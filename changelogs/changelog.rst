@@ -1,0 +1,6 @@
+.. _changelog:
+
+Changelogs
+==========
+
+Table.
