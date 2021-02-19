@@ -3,7 +3,7 @@
   :alt: Men&Mice
   :align: center
 
-.. _home:
+
 
 Micetro by Men&Mice 9.4.5 (AT&T)
 ================================
@@ -49,8 +49,8 @@ Documentation changelog
 .. toctree::
     :caption: Micetro by Men&Mice 9.4.5 for AT&T
     :maxdepth: 1
+    :hidden:
 
-    :ref:`home`
     changelogs/changelog
 
 
