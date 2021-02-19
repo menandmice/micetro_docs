@@ -46,18 +46,18 @@ Documentation changelog
 9.4.5-9:
   * moved to new doc platform
 
-  .. toctree::
+.. toctree::
     :caption: Micetro by Men&Mice 9.4.5 for AT&T
     :maxdepth: 1
-    :hidden:
 
-    :ref:'home'
+    :ref:`home`
     changelogs/changelog
 
-  .. toctree::
+
+
+.. toctree::
      :caption: Implementation Guide
      :maxdepth: 2
-     :numbered:
      :hidden:
 
      guides/implementation-guide/config-files
@@ -65,10 +65,11 @@ Documentation changelog
      guides/implementation-guide/configuration
      guides/implementation-guide/updates
 
-  .. toctree::
+
+
+.. toctree::
      :caption: Operations Guide
      :maxdepth: 2
-     :numbered:
      :hidden:
 
      guides/operations-guide/operations
