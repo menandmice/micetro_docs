@@ -46,10 +46,10 @@ Documentation changelog
 
   .. toctree::
     :caption: Micetro by Men&Mice 9.4.5 for AT&T
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
 
-    README
+    index
     changelogs/changelog
 
   .. toctree::
