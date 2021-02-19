@@ -5,6 +5,9 @@
 
 .. _home:
 
+Micetro by Men&Mice 9.4.5 (AT&T)
+================================
+
 This is the documentation for Micetro by Men&Mice version 9.4.5 for AT&T.
 
 Documentation changelog
@@ -48,7 +51,7 @@ Documentation changelog
     :maxdepth: 1
     :hidden:
 
-    :ref:'Documentation home <home>'
+    :ref:'home'
     changelogs/changelog
 
   .. toctree::
