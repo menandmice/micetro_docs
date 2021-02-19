@@ -3,7 +3,7 @@
 Installation Guide
 ==================
 
-.. include:: level2
-.. include:: level3
+.. include:: level2.rst
+.. include:: level3.rst
 
 bla bla
