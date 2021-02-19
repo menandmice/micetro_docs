@@ -3,11 +3,7 @@
 Installation Guide
 ==================
 
-.. toctree::
-  :maxlevel: 2
-  :numbered:
-
-  level2
-  level3
+.. include:: level2
+.. include:: level3
 
 bla bla
