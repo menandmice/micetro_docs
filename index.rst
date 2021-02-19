@@ -23,7 +23,7 @@ This is the documentation for Micetro by Men&Mice version 9.4.5 for AT&T.
 
 .. toctree::
      :caption: Implementation Guide
-     :maxdepth: 2
+     :maxdepth: 3
      :hidden:
 
      guides/implementation-guide/config-files
