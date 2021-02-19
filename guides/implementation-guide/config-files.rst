@@ -5,9 +5,9 @@ Location of important config files, scripts, and logs
 
 .. table::
 
-===============================================================================   =======================================
+================================================================================= =======================================
 Path                                                                              Information
-===============================================================================   =======================================
+================================================================================= =======================================
 ``/var/mmsuite/mmcentral/preferences.cfg``                                        Men&Mice Central
                                                                                   configuration file.
 ``/var/mmsuite/dns_server_controller/preferences.cfg``                            Men&Mice DNS Server Controller
@@ -34,4 +34,4 @@ Path                                                                            
 ``/var/mmsuite/mmcentral.log``                                                    Men&Mice Central logfile.
 ``/var/mmsuite/dns_server_controller/logs/``                                      Men&Mice DNS Server Controller logfile.
 ``./[monitor]/pg_log/postgresql-[WeekDay].log``                                   PostgreSQL HA cluster monitor logfile.
-=============================================================================     =======================================
+================================================================================= =======================================
