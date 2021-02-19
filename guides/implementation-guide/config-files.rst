@@ -3,7 +3,7 @@
 Location of important config files, scripts, and logs
 =====================================================
 
-. csv-table::
+.. csv-table::
    :header: "Path", "Information"
    :widths: 60%, 40%
 
