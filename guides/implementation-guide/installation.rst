@@ -9,7 +9,4 @@ Installation Guide
   level2
   level3
 
-.. include:: level2.rst
-.. include:: level3.rst
-
 bla bla
