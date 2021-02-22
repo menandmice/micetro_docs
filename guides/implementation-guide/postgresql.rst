@@ -7,7 +7,9 @@ Setting up PostgreSQL
 .. note::
   Men&Mice uses ``pg_auto_failover`` for PostgreSQL high availability. Refer to `their documentation <https://pg-auto-failover.readthedocs.io/en/latest/>`_ for more details about different configurations.
 
-The setup presented here will establish resilience against losing any one of the configured three nodes.
+  The setup presented here will establish resilience against losing any one of the configured three nodes.
+
+.. image:: ../images/postgres_ha.png 
 
 .. csv-table:: Variables
   :header: "Name", "Description", "Example value"
