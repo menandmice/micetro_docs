@@ -1,0 +1,101 @@
+Setting up the PostgreSQL High Availability environment
+-------------------------------------------------------
+
+.. note::
+  You can use the commands ``pg_autoctl stop`` and ``pg_autoctl drop node --destroy`` to start with a clean slate and get rid of everything that might have been set up previously.
+
+Machine: monitor
+^^^^^^^^^^^^^^^^
+
+Switch to user *postgres* and export *pgsql path*:
+
+``sudo su - postgres``
+``export PATH="$PATH:/usr/pgsql-12/bin"``
+
+Set up a monitor node:
+
+``pg_autoctl create monitor --pgdata ./[monitor] --pgport [port] --nodename [monitor] --auth scram-sha-256``
+
+Next, the ``pg_hba.conf`` file needs to be edited to allow connection in from the two nodes
+
+``echo "host pg_auto_failover autoctl_node [ip-address-node-1]/32 scram-sha-256" >> ./[monitor]/pg_hba.conf``
+``echo "host pg_auto_failover autoctl_node [ip-address-node-2]/32 scram-sha-256" >> ./[monitor]/pg_hba.conf``
+
+Edit the ``postgresql.conf`` file to allow scram-sha-256 authentication
+
+.. raw::
+  vi ./[monitor]/postgresql.conf
+  # uncomment the line and set
+  # password_encryption = 'scram-sha-256'
+  # uncomment the line and set
+  # listen_addresses = '*'
+  # save the file and restart
+
+``pg_ctl restart -D ./[monitor]``
+
+Still running as user postgres, set the database user password in the monitor database
+
+``psql -p [port] -d pg_auto_failover
+  ALTER USER autoctl_node PASSWORD '[monitor_node_password]';
+  \q``
+
+Machine: node-1
+^^^^^^^^^^^^^^^
+
+Switch to user postgres and export pgsql path:
+
+``sudo su - postgres``
+``export PATH="$PATH:/usr/pgsql-12/bin"``
+
+Set up a primary node:
+
+``pg_autoctl create postgres --pgdata ./[node-1] --pgport [port] --pgctl `which pg_ctl` --nodename [node-1] --monitor postgres://autoctl_node:[monitor_node_password]@[monitor]:[port]/pg_auto_failover --auth scram-sha-256``
+
+Set up a replication password
+
+``pg_autoctl config set replication.password [replication-password] --pgdata ./[node-1]``
+
+Edit the postgresql.conf file to allow scram-sha-256 authentication
+
+.. raw::
+  vi ./[node-1]/postgresql.conf
+  # uncomment the line and set
+  # password_encryption = 'scram-sha-256'
+  # uncomment the line and set
+  # listen_addresses = '*'
+  # save the file and restart
+
+``pg_ctl restart -D ./[node-1]``
+
+Still running as user postgres, set the database user password in the database
+
+``psql -p [port]
+  ALTER USER pgautofailover_replicator PASSWORD [replication-password];
+  ALTER USER postgres PASSWORD [postgres-password];
+  \q``
+
+Run the primary node in the background
+
+``pg_autoctl run --pgdata ./[node-1]/ &``
+
+Machine: node-2
+^^^^^^^^^^^^^^^
+
+``sudo su - postgres``
+``export PATH="$PATH:/usr/pgsql-12/bin"``
+``pg_autoctl create postgres --pgdata ./[node-2] --pgport [port] --pgctl `which pg_ctl` --nodename [node-2] --monitor postgres://autoctl_node:[monitor_node_password]@[monitor]:[port]/pg_auto_failover --auth scram-sha-256``
+``pg_autoctl config set replication.password [replication-password] --pgdata ./[node-2]``
+``pg_autoctl run --pgdata ./[node-2]/ &``
+
+Machine: monitor
+^^^^^^^^^^^^^^^^
+
+Show state to verify the setup
+
+``pg_autoctl show state --pgdata ./[monitor]``
+
+.. raw::
+  Name                       |   Port    | Group |  Node |     Current State |    Assigned State
+  ---------------------------+-----------+-------+-------+-------------------+------------------
+  [node-1]                   |   [port] |     0 |     1 |            primary |           primary
+  [node-2]                   |   [port] |     0 |     1 |          secondary |         secondary
