@@ -1,7 +1,7 @@
 .. _install-console:
 
 Management Console
-------------------
+==================
 
 The Men&Mice Management Console is a Windows-based application and needs to be installed on a Windows machine, or through a Wine session on Linux.
 
