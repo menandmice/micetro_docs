@@ -1,4 +1,4 @@
-.. _implementation:
+.. _implementation-index:
 
 Implementation Guide
 ####################
@@ -25,4 +25,3 @@ Implementation Guide
   custom_prefs
   adding_dns
   adding_server_groups
-  

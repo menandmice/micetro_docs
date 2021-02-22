@@ -1,3 +1,5 @@
+.. _psql-ha:
+
 Setting up the PostgreSQL High Availability environment
 -------------------------------------------------------
 

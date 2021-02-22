@@ -1,3 +1,5 @@
+.. _central-psql-ha:
+
 Connect Central to the PostgreSQL high availability cluster
 -----------------------------------------------------------
 

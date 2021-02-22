@@ -1,3 +1,5 @@
+.. _central-psql:
+
 Connect Central to the primary PostgreSQL database
 --------------------------------------------------
 

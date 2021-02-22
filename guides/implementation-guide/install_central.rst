@@ -9,6 +9,7 @@ Men&Mice Central
   install_console
   central_ha
   central_psql_ha
+  central_python
 
 Extract and run the Men&Mice Central install package:
 
