@@ -9,7 +9,7 @@ Setting up PostgreSQL
 
   The setup presented here will establish resilience against losing any one of the configured three nodes.
 
-.. image:: ../images/postgres_ha.png 
+.. image:: ~/images/postgres_ha.png 
 
 .. csv-table:: Variables
   :header: "Name", "Description", "Example value"
