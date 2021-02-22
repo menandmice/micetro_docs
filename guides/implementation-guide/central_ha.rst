@@ -25,6 +25,8 @@ Restart Central:
 Login to the Management Console and verify that the current server is running with state "Active" in the :guilabel:`Tools --> Manage high availability` panel.
 Click the *Add* button, and add a second server that’ll act as a high availability failover for the Central cluster. Same as previously, a unique name (e.g. "central2") is required. Set priority to **20**, and click OK.
 
+.. image:: ../../images/console_ha.png 
+
 On the just added secondary server, install the Men&Mice Central application. If it’s already installed, make sure it’s stopped by using (as root):
 
 ``systemctl stop mmcentral``
