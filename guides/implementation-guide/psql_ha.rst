@@ -5,7 +5,7 @@ Setting up the PostgreSQL High Availability environment
   You can use the commands ``pg_autoctl stop`` and ``pg_autoctl drop node --destroy`` to start with a clean slate and get rid of everything that might have been set up previously.
 
 Machine: monitor
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 Switch to user *postgres* and export *pgsql path*:
 
@@ -24,6 +24,7 @@ Next, the ``pg_hba.conf`` file needs to be edited to allow connection in from th
 Edit the ``postgresql.conf`` file to allow scram-sha-256 authentication
 
 .. raw::
+  
   vi ./[monitor]/postgresql.conf
   # uncomment the line and set
   # password_encryption = 'scram-sha-256'
@@ -40,7 +41,7 @@ Still running as user postgres, set the database user password in the monitor da
   \q``
 
 Machine: node-1
-^^^^^^^^^^^^^^^
+"""""""""""""""
 
 Switch to user postgres and export pgsql path:
 
@@ -58,6 +59,7 @@ Set up a replication password
 Edit the postgresql.conf file to allow scram-sha-256 authentication
 
 .. raw::
+
   vi ./[node-1]/postgresql.conf
   # uncomment the line and set
   # password_encryption = 'scram-sha-256'
@@ -79,7 +81,7 @@ Run the primary node in the background
 ``pg_autoctl run --pgdata ./[node-1]/ &``
 
 Machine: node-2
-^^^^^^^^^^^^^^^
+"""""""""""""""
 
 ``sudo su - postgres``
 ``export PATH="$PATH:/usr/pgsql-12/bin"``
@@ -88,13 +90,14 @@ Machine: node-2
 ``pg_autoctl run --pgdata ./[node-2]/ &``
 
 Machine: monitor
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 Show state to verify the setup
 
 ``pg_autoctl show state --pgdata ./[monitor]``
 
 .. raw::
+
   Name                       |   Port    | Group |  Node |     Current State |    Assigned State
   ---------------------------+-----------+-------+-------+-------------------+------------------
   [node-1]                   |   [port] |     0 |     1 |            primary |           primary
