@@ -1,4 +1,7 @@
-.. _ha-tweaks
+.. _ha-tweaks:
+
+Tweaking settings for the high availability clusters
+****************************************************
 
 .. toctree::
   :maxdepth: 2
