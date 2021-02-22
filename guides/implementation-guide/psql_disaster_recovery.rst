@@ -3,39 +3,39 @@
 Possible disaster scenarios
 ===========================
 
-.. table::   
+.. table::
 
-+-----------------------+-----------+-------------------------------------------------------------------------------------------+
-| Failure of:           | Machine   | HA system response                                                                        |
-|                       | affected  |                                                                                           |
-+=======================+===========+===========================================================================================+
-|                       |	Primary	  | Failover, automatic service reboot. Replication stops in the meantime.                    |
-|                       |-----------+-------------------------------------------------------------------------------------------+
-| PSQL database service | Secondary	| Automatic service reboot. Replication stops in the meantime.                              |
-|                       |-----------+-------------------------------------------------------------------------------------------+
-|                       | Monitor	  | Automatic service reboot. Replication continues but no failover possible in the meantime. |
-+-----------------------+-----------+-------------------------------------------------------------------------------------------+
-|                       | Primary	  | Failover. Replication stops, waits for a signal from secondary.                           |
-|                       +-----------+-------------------------------------------------------------------------------------------+
-|                       | Secondary	| Replication on primary stops. Waits for a signal from secondary.                          |
-|                       +-----------+-------------------------------------------------------------------------------------------+
-| Server shutdown       | Monitor  	| The primary database is still usable.                                                     |
-|                       |           | Primary and secondary nodes wait for a connection to monitor. Replication continues.      |
-|                       +-----------+-------------------------------------------------------------------------------------------+
-|                       | All	      | Database unavailable, no replication, no failover possible.                               |
-+-----------------------+-----------+-------------------------------------------------------------------------------------------+
-| Server reboot	        | Primary	  | Failover, automatic service reboot on startup.                                            |
-|                       +-----------+-------------------------------------------------------------------------------------------+
-|                       | Secondary	| Automatic service reboot. Replication stops in the meantime.                              |
-|                       +-----------+-------------------------------------------------------------------------------------------+
-|                       | Monitor  	| Automatic service reboot. Replication continues but no failover possible in the meantime. |
-|                       +-----------+-------------------------------------------------------------------------------------------+
-|                       | All      	| Database unavailable, no replication, no failover possible.                               |
-+-----------------------+-----------+-------------------------------------------------------------------------------------------+
-| ``pg_autoctl``        |           |                                                                                           |
-|  corrupted and/or     | All       | Database unavailable, no replication, no failover possible.                               |
-|  deleted	            |    	      |                                                                                           |
-+-----------------------+-----------+-------------------------------------------------------------------------------------------+
+  +-----------------------+-----------+-------------------------------------------------------------------------------------------+
+  | Failure of:           | Machine   | HA system response                                                                        |
+  |                       | affected  |                                                                                           |
+  +=======================+===========+===========================================================================================+
+  |                       |	Primary	  | Failover, automatic service reboot. Replication stops in the meantime.                    |
+  |                       |-----------+-------------------------------------------------------------------------------------------+
+  | PSQL database service | Secondary	| Automatic service reboot. Replication stops in the meantime.                              |
+  |                       |-----------+-------------------------------------------------------------------------------------------+
+  |                       | Monitor	  | Automatic service reboot. Replication continues but no failover possible in the meantime. |
+  +-----------------------+-----------+-------------------------------------------------------------------------------------------+
+  |                       | Primary	  | Failover. Replication stops, waits for a signal from secondary.                           |
+  |                       +-----------+-------------------------------------------------------------------------------------------+
+  |                       | Secondary	| Replication on primary stops. Waits for a signal from secondary.                          |
+  |                       +-----------+-------------------------------------------------------------------------------------------+
+  | Server shutdown       | Monitor  	| The primary database is still usable.                                                     |
+  |                       |           | Primary and secondary nodes wait for a connection to monitor. Replication continues.      |
+  |                       +-----------+-------------------------------------------------------------------------------------------+
+  |                       | All	      | Database unavailable, no replication, no failover possible.                               |
+  +-----------------------+-----------+-------------------------------------------------------------------------------------------+
+  |             	        | Primary	  | Failover, automatic service reboot on startup.                                            |
+  |                       +-----------+-------------------------------------------------------------------------------------------+
+  |                       | Secondary	| Automatic service reboot. Replication stops in the meantime.                              |
+  | Server reboot         +-----------+-------------------------------------------------------------------------------------------+
+  |                       | Monitor  	| Automatic service reboot. Replication continues but no failover possible in the meantime. |
+  |                       +-----------+-------------------------------------------------------------------------------------------+
+  |                       | All      	| Database unavailable, no replication, no failover possible.                               |
+  +-----------------------+-----------+-------------------------------------------------------------------------------------------+
+  | ``pg_autoctl``        |           |                                                                                           |
+  |  corrupted and/or     | All       | Database unavailable, no replication, no failover possible.                               |
+  |  deleted	            |    	      |                                                                                           |
+  +-----------------------+-----------+-------------------------------------------------------------------------------------------+
 
 Controlled switchover
 --------------------
