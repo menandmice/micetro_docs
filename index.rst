@@ -27,9 +27,10 @@ This is the documentation for Micetro by Men&Mice version 9.4.5 for AT&T.
      :hidden:
 
      guides/implementation-guide/config-files
-     guides/implementation-guide/implementation 
+     guides/implementation-guide/implementation
      guides/implementation-guide/configuration
      guides/implementation-guide/updates
+     guides/implementation-guide/administration 
 
 
 
