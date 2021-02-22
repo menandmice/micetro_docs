@@ -1,7 +1,7 @@
-Men&Mice Suite components
--------------------------
+Micetro by Men&Mice components
+==============================
 
-Important: all Men&Mice components (Central, Controller, and the Web Application) require python (version 2.7 or above) to be installed on the target server.
+Important: all Micetro non-Windows components (Central, Controller, and the Web Application) require python (version 2.7 or above) to be installed on the target server.
 
 The Men&Mice Customer Support team will provide you with the necessary installer packages:
 

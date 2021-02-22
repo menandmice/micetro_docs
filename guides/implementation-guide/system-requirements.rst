@@ -1,7 +1,7 @@
 .. _sysreq:
 
 System requirements
--------------------
+===================
 
 The system requirements for Micetro by Men&Mice are as follows:
 

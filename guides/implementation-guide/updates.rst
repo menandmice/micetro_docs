@@ -1,6 +1,6 @@
 .. _updates:
 
-Updates
-=======
+Update Guide
+************
 
 bla bla
