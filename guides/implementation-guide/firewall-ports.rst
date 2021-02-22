@@ -9,7 +9,7 @@ The following table lists all services and their respective ports to be opened f
   :widths: 30, 10, 10, 60
 
   "DNS Server Controller(s)",	1337,	"TCP",	"Men&Mice Central"
-  "Men&Mice Central",	1231	"TCP",	"Management Console, Web Application"
+  "Men&Mice Central",	1231,	"TCP",	"Management Console, Web Application"
   "Web Application",	"80/443",	"TCP",	"User’s browser"
   "PostgreSQL",	5432,	"TCP",	"Men&Mice Central"
   "PostgreSQL",	5000,	"TCP",	"PSQL HA nodes"
