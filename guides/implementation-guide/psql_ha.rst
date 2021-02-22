@@ -23,8 +23,8 @@ Next, the ``pg_hba.conf`` file needs to be edited to allow connection in from th
 
 Edit the ``postgresql.conf`` file to allow scram-sha-256 authentication
 
-.. raw::
-  
+.. code-block::
+
   vi ./[monitor]/postgresql.conf
   # uncomment the line and set
   # password_encryption = 'scram-sha-256'
@@ -58,7 +58,7 @@ Set up a replication password
 
 Edit the postgresql.conf file to allow scram-sha-256 authentication
 
-.. raw::
+.. code-block::
 
   vi ./[node-1]/postgresql.conf
   # uncomment the line and set
@@ -96,7 +96,7 @@ Show state to verify the setup
 
 ``pg_autoctl show state --pgdata ./[monitor]``
 
-.. raw::
+.. code-block::
 
   Name                       |   Port    | Group |  Node |     Current State |    Assigned State
   ---------------------------+-----------+-------+-------+-------------------+------------------
