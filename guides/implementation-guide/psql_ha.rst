@@ -1,5 +1,5 @@
 Setting up the PostgreSQL High Availability environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------------
 
 .. note::
   You can use the commands ``pg_autoctl stop`` and ``pg_autoctl drop node --destroy`` to start with a clean slate and get rid of everything that might have been set up previously.
@@ -112,3 +112,39 @@ Show state to verify the setup:
   ---------------------------+-----------+-------+-------+-------------------+------------------
   [node-1]                   |   [port] |     0 |     1 |            primary |           primary
   [node-2]                   |   [port] |     0 |     1 |          secondary |         secondary
+
+Set up the mmsuite database and edit config files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Machine: node-1
+"""""""""""""""
+
+Enter the ``postgresql`` database as user *postgres*:
+
+.. code-block::
+  :linenos:
+
+  psql -p [port]
+  > CREATE DATABASE mmsuite ENCODING = 'LATIN1' LC_CTYPE = 'POSIX' LC_COLLATE='POSIX' TEMPLATE template0;
+  > GRANT ALL PRIVILEGES ON DATABASE mmsuite TO postgres;
+
+Edit the ``pg_hba.conf`` to allow access to the database from the outside:
+
+.. code-block::
+  :linenos:
+
+  echo "host mmsuite postgres [ip-address-of-central-primary]/32 scram-sha-256" >> ./[node-1]/pg_hba.conf
+  echo "host mmsuite postgres [ip-address-of-central-secondary]/32 scram-sha-256" >> ./[node-1]/pg_hba.conf
+  psql -p [port] -c 'SELECT pg_reload_conf();'
+
+Machine: node-2
+"""""""""""""""
+
+Edit the ``pg_hba.conf`` to allow access to the database from the outside:
+
+.. code-block::
+  :linenos:
+
+  echo "host mmsuite postgres [ip-address-of-central-primary]/32 scram-sha-256" >> ./[node-2]/pg_hba.conf
+  echo "host mmsuite postgres [ip-address-of-central-secondary]/32 scram-sha-256" >> ./[node-2]/pg_hba.conf
+  psql -p [port] -c 'SELECT pg_reload_conf();'
