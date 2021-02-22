@@ -11,3 +11,4 @@ Implementation Guide
   firewall-ports
   binaries
   postgresql
+  psql_ha 
