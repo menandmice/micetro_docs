@@ -81,6 +81,7 @@ The Quickfilter can be accessed in all sections of the Web Application that uses
 Alternatively, it can be used solely by specifying columns and values for each column to be filtered by.
 
 .. sidebar::
+
   When the Quickfilter is set to “Filter” mode (the funnel icon is highlighted) the filtered list will only display objects that are matched to the string in the text field.
 
     .. figure:: ../../images/quickfilter-filter.png

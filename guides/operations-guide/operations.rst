@@ -6,7 +6,6 @@ Operations Guide
 .. toctree::
   :maxdepth: 2
 
-  operations
   webapp
   att_data
   dns
