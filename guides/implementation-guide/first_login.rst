@@ -19,4 +19,6 @@ The default credentials:
 
 After logging in with the default administrator credentials, the system will prompt to change the administrator password.
 
-.. image:: ../../images/first_login.png 
+.. image:: ../../images/first_login.png
+  :width: 30%
+  :align: center

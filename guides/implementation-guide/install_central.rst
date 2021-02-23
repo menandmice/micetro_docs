@@ -14,7 +14,6 @@ Men&Mice Central
 Extract and run the Men&Mice Central install package:
 
 .. code-block::
-  :linenos:
 
   tar -xzvf mmsuite-central-9.4.4.linux.x64.tgz
   cd mmsuite-central-9.4.2.linux.x64

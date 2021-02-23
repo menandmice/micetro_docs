@@ -8,6 +8,8 @@ The Men&Mice Management Console is a Windows-based application and needs to be i
 Run the Men&Mice Management Console installer (with Administrative privileges). Once installed, launch the application:
 
 .. image:: ../../images/console.png
+  :width: 50%
+  :align: center
 
 Log in with the default credentials:
 

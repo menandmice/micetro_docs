@@ -40,7 +40,7 @@ For each machine create a startup service that runs the pg_autoctl process:
 
 **Machine: node-1**
 
-..code-block:: bash
+.. code-block:: bash
 
   pg_autoctl -q show systemd --pgdata /var/lib/pgsql/[node-1]/ | sudo tee /etc/systemd/system/pgautofailover.service
   systemctl enable pgautofailover.service

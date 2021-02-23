@@ -50,7 +50,7 @@ Start Central on the secondary server:
 
   systemctl start mmcentral
 
-Verify that you now have 2 servers, one primary, one secondary in :guilabel:`Tools --> Manage High availability``.
+Verify that you now have 2 servers, one primary, one secondary in :guilabel:`Tools --> Manage High availability`.
 
 Create a round robin DNS name for the high availability setup, i.e. two A records with the same name, but each with the IP address of the primary and secondary server respectively.
 

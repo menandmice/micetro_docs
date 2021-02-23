@@ -37,11 +37,17 @@ Once the keyfiles are placed in their respective directories, edit the mmweb.con
 
 * change ``<VirtualHost *:80>`` to ``<VirtualHost *:443>``
 * add in the references to the key files (amend the path as necessary):
-    ``SSLCertificateFile /etc/pki/tls/certs/mmweb.crt``
-    ``SSLCertificateKeyFile /etc/pki/tls/private/mmweb.key``
+
+.. code-block::
+  :linenos:
+
+  SSLCertificateFile /etc/pki/tls/certs/mmweb.crt
+  SSLCertificateKeyFile /etc/pki/tls/private/mmweb.key
+
 * enable SSL:
 
 .. code-block::
+  :linenos:
 
     SSLEngine on
     SSLProtocol all -SSLv2 -SSLv3
@@ -51,4 +57,4 @@ Once the keyfiles are placed in their respective directories, edit the mmweb.con
   The default Apache installation may already have a ``<VirtualHost _default_:443>`` directive, which can conflict with the ``mmweb.conf`` file.
   Comment out this existing VirtualHost block to prevent any errors.
 
-To verify the Web Application is accessible, navigate to https://web-application.domain.tld. The Men&Mice Web Application’s login panel should appear.
+To verify the Web Application is accessible, navigate to ``https://web-application.domain.tld``. The Men&Mice Web Application’s login panel should appear.

@@ -5,7 +5,7 @@ Possible disaster scenarios
 
 .. table::
 
-  +=======================+===========+===========================================================================================+
+  +-----------------------+-----------+-------------------------------------------------------------------------------------------+
   | Failure of:           | Machine   | HA system response                                                                        |
   |                       | affected  |                                                                                           |
   +=======================+===========+===========================================================================================+
@@ -68,7 +68,7 @@ The failover system is configured to automatically restart with the server, and 
 
 On the current primary database machine:
 
-..code-block:: bash
+.. code-block:: bash
 
   /usr/pgsql-12/bin/postgres -D /var/lib/pgsql/[node-?] -p [port]
 

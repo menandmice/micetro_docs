@@ -73,7 +73,7 @@ Edit the /var/mmsuite/mmcentral/scripts/group_deploy.py script to change the Dep
 Because the script file stores the DeployUser user’s password in plaintext, make sure that the /var/mmsuite/mmcentral/scripts directory is only readable by root to enhance security.
 
 .. image:: ../../images/scriptuser-address-space.png
-  :width: 50%
+  :width: 90%
   :align: center
 
 Install the scripts to the system (as root):

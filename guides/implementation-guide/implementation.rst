@@ -7,6 +7,5 @@ Implementation Guide
   :maxdepth: 2
 
   installation
-  configuration
   administration
   updates

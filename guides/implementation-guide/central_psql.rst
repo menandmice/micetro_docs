@@ -5,11 +5,14 @@ Connect Central to the primary PostgreSQL database
 
 Edit the configuration file for Men&Mice Central:
 
-``nano /var/mmsuite/mmcentral/preferences.cfg``
+.. code-block:: bash
+
+  nano /var/mmsuite/mmcentral/preferences.cfg
 
 Find (or create) and set the following values:
 
 .. code-block::
+  :linenos:
 
   <database value="postgresql"/>
   <databaseserver value="HOSTNAME@DATABASE"/>
@@ -27,8 +30,9 @@ Where
 
 Restart Central and verify it’s running:
 
-``systemctl restart mmcentral``
+.. code-block:: bash
 
-``systemctl status mmcentral``
+  systemctl restart mmcentral
+  systemctl status mmcentral
 
 If the database connection fails, the service will fail to start with the appropriate error message.

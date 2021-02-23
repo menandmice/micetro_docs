@@ -9,7 +9,7 @@ After installation, the Men&Mice Suite contains no data about DNS servers. These
   When adding a Member Server to a Server Group, the (read-only) DNS server object is added at the same time. DNS servers that are meant to be part of Server Groups must not be added manually here.
 
 1. Log in to the Web Application
-2. Select the :guilabel:`Admin:` tab on the top of the screen
+2. Select the :guilabel:`Admin` tab on the top of the screen
 3. Click :guilabel:`Add DNS server` in the interface
 
 .. image:: ../../images/add-dns.png

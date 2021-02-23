@@ -39,19 +39,27 @@ Install requirements
 
 Install ``sudo`` and ``which``:
 
-``yum install sudo``
-``yum install which``
+.. code-block:: bash
+
+  yum install sudo
+  yum install which
 
 Enable the package repository that distributes ``pg_auto_failover``:
 
-``curl https://install.citusdata.com/community/rpm.sh | sudo bash``
+.. code-block:: bash
+
+  curl https://install.citusdata.com/community/rpm.sh | sudo bash
 
 Install ``pg_auto_failover`` for PostgreSQL 12:
 
-``sudo yum install -y pg-auto-failover10_12``
+.. code-block:: bash
+
+  sudo yum install -y pg-auto-failover10_12
 
 If you will be using hostnames, edit ``/etc/hosts``:
 
-``echo "[ip-address-monitor-machine] [monitor]" >> /etc/hosts``
-``echo "[ip-address-node-1] [node-1]" >> /etc/hosts``
-``echo "[ip-address-node-2] [node-2]" >> /etc/hosts``
+.. code-block:: bash
+
+  echo "[ip-address-monitor-machine] [monitor]" >> /etc/hosts
+  echo "[ip-address-node-1] [node-1]" >> /etc/hosts
+  echo "[ip-address-node-2] [node-2]" >> /etc/hosts

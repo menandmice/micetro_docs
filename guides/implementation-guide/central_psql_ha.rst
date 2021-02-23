@@ -8,7 +8,9 @@ Machine: monitor
 
 To see the connection string we run this command on the monitor machine:
 
-``pg_autoctl show uri --formation default --pgdata ./[monitor]``
+.. code-block:: bash
+
+  pg_autoctl show uri --formation default --pgdata ./[monitor]
 
 The connection string will look somewhat like this:
 
@@ -27,12 +29,15 @@ Machine: central-primary
 
 Update the /etc/hosts file:
 
-``echo "[ip-address-node-1] [node-1]" >> /etc/hosts``
-``echo "[ip-address-node-2] [node-2]" >> /etc/hosts``
+.. code-block:: bash
+
+  echo "[ip-address-node-1] [node-1]" >> /etc/hosts
+  echo "[ip-address-node-2] [node-2]" >> /etc/hosts
 
 Add this to the Men&Mice Central ``preferences.cfg`` file:
 
 .. code-block::
+  :linenos:
 
   <Database value="postgresql"/>
   <DatabaseServer value="postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write" />
@@ -45,12 +50,15 @@ Machine: central-secondary
 
 Update the /etc/hosts file:
 
-``echo "[ip-address-node-1] [node-1]" >> /etc/hosts``
-``echo "[ip-address-node-2] [node-2]" >> /etc/hosts``
+.. code-block:: bash
+
+  echo "[ip-address-node-1] [node-1]" >> /etc/hosts
+  echo "[ip-address-node-2] [node-2]" >> /etc/hosts
 
 Add this to the Men&Mice Central ``preferences.cfg`` file:
 
 .. code-block::
+  :linenos:
 
   <Database value="postgresql"/>
   <DatabaseServer value="postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write" />

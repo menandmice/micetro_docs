@@ -34,14 +34,14 @@ III/6.1. Managing users, groups, and roles
 
 You can manage users, groups, and roles in the Web Application’s :guilabel:`Admin --> Configuration --> User Management` section. (Alternatively, in the Management Console’s :guilabel:`Tools --> User Management` menu.)
 
-.. image:: ../../user_p1.png
+.. image:: ../../images/user_p1.png
   :width: 30%
   :align: center
 
-.. image:: ../../user_p2.png
+.. image:: ../../images/user_p2.png
   :width: 30%
   :align: center
 
-.. image:: ../../roles.png
+.. image:: ../../images/roles.png
   :width: 60%
   :align: center

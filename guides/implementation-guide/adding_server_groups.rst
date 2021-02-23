@@ -12,7 +12,7 @@ To add a server group:
 2. Select the :guilabel:`AT&T` tab on the top of the screen, and switch to the :guilabel:`Server Groups` view in the top left.
 
 .. image:: ../../images/att-tab.png
-  :width: 60%
+  :width: 90%
   :align: center
 
 3. Click :guilabel:`Create Group`.
@@ -21,7 +21,7 @@ To add a server group:
 6. Specify the initial member server that connects to the group master by FQDN or IP address. The autocomplete feature will help you narrow the list of choices after typing a few characters.
 
 .. image:: ../../images/add-server-group.png
-  :width: 40%
+  :width: 60%
   :align: center
 
 7. Click :guilabel:`Confirm` to create the server group.
