@@ -13,8 +13,8 @@ Run the Men&Mice Management Console installer (with Administrative privileges). 
 
 Log in with the default credentials:
 
-* username: administrator
-* password: administrator
+* username: ``administrator``
+* password: ``administrator``
 
 The “Server name” field requires the domain or the IPv4/v6 address of the server running the Men&Mice Central application. (This only needs to be defined once, and will autofill on subsequent logins.)
 Successful login confirms that Men&Mice Central is running, connected to the database, and accessible for the Management Console.
