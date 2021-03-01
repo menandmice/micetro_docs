@@ -15,18 +15,18 @@ Operating systems
 -----------------
 
 .. csv-table:: Operating systems
-  :header: "Operating system", "Management Console [1]_", "Server Controllers", "Men&Mice Central", "Web Application", "API", "Command Line Interface"
+  :header: "Operating system", "Management Console [1]_", "Server Controllers", "Men&Mice Central", "Web Application", "API [2]_", "Command Line Interface"
   :widths: 20, 20, 20, 10, 10, 10, 10
 
-  "Microsoft Windows",,,,,,
-  "Windows Server 2008 R2 [2]_", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
+  "**Microsoft Windows**",,,,,,
+  "Windows Server 2008 R2 [3]_", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
   "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
   "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Solaris",,,,,,
+  "**Solaris**",,,,,,
   "Solaris 10 x86", "N", "Y", "N", "N", "N/A [3]_", "N"
-  "Linux",,,,,,
+  "**Linux**",,,,,,
   "Redhat Enterprise Linux 6", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
   "Redhat Enterprise Linux 7", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
   "Redhat Enterprise Linux 8", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
@@ -40,9 +40,9 @@ Operating systems
 
 .. [1] The management console also works on non-server Windows that have not reached their EOL.
 
-.. [2] On January 14, 2020, Microsoft ends support for Windows server 2008 and 2008 R2 and therefore support for those server types will be deprecated in future versions of the Men&Mice Suite.
+.. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
 
-.. [3] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
+.. [3] On January 14, 2020, Microsoft ends support for Windows server 2008 and 2008 R2 and therefore support for those server types will be deprecated in future versions of the Men&Mice Suite.
 
 Databases
 ---------
@@ -64,12 +64,12 @@ DNS/DHCP Server software
   :header: "Server", "Version(s)"
   :widths: 40, 60
 
-  "DNS"
+  "**DNS**"
   "Microsoft DNS", "2008 R2, 2012, 2012 R2, 2016, 2019"
   "ISC BIND", "9.6 - 9.14"
   "Unbound", "1.4.22 - 1.7.3"
   "PowerDNS Authoritative Server", "3.4 - 4.3"
-  "DHCP"
+  "**DHCP**"
   "Microsoft DHCP", "2008 R2, 2012, 2012 R2, 2016, 2019"
   "ISC DHCP", "3.0.6 - 4.4.1"
   "ISC Kea", "1.1.0 - 1.2.0"

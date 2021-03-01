@@ -94,6 +94,9 @@ The DNS Caching Appliance contains a high-performance Caching-only DNS server. S
 Men & Mice Suite User Interfaces
 ================================
 
+.. note::
+  Of the different user interfaces, multiple copies may be installed, and multiple instances can be logged in at once to manage the environments.
+
 Web Application
 ---------------
 

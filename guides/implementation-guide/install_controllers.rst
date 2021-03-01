@@ -14,6 +14,7 @@ Men&Mice DNS Server Controllers
   The DNS Server Controllers need to be ran as the same user as BIND. (By default: ``named``.)
   If your environment BIND is running as a different user, or files are updated, make sure that the ``mmremote`` service is ran as the same user and has sufficient access to files and directories.
 
+
 Each DNS server intended to be used as part of a server group has to run a Men&Mice Controller. (In addition to the standard DNS software such as BIND.)
 
 Extract the Men&Mice Controller install package (as root):

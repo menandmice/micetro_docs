@@ -13,6 +13,7 @@ Web Application
 .. important::
   Before you install the the Men&Mice Web Application, make sure you must have a functioning and accessible Apache Web Server running. The Web Application will configure its virtual host.
 
+
 Extract and install the Men&Mice Web Application install package (as root):
 
 .. code-block:: bash
