@@ -133,6 +133,8 @@ An example preferences.cfg file for the Windows Authentication method should loo
   <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g. SQLEXPRESS>@,<name of database, e.g. mmsuite"/>
   <databaseusername value=""/>
 
+Restart Central and verify it’s running. If the database connection fails, the service will fail to start with the appropriate error message.
+
 Proceed to :ref:`installing the DNS and DHCP server controllers <install_controllers>`.
 
 Men&Mice Central running on Linux
@@ -162,6 +164,15 @@ Connecting to the MS SQL database
 Restarting the Men&Mice Central service with the new preferences file should connect the Men&Mice Central to your freshly created database. The Men&Mice Central creates the database schema (tables...) during the first connection.
 
 Since the database was freshly created you can now follow the normal installation procedure.
+
+Restart Central and verify it’s running:
+
+.. code-block:: bash
+
+  systemctl restart mmcentral
+  systemctl status mmcentral
+
+If the database connection fails, the service will fail to start with the appropriate error message.
 
 Proceed to :ref:`installing the DNS and DHCP server controllers <install_controllers>`.
 
@@ -215,7 +226,6 @@ An example preferences.cfg file for the Windows Authentication method should loo
   <databaseusername value=""/>
 
 Proceed to :ref:`installing the DNS and DHCP server controllers <install_controllers>`.
-
 
 Men&Mice Central running on Linux
 """""""""""""""""""""""""""""""""

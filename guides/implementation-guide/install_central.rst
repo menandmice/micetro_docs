@@ -40,6 +40,25 @@ Here are the questions asked by the installer that pertain to Men & Mice Central
 
 Proceed to :ref:`Configuring the database <central_database>`.
 
+Removing Men&Mice Central
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Installing Men & Mice Central puts the following files on your system:
+
+.. csv-table::
+  :header: "Description", "File(s) or directory"
+  :widths: 30, 70
+
+  "Men & Mice Central daemon", "mmcentrald, usually in /usr/sbin or /usr/local/sbin"
+  "Data directory for Men & Mice Central", "Usually /var/mmsuite/mmcentral"
+  "Update directory", "update, located in the data directory"
+  "Preferences file", "preferences.cfg, located in the data directory"
+  "[SOLARIS] init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmcentral"
+  "[LINUX] init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmcentral"
+  "settings file used by the init script (Ubuntu Linux only)", "/etc/default/mmcentral"
+
+To remove Men & Mice Central, first use the init script to stop the service (give it the "stop" argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. Also delete the data directory if desired.
+
 Install Men&Mice Central on Windows
 -----------------------------------
 
@@ -59,27 +78,6 @@ Extract and run the Men&Mice Central install package:
 
   gzcat archive-name.tgz | tar xf -
 
-Then change into the newly-created directory and run the installer as described in the following sections.
+Then change into the newly-created directory and run the installer as described in the Linux section.
 
-By default, when executed it tries to figure out the installed service (e.g. BIND) automatically and will try to install it without further user input.
-In case it can't install the service it will print out hints and further information.
-
-If the machine has multiple services installed, like ISC DHCP and ISC BIND DNS you want to specify explicitly the Men & Mice Controllers that
-should be installed.
-
-To get the list of available controllers/parameters just run the installer script with the --help parameter:
-
-.. code-block:: bash
-
-  cd archive-name
-  ./install --help
-  Men & Mice server controller installer.
-  --help:  Print help.
-  --quiet:  Suppress output during install.
-  --auto:  Automatically determine what controllers to install. Default if no other option is given.
-  --bind-dns-controller:  Install a DNS server controller for BIND.
-  --unbound-dns-controller:  Install a DNS server controller for Unbound.
-  --generic-dns-controller:  Install a Generic DNS server controller.
-  --isc-dhcp-controller:  Install a DHCP server controller for ISC dhcpd.
-  --kea-dhcp-controller:  Install a DHCP server controller for Kea dhcp4.
-  --update-controller:  Install update controller. Always installed, if another Men & Mice service is installed.
+Proceed to :ref:`Configuring the database <central_database>`.

@@ -8,8 +8,6 @@ Configuration
 
   running_micetro
   first_login
-  install_scripts
-  webserver_proxy_timeout
-  ha_tweaks
-  db_migrate
-  central_loglevel
+  adding_dns
+  adding_dhcp
+  adding_ip_ranges
