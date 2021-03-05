@@ -3,6 +3,8 @@
 Men&Mice DHCP Server Controllers
 ===============================
 
+Men & Mice DHCP Server Controller is the DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP Server Controller, on any machine in the network) and manages the DHCP service on your behalf.
+
 .. toctree::
   :maxdepth: 2
   :hidden:
@@ -71,7 +73,7 @@ The installer will ask a series of questions. Be prepared to answer them, as ind
 .. note::
   The Kea DHCP4 Controller can not be installed by the deprecated installer.
 
-Men&Mice Central running on Linux 
+Men&Mice Central running on Linux
 ---------------------------------
 
 Here are the questions asked by the installer that pertain to Men & Mice DHCP Server Controller:

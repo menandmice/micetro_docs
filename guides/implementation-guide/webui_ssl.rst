@@ -1,7 +1,10 @@
 .. _webui-ssl:
 
 Setup SSL for the Web Application
----------------------------------
+=================================
+
+SSL on Linux (Apache)
+---------------------
 
 By default, the Web Application uses unencrypted http connection on port 80. To use it with https on port 443, follow these steps.
 
@@ -58,3 +61,95 @@ Once the keyfiles are placed in their respective directories, edit the mmweb.con
   Comment out this existing VirtualHost block to prevent any errors.
 
 To verify the Web Application is accessible, navigate to ``https://web-application.domain.tld``. The Men&Mice Web Application’s login panel should appear.
+
+Proceed to :ref:`Configuring Micetro <configuration>`.
+
+SSL on Windows (IIS)
+--------------------
+
+Configuring SSL Certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Open the IIS (Internet Information Services) Manager
+
+Select the Web Server node in the left sidebar, under "Start Page", and double click on Server Certificates  in the middle pane
+
+.. image:: ../../images/iis-ssl-step1.png
+  :width: 90%
+  :align: center
+
+Choose one of the actions in the actions sidebar on the left to import an existing .pfx SSL certificate, or create a self-signed certificate. If your certificate is in a different format than .pfx, please refer to documentation and/or tools that certificate authorities typically provide to convert their certificates to Microsoft's .pfx format
+
+Select your website under Sites in the left sidebar (usually Default Web Site) , and click Bindings... in the Actions sidebar on the right
+
+.. image:: ../../images/iis-ssl-step2.png
+  :width: 90%
+  :align: center
+
+In the Site Bindings dialog that opened, click Add, select https from the Type menu, and then select the certificate added in step 3 in the SSL certificate picklist. Then click OK
+
+.. image:: ../../images/iis-ssl-step3.png
+  :width: 90%
+  :align: center
+
+The "Host Name" and "Require Server Name Indication" can be left blank if this the first certificate installed on the server.
+
+Redirect HTTP traffic to HTTPS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Editing web.config
+""""""""""""""""""
+
+Locate and open the web.config file for your Default Website in notepad. This is typically at C:\inetpub\wwwroot\web.config
+
+Add the following rule xml to the rewrite > rules section of the xml, at the top below <clear />
+
+.. code-block::
+  :linenos:
+
+  <rule name="HTTP to HTTPS redirect" enabled="true" stopProcessing="true">
+      <match url="(.*)" />
+      <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
+          <add input="{HTTPS}" pattern="^OFF$" />
+      </conditions>
+      <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" appendQueryString="true" redirectType="Permanent" />
+  </rule>
+
+In the IIS manager, select the Default Web site, right click, and select Manage Website > Restart to make the changes to the web.config take effect.
+
+.. image:: ../../images/iis-ssl-step4.png
+  :width: 90%
+  :align: center
+
+With Default Web Site selected in the left sidebar, double click on URL Rewrite in the middle pane. Verify the rule HTTP to HTTPS redirect is at the top of the rewrite rules
+
+Using the IIS manager
+"""""""""""""""""""""
+
+With Default Web Site selected in the left sidebar, double click on URL Rewrite in the middle pane
+
+If there's a HTTP to HTTPS redirect rule already in place at the top of the list of URL rewrite rules, nothing needs to be done
+
+Click Add Rules in the Actions pane on the right, and click OK to create a blank inbound rule
+
+In the name field enter HTTP to HTTPS redirect
+
+In Pattern field enter ``(.*)``
+
+Under conditions click Add and enter the following condition
+
+.. image:: ../../images/iis-ssl-step5.png
+  :width: 90%
+  :align: center
+
+In the Action pane on the bottom, choose Redirect from the Action type dropdown, and set redirect URL to https://{HTTP_HOST}/{R:1} and the redirect type to Permanent (301)
+
+.. image:: ../../images/iis-ssl-step6.png
+  :width: 90%
+  :align: center
+
+Click Apply in the Actions pane on the left. And click Back to rules
+
+Move the new HTTP to HTTPS redirect rule to the top of the rules using the Move Up button in the action pane on the right
+
+Proceed to :ref:`Configuring Micetro <configuration>`.

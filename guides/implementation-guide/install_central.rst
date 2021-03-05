@@ -1,7 +1,7 @@
 Men&Mice Central
 ================
 
-Bla bla, summary of what Central is, bla bla.
+Men&Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing things such as zone history logs, user accounts and permissions, etc. You must have one copy on some server somewhere. It does not need to be installed on a DNS server.
 
 .. toctree::
   :maxdepth: 2
