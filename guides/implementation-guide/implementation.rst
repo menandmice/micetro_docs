@@ -10,11 +10,17 @@ This document is intended to help administrators to install and configure Micetr
 
 .. toctree::
   :maxdepth: 2
+  :hidden:
 
-  implementation 
   installation
   configuration
   updates
+
+:ref:`installation`
+
+:ref:`configuration`
+
+:ref:`updates`
 
 .. _architecture-overview:
 

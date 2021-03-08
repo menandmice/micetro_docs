@@ -18,11 +18,19 @@ Installation Guide
   installation_azure
 
 :ref:`system-requirements`
+
 :ref:`firewall-ports`
+
 :ref:`binaries`
+
 :ref:`install-central`
+
 :ref:`install-console`
+
 :ref:`install-dns-controllers`
+
 :ref:`install-dhcp-controllers`
+
 :ref:`install-webui`
+
 :ref:`installation-azure`
