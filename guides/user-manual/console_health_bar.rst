@@ -23,13 +23,13 @@ The health status is displayed to the user from the health bar which is position
 
 * Appliance
 
-.. image:: ../../images/health-bar-small.png
+.. image:: ../../images/health_bar_small.png
   :width: 90%
   :align: center
 
 A color code is used to represent the severity of the error. If an indicator in any of those categories has a warning or error, it is shown as yellow or red, respectively; otherwise as green. The health bar can be expanded and then the indicator subcategories are shown and more details can be obtained about the health indicators. More importantly, details about each error are given in a separate window where a detailed description about the error is given and also the administrator is given the opportunity to navigate to the object that is affected and from there, fix the error.
 
-.. figure:: ../../images/health-bar-overview.png
+.. figure:: ../../images/health_bar_overview.png
   :width: 90%
   :align: center
 

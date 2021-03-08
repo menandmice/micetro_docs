@@ -7,17 +7,17 @@ Administration functions
   :maxdepth: 2
 
   :ref:`admin-overview`
-  admin_system_settings
-  admin_logging
-  admin_error_checking
-  admin_comments
-  admin_external_commands
-  admin_dns
-  admin_ipam
-  admin_monitoring
+  :ref:`admin_system_settings`
+  :ref:`admin_logging`
+  :ref:`admin_error_checking`
+  :ref:`admin_comments`
+  :ref:`admin_external_commands`
+  :ref:`admin_dns`
+  :ref:`admin_ipam`
+  :ref:`admin_monitoring`
   user_management
-  users
-  groups
+  :ref:`users`
+  :ref:`groups`
   admin_license
   admin_updates
   admin_custom_properties
