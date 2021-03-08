@@ -34,9 +34,9 @@ The toolbar, which runs along the top of the Object Section and Object List, pro
   |server-log|, "**Server Log**", "Displays the Server Log window that shows the DNS log of that server. Refer to DNS Servers—Server Log ."
   |history|, "**History**", "Opens the History window and displays a log of all changes that have been made to the selected object, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user. Refer to Management Console—Object Change History ."
   |zone-wizard|, "**Zone Wizard**", "Launches the Zone Wizard, which helps you create the desired type of zone by prompting you with a series of questions. Refer to DNS Zones—Zone Migration Wizard ."
-  |view-hierarchical|, "**Views (Hierarchical)**", "When selected, toggles to hierarchical view for the IP Address range."
-  |view-flat|, "**Views (Flat)**", "When selected, toggles to flat view for the IP Address range."
-  "N/A", "**Quick Filter**", "This text field lets you instantly filter out objects that you do not want to display. For example, if you type "ex" in the field, only objects that contain "ex" somewhere in their name are displayed in the Object List. When you clear the contents from this field, all available objects are again displayed. Refer to Quick Filter ."
+  |view-hierarchical|, "**View (Hierarchical)**", "When selected, toggles to hierarchical view for the IP Address range."
+  |view-flat|, "**View (Flat)**", "When selected, toggles to flat view for the IP Address range."
+  , "**Quick Filter**", "This text field lets you instantly filter out objects that you do not want to display. For example, if you type 'ex' in the field, only objects that contain 'ex' somewhere in their name are displayed in the Object List. When you clear the contents from this field, all available objects are again displayed. Refer to Quick Filter ."
 
 Zone toolbar
 ------------
@@ -76,7 +76,7 @@ Scope toolbar
 
   |edit|, "**Edit**", "Allow you to edit the selected host by opening the IP Address dialog box. Refer to DHCP Scopes."
   |delete|, "**Delete**", "Deletes the currently selected IP Address. Refer to DHCP Scopes."
-  |claim|, "**Claim**", ""Use this feature to prevent accidental assignment of a reserved address without creating a DNS entry for it. [1]_"
+  |claim|, "**Claim**", "Use this feature to prevent accidental assignment of a reserved address without creating a DNS entry for it. [1]_"
   |release|, "**Release**", "Use this feature to release assignment of a reserved address."
 
 
