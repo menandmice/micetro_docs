@@ -1,4 +1,4 @@
-.. _postgresql:
+.. _central-postgresql-att:
 
 PostgreSQL
 ==========

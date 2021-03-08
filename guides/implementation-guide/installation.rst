@@ -8,7 +8,11 @@ Installation Guide
 
   system-requirements
   firewall-ports
+  binaries
   install_central
   install_console
-  install_controllers
+  install_dns_controllers
+  install_dhcp_controllers
   install_webui
+  installation_azure
+  

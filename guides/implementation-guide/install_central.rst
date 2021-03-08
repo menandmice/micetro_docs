@@ -5,12 +5,10 @@ Men&Mice Central is the central authentication server. It also serves as the met
 
 .. toctree::
   :maxdepth: 2
-  :hidden:
 
   central_database
   install_console
   central_ha
-  central_python
 
 Install Men&Mice Central on Linux
 ---------------------------------
@@ -19,6 +17,7 @@ Install Men&Mice Central on Linux
   Before installing Men & Mice Central, decide the following:
 
   * What user account will own the Men & Mice Central process?
+
   * Where do you want everything stored? There are defaults provided.
 
 Extract and run the Men&Mice Central install package:
@@ -34,8 +33,11 @@ Installer Questions
 Here are the questions asked by the installer that pertain to Men & Mice Central:
 
 * Do you want to install Men & Mice Central?
+
 * Where do you want Men & Mice Central to keep its configuration files?
+
 * Enter the user and group names under which you want to run Men & Mice Central.
+
 * Where do you want to install the Men & Mice Central binary?
 
 Proceed to :ref:`Configuring the database <central_database>`.

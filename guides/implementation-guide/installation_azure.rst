@@ -98,7 +98,7 @@ The following describes our recommendations regarding virtual machine size.
 
 There is the option to use an existing storage account if customers have a centralized storage account used for VM diagnostics.
 
-Select either a new or existing storage accoun
+Select either a new or existing storage account
 
 Input a username which will be used as the local administrator account for the VM which will be created.
 

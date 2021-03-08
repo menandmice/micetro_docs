@@ -20,3 +20,6 @@ Log in with the default credentials:
 
 The “Server name” field requires the domain or the IPv4/v6 address of the server running the Men&Mice Central application. (This only needs to be defined once, and will autofill on subsequent logins.)
 Successful login confirms that Men&Mice Central is running, connected to the database, and accessible for the Management Console.
+
+.. note::
+  You can disable the "Server name" field by using a :ref:`fixed value for the Central server <webui-fixed-central>`.

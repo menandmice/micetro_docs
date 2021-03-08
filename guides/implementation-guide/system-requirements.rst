@@ -19,24 +19,24 @@ Operating systems
   :widths: 20, 20, 20, 10, 10, 10, 10
 
   "**Microsoft Windows**",,,,,,
-  "Windows Server 2008 R2 [3]_", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A [3]_", "Y"
+  "Windows Server 2008 R2 [3]_", "Y", "Y", "Y", "Y", "N/A", "Y"
+  "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A", "Y"
+  "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
+  "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
+  "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
   "**Solaris**",,,,,,
-  "Solaris 10 x86", "N", "Y", "N", "N", "N/A [3]_", "N"
+  "Solaris 10 x86", "N", "Y", "N", "N", "N/A", "N"
   "**Linux**",,,,,,
-  "Redhat Enterprise Linux 6", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Redhat Enterprise Linux 7", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Redhat Enterprise Linux 8", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "CentOS 6", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "CentOS 7", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "CentOS 8", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Suse Enterprise Linux 11/12/13 x86", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Ubuntu 14.04 LTS", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Ubuntu 16.04 LTS", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
-  "Ubuntu 18.04 LTS", "N", "Y", "Y", "Y", "N/A [3]_", "Y"
+  "Redhat Enterprise Linux 6", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Redhat Enterprise Linux 7", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Redhat Enterprise Linux 8", "N", "Y", "Y", "Y", "N/A", "Y"
+  "CentOS 6", "N", "Y", "Y", "Y", "N/A", "Y"
+  "CentOS 7", "N", "Y", "Y", "Y", "N/A", "Y"
+  "CentOS 8", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Suse Enterprise Linux 11/12/13 x86", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Ubuntu 14.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Ubuntu 16.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Ubuntu 18.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
 
 .. [1] The management console also works on non-server Windows that have not reached their EOL.
 
@@ -82,6 +82,7 @@ Men&Mice Web Interface and Web Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft IIS [5]_
+
 * Apache 2 Web server 2.2/2.4 [6]_
 
 .. [5] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
@@ -92,10 +93,15 @@ Supported Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Azure [7]_
+
 * Amazon Web Services (AWS)
+
 * Dyn DNS
+
 * NS1 DNS
+
 * OpenStack
+
 * Akamai
 
 .. [7] Micetro is available to install directly from the Azure Marketplace.
@@ -104,5 +110,7 @@ Supported browsers (Web Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Chrome
+
 * Firefox
+
 * Safari

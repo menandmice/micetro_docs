@@ -79,10 +79,15 @@ Men&Mice Central running on Linux
 Here are the questions asked by the installer that pertain to Men & Mice DHCP Server Controller:
 
 * Do you want to install the Men & Mice DHCP Server Controller?
+
 * Where is the DHCP server configuration file?
+
 * Where is the DHCP server lease file?
+
 * Where do you want the Men & Mice DHCP Server Controller to keep its configuration files?
+
 * Enter the user and group names under which you want to run the Men & Mice DHCP Server Controller. This must be the user which is running dhcpd.
+
 * Where do you want to install the Men & Mice Server Controller binaries?
 
 Managing Cisco IOS with DHCP support
@@ -131,8 +136,11 @@ Please note that for the management of the DHCP failover in Windows Server 2012 
 To configure Men & Mice DHCP Server Controller to access DHCP servers on remote computers, do the following:
 
   1. Start the Windows "Services" program and open the properties dialog box for Men & Mice DHCP Server Controller.
+
   2. Click the Log On tab. The Local System account radio button is most likely selected.
+
   3. Click the This account radio button and enter the name and password of a Windows user that is a member of either the Administrators group or the DHCP Administrators group.
+
   4. Close the dialog box and restart the Men & Mice DHCP Server Controller service.
 
 If Men & Mice DHCP Server Controller is run as a local system service (the default), then it will only be able to manage the MS DHCP service on the same host.
@@ -145,6 +153,7 @@ If Men & Mice Central is installed on a Windows host, then one option is to inst
 However, there are other considerations when deciding where to install Men & Mice DHCP Server Controller.
 
 * The Men & Mice communication protocol used to control a DHCP server is more efficient than the Microsoft protocol. This means that if a DHCP server is separated from Men & Mice Central by a slow network link, it is more efficient to install a copy of the Men & Mice DHCP Server Controller in the same local network (the same site, typically) as the DHCP server.
+
 * Starting in Men & Mice Suite 6.0, Men & Mice DHCP Server Controller can be used to gather lease history data for a DHCP server. However, this requires that the Men & Mice DHCP Server Controller be installed on the DHCP server machine itself. If this is done for all DHCP servers, then there is never any need to run the DHCP Server Controller as a privileged user - the DHCP Server Controller that is only used to control the DHCP service on the same machine as itself can run as a local system service.
 
 Managing Cisco IOS with DHCP Support
