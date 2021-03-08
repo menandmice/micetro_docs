@@ -12,7 +12,7 @@ This document is intended to help administrators to install and configure Micetr
   :maxdepth: 2
 
   installation
-  administration
+  configuration
   updates
 
 .. _architecture-overview:
