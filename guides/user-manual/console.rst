@@ -9,6 +9,8 @@ Management Console
   console_gui
   console_menus
   console_toolbars
+  quickfilter
+  console_actions 
 
 Overview
 ========
