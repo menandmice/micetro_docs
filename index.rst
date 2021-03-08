@@ -46,6 +46,4 @@ Use the Implementation Guide to familiarize yourself with Micetro's architecture
      :maxdepth: 2
      :hidden:
 
-     guides/operations-guide/operations
-     guides/server-groups/server-groups
-     guides/custom-workflows/workflows
+     guides/user-manual/manual 

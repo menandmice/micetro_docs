@@ -3,6 +3,13 @@
 Management Console
 ******************
 
+.. toctree::
+  :maxdepth: 2
+
+  console_gui
+  console_menus
+  console_toolbars
+
 Overview
 ========
 

@@ -6,6 +6,7 @@ Micetro by Men&Mice User Reference Manual
 .. toctree::
   :maxdepth: 2
 
+  console 
 
 What is the Men & Mice Suite?
 -----------------------------
