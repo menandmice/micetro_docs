@@ -10,7 +10,8 @@ Management Console
   console_menus
   console_toolbars
   quickfilter
-  console_actions 
+  console_actions
+  console_health_bar
 
 Overview
 ========
