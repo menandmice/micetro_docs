@@ -1,9 +1,5 @@
 .. _install-webui:
 
-.. toctree::
-  :maxdepth: 2
-
-
 Web Application
 ===============
 

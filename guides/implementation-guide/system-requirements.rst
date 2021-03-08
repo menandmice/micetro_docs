@@ -1,4 +1,4 @@
-.. _sysreq:
+.. _system-reqirements:
 
 System requirements
 ===================

@@ -1,3 +1,5 @@
+.. _install-central:
+
 Men&Mice Central
 ================
 

@@ -1,4 +1,4 @@
-.. _micetro-binaries:
+.. _binaries:
 
 Micetro by Men&Mice components
 ==============================

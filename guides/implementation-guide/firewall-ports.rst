@@ -1,3 +1,5 @@
+.. _firewall-ports:
+
 Networking requirements
 =======================
 

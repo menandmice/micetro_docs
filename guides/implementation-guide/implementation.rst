@@ -12,6 +12,7 @@ This document is intended to help administrators to install and configure Micetr
   :maxdepth: 2
   :hidden:
 
+  implementation 
   installation
   configuration
   updates

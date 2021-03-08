@@ -10,5 +10,5 @@ Configuration
   adding_dns
   adding_dhcp
   adding_ip_ranges
-  vmware 
+  vmware
   console_advanced_settings
