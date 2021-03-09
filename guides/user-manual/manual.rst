@@ -1,7 +1,7 @@
 .. _user-manual:
 
-Micetro by Men&Mice User Reference Manual
-#########################################
+User Reference Manual
+#####################
 
 .. toctree::
   :maxdepth: 2

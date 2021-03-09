@@ -135,6 +135,8 @@ To export the results as a CSV file, do the following:
 
 5. Click Save.
 
+.. _console-object-change-history:
+
 Object Change History
 ---------------------
 
@@ -242,6 +244,8 @@ To view the log messages, do the following:
     * Select the drive, directory, subdirectory, etc. into which you want to save the CSV file.
 
     * Click Save.
+
+.. _object-folders:
 
 Object Folders
 --------------

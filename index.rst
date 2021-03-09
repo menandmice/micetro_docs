@@ -42,8 +42,8 @@ Use the Implementation Guide to familiarize yourself with Micetro's architecture
      guides/implementation-guide/updates
 
 .. toctree::
-     :caption: Operations Guide
-     :maxdepth: 2
+     :caption: User Reference Manual
+     :maxdepth: 3
      :hidden:
 
-     guides/user-manual/manual 
+     guides/user-manual/manual
