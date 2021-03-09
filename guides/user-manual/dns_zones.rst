@@ -21,15 +21,16 @@ When viewing the zones, you will notice the icons that appear to the left of eac
 .. |stub| image:: ../../images/console-dns-zone-stub-icon.png
 .. |forward| image:: ../../images/console-dns-zone-forward-icon.png
 .. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
+.. |analyze| image:: ../../images/console-analyze.png
 
 .. csv-table::
   :widths: 5, 95
 
-  |static|, "An icon with a blue dot indicates a static master zone, which is always the original copy of the zone, and always present on that zone's master server."
-  |dynamic|, "An icon with a gold dot indicates a dynamic master zone, which is always the original copy of the zone, and always present on that zone's master server."
-  |ad|, "An icon with a purple dot indicates an Active Directory Integrated zone."
-  |stub|, "A half page icon represents a stub zone."
-  |forward|, "An icon with an arrow pointing to the right represents a forward zone."
+  |static| , "An icon with a blue dot indicates a static master zone, which is always the original copy of the zone, and always present on that zone's master server."
+  |dynamic| , "An icon with a gold dot indicates a dynamic master zone, which is always the original copy of the zone, and always present on that zone's master server."
+  |ad| , "An icon with a purple dot indicates an Active Directory Integrated zone."
+  |stub| , "A half page icon represents a stub zone."
+  |forward| , "An icon with an arrow pointing to the right represents a forward zone."
   , "A faded icon without any color marking indicates a slave zone. A slave zone is a duplicate of a master zone that is made on the master zone's slave server(s). Slave zones bring redundancy and stability to the DNS system because it allows more than one server to process domain requests, and allows requests to be processed even if one of the servers becomes unavailable.""
 
 .. information::
