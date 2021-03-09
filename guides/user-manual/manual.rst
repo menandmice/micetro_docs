@@ -6,8 +6,13 @@ Micetro by Men&Mice User Reference Manual
 .. toctree::
   :maxdepth: 2
 
-  console
+  ui
   administration
+  dns
+  dhcp
+  ipam
+  active_directory
+  cloud
   web_application
 
 What is the Men & Mice Suite?

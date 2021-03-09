@@ -149,6 +149,8 @@ Access Flags Defined
 
 Each object type in the Men & Mice Suite has a set of Access Flags defined.
 
+.. _global-access:
+
 Global Access
 ^^^^^^^^^^^^^
 

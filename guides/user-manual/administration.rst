@@ -6,15 +6,7 @@ Administration functions
 .. toctree::
   :maxdepth: 2
 
-  :ref:`admin-overview`
-  :ref:`admin_system_settings`
-  :ref:`admin_logging`
-  :ref:`admin_error_checking`
-  :ref:`admin_comments`
-  :ref:`admin_external_commands`
-  :ref:`admin_dns`
-  :ref:`admin_ipam`
-  :ref:`admin_monitoring`
+  admin_system_settings
   user_management
   access_control
   admin_license
