@@ -16,15 +16,15 @@ Administration functions
   :ref:`admin_ipam`
   :ref:`admin_monitoring`
   user_management
-  :ref:`users`
-  :ref:`groups`
+  access_control
   admin_license
   admin_updates
   admin_custom_properties
-  admin_scheduled_scripts
+  admin_schedule_scripts
   admin_maintenance
+  appliance_management
+  caching_appliance
   :ref:`console-advanced-settings`
-  access_control
 
 .. _admin-overview:
 

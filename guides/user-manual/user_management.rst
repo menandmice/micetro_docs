@@ -3,7 +3,7 @@
 User Management
 ***************
 
-User Management involves both creating groups as well as creating users to associate with groups.
+User Management involves both creating groups as well as creating :ref:`users` to associate with :ref:`groups`. For more information refer to :ref:`access-control`.
 
 .. image:: ../../images/admin-user-management.png
   :width: 80%
@@ -95,3 +95,66 @@ Selecting this menu item displays a window that shows a list of all users includ
 2. Use the Quick Filter, if desired, to refine the list.
 
 .. _groups:
+
+Groups
+======
+
+Through this function, you create and manage groups. Groups allow you to manage multiple individual users who have the same access and/or permissions across the system.
+
+Adding a New Group
+------------------
+
+1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+
+2. Click the Groups tab. The default groups are displayed here, as well as any other groups you have already created.
+
+3. From the Groups tab, click the Add button. The New group properties dialog box displays.
+
+4. In the Group name field, enter a name for the group you are creating.
+
+5. (Optional) In the Description field, provide some information that describes the function of this group.
+
+6. Active Directory Integrated. Check this box to define this group as an Active Directory Integrated group. When checked this group name will be matched against groups defined in Active Directory. For more information how on this works refer to External Authentication.
+
+.. image:: ../../images/admin-new-group.png
+  :width: 60%
+  :align: center
+
+7. When all selections/entries are made, click OK. The new group now displays in the User and Group Management dialog box.
+
+Editing a Group
+---------------
+
+Through this function, you can edit the group name and/or description, and indicate whether this group is Active Directory integrated.
+
+1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+
+2. Click the Groups tab.
+
+3. Highlight the group to which you want to make changes.
+
+4. Click the Edit button. The Users properties dialog box displays.
+
+5. Make the desired changes.
+
+6. When all selections/entries are made, click OK.
+
+Deleting a Group
+----------------
+
+Through this function, you delete a group.
+
+1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+
+2. Click the Groups tab.
+
+3. Highlight the group you want to delete.
+
+4. Click the Remove button.
+
+5. When the confirmation message displays, click Yes.
+
+Access control
+==============
+
+See :ref:`access-control`.
