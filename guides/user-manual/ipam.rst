@@ -3,8 +3,8 @@
 .. toctree::
   :maxdepth: 2
 
-.. |user-range| .. image:: ../../images/console-ipam-user-created-range-icon.png
-.. |dhcp-scope| .. image:: ../../images/console-ipam-dhcp-scope-icon.png
+.. |user-range| image:: ../../images/console-ipam-user-created-range-icon.png
+.. |dhcp-scope| image:: ../../images/console-ipam-dhcp-scope-icon.png
 
 IP address management
 =====================
@@ -694,4 +694,4 @@ Moving Objects to a Different Address Space
 DNS servers, DHCP servers, IP Address ranges and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects do a different address space.
 
 .. note::
-  You cannot move folders between address spaces. Individua l DHCP scopes cannot be moved between address spaces, but when you move a DHCP server to a different address space, all of its DHCP scopes are moved as well. Likewise, you cannot move individual DNS zones to a different address space, but moving a DNS server to a different address space will move all of its zones as well.
+  You cannot move folders between address spaces. Individual DHCP scopes cannot be moved between address spaces, but when you move a DHCP server to a different address space, all of its DHCP scopes are moved as well. Likewise, you cannot move individual DNS zones to a different address space, but moving a DNS server to a different address space will move all of its zones as well.
