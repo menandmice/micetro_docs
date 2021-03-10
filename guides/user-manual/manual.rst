@@ -12,6 +12,7 @@ User Reference Manual
   dns
   dhcp
   ipam
+  devices
   active_directory
   cloud
   web_application
