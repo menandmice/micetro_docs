@@ -222,3 +222,52 @@ When the action for a DNS Policy is 'Allow' one or more target DNS scopes must b
 
 Adding DNS policy criteria
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../../images/console-dns-policies-copy.png
+  :width: 60%
+  :align: center
+
+Each DNS policy has a list of criteria that with the policy condition define how the DNS policy is matched. Depending on the policy type different criteria are allowed.
+
+The DNS policy criteria and their descriptions are:
+
+.. csv-table::
+  :header: "Type", "Dsecription"
+  :widths: 20, 80
+
+  "Client Subnet",	"A list of subnet names as they are defined on the server. See Define client subnets for details."
+  "Transport Protocol", "A list of transport protocols used by the incoming query. The possible transport protocols are UDP and TCP."
+  "Network Protocol", "A list of network protocol used by the query. The possible network protocols are IPv4 and IPv6."
+  "Server interface",	"A list of the IP address that the DNS server is listening on."
+  "Domain Name", "A list of domain names with strict wildcards allowed. For example '\*.example.com'"
+  "Query Type", "A list of DNS record types. For example A, NS, SRV, CNAME"
+  "Time of Day", "A list of time periods in a 24h format. For example 18:00-23:15. The time of day is rounded to the next 15 minutes by MS-DNS. Maybe we should put this in a note and absolutely avoid examples that will be rounded."
+
+Operator:
+  Supported values are 'is' or 'is not', where is not negates ALL the values supplied in the 'Values' input box.
+
+Values:
+  The list of values used to match the DNS policy criteria with each item in the list on a newline.
+
+.. note::
+  Two criteria of the same type are allowed only if they have a different operator but you can work around this limitation by using a list of values for each operator. If you want the criteria to match on two domain names you can select the type as 'Domain Name', the operator 'is' and enter the two domain name on different lines in the 'Values' field.
+
+Apply DNS Policy from
+---------------------
+
+It is possible to copy DNS policies between DNS servers and DNS zones. One or more type of DNS policy list can be copied at a time to one or more DNS server or DNS zone. DNS policies can not be copied if they refer to any Client Subnet Lists, DNS scopes or server interfaces that do not exist the targets of the copy operation. The copy operation results in the DNS policy lists for the chosen types of DNS policy to be overwritten with the copied DNS policy lists.
+
+.. note::
+  DNS policies will be renamed if necessary when created or copied. You can avoid this by choosing unique names.
+
+1. Right click on a DNS Server or DNS zone.
+
+2. Select Apply DNS Policy From... in the Edit DNS Policy submenu.
+
+.. image:: ../../images/console-dns-policies-copy.png
+  :width: 40%
+  :align: center
+
+3. Select the DNS policy type to copy.
+
+4. Select the DNS server or DNS zone to copy DNS policies from
