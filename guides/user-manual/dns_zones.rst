@@ -32,7 +32,7 @@ When viewing the zones, you will notice the icons that appear to the left of eac
   |ad|, "An icon with a purple dot indicates an Active Directory Integrated zone."
   |stub|, "A half page icon represents a stub zone."
   |forward|, "An icon with an arrow pointing to the right represents a forward zone."
-  "" , "A faded icon without any color marking indicates a slave zone. A slave zone is a duplicate of a master zone that is made on the master zone's slave server(s). Slave zones bring redundancy and stability to the DNS system because it allows more than one server to process domain requests, and allows requests to be processed even if one of the servers becomes unavailable.""
+  , "A faded icon without any color marking indicates a slave zone. A slave zone is a duplicate of a master zone that is made on the master zone's slave server(s). Slave zones bring redundancy and stability to the DNS system because it allows more than one server to process domain requests, and allows requests to be processed even if one of the servers becomes unavailable."
 
 .. information::
   These indications are not related to which physical server on which the zone is created. Any server can be the master server. The terms master and slave are only relative to the zones. Whichever server the zone was created on is the master server for that zone. This means that a new zone is always created on the master server.
