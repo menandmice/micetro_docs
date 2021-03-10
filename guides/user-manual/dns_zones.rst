@@ -24,14 +24,15 @@ When viewing the zones, you will notice the icons that appear to the left of eac
 .. |analyze| image:: ../../images/console-analyze.png
 
 .. csv-table::
+  :header: "Icon", "Description"
   :widths: 5, 95
 
-  |static| , "An icon with a blue dot indicates a static master zone, which is always the original copy of the zone, and always present on that zone's master server."
-  |dynamic| , "An icon with a gold dot indicates a dynamic master zone, which is always the original copy of the zone, and always present on that zone's master server."
-  |ad| , "An icon with a purple dot indicates an Active Directory Integrated zone."
-  |stub| , "A half page icon represents a stub zone."
-  |forward| , "An icon with an arrow pointing to the right represents a forward zone."
-  , "A faded icon without any color marking indicates a slave zone. A slave zone is a duplicate of a master zone that is made on the master zone's slave server(s). Slave zones bring redundancy and stability to the DNS system because it allows more than one server to process domain requests, and allows requests to be processed even if one of the servers becomes unavailable.""
+  |static|, "An icon with a blue dot indicates a static master zone, which is always the original copy of the zone, and always present on that zone's master server."
+  |dynamic|, "An icon with a gold dot indicates a dynamic master zone, which is always the original copy of the zone, and always present on that zone's master server."
+  |ad|, "An icon with a purple dot indicates an Active Directory Integrated zone."
+  |stub|, "A half page icon represents a stub zone."
+  |forward|, "An icon with an arrow pointing to the right represents a forward zone."
+  "" , "A faded icon without any color marking indicates a slave zone. A slave zone is a duplicate of a master zone that is made on the master zone's slave server(s). Slave zones bring redundancy and stability to the DNS system because it allows more than one server to process domain requests, and allows requests to be processed even if one of the servers becomes unavailable.""
 
 .. information::
   These indications are not related to which physical server on which the zone is created. Any server can be the master server. The terms master and slave are only relative to the zones. Whichever server the zone was created on is the master server for that zone. This means that a new zone is always created on the master server.
@@ -79,7 +80,7 @@ SOA Fields
   :widths: 15, 75
 
   "Master", "This field gives the name of the server that acts as master server for the zone."
-  "Hostmaster", "This field is properly formatted by giving the e-mail address of the person responsible for zone with the @ symbol replaced with a period (.). For example, instead of hostmaster@example.com type hostmaster.example.com. The username part of the e-mail address cannot contain a (verbatim) dot \".\". See RFC 1912 'Common DNS Operational and Configuration Errors', Section 2.2 for additional information."
+  "Hostmaster", "This field is properly formatted by giving the e-mail address of the person responsible for zone with the @ symbol replaced with a period (.). For example, instead of hostmaster@example.com type hostmaster.example.com. The username part of the e-mail address cannot contain a (verbatim) dot (.). See RFC 1912 'Common DNS Operational and Configuration Errors', Section 2.2 for additional information."
   "Serial Number", "The serial number is a ten-digit number consisting of the year, the month, the day, and a two-digit daily revision number. (Actually, it is any integer between 0 and ~ 4 billion, but the preceding is the standard convention.) To create a unique serial number, the Management Console adds 1 to the daily revision number every time the zone is saved."
   "Refresh", "This is the period (in seconds) that determines how often slave servers will check with the master server to determine if their zone files are up to date. This is done by checking the serial number. The default value for this field is 28800, which equates to once every 8 hours."
   "Retry", "This determines the period that a slave server will wait before trying to re-contact the master zone (in the event that an earlier contact attempt is unsuccessful). The default value is 7200 seconds, or once every 2 hours."
