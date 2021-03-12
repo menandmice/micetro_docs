@@ -110,6 +110,8 @@ Fill in the following fields required to connect to AWS:
 |                   | https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html |
 +-------------------+-----------------------------------------------------------------------------+
 
+Read more about :ref:`aws-multi-account`.
+
 Go to :ref:`finish-cloud-config`.
 
 .. _connect-openstack:
