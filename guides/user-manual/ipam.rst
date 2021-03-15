@@ -240,6 +240,8 @@ When the PTR Status for a host entry shows Verify, you can open the IP Address d
 .. note::
   When working with large IP Address ranges (ranges that contain more than 4096 IP Addresses) the Show unassigned addresses will no longer be available and the IP Address List window will only display assigned IP Addresses.
 
+.. _ip-address-dialog:
+
 IP Address Dialog Box
 ---------------------
 
