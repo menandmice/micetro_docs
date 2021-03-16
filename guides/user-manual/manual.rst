@@ -4,7 +4,7 @@ User Reference Manual
 #####################
 
 .. toctree::
-  :maxdepth: 3
+  :maxdepth: 2
 
   introduction
   ui
