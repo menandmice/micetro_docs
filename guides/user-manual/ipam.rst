@@ -40,6 +40,8 @@ When you open the Access dialog box for a range, the dialog box has an extra sec
 
 Regarding other access settings, refer to :ref:`global-access`.
 
+.. _ipam-containers:
+
 Containers
 ----------
 
@@ -148,6 +150,8 @@ It is possible to create subranges of existing ranges and DHCP scopes.
 
 .. note::
   When you create a new IP Address range, the Men & Mice Suite checks to see if the new range can be logically grouped with other address ranges, and adds the new range in the appropriate address range group.
+
+.. _ipam-range-config:
 
 Range Configuration
 -------------------

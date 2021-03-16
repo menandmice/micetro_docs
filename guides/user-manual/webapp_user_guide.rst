@@ -34,6 +34,8 @@ The Web Application is split into three main sections: :ref:`webapp-dns`, :ref:`
 
 For information on elements common to all sections, see :ref:`webapp-general`.
 
+.. _webapp-help:
+
 Getting help or support
 -----------------------
 
