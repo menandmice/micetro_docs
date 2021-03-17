@@ -3,7 +3,7 @@
 Advanced System Settings
 ************************
 
-Starting with version 6.3.2, the Men & Mice Suite allows users to configure Advanced System Settings from within the Management Console.
+Starting with version 6.3.2, the Men&Mice Suite allows users to configure Advanced System Settings from within the Management Console.
 
 To access the Advanced System Settings dialog box, open System Settings and click the Advanced button in the General tab.
 Please note that the Advanced System Settings are only available for the build-in user "administrator".
@@ -29,8 +29,8 @@ Below, you will find a description of the currently available settings.
   "SSL Certificate policy",	"Specifies the SSL Certificate policy to use for the Cloud Integration feature."
   "Allow Migrate Scope to create two enabled scopes",	"Determines whether the Migrate Scope Wizard can create two enabled scopes."
   "Always show discovery info",	"Determines whether the columns related to host discovery should always be displayed when viewing contents of subnets or scopes."
-  "Log file for Men & Mice Central",	"Specifies the path and name of the log file to use when you want to log the output of Men & Mice Central to a file."
-  "Logging level for Men & Mice Central (1-7)", "Determines the level of detail to log when logging the output of Men & Mice Central to a file."
+  "Log file for Men&Mice Central",	"Specifies the path and name of the log file to use when you want to log the output of Men&Mice Central to a file."
+  "Logging level for Men&Mice Central (1-7)", "Determines the level of detail to log when logging the output of Men&Mice Central to a file."
   "Check for underscores in host names",	"Determines whether to check if hosts contain underscores in their names. If checked, it is not possible to create hosts with underscores in their names."
   "Include derived data from DNSSEC zones",	"Determines whether derived data (automatically generated DNSSEC resource records) from DNSSEC zones should be included when opening DNSSEC signed zones. If checked, the derived data will be included when opening the zones. [1]_"
   "Enable collection of IP information from routers",	"Determines whether the system can collect IP information from the ARP cache of routers. If selected, the system can collect this information."

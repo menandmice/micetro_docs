@@ -29,7 +29,7 @@ An example preferences.cfg file for the Windows Authentication method should loo
   <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
   <databaseusername value=""/>
 
-Proceed to :ref:`setting up high availability <central-ha>` or :ref:`installing the DNS and DHCP server controllers <install_controllers>`.
+Proceed to :ref:`central-ha` or :ref:`install_controllers`.
 
 Men&Mice Central running on Linux
 """""""""""""""""""""""""""""""""
@@ -68,4 +68,4 @@ Restart Central and verify it’s running:
 
 If the database connection fails, the service will fail to start with the appropriate error message.
 
-Proceed to :ref:`setting up high availability <central-ha>` or :ref:`installing the DNS and DHCP server controllers <install_controllers>`.
+Proceed to :ref:`central-ha` or :ref:`install_controllers`.

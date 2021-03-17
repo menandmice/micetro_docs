@@ -3,7 +3,7 @@
 Menu Bars
 =========
 
-The Menu Bar in the Men & Mice Management Console provides access to nearly all of the program's functionality.
+The Menu Bar in the Men&Mice Management Console provides access to nearly all of the program's functionality.
 
 .. important::
   You must have sufficient access privileges in order to use some of the menu items discussed below.
@@ -107,8 +107,8 @@ Lease History
 Object History
   Allows you to query the history throughout the system for all objects or a specific object. Refer to  Object Change History  for details. You can search all objects or, using the Only show objects of type drop-down list, you can select which object type to search. You can only search all object types or one selected object type.
 
-Men & Mice Suite Log
-  Displays log messages for the Men & Mice Suite.
+Men&Mice Suite Log
+  Displays log messages for the Men&Mice Suite.
 
 Search and Update Wizard
   Launches the Search and Update Wizard, a utility that allows you to find, create, modify, or delete records in multiple zones and DHCP Scopes using a single action. Click Next> and follow the instructions onscreen to specify the type of records you want to search, the action you want to perform (e.g., create, replace, delete, edit), etc.
@@ -141,7 +141,7 @@ Help Menu
 ---------
 
 Help
-  Launches the on-line help features of the Men & Mice Suite.
+  Launches the on-line help features of the Men&Mice Suite.
 
 About Men and Mice Management Console
-  Opens the About window, which contains the full version number of the Men & Mice Management Console that you are running.
+  Opens the About window, which contains the full version number of the Men&Mice Management Console that you are running.

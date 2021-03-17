@@ -26,7 +26,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
     release_notes
 
 .. toctree::
-     :caption: Implementation Guide
+     :caption: Deploying Micetro
      :maxdepth: 2
      :hidden:
 
@@ -34,7 +34,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
      guides/implementation/updates
 
 .. toctree::
-     :caption: User Reference Manual
+     :caption: Using Micetro 
      :maxdepth: 2
      :hidden:
 

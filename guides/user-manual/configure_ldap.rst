@@ -6,12 +6,12 @@ Configure LDAP authentication
 Introduction
 ------------
 
-This document describes how to configure LDAP authentication in the Men & Mice Suite.
+This document describes how to configure LDAP authentication in the Men&Mice Suite.
 
 Installation on Centos Linux
 ----------------------------
 
-To use LDAP authentication and authorization, start by installing python-ldap on the machine where the Men & Mice Central service is run and install the python extension used by Central when connecting to an LDAP directory:
+To use LDAP authentication and authorization, start by installing python-ldap on the machine where the Men&Mice Central service is run and install the python extension used by Central when connecting to an LDAP directory:
 
 .. code-block:: bash
 
@@ -33,7 +33,7 @@ A signature file for the python extension will also have to be installed and pla
 Configuring LDAP
 ----------------
 
-LDAP configurations are stored in a JSON config file that should be stored in the Men & Mice Central service root directory:
+LDAP configurations are stored in a JSON config file that should be stored in the Men&Mice Central service root directory:
 
 .. code-block:: bash
 
@@ -117,7 +117,7 @@ Example configuration for connecting to an AD LDAP service:
         }
     }
 
-Configuring the Men & Mice Central service to authenticate users using an LDAP service.
+Configuring the Men&Mice Central service to authenticate users using an LDAP service.
 ---------------------------------------------------------------------------------------
 
-To configure the Men & Mice Central service, login as the superuser "administrator" through the Men & Mice Management Console. In the top left-hand corner select "System Settings" from the "Tools" menu, click on the "Advanced..." button and check the  "Enable LDAP integration" checkbox.
+To configure the Men&Mice Central service, login as the superuser "administrator" through the Men&Mice Management Console. In the top left-hand corner select "System Settings" from the "Tools" menu, click on the "Advanced..." button and check the  "Enable LDAP integration" checkbox.

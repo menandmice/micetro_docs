@@ -6,13 +6,13 @@ AD Sites and Subnets
 Overview
 --------
 
-With this feature, it is possible to integrate Active Directory (AD) sites in the Men & Mice Suite, view subnets within these sites and add, remove and move subnets between the sites.
+With this feature, it is possible to integrate Active Directory (AD) sites in the Men&Mice Suite, view subnets within these sites and add, remove and move subnets between the sites.
 
 Once Sites and Subnets integration has been enabled, an AD Sites object displays in the object list on the left hand side of the Manager window and a new column, AD Site displays in the range list in the Manager window.
 
 A few things to note:
 
-* This feature is only available if Men & Mice Central is running on a Windows machine.
+* This feature is only available if Men&Mice Central is running on a Windows machine.
 
 * You can configure the system to view sites and subnets from multiple AD forests.
 
@@ -36,15 +36,15 @@ To manage sites and subnets, you must first add the AD forest.
   :width: 60%
   :align: center
 
-3. Use same Global Catalog as the Men and Mice Central server. If checked, the Men & Mice Suite will use the same Global Catalog server as the Men and Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server in the Global Catalog Server field.
+3. Use same Global Catalog as the Men and Mice Central server. If checked, the Men&Mice Suite will use the same Global Catalog server as the Men and Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server in the Global Catalog Server field.
 
 4. Global Catalog Server. If you want to specify a non-default Global Catalog server, enter the server name in this field. To enable this field, you must first unselect the Use same Global Catalog as the Men and Mice Central server checkbox.
 
-5. Use the same credentials as the Men and Mice Central server. If checked, the Men & Mice Suite uses the same credentials as the Men and Mice Central server when accessing the site information.
+5. Use the same credentials as the Men and Mice Central server. If checked, the Men&Mice Suite uses the same credentials as the Men and Mice Central server when accessing the site information.
 
-6. User and Password. If you don't want to use the default credentials for the machine running Men & Mice Central, enter the desired user name and password in these fields. To enable these fields, you must first unselect the Use the same credentials as the Men and Mice Central server checkbox.
+6. User and Password. If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. To enable these fields, you must first unselect the Use the same credentials as the Men and Mice Central server checkbox.
 
-7. Set as read only. If checked, the Men & Mice Suite will only read from the Active Directory but not make any modifications.
+7. Set as read only. If checked, the Men&Mice Suite will only read from the Active Directory but not make any modifications.
 
 8. Click OK to save the changes. The forest is added and the sites belonging to the forest are displayed.
 
@@ -64,7 +64,7 @@ To change the properties for an AD Forest, do the following:
 Removing an AD Forest
 ---------------------
 
-To remove an AD Forest from the Men & Mice Suite:
+To remove an AD Forest from the Men&Mice Suite:
 
 1. In the Object Browser, expand the AD Sites object category.
 

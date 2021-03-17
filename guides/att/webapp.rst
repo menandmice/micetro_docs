@@ -39,7 +39,7 @@ The Sidebar
 
 The Sidebar acts as a selector in each context. Users can select pre-defined selectors.
 
-Selecting an item in the filtering sidebar applies the filter for the main work grid. Users can further narrow down results with the :ref:`Quickfilter <quickfilter>`.
+Selecting an item in the filtering sidebar applies the filter for the main work grid. Users can further narrow down results with the :ref:`webapp-quick-filter`.
 
 The sidebar is open (displaying icon and text) by default, but can be collapsed to an icon-only mode. In case where a list of clickable items is needed the sidebar is automatically unfolded.
 

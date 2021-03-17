@@ -6,7 +6,7 @@ Access control
 ..contents::
   :depth: 2
 
-The Men & Mice Suite access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.
+The Men&Mice Suite access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.
 
 The relationship between Groups, Users and Roles is as follows:
 
@@ -24,7 +24,7 @@ Built-in Roles
 .. note::
   Please note that in previous versions (< 6.7) roles did not exist and the built-in roles described below were previously built-in groups. All of the users that were members in specific built-in groups are now assigned to the corresponding built-in roles.
 
-Five Roles are built-in to the Men & Mice Suite. These roles are special in that they get full access for their respective domains for all Access Flags.
+Five Roles are built-in to the Men&Mice Suite. These roles are special in that they get full access for their respective domains for all Access Flags.
 
 When new objects are created, the Built-in Role that presides over that object, as well as the user or group that created the object, receives full access to it.
 
@@ -47,7 +47,7 @@ When it's mentioned that a User or Group has Full access to an object we mean th
 The Administrator User
 ----------------------
 
-A single user is Built-in to the Men & Mice Suite. The Administrator User exists completely outside of the access model. This User can do everything, and it is not possible to deny any action to this User.
+A single user is Built-in to the Men&Mice Suite. The Administrator User exists completely outside of the access model. This User can do everything, and it is not possible to deny any action to this User.
 
 Examples:
 
@@ -129,7 +129,7 @@ If no access is defined for a User or Role on a particular object, the access mo
 New Objects
 -----------
 
-When a User creates a new object in the Men & Mice Suite, the object is afforded a certain default access based on the initial access settings for the object type. To define initial access settings for different object types, do the following:
+When a User creates a new object in the Men&Mice Suite, the object is afforded a certain default access based on the initial access settings for the object type. To define initial access settings for different object types, do the following:
 
 1. From the menu bar, select Tools, Initial Access For.
 
@@ -142,19 +142,19 @@ Edit Access Flag
 
 Each object type has an Access Flag named Edit Access. This flag is special in that it directs a User, Group's or Role's access to the object's access information. In other words, if a User has this flag set on an object, he may edit the Access Flags for the object. This means that the User could remove a different User or Group from the object completely. He could even remove the User that created the object. In light of this, the Edit Access flag should be treated with care.
 
-Access for Built-in groups is impossible to change. However, it would be possible to shut out all Users in the Men & Mice Suite from a certain object by simply editing access for each User directly. You could even shut yourself out. The Administrator User will always have full access to every object, so if such situations arise, the Administrator User should be used to set things straight.
+Access for Built-in groups is impossible to change. However, it would be possible to shut out all Users in the Men&Mice Suite from a certain object by simply editing access for each User directly. You could even shut yourself out. The Administrator User will always have full access to every object, so if such situations arise, the Administrator User should be used to set things straight.
 
 Access Flags Defined
 --------------------
 
-Each object type in the Men & Mice Suite has a set of Access Flags defined.
+Each object type in the Men&Mice Suite has a set of Access Flags defined.
 
 .. _global-access:
 
 Global Access
 ^^^^^^^^^^^^^
 
-This is an object referring to the Men & Mice Suite as a whole. It contains flags that define access to the different clients and modules available in the Men & Mice Suite, as well as Administration tasks.
+This is an object referring to the Men&Mice Suite as a whole. It contains flags that define access to the different clients and modules available in the Men&Mice Suite, as well as Administration tasks.
 
 .. csv-table::
   :header: "Object", "Description"
@@ -169,19 +169,19 @@ This is an object referring to the Men & Mice Suite as a whole. It contains flag
   "Access DHCP Module", "Access to the DHCP Module"
   "Access Management Console", "Access to the Management Console"
   "Access CLI", "Access to the CLI"
-  "Access to Web Interface", "Access to the Men & Mice Web Interface"
-  "Access to basic zone view in Web Interface", "Access to the basic zone view in the Men & Mice Web Interface"
-  "Access to advanced zone view in Web Interface", "Access to the advanced zone view in the Men & Mice Web Interface"
-  "Access to IPAM view in Web Interface", "Access to the IPAM view in the Men & Mice Web Interface"
-  "Access to report view in Web interface", "Access to the report view in the Men & Mice Web Interface"
-  "Access to task list view in Web interface", "Access to the task list view in the Men & Mice Web Interface"
+  "Access to Web Interface", "Access to the Men&Mice Web Interface"
+  "Access to basic zone view in Web Interface", "Access to the basic zone view in the Men&Mice Web Interface"
+  "Access to advanced zone view in Web Interface", "Access to the advanced zone view in the Men&Mice Web Interface"
+  "Access to IPAM view in Web Interface", "Access to the IPAM view in the Men&Mice Web Interface"
+  "Access to report view in Web interface", "Access to the report view in the Men&Mice Web Interface"
+  "Access to task list view in Web interface", "Access to the task list view in the Men&Mice Web Interface"
   "Access to view history", "Access to history window in the Management Console. Also provides access to the history for all objects."
-  "Access to Host editor", "Access to the host editor view in the Men & Mice Web interface"
+  "Access to Host editor", "Access to the host editor view in the Men&Mice Web interface"
   "Access to manage AD Sites and Site Links", "Access to work with AD Sites and Site Links."
-  "Access to manage clouds", "Access to add/remove cloud providers into Men & Mice"
+  "Access to manage clouds", "Access to add/remove cloud providers into Men&Mice"
   "Access Workflow module", "If customer has workflow license, grants user access to submit DNS record requests, and approvers to view and approve submitted requests"
   "Access to advanced reporting", "If customer has reporting license, grants access to advanced reporting features"
-  "Access to "Import Data" web task", "Access the Import Data task in Web Interface as well as to Import data into the newer Men & Mice Web Application"
+  "Access to "Import Data" web task", "Access the Import Data task in Web Interface as well as to Import data into the newer Men&Mice Web Application"
 
 DNS Zone
 ^^^^^^^^
@@ -299,7 +299,7 @@ Through the Access Control module, you select groups/users for which you want to
 
 The Access Control dialog box is used to define access to individual objects in the system. To define access for an object, right-click the object and choose Access from the popup menu.
 
-To define access for individual components of the Men & Mice suite, select Tools, Global Access. The Access Control for Men and Mice Suite dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.
+To define access for individual components of the Men&Mice suite, select Tools, Global Access. The Access Control for Men and Mice Suite dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.
 
 Edit access controls
 ^^^^^^^^^^^^^^^^^^^^

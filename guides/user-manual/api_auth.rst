@@ -20,7 +20,7 @@ The Login command and its parameters is fully documented in the normal SOAP API 
 Authorization Headers
 ---------------------
 
-With the introduction of Men & Mice Web Services and the REST API in version 7.3, it's now also possible to authenticate via HTTP headers, by adding a Basic Authorization header, or with a Negotiate Authorization header, if the client supports it
+With the introduction of Men&Mice Web Services and the REST API in version 7.3, it's now also possible to authenticate via HTTP headers, by adding a Basic Authorization header, or with a Negotiate Authorization header, if the client supports it
 
 By using authorization headers for authentication, the Login command becomes unnecessary, and the session ID is not used. The "session" parameter for all the commands must be omitted, and not left blank.
 

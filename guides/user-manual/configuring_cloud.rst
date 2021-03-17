@@ -9,11 +9,11 @@ Set up and configuration
 Before adding a cloud service instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Men & Mice Suite communicates with the cloud services through Men & Mice Central (IPAM) and the Men & Mice DNS controller (DNS).
+The Men&Mice Suite communicates with the cloud services through Men&Mice Central (IPAM) and the Men&Mice DNS controller (DNS).
 
 Before continuing, make sure:
 
-* The DNS controller is installed and set up on the machine running Men & Mice Central.
+* The DNS controller is installed and set up on the machine running Men&Mice Central.
 
 * The machine running central can connect to the specific cloud instance on port  443/TCP.
 
@@ -22,7 +22,7 @@ If you want to add multiple AWS cloud accounts using single credentials make sur
 Adding a cloud service
 ----------------------
 
-The following are the steps that are needed to start using a cloud service in Men & Mice.
+The following are the steps that are needed to start using a cloud service in Men&Mice.
 
 1. File > New > Cloud Service. Access the Cloud service wizard by right clicking Cloud Services in the Object Browser of the Management Console and selecting "New Cloud Service ..." or highlight "Cloud Services" in the Object Browser and clicking the "+" sign in the manager window.
 
@@ -51,9 +51,9 @@ Proceed with one of the Cloud providers shown below and click "Next":
 Fill in the following fields required to connect to Akamai Fast DNS
 
 +---------------+-----------------------------------------------------------+
-| Name          | The name of the cloud service in Men & Mice               |
+| Name          | The name of the cloud service in Men&Mice                 |
 +---------------+-----------------------------------------------------------+
-| Client Secret | The credentials needed for Men & Mice to connect to       |
+| Client Secret | The credentials needed for Men&Mice to connect to         |
 +---------------+                                                           |
 | Host          | the cloud instance                                        |
 +---------------+                                                           |
@@ -78,11 +78,11 @@ Go to :ref:`finish-cloud-config`.
 Fill in the following fields required to connect to Azure:
 
 +-----------------+-----------------------------------------------------------+
-| Name            | The name of the cloud service in Men & Mice               |
+| Name            | The name of the cloud service in Men&Mice                 |
 +-----------------+-----------------------------------------------------------+
 | Subscription ID |                                                           |
 +-----------------+                                                           |
-| Tenant ID       | The credentials needed for Men & Mice to connect to       |
+| Tenant ID       | The credentials needed for Men&Mice to connect to         |
 +-----------------+ the cloud instance                                        |
 | Client ID       |                                                           |
 +-----------------+                                                           |
@@ -99,9 +99,9 @@ Go to :ref:`finish-cloud-config`.
 Fill in the following fields required to connect to AWS:
 
 +-------------------+-----------------------------------------------------------------------------+
-| Name              | The name of the cloud service in Men & Mice                                 |
+| Name              | The name of the cloud service in Men&Mice                                   |
 +-------------------+-----------------------------------------------------------------------------+
-|                   | The credentials needed for Men & Mice to connect to                         |
+|                   | The credentials needed for Men&Mice to connect to                           |
 | Access Key ID     | the cloud instance                                                          |
 +-------------------+                                                                             |
 |                   | **Obtaining Access Credentials**                                            |
@@ -119,11 +119,11 @@ Go to :ref:`finish-cloud-config`.
 Fill in the following fields required to connect to OpenStack:
 
 +-----------------+-----------------------------------------------------------+
-| Name            | The name of the cloud service in Men & Mice               |
+| Name            | The name of the cloud service in Men&Mice                 |
 +-----------------+-----------------------------------------------------------+
 | Server Node     |                                                           |
 +-----------------+                                                           |
-| User Name       | The credentials needed for Men & Mice to connect to       |
+| User Name       | The credentials needed for Men&Mice to connect to         |
 +-----------------+ the cloud instance                                        |
 | Password        |                                                           |
 +-----------------+                                                           |
@@ -137,9 +137,9 @@ Go to :ref:`finish-cloud-config`.
 Fill in the following fields required to connect to NS1:
 
 +-------------------+-----------------------------------------------------------------------------+
-| Name              | The name of the cloud service in Men & Mice                                 |
+| Name              | The name of the cloud service in Men&Mice                                   |
 +-------------------+-----------------------------------------------------------------------------+
-|                   | The credentials needed for Men & Mice to connect to                         |
+|                   | The credentials needed for Men&Mice to connect to                           |
 |                   | the cloud instance                                                          |
 |                   |                                                                             |
 | API Key           | **Obtaining Access Credentials**                                            |
@@ -155,11 +155,11 @@ Go to :ref:`finish-cloud-config`.
 Fill in the following fields required to connect to Dyn:
 
 +-----------------+-----------------------------------------------------------+
-| Name            | The name of the cloud service in Men & Mice               |
+| Name            | The name of the cloud service in Men&Mice                 |
 +-----------------+-----------------------------------------------------------+
 | Customer Name   |                                                           |
 +-----------------+                                                           |
-| User Name       | The credentials needed for Men & Mice to connect to       |
+| User Name       | The credentials needed for Men&Mice to connect to         |
 +-----------------+ the cloud instance                                        |
 | Password        |                                                           |
 +-----------------+-----------------------------------------------------------+

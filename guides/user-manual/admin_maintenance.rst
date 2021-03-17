@@ -3,7 +3,7 @@
 Maintenance
 ===========
 
-The Men & Mice Suite contains several options for cleaning up the network space. To access the network maintenance functions, select Tools, Maintenance and then the maintenance operation you want to perform.
+The Men&Mice Suite contains several options for cleaning up the network space. To access the network maintenance functions, select Tools, Maintenance and then the maintenance operation you want to perform.
 
 .. contents::
 
@@ -78,7 +78,7 @@ To see and remove multiply defined PTR records, do the following:
 
 2. Click Start to start looking for multiply defined PTR records.
 
-  .. note:: 
+  .. note::
     Finding all multiply defined PTR records might take a while in large environments.
 
 .. image:: ../../images/admin-multiply-defined-ptr-records.png

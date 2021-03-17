@@ -15,7 +15,7 @@ Overview
 Managing IP Addresses entails being able to create assignable ranges within the available address space and determining which users and groups have usage rights to that space. The IP ranges can be created with specific properties that also determine the properties of the IP Addresses contained within them.
 
 .. note::
-  In order to use the IP Address Management features in the Men & Mice Management Console, you must have entered the license key for the IPAM module.
+  In order to use the IP Address Management features in the Men&Mice Management Console, you must have entered the license key for the IPAM module.
 
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
@@ -26,11 +26,11 @@ Restriction on allowed IP Addresses.
   When IPAM is enabled, the system administrator may restrict which IP Addresses you are allowed to use. The system administrator can determine an IP Address range that you are allowed to work with. In addition, he/she can choose whether you can use an IP Address that has already been assigned in DNS.
 
 Automatic assignment of IP Addresses.
-  The system administrator can configure the Men & Mice Suite so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.
+  The system administrator can configure the Men&Mice Suite so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.
 
 Range Access
 
-You can manage access to ranges just as you can for other object types in the Men & Mice Suite, but there is one important distinction – You can set Inherited Access for ranges.
+You can manage access to ranges just as you can for other object types in the Men&Mice Suite, but there is one important distinction – You can set Inherited Access for ranges.
 
 When you open the Access dialog box for a range, the dialog box has an extra section for inherited access.
 
@@ -85,7 +85,7 @@ To convert a Container to a range:
 
 3. Click OK in the confirmation dialog box that appears.
 
-You can manage access to Containers just as you can for other object types in the Men & Mice Suite, but there is one important distinction – You can set Inherited Access for Containers.
+You can manage access to Containers just as you can for other object types in the Men&Mice Suite, but there is one important distinction – You can set Inherited Access for Containers.
 
 When you open the Access dialog box for a Container, the dialog box has an extra section for inherited access.
 
@@ -103,7 +103,7 @@ When you open the properties dialog for a Container you can see how much of the 
 Viewing IP Address Ranges
 -------------------------
 
-The IP Address Range view shows the section of the IP Address space that is accessible to the current user of the system. The Men & Mice Suite allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
+The IP Address Range view shows the section of the IP Address space that is accessible to the current user of the system. The Men&Mice Suite allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
 
 .. image:: ../../images/console-ipam-grid.png
   :width: 50%
@@ -144,12 +144,12 @@ To create a new IP Address range, do the following:
 
 3. Enter the appropriate values in the Properties dialog box and click OK.
 
-Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the IP Address component of the Men & Mice Suite. When the range is managed, the Men & Mice Suite will allow users with appropriate privileges to work with IP Addresses from the range.
+Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the IP Address component of the Men&Mice Suite. When the range is managed, the Men&Mice Suite will allow users with appropriate privileges to work with IP Addresses from the range.
 
 It is possible to create subranges of existing ranges and DHCP scopes.
 
 .. note::
-  When you create a new IP Address range, the Men & Mice Suite checks to see if the new range can be logically grouped with other address ranges, and adds the new range in the appropriate address range group.
+  When you create a new IP Address range, the Men&Mice Suite checks to see if the new range can be logically grouped with other address ranges, and adds the new range in the appropriate address range group.
 
 .. _ipam-range-config:
 
@@ -175,10 +175,10 @@ In the Object list, right-click and, from the shortcut menu, select New IP Addre
     This checkbox determines whether the user can use the first and last IP Address of the range when creating address records. If the address range is defined on actual network boundaries, you should leave this checkbox checked. If the address range you are defining is used for Administration boundaries rather than network boundaries, you should clear this checkbox.  NOTE:  This checkbox is disabled for IPv6 ranges.
 
   Locked.
-    Select this checkbox if you want to lock this IP Address range. When an IP Address range is locked, Men & Mice Suite will not allow using IP Addresses from that range. This is useful if you want to lock a certain section of your IP Address block.
+    Select this checkbox if you want to lock this IP Address range. When an IP Address range is locked, Men&Mice Suite will not allow using IP Addresses from that range. This is useful if you want to lock a certain section of your IP Address block.
 
   Allow auto-assignment of IP Addresses.
-    Select this checkbox if you want to allow automatically assigned IP Addresses from this IP Address range. If the checkbox is selected, and a user that has access to this address range creates an address record without entering an IP Address, Men & Mice Suite automatically assigns a free IP Address to the address record.
+    Select this checkbox if you want to allow automatically assigned IP Addresses from this IP Address range. If the checkbox is selected, and a user that has access to this address range creates an address record without entering an IP Address, Men&Mice Suite automatically assigns a free IP Address to the address record.
 
   .. note::
     This checkbox is disabled for IPv6 ranges.
@@ -549,7 +549,7 @@ To edit an SNMP profile:
 Subnet Discovery
 ----------------
 
-The subnet discovery features enables the Men & Mice Suite to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in  configuring host discovery, but to enable this feature, make sure the 'Synchronize subnets ...'  is checked.
+The subnet discovery features enables the Men&Mice Suite to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in  configuring host discovery, but to enable this feature, make sure the 'Synchronize subnets ...'  is checked.
 
 Remove from Folder
 ------------------
@@ -658,7 +658,7 @@ You can export the utilization history for one or more subnets to the Clipboard 
 Multiple Address Spaces
 -----------------------
 
-The Men & Mice Suite supports multiple address spaces. Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP Address entries and object folders. Changes to data in one address space do not affect data in any other address space.
+The Men&Mice Suite supports multiple address spaces. Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP Address entries and object folders. Changes to data in one address space do not affect data in any other address space.
 
 Items shared between address spaces are the user and group lists and custom property definitions.
 

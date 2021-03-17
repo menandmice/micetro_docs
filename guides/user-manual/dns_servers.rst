@@ -6,7 +6,7 @@ Authoritative DNS Servers
 Overview
 --------
 
-This section shows you how to perform specific actions in the Men & Mice Management Console associated with maintaining your DNS servers, such as adding, and creating and editing zones and records.
+This section shows you how to perform specific actions in the Men&Mice Management Console associated with maintaining your DNS servers, such as adding, and creating and editing zones and records.
 The commands associated with server management are located in the Server menu and several are accessible from the toolbar. The Server menu is only available when the DNS Servers object is selected in the Object Section of the Management Console.
 
 .. note::
@@ -20,7 +20,7 @@ New DNS Server
 You must be logged in as a user with privileges to administer DNS in order to add a DNS server.
 
 .. note::
-  For information on adding a DNS server on a Men & Mice Appliance, refer to Appliance Management.
+  For information on adding a DNS server on a Men&Mice Appliance, refer to Appliance Management.
 
 .. image:: ../../images/console-dns-add-server.png
   :width: 50%
@@ -55,7 +55,7 @@ To add a new DNS server, do the following:
     connects to a DNS Server Controller that is configured as Microsoft Azure DNS controller.
 
   Use proxy server.
-    If you are adding a Microsoft DNS server you can specify the location of the DNS Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DNS Server controller. This option allows the system to connect to DNS servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men & Mice Central to manage Microsoft DNS servers.
+    If you are adding a Microsoft DNS server you can specify the location of the DNS Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DNS Server controller. This option allows the system to connect to DNS servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DNS servers.
 
 2. Click OK. You are connected to the server. Once connected, the name of the newly added server displays under DNS Servers in the Object Section. (You may need to click the plus (+) sign next to DNS Servers to see it.)
 
@@ -64,19 +64,19 @@ Server Access on Remote Computers
 
 To manage DNS servers you must have the DNS Server Controller installed. For the BIND DNS server, a DNS Server Controller must be installed on each DNS server you want to manage.
 
-If you plan to use Men & Mice Suite to manage any Microsoft DNS servers, install the DNS Server Controller on a Windows machine that is a member of the same domain or workgroup as the DNS servers. You may install multiple copies of the DNS Server Controller, for example if you want to manage Microsoft DNS Servers that reside in different forests. A single DNS Server Controller for Microsoft DNS Servers can manage multiple DNS servers. The DNS Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows.
+If you plan to use Men&Mice Suite to manage any Microsoft DNS servers, install the DNS Server Controller on a Windows machine that is a member of the same domain or workgroup as the DNS servers. You may install multiple copies of the DNS Server Controller, for example if you want to manage Microsoft DNS Servers that reside in different forests. A single DNS Server Controller for Microsoft DNS Servers can manage multiple DNS servers. The DNS Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows.
 
 To configure the DNS Server Controller to access DNS servers on remote computers, do the following:
 
 1. Before you can administer DNS servers, verify that the DNS Controller is running as a Windows User and has the necessary privileges.
 
-2. To enable DNS Management in the Men & Mice Suite, start the Windows Services program and open the properties dialog box for Men & Mice DNS Server Controller.
+2. To enable DNS Management in the Men&Mice Suite, start the Windows Services program and open the properties dialog box for Men&Mice DNS Server Controller.
 
 3. Click the Log On tab. The Local System account radio button is most likely selected.
 
 4. Click the This account radio button and enter the name and password of a Windows User that is a member of the Administrators group.
 
-5. Close the dialog box and restart the Men & Mice DNS Server Controller service.
+5. Close the dialog box and restart the Men&Mice DNS Server Controller service.
 
 .. information::
   Some actions for static zones are not available if you are managing MS DNS servers on remote computers using the DNS Server Controller. The following actions are not available:
@@ -134,7 +134,7 @@ To clear a Work Set, do the following:
 Disable
 -------
 
-A server can be disabled. When a server is disabled, it is not synchronized with the Men & Mice Suite and excluded from various checks. When a DNS server is disabled, it is greyed out in the DNS server listing.
+A server can be disabled. When a server is disabled, it is not synchronized with the Men&Mice Suite and excluded from various checks. When a DNS server is disabled, it is greyed out in the DNS server listing.
 
 .. _enable-dns-server:
 
@@ -151,7 +151,7 @@ Delete
 This command is only available with the Administrator account. Use this command to remove a server from the Management Console.
 
 .. note::
-  For information on removing a DNS server on a Men & Mice Appliance, refer Appliance Management.
+  For information on removing a DNS server on a Men&Mice Appliance, refer Appliance Management.
 
 1. In the Object browser of the Management Console, click on DNS Servers.
 
@@ -352,7 +352,7 @@ Channel.
   Specifies where your logged data will go. Use the drop-down list to select which log file you want to receive which categories of data.
 
 Category.
-  Lists the different types of information that can be logged. The System log typically tracks system-level messages, while the Men & Mice log is much more comprehensive and includes information about server interactions and activity. Check the categories you want to include in the log.
+  Lists the different types of information that can be logged. The System log typically tracks system-level messages, while the Men&Mice log is much more comprehensive and includes information about server interactions and activity. Check the categories you want to include in the log.
 
 Log Level.
   The Log Level allows you to filter messages by severity. Select the level of messages that you want to log by choosing the corresponding radio button. There are eight radio buttons. The top five are the standard severity levels used by syslog. The remaining two settings areDebug and Dynamic.
@@ -448,7 +448,7 @@ DNS Administrators can access the BIND configuration files directly to edit DNS 
 
 To access the advanced options, do the following:
 
-1. Log in to Men & Mice as the DNS administrator.
+1. Log in to Men&Mice as the DNS administrator.
 
 2. For a DNS zone or DNS server, right-click and select Options from the shortcut menu.
 
@@ -525,9 +525,9 @@ Reload.
   This command reloads the DNS server. On Windows this command has the same effect as the Clear Cache command, but on BIND servers, the command 'rndc reload' is sent to the DNS server.
 
 Reload Zone List.
-  This command reloads the list of zones from the DNS server. It is useful if a zone has been created outside of the Men & Mice Suite.
+  This command reloads the list of zones from the DNS server. It is useful if a zone has been created outside of the Men&Mice Suite.
 
-To reload the zone list to include zones that have been added/deleted outside of the Men & Mice suite, do the following:
+To reload the zone list to include zones that have been added/deleted outside of the Men&Mice suite, do the following:
 
 1. Select the desired server.
 
@@ -618,23 +618,23 @@ To view the cache of a DNS server, do the following:
 Backup and Restore (BIND Only)
 ------------------------------
 
-The Men & Mice Suite will automatically backup configuration for all BIND DNS servers it manages. The backup can then be used to restore the DNS server to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
+The Men&Mice Suite will automatically backup configuration for all BIND DNS servers it manages. The backup can then be used to restore the DNS server to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
 
-Automatic backup can be disabled by setting the property BackupDNSServers value in Men & Mice central preferences to zero:
+Automatic backup can be disabled by setting the property BackupDNSServers value in Men&Mice central preferences to zero:
 
 .. code-block::
   :linenos:
 
   <BackupDNSServers value="0" />
 
-If a DNS server machine crashes and has to be replaced with another machine with the same IP Address, the Men & Mice Suite will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
+If a DNS server machine crashes and has to be replaced with another machine with the same IP Address, the Men&Mice Suite will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
 
 .. image:: ../../images/console-dns-bind-backup-restore.png
   :width: 60%
   :align: center
 
-* If "Use data from the Men & Mice Suite" is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
-* If "Use data from the new server" is selected, all data kept in Men & Mice Central will be ignored and overwritten with current data on the DNS Server.
+* If "Use data from the Men&Mice Suite" is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
+* If "Use data from the new server" is selected, all data kept in Men&Mice Central will be ignored and overwritten with current data on the DNS Server.
 
 Basically, the restore scenario is as follows:
 
@@ -646,4 +646,4 @@ Basically, the restore scenario is as follows:
 
 4. When the new machine is up and running, in the Management Console, right-click the server and choose Reconnect.
 
-When a connection has been established, the Men & Mice Suite detects that this is a new, uninitialized server. See above for a description on what happens next.
+When a connection has been established, the Men&Mice Suite detects that this is a new, uninitialized server. See above for a description on what happens next.

@@ -10,7 +10,7 @@ Microsoft SQL Server
 Setting up the Database
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Men & Mice requires that a blank database is created on the database server, with the collation SQL_Latin1_General_CP1_CS_AS, and a login (Windows or SQL server authenticated) that has db_owner access to that database and an effective default schema of mmCentral.
+Micetro requires that a blank database is created on the database server, with the collation SQL_Latin1_General_CP1_CS_AS, and a login (Windows or SQL server authenticated) that has db_owner access to that database and an effective default schema of mmCentral.
 
 The attached CreateDatabase.sql is a suggestion for the database and database server setup.  Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
 

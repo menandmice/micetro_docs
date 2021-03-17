@@ -87,11 +87,11 @@ VirtualBox
 
 2. In the VirtualBox Manager open the File menu and select Import Appliance.
 
-3. Click on the Open appliance button and select the Men & Mice Virtual appliance OVA file and click on the Continue button.
+3. Click on the Open appliance button and select the Men&Mice Virtual appliance OVA file and click on the Continue button.
 
 4. The next dialog page shows an overview of the settings. It's recommended to select the option to re-initialize the MAC addresses of the two virtual interfaces eth0 (Management Interface) and eth1 (Service Interface) as shown in figure 3.
 
-Finally press the File... - Import Virtual Appliance button to load the Men & Mice virtual machine into your the VirtualBox environment.
+Finally press the File... - Import Virtual Appliance button to load the Men&Mice virtual machine into your the VirtualBox environment.
 
 .. figure:: ../../images/menandmice-appliance-3.png
   :width: 60%
@@ -113,7 +113,7 @@ Entering Appliance Network Information
 
 This section contains instructions on how to configure the network on the appliance. That is performed through the console on the virtual host.
 
-Once the network information has been entered, you can add the appliance to the Men & Mice Suite. For further information refer to Chapter 4: Appliance Management in the Men & Mice Suite User's Guide.
+Once the network information has been entered, you can add the appliance to the Men&Mice Suite. For further information refer to Chapter 4: Appliance Management in the Men&Mice Suite User's Guide.
 
 Follow these instructions to configure the network settings:
 
@@ -133,7 +133,7 @@ Follow these instructions to configure the network settings:
 
 8. Enter the IP Address of the gateway for the network.
 
-Adding the Appliance to the Men & Mice Suite
+Adding the Appliance to the Men&Mice Suite
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please refer to the :ref:`appliance-management` chapter in the :ref:`manual` for instructions on how to add the appliance to the Men & Mice Suite.
+Please refer to the :ref:`appliance-management` chapter in the :ref:`manual` for instructions on how to add the appliance to the Men&Mice Suite.

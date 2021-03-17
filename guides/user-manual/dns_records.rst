@@ -304,7 +304,7 @@ CAA
 
     "example.com", "CAA", "0 issue \"letsencrypt.org\""
 
-In addition to the supported record types in the table, the Men & Mice Suite supports the following DNSSEC resource record types:
+In addition to the supported record types in the table, the Men&Mice Suite supports the following DNSSEC resource record types:
 
 * DNSKEY
 

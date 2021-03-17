@@ -22,7 +22,7 @@ Scripts associated with object types are often used to perform lookups in extern
 
 3. In the System settings dialog box, click the External Commands tab.
 
-4. In the applicable field (e.g., Range script, IP Address script, etc.), type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men & Mice Central; however, if the script is stored in a different location, the path for the script must be entered. Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men & Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men & Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
+4. In the applicable field (e.g., Range script, IP Address script, etc.), type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&Mice Central; however, if the script is stored in a different location, the path for the script must be entered. Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
 
 5. Click OK.
 
@@ -35,7 +35,7 @@ To configure the system to run a script when the number of free addresses in a s
 Script Interfaces
 -----------------
 
-When Men & Mice Central runs an external script, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
+When Men&Mice Central runs an external script, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
 
 The XML structures differs a little depending on the type of script (property change, zone contents change, scope monitoring).
 
@@ -94,7 +94,7 @@ An example XML structure with three custom properties named Location, Country an
   </customFields>
   </externalScriptParameters>
 
-Upon completion, the script must create a new XML structure and return it to Men & Mice Central. The schema for the XML structure that is returned is as follows:
+Upon completion, the script must create a new XML structure and return it to Men&Mice Central. The schema for the XML structure that is returned is as follows:
 
 .. code-block:: XML
   :linenos:
@@ -155,14 +155,14 @@ An example XML structure with three custom properties named Location, Country an
   </customFields>
   </result>
 
-Men & Mice Central uses the information in the XML structure to update other custom properties or to display an error message if the success attribute on the result element is set to 0. The following XML example shows how an error message can be returned by the external script.
+Men&Mice Central uses the information in the XML structure to update other custom properties or to display an error message if the success attribute on the result element is set to 0. The following XML example shows how an error message can be returned by the external script.
 
 .. code-block:: XML
   :linenos:
 
   <?xml version="1.0"?><result success="0"><error code="1"message="The error message."></error></result>
 
-The XML structure is not required to return information about all custom properties, only fields that the script has changed. Unknown property fields are ignored by Men & Mice Central.
+The XML structure is not required to return information about all custom properties, only fields that the script has changed. Unknown property fields are ignored by Men&Mice Central.
 
 Zone Content Change Script Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -307,7 +307,7 @@ The following example script, written in Visual Basic, shows how a script could 
 
   Dim fso, stdin, stdout, stderr, xmlDoc
 
-  'The next four lines connect the script and the "Men & Mice Suite"
+  'The next four lines connect the script and the "Men&Mice Suite"
   Set fso = CreateObject ("Scripting.FileSystemObject")
   Set stdin = fso.GetStandardStream (0)
   Set stdout = fso.GetStandardStream (1)
@@ -375,7 +375,7 @@ Example PowerShell Script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. information::
-  See this article for information on running Powershell scripts through Men & Mice Central.
+  See this article for information on running Powershell scripts through Men&Mice Central.
 
 Instructions
 """"""""""""

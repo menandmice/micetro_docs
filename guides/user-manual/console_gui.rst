@@ -3,7 +3,7 @@
 GUI Interface
 =============
 
-When the Management Console is started up, the Manager Window displays in the center. This window is the heart of the Men & Mice Management Console, providing a single interface with nearly every feature in the Men & Mice Suite.
+When the Management Console is started up, the Manager Window displays in the center. This window is the heart of the Men&Mice Management Console, providing a single interface with nearly every feature in the Men&Mice Suite.
 
 .. image:: ../../images/management-console-1.png
   :width: 90%
@@ -37,7 +37,7 @@ DHCP Servers
   Selecting the DHCP Servers category causes the Detail View to display all DHCP servers managed by the system and accessible to the current user. If a DHCP server is not reachable, its icon is shown with an exclamation mark. If the DHCP Servers category is expanded, the same list of servers will show as sub-categories to the DHCP Servers category. Selecting a server subcategory causes the Detail View to display the scopes managed by that server and accessible to the current user. This category is accessible with a valid DHCP Module License Key.
 
 AD Sites
-  This category is only displayed if you have enabled AD Sites and Subnets integration. Selecting this category will show all AD sites that have been selected for integration in the Men & Mice Suite.
+  This category is only displayed if you have enabled AD Sites and Subnets integration. Selecting this category will show all AD sites that have been selected for integration in the Men&Mice Suite.
 
 .. sidebar::
 

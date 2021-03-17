@@ -52,13 +52,13 @@ To display the General Settings dialog box, do the following:
 
 4. Allow single sign-on through web interface on IIS. To enable single sign-on in the web interface, the web server needs to be configured. Refer to Appendix C – Active Directory Single Sign-on .
 
-5. Enable AD sites and subnets integration . Check this checkbox to enable the integration feature. When the integration is active, all sites and their corresponding subnets in Active Directory displays in the Men & Mice Suite and you can add and remove subnets in sites and move subnets to different sites. Once Sites and Subnets integration has been enabled, an  AD Sites  object displays in the object list on the left hand side of the Manager window and a new column,  AD Site  displays in the range list in the Manager window. If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory against custom properties in the Men & Mice Suite, choose the custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will update the corresponding fields in the Men & Mice Suite and vice versa.
+5. Enable AD sites and subnets integration . Check this checkbox to enable the integration feature. When the integration is active, all sites and their corresponding subnets in Active Directory displays in the Men&Mice Suite and you can add and remove subnets in sites and move subnets to different sites. Once Sites and Subnets integration has been enabled, an  AD Sites  object displays in the object list on the left hand side of the Manager window and a new column,  AD Site  displays in the range list in the Manager window. If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory against custom properties in the Men&Mice Suite, choose the custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will update the corresponding fields in the Men&Mice Suite and vice versa.
 
 6. Enforce AD site inheritance.  Select this checkbox if you want to enforce site inheritance in AD. When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet.
 
 7. Determine Address in use . This section contains several checkboxes that determine whether an IP Address should be considered as being in use. Check the appropriate checkboxes to specify which rules should be applied to the IP Addresses.
 
-8. Advanced system settings . Click this button to display the dialog box for entering advanced system settings. For more information about the contents of this dialog box, see the Men & Mice Knowledge Base.
+8. Advanced system settings . Click this button to display the dialog box for entering advanced system settings. For more information about the contents of this dialog box, see the Men&Mice Knowledge Base.
 
 9. When the desired selections/entries are made, click  OK .
 
@@ -79,7 +79,7 @@ Through this function, you specify when log messages should be purged and whethe
 
 3. Purge log message after ____  days. When selected a number is typed in the field indicating the number of days the logs should be kept.
 
-4. Log extra information when address collection is triggered . When selected, information about the start and duration of the address collection is written in the Men & Mice Suite log file.
+4. Log extra information when address collection is triggered . When selected, information about the start and duration of the address collection is written in the Men&Mice Suite log file.
 
 5. Lease History.  Through this function, you configure the setting that allows for viewing the history of DHCP leases.
 
@@ -106,7 +106,7 @@ The Error Checking tab allows you to specify how the system reports certain erro
 
 2. In the System Settings dialog box, click the Error Checking tab.
 
-3. Ignore missing reverse zones. An error message displays when the Men & Mice Suite is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting the Ignore missing reverse zones checkbox.
+3. Ignore missing reverse zones. An error message displays when the Men&Mice Suite is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting the Ignore missing reverse zones checkbox.
 
 4. Warn when creating A/AAAA records with name that already exists. When enabled, a warning message displays if a user creates an address (A or AAAA) record using the name of an existing record of the same type.
 
@@ -165,9 +165,9 @@ Use the DNS settings dialog box to specify various DNS related settings. To disp
 
 3. Delegation records. When automatically create delegation records when creating new zones is selected, delegation records (NS records) are automatically created in the corresponding parent zones when subzones are created, maintaining a correct delegation chain between parent and subzones.
 
-4. Adjust Zone Transfer. Select the checkbox to allow the Men & Mice Suite to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
+4. Adjust Zone Transfer. Select the checkbox to allow the Men&Mice Suite to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
 
-5. DNSSEC. Select the checkbox to include derived DNSSEC records when viewing DNSSEC signed zones in the Men & Mice Suite. Note that this will increase the size of the Men & Mice Suite database significantly and may affect overall system performance.
+5. DNSSEC. Select the checkbox to include derived DNSSEC records when viewing DNSSEC signed zones in the Men&Mice Suite. Note that this will increase the size of the Men&Mice Suite database significantly and may affect overall system performance.
 
 6. When the desired selections/entries are made, click OK.
 
@@ -180,7 +180,7 @@ The IPAM tab allows you to specify various IPAM related settings:
 
   * How the system should handle new subranges if the parent range is in a folder.
 
-  * How the system should behave if DHCP scopes are removed outside the Men & Mice Suite.
+  * How the system should behave if DHCP scopes are removed outside the Men&Mice Suite.
 
   * How the system should behave when naming conflicts between existing IP Address ranges and DHCP scopes occur.
 
@@ -198,7 +198,7 @@ The IPAM tab allows you to specify various IPAM related settings:
     The selection made here determines what happens when a user creates a subrange of a range in a folder. Click the desired action.
 
 4. DHCP Scope Deletion.
-    If a scope is removed directly from a DHCP server (instead of using the Men & Mice Suite), you can select whether to convert it to an IP Address range or remove it completely.
+    If a scope is removed directly from a DHCP server (instead of using the Men&Mice Suite), you can select whether to convert it to an IP Address range or remove it completely.
 
 5. Name conflicts between ranges and scopes.
     The selection made her determines what happens if the name of an MS DHCP scope does not match the name of an existing IP Address range.
@@ -219,7 +219,7 @@ The IPAM tab allows you to specify various IPAM related settings:
     When selected, the system will allow allocation of IP Addresses that reside in IP Address Containers. For more information on IP Address Containers,  refer to  IPAM Settings.
 
   Enable Cloud integration.
-    Check this checkbox to enable the Cloud integration feature. When Cloud integration is active you can add OpenStack clouds to the Men & Mice Suite. You can manage cloud networks and and you can add and remove subnets from cloud networks and move subnets to cloud networks. Cloud integration has been enabled, a  Cloud  object displays in the object list on the left hand side of the Manager window and a new column,  Cloud Network  displays in the range list in the Manager window.
+    Check this checkbox to enable the Cloud integration feature. When Cloud integration is active you can add OpenStack clouds to the Men&Mice Suite. You can manage cloud networks and and you can add and remove subnets from cloud networks and move subnets to cloud networks. Cloud integration has been enabled, a  Cloud  object displays in the object list on the left hand side of the Manager window and a new column,  Cloud Network  displays in the range list in the Manager window.
 
 7. When all selections/entries are made, click  OK .
 

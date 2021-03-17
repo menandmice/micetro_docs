@@ -6,7 +6,7 @@ DHCP Scopes
 Overview
 --------
 
-This section shows you how to perform specific actions in the Men & Mice Management Console associated with maintaining your DHCP scopes, such as creating and modifying reservations, setting scope options and working with split scopes.
+This section shows you how to perform specific actions in the Men&Mice Management Console associated with maintaining your DHCP scopes, such as creating and modifying reservations, setting scope options and working with split scopes.
 
 .. information::
   The functions for this menu option are listed alphabetically after the New DHCP Scope section.
@@ -298,7 +298,7 @@ Scope Creation Wizard
 
 This section describes how to create and edit DHCP scopes with the new DHCP Scope Creation Wizard.
 
-Whenever you create a new scope, the Men & Mice Suite automatically checks whether the new scope conflicts with an existing scope or an IPAM range.
+Whenever you create a new scope, the Men&Mice Suite automatically checks whether the new scope conflicts with an existing scope or an IPAM range.
 
 The Wizard has additional steps, or skips over some steps, depending on the type of DHCP server the scope is being created on, and whether the AD Sites and Subnets integration has been enabled.
 
@@ -441,7 +441,7 @@ Use this function to convert an existing scope to an IP Address range, while kee
 
 2. From the menu bar, select Range, Convert to IP Address Range.
 
-3. When the Men & Mice Management Console confirmation dialog box appears, click Yes to convert the range.
+3. When the Men&Mice Management Console confirmation dialog box appears, click Yes to convert the range.
 
 Converting a Range to a Scope
 -----------------------------
@@ -457,7 +457,7 @@ Use this function to convert an existing IP Address range to a scope, while keep
 Scope Policies (Windows Server 2012 or newer)
 ---------------------------------------------
 
-If you are managing DHCP servers on Windows Server 2012 or newer, you can use the Men & Mice Suite to set scope policies for individual scopes.
+If you are managing DHCP servers on Windows Server 2012 or newer, you can use the Men&Mice Suite to set scope policies for individual scopes.
 
 Activate/Deactivate a Scope Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -796,7 +796,7 @@ DHCP failover on Windows Server 2012 enables high availability of DHCP services 
 You can configure failover for a single scope or for multiple scopes on the same server.
 
 .. note::
-  To manage failover between two Windows 2012 Servers, the DHCP Server Controller must be running as a service account with enough privileges to manage the DHCP service. For more information, refer to the Men & Mice DHCP Server Controller section in the Installation Guide.
+  To manage failover between two Windows 2012 Servers, the DHCP Server Controller must be running as a service account with enough privileges to manage the DHCP service. For more information, refer to the Men&Mice DHCP Server Controller section in the Installation Guide.
 
 Setting up a Scope Failover
 """""""""""""""""""""""""""
@@ -897,7 +897,7 @@ You can view, create, edit and delete existing failover relationships.
 
 3. Edit the failover configuration and click OK to save the settings.
 
-You can delete existing failover relationships. When a failover relationship is deleted, the scopes are not removed from the DHCP server, but they are no longer in a failover configuration. After removing the failover relationship the Men & Mice Suite will handle the affected scopes as split scopes.
+You can delete existing failover relationships. When a failover relationship is deleted, the scopes are not removed from the DHCP server, but they are no longer in a failover configuration. After removing the failover relationship the Men&Mice Suite will handle the affected scopes as split scopes.
 
 **Deleting a Failover Relationship**
 
@@ -914,7 +914,7 @@ When a scope is hosted on multiple servers, the scope view lists all the servers
   :width: 50%
   :align: center
 
-The Men & Mice Suite detects when a split scope configuration is in place. Split scopes are handled as follows:
+The Men&Mice Suite detects when a split scope configuration is in place. Split scopes are handled as follows:
 
 * In the scope list, split scopes are shown with a different icon and in the server column, the text "split scope" displays
 

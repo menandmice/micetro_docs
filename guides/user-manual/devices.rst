@@ -13,7 +13,7 @@ What is a Device?
 
 A Device is any item that can have an IP address linked to it. A device can, for example, be a computer, a router, a firewall, a phone or a virtual machine. A device has one or more interfaces and each device can have any number of IP addresses linked to it.
 
-It is common to assign multiple properties to devices. As a default, a device in the Men & Mice Suite only has one property - the device name. However, you can create any number of properties for the devices. To create a property for a device, use the Define Custom Properties feature. For more information on this feature, refer to :ref:`admin-custom-properties`.
+It is common to assign multiple properties to devices. As a default, a device in the Men&Mice Suite only has one property - the device name. However, you can create any number of properties for the devices. To create a property for a device, use the Define Custom Properties feature. For more information on this feature, refer to :ref:`admin-custom-properties`.
 
 Adding a Device
 ---------------
@@ -145,6 +145,6 @@ Clicking the button with the plus sign in the top left of the tab will expand th
   :width: 80%
   :align: center
 
-.. image:: ../../images/console-devices-list-by-mac.png 
+.. image:: ../../images/console-devices-list-by-mac.png
   :width: 80%
   :align: center

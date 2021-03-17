@@ -3,12 +3,12 @@
 IP Address Ranges and devices
 *****************************
 
-Once the DHCP servers have been added to Men & Mice, all the scopes from the DHCP servers will be visible in the tool as scopes in the IP Address Ranges list. The organization might also have a spreadsheet or a database with other IP address range (subnet) allocations and maybe details on individual devices (IP addresses). This data can be manually entered in Men & Mice or more efficiently, imported by using the CLI.
+Once the DHCP servers have been added to Men&Mice, all the scopes from the DHCP servers will be visible in the tool as scopes in the IP Address Ranges list. The organization might also have a spreadsheet or a database with other IP address range (subnet) allocations and maybe details on individual devices (IP addresses). This data can be manually entered in Men&Mice or more efficiently, imported by using the CLI.
 
 Importing the IP Address Ranges and Device Properties Using the CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before the IP address ranges are imported into Men & Mice the administrator has to identify which custom properties he wants to maintain for IP address ranges and individual IP addresses (devices).
+Before the IP address ranges are imported into Men&Mice the administrator has to identify which custom properties he wants to maintain for IP address ranges and individual IP addresses (devices).
 
 To define the custom properties the administrator will select "Define Custom Properties" from the "Tools" menu and add the necessary custom properties for IP address ranges and IP addresses. After that has been done the administrator can start importing the data from the spreadsheet.
 
@@ -29,7 +29,7 @@ subnet_mask
 is_subnet:is
   "1" except when the subnet (range) is not on bit boundaries (such as "1.2.3.4-1.2.3.6")
 locked:
-  "1" if subnet is locked and IPs can't be allocated from the subnet in Men & Mice, else "0"
+  "1" if subnet is locked and IPs can't be allocated from the subnet in Men&Mice, else "0"
 can_auto_assign:
   "1" if users (that have access to the subnet) can use IPs from the subnet in auto assignment in DNS
 Title
@@ -64,7 +64,7 @@ The file to import the subnets will look like the following in the csv format (n
   192.168.203.0,255.255.255.0,1,0,0,Second subnet,,used
   192.168.204.0,255.255.255.0,1,0,0,Third subnet,,used
 
-To import the data into Men & Mice the administrator will start the CLI (mmcmd) from the command prompt like:
+To import the data into Men&Mice the administrator will start the CLI (mmcmd) from the command prompt like:
 
 .. code-block:: bash
 
@@ -105,4 +105,4 @@ And if the file doesn't contain any issues it can be imported with:
 
   mmcmd> importdata devices <mydevicefile.csv>
 
-This might take a while depending on the amount of data but after the operation has completed, all the imported devices will appear in Men & Mice with the associated data.
+This might take a while depending on the amount of data but after the operation has completed, all the imported devices will appear in Men&Mice with the associated data.

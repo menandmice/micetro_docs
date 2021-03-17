@@ -6,8 +6,8 @@ Reports Management
 Introduction
 ------------
 
-The Men & Mice Suite manages vast amounts of DNS, DHCP, and IPAM data. The first version of reporting in the Web Application was introduced in version 9.1. To enhance the functionality in version 9.2, a new Reporting module has been created.
-Building reports is easy and can be tailor-made by correlating related data in a few steps, and scheduling the results to be generated daily, weekly or on a custom schedule. There are built-in report definitions that can be used as a reference to build reports. Using custom fields in the Men & Mice Suite further enhances reports by correlating custom fields with the built-in ones. The system then allows you to create reporting definitions that can be run either one time only, or scheduled to run later or at regular intervals.
+The Men&Mice Suite manages vast amounts of DNS, DHCP, and IPAM data. The first version of reporting in the Web Application was introduced in version 9.1. To enhance the functionality in version 9.2, a new Reporting module has been created.
+Building reports is easy and can be tailor-made by correlating related data in a few steps, and scheduling the results to be generated daily, weekly or on a custom schedule. There are built-in report definitions that can be used as a reference to build reports. Using custom fields in the Men&Mice Suite further enhances reports by correlating custom fields with the built-in ones. The system then allows you to create reporting definitions that can be run either one time only, or scheduled to run later or at regular intervals.
 
 The reports can be viewed within the Web Application, or downloaded in various formats for further analysis.
 
@@ -267,7 +267,7 @@ Settings for schedule.
 By selecting for example '2' and 'Weeks', a new report is generated at the selected start on date/time and then at every 2 weeks afterward.
 
 .. note::
-  All dates and times are according to the time zone setting on the Men & Mice Central server.
+  All dates and times are according to the time zone setting on the Men&Mice Central server.
 
 Settings for Scavenging
 """""""""""""""""""""""
@@ -319,7 +319,7 @@ Both the report definition properties, the filtering criteria for the report and
 Scavenge reports
 ^^^^^^^^^^^^^^^^
 
-Report results take up disk space on the Men & Mice Central server. The system allows for specifying the maximum number of reports (or the maximum number of days to keep each result) for each report definition. Oldest results are deleted when the limit is reached.
+Report results take up disk space on the Men&Mice Central server. The system allows for specifying the maximum number of reports (or the maximum number of days to keep each result) for each report definition. Oldest results are deleted when the limit is reached.
 
 1. Select a report definition in the list and click on the Scavenge reports action.
 
@@ -379,7 +379,7 @@ There are 24 reports definitions in the list under Reports (not counting user de
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Lease hardware address with multiple IP addresses[*]_                 |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Men & Mice Suite messages                                             |                                                                       |
+| Men&Mice Suite messages                                               |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | SOA records                                                           | SOA records with abnormal minimum TTL value                           |
 |                                                                       | SOA records with abnormal refresh value                               |

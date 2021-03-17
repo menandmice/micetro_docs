@@ -6,7 +6,7 @@ Import IPAM data
 Overview
 --------
 
-To import IP address ranges or IP addresses into the Men & Mice Suite, the Import wizard in Networks can be used.
+To import IP address ranges or IP addresses into the Men&Mice Suite, the Import wizard in Networks can be used.
 
 The Import wizard can be used to import:
 

@@ -8,4 +8,4 @@ When connecting the Management Console to a newly installed instance of Men&Mice
 The ‘First use wizard’ guides the administrator through configuring the system and make it ready to accept connections from the Controllers(s) and the Web Application. After the wizard completes, you’re presented with the main view of the Console.
 
 .. note::
-  The Web Application is designated to carry out all daily tasks in your DNS environments. The Management Console is to be used only for access management and a select few administration tasks (such as :ref:`High Availability <central-ha>` and :ref:`updates <updates>`).
+  The Web Application is designated to carry out all daily tasks in your DNS environments. The Management Console is to be used only for access management and a select few administration tasks (such as :ref:`central-ha` and :ref:`updates`).

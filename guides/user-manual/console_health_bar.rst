@@ -6,14 +6,14 @@ Health Monitoring Bar
 Overview
 --------
 
-The Men & Mice Health Monitoring provides the administrator with valuable information he needs to maintain his systems and services. First, a good overview of the general health of the Men & Mice Suite and related services. More importantly, it will give the administrator an indication if there is a problem that needs to be acted on and corrected, for example if there is a slave zone that is expiring or if there is a zone that has not been loaded on a server due to an error. Both cases can cause outages for users and therefore be a serious impact for the business.
+The Men&Mice Health Monitoring provides the administrator with valuable information he needs to maintain his systems and services. First, a good overview of the general health of the Men&Mice Suite and related services. More importantly, it will give the administrator an indication if there is a problem that needs to be acted on and corrected, for example if there is a slave zone that is expiring or if there is a zone that has not been loaded on a server due to an error. Both cases can cause outages for users and therefore be a serious impact for the business.
 
 Categories
 ----------
 
 The health status is displayed to the user from the health bar which is positioned at the bottom of the management console window. The status indicators are split into five categories
 
-* Men & Mice Suite
+* Men&Mice Suite
 
 * DNS
 
@@ -45,8 +45,8 @@ Indicator details
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+
 |                  | Database           | An indication is given if the database size exceeds a default threshold of 1GB for SQLite.                                      |
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Men & Mice Suite |                    | An indication is given if                                                                                                       |
-|                  | Server Controllers | * the server controllers have a problem communicating with men & mice central                                                   |
+| Men&Mice Suite   |                    | An indication is given if                                                                                                       |
+|                  | Server Controllers | * the server controllers have a problem communicating with Men&Mice central                                                     |
 |                  |                    | * there is a problem communicating with the update agents running beside the server controllers.                                |
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+
 |                  | Version            | An indication is given if there is a new version available, if there are pending upgrades or if any components are out of date. |

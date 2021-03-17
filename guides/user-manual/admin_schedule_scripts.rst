@@ -19,18 +19,18 @@ To configure this option, do the following:
   :width: 60%
   :align: center
 
-3. Script name. In the applicable Script name field, type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as the Men & Mice Central database file (mmsuite.db); however, if the script is stored in a different location, the path for the script must be entered.
+3. Script name. In the applicable Script name field, type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as the Men&Mice Central database file (mmsuite.db); however, if the script is stored in a different location, the path for the script must be entered.
 
-  Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men & Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb.
+  Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb.
 
-  Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men & Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
+  Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
 
-It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access the Men & Mice Suite without having to enter a user name and password in the script itself.
+It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access the Men&Mice Suite without having to enter a user name and password in the script itself.
 
-To enable this feature, create a user named ScriptRunner. This user must use the Men & Mice Internal authentication method. When this user has been created, you only have to enter $u as a user name and $p as a password when logging in to the Men & Mice Suite through the script.
+To enable this feature, create a user named ScriptRunner. This user must use the Men&Mice Internal authentication method. When this user has been created, you only have to enter $u as a user name and $p as a password when logging in to the Men&Mice Suite through the script.
 
 .. note::
-  This method only works if the script scheduler invokes the script. When running the script, the Men & Mice Suite uses a temporary password that changes every time the script runs.
+  This method only works if the script scheduler invokes the script. When running the script, the Men&Mice Suite uses a temporary password that changes every time the script runs.
 
 4. Example 1: The following example shows how the command line interface can be invoked by the scheduler to execute a backup. This statement can be entered directly into the Script name field:
 

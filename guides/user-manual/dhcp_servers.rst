@@ -16,7 +16,7 @@ DHCP servers
 Overview
 --------
 
-This section shows you how to perform specific actions in the Men & Mice Management Console associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of the Men & Mice Suite you need to have a valid DHCP license key.
+This section shows you how to perform specific actions in the Men&Mice Management Console associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of the Men&Mice Suite you need to have a valid DHCP license key.
 
 .. information::
   The functions for this menu option are listed alphabetically after the New DHCP Server section.
@@ -29,7 +29,7 @@ When adding a DHCP server, the system automatically changes existing IP Address 
 You must be logged in as a user with privileges to administer DHCP in order to add a DHCP server.
 
 .. information::
-  For information on adding a DHCP server on a Men & Mice Appliance, refer to Appliance Management.
+  For information on adding a DHCP server on a Men&Mice Appliance, refer to Appliance Management.
 
 1. From the menu bar, select File, New, DHCP Server. The Add DHCP Server dialog box is shown.
 
@@ -60,7 +60,7 @@ Kea
   connect to a ISC Kea DHCP server.
 
 Use proxy server.
-  If you are adding a Microsoft or a Cisco DHCP server you can specify the location of the DHCP Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DHCP Server controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men & Mice Central to manage Microsoft DHCP servers.
+  If you are adding a Microsoft or a Cisco DHCP server you can specify the location of the DHCP Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DHCP Server controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
 
 2. Click OK. You are connected to the server. Once connected, the name of the newly added server displays under DHCP Servers in the Object Section. (You may need to click the plus (+) sign next to DHCP Servers to see it.)
 
@@ -69,19 +69,19 @@ Server Access on Remote Computers
 
 To manage DHCP servers you must have the DHCP Server Controller installed. For the ISC DHCP server and the Kea DHCP server, a DHCP Server Controller must be installed on each DHCP server you want to manage.
 
-If you plan to use Men & Mice Suite to manage any Microsoft DHCP servers, install the DHCP Server Controller on a Windows machine that is a member of the same domain or workgroup as the DHCP servers. You may install multiple copies of the DHCP Server Controller, for example if you want to manage Microsoft DHCP Servers that reside in different forests. A single DHCP Server Controller for Microsoft DHCP Servers can manage multiple DHCP servers. The DHCP Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows.
+If you plan to use Men&Mice Suite to manage any Microsoft DHCP servers, install the DHCP Server Controller on a Windows machine that is a member of the same domain or workgroup as the DHCP servers. You may install multiple copies of the DHCP Server Controller, for example if you want to manage Microsoft DHCP Servers that reside in different forests. A single DHCP Server Controller for Microsoft DHCP Servers can manage multiple DHCP servers. The DHCP Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows.
 
 To configure the DHCP Server Controller to access DHCP servers on remote computers, do the following:
 
 1. Before you can administer DHCP servers, verify that the DHCP Controller is running as a Windows User and has the necessary privileges.
 
-2. To enable DHCP Management in the Men & Mice Suite, start the Windows Services program and open the properties dialog box for Men & Mice DHCP Server Controller.
+2. To enable DHCP Management in the Men&Mice Suite, start the Windows Services program and open the properties dialog box for Men&Mice DHCP Server Controller.
 
 3. Click the Log On tab. The Local System account radio button is most likely selected.
 
 4. Click the This account radio button and enter the name and password of a Windows User that is a member of either the Administrators role or the DHCP Administrators role.
 
-5. Close the dialog box and restart the Men & Mice DHCP Server Controller service.
+5. Close the dialog box and restart the Men&Mice DHCP Server Controller service.
 
 .. warning::
   Lease history gathering is not possible if you are managing MS DHCP servers on remote computers using the DHCP Server Controller. To gather lease history for a MS DHCP server, you must install the DHCP Server Controller on the server and use the Microsoft with Agent Installed connection method when connecting to the server.
@@ -106,7 +106,7 @@ To access this feature, do the following:
 Inherited Access
 ----------------
 
-You can manage access to scopes just as you can for other object types in the Men & Mice Suite, but there is one important distinction: you can set Inherited Access for scopes. When you open the Access dialog box for a scope, the dialog box has an extra section for inherited access.
+You can manage access to scopes just as you can for other object types in the Men&Mice Suite, but there is one important distinction: you can set Inherited Access for scopes. When you open the Access dialog box for a scope, the dialog box has an extra section for inherited access.
 
 Checking the Inherit Access checkbox will have the selected scope inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the scope as well.
 
@@ -118,7 +118,7 @@ Delete
 ------
 
 .. note::
-  For information on removing a DHCP server on a Men & Mice Appliance, refer to Appliance Management.
+  For information on removing a DHCP server on a Men&Mice Appliance, refer to Appliance Management.
 
 To remove a DHCP server, do the following:
 
@@ -385,7 +385,7 @@ DHCP Administrators can access the ISC DHCP server configuration files directly 
 
 To access the advanced options, do the following:
 
-1. Log in to Men & Mice as the DHCP administrator.
+1. Log in to Men&Mice as the DHCP administrator.
 
 2. Select an ISC DHCP server, right-click and select Properties from the shortcut menu.
 

@@ -6,7 +6,7 @@ BIND DNS File Structure
 Overview
 --------
 
-When the Men & Mice Suite is installed on a server running BIND, it needs to perform several changes to the server configuration file structure. This section describes these changes and includes an overview diagram that shows how the server configuration files are processed after the Men & Mice Suite has updated the structure.
+When the Men&Mice Suite is installed on a server running BIND, it needs to perform several changes to the server configuration file structure. This section describes these changes and includes an overview diagram that shows how the server configuration files are processed after the Men&Mice Suite has updated the structure.
 
 named.conf
 ----------
@@ -15,11 +15,11 @@ named.conf is split into several files. A new named.conf file that includes stat
 
 When named.conf is split up, a new file is created for each zone statement (see Zone options files, below).
 
-The options statement goes into a separate file. That file is modified when the user makes changes to the server options in the Men & Mice Management Console.
+The options statement goes into a separate file. That file is modified when the user makes changes to the server options in the Men&Mice Management Console.
 
-The current version of the Men & Mice Management Console has no interface to change the values of the following statements: key, acl, controls, server, trusted-keys. Therefore, they are kept in separate files, user_before and user_after. The Men & Mice Suite does not modify these files.
+The current version of the Men&Mice Management Console has no interface to change the values of the following statements: key, acl, controls, server, trusted-keys. Therefore, they are kept in separate files, user_before and user_after. The Men&Mice Suite does not modify these files.
 
-The hint zone is copied to /var/named/conf/root.hint. That file is modified when the user makes changes in the Root servers tab in the server options in the Men & Mice Management Console.
+The hint zone is copied to /var/named/conf/root.hint. That file is modified when the user makes changes in the Root servers tab in the server options in the Men&Mice Management Console.
 
 Zone Options Files
 ------------------
@@ -40,7 +40,7 @@ The new zone file is named <zonename>-hosts
 Configuration Files Diagram
 ---------------------------
 
-The following diagram provides an overview on how the configuration files are processed after the file structure has been updated by the Men & Mice Suite.
+The following diagram provides an overview on how the configuration files are processed after the file structure has been updated by the Men&Mice Suite.
 
 .. image:: ../../bind_file_structure.png
   :width: 90%

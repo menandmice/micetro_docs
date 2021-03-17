@@ -129,8 +129,8 @@ After making a change, the following dialog is displayed where users can write a
 Date and time handling
 ----------------------
 
-In certain places like scheduling a change in Workflow and scheduling a report generation in Reporting, the date and times must be in the same time zone as the Men & Mice Central uses.
+In certain places like scheduling a change in Workflow and scheduling a report generation in Reporting, the date and times must be in the same time zone as the Men&Mice Central uses.
 
 .. image:: ../../images/blackstar-schedule.png
   :width: 60%
-  :align: center 
+  :align: center

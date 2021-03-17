@@ -6,7 +6,7 @@ Using the Web Application
 Installing the Web Application
 ------------------------------
 
-Installing the Web Application for the Men & Mice Suite is straightforward: just follow the instructions on the Men & Mice Download page.
+Installing the Web Application for the Men&Mice Suite is straightforward: just follow the instructions on the Men&Mice Download page.
 
 .. note::
   The web application cannot be installed on the same server as the old web interface. It needs to be on a separate virtual host.
@@ -15,7 +15,7 @@ Logging in
 ----------
 
 Server:
-  The hostname or IP address of the server running Men & Mice Central
+  The hostname or IP address of the server running Men&Mice Central
 
 Username: The username you want to log in as
 
@@ -27,7 +27,7 @@ Log in with Single Sign-on: You can use existing SSO to log in. Note that the ch
   :width: 70%
   :align: center
 
-Using the Men & Mice Web Interface
+Using the Men&Mice Web Interface
 ----------------------------------
 
 The Web Application is split into three main sections: :ref:`webapp-dns`, :ref:`webapp-network-management`, and :ref:`webapp-reporting`.

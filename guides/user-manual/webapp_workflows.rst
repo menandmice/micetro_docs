@@ -27,7 +27,7 @@ The Workflow module allows the user to submit 'change requests' for creating, mo
 Getting started
 ---------------
 
-In order to use the DNS requests in the Web application, the Workflow module needs to be purchased and enabled. The license key is added through the License Management dialog (see Administration Functions) in the Men & Mice Management Console.
+In order to use the DNS requests in the Web application, the Workflow module needs to be purchased and enabled. The license key is added through the License Management dialog (see Administration Functions) in the Men&Mice Management Console.
 
 In order to use the Workflow module, there are two new workflow specific roles in User Management, "Requesters" and "Approvers" needed to be set. Users have to be added to the "Requesters" role to be able to submit requests. Administrative users have to be added to the "Approvers" role to be able to see requests made by others and approve them.
 
@@ -142,7 +142,7 @@ If the user want to make a scheduled change (i.e. the records are applied to the
 Additionally, if custom properties have been defined for Change Requests, the user will be asked to enter those here, along with the optional Comment.
 
 .. note::
-  All dates and times are according to the time zone setting on the Men & Mice Central server.
+  All dates and times are according to the time zone setting on the Men&Mice Central server.
 
 .. image:: ../../images/blackstar-workflows-schedule-request.png
   :width: 70%

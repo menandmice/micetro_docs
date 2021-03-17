@@ -4,6 +4,7 @@ Networking requirements
 =======================
 
 Certain ports need to be open for Micetro’s different components to communicate with each other.
+
 The following table lists all services and their respective ports to be opened for incoming communications from the source components.
 
 .. csv-table::
