@@ -8,10 +8,7 @@ Men & Mice DHCP Server Controller is the DHCP server agent. It sits on each DHCP
 .. toctree::
   :maxdepth: 2
   :hidden:
-
-  controller_loglevel
-  controller_perms
-
+  
 Installing Men & Mice DHCP Server Controller is typically quite straightforward, with far fewer considerations than Men & Mice DNS Server Controller.
 
 By default, when executed the controller installer tries to figure out the installed service (e.g. BIND) automatically and will try to install it without further user input.

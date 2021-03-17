@@ -13,10 +13,10 @@ Deployed in any on-premise, hybrid, or multicloud network environment, Micetro a
 This documentation is divided into three parts:
 
 1. :ref:`implementation`
-2. :ref:`manual`
+2. :ref:`user-manual`
 3. :ref:`reference`
 
-Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual` covers Micetro's functionality. The Implementation Guide also details the update procedures, while the User Reference contains other maintenance-related operations (such as concepts of high availability and dealing with failovers).
+Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`user-manual` covers Micetro's functionality. The Implementation Guide also details the update procedures, while the User Reference contains other maintenance-related operations (such as concepts of high availability and dealing with failovers).
 
 
 .. toctree::

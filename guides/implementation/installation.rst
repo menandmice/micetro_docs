@@ -1,10 +1,10 @@
 .. _installation:
 
-Installation Guide
-******************
+Installation
+************
 
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
 
   system-requirements
   firewall-ports

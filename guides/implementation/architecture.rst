@@ -1,7 +1,10 @@
 .. _architecture:
 
-Architecture and strategic overview of Micetro by Men&Mice
-**********************************************************
+Architecture
+************
+
+Overview
+========
 
 COMPONENT ARCHITECTURE VIEW TBD.
 

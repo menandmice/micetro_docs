@@ -22,7 +22,7 @@ There is a global setting in that allows Men & Mice to adjust the zone transfer 
 3. Click :guilabel:`Add DNS server` in the interface
 
 .. image:: ../../images/add-dns.png
-  :width: 60&
+  :width: 60%
   :align: center
 
 4. The *Add DNS server* modal will display.
@@ -30,7 +30,7 @@ There is a global setting in that allows Men & Mice to adjust the zone transfer 
 6. Select “BIND” as server type from the dropdown.
 
 .. image:: ../../images/add-dns-modal.png
-  :width: 30&
+  :width: 30%
   :align: center
 
 7. Click :guilabel:`Confirm`.

@@ -1,7 +1,7 @@
 .. _release-notes:
 
-Micetro by Men&Mice release notes
-=================================
+Release notes
+=============
 
 10.0
 ----

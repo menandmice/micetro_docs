@@ -7,10 +7,6 @@ Men & Mice DNS Server Controller is the DNS server agent. It sits on each DNS se
 
 .. toctree::
   :maxdepth: 2
-  :hidden:
-
-  controller_loglevel
-  controller_perms
 
 .. note::
   The DNS Server Controllers need to be ran as the same user as BIND. (By default: ``named``.)
@@ -162,9 +158,9 @@ The file layout is a little different with or without BIND views. Here are the p
   "Men & Mice DNS Server Controller daemon", "mmremoted, usually in /usr/sbin or /usr/local/sbin"
   "Men & Mice external static zone handling utilities", "mmedit and mmlock, usually in /usr/bin or /usr/local/bin"
   "Data directory for Men & Mice DNS Server Controller", "Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Server Controller was installed"
-  "Backup of original data directory", "Same as above, with ".bak" appended to the path"
+  "Backup of original data directory", "Same as above, with '.bak' appended to the path"
   "New starting configuration file", "Usually either /etc/named.conf or /etc/namedb/named.conf; possibly located within a chroot jail"
-  "Backup of original starting configuration file", "Same as above, with ".bak" appended to the path"
+  "Backup of original starting configuration file", "Same as above, with '.bak' appended to the path"
   "logging statement from named.conf", "conf/logging, relative to the data directory"
   "key and acl statements from named.conf", "conf/user_before, relative to the data directory"
   "options statement from named.conf", "conf/options, relative to the data directory"
@@ -184,10 +180,10 @@ If views are not defined, the following files are created inside the data direct
 
   "List of include statements, one for each zone statement file", "conf/zones"
   "Directory of zone statement files", "conf/zoneopt"
-  "A sample zone statement file, for the zone "localhost."", "conf/zoneopt/localhost.opt"
+  "A sample zone statement file, for the zone 'localhost'.", "conf/zoneopt/localhost.opt"
   "Directory of primary master zone files", "hosts/masters"
   "Directory of slave zone files", "hosts/slaves"
-  "A sample zone file, for the primary master zone "localhost."", "hosts/masters/localhost-hosts"
+  "A sample zone file, for the primary master zone 'localhost.'", "hosts/masters/localhost-hosts"
 
 **With views**
 
@@ -200,17 +196,15 @@ If views are defined, the following files are created inside the data directory:
   "View statements, not including zone statements within each view", "conf/zones"
   "List of include statements for a particular view, one for each zone statement file", "conf/zones_viewname"
   "Directory of zone statement files for a particular view", "conf/zo_viewname"
-  "A sample zone statement file, for the zone "localhost." in the view "internal"", "conf/zo_internal/localhost.opt"
+  "A sample zone statement file, for the zone 'localhost'. in the view 'internal'", "conf/zo_internal/localhost.opt"
   "Directory of primary master zone files for a particular view", "hosts/view_viewname/masters"
   "Directory of slave zone files for a particular view", "hosts/view_viewname/slaves"
-  "A sample zone file, for the primary master zone "localhost." in the view "internal"", "hosts/view_internal/masters/localhost-hosts"
+  "A sample zone file, for the primary master zone 'localhost.' in the view 'internal'", "hosts/view_internal/masters/localhost-hosts"
 
 Removing the DNS Server Controller and Reverting to Original Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To remove the DNS Server Controller, first use the init script to stop the service (give it the "stop" argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. To revert to your original data, stop named with its init script. Then delete the initial configuration file and the data directory and rename the originals, removing the ".bak" from their names.
-
-
 
 SELinux
 ^^^^^^^
@@ -240,7 +234,7 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Proceed to :ref:`installing DHCP server controller <install-dhcp-controllers>` or :ref:`installing the Web Application <install-webui>`.
+Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webui`.
 
 Men&Mice Central running on Windows
 -----------------------------------
@@ -306,7 +300,7 @@ Where to install Men & Mice DNS Server Controller
 
 If Men & Mice Central is installed on a Windows host, then one option is to install Men & Mice DNS Server Controller on the same host. If this is not done, then the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.
 
-.. informaiton::
+.. information::
   The Men & Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men & Mice Central by a slow network link, it is more efficient to install a copy of the Men & Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
 
 Proceed to :ref:`installing DHCP server controller <install-dhcp-controllers>` or :ref:`installing the Web Application <install-webui>`.
