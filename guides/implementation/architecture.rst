@@ -1,20 +1,4 @@
-.. _implementation-index:
-
-Implementation Guide
-####################
-
-This document is intended to help administrators to install and configure Micetro by Men&Mice. It will help the administrators to identify strategic servers to install the Men & Mice components on, as they do not have to be installed on all DNS and DHCP servers in the managed environment.
-
-.. note::
-  All Micetro components can be installed on virtual machines.
-
-:ref:`installation`
-
-:ref:`configuration`
-
-:ref:`updates`
-
-.. _architecture-overview:
+.. _architecture:
 
 Architecture and strategic overview of Micetro by Men&Mice
 **********************************************************
@@ -115,7 +99,7 @@ Similar to the Management Console, the CLI can be installed on as many client co
   :maxdepth: 2
   :hidden:
 
-  implementation 
+  implementation
   installation
   configuration
   updates

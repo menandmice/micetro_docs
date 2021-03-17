@@ -1,28 +1,22 @@
-.. image:: images/menandmice.png
-  :width: 100 %
-  :alt: Men&Mice
-  :align: center
-
-Micetro by Men&Mice 9.4.5 (AT&T)
-================================
+Micetro by Men&Mice 10.0
+########################
 
 Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
 
-Deployed in any on-premise, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components:
+.. image:: images/micetro.png
+  :width: 50%
+  :alt: Men&Mice
+  :align: center
 
-* Men&Mice Central
-* Men&Mice Management Console for Windows
-* Men&Mice Web Application
-* Men&Mice server controllers for DNS and DHCP
-* (optional) virtual appliances for DNS and DHCP
+Deployed in any on-premise, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
-This reference documentation is divided into three parts:
+This documentation is divided into three parts:
 
-1. Implementation Guide
-2. Operations Guide
-3. Maintenance Guide
+1. :ref:`implementation`
+2. :ref:`manual`
+3. :ref:`reference`
 
-Use the Implementation Guide to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The Operations Guide (divided into DNS, DHCP, and IPAM) covers Micetro's functionality. The Maintenance Guide details the update procedures and other maintenance-related operations (such as concepts of high availability and dealing with failovers).
+Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual` covers Micetro's functionality. The Implementation Guide also details the update procedures, while the User Reference contains other maintenance-related operations (such as concepts of high availability and dealing with failovers).
 
 
 .. toctree::
@@ -30,16 +24,15 @@ Use the Implementation Guide to familiarize yourself with Micetro's architecture
     :maxdepth: 1
     :hidden:
 
-    changelogs/changelog
+    release_notes
 
 .. toctree::
      :caption: Implementation Guide
      :maxdepth: 3
      :hidden:
 
-     guides/implementation-guide/config-files
-     guides/implementation-guide/implementation
-     guides/implementation-guide/updates
+     guides/implementation/implementation
+     guides/implementation/updates
 
 .. toctree::
      :caption: User Reference Manual
@@ -47,3 +40,8 @@ Use the Implementation Guide to familiarize yourself with Micetro's architecture
      :hidden:
 
      guides/user-manual/manual
+
+.. image:: images/menandmice.png
+  :width: 25%
+  :alt: Micetro by Men&Mice
+  :align: center
