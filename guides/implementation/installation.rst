@@ -9,6 +9,7 @@ Installation Guide
   system-requirements
   firewall-ports
   binaries
+  config-files
   install_central
   install_console
   install_dns_controllers

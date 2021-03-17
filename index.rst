@@ -28,7 +28,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
      :caption: Implementation Guide
-     :maxdepth: 3
+     :maxdepth: 2
      :hidden:
 
      guides/implementation/implementation
@@ -36,7 +36,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
      :caption: User Reference Manual
-     :maxdepth: 3
+     :maxdepth: 2
      :hidden:
 
      guides/user-manual/manual

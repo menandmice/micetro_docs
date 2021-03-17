@@ -12,6 +12,5 @@ This document is intended to help administrators to install and configure Micetr
   :maxdepth: 2
 
   architecture
-  config-files
   installation
   configuration
