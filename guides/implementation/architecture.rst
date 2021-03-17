@@ -94,12 +94,3 @@ Command Line Interface (CLI)
 ----------------------------
 
 Similar to the Management Console, the CLI can be installed on as many client computers as required. However, it is usually only installed on the machine running the Men & Mice Suite's Central component and on a couple of the administrator's workstations. The CLI is used primarily for scripting and performing bulk updates.
-
-.. toctree::
-  :maxdepth: 2
-  :hidden:
-
-  implementation
-  installation
-  configuration
-  updates

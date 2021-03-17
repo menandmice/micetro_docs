@@ -21,7 +21,6 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
     :caption: Micetro by Men&Mice
-    :maxdepth: 1
     :hidden:
 
     release_notes
