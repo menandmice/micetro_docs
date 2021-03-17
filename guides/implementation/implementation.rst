@@ -9,7 +9,7 @@ This document is intended to help administrators to install and configure Micetr
   All Micetro components can be installed on virtual machines.
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   architecture
   installation

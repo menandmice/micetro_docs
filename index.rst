@@ -20,7 +20,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 
 .. toctree::
-    :caption: Micetro by Men&Mice 9.4.5 for AT&T
+    :caption: Micetro by Men&Mice
     :maxdepth: 1
     :hidden:
 
