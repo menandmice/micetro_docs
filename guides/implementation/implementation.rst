@@ -13,4 +13,3 @@ This document is intended to help administrators to install and configure Micetr
 
   architecture
   installation
-  configuration

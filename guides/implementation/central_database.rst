@@ -7,4 +7,13 @@
   central_mssql
   central_postgresql
 
-Bla bla bla.
+The Men&Mice Suite can be used with the following databases:
+
+* SQlite (built-in, default)
+
+* Microsoft SQL Server
+
+* PostgreSQL
+
+.. note::
+  High Availability for the database is only available for MS SQL and PostgreSQL.

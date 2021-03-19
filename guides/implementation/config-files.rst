@@ -3,6 +3,9 @@
 Location of important config files, scripts, and logs
 =====================================================
 
+Linux
+-----
+
 .. csv-table::
    :header: "Path", "Information"
    :widths: 40, 60
@@ -21,3 +24,8 @@ Location of important config files, scripts, and logs
    "``/var/mmsuite/mmcentral.log``",	"Men&Mice Central logfile."
    "``/var/mmsuite/dns_server_controller/logs/``",	"Men&Mice DNS Server Controller logfile."
    "``./[monitor]/pg_log/postgresql-[WeekDay].log``",	"PostgreSQL HA cluster monitor logfile."
+
+Windows
+-------
+
+.. TBD

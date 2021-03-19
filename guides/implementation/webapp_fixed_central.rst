@@ -1,4 +1,4 @@
-.. _webui-fixed-central:
+.. _webapp-fixed-central:
 
 Configure the web application to use a fixed M&M Central server
 ===============================================================

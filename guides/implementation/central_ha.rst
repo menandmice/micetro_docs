@@ -5,6 +5,9 @@ Configure High Availability for Men&Mice Central
 
 Failover instances of Men&Mice Central can be configured to build a high availability cluster.
 
+Linux
+-----
+
 On the existing (or designated as *primary*) server running Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg``, adding
 
 .. code-block::
@@ -58,3 +61,10 @@ Log in to the Management Console using the domain name set in the DNS as the ser
 
 .. note::
   Repeat these steps for each high availability failover you’d like to add. The priority for each failover member should be unique and higher than the primary.
+
+Proceed to :ref:`install-controllers`
+
+Windows
+-------
+
+.. TBD 

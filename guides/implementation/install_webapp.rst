@@ -1,4 +1,4 @@
-.. _install-webui:
+.. _install-webapp:
 
 Web Application
 ===============
@@ -27,7 +27,7 @@ Install the Web Application on Windows
 .. note::
   On Windows, the Web Application requires IIS to be installed. The installer will check if all required components are available.
 
-Install Men & Mice Web Application by double clicking the Microsoft installer file and follow the instructions there.
+Install Men&Mice Web Application by double clicking the Microsoft installer file and follow the instructions there.
 
 .. warning::
   If the web application is not installed on the same server as Men&Mice Central, you need to  set the **Web app server host** value to the webserver's hostname through :guilabel:`System settings --> Advanced` in the Management Console for the auto-update feature to work for the Web Application.

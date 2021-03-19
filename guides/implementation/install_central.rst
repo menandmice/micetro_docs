@@ -7,10 +7,13 @@ Men&Mice Central is the central authentication server. It also serves as the met
 
 .. toctree::
   :maxdepth: 2
+  :hidden:
 
   central_database
   install_console
   central_ha
+
+.. _install-central-linux:
 
 Install Men&Mice Central on Linux
 ---------------------------------
@@ -63,6 +66,8 @@ Installing Men&Mice Central puts the following files on your system:
 
 To remove Men&Mice Central, first use the init script to stop the service (give it the "stop" argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. Also delete the data directory if desired.
 
+.. _install-central-windows:
+
 Install Men&Mice Central on Windows
 -----------------------------------
 
@@ -73,6 +78,8 @@ Install Men&Mice Central on Windows
 
 Proceed to :ref:`central_database`.
 
+.. _install-central-solaris:
+
 Install Men&Mice Central on Solaris
 -----------------------------------
 
@@ -82,6 +89,6 @@ Extract and run the Men&Mice Central install package:
 
   gzcat archive-name.tgz | tar xf -
 
-Then change into the newly-created directory and run the installer as described in the Linux section.
+Then change into the newly-created directory and run the installer as described in the :ref:`install-central-linux` section.
 
 Proceed to :ref:`central_database`.

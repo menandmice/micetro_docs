@@ -12,7 +12,7 @@ Installation
   config-files
   install_central
   install_console
-  install_dns_controllers
-  install_dhcp_controllers
-  install_webui
+  install_controllers
+  install_webapp
   installation_azure
+  vmware 

@@ -1,7 +1,12 @@
 .. _adding-dhcp:
 
 Add DHCP Servers
-****************
+================
+
+DHCP servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
+
+.. note::
+  Servers in Microsoft Active Directory environments can be added without installing a server controller. See :ref:`agent-free-dns-dhcp`.
 
 The following table demonstrates the different options when adding a DHCP Server.
 

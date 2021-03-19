@@ -1,4 +1,4 @@
-.. _webui-ssl:
+.. _webapp-ssl:
 
 Setup SSL for the Web Application
 =================================
