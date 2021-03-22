@@ -8,10 +8,10 @@ The single sign-on feature in the Men&Mice Web Application allows users to sign 
 .. note::
   This article assumes that both an Active Directory group has already been added to the Men&Mice Suite **and** Kerberos/NTLM has been added to the preferences file for Men&Mice Web Services.
 
-.. information::
+.. note::
   Please refer to :ref:`external-auth` for help for adding active directory groups to the Men&Mice Suite.
 
-.. information::
+.. note::
   Please refer to :ref:`api-auth` for help adding Kerberos/NTLM to preferences for Men&Mice Web Services.
 
 Configuration
@@ -34,10 +34,10 @@ Configuration
 
   7. Make sure that under User Authentication -> Logon "Automatic logon with current username and password" is selected.
 
-8. Open a web browser[*]_ that supports Single Sign-On (SSO) and navigate to the Men&Mice Web Application.
+8. Open a web browser[1]_ that supports Single Sign-On (SSO) and navigate to the Men&Mice Web Application.
 
 9. Enter the FQDN/IP Address of the Men&Mice Central server.
 
 10. Check the "Log in with Single Sign-on" and click Log In.
 
-.. [*] Single Sign-On is only supported in Internet Explorer and Google Chrome.
+.. [1] Single Sign-On is only supported in Internet Explorer and Google Chrome.

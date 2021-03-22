@@ -28,13 +28,11 @@ Detailed instructions on how to create a service principal and retrieve the Tena
 Frequently asked questions (FAQ)
 --------------------------------
 
-Can I configure a proxy for the connection to Azure services?
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**Can I configure a proxy for the connection to Azure services?**
 
 This feature is currently not available.
 
-What are the minimum permissions required for the Men&Mice Suite to integrate fully with Azure?
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**What are the minimum permissions required for the Men&Mice Suite to integrate fully with Azure?**
 
 Below is a custom role definition that covers all the required permissions for DNS and IPAM. Please look at Azure documentation on how to create a custom role.
 

@@ -179,14 +179,15 @@ IP Address Ranges
 | PTR status        | Shows the status of the Address (A) record and Pointer (PTR) record mappings.            |
 |                   | This column can have three values:                                                       |
 |                   |                                                                                          |
-|                   | * **Empty**. there are no DNS records for the host. It is also empty if a                |
+|                   | **Empty**. there are no DNS records for the host. It is also empty if a                  |
 |                   | PTR record exists where the domain in the data section of the PTR record                 |
 |                   | is not managed by the system.                                                            |
 |                   |                                                                                          |
-|                   | * **OK**. there is a match between the A and the corresponding PTR record(s).            |
+|                   | **OK**. there is a match between the A and the corresponding PTR record(s).              |
 |                   |                                                                                          |
-|                   | * **Verify**. there is no match between the A and the PTR records for the host. The most |
+|                   | **Verify**. there is no match between the A and the PTR records for the host. The most   |
 |                   | common reasons are:                                                                      |
+|                   |                                                                                          |
 |                   |    * There is an A record but the PTR record is missing.                                 |
 |                   |    * There is a PTR record but the A record is missing.                                  |
 |                   |    * The data section in the PTR record does not correspond to the name of the A record. |
@@ -292,4 +293,4 @@ An indicator is shown during the ping. Afterwards a green or red indicator on th
 
 .. image:: ../../images/blackstar-ping.png
   :width: 30%
-  :align: center 
+  :align: center

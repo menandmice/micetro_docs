@@ -32,7 +32,7 @@ Conditional Operators
 ---------------------
 
 .. csv-table::
-  :header: "Operator",, "Opposite operator",,
+  :header: "Operator", "", "Opposite operator", ""
   :widths: 10, 40, 10, 40
 
   "=, ==", "is equal", "!=", "is not equal"

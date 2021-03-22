@@ -39,9 +39,9 @@ DHCP Servers
 AD Sites
   This category is only displayed if you have enabled AD Sites and Subnets integration. Selecting this category will show all AD sites that have been selected for integration in the Men&Mice Suite.
 
-.. sidebar::
-
-  .. image:: ../../images/object-broser-filter.png
+.. image:: ../../images/object-browser-filter.png
+  :width: 60%
+  :align: center
 
 Detail View
 -----------

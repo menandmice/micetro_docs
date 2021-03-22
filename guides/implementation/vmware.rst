@@ -41,7 +41,7 @@ Installation and configuration
 Installation: step-by-step
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download the Men&Mice plug-in from here.
+1. Download the Men&Mice plug-in from `here <http://download.menandmice.com/Plugins/VMWare/vRO/1.2.0/>`_.
 
 2. Once downloaded, install the plug-in file into your vRealize Orchestrator. This is done through the configuration interface for your vRealize Orchestrator. https://<Orchestrator server FQDN or IP Address>:8283 is the URL used to access the configuration interface.
 
@@ -82,7 +82,7 @@ Fill in the configuration detail for your Men&Mice Suite and click the Submit bu
 Once the Configure connection to Men&Mice Suite has been run successfully, you're able to interact with your Men&Mice Suite through your vRealize Orchestrator.
 
 .. note::
-  If your configuration contains a backslash character (\), e.g. a username in a Microsoft Active Directory environment you will need to precede it with another backslash.
+  If your configuration contains a backslash character (\\), e.g. a username in a Microsoft Active Directory environment you will need to precede it with another backslash.
 
 Workflows
 ---------

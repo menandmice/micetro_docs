@@ -29,6 +29,7 @@ Automatic assignment of IP Addresses.
   The system administrator can configure the Men&Mice Suite so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.
 
 Range Access
+^^^^^^^^^^^^
 
 You can manage access to ranges just as you can for other object types in the Men&Mice Suite, but there is one important distinction – You can set Inherited Access for ranges.
 

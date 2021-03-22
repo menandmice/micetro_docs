@@ -3,16 +3,6 @@
 Management Console
 ******************
 
-.. toctree::
-  :maxdepth: 2
-
-  console_gui
-  console_menus
-  console_toolbars
-  quickfilter
-  console_actions
-  console_health_bar
-
 Overview
 ========
 
@@ -72,3 +62,14 @@ When connecting the Management Console to a newly installed instance of Men&Mice
 2. Complete each screen as you move through the wizard.
 
 3. The wizard will finish after the user clicks the 'Finish' button and afterwords the changes will be applied.
+
+.. toctree::
+  :maxdepth: 2
+  :hidden:
+
+  console_gui
+  console_menus
+  console_toolbars
+  quickfilter
+  console_actions
+  console_health_bar

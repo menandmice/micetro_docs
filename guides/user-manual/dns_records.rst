@@ -98,7 +98,7 @@ WKS
 
     "host.example.com.", "WKS", "10.0.0.1 TCP (ftp smtp telnet)"
 
-  ..warning::
+  .. warning::
     Please note that the record type WKS was deprecated by RFC1123 - please don't use this record type.
 
 RP
@@ -251,7 +251,7 @@ SSHFP
     :header: "Name", "Type", "Data"
     :widths: 15, 5, 35
 
-    "random.example.com", "SSHFP, "1 1 23D3C516AAF4C8E867D0A2968B2EB999B3168216"
+    "random.example.com", "SSHFP", "1 1 23D3C516AAF4C8E867D0A2968B2EB999B3168216"
 
 SPF
   SPF stands for Sender Policy Framework. This record type is used in an e-mail validation system designed to prevent e-mail spam. The SPF record accepts a text string that contains the configuration info that should be used.
@@ -298,11 +298,11 @@ CAA
 
   Example
 
-  .. csv-table::
-    :header: "Name", "Type", "Data"
-    :widths: 15, 5, 35
-
-    "example.com", "CAA", "0 issue \"letsencrypt.org\""
++--------------+------+---------------------------+
+| Name         | Type | Data                      |
++==============+======+===========================+
+| example.com  | CAA  | 0 issue "letsencrypt.org" |
++--------------+------+---------------------------+
 
 In addition to the supported record types in the table, the Men&Mice Suite supports the following DNSSEC resource record types:
 

@@ -46,12 +46,14 @@ Multiple controllers can be specified. If you want to, for example, have both IS
 
 Quiet/unattended installation is possible with the --quiet parameter (no output at all):
 
+.. code-block:: bash
+
   ./install --generic-dns-controller --bind-dns-controller --quiet
 
 .. note::
   The Men&Mice Update Controller always gets automatically added to the list when another M&M service is installed, e.g. in the above listed example the --update-controller gets added automatically.
 
-If you plan to use the Generic DNS Controller, please see the article about the Generic DNS Server Controller setup.
+If you plan to use the Generic DNS Controller, please see :ref:`generic-dns-controller`.
 
 If you run into issues with the new installer, the old interactive Perl based installer is still present in the same archive as:
 
@@ -88,13 +90,13 @@ Extract the Men&Mice Controller install package (as root):
 
   .. code-block:: bash
 
-    tar -xzvf mmsuite-controllers-9.4.2.linux.x64.tgz
+    tar -xzvf mmsuite-controllers-10.0.linux.x64.tgz
 
-In the newly created ``mmsuite-controllers-9.4.2.linux.x64`` directory run the installer script to install the Men&Mice Controller (as root):
+In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the installer script to install the Men&Mice Controller (as root):
 
   .. code-block:: bash
 
-    cd mmsuite-controllers-9.4.2.linux.x64 && ./install --skip-arrange
+    cd mmsuite-controllers-10.0.linux.x64 && ./install --skip-arrange
 
 Installer Questions
 ^^^^^^^^^^^^^^^^^^^
@@ -214,9 +216,11 @@ Some newer Linux distributions come with SELinux (Security Enhanced Linux) enabl
 The $INCLUDE and $GENERATE Directives
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please refer to the Men&Mice Knowledge Base for information about how these directives are handled in Men&Mice Suite.
-Handling of $INCLUDE: https://otrs.menandmice.com/otrs/public.pl?Action=PublicFAQZoom;ItemID=84 
-Handling of $GENERATE: https://otrs.menandmice.com/otrs/public.pl?Action=PublicFAQZoom;ItemID=83
+Please refer to the following articles for information about how these directives are handled in Men&Mice Suite.
+
+* :ref:`dns-controller-include`
+
+* :ref:`dns-controller-generate`
 
 Installation with Dynamic Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -234,7 +238,7 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webui`.
+Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webapp`.
 
 Men&Mice Central running on Windows
 -----------------------------------
@@ -293,7 +297,7 @@ The file is a text file in a simple XML-based format. Add the following element,
 Configure the DNS Server Controller to work with Microsoft Azure DNS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For information on configuring Microsoft Azure DNS, see Configure Azure DNS.
+For information on configuring Microsoft Azure DNS, see :ref:`configure-azure-dns`.
 
 Where to install Men&Mice DNS Server Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -303,4 +307,4 @@ If Men&Mice Central is installed on a Windows host, then one option is to instal
 .. information::
   The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
 
-Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webui`.
+Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webapp`.

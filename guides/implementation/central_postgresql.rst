@@ -3,36 +3,10 @@
 PostgreSQL
 ----------
 
-Men&Mice Central running on Windows
-"""""""""""""""""""""""""""""""""""
+.. _central-psql-unix:
 
-The preferences.cfg file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: database, databaseserver, databaseusername and databasepassword
-
-The preferences.cfg file for normal user/password authentication should look like:
-
-.. code-block::
-  :linenos:
-
-  <password value="the fingerprint hash"/>
-  <database value="postgresql"/>
-  <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
-  <databaseusername value="mmSuiteDBUser"/>
-  <databasepassword value="password hash"/>
-
-An example preferences.cfg file for the Windows Authentication method should look like (databaseusername tag must be present and the value attribute must be set to empty string):
-
-.. code-block::
-  :linenos:
-
-  <password value="the fingerprint hash"/>
-  <database value="postgresql"/>
-  <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
-  <databaseusername value=""/>
-
-Proceed to :ref:`central-ha` or :ref:`install_controllers`.
-
-Men&Mice Central running on Linux
-"""""""""""""""""""""""""""""""""
+Men&Mice Central running on Linux or Solaris
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Edit the configuration file for Men&Mice Central:
 
@@ -68,4 +42,34 @@ Restart Central and verify it’s running:
 
 If the database connection fails, the service will fail to start with the appropriate error message.
 
-Proceed to :ref:`central-ha` or :ref:`install_controllers`.
+Proceed to :ref:`psql-ha`, :ref:`central-ha`, or :ref:`install-controllers`.
+
+.. _central-psql-windows:
+
+Men&Mice Central running on Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The preferences.cfg file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: database, databaseserver, databaseusername and databasepassword
+
+The preferences.cfg file for normal user/password authentication should look like:
+
+.. code-block::
+  :linenos:
+
+  <password value="the fingerprint hash"/>
+  <database value="postgresql"/>
+  <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
+  <databaseusername value="mmSuiteDBUser"/>
+  <databasepassword value="password hash"/>
+
+An example preferences.cfg file for the Windows Authentication method should look like (databaseusername tag must be present and the value attribute must be set to empty string):
+
+.. code-block::
+  :linenos:
+
+  <password value="the fingerprint hash"/>
+  <database value="postgresql"/>
+  <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
+  <databaseusername value=""/>
+
+  Proceed to :ref:`psql-ha`, :ref:`central-ha`, or :ref:`install-controllers`.

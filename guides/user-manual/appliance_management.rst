@@ -3,9 +3,6 @@
 Appliance management
 ====================
 
-.. contents::
-  :depth: 2
-
 Overview
 --------
 
@@ -399,7 +396,7 @@ To configure IPv6 routing on the Appliance, do the following:
 
 3. Click the IPv6 tab in the routing configuration dialog box.
 
-.. image:: ../../admin-appliance-ipv6-routing.png
+.. image:: ../../images/admin-appliance-ipv6-routing.png
   :width: 50%
   :align: center
 
@@ -409,7 +406,7 @@ To configure IPv6 routing on the Appliance, do the following:
 
 .. THIS DOESN'T SEEM LIKE THE RIGHT SCREENSHOT 🧐
 
-.. image:: ../../admin-appliance-add-ipv6-route.png
+.. image:: ../../images/admin-appliance-add-ipv6-route.png
   :width: 50%
   :align: center
 

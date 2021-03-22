@@ -17,7 +17,7 @@ To add a new DNS server the administrator will select :guilabel:`File --> New --
 3. Click :guilabel:`Add DNS server` in the interface
 
 .. image:: ../../images/add-dns.png
-  :width: 60%
+  :width: 90%
   :align: center
 
 4. The *Add DNS server* modal will display.
@@ -25,7 +25,7 @@ To add a new DNS server the administrator will select :guilabel:`File --> New --
 6. Select the server type from the dropdown.
 
 .. image:: ../../images/add-dns-modal.png
-  :width: 30%
+  :width: 60%
   :align: center
 
 7. Click :guilabel:`Confirm`.
@@ -40,7 +40,7 @@ DNS servers in Active Directory integrated zones
 The DNS agent will use two different methods to retrieve information from Microsoft AD integrated zones.  First it will do a zone transfer (both full and incremental) to get the latest records for the zone and then it will use Microsoft APIs to get detailed information for individual records.  Due to this it is important that the DNS agent is allowed to do a zone transfer from the local server.
 
 .. image:: ../../images/add-dns-arch-old.png
-  :width: 80%
+  :width: 55%
   :align: center
 
 The DNS agent on the DNS server must be able to transfer AD integrated zones from the local DNS server.

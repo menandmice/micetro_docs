@@ -22,4 +22,4 @@ The “Server name” field requires the domain or the IPv4/v6 address of the se
 Successful login confirms that Men&Mice Central is running, connected to the database, and accessible for the Management Console.
 
 .. note::
-  You can disable the "Server name" field by using a :ref:`webapp-fixed-central`.
+  You can disable the "Server name" field: see :ref:`webapp-fixed-central`.

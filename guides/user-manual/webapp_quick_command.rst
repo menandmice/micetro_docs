@@ -62,26 +62,26 @@ The available actions for each object are:
 +--------------+-------------------------+
 | Object       | Actions                 |
 +==============+=========================+
-| DNS zones    | Open DNS zone           |
-|              | Reveal                  |
-|              | Edit zone properties    |
-|              | Delete zone             |
+| DNS zones    | * Open DNS zone         |
+|              | * Reveal                |
+|              | * Edit zone properties  |
+|              | * Delete zone           |
 +--------------+-------------------------+
-| DNS records  | Add DNS record          |
-|              | Edit DNS record         |
-|              | Reveal                  |
-|              | Delete DNS record       |
-|              | Disable DNS record      |
+| DNS records  | * Add DNS record        |
+|              | * Edit DNS record       |
+|              | * Reveal                |
+|              | * Delete DNS record     |
+|              | * Disable DNS record    |
 +--------------+-------------------------+
 | Network      | Open                    |
 |              | Reveal                  |
 |              | Edit network properties |
 |              | Delete network          |
 +--------------+-------------------------+
-| IP addresses | Reveal                  |
-|              | IP address properties   |
-|              | Claim IP address        |
-|              | Ping IP address         |
+| IP addresses | * Reveal                |
+|              | * IP address properties |
+|              | * Claim IP address      |
+|              | * Ping IP address       |
 +--------------+-------------------------+
 
 Examples

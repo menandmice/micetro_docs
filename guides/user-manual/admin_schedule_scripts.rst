@@ -9,8 +9,8 @@ To configure this option, do the following:
 
 1. From the menu bar, select Tools, Scheduled Scripts. The Scheduled Scripts dialog box displays. Any already defined scripts are displayed.
 
-.. image:: ../../images/admin-scheduled-scripts.png
-  :width: 90%
+.. image:: ../../images/admin-scheduled-script-list.png
+  :width: 75%
   :align: center
 
 2. To add a new script, click the Add button. The Schedule Script dialog box displays.
@@ -39,9 +39,9 @@ To enable this feature, create a user named ScriptRunner. This user must use the
 
   mmcmd -s 127.0.0.1 -u $u -p $p backup;exit
 
-  Example 2: The following Visual Basic script checks which users are logged in and writes the list of logged in users to the file logger.txt. To invoke the script you would enter the following statement into the Script name field:
+Example 2: The following Visual Basic script checks which users are logged in and writes the list of logged in users to the file logger.txt. To invoke the script you would enter the following statement into the Script name field:
 
-.. code-block:: Visual Basic
+.. code-block:: 
   :linenos:
 
   cscript /B scripts\test.vbs $u $p

@@ -63,7 +63,7 @@ The Zone tab provides a detailed look at the data inside of a zone, including it
 
 To view the contents of a particular zone, double-click on it. This opens the Zone tab.
 
-.. image:: ../../images/console-dns-zones-zone-content.png
+.. image:: ../../images/console-dns-zones-zone-contents.png
   :width: 80%
   :align: center
 
@@ -390,7 +390,7 @@ To sign a zone on a Windows Server 2012, do the following:
 
   * From the menu bar, select Zone, Sign Zone.
 
-.. image:: ../../images/console-dns-zonesþsign-zone-wizard.png
+.. image:: ../../images/console-dns-zones-sign-zone-wizard.png
   :width: 70%
   :align: center
 

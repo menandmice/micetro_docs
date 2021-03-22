@@ -90,7 +90,7 @@ Press *Enter* to continue.
 
 Type in the username ("mmSuiteDBUser" in the example script) that will be used to connect to your database instance on the specified SQL server, and press Enter.
 
-..note::
+.. note::
   If the database user name is left empty, Windows Authentication will be used instead of a user-based connection. (This requires to run the Central service under credentials that have access by Windows Authentication to the database).
 
 .. code-block::
@@ -125,7 +125,7 @@ An example preferences.cfg file for the Windows Authentication method should loo
 
 Restart Central and verify it’s running. If the database connection fails, the service will fail to start with the appropriate error message.
 
-Proceed to :ref:`central-ha` or :ref:`install_controllers`.
+Proceed to :ref:`central-ha` or :ref:`install-controllers`.
 
 Men&Mice Central running on Linux
 """""""""""""""""""""""""""""""""""
@@ -164,7 +164,7 @@ Restart Central and verify it’s running:
 
 If the database connection fails, the service will fail to start with the appropriate error message.
 
-Proceed to :ref:`central-ha` or :ref:`install_controllers`.
+Proceed to :ref:`central-ha` or :ref:`install-controllers`.
 
 .. _mssql-ha:
 
@@ -183,4 +183,4 @@ To use Always On Availability Groups, change the DatabaseServer value in the pre
 
   <DatabaseServer value="virtual ip/fqdn of availability group listener><,port>\<Instance name>@<Database name>" />
 
-  Proceed to :ref:`central-ha` or :ref:`install_controllers`.
+Proceed to :ref:`central-ha` or :ref:`install-controllers`.

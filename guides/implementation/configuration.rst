@@ -4,11 +4,12 @@ Configuration
 *************
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   first_login
+  first_use_wizard
+  user_management
   adding_dns
   adding_dhcp
   adding_ip_ranges
   vmware
-  console_advanced_settings

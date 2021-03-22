@@ -293,7 +293,7 @@ Root hints
 
 Allows configuration of suggested root servers for the server to use and refer to in resolving names.
 
-.. image:: ../../images/console-dns-windows-dns-options-event-root-hints.png
+.. image:: ../../images/console-dns-windows-dns-options-root-hints.png
   :width: 70%
   :align: center
 
@@ -389,7 +389,7 @@ Query Restrictions (BIND)
 
 The Query restrictions panel allows you to restrict recursive DNS queries to only certain IP Addresses or address ranges.
 
-.. image:: ../../images/console-dns-bind-options-query-restriction.png
+.. image:: ../../images/console-dns-bind-options-query-restrictions.png
   :width: 70%
   :align: center
 

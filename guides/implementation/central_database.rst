@@ -1,19 +1,16 @@
 .. _central-database:
 
+Database backend
+================
+
+The Men&Mice Suite can be used with the following databases:
+
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   central_sqlite
   central_mssql
   central_postgresql
-
-The Men&Mice Suite can be used with the following databases:
-
-* SQlite (built-in, default)
-
-* Microsoft SQL Server
-
-* PostgreSQL
 
 .. note::
   High Availability for the database is only available for MS SQL and PostgreSQL.

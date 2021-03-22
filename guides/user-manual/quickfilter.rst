@@ -72,9 +72,9 @@ To save a filter, do the following:
 
 4. The saved filter shows at the bottom of the Object list for the corresponding object type.
 
-.. sidebar::
-
-  .. image:: ../../images/console-custom-filter.png
+.. image:: ../../images/console-custom-filter.png
+  :width: 60%
+  :align: center
 
 .. note::
   You can also create filters that reside in object folders. To create a filter in a folder, start by selecting the folder before creating the filter. A filter that resides in a folders perform the search within the context of the folder.
@@ -90,9 +90,9 @@ To edit a filter, do the following:
 
 3. Make the desired changes to the filter and click OK to save the changes.
 
-.. sidebar::
-
-  .. image:: ../../images/console-edit-filter.png
+.. image:: ../../images/console-edit-filter.png
+  :width: 60%
+  :align: center
 
 Deleting a Filter
 ^^^^^^^^^^^^^^^^^

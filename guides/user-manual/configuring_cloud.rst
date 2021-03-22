@@ -48,6 +48,9 @@ Proceed with one of the Cloud providers shown below and click "Next":
 
 .. _connect-akamai:
 
+Akamai Fast DNS
+^^^^^^^^^^^^^^^
+
 Fill in the following fields required to connect to Akamai Fast DNS
 
 +---------------+-----------------------------------------------------------+
@@ -75,6 +78,9 @@ Go to :ref:`finish-cloud-config`.
 
 .. _connect-azure:
 
+Azure DNS
+^^^^^^^^^
+
 Fill in the following fields required to connect to Azure:
 
 +-----------------+-----------------------------------------------------------+
@@ -96,6 +102,9 @@ Go to :ref:`finish-cloud-config`.
 
 .. _connect-aws:
 
+Amazon Web Services
+^^^^^^^^^^^^^^^^^^^
+
 Fill in the following fields required to connect to AWS:
 
 +-------------------+-----------------------------------------------------------------------------+
@@ -116,6 +125,9 @@ Go to :ref:`finish-cloud-config`.
 
 .. _connect-openstack:
 
+Openstack
+^^^^^^^^^
+
 Fill in the following fields required to connect to OpenStack:
 
 +-----------------+-----------------------------------------------------------+
@@ -134,6 +146,9 @@ Go to :ref:`finish-cloud-config`.
 
 .. _connect-ns1:
 
+NS1
+^^^
+
 Fill in the following fields required to connect to NS1:
 
 +-------------------+-----------------------------------------------------------------------------+
@@ -151,6 +166,9 @@ Fill in the following fields required to connect to NS1:
 Go to :ref:`finish-cloud-config`.
 
 .. _connect-dyn:
+
+Dyn DNS
+^^^^^^^
 
 Fill in the following fields required to connect to Dyn:
 

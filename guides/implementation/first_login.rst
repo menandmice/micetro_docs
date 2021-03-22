@@ -2,8 +2,8 @@
 
 .. toctree::
   :maxdepth: 2
+  :hidden:
 
-  first_use_wizard
   named-checkconf_timeout
   disable_auto_zone-transfer
 
@@ -14,11 +14,11 @@ After installing and starting the required components (PostgreSQL, Men&Mice Cent
 
 The default credentials:
 
-* username: administrator
-* password: administrator
+* username: ``administrator``
+* password: ``administrator``
 
 After logging in with the default administrator credentials, the system will prompt to change the administrator password.
 
 .. image:: ../../images/first_login.png
-  :width: 30%
+  :width: 60%
   :align: center

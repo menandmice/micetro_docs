@@ -6,10 +6,36 @@ Architecture
 Overview
 ========
 
-COMPONENT ARCHITECTURE VIEW TBD.
+The Men&Mice Suite consists of several components. Below, you will find a short description on each component and a high-level architectural diagram of the Men&Mice Suite architecture.
+
+.. image:: ../../images/micetro-architecture.png
+  :width: 80%
+  :align: center
+
+.. information::
+  All communications between Men&Mice Management Console and the other Men&Mice components are encrypted.
+
+User Interfaces
+^^^^^^^^^^^^^^^
+
+The Management Console and Command Line Interface connects directly to Men&Mice Central using TCP/IP connecting to through TCP port 1231. The Men&Mice Web Interface talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central also through TCP port 1231.
+
+Middle Layer
+^^^^^^^^^^^^
+
+The middle layer is responsible for collecting and synchronizing data and handle requests from different Interfaces. Men&Mice Central has its own database to store all related data. The authoritative data is always the data source itself (i.e., the DNS Server). To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate to other services in order to get or set information—e.g., Microsoft Active Directory to authenticate users.
+
+Data Layer
+^^^^^^^^^^
+
+The Men&Mice DNS Server Controller communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
 
 Men&Mice Central
 ================
+
+.. _about-central:
+
+Men&Mice Central stores all user specific information as well as centrally stored information. One copy of Men&Mice Central needs to be installed. When a user logs into the system, they start by connecting to Men&Mice Central. Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Men&Mice IP Address Management component is installed, Men&Mice Central is responsible for management and allocation of IP Addresses. Men&Mice Central listens on TCP port 1231.
 
 In smaller installations, Men&Mice Suite's Central component can be installed on one of the DNS or DHCP servers, as it will not require much resources. More resources are needed as the managed environment gets larger. Below is a table that can be used as a guideline for choosing suitable hardware for Men&Mice Central.
 
@@ -46,6 +72,8 @@ Men&Mice Suite's Central component can also be installed on a second server that
 Men&Mice Suite's DNS Server Controller
 ========================================
 
+The Men&Mice DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Men&Mice DNS Server controller reads and writes zone data and option files, and sends commands to the DNS server. The Men&Mice DNS Server Controller listens on TCP port 1337
+
 In an Unix BIND DNS environment the Men&Mice Suite's DNS Server Controller (i.e., DNS agent) is installed on each DNS server that is to be managed.  In a Microsoft AD environment, the DNS agent can be installed on some of the DNS servers or they can all be managed agent free.  If they are to be managed agent free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen.  The DNS Server Controller must be running as a user that has necessary privileges.
 
 If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (pure meaning that all zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Men&Mice will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
@@ -62,6 +90,8 @@ Two DNS servers from each domain are added to Men&Mice Central.
 
 Men&Mice Suite's DHCP Server Controller
 =========================================
+
+The Men&Mice DHCP Server Controller is used to control the DHCP server. For ISC DHCP, a copy should be installed on each DHCP server machine. For MS DHCP, a copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connect to the DHCP service over the network. In order for this remote DHCP management to work, the DHCP Server Controller must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP Server Controller can manage several different DHCP servers. To manage the DHCP server on a Cisco router, the DHCP Server Controller can be installed on any machine. The DHCP Server Controller listens for connections from Men&Mice Central on TCP port 4151.
 
 There are a few strategies to install the Men&Mice DHCP Server Controller (i.e., DHCP agent). In a Unix ISC DHCP environment, the DHCP agent is installed on all DHCP servers that are to be managed. In a Microsoft environment, the administrator can install the DHCP agent on one server, some of the servers, or all the servers.
 If all the DHCP servers are in the same security realm (maybe in different forests but with trust between them), the DHCP agent can be installed on one server, typically the server running the Men&Mice Suite's Central component.
@@ -91,15 +121,21 @@ Men&Mice Suite User Interfaces
 .. note::
   Of the different user interfaces, multiple copies may be installed, and multiple instances can be logged in at once to manage the environments.
 
+.. _about-webapp:
+
 Web Application
 ---------------
 
 The Men&Mice Web Interface can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. It is common practice to install the Web Interface on the same server that the Men&Mice Suite's Central component is installed on.
 
+.. _about-console:
+
 Management Console
 ------------------
 
 The Men&Mice Suite's Management Console is a rich client that can be installed on as many client computers as required and is typically installed on each administrator's workstation.
+
+.. _about-cli:
 
 Command Line Interface (CLI)
 ----------------------------

@@ -98,13 +98,13 @@ Extract the Men&Mice Controller install package (as root):
 
 .. code-block:: bash
 
-  tar -xzvf mmsuite-controllers-9.4.2.linux.x64.tgz
+  tar -xzvf mmsuite-controllers-10.0.linux.x64.tgz
 
-In the newly created ``mmsuite-controllers-9.4.2.linux.x64`` directory run the installer script to install the Men&Mice Controller (as root):
+In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the installer script to install the Men&Mice Controller (as root):
 
 .. code-block:: bash
 
-  cd mmsuite-controllers-9.4.2.linux.x64 && ./install --skip-arrange
+  cd mmsuite-controllers-10.0.linux.x64 && ./install --skip-arrange
 
 Ensure the ``named-checkconf`` file is readable:
 
@@ -118,7 +118,7 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Proceed to :ref:`install-webui`.
+Proceed to :ref:`install-webapp`.
 
 Men&Mice Central running on Windows
 -----------------------------------
@@ -160,4 +160,4 @@ Men&Mice DHCP Server Controller can also manage Cisco IOS servers with DHCP supp
 
 When adding a Cisco IOS server to Men&Mice Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Men&Mice Central will look for a copy of the DHCP Server Controller on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Server Controller that is on the same network segment as the Cisco IOS server.
 
-Proceed to :ref:`install-webui`.
+Proceed to :ref:`install-webapp`.

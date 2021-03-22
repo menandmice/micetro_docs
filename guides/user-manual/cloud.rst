@@ -7,5 +7,5 @@ Cloud integration
   :maxdepth: 2
 
   cloud_integration
-  configure_cloud
+  configuring_cloud
   using_cloud

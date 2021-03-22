@@ -115,7 +115,7 @@ The history for the following objects is made available as a task (in the inspec
 
 The history dialog can be used to view past changes. By clicking on the filter icon in the header for the history dialog, additional options are made available for filtering the history.
 
-.. image:: ../../blackstar-history.png
+.. image:: ../../images/blackstar-history.png
   :width: 80%
   :align: center
 

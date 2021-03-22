@@ -16,9 +16,18 @@ Linux
 * Men&Mice Web Application: ``mmsuite-web-application-10.0.linux.x64.tgz``
 * Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
 
-.. note:: Unless noted, all commands are run as root.
+.. note::
+  Unless noted, all commands are run as root.
 
 Windows
 -------
 
-.. TBD
+`Download <download.menandmice.com>`_ the following installer packages:
+
+* Men&Mice Central: ``Men_and_Mice_Central_x64_10.0.exe``
+* Men&Mice Server Controller: ``Men_and_Mice_Controllers_x64_10.0.exe`` (To be installed on each DNS and DHCP server.)
+* Men&Mice Web Application: ``Men_and_Mice_Web_Application_x64_10.0.exe``
+* Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
+
+.. note::
+  Unless noted, all applications are run as Administrator.

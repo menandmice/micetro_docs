@@ -70,11 +70,12 @@ Save Filter/Delete Filter
 Preferences
   Opens the Options dialog box where you can make default selections for various Management Console functions.
 
-.. sidebar::
-
-  .. image:: ../../images/console-preferences-menu.png
+.. image:: ../../images/console-preferences-menu.png
+  :width: 60%
+  :align: center
 
 .. highlights::
+
   When working with a zone, the Edit menu changes and includes additional functions.
 
   Enable Record

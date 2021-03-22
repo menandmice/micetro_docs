@@ -45,7 +45,7 @@ Here are the questions asked by the installer that pertain to Men&Mice Central:
 
 * Where do you want to install the Men&Mice Central binary?
 
-Proceed to :ref:`central_database`.
+Proceed to :ref:`central-database`.
 
 Removing Men&Mice Central
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -76,7 +76,7 @@ Install Men&Mice Central on Windows
 
   When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
 
-Proceed to :ref:`central_database`.
+Proceed to :ref:`central-database`.
 
 .. _install-central-solaris:
 
@@ -91,4 +91,4 @@ Extract and run the Men&Mice Central install package:
 
 Then change into the newly-created directory and run the installer as described in the :ref:`install-central-linux` section.
 
-Proceed to :ref:`central_database`.
+Proceed to :ref:`central-database`.

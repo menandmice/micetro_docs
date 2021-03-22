@@ -115,7 +115,7 @@ Conditions and parenthesis
 
 It is possible to add parenthesis to create sub-conditions with a different operator. The report definition shown in the screenshot above can be read as follows:
 
-.. .. highlights::
+.. highlights::
 
 	"Last seen must be less than one month ago, lost must be true and either claimed or usage must be true".
 
@@ -306,7 +306,7 @@ Both the report definition properties, the filtering criteria for the report and
 
 2. A dialog is presented which allows for specifying the properties for the report, along with editing the filtering criteria.
 
-.. image:: ../../blackstar-reports-edit.png
+.. image:: ../../images/blackstar-reports-edit.png
   :width: 70%
   :align: center
 
@@ -357,27 +357,27 @@ There are 24 reports definitions in the list under Reports (not counting user de
 |                                                                       | Range creation/deletion                                               |
 |                                                                       | Zone creation/deletion                                                |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Access[*]_                                                            |                                                                       |
+| Access[1]_                                                            |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Address space merge conflicts[*]_                                     |                                                                       |
+| Address space merge conflicts[1]_                                     |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | DHCP lease activity                                                   |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Discovered hardware addresses with multiple addresses[*]_             |                                                                       |
+| Discovered hardware addresses with multiple addresses[1]_             |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | DNS records                                                           | Address records                                                       |
 |                                                                       | Multi-labeled hosts                                                   |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | DNS zones                                                             | Enabled DNS zones of type slave                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Host discovery[*]_                                                    | IP reconciliation                                                     |
+| Host discovery[1]_                                                    | IP reconciliation                                                     |
 |                                                                       | Discovered devices                                                    |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | IP ranges                                                             |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | IP addresses                                                          |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Lease hardware address with multiple IP addresses[*]_                 |                                                                       |
+| Lease hardware address with multiple IP addresses[1]_                 |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Men&Mice Suite messages                                               |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+

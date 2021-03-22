@@ -5,8 +5,6 @@ Maintenance
 
 The Men&Mice Suite contains several options for cleaning up the network space. To access the network maintenance functions, select Tools, Maintenance and then the maintenance operation you want to perform.
 
-.. contents::
-
 Find Orphaned PTR Records
 -------------------------
 
@@ -21,7 +19,7 @@ To find and remove orphaned PTR records, do the following:
   .. note::
     Due to the fact that the result could be a large number of records, there is now a limit of 1000 records being shown.
 
-.. image:: ../../images/admin-oprhaned-ptr-records.png
+.. image:: ../../images/admin-orphaned-ptr-records.png
   :width: 70%
   :align: center
 
@@ -41,7 +39,7 @@ To see and remove concurrent DHCP leases, do the following:
   .. note::
     Finding all concurrent leases might take a while in large environments.
 
-.. image:: ../../images/admin-concurrent-leases.png
+.. image:: ../../images/admin-concurrent-records.png
   :width: 70%
   :align: center
 

@@ -3,8 +3,9 @@
 Access control
 ==============
 
-..contents::
-  :depth: 2
+.. toctree::
+  :maxdepth: 2
+  :hidden:
 
 The Men&Mice Suite access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.
 
@@ -259,7 +260,7 @@ DHCP Server
   "View DHCP server history", "Access to viewing the history for the DHCP server"
   "Read DHCP Server options", "Access to view server options"
   "Read/write DHCP Server options", "Access to read and write server options"
-  "Add a scope, "Access to add a DHCP scope"
+  "Add a scope", "Access to add a DHCP scope"
   "Edit DHCP server properties", "Access to edit properties for the DHCP Server"
   "Edit reservations", "Access to edit reservations in DHCP scopes"
   "Add a group", "Access to add DHCP groups (ISC DHCP only)"
@@ -316,7 +317,7 @@ Edit access controls
 
 4. When you return to the main dialog box, the user/group is highlighted in the list of users and groups.
 
-.. image:: ../../images/admin-access-control-console.png
+.. image:: ../../images/admin-access-controls-console.png
   :width: 70%
   :align: center
 
