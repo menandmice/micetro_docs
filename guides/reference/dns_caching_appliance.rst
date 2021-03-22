@@ -55,18 +55,18 @@ VMWare Fusion/Workstation
 
 1. First, download the OVA file (http://appliance.is/caching.ova) or use http://download.menandmice.com/Appliance/ for a specific version
 
-2. To setup the Virtual Appliance in VMWare Fusion, either double click the OVA file, or navigate to File and select import.
+2. To setup the Virtual Appliance in VMWare Fusion, either double click the OVA file, or navigate to :guilabel:`File` and select :guilabel:`Import`.
 
-3. A dialog box appears that will allow you to specify the location of the OVA file. Confirm by clicking the 'Open' button.
+3. A dialog box appears that will allow you to specify the location of the OVA file. Confirm by clicking the :guilabel:`Open` button.
 
-4. After specifying the name of the new virtual appliance, clicking 'Import' will finalize the importing of the virtual appliance.
+4. After specifying the name of the new virtual appliance, clicking :guilabel:`Import` will finalize the importing of the virtual appliance.
 
 5. The Virtual Appliance is now ready to be started up.
 
 VMWare ESX/ESXi
 """""""""""""""
 
-The Virtual Appliance can be imported through a template on the ESX server. As seen in figure 1, the 'Deploy OVF template' is selected, and in figure 2, the deployment URL is pasted in. The next steps in the importing wizard should be self-explanatory.
+The Virtual Appliance can be imported through a template on the ESX server. As seen in figure 1, the :guilabel:`Deploy OVF template` is selected, and in figure 2, the deployment URL is pasted in. The next steps in the importing wizard should be self-explanatory.
 
 .. figure:: ../../images/menandmice-caching-appliance-1.png
   :width: 60%
@@ -85,13 +85,13 @@ VirtualBox
 
 1. First, download the OVA file (http://appliance.is/caching.ova) or use http://download.menandmice.com/Appliance/ for a specific version
 
-2. In the VirtualBox Manager open the File menu and select Import Appliance.
+2. In the VirtualBox Manager open the :guilabel:`File menu` and select :guilabel:`Import Appliance`.
 
-3. Click on the Open appliance button and select the Men&Mice Virtual appliance OVA file and click on the Continue button (see figure 3).
+3. Click on the :guilabel:`Open appliance` button and select the Men&Mice Virtual appliance OVA file and click on the :guilabel:`Continue` button (see figure 3).
 
 4. The next dialog page shows an overview of the settings. It's recommended to select the option to re-initialize the MAC addresses of the two virtual interfaces eth0 (Management Interface) and eth1 (Service Interface) as shown in figure 4.
 
-Finally press the File... - Import Virtual Appliance button to load the Men&Mice virtual machine into your the VirtualBox environment.
+Finally press the :guilabel:`File --> Import Virtual Appliance` button to load the Men&Mice virtual machine into your the VirtualBox environment.
 
 .. figure:: ../../images/menandmice-caching-appliance-3.png
   :width: 75%
@@ -119,19 +119,19 @@ Once the network information has been entered, you can add the appliance to the 
 
 Follow these instructions to configure the network settings
 
-1. Access the Appliance menu by pressing the Escape button and then press the Enter button on the keyboard.
+1. Access the *Appliance* menu by pressing the Escape button and then press the Enter button on the keyboard.
 
-2. From the main menu, select 1. Network.
+2. From the main menu, select :guilabel:`1. Network`.
 
-3. From the menu, select 1.1IP Address.
+3. From the menu, select :guilabel:`1.1IP Address`.
 
 4. Enter the IPv4 address for the Appliance.
 
-5. From the menu, select 1.2 Netmask.
+5. From the menu, select :guilabel:`1.2 Netmask`.
 
 6. Enter the network mask using a CIDR notation.
 
-7. From the menu, select 1.3 Gateway.
+7. From the menu, select :guilabel:`1.3 Gateway`.
 
 8. Enter the IP Address of the gateway for the network.
 

@@ -3,7 +3,7 @@
 IP Address Ranges and devices
 *****************************
 
-Once DHCP servers have been added to the Men&Mice Suite, all the scopes from the DHCP servers will be visible in the tool as scopes in the IP Address Ranges list. The organization might also have a spreadsheet or a database with other IP address range (subnet) allocations and maybe details on individual devices (IP addresses). This data can be manually entered in Men&Mice or more efficiently, imported by using the CLI.
+Once DHCP servers have been added to the Men&Mice Suite, all the scopes from the DHCP servers will be visible in the tool as scopes in the IP Address Ranges list. The organization might also have a spreadsheet or a database with other IP address range (subnet) allocations and maybe details on individual devices (IP addresses). This data can be manually entered in Men&Mice or more efficiently, imported in bulk.
 
 Importing the IP Address Ranges and Device Properties Using the CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,6 +24,7 @@ Subnets (IP Address Ranges)
 
 network_address
   possible format is "1.2.3.0", "1.2.3.0/24" or "1.2.3.4-1.2.3.6"
+
 subnet_mask
   if the network_address includes the mask (such as "1.2.3.0/24") or is not on bit boundaries (such as "1.2.3.4-1.2.3.6") then the subnet_mask can be empty
 is_subnet:is
@@ -45,16 +46,15 @@ address
 custom_property_n
   One entry per custom property maintained for IP addresses in the spreadsheet
 
-The administrator will import the subnets and devices separately.  First he will import the subnets.  In this example the company has "Title, Description and Status" custom properties for subnets (IP Address Ranges) and "Description" and "Device Name" for IP Addresses.
+The administrator will import the subnets and devices separately. First he will import the subnets. In this example the company has "Title, Description and Status" custom properties for subnets (IP Address Ranges) and "Description" and "Device Name" for IP Addresses.
 
-The "Define Custom Properties" window, which appears when "Define Custom Properties" is selected from the "Tools" menu:
+The "Define Custom Properties" window, which appears when :guilabel:`Define Custom Properties` is selected from the :guilabel:`Tools" menu`.
 
 .. image:: ../../images/custom-properties-console-old.png
   :width: 50%
   :align: center
 
-After the custom properties have been defined for IP Address Ranges and IP Addresses
-The file to import the subnets will look like the following in the csv format (note that the first line is needed in the file):
+After the custom properties have been defined for IP Address Ranges and IP Addresses the file to import the subnets will look like the following in the csv format (note that the first line is needed in the file):
 
 .. code-block::
   :linenos:

@@ -21,14 +21,13 @@ Below is a list of the components that are installed and a description of their 
   :widths: 20, 80
 
   "Men&Mice Central",	"The main Men&Mice component. It also serves as the meta-data storage engine, containing things such as zone history logs, user accounts and permissions, etc. You must have one copy on some server somewhere. It does not need to be installed on a DNS server."
-  "Men&Mice DNS Server Controller,	"The DNS server agent. It usually sits on each DNS server machine and manages the DNS service on your behalf. In the case of cloud DNS services providers there should be a DNS server controller installed on the same machine as the central service."
-  "Men&Mice DHCP Server Controller,	"The DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP Server Controller, on any machine in the network) and manages the DHCP service on your behalf."
-  "Men&Mice Web Application",	"In version 9.1 of the Men&Mice Suite, a new Web Application for the Men&Mice Suite was introduced. The Web Application includes most day-to-day actions needed for DDI management.
-For detailed information regarding the Men&Mice Web Application see the Men and Mice Web Application Guide."
+  "Men&Mice DNS Server Controller",	"The DNS server agent. It usually sits on each DNS server machine and manages the DNS service on your behalf. In the case of cloud DNS services providers there should be a DNS server controller installed on the same machine as the central service."
+  "Men&Mice DHCP Server Controller",	"The DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP Server Controller, on any machine in the network) and manages the DHCP service on your behalf."
+  "Men&Mice Web Application",	"In version 9.1 of the Men&Mice Suite, a new Web Application for the Men&Mice Suite was introduced. The Web Application includes most day-to-day actions needed for DDI management. For detailed information regarding the Men&Mice Web Application see the Men and Mice Web Application Guide."
   "Men&Mice Management Console", " A thick client and one of the main user interfaces of the Men&Mice Suite. You can install multiple copies, wherever it’s needed. For detailed information regarding the Men&Mice Management Console see the documentation for the Management Console."
   "Azure SQL Server", "The database backend for the Men&Mice Central. The Men&Mice Suite will preform all the necessary setup for the database to be ready for use."
 
-.. information::
+.. important::
   The Azure Marketplace offering comes with 60 day trial keys for all components of the Men&Mice Suite. If you would like to extend your trial or buy permanent license keys please contact sales@menandmice.com
 
 Getting started
@@ -93,7 +92,7 @@ The following describes our recommendations regarding virtual machine size.
   :widths: 10, 10, 20, 10
 
   "< 100",	"< 5000",	"< 1000",	"D2s_v3"
-  "< 1000",	"< 50000",	"< 10000"	"D4s_v3"
+  "< 1000",	"< 50000",	"< 10000",	"D4s_v3"
   "Tens of thousands",	"Millions",	"Hundreds of thousands",	"D8s_v3"
 
 There is the option to use an existing storage account if customers have a centralized storage account used for VM diagnostics.
@@ -165,7 +164,7 @@ The credentials here require membership in Administrators, or equivalent, on the
 
 **Service Account**
 
-To automatically detect the DNS/DHCP servers on your network the Men&Mice DNS/DHCP server controllers are required to be run under managed service accounts. For more information see: https://docs.menandmice.com/pages/viewpage.action?pageId=13205730
+To automatically detect the DNS/DHCP servers on your network the Men&Mice DNS/DHCP server controllers are required to be run under managed service accounts. For more information see :ref:`setup-msa`.
 
 After deployment
 ----------------

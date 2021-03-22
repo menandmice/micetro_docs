@@ -9,7 +9,7 @@ Hardware
 --------
 
 .. note::
-  The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to the :ref:`Implementation overview <architecture-overview>` for details.
+  The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture-overview` for details.
 
 Operating systems
 -----------------

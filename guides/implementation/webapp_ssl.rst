@@ -72,7 +72,7 @@ Configuring SSL Certificate
 
 Open the IIS (Internet Information Services) Manager
 
-Select the Web Server node in the left sidebar, under "Start Page", and double click on Server Certificates  in the middle pane
+Select the :guilabel:`Web Server node` in the left sidebar, under "Start Page", and double click on :guilabel:`Server Certificates` in the middle pane
 
 .. image:: ../../images/iis-ssl-step1.png
   :width: 90%
@@ -80,13 +80,13 @@ Select the Web Server node in the left sidebar, under "Start Page", and double c
 
 Choose one of the actions in the actions sidebar on the left to import an existing .pfx SSL certificate, or create a self-signed certificate. If your certificate is in a different format than .pfx, please refer to documentation and/or tools that certificate authorities typically provide to convert their certificates to Microsoft's .pfx format
 
-Select your website under Sites in the left sidebar (usually Default Web Site) , and click Bindings... in the Actions sidebar on the right
+Select your website under *Sites* in the left sidebar (usually Default Web Site) , and click :guilabel:`Bindings...` in the **Actions** sidebar on the right.
 
 .. image:: ../../images/iis-ssl-step2.png
   :width: 90%
   :align: center
 
-In the Site Bindings dialog that opened, click Add, select https from the Type menu, and then select the certificate added in step 3 in the SSL certificate picklist. Then click OK
+In the *Site Bindings* dialog that opened, click :guilabel:`Add`, select **https** from the *Type* menu, and then select the certificate added in step 3 in the SSL certificate picklist. Then click :guilabel:`OK`.
 
 .. image:: ../../images/iis-ssl-step3.png
   :width: 90%
@@ -115,41 +115,41 @@ Add the following rule xml to the rewrite > rules section of the xml, at the top
       <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" appendQueryString="true" redirectType="Permanent" />
   </rule>
 
-In the IIS manager, select the Default Web site, right click, and select Manage Website > Restart to make the changes to the web.config take effect.
+In the IIS manager, select the :guilabel:`Default Web site`, right click, and select :guilabel:`Manage Website --> Restart` to make the changes to the web.config take effect.
 
 .. image:: ../../images/iis-ssl-step4.png
   :width: 90%
   :align: center
 
-With Default Web Site selected in the left sidebar, double click on URL Rewrite in the middle pane. Verify the rule HTTP to HTTPS redirect is at the top of the rewrite rules
+With *Default Web Site* selected in the left sidebar, double click on :guilabel:`URL Rewrite` in the middle pane. Verify the rule *HTTP to HTTPS redirect* is at the top of the rewrite rules
 
 Using the IIS manager
 """""""""""""""""""""
 
-With Default Web Site selected in the left sidebar, double click on URL Rewrite in the middle pane
+With **Default Web Site** selected in the left sidebar, double click on :guilabel:`URL Rewrite` in the middle pane
 
-If there's a HTTP to HTTPS redirect rule already in place at the top of the list of URL rewrite rules, nothing needs to be done
+If there's a *HTTP to HTTPS redirect* rule already in place at the top of the list of URL rewrite rules, nothing needs to be done.
 
-Click Add Rules in the Actions pane on the right, and click OK to create a blank inbound rule
+Click :guilabel:`Add Rules` in the **Actions** pane on the right, and click OK to create a blank inbound rule.
 
-In the name field enter HTTP to HTTPS redirect
+In the name field enter *HTTP to HTTPS redirect*.
 
 In Pattern field enter ``(.*)``
 
-Under conditions click Add and enter the following condition
+Under conditions click :guilabel:`Add` and enter the following condition:
 
 .. image:: ../../images/iis-ssl-step5.png
   :width: 90%
   :align: center
 
-In the Action pane on the bottom, choose Redirect from the Action type dropdown, and set redirect URL to https://{HTTP_HOST}/{R:1} and the redirect type to Permanent (301)
+In the **Action** pane on the bottom, choose *Redirect* from the :guilabel:`Action type` dropdown, and set redirect URL to ``https://{HTTP_HOST}/{R:1}`` and the redirect type to *Permanent (301)*.
 
 .. image:: ../../images/iis-ssl-step6.png
   :width: 90%
   :align: center
 
-Click Apply in the Actions pane on the left. And click Back to rules
+Click :guilabel:`Apply` in the **Actions** pane on the left. And click :guilabel:`Back to rules`.
 
-Move the new HTTP to HTTPS redirect rule to the top of the rules using the Move Up button in the action pane on the right
+Move the new *HTTP to HTTPS redirect* rule to the top of the rules using the :guilabel:`Move Up` button in the action pane on the right.
 
 Proceed to :ref:`configuration`.

@@ -28,58 +28,63 @@ To manage sites and subnets, you must first add the AD forest.
 .. note::
   You can manage sites and subnets from multiple forests.
 
-1. In the Object Browser, right-click on the AD Sites object category.
+1. In the Object Browser, right-click on the :guilabel:`AD Sites` object category.
 
-2. From the shortcut menu, select Add AD Forest. A dialog box displays.
+2. From the shortcut menu, select :guilabel:`Add AD Forest`. A dialog box displays.
 
 .. image:: ../../images/console-ad-add-forest.png
   :width: 60%
   :align: center
 
-3. Use same Global Catalog as the Men and Mice Central server. If checked, the Men&Mice Suite will use the same Global Catalog server as the Men and Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server in the Global Catalog Server field.
+Use same Global Catalog as the Men and Mice Central server.
+  If checked, the Men&Mice Suite will use the same Global Catalog server as the Men and Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server in the Global Catalog Server field.
 
-4. Global Catalog Server. If you want to specify a non-default Global Catalog server, enter the server name in this field. To enable this field, you must first unselect the Use same Global Catalog as the Men and Mice Central server checkbox.
+Global Catalog Server.
+  If you want to specify a non-default Global Catalog server, enter the server name in this field. To enable this field, you must first unselect the :guilabel:`Use same Global Catalog as the Men and Mice Central server` checkbox.
 
-5. Use the same credentials as the Men and Mice Central server. If checked, the Men&Mice Suite uses the same credentials as the Men and Mice Central server when accessing the site information.
+Use the same credentials as the Men and Mice Central server.
+  If checked, the Men&Mice Suite uses the same credentials as the Men and Mice Central server when accessing the site information.
 
-6. User and Password. If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. To enable these fields, you must first unselect the Use the same credentials as the Men and Mice Central server checkbox.
+User and Password.
+  If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. To enable these fields, you must first unselect the :guilabel:`Use the same credentials as the Men and Mice Central server` checkbox.
 
-7. Set as read only. If checked, the Men&Mice Suite will only read from the Active Directory but not make any modifications.
+Set as read only.
+  If checked, the Men&Mice Suite will only read from the Active Directory but not make any modifications.
 
-8. Click OK to save the changes. The forest is added and the sites belonging to the forest are displayed.
+3. Click :guilabel:`OK` to save the changes. The forest is added and the sites belonging to the forest are displayed.
 
 Changing AD Forest Properties
 -----------------------------
 
 To change the properties for an AD Forest, do the following:
 
-1. In the Object Browser, expand the AD Sites object category.
+1. In the Object Browser, expand the :guilabel:`AD Sites` object category.
 
-2. Right-click the Forest you want to change, and select Properties.
+2. Right-click the Forest you want to change, and select :guilabel:`Properties`.
 
 3. Enter the required information in the dialog box.
 
-4. Click OK to save your changes.
+4. Click :guilabel:`OK` to save your changes.
 
 Removing an AD Forest
 ---------------------
 
 To remove an AD Forest from the Men&Mice Suite:
 
-1. In the Object Browser, expand the AD Sites object category.
+1. In the Object Browser, expand the :guilabel:`AD Sites` object category.
 
-2. Right-click the Forest you want to change, and select Remove AD Forest(s).
+2. Right-click the Forest you want to change, and select :guilabel:`Remove AD Forest(s)``.
 
-3. Click OK in the confirmation box to remove the Forest.
+3. Click :guilabel:`OK` in the confirmation box to remove the Forest.
 
 Reloading the Sites in an AD Forest
 -----------------------------------
 
 The list of sites in an AD Forest is reloaded on a regular basis. To manually reload the list of sites:
 
-1. In the Object Browser, expand the AD Sites object category.
+1. In the Object Browser, expand the :guilabel:`AD Sites` object category.
 
-2. Right-click the Forest you want to reload, and select Reload AD Sites.
+2. Right-click the Forest you want to reload, and select :guilabel:`Reload AD Sites`.
 
 Managing Subnets in a Site
 --------------------------
@@ -88,7 +93,7 @@ Managing Subnets in a Site
 
 * To add a subnet to a site, just drag the subnet from the list of subnets in the Manager window to the site. The subnet is added to the site in AD. When a subnet is placed in a site, all subnets contained within that subnet are placed in the site as well. It is not possible to assign these subnets to a different site.
 
-* To remove a subnet from a site, right-click the subnet and choose 'Remove from AD Site'. The subnet is removed from the site in AD. When a subnet is removed from a site, all subnets contained within that subnet are removed from the site as well.
+* To remove a subnet from a site, right-click the subnet and choose :guilabel:`Remove from AD Site`. The subnet is removed from the site in AD. When a subnet is removed from a site, all subnets contained within that subnet are removed from the site as well.
 
 * To move a subnet to a different site, drag the subnet to the new site. The subnet is moved to the site in AD.
 

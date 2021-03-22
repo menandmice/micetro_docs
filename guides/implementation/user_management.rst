@@ -30,7 +30,7 @@ It is recommended you use these roles as only they can receive default access to
 
 To allow a custom user or group full access to a new object, include them as a member in the corresponding default role.
 
-More details on access controls can be found in the Men&Mice user documentation: https://docs.menandmice.com/current/Access
+More details on access controls can be found in :ref:`access-control`.
 
 Adding Users and Groups
 =======================
@@ -45,7 +45,7 @@ It is possible to specify the roles of users either by using Active Directory gr
 
 In the example above members of the AD group DOMAIN2\MM-Administrators will have access to the all the modules in the tool and will be able to login through all the clients except the CLI. In addition to this the DOMAIN2\MM-Administrators group can not use the report or task view in the Web UI.
 
-After specifying access to the tool for all groups it is best to specify access to new objects for these groups. This will be the default access for objects that are either created in Men&Mice (such as an IP address range) or externally (such as a new DNS zone created outside of Men&Mice). The new object access is specified by selecting the "Administration->System Settings" menu item, pressing the "New Objects Access" button in the System Settings window and setting access for the different object types.
+After specifying access to the tool for all groups it is best to specify access to new objects for these groups. This will be the default access for objects that are either created in Men&Mice (such as an IP address range) or externally (such as a new DNS zone created outside of Men&Mice). The new object access is specified by selecting the :guilabel:`Administration --> System Settings` menu item, pressing the :guilabel:`New Objects Access` button in the *System Settings* window and setting access for the different object types.
 
 After the new object access has been defined the administrator can configure the access on existing objects. One thing to keep in mind is that users/groups must first have access to a DNS server in order to have access to a zone on the server. This means that the administrator must first grant the group "List (or view)" access to the DNS server and then "List (or view)" on a zone stored on the server to have a read-only access to the zone.
 

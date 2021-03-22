@@ -3,7 +3,7 @@
 Adding DNS servers
 ==================
 
-After installation, the Men&Mice Suite contains no data about DNS servers. These need to be added through the Web Application.
+After installation, the Men&Mice Suite contains no data about DNS servers. These need to be added through the Management Console.
 
 DNS servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
 
@@ -13,7 +13,9 @@ DNS servers require :ref:`install-controllers` and need to be added using their 
 To add a new DNS server the administrator will select :guilabel:`File --> New --> DNS Server`.
 
 1. Log in to the Web Application
+
 2. Select the :guilabel:`Admin` tab on the top of the screen
+
 3. Click :guilabel:`Add DNS server` in the interface
 
 .. image:: ../../images/add-dns.png
@@ -21,7 +23,9 @@ To add a new DNS server the administrator will select :guilabel:`File --> New --
   :align: center
 
 4. The *Add DNS server* modal will display.
+
 5. Fill in the server’s FQDN. Optionally, you can specify its IP address (IPv4 or IPv6).
+
 6. Select the server type from the dropdown.
 
 .. image:: ../../images/add-dns-modal.png

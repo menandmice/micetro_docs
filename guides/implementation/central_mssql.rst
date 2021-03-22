@@ -12,7 +12,9 @@ Setting up the Database
 
 Micetro requires that a blank database is created on the database server, with the collation SQL_Latin1_General_CP1_CS_AS, and a login (Windows or SQL server authenticated) that has db_owner access to that database and an effective default schema of mmCentral.
 
-The attached CreateDatabase.sql is a suggestion for the database and database server setup.  Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
+The attached CreateDatabase.sql is a suggestion for the database and database server setup. Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
+
+.. THERE IS NO SCRIPT ATTACHED HERE.
 
 Before you run the script please go through the script and change the necessary entries accordingly. This includes path strings (default C:/Data) and very important also the password, which is set by default to "1234" in the script!
 

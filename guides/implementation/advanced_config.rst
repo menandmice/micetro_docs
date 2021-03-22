@@ -8,4 +8,5 @@ Advanced configuration
 
   console_advanced_settings
   psql_ha
+  ha_tweaks
   xdns_redundancy_groups

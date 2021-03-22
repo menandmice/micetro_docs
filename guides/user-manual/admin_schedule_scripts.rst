@@ -7,23 +7,24 @@ The administrator can configure the system to run scripts in a schedule – e.g.
 
 To configure this option, do the following:
 
-1. From the menu bar, select Tools, Scheduled Scripts. The Scheduled Scripts dialog box displays. Any already defined scripts are displayed.
+1. From the menu bar, select :guilabel:`Tools --> Scheduled Scripts`. The *Scheduled Scripts* dialog box displays. Any already defined scripts are displayed.
 
 .. image:: ../../images/admin-scheduled-script-list.png
   :width: 75%
   :align: center
 
-2. To add a new script, click the Add button. The Schedule Script dialog box displays.
+2. To add a new script, click the :guilabel:`Add` button. The *Schedule Script* dialog box displays.
 
 .. image:: ../../images/admin-add-scheduled-script.png
   :width: 60%
   :align: center
 
-3. Script name. In the applicable Script name field, type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as the Men&Mice Central database file (mmsuite.db); however, if the script is stored in a different location, the path for the script must be entered.
+Script name.
+  In the applicable Script name field, type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as the Men&Mice Central database file (mmsuite.db); however, if the script is stored in a different location, the path for the script must be entered.
 
-  Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb.
+Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb.
 
-  Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
+Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
 
 It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access the Men&Mice Suite without having to enter a user name and password in the script itself.
 
@@ -32,7 +33,7 @@ To enable this feature, create a user named ScriptRunner. This user must use the
 .. note::
   This method only works if the script scheduler invokes the script. When running the script, the Men&Mice Suite uses a temporary password that changes every time the script runs.
 
-4. Example 1: The following example shows how the command line interface can be invoked by the scheduler to execute a backup. This statement can be entered directly into the Script name field:
+Example 1: The following example shows how the command line interface can be invoked by the scheduler to execute a backup. This statement can be entered directly into the Script name field:
 
 .. code-block::
   :linenos:
@@ -41,7 +42,7 @@ To enable this feature, create a user named ScriptRunner. This user must use the
 
 Example 2: The following Visual Basic script checks which users are logged in and writes the list of logged in users to the file logger.txt. To invoke the script you would enter the following statement into the Script name field:
 
-.. code-block:: 
+.. code-block::
   :linenos:
 
   cscript /B scripts\test.vbs $u $p
@@ -82,12 +83,16 @@ Example 2: The following Visual Basic script checks which users are logged in an
   set objShell = nothing
   WScript.Quit
 
-5. Enabled. Click the checkbox to enable the scheduling process for the script. Likewise, at any time if you wish to disable the script, return to this dialog box and uncheck this option.
+Enabled.
+  Click the checkbox to enable the scheduling process for the script. Likewise, at any time if you wish to disable the script, return to this dialog box and uncheck this option.
 
-6. Run on. Either type the date the script should run, or click the drop-down list field and select the date from the calendar.
+Run on.
+  Either type the date the script should run, or click the drop-down list field and select the date from the calendar.
 
-7. At. Type or use the up/down arrows to select the time.
+At.
+  Type or use the up/down arrows to select the time.
 
-8. Repeat every. If this script should repeat at a designed frequency, click in the checkbox. Then, in the next two fields, select the interval – e.g., 1 week, 1 month, etc.
+Repeat every.
+  If this script should repeat at a designed frequency, click in the checkbox. Then, in the next two fields, select the interval – e.g., 1 week, 1 month, etc.
 
-9. When all selections/entries are made, click OK.
+3. When all selections/entries are made, click :guilabel:`OK`.

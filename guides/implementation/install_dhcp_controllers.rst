@@ -17,7 +17,7 @@ In case it can't install the service it will print out hints and further informa
 
 If the machine has multiple services installed, like ISC DHCP and ISC BIND DNS you want to specify explicitly the Men&Mice Controllers that should be installed.
 
-To get the list of available controllers/parameters just run the installer script with the --help parameter:
+To get the list of available controllers/parameters just run the installer script with the ``--help`` parameter:
 
   .. code-block:: bash
 
@@ -40,10 +40,10 @@ Multiple controllers can be specified. If you have for instance both ISC Kea and
 
   ./install --kea-dhcp-controller --isc-dhcp-controller
 
-.. information::
+.. note::
   If you have only a single service like BIND or Unbound installed we recommend to run the installer without parameter. It will then use the --auto parameter and figure out the service automatically.
 
-Quiet/unattended installation is possible with the --quiet parameter (no output at all):
+Quiet/unattended installation is possible with the ``--quiet`` parameter (no output at all):
 
 .. code-block:: bash
 
@@ -124,7 +124,7 @@ Men&Mice Central running on Windows
 -----------------------------------
 
 Running Men&Mice DHCP Server Controller under a privileged user account / Server type: Microsoft Agent-Free
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Normally, Men&Mice DHCP Server Controller is installed on one host in an Active Directory forest, or one copy per site. That installation can then manage all MS DHCP servers in the forest, or in the site, using Microsoft's own DHCP management API. In order for this to work, the service needs to run as a user that is a member of the Active Directory DHCP Administrators group.
 

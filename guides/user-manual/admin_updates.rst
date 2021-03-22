@@ -1,3 +1,3 @@
 .. _admin-updates:
 
-.. include:: ../../implementation/updates.rst 
+.. include:: ../../implementation/updates.rst

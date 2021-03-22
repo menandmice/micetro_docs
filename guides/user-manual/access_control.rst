@@ -41,7 +41,7 @@ Each administrator role also receives default access to its corresponding module
 
 * User Administrators. Full access to User and Group objects.
 
-It is recommended that our clients use these Roles. These roles are the only roles that can receive default access to new items. User-defined Roles do not receive any access information for new objects and are considered to have "denied" access. To allow a User or a Group to receive default full access to a new object, include the User or Group as a member in the corresponding Built-in Role. If you need to reduce this particular User's access, refer to the section below titled, " Overriding Access Settings ."
+It is recommended that our clients use these Roles. These roles are the only roles that can receive default access to new items. User-defined Roles do not receive any access information for new objects and are considered to have "denied" access. To allow a User or a Group to receive default full access to a new object, include the User or Group as a member in the corresponding Built-in Role. If you need to reduce this particular User's access, refer to :ref:`access-overrde` section below.
 
 When it's mentioned that a User or Group has Full access to an object we mean that the User or Group has all known Access Flags for the object set to Allow.
 
@@ -95,6 +95,8 @@ For every DNS Zone created, the zone will have these flags set to Allow for the 
   "Edit other records", 1, 0
   "Edit zone properties", 1, 0
 
+.. _access-override:
+
 Overriding Access Settings
 --------------------------
 
@@ -132,16 +134,16 @@ New Objects
 
 When a User creates a new object in the Men&Mice Suite, the object is afforded a certain default access based on the initial access settings for the object type. To define initial access settings for different object types, do the following:
 
-1. From the menu bar, select Tools, Initial Access For.
+1. From the menu bar, select :guilabel:`Tools --> Initial Access For`.
 
 2. Select the object type for which you want to set the initial access. The Access Control dialog box displays.
 
-3. Set the desired access for new objects and click OK.
+3. Set the desired access for new objects and click :guilabel:`OK`.
 
 Edit Access Flag
 ----------------
 
-Each object type has an Access Flag named Edit Access. This flag is special in that it directs a User, Group's or Role's access to the object's access information. In other words, if a User has this flag set on an object, he may edit the Access Flags for the object. This means that the User could remove a different User or Group from the object completely. He could even remove the User that created the object. In light of this, the Edit Access flag should be treated with care.
+Each object type has an Access Flag named *Edit Access*. This flag is special in that it directs a User, Group's or Role's access to the object's access information. In other words, if a User has this flag set on an object, he may edit the Access Flags for the object. This means that the User could remove a different User or Group from the object completely. He could even remove the User that created the object. In light of this, the Edit Access flag should be treated with care.
 
 Access for Built-in groups is impossible to change. However, it would be possible to shut out all Users in the Men&Mice Suite from a certain object by simply editing access for each User directly. You could even shut yourself out. The Administrator User will always have full access to every object, so if such situations arise, the Administrator User should be used to set things straight.
 
@@ -298,7 +300,7 @@ Access Control Dialog Box
 
 Through the Access Control module, you select groups/users for which you want to manage permissions.
 
-The Access Control dialog box is used to define access to individual objects in the system. To define access for an object, right-click the object and choose Access from the popup menu.
+The Access Control dialog box is used to define access to individual objects in the system. To define access for an object, right-click the object and choose :guilabel:`Access` from the popup menu.
 
 To define access for individual components of the Men&Mice suite, select Tools, Global Access. The Access Control for Men and Mice Suite dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.
 
@@ -313,7 +315,7 @@ Edit access controls
 
 2. Highlight the user, group and/or role for which you want to assign permissions.
 
-3. Click the Select button.
+3. Click the :guilabel:`Select` button.
 
 4. When you return to the main dialog box, the user/group is highlighted in the list of users and groups.
 
@@ -330,7 +332,7 @@ Edit access controls
   .. note::
     It is not necessary to select Deny unless you want to ensure that a user/group/role does not have permission to a specific object. However, if you do not specify the permission for an individual user, but the group(s) or role(s) to which the user belong does Allow access to that object, the user (by default) also has access.
 
-6. When all selections are made, click OK. The dialog box closes.
+6. When all selections are made, click :guilabel:`OK`. The dialog box closes.
 
 7. Repeat the above for any additional groups/users.
 
@@ -342,4 +344,4 @@ Through this function, you specify access privileges that should be set for obje
 .. information::
   The access control dialog box for IP Address Ranges and Scopes contains a checkbox, 'IP Address Ranges/Scopes inherit access by default'. If this checkbox is checked, a new range or scope will inherit all access bits from its parent. For more information on inherited access, refer to  IP Address Management—Range Access.
 
-From the menu bar, select Tools, Initial Access For, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to  Administration Functions—Global Access  for details on working with this dialog box.
+From the menu bar, select :guilabel:`Tools --> Initial Access For`, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to :ref:`global-access` for details on working with this dialog box.

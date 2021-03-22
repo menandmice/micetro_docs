@@ -10,6 +10,7 @@ Men&Mice DNS Server Controller is the DNS server agent. It sits on each DNS serv
 
 .. note::
   The DNS Server Controllers need to be ran as the same user as BIND. (By default: ``named``.)
+
   If your environment BIND is running as a different user, or files are updated, make sure that the ``mmremote`` service is ran as the same user and has sufficient access to files and directories.
 
 By default, when executed the controller installer tries to figure out the installed service (e.g. BIND) automatically and will try to install it without further user input.
@@ -276,8 +277,8 @@ Normally, Men&Mice DNS Server Controller is installed on one host in an Active D
 To configure Men&Mice DNS Server Controller to access DNS servers on remote computers, do the following:
 
  1. Start the Windows 'Services' program and open the properties dialog box for Men&Mice DNS Server Controller.
- 2. Click the Log On tab. The Local System account radio button is most likely selected.
- 3. Click the This account radio button and enter the name and password of a Windows user that is a member of the Administrators group.
+ 2. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
+ 3. Click the :guilabel:`This account` radio button and enter the name and password of a Windows user that is a member of the Administrators group.
  4. Close the dialog box and restart the Men&Mice DNS Server Controller service.
 
 If Men&Mice DNS Server Controller is run as a local system service (the default), then it will only be able to manage the MS DNS service on the same host.

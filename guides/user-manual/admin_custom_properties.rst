@@ -10,7 +10,7 @@ In addition, various properties can be set when working with custom properties.
 Adding a Custom Property
 ------------------------
 
-1. From the menu bar, select Tools, Define Custom Properties. The Define Custom Properties dialog box displays.
+1. From the menu bar, select :guilabel:`Tools --> Define Custom Properties`. The *Define Custom Properties* dialog box displays.
 
 .. image:: ../../images/admin-custom-properties.png
   :width: 80%
@@ -18,7 +18,7 @@ Adding a Custom Property
 
 2. Select the object type to which you want to add a custom property.
 
-3. Click the Add button. The Custom Property dialog box displays.
+3. Click the :guilabel:`Add` button. The *Custom Property* dialog box displays.
 
 .. image:: ../../images/admin-define-custom-property.png
   :width: 60%
@@ -57,7 +57,7 @@ Adding a Custom Property
 
     * Add any additional items. You can move items Up and/or Down in the list, as desired. This designates the order in which they appear in the list.
 
-    * Then click OK. When you return to the Custom Property List Items dialog box, the items entered are shown.
+    * Then click :guilabel:`OK`. When you return to the *Custom Property List Items* dialog box, the items entered are shown.
 
     .. image:: ../../images/admin-custom-property-2.png
       :width: 60%
@@ -65,46 +65,46 @@ Adding a Custom Property
 
     * To edit/remove any values, click Edit List and make the necessary changes.
 
-    * When all selections are made, click OK.
+    * When all selections are made, click :guilabel:`OK`.
 
   Default value.
     Specifies the default field value to use when an object is created. This field is only a drop-down list if the 'List' checkbox is selected; otherwise, it is an edit field.
 
-5. When all selections/entries are made, click OK. When you return to the Define Custom Properties dialog box, the new field is shown.
+5. When all selections/entries are made, click :guilabel:`OK`. When you return to the *Define Custom Properties* dialog box, the new field is shown.
 
 6. If there are multiple custom properties for an object, use the Move Up/Move Down arrows to change the order in which this display in the object window.
 
-7. When all fields are added, click the Save button.
+7. When all fields are added, click the :guilabel:`Save` button.
 
 Editing a Custom Property
 -------------------------
 
 To edit a custom property, do the following:
 
-1. From the menu, select Tools, Define Custom Properties.
+1. From the menu, select :guilabel:`Tools --> Define Custom Properties`.
 
 2. Locate and highlight the property to be edited.
 
-3. Click the Edit button.
+3. Click the :guilabel:`Edit` button.
 
 4. Make the necessary changes.
 
-5. Click OK.
+5. Click :guilabel:`OK`.
 
 Deleting a Custom Property
 --------------------------
 
 To delete a custom property, do the following:
 
-1. From the menu, select Tools, Define Custom Properties.
+1. From the menu, select :guilabel:`Tools --> Define Custom Properties`.
 
 2. Locate and highlight the property to be deleted.
 
-3. Click the Delete button.
+3. Click the :guilabel:`Delete` button.
 
-4. When the confirmation message displays, click Yes.
+4. When the confirmation message displays, click :guilabel:`Yes`.
 
-5. Click OK.
+5. Click :guilabel:`OK`.
 
 Displaying a Custom Property
 ----------------------------
@@ -118,13 +118,13 @@ Anytime you have specified a URL within a custom property, you can use this opti
 
 1. Locate the item containing the URL.
 
-2. Right-click and, from the shortcut menu, select Properties.
+2. Right-click and, from the shortcut menu, select :guilabel:`Properties`.
 
-3. In the Properties dialog box, move to the field containing the URL.
+3. In the *Properties* dialog box, move to the field containing the URL.
 
 4. Place the cursor anywhere in the field and right-click.
 
-5. From the shortcut menu, select Open URL.
+5. From the shortcut menu, select :guilabel:`Open URL`.
 
 .. image:: ../../images/admin-custom-property-url.png
   :width: 60%

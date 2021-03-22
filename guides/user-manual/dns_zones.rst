@@ -220,6 +220,8 @@ This option is used to see on which servers a copy of a particular zone resides.
 
 3. Click OK to close the dialog box.
 
+.. _ad-preferred-servers:
+
 Edit Preferred Servers
 ----------------------
 

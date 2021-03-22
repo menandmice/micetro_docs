@@ -3,6 +3,8 @@
 Architecture
 ************
 
+.. _architecture-overview:
+
 Overview
 ========
 
@@ -72,13 +74,13 @@ Men&Mice Suite's Central component can also be installed on a second server that
 Men&Mice Suite's DNS Server Controller
 ========================================
 
-The Men&Mice DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Men&Mice DNS Server controller reads and writes zone data and option files, and sends commands to the DNS server. The Men&Mice DNS Server Controller listens on TCP port 1337
+The Men&Mice DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Men&Mice DNS Server controller reads and writes zone data and option files, and sends commands to the DNS server. The Men&Mice DNS Server Controller listens on TCP port 1337.
 
 In an Unix BIND DNS environment the Men&Mice Suite's DNS Server Controller (i.e., DNS agent) is installed on each DNS server that is to be managed.  In a Microsoft AD environment, the DNS agent can be installed on some of the DNS servers or they can all be managed agent free.  If they are to be managed agent free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen.  The DNS Server Controller must be running as a user that has necessary privileges.
 
 If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (pure meaning that all zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Men&Mice will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
 
-For more information see Edit Preferred Servers for AD Integrated Zones" in the User's guide.
+For more information see :ref:`ad-preferred-servers`.
 
 .. image:: ../../images/dns-controller-arch-old.png
   :width: 80%
@@ -109,9 +111,10 @@ Men&Mice Virtual Appliances
 ===========================
 
 There are two types of Men&Mice Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance.
+
 The DNS/DHCP Appliance can be used as a DNS and a DHCP server. You can also use the DNS/DHCP Appliance act as a server for the Men&Mice Suite Web Interface. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers.
 
-The DNS Caching Appliance contains a high-performance Caching-only DNS server. See Caching DNS Servers for information on managing the DNS server on the DNS Caching appliance.
+The DNS Caching Appliance contains a high-performance Caching-only DNS server. See :ref:`caching-appliance` for more information.
 
 .. _about-ui:
 

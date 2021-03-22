@@ -5,8 +5,10 @@ Advanced System Settings
 
 Starting with version 6.3.2, the Men&Mice Suite allows users to configure Advanced System Settings from within the Management Console.
 
-To access the Advanced System Settings dialog box, open System Settings and click the Advanced button in the General tab.
-Please note that the Advanced System Settings are only available for the build-in user "administrator".
+To access the Advanced System Settings dialog box, open :guilabel:`System Settings` and click the :guilabel:`Advanced` button in the *General* tab.
+
+.. note::
+  The :guilabel:`Advanced System Settings` are only available for the build-in user "administrator".
 
 Below, you will find a description of the currently available settings.
 
@@ -23,8 +25,8 @@ Below, you will find a description of the currently available settings.
   "Default hostmaster SOA field in new zones", "Specifies the default value to use for the Hostmaster field in the SOA record of new zones."
   "Default TTL SOA field in new zones (MS)", "Specifies the default value (in seconds) to use for the TTL field in the SOA record of new zones. Only applicable for zones on Microsoft DNS servers."
   "Default refresh SOA field in new zones",	"Specifies the default value (in seconds) to use for the Refresh field in the SOA record of new zones."
-  "Default retry SOA field in new zones, "Specifies the default value (in seconds) to use for the Retry field in the SOA record of new zones."
-  "Default TTL of SOA record in new zones, "Specifies the default TTL value (in seconds) to use for the SOA record of new zones."
+  "Default retry SOA field in new zones", "Specifies the default value (in seconds) to use for the Retry field in the SOA record of new zones."
+  "Default TTL of SOA record in new zones", "Specifies the default TTL value (in seconds) to use for the SOA record of new zones."
   "Path to an SSL Root certificate", "Specifies the path to an SSL Root certificate is such a certificate is being used for the Cloud Integration feature."
   "SSL Certificate policy",	"Specifies the SSL Certificate policy to use for the Cloud Integration feature."
   "Allow Migrate Scope to create two enabled scopes",	"Determines whether the Migrate Scope Wizard can create two enabled scopes."
