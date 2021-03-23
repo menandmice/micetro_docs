@@ -44,7 +44,7 @@ Adding a Custom Property
   Predefined Values.
     When selected, the field displays as a drop-down list. Click the checkbox for List. Then click the Edit List button. The Custom Property List Items dialog box through which you can add, edit, and remove custom properties displays.
 
-    .. information::
+    .. note::
       If you select this option, you cannot select "Multiline".
 
     * To ADD an item for this property, click Add. The Custom Property List Items dialog box displays.

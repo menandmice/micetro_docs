@@ -41,7 +41,7 @@ Indicator details
 +------------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | Category         | Subcategory        | Description                                                                                                                     |
 +==================+====================+=================================================================================================================================+
-|                  | Licensing          | An indication is given if there is a problem with the licence, for example if a module licence has been exceeded.               |
+|                  | Licensing          | An indication is given if there is a problem with the license, for example if a module license has been exceeded.               |
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+
 |                  | Database           | An indication is given if the database size exceeds a default threshold of 1GB for SQLite.                                      |
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+

@@ -35,7 +35,7 @@ In the Reporting section it is possible to:
 
 * Schedule reports to be run at specific times
 
-.. information::
+.. note::
   The Internet Explorer browser is no longer supported as of version 9.3.0.
 
 .. image:: ../../images/blackstar-frontpage.png

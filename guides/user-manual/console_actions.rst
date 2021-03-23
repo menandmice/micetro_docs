@@ -6,7 +6,7 @@ Other actions in the Management Console
 Jump to Box
 -----------
 
-The Jump to Box is a field that can be used to quickly open a single object in the Men&Mice Suite by entering the object name. Using the Jump to Box you can open the following object types:
+The **Jump to Box** is a field that can be used to quickly open a single object in the Men&Mice Suite by entering the object name. Using the 'Jump to Box' you can open the following object types:
 
 * DNS Zone
 
@@ -18,13 +18,13 @@ The Jump to Box is a field that can be used to quickly open a single object in t
 
 * IP Address in an IP Address Range or a DHCP Scope
 
-The Jump to Box is located at the bottom of the sidebar on the left. Additionally the shortcut Shift-J can be used to move the focus to the Jump to Box.
+The 'Jump to Box' is located at the bottom of the sidebar on the left. Additionally the shortcut *Shift-J* can be used to move the focus to the 'Jump to Box'.
 
-To use the Jump to Box, do the following:
+To use the 'Jump to Box', do the following:
 
-1. Navigate to the Jump to Box or press Ctrl+J
+1. Navigate to the **Jump to Box** or press *Ctrl+J*.
 
-2. Enter the name of the object you want to open and click the Jump to icon to the right of the field (or press Enter). If more than one matching object is found, a dialog box displays in which you can select the object instance you want to open.
+2. Enter the name of the object you want to open and click the :guilabel:`Jump to` icon to the right of the field (or press *Enter*). If more than one matching object is found, a dialog box displays in which you can select the object instance you want to open.
 
 .. note::
   You must enter the exact name of the object you want to open. For example, if you want to open a zone by the name myzone.local, it is not sufficient to enter just 'myzone' or 'myzone.lo' – you must enter 'myzone.local'. The same applies for DNS records, IP Address Ranges, DHCP Scopes and IP Addresses.
@@ -32,9 +32,9 @@ To use the Jump to Box, do the following:
 Program Preferences
 -------------------
 
-You can set some default behaviors for the Men&Mice Management Console using the Options dialog box.
+You can set some default behaviors for the Men&Mice Management Console using the *Options* dialog box.
 
-On the menu bar, select Edit, Preferences. The Options dialog box displays.
+On the menu bar, select :guilabel:`Edit --> Preferences`. The *Options* dialog box displays.
 
 .. image:: ../../images/console-app-preferences.png
   :width: 60%
@@ -82,13 +82,18 @@ This utility allows you to find, create, modify, or delete records in multiple z
 
 There are three search options available:
 
-  * DNS Resource Records. Refer to DNS Resource Records for further information.
-  * DCHP Scope Options. Through this function, you replace, delete or search for option values.
-  * IP Addresses. Through this function, you can find an IP Address in any IP Address range and display the results in the IP Address range window.
+DNS Resource Records
+  Refer to :ref:`dns-records` for further information.
 
-To launch the Search and Update Wizard, do the following:
+DCHP Scope Options
+  Through this function, you replace, delete or search for option values.
 
-1. From the menu bar, select Query, Search and Update Wizard. The Search and Update Wizard dialog box displays.
+IP Addresses
+  Through this function, you can find an IP Address in any IP Address range and display the results in the IP Address range window.
+
+To launch the *Search and Update Wizard*, do the following:
+
+1. From the menu bar, select :guilabel:`Query --> Search and Update Wizard`. The *Search and Update Wizard* dialog box displays.
 
 2. Select the type of search you want to perform.
 
@@ -103,22 +108,24 @@ Lease History
 
 Through this function, you view the lease history for your MS and ISC DHCP servers.
 
-.. information::
+.. note::
   You must be a member of the DHCP Administrator group to view the DHCP lease history. Lease history collection must be enabled for this function to work.
 
 To view the DHCP lease history:
 
-1. From the menu bar, select Query, Lease History. The Lease History Query tab displays.
+1. From the menu bar, select :guilabel:`Query --> Lease History`. The *Lease History Query* tab displays.
 
 .. image:: ../../images/console-lease-history.png
   :width: 90%
   :align: center
 
-2. Find DHCP leases where. Select if you want to query by IP Address, MAC Address, Server Address, Hostname or Description.
+Find DHCP leases where
+  Select if you want to query by *IP Address*, *MAC Address*, *Server Address*, *Hostname* or *Description*.
 
-3. Starting on/Ending on. To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.
+Starting on/Ending on
+  To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.
 
-4. Click Search. Any matching results are displayed in the lower portion of the window.
+2. Click :guilabel:`Search`. Any matching results are displayed in the lower portion of the window.
 
 Exporting Search Results
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -129,11 +136,11 @@ To export the results as a CSV file, do the following:
 
 2. Search for the desired history.
 
-3. When the applicable change history is shown, click the Export button. The Export records to CSV file dialog box displays.
+3. When the applicable change history is shown, click the :guilabel:`Export` button. The *Export records to CSV file* dialog box displays.
 
 4. Select the drive, directory, subdirectory, etc. into which you want to save the CSV file.
 
-5. Click Save.
+5. Click :guilabel:`Save`.
 
 .. _console-object-change-history:
 
@@ -144,30 +151,37 @@ Through this function, you can display a log of all changes that have been made 
 
 There are two ways to search/view the object change history:
 
-* From the Menu Bar. With this option, you select the type of object to search change history for.
+* From the *Menu Bar*. With this option, you select the type of object to search change history for.
 
-* Through the Object Browser. With this option, you select the object first, and then search for the change history.
+* Through the *Object Browser*. With this option, you select the object first, and then search for the change history.
+
+.. _history-menu:
 
 Accessing via the Menu Bar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. From the menu bar, select Query, Object History. The History Query tab displays.
+1. From the menu bar, select :guilabel:`Query --> Object History`. The *History Query* tab displays.
 
 .. image:: ../../images/console-history-query.png
   :width: 90%
   :align: center
 
-2. Where text contains. Type any words that the text contains.
+Where text contains
+  Type any words that the text contains.
 
-3. Made by. Type the user login name.
+Made by
+  Type the user login name.
 
-4. Starting on/Ending on. To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.
+Starting on/Ending on
+  To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.
 
-5. Only show objects of type. Click the drop-down list arrow, and select the type of object for which you want to find change history.
+Only show objects of type
+  Click the drop-down list arrow, and select the type of object for which you want to find change history.
 
-6. Limit to \____\ Results. Enter the maximum number of results to display.
+Limit to ____ Results
+  Enter the maximum number of results to display.
 
-7. Click Search. Any matching results are displayed in the lower portion of the tab.
+2. Click :guilabel:`Search`. Any matching results are displayed in the lower portion of the tab.
 
 .. image:: ../../images/console-history-query-results.png
   :width: 90%
@@ -176,25 +190,25 @@ Accessing via the Menu Bar
 Accessing via the Object Browser
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. In the Object Browser, open the desired object category (e.g., DNS Zones, DNS Servers, etc.).
+1. In the *Object Browser*, open the desired object category (e.g., DNS Zones, DNS Servers, etc.).
 
 2. Locate the object for which you want to view the history.
 
-3. Right-click and, from the shortcut menu, select View History.
+3. Right-click and, from the shortcut menu, select :guilabel:`View History`.
 
 .. image:: ../../images/console-view-history.png
   :width: 90%
   :align: center
 
-The History window displays showing all the history for the selected object.
+The *History* window displays showing all the history for the selected object.
 
 .. image:: ../../images/console-view-history-results.png
   :width: 90%
   :align: center
 
-4. If you wish to query the results, click the plus sign (plus)  in the upper left corner of the dialog box.
+4. If you wish to query the results, click the :guilabel:`+` in the upper left corner of the dialog box.
 
-5. Following the directions under Accessing via the Menu Bar to enter the query information.
+5. Following the directions under :ref:`history-menu` to enter the query information.
 
 Exporting Search Results
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -203,47 +217,50 @@ To export the results as a CSV file, do the following:
 
 1. Display the object change history.
 
-2. Display the Query Change History search criteria fields.
+2. Display the *Query Change History* search criteria fields.
 
 3. Search for the desired change history.
 
-4. When the applicable change history is shown, click the Export button. The Export records to CSV file dialog box displays.
+4. When the applicable change history is shown, click the :guilabel:`Export` button. The *Export records to CSV file* dialog box displays.
 
 5. Select the drive, directory, subdirectory, etc. into which you want to save the CSV file.
 
-6. Click Save.
+6. Click :guilabel:`Save`.
 
 Men and Mice Suite Log
 ----------------------
 
 Through this function, you can display log messages generated by the Men&Mice Suite.
 
-.. information::
+.. note::
   You must be a member of an Administrator group to view the log messages.
 
 To view the log messages, do the following:
 
-1. In the main Men&Mice window, move to the menu bar and select Query, Men&Mice Suite Log. The Men&Mice Suite Log tab displays.
+1. In the main Men&Mice window, move to the menu bar and select :guilabel:`Query --> Men&Mice Suite Log`. The *Men&Mice Suite Log* tab displays.
 
 .. image:: ../../images/console-log.png
   :width: 70%
   :align: center
 
-2. Search For. Type the information to query.
+Search For
+  Type the information to query.
 
-3. Starting on/Ending on. To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.
+Starting on/Ending on
+  To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.
 
-4. Log level. Click the drop-down list, and select the desired level – e.g., Error, Notice or Warning.
+Log level
+  Click the drop-down list, and select the desired level – e.g., Error, Notice or Warning.
 
-5. When all selections/entries are made, click Search. Any matching results are displayed in the lower portion of the window.
+2. When all selections/entries are made, click :guilabel:`Search`. Any matching results are displayed in the lower portion of the window.
 
-6. Quick Filter. Allows you to further refine the search results. As you type in the field, results that are not applicable are removed. To export the results as a CSV file, do the following:
+3. The Quick Filter allows you to further refine the search results. As you type in the field, results that are not applicable are removed. To export the results as a CSV file, do the following:
 
-    * Click the Export button. The Export records to CSV file dialog box displays.
+    * Click the :guilabel:`Export` button. The *Export records to CSV file* dialog box displays.
 
     * Select the drive, directory, subdirectory, etc. into which you want to save the CSV file.
 
-    * Click Save.
+    * Click *Save*.
 
 .. _object-folders:
 
@@ -259,13 +276,13 @@ When you create a new folder, you can move objects from the "master" list into t
 
 To create a folder, do the following:
 
-1. In the Object List, right-click on either IP Address ranges, DNS Zones, or DHCP scopes.
+1. In the *Object List*, right-click on either :guilabel:`IP Address ranges`, :guilabel:`DNS Zones`, or :guilabel:`DHCP scopes`.
 
-2. From the shortcut menu, select New folder. The Create Folder dialog box displays.
+2. From the shortcut menu, select :guilabel:`New folder`. The *Create Folder* dialog box displays.
 
 3. Type a name for the folder.
 
-4. Click OK. The new folder now displays in the Object List.
+4. Click :guilabel:`OK`. The new folder now displays in the Object List.
 
 5. To move an object into this new folder, simply highlight it and drag and drop it into this folder.
 
@@ -277,15 +294,15 @@ If desired, you can add a subfolder underneath any existing folder.
 .. warning::
   If you move an object from another folder into a subfolder, the object no longer appears in the original folder. This is not the case, however, when you move an object from the master list. The object always remains in the master list, regardless of what folder/subfolder a copy is moved to.
 
-In the Object List, click the plus (plus) sign next to the object type where you want to create the subfolder. The object expands to show any currently defined folders.
+In the *Object List*, click :guilabel:`+` next to the object type where you want to create the subfolder. The object expands to show any currently defined folders.
 
 1. Right-click on the folder to which you want to add a subfolder.
 
-2. From the shortcut menu, select New Folder.
+2. From the shortcut menu, select :guilabel:`New Folder`.
 
-3. In the Create Folder dialog box, type a name for the new subfolder.
+3. In the *Create Folder* dialog box, type a name for the new subfolder.
 
-4. Click OK. You can now move objects into this subfolder by dragging/dropping them from the list on the right.
+4. Click :guilabel:`OK`. You can now move objects into this subfolder by dragging/dropping them from the list on the right.
 
 Renaming a Folder
 ^^^^^^^^^^^^^^^^^
@@ -294,11 +311,11 @@ You can rename any folder by doing the following:
 
 1. Select the folder you want to rename.
 
-2. Right-click and, from the shortcut menu, select Rename.
+2. Right-click and, from the shortcut menu, select :guilabel:`Rename`.
 
-3. In the Rename folder dialog box, type the new name for the folder.
+3. In the *Rename folder* dialog box, type the new name for the folder.
 
-4. Click OK. The object list refreshes and the new folder name displays.
+4. Click :guilabel:`OK`. The object list refreshes and the new folder name displays.
 
 Specifying Access for Folder Items
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -307,13 +324,13 @@ Once you have created a folder and moved objects into the folder, you can assign
 
 To specify access for item/items in a folder, do the following:
 
-1. Right-click on the folder and, from the shortcut menu, select Access.
+1. Right-click on the folder and, from the shortcut menu, select :guilabel:`Access`.
 
-2. In the Access Control dialog box, select the group/user (or add a new group/user). Then, specify the permissions for the user.
+2. In the *Access Control* dialog box, select the group/user (or add a new group/user). Then, specify the permissions for the user.
 
-3. Click OK.
+3. Click :guilabel:`OK`.
 
-4. If desired, enter a Save Comment when prompted.
+4. If desired, enter a *Save Comment* when prompted.
 
 Deleting a Folder
 ^^^^^^^^^^^^^^^^^
@@ -322,6 +339,6 @@ When deleting a folder, the objects within the folder are not deleted and remain
 
 To delete a folder/subfolder, do the following:
 
-1. Right-click on the folder and, from the shortcut menu, select Delete.
+1. Right-click on the folder and, from the shortcut menu, select :guilabel:`Delete`.
 
-2. When the confirmation message displays, click Yes.
+2. When the confirmation message displays, click :guilabel:`Yes`.

@@ -8,20 +8,20 @@ Viewing a cloud service instance
 
 Highlighting a cloud service in the object browser will show the cloud networks residing in that cloud service.
 
-Name:
+Name
   The name of the cloud network
 
-Cloud:
+Cloud
   The name of the Cloud service
 
-Region:
+Region
   The region where the cloud network is located at.
 
   .. note::
     This field is referred to as Location in Azure.
 
-Address blocks:
-  The address blocks in the specific cloud network
+Address blocks
+  The address blocks in the specific cloud network.
 
 .. image:: ../../images/viewing-cloud-service.png
   :width: 80%
@@ -49,7 +49,7 @@ In the Object browser, clicking on a specific cloud network will display the sub
   :width: 80%
   :align: center
 
-In IP Address ranges, a column named "Cloud Networks" shows the name of the respective cloud network among the other existing subnets.
+In IP Address ranges, a column named :guilabel:`Cloud Networks` shows the name of the respective cloud network among the other existing subnets.
 
 .. image:: ../../images/cloud-networks-ipam.png
   :width: 80%

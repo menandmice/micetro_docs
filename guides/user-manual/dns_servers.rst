@@ -28,16 +28,16 @@ You must be logged in as a user with privileges to administer DNS in order to ad
 
 To add a new DNS server, do the following:
 
-1. From the menu bar, select File, New, DNS Server. The Add DNS Server dialog box displays.
+1. From the menu bar, select :guilabel:`File --> New --> DNS Server`. The *Add DNS Server* dialog box displays.
 
-  Server Name.
-    Type the name (fully qualified host name) of the DNS server as the name is used for the MNAME field in the SOA record of new DNS zones. For Azure DNS the name does not really matter. If the name can't be resolved you want to specify the optional IP address (see following point 3).
+Server Name
+  Type the name (fully qualified host name) of the DNS server as the name is used for the MNAME field in the SOA record of new DNS zones. For Azure DNS the name does not really matter. If the name can't be resolved you want to specify the optional IP address.
 
-  Server address (optional).
-    If desired, type the IPv4 or IPv6 address for the server. This is not required, but doing so allows the Management Console to connect to the server by IP Address instead of by name. The Server name will still be used when displaying server information and creating NS records.
+Server address (optional)
+  If desired, type the IPv4 or IPv6 address for the server. This is not required, but doing so allows the Management Console to connect to the server by IP Address instead of by name. The Server name will still be used when displaying server information and creating NS records.
 
-  Server Type.
-    Click the drop-down list, and select the desired server type.
+Server Type
+  Click the drop-down list, and select the desired server type.
 
   Microsoft with Agent Installed
     connects to a Microsoft DNS server that has a DNS Server Controller installed.
@@ -54,10 +54,10 @@ To add a new DNS server, do the following:
   Azure DNS
     connects to a DNS Server Controller that is configured as Microsoft Azure DNS controller.
 
-  Use proxy server.
-    If you are adding a Microsoft DNS server you can specify the location of the DNS Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DNS Server controller. This option allows the system to connect to DNS servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DNS servers.
+Use proxy server
+  If you are adding a Microsoft DNS server you can specify the location of the DNS Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DNS Server controller. This option allows the system to connect to DNS servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DNS servers.
 
-2. Click OK. You are connected to the server. Once connected, the name of the newly added server displays under DNS Servers in the Object Section. (You may need to click the plus (+) sign next to DNS Servers to see it.)
+2. Click :guilabel:`OK`. You are connected to the server. Once connected, the name of the newly added server displays under :guilabel:`DNS Servers` in the Object Section. (You may need to click the :guilabel:`+` sign next to DNS Servers to see it.)
 
 Server Access on Remote Computers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,18 +72,21 @@ To configure the DNS Server Controller to access DNS servers on remote computers
 
 2. To enable DNS Management in the Men&Mice Suite, start the Windows Services program and open the properties dialog box for Men&Mice DNS Server Controller.
 
-3. Click the Log On tab. The Local System account radio button is most likely selected.
+3. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
 
-4. Click the This account radio button and enter the name and password of a Windows User that is a member of the Administrators group.
+4. Click the :guilabel:`This account` radio button and enter the name and password of a Windows User that is a member of the Administrators group.
 
 5. Close the dialog box and restart the Men&Mice DNS Server Controller service.
 
-.. information::
+.. note::
   Some actions for static zones are not available if you are managing MS DNS servers on remote computers using the DNS Server Controller. The following actions are not available:
 
     * Disable resource record
+
     * Enable resource record
+
     * View and edit resource record comments
+
     * Disable zone
 
   If you need to be able to perform these actions, you must install the DNS Server Controller on the server and use the Microsoft with Agent Installed connection method when connecting to the server.
@@ -99,13 +102,13 @@ To access this feature, do the following:
 
 1. Locate the applicable server.
 
-2. Right-click and, from the shortcut menu, select Edit Server Name. The Edit Server name dialog box displays.
+2. Right-click and, from the shortcut menu, select :guilabel:`Edit Server Name`. The *Edit Server name* dialog box displays.
 
 ..
 
-3. Change the Server name, Server address (optional), and/or Server Type. If applicable, you can select Use proxy server and enter the relevant information.
+3. Change the **Server name**, **Server address** (optional), and/or **Server Type**. If applicable, you can select :guilabel:`Use proxy server` and enter the relevant information.
 
-4. Click OK.
+4. Click :guilabel:`OK`.
 
 Access
 ------
@@ -121,13 +124,13 @@ It is possible to define a Work Set for servers. A Work Set contains a subset of
 
 To define a Work Set, do the following:
 
-1. Select the server(s) you want to include in the Work Set
+1. Select the server(s) you want to include in the Work Set.
 
-2. Right-click the selected server(s) and choose Define Work Set.
+2. Right-click the selected server(s) and choose :guilabel:`Define Work Set`.
 
 To clear a Work Set, do the following:
 
-1. Click the Clear Work Set button in the Manager window. The Work Set is cleared.
+1. Click the :guilabel:`Clear Work Set` button in the Manager window. The Work Set is cleared.
 
 .. _disable-dns-server:
 
@@ -153,28 +156,30 @@ This command is only available with the Administrator account. Use this command 
 .. note::
   For information on removing a DNS server on a Men&Mice Appliance, refer Appliance Management.
 
-1. In the Object browser of the Management Console, click on DNS Servers.
+1. In the Object browser of the Management Console, click on :guilabel:`DNS Servers`.
 
 2. In the Object List, select the Name Server(s) from you want to disconnect. To select multiple servers, hold down the Ctrl key while making your selections.
 
-3. On the toolbar, click the Remove button. A dialog box prompts you to confirm your decision.
+3. On the toolbar, click the :guilabel:`Remove` button. A dialog box prompts you to confirm your decision.
 
-4. To disconnect from the Name Server, click Yes. Otherwise, click No to keep the server.
+4. To disconnect from the Name Server, click :guilabel:`Yes`. Otherwise, click :guilabel:`No` to keep the server.
+
+.. _dns-options:
 
 Options
 -------
 
-The Server Options dialog box lets you configure settings for each name server individually, including forwarding servers, logging preferences, transfer and query restrictions, and root servers.
+The *Server Options* dialog box lets you configure settings for each name server individually, including forwarding servers, logging preferences, transfer and query restrictions, and root servers.
 
-.. information::
+.. note::
   The server options vary depending on the server environment. In the section that follows, the server options are documented twice: once for those using a Windows DNS server, and again for those using BIND.
 
 Accessing Server Options
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. In the Object Section, select DNS Servers so the servers appear in the Object List.
+1. In the Object Section, select :guilabel:`DNS Servers` so the servers appear in the Object List.
 
-2. Right-click on the server you want to make changes to and select Options from the context menu. The Server Options dialog box displays.
+2. Right-click on the server you want to make changes to and select :guilabel:`Options` from the context menu. The *Server Options* dialog box displays.
 
 3. Choose the desired option (Resolution, Logging, Advanced, Interfaces, Event logging, Root hints) from the menu on the left. The corresponding options display in the right panel of the dialog box.
 
@@ -216,12 +221,12 @@ The Logging options consist of a list of checkbox options. Once you enable Log p
   :width: 70%
   :align: center
 
-After checking the desired options, you can either choose another category from the left column or click OK to close the dialog box.
+After checking the desired options, you can either choose another category from the left column or click :guilabel:`OK` to close the dialog box.
 
 Advanced (Windows)
 """"""""""""""""""
 
-Use this panel to set various advanced options for the DNS server. Complete the dialog box based upon the guidelines below. When all selections/entries are made, click OK.
+Use this panel to set various advanced options for the DNS server. Complete the dialog box based upon the guidelines below. When all selections/entries are made, click :guilabel:`OK`.
 
 .. image:: ../../images/console-dns-windows-dns-options-advanced.png
   :width: 70%
@@ -257,7 +262,7 @@ Enable automatic scavenging of stale records.
 Interfaces (Windows)
 """"""""""""""""""""
 
-Use this panel to specify the IP Addresses this server will use to serve DNS requests. When your selection is made, click OK.
+Use this panel to specify the IP Addresses this server will use to serve DNS requests. When your selection is made, click :guilabel:`OK`.
 
 .. image:: ../../images/console-dns-windows-dns-options-interfaces.png
   :width: 70%
@@ -286,7 +291,7 @@ Click next to each of the desired items using the guidelines below:
   All events.
     Specifies that all events will be logged in the DNS Server log.
 
-When all selections are made, click OK.
+When all selections are made, click :guilabel:`OK`.
 
 Root hints
 """"""""""
@@ -299,7 +304,7 @@ Allows configuration of suggested root servers for the server to use and refer t
 
 To Add a Root name server, complete the fields as follows:
 
-1. Click the Add button.
+1. Click the :guilabel:`Add` button.
 
   Server fully qualified domain name.
     Type the name of the server.
@@ -307,23 +312,23 @@ To Add a Root name server, complete the fields as follows:
   IP Address.
     Type the IP Address of this server.
 
-2. Click OK.
+2. Click :guilabel:`OK`.
 
 To Edit the Root hint name server data, do the following:
 
 1. Select the server definition you want to edit.
 
-2. Click the Edit button.
+2. Click the :guilabel:`Edit` button.
 
-3. In the Root hint name server dialog box, type the updated information.
+3. In the *Root hint name server* dialog box, type the updated information.
 
-4. Click OK.
+4. Click :guilabel:`OK`.
 
 To Remove a Root hint name server, do the following:
 
 1. Select the server definition you want to remove.
 
-2. Click the Remove button
+2. Click the :guilabel:`Remove` button.
 
 BIND Environment
 ^^^^^^^^^^^^^^^^
@@ -395,13 +400,13 @@ The Query restrictions panel allows you to restrict recursive DNS queries to onl
 
 To configure a query restriction, do the following:
 
-1. Click the Add button.
+1. Click the :guilabel:`Add` button.
 
 2. Enter an IP Address in the field provided. You can choose a predefined range from the drop down list, which gives you the option to select any, none, localhost, or localnets.
 
 3. Choose whether you want to allow or deny this server access control for recursive queries by selecting the appropriate radio button.
 
-4. Click OK to add the new restriction to the list.
+4. Click :guilabel:`OK` to add the new restriction to the list.
 
 Transfer Restrictions (BIND)
 """"""""""""""""""""""""""""
@@ -416,13 +421,13 @@ The Transfer restrictions panel allows you to restrict zone transfers to only ce
 
 To configure a transfer restriction, do the following:
 
-1. Click the Add button.
+1. Click the :guilabel:`Add` button.
 
 2. Enter an IP Address in the field provided. You can choose a predefined range from the drop down list, which gives you the option to select any, none, localhost, or localnets.
 
 3. Choose whether you want to allow or deny zone transfers to this IP Address by selecting the appropriate radio button.
 
-4. Click OK to add the new restriction to the list.
+4. Click :guilabel:`OK` to add the new restriction to the list.
 
 Listen on (BIND)
 """"""""""""""""
@@ -450,9 +455,9 @@ To access the advanced options, do the following:
 
 1. Log in to Men&Mice as the DNS administrator.
 
-2. For a DNS zone or DNS server, right-click and select Options from the shortcut menu.
+2. For a DNS zone or DNS server, right-click and select :guilabel:`Options` from the shortcut menu.
 
-3. When the Options displays, click the Advanced button.
+3. When the *Options* displays, click the :guilabel:`Advanced` button.
 
 .. image:: ../../images/console-dns-bind-options-advanced.png
   :width: 70%
@@ -460,16 +465,16 @@ To access the advanced options, do the following:
 
 4. When the Advanced Options dialog box displays, you can edit the options for the zone or server in a text document. The dialog for editing server options contains four tabs where each tab contains a section of the server options (logging, user_before, options, user_after). If the DNS server contains one or more views, each view displays in a separate tab where various settings can be changed for each view.
 
-.. information::
+.. note::
   #include statements are not shown and you cannot add #include statements.
 
   .. figure:: ../../images/console-dns-bind-options-advanced-options.png
     :width: 70%
     :align: center
 
-    Refer to :ref:`bind-file-structure` for more information on each section.
+  Refer to :ref:`bind-file-structure` for more information on each section.
 
-5. Click OK. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
+5. Click :guilabel:`OK`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
 
 Properties
 ----------
@@ -478,18 +483,19 @@ Applies only when custom properties have been defined for DNS servers. Selecting
 
 1. In the Object browser, select the server for which you want to manage properties.
 
-2. From the menu bar, select Server, Properties.
+2. From the menu bar, select :guilabel:`Server --> Properties`.
 
-3. Location. Type a location.
+Location
+  Type a location.
 
-4. Click Apply or OK.
+4. Click :guilabel:`Apply` or :guilabel:`OK`.
 
 Server Info
 -----------
 
 This command opens a dialog box that shows information about the history and status of the currently selected server in the Management Console. This includes such things as the server's IP Address, operating system, number of requests & replies received, total uptime, and the number of master and slave zones it has. This command is only available when a server is selected in the Management Console.
 
-In the Object List, right-click on the desired server name and, from the shortcut menu, select Server Info.
+In the Object List, right-click on the desired server name and, from the shortcut menu, select :guilabel:`Server Info`.
 
 .. figure:: ../../images/console-dns-server-info.png
   :width: 70%
@@ -502,13 +508,13 @@ Server Log
 
 To view the activity log for a particular server:
 
-In the Object List, right-click on the desired server and, from the shortcut menu, select Server Log. A Log tab opens for the selected server that contains a list of activity and maintenance that has occurred on that server since the last time the log was cleared.
+In the Object List, right-click on the desired server and, from the shortcut menu, select :guilabel:`Server Log`. A Log tab opens for the selected server that contains a list of activity and maintenance that has occurred on that server since the last time the log was cleared.
 
 .. image:: ../../images/console-dns-server-log.png
   :width: 80%
   :align: center
 
-You can clear the server log by clicking the Clear log button in the server log tab.
+You can clear the server log by clicking the :guilabel:`Clear log` button in the server log tab.
 
 .. note::
   For Windows DNS servers, it is not possible to view the server log if connected through an agent-free connection.
@@ -522,7 +528,7 @@ Reload/Reload Zone List
 There are two reload commands in the Server context and the commands are quite different:
 
 Reload.
-  This command reloads the DNS server. On Windows this command has the same effect as the Clear Cache command, but on BIND servers, the command 'rndc reload' is sent to the DNS server.
+  This command reloads the DNS server. On Windows this command has the same effect as the Clear Cache command, but on BIND servers, the command ``rndc reload`` is sent to the DNS server.
 
 Reload Zone List.
   This command reloads the list of zones from the DNS server. It is useful if a zone has been created outside of the Men&Mice Suite.
@@ -531,18 +537,18 @@ To reload the zone list to include zones that have been added/deleted outside of
 
 1. Select the desired server.
 
-2. From the menu bar, select Server, Reload Zone List. The window grays as the zones are reloaded then displays with the updated zones.
+2. From the menu bar, select :guilabel:`Server --> Reload Zone List`. The window grays as the zones are reloaded then displays with the updated zones.
 
 To reload a DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select Server, Reload Zone List.
+2. From the menu bar, select :guilabel:`Server --> Reload Zone List`.
 
 Edit DNS Policies
 -----------------
 
-.. information::
+.. note::
   This functionality is only available for Windows Server 2016
 
 For details on how to configure and use DNS Policies, see :ref:`windows-dns-policies`.
@@ -562,33 +568,33 @@ To clear the cache of a BIND DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select Server, Clear Cache. The Clear Cache dialog box displays.
+2. From the menu bar, select :guilabel:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
 
 .. image:: ../../images/console-dns-clear-cache.png
   :width: 50%
   :align: center
 
-3. To clear the entire server cache, select Clear entire cache. Note that this is the only available option if you are clearing the cache on a Windows DNS server.
+3. To clear the entire server cache, select :guilabel:`Clear entire cache`. Note that this is the only available option if you are clearing the cache on a Windows DNS server.
 
-4. To clear a specific name, select the Name to clear radio button and enter the name you want to clear from the cache. The name is cleared from all views unless you specify the view name after the entry name. Note that this option is not available for Windows DNS servers.
+4. To clear a specific name, select the :guilabel:`Name to clear` radio button and enter the name you want to clear from the cache. The name is cleared from all views unless you specify the view name after the entry name. Note that this option is not available for Windows DNS servers.
 
 To clear the cache of a Windows DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select Server, Clear Cache. A confirmation dialog box displays.
+2. From the menu bar, select :guilabel:`Server --> Clear Cache`. A confirmation dialog box displays.
 
-3. Click OK to clear the cache of the server.
+3. Click :guilabel:`OK` to clear the cache of the server.
 
 To clear the cache of a DNS Caching Appliance, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select Server, Clear Cache. The Clear Cache dialog box displays.
+2. From the menu bar, select :guilabel:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
 
-3. To clear the entire server cache, select Clear entire cache. Note that this is the only available option if you are clearing the cache on a Windows DNS server.
+3. To clear the entire server cache, select :guilabel:`Clear entire cache`. Note that this is the only available option if you are clearing the cache on a Windows DNS server.
 
-4. To clear a specific name, select the Name to clear radio button and enter the name you want to clear from the cache. If you want to clear an entire domain (the name entered and all names below it), select the Recursively flush the entire domain checkbox.
+4. To clear a specific name, select the :guilabel:`Name to clear` radio button and enter the name you want to clear from the cache. If you want to clear an entire domain (the name entered and all names below it), select the Recursively flush the entire domain checkbox.
 
 View Cache Entries
 ------------------
@@ -599,13 +605,13 @@ To view the cache of a DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select Server, View Cache Entries. The View Cache Entries tab displays.
+2. From the menu bar, select :guilabel:`Server --> View Cache Entries`. The *View Cache Entries* tab displays.
 
 .. image:: ../../images/console-dns-cache-entries-1.png
   :width: 70%
   :align: center
 
-3. Enter a name to view and click the View button. The entries found are displayed in a tree view.
+3. Enter a name to view and click the :guilabel:`View` button. The entries found are displayed in a tree view.
 
 .. image:: ../../images/console-dns-cache-entries-2.png
   :width: 70%
@@ -613,14 +619,14 @@ To view the cache of a DNS server, do the following:
 
 4. To clear one or more entries from the DNS server cache, select the checkbox for the entries you want to clear.
 
-5. Click the Clear Selected button.
+5. Click the :guilabel:`Clear Selected` button.
 
 Backup and Restore (BIND Only)
 ------------------------------
 
 The Men&Mice Suite will automatically backup configuration for all BIND DNS servers it manages. The backup can then be used to restore the DNS server to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
 
-Automatic backup can be disabled by setting the property BackupDNSServers value in Men&Mice central preferences to zero:
+Automatic backup can be disabled by setting the property ``BackupDNSServers`` value in Men&Mice central preferences to zero:
 
 .. code-block::
   :linenos:
@@ -633,8 +639,9 @@ If a DNS server machine crashes and has to be replaced with another machine with
   :width: 60%
   :align: center
 
-* If "Use data from the Men&Mice Suite" is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
-* If "Use data from the new server" is selected, all data kept in Men&Mice Central will be ignored and overwritten with current data on the DNS Server.
+* If **Use data from the Men&Mice Suite** is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
+
+* If **Use data from the new server** is selected, all data kept in Men&Mice Central will be ignored and overwritten with current data on the DNS Server.
 
 Basically, the restore scenario is as follows:
 
@@ -644,6 +651,6 @@ Basically, the restore scenario is as follows:
 
 3. Install the DNS Server Controller on the new machine.
 
-4. When the new machine is up and running, in the Management Console, right-click the server and choose Reconnect.
+4. When the new machine is up and running, in the Management Console, right-click the server and choose :guilabel:`Reconnect`.
 
 When a connection has been established, the Men&Mice Suite detects that this is a new, uninitialized server. See above for a description on what happens next.

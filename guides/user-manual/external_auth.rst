@@ -34,16 +34,16 @@ Configuring Users for AD Authentication
 
 To configure a user to use AD user authentication, do the following:
 
-1. From the menu, select Tools, User management.
+1. From the menu, select :guilabel:`Tools --> User management`.
 
 2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to :ref:`users`.
 
-3. When the Properties dialog box display, move to the Authentication field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Men&Mice Suite authentication method displays.)
+3. When the *Properties* dialog box display, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Men&Mice Suite authentication method displays.)
 
-4. Click OK.
+4. Click :guilabel:`OK`.
 
   .. note::
-    When the AD authentication method is selected, the Password field is disabled, since the password is not stored in the Men&Mice Suite.
+    When the AD authentication method is selected, the **Password** field is disabled, since the password is not stored in the Men&Mice Suite.
 
 Active Directory Single Sign-on
 -------------------------------
@@ -56,13 +56,13 @@ You can enable the Single Sign-on so that Active Directory users do not have to 
 
 To enable Active Directory Single Sign-on, do the following:
 
-1. From the menu bar, select Tools, System Settings.
+1. From the menu bar, select :guilabel:`Tools --> System Settings`.
 
-2. In the System Settings dialog box, click the General Settings tab.
+2. In the *System Settings* dialog box, click the :guilabel:`General Settings` tab.
 
-3. Select the Allow Single Sign-on option.
+3. Select the :guilabel:`Allow Single Sign-on` option.
 
-4. Click OK.
+4. Click :guilabel:`OK`.
 
 Web Interface
 ^^^^^^^^^^^^^
@@ -78,6 +78,15 @@ To enable single sign-on in the web interface, do the following:
 3. Edit the file Index.htm in the MenandMice web folder, and change the redirection so SSO=1 argument is specified.
 
 4. Make Index.htm the default document for the site.
+
+.. _disable-kernel-mode-auth:
+
+Disabling Kernel Mode Authentication
+""""""""""""""""""""""""""""""""""""
+
+The Windows Authentication in IIS has by default the Kernel Mode Authentication enabled, which blocks the SSO.
+
+In the IIS Management Console, go to :guilabel:`Windows Authentication --> advanced settings` and set the "Kernel Mode Authentication" to *disabled*.
 
 Application Log In
 ------------------
@@ -104,9 +113,9 @@ Configuring Groups for AD Group Level Authentication
 
 When using AD Group level authentication, you must specify which groups in the Men&Mice Suite should be used to verify group membership.
 
-1. From the menu, select Tools, User Management. The Users and groups management dialog box displays.
+1. From the menu, select :guilabel:`Tools --> User Management`. The *Users and groups management* dialog box displays.
 
-2. Click the Groups tab.
+2. Click the :guilabel:`Groups` tab.
 
 3. Select the group to which you want to configure AD and click the Edit button. If the desired group is not shown, you will need to add the group. See :ref:`groups`.
 
@@ -114,13 +123,15 @@ When using AD Group level authentication, you must specify which groups in the M
   :width: 60%
   :align: center
 
-4. Group Name. Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain "MYDOMAIN" contains the group "MM-ReadOnly". The group name must then be "MYDOMAIN\MM-ReadOnly".
+Group Name
+  Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain "MYDOMAIN" contains the group "MM-ReadOnly". The group name must then be "MYDOMAIN\MM-ReadOnly".
 
-5. Click the checkbox for Active Directory Integrated.
+5. Click the checkbox for :guilabel:`Active Directory Integrated`.
 
-6. Click OK.
+6. Click :guilabel:`OK`.
 
-Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
+.. note::
+  Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
 
 Configuring Users and Access Privileges
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -147,9 +158,9 @@ To enable RADIUS authentication, you must add several properties to the Men&Mice
 
 * Windows: C:\Program Files\Men&Mice\Central\data
 
-* Mac OS X: /var/mmsuite/mmcentral
+* Mac OS X: ``/var/mmsuite/mmcentral``
 
-* All others: set during installation. Usually /var/mmsuite/mmcentral or /chroot/var/mmsuite/mmcentral, where /chroot is the location used as a chroot jail for named.
+* All others: set during installation. Usually ``/var/mmsuite/mmcentral`` or ``/chroot/var/mmsuite/mmcentral``, where ``/chroot`` is the location used as a chroot jail for named.
 
 The properties to be added are:
 
@@ -170,11 +181,15 @@ Example:
 
 After editing the file, restart Men&Mice Central.
 
-* Windows: Use Administration Tools > Services to restart Men&Mice Central.
+* Windows: use :guilabel:`Administration Tools --> Services` to restart Men&Mice Central.
 
-* Mac OS X: Execute the following shell command in a Terminal window (/Applications/Utilities/Terminal): sudo /Library/StartupItems/mmSuite/mmcentral restart
+* Mac OS X: Execute the following shell command in a Terminal window (/Applications/Utilities/Terminal):
 
-* All others: Execute the mmcentral init script with the 'restart' argument.
+  .. code-block:: bash
+
+    sudo /Library/StartupItems/mmSuite/mmcentral restart
+
+* All others: Execute the ``mmcentral`` init script with the 'restart' argument.
 
 Configuring Users
 ^^^^^^^^^^^^^^^^^
@@ -183,14 +198,14 @@ To allow a user to log in to the Men&Mice system, the user must exist in the Men
 
 To configure a user to use AD user authentication, do the following:
 
-1. From the menu bar, select Tools, User Management. The User and group management dialog box displays.
+1. From the menu bar, select :guilabel:`Tools --> User Management`. The *User and group management* dialog box displays.
 
-2. To add a new user, click the Add button. Refer to :ref:`users`. Follow the instructions with one exception: in the Authentication field, click the drop-down list and select RADIUS.
+2. To add a new user, click the :guilabel:`Add` button. Refer to :ref:`users`. Follow the instructions with one exception: in the **Authentication** field, click the drop-down list and select RADIUS.
 
-3. To modify an existing user, double-click on the user's name to display the user Properties dialog box, and in the Authentication field, click the drop-down list and select RADIUS.
+3. To modify an existing user, double-click on the user's name to display the user *Properties* dialog box, and in the **Authentication** field, click the drop-down list and select RADIUS.
 
 .. note::
-  When the RADIUS authentication method is selected, the Password field is disabled, since the password is not stored in the Men&Mice Suite.
+  When the RADIUS authentication method is selected, the **Password** field is disabled, since the password is not stored in the Men&Mice Suite.
 
 .. image:: ../../images/console_ad_sso_radius.png
   :width: 60%

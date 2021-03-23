@@ -11,7 +11,7 @@ This document describes how to configure LDAP authentication in the Men&Mice Sui
 Installation on Centos Linux
 ----------------------------
 
-To use LDAP authentication and authorization, start by installing python-ldap on the machine where the Men&Mice Central service is run and install the python extension used by Central when connecting to an LDAP directory:
+To use LDAP authentication and authorization, start by installing ``python-ldap`` on the machine where the Men&Mice Central service is run and install the python extension used by Central when connecting to an LDAP directory:
 
 .. code-block:: bash
 
@@ -28,7 +28,7 @@ A signature file for the python extension will also have to be installed and pla
   sudo cp mm_ldap.signature /var/mmsuite/mmcentral/extensions
 
 .. note::
-  For security reasons, the Central service will not execute mm_ldap.py unless the signature inmm_ldap.signature matches the signature calculated for mm_ldap.py.
+  For security reasons, the Central service will not execute ``mm_ldap.py`` unless the signature ``inmm_ldap.signature`` matches the signature calculated for ``mm_ldap.py``.
 
 Configuring LDAP
 ----------------
@@ -120,4 +120,4 @@ Example configuration for connecting to an AD LDAP service:
 Configuring the Men&Mice Central service to authenticate users using an LDAP service.
 ---------------------------------------------------------------------------------------
 
-To configure the Men&Mice Central service, login as the superuser "administrator" through the Men&Mice Management Console. In the top left-hand corner select "System Settings" from the "Tools" menu, click on the "Advanced..." button and check the  "Enable LDAP integration" checkbox.
+To configure the Men&Mice Central service, login as the superuser ``administrator`` through the Men&Mice Management Console. In the top left-hand corner select :guilabel:`Tools --> System Settings --> Advanced` and check the :guilabel:`Enable LDAP integration` checkbox.

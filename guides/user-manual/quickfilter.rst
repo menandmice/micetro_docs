@@ -23,35 +23,38 @@ Custom Properties
 Using Wildcards and Regular Expressions in Filters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When using the Quick Filters, it is possible to use the wildcard characters '^' and '$' to narrow the search results.
+When using the Quick Filters, it is possible to use the wildcard characters ``^`` and ``$`` to narrow the search results.
 
-  * The **caret symbol ^** means **starts with**. For example, the search string ^server finds server1.zone.com and server-north.anotherzone.com, but not myserver.myzone.com.
+  * The **caret symbol** ``^`` means **starts with**. For example, the search string ^server finds server1.zone.com and server-north.anotherzone.com, but not myserver.myzone.com.
 
-  * The **dollar symbol $** means **ends with**. For example, the search string 'server$' finds the.best.server and good.nameserver, but not slow.servers.
+  * The **dollar symbol** ``$`` means **ends with**. For example, the search string 'server$' finds the.best.server and good.nameserver, but not slow.servers.
 
-  * The '**!**' operator means **NOT{\*}**.
+  * The ``!`` operator means **NOT{\*}**.
 
-  For example, the search string '!^a' finds entries that don't start with 'a'. The exclamation mark can be used with the other wildcards to find non-empty fields. Entering 'Description: !^$' finds all entries where the Description field is not empty.
+For example, the search string ``!^a`` finds entries that don't start with 'a'. The exclamation mark can be used with the other wildcards to find non-empty fields. Entering ``Description: !^$`` finds all entries where the Description field is not empty.
 
 .. warning::
-  The & and | operators only work for the SOAP interface and Web interface, but not currently for the Management Console. It is a known issue that will be fixed in an upcoming version.
+  The ``&`` and ``|`` operators only work for the SOAP interface and Web interface, but not currently for the Management Console. It is a known issue that will be fixed in an upcoming version.
 
-  * The '**&**' and '**|**' operators. The **ampersand** is interpreted as an **AND** operator while the **vertical bar** is used as an **OR** operator. Using these operators, you can combine searches for added control. You can use parenthesis in conjunction with these operators. Examples:
+  * The ``&`` and ``|`` operators. The **ampersand** is interpreted as an **AND** operator while the **vertical bar** is used as an **OR** operator. Using these operators, you can combine searches for added control. You can use parenthesis in conjunction with these operators. Examples:
 
-    * A | B Finds entries with the text A or the text B
-    * A & B Find entries containing both A and B
-    * A & (B | C) Finds entries containing A and either B or C
-    * (A & B) | C Finds entries containing both A and B or entries containing C
+    * ``A | B`` Finds entries with the text A or the text B
+
+    * ``A & B`` Find entries containing both A and B
+
+    * ``A & (B | C)`` Finds entries containing A and either B or C
+
+    * ``(A & B) | C`` Finds entries containing both A and B or entries containing C
 
 For even more control, you can use regular expressions in filters.
 
 .. note::
-  The character '.' must be escaped if it is to be used as a wildcard character. Otherwise, it will be interpreted literally. The same applies to following characters: ( ) { }.
+  The character ``.`` must be escaped if it is to be used as a wildcard character. Otherwise, it will be interpreted literally. The same applies to following characters: ``(``, ``)``, ``{``, ``}``.
 
 Clearing an Entry
 ^^^^^^^^^^^^^^^^^
 
-At any time, you can clear the text you have in the Quick Filter field by click the "X" shown at the end of the field.
+At any time, you can clear the text you have in the Quick Filter field by click the :guilabel:`X` shown at the end of the field.
 
 .. image:: ../../images/console-clear-quickfilter.png
   :width: 90%
@@ -66,9 +69,9 @@ To save a filter, do the following:
 
 1. Type the entry you want to filter by in the Quick Filter field.
 
-2. Move to the menu bar, and select Edit, Save Filter.
+2. Move to the menu bar, and select :guilabel:`Edit --> Save Filter`.
 
-3. In the dialog box, type the desired name for the filter. Then click OK.
+3. In the dialog box, type the desired name for the filter. Then click :guilabel:`OK`.
 
 4. The saved filter shows at the bottom of the Object list for the corresponding object type.
 
@@ -86,9 +89,9 @@ To edit a filter, do the following:
 
 1. Locate the filter name in the Object list.
 
-2. Right-click the filter and select Edit Filter.
+2. Right-click the filter and select :guilabel:`Edit Filter`.
 
-3. Make the desired changes to the filter and click OK to save the changes.
+3. Make the desired changes to the filter and click :guilabel:`OK` to save the changes.
 
 .. image:: ../../images/console-edit-filter.png
   :width: 60%
@@ -101,4 +104,4 @@ To delete a filter, do the following:
 
 1. Locate the filter name in the Object list.
 
-2. Right-click the filter and select Delete Filter.
+2. Right-click the filter and select :guilabel:`Delete Filter`.

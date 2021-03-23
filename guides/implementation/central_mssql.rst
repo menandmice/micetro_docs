@@ -30,7 +30,7 @@ Subsequently the script will create:
 * an empty database with the name "mmsuite" and the following collation:
   ``COLLATE SQL_Latin1_General_CP1_CS_AS``
 
-.. information::
+.. note::
   For further details take a look at the CreateDatabase.sql script.
 
 Configuring the connection parameters

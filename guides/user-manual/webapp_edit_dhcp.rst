@@ -8,9 +8,9 @@ View the configured DHCP options for a DHCP scope
 
 1. Select the DHCP scope in the network list
 
-2. Click on the "Edit DHCP options" task
+2. Click on the :guilabel:`Edit DHCP options` task.
 
-3. A dialog is displayed. Note that in order to see the options that have inherited values, the "Show inherited options" checkbox needs to be checked.
+3. A dialog is displayed. Note that in order to see the options that have inherited values, the :guilabel:`Show inherited options` checkbox needs to be checked.
 
 .. image:: ../../images/blackstar-edit-dhcp.png
   :width: 70%
@@ -19,7 +19,7 @@ View the configured DHCP options for a DHCP scope
 Add a new DHCP option
 ---------------------
 
-1. Start typing into the "Add an option" field. Either type in the name of the option or the option number.
+1. Start typing into the :guilabel:`Add an option` field. Either type in the name of the option or the option number.
 
 2. A list of available options will be displayed as you type.
 

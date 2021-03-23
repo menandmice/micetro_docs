@@ -3,7 +3,7 @@
 Menu Bars
 =========
 
-The Menu Bar in the Men&Mice Management Console provides access to nearly all of the program's functionality.
+The *Menu Bar* in the Men&Mice Management Console provides access to nearly all of the program's functionality.
 
 .. important::
   You must have sufficient access privileges in order to use some of the menu items discussed below.

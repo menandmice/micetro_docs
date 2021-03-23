@@ -6,7 +6,7 @@ DNS resource records
 Overview
 --------
 
-Each zone contains DNS resource records that define how requests are processed or delegated by the zone. The Zone tab provides a spreadsheet-like interface that makes it easy to view, edit, and manipulate information within a zone.
+Each zone contains DNS resource records that define how requests are processed or delegated by the zone. The *Zone* tab provides a spreadsheet-like interface that makes it easy to view, edit, and manipulate information within a zone.
 
 .. image:: ../../images/console-dns-records.png
   :width: 80%
@@ -40,7 +40,7 @@ A
     "example.com.",	"A", "192.168.0.1"
 
 PTR
-  Also known as Pointer records, PTR records define an IP Address-to-Hostname mapping, known as a reverse mapping. A properly configured reverse zone has one PTR record providing the reverse lookup for each IP Address. All reverse zones are traditionally part of the .in-addr.arpa. zone. The proper formatting for a PTR record is the 4 octets of the IP Address in reverse order, followed by .in-addr.arpa. A properly formatted PTR record for the A record (above) is shown in the following example.
+  Also known as Pointer records, PTR records define an IP Address-to-Hostname mapping, known as a reverse mapping. A properly configured reverse zone has one PTR record providing the reverse lookup for each IP Address. All reverse zones are traditionally part of the ``.in-addr.arpa.`` zone. The proper formatting for a PTR record is the 4 octets of the IP Address in reverse order, followed by ``.in-addr.arpa.`` A properly formatted PTR record for the A record (above) is shown in the following example.
 
   In the event that you have multiple A records concerning the same IP Address, choose one for the PTR record. If one of the host names is used for a mail server, give that hostname preference because a common use of reverse lookup is to check the source of e-mail.
 
@@ -116,7 +116,9 @@ AFSDB
   The Andrew File System Database resource record maps a DNS domain name to the host name for a server computer of a server subtype. Two fields of data are required:
 
   The first is a subtype, which can have one of two supported numeric values:
+
     * A 1 indicates that the server is an AFS version 3.0 volume location server for the named AFS cell.
+
     * A 2 indicates that the server is an authenticated name server holding the cell-root directory node for the server that uses either Open Software Foundation's (OSF) DCE authenticated cell-naming system or HP/Apollo's Network Computing Architecture (NCA).
 
   The second field is the server's host name.
@@ -132,18 +134,18 @@ AFSDB
 SRV
   Service records are intended to provide information on available services. They allow multiple servers providing a similar TCP/IP-based service to be located using a single DNS query operation.
 
-  An SRV record has four fields and a special system for naming. The naming system is an underscore followed by the name of the service, followed by a period, an underscore, and then the protocol (generally TCP or UDP), another dot, and then the name of the domain. The four fields are.
+  An SRV record has four fields and a special system for naming. The naming system is an underscore followed by the name of the service, followed by a period, an underscore, and then the protocol (generally TCP or UDP), another dot, and then the name of the domain. The four fields are:
 
-  Priority.
+  Priority
     Used the same way as the preference number in MX records.
 
-  Weight.
+  Weight
     This determines the relative capacity between SRV fields with the same priority. Hits will be assigned proportionately by weight, allowing a powerful and a weak server to share appropriate loads.
 
-  Port.
+  Port
     The port of the service offered.
 
-  Hostname.
+  Hostname
     The name of the domain.
 
   Example
@@ -191,7 +193,7 @@ LOC
 
   * Vertical precision of data in meters, with or without an M. (Optional, not available if 5 is blank.)
 
-  .. information::
+  .. note::
     The Microsoft DNS server does not support LOC records.
 
   Example
@@ -205,22 +207,22 @@ LOC
 NAPTR
   NAPTR stands for Naming Authority Pointer and is a resource record type that supports regular expression based rewriting. The NAPTR record accepts six fields of data:
 
-  Preference.
+  Preference
     When there are multiple NAPTR records with the same name, the record with the lowest preference number is picked first.
 
-  Weight (Order).
+  Weight (Order)
     This field specifies the order in which the NAPTR records MUST be processed to accurately represent the ordered list of Rules. This field is only used when there is more than one record with the same preference
 
-  Flags.
+  Flags
     This field contains flags to control aspects of the rewriting and interpretation of the fields in the record. Flags are single characters from the set A-Z and 0-9.
 
-  Service.
+  Service
     This field contains a character-string that specifies the Service Parameters applicable to this delegation path.
 
-  Regexp.
+  Regexp
     This field contains a character-string that contains a substitution expression that is applied to the original string held by the client in order to construct the next domain name to lookup.
 
-  Replacement.
+  Replacement
     This field contains a domain name, which is the next domain name to query for, depending on the potential values found in the flags field.
 
   Example
@@ -234,16 +236,16 @@ NAPTR
 SSHFP
   SSHFP stands for SSH Public Key Fingerprint. This resource record type is used for publishing SSH public host key fingerprints in the DNS System, in order to aid in verifying the authenticity of the host. The SSHFP record accepts 3 fields of data:
 
-  Algorithm.
+  Algorithm
     Specifies the algorithm number to use.
 
-  Fingerprint type.
+  Fingerprint type
     Specifies the fingerprint type to use.
 
-  Fingerprint.
+  Fingerprint
     The fingerprint for the record.
 
-  For further information on this record type, see RFC 4255
+  For further information on this record type, see RFC 4255.
 
   Example
 
@@ -256,7 +258,7 @@ SSHFP
 SPF
   SPF stands for Sender Policy Framework. This record type is used in an e-mail validation system designed to prevent e-mail spam. The SPF record accepts a text string that contains the configuration info that should be used.
 
-  For further information on this record type, see RFC 4408
+  For further information on this record type, see RFC 4408.
 
   Example
 
@@ -271,18 +273,18 @@ TLSA
 
   For further information on this record type, see RFC 6698
 
-  A TLSA record has four fields, which are
+  A TLSA record has four fields, which are:
 
-  Certificate usage.
+  Certificate usage
     Specifies the association that will be used to match the certificate.
 
-  Selector.
+  Selector
     Specifies which part of the TLS certificate will be matched against the certificate association data
 
-  Matching type.
+  Matching type
     Specifies how the certificate association is presented
 
-  Certificate associate data.
+  Certificate associate data
     Specifies the certificate association data to be matched
 
   Example
@@ -298,11 +300,11 @@ CAA
 
   Example
 
-+--------------+------+---------------------------+
-| Name         | Type | Data                      |
-+==============+======+===========================+
-| example.com  | CAA  | 0 issue "letsencrypt.org" |
-+--------------+------+---------------------------+
+  +--------------+------+---------------------------+
+  | Name         | Type | Data                      |
+  +==============+======+===========================+
+  | example.com  | CAA  | 0 issue "letsencrypt.org" |
+  +--------------+------+---------------------------+
 
 In addition to the supported record types in the table, the Men&Mice Suite supports the following DNSSEC resource record types:
 
@@ -349,30 +351,24 @@ New Records
 
 If you are comfortable editing the record table directly, you can use this procedure to insert a new record directly in the zone tab.
 
-1. Open the Zone tab to display the resource records in the zone you want to edit.
+1. Open the :guilabel:`Zone` tab to display the resource records in the zone you want to edit.
 
 2. In the record table, select the record that is directly above where you want to insert the new record. To select a record, click on the square block to the left of the Name column.
 
-3. Right-click anywhere in the selected record and, from the shortcut menu, select Insert Record. A new, blank record is added.
+3. Right-click anywhere in the selected record and, from the shortcut menu, select :guilabel:`Insert Record`. A new, blank record is added.
 
-4. Starting with the Name field, enter the domain name.
+4. Starting with the **Name** field, enter the domain name.
 
 .. warning::
   If you enter a domain name that is not fully qualified (i.e., does not end in a dot.). The program will assume that you are using a local name and will automatically append the name of the zone onto the end of the name, making it a fully qualified domain name. That means when adding the name server ns1 to the zone example.com, you should enter either just ns1 or ns1.example.com. If you leave off the period at the end, the program will interpret your intention as ns1.example.com.example.com. The information automatically filled in by the Management Console appears in grey.
 
-5. Press the Tab key to advance the focus to the Type field.
+5. Press the Tab key to advance the focus to the **Type** field. Enter the appropriate type classification. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, AFSDB, SRV, HINFO, TXT, and NAPTR. The appropriate number of fields is automatically created in the Data field based on the type you entered. If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.
 
-6. Enter the appropriate type classification. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, AFSDB, SRV, HINFO, TXT, and NAPTR. The appropriate number of fields is automatically created in the Data field based on the type you entered. If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.
+6. Press the Tab key to advance the focus to the **Data** field. Enter the appropriate data for your record type.
 
-7. Press the Tab key to advance the focus to the Data field.
+7. Click the :guilabel:`Save` button to save the new record to the zone.
 
-8. Enter the appropriate data for your record type.
-
-9. Click the Save button to save the new record to the zone.
-
-10. An exclamation mark displays at the left edge of a record that is incomplete or improperly entered. The program will not allow you to save the changes to this zone until the record is repaired. Move to the lower right corner of the tab and click the exclamation point icon. This expands the tab and shows the items in error:
-
-11. Double-click on the error message and it will jump to the record in question.
+8. An exclamation mark displays at the left edge of a record that is incomplete or improperly entered. The program will not allow you to save the changes to this zone until the record is repaired. Move to the lower right corner of the tab and click the exclamation point icon. This expands the tab and shows the items in error. Double-click on the error message and it will jump to the record in question.
 
 .. image:: ../../images/console-dns-records-inspector.png
   :width: 80%
@@ -381,27 +377,27 @@ If you are comfortable editing the record table directly, you can use this proce
 Deleting Records
 ----------------
 
-Deleting a record removes both the data and the physical record from the Zone window. Records beneath the deleted one are instantly moved up to fill in the space.
+Deleting a record removes both the data and the physical record from the *Zone* window. Records beneath the deleted one are instantly moved up to fill in the space.
 
 1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl key while making you selections.
 
-2. Right-click anywhere in the zone window, and select Delete Record from the context menu. The record is immediately deleted from the zone.
+2. Right-click anywhere in the zone window, and select :guilabel:`Delete Record` from the context menu. The record is immediately deleted from the zone.
 
 Clearing Records
 ----------------
 
-When the whole record is selected, the Clear command works the same as the Delete Record command. The Clear command is really intended for deleting the contents of an individual field of data, leaving the rest of the record's data intact.
+When the whole record is selected, the :guilabel:`Clear` command works the same as the :guilabel:`Delete Record` command. The Clear command is really intended for deleting the contents of an individual field of data, leaving the rest of the record's data intact.
 
-1. In the Zone window, select the field (cell) whose contents you want to delete.
+1. In the *Zone* window, select the field (cell) whose contents you want to delete.
 
-2. Right-click anywhere in the zone window and select Clear from the context menu. The data is removed from the field. (The cell is not removed, and the rest of the record is unaffected.)
+2. Right-click anywhere in the zone window and select :guilabel:`Clear` from the context menu. The data is removed from the field. (The cell is not removed, and the rest of the record is unaffected.)
 
 Disable/Enable Records in the Zone Window
 -----------------------------------------
 
 You can disable a record without deleting it. The disabled record performs no function; however, it can be instantly enabled when its services are needed, without having to re-type the record.
 
-.. information::
+.. note::
   You cannot disable and enable records in dynamic zones.
 
 How to Disable a Record
@@ -409,15 +405,15 @@ How to Disable a Record
 
 1. In the Zone window, select the record(s) that you want to disable. To select more than one record, hold down the Ctrl key while making your selections.
 
-2. Right-click anywhere in the zone window and select Disable Record. Disabled records are grayed out in the Zone window.
+2. Right-click anywhere in the zone window and select :guilabel:`Disable Record`. Disabled records are grayed out in the Zone window.
 
-3. In the toolbar, click the Save button to save the changes to the zone.
+3. In the toolbar, click the :guilabel:`Save` button to save the changes to the zone.
 
 4. Select the disabled record(s) that you want to re-activate. To select multiple records at once, hold down the Ctrl key while making your selections.
 
-5. Right-click anywhere in the zone window and select Enable Record.
+5. Right-click anywhere in the zone window and select :guilabel:`Enable Record`.
 
-6. In the toolbar, click theSave button to save the changes to the zone.
+6. In the toolbar, click the :guilabel:`Save` button to save the changes to the zone.
 
 .. image:: ../../images/console-dns-records-disable.png
   :width: 60%
@@ -430,27 +426,26 @@ When working with records in the Management Console, there is no need to enter t
 
 To facilitate this, the Copy and Paste functions do not use fully qualified host names, so it is easy to work with records between zones.
 
-This means that if you copy a record from the domain example.com, such as: www.example.com. CNAME example.com.
-and paste the record to sample.com, it displays as: www.sample.com. CNAME sample.com.
+This means that if you copy a record from the domain example.com, such as: ``www.example.com. CNAME example.com.`` and paste the record to sample.com, it displays as: www.sample.com. CNAME sample.com.
 
 To cut, copy, and paste records, do the following:
 
 1. Select the record(s) that you want to move or copy. To select multiple records, hold down the Ctrl key while making your selections.
 
-2. Right-click anywhere in the Zone window and choose either Cut (to move the record) or Copy (to duplicate the record elsewhere) from the context menu.
+2. Right-click anywhere in the Zone window and choose either :guilabel:`Cut` (to move the record) or :guilabel:`Copy` (to duplicate the record elsewhere) from the context menu.
 
-.. information::
+.. note::
   The Cut, Copy, Paste, and Clear commands can also be selected from the Edit menu in the main window.
 
 3. Open the destination zone in which you want to insert the record(s).
 
-4. In the destination zone, insert a new blank record in the location where you want to paste the records. To do this, right-click on the record immediately above where you want to paste the new one(s), then select Insert Record from the popup menu.
+4. In the destination zone, insert a new blank record in the location where you want to paste the records. To do this, right-click on the record immediately above where you want to paste the new one(s), then select :guilabel:`Insert Record` from the popup menu.
 
-5. Select the blank record
+5. Select the blank record.
 
-6. Right-click anywhere in the Zone window and choose Paste from the context menu. The new record(s) are pasted in the destination zone.The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.
+6. Right-click anywhere in the Zone window and choose :guilabel:`Paste` from the context menu. The new record(s) are pasted in the destination zone.The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.
 
-7. When you perform an editing action, the Edit menu's Undo command is modified to include that action. For example, if you disable a record, the Undo command changes to Undo Disable. Selecting this command will reverse the action and restore the previously deleted record. When you perform an Undo action, the Redo command becomes active. Selecting this command reverses the previous Undo action. If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.
+7. When you perform an editing action, the :menuselection:`Edit` menu's :guilabel:`Undo` command is modified to include that action. For example, if you disable a record, the Undo command changes to :guilabel:`Undo Disable`. Selecting this command will reverse the action and restore the previously deleted record. When you perform an Undo action, the Redo command becomes active. Selecting this command reverses the previous Undo action. If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.
 
 Undo/Redo Commands
 ------------------
@@ -459,6 +454,6 @@ The Management Console allows you to undo most editing actions, such as deleting
 
 When you perform an editing action, the Edit menu’s Undo command is modified to include that action. For example, if you disable a record, the Undo command changes to Undo Disable. Selecting this command will reverse the action and restore the previously deleted record.
 
-When you perform an Undo action, the Redo command becomes active. Selecting this command reverses the previous Undo action.
+When you perform an Undo action, the :guilabel:`Redo` command becomes active. Selecting this command reverses the previous Undo action.
 
 If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.

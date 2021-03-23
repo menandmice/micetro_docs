@@ -97,7 +97,7 @@ Managing Subnets in a Site
 
 * To move a subnet to a different site, drag the subnet to the new site. The subnet is moved to the site in AD.
 
-.. information::
+.. note::
   Child subnets cannot be moved to a different site than the parent subnet unless the Enforce site inheritance checkbox is unchecked in the System Settings dialog box. It is also possible to move a subnet to a different site by selecting the site from a drop-down list in the Range or Scope Properties dialog box.
 
 * To view subnets that don't belong to a site, sort the IP Address ranges by the AD Site column in ascending order. You may want to use the flat view for the IP Address ranges when performing this action.

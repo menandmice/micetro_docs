@@ -14,7 +14,7 @@ The Men&Mice Suite consists of several components. Below, you will find a short 
   :width: 80%
   :align: center
 
-.. information::
+.. note::
   All communications between Men&Mice Management Console and the other Men&Mice components are encrypted.
 
 User Interfaces

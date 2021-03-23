@@ -35,9 +35,9 @@ You can manage access to ranges just as you can for other object types in the Me
 
 When you open the Access dialog box for a range, the dialog box has an extra section for inherited access.
 
-* Checking the Inherit Access checkbox will have the selected range inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the selected range as well.
+* Checking the :guilabel:`Inherit Access` checkbox will have the selected range inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the selected range as well.
 
-* Clicking the Apply access inheritance in child ranges button will enable access inheritance for all descendants of the selected range. This means that whenever the access privileges in the selected range are changed, the changes will be applied of all descendants of the range.
+* Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the selected range. This means that whenever the access privileges in the selected range are changed, the changes will be applied of all descendants of the range.
 
 Regarding other access settings, refer to :ref:`global-access`.
 
@@ -53,17 +53,20 @@ Creating a Container
 
 To create a Container, do the following:
 
-1. Select File, New, Container. The Container dialog box displays.
+Select :guilabel:`File --> New --> Container`. The *Container* dialog box displays.
 
 .. image:: ../../images/console-ipam-create-range.png
   :width: 70%
   :align: center
 
-2. Subnet. For IPv4 ranges you can enter the address range in a network/subnet notation, for example 192.168.1/24. For IPv6 ranges you must enter the range in a network/subnet.
+Subnet
+  For IPv4 ranges you can enter the address range in a network/subnet notation, for example 192.168.1/24. For IPv6 ranges you must enter the range in a network/subnet.
 
-3. Title. Type the name you want to use for this Container. This name is for your convenience, so feel free to use whatever name you feel is appropriate.
+Title
+  Type the name you want to use for this Container. This name is for your convenience, so feel free to use whatever name you feel is appropriate.
 
-4. Description. Enter a comment for this Container.
+Description
+  Enter a comment for this Container.
 
 Converting Ranges and Containers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -74,25 +77,25 @@ To convert a range to a Container:
 
 1. Right-click the range that you want to convert.
 
-2. From the shortcut menu, select Convert to Container.
+2. From the shortcut menu, select :guilabel:`Convert to Container`.
 
-3. Click OK in the confirmation dialog box that appears.
+3. Click :guilabel:`OK` in the confirmation dialog box that appears.
 
 To convert a Container to a range:
 
 1. Right-click the Container that you want to convert.
 
-2. From the shortcut menu, select Convert to IP Address Range.
+2. From the shortcut menu, select :guilabel:`Convert to IP Address Range`.
 
-3. Click OK in the confirmation dialog box that appears.
+3. Click :guilabel:`OK` in the confirmation dialog box that appears.
 
 You can manage access to Containers just as you can for other object types in the Men&Mice Suite, but there is one important distinction – You can set Inherited Access for Containers.
 
 When you open the Access dialog box for a Container, the dialog box has an extra section for inherited access.
 
-* Checking the Inherit Access checkbox will have the selected Container inherit all access bits from its parent. This means that whenever the access privileges for the parent are changed, they will be applied to the Container as well.
+* Checking the :guilabel:`Inherit Access` checkbox will have the selected Container inherit all access bits from its parent. This means that whenever the access privileges for the parent are changed, they will be applied to the Container as well.
 
-* Clicking the Apply access inheritance in child ranges button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
+* Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
 
 Regarding other access settings, refer to :ref:`global-access`.
 
@@ -110,7 +113,7 @@ The IP Address Range view shows the section of the IP Address space that is acce
   :width: 50%
   :align: center
 
-In the Object Section, click on IP Address Ranges. This shows the name of each IP range that has been created (and the address range it represents) and accessible to the current user.
+In the Object Section, click on :guilabel:`IP Address Ranges`. This shows the name of each IP range that has been created (and the address range it represents) and accessible to the current user.
 
 As indicated by the icons there are two types of ranges listed:
 
@@ -128,7 +131,7 @@ If an Address range has no subranges, the utilization for the range is shown in 
 
 The IP Address Range view can display an indicator to show which gaps between IP Address ranges. This view is useful if you are looking for free segments in a fragmented IP Address space. When active, the view will display a thin blue line below a range if there is unallocated space between that range and the next range in the address space. To display the indicator, choose Show Trailing Gaps from the Range menu.
 
-While viewing the IP Address ranges, the Quick Filter is available. When using the tree view while a filter is active, any parent ranges that don't fulfill the search criteria are displayed in gray to distinguish them from the found ranges. For example, in the image below, we searched for the string '0/26' and the only range found was '10.1.0.0./26'. However, to maintain the tree view, the parent ranges are shown even if they don't fulfill the search criteria.
+While viewing the IP Address ranges, the :ref:`quickfilter` is available. When using the tree view while a filter is active, any parent ranges that don't fulfill the search criteria are displayed in gray to distinguish them from the found ranges. For example, in the image below, we searched for the string '0/26' and the only range found was '10.1.0.0./26'. However, to maintain the tree view, the parent ranges are shown even if they don't fulfill the search criteria.
 
 .. image:: ../../images/console-ipam-range-filter.png
   :width: 50%
@@ -139,11 +142,11 @@ New Ranges
 
 To create a new IP Address range, do the following:
 
-1. Make sure that IP Address Ranges is selected in the left hand side of the Manager window.
+1. Make sure that :guilabel:`IP Address Ranges` is selected in the left hand side of the Manager window.
 
-2. Click the Add button. The Properties dialog box displays.
+2. Click the :guilabel:`Add` button. The *Properties* dialog box displays.
 
-3. Enter the appropriate values in the Properties dialog box and click OK.
+3. Enter the appropriate values in the Properties dialog box and click :guilabel:`OK`.
 
 Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the IP Address component of the Men&Mice Suite. When the range is managed, the Men&Mice Suite will allow users with appropriate privileges to work with IP Addresses from the range.
 
@@ -163,23 +166,31 @@ When configuring a new IP Address range, you must complete the Properties dialog
   :width: 60%
   :align: center
 
-In the Object list, right-click and, from the shortcut menu, select New IP Address Range. The New Range Properties dialog box displays.
+In the Object list, right-click and, from the shortcut menu, select :guilabel:`New IP Address Range`. The *New Range Properties* dialog box displays.
 
-  Subnet.
-    For IPv4 ranges you can enter the address range in a network/subnet notation, for example 192.168.1/24. You can also enter the address range using a from-to notation, for example 192.168.1.23-192.168.1.77. A range does not have to be defined on network boundaries. For IPv6 ranges you must enter the range in a network/subnet notation and the smallest network you can create is a /64. The actual range displays in the Usable IP Addresses field below. The network address and the broadcast address for the range are displayed below the Usable IP Addresses if the Range is a subnet checkbox is selected.  NOTE:  The boundaries of IP existing address ranges may not overlap.
+Subnet
+  For IPv4 ranges you can enter the address range in a network/subnet notation, for example 192.168.1/24. You can also enter the address range using a from-to notation, for example 192.168.1.23-192.168.1.77. A range does not have to be defined on network boundaries. For IPv6 ranges you must enter the range in a network/subnet notation and the smallest network you can create is a /64. The actual range displays in the Usable IP Addresses field below. The network address and the broadcast address for the range are displayed below the Usable IP Addresses if the Range is a subnet checkbox is selected.
 
-  Title.
-    Type the name you want to use for this IP Address range. This name is for your convenience, so feel free to use whatever name you feel is appropriate.
-  Description. Enter a comment for this IP Address range.
+  .. note::
+    The boundaries of IP existing address ranges may not overlap.
 
-  Reserve Network and Broadcast Address.
-    This checkbox determines whether the user can use the first and last IP Address of the range when creating address records. If the address range is defined on actual network boundaries, you should leave this checkbox checked. If the address range you are defining is used for Administration boundaries rather than network boundaries, you should clear this checkbox.  NOTE:  This checkbox is disabled for IPv6 ranges.
+Title
+  Type the name you want to use for this IP Address range. This name is for your convenience, so feel free to use whatever name you feel is appropriate.
 
-  Locked.
-    Select this checkbox if you want to lock this IP Address range. When an IP Address range is locked, Men&Mice Suite will not allow using IP Addresses from that range. This is useful if you want to lock a certain section of your IP Address block.
+Description
+  Enter a comment for this IP Address range.
 
-  Allow auto-assignment of IP Addresses.
-    Select this checkbox if you want to allow automatically assigned IP Addresses from this IP Address range. If the checkbox is selected, and a user that has access to this address range creates an address record without entering an IP Address, Men&Mice Suite automatically assigns a free IP Address to the address record.
+Reserve Network and Broadcast Address
+  This checkbox determines whether the user can use the first and last IP Address of the range when creating address records. If the address range is defined on actual network boundaries, you should leave this checkbox checked. If the address range you are defining is used for Administration boundaries rather than network boundaries, you should clear this checkbox.
+
+  .. note::
+    This checkbox is disabled for IPv6 ranges.
+
+Locked
+  Select this checkbox if you want to lock this IP Address range. When an IP Address range is locked, Men&Mice Suite will not allow using IP Addresses from that range. This is useful if you want to lock a certain section of your IP Address block.
+
+Allow auto-assignment of IP Addresses
+  Select this checkbox if you want to allow automatically assigned IP Addresses from this IP Address range. If the checkbox is selected, and a user that has access to this address range creates an address record without entering an IP Address, Men&Mice Suite automatically assigns a free IP Address to the address record.
 
   .. note::
     This checkbox is disabled for IPv6 ranges.
@@ -192,17 +203,18 @@ Once you have created an IP Address Range, it is easy for you to make changes to
 * Change the name of the IP Address range
 
 * Change the boundaries (start and end IP Address) of the IP Address range
+
 * Change the state of the IP Addresses in that IP Address range
 
 To modify an IP Address range, do the following:
 
-1. Right-click on the IP Address ranges.
+1. Right-click on the :guilabel:`IP Address ranges`.
 
-2. From the shortcut menu, select Properties.
+2. From the shortcut menu, select :guilabel:`Properties`.
 
 3. Make the desired changes.
 
-4. Click OK.
+4. Click :guilabel:`OK`.
 
 Range Deletions
 ^^^^^^^^^^^^^^^
@@ -213,37 +225,42 @@ Use the following procedure to delete an IP Address Range definition:
 
 1. Locate the IP Address Range you want to remove and right-click on it.
 
-2. From the shortcut menu, select Delete. A dialog prompts you to confirm your decision to delete this range
+2. From the shortcut menu, select :guilabel:`Delete`. A dialog prompts you to confirm your decision to delete this range
 
-3. Click OK to delete the range, or Cancel to leave it.
+3. Click :guilabel:`OK` to delete the range, or Cancel to leave it.
 
 IP Address List
 ---------------
 
-To view a list of host entries in a particular range, double-click on the IP Address Range. This opens the IP Address List tab where you can view and edit the properties of individual IP Address entries.
+To view a list of host entries in a particular range, double-click on the IP Address Range. This opens the :guilabel:`IP Address List` tab where you can view and edit the properties of individual IP Address entries.
 
 .. image:: ../../images/console-ipam-ip-list.png
   :width: 70%
   :align: center
 
-* The Show unassigned addresses checkbox lets you choose whether you want to see all IP Addresses in the range or whether you only want to show IP Addresses that are assigned.
+* The :guilabel:`Show unassigned addresses` checkbox lets you choose whether you want to see all IP Addresses in the range or whether you only want to show IP Addresses that are assigned.
 
-* The PTR Status column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
+* The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
 
-  Empty. The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
+  Empty
+    The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
 
-  OK. If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
+  OK
+    If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
 
-  Verify. If there is not a match between the A and the PTR records for the host, the status is listed as Verify. The most common reasons are:
+  Verify
+    If there is not a match between the A and the PTR records for the host, the status is listed as Verify. The most common reasons are:
 
-    * There is an A record but the PTR record is missing.
-    * There is a PTR record but the A record is missing.
-    * The data section in the PTR record does not correspond to the name of the A record.
+      * There is an A record but the PTR record is missing.
+
+      * There is a PTR record but the A record is missing.
+
+      * The data section in the PTR record does not correspond to the name of the A record.
 
 When the PTR Status for a host entry shows Verify, you can open the IP Address dialog box for the host to see more detailed information on which DNS host entry is generating this status message.
 
 .. note::
-  When working with large IP Address ranges (ranges that contain more than 4096 IP Addresses) the Show unassigned addresses will no longer be available and the IP Address List window will only display assigned IP Addresses.
+  When working with large IP Address ranges (ranges that contain more than 4096 IP Addresses) the :guilabel:`Show unassigned addresses` will no longer be available and the IP Address List window will only display assigned IP Addresses.
 
 .. _ip-address-dialog:
 
@@ -256,31 +273,34 @@ When you add or modify an existing entry, the IP Address dialog box displays. Th
   :width: 60%
   :align: center
 
-DNS Hosts. If a DNS license key is active, the IP Address dialog box will contain a DNS Hosts section where you can enter Address (A) records and related CNAME and TXT records. You can also add, edit, and remove hosts/related hosts from this screen. The PTR column in the list of DNS hosts shows the PTR status for each A or AAAA record. For more information on PTR status see the IP Address List section, above.
+DNS Hosts
+  If a DNS license key is active, the IP Address dialog box will contain a DNS Hosts section where you can enter Address (A) records and related CNAME and TXT records. You can also add, edit, and remove hosts/related hosts from this screen. The PTR column in the list of DNS hosts shows the PTR status for each A or AAAA record. For more information on PTR status see the IP Address List section, above.
 
 If a discovery schedule has been set for the subnet, the dialog box will show information on when the IP Address was last seen on the network:
 
-  Last seen.
+  Last seen
     Shows the last time this IP Address was seen. This information cannot be edited.
 
-  Last discovery.
+  Last discovery
     Shows the last time a discovery was performed for this IP Address. This information cannot be edited.
 
-  Last known MAC.
+  Last known MAC
     Shows the last known MAC address for this IP Address. This information is read directly from the router tables and is only populated if Router Query is active.
 
-  Discovery type.
+  Discovery type
     Shows the type of discovery performed for this IP Address (Ping or Router Query)
 
-If the IP Address is linked to a device, the name of the device is shown and a Show button displays. Click the Show button to open the Device Properties window for the device the IP Address is linked to.
+If the IP Address is linked to a device, the name of the device is shown and a Show button displays. Click the :guilabel:`Show` button to open the Device Properties window for the device the IP Address is linked to.
+
+.. _ipam-add-dns-host:
 
 Adding a DNS Host
 ^^^^^^^^^^^^^^^^^
 
 .. tip::
-  As a shortcut, you can select a valid host name in any field, right-click and select Add Host.  The host is automatically added
+  As a shortcut, you can select a valid host name in any field, right-click and select :guilabel:`Add Host`. The host is automatically added.
 
-1. While viewing the IP Address dialog box, move to the DNS Hosts section, and click the Add button.
+1. While viewing the IP Address dialog box, move to the :guilabel:`DNS Hosts` section, and click the :guilabel:`Add` button.
 
 .. image:: ../../images/console-ipam-add-dns-host.png
   :width: 50%
@@ -289,9 +309,9 @@ Adding a DNS Host
   .. note::
     If the number of available zones does not exceed 100, the Zone area of the window will be a drop-down list instead of the Browse button.
 
-2. In the Zone menu, verify the zone selected is the zone to which you want to add a host. The Select zone menu displays, reflecting a list of available zones.
+2. In the :guilabel:`Zone` menu, verify the zone selected is the zone to which you want to add a host. The :guilabel:`Select zone` menu displays, reflecting a list of available zones.
 
-3. Click OK. The dialog box closes and the Address record displays in the IP Address dialog box.
+3. Click :guilabel:`OK`. The dialog box closes and the Address record displays in the IP Address dialog box.
 
 Editing a DNS Host
 ^^^^^^^^^^^^^^^^^^
@@ -300,32 +320,33 @@ Editing a DNS Host
 
 2. Double click the host entry you want to edit. A dialog box displays.
 
-3. Make the desired changes and click OK. The dialog box closes and the details are updated.
+3. Make the desired changes and click :guilabel:`OK`. The dialog box closes and the details are updated.
 
 Removing a DNS Host
 ^^^^^^^^^^^^^^^^^^^
 
 1. Select the host you want to remove.
 
-2. Click Remove. The host details are deleted and removed from the list in the IP Address dialog box.
+2. Click :guilabel:`Remove`. The host details are deleted and removed from the list in the IP Address dialog box.
 
 Adding a Related Host
 ^^^^^^^^^^^^^^^^^^^^^
 
-1. Click Add Related button. The Add Related Record dialog box displays.
+1. Click :guilabel:`Add Related` button. The *Add Related Record* dialog box displays.
 
 .. image:: ../../images/console-ipam-add-related-record.png
   :width: 50%
   :align: center
 
-2. For the Name and Zone fields, refer to the steps found for  Adding a DNS Host .
+2. For the **Name** and **Zone** fields, refer to the steps found for :ref:`ipam-add-dns-host`.
 
-3. In the Type field, click the drop-down list and select the record type.
+3. In the **Type** field, click the drop-down list and select the record type.
 
     * If the record type is CNAME, in the Zone field, choose the zone that should contain the record.
+
     * If the record type is TXT, in the Data field, type the text for the record.
 
-4. Click OK. The dialog box closes and the related record displays in the IP Address dialog box.
+4. Click :guilabel:`OK`. The dialog box closes and the related record displays in the IP Address dialog box.
 
 Editing a Related Host
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -339,14 +360,14 @@ Editing a Related Host
   :width: 50%
   :align: center
 
-2. Make the desired changes and click OK. The dialog box closes and the record is updated.
+2. Make the desired changes and click :guilabel:`OK`. The dialog box closes and the record is updated.
 
 Removing a Related Host
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Select the related record you want to remove.
 
-2. Click Remove. The related record is deleted from the zone and removed from the list in the IP Address dialog box.
+2. Click :guilabel:`Remove`. The related record is deleted from the zone and removed from the list in the IP Address dialog box.
 
 Moving IP Address Information
 -----------------------------
@@ -361,35 +382,38 @@ To move a IP Address information, do the following:
 
 3. Find the applicable IP Address.
 
-4. Right-click and, from the shortcut menu, select Move.
+4. Right-click and, from the shortcut menu, select :guilabel:`Move`.
 
 .. image:: ../../images/console-ipam-move.png
   :width: 60%
   :align: center
 
-5. In the Move IP Address Information dialog box, type the new IP Address.
+5. In the *Move IP Address Information* dialog box, type the new IP Address.
 
-6. Click OK. The IP Address information is moved to the new IP Address.
+6. Click :guilabel:`OK`. The IP Address information is moved to the new IP Address.
 
 Split Range Wizard
 ------------------
 
 This wizard allows you to create multiple subranges of an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
-1. From the object list, click on IP Address Ranges.
+1. From the object list, click on :guilabel:`IP Address Ranges`.
 
-2. From the list of ranges displayed right-click and, from the shortcut menu, select Split into Subranges. The Split range wizard displays.
+2. From the list of ranges displayed right-click and, from the shortcut menu, select :guilabel:`Split into Subranges`. The *Split range wizard* displays.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
 Update Reverse Records Wizard
 -----------------------------
 
-This wizard allows you to create reverse DNS zones for selected ranges. The wizard can only be used on ranges that exist on subnet boundaries and contain 254 or more IP Addresses (/24 or larger)
+This wizard allows you to create reverse DNS zones for selected ranges.
 
-1. From the object list, click on IP Address Ranges.
+.. note::
+  The wizard can only be used on ranges that exist on subnet boundaries and contain 254 or more IP Addresses (/24 or larger)
 
-2. From the list of ranges displayed, select the ranges, right-click and, from the shortcut menu, select Update Reverse Records. The Reverse zone generation wizard displays.
+1. From the object list, click on :guilabel:`IP Address Ranges`.
+
+2. From the list of ranges displayed, select the ranges, right-click and, from the shortcut menu, select :guilabel:`Update Reverse Records`. The *Reverse zone generation wizard* displays.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
@@ -398,22 +422,22 @@ Allocate Ranges Wizard
 
 This wizard allows you to create allocate a user-defined number of subranges from an existing range. The wizard can only be used on ranges that exist on subnet.
 
-1. From the object list, click on IP Address Ranges.
+1. From the object list, click on :guilabel:`IP Address Ranges`.
 
-2. From the list of ranges displayed right-click and, from the shortcut menu, select Allocate Ranges. The Allocate ranges wizard displays.
+2. From the list of ranges displayed right-click and, from the shortcut menu, select :guilabel:`Allocate Ranges`. The *Allocate ranges wizard* displays.
 
 3. Follow the instructions provided by the wizard to create the number of subranges that you need.
 
 Join Ranges
 -----------
 
-This function allows you to select and join a number of ranges. The Join Ranges command is available if the selected ranges can be joined.
+This function allows you to select and join a number of ranges. The :guilabel:`Join Ranges` command is available if the selected ranges can be joined.
 
 1. Display the list of address ranges that you want to join.
 
 2. Select each of the desired ranges.
 
-3. Right-click and, from the shortcut menu, select Join Ranges.
+3. Right-click and, from the shortcut menu, select :guilabel:`Join Ranges`.
 
 .. image:: ../../images/console-ipam-join-ranges.png
   :width: 70%
@@ -421,19 +445,19 @@ This function allows you to select and join a number of ranges. The Join Ranges 
 
 4. The Join Ranges dialog box displays.
 
-  Use Access.
-    Click the drop-down list and specify from which range you will gain access.
+Use Access
+  Click the drop-down list and specify from which range you will gain access.
 
-  Use Properties.
-    Click the drop-down list and specify from which range you will use the properties.
+Use Properties
+  Click the drop-down list and specify from which range you will use the properties.
 
-  Title.
-    Enter a title for this range.
+Title
+  Enter a title for this range.
 
-  Description.
-    Type a description.
+Description
+  Type a description.
 
-5. Click Join.
+5. Click :guilabel:`Join`.
 
 Select Parent
 -------------
@@ -446,7 +470,7 @@ This function allows you to view the hierarchy for subnets when filtering is act
 
 1. Locate the subrange for which you want to view the hierarchy.
 
-2. Right-click on the subrange and, from the shortcut menu, selects Parent. All available parent(s) are shown.
+2. Right-click on the subrange and, from the shortcut menu, selects :guilabel:`Parent`. All available parent(s) are shown.
 
 3. Click on the parent and the system automatically moves you to that parent range.
 
@@ -460,21 +484,24 @@ Configuring Host Discovery Using Ping
 
 1. Select one or more IP Address Ranges.
 
-2. Right-click and, from the shortcut menu, select Set Discovery Schedule. The Schedule dialog box displays.
+2. Right-click and, from the shortcut menu, select :guilabel:`Set Discovery Schedule`. The *Schedule* dialog box displays.
 
 .. image:: ../../images/console-ipam-discovery-schedule.png
   :width: 40%
   :align: center
 
-3. Select the Enable discovery schedule option.
+3. Select the :guilabel:`Enable discovery schedule` option.
 
-4. Schedule ____ every ___ day(s)/week(s)/month(s). Click the drop-down list and select the frequency (e.g., Daily, Weekly, etc.) and the occurrences (e.g., 1 day, 2 weeks, etc.).
+Schedule ____ every ___ day(s)/week(s)/month(s)
+  Click the drop-down list and select the frequency (e.g., Daily, Weekly, etc.) and the occurrences (e.g., 1 day, 2 weeks, etc.).
 
-5. At ____. Enter the time at which discovery should take place.
+At ____
+  Enter the time at which discovery should take place.
 
-6. Starting ____. Click the drop-down list and select the start date.
+Starting ____
+  Click the drop-down list and select the start date.
 
-7. Click OK
+4. Click :guilabel:`OK`.
 
 Once the schedule options have been set and saved, a new column called, Last seen, identifies when a host last was last seen on the network.
 
@@ -482,23 +509,26 @@ Once the schedule options have been set and saved, a new column called, Last see
   :width: 70%
   :align: center
 
-Green. Host responded to the last PING request. The date and time are shown.
+Green
+  Host responded to the last PING request. The date and time are shown.
 
-Orange. Host has responded in the past, but did not respond to the last PING request. The date and time of last response is shown.
+Orange
+  Host has responded in the past, but did not respond to the last PING request. The date and time of last response is shown.
 
-Red. Host has never responded to a PING request. The text Never is shown.
+Red
+  Host has never responded to a PING request. The text Never is shown.
 
 The list of ranges contains a column that shows if a discovery schedule has been set for a range. The name of this column is Schedule. To quickly see all ranges that have a schedule set, you can use the Quick Filter and filter by this column by entering Schedule:Yes in the Quick Filter search field.
 
-At any time if you wish to  disable  host discovery, do the following:
+At any time if you wish to disable host discovery, do the following:
 
 1. Select the object(s) for which you want to disable discovery.
 
-2. Right-click and, from the shortcut menu, select Set Discovery Schedule. The Schedule dialog box displays.
+2. Right-click and, from the shortcut menu, select :guilabel:`Set Discovery Schedule`. The *Schedule* dialog box displays.
 
-3. Uncheck the Enable discovery schedule option.
+3. Uncheck the :guilabel:`Enable discovery schedule` option.
 
-4. Click OK.
+4. Click :guilabel:`OK`.
 
 Configuring Host Discovery by Querying Routers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -509,13 +539,13 @@ Before a router can be queried it must be placed in an SNMP profile. An SNMP pro
 
 To create an SNMP profile:
 
-1. Select Tools, SNMP Profiles. The following dialog window appears.  Here a new profile can be created, edited or removed. Additionally, a scan can be initiated. If the 'Scan' button is greyed out, a scan is already in progress.
+1. Select :guilabel:`Tools --> SNMP Profiles`. A new profile can be created, edited or removed. Additionally, a scan can be initiated. If the :guilabel:`Scan` button is greyed out, a scan is already in progress.
 
-2. To create a new profile, click Add. The SNMP Profile dialog box is displayed.
+2. To create a new profile, click :guilabel:`Add`. The *SNMP Profile* dialog box is displayed.
 
-3. Enter a profile name and choose the SNMP version to use. You can also specify a non-standard port to use for SNMP
+3. Enter a profile name and choose the SNMP version to use. You can also specify a non-standard port to use for SNMP.
 
-4. Enter the necessary information to access the router using SNMP. The information is different depending on the SNMP version selected.
+4. Enter the necessary information to access the router using SNMP. The information is different depending on the SNMP version selected:
 
   For SNMP v1 and v2c:
 
@@ -537,29 +567,32 @@ To create an SNMP profile:
 
 5. Enter the IPv4 address of one or more routers that you want to query using this profile. Note that each router's IP address needs to be on a separate line in the text area.
 
-6. Click OK to save the settings and close the dialog box.
+6. Click :guilabel:`OK` to save the settings and close the dialog box.
 
 You can edit an SNMP profile, for example if you want to add or remove routers from a profile.
 
 To edit an SNMP profile:
 
-1. Select Tools, SNMP Profiles, select the SNMP profile you want do edit and click Edit in the dialog box that appears. The SNMP Profile dialog box is displayed for the selected entry.
+1. Select :guilabel:`Tools --> SNMP Profiles`, select the SNMP profile you want do edit and click :guilabel:`Edit` in the dialog box that appears. The *SNMP Profile* dialog box is displayed for the selected entry.
 
-2. Make the required changes and click OK to save the changes and close the dialog box.
+2. Make the required changes and click :guilabel:`OK` to save the changes and close the dialog box.
 
 Subnet Discovery
 ----------------
 
-The subnet discovery features enables the Men&Mice Suite to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in  configuring host discovery, but to enable this feature, make sure the 'Synchronize subnets ...'  is checked.
+The subnet discovery features enables the Men&Mice Suite to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in  configuring host discovery, but to enable this feature, make sure the :guilabel:`Synchronize subnets ...`  is checked.
 
 Remove from Folder
 ------------------
 
-Removes the currently selected IP Address Range from the current folder. Once you remove a range, there is no "undo" option available.
+Removes the currently selected IP Address Range from the current folder.
+
+.. danger::
+  Once you remove a range, there is no "undo" option available.
 
 1. Highlight the range you want to remove.
 
-2. Right-click and, from the shortcut menu, select Remove from Folder. The range is removed.
+2. Right-click and, from the shortcut menu, select :guilabel:`Remove from Folder`. The range is removed.
 
 Subnet Monitoring and Utilization History
 -----------------------------------------
@@ -582,30 +615,30 @@ To change the monitoring settings for a subnet:
   :width: 50%
   :align: center
 
-1. Right-click and, from the shortcut menu, select Set Subnet Monitoring. The Subnet Monitoring dialog box displays.
+1. Right-click and, from the shortcut menu, select :guilabel:`Set Subnet Monitoring`. The *Subnet Monitoring* dialog box displays.
 
-  Enabled.
-    When checked, the subnet will be monitored.
+Enabled
+  When checked, the subnet will be monitored.
 
-  Script to invoke.
-    Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
+Script to invoke
+  Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
 
-  E-mail addresses.
-    Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
+E-mail addresses
+  Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
 
-  Dynamic Threshold.
-    Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
+Dynamic Threshold
+  Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
 
-  Static Threshold.
-    Enter the threshold for the free addresses in a subnet.
+Static Threshold
+  Enter the threshold for the free addresses in a subnet.
 
-  Only perform action once (until fixed).
-    When checked, the action is performed only once when the number of free addresses goes below the threshold.
+Only perform action once (until fixed)
+  When checked, the action is performed only once when the number of free addresses goes below the threshold.
 
-  Perform action when fixed.
-    When checked, the action is performed when the number of free addresses is no longer below the threshold.
+Perform action when fixed
+  When checked, the action is performed when the number of free addresses is no longer below the threshold.
 
-2. Click OK to confirm your settings.
+2. Click :guilabel:`OK` to confirm your settings.
 
 Removing Subnet Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -614,7 +647,7 @@ You can clear the monitor setting for individual subnets if you want to use the 
 
 1. Select the subnet(s) for which you want to clear the monitoring setting.
 
-2. Right-click and, from the shortcut menu, select Remove Subnet Monitoring. The custom subnet monitoring setting is removed and the global monitoring setting is used instead.
+2. Right-click and, from the shortcut menu, select :guilabel:`Remove Subnet Monitoring`. The custom subnet monitoring setting is removed and the global monitoring setting is used instead.
 
 View Utilization History
 ------------------------
@@ -625,7 +658,7 @@ To view the utilization history:
 
 1. Select the subnet for which you want to view the utilization history.
 
-2. Right-click and, from the shortcut menu, select View Address Utilization. The Address Utilization window displays.
+2. Right-click and, from the shortcut menu, select :guilabel:`View Address Utilization`. The *Address Utilization* window displays.
 
 .. image:: ../../images/console-ipam-utilization-history.png
   :width: 80%
@@ -652,9 +685,9 @@ Export Utilization History
 
 You can export the utilization history for one or more subnets to the Clipboard or into a CSV file.
 
-* To export the utilization history for a single subnet from the Address Utilization Window, right-click the graph and select the time period you want to export. The data is copied to the Clipboard.
+* To export the utilization history for a single subnet from the :guilabel:`Address Utilization Window`, right-click the graph and select the time period you want to export. The data is copied to the Clipboard.
 
-* To export the utilization for multiple subnets, select the subnets, right-click and from the shortcut menu select Export Address Utilization. The data is saved in a CSV file.
+* To export the utilization for multiple subnets, select the subnets, right-click and from the shortcut menu select :guilabel:`Export Address Utilization`. The data is saved in a CSV file.
 
 Multiple Address Spaces
 -----------------------
@@ -678,9 +711,15 @@ To create a new address space, click the Add button and enter the name and descr
 
 To change the name or description for an address space, select the address space and click the Edit button.
 
-To delete an address space, select the address space and click the Delete button.  NOTE:  When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP Address ranges, IP Address entries and folders). This action is not undoable.  NOTE:  You cannot delete the <default> address space or the address space you are currently working in.
+To delete an address space, select the address space and click the Delete button.
 
-To set access privileges for an address space, select the address space and click the Access button.
+.. danger::
+  When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP Address ranges, IP Address entries and folders). This action is not undoable.
+
+.. note::
+  You cannot delete the <default> address space or the address space you are currently working in.
+
+To set access privileges for an address space, select the address space and click the :guilabel:`Access` button.
 
 Switching to a Different Address Space
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -689,11 +728,11 @@ You can only work in one address space at a time. You can see the current addres
 
 To switch to a different address space:
 
-1. Select the IP Address Ranges object in the object list in the Manager window.
+1. Select the :guilabel:`IP Address Ranges` object in the object list in the Manager window.
 
-2. Select Ranges -> Switch Current Address Space. A dialog box listing all available address spaces displays.
+2. Select :guilabel:`Ranges --> Switch Current Address Space`. A dialog box listing all available address spaces displays.
 
-3. Select the address space you want to switch to and click the OK button.
+3. Select the address space you want to switch to and click the :guilabel:`OK` button.
 
 Moving Objects to a Different Address Space
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

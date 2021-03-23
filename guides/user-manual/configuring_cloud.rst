@@ -13,18 +13,18 @@ The Men&Mice Suite communicates with the cloud services through Men&Mice Central
 
 Before continuing, make sure:
 
-* The DNS controller is installed and set up on the machine running Men&Mice Central.
+* The DNS controller is installed and set up on the machine running Men&Mice Central. See :ref:`install-controllers`.
 
-* The machine running central can connect to the specific cloud instance on port  443/TCP.
+* The machine running central can connect to the specific cloud instance on port 443/TCP. See :ref:`firewall-ports`.
 
-If you want to add multiple AWS cloud accounts using single credentials make sure to check out how to configure an AWS multi account setup.
+If you want to add multiple AWS cloud accounts using single credentials refer to :ref:`aws-multi-account`.
 
 Adding a cloud service
 ----------------------
 
 The following are the steps that are needed to start using a cloud service in Men&Mice.
 
-1. File > New > Cloud Service. Access the Cloud service wizard by right clicking Cloud Services in the Object Browser of the Management Console and selecting "New Cloud Service ..." or highlight "Cloud Services" in the Object Browser and clicking the "+" sign in the manager window.
+1. :guilabel:`File --> New --> Cloud Service`. Access the Cloud service wizard by right clicking :guilabel:`Cloud Services` in the *Object Browser* of the Management Console and selecting :guilabel:`New Cloud Service` or highlight :guilabel:`Cloud Services` in the *Object Browser* and clicking :guilabel:`+` sign in the manager window.
 
 2. The following dialog is shown:
 
@@ -32,7 +32,7 @@ The following are the steps that are needed to start using a cloud service in Me
   :width: 50%
   :align: center
 
-Proceed with one of the Cloud providers shown below and click "Next":
+Proceed with one of the Cloud providers shown below and click :guilabel:`Next`:
 
 * :ref:`connect-akamai`
 
@@ -95,8 +95,8 @@ Fill in the following fields required to connect to Azure:
 | Client secret   |                                                           |
 +-----------------+-----------------------------------------------------------+
 
-.. information::
-  See Configure Azure DNS.
+.. note::
+  See :ref:`configure-azure-dns`.
 
 Go to :ref:`finish-cloud-config`.
 
@@ -119,7 +119,7 @@ Fill in the following fields required to connect to AWS:
 |                   | https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html |
 +-------------------+-----------------------------------------------------------------------------+
 
-Read more about :ref:`aws-multi-account`.
+Read more: :ref:`aws-multi-account`.
 
 Go to :ref:`finish-cloud-config`.
 
@@ -194,19 +194,19 @@ After finishing going through the wizard, the DNS service (if applicable) and an
 Editing a cloud service instance
 --------------------------------
 
-To edit the properties for a cloud instance, right click on a cloud instance in the Object Browser and select "Properties".
+To edit the properties for a cloud instance, right click on a cloud instance in the *Object Browser* and select :guilabel:`Properties`.
 
 Removing a cloud service
 ------------------------
 
-To remove a cloud service, right click on the specific cloud service in the Object Browser and select "Delete ...".
+To remove a cloud service, right click on the specific cloud service in the *Object Browser* and select :guilabel:`Delete`.
 
 .. warning::
   By removing the cloud service, the associated DNS service and the corresponding zones will be removed. Additionally, any subnets and cloud networks will also be removed.
 
-Click "Yes" to remove the cloud service.
+Click :guilabel:`Yes` to remove the cloud service.
 
 Removing a cloud network
 ------------------------
 
-To remove a cloud network, right click on the specific cloud network in the object browser or in the manager window and select "Delete ..."
+To remove a cloud network, right click on the specific cloud network in the object browser or in the manager window and select :guilabel:`Delete`.

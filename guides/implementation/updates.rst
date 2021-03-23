@@ -79,7 +79,7 @@ The dialog box shows the update status for all DNS and DHCP server controllers a
 
 Uncheck the Show servers that are up-to-date checkbox to only show servers that need to be updated.
 
-.. information::
+.. note::
   The Auto Updater will update all connected server controllers along with Central.
 
 .. note::

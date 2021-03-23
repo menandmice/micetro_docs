@@ -13,7 +13,7 @@ Deployed in any on-premise, hybrid, or multicloud network environment, Micetro a
 This documentation is divided into three parts:
 
 1. :ref:`implementation`
-2. :ref:`user-manual`
+2. :ref:`manual-introduction`
 3. :ref:`reference`
 
 Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`user-manual` covers Micetro's functionality. The Implementation Guide also details the update procedures.
@@ -60,4 +60,4 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
     :maxdepth: 2
     :hidden:
 
-    guides/reference/reference 
+    guides/reference/reference

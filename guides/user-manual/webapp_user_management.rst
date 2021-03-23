@@ -1,4 +1,4 @@
-.. _user-management:
+.. _webapp-user-management:
 
 User Management
 ***************
@@ -16,7 +16,7 @@ Users
 
 Each user defined in the Men&Mice Suite can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
 
-.. information::
+.. note::
   "administrator" is the user already configured for the application. In order to manage users, you have to be logged in as a user who has user management privileges.
 
 Adding User Accounts

@@ -10,7 +10,7 @@ Failover instances of Men&Mice Central can be configured to build a high availab
 
   High Availability is also available for the database backend, see :ref:`psql-ha` and :ref:`mssql-ha` for more information.
 
-.. information::
+.. note::
   For fine-tuning the settings for the Central High Availability cluster, see :ref:`ha-tweaks`.
 
 .. _central-ha-unix:

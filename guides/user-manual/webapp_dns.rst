@@ -10,7 +10,9 @@ Here is an overview of the main functionality for managing DNS zones.
 
 By default, the list shows only master DNS zones, but to see other types of DNS zones, the filtering sidebar offers options to select different types.
 
-..
+.. image:: ../../images/blackstar-dns.png
+  :width: 90%
+  :align: center
 
 Viewing the DNS zone list
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -22,14 +24,14 @@ Opening a DNS zone
 
 Opening a DNS zone can either by done by
 
-* selecting the zone in the zone list and clicking on the "Open" button in the task bar above the zone list; or
+* selecting the zone in the zone list and clicking on the :guilabel:`Open` button in the task bar above the zone list; or
 
 * double clicking on the zone.
 
 Creating a DNS zone
 ^^^^^^^^^^^^^^^^^^^
 
-Creating a new DNS zone can be done by clicking on the "Create" button above the DNS zone list.
+Creating a new DNS zone can be done by clicking on the :guilabel:`Create` button above the DNS zone list.
 
 The following dialog presents the options for the operation:
 
@@ -56,7 +58,7 @@ Any custom properties that have been defined for DNS zones can be added and edit
 Deleting a zone
 ^^^^^^^^^^^^^^^
 
-Select the zone to be deleted and click on the "Delete zone" action in the action part of the Inspector on the right hand side.
+Select the zone to be deleted and click on the :guilabel:`Delete zone` action in the action part of the Inspector on the right hand side.
 
 Migrating a DNS zone
 ^^^^^^^^^^^^^^^^^^^^
@@ -67,7 +69,7 @@ A DNS zone can be migrated between DNS servers.
   :width: 60%
   :align: center
 
-1. Select the DNS zone in the list and run the "Migrate zone" action.
+1. Select the DNS zone in the list and run the :guilabel:`Migrate zone` action.
 
 2. Specify the destination server. This is the server for which the DNS zone will be migrated to.
 
@@ -86,7 +88,7 @@ After having opened a DNS zone, it is possible to:
 
 * Disable DNS records
 
-The Inspector for DNS records allows the following actions and details for each selected DNS record in the DNS zone list.
+The :guilabel:`Inspector` for DNS records allows the following actions and details for each selected DNS record in the DNS zone list.
 
 .. csv-table::
   :header: "Item", "Description"
@@ -100,7 +102,7 @@ The Inspector for DNS records allows the following actions and details for each 
 Creating a new DNS record
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a new DNS record, either click on the "Create" button in the main task bar or click on the "Create new DNS record" in the actions section of the Inspector.
+To create a new DNS record, either click on the :guilabel:`Create` button in the main task bar or click on the :guilabel:`Create new DNS record` in the actions section of the Inspector.
 
 The following dialog presents the options for the operation:
 
@@ -168,9 +170,9 @@ Typing in the first digits of a network will allow you to see a list of networks
   :width: 75%
   :align: center
 
-Selecting the first item from the list will fill in the Address field with the next free IP address from that network. Additionally, insights for the specified IP address will be shown.
+Selecting the first item from the list will fill in the **Address** field with the next free IP address from that network. Additionally, insights for the specified IP address will be shown.
 
-After typing in an IP address or selecting from the list, an indicator will be given on the state of the IP address, whether it is Free, Reserved, Claimed or Assigned.
+After typing in an IP address or selecting from the list, an indicator will be given on the state of the IP address, whether it is *Free*, *Reserved*, *Claimed* or *Assigned*.
 
 .. image:: ../../images/blackstar-create-dns-record-ipam.png
   :width: 75%
@@ -179,10 +181,9 @@ After typing in an IP address or selecting from the list, an indicator will be g
 IP Address Insights
 """""""""""""""""""
 
-The IP address insights feature aims to give details on the IP address and related objects.
-Hovering over the "i" icon will list further information or show a list of objects.
+The IP address insights feature aims to give details on the IP address and related objects. Hovering over the "i" icon will list further information or show a list of objects.
 
-Typing in the full IP address in the the Address field will indicate the state of the IP address. Additionally, the IP insights are shown, which are details on the IP address itself and related objects.
+Typing in the full IP address in the the **Address** field will indicate the state of the IP address. Additionally, the IP insights are shown, which are details on the IP address itself and related objects.
 
 .. image:: ../../images/blackstar-create-dns-record-ipam-insights.png
   :width: 75%
@@ -242,18 +243,18 @@ Editing a DNS record
 
 1. Select the DNS record in the DNS record list
 
-2. Either click "Edit" in the main task bar, or click on "Edit DNS record" in the Inspector actions.
+2. Either click :guilabel:`Edit` in the main task bar, or click on :guilabel:`Edit DNS record` in the Inspector actions.
 
 3. A dialog is displayed which allows you to modify the DNS record
 
-4. Click Save to persist the changes
+4. Click :guilabel:`Save` to persist the changes.
 
 Deleting a DNS record
 ^^^^^^^^^^^^^^^^^^^^^
 
 1. Select the DNS record in the DNS record list
 
-2. Click on "Delete" in the main task bar or click on "Delete DNS record in the Inspector actions
+2. Click on :guilabel:`Delete` in the main task bar or click on :guilabel:`Delete DNS record` in the Inspector actions.
 
 3. Users will be prompted before the record(s) are deleted
 
@@ -262,6 +263,6 @@ Disabling a DNS record
 
 1. Select the DNS record in the DNS record list
 
-2. Click on "Disable DNS record in the Inspector actions
+2. Click on :guilabel:`Disable DNS record` in the Inspector actions.
 
 3. Users will be prompted before the record(s) are disabled

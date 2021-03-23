@@ -3,7 +3,7 @@
 Configure Azure DNS
 ===================
 
-Azure is natively supported through Cloud Integration. An Azure subscription may be added with the Configure Cloud Service Account Wizard in the Management Console.
+Azure is natively supported through Cloud Integration. An Azure subscription may be added with the *Configure Cloud Service Account Wizard* (see :ref:`configuring-cloud`) in the Management Console.
 
 Prerequisites
 -------------

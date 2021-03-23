@@ -22,9 +22,15 @@ Scripts associated with object types are often used to perform lookups in extern
 
 3. In the System settings dialog box, click the External Commands tab.
 
-4. In the applicable field (e.g., Range script, IP Address script, etc.), type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&Mice Central; however, if the script is stored in a different location, the path for the script must be entered. Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
+4. In the applicable field (e.g., Range script, IP Address script, etc.), type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&Mice Central; however, if the script is stored in a different location, the path for the script must be entered.
 
-5. Click OK.
+Example 1:
+  Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb
+
+Example 2:
+  Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
+
+5. Click :guilabel:`OK`.
 
 To configure the system to run a script when the number of free addresses in a subnet goes below a user-definable threshold, refer to  IP Address Management—Subnet Monitoring and Utilization History.
 
@@ -259,7 +265,7 @@ The XML schema for a subnet monitoring script is as follows:
 
 The value of the thresholdType element will be either static or dynamic depending on whether the threshold being crossed is one of dynamically allocatable addresses (i.e., available addresses in address pools) or if it is a threshold set for static addresses (i.e., available addresses outside of address pools).
 
-.. information::
+.. note::
   The global subnet monitor, set through the system settings dialog, is the only one that takes superscopes into account. When the global subnet monitor actions are performed, due to the conditions being met for a superscope, the XML generated will contain a <server> tag and a <superscope> tag.
 
 An example XML structure for a subnet monitoring script might look as follows for scope:
@@ -302,7 +308,7 @@ Example Visual Basic Script
 
 The following example script, written in Visual Basic, shows how a script could return different values depending on the user that is running the script. The script is called when an object property changes.
 
-.. code-block:: Visual Basic
+.. code-block::
   :linenos:
 
   Dim fso, stdin, stdout, stderr, xmlDoc
@@ -374,8 +380,8 @@ The following example script, written in Visual Basic, shows how a script could 
 Example PowerShell Script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. information::
-  See this article for information on running Powershell scripts through Men&Mice Central.
+.. note::
+  Powershell scripts can be run natively by Men&Mice by starting the command with "powershell", "powershell.exe" or simply with the path to the .ps1 file. Powershell can then read the stdin with [Console]::In.ReadToEnd()
 
 Instructions
 """"""""""""

@@ -3,7 +3,15 @@
 API Authentication methods
 ==========================
 
-There a few options for authenticating against the M&M API: Using the Login command, using authorization headers against M&M Web services, or using IIS single sign-on
+There a few options for authenticating against the M&M API:
+
+* :ref:`api-login-command`
+
+* :ref:`api-login-headers`
+
+* :ref:`api-login-sso`
+
+.. _api-login-command:
 
 Login command
 -------------
@@ -16,6 +24,8 @@ The Login command and its parameters is fully documented in the normal SOAP API 
 
 .. note::
   Remember to configure HTTPS for the mmws and/or _mmwebext sites for this authentication method
+
+.. _api-login-headers:
 
 Authorization Headers
 ---------------------
@@ -38,7 +48,7 @@ For Basic Authentication, simply include a header like:
 
   Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
 
-where the last part is <user name>:<password>, base64 encoded
+where the last part is ``<user name>:<password>``, base64 encoded
 
 For more information on Basic Authorization headers on the client side, see for example here: https://en.wikipedia.org/wiki/Basic_access_authentication
 
@@ -63,6 +73,8 @@ To enable the Negotiate header Authorization in M&M Web Services, add the follow
 
 The order of the methods can be changed, e.g. if NTLM is preferred over Kerberos.
 
+.. _api-login-sso:
+
 Single Sign-On
 --------------
 
@@ -77,7 +89,7 @@ When using the M&M Web Extension that comes with the M&M Web Interface as an API
 
 The body of the http request should include simply the M&M Central server name.
 
-If IIS is correctly configured (see https://docs.menandmice.com/x/_g9h), this request will return an XML similar to what the Login SOAP command would return:
+If IIS is correctly configured (see :ref:`disable-kernel-mode-auth`), this request will return an XML similar to what the Login SOAP command would return:
 
 .. code-block:: XML
   :linenos:

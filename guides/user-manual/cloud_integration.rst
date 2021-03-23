@@ -15,7 +15,7 @@ Supported Cloud Services
   :widths: 10, 30, 30
 
   "Akamai",	"Yes (Akamai Fast DNS)", "N/A"
-  "Azure", "Yes (Azure DNS[1]_)", "Yes"
+  "Azure", "Yes (Azure DNS [1]_)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "OpenStack", "No", "Yes"
   "NS1", "Yes", "N/A"

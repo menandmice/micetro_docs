@@ -99,7 +99,7 @@ Finally press the :guilabel:`File --> Import Virtual Appliance button` to load t
 
   Importing the Men and Mice Virtual DNS OVA image.
 
-.. information::
+.. note::
   Change the Guest OS Type to Other Linux (64-bit)
     It's important to change the Guest OS Type to "Other Linux(64-bit). Otherwise the VM might get stuck during startup.
 

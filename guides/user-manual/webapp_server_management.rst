@@ -1,4 +1,4 @@
-.. _server-management:
+.. _webapp-server-management:
 
 Server management
 =================
@@ -19,7 +19,7 @@ In the right hand sidebar, the properties of a selected server is shown. Any cus
 Server Management actions
 -------------------------
 
-Any actions that can be performed on a selected server can either be accessed in the “Actions” above the list or by hovering over a menu at the right hand side of the list.
+Any actions that can be performed on a selected server can either be accessed in the :guilabel:`Actions` above the list or by hovering over a menu at the right hand side of the list.
 
 .. csv-table::
   :header: "Action", "Description"

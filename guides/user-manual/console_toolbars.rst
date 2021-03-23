@@ -21,7 +21,7 @@ Toolbars
 .. |release| image:: ../../images/console-release.png
 .. |next-free-ip| image:: ../../images/console-next-free-ip.png
 
-The toolbar, which runs along the top of the Object Section and Object List, provides fast access to commonly performed operations. The function of any given button is always in the context of the currently selected object. Some buttons will not be available (i.e., greyed out) when certain objects are selected.
+The toolbar, which runs along the top of the *Object Section* and *Object List*, provides fast access to commonly performed operations. The function of any given button is always in the context of the currently selected object. Some buttons will not be available (i.e., greyed out) when certain objects are selected.
 
 .. csv-table::
   :header: "Button", "Name", "Description"

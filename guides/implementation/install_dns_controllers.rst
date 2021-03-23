@@ -42,7 +42,7 @@ Multiple controllers can be specified. If you want to, for example, have both IS
 
   ./install --generic-dns-controller --bind-dns-controller --isc-dhcp-controller
 
-.. information::
+.. note::
   If you have only a single service like BIND or Unbound installed we recommend to run the installer without parameter. It will then use the --auto parameter and figure out the service automatically.
 
 Quiet/unattended installation is possible with the --quiet parameter (no output at all):
@@ -74,7 +74,7 @@ The installer will ask a series of questions. Be prepared to answer them, as des
 Men&Mice Central running on Linux
 ---------------------------------
 
-.. information::
+.. note::
   Before installing Men&Mice DNS Server Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:
 
   * Is there a starting configuration file, such as /etc/named.conf?
@@ -305,7 +305,7 @@ Where to install Men&Mice DNS Server Controller
 
 If Men&Mice Central is installed on a Windows host, then one option is to install Men&Mice DNS Server Controller on the same host. If this is not done, then the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.
 
-.. information::
+.. note::
   The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
 
 Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webapp`.
