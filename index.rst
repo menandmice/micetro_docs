@@ -16,7 +16,7 @@ This documentation is divided into three parts:
 2. :ref:`manual-introduction`
 3. :ref:`reference`
 
-Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`user-manual` covers Micetro's functionality. The Implementation Guide also details the update procedures.
+Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of Micetro's functionality. The Implementation Guide also details the update procedures.
 
 .. image:: images/menandmice.png
   :width: 25%
@@ -28,6 +28,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
     :hidden:
 
     release_notes
+    3rd_party
 
 .. toctree::
      :caption: Installing Micetro
@@ -46,7 +47,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
      guides/user-manual/introduction
      guides/user-manual/console
-     guides/user-manual/webapp
+     guides/user-manual/web_application
      guides/user-manual/administration
      guides/user-manual/dns
      guides/user-manual/dhcp

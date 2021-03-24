@@ -41,7 +41,7 @@ The lines in the import text, or the contents of the file chosen, must have line
 For instance, when cells of a spreadsheet are highlighted and copied to the clipboard, they will be tab separated when pasted into the text area of the Import Data wizard. When importing a fair amount of lines stored in an excel spreadsheet, this is probably the easiest method of getting the data into the Import Data wizard.
 
 .. note::
-  When choosing files, only plaintext CSV/TSV/TXT files are accepted. Excel spreadsheets need to be exported to one of these formats prior to importing
+  When choosing files, only plaintext CSV/TSV/TXT files are accepted. Excel spreadsheets need to be exported to one of these formats prior to importing.
 
 Clearing values
 ^^^^^^^^^^^^^^^
