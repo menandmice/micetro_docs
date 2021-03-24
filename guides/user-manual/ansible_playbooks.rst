@@ -7,6 +7,8 @@ To use the Micetro Ansible Integration you need to create Ansible playbooks that
 
 Following are a couple of example playbooks for inspiration. These playbooks have been tested extensively with different operating systems, versions of Ansible and Python.
 
+.. contents::
+
 play-user
 ---------
 
