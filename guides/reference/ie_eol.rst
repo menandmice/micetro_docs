@@ -24,4 +24,4 @@ The Men&Mice Web Application supports modern web browsers:
 
 * Apple Safari
 
-See :ref:`system-requirements` for a full list of supported systems and applications
+See :ref:`system-requirements` for a full list of supported systems and applications.
