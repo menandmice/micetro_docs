@@ -25,7 +25,7 @@ Use the :ref:`implementation` to familiarize yourself with the Suite's architect
 
     release_notes
     support
-    3rd_party
+    opensource 
 
 .. toctree::
      :caption: Installing the Suite
