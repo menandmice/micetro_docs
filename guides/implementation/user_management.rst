@@ -1,7 +1,7 @@
 .. _user-management:
 
-Micetro User Management
-***********************
+Men&Mice Suite User Management
+******************************
 
 .. note::
   Users, groups, and roles can be managed through the Web Application. Access management is done in the Management Console.

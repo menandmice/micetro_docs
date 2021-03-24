@@ -10,7 +10,6 @@ The Men&Mice Suite can be used with the following databases:
 
   central_sqlite
   central_mssql
-  central_postgresql
 
 .. note::
-  High Availability for the database is only available for MS SQL and PostgreSQL.
+  High Availability for the database is only available for MS SQL.

@@ -1,7 +1,7 @@
 .. _installation-azure:
 
-Installing Micetro in Azure
-***************************
+Installing the Men&Mice Suite in Azure
+**************************************
 
 .. toctree::
   :maxdepth: 2

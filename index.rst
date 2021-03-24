@@ -1,14 +1,14 @@
-Micetro by Men&Mice 10.0
-########################
+Men&Mice Suite 9.3.8
+####################
 
-Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
+Welcome to the Men&Mice Suite, a backend-agnostic DDI orchestration software for complex enterprise network environments.
 
-.. image:: images/micetro.png
-  :width: 50%
+.. image:: images/menandmice.png
+  :width: 25%
   :alt: Men&Mice
   :align: center
 
-Deployed in any on-premise, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
+Deployed in any on-premise, hybrid, or multicloud network environment, the Men&Mice Suite acts as a non-disruptive overlay that unifies server management under a single GUI and API. The Men&Mice Suite is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
 This documentation is divided into three parts:
 
@@ -16,24 +16,20 @@ This documentation is divided into three parts:
 2. :ref:`manual-introduction`
 3. :ref:`reference`
 
-Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of Micetro's functionality. The Implementation Guide also details the update procedures.
-
-.. image:: images/menandmice.png
-  :width: 25%
-  :alt: Micetro by Men&Mice
-  :align: center
+Use the :ref:`implementation` to familiarize yourself with the Suite's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of the Men&Mice Suite's functionality. The Implementation Guide also details the update procedures.
 
 .. toctree::
-    :caption: Micetro by Men&Mice
+    :caption: Men&Mice Suite
+    :maxdepth: 1
     :hidden:
 
     release_notes
-    support 
+    support
     3rd_party
 
 .. toctree::
-     :caption: Installing Micetro
-     :maxdepth: 2
+     :caption: Installing the Suite
+     :maxdepth: 3
      :hidden:
 
      guides/implementation/implementation
@@ -42,8 +38,8 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
      guides/implementation/updates
 
 .. toctree::
-     :caption: Using Micetro
-     :maxdepth: 2
+     :caption: Using The Men&Mice Suite
+     :maxdepth: 3
      :hidden:
 
      guides/user-manual/introduction
@@ -59,7 +55,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
     :caption: Reference articles
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
 
     guides/reference/reference

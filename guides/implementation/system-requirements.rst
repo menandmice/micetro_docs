@@ -3,13 +3,13 @@
 System requirements
 ===================
 
-The minimum system requirements and supported platforms for Micetro by Men&Mice are as follows:
+The minimum system requirements and supported platforms for the Men&Mice Suite are as follows:
 
 Hardware
 --------
 
 .. note::
-  The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture-overview` for details.
+  The hardware requirements for the Suite components are dependent on the size of the environment and usage. Refer to :ref:`architecture-overview` for details.
 
 Operating systems
 -----------------
@@ -51,7 +51,6 @@ Databases
   :header: "Database", "Supported version(s)", "Operating System of Men&Mice Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 12, "Windows, Linux"
   "SQLite", "N/A [4]_", "Windows, Linux, Solaris"
   "Microsoft SQL Server", "2008 R2, 2012, 2014, 2016", "Windows"
 
@@ -104,7 +103,7 @@ Supported Cloud Services
 
 * Akamai
 
-.. [7] Micetro is available to install directly from the Azure Marketplace.
+.. [7] the Men&Mice Suite is available to install directly from the Azure Marketplace.
 
 Supported browsers (Web Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

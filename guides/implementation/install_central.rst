@@ -29,11 +29,12 @@ Extract and run the Men&Mice Central install package:
 
 .. code-block::
 
-  tar -xzvf mmsuite-central-9.4.4.linux.x64.tgz
-  cd mmsuite-central-9.4.2.linux.x64
+  tar -xzvf mmsuite-central-9.3.8.linux.x64.tgz
+  cd mmsuite-central-9.3.8.linux.x64
   ./install
 
 Installer Questions
+^^^^^^^^^^^^^^^^^^^
 
 Here are the questions asked by the installer that pertain to Men&Mice Central:
 

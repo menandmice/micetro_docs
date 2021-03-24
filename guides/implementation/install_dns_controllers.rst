@@ -91,13 +91,13 @@ Extract the Men&Mice Controller install package (as root):
 
   .. code-block:: bash
 
-    tar -xzvf mmsuite-controllers-10.0.linux.x64.tgz
+    tar -xzvf mmsuite-controllers-9.3.8.linux.x64.tgz
 
-In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the installer script to install the Men&Mice Controller (as root):
+In the newly created ``mmsuite-controllers-9.3.8.linux.x64`` directory run the installer script to install the Men&Mice Controller (as root):
 
   .. code-block:: bash
 
-    cd mmsuite-controllers-10.0.linux.x64 && ./install --skip-arrange
+    cd mmsuite-controllers-9.3.8.linux.x64 && ./install --skip-arrange
 
 Installer Questions
 ^^^^^^^^^^^^^^^^^^^
