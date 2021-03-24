@@ -29,7 +29,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
     release_notes
     support
-    opensource 
+    opensource
 
 .. toctree::
      :caption: Installing Micetro
@@ -56,6 +56,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
      guides/user-manual/devices
      guides/user-manual/active_directory
      guides/user-manual/cloud
+     guides/user-manual/automation 
 
 .. toctree::
     :caption: Reference articles
