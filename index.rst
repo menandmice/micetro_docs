@@ -28,8 +28,8 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
     :hidden:
 
     release_notes
-    support 
-    3rd_party
+    support
+    opensource 
 
 .. toctree::
      :caption: Installing Micetro
