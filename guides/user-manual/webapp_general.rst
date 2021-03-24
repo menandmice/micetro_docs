@@ -126,6 +126,8 @@ For audit trail purposes, saving comments is required after making changes in th
 
 After making a change, the following dialog is displayed where users can write a comment that will be included in the history for that object.
 
+.. _webapp-time-and-date:
+
 Date and time handling
 ----------------------
 

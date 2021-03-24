@@ -12,6 +12,7 @@ Web Application
   webapp_filtering
   webapp_inspector
   webapp_dns
+  webapp_import_dns_records
   webapp_network_management
   webapp_reporting
   webapp_sso
