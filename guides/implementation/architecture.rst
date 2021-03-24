@@ -15,7 +15,7 @@ Micetro consists of several components. Below, you will find a short description
   :align: center
 
 .. note::
-  All communications between Men&Mice Management Console and the other Men&Mice components are encrypted.
+  All communications between Men&Mice Management Console and the other Micetro components are encrypted.
 
 User Interfaces
 ^^^^^^^^^^^^^^^
@@ -37,9 +37,9 @@ Men&Mice Central
 
 .. _about-central:
 
-Men&Mice Central stores all user specific information as well as centrally stored information. One copy of Men&Mice Central needs to be installed. When a user logs into the system, they start by connecting to Men&Mice Central. Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Men&Mice IP Address Management component is installed, Men&Mice Central is responsible for management and allocation of IP Addresses. Men&Mice Central listens on TCP port 1231.
+Men&Mice Central stores all user specific information as well as centrally stored information. One copy of Men&Mice Central needs to be installed. When a user logs into the system, they start by connecting to Men&Mice Central. Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management component is installed, Men&Mice Central is responsible for management and allocation of IP Addresses. Men&Mice Central listens on TCP port 1231.
 
-In smaller installations, Men&Mice Suite's Central component can be installed on one of the DNS or DHCP servers, as it will not require much resources. More resources are needed as the managed environment gets larger. Below is a table that can be used as a guideline for choosing suitable hardware for Men&Mice Central.
+In smaller installations, Micetro's Central component can be installed on one of the DNS or DHCP servers, as it will not require much resources. More resources are needed as the managed environment gets larger. Below is a table that can be used as a guideline for choosing suitable hardware for Men&Mice Central.
 
 +-----------------------+--------------------------------+-------------------------------------------------+
 | Size of environment   | Number of objects              | Hardware guidelines                             |
@@ -61,24 +61,24 @@ In smaller installations, Men&Mice Suite's Central component can be installed on
 
 By default Men&Mice Central will use an embedded SQLite database.  The embedded database is suitable for small to medium environments but larger environments should instead use MS SQL server.  Information on how to use MS SQL as the database for Men&Mice Central can be found in the Men&Mice Knowledge Base.
 
-If the organization is using Active Directory (AD) and wishes to use AD user authentication, Men&Mice Central must be installed on a Microsoft Windows member server in the domain. All users in that domain, that forest, and trusted forests, will be able to authenticate in Men&Mice, given that they have been granted access in Micetro. As the other Men&Mice Suite components (DNS Server Controller and DHCP Server Controller) can be installed on the DNS and DHCP servers, Men&Mice can manage DNS and DHCP servers that reside in forests where there is no trust between the forest where Central is installed and DNS/DHCP is installed.
+If the organization is using Active Directory (AD) and wishes to use AD user authentication, Men&Mice Central must be installed on a Microsoft Windows member server in the domain. All users in that domain, that forest, and trusted forests, will be able to authenticate in Micetro, given that they have been granted access in Micetro. As the other Micetro components (DNS Server Controller and DHCP Server Controller) can be installed on the DNS and DHCP servers, Micetro can manage DNS and DHCP servers that reside in forests where there is no trust between the forest where Central is installed and DNS/DHCP is installed.
 
 .. image:: ../../images/central-arch-old.png
   :width: 80%
   :align: center
 
-Men&Mice Suite's Central component can also be installed on a second server that can be used as a "cold standby". The Men&Mice's embedded database will then be periodically copied from the active Central server to the cold standby and, if the active server becomes unavailable, the Central service on the cold standby can be activated.
+Micetro's Central component can also be installed on a second server that can be used as a "cold standby". The Micetro's embedded database will then be periodically copied from the active Central server to the cold standby and, if the active server becomes unavailable, the Central service on the cold standby can be activated.
 
 .. _about-dns-controller:
 
-Men&Mice Suite's DNS Server Controller
+Micetro's DNS Server Controller
 ========================================
 
 The Men&Mice DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Men&Mice DNS Server controller reads and writes zone data and option files, and sends commands to the DNS server. The Men&Mice DNS Server Controller listens on TCP port 1337.
 
 In an Unix BIND DNS environment Micetro's DNS Server Controller (i.e., DNS agent) is installed on each DNS server that is to be managed.  In a Microsoft AD environment, the DNS agent can be installed on some of the DNS servers or they can all be managed agent free.  If they are to be managed agent free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen.  The DNS Server Controller must be running as a user that has necessary privileges.
 
-If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (pure meaning that all zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Men&Mice will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
+If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (pure meaning that all zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Micetro will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
 
 For more information see :ref:`ad-preferred-servers`.
 
@@ -90,7 +90,7 @@ Two DNS servers from each domain are added to Men&Mice Central.
 
 .. _about-dhcp-controller:
 
-Men&Mice Suite's DHCP Server Controller
+Micetro's DHCP Server Controller
 =========================================
 
 The Men&Mice DHCP Server Controller is used to control the DHCP server. For ISC DHCP, a copy should be installed on each DHCP server machine. For MS DHCP, a copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connect to the DHCP service over the network. In order for this remote DHCP management to work, the DHCP Server Controller must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP Server Controller can manage several different DHCP servers. To manage the DHCP server on a Cisco router, the DHCP Server Controller can be installed on any machine. The DHCP Server Controller listens for connections from Men&Mice Central on TCP port 4151.
@@ -118,7 +118,7 @@ The DNS Caching Appliance contains a high-performance Caching-only DNS server. S
 
 .. _about-ui:
 
-Men&Mice Suite User Interfaces
+Micetro User Interfaces
 ================================
 
 .. note::

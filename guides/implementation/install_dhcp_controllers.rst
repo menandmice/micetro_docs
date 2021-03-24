@@ -149,7 +149,7 @@ If Men&Mice Central is installed on a Windows host, then one option is to instal
 
 However, there are other considerations when deciding where to install Men&Mice DHCP Server Controller.
 
-* The Men&Mice communication protocol used to control a DHCP server is more efficient than the Microsoft protocol. This means that if a DHCP server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DHCP Server Controller in the same local network (the same site, typically) as the DHCP server.
+* The Micetro communication protocol used to control a DHCP server is more efficient than the Microsoft protocol. This means that if a DHCP server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DHCP Server Controller in the same local network (the same site, typically) as the DHCP server.
 
 * Starting in Men&Mice Suite 6.0, Men&Mice DHCP Server Controller can be used to gather lease history data for a DHCP server. However, this requires that the Men&Mice DHCP Server Controller be installed on the DHCP server machine itself. If this is done for all DHCP servers, then there is never any need to run the DHCP Server Controller as a privileged user - the DHCP Server Controller that is only used to control the DHCP service on the same machine as itself can run as a local system service.
 
