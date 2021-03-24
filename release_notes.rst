@@ -10,6 +10,9 @@ Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:
 
 .. _9.3.9-release:
 
+9.3.9
+-----
+
 *January 6th, 2021*
 
 This is a maintenance release containing various fixes and improvements.
