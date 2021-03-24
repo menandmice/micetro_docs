@@ -1,7 +1,7 @@
 .. _reference:
 
-Micetro reference articles
-##########################
+Men&Mice reference articles
+###########################
 
 .. toctree::
   :maxdepth: 2
