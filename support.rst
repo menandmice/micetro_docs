@@ -13,7 +13,7 @@ If you have a valid service contract and the issue is considered critical, pleas
 Clear Description
 -----------------
 
-It is important that you write a clear description of the issue. Please include the current version number of the Men&Mice Suite and related components and provide detailed information based on the following questions.
+It is important that you write a clear description of the issue. Please include the current version number of Micetro and related components and provide detailed information based on the following questions.
 
 * What were the circumstances when the issue came up?
 
@@ -23,7 +23,7 @@ It is important that you write a clear description of the issue. Please include 
 
 * Do you have any logfiles or screenshots available that might help diagnose the problem?
 
-* In which part of the Men&Mice Suite did the issue come up? E.g. Management Console, DNS/DHCP Controller, Men&Mice Central, Web Interface?
+* In which part of Micetro did the issue come up? E.g. Management Console, DNS/DHCP Controller, Men&Mice Central, Web Interface?
 
 Send an email to us
 -------------------

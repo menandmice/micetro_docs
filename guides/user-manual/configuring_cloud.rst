@@ -9,7 +9,7 @@ Set up and configuration
 Before adding a cloud service instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Men&Mice Suite communicates with the cloud services through Men&Mice Central (IPAM) and the Men&Mice DNS controller (DNS).
+Micetro communicates with the cloud services through Men&Mice Central (IPAM) and the Men&Mice DNS controller (DNS).
 
 Before continuing, make sure:
 
@@ -22,7 +22,7 @@ If you want to add multiple AWS cloud accounts using single credentials refer to
 Adding a cloud service
 ----------------------
 
-The following are the steps that are needed to start using a cloud service in Men&Mice.
+The following are the steps that are needed to start using a cloud service in Micetro.
 
 1. :guilabel:`File --> New --> Cloud Service`. Access the Cloud service wizard by right clicking :guilabel:`Cloud Services` in the *Object Browser* of the Management Console and selecting :guilabel:`New Cloud Service` or highlight :guilabel:`Cloud Services` in the *Object Browser* and clicking :guilabel:`+` sign in the manager window.
 
@@ -54,9 +54,9 @@ Akamai Fast DNS
 Fill in the following fields required to connect to Akamai Fast DNS
 
 +---------------+-----------------------------------------------------------+
-| Name          | The name of the cloud service in Men&Mice                 |
+| Name          | The name of the cloud service in Micetro                  |
 +---------------+-----------------------------------------------------------+
-| Client Secret | The credentials needed for Men&Mice to connect to         |
+| Client Secret | The credentials needed for Micetro to connect to          |
 +---------------+                                                           |
 | Host          | the cloud instance                                        |
 +---------------+                                                           |
@@ -64,7 +64,7 @@ Fill in the following fields required to connect to Akamai Fast DNS
 +---------------+                                                           |
 | Client token  | **Obtaining Access Credentials**                          |
 |               | Please refer to the following on how to create            |
-|               | API Access Credentials for use by the suite:              |
+|               | API Access Credentials for use by Micetro:                |
 |               | https://developer.akamai.com/introduction/Prov_Creds.html |
 +---------------+-----------------------------------------------------------+
 
@@ -72,7 +72,7 @@ Fill in the following fields required to connect to Akamai Fast DNS
   Akamai OPEN APIs are time sensitive! Ensure that the system your client runs on is synchronized with a Stratum 2 or better time source. (source: https://developer.akamai.com/introduction/Client_Auth.html)
 
 .. danger::
-  If the time on the server that the DNS Remote is running on deviates enough from Coordinated Universal Time the authentication will fail and it will not be possible to access/update zone through the suite.
+  If the time on the server that the DNS Remote is running on deviates enough from Coordinated Universal Time the authentication will fail and it will not be possible to access/update zone through Micetro.
 
 Go to :ref:`finish-cloud-config`.
 
@@ -84,11 +84,11 @@ Azure DNS
 Fill in the following fields required to connect to Azure:
 
 +-----------------+-----------------------------------------------------------+
-| Name            | The name of the cloud service in Men&Mice                 |
+| Name            | The name of the cloud service in Micetro                  |
 +-----------------+-----------------------------------------------------------+
 | Subscription ID |                                                           |
 +-----------------+                                                           |
-| Tenant ID       | The credentials needed for Men&Mice to connect to         |
+| Tenant ID       | The credentials needed for Micetro to connect to          |
 +-----------------+ the cloud instance                                        |
 | Client ID       |                                                           |
 +-----------------+                                                           |
@@ -108,14 +108,14 @@ Amazon Web Services
 Fill in the following fields required to connect to AWS:
 
 +-------------------+-----------------------------------------------------------------------------+
-| Name              | The name of the cloud service in Men&Mice                                   |
+| Name              | The name of the cloud service in Micetro                                    |
 +-------------------+-----------------------------------------------------------------------------+
-|                   | The credentials needed for Men&Mice to connect to                           |
+|                   | The credentials needed for Micetro to connect to                            |
 | Access Key ID     | the cloud instance                                                          |
 +-------------------+                                                                             |
 |                   | **Obtaining Access Credentials**                                            |
 | Secret Access Key | Please refer to the following on how to create API Access                   |
-|                   | Credentials for use by the suite:                                           |
+|                   | Credentials for use by Micetro:                                             |
 |                   | https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html |
 +-------------------+-----------------------------------------------------------------------------+
 
@@ -131,11 +131,11 @@ Openstack
 Fill in the following fields required to connect to OpenStack:
 
 +-----------------+-----------------------------------------------------------+
-| Name            | The name of the cloud service in Men&Mice                 |
+| Name            | The name of the cloud service in Micetro                  |
 +-----------------+-----------------------------------------------------------+
 | Server Node     |                                                           |
 +-----------------+                                                           |
-| User Name       | The credentials needed for Men&Mice to connect to         |
+| User Name       | The credentials needed for Micetro to connect to          |
 +-----------------+ the cloud instance                                        |
 | Password        |                                                           |
 +-----------------+                                                           |
@@ -152,14 +152,14 @@ NS1
 Fill in the following fields required to connect to NS1:
 
 +-------------------+-----------------------------------------------------------------------------+
-| Name              | The name of the cloud service in Men&Mice                                   |
+| Name              | The name of the cloud service in Micetro                                    |
 +-------------------+-----------------------------------------------------------------------------+
-|                   | The credentials needed for Men&Mice to connect to                           |
+|                   | The credentials needed for Micetro to connect to                            |
 |                   | the cloud instance                                                          |
 |                   |                                                                             |
 | API Key           | **Obtaining Access Credentials**                                            |
 |                   | Please refer to the following on how to create API Access                   |
-|                   | Credentials for use by the suite:                                           |
+|                   | Credentials for use by Micetro:                                             |
 |                   | https://ns1.com/knowledgebase/creating-and-managing-api-keys                |
 +-------------------+-----------------------------------------------------------------------------+
 
@@ -173,11 +173,11 @@ Dyn DNS
 Fill in the following fields required to connect to Dyn:
 
 +-----------------+-----------------------------------------------------------+
-| Name            | The name of the cloud service in Men&Mice                 |
+| Name            | The name of the cloud service in Micetro                  |
 +-----------------+-----------------------------------------------------------+
 | Customer Name   |                                                           |
 +-----------------+                                                           |
-| User Name       | The credentials needed for Men&Mice to connect to         |
+| User Name       | The credentials needed for Micetro to connect to          |
 +-----------------+ the cloud instance                                        |
 | Password        |                                                           |
 +-----------------+-----------------------------------------------------------+

@@ -3,7 +3,7 @@
 Maintenance
 ===========
 
-The Men&Mice Suite contains several options for cleaning up the network space. To access the network maintenance functions, select :guilabel:`Tools --> Maintenance` and then the maintenance operation you want to perform.
+Micetro contains several options for cleaning up the network space. To access the network maintenance functions, select :guilabel:`Tools --> Maintenance` and then the maintenance operation you want to perform.
 
 Find Orphaned PTR Records
 -------------------------

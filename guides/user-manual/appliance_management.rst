@@ -9,7 +9,7 @@ Overview
 There are two types of Men&Mice Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance.
 
 DNS/DHCP Appliance
-  Can be used as a DNS and a DHCP server. You can also use the DNS/DHCP Appliance act as a server for the Men&Mice Suite Web Interface. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers.
+  Can be used as a DNS and a DHCP server. You can also use the DNS/DHCP Appliance act as a server for the Micetro Web Application. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers.
 
 DNS Caching Appliance
   Contains a high-performance Caching-only DNS server. See :ref:`caching-appliance` for information on managing the DNS server on the DNS Caching appliance.
@@ -79,7 +79,7 @@ To enable or disable DNS and DHCP service on the Appliance:
 Using as Web Server (DNS/DHCP Appliance only)
 ---------------------------------------------
 
-The Men&Mice Appliance can be configured to act as a web server for the Men&Mice Suite. When enabled, users can connect to the Men&Mice Appliance using a web browser to access the Men&Mice Suite web interface.
+The Men&Mice Appliance can be configured to act as a web server for Micetro. When enabled, users can connect to the Men&Mice Appliance using a web browser to access the interface.
 
 To enable the web server on the Appliance:
 
@@ -306,7 +306,7 @@ To configure IPv4 addresses on the Appliance, do the following:
   :width: 50%
   :align: center
 
-3. In the **IPv4 Address** field enter the IPv4 IP address for the Men&Mice Appliance. NOTE: The main IPv4 address on the primary network interface (eth0) is used by the Men&Mice Suite to communicate with the Appliance. If you change the main IPv4 address of the primary network interface, you will lose the connection to the Appliance once the changes are saved, and you must update the connection information for the Appliance. Refer to :ref:`edit-appliance-name` for details on how to change the connection information.
+3. In the **IPv4 Address** field enter the IPv4 IP address for the Men&Mice Appliance. NOTE: The main IPv4 address on the primary network interface (eth0) is used by Micetro to communicate with the Appliance. If you change the main IPv4 address of the primary network interface, you will lose the connection to the Appliance once the changes are saved, and you must update the connection information for the Appliance. Refer to :ref:`edit-appliance-name` for details on how to change the connection information.
 
 4. In the **Subnet Mask** field, enter the subnet mask to use.
 
@@ -478,7 +478,7 @@ Delete Appliance
 .. note::
   This command is only available with the Administrator account.
 
-Use this command to remove a Men&Mice Appliance from the Men&Mice Suite.
+Use this command to remove a Men&Mice Appliance from Micetro.
 
 1. In the *Object browser* of the Management Console, click on :guilabel:`Appliances`.
 
@@ -487,14 +487,14 @@ Use this command to remove a Men&Mice Appliance from the Men&Mice Suite.
 3. On the toolbar, click the :guilabel:`Remove` button. A dialog box prompts you to confirm your decision. To remove the Appliance, click :guilabel:`Yes`. Otherwise, click :guilabel:`No` to keep the Appliance.
 
 .. warning::
-  When you remove an Appliance from the Men&Mice Suite, the DNS and DHCP servers hosted on the Appliance are removed from the Men&Mice Suite as well.
+  When you remove an Appliance from Micetro, the DNS and DHCP servers hosted on the Appliance are removed from Micetro as well.
 
 Backup and Restore
 ------------------
 
-The Men&Mice Suite will automatically backup configuration for all appliances it manages. The backup can then be used to restore the appliance to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
+Micetro will automatically backup configuration for all appliances it manages. The backup can then be used to restore the appliance to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
 
-If an appliance crashes and has to be replaced with another appliance with the same IP Address, the Men&Mice Suite will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
+If an appliance crashes and has to be replaced with another appliance with the same IP Address, Micetro will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
 
 .. image:: ../../images/admin-appliance-backup-restore.png
   :width: 60%
@@ -512,4 +512,4 @@ Basically, the restore scenario is as follows:
 
 3. When the new appliance is up and running, in the Management Console, right-click the appliance and choose :guilabel:`Reconnect`.
 
-When a connection has been established, the Men&Mice Suite detects that this is a new, uninitialized appliance. See above for a description on what happens next.
+When a connection has been established, Micetro detects that this is a new, uninitialized appliance. See above for a description on what happens next.

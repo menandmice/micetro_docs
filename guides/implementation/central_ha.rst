@@ -6,7 +6,7 @@ Configure High Availability for Men&Mice Central
 Failover instances of Men&Mice Central can be configured to build a high availability cluster.
 
 .. note::
-  To run the Men&Mice Suite in High Availability mode you must be using the MSSQL or PostgreSQL database backend for the Men&Mice Suite. High Availability mode is not available for other database types.
+  To run Micetro in High Availability mode you must be using the MSSQL or PostgreSQL database backend for Micetro. High Availability mode is not available for other database types.
 
   High Availability is also available for the database backend, see :ref:`psql-ha` and :ref:`mssql-ha` for more information.
 

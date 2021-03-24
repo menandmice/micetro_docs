@@ -344,7 +344,7 @@ DNS Response Policy Zones (BIND only)
 
 The ISC BIND name server (9.8 or later) supports DNS Response Policy Zones (RPZ). You can find more information on RPZ at dnsrpz.info
 
-You can manage RPZ zones from within the Men&Mice Suite. When you open the Options dialog box for a master zone on a BIND server you will see the :guilabel:`Response Policy Zone` checkbox. To specify zone as an RPZ zone, just click the checkbox.
+You can manage RPZ zones from within Micetro. When you open the Options dialog box for a master zone on a BIND server you will see the :guilabel:`Response Policy Zone` checkbox. To specify zone as an RPZ zone, just click the checkbox.
 
 .. image:: ../../images/console-dns-zones-rpz.png
   :width: 50%
@@ -379,7 +379,7 @@ When DNSSEC zones are opened, the system ignores most DNSSEC records unless the 
 DNSSEC Management on Windows Server 2012
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use the Men&Mice Suite to manage DNSSEC on Windows Server 2012. You can sign and unsign zones. You can customize the zone signing parameters and add, edit and remove Key Signing Keys (KSK) and Zone Signing Keys (ZSK).
+You can use Micetro to manage DNSSEC on Windows Server 2012. You can sign and unsign zones. You can customize the zone signing parameters and add, edit and remove Key Signing Keys (KSK) and Zone Signing Keys (ZSK).
 
 The details of DNSSEC are beyond the scope of this documentation. For more information on Windows Server 2012 and DNSSEC, see the Microsoft web site http://www.microsoft.com.
 
@@ -600,7 +600,7 @@ The Promote Zone feature makes it possible to change a slave zone to a master zo
 
 When a slave zone is promoted, the following actions are performed:
 
-* The Men&Mice Suite checks whether the most recent copy of the zone is found in its internal database or on the server hosting the slave zone and uses the copy that is more recent.
+* Micetro checks whether the most recent copy of the zone is found in its internal database or on the server hosting the slave zone and uses the copy that is more recent.
 
 * The server hosting the slave zone is configured so that the zone is saved as a master zone on the server.
 

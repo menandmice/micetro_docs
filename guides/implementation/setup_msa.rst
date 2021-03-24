@@ -46,6 +46,6 @@ To remove Managed Service Account from M&M DND/DHCP Server Controllers run cmd a
 
 .. code-block::
 
-  sc.exe managedaccount "Men and Mice DNS/DHCP Server Controller" false
+  sc.exe managedaccount "Men&Mice DNS/DHCP Server Controller" false
 
 Information gathered from this `Microsoft article <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10)?redirectedfrom=MSDN>`_.

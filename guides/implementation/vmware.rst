@@ -1,26 +1,26 @@
 .. _vmware:
 
-Men and Mice Plug-In for VMware
-===============================
+Micetro Plug-In for VMware
+==========================
 
 Introduction
 ------------
 
 The Men&Mice VMware plug-in enables Men&Mice integration with the VMware vRealize Orchestrator. The plug-in allows a simplified workflow for Men&Mice Suite customers who configure and deploy virtual machines via the VMware vRealize Orchestrator.
 
-The plug-in uses the Men&Mice JSON-RPC web service to communicate requests to the Men&Mice Suite. The JSON-RPC web service is an extension of the Men&Mice SOAP API and utilizes the same commands. A complete list of the SOAP commands is available here.
+The plug-in uses the Men&Mice JSON-RPC web service to communicate requests to Micetro. The JSON-RPC web service is an extension of the Men&Mice SOAP API and utilizes the same commands. A complete list of the SOAP commands is available here.
 
-Under the hood, the plug-in mainly consists of a Java object that can be configured. The configuration is persisted in the object. The object’s methods then uses the JSON-RPC web service to communicate requests to the Men&Mice Suite. Setting up this process requires minimal configuration.
+Under the hood, the plug-in mainly consists of a Java object that can be configured. The configuration is persisted in the object. The object’s methods then uses the JSON-RPC web service to communicate requests to Micetro. Setting up this process requires minimal configuration.
 
 .. note::
-  The recommended version of the Men&Mice Suite used with the VMWare Plugin is 7.3 or higher
+  The recommended version of Micetro used with the VMWare Plugin is 7.3 or higher
 
 Configuration overview
 ----------------------
 
 * Whether to use an HTTP or HTTPS connection
 
-* The proxy for your Men&Mice Suite (the fully qualified domain name of the web server that is running your Men and Mice Suite)
+* The proxy for your Men&Mice Suite (the fully qualified domain name of the web server that is running your Micetro)
 
 * The server for your Men&Mice Suite login
 
@@ -114,13 +114,13 @@ Configure connection to Men&Mice Suite
   This workflow will save your configuration for the connection to your Men&Mice Suite. The configuration is persisted.
 
 Clone Linux virtual machine
-  This workflow clones a Linux virtual machine and connects it to your Men&Mice Suite. The virtual machine is assigned an IP address from the Men&Mice Suite automatically and you can choose to use either a static IP address or DHCP.
+  This workflow clones a Linux virtual machine and connects it to your Men&Mice Suite. The virtual machine is assigned an IP address from Micetro automatically and you can choose to use either a static IP address or DHCP.
 
 Clone Windows virtual machine
-  This workflow clones a Windows virtual machine and connects it to your Men&Mice Suite. The virtual machine is assigned an IP address from the Men&Mice Suite automatically and you can choose to use either a static IP address or DHCP.
+  This workflow clones a Windows virtual machine and connects it to your Men&Mice Suite. The virtual machine is assigned an IP address from Micetro automatically and you can choose to use either a static IP address or DHCP.
 
 Remove virtual machine
-  This workflow will remove a virtual machine and release its IP address in the Men&Mice Suite, as well as remove the corresponding DNS record.
+  This workflow will remove a virtual machine and release its IP address in Micetro, as well as remove the corresponding DNS record.
 
 Add IP range
   This workflow adds an IP range to your Men&Mice Suite.
@@ -131,11 +131,11 @@ Remove IP range
 Sample workflows
   These workflows are mainly intended to exhibit how users can build their own workflows using the mmSuiteClient object.
 
-  * Add DNS record: Adds a DNS record to the Men&Mice Suite
+  * Add DNS record: Adds a DNS record to Micetro
   * Get next free address: Gets next free address from the specified range
-  * Remove DNS record: Removes a DNS record from the Men&Mice Suite
+  * Remove DNS record: Removes a DNS record from Micetro
 
 Summary
 -------
 
-The Men&Mice Suite vRealize Orchestrator plug-in allows for the easy sending of requests to your Men&Mice Suite. The plug-in uses the JSON-RPC web service so you can call all methods in the Men&Mice SOAP API. The workflows in the Samples folder are extensively commented to make it easier for the user to understand how the plug-in works. Under the hood, the plug-in has a Java object called mmSuiteClient which contains some methods and can be configured.
+The Men&Mice vRealize Orchestrator plug-in allows for the easy sending of requests to your Men&Mice Suite. The plug-in uses the JSON-RPC web service so you can call all methods in the Men&Mice SOAP API. The workflows in the Samples folder are extensively commented to make it easier for the user to understand how the plug-in works. Under the hood, the plug-in has a Java object called mmSuiteClient which contains some methods and can be configured.

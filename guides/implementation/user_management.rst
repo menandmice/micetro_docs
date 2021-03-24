@@ -9,14 +9,14 @@ Micetro User Management
 Object-based access controls primer
 ===================================
 
-The access model for the Men&Mice Suite is object-based. Each object type (DNS server, zone, etc.) has an access flag, and restrictions are managed through “roles”, “users”, and “groups”.
+The access model for Micetro is object-based. Each object type (DNS server, zone, etc.) has an access flag, and restrictions are managed through “roles”, “users”, and “groups”.
 
 * *Groups* **can** contain *Users*
 * *Groups* **cannot** contain *Groups*
 * *Users* can be a member of **any number** of *Groups*
 * *Users* **and** *Groups* can be assigned to *Roles*
 
-Roles are grouped access controls based on common restrictions across users and groups. The Men&Mice Suite is configured with five default roles: administrators, DNS administrators, DHCP administrators, IPAM administrators, and User administrators. These get full access to all access flags in their respective areas.
+Roles are grouped access controls based on common restrictions across users and groups. Micetro is configured with five default roles: administrators, DNS administrators, DHCP administrators, IPAM administrators, and User administrators. These get full access to all access flags in their respective areas.
 
 * *Administrators*: full access to all objects
 * *DNS Administrators*: full access to DNS objects, including zones, DNS servers, etc.

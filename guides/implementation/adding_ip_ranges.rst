@@ -3,7 +3,7 @@
 IP Address Ranges and devices
 *****************************
 
-Once DHCP servers have been added to the Men&Mice Suite, all the scopes from the DHCP servers will be visible in the tool as scopes in the IP Address Ranges list. The organization might also have a spreadsheet or a database with other IP address range (subnet) allocations and maybe details on individual devices (IP addresses). This data can be manually entered in Men&Mice or more efficiently, imported in bulk.
+Once DHCP servers have been added to Micetro, all the scopes from the DHCP servers will be visible in the tool as scopes in the IP Address Ranges list. The organization might also have a spreadsheet or a database with other IP address range (subnet) allocations and maybe details on individual devices (IP addresses). This data can be manually entered in Men&Mice or more efficiently, imported in bulk.
 
 Importing the IP Address Ranges and Device Properties Using the CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

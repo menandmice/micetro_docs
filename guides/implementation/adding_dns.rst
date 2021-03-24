@@ -3,7 +3,7 @@
 Adding DNS servers
 ==================
 
-After installation, the Men&Mice Suite contains no data about DNS servers. These need to be added through the Management Console.
+After installation, Micetro contains no data about DNS servers. These need to be added through the Management Console.
 
 DNS servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
 
@@ -49,4 +49,4 @@ The DNS agent will use two different methods to retrieve information from Micros
 
 The DNS agent on the DNS server must be able to transfer AD integrated zones from the local DNS server.
 
-There is a global setting in that allows the Suite to adjust the zone transfer settings for dynamic or AD integrated zones. It is enabled by default but the administrator can change this setting by selecting :guilabel:`Tools --> System Settings` in the Management Console, and switching to the :guilabel:`DNS` tab.
+There is a global setting in that allows Micetro to adjust the zone transfer settings for dynamic or AD integrated zones. It is enabled by default but the administrator can change this setting by selecting :guilabel:`Tools --> System Settings` in the Management Console, and switching to the :guilabel:`DNS` tab.

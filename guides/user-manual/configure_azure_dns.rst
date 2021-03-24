@@ -14,7 +14,7 @@ Prerequisites
   * https://login.microsoftonline.com
   * https://management.core.windows.net
 
-* An Azure service principal that can access Azure resources that should be managed through the Men&Mice Suite. Add the following built-in Azure roles on the subscription or specific resource groups you want to manage:
+* An Azure service principal that can access Azure resources that should be managed through Micetro. Add the following built-in Azure roles on the subscription or specific resource groups you want to manage:
 
   * DNS Zone Contributor
 
@@ -32,7 +32,7 @@ Frequently asked questions (FAQ)
 
 This feature is currently not available.
 
-**What are the minimum permissions required for the Men&Mice Suite to integrate fully with Azure?**
+**What are the minimum permissions required for Micetro to integrate fully with Azure?**
 
 Below is a custom role definition that covers all the required permissions for DNS and IPAM. Please look at Azure documentation on how to create a custom role.
 
@@ -40,7 +40,7 @@ Below is a custom role definition that covers all the required permissions for D
   :linenos:
 
   {
-  "Name": "Men and Mice Operator",
+  "Name": "Men&Mice Operator",
   "IsCustom": true,
   "Description": "Can manage DNS and IPAM related resources.",
   "Actions": [

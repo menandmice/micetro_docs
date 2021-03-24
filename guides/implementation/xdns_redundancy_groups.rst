@@ -58,7 +58,7 @@ Click :guilabel:`Next` to configure the sync policy for the zones in the redunda
   :width: 60%
   :align: center
 
-The sync policy specifies how each zone handles external changes from other zones in the group. The zones selected here will replicate the changes when other zones in the group are modified externally, outside of the Men and Mice Suite. The zones not selected will act as "readonly" and only receive updates done through the Men and Mice suite or when the zone itself is modified externally, for example through it's corresponding cloud portal.
+The sync policy specifies how each zone handles external changes from other zones in the group. The zones selected here will replicate the changes when other zones in the group are modified externally, outside of Micetro. The zones not selected will act as "readonly" and only receive updates done through Micetro or when the zone itself is modified externally, for example through it's corresponding cloud portal.
 
 Click :guilabel:`Next` to write a save comment that will saved when the group is created:
 
@@ -143,7 +143,7 @@ Re-syncing zone redundancy groups when all members are out-of-sync
 
 When a zone in a redundancy group can not be kept in sync with other zones in the group (e.g. if a DNS server is offline), then its status will be set to "Out Of Sync". Once the zone comes back online it will automatically be synced with a different zone in the group that is in sync. The zone state will then be set to "In Sync". However, if all group members are out of sync, then the group has to be manually synced again.
 
-If a zone that is out of sync changes, then the changes will not be replicated to other zones in the group, until it is back in sync. Note that it is still possible to make changes to the zone and manage it in the Men&Mice Suite.  The changes will however not be replicated to other group members.
+If a zone that is out of sync changes, then the changes will not be replicated to other zones in the group, until it is back in sync. Note that it is still possible to make changes to the zone and manage it in Micetro.  The changes will however not be replicated to other group members.
 
 To re-sync a redundancy group from within the xDNS Zone Redundancy Dialog, click the :guilabel:`Edit` button (or double click the group name) to open the xDNS Zone Redundancy Group Wizard:
 

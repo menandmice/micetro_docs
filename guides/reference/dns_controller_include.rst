@@ -18,7 +18,7 @@ Instead, since an included file is usually only specified by name, it must be pl
 
 Lastly, it's possible to use an include file in a way that, while perfectly valid as far as ``named`` is concerned, makes the zone look invalid to Men&Mice Management Console's syntax check. If the zone's authority NS records and/or SOA record are located in an include file, the Management Console will not allow you to save the file. This can be solved by configuring the DNS Server Controller to (permanently) expand control statements.
 
-Using the $INCLUDE directive with the Men&Mice Suite
+Using the $INCLUDE directive with Micetro
 ----------------------------------------------------
 
 Men&Mice DNS Server Controller can be configured to expand ``$INCLUDE`` statements, so that you see the entire contents of the zone in the zone window.

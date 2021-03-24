@@ -55,7 +55,7 @@ Allow single sign-on through web interface on IIS.
   To enable single sign-on in the web interface, the web server needs to be configured. Refer to :ref:`external-auth`.
 
 Enable AD sites and subnets integration.
-  Check this checkbox to enable the integration feature. When the integration is active, all sites and their corresponding subnets in Active Directory displays in the Men&Mice Suite and you can add and remove subnets in sites and move subnets to different sites. Once Sites and Subnets integration has been enabled, an  AD Sites  object displays in the object list on the left hand side of the Manager window and a new column,  AD Site  displays in the range list in the Manager window. If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory against custom properties in the Men&Mice Suite, choose the custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will update the corresponding fields in the Men&Mice Suite and vice versa.
+  Check this checkbox to enable the integration feature. When the integration is active, all sites and their corresponding subnets in Active Directory displays in Micetro and you can add and remove subnets in sites and move subnets to different sites. Once Sites and Subnets integration has been enabled, an  AD Sites  object displays in the object list on the left hand side of the Manager window and a new column,  AD Site  displays in the range list in the Manager window. If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory against custom properties in Micetro, choose the custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will update the corresponding fields in Micetro and vice versa.
 
 Enforce AD site inheritance.
   Select this checkbox if you want to enforce site inheritance in AD. When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet.
@@ -87,7 +87,7 @@ Purge log message after ____  days.
   When selected a number is typed in the field indicating the number of days the logs should be kept.
 
 Log extra information when address collection is triggered.
-  When selected, information about the start and duration of the address collection is written in the Men&Mice Suite log file.
+  When selected, information about the start and duration of the address collection is written in the Micetro log file.
 
 Lease History.
   Through this function, you configure the setting that allows for viewing the history of DHCP leases.
@@ -116,7 +116,7 @@ The *Error Checking* tab allows you to specify how the system reports certain er
 2. In the *System Settings* dialog box, click the :guilabel:`Error Checking` tab.
 
 Ignore missing reverse zones.
-  An error message displays when the Men&Mice Suite is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting the Ignore missing reverse zones checkbox.
+  An error message displays when Micetro is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting the Ignore missing reverse zones checkbox.
 
 Warn when creating A/AAAA records with name that already exists.
   When enabled, a warning message displays if a user creates an address (A or AAAA) record using the name of an existing record of the same type.
@@ -182,10 +182,10 @@ Delegation records.
   When automatically create delegation records when creating new zones is selected, delegation records (NS records) are automatically created in the corresponding parent zones when subzones are created, maintaining a correct delegation chain between parent and subzones.
 
 Adjust Zone Transfer.
-  Select the checkbox to allow the Men&Mice Suite to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
+  Select the checkbox to allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
 
 DNSSEC.
-  Select the checkbox to include derived DNSSEC records when viewing DNSSEC signed zones in the Men&Mice Suite. Note that this will increase the size of the Men&Mice Suite database significantly and may affect overall system performance.
+  Select the checkbox to include derived DNSSEC records when viewing DNSSEC signed zones in Micetro. Note that this will increase the size of the Micetro database significantly and may affect overall system performance.
 
 3. When the desired selections/entries are made, click :guilabel:`OK`.
 
@@ -198,7 +198,7 @@ The *IPAM* tab allows you to specify various IPAM related settings:
 
   * How the system should handle new subranges if the parent range is in a folder.
 
-  * How the system should behave if DHCP scopes are removed outside the Men&Mice Suite.
+  * How the system should behave if DHCP scopes are removed outside Micetro.
 
   * How the system should behave when naming conflicts between existing IP Address ranges and DHCP scopes occur.
 
@@ -216,7 +216,7 @@ Subranges.
   The selection made here determines what happens when a user creates a subrange of a range in a folder. Click the desired action.
 
 DHCP Scope Deletion.
-  If a scope is removed directly from a DHCP server (instead of using the Men&Mice Suite), you can select whether to convert it to an IP Address range or remove it completely.
+  If a scope is removed directly from a DHCP server (instead of using Micetro), you can select whether to convert it to an IP Address range or remove it completely.
 
 Name conflicts between ranges and scopes.
   The selection made her determines what happens if the name of an MS DHCP scope does not match the name of an existing IP Address range.
@@ -237,7 +237,7 @@ Allow allocation of IP Addresses from IP Address Containers.
   When selected, the system will allow allocation of IP Addresses that reside in IP Address Containers. For more information on IP Address Containers,  refer to  IPAM Settings.
 
 Enable Cloud integration.
-  Check this checkbox to enable the Cloud integration feature. When Cloud integration is active you can add OpenStack clouds to the Men&Mice Suite. You can manage cloud networks and and you can add and remove subnets from cloud networks and move subnets to cloud networks. Cloud integration has been enabled, a :guilabel:`Cloud` object displays in the object list on the left hand side of the Manager window and a new column, *Cloud Network* displays in the range list in the Manager window.
+  Check this checkbox to enable the Cloud integration feature. When Cloud integration is active you can add OpenStack clouds to Micetro. You can manage cloud networks and and you can add and remove subnets from cloud networks and move subnets to cloud networks. Cloud integration has been enabled, a :guilabel:`Cloud` object displays in the object list on the left hand side of the Manager window and a new column, *Cloud Network* displays in the range list in the Manager window.
 
 3. When all selections/entries are made, click :guilabel:`OK`.
 
@@ -311,7 +311,7 @@ Enable sending SNMP traps.
 
     * When the number of free IP Addresses in monitored subnets goes below a user-definable threshold.
 
-    * When a log event of type Error or Notice occurs. Refer to Management Console—Men and Mice Suite Log for more information on log events.
+    * When a log event of type Error or Notice occurs. Refer to :ref:`admin-logging` for more information on log events.
 
   When enabling sending of SNMP traps, you must provide additional information:
 

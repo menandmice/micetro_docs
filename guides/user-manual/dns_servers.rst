@@ -70,7 +70,7 @@ To configure the DNS Server Controller to access DNS servers on remote computers
 
 1. Before you can administer DNS servers, verify that the DNS Controller is running as a Windows User and has the necessary privileges.
 
-2. To enable DNS Management in the Men&Mice Suite, start the Windows Services program and open the properties dialog box for Men&Mice DNS Server Controller.
+2. To enable DNS Management in Micetro, start the Windows Services program and open the properties dialog box for Men&Mice DNS Server Controller.
 
 3. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
 
@@ -137,7 +137,7 @@ To clear a Work Set, do the following:
 Disable
 -------
 
-A server can be disabled. When a server is disabled, it is not synchronized with the Men&Mice Suite and excluded from various checks. When a DNS server is disabled, it is greyed out in the DNS server listing.
+A server can be disabled. When a server is disabled, it is not synchronized with Micetro and excluded from various checks. When a DNS server is disabled, it is greyed out in the DNS server listing.
 
 .. _enable-dns-server:
 
@@ -531,9 +531,9 @@ Reload.
   This command reloads the DNS server. On Windows this command has the same effect as the Clear Cache command, but on BIND servers, the command ``rndc reload`` is sent to the DNS server.
 
 Reload Zone List.
-  This command reloads the list of zones from the DNS server. It is useful if a zone has been created outside of the Men&Mice Suite.
+  This command reloads the list of zones from the DNS server. It is useful if a zone has been created outside of Micetro.
 
-To reload the zone list to include zones that have been added/deleted outside of the Men&Mice suite, do the following:
+To reload the zone list to include zones that have been added/deleted outside of Micetro, do the following:
 
 1. Select the desired server.
 
@@ -624,7 +624,7 @@ To view the cache of a DNS server, do the following:
 Backup and Restore (BIND Only)
 ------------------------------
 
-The Men&Mice Suite will automatically backup configuration for all BIND DNS servers it manages. The backup can then be used to restore the DNS server to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
+Micetro will automatically backup configuration for all BIND DNS servers it manages. The backup can then be used to restore the DNS server to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
 
 Automatic backup can be disabled by setting the property ``BackupDNSServers`` value in Men&Mice central preferences to zero:
 
@@ -633,13 +633,13 @@ Automatic backup can be disabled by setting the property ``BackupDNSServers`` va
 
   <BackupDNSServers value="0" />
 
-If a DNS server machine crashes and has to be replaced with another machine with the same IP Address, the Men&Mice Suite will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
+If a DNS server machine crashes and has to be replaced with another machine with the same IP Address, Micetro will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
 
 .. image:: ../../images/console-dns-bind-backup-restore.png
   :width: 60%
   :align: center
 
-* If **Use data from the Men&Mice Suite** is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
+* If **Use data from Micetro** is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
 
 * If **Use data from the new server** is selected, all data kept in Men&Mice Central will be ignored and overwritten with current data on the DNS Server.
 
@@ -653,4 +653,4 @@ Basically, the restore scenario is as follows:
 
 4. When the new machine is up and running, in the Management Console, right-click the server and choose :guilabel:`Reconnect`.
 
-When a connection has been established, the Men&Mice Suite detects that this is a new, uninitialized server. See above for a description on what happens next.
+When a connection has been established, Micetro detects that this is a new, uninitialized server. See above for a description on what happens next.

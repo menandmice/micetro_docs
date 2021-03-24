@@ -301,7 +301,7 @@ Scope Creation Wizard
 
 This section describes how to create and edit DHCP scopes with the new *DHCP Scope Creation Wizard*.
 
-Whenever you create a new scope, the Men&Mice Suite automatically checks whether the new scope conflicts with an existing scope or an IPAM range.
+Whenever you create a new scope, Micetro automatically checks whether the new scope conflicts with an existing scope or an IPAM range.
 
 The Wizard has additional steps, or skips over some steps, depending on the type of DHCP server the scope is being created on, and whether the :ref:`active-directory` integration has been enabled.
 
@@ -463,7 +463,7 @@ Use this function to convert an existing IP Address range to a scope, while keep
 Scope Policies (Windows Server 2012 or newer)
 ---------------------------------------------
 
-If you are managing DHCP servers on Windows Server 2012 or newer, you can use the Men&Mice Suite to set scope policies for individual scopes.
+If you are managing DHCP servers on Windows Server 2012 or newer, you can use Micetro to set scope policies for individual scopes.
 
 Activate/Deactivate a Scope Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -903,7 +903,7 @@ You can view, create, edit and delete existing failover relationships.
 
 3. Edit the failover configuration and click :guilabel:`OK` to save the settings.
 
-You can delete existing failover relationships. When a failover relationship is deleted, the scopes are not removed from the DHCP server, but they are no longer in a failover configuration. After removing the failover relationship the Men&Mice Suite will handle the affected scopes as split scopes.
+You can delete existing failover relationships. When a failover relationship is deleted, the scopes are not removed from the DHCP server, but they are no longer in a failover configuration. After removing the failover relationship Micetro will handle the affected scopes as split scopes.
 
 **Deleting a Failover Relationship**
 
@@ -920,7 +920,7 @@ When a scope is hosted on multiple servers, the scope view lists all the servers
   :width: 50%
   :align: center
 
-The Men&Mice Suite detects when a split scope configuration is in place. Split scopes are handled as follows:
+Micetro detects when a split scope configuration is in place. Split scopes are handled as follows:
 
 * In the scope list, split scopes are shown with a different icon and in the server column, the text "split scope" displays
 

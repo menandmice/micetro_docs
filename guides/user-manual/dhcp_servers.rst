@@ -16,7 +16,7 @@ DHCP servers
 Overview
 --------
 
-This section shows you how to perform specific actions in the Men&Mice Management Console associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of the Men&Mice Suite you need to have a valid DHCP license key.
+This section shows you how to perform specific actions in the Men&Mice Management Console associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
 
 .. note::
   The functions for this menu option are listed alphabetically after the New DHCP Server section.
@@ -75,7 +75,7 @@ To configure the DHCP Server Controller to access DHCP servers on remote compute
 
 1. Before you can administer DHCP servers, verify that the DHCP Controller is running as a Windows User and has the necessary privileges.
 
-2. To enable DHCP Management in the Men&Mice Suite, start the Windows Services program and open the properties dialog box for Men&Mice DHCP Server Controller.
+2. To enable DHCP Management in Micetro, start the Windows Services program and open the properties dialog box for Men&Mice DHCP Server Controller.
 
 3. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
 
@@ -106,7 +106,7 @@ To access this feature, do the following:
 Inherited Access
 ----------------
 
-You can manage access to scopes just as you can for other object types in the Men&Mice Suite, but there is one important distinction: you can set Inherited Access for scopes. When you open the Access dialog box for a scope, the dialog box has an extra section for inherited access.
+You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set Inherited Access for scopes. When you open the Access dialog box for a scope, the dialog box has an extra section for inherited access.
 
 Checking the :guilabel:`Inherit Access` checkbox will have the selected scope inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the scope as well.
 

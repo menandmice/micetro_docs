@@ -97,7 +97,7 @@ Finally press the :guilabel:`File --> Import Virtual Appliance button` to load t
   :width: 60%
   :align: center
 
-  Importing the Men and Mice Virtual DNS OVA image.
+  Importing the Men&Mice Virtual DNS OVA image.
 
 .. note::
   Change the Guest OS Type to Other Linux (64-bit)
@@ -113,7 +113,7 @@ Entering Appliance Network Information
 
 This section contains instructions on how to configure the network on the appliance. That is performed through the console on the virtual host.
 
-Once the network information has been entered, you can add the appliance to the Men&Mice Suite. For further information refer to Chapter 4: Appliance Management in the Men&Mice Suite User's Guide.
+Once the network information has been entered, you can add the appliance to Micetro. For further information refer to :ref:`appliance-management` in the Micetro User's Guide.
 
 Follow these instructions to configure the network settings:
 
@@ -133,7 +133,7 @@ Follow these instructions to configure the network settings:
 
 8. Enter the IP Address of the gateway for the network.
 
-Adding the Appliance to the Men&Mice Suite
+Adding the Appliance to Micetro
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please refer to the :ref:`appliance-management` chapter in the :ref:`manual` for instructions on how to add the appliance to the Men&Mice Suite.
+Please refer to the :ref:`appliance-management` chapter in the :ref:`manual` for instructions on how to add the appliance to Micetro.

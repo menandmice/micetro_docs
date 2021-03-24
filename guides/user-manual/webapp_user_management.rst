@@ -14,7 +14,7 @@ User Management involves both creating groups as well as creating :ref:`users` t
 Users
 =====
 
-Each user defined in the Men&Mice Suite can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
+Each user defined in Micetro can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
 
 .. note::
   "administrator" is the user already configured for the application. In order to manage users, you have to be logged in as a user who has user management privileges.
@@ -38,7 +38,7 @@ Through this function, you add new users who can then be assigned to groups.
     (Optional) Type the user's first and last name and a description of their duties (i.e., job title, department, etc.), respectively.
 
   Authentication.
-    Click the drop-down list and specify whether the user's login will be authenticated by the Men and Mice software or by an external authentication service (such as existing Active Directory account on the network).
+    Click the drop-down list and specify whether the user's login will be authenticated by Micetro or by an external authentication service (such as existing Active Directory account on the network).
 
   Password/Confirm Password.
     If the Authentication method selected is Men&Mice Internal, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above.

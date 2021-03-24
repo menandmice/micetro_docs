@@ -6,10 +6,10 @@ Configure Single Sign-On
 The single sign-on feature in the Men&Mice Web Application allows users to sign in to the web using their active directory credentials.
 
 .. note::
-  This article assumes that both an Active Directory group has already been added to the Men&Mice Suite **and** Kerberos/NTLM has been added to the preferences file for Men&Mice Web Services.
+  This article assumes that both an Active Directory group has already been added to Micetro **and** Kerberos/NTLM has been added to the preferences file for Men&Mice Web Services.
 
 .. note::
-  Please refer to :ref:`external-auth` for help for adding active directory groups to the Men&Mice Suite.
+  Please refer to :ref:`external-auth` for help for adding active directory groups to Micetro.
 
 .. note::
   Please refer to :ref:`api-auth` for help adding Kerberos/NTLM to preferences for Men&Mice Web Services.
@@ -17,7 +17,7 @@ The single sign-on feature in the Men&Mice Web Application allows users to sign 
 Configuration
 -------------
 
-1. Make sure the user is a member of the Active Directory group already added to the Men&Mice Suite.
+1. Make sure the user is a member of the Active Directory group already added to Micetro.
 
 2. Log in to the workstation as the user.
 

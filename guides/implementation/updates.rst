@@ -3,12 +3,12 @@
 Update Guide
 ############
 
-The Update Manager notifies you when a new version of the Men&Mice Suite is available and simplifies the update process for the Men&Mice Suite. Using the Update Manager you can update Men&Mice Central, the Men&Mice Suite Server Controllers and the Men&Mice Suite Appliance with minimal downtime.
+The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&Mice Central, the Men&Mice Server Controllers and the Men&Mice Appliances with minimal downtime.
 
 Checking and Downloading an Update
 ----------------------------------
 
-When you log into the system using the Management Console, an update notification is displayed when a new version of the Men&Mice Suite is available.
+When you log into the system using the Management Console, an update notification is displayed when a new version of Micetro is available.
 
 .. image:: ../../images/admin-new-update.png
   :width: 50%
@@ -41,7 +41,7 @@ Once the update has been downloaded, you can start the actual update process. Th
 
 If you want to perform the update at a later time, you can close the dialog box. To display the dialog box again, select :guilabel:`Tools --> Check for Updates`.
 
-The following instructions contain information on how to update the Men&Mice Suite after the update has been downloaded using the Update Manager.
+The following instructions contain information on how to update Micetro after the update has been downloaded using the Update Manager.
 
 1. To start the update process, click the :guilabel:`Start Update` button in the update details dialog box. When you click :guilabel:`Start Update` the following happens:
 
@@ -69,7 +69,7 @@ To complete an Appliance update, you must manually initiate the update. To minim
 Viewing Update Status
 ---------------------
 
-Through the *Update Status* dialog box, you can always view the update status for the Men&Mice Suite components. To display the Update Status dialog box, select :guilabel:`Tools --> Update Status`.
+Through the *Update Status* dialog box, you can always view the update status for Micetro components. To display the Update Status dialog box, select :guilabel:`Tools --> Update Status`.
 
 .. image:: ../../images/admin-update-status.png
   :width: 80%
@@ -95,7 +95,7 @@ In order to verify that the update has propagated to all servers:
 
 1.	Log in to the Management Console
 2.	Navigate to :guilabel:`Tools --> Update Status`
-3.	Review the version reported for each of the listed components. The listed version number for the Men&Mice Suite is listed near the top, and should match the version of each component in the list.
+3.	Review the version reported for each of the listed components. The listed version number for Micetro is listed near the top, and should match the version of each component in the list.
 4.	Log in to the Web Application, click on the :guilabel:`User` icon in the top menu. Verify that the version listed there matches the version of the Men&Mice Central that was installed.
 
 .. note::

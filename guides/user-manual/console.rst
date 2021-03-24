@@ -7,7 +7,7 @@ Overview
 --------
 
 Prior to starting the Men&Mice Management Console, make sure that you have installed and started the other Men&Mice Suite modules, as required. Refer to the Installation Guide for other components.
-The Men&Mice Management Console boasts a very intuitive interface. It is the central organizational tool of the Men&Mice Suite and provides all the tools you need to oversee the management of your DNS and DHCP servers.
+The Men&Mice Management Console boasts a very intuitive interface. It is the central organizational tool of Micetro and provides all the tools you need to oversee the management of your DNS and DHCP servers.
 
 The Men&Mice Management Console is the GUI client of a client/server application that allows you to administer local DNS/DHCP servers and IP Addresses. Specifically, it provides a simple graphical user interface that allows you to manage your domain names and IP Addresses.
 
@@ -16,7 +16,7 @@ From the Management Console, you can simultaneously manage DHCP/DNS servers on d
 .. note::
   Be aware that you will only be able to view the servers to which you have access. The administrator user has access to all servers.
 
-Launching the Men&Mice Suite
+Launching Micetro
 ----------------------------
 
 When logging into the Men&Mice Management Console, you have the option to choose "Single Sign-on." This allows those users working on a Microsoft Network with Active Directory to sign on one time only to access all your resources.

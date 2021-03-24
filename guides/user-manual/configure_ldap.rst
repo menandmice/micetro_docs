@@ -6,7 +6,7 @@ Configure LDAP authentication
 Introduction
 ------------
 
-This document describes how to configure LDAP authentication in the Men&Mice Suite.
+This document describes how to configure LDAP authentication in Micetro.
 
 Installation on Centos Linux
 ----------------------------

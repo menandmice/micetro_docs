@@ -42,7 +42,7 @@ Operating systems
 
 .. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
 
-.. [3] On January 14, 2020, Microsoft ends support for Windows server 2008 and 2008 R2 and therefore support for those server types will be deprecated in future versions of the Men&Mice Suite.
+.. [3] On January 14, 2020, Microsoft ends support for Windows server 2008 and 2008 R2 and therefore support for those server types will be deprecated in future versions of Micetro.
 
 Databases
 ---------
