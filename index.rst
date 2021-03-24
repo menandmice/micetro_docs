@@ -1,4 +1,4 @@
-Men&Mice Suite 9.3.8
+Men&Mice Suite 9.3.9
 ####################
 
 Welcome to the Men&Mice Suite, a backend-agnostic DDI orchestration software for complex enterprise network environments.

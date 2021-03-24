@@ -6,7 +6,48 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:`9.3.3-release`, :ref:`9.3.4-release`, :ref:`9.3.5-release`, :ref:`9.3.6-release`, :ref:`9.3.7-release`, :ref:`9.3.8-release`,
+Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:`9.3.3-release`, :ref:`9.3.4-release`, :ref:`9.3.5-release`, :ref:`9.3.6-release`, :ref:`9.3.7-release`, :ref:`9.3.8-release`, :ref:`9.3.9-release`
+
+.. _9.3.9-release:
+
+*January 6th, 2021*
+
+This is a maintenance release containing various fixes and improvements.
+
+Bug fixes
+^^^^^^^^^
+
+* An issue was fixed in the Web application installer where it failed if Apache had never been run before on the server
+
+* An issue was fixed in the web application where it was not possible to add A records to AD integrated zones
+
+* An issue was fixed where ping discovery only updated IP addresses in the default address space
+
+* An issue was fixed where the CAA record flag "0" would be ignored
+
+* An issue was fixed in the Web application reports where a True/False value would be misinterpreted.
+
+* An issue was fixed where DHCP failover relationships would not be handled properly if the DHCP server has an anycast IP address
+
+* An issue was fixed where Men&Mice Central would not properly handle a misconfigured Python installation.
+
+* An issue was fixed where changing between address spaces could fail
+
+Improvements
+^^^^^^^^^^^^
+
+* An option was added to allow Men&Mice Central to use Python 2.7 instead of Python 3
+
+* An improvement was made on how routers and switches are uniquely identified in the system
+
+* An improvement was made on managing DHCP scopes in failover
+
+* An improvement was made on the webservice component performance
+
+New Features
+^^^^^^^^^^^^
+
+It is now possible to manage services in the Azure Government cloud
 
 .. _9.3.8-release:
 
