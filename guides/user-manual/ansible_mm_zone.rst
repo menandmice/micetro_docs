@@ -63,11 +63,11 @@ Examples
       state: present
       name: example.com
       nameserver: ns1.example.com
-      authority: mmsuite.example.net
+      authority: micetro.example.net
       customproperties:
         location: London
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost
@@ -79,7 +79,7 @@ Examples
       state: absent
       name: example.com
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

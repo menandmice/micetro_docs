@@ -18,7 +18,7 @@ name:
   (required) Name of the role to create, remove or modify.
 
 provider:
-  (required) Definition of the Men&Mice suite API provider.
+  (required) Definition of the Micetro API provider.
 
 state:
   Should the role exist or not. (``absent``, ``present``)
@@ -29,7 +29,7 @@ users:
 Examples
 ^^^^^^^^
 
-.. code-block:: yaml 
+.. code-block:: yaml
 
   - name: Add the 'local' role
     mm_role:
@@ -37,7 +37,7 @@ Examples
       desc: A local role
       state: present
     provider:
-      mmurl: http://mmsuite.example.net
+      mmurl: http://micetro.example.net
       user: apiuser
       password: apipasswd
     delegate_to: localhost
@@ -49,7 +49,7 @@ Examples
       name: local
       state: absent
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

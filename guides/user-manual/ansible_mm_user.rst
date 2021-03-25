@@ -56,7 +56,7 @@ Examples
           - Approvers (built-in)
           - Requesters (built-in)
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost
@@ -68,7 +68,7 @@ Examples
       username: mauricem
       state: absent
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

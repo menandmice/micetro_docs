@@ -41,7 +41,7 @@ state:
 Examples
 ^^^^^^^^
 
-.. code-block:: yaml 
+.. code-block:: yaml
 
   - name: Add a reservation for an IP address
     mm_dhcp:
@@ -50,7 +50,7 @@ Examples
       ipaddress: 172.16.17.8
       macaddress: 44:55:66:77:88:99
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

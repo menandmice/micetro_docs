@@ -60,12 +60,12 @@ Examples
   - name: Set DNS record in zone for a defined name
     mm_dnsrecord:
       state: present
-      name: itcrowd
+      name: reynholm
       data: 172.16.17.2
       rrtype: A
       dnszone: example.net.
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost
@@ -76,11 +76,11 @@ Examples
     mm_dnsrecord:
       state: present
       name: "2.17.16.172.in-addr.arpa."
-      data: itcrowd.example.net.
+      data: reynholm.example.net.
       rrtype: PTR
       dnszone: "17.16.172.in-addr.arpa."
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

@@ -16,13 +16,13 @@ play-user
 
   ---
   #
-  # Add, delete and change users on the Men&Mice Suite example
+  # Add, delete and change users in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -114,13 +114,13 @@ play-group
 
   ---
   #
-  # Add, delete and change groups on the Men&Mice Suite example
+  # Add, delete and change groups in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -180,13 +180,13 @@ play-role
 
   ---
   #
-  # Add, delete and change roles on the Men&Mice Suite example
+  # Add, delete and change roles in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -246,13 +246,13 @@ play-props
 
   ---
   #
-  # Set, delete and change custom properties on the Men&Mice Suite example
+  # Set, delete and change custom properties in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -350,13 +350,13 @@ play-claimip
 
   ---
   #
-  # Claim and release an IP address on the Men&Mice Suite example
+  # Claim and release an IP address in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -407,13 +407,13 @@ play-dhcp
 
   ---
   #
-  # Make a DHCP reservation and release it on the Men&Mice Suite example
+  # Make a DHCP reservation and release it in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -516,7 +516,7 @@ play-zone
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -561,13 +561,13 @@ play-dnsrecord
 
   ---
   #
-  # Set and change a DNS record on the Men&Mice Suite example
+  # Set and change a DNS record in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -587,7 +587,7 @@ play-dnsrecord
       - name: Set DNS record
         mm_dnsrecord:
           state: present
-          name: itcrowd
+          name: reynholm
           rrtype: A
           dnszone: testzone
           data: 192.168.10.12
@@ -599,7 +599,7 @@ play-dnsrecord
       - name: Check idempotentie
         mm_dnsrecord:
           state: present
-          name: itcrowd
+          name: reynholm
           rrtype: A
           dnszone: testzone
           data: 192.168.10.12
@@ -611,7 +611,7 @@ play-dnsrecord
       - name: Set DNS record with erroneous values
         mm_dnsrecord:
           state: present
-          name: itcrowd
+          name: reynholm
           rrtype: AAAA
           dnszone: testzone
           data: 192.168.10.127
@@ -624,7 +624,7 @@ play-dnsrecord
       - name: Change record
         mm_dnsrecord:
           state: present
-          name: itcrowd
+          name: reynholm
           rrtype: A
           dnszone: testzone
           data: 192.168.10.14
@@ -635,7 +635,7 @@ play-dnsrecord
       - name: Do something stupid
         mm_dnsrecord:
           state: present
-          name: itcrowd
+          name: reynholm
           rrtype: A
           dnszone: notthetestzone
           data: 192.168.90.14
@@ -647,7 +647,7 @@ play-dnsrecord
       - name: Do more something stupid things
         mm_dnsrecord:
           state: present
-          name: itcrowd
+          name: reynholm
           rrtype: A
           dnszone: testzone
           data: 192.168.390.14
@@ -659,7 +659,7 @@ play-dnsrecord
       - name: Remove record
         mm_dnsrecord:
           state: absent
-          name: itcrowd
+          name: reynholm
           dnszone: notthetestzone
           data: 192.168.90.14
           provider: "{{ provider }}"
@@ -668,7 +668,7 @@ play-dnsrecord
       - name: Remove record - again
         mm_dnsrecord:
           state: absent
-          name: itcrowd
+          name: reynholm
           dnszone: notthetestzone
           data: 192.168.90.14
           provider: "{{ provider }}"
@@ -681,13 +681,13 @@ play-freeip
 
   ---
   #
-  # Find a set of free IP addresses in a range on the Men&Mice Suite example
+  # Find a set of free IP addresses in a range in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #
@@ -734,13 +734,13 @@ play-ipinfo
 
   ---
   #
-  # Get all info for an IP address on the Men&Mice Suite example
+  # Get all info for an IP address in Micetro example
   #
   # The file <ansible_topdir>/group_vars/all contains:
   #
   #    ---
   #    provider:
-  #      mmurl: http://mmsuite.example.net
+  #      mmurl: http://micetro.example.net
   #      user: apiuser
   #      password: apipasswd
   #

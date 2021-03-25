@@ -3,7 +3,7 @@
 mm_inventory plugin
 -------------------
 
-This plugin generates the inventory from the Men&Mice Suite. It supports reading configuration from both a YAML configuration file and environment variables. If reading from the YAML file, the filename must end with ``mm_inventory.(yml|yaml)``, the path in the command would be ``/path/to/mm_inventory.(yml|yaml)``. If some arguments in the configuration file are missing, this plugin will try to fill in the missing arguments by reading from environment variables. If reading configurations from environment variables, the path in the command must be @mm_inventory.
+This plugin generates the inventory from Micetro. It supports reading configuration from both a YAML configuration file and environment variables. If reading from the YAML file, the filename must end with ``mm_inventory.(yml|yaml)``, the path in the command would be ``/path/to/mm_inventory.(yml|yaml)``. If some arguments in the configuration file are missing, this plugin will try to fill in the missing arguments by reading from environment variables. If reading configurations from environment variables, the path in the command must be @mm_inventory.
 
 Valid configuration filenames are:
 
@@ -35,7 +35,7 @@ plugin
   Name of the plugin (mm_inventory)
 
 host
-  Men&Mice Suite to connect to (http://mmsuite.example.net)
+  Micetro to connect to (http://micetro.example.net)
 
 user
   UserID to connect with (apiuser)
@@ -70,7 +70,7 @@ An example of the ``mm_inventory.yml`` file:
 .. code-block:: yaml
 
   plugin: mm_inventory
-  host: "http://mmsuite.example.net"
+  host: "http://micetro.example.net"
   user: apiuser
   password: apipasswd
   filters:

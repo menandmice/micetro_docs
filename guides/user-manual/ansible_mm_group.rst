@@ -41,7 +41,7 @@ Examples
       roles:
         - IPAM Administrators (built-in)
     provider:
-      mmurl: http://mmsuite.example.net
+      mmurl: http://micetro.example.net
       user: apiuser
       password: apipasswd
     delegate_to: localhost
@@ -53,7 +53,7 @@ Examples
       name: local
       state: absent
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

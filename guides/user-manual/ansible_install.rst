@@ -114,7 +114,7 @@ As the modules and plugins can be used by all systems under Ansible control, it 
 
   ---
   provider:
-    mmurl: http://mmsuite.example.net
+    mmurl: http://micetro.example.net
     user: apiuser
     password: apipasswd
 

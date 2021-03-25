@@ -9,7 +9,7 @@ Options
 ^^^^^^^
 
 deleteunspecified:
-  Clear properties that are not explicitly set.
+  Clmicetroperties that are not explicitly set.
 
 ipaddress:
   (required) The IP address(es) to work on.
@@ -18,7 +18,7 @@ properties:
   (required) Custom properties for the IP address. These properties must already be defined.
 
 provider:
-  (required) Definition of the Men&Mice suite API provider.
+  (required) Definition of the Micetro API provider.
 
 state:
   Property present or not. (``absent``, ``present``)
@@ -36,7 +36,7 @@ Examples
         claimed: false
         location: London
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

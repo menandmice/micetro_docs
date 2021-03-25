@@ -15,7 +15,7 @@ excludedhcp:
   exclude DHCP reserved ranges from result
 
 filter:
-  Micetro filter statement. Filter validation is done by the Men&Mice suite, not in the plugin. More filter info: :ref:`quickfilter`
+  Micetro filter statement. Filter validation is done by Micetro, not in the plugin. More filter info: :ref:`quickfilter`
 
 multi:
   Get a list of x number of free IP addresses from the requested zones.
@@ -39,7 +39,7 @@ Example usage
 
 Claim IP addresses in one or more ranges
 
-.. code-block:: yaml 
+.. code-block:: yaml
 
   ---
   - name: Men&Mice FreeIP test play
@@ -49,7 +49,7 @@ Claim IP addresses in one or more ranges
 
     vars:
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipassword
       network: examplenet

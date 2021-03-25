@@ -59,7 +59,7 @@ Examples
       proptype: text
       dest: zone
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost

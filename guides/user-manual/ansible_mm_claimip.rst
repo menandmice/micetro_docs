@@ -30,7 +30,7 @@ Examples
       state: present
       ipaddress: 172.16.12.14
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost
@@ -45,7 +45,7 @@ Examples
         - 172.16.12.15
         - 172.16.12.16
       provider:
-        mmurl: http://mmsuite.example.net
+        mmurl: http://micetro.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost
