@@ -1,0 +1,90 @@
+.. _terraform-dhcp-reservations:
+
+menandmice_dhcp_reservation
+---------------------------
+
+Schema
+^^^^^^
+
+Required
+""""""""
+
+addresses
+  (List of String) A list of zero or more IP addresses used for the reservation.
+
+client_identifier
+  (String) The client_identifier of this reservation.
+
+name
+  (String) The name of DHCP reservation you want to query
+
+owner
+  (String) DHCP group scope or server where this reservation is made.
+
+Optional
+""""""""
+
+ddns_hostname
+  (String) Dynamic DNS host name for reservation.
+
+  .. note::
+    Only applicable for ISC DHCP servers.
+
+description
+  (String) Description for the reservation.
+
+  .. note::
+    Only applicable for MS DHCP servers.
+
+filename
+  (String) The filename DHCP option.
+
+  .. note::
+    Only applicable for ISC DHCP servers.
+
+id
+  (String) The ID of this resource.
+
+next_server
+  (String) The next-server ISC DHCP option.
+
+  .. note::
+    Only applicable for ISC DHCP servers.
+
+reservation_method
+  (String) DHCP reservation method, For example: ``HardwareAddress``, ``ClientIdentifier``. Default: ``HardwareAddress``.
+
+servername
+  (String) The server-name DHCP option.
+
+  .. note::
+    Only applicable for ISC DHCP servers.
+
+type
+  (String) The type of this DHCP reservation. For example: ``DHCP``, ``BOOTP``, ``BOTH``.
+
+Read-Only
+"""""""""
+
+owner_ref
+  (String) Internal reference to the DHCP group scope or server where this reservation is made.
+
+ref
+  (String) Internal reference to this DHCP reservation
+
+Example
+^^^^^^^
+
+.. code-block::
+
+  resource menandmice_dhcp_reservation reservation2 {
+    owner = "micetro.example.net."
+    name    = "test5"
+    client_identifier = "44:55:66:77:88:01"
+    servername = "testname"
+    next_server = "server1"
+    reservation_method = "ClientIdentifier"
+    # description = "test description" # only valid for some dhcp servers
+    addresses = ["192.168.2.10"]
+    ddns_hostname = "test"
+  }
