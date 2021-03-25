@@ -39,11 +39,11 @@ play-user
             - "Python version     : {{ ansible_facts['python_version'] }}"
             - "Python executable  : {{ ansible_facts['python']['executable'] }}"
 
-      - name: Add the user 'johnd' as an admin
+      - name: Add the user 'mauricem' as an admin
         mm_user:
-          username: johnd
+          username: mauricem
           password: password
-          full_name: John Doe
+          full_name: Maurice Moss
           state: present
           authentication_type: internal
           roles:
@@ -58,9 +58,9 @@ play-user
 
       - name: Check idempotency
         mm_user:
-          username: johnd
+          username: mauricem
           password: password
-          full_name: John Doe
+          full_name: Maurice Moss
           state: present
           authentication_type: internal
           roles:
@@ -75,9 +75,9 @@ play-user
 
       - name: Change the groups
         mm_user:
-          username: johnd
+          username: mauricem
           password: password
-          full_name: John Doe
+          full_name: Maurice Moss
           state: present
           authentication_type: internal
           roles:
@@ -89,9 +89,9 @@ play-user
 
       - name: Check idempotency again
         mm_user:
-          username: johnd
+          username: mauricem
           password: password
-          full_name: John Doe
+          full_name: Maurice Moss
           state: present
           authentication_type: internal
           roles:
@@ -103,7 +103,7 @@ play-user
 
       - name: Remove the user again
         mm_user:
-          username: johnd
+          username: mauricem
           state: absent
           provider: "{{ provider }}"
 
@@ -143,8 +143,8 @@ play-group
           desc: A local rgroup
           state: present
           users:
-            - johndoe
-            - angelina
+            - mauricemoss
+            - jenbarber
           provider: "{{ provider }}"
 
       - name: Check idempotency
@@ -153,8 +153,8 @@ play-group
           desc: A local group
           state: present
           users:
-            - johndoe
-            - angelina
+            - mauricemoss
+            - jenbarber
           provider: "{{ provider }}"
 
       - name: Add nonexisting user to group
@@ -163,7 +163,7 @@ play-group
           desc: A local group
           state: present
           users:
-            - neverheardof
+            - roy
           provider: "{{ provider }}"
         ignore_errors: true
 
@@ -209,8 +209,8 @@ play-role
           desc: A local role
           state: present
           users:
-            - johndoe
-            - angelina
+            - mauricemoss
+            - jenbarber
           provider: "{{ provider }}"
 
       - name: Check idempotency
@@ -219,8 +219,8 @@ play-role
           desc: A local role
           state: present
           users:
-            - johndoe
-            - angelina
+            - mauricemoss
+            - jenbarber
           provider: "{{ provider }}"
 
       - name: Add nonexisting user to role
@@ -229,7 +229,7 @@ play-role
           desc: A local role
           state: present
           users:
-            - neverheardof
+            - roy
           provider: "{{ provider }}"
         ignore_errors: true
 
@@ -276,10 +276,10 @@ play-props
           proptype: text
           dest: dnsserver
           listitems:
-            - John
             - Paul
-            - Ringo
-            - George
+            - Daniel
+            - April
+            - Nolan
           provider: "{{ provider }}"
         delegate_to: localhost
 
@@ -290,10 +290,10 @@ play-props
           proptype: text
           dest: dnsserver
           listitems:
-            - John
             - Paul
-            - Ringo
-            - George
+            - Daniel
+            - April
+            - Nolan
           provider: "{{ provider }}"
         delegate_to: localhost
 
@@ -304,10 +304,10 @@ play-props
           proptype: yesno
           dest: dnsserver
           listitems:
-            - John
             - Paul
-            - Ringo
-            - George
+            - Daniel
+            - April
+            - Nolan
           provider: "{{ provider }}"
         delegate_to: localhost
 
@@ -318,10 +318,10 @@ play-props
           proptype: text
           dest: dnsserver
           listitems:
-            - George
-            - John
             - Paul
-            - Ringo
+            - Daniel
+            - April
+            - Nolan
           provider: "{{ provider }}"
         delegate_to: localhost
 
@@ -542,8 +542,8 @@ play-zone
           masters: mandm.example.net
           servtype: master
           customproperties:
-            owner: Me, myself and I
-            place: Netherlands
+            owner: Reynholm Industries
+            place: London
           provider: "{{ provider }}"
         delegate_to: localhost
 
@@ -587,7 +587,7 @@ play-dnsrecord
       - name: Set DNS record
         mm_dnsrecord:
           state: present
-          name: beatles
+          name: itcrowd
           rrtype: A
           dnszone: testzone
           data: 192.168.10.12
@@ -599,7 +599,7 @@ play-dnsrecord
       - name: Check idempotentie
         mm_dnsrecord:
           state: present
-          name: beatles
+          name: itcrowd
           rrtype: A
           dnszone: testzone
           data: 192.168.10.12
@@ -611,7 +611,7 @@ play-dnsrecord
       - name: Set DNS record with erroneous values
         mm_dnsrecord:
           state: present
-          name: beatles
+          name: itcrowd
           rrtype: AAAA
           dnszone: testzone
           data: 192.168.10.127
@@ -624,7 +624,7 @@ play-dnsrecord
       - name: Change record
         mm_dnsrecord:
           state: present
-          name: beatles
+          name: itcrowd
           rrtype: A
           dnszone: testzone
           data: 192.168.10.14
@@ -635,7 +635,7 @@ play-dnsrecord
       - name: Do something stupid
         mm_dnsrecord:
           state: present
-          name: beatles
+          name: itcrowd
           rrtype: A
           dnszone: notthetestzone
           data: 192.168.90.14
@@ -647,7 +647,7 @@ play-dnsrecord
       - name: Do more something stupid things
         mm_dnsrecord:
           state: present
-          name: beatles
+          name: itcrowd
           rrtype: A
           dnszone: testzone
           data: 192.168.390.14
@@ -659,7 +659,7 @@ play-dnsrecord
       - name: Remove record
         mm_dnsrecord:
           state: absent
-          name: beatles
+          name: itcrowd
           dnszone: notthetestzone
           data: 192.168.90.14
           provider: "{{ provider }}"
@@ -668,7 +668,7 @@ play-dnsrecord
       - name: Remove record - again
         mm_dnsrecord:
           state: absent
-          name: beatles
+          name: itcrowd
           dnszone: notthetestzone
           data: 192.168.90.14
           provider: "{{ provider }}"

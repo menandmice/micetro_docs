@@ -37,7 +37,7 @@ Examples
       desc: A local group
       state: present
       users:
-        - johndoe
+        - mauricemoss
       roles:
         - IPAM Administrators (built-in)
     provider:

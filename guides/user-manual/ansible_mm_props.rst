@@ -50,9 +50,9 @@ updateexisting:
 Examples
 ^^^^^^^^
 
-.. code-block:: yaml 
+.. code-block:: yaml
 
-  - name: Set deinition for custom properties
+  - name: Set definition for custom properties
     mm_props:
       name: location
       state: present

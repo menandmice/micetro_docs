@@ -65,14 +65,14 @@ Examples
       nameserver: ns1.example.com
       authority: mmsuite.example.net
       customproperties:
-        location: Reykjavik
+        location: London
       provider:
         mmurl: http://mmsuite.example.net
         user: apiuser
         password: apipasswd
     delegate_to: localhost
 
-.. code-block:: yaml 
+.. code-block:: yaml
 
   - name: Release a zone
     mm_zone:

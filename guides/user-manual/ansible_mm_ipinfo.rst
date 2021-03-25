@@ -42,7 +42,7 @@ With output like (output shortened):
           "address": "172.16.17.2",
           "claimed": false,
           "customProperties": {
-              "location": "At the attic"
+              "location": "In the basement"
           },
       }
   }

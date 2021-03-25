@@ -40,9 +40,9 @@ Examples
 
 .. code-block:: yaml
 
-  - name: Add the user 'johnd' as an admin
+  - name: Add the user 'mauricem' as an admin
     mm_user:
-      username: johnd
+      username: mauricem
       password: password
       full_name: John Doe
       state: present
@@ -63,9 +63,9 @@ Examples
 
 .. code-block:: yaml
 
-  - name: Remove user 'johnd'
+  - name: Remove user 'mauricem'
     mm_user:
-      username: johnd
+      username: mauricem
       state: absent
       provider:
         mmurl: http://mmsuite.example.net

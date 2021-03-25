@@ -55,12 +55,12 @@ ttl:
 Examples
 ^^^^^^^^
 
-.. code-block:: yaml 
+.. code-block:: yaml
 
   - name: Set DNS record in zone for a defined name
     mm_dnsrecord:
       state: present
-      name: beatles
+      name: itcrowd
       data: 172.16.17.2
       rrtype: A
       dnszone: example.net.
@@ -76,7 +76,7 @@ Examples
     mm_dnsrecord:
       state: present
       name: "2.17.16.172.in-addr.arpa."
-      data: beatles.example.net.
+      data: itcrowd.example.net.
       rrtype: PTR
       dnszone: "17.16.172.in-addr.arpa."
       provider:
