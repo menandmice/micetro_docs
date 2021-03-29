@@ -13,7 +13,15 @@ Most pages have a 'toctree' directive to control structure and the sidebar navig
 .. toctree::
   :maxdepth: 2
 
-Sometimes I use the 'contents' directive instead, which doesn't affect the sidebar.
+  guides/implementation/implementation
+  guides/reference/reference
+  guides/user-manual/introduction
+
+Sometimes these are marked as hidden in the markup, but they still affect the navigation in the sidebar and the "next" and "previous" buttons at the end of pages.
+
+Other times I use the 'contents' directive instead, which doesn't affect the sidebar:
+
+.. contents::
 
 .. tip::
   Take a look at `the reStructured Text directives <https://docutils.sourceforge.io/docs/ref/rst/directives.html>`_ as we might pick from those in the future/on occasion. Below are the ones that I'm already using a lot.
@@ -81,13 +89,13 @@ And formatting that signifies buttons and other GUI elements: :guilabel:`Add -->
 
 There are images:
 
-.. image:: ../../images/micetro.png
+.. image:: images/micetro.png
   :width: 75%
   :align: center
 
 And "figures" (images with captions):
 
-.. figure:: ../../images/menandmice.png
+.. figure:: images/menandmice.png
   :width: 75%
   :align: center
 
