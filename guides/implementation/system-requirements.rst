@@ -72,8 +72,11 @@ DNS/DHCP Server software
   "**DHCP**"
   "Microsoft DHCP", "2008 R2, 2012, 2012 R2, 2016, 2019"
   "ISC DHCP", "3.0.6 - 4.4.1"
-  "ISC Kea", "1.1.0 - 1.2.0"
+  "ISC Kea", "1.6.0, 1.8.0"
   "Cisco IOS with DHCP support", "12.3 - 16.09"
+
+.. danger::
+  ISC Kea versions older than 1.6 are no longer supported. See :ref:`kea-update` for more details.
 
 Other
 -----

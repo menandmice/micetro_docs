@@ -48,13 +48,13 @@ Server Type
       connects to a Microsoft DHCP server that has a DHCP Server Controller installed. If you want to gather the lease history from the DHCP server, you must use this connection method.
 
     Microsoft Agent-Free
-      connects to a Microsoft DHCP server that does not have a DHCP Server Controller installed. When using this connection method, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to DHCP Servers--Server Access on Remote Computers.
+      connects to a Microsoft DHCP server that does not have a DHCP Server Controller installed. When using this connection method, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access`.
 
     ISC
       connects to an ISC DHCP server.
 
     Cisco
-      connects to a Cisco Router that is running DHCP server software. For more information, see Adding a Cisco DHCP server.
+      connects to a Cisco Router that is running DHCP server software. For more information, see :ref:`add-cisco-dhcp`.
 
     Kea
       connect to a ISC Kea DHCP server.
@@ -64,10 +64,12 @@ Use proxy server
 
 2. Click :guilabel:`OK`. You are connected to the server. Once connected, the name of the newly added server displays under DHCP Servers in the Object Section. (You may need to click the :guilabel:`+` sign next to DHCP Servers to see it.)
 
+.. _dhcp-remote-access:
+
 Server Access on Remote Computers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To manage DHCP servers you must have the DHCP Server Controller installed. For the ISC DHCP server and the Kea DHCP server, a DHCP Server Controller must be installed on each DHCP server you want to manage.
+To manage DHCP servers you must have the DHCP Server Controller installed. For the ISC DHCP server, a DHCP Server Controller must be installed on each DHCP server you want to manage.
 
 If you plan to use Men&Mice Suite to manage any Microsoft DHCP servers, install the DHCP Server Controller on a Windows machine that is a member of the same domain or workgroup as the DHCP servers. You may install multiple copies of the DHCP Server Controller, for example if you want to manage Microsoft DHCP Servers that reside in different forests. A single DHCP Server Controller for Microsoft DHCP Servers can manage multiple DHCP servers. The DHCP Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows.
 
@@ -345,7 +347,9 @@ DDNS Update Style
     Dynamic DNS updates are not performed
 
   Ad-hoc
-    This update scheme is depreciated
+
+    .. warning::
+      This update scheme is deprecated
 
   Interim
     This is the recommended scheme for dynamic DNS updates
@@ -387,16 +391,16 @@ Next Server
   Specifies the host address of the server from which the initial boot file (that is specified by Filename) is to be loaded.
 
 
-Advanced ISC DHCP Server Properties
+Advanced ISC DHCP and ISC Kea Server Properties
 """""""""""""""""""""""""""""""""""
 
-DHCP Administrators can access the ISC DHCP server configuration files directly to edit DHCP server properties that are not available in the GUI.
+DHCP Administrators can access the ISC DHCP and ISC Kea DHCP server configuration files directly to edit DHCP server properties that are not available in the GUI.
 
 To access the advanced options, do the following:
 
 1. Log in to Men&Mice as the DHCP administrator.
 
-2. Select an ISC DHCP server, right-click and select :guilabel:`Properties` from the shortcut menu.
+2. Select an ISC DHCP or Kea DHCP server, right-click and select :guilabel:`Properties` from the shortcut menu.
 
 3. When the *Properties* dialog displays, click the :guilabel:`Advanced` button.
 
@@ -404,7 +408,7 @@ To access the advanced options, do the following:
 
 .. image:: ../../images/console-dhcp-isc-advanced-options.png
   :width: 70%
-  :align: center
+  :align: centercon
 
 5. Click :guilabel:`OK`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
 
@@ -413,13 +417,11 @@ To access the advanced options, do the following:
 Kea DHCP Server Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Interfaces
-  Specifies the interfaces the server listens on. An asterix ``*`` specifies that the server should listen on all interfaces.
+.. image:: ../../images/console-kea-properties-new.png
+  :width: 80%
+  :align: center
 
-DHCP Socket Type
-  Specifies the type of sockets used. Available options are raw and UDP.
-
-Valid Lifetime
+Default/Maximum/Minimum Valid Lifetime
   Specifies the time after which a lease will expire if not renewed.
 
 Renew Timer
@@ -434,18 +436,6 @@ Match Client ID
 Echo Client ID
   Specifies if the server should send back client-id options when responding to clients.
 
-LFC Interval
-  Specifies the interval in seconds, at which the server  will perform a lease file cleanup (LFC)
-
-Lease Database Type
-  Specifies the lease database. Only the memfile option is supported.
-
-Lease Database File
-  A full path to the lease database file.
-
-Persist Lease Database
-  Specifies whether the new leases and updates to existing leases are written to the file.
-
 Decline Probation Period
   Specifies a probation time that will be set on addresses that are in use by some unknown entity.
 
@@ -454,11 +444,11 @@ Next Server
 
 Control Socket
 
-  Control Socket Name.
-    The path to the UNIX socket.
+  Name
+    The path to the UNIX socket. Cannot be empty.
 
-Loggers.
-  Click :guilabel:`Add` to add a new logger.
+Server tag
+  The name used for this server in a High Availability setup.
 
 .. _cisco-dhcp-properties:
 
@@ -499,7 +489,7 @@ Restart
 -------
 
 .. note::
-  Applies to ISC DHCP and Kea DHCP Servers only.
+  Applies to ISC DHCP servers only.
 
 This menu item is only displayed when a user with DHCP administration privileges is logged in. This command restarts the DHCP server.
 
