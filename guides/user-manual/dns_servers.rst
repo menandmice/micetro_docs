@@ -43,7 +43,7 @@ Server Type
     connects to a Microsoft DNS server that has a DNS Server Controller installed.
 
   Microsoft Agent-Free
-    connects to a Microsoft DNS server that does not have a DNS Server Controller installed. For further information regarding this connection method, refer to DNS Servers—Server Access on Remote Computers.
+    connects to a Microsoft DNS server that does not have a DNS Server Controller installed. For further information regarding this connection method, refer to :ref:`dns-remote-access`.
 
   BIND
     connects to BIND DNS server.
@@ -58,6 +58,8 @@ Use proxy server
   If you are adding a Microsoft DNS server you can specify the location of the DNS Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DNS Server controller. This option allows the system to connect to DNS servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DNS servers.
 
 2. Click :guilabel:`OK`. You are connected to the server. Once connected, the name of the newly added server displays under :guilabel:`DNS Servers` in the Object Section. (You may need to click the :guilabel:`+` sign next to DNS Servers to see it.)
+
+.. _dns-remote-access:
 
 Server Access on Remote Computers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
