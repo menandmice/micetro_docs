@@ -44,7 +44,7 @@ Such as "DNS" or "Automation".
 
 Although *right now* I'm not using it often, but the next stage in developing the documentation will focus on splitting the large pages into a bunch of small ones, and using the 'include' directive, like so:
 
-.. include:: include_test_page
+.. include:: include_test_page.rst
 
 Section header (usually used as h1 on pages)
 ============================================
