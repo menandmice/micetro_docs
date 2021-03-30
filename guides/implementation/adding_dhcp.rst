@@ -14,7 +14,7 @@ DHCP servers require :ref:`install-controllers` and need to be added using their
 The following table demonstrates the different options when adding a DHCP Server.
 
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
-| Server type               | Description                                                                                                        |
+| Server type               | Description                                                                                                         |
 +===========================+=====================================================================================================================+
 | Microsoft Agent-Free [1]_ | The DHCP Server Controller has been installed on the machine running the Men&Mice Central Component,                |
 | (Use proxy not checked)   | and that machine will be used as a proxy. Micetro is not able to track lease history data.                          |

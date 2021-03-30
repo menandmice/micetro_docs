@@ -10,7 +10,6 @@
 .. |delete-reservation-dhcp| image:: ../../images/console-dhcp-delete-reservation-icon.png
 .. |reservation-options-dhcp| image:: ../../images/console-dhcp-reservation-options-icon.png
 
-
 ISC DHCP
 ========
 
