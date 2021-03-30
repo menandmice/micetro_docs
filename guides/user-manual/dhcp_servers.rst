@@ -3,6 +3,15 @@
 DHCP servers
 ============
 
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+  dhcp_windows
+  dhcp_kea
+  dhcp_isc
+  dhcp_cisco
+
 Overview
 --------
 
@@ -185,12 +194,3 @@ Reload Scope List
 -----------------
 
 Reloads the list of scopes to view additions and/or deletions made by another user.
-
-.. toctree::
-  :maxdepth: 1
-  :hidden:
-
-  dhcp_windows
-  dhcp_kea
-  dhcp_isc
-  dhcp_cisco
