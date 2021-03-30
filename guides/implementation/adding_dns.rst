@@ -36,7 +36,7 @@ To add a new DNS server the administrator will select :guilabel:`File --> New --
 
 If the entered details are correct and the server is accessible, it will show up in the DNS view.
 
-For further details on DNS management, refer to :ref:`dns`.
+For further details, refer to :ref:`dns` in the User Guide.
 
 DNS servers in Active Directory integrated zones
 ------------------------------------------------

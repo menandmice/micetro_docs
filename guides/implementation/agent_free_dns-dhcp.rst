@@ -3,6 +3,18 @@
 Agent-free management of DNS/DHCP servers
 =========================================
 
+.. _kea-agent-free:
+
+Kea
+---
+
+Kea DHCP servers can be configured agent-free, without a DHCP Server Controller running on every Kea machine. The :ref:`kea-control-agent` needs to be installed, and available for communication through its defined port (default: 8000). A single DHCP Server Controller is sufficient to communicate with and handle all Kea servers on the network.
+
+.. _ms-agent-free:
+
+Microsoft
+---------
+
 Microsoft DNS and DHCP servers in Active Directory environments can be managed agent free, i.e. without running a Men&Mice server controller locally on the DNS/DHCP server.
 
 While agent free management of DHCP servers is possible with any 6.x version of Micetro, version 6.3 or newer is required for agent free management of DNS servers.
@@ -12,10 +24,10 @@ Although it is not required to install an agent on the DNS/DHCP server itself, a
 Naturally, the Micetro proxy agent must adhere to the security imposed by the Active Directory. Therefore, the proxy agent service must be running with a service account that has sufficient privileges for DNS and/or DHCP management in the domain. If the privileges are restricted, that will translate to the same restriction in Micetro. For instance, if the service account only has privileges to view DNS zones and records but not do any changes what so ever, the zones and records will show up in Micetro, but all changes to those zones will be denied by Micetro. The same applies to the DHCP server management, if the service account has read-only privileges to the scopes, the scopes will show up in Micetro but the end-user will not be able to do any changes.
 
 Limitations:
-------------
+^^^^^^^^^^^^
 
 DNS:
-^^^^
+""""
 
 With agent-free management of MS DNS servers, as opposed to using a locally installed agent, you will lose the following ability in static zones only:
 
@@ -28,7 +40,7 @@ With agent-free management of MS DNS servers, as opposed to using a locally inst
 * Disable zone
 
 DHCP:
-^^^^^
+"""""
 
 Collection of lease history is only possible when the agent is installed locally. No lease history will be collected from servers that are managed agent-free.
 
