@@ -47,8 +47,8 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
      :hidden:
 
      guides/user-manual/introduction
-     guides/user-manual/console
      guides/user-manual/web_application
+     guides/user-manual/console
      guides/user-manual/administration
      guides/user-manual/dns
      guides/user-manual/dhcp
@@ -56,7 +56,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
      guides/user-manual/devices
      guides/user-manual/active_directory
      guides/user-manual/cloud
-     guides/user-manual/automation 
+     guides/user-manual/automation
 
 .. toctree::
     :caption: Reference articles

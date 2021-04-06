@@ -4,7 +4,7 @@ Web Application
 ***************
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   webapp_introduction
   webapp_user_guide

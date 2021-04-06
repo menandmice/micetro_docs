@@ -1,15 +1,15 @@
 .. _console-health-bar:
 
 Health Monitoring Bar
-=====================
+---------------------
 
 Overview
---------
+^^^^^^^^
 
 The Men&Mice Health Monitoring provides the administrator with valuable information he needs to maintain his systems and services. First, a good overview of the general health of Micetro and related services. More importantly, it will give the administrator an indication if there is a problem that needs to be acted on and corrected, for example if there is a slave zone that is expiring or if there is a zone that has not been loaded on a server due to an error. Both cases can cause outages for users and therefore be a serious impact for the business.
 
 Categories
-----------
+^^^^^^^^^^
 
 The health status is displayed to the user from the health bar which is positioned at the bottom of the management console window. The status indicators are split into five categories
 
@@ -36,7 +36,7 @@ A color code is used to represent the severity of the error. If an indicator in 
   The health bar has been expanded by clicking the up arrow in the upper right corner of the health bar. There, it can be seen the there are errors in 'DNS Zones' and 'Server Controllers' and a warning in 'Version'.
 
 Indicator details
------------------
+^^^^^^^^^^^^^^^^^
 
 +------------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | Category         | Subcategory        | Description                                                                                                                     |
@@ -45,7 +45,7 @@ Indicator details
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+
 |                  | Database           | An indication is given if the database size exceeds a default threshold of 1GB for SQLite.                                      |
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Men&Mice Suite   |                    | An indication is given if                                                                                                       |
+| Micetro          |                    | An indication is given if                                                                                                       |
 |                  | Server Controllers | * the server controllers have a problem communicating with Men&Mice central                                                     |
 |                  |                    | * there is a problem communicating with the update agents running beside the server controllers.                                |
 |                  +--------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -84,12 +84,12 @@ Indicator details
 In any case of an warning or error above, there will be a detailed description of the error or warning, and a way to navigate to the proper place to fix an error/warning.
 
 Ignoring indicators
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 
 By right clicking a status indicator in the health bar and selecting 'ignore', that status indicator can be ignored.
 
 Viewing error / warning indicators
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""
 
 In this window more details about the status indicator can be seen. Following are descriptions about what each column shows.
 
@@ -117,6 +117,6 @@ Right clicking an indicator will show a context menu with the following items (w
   * Reconnect: Reconnects to an already disconnected server
 
 Disabling health monitoring
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The system health monitoring can be disabled completely by setting an advanced system option. See :ref:`console-advanced-settings` for more details.

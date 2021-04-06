@@ -1,7 +1,10 @@
 .. _quickfilter:
 
-Quick Filter
-============
+Quick Filter (Management Console)
+=================================
+
+.. note::
+  The Quick Filter functionality is also available in the Web Application.
 
 Quick Filters provide a simple way to filter out data records you do not want to see. They can be found in most windows that contain a number of objects. A Quick Filter works in real time and searches all items in a list by default. It is also possible to narrow the search by using keywords to specify in which field to search.
 
@@ -9,13 +12,13 @@ Using Keywords
 ^^^^^^^^^^^^^^
 
 Column Headers
-  It is possible to use column headers as keywords in the Quick Filter and to specify in which field to search. For example, if you enter the following filtering criterion when filtering zones - name:myzone - the filter only searches in the Name field and displays only those results that contain the text myzone. When a column header's name contains a space, such as "Lease MAC Address", you can enclose the name in quotes –e.g., "Lease MAC Address":11. See Colons, below.
+  It is possible to use column headers as keywords in the Quick Filter and to specify in which field to search. For example, if you enter the following filtering criterion when filtering zones - ``name:myzone`` - the filter only searches in the **Name** field and displays only those results that contain the text ``myzone``. When a column header's name contains a space, such as ``Lease MAC Address``, you can enclose the name in quotes –e.g. ``"Lease MAC Address":11``. See Colons, below.
 
 Colons
-  Colons are used to separate a column name from a filter. If the filter contains colons, you can either enclose the filter in quotes or escape the colons with a backslash (). For example, both "Lease MAC Address":"11:22" and "Lease MAC Address":11\:22 search for a MAC address containing "11:22" in a column with a name containing with the name "Lease MAC Address".
+  Colons are used to separate a column name from a filter. If the filter contains colons, you can either enclose the filter in quotes or escape the colons with a backslash ``\``. For example, both ``"Lease MAC Address":"11:22"`` and ``"Lease MAC Address":11\:22`` search for a MAC address containing ``11:22`` in a column with a name containing with the name ``Lease MAC Address``.
 
 Simultaneous Keywords
-  You can use several keywords simultaneously simply by leaving a space between each consecutive filtering criterion. An 'AND' condition is used when finding records. For example: name:myzone type:slave.
+  You can use several keywords simultaneously simply by leaving a space between each consecutive filtering criterion. An ``AND`` condition is used when finding records. For example: ``name:myzone type:slave``.
 
 Custom Properties
   When custom properties are used, you can use the name of the custom property as a keyword.
@@ -34,7 +37,7 @@ When using the Quick Filters, it is possible to use the wildcard characters ``^`
 For example, the search string ``!^a`` finds entries that don't start with 'a'. The exclamation mark can be used with the other wildcards to find non-empty fields. Entering ``Description: !^$`` finds all entries where the Description field is not empty.
 
 .. warning::
-  The ``&`` and ``|`` operators only work for the SOAP interface and Web interface, but not currently for the Management Console. It is a known issue that will be fixed in an upcoming version.
+  The ``&`` and ``|`` operators only work for the SOAP interface and Web Application, but *not* currently for the Management Console. It is a known issue that will be fixed in an upcoming version.
 
   * The ``&`` and ``|`` operators. The **ampersand** is interpreted as an **AND** operator while the **vertical bar** is used as an **OR** operator. Using these operators, you can combine searches for added control. You can use parenthesis in conjunction with these operators. Examples:
 
@@ -69,7 +72,7 @@ To save a filter, do the following:
 
 1. Type the entry you want to filter by in the Quick Filter field.
 
-2. Move to the menu bar, and select :guilabel:`Edit --> Save Filter`.
+2. Move to the menu bar, and select :menuselection:`Edit --> Save Filter`.
 
 3. In the dialog box, type the desired name for the filter. Then click :guilabel:`OK`.
 

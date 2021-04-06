@@ -1,7 +1,7 @@
 .. _console-toolbars:
 
 Toolbars
-========
+--------
 
 .. |create| image:: ../../images/console-create.png
 .. |delete| image:: ../../images/console-delete.png
@@ -39,7 +39,7 @@ The toolbar, which runs along the top of the *Object Section* and *Object List*,
   , "**Quick Filter**", "This text field lets you instantly filter out objects that you do not want to display. For example, if you type 'ex' in the field, only objects that contain 'ex' somewhere in their name are displayed in the Object List. When you clear the contents from this field, all available objects are again displayed. Refer to Quick Filter ."
 
 Zone toolbar
-------------
+^^^^^^^^^^^^
 
 .. csv-table::
   :header: "Button", "Name", "Description"
@@ -55,7 +55,7 @@ Zone toolbar
   |save|, "**Save**", "Saves the information as entered in the main zone information window."
 
 IP Address Range toolbar
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. csv-table::
   :header: "Button", "Name", "Description"
@@ -68,7 +68,7 @@ IP Address Range toolbar
   |next-free-ip|, "**Next Free Address in Range**", "Finds the first IP Address in the range that is not in use. When clicked, opens the IP Address dialog box in which you enter the IP Address info."
 
 Scope toolbar
--------------
+^^^^^^^^^^^^^
 
 .. csv-table::
   :header: "Button", "Name", "Description"

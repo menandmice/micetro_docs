@@ -1,10 +1,10 @@
 .. _console-actions:
 
 Other actions in the Management Console
-=======================================
+---------------------------------------
 
 Jump to Box
------------
+^^^^^^^^^^^
 
 The **Jump to Box** is a field that can be used to quickly open a single object in Micetro by entering the object name. Using the 'Jump to Box' you can open the following object types:
 
@@ -30,18 +30,18 @@ To use the 'Jump to Box', do the following:
   You must enter the exact name of the object you want to open. For example, if you want to open a zone by the name myzone.local, it is not sufficient to enter just 'myzone' or 'myzone.lo' – you must enter 'myzone.local'. The same applies for DNS records, IP Address Ranges, DHCP Scopes and IP Addresses.
 
 Program Preferences
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 You can set some default behaviors for the Men&Mice Management Console using the *Options* dialog box.
 
-On the menu bar, select :guilabel:`Edit --> Preferences`. The *Options* dialog box displays.
+On the menu bar, select :menuselection:`Edit --> Preferences`. The *Options* dialog box displays.
 
 .. image:: ../../images/console-app-preferences.png
   :width: 60%
   :align: center
 
 Log Window
-^^^^^^^^^^
+""""""""""
 
 Initial log size
   The server logs are kept by the servers. When the Management Console connects to a server and the log window is opened, the Manager downloads the most recent portions of the server's log. The amount downloaded (in kilobytes) will be equal to the value set in the Initial log size field.
@@ -53,7 +53,7 @@ Log interval
   Whenever the log window is open, it will continually update itself (the log) from the server. The interval between sequential updates can be set to any value between one and thirty seconds. The default value is every five seconds.
 
 New Zone Window
-^^^^^^^^^^^^^^^
+"""""""""""""""
 
 Show TTL
   This checkbox is enabled by default. If you clear this checkbox, the TTL column will not be included in any new zones that you create.
@@ -62,7 +62,7 @@ Show comment
   This checkbox is enabled by default. If you clear this checkbox, the Comment column will not be included in any new zones that you create.
 
 Console
-^^^^^^^
+"""""""
 
 You can configure how the Console Window behaves when new entries are added to the window.
 
@@ -76,7 +76,7 @@ Bring Console to front
   If this option is selected, the console window will be displayed as the front-most window when new entries are added.
 
 Search/Update Wizard
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 This utility allows you to find, create, modify, or delete records in multiple zones and DHCP Scopes using a single action.
 
@@ -93,7 +93,7 @@ IP Addresses
 
 To launch the *Search and Update Wizard*, do the following:
 
-1. From the menu bar, select :guilabel:`Query --> Search and Update Wizard`. The *Search and Update Wizard* dialog box displays.
+1. From the menu bar, select :menuselection:`Query --> Search and Update Wizard`. The *Search and Update Wizard* dialog box displays.
 
 2. Select the type of search you want to perform.
 
@@ -104,7 +104,7 @@ To launch the *Search and Update Wizard*, do the following:
   :align: center
 
 Lease History
--------------
+^^^^^^^^^^^^^
 
 Through this function, you view the lease history for your MS and ISC DHCP servers.
 
@@ -113,7 +113,7 @@ Through this function, you view the lease history for your MS and ISC DHCP serve
 
 To view the DHCP lease history:
 
-1. From the menu bar, select :guilabel:`Query --> Lease History`. The *Lease History Query* tab displays.
+1. From the menu bar, select :menuselection:`Query --> Lease History`. The *Lease History Query* tab displays.
 
 .. image:: ../../images/console-lease-history.png
   :width: 90%
@@ -128,7 +128,7 @@ Starting on/Ending on
 2. Click :guilabel:`Search`. Any matching results are displayed in the lower portion of the window.
 
 Exporting Search Results
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 
 To export the results as a CSV file, do the following:
 
@@ -145,7 +145,7 @@ To export the results as a CSV file, do the following:
 .. _console-object-change-history:
 
 Object Change History
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Through this function, you can display a log of all changes that have been made to any object such as the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user.
 
@@ -158,9 +158,9 @@ There are two ways to search/view the object change history:
 .. _history-menu:
 
 Accessing via the Menu Bar
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 
-1. From the menu bar, select :guilabel:`Query --> Object History`. The *History Query* tab displays.
+1. From the menu bar, select :menuselection:`Query --> Object History`. The *History Query* tab displays.
 
 .. image:: ../../images/console-history-query.png
   :width: 90%
@@ -188,7 +188,7 @@ Limit to ____ Results
   :align: center
 
 Accessing via the Object Browser
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""
 
 1. In the *Object Browser*, open the desired object category (e.g., DNS Zones, DNS Servers, etc.).
 
@@ -211,7 +211,7 @@ The *History* window displays showing all the history for the selected object.
 5. Following the directions under :ref:`history-menu` to enter the query information.
 
 Exporting Search Results
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 
 To export the results as a CSV file, do the following:
 
@@ -228,7 +228,7 @@ To export the results as a CSV file, do the following:
 6. Click :guilabel:`Save`.
 
 Micetro Log
-----------------------
+^^^^^^^^^^^
 
 Through this function, you can display log messages generated by Micetro.
 
@@ -237,7 +237,7 @@ Through this function, you can display log messages generated by Micetro.
 
 To view the log messages, do the following:
 
-1. In the main Men&Mice window, move to the menu bar and select :guilabel:`Query --> Men&Mice Suite Log`. The *Men&Mice Suite Log* tab displays.
+1. In the main Men&Mice window, move to the menu bar and select :menuselection:`Query --> Men&Mice Suite Log`. The *Men&Mice Suite Log* tab displays.
 
 .. image:: ../../images/console-log.png
   :width: 70%
@@ -265,12 +265,15 @@ Log level
 .. _object-folders:
 
 Object Folders
---------------
+^^^^^^^^^^^^^^
 
 To help in organizing your IP Address ranges, DNS Zones, and DHCP scopes, you can create folders and subfolders into which you can place one or more objects. You can also rename and delete folders, as well as specify access to ranges within the folder (once objects have been moved into it).
 
+.. note::
+  :ref:`object-folders` also appear in the Web Application, and objects can be added to and removed from them.
+
 Creating a New Folder
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 
 When you create a new folder, you can move objects from the "master" list into this new folder. However, the objects always remain in the master list as well.
 
@@ -287,7 +290,7 @@ To create a folder, do the following:
 5. To move an object into this new folder, simply highlight it and drag and drop it into this folder.
 
 Creating a Subfolder
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 
 If desired, you can add a subfolder underneath any existing folder.
 
@@ -305,7 +308,7 @@ In the *Object List*, click :guilabel:`+` next to the object type where you want
 4. Click :guilabel:`OK`. You can now move objects into this subfolder by dragging/dropping them from the list on the right.
 
 Renaming a Folder
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 
 You can rename any folder by doing the following:
 
@@ -318,7 +321,7 @@ You can rename any folder by doing the following:
 4. Click :guilabel:`OK`. The object list refreshes and the new folder name displays.
 
 Specifying Access for Folder Items
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""
 
 Once you have created a folder and moved objects into the folder, you can assign permissions to the ranges in the folder to control who can work with those objects. Choosing access for a folder does not set the access for the folder, but merely selects all objects in the folder and applies the access settings to these objects.
 
@@ -333,7 +336,7 @@ To specify access for item/items in a folder, do the following:
 4. If desired, enter a *Save Comment* when prompted.
 
 Deleting a Folder
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 
 When deleting a folder, the objects within the folder are not deleted and remain intact.
 
