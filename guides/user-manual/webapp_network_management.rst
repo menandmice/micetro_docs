@@ -253,7 +253,7 @@ To add a DNS host for a specific IP address within a IP address range or a scope
 
 3. A dialog will be displayed which allows for adding the record
 
-.. image:: ../../images/blackstar-add-related-dns-host.png
+.. image:: ../../images/Networks-related-dns-Micetro.png
   :width: 75%
   :align: center
 
