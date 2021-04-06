@@ -33,7 +33,7 @@ to the end of the file. ``somename`` is the unique name that will identify the C
 
   systemctl restart mmcentral
 
-3. Login to the Management Console as "administrator" and go to :guilabel:`Tools --> Manage High availability`. (The menu item is only available for the administrator account(s).)
+3. Login to the Management Console as "administrator" and go to :menuselection:`Tools --> Manage High availability`. (The menu item is only available for the administrator account(s).)
 Click the :guilabel:`Add` button and enter the name used in the first step. Set the priority to **10**.
 
 4. Restart Central:
@@ -42,11 +42,13 @@ Click the :guilabel:`Add` button and enter the name used in the first step. Set 
 
   systemctl restart mmcentral
 
-5. Login to the Management Console and verify that the current server is running with state "Active" in the :guilabel:`Tools --> Manage high availability` panel.
+5. Login to the Management Console and verify that the current server is running with state "Active" in the :menuselection:`Tools --> Manage high availability` panel.
 
 6. Click the :guilabel:`Add` button, and add a second server that’ll act as a high availability failover for the Central cluster. Same as previously, a unique name (e.g. "central2") is required. Set priority to **20**, and click OK.
 
 .. image:: ../../images/console_ha.png
+  :width: 70%
+  :align: center
 
 7. On the just added secondary server, install the Men&Mice Central application. If it’s already installed, make sure it’s stopped by using (as root):
 
@@ -63,7 +65,7 @@ Click the :guilabel:`Add` button and enter the name used in the first step. Set 
 
   systemctl start mmcentral
 
-10. Verify that you now have 2 servers, one primary, one secondary in :guilabel:`Tools --> Manage High availability`.
+10. Verify that you now have 2 servers, one primary, one secondary in :menuselection:`Tools --> Manage High availability`.
 
 11. Create a round robin DNS name for the high availability setup, i.e. two A records with the same name, but each with the IP address of the primary and secondary server respectively.
 
@@ -95,7 +97,7 @@ to the end of the file. ``somename`` is the unique name that will identify the C
   mmcentral –stop
   mmcentral –start
 
-3. Login to the Management Console as "administrator" and go to :guilabel:`Tools --> Manage High availability`. (The menu item is only available for the administrator account(s).) Click the :guilabel:`Add` button and enter the name used in the first step. Set the priority to **10**.
+3. Login to the Management Console as "administrator" and go to :menuselection:`Tools --> Manage High availability`. (The menu item is only available for the administrator account(s).) Click the :guilabel:`Add` button and enter the name used in the first step. Set the priority to **10**.
 
 4. Restart the Central application from the command line:
 
@@ -104,11 +106,13 @@ to the end of the file. ``somename`` is the unique name that will identify the C
   mmcentral –stop
   mmcentral –start
 
-5. Login to the Management Console and verify that the current server is running with state "Active" in the :guilabel:`Tools --> Manage high availability` panel.
+5. Login to the Management Console and verify that the current server is running with state "Active" in the :menuselection:`Tools --> Manage high availability` panel.
 
 6. Click the :guilabel:`Add` button, and add a second server that’ll act as a high availability failover for the Central cluster. Same as previously, a unique name (e.g. "central2") is required. Set priority to **20**, and click OK.
 
 .. image:: ../../images/console_ha.png
+  :width: 70%
+  :align: center
 
 7. On the just added secondary server, install the Men&Mice Central application. If it’s already installed, make sure it’s stopped:
 

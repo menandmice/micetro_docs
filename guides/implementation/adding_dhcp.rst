@@ -9,7 +9,7 @@ DHCP servers require :ref:`install-controllers` and need to be added using their
   Servers in Microsoft Active Directory environments can be added without installing a server controller. See :ref:`agent-free-dns-dhcp`.
 
 .. note::
-  ISC DHCP servers require a DHCP Server Controller to be installed on the server. Kea servers require only one DHCP Server Controller installed in the system, either on the machine running Kea, or a machine that can connect to the :ref:`kea-control-agent` through the network.
+  ISC DHCP servers require a DHCP Server Controller to be installed on each DHCP server. Kea servers require *only one* DHCP Server Controller installed in the system, either on the machine running Kea, or a machine that can connect to the :ref:`kea-control-agent` through the network.
 
 The following table demonstrates the different options when adding a DHCP Server.
 
@@ -43,16 +43,14 @@ The following table demonstrates the different options when adding a DHCP Server
 
 .. [2] Alternatively, you can configure a socket for communication in ``kea-dhcp4.conf``.
 
-To add a new DHCP server the administrator will select :guilabel:`File --> New --> DHCP Server`.
-
 1. Log in to the Web Application
 
 2. Select the :guilabel:`Admin` tab on the top of the screen
 
 3. Click :guilabel:`Add DHCP server` in the interface
 
-.. image:: ../../images/add-dns.png
-  :width: 90%
+.. image:: ../../images/Admin-Micetro.png
+  :width: 80%
   :align: center
 
 4. The *Add DHCP server* modal will display.
@@ -61,12 +59,16 @@ To add a new DHCP server the administrator will select :guilabel:`File --> New -
 
 6. Select the server type from the dropdown.
 
-.. image:: ../../images/add-dhcp-modal.png
+.. image:: ../../images/add-dhcp-server.png
   :width: 60%
   :align: center
 
 7. Click :guilabel:`Confirm`.
 
-If the entered details are correct and the server is accessible, it will show up in the DNS view.
+If the entered details are correct and the server is accessible, it will show up in the server management list and the Networks context.
 
 For further details, refer to :ref:`dhcp` in the User Guide.
+
+
+.. note::
+  To add a new DHCP server in the Management Console, the administrator will select :menuselection:`File --> New --> DHCP Server`.

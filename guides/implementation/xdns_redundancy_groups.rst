@@ -13,14 +13,14 @@ Any unsigned non-AD integrated master zone can be added to a redundancy group, a
 Manage xDNS Zone Redundancy Groups
 ----------------------------------
 
-To manage xDNS Redundancy Groups select :guilabel:`Zone --> Manage xDNS Zone Redundancy Groups`.
+To manage xDNS Redundancy Groups select :menuselection:`Zone --> Manage xDNS Zone Redundancy Groups` in the Management Console.
 
 This will open the **xDNS Zone Redundancy Groups** Dialog. The dialog can be used to add, edit or remove a redundancy group.
 
 Adding a zone redundancy group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the :guilabel:`Add` button to open the xDNS Zone Redundancy Group Wizard:
+To add a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the :guilabel:`Add` button to open the *xDNS Zone Redundancy Group Wizard*:
 
 .. image:: ../../images/xdns-add-1.png
   :width: 60%
@@ -90,7 +90,7 @@ It is also possible to create a redundancy group by right clicking selected zone
   :width: 80%
   :align: center
 
-The xDNS Zone Redundancy Group Wizard will then open with the selected zones.
+The *xDNS Zone Redundancy Group Wizard* will then open with the selected zones.
 
 Edit a zone redundancy group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -127,7 +127,7 @@ It is also possible to add and remove a zone from a redundancy group by right cl
   :width: 80%
   :align: center
 
-The xDNS Zone Redundancy Group Wizard will then open with the selected zones.
+The *xDNS Zone Redundancy Group Wizard* will then open with the selected zones.
 
 Removing a redundancy group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

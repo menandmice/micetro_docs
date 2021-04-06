@@ -4,7 +4,7 @@ Advanced configuration
 **********************
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   console_advanced_settings
   central_ha

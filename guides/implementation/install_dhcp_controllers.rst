@@ -3,11 +3,7 @@
 Men&Mice DHCP Server Controllers
 ===============================
 
-Men&Mice DHCP Server Controller is the DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP Server Controller, on any machine in the network) and manages the DHCP service on your behalf.
-
-.. toctree::
-  :maxdepth: 2
-  :hidden:
+Men&Mice DHCP Server Controller is the DHCP server agent. It sits on each DHCP server machine (or in case of environments using MS DHCP or ISC Kea servers, on any machine in the network) and manages the DHCP service on your behalf.
 
 Installing Men&Mice DHCP Server Controller is typically quite straightforward, with far fewer considerations than Men&Mice DNS Server Controller.
 

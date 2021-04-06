@@ -1,12 +1,5 @@
 .. _first-login:
 
-.. toctree::
-  :maxdepth: 2
-  :hidden:
-
-  named-checkconf_timeout
-  disable_auto_zone-transfer
-
 First login
 ===========
 
