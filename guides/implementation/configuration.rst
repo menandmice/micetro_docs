@@ -13,3 +13,4 @@ Configuration
   adding_dhcp
   adding_ip_ranges
   vmware
+  central_ha

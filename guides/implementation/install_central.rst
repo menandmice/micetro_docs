@@ -3,20 +3,19 @@
 Men&Mice Central
 ================
 
-Men&Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing things such as zone history logs, user accounts and permissions, etc. You must have one copy on some server somewhere. It does not need to be installed on a DNS server.
+Men&Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing data such as zone history logs, user accounts and permissions, etc. You must have at least one copy of Central installed in the environment. Central does not need to be installed on a DNS server.
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
   :hidden:
 
+  install_central
   central_database
-  install_console
-  central_ha
 
 .. _install-central-linux:
 
-Install Men&Mice Central on Linux
----------------------------------
+Men&Mice Central on Linux
+-------------------------
 
 .. note::
   Before installing Men&Mice Central, decide the following:
@@ -29,8 +28,8 @@ Extract and run the Men&Mice Central install package:
 
 .. code-block::
 
-  tar -xzvf mmsuite-central-9.4.4.linux.x64.tgz
-  cd mmsuite-central-9.4.2.linux.x64
+  tar -xzvf mmsuite-central-10.0.linux.x64.tgz
+  cd mmsuite-central-10.0.linux.x64
   ./install
 
 Installer Questions
@@ -68,8 +67,8 @@ To remove Men&Mice Central, first use the init script to stop the service (give 
 
 .. _install-central-windows:
 
-Install Men&Mice Central on Windows
------------------------------------
+Men&Mice Central on Windows
+---------------------------
 
 .. note:: Running Men&Mice Central under a privileged user account
   Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
@@ -80,8 +79,8 @@ Proceed to :ref:`central-database`.
 
 .. _install-central-solaris:
 
-Install Men&Mice Central on Solaris
------------------------------------
+Men&Mice Central on Solaris
+---------------------------
 
 Extract and run the Men&Mice Central install package:
 

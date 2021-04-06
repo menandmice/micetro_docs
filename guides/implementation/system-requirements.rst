@@ -81,8 +81,8 @@ DNS/DHCP Server software
 Other
 -----
 
-Men&Mice Web Interface and Web Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Men&Mice Web Application
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft IIS [5]_
 

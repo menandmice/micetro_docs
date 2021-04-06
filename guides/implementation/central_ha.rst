@@ -1,7 +1,7 @@
 .. _central-ha:
 
 Configure High Availability for Men&Mice Central
-------------------------------------------------
+================================================
 
 Failover instances of Men&Mice Central can be configured to build a high availability cluster.
 

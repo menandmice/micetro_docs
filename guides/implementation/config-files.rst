@@ -1,7 +1,7 @@
 .. _config-files:
 
-Location of important config files, scripts, and logs
-=====================================================
+Location of important config and log files
+==========================================
 
 Linux
 -----
