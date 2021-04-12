@@ -101,6 +101,8 @@ The navigation bar below the top menu
 
 * allows you to navigate between subsections
 
+.. _webapp-object-change-history:
+
 History
 -------
 

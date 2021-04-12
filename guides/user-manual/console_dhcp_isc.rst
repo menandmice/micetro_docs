@@ -1,4 +1,4 @@
-.. _dhcp-isc:
+.. _console-dhcp-isc:
 
 ISC DHCP
 ========
@@ -13,7 +13,7 @@ ISC DHCP
 .. |delete-reservation-dhcp| image:: ../../images/console-dhcp-delete-reservation-icon.png
 .. |reservation-options-dhcp| image:: ../../images/console-dhcp-reservation-options-icon.png
 
-.. _dhcp-isc-groups-hosts:
+.. _console-dhcp-isc-groups-hosts:
 
 Managing Groups/Hosts
 ---------------------
@@ -73,7 +73,7 @@ Copy
 Select All
   Selects all groups/hosts. You can then right-click and use the shortcut menu options to manage all the selected items.
 
-.. _dhcp-isc-subclasses:
+.. _console-dhcp-isc-subclasses:
 
 Editing Subclasses
 ------------------
@@ -98,7 +98,7 @@ To edit subclasses, do the following:
 
 5. Click :guilabel:`OK` to confirm your changes and close the dialog box.
 
-.. _dhcp-isc-define-options:
+.. _console-dhcp-isc-define-options:
 
 Defining Options on ISC DHCP Servers
 ------------------------------------
@@ -118,7 +118,7 @@ Defining Options on ISC DHCP Servers
 
 5. Click :guilabel:`OK` to save the option definition.
 
-.. _isc-dhcp-properties:
+.. _console-isc-dhcp-properties:
 
 ISC Server Properties
 ---------------------

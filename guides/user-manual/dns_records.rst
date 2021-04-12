@@ -6,10 +6,10 @@ DNS resource records
 Overview
 --------
 
-Each zone contains DNS resource records that define how requests are processed or delegated by the zone. The *Zone* tab provides a spreadsheet-like interface that makes it easy to view, edit, and manipulate information within a zone.
+Each zone contains DNS resource records that define how requests are processed or delegated by the zone. The :guilabel:`Open` action displays a streamlined interface that makes it easy to view, edit, and manipulate information within a zone.
 
-.. image:: ../../images/console-dns-records.png
-  :width: 80%
+.. image:: ../../images/DNS-records-Micetro.png
+  :width: 90%
   :align: center
 
 Types of Resource Records
@@ -308,19 +308,19 @@ CAA
 
 In addition to the supported record types in the table, Micetro supports the following DNSSEC resource record types:
 
-* DNSKEY
+* DNSKEY (read-only)
 
-* NSEC
+* NSEC (read-only)
 
-* NSEC3
+* NSEC3 (read-only)
 
 * NSEC3PARAM
 
-* RRSIG
+* RRSIG (read-only)
 
 * DS
 
-* DLV
+* DLV (read only)
 
 .. note::
   All DNSSEC specific record types, with the exception of the DS and NSEC3PARAM record types, are read only.
@@ -342,7 +342,7 @@ To select non-consecutive records, do the following:
 
 To select a contiguous series of records, select the first record in the series as usual, then hold down the [Shift] key and select the last record in the series. All records in between will automatically be selected.
 
-.. image:: ../../images/console-dns-records-highlight.png
+.. image:: ../../images/DNS-records-highlight-Micetro.png
   :width: 70%
   :align: center
 
@@ -351,40 +351,45 @@ New Records
 
 If you are comfortable editing the record table directly, you can use this procedure to insert a new record directly in the zone tab.
 
-1. Open the :guilabel:`Zone` tab to display the resource records in the zone you want to edit.
+1. Open the zone to display the resource records in the zone you want to edit.
 
-2. In the record table, select the record that is directly above where you want to insert the new record. To select a record, click on the square block to the left of the Name column.
+2. In the grid, select the record that is directly *above* where you want to insert the new record.
 
-3. Right-click anywhere in the selected record and, from the shortcut menu, select :guilabel:`Insert Record`. A new, blank record is added.
+3. Click on :guilabel:`Create`. A new, blank record is added.
 
-4. Starting with the **Name** field, enter the domain name.
+4. Enter the **Record Name**.
 
 .. warning::
-  If you enter a domain name that is not fully qualified (i.e., does not end in a dot.). The program will assume that you are using a local name and will automatically append the name of the zone onto the end of the name, making it a fully qualified domain name. That means when adding the name server ns1 to the zone example.com, you should enter either just ns1 or ns1.example.com. If you leave off the period at the end, the program will interpret your intention as ns1.example.com.example.com. The information automatically filled in by the Management Console appears in grey.
+  If you enter a domain name that is not fully qualified (i.e., does not end in a trailing dot ``.``), Micetro will assume that you are using a local name and will automatically append the name of the zone onto the end of the name, making it a fully qualified domain name. That means when adding the name server ``ns1`` to the zone ``example.com``, you should enter either just ``ns1`` or ``ns1.example.com``. If you leave off the trailing dot Micetro will interpret your intention as ``ns1.example.com.example.com``. The information automatically filled in by the Web Application appears greyed out.
 
-5. Press the Tab key to advance the focus to the **Type** field. Enter the appropriate type classification. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, AFSDB, SRV, HINFO, TXT, and NAPTR. The appropriate number of fields is automatically created in the Data field based on the type you entered. If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.
+5. In the **Type** field select the appropriate type from the dropdown. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, SRV, TXT, and SPF.
 
-6. Press the Tab key to advance the focus to the **Data** field. Enter the appropriate data for your record type.
+  .. warning::
+    If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.
 
-7. Click the :guilabel:`Save` button to save the new record to the zone.
+6. After selecting the type, the relevant fields are automatically displayed.
 
-8. An exclamation mark displays at the left edge of a record that is incomplete or improperly entered. The program will not allow you to save the changes to this zone until the record is repaired. Move to the lower right corner of the tab and click the exclamation point icon. This expands the tab and shows the items in error. Double-click on the error message and it will jump to the record in question.
+7. Fill in all apprioriate data fields.
 
-.. image:: ../../images/console-dns-records-inspector.png
+7. Click :guilabel:`Create now` button to save the new record to the zone, or :guilabel:`Add to request` to add it to the request queue. (See :ref:`webapp-workflows` for details on the request queue.)
+
+Micetro will not allow you to save the changes until all required information is filled in and the data is validated. In case of errors or missing information, the relevant fields will highlight in red.
+
+.. image:: ../../images/DNS-create-record-Micetro.png
   :width: 80%
   :align: center
 
 Deleting Records
 ----------------
 
-Deleting a record removes both the data and the physical record from the *Zone* window. Records beneath the deleted one are instantly moved up to fill in the space.
+Deleting a record removes both the data and the physical record from the grid. Records beneath the deleted one are instantly moved up to fill in the space.
 
-1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl key while making you selections.
+1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making you selections.
 
-2. Right-click anywhere in the zone window, and select :guilabel:`Delete Record` from the context menu. The record is immediately deleted from the zone.
+2. Select :guilabel:`Delete`. The record is immediately deleted from the zone.
 
-Clearing Records
-----------------
+Clearing Records (Management Console)
+-------------------------------------
 
 When the whole record is selected, the :guilabel:`Clear` command works the same as the :guilabel:`Delete Record` command. The Clear command is really intended for deleting the contents of an individual field of data, leaving the rest of the record's data intact.
 
@@ -392,8 +397,8 @@ When the whole record is selected, the :guilabel:`Clear` command works the same 
 
 2. Right-click anywhere in the zone window and select :guilabel:`Clear` from the context menu. The data is removed from the field. (The cell is not removed, and the rest of the record is unaffected.)
 
-Disable/Enable Records in the Zone Window
------------------------------------------
+Disable/Enable Records
+----------------------
 
 You can disable a record without deleting it. The disabled record performs no function; however, it can be instantly enabled when its services are needed, without having to re-type the record.
 
@@ -403,24 +408,17 @@ You can disable a record without deleting it. The disabled record performs no fu
 How to Disable a Record
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-1. In the Zone window, select the record(s) that you want to disable. To select more than one record, hold down the Ctrl key while making your selections.
+1. Select the record(s) that you want to disable. To select more than one record, hold down the Ctrl (Cmd on Mac) key while making your selections.
 
-2. Right-click anywhere in the zone window and select :guilabel:`Disable Record`. Disabled records are grayed out in the Zone window.
+2. From the ellipsis menu select :guilabel:`Disable DNS record` or use ::menuselection:`Actions --> Disable DNS record`.
 
-3. In the toolbar, click the :guilabel:`Save` button to save the changes to the zone.
+.. note::
+  Disabled records are grayed out in the grid, and will show an *Enable DNS record* action instead.
 
-4. Select the disabled record(s) that you want to re-activate. To select multiple records at once, hold down the Ctrl key while making your selections.
+3. In the confirmation dialog, click :guilabel:`Save now` to save the changes, or :guilabel:`Add to request` to add it to the request queue. (See :ref:`webapp-workflows` for details on the request queue.)
 
-5. Right-click anywhere in the zone window and select :guilabel:`Enable Record`.
-
-6. In the toolbar, click the :guilabel:`Save` button to save the changes to the zone.
-
-.. image:: ../../images/console-dns-records-disable.png
-  :width: 60%
-  :align: center
-
-Cut, Copy, and Paste
---------------------
+Cut, Copy, and Paste (Management Console)
+-----------------------------------------
 
 When working with records in the Management Console, there is no need to enter the same records in different zones. All records can be copied (or moved) to other zones simply by copying and pasting them between different zone windows.
 
@@ -447,8 +445,8 @@ To cut, copy, and paste records, do the following:
 
 7. When you perform an editing action, the :menuselection:`Edit` menu's :guilabel:`Undo` command is modified to include that action. For example, if you disable a record, the Undo command changes to :guilabel:`Undo Disable`. Selecting this command will reverse the action and restore the previously deleted record. When you perform an Undo action, the Redo command becomes active. Selecting this command reverses the previous Undo action. If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.
 
-Undo/Redo Commands
-------------------
+Undo/Redo Commands (Management Console)
+---------------------------------------
 
 The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.
 

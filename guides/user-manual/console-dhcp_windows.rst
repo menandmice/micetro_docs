@@ -3,7 +3,7 @@
 Micerosoft DHCP
 ===============
 
-.. _dhcp-windows-remote-access:
+.. _console-dhcp-windows-remote-access:
 
 Server Access on Remote Computers (Microsoft DHCP)
 --------------------------------------------------
@@ -23,7 +23,7 @@ To configure the DHCP Server Controller to access DHCP servers on remote compute
 .. warning::
   Lease history gathering is not possible if you are managing MS DHCP servers on remote computers using the DHCP Server Controller. To gather lease history for a MS DHCP server, you must install the DHCP Server Controller on the server and use the *Microsoft with Agent Installed* connection method when connecting to the server.
 
-.. _ms-dhcp-properties:
+.. _console-ms-dhcp-properties:
 
 MS Server Properties
 --------------------
@@ -61,7 +61,7 @@ Dynamically update DNS A and PTR records for DHCP clients.
 
 3. When all selections/entries are made, click :guilabel:`OK`.
 
-.. _dhcp-windows-define-options:
+.. _console-dhcp-windows-define-options:
 
 Defining Options on MS DHCP Servers
 -----------------------------------

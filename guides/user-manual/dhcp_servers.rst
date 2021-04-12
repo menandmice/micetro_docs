@@ -33,7 +33,8 @@ This page describes the process for adding new DHCP servers, and generic DHCP ma
 New DHCP Server
 ---------------
 
-When adding a DHCP server, the system automatically changes existing IP Address ranges to scopes if it finds IP Address ranges that contain the same start and end address as a scope on the DHCP server being added.
+.. note::
+  When adding a DHCP server, the system automatically changes existing IP Address ranges to scopes if it finds IP Address ranges that contain the same start and end address as a scope on the DHCP server being added.
 
 You must be logged in as a user with privileges to administer DHCP in order to add a DHCP server.
 
@@ -42,7 +43,9 @@ You must be logged in as a user with privileges to administer DHCP in order to a
 
 1. From the menu bar, select :guilabel:`File --> New --> DHCP Server`. The *Add DHCP Server* dialog box is shown.
 
-..
+.. image:: ../../images/add-dhcp-server.png
+  :width: 50%
+  :align: center
 
 Server Name
   Type either the DNS name or the IP Address of the DHCP server.
@@ -53,11 +56,8 @@ Server address (optional)
 Server Type
   Click the drop-down list, and select the desired server type.
 
-    Microsoft with Agent Installed
-      connects to a Microsoft DHCP server that has a DHCP Server Controller installed. If you want to gather the lease history from the DHCP server, you must use this connection method. See :ref:`dhcp-windows`.
-
-    Microsoft Agent-Free
-      connects to a Microsoft DHCP server that does not have a DHCP Server Controller installed. When using this connection method, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access`. See :ref:`dhcp-windows`.
+    Microsoft
+      connects to a Microsoft DHCP server. If you want to gather the lease history from the DHCP server, you must install a DHCP Server Controller on the server. See :ref:`dhcp-windows`.
 
     ISC
       connects to an ISC DHCP server. See :ref:`dhcp-isc`.
@@ -68,10 +68,16 @@ Server Type
     Kea
       connect to a ISC Kea DHCP server. See :ref:`dhcp-kea`.
 
-Use proxy server
-  If you are adding a Microsoft or a Cisco DHCP server you can specify the location of the DHCP Server Controller by clicking the :guilabel:`Use proxy server` checkbox and entering the DNS name or IP Address of the machine running the DHCP Server controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
+Agent-free (Microsoft and ISC Kea only)
+  When using the agent-free connection method, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access`. See :ref:`dhcp-windows`.
 
-2. Click :guilabel:`OK`. You are connected to the server. Once connected, the name of the newly added server displays under DHCP Servers in the Object Section. (You may need to click the :guilabel:`+` sign next to DHCP Servers to see it.)
+Proxy
+  If you are adding a Microsoft or a Cisco DHCP server you can specify the location of the DHCP Server Controller by entering the DNS name or IP Address of the machine running the DHCP Server Controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
+
+2. Click :guilabel:`Confirm`. You are connected to the server. Once connected, the name of the newly added server displays in the grid of the *Server Management* context.
+
+.. note::
+  To add a DHCP server in the Management Console, see :ref:`console-new-dhcp-server`.
 
 .. _dhcp-remote-access:
 
@@ -93,20 +99,21 @@ This feature allows you to change the name or IP Address used to connect to a DH
 
 To access this feature, do the following:
 
-1. Locate the applicable server.
+1. Locate the DHCP server.
 
-2. Right-click and, from the shortcut menu, select :guilabel:`Edit Server Name`. The *Edit Server* name dialog box displays.
+2. From the ellipsis menu select :guilabel:`Edit DHCP server` or use ::menuselection:`Actions --> Edit DHCP server`. The *Edit DHCP server* dialog box displays.
 
-..
+3. Change the **Server name**, **Server address** (optional), and **Server Type**. If applicable, you can edit the **Proxy** server's information.
 
-3. Change the **Server name**, **Server address** (optional), and **Server Type**. If applicable, you can select :guilabel:`Use proxy server` and enter the relevant information.
+4. Click :guilabel:`Confirm`.
 
-4. Click :guilabel:`OK`.
+.. note::
+  To edit a DHCP server's name in the Management Console, see :ref:`console-edit-dhcp-server`.
 
-Inherited Access
-----------------
+Inherited Access (Management Console)
+-------------------------------------
 
-You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set Inherited Access for scopes. When you open the Access dialog box for a scope, the dialog box has an extra section for inherited access.
+You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set *Inherited Access* for scopes. When you open the Access dialog box for a scope, the dialog box has an extra section for inherited access.
 
 Checking the :guilabel:`Inherit Access` checkbox will have the selected scope inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the scope as well.
 
@@ -114,7 +121,7 @@ Clicking the :guilabel:`Apply access inheritance in child ranges` button will en
 
 Regarding other access settings, refer to :ref:`global-access`.
 
-Delete
+Remove
 ------
 
 .. note::
@@ -122,13 +129,14 @@ Delete
 
 To remove a DHCP server, do the following:
 
-1. In the *Object Section* of the Management Console, click on :guilabel:`DHCP Servers`.
+1. In ::menuselection:`Admin --> Server Management` locate the DHCP server.
 
-2. In the Object List, right-click on the DHCP Server you want to remove.
-
-3. From the shortcut menu, select :guilabel:`Delete`.
+2. From the ellipsis menu select :guilabel:`Remove DHCP server`.
 
 4. In the confirmation dialog box, click :guilabel:`Yes`.
+
+.. note::
+  To remove a DHCP server in the Management Console, see :ref:`console-delete-dhcp-server`.
 
 .. _dhcp-options:
 

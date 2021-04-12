@@ -28,6 +28,8 @@ Opening a DNS zone can either by done by
 
 * double clicking on the zone.
 
+.. _webapp-create-dns-zone:
+
 Creating a DNS zone
 ^^^^^^^^^^^^^^^^^^^
 
