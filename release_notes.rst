@@ -13,8 +13,8 @@ Jump to: :ref:`10.0-release`
 10.0
 ----
 
-.. danger::
-  **End-of-Life Announcements**
+.. important::
+  **End-of-Life Announcement**
 
   Kea versions before 1.6 are no longer supported. Users must update their Kea servers *before* updating to Micetro 10.0.
 
