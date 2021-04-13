@@ -21,7 +21,7 @@ Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:
 
 * An issue was fixed where a GET  REST API command on DNSZone with a set DNSRecords filter could crash Men&Mice Central.
 
-* An issue was fixed where adding a TXT record to AWS and the record data contains an "&" it would erroneously be converted into "&"
+* An issue was fixed where adding a TXT record to AWS and the record data contains an "&" it would erroneously be converted into "&amp;"
 
 * An issue was fixed where VPCs were not being discovered because of an authorization issue
 
