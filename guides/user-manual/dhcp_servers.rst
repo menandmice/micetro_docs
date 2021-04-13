@@ -9,7 +9,7 @@ DHCP servers
 
   dhcp_windows
   dhcp_kea
-  dhcp_isc
+  console_dhcp_isc
   dhcp_cisco
 
 Overview
@@ -26,7 +26,7 @@ This page describes the process for adding new DHCP servers, and generic DHCP ma
 
 * :ref:`dhcp-kea`
 
-* :ref:`dhcp-isc`
+* :ref:`console-dhcp-isc`
 
 * :ref:`dhcp-cisco`
 
@@ -41,7 +41,7 @@ You must be logged in as a user with privileges to administer DHCP in order to a
 .. note::
   For information on adding a DHCP server on a Men&Mice Appliance, refer to :ref:`appliance-management`.
 
-1. From the menu bar, select :guilabel:`File --> New --> DHCP Server`. The *Add DHCP Server* dialog box is shown.
+1. Navigate to :menuselection:`Admin --> Server Management` and select :guilabel:`Add DHCP server`. The *Add DHCP Server* dialog box is shown.
 
 .. image:: ../../images/add-dhcp-server.png
   :width: 50%
@@ -60,7 +60,7 @@ Server Type
       connects to a Microsoft DHCP server. If you want to gather the lease history from the DHCP server, you must install a DHCP Server Controller on the server. See :ref:`dhcp-windows`.
 
     ISC
-      connects to an ISC DHCP server. See :ref:`dhcp-isc`.
+      connects to an ISC DHCP server. See :ref:`console-dhcp-isc`.
 
     Cisco
       connects to a Cisco Router that is running DHCP server software. For more information, see :ref:`dhcp-cisco`.
@@ -113,7 +113,7 @@ To access this feature, do the following:
 Inherited Access (Management Console)
 -------------------------------------
 
-You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set *Inherited Access* for scopes. When you open the Access dialog box for a scope, the dialog box has an extra section for inherited access.
+You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set *Inherited Access* for scopes. When you open the *Access* dialog box for a scope, the dialog box has an extra section for inherited access.
 
 Checking the :guilabel:`Inherit Access` checkbox will have the selected scope inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the scope as well.
 
@@ -143,62 +143,65 @@ To remove a DHCP server, do the following:
 Options
 -------
 
-The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers offer different types of options: the MS DHCP server allows the user to choose between different option types (Standard, Microsoft Options and Microsoft Windows 2000 options). This drop-down list is only displayed if there are non-standard options defined on the ISC DHCP server.
+The ISC DHCP, Kea DHCP, Cisco, and MS DHCP servers offer different types of options.
 
-.. image:: ../../images/console-dhcp-server-options.png
-  :width: 40%
+.. figure:: ../../images/dhcp-options-Micetro.png
+  :width: 60%
   :align: center
 
-You can set options for multiple servers by selecting all of the servers for which you want to set options. When setting options for multiple servers all of the servers must be of the same type.
+  DHCP server options depend on the server type and previously configured options.
 
-1. In the *Object List*, right-click on the applicable DHCP Server and, from the shortcut menu, select :guilabel:`Options`. The *DHCP Server Options* window displays.
+You can set options for multiple servers by selecting all of the servers for which you want to set options.
 
-2. In the selection field in the upper left corner, click the drop-down list to select which options you want to display. Based upon your selection, the dialog box changes.
+.. note::
+  When setting options for multiple servers all of the servers must be of the same type.
 
-3. To :guilabel:`Show only options with non-default values`, click this checkbox. The Quick Filter field supports the following keywords: name, value, and option. For example, if you want to quickly find option 51, you could enter the following: option51.
+1. In ::menuselection:`Admin --> Server management` select the applicable DHCP server(s) and use ::menuselection:`Actions --> Edit DHCP options`. (Or :guilabel:`Edit DHCP options` from the ellipsis menu.) The *DHCP Server Options* window displays.
 
-4. To add a value to an option, locate the option item, and click the plus sign at the end of the field. A blank field displays into which you can enter the applicable information. If you enter multiple fields for an option, they are numbered consecutively (e.g., Time Server as two fields.)
+2. Click the drop-down list to select which options you want to add. Upon selection, the setting is added to the dialog box for editing.
 
-5. If applicable, use the scroll bar along the right-hand side of the page to move up/down the option list.
+6. When all selections/entries are made, click :guilabel:`Save` to save your changes.
 
-6. When all selections/entries are made, click :guilabel:`OK` to save your changes.
+.. note::
+  To manage DHCP server option in the Management Console, see :ref:`console-dhcp-options`.
 
 Defining DHCP Server Options
 ----------------------------
 
-You can define your own options on :ref:`dhcp-isc` and :ref:`dhcp-windows` servers.
+You can define your own options on :ref:`console-dhcp-isc` and :ref:`console-dhcp-windows` servers.
 
-Properties
-----------
+Properties (Management Console)
+-------------------------------
 
 1. From the Object list, expand the DHCP Servers list.
 
-2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`ms-dhcp-properties`, :ref:`isc-dhcp-properties`, :ref:`kea-dhcp-properties` or :ref:`cisco-dhcp-properties`.
+2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`kea-dhcp-properties` or :ref:`console-cisco-dhcp-properties`.
 
 .. _dhcp-advanced-options:
 
-Advanced ISC DHCP and ISC Kea Server Properties
------------------------------------------------
+Advanced ISC Kea Server Properties
+----------------------------------
 
-DHCP Administrators can access the ISC DHCP and ISC Kea DHCP server configuration files directly to edit DHCP server properties that are not available in the GUI.
+DHCP Administrators can access the ISC Kea DHCP server configuration files directly to edit properties that are not available in the user interface.
 
 To access the advanced options, do the following:
 
-1. Log in to Men&Mice as the DHCP administrator.
+1. Log in to Micetro as the DHCP administrator.
 
-2. Select an ISC DHCP or Kea DHCP server, right-click and select :guilabel:`Properties` from the shortcut menu.
+2. Select a Kea DHCP server, select :guilabel:`Edit configuration` from the ellipsis menu or use ::menuselection:`Actions --> Edit configuration`.
 
-3. When the *Properties* dialog displays, click the :guilabel:`Advanced` button.
+3. When the *Edit configuration* box displays, you can edit the configuration file for the server.
 
-4. When the *Advanced Options* dialog box displays, you can edit the properties for the server in a text document. If the DHCP server contains multiple configuration files, each file displays in a separate tab.
-
-.. image:: ../../images/console-dhcp-isc-advanced-options.png
-  :width: 70%
+.. image:: ../../images/edit-kea-config-Micetro.png
+  :width: 80%
   :align: center
 
-5. Click :guilabel:`OK`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
+5. Click :guilabel:`Save`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
 
-Reload Scope List
------------------
+.. note::
+  To edit advanced DHCP configuration in the Management Console, see :ref:`console-dhcp-advanced-options`.
+
+Reload Scope List (Management Console)
+--------------------------------------
 
 Reloads the list of scopes to view additions and/or deletions made by another user.

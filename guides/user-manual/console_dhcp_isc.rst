@@ -1,7 +1,7 @@
 .. _console-dhcp-isc:
 
-ISC DHCP
-========
+ISC DHCP (Management Console)
+-----------------------------
 
 .. |add-dhcp| image:: ../../images/console-dhcp-add-icon.png
 .. |rename-dhcp| image:: ../../images/console-dhcp-rename-icon.png
@@ -16,10 +16,7 @@ ISC DHCP
 .. _console-dhcp-isc-groups-hosts:
 
 Managing Groups/Hosts
----------------------
-
-.. note::
-  Applies to ISC DHCP Servers only.
+^^^^^^^^^^^^^^^^^^^^^
 
 Allows you to manage groups and hosts within groups on an ISC DHCP server. You can also manage host entries that are defined in the global scope.
 
@@ -34,7 +31,7 @@ To manage groups and hosts, do the following:
   :align: center
 
 Groups/Hosts Toolbar
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 
 The toolbar that displays in the Groups for DHCP Server contains the following:
 
@@ -53,7 +50,7 @@ The toolbar that displays in the Groups for DHCP Server contains the following:
   |reservation-options-dhcp| , "Reservation options", "When selected, displays the Reservation Options dialog. Refer to :ref:`dhcp-options` for details on this dialog box."
 
 Groups/Hosts Shortcut Menu
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 
 Edit
   Displays the Edit Host dialog box. Make the desired changes to the name for the selected group, and click :guilabel:`Save`.
@@ -76,10 +73,7 @@ Select All
 .. _console-dhcp-isc-subclasses:
 
 Editing Subclasses
-------------------
-
-.. note::
-  Applies to ISC DHCP Servers only.
+^^^^^^^^^^^^^^^^^^
 
 Allows you to edit subclasses on an ISC DHCP server.
 
@@ -101,11 +95,9 @@ To edit subclasses, do the following:
 .. _console-dhcp-isc-define-options:
 
 Defining Options on ISC DHCP Servers
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. In the Object List, right-click on the applicable DHCP Server and, from the shortcut menu, select :guilabel:`Define Options`. The *DHCP Server Option* definition dialog box displays. The dialog box shows all custom options defined on the DHCP server. The standard ISC DHCP options will reside in the Standard Vendor class. Other custom class that have been added will be available in the Vendor class drop down field.
-
-..
 
 2. To Add an option, click the :guilabel:`+` button at the end of the option list. Enter the ID, name and type of data to use for the option. The several data types can be specified as arrays and the Array checkbox is enabled when a supported data type is selected. To specify an array, click the Array checkbox.
 
@@ -121,7 +113,7 @@ Defining Options on ISC DHCP Servers
 .. _console-isc-dhcp-properties:
 
 ISC Server Properties
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Authoritative
   Specifies whether the server is authoritative to determine if a DHCP request from a client is valid

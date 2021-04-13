@@ -1,7 +1,7 @@
 .. _dhcp-windows:
 
-Micerosoft DHCP
-===============
+Microsoft DHCP
+==============
 
 .. _console-dhcp-windows-remote-access:
 
