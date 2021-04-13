@@ -14,8 +14,8 @@ Extract and install the Men&Mice Web Application install package (as root):
 .. code-block:: bash
   :linenos:
 
-  tar -xzvf mmsuite-web-application-9.3.9.linux.x64.tgz
-  cd mmsuite-web-application-9.3.9.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
+  tar -xzvf mmsuite-web-application-9.3.10.linux.x64.tgz
+  cd mmsuite-web-application-9.3.10.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
 
 Where ``web-application.domain.tld`` is the domain on which the Web Application will be accessed.
 
