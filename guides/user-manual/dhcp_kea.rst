@@ -58,7 +58,6 @@ Server tag
 
 .. toctree::
   :maxdepth: 2
-  :hidden:
 
   dhcp_kea_external_changes
   dhcp_kea_ha
