@@ -1,13 +1,13 @@
-.. _ipam:
+.. _console-ipam:
 
 .. toctree::
   :maxdepth: 2
 
+.. |user-range| image:: ../../images/console-ipam-user-created-range-icon.png
+.. |dhcp-scope| image:: ../../images/console-ipam-dhcp-scope-icon.png
+
 IP address management
 =====================
-
-.. note::
-  To manage IP addresses in the Management Console, see :ref:`console-ipam`.
 
 Overview
 --------
@@ -15,31 +15,33 @@ Overview
 Managing IP Addresses entails being able to create assignable ranges within the available address space and determining which users and groups have usage rights to that space. The IP ranges can be created with specific properties that also determine the properties of the IP Addresses contained within them.
 
 .. note::
-  In order to use the IP Address Management features in Micetro, you must have entered the license key for the IPAM module.
+  In order to use the IP Address Management features in the Men&Mice Management Console, you must have entered the license key for the IPAM module.
 
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
 
 When the IP Address management component is enabled, you may notice some differences when working with Address (A) records in DNS zone windows, such as:
 
-Restriction on allowed IP Addresses
+Restriction on allowed IP Addresses.
   When IPAM is enabled, the system administrator may restrict which IP Addresses you are allowed to use. The system administrator can determine an IP Address range that you are allowed to work with. In addition, he/she can choose whether you can use an IP Address that has already been assigned in DNS.
 
-Automatic assignment of IP Addresses
+Automatic assignment of IP Addresses.
   The system administrator can configure Micetro so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.
 
-Range Access (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Range Access
+^^^^^^^^^^^^
 
-You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set *Inherited Access* for scopes. When you open the *Access* dialog box for a scope, the dialog box has an extra section for inherited access.
+You can manage access to ranges just as you can for other object types in Micetro, but there is one important distinction – You can set Inherited Access for ranges.
 
-Checking the :guilabel:`Inherit Access` checkbox will have the selected scope inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the scope as well.
+When you open the Access dialog box for a range, the dialog box has an extra section for inherited access.
 
-Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the scope. This means that whenever the access privileges in the scope are changed, the changes will be applied of all descendants of the scope.
+* Checking the :guilabel:`Inherit Access` checkbox will have the selected range inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the selected range as well.
+
+* Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the selected range. This means that whenever the access privileges in the selected range are changed, the changes will be applied of all descendants of the range.
 
 Regarding other access settings, refer to :ref:`global-access`.
 
-.. _ipam-containers:
+.. _console-ipam-containers:
 
 Containers
 ----------
@@ -49,44 +51,90 @@ A Container is a section of the address space that has been reserved but not yet
 Creating a Container
 ^^^^^^^^^^^^^^^^^^^^
 
+To create a Container, do the following:
+
+Select :menuselection:`File --> New --> Container`. The *Container* dialog box displays.
+
+.. image:: ../../images/console-ipam-create-range.png
+  :width: 70%
+  :align: center
+
+Subnet
+  For IPv4 ranges you can enter the address range in a network/subnet notation, for example 192.168.1/24. For IPv6 ranges you must enter the range in a network/subnet.
+
+Title
+  Type the name you want to use for this Container. This name is for your convenience, so feel free to use whatever name you feel is appropriate.
+
+Description
+  Enter a comment for this Container.
+
+Converting Ranges and Containers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 A range that exists on network boundaries (a subnet) can be converted to a Container. Likewise, a Container can be converted to a range.
 
-1. In the **Networks** context select the range(s).
+To convert a range to a Container:
 
-2. From the ellipsis menu select :guilabel:`Convert to container` or use :menuselection:`Actions --> Convert to container`.
+1. Right-click the range that you want to convert.
 
-3. Confirm that you want to convert the selected range(s) and add a save comment.
+2. From the shortcut menu, select :guilabel:`Convert to Container`.
 
-.. note::
-  In the Management Console, you can set Inherited Access for Containers.
+3. Click :guilabel:`OK` in the confirmation dialog box that appears.
 
-  When you open the Access dialog box for a Container, the dialog box has an extra section for inherited access.
+To convert a Container to a range:
 
-  * Checking the :guilabel:`Inherit Access` checkbox will have the selected Container inherit all access bits from its parent. This means that whenever the access privileges for the parent are changed, they will be applied to the Container as well.
+1. Right-click the Container that you want to convert.
 
-  * Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
+2. From the shortcut menu, select :guilabel:`Convert to IP Address Range`.
 
-  Regarding other access settings, refer to :ref:`global-access`.
+3. Click :guilabel:`OK` in the confirmation dialog box that appears.
+
+You can manage access to Containers just as you can for other object types in Micetro, but there is one important distinction – You can set Inherited Access for Containers.
+
+When you open the Access dialog box for a Container, the dialog box has an extra section for inherited access.
+
+* Checking the :guilabel:`Inherit Access` checkbox will have the selected Container inherit all access bits from its parent. This means that whenever the access privileges for the parent are changed, they will be applied to the Container as well.
+
+* Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
+
+Regarding other access settings, refer to :ref:`global-access`.
+
+Container Utilization
+^^^^^^^^^^^^^^^^^^^^^
+
+When you open the properties dialog for a Container you can see how much of the Container has been allocated to subranges. This way, it is easy to see how much of the container is being utilized.
 
 Viewing IP Address Ranges
 -------------------------
 
-The **Networks** context shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
+The IP Address Range view shows the section of the IP Address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
 
-.. image:: ../../images/Networks-Micetro.png
-  :width: 90%
+.. image:: ../../images/console-ipam-grid.png
+  :width: 50%
   :align: center
 
-In the filtering sidebar, click on :guilabel:`IP Ranges`.
+In the Object Section, click on :guilabel:`IP Address Ranges`. This shows the name of each IP range that has been created (and the address range it represents) and accessible to the current user.
 
-You can choose between a flat and a hierarchical view for the Address Ranges scopes by selecting an appropriate button on the top right of the grid.
+As indicated by the icons there are two types of ranges listed:
+
+* The |user-range| icon indicates a user-created range. Any range you create is considered a user-created range.
+
+* The |dhcp-scope| icon represents a DHCP scope, created in the DHCP Scopes area of the Management Console.
+
+You can choose between a flat and a hierarchical view for the Address Ranges scopes by selecting an appropriate button from the toolbar. You can also toggle between the views by selecting Toggle Hierarchical View from the Range menu.
 
 If an Address range has no subranges, the utilization for the range is shown in the range list.
 
-While viewing the IP ranges, the :ref:`webapp-quickfilter` is available. When using the tree view while a filter is active, any parent ranges that don't fulfill the search criteria are faded out and the matches highlighted. For example, in the image below, we searched for the string ``1.4``.
+.. image:: ../../images/console-ipam-range-utilization.png
+  :width: 50%
+  :align: center
 
-.. image:: ../../images/networks-tree-filter-Micetro.png
-  :width: 90%
+The IP Address Range view can display an indicator to show which gaps between IP Address ranges. This view is useful if you are looking for free segments in a fragmented IP Address space. When active, the view will display a thin blue line below a range if there is unallocated space between that range and the next range in the address space. To display the indicator, choose Show Trailing Gaps from the Range menu.
+
+While viewing the IP Address ranges, the :ref:`quickfilter` is available. When using the tree view while a filter is active, any parent ranges that don't fulfill the search criteria are displayed in gray to distinguish them from the found ranges. For example, in the image below, we searched for the string '0/26' and the only range found was '10.1.0.0./26'. However, to maintain the tree view, the parent ranges are shown even if they don't fulfill the search criteria.
+
+.. image:: ../../images/console-ipam-range-filter.png
+  :width: 50%
   :align: center
 
 New Ranges
@@ -94,31 +142,58 @@ New Ranges
 
 To create a new IP Address range, do the following:
 
-1. Open the :menuselection:`Networks` context.
+1. Make sure that :guilabel:`IP Address Ranges` is selected in the left hand side of the Manager window.
 
-2. Click the :guilabel:`Create` button. The *Create network* dialog box displays.
+2. Click the :guilabel:`Add` button. The *Properties* dialog box displays.
 
-3. Enter the appropriate value for the new network, as well as whether you want to create a DHCP scope or reserve network and broadcast addresses and click :guilabel:`Next`.
+3. Enter the appropriate values in the Properties dialog box and click :guilabel:`OK`.
 
-Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the Networks component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.
+Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the IP Address component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.
 
 It is possible to create subranges of existing ranges and DHCP scopes.
 
 .. note::
   When you create a new IP Address range, Micetro checks to see if the new range can be logically grouped with other address ranges, and adds the new range in the appropriate address range group.
 
-.. _ipam-range-config:
+.. _console-ipam-range-config:
 
 Range Configuration
 -------------------
 
-When creating a new IP Address range, you must complete the Properties dialog box.
+When configuring a new IP Address range, you must complete the Properties dialog box.
 
-.. image:: ../../images/create-network-properties-Micetro.png
+.. image:: ../../images/console-ipam-create-range.png
   :width: 60%
   :align: center
 
-These properties are defined in :ref:`admin-custom-properties`.
+In the Object list, right-click and, from the shortcut menu, select :guilabel:`New IP Address Range`. The *New Range Properties* dialog box displays.
+
+Subnet
+  For IPv4 ranges you can enter the address range in a network/subnet notation, for example 192.168.1/24. You can also enter the address range using a from-to notation, for example 192.168.1.23-192.168.1.77. A range does not have to be defined on network boundaries. For IPv6 ranges you must enter the range in a network/subnet notation and the smallest network you can create is a /64. The actual range displays in the Usable IP Addresses field below. The network address and the broadcast address for the range are displayed below the Usable IP Addresses if the Range is a subnet checkbox is selected.
+
+  .. note::
+    The boundaries of IP existing address ranges may not overlap.
+
+Title
+  Type the name you want to use for this IP Address range. This name is for your convenience, so feel free to use whatever name you feel is appropriate.
+
+Description
+  Enter a comment for this IP Address range.
+
+Reserve Network and Broadcast Address
+  This checkbox determines whether the user can use the first and last IP Address of the range when creating address records. If the address range is defined on actual network boundaries, you should leave this checkbox checked. If the address range you are defining is used for Administration boundaries rather than network boundaries, you should clear this checkbox.
+
+  .. note::
+    This checkbox is disabled for IPv6 ranges.
+
+Locked
+  Select this checkbox if you want to lock this IP Address range. When an IP Address range is locked, Men&Mice Suite will not allow using IP Addresses from that range. This is useful if you want to lock a certain section of your IP Address block.
+
+Allow auto-assignment of IP Addresses
+  Select this checkbox if you want to allow automatically assigned IP Addresses from this IP Address range. If the checkbox is selected, and a user that has access to this address range creates an address record without entering an IP Address, Men&Mice Suite automatically assigns a free IP Address to the address record.
+
+  .. note::
+    This checkbox is disabled for IPv6 ranges.
 
 Range Modifications
 ^^^^^^^^^^^^^^^^^^^
@@ -133,13 +208,13 @@ Once you have created an IP Address Range, it is easy for you to make changes to
 
 To modify an IP Address range, do the following:
 
-1. Select the range in the grid.
+1. Right-click on the :guilabel:`IP Address ranges`.
 
-2. From the ellipsis menu select :guilabel:`Edit network properties` or use ::menuselection:`Actions --> Edit network properties`.
+2. From the shortcut menu, select :guilabel:`Properties`.
 
 3. Make the desired changes.
 
-4. Click :guilabel:`Save`.
+4. Click :guilabel:`OK`.
 
 Range Deletions
 ^^^^^^^^^^^^^^^
@@ -148,24 +223,24 @@ You can always delete an IP Address Range definition. If you delete an IP Addres
 
 Use the following procedure to delete an IP Address Range definition:
 
-1. Select IP range(s) you want to remove.
+1. Locate the IP Address Range you want to remove and right-click on it.
 
-2. From the ellipsis menu select :guilabel:`Delete network` or use ::menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) range(s).
+2. From the shortcut menu, select :guilabel:`Delete`. A dialog prompts you to confirm your decision to delete this range
 
-3. Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
+3. Click :guilabel:`OK` to delete the range, or Cancel to leave it.
 
 IP Address List
 ---------------
 
-To view a list of host entries in a particular range, double-click on the range. This opens the grid where you can view and edit the properties of individual IP address entries.
+To view a list of host entries in a particular range, double-click on the IP Address Range. This opens the :guilabel:`IP Address List` tab where you can view and edit the properties of individual IP Address entries.
 
-.. image:: ../../images/view-Networks-Micetro.png
-  :width: 80%
+.. image:: ../../images/console-ipam-ip-list.png
+  :width: 70%
   :align: center
 
-The filtering sidebar's :guilabel:`State` section can be used to show only **Free**, **Assigned**, **Claimed**.
+* The :guilabel:`Show unassigned addresses` checkbox lets you choose whether you want to see all IP Addresses in the range or whether you only want to show IP Addresses that are assigned.
 
-The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
+* The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
 
   Empty
     The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
@@ -187,44 +262,115 @@ When the PTR Status for a host entry shows Verify, you can open the IP Address d
 .. note::
   When working with large IP Address ranges (ranges that contain more than 4096 IP Addresses) the :guilabel:`Show unassigned addresses` will no longer be available and the IP Address List window will only display assigned IP Addresses.
 
-.. _ip-address-dialog:
+.. _console-ip-address-dialog:
 
-IP Address Inspector
---------------------
+IP Address Dialog Box
+---------------------
 
-When you add or modify an existing IP address entry, the IP Address dialog box displays. The entries in Inspector can vary, depending on the custom properties defined in Micetro (e.g., "Owner" is a custom property in the example shown below), if DNS or DHCP related data exists, etc.
+When you add or modify an existing entry, the IP Address dialog box displays. The entries in this dialog box can vary, depending on the license keys in use, whether the dialog box is accessed from a DHCP scope or an IP Address range, and if any custom properties have been defined (e.g., "Owner" is a custom property in the example shown below).
 
-.. image:: ../../images/ip-inspector-Micetro.png
-  :width: 30%
+.. image:: ../../images/console-ipam-address-dialog.png
+  :width: 60%
   :align: center
 
-.. _ipam-add-dns-host:
+DNS Hosts
+  If a DNS license key is active, the IP Address dialog box will contain a DNS Hosts section where you can enter Address (A) records and related CNAME and TXT records. You can also add, edit, and remove hosts/related hosts from this screen. The PTR column in the list of DNS hosts shows the PTR status for each A or AAAA record. For more information on PTR status see the IP Address List section, above.
+
+If a discovery schedule has been set for the subnet, the dialog box will show information on when the IP Address was last seen on the network:
+
+  Last seen
+    Shows the last time this IP Address was seen. This information cannot be edited.
+
+  Last discovery
+    Shows the last time a discovery was performed for this IP Address. This information cannot be edited.
+
+  Last known MAC
+    Shows the last known MAC address for this IP Address. This information is read directly from the router tables and is only populated if Router Query is active.
+
+  Discovery type
+    Shows the type of discovery performed for this IP Address (Ping or Router Query)
+
+If the IP Address is linked to a device, the name of the device is shown and a Show button displays. Click the :guilabel:`Show` button to open the Device Properties window for the device the IP Address is linked to.
+
+.. _console-ipam-add-dns-host:
 
 Adding a DNS Host
 ^^^^^^^^^^^^^^^^^
 
-While viewing the IP Address Inspector, click the :guilabel:`+` button in the :guilabel:`Related DNS data`.
+.. tip::
+  As a shortcut, you can select a valid host name in any field, right-click and select :guilabel:`Add Host`. The host is automatically added.
 
-.. image:: ../../images/ip-create-dns-Micetro.png
+1. While viewing the IP Address dialog box, move to the :guilabel:`DNS Hosts` section, and click the :guilabel:`Add` button.
+
+.. image:: ../../images/console-ipam-add-dns-host.png
   :width: 50%
   :align: center
 
-The **Address** field is automatically filled with the selected IP address. Fill in the other information and click :guilabel:`Create now` or :guilabel:`Add to request`. (See :ref:`webapp-workflows`.)
+  .. note::
+    If the number of available zones does not exceed 100, the Zone area of the window will be a drop-down list instead of the Browse button.
+
+2. In the :guilabel:`Zone` menu, verify the zone selected is the zone to which you want to add a host. The :guilabel:`Select zone` menu displays, reflecting a list of available zones.
+
+3. Click :guilabel:`OK`. The dialog box closes and the Address record displays in the IP Address dialog box.
 
 Editing a DNS Host
 ^^^^^^^^^^^^^^^^^^
 
-1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Edit`.
+1. Select the host details you want to edit.
 
-3. Make the desired changes and click :guilabel:`Save`. The dialog box closes and the details are updated.
+2. Double click the host entry you want to edit. A dialog box displays.
+
+3. Make the desired changes and click :guilabel:`OK`. The dialog box closes and the details are updated.
 
 Removing a DNS Host
 ^^^^^^^^^^^^^^^^^^^
 
-1. 1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
+1. Select the host you want to remove.
 
-Moving IP Address Information (Management Console)
---------------------------------------------------
+2. Click :guilabel:`Remove`. The host details are deleted and removed from the list in the IP Address dialog box.
+
+Adding a Related Host
+^^^^^^^^^^^^^^^^^^^^^
+
+1. Click :guilabel:`Add Related` button. The *Add Related Record* dialog box displays.
+
+.. image:: ../../images/console-ipam-add-related-record.png
+  :width: 50%
+  :align: center
+
+2. For the **Name** and **Zone** fields, refer to the steps found for :ref:`console-ipam-add-dns-host`.
+
+3. In the **Type** field, click the drop-down list and select the record type.
+
+    * If the record type is CNAME, in the Zone field, choose the zone that should contain the record.
+
+    * If the record type is TXT, in the Data field, type the text for the record.
+
+4. Click :guilabel:`OK`. The dialog box closes and the related record displays in the IP Address dialog box.
+
+Editing a Related Host
+^^^^^^^^^^^^^^^^^^^^^^
+
+1. Double click the related host you want to edit. The Modify Host dialog box displays.
+
+  .. note::
+    It is not possible to edit all record types.
+
+.. image:: ../../images/console-ipam-modify-related-record.png
+  :width: 50%
+  :align: center
+
+2. Make the desired changes and click :guilabel:`OK`. The dialog box closes and the record is updated.
+
+Removing a Related Host
+^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Select the related record you want to remove.
+
+2. Click :guilabel:`Remove`. The related record is deleted from the zone and removed from the list in the IP Address dialog box.
+
+Moving IP Address Information
+-----------------------------
 
 IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained, and the associated DNS records are updated.
 
@@ -246,8 +392,8 @@ To move a IP Address information, do the following:
 
 6. Click :guilabel:`OK`. The IP Address information is moved to the new IP Address.
 
-Split Range Wizard (Management Console)
----------------------------------------
+Split Range Wizard
+------------------
 
 This wizard allows you to create multiple subranges of an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
@@ -257,8 +403,8 @@ This wizard allows you to create multiple subranges of an existing range. The wi
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
-Update Reverse Records Wizard (Management Console)
---------------------------------------------------
+Update Reverse Records Wizard
+-----------------------------
 
 This wizard allows you to create reverse DNS zones for selected ranges.
 
@@ -271,8 +417,8 @@ This wizard allows you to create reverse DNS zones for selected ranges.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
-Allocate Ranges Wizard (Management Console)
--------------------------------------------
+Allocate Ranges Wizard
+----------------------
 
 This wizard allows you to create allocate a user-defined number of subranges from an existing range. The wizard can only be used on ranges that exist on subnet.
 
@@ -282,8 +428,8 @@ This wizard allows you to create allocate a user-defined number of subranges fro
 
 3. Follow the instructions provided by the wizard to create the number of subranges that you need.
 
-Join Ranges (Management Console)
---------------------------------
+Join Ranges
+-----------
 
 This function allows you to select and join a number of ranges. The :guilabel:`Join Ranges` command is available if the selected ranges can be joined.
 
@@ -313,7 +459,7 @@ Description
 
 5. Click :guilabel:`Join`.
 
-Select Parent (Management Console)
+Select Parent
 -------------
 
 .. image:: ../../images/console-ipam-select-parent.png
@@ -336,24 +482,32 @@ With this feature, you can see when hosts were last seen on your network. There 
 Configuring Host Discovery Using Ping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Select one or more IP ranges.
+1. Select one or more IP Address Ranges.
 
-2. From the ellipsis menu select :guilabel:`Set discovery schedule` or use :menuselection:`Actions --> Set discovery schedule`.
+2. Right-click and, from the shortcut menu, select :guilabel:`Set Discovery Schedule`. The *Schedule* dialog box displays.
 
-3. Check the :guilabel:`Enable` option.
+.. image:: ../../images/console-ipam-discovery-schedule.png
+  :width: 40%
+  :align: center
 
-  Frequency
-    Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
+3. Select the :guilabel:`Enable discovery schedule` option.
 
-  Every
-    Enter the frequency unit for discovery (e.g. days, weeks, etc.).
+Schedule ____ every ___ day(s)/week(s)/month(s)
+  Click the drop-down list and select the frequency (e.g., Daily, Weekly, etc.) and the occurrences (e.g., 1 day, 2 weeks, etc.).
 
-  Next run
-    Select the start date and time.
+At ____
+  Enter the time at which discovery should take place.
 
-4. Click :guilabel:`Save`.
+Starting ____
+  Click the drop-down list and select the start date.
 
-Once the schedule options have been set and saved, two columns - Last Seen and Last Known MAC Address - are added to the range grid. The Last Seen column identifies when a host was last seen on the network.
+4. Click :guilabel:`OK`.
+
+Once the schedule options have been set and saved, a new column called, Last seen, identifies when a host last was last seen on the network.
+
+.. image:: ../../images/console-ipam-last-seen.png
+  :width: 70%
+  :align: center
 
 Green
   Host responded to the last PING request. The date and time are shown.
@@ -364,18 +518,20 @@ Orange
 Red
   Host has never responded to a PING request. The text Never is shown.
 
+The list of ranges contains a column that shows if a discovery schedule has been set for a range. The name of this column is Schedule. To quickly see all ranges that have a schedule set, you can use the Quick Filter and filter by this column by entering Schedule:Yes in the Quick Filter search field.
+
 At any time if you wish to disable host discovery, do the following:
 
 1. Select the object(s) for which you want to disable discovery.
 
-2. From the ellipsis menu, select :guilabel:`Set discovery schedule`.
+2. Right-click and, from the shortcut menu, select :guilabel:`Set Discovery Schedule`. The *Schedule* dialog box displays.
 
-3. Uncheck the :guilabel:`Enable` option.
+3. Uncheck the :guilabel:`Enable discovery schedule` option.
 
-4. Click :guilabel:`Save`.
+4. Click :guilabel:`OK`.
 
-Configuring Host Discovery by Querying Routers (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring Host Discovery by Querying Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is possible to perform host discovery by performing SNMP queries on specified routers. SNMP v1, v2c and v3 is supported.
 
@@ -421,25 +577,25 @@ To edit an SNMP profile:
 
 2. Make the required changes and click :guilabel:`OK` to save the changes and close the dialog box.
 
-Subnet Discovery (Management Console)
--------------------------------------
+Subnet Discovery
+----------------
 
 The subnet discovery features enables Micetro to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in  configuring host discovery, but to enable this feature, make sure the :guilabel:`Synchronize subnets ...`  is checked.
 
-Add to/remove from Folder
--------------------------
+Remove from Folder
+------------------
 
-Adds or removes the currently selected IP Address Range from folders.
+Removes the currently selected IP Address Range from the current folder.
 
 .. danger::
-  Once you remove a range from a folder, there is no "undo" option available.
+  Once you remove a range, there is no "undo" option available.
 
 1. Highlight the range you want to remove.
 
-2. From the ellipsis menu, select :guilabel:`Set folder` and add or remove the range from folders.
+2. Right-click and, from the shortcut menu, select :guilabel:`Remove from Folder`. The range is removed.
 
-Subnet Monitoring and Utilization History (Management Console)
---------------------------------------------------------------
+Subnet Monitoring and Utilization History
+-----------------------------------------
 
 The Subnet Monitoring is used to monitor the free addresses in subnets and DHCP address pools and perform an action if the number of free addresses goes below a user-definable threshold. In addition, the utilization history for the monitored subnets and scopes is collected and you can view and export the historical utilization data.
 
@@ -493,8 +649,8 @@ You can clear the monitor setting for individual subnets if you want to use the 
 
 2. Right-click and, from the shortcut menu, select :guilabel:`Remove Subnet Monitoring`. The custom subnet monitoring setting is removed and the global monitoring setting is used instead.
 
-View Utilization History (Management Console)
----------------------------------------------
+View Utilization History
+------------------------
 
 You can view the utilization history for a subnet or scope that is being monitored.
 
@@ -540,8 +696,8 @@ Micetro supports multiple address spaces. Each address space instance contains i
 
 Items shared between address spaces are the user and group lists and custom property definitions.
 
-Address Space Management (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Address Space Management
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Address Space Management dialog box allows you to create, modify or delete address spaces as well as set access privileges for existing address spaces. To access the Address Space Management dialog box, you must be logged in as the administrator user.
 
@@ -572,16 +728,14 @@ You can only work in one address space at a time. You can see the current addres
 
 To switch to a different address space:
 
-1. Click the **User** icon in the top right corner of the Web Application.
+1. Select the :guilabel:`IP Address Ranges` object in the object list in the Manager window.
 
-2. Select :guilabel:`Address Space` and select the address space you want to use.
+2. Select :menuselection:`Ranges --> Switch Current Address Space`. A dialog box listing all available address spaces displays.
 
-.. image:: ../../images/address-space-Micetro.png
-  :width: 50%
-  :align: center
+3. Select the address space you want to switch to and click the :guilabel:`OK` button.
 
-Moving Objects to a Different Address Space (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Moving Objects to a Different Address Space
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 DNS servers, DHCP servers, IP Address ranges and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects do a different address space.
 
