@@ -9,7 +9,7 @@ DHCP servers
 
   dhcp_windows
   dhcp_kea
-  console_dhcp_isc
+  dhcp_isc
   dhcp_cisco
 
 Overview
@@ -26,7 +26,7 @@ This page describes the process for adding new DHCP servers, and generic DHCP ma
 
 * :ref:`dhcp-kea`
 
-* :ref:`console-dhcp-isc`
+* :ref:`dhcp-isc`
 
 * :ref:`dhcp-cisco`
 
@@ -60,7 +60,7 @@ Server Type
       connects to a Microsoft DHCP server. If you want to gather the lease history from the DHCP server, you must install a DHCP Server Controller on the server. See :ref:`dhcp-windows`.
 
     ISC
-      connects to an ISC DHCP server. See :ref:`console-dhcp-isc`.
+      connects to an ISC DHCP server. See :ref:`dhcp-isc`.
 
     Cisco
       connects to a Cisco Router that is running DHCP server software. For more information, see :ref:`dhcp-cisco`.
@@ -69,10 +69,10 @@ Server Type
       connect to a ISC Kea DHCP server. See :ref:`dhcp-kea`.
 
 Agent-free (Microsoft and ISC Kea only)
-  When using the agent-free connection method, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access`. See :ref:`dhcp-windows`.
+  When using the agent-free connection method for Windows DHCP, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access` and :ref:`dhcp-windows`.
 
 Proxy
-  If you are adding a Microsoft or a Cisco DHCP server you can specify the location of the DHCP Server Controller by entering the DNS name or IP Address of the machine running the DHCP Server Controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
+  If you are adding a Microsoft, agent-free ISC Kea, or Cisco DHCP server you can specify the location of the DHCP Server Controller by entering the DNS name or IP Address of the machine running the DHCP Server Controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
 
 2. Click :guilabel:`Confirm`. You are connected to the server. Once connected, the name of the newly added server displays in the grid of the *Server Management* context.
 
@@ -91,6 +91,26 @@ To manage DHCP servers you must have the DHCP Server Controller installed.
 * For Microsoft DHCP servers, install the DHCP Server Controller on a Windows machine that is a member of the same domain or workgroup as the DHCP servers. You may install multiple copies of the DHCP Server Controller, for example if you want to manage Microsoft DHCP Servers that reside in different forests. A single DHCP Server Controller for Microsoft DHCP Servers can manage multiple DHCP servers. The DHCP Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows. See :ref:`dhcp-windows-remote-access`.
 
 * For Kea DHCP servers, only one DHCP Server Controller needs to be installed, either on the same machine as the Kea service or on a machine that can access the :ref:`kea-control-agent` on the network.
+
+.. _dhcp-windows-remote-access:
+
+Server Access on Remote Computers (Microsoft DHCP)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To configure the DHCP Server Controller to access DHCP servers on remote computers, do the following:
+
+1. Before you can administer DHCP servers, verify that the DHCP Controller is running as a Windows User and has the necessary privileges.
+
+2. To enable DHCP Management in Micetro, start the Windows Services program and open the properties dialog box for Men&Mice DHCP Server Controller.
+
+3. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
+
+4. Click the :guilabel:`This account` radio button and enter the name and password of a Windows User that is a member of either the Administrators role or the DHCP Administrators role.
+
+5. Close the dialog box and restart the Men&Mice DHCP Server Controller service.
+
+.. warning::
+  Lease history gathering is not possible if you are managing MS DHCP servers on remote computers using the DHCP Server Controller. To gather lease history for a MS DHCP server, you must install the DHCP Server Controller on the server and use the *Microsoft with Agent Installed* connection method when connecting to the server.
 
 Edit DHCP Server Name
 ---------------------
@@ -165,17 +185,12 @@ You can set options for multiple servers by selecting all of the servers for whi
 .. note::
   To manage DHCP server option in the Management Console, see :ref:`console-dhcp-options`.
 
-Defining DHCP Server Options
-----------------------------
-
-You can define your own options on :ref:`console-dhcp-isc` and :ref:`console-dhcp-windows` servers.
-
 Properties (Management Console)
 -------------------------------
 
 1. From the Object list, expand the DHCP Servers list.
 
-2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`kea-dhcp-properties` or :ref:`console-cisco-dhcp-properties`.
+2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-poperties` or :ref:`console-cisco-dhcp-properties`.
 
 .. _dhcp-advanced-options:
 

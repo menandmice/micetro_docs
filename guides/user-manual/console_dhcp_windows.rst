@@ -1,32 +1,12 @@
-.. _dhcp-windows:
+.. _console-dhcp-windows:
 
-Microsoft DHCP
-==============
-
-.. _console-dhcp-windows-remote-access:
-
-Server Access on Remote Computers (Microsoft DHCP)
---------------------------------------------------
-
-To configure the DHCP Server Controller to access DHCP servers on remote computers, do the following:
-
-1. Before you can administer DHCP servers, verify that the DHCP Controller is running as a Windows User and has the necessary privileges.
-
-2. To enable DHCP Management in Micetro, start the Windows Services program and open the properties dialog box for Men&Mice DHCP Server Controller.
-
-3. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
-
-4. Click the :guilabel:`This account` radio button and enter the name and password of a Windows User that is a member of either the Administrators role or the DHCP Administrators role.
-
-5. Close the dialog box and restart the Men&Mice DHCP Server Controller service.
-
-.. warning::
-  Lease history gathering is not possible if you are managing MS DHCP servers on remote computers using the DHCP Server Controller. To gather lease history for a MS DHCP server, you must install the DHCP Server Controller on the server and use the *Microsoft with Agent Installed* connection method when connecting to the server.
+Microsoft DHCP (Management Console)
+-----------------------------------
 
 .. _console-ms-dhcp-properties:
 
 MS Server Properties
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 1. Complete the :guilabel:`General` tab using the guidelines below.
 
@@ -64,7 +44,7 @@ Dynamically update DNS A and PTR records for DHCP clients.
 .. _console-dhcp-windows-define-options:
 
 Defining Options on MS DHCP Servers
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. In the *Object List*, right-click on the applicable DHCP Server and, from the shortcut menu, select :guilabel:`Define Options`. The *DHCP Server Option definition* dialog box displays. The dialog box shows all options defined on the DHCP server.
 
@@ -83,11 +63,10 @@ Defining Options on MS DHCP Servers
 .. note::
   You can only add or delete option definitions. You cannot change the properties of an existing option definition.
 
-Reconcile Scopes
-----------------
+.. _console-dhcp-windows-reconcile:
 
-.. note::
-  Applies to MS DHCP Servers only.
+Reconcile Scopes
+^^^^^^^^^^^^^^^^
 
 Use this function to fix inconsistencies between information in the registry and the DHCP database.
 

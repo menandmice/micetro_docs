@@ -101,6 +101,8 @@ The :guilabel:`Inspector` for DNS records allows the following actions and detai
   "Related DNS Data", "Lists all related DNS records for the selected DNS record. Related DNS records all DNS records that are somehow associated with the specified record."
   "Related IP address", "List the related IP address in case of an A or AAAA DNS record."
 
+.. _webapp-create-dns-record:
+
 Creating a new DNS record
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -174,6 +174,8 @@ Server Name
 Next Server
   Specifies the host address of the server from which the initial boot file (that is specified by Filename) is to be loaded.
 
+.. _console-dhcp-isc-restart:
+
 Restart
 -------
 
