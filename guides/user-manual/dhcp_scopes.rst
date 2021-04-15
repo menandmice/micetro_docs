@@ -136,6 +136,9 @@ View history
 Scope Creation Wizard
 ---------------------
 
+.. note::
+  Creating a scope on a Kea server configured for load balancing high availability, Micetro will automatically split the scope evenly between primary and secondary servers. See :ref:`dhcp-kea-ha`.
+
 This section describes how to create and edit DHCP scopes with the new *DHCP Scope Creation Wizard*.
 
 Whenever you create a new scope, Micetro automatically checks whether the new scope conflicts with an existing scope or an IPAM range.
@@ -634,6 +637,9 @@ When using a failover configuration, it is possible to replicate scope informati
 
 Managing Failover Relationships
 """""""""""""""""""""""""""""""
+
+.. note::
+  In the Web Application, the failover mode, as well as the failover partners, is displayed in the Inspector's :guilabel:`High availability` section when a server or scope is selected that is configured for high availability.
 
 You can view, create, edit and delete existing failover relationships.
 

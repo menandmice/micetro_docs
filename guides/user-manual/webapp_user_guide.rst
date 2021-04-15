@@ -26,6 +26,9 @@ Password
 Log in with Single Sign-on
   You can use existing SSO to log in. Note that the checkbox is only visible when the web server supports SSO.  For more information see :ref:`webapp-sso`.
 
+  .. note::
+    If you're logged in through an SSO service, the *Change password* operation is disabled in the :menuselection:`User menu`.
+
 .. image:: ../../images/login-Micetro.png
   :width: 70%
   :align: center

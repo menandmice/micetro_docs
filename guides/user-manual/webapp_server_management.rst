@@ -4,15 +4,14 @@ Server management
 =================
 
 Managing DNS and DHCP servers in the system is done by navigating to :guilabel:`Admin`.
+
 A list of all servers configured in the system is shown by default.
-In the left sidebar it is possible to choose from viewing DNS servers, DHCP servers or Appliances (if configured in the system).
+
+In the left sidebar it is possible to choose from viewing DNS servers, DHCP servers, or Appliances (if configured in the system).
 
 .. image:: ../../images/dns-context.png
   :width: 90%
   :align: center
-
-.. note::
-  The final version of the server management feature has not been released officially and will go through improvements before the final release.
 
 In the right hand sidebar, the properties of a selected server is shown. Any custom fields defined will also be displayed there.
 

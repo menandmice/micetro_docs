@@ -22,6 +22,14 @@ Previously only available to paid subscribers, the HA hooks library is now part 
 .. tip::
   For RedHat-like systems (such as RHEL, CentOS, SUSE, Fedora, etc.), the hook library is usually located at ``/usr/lib/x86_64-linux-gnu/kea/hooks/libdhcp_ha.so``. For Debian-based systems (such as Ubuntu, Linux Mint, Raspbian, etc.), the hook library is usually located at ``/usr/lib64/kea/hooks/libdhcp_ha.so``.
 
+Two modes of failover operation are supported:
+
+Load-balancing
+  One of the servers must be designated as *primary* and another as *secondary*. During normal operation they're identical. When the two servers are started at (nearly) the same time, and synchronize their lease databases, the primary server will always synchronize its database first. The secondary will wait for the primary to complete before it starts its own synchronization.
+
+Hot standby
+  In this configuration, one of the servers is designated as *primary* and another as *secondary*. During normal operation **only** the primary server will respond to DHCP requests, and the secondary (or *standby*) receives lease updates from the primary over the control channel. When the secondary server considers the primary to be offline, it will start responding to DHCP queries.
+
 Ports and networking
 --------------------
 
@@ -111,8 +119,8 @@ If the Kea high availability environment is set up correctly, system administrat
 .. important::
   If the DHCP Server Controller is running on a machine **other** than the primary Kea DHCP server, a proxy must be defined in the *Add DHCP server* dialog in Micetro. In the dialog, enter the IP address or FQDN of the of the machine running the DHCP Server Controller.
 
-Fallback behavior
------------------
+Fallback behavior and indicators
+--------------------------------
 
 After the primary Kea server has been added to Micetro, it will acts as the primary mode of communication between Micetro and the high availability cluster. All changes will be written to this primary server and replication will be handled with regards to it. The single-source-of-truth for the configuration will be the in-memory config on the primary Kea DHCP server.
 
