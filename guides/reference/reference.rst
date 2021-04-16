@@ -7,6 +7,7 @@ Men&Mice reference articles
   :maxdepth: 2
 
   appliance_guide
+  health_bar_information
   dynamic_zones
   aws-route53
   powerdns
