@@ -56,6 +56,7 @@ Use the :ref:`implementation` to familiarize yourself with the Suite's architect
      guides/user-manual/devices
      guides/user-manual/active_directory
      guides/user-manual/cloud
+     guides/user-manual/automation 
 
 .. toctree::
     :caption: Reference articles
