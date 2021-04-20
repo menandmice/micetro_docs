@@ -184,7 +184,7 @@ This is an object referring to the Men&Mice Suite as a whole. It contains flags 
   "Access to manage clouds", "Access to add/remove cloud providers into Men&Mice"
   "Access Workflow module", "If customer has workflow license, grants user access to submit DNS record requests, and approvers to view and approve submitted requests"
   "Access to advanced reporting", "If customer has reporting license, grants access to advanced reporting features"
-  "Access to "Import Data" web task", "Access the Import Data task in Web Interface as well as to Import data into the newer Men&Mice Web Application"
+  "Access to 'Import Data' web task", "Access the Import Data task in Web Interface as well as to Import data into the newer Men&Mice Web Application"
 
 DNS Zone
 ^^^^^^^^
