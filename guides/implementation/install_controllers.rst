@@ -3,7 +3,7 @@
 Server controllers
 ==================
 
-The Men&Mice Suite uses *server controllers* to connect with DNS and DHCP servers in the network.
+Micetro uses *server controllers* to connect with DNS and DHCP servers in the network.
 
 .. toctree::
   :maxdepth: 1

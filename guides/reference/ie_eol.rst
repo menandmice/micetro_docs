@@ -3,7 +3,7 @@
 Discontinuation of support for Internet Explorer
 ================================================
 
-As of the 9.3.0 version of the Men&Mice Suite, Internet Explorer will no longer be supported for the Web Application. Customers currently using Internet Explorer to access the Web Application will be redirected to the old Web UI.
+As of the 9.3.0 version of Micetro, Internet Explorer will no longer be supported for the Web Application. Customers currently using Internet Explorer to access the Web Application will be redirected to the old Web UI.
 
 Microsoft has discouraged users from using Internet Explorer as their browser. While security and reliability updates are and will be still available for Internet Explorer, in sync with its respective OS version, functionality updates have been discontinued in favor of Edge. Modern web technologies have passed Internet Explorer and are now either unsupported or completely incompatible with it.
 

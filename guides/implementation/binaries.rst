@@ -7,12 +7,12 @@ Linux
 -----
 
 .. important::
-  All Micetro non-Windows components (Central, Controller, and the Web Application) require python (version 2.7 or above) to be installed on the target server.
+  All Micetro non-Windows components (Central, Server Controllers, and the Web Application) require python (version 2.7 or above) to be installed on the target server.
 
 `Download <download.menandmice.com>`_ the following installer packages:
 
 * Men&Mice Central: ``mmsuite-central-10.0.linux.x64.tgz``
-* Men&Mice Server Controller: ``mmsuite-controllers-10.0.linux.x64.tgz`` (To be installed on each DNS and DHCP server.)
+* Men&Mice Server Controller: ``mmsuite-controllers-10.0.linux.x64.tgz``
 * Men&Mice Web Application: ``mmsuite-web-application-10.0.linux.x64.tgz``
 * Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
 
@@ -25,7 +25,7 @@ Windows
 `Download <download.menandmice.com>`_ the following installer packages:
 
 * Men&Mice Central: ``Men_and_Mice_Central_x64_10.0.exe``
-* Men&Mice Server Controller: ``Men_and_Mice_Controllers_x64_10.0.exe`` (To be installed on each DNS and DHCP server.)
+* Men&Mice Server Controller: ``Men_and_Mice_Controllers_x64_10.0.exe``
 * Men&Mice Web Application: ``Men_and_Mice_Web_Application_x64_10.0.exe``
 * Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
 

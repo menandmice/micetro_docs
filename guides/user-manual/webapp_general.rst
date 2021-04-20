@@ -11,7 +11,7 @@ The front page of the Web Application gives an overview of the available operati
 .. note::
   A persistent help section, (see :ref:`webapp-help`) is available in all views.
 
-.. image:: ../../images/blackstar-frontpage.png
+.. image:: ../../images/micetro-frontpage.png
   :width: 70%
   :align: center
 
@@ -46,7 +46,10 @@ Operations highlighted in the image:
 Folders
 ^^^^^^^
 
-Folders can be used as containers of objects such as DNS zones and networks. Currently the Web Application does not support managing folders (creating, editing, deleting), which needs to be done through the Management Console.
+Folders can be used as containers of objects such as DNS zones and networks.
+
+.. note::
+  Currently the Web Application does not support managing folders (creating, editing, deleting), which needs to be done through the Management Console. See :ref:`object-folders` for further information.
 
 The available folders, along with the folder hierarchy can be viewed in the filtering sidebar. Clicking on a folder will display the contents of the specific folder.
 
@@ -61,7 +64,7 @@ Selecting multiple items
 
 Selecting multiple items in the list can be done by:
 
-* On Windows: holding down the SHIFT button and selecting rows with the mouse
+* On Windows: holding down the CTRL or SHIFT button and selecting rows with the mouse
 
 * On OS X: holding down the CMD button and selecting rows with the mouse
 
@@ -92,16 +95,20 @@ The top menu allows to switch between the three main sections of the Web Applica
 Navigating
 ^^^^^^^^^^
 
-The navigation bar below the top menu
+The navigation bar at the top of the grid interface
 
 * indicates where you are
 
 * allows you to navigate between subsections
 
+You can also quickly check your current location by glancing at the breadcrumbs at the bottom of the interface.
+
+.. _webapp-object-change-history:
+
 History
 -------
 
-The history for the following objects is made available as a task (in the inspector actions) as well as a Quick command.
+The history for the following objects is made available as a task (in the inspector actions) as well as a Quick Command.
 
 * DNS zones
 

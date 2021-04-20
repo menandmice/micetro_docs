@@ -4,7 +4,7 @@ Installation
 ************
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   system-requirements
   firewall-ports
@@ -15,4 +15,4 @@ Installation
   install_controllers
   install_webapp
   installation_azure
-  vmware 
+  vmware

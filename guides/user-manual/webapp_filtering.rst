@@ -10,7 +10,10 @@ The filtering sidebar acts as a selector in each context, and allows users to qu
 
 The sidebar is open (displaying icon and text) by default, but can be collapsed to an icon-only mode. In case where a list of clickable items is needed the sidebar is automatically unfolded.
 
-Selecting an item in the filtering sidebar applies the filter for the main work grid. Users can further narrow down results with quickfilters from the top menu. (See :ref:`webapp-quickfilter`.)
+Selecting an item in the filtering sidebar applies the filter for the main work grid. Users can further narrow down results with quickfilters from the top menu. (See :ref:`webapp-quick-filter`.)
+
+.. tip::
+  When you select a filter in the filtering sidebar, and then use the :guilabel:`Create` operation in the grid, the type of object will be automatically selected based on the active filter.
 
 Common filters
 --------------

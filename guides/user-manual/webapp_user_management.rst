@@ -14,7 +14,7 @@ User Management involves both creating groups as well as creating :ref:`users` t
 Users
 =====
 
-Each user defined in the Men&Mice Suite can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
+Each user defined in Micetro can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
 
 .. note::
   "administrator" is the user already configured for the application. In order to manage users, you have to be logged in as a user who has user management privileges.
@@ -24,27 +24,30 @@ Adding User Accounts
 
 Through this function, you add new users who can then be assigned to groups.
 
-1þ From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays. The default administrator account displays here, as well as any other users you have already added.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Users` in the filtering sidebar. The default administrator account displays here, as well as any other users you have already added.
 
-2. On the Users tab, click the Add button. The New user properties dialog box displays.
+2. Click the :guilabel:`Create` button. The *Create user* dialog box displays.
 
-  User Name
-    Type the name that you want to as assign to this person.
+  Name
+    Type the **username** that you want to as assign to this person.
 
   .. warning::
     Once you have created the user name, it is not possible to change it.
 
-  Full Name and Description.
+  Full Name and Description
     (Optional) Type the user's first and last name and a description of their duties (i.e., job title, department, etc.), respectively.
 
-  Authentication.
-    Click the drop-down list and specify whether the user's login will be authenticated by the Men and Mice software or by an external authentication service (such as existing Active Directory account on the network).
+  Authentication type
+    Click the drop-down list and specify whether the user's login will be authenticated by Micetro or by an external authentication service (such as existing Active Directory account on the network).
 
-  Password/Confirm Password.
-    If the Authentication method selected is Men&Mice Internal, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above.
+  Email address
+    The user's email address. Used for sending notifications such as scheduled reports, subnet monitoring updates, etc.
 
-  In the Groups area, select the user group(s) to which you want to assign this user.
-    Each user can be assigned to none or to multiple groups. There are five default groups defined in Men&Mice Suite:
+  Password/Confirm Password
+    If the **Authentication type** selected is *Men&Mice internal*, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above.
+
+  In the :guilabel:`Groups` and :guilabel:`Roles` tabs, select the user group(s) and role(s) to which you want to assign this user.
+    Each user can be assigned to none or to multiple groups and roles. There are five default groups defined in Men&Mice Suite:
 
       * **Administrators**. Full access to everything.
       * **DNS Administrators**. Full access to all DNS related objects, such as zones, DNS servers, etc.
@@ -55,44 +58,36 @@ Through this function, you add new users who can then be assigned to groups.
   .. note::
     If you have not created your groups, you can always come back and edit the user accounts anytime and change the group assignments.
 
-3. When all selections/entries are made, click OK. The new user is added to the Users list.
+3. When all selections/entries are made, click :guilabel:`Create`. The new user is added to the *Users* list and can now use Micetro.
 
 Editing User Accounts
 ---------------------
 
-1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Users` in the filtering sidebar.
 
-2. To select a single user, click on the user's name. To select multiple users, press/hold the Ctrl key and then click on each user name.
+2. To select a single user, click on the user's name. To select multiple users, press/hold the Ctrl (Cmd on Mac) key and then click on each user name.
 
-3. Click the Edit button. The User properties tabdisplays.
+3. From the ellipsis menu, select :guilabel:`Edit user properties` or use :menuselection:`Actions --> Edit user properties`.
 
 4. Make the desired changes to the user's information.
 
-5. Click OK to save the changes.
+5. Click :guilabel:`Save` to save the changes.
 
 Removing User Accounts
 ----------------------
 
-1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Users` in the filtering sidebar.
 
-2. To remove a single user, click on the user's name. To remove multiple users, press/hold the Ctrl key and then click on each user name.
+2. To remove a single user, click on the user's name. To remove multiple users, press/hold the Ctrl (Cmd on Mac) key and then click on each user name.
 
-3. Click the Remove button. A dialog box prompts you to confirm your decision.
+3. From the ellipsis menu, select :guilabel:`Remove user` or use :menuselection:`Actions --> Remove user`.
 
-4. To remove the user, click the Yes button. The user is removed.
+4. To remove the user, click the :guilabel:`Yes` button. The user is removed.
 
-Viewing User Activity
----------------------
+User Inspector
+--------------
 
-Selecting this menu item displays a window that shows a list of all users including the user name, authentication type, login status, and last login time. Only users with user administrative privileges can see this menu item.
-
-1. From the menu bar, select Query, User Activity. The User Activity tab displays.
-
-.. image:: ../../images/admin-user-activity.png
-  :width: 90%
-  :align: center
-
-2. Use the Quick Filter, if desired, to refine the list.
+Selecting an user displays a list of information in the Inspector, including the user name, authentication type, roles, etc. Only users with user administrative privileges can see this information.
 
 .. _groups:
 
@@ -104,55 +99,115 @@ Through this function, you create and manage groups. Groups allow you to manage 
 Adding a New Group
 ------------------
 
-1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar. The default groups are displayed here, as well as any other groups you have already created.
 
-2. Click the Groups tab. The default groups are displayed here, as well as any other groups you have already created.
+2. Click the :guilabel:`Create` button. The *Create group* dialog box displays.
 
-3. From the Groups tab, click the Add button. The New group properties dialog box displays.
+  Group name
+    The name for the group you are creating.
 
-4. In the Group name field, enter a name for the group you are creating.
+  Description field
+    (Optional) Some information that describes the function of this group.
 
-5. (Optional) In the Description field, provide some information that describes the function of this group.
+  AD Integrated
+    Check this box to define this group as an Active Directory Integrated group. When checked this group name will be matched against groups defined in Active Directory. For more information how on this works refer to External Authentication.
 
-6. Active Directory Integrated. Check this box to define this group as an Active Directory Integrated group. When checked this group name will be matched against groups defined in Active Directory. For more information how on this works refer to External Authentication.
+  Roles
+    Any roles that members of this group will automatically assume.
 
 .. image:: ../../images/admin-new-group.png
   :width: 60%
   :align: center
 
-7. When all selections/entries are made, click OK. The new group now displays in the User and Group Management dialog box.
+3. When all selections/entries are made, click :guilabel:`Save`.
 
 Editing a Group
 ---------------
 
 Through this function, you can edit the group name and/or description, and indicate whether this group is Active Directory integrated.
 
-1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar.
 
-2. Click the Groups tab.
+2. To select a single group, click on the group's name. To select multiple groups, press/hold the Ctrl (Cmd on Mac) key and then click on each group's name.
 
-3. Highlight the group to which you want to make changes.
+3. From the ellipsis menu, select :guilabel:`Edit group properties` or use :menuselection:`Actions --> Edit group properties`.
 
-4. Click the Edit button. The Users properties dialog box displays.
+4. Make the desired changes to the group's information. In the :guilabel:`Users` tab you can remove users from the group.
 
-5. Make the desired changes.
-
-6. When all selections/entries are made, click OK.
+5. Click :guilabel:`Save` to save the changes.
 
 Deleting a Group
 ----------------
 
 Through this function, you delete a group.
 
-1. From the menu bar, select Tools, Users and Groups. The User and group management dialog box displays.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar.
 
-2. Click the Groups tab.
+2. To remove a single group, click on the group's name. To remove multiple groups, press/hold the Ctrl (Cmd on Mac) key and then click on each group's name.
 
-3. Highlight the group you want to delete.
+3. From the ellipsis menu, select :guilabel:`Remove user` or use :menuselection:`Actions --> Remove user`.
 
-4. Click the Remove button.
+4. To remove the group, click the :guilabel:`Yes` button. The group is removed.
 
-5. When the confirmation message displays, click Yes.
+Roles
+=====
+
+Through this function, you create and manage roles. Roles allow you to manage access controls for users and groups.
+
+Adding a New Role
+-----------------
+
+Through this function, you add new users who can then be assigned to groups.
+
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Roles` in the filtering sidebar. The built-in roles are displayed here, as well as all other roles that have been added to Micetro already.
+
+2. Click the :guilabel:`Create` button. The *Create role* dialog box displays.
+
+.. image:: ../../images/admin-new-role.png
+  :width: 60%
+  :align: center
+
+Role name
+  Give the new role a name.
+
+Description
+  Brief description for the role.
+
+.. note::
+  To edit a role's permissions, see :ref:`access-control`.
+
+3. When all necessary information is filled in, click :guilabel:`Save`.
+
+Editing a Role
+---------------
+
+Through this function, you can edit the role's name and/or description.
+
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Roles` in the filtering sidebar.
+
+2. To select a single role, click on the role's name. To select multiple roles, press/hold the Ctrl (Cmd on Mac) key and then click on each role's name.
+
+3. From the ellipsis menu, select :guilabel:`Edit role properties` or use :menuselection:`Actions --> Edit role properties`.
+
+4. Make the desired changes to the role's information. In the :guilabel:`Users` tab you can remove users from the role(s).
+
+5. Click :guilabel:`Save` to save the changes.
+
+Deleting a Role
+---------------
+
+Through this function, you remove a role from Micetro.
+
+.. note::
+  Built-in roles cannot be removed.
+
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Roles` in the filtering sidebar.
+
+2. To remove a single role, click on the role's name. To remove multiple roles, press/hold the Ctrl (Cmd on Mac) key and then click on each role's name.
+
+3. From the ellipsis menu, select :guilabel:`Remove role` or use :menuselection:`Actions --> Remove role`.
+
+4. To remove the role, click the :guilabel:`Yes` button. The role is removed.
 
 Access control
 ==============

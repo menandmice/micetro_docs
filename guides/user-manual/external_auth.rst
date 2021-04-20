@@ -6,14 +6,14 @@ External Authentication
 Overview
 --------
 
-This section discusses the available user authentication methods available with the Men&Mice Suite.
+This section discusses the available user authentication methods available with Micetro.
 
-In addition to Local User Authentication, the Men&Mice Suite currently supports two methods of AD user authentication using the Windows Active Directory user database and authentication through a RADIUS server.
+In addition to Local User Authentication, Micetro currently supports two methods of AD user authentication using the Windows Active Directory user database and authentication through a RADIUS server.
 
 Active Directory User Authentication
 ------------------------------------
 
-The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to login to the Men&Mice Suite. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to the Men&Mice Suite.
+The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to login to Micetro. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
 
 Active Directory User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,16 +34,16 @@ Configuring Users for AD Authentication
 
 To configure a user to use AD user authentication, do the following:
 
-1. From the menu, select :guilabel:`Tools --> User management`.
+1. From the menu, select :menuselection:`Tools --> User management`.
 
 2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to :ref:`users`.
 
-3. When the *Properties* dialog box display, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Men&Mice Suite authentication method displays.)
+3. When the *Properties* dialog box display, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)
 
 4. Click :guilabel:`OK`.
 
   .. note::
-    When the AD authentication method is selected, the **Password** field is disabled, since the password is not stored in the Men&Mice Suite.
+    When the AD authentication method is selected, the **Password** field is disabled, since the password is not stored in Micetro.
 
 Active Directory Single Sign-on
 -------------------------------
@@ -56,7 +56,7 @@ You can enable the Single Sign-on so that Active Directory users do not have to 
 
 To enable Active Directory Single Sign-on, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
 2. In the *System Settings* dialog box, click the :guilabel:`General Settings` tab.
 
@@ -71,7 +71,7 @@ When single sign-on is enabled, it is possible to enable sign-on in the web inte
 
 To enable single sign-on in the web interface, do the following:
 
-1. Make sure that Single Sign-on and Single Sign-on for web is enabled in the Men&Mice Suite.
+1. Make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro.
 
 2. Using the IIS Administrator application, select an authentication method other than Anonymous and Basic for the MenandMice web folder.
 
@@ -86,34 +86,34 @@ Disabling Kernel Mode Authentication
 
 The Windows Authentication in IIS has by default the Kernel Mode Authentication enabled, which blocks the SSO.
 
-In the IIS Management Console, go to :guilabel:`Windows Authentication --> advanced settings` and set the "Kernel Mode Authentication" to *disabled*.
+In the IIS Management Console, go to :menuselection:`Windows Authentication --> advanced settings` and set the "Kernel Mode Authentication" to *disabled*.
 
 Application Log In
 ------------------
 
-Logging into the Men&Mice Suite will not change when AD user authentication is used and Single Sign-on is disabled. The only thing to keep in mind is that the user name that is entered must match the user name stored in the Men&Mice Suite. If a distinguished user name is used, it must be entered in the same way when logging in.
+Logging into Micetro will not change when AD user authentication is used and Single Sign-on is disabled. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro. If a distinguished user name is used, it must be entered in the same way when logging in.
 
 Group Level Active Directory User Authentication
 ------------------------------------------------
 
-The Group Level Active Directory (AD) User Authentication mechanism allows you to set user access privileges by group membership in the AD. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to the Men&Mice Suite.
+The Group Level Active Directory (AD) User Authentication mechanism allows you to set user access privileges by group membership in the AD. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
 
 The login sequence is as follows for users with Group Level AD authentication:
 
-1. The user enters his/her user name and password in the Men&Mice Suite
+1. The user enters his/her user name and password in Micetro
 
-2. The Men&Mice Suite uses the AD authentication mechanism to validate the user name and password. If the user name and password is correct, the Men&Mice Suite retrieves the group membership of the user from the AD.
+2. Micetro uses the AD authentication mechanism to validate the user name and password. If the user name and password is correct, Micetro retrieves the group membership of the user from the AD.
 
-3. The AD group list of the user is compared (by group name) to the local group list in the Men&Mice Suite. If a match is found, the user is logged in with the privileges specified in the local group list. If no match is found, the login fails.
+3. The AD group list of the user is compared (by group name) to the local group list in Micetro. If a match is found, the user is logged in with the privileges specified in the local group list. If no match is found, the login fails.
 
-To allow a user to log in to the Men&Mice Suite, you must create a group in the AD that has the same name as a group in the Men&Mice Suite and place the AD user in that group. You may create multiple groups in the AD that match group names in the Men&Mice Suite.
+To allow a user to log in to Micetro, you must create a group in the AD that has the same name as a group in Micetro and place the AD user in that group. You may create multiple groups in the AD that match group names in Micetro.
 
 Configuring Groups for AD Group Level Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When using AD Group level authentication, you must specify which groups in the Men&Mice Suite should be used to verify group membership.
+When using AD Group level authentication, you must specify which groups in Micetro should be used to verify group membership.
 
-1. From the menu, select :guilabel:`Tools --> User Management`. The *Users and groups management* dialog box displays.
+1. From the menu, select :menuselection:`Tools --> User Management`. The *Users and groups management* dialog box displays.
 
 2. Click the :guilabel:`Groups` tab.
 
@@ -136,12 +136,12 @@ Group Name
 Configuring Users and Access Privileges
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You do not have to create users in the Men&Mice Suite when the Group Level AD authentication is used. Instead, user access is controlled by the group membership of the user in the AD.
+You do not have to create users in Micetro when the Group Level AD authentication is used. Instead, user access is controlled by the group membership of the user in the AD.
 
 RADIUS User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Men&Mice Suite can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to the Men&Mice Suite.
+Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
 
 RADIUS User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,7 +169,7 @@ The properties to be added are:
 
   "RADIUSServer", "Defines the address of the RADIUS server that will do RADIUS authentication."
   "RADIUSPort", "Defines the port that the RADIUS server is listening on. The default value is 1812, which is the port normally used by RADIUS."
-  "RADIUSSharedSecret", "The shared secret between the RADIUS server and the Men&Mice Suite."
+  "RADIUSSharedSecret", "The shared secret between the RADIUS server and Micetro."
   "RADIUSAuthentication", "The type of authentication used. 0 = PAP, 1 = CHAP."
 
 Example:
@@ -181,7 +181,7 @@ Example:
 
 After editing the file, restart Men&Mice Central.
 
-* Windows: use :guilabel:`Administration Tools --> Services` to restart Men&Mice Central.
+* Windows: use :menuselection:`Administration Tools --> Services` to restart Men&Mice Central.
 
 * Mac OS X: Execute the following shell command in a Terminal window (/Applications/Utilities/Terminal):
 
@@ -198,20 +198,20 @@ To allow a user to log in to the Men&Mice system, the user must exist in the Men
 
 To configure a user to use AD user authentication, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> User Management`. The *User and group management* dialog box displays.
+1. From the menu bar, select :menuselection:`Tools --> User Management`. The *User and group management* dialog box displays.
 
 2. To add a new user, click the :guilabel:`Add` button. Refer to :ref:`users`. Follow the instructions with one exception: in the **Authentication** field, click the drop-down list and select RADIUS.
 
 3. To modify an existing user, double-click on the user's name to display the user *Properties* dialog box, and in the **Authentication** field, click the drop-down list and select RADIUS.
 
 .. note::
-  When the RADIUS authentication method is selected, the **Password** field is disabled, since the password is not stored in the Men&Mice Suite.
+  When the RADIUS authentication method is selected, the **Password** field is disabled, since the password is not stored in Micetro.
 
 .. image:: ../../images/console_ad_sso_radius.png
   :width: 60%
   :align: center
 
-Logging into the Men&Mice Suite
+Logging into Micetro
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Logging in to the Men&Mice Suite will not change when RADIUS user authentication is used. The only thing to keep in mind is that the user name that is entered must match the user name stored in the Men&Mice Suite.
+Logging in to Micetro will not change when RADIUS user authentication is used. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro.

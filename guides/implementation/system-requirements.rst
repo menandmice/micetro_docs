@@ -24,8 +24,6 @@ Operating systems
   "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
-  "**Solaris**",,,,,,
-  "Solaris 10 x86", "N", "Y", "N", "N", "N/A", "N"
   "**Linux**",,,,,,
   "Redhat Enterprise Linux 6", "N", "Y", "Y", "Y", "N/A", "Y"
   "Redhat Enterprise Linux 7", "N", "Y", "Y", "Y", "N/A", "Y"
@@ -37,12 +35,13 @@ Operating systems
   "Ubuntu 14.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 16.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 18.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Ubuntu 20.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
 
 .. [1] The management console also works on non-server Windows that have not reached their EOL.
 
 .. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
 
-.. [3] On January 14, 2020, Microsoft ends support for Windows server 2008 and 2008 R2 and therefore support for those server types will be deprecated in future versions of the Men&Mice Suite.
+.. [3] On January 14, 2020, Microsoft ends support for Windows server 2008 and 2008 R2 and therefore support for those server types will be deprecated in future versions of Micetro.
 
 Databases
 ---------
@@ -52,7 +51,7 @@ Databases
   :widths: 20, 20, 60
 
   "PostgreSQL", 12, "Windows, Linux"
-  "SQLite", "N/A [4]_", "Windows, Linux, Solaris"
+  "SQLite", "N/A [4]_", "Windows, Linux"
   "Microsoft SQL Server", "2008 R2, 2012, 2014, 2016", "Windows"
 
 .. [4] The SQLite database is embedded into the Men&Mice Central application.
@@ -65,21 +64,24 @@ DNS/DHCP Server software
   :widths: 40, 60
 
   "**DNS**"
-  "Microsoft DNS", "2008 R2, 2012, 2012 R2, 2016, 2019"
+  "Microsoft DNS", "2012, 2012 R2, 2016, 2019"
   "ISC BIND", "9.6 - 9.14"
   "Unbound", "1.4.22 - 1.7.3"
   "PowerDNS Authoritative Server", "3.4 - 4.3"
   "**DHCP**"
-  "Microsoft DHCP", "2008 R2, 2012, 2012 R2, 2016, 2019"
+  "Microsoft DHCP", "2012, 2012 R2, 2016, 2019"
   "ISC DHCP", "3.0.6 - 4.4.1"
-  "ISC Kea", "1.1.0 - 1.2.0"
+  "ISC Kea", "1.6, 1.8"
   "Cisco IOS with DHCP support", "12.3 - 16.09"
+
+.. danger::
+  ISC Kea versions older than 1.6 are no longer supported. See :ref:`kea-update` for more details.
 
 Other
 -----
 
-Men&Mice Web Interface and Web Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Men&Mice Web Application
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft IIS [5]_
 

@@ -1,7 +1,7 @@
 .. _ha-tweaks-psql:
 
-PostgreSQL
-==========
+PostgreSQL HA tweaks
+====================
 
 Lower timeout threshold
 -----------------------

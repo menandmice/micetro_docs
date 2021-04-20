@@ -3,6 +3,9 @@
 DNS policies (Windows)
 ======================
 
+.. note::
+  Managing DNS policies for Microsoft DNS servers is only available in the Management Console.
+
 DNS Policies and DNS Scopes
 ---------------------------
 

@@ -3,7 +3,7 @@
 Database backend
 ================
 
-The Men&Mice Suite can be used with the following databases:
+Micetro can be used with the following databases:
 
 .. toctree::
   :maxdepth: 1

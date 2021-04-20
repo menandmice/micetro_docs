@@ -1,7 +1,7 @@
 .. _console-menus:
 
 Menu Bars
-=========
+---------
 
 The *Menu Bar* in the Men&Mice Management Console provides access to nearly all of the program's functionality.
 
@@ -12,7 +12,7 @@ The *Menu Bar* in the Men&Mice Management Console provides access to nearly all 
   Not every menu option is listed below. Some are detailed in their respective sections. Some of the options discussed below are global across the whole application (e.g., Cut, Copy, and Paste).
 
 File Menu
----------
+^^^^^^^^^
 
 Save
   Saves any changes that have been made in the currently active window. This is only available when a zone has been edited and there is some new data to be saved.
@@ -30,7 +30,7 @@ Exit
   Closes the Management Console window.
 
 Edit Menu
----------
+^^^^^^^^^
 
 The commands available from the Edit menu vary, depending on what is currently selected in the Management Console. When working in the Manager window the following functions are offered:
 
@@ -75,7 +75,6 @@ Preferences
   :align: center
 
 .. highlights::
-
   When working with a zone, the Edit menu changes and includes additional functions.
 
   Enable Record
@@ -100,7 +99,7 @@ Preferences
     This menu command can be toggled on and off by selecting it repeatedly. This option is enabled by default. If you disable this option, the Comment column will not be displayed in the zone windows. This command is only available when a Zone window is open and active. This command can only be used for static zones.
 
 Query Menu
-----------
+^^^^^^^^^^
 
 Lease History
   This function can be enabled through System Settings, Logging. When enabled you can search the DHCP lease history and if desired, export the search results to a file.
@@ -109,7 +108,7 @@ Object History
   Allows you to query the history throughout the system for all objects or a specific object. Refer to  Object Change History  for details. You can search all objects or, using the Only show objects of type drop-down list, you can select which object type to search. You can only search all object types or one selected object type.
 
 Men&Mice Suite Log
-  Displays log messages for the Men&Mice Suite.
+  Displays log messages for Micetro.
 
 Search and Update Wizard
   Launches the Search and Update Wizard, a utility that allows you to find, create, modify, or delete records in multiple zones and DHCP Scopes using a single action. Click Next> and follow the instructions onscreen to specify the type of records you want to search, the action you want to perform (e.g., create, replace, delete, edit), etc.
@@ -118,7 +117,7 @@ User Activity
   Users with user administrative privileges can see this menu item. Selecting this menu item displays a window that shows a list of all users including the user name, authentication type, login status, and last login time.
 
 Window Menu
------------
+^^^^^^^^^^^
 
 Cascade
   Aligns all currently open windows inside the Console window so that they overlap, showing only their title bars. This allows you to access all currently open windows.
@@ -139,10 +138,10 @@ Active Window List
   At the bottom of the Window menu, there will be a list of every window currently open in the Management Console. You can instantly give a window the focus (i.e., bring it to the top) by selecting it from this list.
 
 Help Menu
----------
+^^^^^^^^^
 
 Help
-  Launches the on-line help features of the Men&Mice Suite.
+  Launches the on-line help features of Micetro.
 
-About Men and Mice Management Console
+About Men&Mice Management Console
   Opens the About window, which contains the full version number of the Men&Mice Management Console that you are running.

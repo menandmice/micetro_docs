@@ -6,9 +6,9 @@ Dynamic Zones
 Overview
 --------
 
-The Men and Mice Suite allows you to work with dynamic zones on BIND and the Windows DNS server.
+Micetro allows you to work with dynamic zones on BIND and the Windows DNS server.
 
-This section describes how the Men&Mice Suite handles dynamic zones and how to configure your DNS server to allow the program to work with dynamic zones.
+This section describes how Micetro handles dynamic zones and how to configure your DNS server to allow the program to work with dynamic zones.
 
 Static vs. Dynamic Zones
 ------------------------
@@ -46,7 +46,7 @@ To create a TSIG key to use with BIND:
 
   .. code-block:: bash
 
-  /etc/init.d/mmremote stop /etc/init.d/mmremote start
+    /etc/init.d/mmremote stop /etc/init.d/mmremote start
 
 When you have configured the server, you can change the zone type from static to dynamic by opening the zone options in the Management Console and changing the zone type to dynamic.
 
@@ -55,7 +55,7 @@ As dynamic zones are transferred from the DNS server using a zone transfer, you 
 Windows DNS Server Configuration
 --------------------------------
 
-* The Men and Mice Management Console can work with dynamic zones on the Windows DNS server, both AD integrated zones and file-based zones.
+* The Men&Mice Management Console can work with dynamic zones on the Windows DNS server, both AD integrated zones and file-based zones.
 
 * A new column, Record timestamp, is shown for dynamic zones that are hosted on Windows DNS servers. The Record timestamp column will show the creation time for records that are added dynamically (dynamic records).
 Static records will not have a record timestamp.

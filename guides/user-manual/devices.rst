@@ -13,7 +13,7 @@ What is a Device?
 
 A Device is any item that can have an IP address linked to it. A device can, for example, be a computer, a router, a firewall, a phone or a virtual machine. A device has one or more interfaces and each device can have any number of IP addresses linked to it.
 
-It is common to assign multiple properties to devices. As a default, a device in the Men&Mice Suite only has one property - the device name. However, you can create any number of properties for the devices. To create a property for a device, use the Define Custom Properties feature. For more information on this feature, refer to :ref:`admin-custom-properties`.
+It is common to assign multiple properties to devices. As a default, a device in Micetro only has one property - the device name. However, you can create any number of properties for the devices. To create a property for a device, use the Define Custom Properties feature. For more information on this feature, refer to :ref:`admin-custom-properties`.
 
 Adding a Device
 ---------------
@@ -22,7 +22,7 @@ When you add a Device, you start by entering the basic Device information and th
 
 To add a new device:
 
-1. From the menu bar, select :guilabel:`Device --> New Device`. A dialog box is displayed where you enter the name of the device. The information you enter is based on the properties that have been defined for the device.
+1. From the menu bar, select :menuselection:`Device --> New Device`. A dialog box is displayed where you enter the name of the device. The information you enter is based on the properties that have been defined for the device.
 
 2. Enter the name and click :guilabel:`Add` to create the device.
 
@@ -117,7 +117,7 @@ You can quickly find the device you want to work with using the Find Device comm
 
 To search for a device:
 
-1. From the menu bar, select :guilabel:`Device --> Find Device`. The *Device Search* dialog box displays.
+1. From the menu bar, select :menuselection:`Device --> Find Device`. The *Device Search* dialog box displays.
 
 2. Enter the search criteria for the device you want to find.
 
@@ -130,7 +130,7 @@ To search for a device:
 Device List tab
 ---------------
 
-The Device List tab is displayed when you choose :guilabel:`Device --> Show All Devices` from the menu bar. The tab is also used to display search results when there is more than one device that matches the search criteria.
+The Device List tab is displayed when you choose :menuselection:`Device --> Show All Devices` from the menu bar. The tab is also used to display search results when there is more than one device that matches the search criteria.
 
 The *Device List* tab shows all relevant info for the Devices found.
 

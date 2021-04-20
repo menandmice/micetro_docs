@@ -6,8 +6,9 @@ Reports Management
 Introduction
 ------------
 
-The Men&Mice Suite manages vast amounts of DNS, DHCP, and IPAM data. The first version of reporting in the Web Application was introduced in version 9.1. To enhance the functionality in version 9.2, a new Reporting module has been created.
-Building reports is easy and can be tailor-made by correlating related data in a few steps, and scheduling the results to be generated daily, weekly or on a custom schedule. There are built-in report definitions that can be used as a reference to build reports. Using custom fields in the Men&Mice Suite further enhances reports by correlating custom fields with the built-in ones. The system then allows you to create reporting definitions that can be run either one time only, or scheduled to run later or at regular intervals.
+Micetro manages vast amounts of DNS, DHCP, and IPAM data. The first version of reporting in the Web Application was introduced in version 9.1. To enhance the functionality in version 9.2, a new Reporting module has been created.
+
+Building reports is easy and can be tailor-made by correlating related data in a few steps, and scheduling the results to be generated daily, weekly or on a custom schedule. There are built-in report definitions that can be used as a reference to build reports. Using custom fields in Micetro further enhances reports by correlating custom fields with the built-in ones. The system then allows you to create reporting definitions that can be run either one time only, or scheduled to run later or at regular intervals.
 
 The reports can be viewed within the Web Application, or downloaded in various formats for further analysis.
 
@@ -357,27 +358,27 @@ There are 24 reports definitions in the list under Reports (not counting user de
 |                                                                       | Range creation/deletion                                               |
 |                                                                       | Zone creation/deletion                                                |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Access[1]_                                                            |                                                                       |
+| Access [1]_                                                           |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Address space merge conflicts[1]_                                     |                                                                       |
+| Address space merge conflicts [1]_                                    |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | DHCP lease activity                                                   |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Discovered hardware addresses with multiple addresses[1]_             |                                                                       |
+| Discovered hardware addresses with multiple addresses [1]_            |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | DNS records                                                           | Address records                                                       |
 |                                                                       | Multi-labeled hosts                                                   |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | DNS zones                                                             | Enabled DNS zones of type slave                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Host discovery[1]_                                                    | IP reconciliation                                                     |
+| Host discovery [1]_                                                   | IP reconciliation                                                     |
 |                                                                       | Discovered devices                                                    |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | IP ranges                                                             |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | IP addresses                                                          |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Lease hardware address with multiple IP addresses[1]_                 |                                                                       |
+| Lease hardware address with multiple IP addresses [1]_                |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Men&Mice Suite messages                                               |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
@@ -385,7 +386,7 @@ There are 24 reports definitions in the list under Reports (not counting user de
 |                                                                       | SOA records with abnormal refresh value                               |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. [*] Specialized report source.
+.. [1] Specialized report source.
 
 Filter field types
 ------------------

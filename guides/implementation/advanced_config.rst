@@ -4,9 +4,11 @@ Advanced configuration
 **********************
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   console_advanced_settings
+  central_ha
+  mmsql_ha
   psql_ha
   ha_tweaks
   xdns_redundancy_groups

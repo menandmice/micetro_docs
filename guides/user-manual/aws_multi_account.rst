@@ -6,12 +6,12 @@ Configuring an AWS multi-account setup
 Overview
 --------
 
-The Men&Mice Suite can be connected to multiple AWS accounts using single credentials. This is done by configuring a cloud account to be able to assume roles on other accounts. The credentials added to the Men&Mice Suite when adding multiple AWS cloud accounts, should belong to a user that is a member of a group. The group should be configured to allow members to assume AWS roles on other accounts with access to cloud networks(via EC2) or DNS Services(via Route53). Step-by-step instructions on how to configure this setup can be found below.
+Micetro can be connected to multiple AWS accounts using single credentials. This is done by configuring a cloud account to be able to assume roles on other accounts. The credentials added to Micetro when adding multiple AWS cloud accounts, should belong to a user that is a member of a group. The group should be configured to allow members to assume AWS roles on other accounts with access to cloud networks(via EC2) or DNS Services(via Route53). Step-by-step instructions on how to configure this setup can be found below.
 
 Set up and configuration
 ------------------------
 
-The following steps should be taken when configuring an AWS account to assume roles on other accounts for the Men&Mice Suite.
+The following steps should be taken when configuring an AWS account to assume roles on other accounts for Micetro.
 
 I. Creating a group containing the user that should have access to the roles on the other accounts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -26,7 +26,7 @@ Open the :guilabel:`IAM service` in the management console.
 
 2. Select :guilabel:`Users` from the left-hand menu or under IAM resources.
 
-3. Either select an existing user to use, or create a new user by clicking :guilabel:`Add user` and following the steps described in the wizard. If a new user is created, make sure to allow programmatic access so that an access key ID and secret access key pair can be used to add the account to the Men&Mice Suite. The user must also have the IAMReadOnlyAccess policy attached. If you want to manage Route53 and VPCs on the account where the user is located, the AmazonRoute53FullAccess and AmazonEC2Full access policies should also be attached.
+3. Either select an existing user to use, or create a new user by clicking :guilabel:`Add user` and following the steps described in the wizard. If a new user is created, make sure to allow programmatic access so that an access key ID and secret access key pair can be used to add the account to Micetro. The user must also have the IAMReadOnlyAccess policy attached. If you want to manage Route53 and VPCs on the account where the user is located, the AmazonRoute53FullAccess and AmazonEC2Full access policies should also be attached.
 
 4. Create a group
 
@@ -72,17 +72,17 @@ This can be done through the AWS Management Console or by using the AWS CLI comm
 
 5. Select :guilabel:`Another AWS account` as the type of trusted entity. In the Account ID window, put the account ID of the account that contains the user that should be able to access this account. Then click :guilabel:`Next: Permissions`.
 
-6. Now attach necessary policies for the Men&Mice Suite to the role. You can attach the policies by searching for them by name in the search window and then checking the checkbox next to their name. After all necessary policies have been attached, click on the :guilabel:`Next: Tags` button. The Men&Mice Suite needs the following AWS policies to be attached.
+6. Now attach necessary policies for Micetro to the role. You can attach the policies by searching for them by name in the search window and then checking the checkbox next to their name. After all necessary policies have been attached, click on the :guilabel:`Next: Tags` button. Micetro needs the following AWS policies to be attached.
 
 * *AmazonRoute53FullAccess* to manage hosted DNS zones.
 
 * *AmazonEC2FullAccess* to manage Cloud Networks and ranges.
 
-* *IAMReadOnlyAccess* so that the Suite can access the account alias. This does not need to be attached if you do not want AWS account aliases to be displayed in the Men&Mice Suite.
+* *IAMReadOnlyAccess* so that Micetro can access the account alias. This does not need to be attached if you do not want AWS account aliases to be displayed in Micetro.
 
 This can also be done using the AWS CLI command ``[iam|attach-role-policy]``
 
-7. Now you can add tags to the role. The Men&Mice Suite does not require any tags but they can be added optionally to help organize your account. After you finish adding tags, click on the :guilabel:`Next: Review` button.
+7. Now you can add tags to the role. Micetro does not require any tags but they can be added optionally to help organize your account. After you finish adding tags, click on the :guilabel:`Next: Review` button.
 
 8. Now select a name for the role that is being created and review the role before confirming the creation. After naming the role and ideally writing a short description, press the :guilabel:`Create role` button.
 
@@ -127,4 +127,4 @@ This can be done through the AWS Management Console or by using the AWS CLI comm
 After Configuring the accounts
 ------------------------------
 
-After adding the policies to the group for all of the roles, the accounts can be added to the Men&Mice Suite using the API credentials of the user that is in the group. Further information on how to add AWS accounts to the Suite can be found here. You might need to wait a couple of minutes for the AWS backend to propagate the changes everywhere.
+After adding the policies to the group for all of the roles, the accounts can be added to Micetro using the API credentials of the user that is in the group. Further information on how to add AWS accounts to Micetro can be found here. You might need to wait a couple of minutes for the AWS backend to propagate the changes everywhere.

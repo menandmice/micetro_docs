@@ -3,7 +3,7 @@
 Advanced System Settings
 ************************
 
-Starting with version 6.3.2, the Men&Mice Suite allows users to configure Advanced System Settings from within the Management Console.
+Starting with version 6.3.2, Micetro allows users to configure Advanced System Settings from within the Management Console.
 
 To access the Advanced System Settings dialog box, open :guilabel:`System Settings` and click the :guilabel:`Advanced` button in the *General* tab.
 

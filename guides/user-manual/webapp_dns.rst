@@ -10,7 +10,7 @@ Here is an overview of the main functionality for managing DNS zones.
 
 By default, the list shows only master DNS zones, but to see other types of DNS zones, the filtering sidebar offers options to select different types.
 
-.. image:: ../../images/blackstar-dns.png
+.. image:: ../../images/DNS-Micetro.png
   :width: 90%
   :align: center
 
@@ -28,6 +28,8 @@ Opening a DNS zone can either by done by
 
 * double clicking on the zone.
 
+.. _webapp-create-dns-zone:
+
 Creating a DNS zone
 ^^^^^^^^^^^^^^^^^^^
 
@@ -35,7 +37,7 @@ Creating a new DNS zone can be done by clicking on the :guilabel:`Create` button
 
 The following dialog presents the options for the operation:
 
-.. image:: ../../images/blackstar-create-dns-zone.png
+.. image:: ../../images/create-DNS-zone-Micetro.png
   :width: 70%
   :align: center
 
@@ -65,7 +67,7 @@ Migrating a DNS zone
 
 A DNS zone can be migrated between DNS servers.
 
-.. image:: ../../images/blackstar-migrate-dns-zone.png
+.. image:: ../../images/migrate-DNS-zone-Micetro.png
   :width: 60%
   :align: center
 
@@ -74,6 +76,11 @@ A DNS zone can be migrated between DNS servers.
 2. Specify the destination server. This is the server for which the DNS zone will be migrated to.
 
 3. After migrating, you are presented with a dialog which confirms a successful zone migration.
+
+Promoting a secondary zone
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can select a secondary (slave) DNS zone and promote it to primary (master) using :guilabel:`Promote to master` from the selected zone(s)'s ellipsis menu. The confirmation dialog will also offer the ability to automatically update the SOA record's master record. (Default: true.)
 
 DNS Records
 -----------
@@ -99,14 +106,19 @@ The :guilabel:`Inspector` for DNS records allows the following actions and detai
   "Related DNS Data", "Lists all related DNS records for the selected DNS record. Related DNS records all DNS records that are somehow associated with the specified record."
   "Related IP address", "List the related IP address in case of an A or AAAA DNS record."
 
+.. _webapp-create-dns-record:
+
 Creating a new DNS record
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a new DNS record, either click on the :guilabel:`Create` button in the main task bar or click on the :guilabel:`Create new DNS record` in the actions section of the Inspector.
+.. note::
+  For importing DNS records in bulk, see :ref:`webapp-import-dns-records`.
+
+To create a new DNS record, either click on the :guilabel:`Create` button in the main task bar or click on :menuselection:`Actions --> Create new DNS record` from the top menu or in the Inspector.
 
 The following dialog presents the options for the operation:
 
-.. image:: ../../images/blackstar-create-dns-record.png
+.. image:: ../../images/create-DNS-record-Micetro.png
   :width: 75%
   :align: center
 
@@ -166,48 +178,54 @@ For A records, there is useful autocomplete behavior that can help finding a fre
 
 Typing in the first digits of a network will allow you to see a list of networks to choose from.
 
-.. image:: ../../images/blackstar-create-dns-record-ip.png
+.. image:: ../../images/create-DNS-record-ip-Micetro.png
   :width: 75%
   :align: center
 
 Selecting the first item from the list will fill in the **Address** field with the next free IP address from that network. Additionally, insights for the specified IP address will be shown.
 
-After typing in an IP address or selecting from the list, an indicator will be given on the state of the IP address, whether it is *Free*, *Reserved*, *Claimed* or *Assigned*.
+After typing in an IP address or selecting from the list, an indicator will be given on the state of the IP address, whether it is ``Free``, ``Reserved``, ``Claimed`` or ``Assigned``.
 
-.. image:: ../../images/blackstar-create-dns-record-ipam.png
+.. image:: ../../images/create-DNS-record-ipam-Micetro.png
   :width: 75%
   :align: center
 
 IP Address Insights
 """""""""""""""""""
 
-The IP address insights feature aims to give details on the IP address and related objects. Hovering over the "i" icon will list further information or show a list of objects.
+The IP address insights feature aims to give details on the IP address and related objects.
 
 Typing in the full IP address in the the **Address** field will indicate the state of the IP address. Additionally, the IP insights are shown, which are details on the IP address itself and related objects.
 
-.. image:: ../../images/blackstar-create-dns-record-ipam-insights.png
+.. image:: ../../images/create-DNS-record-ipam-insights-Micetro.png
   :width: 75%
   :align: center
 
-Hovering over info icon for Network will show more details on the network.
+Hovering over the :guilabel:`i` icon will list further information or show a list of objects:
 
-.. image:: ../../images/blackstar-create-dns-record-ipam-insights-network.png
-  :width: 75%
-  :align: center
+  * *Network* will show more details on the network.
 
-Hovering over the icon for the Properties will show a list of all defined properties for the specified IP address.
+  .. image:: ../../images/create-DNS-record-ipam-insights-networkMicetro.png
+    :width: 75%
+    :align: center
 
-.. image:: ../../images/blackstar-create-dns-record-ip-properties.png
-  :width: 75%
-  :align: center
+  * *Properties* will show a list of all defined properties for the specified IP address.
 
-Hovering over the icon for the DNS hosts will show a list of all defined DNS hosts for the specified IP address.
+  * *DNS hosts* will show a list of all defined DNS hosts for the specified IP address.
 
-.. image:: ../../images/blackstar-create-dns-record-ip-hosts.png
-  :width: 75%
-  :align: center
+  * *MAC address* will show a list of additional MAC information for the specified IP address.
 
-.. csv-table::
+  .. image:: ../../images/create-DNS-record-ipam-insights-mac-Micetro.png
+    :width: 75%
+    :align: center
+
+  * *Last seen* will show a list of additional information for the specified IP address.
+
+  .. image:: ../../images/create-DNS-record-ipam-insights-last-seen-Micetro.png
+    :width: 75%
+    :align: center
+
+.. csv-table:: IPAM Insights
   :widths: 15, 85
 
   "Network", "The network containing the specified IP address"

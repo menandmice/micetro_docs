@@ -23,13 +23,17 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
   :alt: Micetro by Men&Mice
   :align: center
 
+  .. note::
+    If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
+
 .. toctree::
     :caption: Micetro by Men&Mice
     :hidden:
 
     release_notes
-    support 
-    3rd_party
+    security_announcements
+    support
+    opensource
 
 .. toctree::
      :caption: Installing Micetro
@@ -47,8 +51,8 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
      :hidden:
 
      guides/user-manual/introduction
-     guides/user-manual/console
      guides/user-manual/web_application
+     guides/user-manual/console
      guides/user-manual/administration
      guides/user-manual/dns
      guides/user-manual/dhcp
@@ -56,6 +60,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
      guides/user-manual/devices
      guides/user-manual/active_directory
      guides/user-manual/cloud
+     guides/user-manual/automation
 
 .. toctree::
     :caption: Reference articles

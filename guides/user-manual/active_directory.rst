@@ -6,7 +6,7 @@ AD Sites and Subnets
 Overview
 --------
 
-With this feature, it is possible to integrate Active Directory (AD) sites in the Men&Mice Suite, view subnets within these sites and add, remove and move subnets between the sites.
+With this feature, it is possible to integrate Active Directory (AD) sites in Micetro, view subnets within these sites and add, remove and move subnets between the sites.
 
 Once Sites and Subnets integration has been enabled, an AD Sites object displays in the object list on the left hand side of the Manager window and a new column, AD Site displays in the range list in the Manager window.
 
@@ -36,20 +36,20 @@ To manage sites and subnets, you must first add the AD forest.
   :width: 60%
   :align: center
 
-Use same Global Catalog as the Men and Mice Central server.
-  If checked, the Men&Mice Suite will use the same Global Catalog server as the Men and Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server in the Global Catalog Server field.
+Use same Global Catalog as the Men&Mice Central server.
+  If checked, Micetro will use the same Global Catalog server as the Men&Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server in the Global Catalog Server field.
 
 Global Catalog Server.
-  If you want to specify a non-default Global Catalog server, enter the server name in this field. To enable this field, you must first unselect the :guilabel:`Use same Global Catalog as the Men and Mice Central server` checkbox.
+  If you want to specify a non-default Global Catalog server, enter the server name in this field. To enable this field, you must first unselect the :guilabel:`Use same Global Catalog as the Men&Mice Central server` checkbox.
 
-Use the same credentials as the Men and Mice Central server.
-  If checked, the Men&Mice Suite uses the same credentials as the Men and Mice Central server when accessing the site information.
+Use the same credentials as the Men&Mice Central server.
+  If checked, Micetro uses the same credentials as the Men&Mice Central server when accessing the site information.
 
 User and Password.
-  If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. To enable these fields, you must first unselect the :guilabel:`Use the same credentials as the Men and Mice Central server` checkbox.
+  If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. To enable these fields, you must first unselect the :guilabel:`Use the same credentials as the Men&Mice Central server` checkbox.
 
 Set as read only.
-  If checked, the Men&Mice Suite will only read from the Active Directory but not make any modifications.
+  If checked, Micetro will only read from the Active Directory but not make any modifications.
 
 3. Click :guilabel:`OK` to save the changes. The forest is added and the sites belonging to the forest are displayed.
 
@@ -69,7 +69,7 @@ To change the properties for an AD Forest, do the following:
 Removing an AD Forest
 ---------------------
 
-To remove an AD Forest from the Men&Mice Suite:
+To remove an AD Forest from Micetro:
 
 1. In the Object Browser, expand the :guilabel:`AD Sites` object category.
 

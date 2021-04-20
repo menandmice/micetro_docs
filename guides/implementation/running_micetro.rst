@@ -5,8 +5,8 @@ Running the Men&Mice components (Central, Controllers)
 
 .. _running-micetro-unix:
 
-Linux and Solaris
------------------
+Linux
+-----
 
 After installation, all Men&Mice components are configured as system processes available through ``systemctl``. Only use ``systemctl`` to stop, (re)start, and query the status of the components, i.e.:
 

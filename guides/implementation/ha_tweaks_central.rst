@@ -1,7 +1,7 @@
 .. _ha-tweaks-central:
 
-Men&Mice Central
-================
+Men&Mice Central HA tweaks
+==========================
 
 Changing the default heartbeat timestamp value in Central HA
 ------------------------------------------------------------

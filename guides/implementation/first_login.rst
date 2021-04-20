@@ -1,12 +1,5 @@
 .. _first-login:
 
-.. toctree::
-  :maxdepth: 2
-  :hidden:
-
-  named-checkconf_timeout
-  disable_auto_zone-transfer
-
 First login
 ===========
 
@@ -22,3 +15,14 @@ After logging in with the default administrator credentials, the system will pro
 .. image:: ../../images/first_login.png
   :width: 60%
   :align: center
+
+License keys
+------------
+
+.. note::
+  When logging in to the Web Application for the first time, and no license keys have been configured, administrators will be prompted and able to paste their license keys through the Web Application as well.
+
+License key management is done through the Management Console. See :ref:`admin-license` for more information.
+
+.. note::
+  The IPAM license key unlocks **both** the DHCP and IPAM functionality of Micetro.

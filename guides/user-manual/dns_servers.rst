@@ -20,49 +20,54 @@ New DNS Server
 You must be logged in as a user with privileges to administer DNS in order to add a DNS server.
 
 .. note::
-  For information on adding a DNS server on a Men&Mice Appliance, refer to Appliance Management.
+  For information on adding a DNS server on a Men&Mice Appliance, refer to :ref:`appliance-management`.
 
-.. image:: ../../images/console-dns-add-server.png
+.. image:: ../../images/add-dns-server.png
   :width: 50%
   :align: center
 
 To add a new DNS server, do the following:
 
-1. From the menu bar, select :guilabel:`File --> New --> DNS Server`. The *Add DNS Server* dialog box displays.
+1. Navigate to :menuselection:`Admin --> Server Management` and click :guilabel:`Add DNS Server`.
 
 Server Name
-  Type the name (fully qualified host name) of the DNS server as the name is used for the MNAME field in the SOA record of new DNS zones. For Azure DNS the name does not really matter. If the name can't be resolved you want to specify the optional IP address.
+  Type the name (fully qualified host name) of the DNS server as the name is used for the ``MNAME`` field in the SOA record of new DNS zones. If the name can't be resolved you want to specify the optional IP address.
 
 Server address (optional)
-  If desired, type the IPv4 or IPv6 address for the server. This is not required, but doing so allows the Management Console to connect to the server by IP Address instead of by name. The Server name will still be used when displaying server information and creating NS records.
+  If desired, type the IPv4 or IPv6 address for the server. This is not required, but doing so allows Micetro to connect to the server by IP Address instead of by name. The **Server name** will still be used when displaying server information and creating NS records.
 
 Server Type
   Click the drop-down list, and select the desired server type.
 
   Microsoft with Agent Installed
-    connects to a Microsoft DNS server that has a DNS Server Controller installed.
-
-  Microsoft Agent-Free
-    connects to a Microsoft DNS server that does not have a DNS Server Controller installed. For further information regarding this connection method, refer to DNS Servers—Server Access on Remote Computers.
+    connects to a Microsoft DNS server.
 
   BIND
     connects to BIND DNS server.
 
+  Unbound
+    connects o an Unbound DNS server.
+
   Generic
     connects to a DNS Server Controller that is configured to support a generic DNS server.
 
-  Azure DNS
-    connects to a DNS Server Controller that is configured as Microsoft Azure DNS controller.
+Agent-free
+  Microsoft DNS servers can be attached to Micetro without a Server Controller installed. For further information regarding this connection method, refer to :ref:`dns-remote-access`.
 
-Use proxy server
+Proxy
   If you are adding a Microsoft DNS server you can specify the location of the DNS Server Controller by clicking the Use proxy server checkbox and entering the DNS name or IP Address of the machine running the DNS Server controller. This option allows the system to connect to DNS servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DNS servers.
 
-2. Click :guilabel:`OK`. You are connected to the server. Once connected, the name of the newly added server displays under :guilabel:`DNS Servers` in the Object Section. (You may need to click the :guilabel:`+` sign next to DNS Servers to see it.)
+2. Click :guilabel:`Confirm`. You are connected to the server. Once connected, the name of the newly added server displays in the grid of the *Server mangagement* and *DNS* contexts.
+
+.. note::
+  For adding DNS servers in the Management Console, refer to :ref:`console-add-dns-server`.
+
+.. _dns-remote-access:
 
 Server Access on Remote Computers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To manage DNS servers you must have the DNS Server Controller installed. For the BIND DNS server, a DNS Server Controller must be installed on each DNS server you want to manage.
+To manage DNS servers, each must have a DNS Server Controller installed. For the BIND DNS server, a DNS Server Controller must be installed on each DNS server you want to manage.
 
 If you plan to use Men&Mice Suite to manage any Microsoft DNS servers, install the DNS Server Controller on a Windows machine that is a member of the same domain or workgroup as the DNS servers. You may install multiple copies of the DNS Server Controller, for example if you want to manage Microsoft DNS Servers that reside in different forests. A single DNS Server Controller for Microsoft DNS Servers can manage multiple DNS servers. The DNS Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows.
 
@@ -70,16 +75,16 @@ To configure the DNS Server Controller to access DNS servers on remote computers
 
 1. Before you can administer DNS servers, verify that the DNS Controller is running as a Windows User and has the necessary privileges.
 
-2. To enable DNS Management in the Men&Mice Suite, start the Windows Services program and open the properties dialog box for Men&Mice DNS Server Controller.
+2. To enable DNS Management in Micetro, start the Windows Services program and open the properties dialog box for Men&Mice DNS Server Controller.
 
-3. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
+3. Click the *Log On* tab. The :guilabel:`Local System account` radio button is most likely selected.
 
 4. Click the :guilabel:`This account` radio button and enter the name and password of a Windows User that is a member of the Administrators group.
 
 5. Close the dialog box and restart the Men&Mice DNS Server Controller service.
 
 .. note::
-  Some actions for static zones are not available if you are managing MS DNS servers on remote computers using the DNS Server Controller. The following actions are not available:
+  Some actions for static zones are not available if you are managing Microsoft DNS servers on remote computers using the DNS Server Controller. The following actions are not available:
 
     * Disable resource record
 
@@ -100,15 +105,20 @@ This feature allows you to change the name or IP Address used to connect to a DN
 
 To access this feature, do the following:
 
-1. Locate the applicable server.
+1. Locate the applicable server in the *Server Management* context.
 
-2. Right-click and, from the shortcut menu, select :guilabel:`Edit Server Name`. The *Edit Server name* dialog box displays.
+2. Select it, and from the ellipsis menu select :guilabel:`Edit DNS Server`.
 
-..
+.. image:: ../../images/edit-dns-server-Micetro.png
+  :width: 50%
+  :align: center
 
-3. Change the **Server name**, **Server address** (optional), and/or **Server Type**. If applicable, you can select :guilabel:`Use proxy server` and enter the relevant information.
+3. Change the **Server name** and/or **Server address**.
 
-4. Click :guilabel:`OK`.
+4. Click :guilabel:`Confirm`.
+
+.. note::
+  To edit DNS servers in the the Management Console, see :ref:`console-edit-dns`.
 
 Access
 ------
@@ -120,7 +130,7 @@ See :ref:`global-access`.
 Define Work Set
 ---------------
 
-It is possible to define a Work Set for servers. A Work Set contains a subset of all of the servers in the system and when a Work Set is active, only the servers in the Work Set are visible and the zones on the servers in the Work Set are the only zones visible. This feature is useful when many servers are defined, but you only work with a small number of them on a day-to-day basis.
+It is possible to define a Work Set for servers in the Management Console. A Work Set contains a subset of all of the servers in the system and when a Work Set is active, only the servers in the Work Set are visible and the zones on the servers in the Work Set are the only zones visible. This feature is useful when many servers are defined, but you only work with a small number of them on a day-to-day basis.
 
 To define a Work Set, do the following:
 
@@ -132,44 +142,50 @@ To clear a Work Set, do the following:
 
 1. Click the :guilabel:`Clear Work Set` button in the Manager window. The Work Set is cleared.
 
-.. _disable-dns-server:
+.. _detach-dns-server:
 
-Disable
--------
-
-A server can be disabled. When a server is disabled, it is not synchronized with the Men&Mice Suite and excluded from various checks. When a DNS server is disabled, it is greyed out in the DNS server listing.
-
-.. _enable-dns-server:
-
-Enable
+Detach
 ------
 
-A server that is already disabled can be enabled again.
+A server can be disabled by selecting :guilabel:`Detach DNS server` from the ellipsis menu. When a server is detached, it is not synchronized with Micetro and excluded from various checks. When a DNS server is detached, it is greyed out in the *Server Management* and *DNS* grids.
+
+.. _attach-dns-server:
+
+Attach
+------
+
+A server that is already detached can be attached again. The ellipsis menu for detached DNS servers displays :guilabel:`Attach DNS Server`.
+
+.. note::
+  You can also detach/attach DNS servers in the Management Console. See :ref:`console-disable-enable-dns-server`.
 
 .. _delete-dns-server:
 
-Delete
+Remove
 ------
 
-This command is only available with the Administrator account. Use this command to remove a server from the Management Console.
+This command is only available with the Administrator account. Use this command to remove a DNS server from Micetro.
 
 .. note::
-  For information on removing a DNS server on a Men&Mice Appliance, refer Appliance Management.
+  For information on removing a DNS server on a Men&Mice Appliance, refer :ref:`appliance-management`.
 
-1. In the Object browser of the Management Console, click on :guilabel:`DNS Servers`.
+1. In the Web Application, navigate to :menuselection:`Admin --> Server Management`.
 
-2. In the Object List, select the Name Server(s) from you want to disconnect. To select multiple servers, hold down the Ctrl key while making your selections.
+2. In the grid, select the server(s) from you want to remove. To select multiple servers, hold down the Ctrl (Cmd on Mac) key while making your selections.
 
-3. On the toolbar, click the :guilabel:`Remove` button. A dialog box prompts you to confirm your decision.
+3. In the ellipsis menu, click :guilabel:`Remove DNS server`. A dialog box prompts you to confirm your decision.
 
-4. To disconnect from the Name Server, click :guilabel:`Yes`. Otherwise, click :guilabel:`No` to keep the server.
+4. To remove the server, click :guilabel:`Yes`. Otherwise, click :guilabel:`No`.
+
+.. note::
+  For removing DNS servers in the Management Console, see :ref:`console-delete-dns-server`.
 
 .. _dns-options:
 
-Options
--------
+Options (Management Console)
+----------------------------
 
-The *Server Options* dialog box lets you configure settings for each name server individually, including forwarding servers, logging preferences, transfer and query restrictions, and root servers.
+The Management Console's *Server Options* dialog box lets you configure settings for each name server individually, including forwarding servers, logging preferences, transfer and query restrictions, and root servers.
 
 .. note::
   The server options vary depending on the server environment. In the section that follows, the server options are documented twice: once for those using a Windows DNS server, and again for those using BIND.
@@ -483,7 +499,7 @@ Applies only when custom properties have been defined for DNS servers. Selecting
 
 1. In the Object browser, select the server for which you want to manage properties.
 
-2. From the menu bar, select :guilabel:`Server --> Properties`.
+2. From the menu bar, select :menuselection:`Server --> Properties`.
 
 Location
   Type a location.
@@ -522,8 +538,11 @@ You can clear the server log by clicking the :guilabel:`Clear log` button in the
 .. note::
   If the server log window is opened for a caching DNS server, the window will contain additional buttons related to query logging.
 
-Reload/Reload Zone List
------------------------
+Reload/Reload Zone List (Management Console)
+--------------------------------------------
+
+.. note::
+  In the Web Application, hitting the browser's 'Refresh' button will reload the data displayed in the context.
 
 There are two reload commands in the Server context and the commands are quite different:
 
@@ -531,19 +550,19 @@ Reload.
   This command reloads the DNS server. On Windows this command has the same effect as the Clear Cache command, but on BIND servers, the command ``rndc reload`` is sent to the DNS server.
 
 Reload Zone List.
-  This command reloads the list of zones from the DNS server. It is useful if a zone has been created outside of the Men&Mice Suite.
+  This command reloads the list of zones from the DNS server. It is useful if a zone has been created outside of Micetro.
 
-To reload the zone list to include zones that have been added/deleted outside of the Men&Mice suite, do the following:
+To reload the zone list to include zones that have been added/deleted outside of Micetro, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Reload Zone List`. The window grays as the zones are reloaded then displays with the updated zones.
+2. From the menu bar, select :menuselection:`Server --> Reload Zone List`. The window grays as the zones are reloaded then displays with the updated zones.
 
 To reload a DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Reload Zone List`.
+2. From the menu bar, select :menuselection:`Server --> Reload Zone List`.
 
 Edit DNS Policies
 -----------------
@@ -553,10 +572,10 @@ Edit DNS Policies
 
 For details on how to configure and use DNS Policies, see :ref:`windows-dns-policies`.
 
-Clear Cache
------------
+Clear Cache (Management Console)
+--------------------------------
 
-It is possible to clear the DNS server cache using the Clear Cache command. The control you have over which cache entries you can clear depends on the DNS server type:
+It is possible to clear the DNS server cache using the Management console's 'Clear Cache' command. The control you have over which cache entries you can clear depends on the DNS server type:
 
 * On BIND, you can choose to clear individual cache entries or the entire cache
 
@@ -568,7 +587,7 @@ To clear the cache of a BIND DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
+2. From the menu bar, select :menuselection:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
 
 .. image:: ../../images/console-dns-clear-cache.png
   :width: 50%
@@ -582,7 +601,7 @@ To clear the cache of a Windows DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Clear Cache`. A confirmation dialog box displays.
+2. From the menu bar, select :menuselection:`Server --> Clear Cache`. A confirmation dialog box displays.
 
 3. Click :guilabel:`OK` to clear the cache of the server.
 
@@ -590,14 +609,14 @@ To clear the cache of a DNS Caching Appliance, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
+2. From the menu bar, select :menuselection:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
 
 3. To clear the entire server cache, select :guilabel:`Clear entire cache`. Note that this is the only available option if you are clearing the cache on a Windows DNS server.
 
 4. To clear a specific name, select the :guilabel:`Name to clear` radio button and enter the name you want to clear from the cache. If you want to clear an entire domain (the name entered and all names below it), select the Recursively flush the entire domain checkbox.
 
-View Cache Entries
-------------------
+View Cache Entries (Management Console)
+---------------------------------------
 
 You can view and clear individual DNS cache entries using the View Cache Entries command.
 
@@ -605,7 +624,7 @@ To view the cache of a DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> View Cache Entries`. The *View Cache Entries* tab displays.
+2. From the menu bar, select :menuselection:`Server --> View Cache Entries`. The *View Cache Entries* tab displays.
 
 .. image:: ../../images/console-dns-cache-entries-1.png
   :width: 70%
@@ -621,10 +640,10 @@ To view the cache of a DNS server, do the following:
 
 5. Click the :guilabel:`Clear Selected` button.
 
-Backup and Restore (BIND Only)
-------------------------------
+Backup and Restore (BIND Only) (Management Console)
+---------------------------------------------------
 
-The Men&Mice Suite will automatically backup configuration for all BIND DNS servers it manages. The backup can then be used to restore the DNS server to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
+Micetro will automatically backup configuration for all BIND DNS servers it manages. The backup can then be used to restore the DNS server to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.
 
 Automatic backup can be disabled by setting the property ``BackupDNSServers`` value in Men&Mice central preferences to zero:
 
@@ -633,13 +652,13 @@ Automatic backup can be disabled by setting the property ``BackupDNSServers`` va
 
   <BackupDNSServers value="0" />
 
-If a DNS server machine crashes and has to be replaced with another machine with the same IP Address, the Men&Mice Suite will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
+If a DNS server machine crashes and has to be replaced with another machine with the same IP Address, Micetro will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
 
 .. image:: ../../images/console-dns-bind-backup-restore.png
   :width: 60%
   :align: center
 
-* If **Use data from the Men&Mice Suite** is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
+* If **Use data from Micetro** is selected, all configurations and DNS zone information on the DNS server will be overwritten with the backed-up data.
 
 * If **Use data from the new server** is selected, all data kept in Men&Mice Central will be ignored and overwritten with current data on the DNS Server.
 
@@ -653,4 +672,4 @@ Basically, the restore scenario is as follows:
 
 4. When the new machine is up and running, in the Management Console, right-click the server and choose :guilabel:`Reconnect`.
 
-When a connection has been established, the Men&Mice Suite detects that this is a new, uninitialized server. See above for a description on what happens next.
+When a connection has been established, Micetro detects that this is a new, uninitialized server. See above for a description on what happens next.

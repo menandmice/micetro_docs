@@ -3,13 +3,17 @@
 Introduction
 ============
 
-The Web Application is split into three main sections:
+The Web Application is split into five main sections:
 
-:ref:`webapp-dns`
+1. :ref:`webapp-dns`
 
-:ref:`webapp-network-management`
+2. :ref:`webapp-network-management`
 
-:ref:`webapp-reporting`
+3. :ref:`webapp-reporting`
+
+4. :ref:`webapp-workflows`
+
+5. :ref:`webapp-server-management`
 
 From the DNS section it is possible to:
 
@@ -38,6 +42,6 @@ In the Reporting section it is possible to:
 .. note::
   The Internet Explorer browser is no longer supported as of version 9.3.0.
 
-.. image:: ../../images/blackstar-frontpage.png
+.. image:: ../../images/micetro-frontpage.png
   :width: 80%
   :align: center

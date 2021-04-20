@@ -115,7 +115,7 @@ Add the following rule xml to the rewrite > rules section of the xml, at the top
       <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" appendQueryString="true" redirectType="Permanent" />
   </rule>
 
-In the IIS manager, select the :guilabel:`Default Web site`, right click, and select :guilabel:`Manage Website --> Restart` to make the changes to the web.config take effect.
+In the IIS manager, select the :guilabel:`Default Web site`, right click, and select :menuselection:`Manage Website --> Restart` to make the changes to the web.config take effect.
 
 .. image:: ../../images/iis-ssl-step4.png
   :width: 90%

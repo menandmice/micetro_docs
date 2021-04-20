@@ -13,14 +13,14 @@ Any unsigned non-AD integrated master zone can be added to a redundancy group, a
 Manage xDNS Zone Redundancy Groups
 ----------------------------------
 
-To manage xDNS Redundancy Groups select :guilabel:`Zone --> Manage xDNS Zone Redundancy Groups`.
+To manage xDNS Redundancy Groups select :menuselection:`Zone --> Manage xDNS Zone Redundancy Groups` in the Management Console.
 
 This will open the **xDNS Zone Redundancy Groups** Dialog. The dialog can be used to add, edit or remove a redundancy group.
 
 Adding a zone redundancy group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the :guilabel:`Add` button to open the xDNS Zone Redundancy Group Wizard:
+To add a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the :guilabel:`Add` button to open the *xDNS Zone Redundancy Group Wizard*:
 
 .. image:: ../../images/xdns-add-1.png
   :width: 60%
@@ -58,7 +58,7 @@ Click :guilabel:`Next` to configure the sync policy for the zones in the redunda
   :width: 60%
   :align: center
 
-The sync policy specifies how each zone handles external changes from other zones in the group. The zones selected here will replicate the changes when other zones in the group are modified externally, outside of the Men and Mice Suite. The zones not selected will act as "readonly" and only receive updates done through the Men and Mice suite or when the zone itself is modified externally, for example through it's corresponding cloud portal.
+The sync policy specifies how each zone handles external changes from other zones in the group. The zones selected here will replicate the changes when other zones in the group are modified externally, outside of Micetro. The zones not selected will act as "readonly" and only receive updates done through Micetro or when the zone itself is modified externally, for example through it's corresponding cloud portal.
 
 Click :guilabel:`Next` to write a save comment that will saved when the group is created:
 
@@ -90,7 +90,7 @@ It is also possible to create a redundancy group by right clicking selected zone
   :width: 80%
   :align: center
 
-The xDNS Zone Redundancy Group Wizard will then open with the selected zones.
+The *xDNS Zone Redundancy Group Wizard* will then open with the selected zones.
 
 Edit a zone redundancy group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -127,7 +127,7 @@ It is also possible to add and remove a zone from a redundancy group by right cl
   :width: 80%
   :align: center
 
-The xDNS Zone Redundancy Group Wizard will then open with the selected zones.
+The *xDNS Zone Redundancy Group Wizard* will then open with the selected zones.
 
 Removing a redundancy group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,7 +143,7 @@ Re-syncing zone redundancy groups when all members are out-of-sync
 
 When a zone in a redundancy group can not be kept in sync with other zones in the group (e.g. if a DNS server is offline), then its status will be set to "Out Of Sync". Once the zone comes back online it will automatically be synced with a different zone in the group that is in sync. The zone state will then be set to "In Sync". However, if all group members are out of sync, then the group has to be manually synced again.
 
-If a zone that is out of sync changes, then the changes will not be replicated to other zones in the group, until it is back in sync. Note that it is still possible to make changes to the zone and manage it in the Men&Mice Suite.  The changes will however not be replicated to other group members.
+If a zone that is out of sync changes, then the changes will not be replicated to other zones in the group, until it is back in sync. Note that it is still possible to make changes to the zone and manage it in Micetro.  The changes will however not be replicated to other group members.
 
 To re-sync a redundancy group from within the xDNS Zone Redundancy Dialog, click the :guilabel:`Edit` button (or double click the group name) to open the xDNS Zone Redundancy Group Wizard:
 

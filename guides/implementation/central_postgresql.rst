@@ -5,8 +5,8 @@ PostgreSQL
 
 .. _central-psql-unix:
 
-Men&Mice Central running on Linux or Solaris
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Men&Mice Central running on Linux
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Edit the configuration file for Men&Mice Central:
 

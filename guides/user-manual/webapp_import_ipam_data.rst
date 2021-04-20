@@ -6,7 +6,7 @@ Import IPAM data
 Overview
 --------
 
-To import IP address ranges or IP addresses into the Men&Mice Suite, the Import wizard in Networks can be used.
+To import IP address ranges or IP addresses into Micetro, the Import wizard in Networks can be used.
 
 The Import wizard can be used to import:
 
@@ -16,9 +16,11 @@ The Import wizard can be used to import:
 
 * Devices and interfaces
 
-The data can either be pasted directly in to the wizard or by using a file that is uploaded.
+The data can either be pasted directly into the wizard or by using a file that is uploaded.
 
-..
+.. image:: ../../images/bulk-import-ipam.png
+  :width: 90%
+  :align: center
 
 Prerequisites
 -------------
@@ -27,16 +29,16 @@ The user importing must have the following :ref:`global-access`:
 
 * Access to IPAM Module
 
-* Access to the Web Interface
+* Access to the Web Application
 
-* Access to IPAM view in web interface
+* Access to IPAM view in Web Application
 
 * Access to "Import Data" web task
 
 Importing Data
 --------------
 
-The lines in the import text, or the contents of the file chosen, must have lines whose columns/fields are separated by either Comma "," , semicolon ";", pipe "|" or the tab character.
+The lines in the import text, or the contents of the file chosen, must have lines whose columns/fields are separated by either comma ``,``, semicolon ``;``, pipe ``|`` or the tab character.
 
 For instance, when cells of a spreadsheet are highlighted and copied to the clipboard, they will be tab separated when pasted into the text area of the Import Data wizard. When importing a fair amount of lines stored in an excel spreadsheet, this is probably the easiest method of getting the data into the Import Data wizard.
 
@@ -48,7 +50,7 @@ Clearing values
 
 When the value in a particular column is empty, it is by default not cleared. Instead it is not included in the import. This makes it possible to update certain fields and leave others as is, in the same import.
 
-To clear values for a custom property, e.g. Responsible Person, use one of these clearing tokens instead of a blank value: "$null", "%clear", "<none>", "<blank>" or "<empty>".
+To clear values for a custom property, e.g. Responsible Person, use one of these clearing tokens instead of a blank value: ``$null``, ``%clear``, ``<none>``, ``<blank>``, or ``<empty>``.
 
 These tokens will only be interpreted to clear the field if field contains only the token and nothing else. For example if the field value is "This is <none>" in the import text, the field would not be cleared, but set to that value instead.
 

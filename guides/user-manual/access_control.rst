@@ -7,7 +7,7 @@ Access control
   :maxdepth: 2
   :hidden:
 
-The Men&Mice Suite access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.
+The Micetro access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.
 
 The relationship between Groups, Users and Roles is as follows:
 
@@ -25,11 +25,11 @@ Built-in Roles
 .. note::
   Please note that in previous versions (< 6.7) roles did not exist and the built-in roles described below were previously built-in groups. All of the users that were members in specific built-in groups are now assigned to the corresponding built-in roles.
 
-Five Roles are built-in to the Men&Mice Suite. These roles are special in that they get full access for their respective domains for all Access Flags.
+Five Roles are built-in to Micetro. These roles are special in that they get full access for their respective domains for all Access Flags.
 
 When new objects are created, the Built-in Role that presides over that object, as well as the user or group that created the object, receives full access to it.
 
-Each administrator role also receives default access to its corresponding module (including an Access Flag set on the Suite object allowing them administrator privileges for their domain). The Administrators role receives default access to all the Access Flags on the Suite object. Default access for each Built-in role is as follows:
+Each administrator role also receives default access to its corresponding module (including an Access Flag set on Micetro object allowing them administrator privileges for their domain). The Administrators role receives default access to all the Access Flags on Micetro object. Default access for each Built-in role is as follows:
 
 * Administrators. Full access to all objects
 
@@ -48,11 +48,11 @@ When it's mentioned that a User or Group has Full access to an object we mean th
 The Administrator User
 ----------------------
 
-A single user is Built-in to the Men&Mice Suite. The Administrator User exists completely outside of the access model. This User can do everything, and it is not possible to deny any action to this User.
+A single user is Built-in to Micetro. The Administrator User exists completely outside of the access model. This User can do everything, and it is not possible to deny any action to this User.
 
 Examples:
 
-The Suite object will have the following access bits set to Allow for the DNS Administrators Role:
+The Micetro object will have the following access bits set to Allow for the DNS Administrators Role:
 
 .. csv-table::
   :header: "Access Flags", "Allow", "Deny"
@@ -132,9 +132,9 @@ If no access is defined for a User or Role on a particular object, the access mo
 New Objects
 -----------
 
-When a User creates a new object in the Men&Mice Suite, the object is afforded a certain default access based on the initial access settings for the object type. To define initial access settings for different object types, do the following:
+When a User creates a new object in Micetro, the object is afforded a certain default access based on the initial access settings for the object type. To define initial access settings for different object types, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> Initial Access For`.
+1. From the menu bar, select :menuselection:`Tools --> Initial Access For`.
 
 2. Select the object type for which you want to set the initial access. The Access Control dialog box displays.
 
@@ -145,19 +145,19 @@ Edit Access Flag
 
 Each object type has an Access Flag named *Edit Access*. This flag is special in that it directs a User, Group's or Role's access to the object's access information. In other words, if a User has this flag set on an object, he may edit the Access Flags for the object. This means that the User could remove a different User or Group from the object completely. He could even remove the User that created the object. In light of this, the Edit Access flag should be treated with care.
 
-Access for Built-in groups is impossible to change. However, it would be possible to shut out all Users in the Men&Mice Suite from a certain object by simply editing access for each User directly. You could even shut yourself out. The Administrator User will always have full access to every object, so if such situations arise, the Administrator User should be used to set things straight.
+Access for Built-in groups is impossible to change. However, it would be possible to shut out all Users in Micetro from a certain object by simply editing access for each User directly. You could even shut yourself out. The Administrator User will always have full access to every object, so if such situations arise, the Administrator User should be used to set things straight.
 
 Access Flags Defined
 --------------------
 
-Each object type in the Men&Mice Suite has a set of Access Flags defined.
+Each object type in Micetro has a set of Access Flags defined.
 
 .. _global-access:
 
 Global Access
 ^^^^^^^^^^^^^
 
-This is an object referring to the Men&Mice Suite as a whole. It contains flags that define access to the different clients and modules available in the Men&Mice Suite, as well as Administration tasks.
+This is an object referring to Micetro as a whole. It contains flags that define access to the different clients and modules available in Micetro, as well as Administration tasks.
 
 .. csv-table::
   :header: "Object", "Description"
@@ -201,7 +201,8 @@ DNS Zone
   "Delete Zone", "Access to delete zone"
   "Enable/disable apex records", "Access to enable/disable zone's APEX records"
   "Edit apex records", "Access to edit zone's APEX records"
-  "Enable/disable wildcard records	Access to enable/disable zone's wildcard records", "Edit wildcard records	Access to edit zone's wildcard records"
+  "Enable/disable wildcard records", "Access to enable/disable zone's wildcard records"
+  "Edit wildcard records", "Access to edit zone's wildcard records"
   "Enable/disable other records", "Access to enable/disable zone records other than APEX"
   "Edit other records", "Access to edit zone records other than APEX records"
   "Edit zone properties", "Access to edit properties for the zone"
@@ -302,7 +303,7 @@ Through the Access Control module, you select groups/users for which you want to
 
 The Access Control dialog box is used to define access to individual objects in the system. To define access for an object, right-click the object and choose :guilabel:`Access` from the popup menu.
 
-To define access for individual components of the Men&Mice suite, select Tools, Global Access. The Access Control for Men and Mice Suite dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.
+To define access for individual components of Micetro, select :menuselection:`Tools --> Global Access`. The Access Control for Micetro dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.
 
 Edit access controls
 ^^^^^^^^^^^^^^^^^^^^
@@ -344,4 +345,4 @@ Through this function, you specify access privileges that should be set for obje
 .. note::
   The access control dialog box for IP Address Ranges and Scopes contains a checkbox, 'IP Address Ranges/Scopes inherit access by default'. If this checkbox is checked, a new range or scope will inherit all access bits from its parent. For more information on inherited access, refer to  IP Address Management—Range Access.
 
-From the menu bar, select :guilabel:`Tools --> Initial Access For`, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to :ref:`global-access` for details on working with this dialog box.
+From the menu bar, select :menuselection:`Tools --> Initial Access For`, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to :ref:`global-access` for details on working with this dialog box.

@@ -1,9 +1,9 @@
 .. _console-gui:
 
 GUI Interface
-=============
+-------------
 
-When the Management Console is started up, the *Manager Window* displays in the center. This window is the heart of the Men&Mice Management Console, providing a single interface with nearly every feature in the Men&Mice Suite.
+When the Management Console is started up, the *Manager Window* displays in the center. This window is the heart of the Men&Mice Management Console, providing a single interface with nearly every feature in Micetro.
 
 .. image:: ../../images/management-console-1.png
   :width: 90%
@@ -14,7 +14,7 @@ This window consists of two main areas: the :ref:`console-object-browser` and th
 .. _console-object-browser:
 
 Object Browser
---------------
+^^^^^^^^^^^^^^
 
 The *Object Browser* displays on the left side of the Manager window and contains categories of objects that can be created, modified, and deleted.
 
@@ -40,16 +40,16 @@ DHCP Servers
   Selecting the DHCP Servers category causes the Detail View to display all DHCP servers managed by the system and accessible to the current user. If a DHCP server is not reachable, its icon is shown with an exclamation mark. If the DHCP Servers category is expanded, the same list of servers will show as sub-categories to the DHCP Servers category. Selecting a server subcategory causes the Detail View to display the scopes managed by that server and accessible to the current user. This category is accessible with a valid DHCP Module License Key.
 
 AD Sites
-  This category is only displayed if you have enabled :ref:`active-directory` integration. Selecting this category will show all AD sites that have been selected for integration in the Men&Mice Suite.
+  This category is only displayed if you have enabled :ref:`active-directory` integration. Selecting this category will show all AD sites that have been selected for integration in Micetro.
 
 .. image:: ../../images/object-browser-filter.png
-  :width: 60%
+  :width: 40%
   :align: center
 
 .. _console-detail-view:
 
 Detail View
------------
+^^^^^^^^^^^
 
 .. note::
   A new feature in version 7.2 is that the windows are now 'docked' and therefore they open up in a tab instead of a window.
@@ -72,7 +72,7 @@ Display or hide columns
   Right-click on a column header. All the column names shown with a checkmark are currently displayed. To hide a column, click on the name to remove the checkmark. To display a hidden column, repeat the process. Reset all makes all columns display without having to unhide them individually.
 
 Sorting Records
----------------
+^^^^^^^^^^^^^^^
 
 When viewing information in the Object List – be it DNS zones, Servers, Views, IP Address Ranges, or Scopes – you can instantly sort the displayed information by clicking on the header of any column shown in that view. For instance, click on the :guilabel:`Name` header once to sort the displayed objects alphabetically (A-Z) by name. Clicking on the *Name* header again will resort the list in reverse alphabetic order (Z-A). This can be done with any column of data, including Servers, Addresses, Utilization percentages, etc.
 

@@ -17,6 +17,9 @@ The Quickfilter helps users to narrow down the results shown in each list after 
 How to use the Quickfilter
 --------------------------
 
+.. tip::
+  After typing into the Quickfilter or Quicksearch field, the number of results is shown and you can use the :guilabel:`<` and :guilabel:`>` buttons on the right to step through the matches.
+
 The Quickfilter can be used as a free text search by simply entering a some string into the field. Then the value is matched to all rows that have columns whose value contain the string.
 
 The column to match against can also be specified by providing the name of the column, a condition operator, and the queried string.
@@ -56,3 +59,8 @@ On the networks page, one way of finding the network which contains a specific I
 .. image:: ../../images/blackstar-quickfilter-networks.png
   :width: 80%
   :align: center
+
+Quicksearch
+===========
+
+You can toggle the Quickfilter to Quicksearch. Quicksearch will only highlight matching objects in the grid, but still display all other entries as well.
