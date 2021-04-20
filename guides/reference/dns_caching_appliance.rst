@@ -91,7 +91,7 @@ VirtualBox
 
 4. The next dialog page shows an overview of the settings. It's recommended to select the option to re-initialize the MAC addresses of the two virtual interfaces eth0 (Management Interface) and eth1 (Service Interface) as shown in figure 4.
 
-Finally press the :guilabel:`File --> Import Virtual Appliance` button to load the Men&Mice virtual machine into your the VirtualBox environment.
+Finally press the :menuselection:`File --> Import Virtual Appliance` button to load the Men&Mice virtual machine into your the VirtualBox environment.
 
 .. figure:: ../../images/menandmice-caching-appliance-3.png
   :width: 75%

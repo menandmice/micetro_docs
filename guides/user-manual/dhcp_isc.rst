@@ -11,7 +11,7 @@ ISC DHCP
 Defining Options on ISC DHCP Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. In :menuselection:`Admin --> Server Management` select the applicable DHCP Server and select :guilabel:`Edit DHCP options` from the ellpisis menu or use ::menuselection:`Actions --> Edit DHCP options`. The *Edit DHCP Options* box displays. The dialog box shows all custom options defined on the DHCP server. The available ISC DHCP options can be selected from the dropdown menu.
+1. In :menuselection:`Admin --> Server Management` select the applicable DHCP Server and select :guilabel:`Edit DHCP options` from the ellpisis menu or use :menuselection:`Actions --> Edit DHCP options`. The *Edit DHCP Options* box displays. The dialog box shows all custom options defined on the DHCP server. The available ISC DHCP options can be selected from the dropdown menu.
 
 2. To add an option, select it from the option list. The option field is added to the dialog.
 

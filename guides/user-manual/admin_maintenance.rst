@@ -3,7 +3,7 @@
 Maintenance
 ===========
 
-Micetro contains several options for cleaning up the network space. To access the network maintenance functions, select :guilabel:`Tools --> Maintenance` and then the maintenance operation you want to perform.
+Micetro contains several options for cleaning up the network space. To access the network maintenance functions, select :menuselection:`Tools --> Maintenance` and then the maintenance operation you want to perform.
 
 Find Orphaned PTR Records
 -------------------------
@@ -12,7 +12,7 @@ The *Find Orphaned PTR Records* maintenance operation allows you to see and remo
 
 To find and remove orphaned PTR records, do the following:
 
-1. From the :guilabel:`Tools` menu, select :guilabel:`Maintenance --> Find Orphaned PTR Records`. A dialog box displays.
+1. Select :menuselection:`Tools --> Maintenance --> Find Orphaned PTR Records`. A dialog box displays.
 
 2. Click :guilabel:`Start` to start looking for orphaned PTR records.
 
@@ -32,7 +32,7 @@ The *Find Concurrent Leases* maintenance operation allows you to see and release
 
 To see and remove concurrent DHCP leases, do the following:
 
-1. From the :guilabel:`Tools` menu, select :guilabel:`Maintenance --> Find Concurrent Leases`. A dialog box opens.
+1. Select :menuselection:`Tools --> Maintenance --> Find Concurrent Leases`. A dialog box opens.
 
 2. Click :guilabel:`Start` to start looking for concurrent DHCP leases.
 
@@ -52,7 +52,7 @@ The *Show Round Robin Records* maintenance operation allows you to see and delet
 
 To see and remove round robin records, do the following:
 
-1. From the :guilabel:`Tools` menu, select :guilabel:`Maintenance --> Show Round Robin Records`. A dialog box displays.
+1. Select :menuselection:`Tools --> Maintenance --> Show Round Robin Records`. A dialog box displays.
 
 2. Click :guilabel:`Start` to start looking for round robin records.
 
@@ -72,7 +72,7 @@ The *Show Multiply Defined Records* maintenance operation allows you to see and 
 
 To see and remove multiply defined PTR records, do the following:
 
-1. From the :guilabel:`Tools` menu, select :guilabel:`Maintenance --> Show Multiply Defined PTR Records`. A dialog box displays.
+1. Select :menuselection:`Tools --> Maintenance --> Show Multiply Defined PTR Records`. A dialog box displays.
 
 2. Click :guilabel:`Start` to start looking for multiply defined PTR records.
 

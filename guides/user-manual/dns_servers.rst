@@ -28,7 +28,7 @@ You must be logged in as a user with privileges to administer DNS in order to ad
 
 To add a new DNS server, do the following:
 
-1. Navigate to :guilabel:`Admin --> Server Management` and click :guilabel:`Add DNS Server`.
+1. Navigate to :menuselection:`Admin --> Server Management` and click :guilabel:`Add DNS Server`.
 
 Server Name
   Type the name (fully qualified host name) of the DNS server as the name is used for the ``MNAME`` field in the SOA record of new DNS zones. If the name can't be resolved you want to specify the optional IP address.
@@ -107,7 +107,7 @@ To access this feature, do the following:
 
 1. Locate the applicable server in the *Server Management* context.
 
-2. Select it, and from the ellpisis menu select :guilabel:`Edit DNS Server`.
+2. Select it, and from the ellipsis menu select :guilabel:`Edit DNS Server`.
 
 .. image:: ../../images/edit-dns-server-Micetro.png
   :width: 50%
@@ -499,7 +499,7 @@ Applies only when custom properties have been defined for DNS servers. Selecting
 
 1. In the Object browser, select the server for which you want to manage properties.
 
-2. From the menu bar, select :guilabel:`Server --> Properties`.
+2. From the menu bar, select :menuselection:`Server --> Properties`.
 
 Location
   Type a location.
@@ -556,13 +556,13 @@ To reload the zone list to include zones that have been added/deleted outside of
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Reload Zone List`. The window grays as the zones are reloaded then displays with the updated zones.
+2. From the menu bar, select :menuselection:`Server --> Reload Zone List`. The window grays as the zones are reloaded then displays with the updated zones.
 
 To reload a DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Reload Zone List`.
+2. From the menu bar, select :menuselection:`Server --> Reload Zone List`.
 
 Edit DNS Policies
 -----------------
@@ -587,7 +587,7 @@ To clear the cache of a BIND DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
+2. From the menu bar, select :menuselection:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
 
 .. image:: ../../images/console-dns-clear-cache.png
   :width: 50%
@@ -601,7 +601,7 @@ To clear the cache of a Windows DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Clear Cache`. A confirmation dialog box displays.
+2. From the menu bar, select :menuselection:`Server --> Clear Cache`. A confirmation dialog box displays.
 
 3. Click :guilabel:`OK` to clear the cache of the server.
 
@@ -609,7 +609,7 @@ To clear the cache of a DNS Caching Appliance, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
+2. From the menu bar, select :menuselection:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
 
 3. To clear the entire server cache, select :guilabel:`Clear entire cache`. Note that this is the only available option if you are clearing the cache on a Windows DNS server.
 
@@ -624,7 +624,7 @@ To view the cache of a DNS server, do the following:
 
 1. Select the desired server.
 
-2. From the menu bar, select :guilabel:`Server --> View Cache Entries`. The *View Cache Entries* tab displays.
+2. From the menu bar, select :menuselection:`Server --> View Cache Entries`. The *View Cache Entries* tab displays.
 
 .. image:: ../../images/console-dns-cache-entries-1.png
   :width: 70%

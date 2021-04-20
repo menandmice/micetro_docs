@@ -77,6 +77,11 @@ A DNS zone can be migrated between DNS servers.
 
 3. After migrating, you are presented with a dialog which confirms a successful zone migration.
 
+Promoting a secondary zone
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can select a secondary (slave) DNS zone and promote it to primary (master) using :guilabel:`Promote to master` from the selected zone(s)'s ellipsis menu. The confirmation dialog will also offer the ability to automatically update the SOA record's master record. (Default: true.)
+
 DNS Records
 -----------
 
@@ -105,6 +110,9 @@ The :guilabel:`Inspector` for DNS records allows the following actions and detai
 
 Creating a new DNS record
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+  For importing DNS records in bulk, see :ref:`webapp-import-dns-records`.
 
 To create a new DNS record, either click on the :guilabel:`Create` button in the main task bar or click on :menuselection:`Actions --> Create new DNS record` from the top menu or in the Inspector.
 

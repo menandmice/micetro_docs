@@ -69,6 +69,6 @@ When connecting the Management Console to a newly installed instance of Men&Mice
   console_gui
   console_menus
   console_toolbars
-  quickfilter
+  console_quickfilter
   console_actions
   console_health_bar

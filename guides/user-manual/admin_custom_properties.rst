@@ -10,7 +10,7 @@ In addition, various properties can be set when working with custom properties.
 Adding a Custom Property
 ------------------------
 
-1. From the menu bar, select :guilabel:`Tools --> Define Custom Properties`. The *Define Custom Properties* dialog box displays.
+1. From the menu bar, select :menuselection:`Tools --> Define Custom Properties`. The *Define Custom Properties* dialog box displays.
 
 .. image:: ../../images/admin-custom-properties.png
   :width: 80%
@@ -81,7 +81,7 @@ Editing a Custom Property
 
 To edit a custom property, do the following:
 
-1. From the menu, select :guilabel:`Tools --> Define Custom Properties`.
+1. From the menu, select :menuselection:`Tools --> Define Custom Properties`.
 
 2. Locate and highlight the property to be edited.
 
@@ -96,7 +96,7 @@ Deleting a Custom Property
 
 To delete a custom property, do the following:
 
-1. From the menu, select :guilabel:`Tools --> Define Custom Properties`.
+1. From the menu, select :menuselection:`Tools --> Define Custom Properties`.
 
 2. Locate and highlight the property to be deleted.
 

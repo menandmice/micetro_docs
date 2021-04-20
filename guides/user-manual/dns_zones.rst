@@ -6,7 +6,7 @@ DNS zones
 Overview
 --------
 
-The commands associated with zone management (located in the *DNS* context of the Web Application or the ::menuselection:`Zone menu` in the Management Console) are only available when a specific DNS server or DNS zone is selected. In other words, actions for the DNS zone are only available when DNS zones are listed. The default for the *DNS* context is displaying all zones. (In the Management Console, when DNS Zones is selected in the Object Browser, all DNS zones are listed on all servers.) However, when a particular name server is selected, only the zones being managed on that server are listed.
+The commands associated with zone management (located in the *DNS* context of the Web Application or the :menuselection:`Zone menu` in the Management Console) are only available when a specific DNS server or DNS zone is selected. In other words, actions for the DNS zone are only available when DNS zones are listed. The default for the *DNS* context is displaying all zones. (In the Management Console, when DNS Zones is selected in the Object Browser, all DNS zones are listed on all servers.) However, when a particular name server is selected, only the zones being managed on that server are listed.
 
 The Web Application's *DNS* context displays zone types in the second column.
 
@@ -60,7 +60,7 @@ To view the contents of a particular zone, double-click on it. This opens the Zo
 SOA
 ^^^
 
-Since the SOA record is seldom modified after it is created, the Inspector windows has a built-in control to allow you to hide the SOA data from view. On the right edge of the Inspector, next to the 'edit' button, you'll notice the open/close button (:guilabel;`>` and :guilabel:`v`, respectively) to show/hide the SOA information.
+Since the SOA record is seldom modified after it is created, the Inspector windows has a built-in control to allow you to hide the SOA data from view. On the right edge of the Inspector, next to the 'edit' button, you'll notice the open/close button (:guilabel:`>` and :guilabel:`v`, respectively) to show/hide the SOA information.
 
 SOA Fields
 """"""""""
@@ -87,9 +87,9 @@ The DNS Expert Zone Analysis engine allows zones to be analyzed for correctness 
 
 To analyze a zone, do any of the following:
 
-* Right-click on the zone you want to analyze, and from the shortcut menu select :guilabel:`Analyze`.
+* Right-click on the zone you want to analyze, and from the shortcut menu select :menuselection:`Analyze`.
 
-* Choose :guilabel:`Zone --> Analyze`
+* Choose :menuselection:`Zone --> Analyze`
 
 * Open the zone and click the Analyze button on the toolbar. |analyze|
 
@@ -160,7 +160,7 @@ This function is only available for static master zones that have no slave zones
 
 2. Select the zone(s) that you want to disable. To select more than one zone, hold down the Ctrl key while making your selections.
 
-3. From the menu bar, select :guilabel:`Zone --> Disable Zone`. A dialog box prompts you to confirm your decision.
+3. From the menu bar, select :menuselection:`Zone --> Disable Zone`. A dialog box prompts you to confirm your decision.
 
 4. To disable the selected zone(s), click the :guilabel:`Yes` button. The zone becomes disabled.
 
@@ -173,7 +173,7 @@ Use the following procedure to re-activate a zone that has been disabled.
 
 1. In the Object List, locate the zone(s) that you want to re-enable. To select more than one disabled zone, hold down the Ctrl key while making your selections.
 
-2. From the menu bar, select :guilabel:`Zone --> Enable Zone`. A dialog box prompts you to confirm your decision.
+2. From the menu bar, select :menuselection:`Zone --> Enable Zone`. A dialog box prompts you to confirm your decision.
 
 3. To enable the zone(s), click the :guilabel:`Yes` button. The Object List refreshes itself and shows that the zone(s) has been restored to active status.
 
@@ -181,7 +181,7 @@ Duplicate (Management Console)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tip::
-  In the Web Application, you can duplicate DNS zones by selecting :guilabel:`Migrate zone` from the ellipsis menu, or using ::menuselection:`Actions --> Migrate zone` and leaving the *Remove original zone* checkbox **unchecked**.
+  In the Web Application, you can duplicate DNS zones by selecting :guilabel:`Migrate zone` from the ellipsis menu, or using :menuselection:`Actions --> Migrate zone` and leaving the *Remove original zone* checkbox **unchecked**.
 
 In the Management Console, use the following procedure to create a new zone that is an exact duplicate of an existing one, including master and slave servers, zone data and zone options.
 
@@ -202,7 +202,7 @@ To migrate a zone, do the following:
 
 1. Select one or more zones.
 
-2. Select the ellipsis menu's :guilabel:`Migrate Zone` or use ::menuselection:`Action --> Migrate zone`. The *Migrate Zone(s) Wizard* dialog box displays.
+2. Select the ellipsis menu's :guilabel:`Migrate Zone` or use :menuselection:`Action --> Migrate zone`. The *Migrate Zone(s) Wizard* dialog box displays.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
@@ -229,7 +229,7 @@ This option is only available when working with AD integrated zones. (See :ref:`
 
 It is also possible to specify which server to use if the preferred server becomes unavailable—e.g., the server on the top of the list is tried first and, if that server is unavailable, the second server is tried, and so on.
 
-1. From the menu bar, select :guilabel:`Zone --> Preferred Server`. The *Edit preferred server list* dialog box displays.
+1. From the menu bar, select :menuselection:`Zone --> Preferred Server`. The *Edit preferred server list* dialog box displays.
 
 2. Change the order of your servers into the preferred order.
 
@@ -353,7 +353,7 @@ To sign a zone on a Windows Server 2012, do the following:
 
   * Right-click on the zone record and select :guilabel:`Sign Zone`.
 
-  * From the menu bar, select :guilabel:`Zone --> Sign Zone`.
+  * From the menu bar, select :menuselection:`Zone --> Sign Zone`.
 
 .. image:: ../../images/console-dns-zones-sign-zone-wizard.png
   :width: 70%
@@ -385,7 +385,7 @@ To unsign a zone on a Windows Server 2012, do the following:
 
   * Right-click on the zone record and select :guilabel:`Unsign Zone`.
 
-  * From the menu bar, select :guilabel:`Zone --> Unsign Zone`.
+  * From the menu bar, select :menuselection:`Zone --> Unsign Zone`.
 
 3. The zone is unsigned and all DNSSEC records are removed from the zone.
 
@@ -408,7 +408,7 @@ To access the zone options for a specific zone only, do the following:
 
   * Right-click on the zone record and select :guilabel:`Options`.
 
-  * From the menu bar, select :guilabel:`Zone --> Options`.
+  * From the menu bar, select :menuselection:`Zone --> Options`.
 
   * On the toolbar, click the :guilabel:`Options` button.
 
@@ -531,7 +531,7 @@ If a zone exists on more than one server (e.g., in a master/slave configuration)
 
 1. Select the applicable zone.
 
-2. From the menu bar, select :guilabel:`Zone --> Options for`.
+2. From the menu bar, select :menuselection:`Zone --> Options for`.
 
 3. From the submenu, select the desired zone/zone instance (e.g., Master Zones only, Slave Zone only, etc.). The Zone Options dialog box displays.
 
@@ -574,7 +574,7 @@ To promote a slave zone to a master zone, do the following:
 
 1. Select the slave zone.
 
-2. Using the ellipsis menu's :guilabel:`Promote to master` or using ::menuselection:`Actions --> Promote to master`. An information message displays:
+2. Using the ellipsis menu's :guilabel:`Promote to master` or using :menuselection:`Actions --> Promote to master`. An information message displays:
 
 .. image:: ../../images/DNS-promote-to-master-Micetro.png
   :width: 50%
@@ -618,7 +618,7 @@ Allows you to add or remove zones from folder.
 
 1. Highlight the zone you want to remove from a folder.
 
-2. From ellipsis menu select :guilabel:`Set folder` or use ::menuselection:`Actions --> Set folder`.
+2. From ellipsis menu select :guilabel:`Set folder` or use :menuselection:`Actions --> Set folder`.
 
 Search
 ------

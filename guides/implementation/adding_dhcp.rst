@@ -19,7 +19,7 @@ The following table demonstrates the different options when adding a DHCP Server
 | Microsoft Agent-Free [1]_ | The DHCP Server Controller has been installed on the machine running the Men&Mice Central Component,                |
 | (Use proxy not checked)   | and that machine will be used as a proxy. Micetro is not able to track lease history data.                          |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
-| Microsoft Agent-Free [1]_ | The DHCP Server Controller has been installed on the machine identified in the :guilabel:`Use proxy server` field,  |
+| Microsoft Agent-Free [1]_ | The DHCP Server Controller has been installed on the machine identified in the **Use proxy server** field,          |
 | (Use proxy checked)       | and that machine will be used as a proxy. Micetro is not able to track lease history data.                          |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
 | Microsoft                 | The DHCP Server Controller has been installed on the remote DHCP server.                                            |
@@ -35,7 +35,7 @@ The following table demonstrates the different options when adding a DHCP Server
 | Cisco                     | The DHCP Server Controller has been installed on the machine running the Men&Mice Central Component,                |
 | (Use proxy not checked)   | and that machine will be used as a proxy.                                                                           |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
-| Cisco                     | The DHCP Server Controller has been installed on the machine identified in the :guilabel:`Use proxy server` field,  |
+| Cisco                     | The DHCP Server Controller has been installed on the machine identified in the **Use proxy server** field,          |
 | (Use proxy checked)       | and that machine will be used as a proxy.                                                                           |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
 
@@ -45,7 +45,7 @@ The following table demonstrates the different options when adding a DHCP Server
 
 1. Log in to the Web Application
 
-2. Select the :guilabel:`Admin` tab on the top of the screen
+2. Navigate to :menuselection:`Admin --> Server Management`.
 
 3. Click :guilabel:`Add DHCP server` in the interface
 

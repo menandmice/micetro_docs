@@ -171,8 +171,7 @@ The file layout is a little different with or without BIND views. Here are the p
   "options statement from named.conf", "conf/options, relative to the data directory"
   "controls, server, and trusted-keys statements from named.conf; also, if present and if not using views, the root hints zone statement", "conf/user_after, relative to the data directory"
   "Preferences file", "mmsuite/preferences.cfg, located in the data directory"
-  "[SOLARIS] init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmremote"
-  "[LINUX] init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmremote"
+  "init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmremote"
   "settings file used by the init script (Ubuntu Linux only)", "/etc/default/mmremote"
 
 **Without Views**

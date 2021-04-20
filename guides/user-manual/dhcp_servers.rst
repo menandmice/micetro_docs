@@ -48,7 +48,7 @@ You must be logged in as a user with privileges to administer DHCP in order to a
   :align: center
 
 Server Name
-  Type either the DNS name or the IP Address of the DHCP server.
+  Type either the (fully qualified) DNS name or the IP Address of the DHCP server.
 
 Server address (optional)
   If desired, type the IPv4 or IPv6 address for the server. This is not required, but doing so allows the Management Console to connect to the server by IP Address instead of by name.
@@ -72,9 +72,9 @@ Agent-free (Microsoft and ISC Kea only)
   When using the agent-free connection method for Windows DHCP, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access` and :ref:`dhcp-windows`.
 
 Proxy
-  If you are adding a Microsoft, agent-free ISC Kea, or Cisco DHCP server you can specify the location of the DHCP Server Controller by entering the DNS name or IP Address of the machine running the DHCP Server Controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
+  If you are adding a Cisco DHCP or agent-free Microsoft or Kea server, you can specify the location of the DHCP Server Controller by entering the (fully qualified) DNS name or IP Address of the machine running the DHCP Server Controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
 
-2. Click :guilabel:`Confirm`. You are connected to the server. Once connected, the name of the newly added server displays in the grid of the *Server Management* context.
+2. Click :guilabel:`Confirm`. Once connected, the name of the newly added server displays in the grid of the *Server Management* context.
 
 .. note::
   To add a DHCP server in the Management Console, see :ref:`console-new-dhcp-server`.
@@ -121,7 +121,7 @@ To access this feature, do the following:
 
 1. Locate the DHCP server.
 
-2. From the ellipsis menu select :guilabel:`Edit DHCP server` or use ::menuselection:`Actions --> Edit DHCP server`. The *Edit DHCP server* dialog box displays.
+2. From the ellipsis menu select :guilabel:`Edit DHCP server` or use :menuselection:`Actions --> Edit DHCP server`. The *Edit DHCP server* dialog box displays.
 
 3. Change the **Server name**, **Server address** (optional), and **Server Type**. If applicable, you can edit the **Proxy** server's information.
 
@@ -149,7 +149,7 @@ Remove
 
 To remove a DHCP server, do the following:
 
-1. In ::menuselection:`Admin --> Server Management` locate the DHCP server.
+1. In :menuselection:`Admin --> Server Management` locate the DHCP server.
 
 2. From the ellipsis menu select :guilabel:`Remove DHCP server`.
 
@@ -176,7 +176,7 @@ You can set options for multiple servers by selecting all of the servers for whi
 .. note::
   When setting options for multiple servers all of the servers must be of the same type.
 
-1. In ::menuselection:`Admin --> Server management` select the applicable DHCP server(s) and use ::menuselection:`Actions --> Edit DHCP options`. (Or :guilabel:`Edit DHCP options` from the ellipsis menu.) The *DHCP Server Options* window displays.
+1. In :menuselection:`Admin --> Server management` select the applicable DHCP server(s) and use :menuselection:`Actions --> Edit DHCP options`. (Or :guilabel:`Edit DHCP options` from the ellipsis menu.) The *DHCP Server Options* window displays.
 
 2. Click the drop-down list to select which options you want to add. Upon selection, the setting is added to the dialog box for editing.
 
@@ -203,7 +203,7 @@ To access the advanced options, do the following:
 
 1. Log in to Micetro as the DHCP administrator.
 
-2. Select a Kea DHCP server, select :guilabel:`Edit configuration` from the ellipsis menu or use ::menuselection:`Actions --> Edit configuration`.
+2. Select a Kea DHCP server, select :guilabel:`Edit configuration` from the ellipsis menu or use :menuselection:`Actions --> Edit configuration`.
 
 3. When the *Edit configuration* box displays, you can edit the configuration file for the server.
 

@@ -40,7 +40,7 @@ Through this function, you can specify the following:
 
 To display the General Settings dialog box, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
 .. image:: ../../images/console-system-settings.png
   :width: 90%
@@ -75,7 +75,7 @@ Logging
 
 Through this function, you specify when log messages should be purged and whether lease history for DHCP servers should be collected.
 
-1. From the menu, select :guilabel:`Tools --> System Settings`.
+1. From the menu, select :menuselection:`Tools --> System Settings`.
 
 .. image:: ../../images/admin-logging.png
   :width: 80%
@@ -107,7 +107,7 @@ Error Checking
 
 The *Error Checking* tab allows you to specify how the system reports certain errors related to DHCP and DNS. This tab is also used to enable or disable DHCP scope monitoring.
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
 .. image:: ../../images/admin-error-checking.png
   :width: 80%
@@ -144,7 +144,7 @@ When saving changes to various objects, the Save Comment window may display. Whe
 
 To define when comments can be entered (and this can only be when logged on as a System Administrator), do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
 .. image:: ../../images/admin-comments.png
   :width: 80%
@@ -204,7 +204,7 @@ The *IPAM* tab allows you to specify various IPAM related settings:
 
   * Whether the system should allow reservations inside address pools on ISC DHCP servers.
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
 .. image:: ../../images/admin-ipam.png
   :width: 80%
@@ -250,7 +250,7 @@ Use the *Monitoring settings* dialog box to specify various monitoring related s
 
 To display the Monitoring Settings dialog box, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
 .. image:: ../../images/admin-monitoring.png
   :width: 80%

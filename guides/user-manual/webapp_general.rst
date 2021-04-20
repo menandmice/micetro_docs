@@ -64,7 +64,7 @@ Selecting multiple items
 
 Selecting multiple items in the list can be done by:
 
-* On Windows: holding down the SHIFT button and selecting rows with the mouse
+* On Windows: holding down the CTRL or SHIFT button and selecting rows with the mouse
 
 * On OS X: holding down the CMD button and selecting rows with the mouse
 
@@ -95,11 +95,13 @@ The top menu allows to switch between the three main sections of the Web Applica
 Navigating
 ^^^^^^^^^^
 
-The navigation bar below the top menu
+The navigation bar at the top of the grid interface
 
 * indicates where you are
 
 * allows you to navigate between subsections
+
+You can also quickly check your current location by glancing at the breadcrumbs at the bottom of the interface.
 
 .. _webapp-object-change-history:
 

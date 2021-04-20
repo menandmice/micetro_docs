@@ -34,7 +34,7 @@ Configuring Users for AD Authentication
 
 To configure a user to use AD user authentication, do the following:
 
-1. From the menu, select :guilabel:`Tools --> User management`.
+1. From the menu, select :menuselection:`Tools --> User management`.
 
 2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to :ref:`users`.
 
@@ -56,7 +56,7 @@ You can enable the Single Sign-on so that Active Directory users do not have to 
 
 To enable Active Directory Single Sign-on, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
 2. In the *System Settings* dialog box, click the :guilabel:`General Settings` tab.
 
@@ -86,7 +86,7 @@ Disabling Kernel Mode Authentication
 
 The Windows Authentication in IIS has by default the Kernel Mode Authentication enabled, which blocks the SSO.
 
-In the IIS Management Console, go to :guilabel:`Windows Authentication --> advanced settings` and set the "Kernel Mode Authentication" to *disabled*.
+In the IIS Management Console, go to :menuselection:`Windows Authentication --> advanced settings` and set the "Kernel Mode Authentication" to *disabled*.
 
 Application Log In
 ------------------
@@ -113,7 +113,7 @@ Configuring Groups for AD Group Level Authentication
 
 When using AD Group level authentication, you must specify which groups in Micetro should be used to verify group membership.
 
-1. From the menu, select :guilabel:`Tools --> User Management`. The *Users and groups management* dialog box displays.
+1. From the menu, select :menuselection:`Tools --> User Management`. The *Users and groups management* dialog box displays.
 
 2. Click the :guilabel:`Groups` tab.
 
@@ -181,7 +181,7 @@ Example:
 
 After editing the file, restart Men&Mice Central.
 
-* Windows: use :guilabel:`Administration Tools --> Services` to restart Men&Mice Central.
+* Windows: use :menuselection:`Administration Tools --> Services` to restart Men&Mice Central.
 
 * Mac OS X: Execute the following shell command in a Terminal window (/Applications/Utilities/Terminal):
 
@@ -198,7 +198,7 @@ To allow a user to log in to the Men&Mice system, the user must exist in the Men
 
 To configure a user to use AD user authentication, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> User Management`. The *User and group management* dialog box displays.
+1. From the menu bar, select :menuselection:`Tools --> User Management`. The *User and group management* dialog box displays.
 
 2. To add a new user, click the :guilabel:`Add` button. Refer to :ref:`users`. Follow the instructions with one exception: in the **Authentication** field, click the drop-down list and select RADIUS.
 

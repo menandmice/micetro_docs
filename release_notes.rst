@@ -16,7 +16,11 @@ Jump to: :ref:`10.0-release`
 .. important::
   **End-of-Life Announcement**
 
-  Kea versions before 1.6 are no longer supported. Users must update their Kea servers *before* updating to Micetro 10.0.
+  * Kea versions before 1.6 are no longer supported. Users must update their Kea servers *before* updating to Micetro 10.0.
+
+  * Microsoft DNS and DHCP servers version 2008 R2 are no longer supported.
+
+  * Solaris is no longer supported.
 
   See :ref:`system-requirements` for supported platforms.
 
@@ -39,7 +43,7 @@ New features
 
 * Logging in to the Web Application before adding license keys in the Management Console sometimes created awkward situations, so now you can add your license keys in the Web Application without slowing your roll.
 
-* You can now promote slave zones to master zones in the Web Application.
+* You can now promote secondary zones to primary zones in the Web Application.
 
 * Windows DNS users can now manage all their zone transfer and notify settings in the Web Application.
 
@@ -49,7 +53,7 @@ New features
 
 * Static-stub zones are now supported in the Web Application
 
-* Some of y’all wanted search instead of filtering, so now you can switch the quickfilter to a quicksearch and back again. Search will only show the matching records but from all data grids, while filtering will highlight them and only from the current grid.
+* Some of y’all wanted search instead of filtering, so now you can switch the Quickfilter to a Quicksearch and back again. The Quikfilter will only show the matching records in the grid, while Quicksearch will highlight them but still display all other objects as well.
 
 * You can import DNS records into a zone with an “Import” task in the Web Application’s DNS context. No muss, no fuss.
 

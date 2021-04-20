@@ -59,8 +59,7 @@ Installing Men&Mice Central puts the following files on your system:
   "Data directory for Men&Mice Central", "Usually /var/mmsuite/mmcentral"
   "Update directory", "update, located in the data directory"
   "Preferences file", "preferences.cfg, located in the data directory"
-  "[SOLARIS] init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmcentral"
-  "[LINUX] init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmcentral"
+  "init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmcentral"
   "settings file used by the init script (Ubuntu Linux only)", "/etc/default/mmcentral"
 
 To remove Men&Mice Central, first use the init script to stop the service (give it the "stop" argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. Also delete the data directory if desired.
@@ -74,20 +73,5 @@ Men&Mice Central on Windows
   Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
 
   When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
-
-Proceed to :ref:`central-database`.
-
-.. _install-central-solaris:
-
-Men&Mice Central on Solaris
----------------------------
-
-Extract and run the Men&Mice Central install package:
-
-.. code-block::
-
-  gzcat archive-name.tgz | tar xf -
-
-Then change into the newly-created directory and run the installer as described in the :ref:`install-central-linux` section.
 
 Proceed to :ref:`central-database`.

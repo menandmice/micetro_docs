@@ -9,24 +9,30 @@ Schema
 Required
 """"""""
 
-authority
-  (String) the DNS authoritive server for this zone.
-
 name
-  (String) fully qualified (with the trailing dot ``.``) name of DNS zone.
+  (String) Fully qualified (with the trailing dot ``.``) name of DNS zone.
+
+server
+  (String) Fully qualified name of the DNS server where the record is stored, ending with the trailing dot ``.``.
 
 
 Optional
 """"""""
 
+id
+  (String) The ID of this resource.
+
+view
+  (String) Name of the view this DNS zone is in.
+
+Read-Only
+"""""""""
+
 adintegrated
-  (Boolean) If DNS zone is intergrated with Active Directory. Default: ``False``.
+  (Boolean) If the DNS zone is AD integrated. Default: ``False``.
 
-adpartition
-  (String) The Active Directory partition if the zone is AD-integrated.
-
-adreplicationtype
-  (String) Replication types for an AD-integrated zone.
+authority
+  (String) The authoritative DNS server for this zone. Requires FQDN with the trailing dot ``.``.
 
 custom_properties
   (Map of String) Map of custom properties associated with this DNS zone.
@@ -35,34 +41,7 @@ displayname
   (String) A name that can distinguish the zone from other zone instances with the same name.
 
 dnssecsigned
-  (Boolean)
-
-dynamic
-  (Boolean) If DNS zone Dynamic, default: ``False``.
-
-id
-  (String) The ID of this resource.
-
-kskids
-  (String) A comma separated string of IDs of KSKs, starting with active keys, then inactive keys in parenthesis ``()``.
-
-masters
-  (List of String) List of all masters IP address, for slave zones.
-
-type
-  (String) the DNS zone type. For example: ``Master``, ``Slave``, ``Hint``, ``Stub``, ``Forward``.
-
-view
-  (String) Name of the view this DNS zone is in.
-
-zskids
-  (String) A comma separated string of IDs of ZSKs, starting with active keys, then inactive keys in parenthesis ``()``.
-
-Read-Only
-"""""""""
-
-created
-  (String) Date when zone was created in Micetro.
+  (Boolean) If DNS signing is enabled.
 
 dnsviewref
   (String) Internal references to views.
@@ -73,11 +52,37 @@ dnsviewrefs
   .. note::
     Only used with Active Directory.
 
+dynamic
+  (Boolean) If DNS zone Dynamic, default: ``False``.
+
+kskids
+  (String) A comma separated string of IDs of KSKs, starting with active keys, then inactive keys in parenthesis ``()``.
+
 lastmodified
   (String) Date when zone was last modified Micetro.
 
 ref
   (String) Internal references to this DNS zone.
+
+type
+  (String) the DNS zone type. For example: ``Master``, ``Slave``, ``Hint``, ``Stub``, ``Forward``.
+
+zskids
+  (String) A comma separated string of IDs of ZSKs, starting with active keys, then inactive keys in parenthesis ``()``.
+
+..
+
+  masters
+    (List of String) List of all masters IP address, for slave zones.
+
+  adpartition
+    (String) The Active Directory partition if the zone is AD-integrated.
+
+  adreplicationtype
+    (String) Replication types for an AD-integrated zone.
+
+  created
+    (String) Date when zone was created in Micetro.
 
 Import
 ^^^^^^
@@ -98,13 +103,15 @@ Example
 
 .. code-block::
 
-  resource menandmice_dns_zone zone2{
-    name    = "zone2.net."
-    authority   = "micetro.example.net."
-    adintegrated = false
-    custom_properties = {"place" = "city","owner" = "me"}
-
-    view = ""             # default ""
-    type = "Master"       # default "Master"
-    dnssecsigned = false  # default false
+  terraform {
+    required_providers {
+      menandmice = {
+        # uncomment for terraform 0.13 and higher
+        version = "~> 0.2",
+        source  = "local/menandmice",
+      }
+    }
   }
+  data menandmice_dns_zone zone1 {
+    name = "zone1.net."
+    server = "micetro.example.net."

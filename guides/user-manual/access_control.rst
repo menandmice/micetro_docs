@@ -134,7 +134,7 @@ New Objects
 
 When a User creates a new object in Micetro, the object is afforded a certain default access based on the initial access settings for the object type. To define initial access settings for different object types, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> Initial Access For`.
+1. From the menu bar, select :menuselection:`Tools --> Initial Access For`.
 
 2. Select the object type for which you want to set the initial access. The Access Control dialog box displays.
 
@@ -201,7 +201,8 @@ DNS Zone
   "Delete Zone", "Access to delete zone"
   "Enable/disable apex records", "Access to enable/disable zone's APEX records"
   "Edit apex records", "Access to edit zone's APEX records"
-  "Enable/disable wildcard records	Access to enable/disable zone's wildcard records", "Edit wildcard records	Access to edit zone's wildcard records"
+  "Enable/disable wildcard records", "Access to enable/disable zone's wildcard records"
+  "Edit wildcard records", "Access to edit zone's wildcard records"
   "Enable/disable other records", "Access to enable/disable zone records other than APEX"
   "Edit other records", "Access to edit zone records other than APEX records"
   "Edit zone properties", "Access to edit properties for the zone"
@@ -302,7 +303,7 @@ Through the Access Control module, you select groups/users for which you want to
 
 The Access Control dialog box is used to define access to individual objects in the system. To define access for an object, right-click the object and choose :guilabel:`Access` from the popup menu.
 
-To define access for individual components of Micetro, select :guilabel:`Tools --> Global Access`. The Access Control for Micetro dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.
+To define access for individual components of Micetro, select :menuselection:`Tools --> Global Access`. The Access Control for Micetro dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.
 
 Edit access controls
 ^^^^^^^^^^^^^^^^^^^^
@@ -344,4 +345,4 @@ Through this function, you specify access privileges that should be set for obje
 .. note::
   The access control dialog box for IP Address Ranges and Scopes contains a checkbox, 'IP Address Ranges/Scopes inherit access by default'. If this checkbox is checked, a new range or scope will inherit all access bits from its parent. For more information on inherited access, refer to  IP Address Management—Range Access.
 
-From the menu bar, select :guilabel:`Tools --> Initial Access For`, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to :ref:`global-access` for details on working with this dialog box.
+From the menu bar, select :menuselection:`Tools --> Initial Access For`, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to :ref:`global-access` for details on working with this dialog box.

@@ -24,7 +24,7 @@ Adding a cloud service
 
 The following are the steps that are needed to start using a cloud service in Micetro.
 
-1. :guilabel:`File --> New --> Cloud Service`. Access the Cloud service wizard by right clicking :guilabel:`Cloud Services` in the *Object Browser* of the Management Console and selecting :guilabel:`New Cloud Service` or highlight :guilabel:`Cloud Services` in the *Object Browser* and clicking :guilabel:`+` sign in the manager window.
+1. :menuselection:`File --> New --> Cloud Service`. Access the Cloud service wizard by right clicking :guilabel:`Cloud Services` in the *Object Browser* of the Management Console and selecting :guilabel:`New Cloud Service` or highlight :guilabel:`Cloud Services` in the *Object Browser* and clicking :guilabel:`+` sign in the manager window.
 
 2. The following dialog is shown:
 

@@ -9,20 +9,23 @@ Schema
 Required
 """"""""
 
-addresses
-  (List of String) A list of zero or more IP addresses used for the reservation.
-
-client_identifier
-  (String) The client_identifier of this reservation.
-
 name
-  (String) The name of DHCP reservation you want to query
-
-owner
-  (String) DHCP group scope or server where this reservation is made.
+  (String) The name of DHCP reservation you want to query.
 
 Optional
 """"""""
+
+id
+  (String) The ID of this resource.
+
+Read-Only
+"""""""""
+
+addresses
+  (List of String) A list of IP addresses used for the reservation.
+
+client_identifier
+  (String) The ``client_identifier`` of this reservation.
 
 ddns_hostname
   (String) Dynamic DNS host name for reservation.
@@ -42,9 +45,6 @@ filename
   .. note::
     Only applicable for ISC DHCP servers.
 
-id
-  (String) The ID of this resource.
-
 next_server
   (String) The next-server ISC DHCP option.
 
@@ -63,28 +63,27 @@ servername
 type
   (String) The type of this DHCP reservation. For example: ``DHCP``, ``BOOTP``, ``BOTH``.
 
-Read-Only
-"""""""""
-
 owner_ref
   (String) Internal reference to the DHCP group scope or server where this reservation is made.
 
 ref
-  (String) Internal reference to this DHCP reservation
+  (String) Internal reference to this DHCP reservation.
 
 Example
 ^^^^^^^
 
 .. code-block::
+  :linenos:
 
-  resource menandmice_dhcp_reservation reservation2 {
-    owner = "micetro.example.net."
-    name    = "test5"
-    client_identifier = "44:55:66:77:88:01"
-    servername = "testname"
-    next_server = "server1"
-    reservation_method = "ClientIdentifier"
-    # description = "test description" # only valid for some dhcp servers
-    addresses = ["192.168.2.10"]
-    ddns_hostname = "test"
+  terraform {
+    required_providers {
+      menandmice = {
+        # uncomment for terraform 0.13 and higher
+        version = "~> 0.2",
+        source  = "local/menandmice",
+      }
+    }
+  }
+  data menandmice_dhcp_reservation reservation1 {
+     name = "reserved1"
   }

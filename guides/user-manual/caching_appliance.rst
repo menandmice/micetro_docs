@@ -222,7 +222,7 @@ Stopping the DNS Server
 
 The Men&Mice DNS Caching Appliance is configured to keep the DNS service running at all times. This means that if the DNS server is stopped for some reason, it is restarted automatically. However, it is possible to override this setting and stop the DNS server from the Server menu. When the DNS server is stopped, the Men&Mice DNS Caching Appliance withdraws itself from the Anycast setup if Anycast has been configured on the Appliance. When the DNS server is started again, the Appliance re-enables the Anycast configuration. The stopped state for the DNS server is not persistent. If the Appliance is restarted while the DNS server is stopped, the DNS server will be started once the Appliance has restarted.
 
-To stop the DNS server, select the caching DNS server in the DNS Server list and on the ::menuselection:`Server` menu select :guilabel:`Stop DNS Server`.
+To stop the DNS server, select the caching DNS server in the DNS Server list and on the :menuselection:`Server` menu select :guilabel:`Stop DNS Server`.
 
 To start the DNS server, on the :menuselection:`Server` menu select :guilabel:`Start DNS Server`.
 

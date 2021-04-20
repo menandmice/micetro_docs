@@ -11,7 +11,7 @@ You must be logged in as a user with privileges to administer DHCP in order to a
 .. note::
   For information on adding a DHCP server on a Men&Mice Appliance, refer to :ref:`appliance-management`.
 
-1. From the menu bar, select :guilabel:`File --> New --> DHCP Server`. The *Add DHCP Server* dialog box is shown.
+1. From the menu bar, select :menuselection:`File --> New --> DHCP Server`. The *Add DHCP Server* dialog box is shown.
 
 Server Name
   Type either the DNS name or the IP Address of the DHCP server.

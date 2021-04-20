@@ -23,11 +23,15 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
   :alt: Micetro by Men&Mice
   :align: center
 
+  .. note::
+    If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
+
 .. toctree::
     :caption: Micetro by Men&Mice
     :hidden:
 
     release_notes
+    security_announcements
     support
     opensource
 

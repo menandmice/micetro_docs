@@ -14,7 +14,7 @@ You must be logged in as a user with privileges to administer DNS in order to ad
 
 To add a new DNS server, do the following:
 
-1. From the menu bar, select :guilabel:`File --> New --> DNS Server`. The *Add DNS Server* dialog box displays.
+1. From the menu bar, select :menuselection:`File --> New --> DNS Server`. The *Add DNS Server* dialog box displays.
 
 Server Name
   Type the name (fully qualified host name) of the DNS server as the name is used for the MNAME field in the SOA record of new DNS zones. For Azure DNS the name does not really matter. If the name can't be resolved you want to specify the optional IP address.

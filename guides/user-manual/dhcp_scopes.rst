@@ -17,7 +17,7 @@ Viewing Scopes
 All DHCP Scopes on All Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In ::menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
+You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In :menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
 
 .. image:: ../../images/dhcp-scopes-Micetro.png
   :width: 80%
@@ -30,7 +30,7 @@ Disabled scopes are shown as gray. The number of unassigned addresses is always 
 Scopes on a Specific DHCP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is easy to view the DHCP scopes that reside on individual DHCP Servers that are being managed by Micetro. In the ::menuselection:`Networks` context click the relevant DHCP server in the filtering sidebar's :guilabel:`DHCP servers` section.
+It is easy to view the DHCP scopes that reside on individual DHCP Servers that are being managed by Micetro. In the :menuselection:`Networks` context click the relevant DHCP server in the filtering sidebar's :guilabel:`DHCP servers` section.
 
 Selected Scope Menus
 ^^^^^^^^^^^^^^^^^^^^
@@ -86,7 +86,7 @@ Manage DHCP pools
 DHCP actions for IP addresses
 """""""""""""""""""""""""""""
 
-Open a DHCP scope (by double clicking it in the grid, selecting :guilabel:`Open network` from the ellipsis menu, or using ::menuselection:`Actions --> Open network`) to view the IP addresses it contains.
+Open a DHCP scope (by double clicking it in the grid, selecting :guilabel:`Open network` from the ellipsis menu, or using :menuselection:`Actions --> Open network`) to view the IP addresses it contains.
 
 Create DNS record
   Creates an A record from the selected IP address. See :ref:`webapp-create-dns-record`.
@@ -136,6 +136,9 @@ View history
 Scope Creation Wizard
 ---------------------
 
+.. note::
+  Creating a scope on a Kea server configured for load balancing high availability, Micetro will automatically split the scope evenly between primary and secondary servers. See :ref:`dhcp-kea-ha`.
+
 This section describes how to create and edit DHCP scopes with the new *DHCP Scope Creation Wizard*.
 
 Whenever you create a new scope, Micetro automatically checks whether the new scope conflicts with an existing scope or an IPAM range.
@@ -144,7 +147,7 @@ The Wizard has additional steps, or skips over some steps, depending on the type
 
 To create a new scope on the MS DHCP server, do the following:
 
-1. In ::menuselection:`Networks` select :guilabel:`Create` and tick the :guilabel:`Create a DHCP scope` checkbox.
+1. In :menuselection:`Networks` select :guilabel:`Create` and tick the :guilabel:`Create a DHCP scope` checkbox.
 
 .. image:: ../../images/create-network-Micetro.png
   :width: 70%
@@ -327,7 +330,7 @@ To delete a lease in a DHCP scope, do the following:
 
 1. Open the scope containing the lease you want to delete.
 
-2. Select the lease and from the ellpisis menu select :guilabel:`Release DHCP lease` or use ::menuselection:`Actions --> Release DHCP lease`.
+2. Select the lease and from the ellpisis menu select :guilabel:`Release DHCP lease` or use :menuselection:`Actions --> Release DHCP lease`.
 
 IP Address Details
 ^^^^^^^^^^^^^^^^^^
@@ -634,6 +637,9 @@ When using a failover configuration, it is possible to replicate scope informati
 
 Managing Failover Relationships
 """""""""""""""""""""""""""""""
+
+.. note::
+  In the Web Application, the failover mode, as well as the failover partners, is displayed in the Inspector's :guilabel:`High availability` section when a server or scope is selected that is configured for high availability.
 
 You can view, create, edit and delete existing failover relationships.
 

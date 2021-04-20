@@ -18,6 +18,22 @@ The Kea Control Agent is a daemon that exposes a RESTful control interface for m
 
 Because of the Kea Control Agent, Kea DHCP servers can be added to Micetro without a DHCP Server Controller running on every machine that runs Kea. A *single* DHCP Server Controller, installed on a machine that can access the instances that run Kea services, is sufficient and will communicate with all Kea servers on Micetro's behalf.
 
+Kea high availability
+---------------------
+
+Kea DHCP servers need to be configured for high availability **before** the primary server is added to Micetro. If the high availability is set up properly, once added to the system Micetro will recognize the failover nodes and the method (load balancing, hot standby, etc.) and configure the server objects accordingly.
+
+For more information, see :ref:`dhcp-kea-ha`.
+
+Split scopes in load balancing mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When creating scopes on Kea servers configured in load balancing mode for high availability, Micetro will split the available pool evenly between primary and secondary servers.
+
+.. image:: ../../images/kea-ha-lb-split-scopes-Micetro.png
+  :width: 50%
+  :align: center
+
 .. _kea-dhcp-poperties:
 
 Kea DHCP Server Properties
@@ -48,7 +64,7 @@ Decline Probation Period
 Next Server
   Specifies the server address to use when clients want to obtain configuration from a TFTP server.
 
-Control Socket
+**Control Socket**
 
   Name
     The path to the UNIX socket. Cannot be empty.
@@ -58,7 +74,6 @@ Server tag
 
 .. toctree::
   :maxdepth: 2
-  :hidden:
 
   dhcp_kea_external_changes
   dhcp_kea_ha

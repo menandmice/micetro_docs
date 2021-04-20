@@ -49,7 +49,7 @@ custom_property_n
 
 The administrator will import the subnets and devices separately. First he will import the subnets. In this example the company has "Title, Description and Status" custom properties for subnets (IP Address Ranges) and "Description" and "Device Name" for IP Addresses.
 
-The "Define Custom Properties" window, which appears when :guilabel:`Define Custom Properties` is selected from the :guilabel:`Tools" menu`.
+The "Define Custom Properties" window, which appears when :guilabel:`Define Custom Properties` is selected from the :menuselection:`Tools` menu.
 
 .. image:: ../../images/custom-properties-console-old.png
   :width: 50%

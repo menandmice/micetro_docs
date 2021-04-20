@@ -14,7 +14,7 @@ Viewing Scopes
 All DHCP Scopes on All Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In ::menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
+You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In :menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
 
 .. image:: ../../images/dhcp-scopes-Micetro.png
   :width: 80%
@@ -442,7 +442,7 @@ Use this function to convert an existing scope to an IP Address range, while kee
 
 1. In the *Object List*, select :guilabel:`DHCP Scopes` and then select a scope.
 
-2. From the menu bar, select :guilabel:`Range --> Convert to IP Address Range`.
+2. From the menu bar, select :menuselection:`Range --> Convert to IP Address Range`.
 
 3. When the Men&Mice Management Console confirmation dialog box appears, click :guilabel:`Yes` to convert the range.
 
@@ -453,7 +453,7 @@ Use this function to convert an existing IP Address range to a scope, while keep
 
 1. In the *Object List*, select :guilabel:`IP Address Ranges` and then select a range.
 
-2. From the menu bar, select :guilabel:`Range --> Convert to DHCP Scope`, or right click and select :guilabel:`Convert to DHCP Scope`. The *Scope Creation Wizard* will appear, with the subnet field pre-populated for the selected range.
+2. From the menu bar, select :menuselection:`Range --> Convert to DHCP Scope`, or right click and select :guilabel:`Convert to DHCP Scope`. The *Scope Creation Wizard* will appear, with the subnet field pre-populated for the selected range.
 
 3. Clicking :guilabel:`Next` will continue with the *Scope Creation Wizard* as normal.
 
