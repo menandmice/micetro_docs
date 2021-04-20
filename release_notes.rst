@@ -347,7 +347,7 @@ End-of-Life Announcements
   As of version 9.3.0 of the Web Application, Internet Explorer is not supported. In the case of trying to log in to the Web Applications using IE, the user will be redirected to the older version of the Web Interface. For more details, see :ref:`ie-eol`.
 
 .. important::
-  Support for Solaris in the Men&Mice Suite will be deprecated in version 9.4.0 of the Men&Mice Suite.
+  Support for Solaris in the Men&Mice Suite will be deprecated in version 10.0 of the Men&Mice Suite.
 
 .. important::
   Version 8.3 of the Men&Mice Suite is no longer supported as of January 11th 2020.

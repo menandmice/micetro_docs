@@ -24,6 +24,7 @@ Use the :ref:`implementation` to familiarize yourself with the Suite's architect
     :hidden:
 
     release_notes
+    security_announcements
     support
     opensource
 

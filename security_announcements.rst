@@ -1,0 +1,40 @@
+.. _security-announcements:
+
+Security announcements
+======================
+
+August 21st, 2020
+-----------------
+
+Men&Mice is releasing versions 9.3.6 and 9.2.11 for the Men&Mice Virtual DNS/DHCP appliances to patch three vulnerabilities found in BIND:
+
+* CVE-2020-8622: A truncated TSIG response can lead to an assertion failure
+
+* CVE-2020-8623: A flaw in native PKCS#11 code can lead to a remotely triggerable assertion failure in pk11.c
+
+* CVE-2020-8624: "update-policy" rules of type "subdomain" were enforced incorrectly
+
+The new releases now run BIND 9.11.22, which contains patches from ISC to close these vulnerabilities.
+
+Men&Mice customers are highly encouraged to update their software, easily done using the Automatic Updates feature of the Men&Mice Suite.
+
+For details on how to update the Men&Mice Suite, see :ref:`updates`.
+
+For more information regarding the upgrade, contact Men&Mice Support: :ref:`support`.
+
+June 25th, 2020
+---------------
+
+Due to vulnerabilities found in BIND and Unbound, 3rd-party softwares running on the Men&Mice Virtual DNS/DHCP appliances, Men&Mice has released a security update for the Men&Mice Suite.
+
+* a Denial of Service (DoS) vulnerability is possible, although unlikely due to the limited attack vector, due to the RFC design of handling a wildcard character. The vulnerability has been documented on `CVE-2020-8619 <https://kb.isc.org/docs/cve-2020-8619>`_ and patched.
+
+* a vulnerability in Unbound made the software exploitable for amplification attacks (a single incoming query resulting in a disproportionate amount of outgoing queries) to use in DDoS attacks, as per `CVE-2020-12662 <https://nlnetlabs.nl/downloads/unbound/CVE-2020-12662_2020-12663.txt>`_. Another issue in the Unbound code, filed under `CVE-2020-12663 <https://nlnetlabs.nl/downloads/unbound/CVE-2020-12662_2020-12663.txt>`_ also made it possible for attackers to force Unbound to enter into an infinite loop and crash.
+
+Developers of BIND and Unbound have issued updates to fix these issues, and Men&Mice has updated the DNS/DHCP appliances to include these patches. Versions 9.2.10 and 9.3.5 contain the fixes.
+
+Men&Mice customers are highly encouraged to update their software, easily done using the Automatic Updates feature of the Men&Mice Suite.
+
+For details on how to update the Men&Mice Suite, see :ref:`updates`.
+
+For more information regarding the upgrade, contact Men&Mice Support: :ref:`support`.
