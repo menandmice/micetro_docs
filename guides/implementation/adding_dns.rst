@@ -10,11 +10,9 @@ DNS servers require :ref:`install-controllers` and need to be added using their 
 .. note::
   Servers in Microsoft Active Directory environments can be added without installing a server controller. See :ref:`agent-free-dns-dhcp`.
 
-To add a new DNS server the administrator will select :guilabel:`File --> New --> DNS Server`.
-
 1. Log in to the Web Application.
 
-2. Select the :guilabel:`Admin` tab on the top of the screen.
+2. Navigate to :menuselection:`Admin --> Server Management`.
 
 3. Click :guilabel:`Add DNS server` in the interface.
 

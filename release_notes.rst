@@ -20,6 +20,8 @@ Jump to: :ref:`10.0-release`
 
   * Microsoft DNS and DHCP servers version 2008 R2 are no longer supported.
 
+  * Solaris is no longer supported.
+
   See :ref:`system-requirements` for supported platforms.
 
 New features

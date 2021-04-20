@@ -15,7 +15,7 @@ To access the advanced options, do the following:
 
 4. When the *Advanced Options* dialog box displays, you can edit the properties for the server in a text document. If the DHCP server contains multiple configuration files, each file displays in a separate tab.
 
-.. image:: ../../images/console-dhcp-isc-advanced-options.png
+.. image:: ../../../images/console-dhcp-isc-advanced-options.png
   :width: 70%
   :align: center
 

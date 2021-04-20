@@ -24,8 +24,6 @@ Operating systems
   "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
-  "**Solaris**",,,,,,
-  "Solaris 10 x86", "N", "Y", "N", "N", "N/A", "N"
   "**Linux**",,,,,,
   "Redhat Enterprise Linux 6", "N", "Y", "Y", "Y", "N/A", "Y"
   "Redhat Enterprise Linux 7", "N", "Y", "Y", "Y", "N/A", "Y"
@@ -53,7 +51,7 @@ Databases
   :widths: 20, 20, 60
 
   "PostgreSQL", 12, "Windows, Linux"
-  "SQLite", "N/A [4]_", "Windows, Linux, Solaris"
+  "SQLite", "N/A [4]_", "Windows, Linux"
   "Microsoft SQL Server", "2008 R2, 2012, 2014, 2016", "Windows"
 
 .. [4] The SQLite database is embedded into the Men&Mice Central application.

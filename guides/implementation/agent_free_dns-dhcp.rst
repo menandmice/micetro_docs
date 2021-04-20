@@ -44,6 +44,6 @@ DHCP:
 
 Collection of lease history is only possible when the agent is installed locally. No lease history will be collected from servers that are managed agent-free.
 
-If ``netsh`` with full dhcp functionality is not installed properly, no scopes will show up in Micetro regardless of the privileges of the service account running the proxy DHCP agent. The proxy DHCP agent must be installed on a machine that has ``netsh`` with full dhcp capability. This is always the case if the DHCP role service is installed. If not, it can be installed (on Win2008R2) by :guilabel:`Server Manager --> Features --> Remote Server Administration --> Role Administration Tools -- >DHCP Server Tools`.
+If ``netsh`` with full dhcp functionality is not installed properly, no scopes will show up in Micetro regardless of the privileges of the service account running the proxy DHCP agent. The proxy DHCP agent must be installed on a machine that has ``netsh`` with full dhcp capability. This is always the case if the DHCP role service is installed. If not, it can be installed (on Win2008R2) by :menuselection:`Server Manager --> Features --> Remote Server Administration --> Role Administration Tools -- >DHCP Server Tools`.
 
 It's recommended (but not required) that Windows 2003 DHCP servers are managed by proxy DHCP agents installed on Windows 2003 servers, and Windows 2008/R2 DHCP servers are managed by proxy DHCP agents installed on Windows 2008/R2 servers, due to some minor differences in the ``netsh`` between these two operating systems.

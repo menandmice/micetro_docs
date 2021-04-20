@@ -46,7 +46,7 @@ To create a TSIG key to use with BIND:
 
   .. code-block:: bash
 
-  /etc/init.d/mmremote stop /etc/init.d/mmremote start
+    /etc/init.d/mmremote stop /etc/init.d/mmremote start
 
 When you have configured the server, you can change the zone type from static to dynamic by opening the zone options in the Management Console and changing the zone type to dynamic.
 

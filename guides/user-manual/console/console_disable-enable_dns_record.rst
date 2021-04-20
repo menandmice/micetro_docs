@@ -23,6 +23,6 @@ How to Disable a Record
 
 6. In the toolbar, click the :guilabel:`Save` button to save the changes to the zone.
 
-.. image:: ../../images/console-dns-records-disable.png
+.. image:: ../../../images/console-dns-records-disable.png
   :width: 60%
   :align: center

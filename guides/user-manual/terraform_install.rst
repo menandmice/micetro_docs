@@ -16,7 +16,7 @@ Windows
 
 1. Build and install the provider:
 
-.. code-block::
+.. code-block:: shell
 
   go build -o terraform-provider-menandmice
 
@@ -46,6 +46,8 @@ Set provider settings that are not set in ``main.tf``:
   export MENANDMICE_PASSWORD=<your password>
 
 And make a test account:
+
+.. code-block:: bash
 
   make testacc
 

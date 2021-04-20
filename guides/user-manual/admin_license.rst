@@ -23,7 +23,7 @@ The *License Management* dialog box in the Management Console shows detailed inf
 Adding a License Key
 --------------------
 
-1. From the menu bar, select :guilabel:`Tools --> License Management`. The *License Management* dialog box displays. All currently entered license keys are displayed.
+1. From the menu bar, select :menuselection:`Tools --> License Management`. The *License Management* dialog box displays. All currently entered license keys are displayed.
 
 .. image:: ../../images/admin-license-empty.png
   :width: 80%
@@ -48,7 +48,7 @@ The Management Console will prompt for license keys on the first login.
 Removing a License Key
 ----------------------
 
-1. From the menu bar, select :guilabel:`Tools --> License Management`. *The License Management* dialog box displays. All currently entered license keys are displayed.
+1. From the menu bar, select :menuselection:`Tools --> License Management`. *The License Management* dialog box displays. All currently entered license keys are displayed.
 
 2. Highlight the key you want to remove.
 

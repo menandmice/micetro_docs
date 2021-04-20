@@ -15,8 +15,8 @@ Failover instances of Men&Mice Central can be configured to build a high availab
 
 .. _central-ha-unix:
 
-Linux and Solaris
------------------
+Linux
+-----
 
 1. On the existing (or designated as *primary*) server running Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg``, adding
 
@@ -128,7 +128,7 @@ to the end of the file. ``somename`` is the unique name that will identify the C
 
   mmcentral –start
 
-10. Verify that you now have 2 servers, one primary, one secondary in :guilabel:`Tools --> Manage High availability`.
+10. Verify that you now have 2 servers, one primary, one secondary in :menuselection:`Tools --> Manage High availability`.
 
 11. Create a round robin DNS name for the high availability setup, i.e. two A records with the same name, but each with the IP address of the primary and secondary server respectively.
 

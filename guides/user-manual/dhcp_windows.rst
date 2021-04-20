@@ -8,7 +8,7 @@ Microsoft DHCP
 Defining Options on MS DHCP Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. In ::menuselection:`Admin --> Server Management` select the applicable DHCP Server and select :guilabel:`Edit DHCP options` from the ellipsis menu or use ::menuselection:`Actions --> Edit DHCP options`. The *Edit DHCP options* box displays. The dialog box shows all options defined on the DHCP server.
+1. In :menuselection:`Admin --> Server Management` select the applicable DHCP Server and select :guilabel:`Edit DHCP options` from the ellipsis menu or use :menuselection:`Actions --> Edit DHCP options`. The *Edit DHCP options* box displays. The dialog box shows all options defined on the DHCP server.
 
 2. Use the drop-down menu to select the option you want to define.
 

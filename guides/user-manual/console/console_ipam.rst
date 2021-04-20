@@ -3,8 +3,8 @@
 .. toctree::
   :maxdepth: 2
 
-.. |user-range| image:: ../../images/console-ipam-user-created-range-icon.png
-.. |dhcp-scope| image:: ../../images/console-ipam-dhcp-scope-icon.png
+.. |user-range| image:: ../../../images/console-ipam-user-created-range-icon.png
+.. |dhcp-scope| image:: ../../../images/console-ipam-dhcp-scope-icon.png
 
 IP address management
 =====================
@@ -55,7 +55,7 @@ To create a Container, do the following:
 
 Select :menuselection:`File --> New --> Container`. The *Container* dialog box displays.
 
-.. image:: ../../images/console-ipam-create-range.png
+.. image:: ../../../images/console-ipam-create-range.png
   :width: 70%
   :align: center
 
@@ -109,7 +109,7 @@ Viewing IP Address Ranges
 
 The IP Address Range view shows the section of the IP Address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
 
-.. image:: ../../images/console-ipam-grid.png
+.. image:: ../../../images/console-ipam-grid.png
   :width: 50%
   :align: center
 
@@ -125,7 +125,7 @@ You can choose between a flat and a hierarchical view for the Address Ranges sco
 
 If an Address range has no subranges, the utilization for the range is shown in the range list.
 
-.. image:: ../../images/console-ipam-range-utilization.png
+.. image:: ../../../images/console-ipam-range-utilization.png
   :width: 50%
   :align: center
 
@@ -133,7 +133,7 @@ The IP Address Range view can display an indicator to show which gaps between IP
 
 While viewing the IP Address ranges, the :ref:`quickfilter` is available. When using the tree view while a filter is active, any parent ranges that don't fulfill the search criteria are displayed in gray to distinguish them from the found ranges. For example, in the image below, we searched for the string '0/26' and the only range found was '10.1.0.0./26'. However, to maintain the tree view, the parent ranges are shown even if they don't fulfill the search criteria.
 
-.. image:: ../../images/console-ipam-range-filter.png
+.. image:: ../../../images/console-ipam-range-filter.png
   :width: 50%
   :align: center
 
@@ -162,7 +162,7 @@ Range Configuration
 
 When configuring a new IP Address range, you must complete the Properties dialog box.
 
-.. image:: ../../images/console-ipam-create-range.png
+.. image:: ../../../images/console-ipam-create-range.png
   :width: 60%
   :align: center
 
@@ -234,7 +234,7 @@ IP Address List
 
 To view a list of host entries in a particular range, double-click on the IP Address Range. This opens the :guilabel:`IP Address List` tab where you can view and edit the properties of individual IP Address entries.
 
-.. image:: ../../images/console-ipam-ip-list.png
+.. image:: ../../../images/console-ipam-ip-list.png
   :width: 70%
   :align: center
 
@@ -269,7 +269,7 @@ IP Address Dialog Box
 
 When you add or modify an existing entry, the IP Address dialog box displays. The entries in this dialog box can vary, depending on the license keys in use, whether the dialog box is accessed from a DHCP scope or an IP Address range, and if any custom properties have been defined (e.g., "Owner" is a custom property in the example shown below).
 
-.. image:: ../../images/console-ipam-address-dialog.png
+.. image:: ../../../images/console-ipam-address-dialog.png
   :width: 60%
   :align: center
 
@@ -302,7 +302,7 @@ Adding a DNS Host
 
 1. While viewing the IP Address dialog box, move to the :guilabel:`DNS Hosts` section, and click the :guilabel:`Add` button.
 
-.. image:: ../../images/console-ipam-add-dns-host.png
+.. image:: ../../../images/console-ipam-add-dns-host.png
   :width: 50%
   :align: center
 
@@ -334,7 +334,7 @@ Adding a Related Host
 
 1. Click :guilabel:`Add Related` button. The *Add Related Record* dialog box displays.
 
-.. image:: ../../images/console-ipam-add-related-record.png
+.. image:: ../../../images/console-ipam-add-related-record.png
   :width: 50%
   :align: center
 
@@ -356,7 +356,7 @@ Editing a Related Host
   .. note::
     It is not possible to edit all record types.
 
-.. image:: ../../images/console-ipam-modify-related-record.png
+.. image:: ../../../images/console-ipam-modify-related-record.png
   :width: 50%
   :align: center
 
@@ -384,7 +384,7 @@ To move a IP Address information, do the following:
 
 4. Right-click and, from the shortcut menu, select :guilabel:`Move`.
 
-.. image:: ../../images/console-ipam-move.png
+.. image:: ../../../images/console-ipam-move.png
   :width: 60%
   :align: center
 
@@ -439,7 +439,7 @@ This function allows you to select and join a number of ranges. The :guilabel:`J
 
 3. Right-click and, from the shortcut menu, select :guilabel:`Join Ranges`.
 
-.. image:: ../../images/console-ipam-join-ranges.png
+.. image:: ../../../images/console-ipam-join-ranges.png
   :width: 70%
   :align: center
 
@@ -462,7 +462,7 @@ Description
 Select Parent
 -------------
 
-.. image:: ../../images/console-ipam-select-parent.png
+.. image:: ../../../images/console-ipam-select-parent.png
   :width: 70%
   :align: center
 
@@ -486,7 +486,7 @@ Configuring Host Discovery Using Ping
 
 2. Right-click and, from the shortcut menu, select :guilabel:`Set Discovery Schedule`. The *Schedule* dialog box displays.
 
-.. image:: ../../images/console-ipam-discovery-schedule.png
+.. image:: ../../../images/console-ipam-discovery-schedule.png
   :width: 40%
   :align: center
 
@@ -505,7 +505,7 @@ Starting ____
 
 Once the schedule options have been set and saved, a new column called, Last seen, identifies when a host last was last seen on the network.
 
-.. image:: ../../images/console-ipam-last-seen.png
+.. image:: ../../../images/console-ipam-last-seen.png
   :width: 70%
   :align: center
 
@@ -611,7 +611,7 @@ To change the monitoring settings for a subnet:
 
 1. Select the subnet(s) for which you want to change the monitoring setting.
 
-.. image:: ../../images/console-ipam-subnet-monitoring.png
+.. image:: ../../../images/console-ipam-subnet-monitoring.png
   :width: 50%
   :align: center
 
@@ -660,7 +660,7 @@ To view the utilization history:
 
 2. Right-click and, from the shortcut menu, select :guilabel:`View Address Utilization`. The *Address Utilization* window displays.
 
-.. image:: ../../images/console-ipam-utilization-history.png
+.. image:: ../../../images/console-ipam-utilization-history.png
   :width: 80%
   :align: center
 
@@ -703,7 +703,7 @@ The Address Space Management dialog box allows you to create, modify or delete a
 
 To open the Address Space Management dialog box, from the Tools menu, select Define Address Spaces.
 
-.. image:: ../../images/console-ipam-address-spaces.png
+.. image:: ../../../images/console-ipam-address-spaces.png
   :width: 50%
   :align: center
 

@@ -1,4 +1,4 @@
-.. _quickfilter:
+.. _console-quickfilter:
 
 Quick Filter (Management Console)
 =================================

@@ -26,7 +26,7 @@ You must be logged in as a user with administrator privileges to add a new Men&M
 
 To add a new Men&Mice Appliance, do the following:
 
-1. From the menu bar, select :guilabel:`File --> New --> Appliance`. The *Add Appliance* dialog box displays.
+1. From the menu bar, select :menuselection:`File --> New --> Appliance`. The *Add Appliance* dialog box displays.
 
 .. image:: ../../images/admin-add-appliance.png
   :width: 60%

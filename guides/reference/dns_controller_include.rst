@@ -3,9 +3,9 @@
 Men&Mice DNS Server Controller and $INCLUDE Directives
 ========================================================
 
-BIND supports several extensions to the standard zone file format, known as directives or control statements; all directives start with “$”. With one exception, the $TTL directive, Men&Mice Suite doesn’t display these directives in the zone window.
+BIND supports several extensions to the standard zone file format, known as directives or control statements; all directives start with ``$``. With one exception, the ``$TTL`` directive, Micetro doesn’t display these directives in the zone window.
 
-Instead, when directives other than $TTL are present, the Management Console zone window displays an extra button in the button bar, on the right end. This button, labeled “Zone control statements”, brings up a window showing all of these statements in raw form. Management Console does not allow these statements to be edited; instead, all editing of such statements must be done by editing the zone file directly, on the server.
+Instead, when directives other than ``$TTL`` are present, the Management Console zone window displays an extra button in the button bar, on the right end. This button, labeled :guilabel:`Zone control statements`, brings up a window showing all of these statements in raw form. The Management Console does not allow these statements to be edited; instead, all editing of such statements must be done by editing the zone file directly, on the server.
 
 The $INCLUDE directive
 ----------------------
@@ -21,12 +21,12 @@ Lastly, it's possible to use an include file in a way that, while perfectly vali
 Using the $INCLUDE directive with Micetro
 ----------------------------------------------------
 
-Men&Mice DNS Server Controller can be configured to expand ``$INCLUDE`` statements, so that you see the entire contents of the zone in the zone window.
+The Men&Mice DNS Server Controller can be configured to expand ``$INCLUDE`` statements, so that you see the entire contents of the zone in the zone window.
 
 .. note::
   If you configure Men&Mice DNS Server Controller to expand ``$INCLUDE`` statements, it will do so globally, for all zones. It will also expand all other control statements (not counting the $TTL directive at the top of each zone). The expansion is permanent, meaning the zone file is actually changed to reflect the effect of the control statement, and the control statement is removed.
 
-To follow these instructions, you'll need to figure out where your named data directory is, which we'll refer to as $NAMED. This can be done by examining named.conf. If you're not sure where named.conf is, examine your DNS Server Controller (``mmremoted``) command line (in the output of the appropriate 'ps' command) - it should show the location of named.conf after '-c'; if there's a '-t' option as well, the named.conf location will be relative to this chroot jail path. If you don't see either of these options, the location is /etc/named.conf. (And if this sounds like gibberish to you, please contact us for help.)
+To follow these instructions, you'll need to figure out where your named data directory is, which we'll refer to as ``$NAMED``. This can be done by examining ``named.conf``. If you're not sure where ``named.conf`` is, examine your DNS Server Controller (``mmremoted``) command line (in the output of the appropriate ``ps`` command) - it should show the location of ``named.conf`` after ``-c``; if there's a ``-t`` option as well, the ``named.conf`` location will be relative to this chroot jail path. If you don't see either of these options, the location is ``/etc/named.conf``. (And if this sounds like gibberish to you, please contact us for help.)
 
 ``named.conf`` contains a set of 5 ``include`` statements, referring to the absolute path of files in ``$NAMED/conf/``. So if your $NAMED directory is ``/var/named``, the include statements will look like this:
 
@@ -46,7 +46,7 @@ Edit the file ``$NAMED/mmsuite/preferences.cfg``. Add the following line:
 
   <ExpandControlStatements value="1"/>
 
-Save the file and restart the DNS Server Controller, using its init script (a file named 'mmremoted', such as ``/etc/init.d/mmremoted``, or ``/Library/StartupItems/mmServerController/mmServerController`` - the location is platform-specific). You can then log in with the Management Console to see the effects of this process.
+Save the file and restart the DNS Server Controller, using its init script (a file named *mmremoted*, such as ``/etc/init.d/mmremoted``, or ``/Library/StartupItems/mmServerController/mmServerController`` - the location is platform-specific). You can then log in with the Management Console to see the effects of this process.
 
 On Mac OS X, use the following shell commands to complete these instructions:
 

@@ -7,7 +7,7 @@ By default, Micetro automatically adjusts zone transfer settings for slave zones
 
 1. Log in to the Management Console
 
-2. Navigate to :guilabel:`Tools --> System Settings --> Advanced`.
+2. Navigate to :menuselection:`Tools --> System Settings --> Advanced`.
 
 3. Filter the options with “automatically”, and locate the “*Automatically adjust local zone transfer settings for BIND*” line.
 

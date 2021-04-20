@@ -135,7 +135,7 @@ To modify an IP Address range, do the following:
 
 1. Select the range in the grid.
 
-2. From the ellipsis menu select :guilabel:`Edit network properties` or use ::menuselection:`Actions --> Edit network properties`.
+2. From the ellipsis menu select :guilabel:`Edit network properties` or use :menuselection:`Actions --> Edit network properties`.
 
 3. Make the desired changes.
 
@@ -150,7 +150,7 @@ Use the following procedure to delete an IP Address Range definition:
 
 1. Select IP range(s) you want to remove.
 
-2. From the ellipsis menu select :guilabel:`Delete network` or use ::menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) range(s).
+2. From the ellipsis menu select :guilabel:`Delete network` or use :menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) range(s).
 
 3. Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
 

@@ -1,2 +1,2 @@
 # micetro_docs
-Documentation for Micetro by Men&amp;Mice
+Documentation for Micetro by Men&Mice

@@ -10,7 +10,7 @@ Adding a Cisco DHCP server
 
 When adding a Cisco DHCP server, the following dialog box displays:
 
-.. image:: ../../images/console-add-cisco.png
+.. image:: ../../../images/console-add-cisco.png
   :width: 60%
   :align: center
 

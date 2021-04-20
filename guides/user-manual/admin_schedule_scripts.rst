@@ -7,7 +7,7 @@ The administrator can configure the system to run scripts in a schedule – e.g.
 
 To configure this option, do the following:
 
-1. From the menu bar, select :guilabel:`Tools --> Scheduled Scripts`. The *Scheduled Scripts* dialog box displays. Any already defined scripts are displayed.
+1. From the menu bar, select :menuselection:`Tools --> Scheduled Scripts`. The *Scheduled Scripts* dialog box displays. Any already defined scripts are displayed.
 
 .. image:: ../../images/admin-scheduled-script-list.png
   :width: 75%

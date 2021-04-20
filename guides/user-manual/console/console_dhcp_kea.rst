@@ -23,7 +23,7 @@ Because of the Kea Control Agent, Kea DHCP servers can be added to Micetro witho
 Kea DHCP Server Properties
 --------------------------
 
-.. image:: ../../images/console-kea-properties-new.png
+.. image:: ../../../images/console-kea-properties-new.png
   :width: 80%
   :align: center
 

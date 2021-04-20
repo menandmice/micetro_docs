@@ -95,7 +95,7 @@ Unable to get status for zones
   This warning is shown when Men&Mice Central can’t connect to the DNS Server Controller service to get status on the zones. The reason could be if the DNS Server Controller service is turned off or is offline.
 
 Update available
-  This warning is shown when new version of Micetro is available. To get this new version go to ::menuselection:`Tools --> Check for updates` in the menu bar and run the update wizard.
+  This warning is shown when new version of Micetro is available. To get this new version go to :menuselection:`Tools --> Check for updates` in the menu bar and run the update wizard.
 
 Update server unreachable
   This warning is shown when Men&Mice Central has lost its connection to Men&Mice update server. It is not mandatory to have this connection and it can be turned off. To fix this issue make sure that machine running the Men&Mice Update service and the machine running the Men&Mice Central are listening to the same TCP port. TCP port ``4603`` is reserved for the update service but it can be changed if there is another software using that TCP port. See :ref:`change-updater-port` about changing the TCP port.

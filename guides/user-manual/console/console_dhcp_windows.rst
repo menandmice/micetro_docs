@@ -50,7 +50,7 @@ Defining Options on MS DHCP Servers
 
 2. Use the **Vendor class** drop-down list to select the vendor class for which you want to define options.
 
-.. image:: ../../images/console-dhcp-server-options-microsoft.png
+.. image:: ../../../images/console-dhcp-server-options-microsoft.png
   :width: 40%
   :align: center
 

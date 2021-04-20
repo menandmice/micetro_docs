@@ -64,7 +64,7 @@ Decline Probation Period
 Next Server
   Specifies the server address to use when clients want to obtain configuration from a TFTP server.
 
-Control Socket
+**Control Socket**
 
   Name
     The path to the UNIX socket. Cannot be empty.

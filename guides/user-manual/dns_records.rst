@@ -410,7 +410,7 @@ How to Disable a Record
 
 1. Select the record(s) that you want to disable. To select more than one record, hold down the Ctrl (Cmd on Mac) key while making your selections.
 
-2. From the ellipsis menu select :guilabel:`Disable DNS record` or use ::menuselection:`Actions --> Disable DNS record`.
+2. From the ellipsis menu select :guilabel:`Disable DNS record` or use :menuselection:`Actions --> Disable DNS record`.
 
 .. note::
   Disabled records are grayed out in the grid, and will show an *Enable DNS record* action instead.

@@ -120,4 +120,4 @@ Example configuration for connecting to an AD LDAP service:
 Configuring the Men&Mice Central service to authenticate users using an LDAP service.
 ---------------------------------------------------------------------------------------
 
-To configure the Men&Mice Central service, login as the superuser ``administrator`` through the Men&Mice Management Console. In the top left-hand corner select :guilabel:`Tools --> System Settings --> Advanced` and check the :guilabel:`Enable LDAP integration` checkbox.
+To configure the Men&Mice Central service, login as the superuser ``administrator`` through the Men&Mice Management Console. In the top left-hand corner select :menuselection:`Tools --> System Settings --> Advanced` and check the :guilabel:`Enable LDAP integration` checkbox.

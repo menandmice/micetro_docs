@@ -5,7 +5,7 @@ Forward Zone
 
 Through this function, you create a forward zone.
 
-.. image:: ../../images/console-dns-zones-create-forward-zone.png
+.. image:: ../../../images/console-dns-zones-create-forward-zone.png
   :width: 60%
   :align: center
 

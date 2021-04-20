@@ -5,13 +5,13 @@ Zone Icons (Management Console)
 
 When viewing the zones, you will notice indicators that show the zone type.
 
-.. |static| image:: ../../images/console-dns-zone-static-icon.png
-.. |dynamic| image:: ../../images/console-dns-zone-dynamic-icon.png
-.. |ad| image:: ../../images/console-dns-zone-ad-icon.png
-.. |stub| image:: ../../images/console-dns-zone-stub-icon.png
-.. |forward| image:: ../../images/console-dns-zone-forward-icon.png
-.. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
-.. |analyze| image:: ../../images/console-analyze.png
+.. |static| image:: ../../../images/console-dns-zone-static-icon.png
+.. |dynamic| image:: ../../../images/console-dns-zone-dynamic-icon.png
+.. |ad| image:: ../../../images/console-dns-zone-ad-icon.png
+.. |stub| image:: ../../../images/console-dns-zone-stub-icon.png
+.. |forward| image:: ../../../images/console-dns-zone-forward-icon.png
+.. |controls| image:: ../../../images/console-dns-zones-zone-controls-icon.png
+.. |analyze| image:: ../../../images/console-analyze.png
 
   The Management Console displays zone type with the following icons:
 

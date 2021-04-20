@@ -24,6 +24,6 @@ If you are comfortable editing the record table directly, you can use this proce
 
 8. An exclamation mark displays at the left edge of a record that is incomplete or improperly entered. The program will not allow you to save the changes to this zone until the record is repaired. Move to the lower right corner of the tab and click the exclamation point icon. This expands the tab and shows the items in error. Double-click on the error message and it will jump to the record in question.
 
-.. image:: ../../images/console-dns-records-inspector.png
+.. image:: ../../../images/console-dns-records-inspector.png
   :width: 80%
   :align: center

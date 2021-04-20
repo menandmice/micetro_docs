@@ -14,9 +14,9 @@ Viewing Scopes
 All DHCP Scopes on All Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In ::menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
+You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In :menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
 
-.. image:: ../../images/dhcp-scopes-Micetro.png
+.. image:: ../../../images/dhcp-scopes-Micetro.png
   :width: 80%
   :align: center
 
@@ -308,7 +308,7 @@ To create a new scope on the MS DHCP server, do the following:
 
 2. The *Scope Creation Wizard* dialog appears.
 
-.. image:: ../../images/console-dhcp-scope-creation-wizard.png
+.. image:: ../../../images/console-dhcp-scope-creation-wizard.png
   :width: 60%
   :align: center
 
@@ -442,7 +442,7 @@ Use this function to convert an existing scope to an IP Address range, while kee
 
 1. In the *Object List*, select :guilabel:`DHCP Scopes` and then select a scope.
 
-2. From the menu bar, select :guilabel:`Range --> Convert to IP Address Range`.
+2. From the menu bar, select :menuselection:`Range --> Convert to IP Address Range`.
 
 3. When the Men&Mice Management Console confirmation dialog box appears, click :guilabel:`Yes` to convert the range.
 
@@ -453,7 +453,7 @@ Use this function to convert an existing IP Address range to a scope, while keep
 
 1. In the *Object List*, select :guilabel:`IP Address Ranges` and then select a range.
 
-2. From the menu bar, select :guilabel:`Range --> Convert to DHCP Scope`, or right click and select :guilabel:`Convert to DHCP Scope`. The *Scope Creation Wizard* will appear, with the subnet field pre-populated for the selected range.
+2. From the menu bar, select :menuselection:`Range --> Convert to DHCP Scope`, or right click and select :guilabel:`Convert to DHCP Scope`. The *Scope Creation Wizard* will appear, with the subnet field pre-populated for the selected range.
 
 3. Clicking :guilabel:`Next` will continue with the *Scope Creation Wizard* as normal.
 
@@ -605,7 +605,7 @@ Superscopes
 
 All MS Superscopes are listed in the object section under the heading :guilabel:`Superscopes`.
 
-.. image:: ../../images/console-dhcp-superscopes.png
+.. image:: ../../../images/console-dhcp-superscopes.png
   :width: 70%
   :align: center
 
@@ -913,7 +913,7 @@ Managing Split Scopes
 
 When a scope is hosted on multiple servers, the scope view lists all the servers that contain a copy of the scope. For scopes on MS servers, the line says 'Split Scope' and then lists the servers. For the ISC DHCP server, the line says 'Multiple Instances' and then lists the servers:
 
-.. image:: ../../images/console-dhcp-split-scopes.png
+.. image:: ../../../images/console-dhcp-split-scopes.png
   :width: 50%
   :align: center
 

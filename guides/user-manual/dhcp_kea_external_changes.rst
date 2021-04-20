@@ -28,7 +28,7 @@ If successful, the result looks like this:
 
 After the changes to the configuration file have been accepted and parsed into the Kea DHCP servers memory structure, users can display them in Micetro through the :guilabel:`Edit Configuration` action for the server.
 
-.. image:: ../../iamges/kea-edit-config.png
+.. image:: ../../images/kea-edit-config.png
   :width: 90%
   :align: center
 

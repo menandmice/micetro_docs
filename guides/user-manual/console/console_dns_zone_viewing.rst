@@ -15,7 +15,7 @@ Single Name Server Zones
 
 In the Object Section of the Management Console, locate the DNS server that owns the zones you want to view and click on it. (The DNS server(s) will be listed under the DNS Servers object. You may need to click the :guilabel:`+` sign in order to see it.) When a server is selected, the zone information for that server displays in the Objects List.
 
-.. image:: ../../images/console-dns-zones.png
+.. image:: ../../../images/console-dns-zones.png
   :width: 80%
   :align: center
 
@@ -26,7 +26,7 @@ The :guilabel:`Zone` tab provides a detailed look at the data inside of a zone, 
 
 To view the contents of a particular zone, double-click on it. This opens the Zone tab.
 
-.. image:: ../../images/console-dns-zones-zone-contents.png
+.. image:: ../../../images/console-dns-zones-zone-contents.png
   :width: 80%
   :align: center
 
