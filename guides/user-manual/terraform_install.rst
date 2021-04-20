@@ -3,6 +3,11 @@
 Installing the Micetro provider for Terraform
 =============================================
 
+Download compiled binaries
+--------------------------
+
+Precompiled binaries for Windows and Linux are available on `the Men&Mice download server <https://download.menandmice.com/opensource/terraform/>`_.
+
 Manual Build and Install
 ------------------------
 
