@@ -18,6 +18,9 @@ This documentation is divided into three parts:
 
 Use the :ref:`implementation` to familiarize yourself with the Suite's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of the Men&Mice Suite's functionality. The Implementation Guide also details the update procedures.
 
+.. note::
+  If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
+
 .. toctree::
     :caption: Men&Mice Suite
     :maxdepth: 1
