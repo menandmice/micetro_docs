@@ -3,15 +3,15 @@
 ISC DHCP (Management Console)
 -----------------------------
 
-.. |add-dhcp| image:: ../../../images/console-dhcp-add-icon.png
-.. |rename-dhcp| image:: ../../../images/console-dhcp-rename-icon.png
-.. |delete-dhcp| image:: ../../../images/console-dhcp-delete-icon.png
-.. |options-dhcp| image:: ../../../images/console-dhcp-options-icon.png
-.. |access-dhcp| image:: ../../../images/console-dhcp-access-icon.png
-.. |add-reservation-dhcp| image:: ../../../images/console-dhcp-add-reservation-icon.png
-.. |edit-reservation-dhcp| image:: ../../../images/console-dhcp-edit-reservation-icon.png
-.. |delete-reservation-dhcp| image:: ../../../images/console-dhcp-delete-reservation-icon.png
-.. |reservation-options-dhcp| image:: ../../../images/console-dhcp-reservation-options-icon.png
+.. |add-dhcp| image:: ../../images/console-dhcp-add-icon.png
+.. |rename-dhcp| image:: ../../images/console-dhcp-rename-icon.png
+.. |delete-dhcp| image:: ../../images/console-dhcp-delete-icon.png
+.. |options-dhcp| image:: ../../images/console-dhcp-options-icon.png
+.. |access-dhcp| image:: ../../images/console-dhcp-access-icon.png
+.. |add-reservation-dhcp| image:: ../../images/console-dhcp-add-reservation-icon.png
+.. |edit-reservation-dhcp| image:: ../../images/console-dhcp-edit-reservation-icon.png
+.. |delete-reservation-dhcp| image:: ../../images/console-dhcp-delete-reservation-icon.png
+.. |reservation-options-dhcp| image:: ../../images/console-dhcp-reservation-options-icon.png
 
 .. _console-dhcp-isc-groups-hosts:
 
@@ -26,7 +26,7 @@ To manage groups and hosts, do the following:
 
 2. Right-click on the server and, from the shortcut menu, select :guilabel:`Manage Groups and Hosts`. A new menu displays in the menu bar and the *DHCP Groups* dialog box displays.
 
-.. image:: ../../../images/console-dhcp-groups.png
+.. image:: ../../images/console-dhcp-groups.png
   :width: 60%
   :align: center
 

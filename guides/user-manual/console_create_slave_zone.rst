@@ -3,7 +3,7 @@
 Slave Zone (Management Console)
 -------------------------------
 
-.. image:: ../../../images/console-dns-zones-create-slave.png
+.. image:: ../../images/console-dns-zones-create-slave.png
   :width: 50%
   :align: center
 
@@ -32,6 +32,6 @@ Use the following procedure to assign a slave server to a particular zone so it 
 
 4. Choose the desired slave server from the submenu that displays. That zone now displays as a slave on the server that was specified.
 
-.. image:: ../../../images/console-dns-zones-slave-assignments.png
+.. image:: ../../images/console-dns-zones-slave-assignments.png
   :width: 50%
   :align: center

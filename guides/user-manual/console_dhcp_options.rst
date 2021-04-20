@@ -5,7 +5,7 @@ Options (Management Console)
 
 The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers offer different types of options: the MS DHCP server allows the user to choose between different option types (Standard, Microsoft Options and Microsoft Windows 2000 options). This drop-down list is only displayed if there are non-standard options defined on the ISC DHCP server.
 
-.. image:: ../../../images/console-dhcp-server-options.png
+.. image:: ../../images/console-dhcp-server-options.png
   :width: 40%
   :align: center
 
@@ -52,7 +52,7 @@ To access the advanced options, do the following:
 
 4. When the *Advanced Options* dialog box displays, you can edit the properties for the server in a text document. If the DHCP server contains multiple configuration files, each file displays in a separate tab.
 
-.. image:: ../../../images/console-dhcp-isc-advanced-options.png
+.. image:: ../../images/console-dhcp-isc-advanced-options.png
   :width: 70%
   :align: center
 

@@ -21,7 +21,7 @@ To promote a slave zone to a master zone, do the following:
 
 2. Right-click the slave zone you want to promote and, from the shortcut menu, select :guilabel:`Promote to master`. An information message displays:
 
-.. image:: ../../../images/console-dns-zones-promote.png
+.. image:: ../../images/console-dns-zones-promote.png
   :width: 30%
   :align: center
 

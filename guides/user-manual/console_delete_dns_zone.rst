@@ -13,6 +13,6 @@ Use this command to delete a zone from one or more servers. Before using this co
 
 4. To remove the zone(s) from the selected servers, click the :guilabel:`Delete` button. The zone is removed from the servers.
 
-.. image:: ../../../images/console-dns-zones-delete.png
+.. image:: ../../images/console-dns-zones-delete.png
   :width: 50%
   :align: center
