@@ -23,13 +23,19 @@ Windows
 
 .. code-block:: shell
 
-  go build -o terraform-provider-menandmice
+  go build -o terraform-provider-menandmice.exe
 
-2. Copy the ``terraform-provider-menandmice`` binary:
+2. Copy the ``terraform-provider-menandmice.exe`` to:
 
   * for Terraform 0.12: ``%APPDATA%\terraform.d\plugins\windows_amd64\``
 
-  * for Terraform 0.13: ``%APPDATA%\terraform.d\plugins\terraform-provider-menandmice\local\menandmice\0.2\windows_amd64\``
+  * for Terraform 0.14: ``%APPDATA%\terraform.d\plugins\registry.terraform.io\local\menandmice\0.2.0\windows_amd64\``
+
+3. Initialize:
+
+.. code-block:: shell
+
+  terraform.exe init 
 
 Run acceptation test
 --------------------

@@ -18,6 +18,35 @@ The Kea Control Agent is a daemon that exposes a RESTful control interface for m
 
 Because of the Kea Control Agent, Kea DHCP servers can be added to Micetro without a DHCP Server Controller running on every machine that runs Kea. A *single* DHCP Server Controller, installed on a machine that can access the instances that run Kea services, is sufficient and will communicate with all Kea servers on Micetro's behalf.
 
+.. _add-kea-hooks:
+
+Adding Kea to Micetro
+---------------------
+
+Because Micetro uses the Kea API to communicate with the DHCP server(s), it requires (in addition to the DHCP Server Controller) the Kea hook library ``libdhcp_lease_cmds.so``.
+
+.. note::
+  On certain distributions (like RHEL) check that the kea-hooks package is also installed.
+
+Configuring the Kea hook library
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After installing the Kea hook library, open ``kea-dhcp4.conf`` and locate the ``hooks-libraries`` array. Add the hook to ``libdhcp_lease_cmds.so``:
+
+.. code-block::
+  :linenos:
+
+  "hooks-libraries":[
+      {
+        "library" : "/lib64/kea/hooks/libdhcp_lease_cmds.so",
+        "parameters" : {}
+      }
+  ]
+
+The location of the library depends on your distribution, use ``whereis libdhcp_lease_cmds.so`` to find it.
+
+After adding the library, restart Kea and the Kea Control Agent.
+
 Kea high availability
 ---------------------
 

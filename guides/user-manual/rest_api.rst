@@ -16,7 +16,7 @@ To use the REST API, you must install the Men&Mice Web Application and make sure
 REST API documentation
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The online REST API documentation can be viewed on `http://api.menandmice.com/10.0/rest-doc-100-static.html`_.
+The online REST API documentation can be viewed on `api.menandmice.com <http://api.menandmice.com/10.0.0/rest-doc-1000-static.html>`_.
 
 .. tip::
   Documentation for the REST API is bundled with the Web Application, and can be viewed on ``http(s)://micetro.yourdomain.tld/mmws/api/doc`` where *micetro.yourdomain.tld* is the url for the Web Application.

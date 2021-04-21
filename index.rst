@@ -4,7 +4,7 @@ Micetro by Men&Mice 10.0
 Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
 
 .. image:: images/micetro.png
-  :width: 50%
+  :width: 70%
   :alt: Men&Mice
   :align: center
 
@@ -18,8 +18,11 @@ This documentation is divided into three parts:
 
 Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of Micetro's functionality. The Implementation Guide also details the update procedures.
 
+.. note::
+  For how-to articles and troubleshooting, visit the `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
+
 .. image:: images/menandmice.png
-  :width: 25%
+  :width: 60%
   :alt: Micetro by Men&Mice
   :align: center
 

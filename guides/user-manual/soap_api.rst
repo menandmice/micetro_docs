@@ -25,7 +25,7 @@ The web service can be used to perform tasks such as:
 SOAP API documentation
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The SOAP command reference can be viewed online on `http://api.menandmice.com/`_.
+The SOAP command reference can be viewed online on `api.menandmice.com <http://api.menandmice.com/10.0.0>`_.
 
 .. tip::
   Documentation for the REST API is bundled with the Web Application, and can be viewed on ``http(s)://micetro.yourdomain.tld/mmws/wsdldoc`` where *micetro.yourdomain.tld* is the url for the Web Application.
