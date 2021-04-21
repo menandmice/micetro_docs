@@ -43,6 +43,9 @@ The following table demonstrates the different options when adding a DHCP Server
 
 .. [2] Alternatively, you can configure a socket for communication in ``kea-dhcp4.conf``.
 
+.. important::
+  To add Kea servers to Micetro, they need to be configured with the ``libdhcp_lease_cmds.so`` library. See :ref:`add-kea-hooks` for details.
+
 1. Log in to the Web Application
 
 2. Navigate to :menuselection:`Admin --> Server Management`.
