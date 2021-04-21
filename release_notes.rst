@@ -13,6 +13,8 @@ Jump to: :ref:`10.0-release`
 10.0
 ----
 
+*April 20th 2021*
+
 .. important::
   **End-of-Life Announcement**
 
@@ -53,7 +55,7 @@ New features
 
 * Static-stub zones are now supported in the Web Application
 
-* Some of y’all wanted search instead of filtering, so now you can switch the Quickfilter to a Quicksearch and back again. The Quikfilter will only show the matching records in the grid, while Quicksearch will highlight them but still display all other objects as well.
+* Some of y’all wanted search instead of filtering, so now you can switch the Quickfilter to a Quicksearch and back again. The Quickfilter will only show the matching records in the grid, while Quicksearch will highlight them but still display all other objects as well.
 
 * You can import DNS records into a zone with an “Import” task in the Web Application’s DNS context. No muss, no fuss.
 
