@@ -7,7 +7,6 @@ Men&Mice Central is the central authentication server. It also serves as the met
 
 .. toctree::
   :maxdepth: 1
-  :hidden:
 
   install_central
   central_database

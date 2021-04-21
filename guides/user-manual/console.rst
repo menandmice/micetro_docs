@@ -64,7 +64,6 @@ When connecting the Management Console to a newly installed instance of Men&Mice
 
 .. toctree::
   :maxdepth: 1
-  :hidden:
 
   console_gui
   console_menus

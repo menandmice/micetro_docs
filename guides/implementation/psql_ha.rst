@@ -153,7 +153,6 @@ Edit the ``pg_hba.conf`` to allow access to the database from the outside:
 
 .. toctree::
   :maxdepth: 2
-  :hidden:
 
   psql_ha_admin
   psql_ha_maintenance

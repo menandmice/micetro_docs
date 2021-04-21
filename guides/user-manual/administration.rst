@@ -12,7 +12,6 @@ This section describes the Administration features in the Men&Mice Management Co
 
 .. toctree::
   :maxdepth: 2
-  :hidden:
 
   admin_system_settings
   user_management
@@ -24,4 +23,3 @@ This section describes the Administration features in the Men&Mice Management Co
   admin_maintenance
   appliance_management
   caching_appliance
-menuselection

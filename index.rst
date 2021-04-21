@@ -31,7 +31,6 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
     :caption: Micetro by Men&Mice
-    :hidden:
 
     release_notes
     security_announcements
@@ -41,7 +40,6 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 .. toctree::
      :caption: Installing Micetro
      :maxdepth: 2
-     :hidden:
 
      guides/implementation/implementation
      guides/implementation/configuration
@@ -51,7 +49,6 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 .. toctree::
      :caption: Using Micetro
      :maxdepth: 2
-     :hidden:
 
      guides/user-manual/introduction
      guides/user-manual/web_application
@@ -68,6 +65,5 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 .. toctree::
     :caption: Reference articles
     :maxdepth: 2
-    :hidden:
 
     guides/reference/reference
