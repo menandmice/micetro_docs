@@ -17,18 +17,18 @@ It will then install the base Generic DNS Server Controller, but there are two t
 
 and set the correct ownership.
 
-2. Create a file preferences.cfg in the mmsuite directory and configure the connector script with a XML-tag as described in Generic DNS Server Controller. E.g. on Linux:
+2. Create a file ``preferences.cfg`` in the ``mmsuite`` directory and configure the connector script with a XML-tag as described in Generic DNS Server Controller. E.g. on Linux:
 
 .. code-block::
   :linenos:
 
   <GenericDNSScript value="python /your/script/directory/genericDNS.py" />
 
-Download the script `here <https://docs.menandmice.com/download/attachments/15302753/genericDNSPowerDNS.py?version=3&modificationDate=1601037003658&api=v2>`_.
+Download the script from :ref:`powerdns-script`.
 
-4. Edit the systemd/init script of the controller. Open with an editor, e.g. vi the mmremote init script, which should be /etc/init.d/mmremote
+4. Edit the ``systemd/init`` script of the controller. Open with an editor, e.g. vi the ``mmremote`` init script, which should be ``/etc/init.d/mmremote``.
 
-5. Search for the line PARAMS="...."
+5. Search for the line ``PARAMS="...."``.
 
 6. Add to the begin of the parameter list your created controller working directory with the -d parameter, .i.e.
 
