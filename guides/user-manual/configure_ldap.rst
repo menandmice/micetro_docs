@@ -11,7 +11,7 @@ This document describes how to configure LDAP authentication in Micetro.
 Installation on Centos Linux
 ----------------------------
 
-Find the Python script on :ref:`ldap-script` and the signature file on
+Find the Python script on :ref:`ldap-script` and the signature file on :ref:`ldap-signature`.
 
 To use LDAP authentication and authorization, start by installing ``python-ldap`` on the machine where the Men&Mice Central service is run and install the python extension used by Central when connecting to an LDAP directory:
 
