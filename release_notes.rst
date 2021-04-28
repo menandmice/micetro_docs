@@ -183,7 +183,7 @@ Bugfixes
 
 * Fixed REST Basic Authentication with passwords containing a colon.
 
-* New DNS records are now case insensitive and will no longer fail when the same but case insensitive resource record set with the same name already exists in AWS Route 53 and other cloud providers.
+* Adding new DNS records to AWS is now case insensitive and will no longer fail when the same but case insensitive resource record set with the same name already exists in AWS Route 53 and other cloud providers.
 
 * Restarting a DHCP Server Controller is no longer necessary after losing connection to a Cisco DHCP server.
 
