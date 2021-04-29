@@ -6,7 +6,16 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:`9.3.3-release`, :ref:`9.3.4-release`, :ref:`9.3.5-release`, :ref:`9.3.6-release`, :ref:`9.3.7-release`, :ref:`9.3.8-release`, :ref:`9.3.9-release`, :ref:`9.3.10-release`
+Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:`9.3.3-release`, :ref:`9.3.4-release`, :ref:`9.3.5-release`, :ref:`9.3.6-release`, :ref:`9.3.7-release`, :ref:`9.3.8-release`, :ref:`9.3.9-release`, :ref:`9.3.10-release`, :ref:`9.3.11-release`
+
+.. _9.3.11-release:
+
+9.3.11
+------
+
+*April 29th, 2021*
+
+* The authoritative DNS software (BIND) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2021-25214, CVE-2021-25215
 
 .. _9.3.10-release:
 
