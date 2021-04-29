@@ -13,8 +13,7 @@ Jump to: :ref:`10.0-release`, :ref:`10.0.1-release`
 10.0.1
 ------
 
-.. note::
-  This is a maintenance release
+*April 29th, 2021*
 
 * The authoritative DNS software (BIND) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2021-25214, CVE-2021-25215
 
