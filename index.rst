@@ -39,7 +39,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
      :caption: Installing Micetro
-     :maxdepth: 2
+     :maxdepth: 3
 
      guides/implementation/implementation
      guides/implementation/configuration
@@ -48,7 +48,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
      :caption: Using Micetro
-     :maxdepth: 2
+     :maxdepth: 3
 
      guides/user-manual/introduction
      guides/user-manual/web_application
@@ -64,6 +64,6 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. toctree::
     :caption: Reference articles
-    :maxdepth: 2
+    :maxdepth: 3
 
     guides/reference/reference
