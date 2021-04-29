@@ -6,7 +6,17 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`10.0-release`
+Jump to: :ref:`10.0-release`, :ref:`10.0.1-release`
+
+.. _10.0.1-release:
+
+10.0.1
+------
+
+.. note::
+  This is a maintenance release
+
+* The authoritative DNS software (BIND) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2021-25214, CVE-2021-25215
 
 .. _10.0-release:
 
