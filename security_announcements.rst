@@ -19,5 +19,3 @@ The appliances can be easily upgraded using the Automatic Updates feature of Mic
 For details on how to update Micetro, see :ref:`updates`.
 
 For more information regarding the upgrade, contact Men&Mice Customer Care. See :ref:`support`.
-
-* The authoritative DNS software (BIND) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2021-25214, CVE-2021-25215
