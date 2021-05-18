@@ -1,3 +1,7 @@
+.. meta::
+   :description: Scheduled scripts allow the administrator to configure the system to run on schedule  
+   :keywords: schedule, scripts, configure, enable
+
 .. _admin-schedule-scripts:
 
 Scheduled Scripts
