@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing a Micetro installation through Ansible
+   :keywords: Ansible, Micetro, installation
+
 .. _ansible:
 
 Ansible
