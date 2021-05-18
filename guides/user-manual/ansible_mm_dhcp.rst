@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing DHCP reservations in Micetro
+   :keywords: DHCP, management, reservations, Micetro, Ansible 
+
 .. _ansible-mm_dhcp:
 
 mm_dhcp
