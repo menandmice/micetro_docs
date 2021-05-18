@@ -1,3 +1,7 @@
+.. meta::
+   :description: Ansible credentials matrix
+   :keywords: ansible, credentials, module, plugin, administrator
+
 .. _ansible-credentials:
 
 Credential matrix
