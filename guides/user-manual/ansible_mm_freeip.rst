@@ -1,3 +1,7 @@
+.. meta::
+   :description: Options, example usage of Men&Mice FreeIP lookup plugin
+   :keywords: Men&Mice, FreeIP, lookup, plugin 
+
 .. _ansible-mm_freeip:
 
 mm_freeip plugin
