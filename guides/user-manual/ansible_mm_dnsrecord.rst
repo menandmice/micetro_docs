@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing DNS records in Micetro
+   :keywords: DNS, records, Micetro, Ansible
+
 .. _ansible-mm_dnsrecord:
 
 mm_dnsrecord
