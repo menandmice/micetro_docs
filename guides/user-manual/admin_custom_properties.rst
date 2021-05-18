@@ -1,6 +1,6 @@
 .. meta::
    :description: Defining and adding custom properties used for entry of relevant data  
-   :keywords: custom properties, defining, adding, 
+   :keywords: custom properties, defining, adding, define, add 
    
 .. _admin-custom-properties:
 
