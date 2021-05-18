@@ -1,6 +1,6 @@
 .. meta::
-   :description: Installing the Ansible modules and plugins
-   :keywords: Ansible, installation, Micetro  
+   :description: Installing Micetro / the Ansible modules and plugins
+   :keywords: Ansible, installation, Micetro
 
 .. _ansible-install:
 
