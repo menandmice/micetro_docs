@@ -1,3 +1,7 @@
+.. meta::
+   :description: Claiming IP addresses in DHCP in Micetro
+   :keywords: IP, IP address, DHCP, Micetro 
+
 .. _ansible-mm_claimip:
 
 mm_claimip
