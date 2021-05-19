@@ -1,3 +1,7 @@
+.. meta::
+   :description: Using the Micetro Ansible Integration to create Ansible playbooks that utilize the functionality of Micetro with examples
+   :keywords: Micetro, Ansible, integration, playbook, examples
+
 .. _ansible-playbooks:
 
 Example playbooks
