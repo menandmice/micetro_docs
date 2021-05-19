@@ -1,3 +1,7 @@
+.. meta::
+   :description: Automation, REST API, SOAP API, Ansible, Terraform 
+   :keywords: automation, REST API, SOAP API, Ansible, Terraform 
+
 .. _automation:
 
 Automation
