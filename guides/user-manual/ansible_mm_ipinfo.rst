@@ -1,3 +1,7 @@
+.. meta::
+   :description: Men&Mice IPInfo lookup plugin finds a lot of info about a specified IP address, defined in Micetro
+   :keywords: IPInfo, lookup plugin, IP address, Micetro 
+
 .. _ansible-mm_ipinfo:
 
 mm_ipinfo plugin
