@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing user accounts and user properties in Micetro
+   :keywords: user, properties, accounts, Micetro, Ansible 
+
 .. _ansible-mm_user:
 
 mm_user
