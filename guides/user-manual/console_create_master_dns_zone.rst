@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to create a master zone in the Men&Mice Management Console 
+   :keywords: console, create, master, dns 
+
 .. _console-create-master-dns-zone:
 
 Master Zone (Management Console)
