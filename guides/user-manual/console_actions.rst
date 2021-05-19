@@ -1,3 +1,7 @@
+.. meta::
+   :description: A list of actions in the Men&Mice Management Console 
+   :keywords: actions, management, console
+
 .. _console-actions:
 
 Other actions in the Management Console
