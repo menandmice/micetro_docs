@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing roles in Micetro 
+   :keywords: roles, management, Ansible, Micetro
+
 .. _ansible-mm_role:
 
 mm_role
