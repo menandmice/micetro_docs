@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to launch the Men&Mice Management Console
+   :keywords: management, console, Men&Mice
+
 .. _console:
 
 Management Console
