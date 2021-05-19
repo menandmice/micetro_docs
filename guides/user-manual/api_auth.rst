@@ -1,3 +1,7 @@
+.. meta::
+   :description: API authentication methods including the login command 
+   :keywords: API, authentication
+
 .. _api-auth:
 
 API Authentication methods
