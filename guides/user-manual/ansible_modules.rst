@@ -1,3 +1,7 @@
+.. meta::
+   :description: Ansible modules
+   :keywords: Ansible, module
+
 .. _ansible-modules:
 
 Ansible modules
