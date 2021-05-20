@@ -1,3 +1,7 @@
+.. meta::
+   :description: Using the Management Console to view all of the existing DNS zones on all servers  
+   :keywords: plaintext, markup language
+
 .. _console-dns-zone-viewing:
 
 Zone Viewing (Management Console)
