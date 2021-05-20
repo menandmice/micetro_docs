@@ -1,3 +1,7 @@
+.. meta::
+   :description: Microsoft server properties  
+   :keywords: Microsoft, DHCP, Windows, Console 
+
 .. _console-dhcp-windows:
 
 Microsoft DHCP (Management Console)
