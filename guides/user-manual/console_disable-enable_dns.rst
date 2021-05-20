@@ -1,3 +1,7 @@
+.. meta::
+   :description: What happens when a DNS server is disabled
+   :keywords: console, disable, DNS, Micetro
+
 .. _console-disable-enable-dns-server:
 
 Disable
