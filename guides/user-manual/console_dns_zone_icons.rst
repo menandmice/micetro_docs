@@ -1,3 +1,7 @@
+.. meta::
+   :description: Zone types and icons within the Management Console
+   :keywords: zone, icons, dns, management, console 
+
 .. _console-dns-zone-icons:
 
 Zone Icons (Management Console)
