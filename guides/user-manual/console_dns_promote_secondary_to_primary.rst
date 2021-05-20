@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Promote Zone feature - changing a slave zone to a master zone
+   :keywords: slave, master, zone, dns, console, promote
+
 .. _console-dns-promote-secondary-to-primary:
 
 Promote Slave to Master (Management Console)
