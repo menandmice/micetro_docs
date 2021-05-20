@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to add a Cisco DHCP server
+   :keywords: Cisco, DHCP, server
+
 .. _console-dhcp-cisco:
 
 Cisco DHCP
