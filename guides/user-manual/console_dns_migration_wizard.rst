@@ -1,3 +1,7 @@
+.. meta::
+   :description: What is a Zone Migration Wizard 
+   :keywords: dns, console, migration, wizard, zone
+
 .. _console-dns-migration-wizard:
 
 Zone Migration Wizard (Management Console)
