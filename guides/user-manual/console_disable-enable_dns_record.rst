@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to disable and/or enable records
+   :description: How to disable and/or enable DNS records
    :keywords: disable, enable, dns, records 
 
 .. _console-disable-enable-dns-record:
