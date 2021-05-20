@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Zone tab allows users to search any or all fields in the zone for a particular keyword or numeric value
+   :keywords: DNS, search, zone 
+
 .. _console-dns-search:
 
 Search (DNS) (Management Console)
