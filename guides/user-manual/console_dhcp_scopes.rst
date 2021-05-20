@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to perform specific actions in Micetro associated with maintaining DHCP scopes
+   :keywords: DHCP, scopes
+
 .. _dhcp-scopes:
 
 DHCP Scopes
