@@ -1,3 +1,7 @@
+.. meta::
+   :description: The command to delete a zone from one or more servers
+   :keywords: command, delete, zone, server
+
 .. _console-delete-dns-zone:
 
 Delete zone (Management Console)
