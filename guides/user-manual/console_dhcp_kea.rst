@@ -1,3 +1,7 @@
+.. meta::
+   :description: Adding Kea DHCP server to Micetro
+   :keywords: ISC Kea, DHCP, Management Console
+
 .. _console-dhcp-kea:
 
 ISC Kea DHCP (Management Console)
