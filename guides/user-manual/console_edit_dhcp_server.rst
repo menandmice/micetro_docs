@@ -1,3 +1,7 @@
+.. meta::
+   :description: Change the name or IP Address used to connect to a DHCP server 
+   :keywords: edit, dhcp, server, name
+   
 .. _console-edit-dhcp-server:
 
 Edit DHCP Server Name (Management Console)
