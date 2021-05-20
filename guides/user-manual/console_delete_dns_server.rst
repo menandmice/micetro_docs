@@ -1,3 +1,7 @@
+.. meta::
+   :description: The command to remove a server from the Management Console 
+   :keywords: remove, command, management console 
+
 .. _console-delete-dns-server:
 
 Remove
