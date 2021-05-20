@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to access the advanced Advanced ISC DHCP and ISC Kea Server Properties in order to edit DHCP server properties that are not available in the GUI
+   :keywords: DHCP, KEA, server, properties 
+
 .. _console-dhcp-advanced-options:
 
 Advanced ISC DHCP and ISC Kea Server Properties
