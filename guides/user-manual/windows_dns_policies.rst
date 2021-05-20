@@ -1,3 +1,7 @@
+.. meta::
+   :description: DNS policies and scopes for Microsoft DNS servers 
+   :keywords: DNS, policies, Windows
+
 .. _windows-dns-policies:
 
 DNS policies (Windows)
