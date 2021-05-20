@@ -1,3 +1,7 @@
+.. meta::
+   :description: The ISC DHCP, Kea DHCP, Cisco and MS DHCP server options
+   :keywords: DHCP, Kea, Cisco, Microsoft
+
 .. _console-dhcp-options:
 
 Options (Management Console)
