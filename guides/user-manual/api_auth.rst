@@ -9,8 +9,7 @@ There a few options for authenticating against the M&M API:
 
 * :ref:`api-login-headers`
 
-..
-  * :ref:`api-login-sso`
+* :ref:`api-login-sso`
 
 .. _api-login-command:
 
@@ -40,7 +39,7 @@ By using authorization headers for authentication, the Login command becomes unn
 
 With this authentication method, multiple M&M Web Service instances can be deployed and used simultaneously behind a load balancer to provide a redundancy that is transparent to the API client.
 
-The session IDs, on the other hand, are only valid on the API endpoint (web server) they were created with. So when an API client that uses a session id gets redirected to another Web Server/API Endpoint, the client will get an error that the session id is invalid or expired, and then needs to login again to get a new session id before proceeding.
+The session IDs, on the other hand, are only valid on the API endpoint (web service) they were created with. So when an API client that uses a session id gets redirected to another Web Service/API Endpoint, the client will get an error that the session id is invalid or expired, and then needs to login again to get a new session id before proceeding.
 
 Basic Authentication
 ^^^^^^^^^^^^^^^^^^^^
@@ -78,10 +77,14 @@ To enable the Negotiate header Authorization in M&M Web Services, add the follow
 The order of the methods can be changed, e.g. if NTLM is preferred over Kerberos but in general if you don't want to allow NTLM (which is less secure) as a fallback only specify Kerberos as
 a value.
 
+.. _api-login-sso:
+
+Single Sign-On
+--------------
+
+To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro. See :ref:`external-auth`.
+
 ..
-  .. _api-login-sso:
-  Single Sign-On
-  --------------
   When using M&M Web Services as an API endpoint, refer to the Negotiate header Authorization section above.
   When using the M&M Web Extension that comes with the M&M Web Interface as an API endpoint, single sign-on is achieved by invoking a POST http request to
   .. code-block::
