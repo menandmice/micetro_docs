@@ -10,7 +10,6 @@ There a few options for authenticating against the M&M API:
 * :ref:`api-login-headers`
 
 ..
-
   * :ref:`api-login-sso`
 
 .. _api-login-command:
@@ -25,8 +24,7 @@ The Login command takes in server (for the M&M Central server), user name, and p
 The Login command and its parameters is fully documented in the normal SOAP API documentation
 
 .. note::
-  Remember to configure HTTPS for the mmws and/or _mmwebext sites for this authentication method, since the username and password can easily be extracted for anyone listening in on
-the communication.
+  Remember to configure HTTPS for the mmws and/or _mmwebext sites for this authentication method, since the username and password can easily be extracted for anyone listening in on the communication.
 
 .. _api-login-headers:
 
@@ -61,8 +59,7 @@ For more information on Basic Authorization headers on the client side, see for 
 The authorization header authentication method is only available for JSON-RPC and REST APIs, and only if using M&M Web Services as an endpoint (i.e. the URL is <server>/mmws/api or <server>/mmws/json)
 
 .. note::
-  Remember to configure HTTPS for the mmws site for this authentication method since the username and password can easily be extracted for anyone listening in on
-the communication.
+  Remember to configure HTTPS for the mmws site for this authentication method since the username and password can easily be extracted for anyone listening in on the communication.
 
 Negotiate Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,28 +79,18 @@ The order of the methods can be changed, e.g. if NTLM is preferred over Kerberos
 a value.
 
 ..
-
   .. _api-login-sso:
-
   Single Sign-On
   --------------
-
   When using M&M Web Services as an API endpoint, refer to the Negotiate header Authorization section above.
-
   When using the M&M Web Extension that comes with the M&M Web Interface as an API endpoint, single sign-on is achieved by invoking a POST http request to
-
   .. code-block::
     :linenos:
-
     http://<web server>/_mmwebext/mmwebext.dll?RequestSSO
-
   The body of the http request should include simply the M&M Central server name.
-
   If IIS is correctly configured (see :ref:`disable-kernel-mode-auth`), this request will return an XML similar to what the Login SOAP command would return:
-
   .. code-block:: XML
     :linenos:
-
     <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <soap:Body>
           <LoginResponse xmlns="http://menandmice.com/webservices/">
@@ -112,5 +99,4 @@ a value.
           </LoginResponse>
       </soap:Body>
     </soap:Envelope>
-
   The *session* should then be used for all subsequent API commands.
