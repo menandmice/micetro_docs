@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to handle external changes with Kea 
+   :keywords: DHCP, external, changes, Kea 
+
 .. _dhcp-kea-external-changes:
 
 Handling external changes with Kea
