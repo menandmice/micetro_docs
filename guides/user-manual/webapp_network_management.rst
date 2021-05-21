@@ -1,3 +1,7 @@
+.. meta::
+   :description: Network management in the Men&Mice Web Application  
+   :keywords: network, management, web app  
+
 .. _webapp-network-management:
 
 Network management
