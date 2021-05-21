@@ -1,3 +1,7 @@
+.. meta::
+   :description: DHCP 
+   :keywords: DHCP 
+
 .. _dhcp:
 
 DHCP
