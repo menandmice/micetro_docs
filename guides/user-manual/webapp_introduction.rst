@@ -1,3 +1,7 @@
+.. meta::
+   :description: Introduction to the Men&Mice Web Application  
+   :keywords: introduction, web app  
+
 .. _webapp-introduction:
 
 Introduction
