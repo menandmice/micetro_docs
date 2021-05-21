@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Quick Filter functionality in the Men&Mice Management Console 
+   :keywords: quick filter, management console 
+
 .. _console-quickfilter:
 
 Quick Filter (Management Console)
