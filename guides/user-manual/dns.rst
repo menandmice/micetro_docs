@@ -1,3 +1,7 @@
+.. meta::
+   :description: DNS servers, zones, records, policies 
+   :keywords: DNS
+
 .. _dns:
 
 DNS
