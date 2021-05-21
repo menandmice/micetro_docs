@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Inspector in the Men&Mice Web Application overview 
+   :keywords: inspector, web app, overview
+
 .. _webapp-inspector:
 
 The Inspector
