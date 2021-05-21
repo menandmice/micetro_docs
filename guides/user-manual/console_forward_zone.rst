@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to create a forward zone 
+   :description: How to create a forward zone in the Men&Mice Management Console
    :keywords: console, forward, zone
 
 .. _console-forward-zone:
