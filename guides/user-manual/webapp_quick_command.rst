@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Quick command feature in the Men&Mice Web Application 
+   :keywords: Quick, comman, web app  
+
 .. _webapp-quick-command:
 
 Quick command
