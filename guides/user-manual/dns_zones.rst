@@ -1,3 +1,7 @@
+.. meta::
+   :description: Overview of DNS zones and zone management commands 
+   :keywords: DNS, zones e
+
 .. _dns-zones:
 
 DNS zones
