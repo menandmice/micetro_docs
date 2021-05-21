@@ -1,3 +1,7 @@
+.. meta::
+   :description: The introduction to Micetro by Men&Mice 
+   :keywords: user manual, Micetro 
+
 .. _manual-introduction:
 
 User Manual
