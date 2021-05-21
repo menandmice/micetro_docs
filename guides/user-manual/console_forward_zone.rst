@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to create a forward zone 
+   :keywords: console, forward, zone
+
 .. _console-forward-zone:
 
 Forward Zone
