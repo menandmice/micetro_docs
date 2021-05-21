@@ -1,3 +1,7 @@
+.. meta::
+   :description: IP address management in the Men&Mice Management Console 
+   :keywords: IPAM, management, console  
+
 .. _ipam:
 
 .. toctree::
