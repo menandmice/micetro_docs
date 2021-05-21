@@ -1,3 +1,7 @@
+.. meta::
+   :description: A guide to using the web application for Micetro
+   :keywords: web app, user guide, Micetro 
+
 .. _webapp-user-guide:
 
 Using the Web Application
