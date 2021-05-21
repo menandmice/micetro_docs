@@ -1,3 +1,7 @@
+.. meta::
+   :description: Maintaining DHCP servers in the Men&Mice Management Console 
+   :keywords: DHCP, servers, management console, Men&Mice 
+
 .. _dhcp-servers:
 
 DHCP servers
