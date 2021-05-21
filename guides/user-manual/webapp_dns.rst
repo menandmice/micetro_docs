@@ -1,3 +1,7 @@
+.. meta::
+   :description: DNS management in the Men&Mice Web Application
+   :keywords: DNS, management, web app 
+
 .. _webapp-dns:
 
 DNS management
