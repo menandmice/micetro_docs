@@ -1,3 +1,7 @@
+.. meta::
+   :description: General information about the Men&Mice Web Application
+   :keywords: general, web app  
+
 .. _webapp-general:
 
 General
