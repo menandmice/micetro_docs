@@ -1,3 +1,7 @@
+.. meta::
+   :description: ISC DHCP servers in the Men&Mice Management Console 
+   :keywords: ISC, DHCP, management, console 
+   
 .. _dhcp-isc:
 
 ISC DHCP
