@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to run external scripts and the types of script interfaces  
+   :keywords: external, scripts 
+
 .. _external-scripts:
 
 External scripts
