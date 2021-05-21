@@ -1,3 +1,7 @@
+.. meta::
+   :description: Menu bars and commands in the Men&Mice Management Console 
+   :keywords: menu, bar, console 
+
 .. _console-menus:
 
 Menu Bars
