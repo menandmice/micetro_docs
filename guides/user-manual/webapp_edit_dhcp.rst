@@ -1,3 +1,7 @@
+.. meta::
+   :description: Viewing, adding, removing DHCP options in the Men&Mice Web Application  
+   :keywords: edit, DHCP, options 
+   
 .. _webapp-edit-dhcp:
 
 Edit DHCP Options
