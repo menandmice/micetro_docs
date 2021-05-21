@@ -1,6 +1,6 @@
 .. meta::
-   :description: Overview of DNS zones and zone management commands 
-   :keywords: DNS, zones e
+   :description: Overview, analysis, viewing, deleting of DNS zones  
+   :keywords: DNS, zones 
 
 .. _dns-zones:
 
