@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to create a stub zone through the Stub Zone function in the Men&Mice Management Console 
+   :keywords: stub zone, management console 
+
 .. _console-stub-zone:
 
 Stub Zone (Management Console)
