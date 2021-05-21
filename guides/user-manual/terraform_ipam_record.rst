@@ -1,3 +1,7 @@
+.. meta::
+   :description: Terraform IPAM record
+   :keywords: terraform, IPAM, record
+
 .. _terraform-ipam-record:
 
 menandmice_ipam_record
