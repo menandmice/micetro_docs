@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Devices feature in the Men&Mice Management Console - definition and usage
+   :keywords: devices, management console 
+
 .. _devices:
 
 Devices
