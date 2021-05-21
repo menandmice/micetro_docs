@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to manage DNS and DHCP servers in the Men&Mice Web Application
+   :keywords: server, management, DNS, DHCP 
+
 .. _webapp-server-management:
 
 Server management
