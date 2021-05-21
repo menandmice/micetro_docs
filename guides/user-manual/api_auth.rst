@@ -61,7 +61,8 @@ For more information on Basic Authorization headers on the client side, see for 
 The authorization header authentication method is only available for JSON-RPC and REST APIs, and only if using M&M Web Services as an endpoint (i.e. the URL is <server>/mmws/api or <server>/mmws/json)
 
 .. note::
-  Remember to configure HTTPS for the mmws site for this authentication method.
+  Remember to configure HTTPS for the mmws site for this authentication method since the username and password can easily be extracted for anyone listening in on
+the communication.
 
 Negotiate Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^
