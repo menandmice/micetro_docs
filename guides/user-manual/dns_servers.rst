@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to maintain DNS servers in the Men&Mice Management Console 
+   :keywords: DNS, server, management console 
+
 .. _dns-servers:
 
 Authoritative DNS Servers
