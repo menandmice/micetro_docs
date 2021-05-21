@@ -1,3 +1,7 @@
+.. meta::
+   :description: Toolbars in the Men&Mice Management Console 
+   :keywords: toolbars, management console 
+
 .. _console-toolbars:
 
 Toolbars
