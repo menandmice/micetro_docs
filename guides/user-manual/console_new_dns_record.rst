@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to insert a new record in the zone tab in the Men&Mice Management Console 
+   :keywords: new, record, management, console  
+
 .. _console-new-dns-record:
 
 New Records (Management Console)
