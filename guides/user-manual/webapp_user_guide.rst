@@ -1,5 +1,5 @@
 .. meta::
-   :description: A guide to using the web application for Micetro
+   :description: A guide to using the Men&Mice Web Application 
    :keywords: web app, user guide, Micetro 
 
 .. _webapp-user-guide:
