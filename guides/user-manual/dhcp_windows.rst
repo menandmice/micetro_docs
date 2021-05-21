@@ -1,3 +1,7 @@
+.. meta::
+   :description: Defining options on Microsoft DHCP servers 
+   :keywords: DHCP, Windows, Microsoft server 
+
 .. _dhcp-windows:
 
 Microsoft DHCP
