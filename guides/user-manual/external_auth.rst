@@ -1,3 +1,7 @@
+.. meta::
+   :description: User authentication methods available with Micetro
+   :keywords: external, authentication 
+
 .. _external-auth:
 
 External Authentication
