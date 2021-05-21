@@ -1,3 +1,7 @@
+.. meta::
+   :description: Adding a new DHCP server in the Men&Mice Management Console 
+   :keywords: DHCP, server, management, console 
+   
 .. _console-new-dhcp-server:
 
 New DHCP Server (Management Console)
