@@ -1,3 +1,7 @@
+.. meta::
+   :description: The GUI interface in the Men&Mice Management Console
+   :keywords: console, GUI, interface
+
 .. _console-gui:
 
 GUI Interface
