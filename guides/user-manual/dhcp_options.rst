@@ -1,3 +1,7 @@
+.. meta::
+   :description: The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers options in the Men&Mice Management Console 
+   :keywords: Console, DHCP, options, Men&Mice  
+
 .. _console-dhcp-options:
 
 Options
