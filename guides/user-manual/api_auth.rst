@@ -44,7 +44,7 @@ The session IDs, on the other hand, are only valid on the API endpoint (web serv
 Basic Authentication
 ^^^^^^^^^^^^^^^^^^^^
 
-For Basic Authentication, simply include a header like:
+For Basic Authentication, simply include a HTTP header like:
 
 .. code-block::
   :linenos:
