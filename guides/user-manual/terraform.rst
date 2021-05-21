@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Micetro plugin for Terraform 
+   :keywords: Terraform 
+
 .. _terraform:
 
 Terraform
