@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to use cloud integration
+   :keywords: cloud, integration, IPAM, DNS 
+
 .. _using-cloud:
 
 Using Cloud Integration
