@@ -1,3 +1,7 @@
+.. meta::
+   :description: Filtering sidebar in the Men&Mice Web Application 
+   :keywords: filtering, sidebar 
+
 .. _webapp-filtering:
 
 Filtering sidebar
