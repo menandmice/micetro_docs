@@ -1,3 +1,7 @@
+.. meta::
+   :description: Web application 
+   :keywords: web app
+
 .. _web-application:
 
 Web Application
