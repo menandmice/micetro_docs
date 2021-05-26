@@ -7,8 +7,12 @@ On this page, the errors / warnings from the :ref:`console-health-bar` in the Ma
 
 The user is able to click a link from the Management Console to get more details about each error / warning that is shown there.
 
+.. _component-out-of-date:
+
 Component out of date
   This warning is shown when a Men&Mice component is out of date in the system. This can be confirmed by going to :menuselection:`Tools --> Update Status`. It will show all components that are out of date in the system. From this window, they can also be updated.
+
+.. _component-unreachable:
 
 Component unreachable
   This error is shown when the Men&Mice Central cannot communicate with the specified component. It can be due to one of the following reasons:
