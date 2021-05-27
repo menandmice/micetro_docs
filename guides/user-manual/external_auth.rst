@@ -67,7 +67,7 @@ To enable Active Directory Single Sign-on, do the following:
 Web Interface
 ^^^^^^^^^^^^^
 
-When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on an IIS Server.
+When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on a Microsoft Windows Server.
 
 To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro.
 
