@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _db-migrate:
 
 Migrate data from another database

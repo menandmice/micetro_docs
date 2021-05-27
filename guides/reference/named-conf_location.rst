@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _named.conf-location:
 
 named.conf validation

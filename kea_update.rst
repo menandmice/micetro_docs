@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _kea-update:
 
 Updating ISC Kea with Micetro 10.0

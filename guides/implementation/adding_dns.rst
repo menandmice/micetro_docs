@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _adding-dns:
 
 Adding DNS servers

@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _central-ha:
 
 Configure High Availability for Men&Mice Central

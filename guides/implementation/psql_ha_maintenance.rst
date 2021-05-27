@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _psql-ha-maintenance:
 
 PostgreSQL HA operations

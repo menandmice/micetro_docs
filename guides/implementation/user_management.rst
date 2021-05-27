@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _user-management:
 
 Micetro User Management

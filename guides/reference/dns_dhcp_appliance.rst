@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _dns-dhcp-appliance:
 
 Virtual DNS - DHCP Appliance Setup Guide

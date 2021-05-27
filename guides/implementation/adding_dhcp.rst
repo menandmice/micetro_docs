@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _adding-dhcp:
 
 Add DHCP Servers

@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _createdatabase_sql:
 
 CreateDatabase.sql

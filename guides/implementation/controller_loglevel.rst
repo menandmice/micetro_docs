@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _controller-loglevel:
 
 Raise log level for DNS Server Controller

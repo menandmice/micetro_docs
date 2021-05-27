@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _xdns-redundancy-groups:
 
 xDNS Zone Redundancy Groups

@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _install-dns-controllers:
 
 Men&Mice DNS Server Controllers

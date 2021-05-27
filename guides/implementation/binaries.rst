@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _binaries:
 
 Micetro by Men&Mice components

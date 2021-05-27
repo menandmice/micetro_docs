@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _adding-ip-ranges:
 
 IP Address Ranges and devices

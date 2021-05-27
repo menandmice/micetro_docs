@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _central-mssql:
 
 Microsoft SQL Server

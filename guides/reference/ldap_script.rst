@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _ldap-script:
 
 mm_ldap.py

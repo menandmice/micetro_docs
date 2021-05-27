@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _install-controllers:
 
 Server controllers

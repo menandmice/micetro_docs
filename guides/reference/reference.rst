@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _reference:
 
 Micetro reference articles

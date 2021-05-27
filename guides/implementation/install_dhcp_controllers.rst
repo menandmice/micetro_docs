@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _install-dhcp-controllers:
 
 Men&Mice DHCP Server Controllers

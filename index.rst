@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 Micetro by Men&Mice 10.0
 ########################
 

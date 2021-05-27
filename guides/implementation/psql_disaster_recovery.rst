@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _psql-disaster-recovery:
 
 Possible disaster scenarios

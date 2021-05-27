@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _dns-controller-include:
 
 Men&Mice DNS Server Controller and $INCLUDE Directives

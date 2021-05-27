@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _advanced-config:
 
 Advanced configuration

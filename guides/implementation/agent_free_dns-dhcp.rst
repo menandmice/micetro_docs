@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _agent-free-dns-dhcp:
 
 Agent-free management of DNS/DHCP servers

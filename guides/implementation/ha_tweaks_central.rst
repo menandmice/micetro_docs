@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _ha-tweaks-central:
 
 Men&Mice Central HA tweaks

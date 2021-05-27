@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _named-checkconf-timeout:
 
 Updating timeout value for named-checkconf

@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _change-updater-port:
 
 Changing the TCP port for the Men&Mice Update Service

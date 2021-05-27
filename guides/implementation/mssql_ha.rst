@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _mssql-ha:
 
 Always On Availability Groups

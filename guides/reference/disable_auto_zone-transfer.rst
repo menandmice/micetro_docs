@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _disable-auto-zone-transfer:
 
 Disable “Automatic adjustment of Zone Transfer”

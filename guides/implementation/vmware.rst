@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _vmware:
 
 Micetro Plug-In for VMware

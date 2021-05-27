@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _ha-tweaks-psql:
 
 PostgreSQL HA tweaks

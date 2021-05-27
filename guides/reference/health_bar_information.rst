@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _health-bar-information:
 
 Health Bar information (Management Console)

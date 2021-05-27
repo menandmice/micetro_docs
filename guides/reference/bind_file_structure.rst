@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _bind-file-structure:
 
 BIND DNS File Structure

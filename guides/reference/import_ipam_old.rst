@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _import-ipam-old:
 
 Importing the IP Address Ranges and Device Properties via CLI (deprecated)

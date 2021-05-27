@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _ie-eol:
 
 Discontinuation of support for Internet Explorer

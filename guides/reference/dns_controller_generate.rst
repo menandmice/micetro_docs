@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _dns-controller-generate:
 
 Expanding $GENERATE directives into records

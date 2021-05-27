@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _central-psql-ha:
 
 Connect Central to the PostgreSQL high availability cluster

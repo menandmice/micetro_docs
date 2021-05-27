@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _ldap-signature:
 
 inmm_ldap.signature

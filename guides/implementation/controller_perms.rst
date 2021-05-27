@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _controller-perms:
 
 Setting up permissions for DNS Server Controller

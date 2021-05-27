@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _system-requirements:
 
 System requirements

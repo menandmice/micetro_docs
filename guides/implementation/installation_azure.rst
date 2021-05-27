@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _installation-azure:
 
 Installing Micetro in Azure
