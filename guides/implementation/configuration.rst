@@ -12,4 +12,3 @@ Configuration
   adding_dns
   adding_dhcp
   adding_ip_ranges
-  central_ha

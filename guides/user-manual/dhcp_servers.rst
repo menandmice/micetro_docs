@@ -5,7 +5,6 @@ DHCP servers
 
 .. toctree::
   :maxdepth: 1
-  :hidden:
 
   dhcp_windows
   dhcp_kea

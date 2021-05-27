@@ -3,6 +3,11 @@
 Quickfilter
 ===========
 
+.. note::
+  **Quicksearch**
+
+  You can toggle the Quickfilter to Quicksearch. Quicksearch will only highlight matching objects in the grid, but still display all other entries as well.
+
 Introduction
 ------------
 
@@ -59,8 +64,3 @@ On the networks page, one way of finding the network which contains a specific I
 .. image:: ../../images/blackstar-quickfilter-networks.png
   :width: 80%
   :align: center
-
-Quicksearch
-===========
-
-You can toggle the Quickfilter to Quicksearch. Quicksearch will only highlight matching objects in the grid, but still display all other entries as well.

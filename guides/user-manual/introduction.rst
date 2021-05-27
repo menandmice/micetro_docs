@@ -3,8 +3,7 @@
 User Manual
 ===========
 
-What is Micetro by Men&Mice?
-----------------------------
+**What is Micetro by Men&Mice?**
 
 Micetro is an orchestration tool for DNS, DHCP, and IP Address Management in diverse network environments.
 

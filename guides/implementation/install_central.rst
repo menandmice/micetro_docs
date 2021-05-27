@@ -5,13 +5,6 @@ Men&Mice Central
 
 Men&Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing data such as zone history logs, user accounts and permissions, etc. You must have at least one copy of Central installed in the environment. Central does not need to be installed on a DNS server.
 
-.. toctree::
-  :maxdepth: 1
-  :hidden:
-
-  install_central
-  central_database
-
 .. _install-central-linux:
 
 Men&Mice Central on Linux
