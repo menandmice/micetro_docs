@@ -3,14 +3,6 @@
 Using the Web Application
 =========================
 
-Installing the Web Application
-------------------------------
-
-Installing the Web Application for the Men&Mice Suite is straightforward: just follow the instructions on the Men&Mice Download page.
-
-.. note::
-  The web application cannot be installed on the same server as the old web interface. It needs to be on a separate virtual host.
-
 Logging in
 ----------
 

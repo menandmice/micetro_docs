@@ -5,9 +5,6 @@ Men&Mice DNS Server Controllers
 
 Men&Mice DNS Server Controller is the DNS server agent. It sits on each DNS server machine and manages the DNS service on your behalf.
 
-.. toctree::
-  :maxdepth: 2
-
 .. note::
   The DNS Server Controllers need to be ran as the same user as BIND. (By default: ``named``.)
 

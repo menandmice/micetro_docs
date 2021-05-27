@@ -63,9 +63,11 @@ When connecting the Management Console to a newly installed instance of Men&Mice
 
 3. The wizard will finish after the user clicks the 'Finish' button and afterwords the changes will be applied.
 
+Console functions
+-----------------
+
 .. toctree::
   :maxdepth: 2
-  :hidden:
 
   console_gui
   console_menus

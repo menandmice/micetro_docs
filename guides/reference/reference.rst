@@ -4,7 +4,7 @@ Men&Mice reference articles
 ###########################
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   appliance_guide
   health_bar_information

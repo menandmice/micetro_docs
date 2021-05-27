@@ -7,5 +7,7 @@ Advanced configuration
   :maxdepth: 2
 
   console_advanced_settings
-  ha_tweaks
+  central_ha
+  mssql_ha
+  ha_tweaks_central
   xdns_redundancy_groups

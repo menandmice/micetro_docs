@@ -21,6 +21,9 @@ Use the :ref:`implementation` to familiarize yourself with the Suite's architect
 .. note::
   If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
 
+Table of Contents
+-----------------
+
 .. toctree::
     :caption: Men&Mice Suite
     :maxdepth: 1
@@ -56,7 +59,7 @@ Use the :ref:`implementation` to familiarize yourself with the Suite's architect
      guides/user-manual/devices
      guides/user-manual/active_directory
      guides/user-manual/cloud
-     guides/user-manual/automation 
+     guides/user-manual/automation
 
 .. toctree::
     :caption: Reference articles
