@@ -6,7 +6,16 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`10.0-release`
+Jump to: :ref:`10.0-release`, :ref:`10.0.1-release`
+
+.. _10.0.1-release:
+
+10.0.1
+------
+
+*April 29th, 2021*
+
+* The authoritative DNS software (BIND) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2021-25214, CVE-2021-25215
 
 .. _10.0-release:
 
@@ -183,7 +192,7 @@ Bugfixes
 
 * Fixed REST Basic Authentication with passwords containing a colon.
 
-* New DNS records are now case insensitive and will no longer fail when the same but case insensitive resource record set with the same name already exists in AWS Route 53 and other cloud providers.
+* Adding new DNS records to AWS is now case insensitive and will no longer fail when the same but case insensitive resource record set with the same name already exists in AWS Route 53 and other cloud providers.
 
 * Restarting a DHCP Server Controller is no longer necessary after losing connection to a Cisco DHCP server.
 
