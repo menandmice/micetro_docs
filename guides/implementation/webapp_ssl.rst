@@ -62,8 +62,6 @@ Once the keyfiles are placed in their respective directories, edit the mmweb.con
 
 To verify the Web Application is accessible, navigate to ``https://web-application.domain.tld``. The Men&Mice Web Application’s login panel should appear.
 
-Proceed to :ref:`configuration`.
-
 SSL on Windows (IIS)
 --------------------
 
@@ -151,5 +149,3 @@ In the **Action** pane on the bottom, choose *Redirect* from the :guilabel:`Acti
 Click :guilabel:`Apply` in the **Actions** pane on the left. And click :guilabel:`Back to rules`.
 
 Move the new *HTTP to HTTPS redirect* rule to the top of the rules using the :guilabel:`Move Up` button in the action pane on the right.
-
-Proceed to :ref:`configuration`.

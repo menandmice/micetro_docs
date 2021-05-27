@@ -8,7 +8,7 @@ Advanced configuration
 
   console_advanced_settings
   central_ha
-  mmsql_ha
+  mssql_ha
   psql_ha
-  ha_tweaks
+  ha_tweaks_central
   xdns_redundancy_groups

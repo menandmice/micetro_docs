@@ -72,4 +72,4 @@ An example preferences.cfg file for the Windows Authentication method should loo
   <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
   <databaseusername value=""/>
 
-  Proceed to :ref:`psql-ha`, :ref:`central-ha`, or :ref:`install-controllers`.
+Proceed to :ref:`psql-ha`, :ref:`central-ha`, or :ref:`install-controllers`.

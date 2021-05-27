@@ -40,7 +40,7 @@ To start the Management Console, do the following:
 5. Click the :guilabel:`Connect` button. If this is the first time any user logs into this particular Men&Mice Central, the :ref:`first-use-wizard` launches. Otherwise, within a few moments, the Men&Mice Management Console will start, and the Manager window will display.
 
 First Use Wizard
-^^^^^^^^^^^^^^^^
+----------------
 
 The First Use Wizard has been improved greatly in version 6.8. It is able to discover
 
@@ -61,6 +61,9 @@ When connecting the Management Console to a newly installed instance of Men&Mice
 2. Complete each screen as you move through the wizard.
 
 3. The wizard will finish after the user clicks the 'Finish' button and afterwords the changes will be applied.
+
+Console functions
+-----------------
 
 .. toctree::
   :maxdepth: 1

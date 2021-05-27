@@ -32,4 +32,12 @@ Install Men&Mice Web Application by double clicking the Microsoft installer file
 .. warning::
   If the web application is not installed on the same server as Men&Mice Central, you need to  set the **Web app server host** value to the webserver's hostname through :menuselection:`System settings --> Advanced` in the Management Console for the auto-update feature to work for the Web Application.
 
-Proceed to :ref:`webapp-ssl` or :ref:`configuration`.
+If you do not wish to configure SSL for the Web Application (**not recommended**) proceed to :ref:`configuration`.
+
+.. toctree::
+  :maxdepth: 1
+
+  webapp_ssl
+  webapp_compression
+  webapp_fixed_central
+  webserver_proxy_timeout
