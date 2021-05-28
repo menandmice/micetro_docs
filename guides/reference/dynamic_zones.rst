@@ -1,3 +1,6 @@
+.. meta::
+   :description: Micetro allows you to work with dynamic zones on BIND and the Windows DNS server.
+   :keywords: BIND, WIndows DNS server
 .. _dynamic-zones:
 
 Dynamic Zones
