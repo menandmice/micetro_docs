@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Agent-free management of DNS and DHCP servers in Micetro
+   :keywords: DNS management, DHCP management, DNS, DHCP, agent-free, Micetro
 
 .. _agent-free-dns-dhcp:
 

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Configuring server log level for Micetro
+   :keywords: logging, Micetro, troubleshooting, Linux 
 
 .. _central-loglevel:
 

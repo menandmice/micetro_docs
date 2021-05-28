@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Configuring PostgreSQL as the database backend for Micetro by Men&Mice
+   :keywords: PostgreSQL, Micetro, database, DDI database 
 
 .. _central-postgresql:
 

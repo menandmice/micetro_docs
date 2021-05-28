@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Database backend options for Micetro by Men&Mice
+   :keywords: database, Micetro, SQLite, Microsoft SQL Server, PostgreSQL
 
 .. _central-database:
 

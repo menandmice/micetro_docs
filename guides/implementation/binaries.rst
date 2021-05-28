@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Download binaries for Micetro by Men&Mice
+   :keywords: download, Micetro, Linux, Windows
 
 .. _binaries:
 

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Release notes for Micetro by Men&Mice 10.0.x versions
+   :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
 
@@ -10,7 +10,16 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`10.0-release`, :ref:`10.0.1-release`
+Jump to: :ref:`10.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`
+
+.. _10.0.2-release:
+
+10.0.2
+------
+
+*May 28th, 2021*
+
+* The DHCP software (ISC DHCP) on the Men&Mice Virtual Appliances was patched for the following vulnerability: CVE-2021-25217
 
 .. _10.0.1-release:
 

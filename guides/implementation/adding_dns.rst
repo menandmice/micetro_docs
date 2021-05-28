@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Adding DNS servers to Micetro
+   :keywords: DNS, Micetro, DNS management, Active Directory DNS
 
 .. _adding-dns:
 

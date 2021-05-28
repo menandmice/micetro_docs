@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Configuring High Availability for Micetro's server component
+   :keywords: high availability, failover, Micetro
 
 .. _central-ha:
 

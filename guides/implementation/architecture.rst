@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Architecture design of Micetro by Men&Mice
+   :keywords: Micetro, system design, hardware requirements, DDI components
 
 .. _architecture:
 

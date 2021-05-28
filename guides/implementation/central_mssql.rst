@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Configuring Microsoft SQL Server as the database backend for Micetro by Men&Mice
+   :keywords: Microsoft SQL Server, Micetro, database, DDI database 
 
 .. _central-mssql:
 
