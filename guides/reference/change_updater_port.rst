@@ -1,3 +1,7 @@
+.. meta::
+   :description: The TCP port for the updater service can be changed. It must be changed on the ``mmupdate`` service and also on Men&Mice Central (``mmcentral``). All remote servers must listen on the same TCP port for update messages from Men&Mice Central.
+   :keywords: TCP Port, Men&Mice
+
 .. _change-updater-port:
 
 Changing the TCP port for the Men&Mice Update Service
