@@ -1,3 +1,6 @@
+.. meta::
+   :description: The PowerDNS connector script connects directly to the MySQL backend and allows management of zones in PowerDNS. Native mode and Master/Slave mode in the authoritative PowerDNS are currently supported.
+   :keywords: PowerDNS, DNS 
 .. _powerdns:
 
 Configuring PowerDNS
