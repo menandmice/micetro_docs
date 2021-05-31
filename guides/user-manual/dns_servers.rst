@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to maintain DNS servers in the Men&Mice Management Console 
-   :keywords: DNS, server, management console 
+   :description: How to maintain DNS servers in the Micetro by Men&Mice Management Console 
+   :keywords: DNS, DNS server, DNS management console 
 
 .. _dns-servers:
 
