@@ -1,6 +1,6 @@
 .. meta::
-   :description: Using the Micetro provider with Terraform
-   :keywords: micetro, terraform, provider, usage
+   :description: Using the Micetro by Men&Mice provider with Terraform
+   :keywords: micetro, terraform
 
 .. _terraform-usage:
 
