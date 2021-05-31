@@ -1,6 +1,6 @@
 .. meta::
    :description: Configuring cloud integration
-   :keywords: cloud, integration
+   :keywords: network cloud, integration
 
 .. _cloud:
 
