@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to manage DHCP scopes in the Men&Mice Management Console 
-   :keywords: management, console, DHCP, scopes 
+   :description: How to manage DHCP scopes in the Micetro by Men&Mice Management Console 
+   :keywords: DHCP management, DHCP scopes
 
 .. _dhcp-scopes:
 
