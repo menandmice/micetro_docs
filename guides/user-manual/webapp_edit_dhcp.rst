@@ -1,6 +1,6 @@
 .. meta::
-   :description: Viewing, adding, removing DHCP options in the Men&Mice Web Application  
-   :keywords: edit, DHCP, options 
+   :description: Viewing, adding, removing DHCP options in the Micetro by Men&Mice Web Application  
+   :keywords: DHCP options, DDI
    
 .. _webapp-edit-dhcp:
 
