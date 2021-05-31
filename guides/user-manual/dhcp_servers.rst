@@ -1,6 +1,6 @@
 .. meta::
-   :description: Maintaining DHCP servers in the Men&Mice Management Console 
-   :keywords: DHCP, servers, management console, Men&Mice 
+   :description: Maintaining DHCP servers in the Micetro by Men&Mice Management Console 
+   :keywords: DHCP servers, DHCP management console, DHCP Kea 
 
 .. _dhcp-servers:
 
