@@ -41,8 +41,6 @@ Here are the questions asked by the installer that pertain to Men&Mice Central:
 
 * Where do you want to install the Men&Mice Central binary?
 
-Proceed to :ref:`central-database`.
-
 Removing Men&Mice Central
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -70,5 +68,3 @@ Men&Mice Central on Windows
   Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
 
   When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
-
-Proceed to :ref:`central-database`.

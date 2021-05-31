@@ -15,7 +15,7 @@ Machine: monitor
 
 We want to lower the database timeout value, i.e. when the failover should be performed if the primary database is unreachable:
 
-.. code-block::
+.. code-block:: bash
 
   psql -p [port] -d pg_auto_failover
   # List the health_check variables
@@ -30,26 +30,29 @@ We want to lower the database timeout value, i.e. when the failover should be pe
   SELECT name, setting FROM pg_settings WHERE name ~ 'pgautofailover\.health';
   SELECT name, setting FROM pg_settings WHERE name ~ 'pgautofailover\.node';
 
-II/2.2.2. Create a startup service
-""""""""""""""""""""""""""""""""""
+Create a startup service
+------------------------
 
-For each machine create a startup service that runs the pg_autoctl process:
+For each machine create a startup service that runs the ``pg_autoctl`` process:
 
-**Machine: monitor**
+Machine: monitor
+""""""""""""""""
 
 .. code-block:: bash
 
   pg_autoctl -q show systemd --pgdata /var/lib/pgsql/[monitor]/ | sudo tee /etc/systemd/system/pgautofailover.service
   systemctl enable pgautofailover.service
 
-**Machine: node-1**
+Machine: node-1
+"""""""""""""""
 
 .. code-block:: bash
 
   pg_autoctl -q show systemd --pgdata /var/lib/pgsql/[node-1]/ | sudo tee /etc/systemd/system/pgautofailover.service
   systemctl enable pgautofailover.service
 
-**Machine: node-2**
+Machine: node-2
+"""""""""""""""
 
 .. code-block:: bash
 
@@ -59,30 +62,8 @@ For each machine create a startup service that runs the pg_autoctl process:
 Configuring PostgreSQL logging
 ------------------------------
 
-**Machine: monitor**
-
-.. code-block::
-
-  sudo su - postgres
-  export PATH="$PATH:/usr/pgsql-12/bin"
-  psql -p [port]
-  ALTER SYSTEM SET log_truncate_on_rotation = 'on';
-  ALTER SYSTEM SET log_filename = 'postgresql-%a.log';
-  ALTER SYSTEM SET log_rotation_age = '1440';
-  ALTER SYSTEM SET log_line_prefix = '%m - %l - %p - %h - %u@%d - %x';
-  ALTER SYSTEM SET log_directory = 'pg_log';
-  ALTER SYSTEM SET log_min_messages = 'WARNING';
-  ALTER SYSTEM SET log_min_error_statement = 'NOTICE';
-  ALTER SYSTEM SET log_min_duration_statement = '10s';
-  ALTER SYSTEM SET log_checkpoints = 'on';
-  ALTER SYSTEM SET log_lock_waits = 'on';
-  ALTER SYSTEM SET log_temp_files = '0';
-  ALTER SYSTEM SET log_connections=on;
-  ALTER SYSTEM SET log_disconnections=on;
-  ALTER SYSTEM SET log_duration=on;
-  SELECT pg_reload_conf();
-
-**Machine: node-1**
+Machine: monitor
+""""""""""""""""
 
 .. code-block:: bash
 
@@ -105,9 +86,34 @@ Configuring PostgreSQL logging
   ALTER SYSTEM SET log_duration=on;
   SELECT pg_reload_conf();
 
-**Machine: node-2**
+Machine: node-1
+"""""""""""""""
 
-.. code-block::
+.. code-block:: bash
+
+  sudo su - postgres
+  export PATH="$PATH:/usr/pgsql-12/bin"
+  psql -p [port]
+  ALTER SYSTEM SET log_truncate_on_rotation = 'on';
+  ALTER SYSTEM SET log_filename = 'postgresql-%a.log';
+  ALTER SYSTEM SET log_rotation_age = '1440';
+  ALTER SYSTEM SET log_line_prefix = '%m - %l - %p - %h - %u@%d - %x';
+  ALTER SYSTEM SET log_directory = 'pg_log';
+  ALTER SYSTEM SET log_min_messages = 'WARNING';
+  ALTER SYSTEM SET log_min_error_statement = 'NOTICE';
+  ALTER SYSTEM SET log_min_duration_statement = '10s';
+  ALTER SYSTEM SET log_checkpoints = 'on';
+  ALTER SYSTEM SET log_lock_waits = 'on';
+  ALTER SYSTEM SET log_temp_files = '0';
+  ALTER SYSTEM SET log_connections=on;
+  ALTER SYSTEM SET log_disconnections=on;
+  ALTER SYSTEM SET log_duration=on;
+  SELECT pg_reload_conf();
+
+Machine: node-2
+"""""""""""""""
+
+.. code-block:: bash
 
   sudo su - postgres
   export PATH="$PATH:/usr/pgsql-12/bin"

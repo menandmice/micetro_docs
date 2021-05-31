@@ -1,13 +1,13 @@
 .. meta::
    :description: Configuring Microsoft SQL Server as the database backend for Micetro by Men&Mice
-   :keywords: Microsoft SQL Server, Micetro, database, DDI database 
+   :keywords: Microsoft SQL Server, Micetro, database, DDI database
 
 .. _central-mssql:
 
 Microsoft SQL Server
 --------------------
 
-.. warning::
+.. important::
   We recommend that the network latency between the SQL server and M&M Central is **no more than 5 ms**. Otherwise, the performance of M&M in conjunction with SQL Server can't be guaranteed to be acceptable.
   We recommend that the SQL Server database is managed and maintained by a database administrator (DBA).
 
@@ -33,21 +33,21 @@ Subsequently the script will create:
   ``COLLATE SQL_Latin1_General_CP1_CS_AS``
 
 .. note::
-  For further details take a look at the CreateDatabase.sql script.
+  For further details take a look at the :ref:`createdatabase_sql` script.
 
 Configuring the connection parameters
 
 .. warning::
-  If it's a dedicated server please don't forget to `enable the TCP/IP protocol with the SQL Configuration Manager <https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol?redirectedfrom=MSDN&view=sql-server-ver15>`_.
+  If you're configuring MS SQL on a dedicated server, make sure to `enable the TCP/IP protocol with the SQL Configuration Manager <https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol?redirectedfrom=MSDN&view=sql-server-ver15>`_.
 
 .. _central-mssql-windows:
 
 Men&Mice Central running on Windows
 """""""""""""""""""""""""""""""""""
 
-The preferences.cfg file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: database, databaseserver, databaseusername and databasepassword
+The ``preferences.cfg`` file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
 
-The preferences.cfg file for normal user/password authentication should look like:
+The ``preferences.cfg`` file for normal user/password authentication should look like:
 
 .. code-block::
   :linenos:
@@ -58,9 +58,9 @@ The preferences.cfg file for normal user/password authentication should look lik
   <databaseusername value="mmSuiteDBUser"/>
   <databasepassword value="plaintext:DBPASSWORD"/>
 
-the ``plaintext:`` directive in the password inputs allows you to enter the passwords in plaintext, which Central will automatically encrypt and replace with the hash during first startup.
+The ``plaintext:`` directive in the password inputs allows you to enter the passwords in plaintext, which Central will automatically encrypt and replace with the hash during first startup.
 
-An example ``preferences.cfg`` file for the Windows Authentication method should look like (databaseusername tag must be present and the value attribute must be set to empty string):
+An example ``preferences.cfg`` file for the Windows Authentication method should look like (``databaseusername`` tag must be present and the value attribute must be set to empty string):
 
 .. code-block::
   :linenos:
@@ -72,17 +72,15 @@ An example ``preferences.cfg`` file for the Windows Authentication method should
 
 Restart Central and verify it’s running. If the database connection fails, the service will fail to start with the appropriate error message.
 
-Proceed to :ref:`central-ha` or :ref:`install-controllers`.
-
 Men&Mice Central running on Linux
 """""""""""""""""""""""""""""""""""
 
 .. warning::
   A ODBC driver will need to be `installed on the Linux machine to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
 
-Navigate to the data directory of the Men&Mice Central, usually located in /var/mmsuite/mmcentral.
+Navigate to the data directory of the Men&Mice Central, usually located in ``/var/mmsuite/mmcentral``.
 
-Edit the preferences.cfg file with in that directory with the following:
+Edit the ``preferences.cfg`` file with in that directory with the following:
 
 .. code-block::
   :linenos:
@@ -93,7 +91,7 @@ Edit the preferences.cfg file with in that directory with the following:
   <DatabasePassword value="plaintext:<your password here>" />
 
 .. note::
-  If the DatabasePassword value is prefixed by "plaintext:", it will be swapped out by the Men&Mice Central for a password hash during start up.
+  If the ``DatabasePassword`` value is prefixed by ``plaintext:``, it will be replaced by Men&Mice Central for a password hash during start up.
 
 Connecting to the MS SQL database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,5 +108,3 @@ Restart Central and verify it’s running:
   systemctl status mmcentral
 
 If the database connection fails, the service will fail to start with the appropriate error message.
-
-Proceed to :ref:`central-ha` or :ref:`install-controllers`.

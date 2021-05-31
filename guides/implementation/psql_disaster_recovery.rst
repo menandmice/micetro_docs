@@ -37,8 +37,8 @@ Possible disaster scenarios
   |                       | All       | Database unavailable, no replication, no failover possible.                               |
   +-----------------------+-----------+-------------------------------------------------------------------------------------------+
   | ``pg_autoctl``        |           |                                                                                           |
-  |  corrupted and/or     | All       | Database unavailable, no replication, no failover possible.                               |
-  |  deleted              |           |                                                                                           |
+  | corrupted and/or      | All       | Database unavailable, no replication, no failover possible.                               |
+  | deleted               |           |                                                                                           |
   +-----------------------+-----------+-------------------------------------------------------------------------------------------+
 
 Controlled switchover

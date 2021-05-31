@@ -10,13 +10,13 @@ Installing Micetro in Azure
 Overview
 ========
 
-The Micetro offering in the Azure Marketplace offers a simple wizard for deployment of the necessary components to get started. The diagram below depicts the steps needed to perform the deployment. See Azure Marketplace Wizard for details on each step.
+The Micetro offering in the Azure Marketplace offers a simple wizard for deployment of the necessary components to get started. The diagram below depicts the steps needed to perform the deployment. See :ref:`azure-marketplace-wizard` for details on each step.
 
 .. image:: ../../images/deploy-azure-marketplace.png
   :width: 80%
   :align: center
 
-Below is a list of the components that are installed and a description of their main functions.
+Below is a list of the components that are installed and a description of their main functions. See :ref:`architecture` for more details.
 
 .. csv-table::
   :widths: 20, 80
@@ -51,6 +51,8 @@ Enter the search term "Men&Mice Suite" click on the offering and there should op
   :width: 80%
   :align: center
 
+.. _azure-marketplace-wizard:
+
 Azure Marketplace Wizard
 ------------------------
 
@@ -61,16 +63,16 @@ On the left hand side you can see the 7 steps required to be stepped through bef
 Step 1: Basics
 """"""""""""""
 
-Information regarding subscription, resource group and location
+**Information regarding subscription, resource group and location.**
 
-Please select the subscription you wish the Azure Consumption of the deployment to be billed to.
+* Please select the **subscription** you wish the Azure Consumption of the deployment to be billed to.
 
-.. note::
-  You will only be charged for the Azure Consumption used by the deployment. The Azure Marketplace offering comes with trial keys for all components of Micetro.
+  .. note::
+    You will only be charged for the Azure Consumption used by the deployment. The Azure Marketplace offering comes with trial keys for all components of Micetro.
 
-Please select an empty resource group or a create a new one
+* Please select an empty **resource group** or a create a new one.
 
-Please select a region.
+* Please select a region.
 
 .. warning::
   Latency will vary depending on the location of the deployment and the location of the endpoints that are intended to be managed within the Men&Mice
@@ -82,31 +84,34 @@ Please select a region.
 Step 2: Virtual Machine Settings
 """"""""""""""""""""""""""""""""
 
-User credentials, system specifications and storage accounts
+**User credentials, system specifications and storage accounts.**
 
-When selecting Virtual Machine Size please consider the size of the environment you intend to manage.
+* When selecting **Virtual Machine Size** please consider the size of the environment you intend to manage.
 
-The following describes our recommendations regarding virtual machine size.
+  The following describes our recommendations regarding virtual machine size.
 
-.. csv-table::
-  :header: "DNS Zones", "IP Addresses", "Subnets", "Virtual machine size"
-  :widths: 10, 10, 20, 10
+  .. csv-table::
+    :header: "DNS Zones", "IP Addresses", "Subnets", "Virtual machine size"
+    :widths: 10, 10, 20, 10
 
-  "< 100",	"< 5000",	"< 1000",	"D2s_v3"
-  "< 1000",	"< 50000",	"< 10000",	"D4s_v3"
-  "Tens of thousands",	"Millions",	"Hundreds of thousands",	"D8s_v3"
+    "< 100",	"< 5000",	"< 1000",	"D2s_v3"
+    "< 1000",	"< 50000",	"< 10000",	"D4s_v3"
+    "Tens of thousands",	"Millions",	"Hundreds of thousands",	"D8s_v3"
 
-There is the option to use an existing storage account if customers have a centralized storage account used for VM diagnostics.
+* Select either a new or existing storage account.
 
-Select either a new or existing storage account
+  .. tip::
+    There is the option to use an existing storage account if customers have a centralized storage account used for VM diagnostics.
 
-Input a username which will be used as the local administrator account for the VM which will be created.
+* Input a **username** which will be used as the local administrator account for the VM which will be created.
 
-There are some reserved words which cannot be used for the account name: "admin", "administrator", "user" for example.
+  .. note::
+    There are some reserved words which cannot be used for the account name: "admin", "administrator", "user" for example.
 
-Input a password which will be used as the password for the above mentioned local administrator account
+* Input a **password** which will be used as the password for the above mentioned local administrator account
 
-Password contain at least 12 characters, with at least one symbol and one number.
+  .. important::
+    Password must contain at least 12 characters, with at least one symbol and one number.
 
 .. image:: ../../images/micetro-azure-4.png
   :width: 60%

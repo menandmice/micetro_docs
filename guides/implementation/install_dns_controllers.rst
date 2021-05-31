@@ -244,8 +244,6 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webapp`.
-
 Men&Mice Central running on Windows
 -----------------------------------
 
@@ -256,11 +254,11 @@ In order to open a dynamic zone, Men&Mice Suite must read it from the DNS servic
 
 In some cases, Men&Mice DNS Server Controller will also need to be told specifically which interface to use when requesting zone transfers. If you have trouble opening a dynamic zone after setting the zone's transfer restrictions appropriately, check the Event Log / Application Log for messages from Men&Mice DNS Server Controller. If there is a message indicating that it was unable to get a zone transfer, note the address it tried to use; you can either add that IP address to the transfer restrictions list, or else edit a configuration file for Men&Mice DNS Server Controller.
 
-To configure the DNS Server Controller to use a different address, edit the service's preferences.cfg file on the DNS server computer. The file is located in one of the following two locations, where {Windows} is probably C:\Windows:
+To configure the DNS Server Controller to use a different address, edit the service's preferences.cfg file on the DNS server computer. The file is located in one of the following two locations, where {Windows} is probably C:\\Windows:
 
-* {Windows}\System32\dns\mmsuite\preferences.cfg
-* C:\Documents and Settings\All Users\Application Data\Men and Mice\DNS Server Controller\preferences.cfg
-* C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg
+* {Windows}\\System32\\dns\\mmsuite\\preferences.cfg
+* C:\\Documents and Settings\\All Users\\Application Data\\Men and Mice\\DNS Server Controller\\preferences.cfg
+* C:\\ProgramData\\Men and Mice\\DNS Server Controller\\preferences.cfg
 
 If the file does not exist, create it. The file is a text file in a simple XML-based format. Add the following element, replacing the dummy address here with the server's correct network address:
 
@@ -312,5 +310,3 @@ If Men&Mice Central is installed on a Windows host, then one option is to instal
 
 .. note::
   The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
-
-Proceed to :ref:`install-dhcp-controllers` or :ref:`install-webapp`.

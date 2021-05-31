@@ -218,8 +218,8 @@ Edit the ``pg_hba.conf`` to allow access to the database from the outside:
   echo "host mmsuite postgres [ip-address-of-central-secondary]/32 scram-sha-256" >> ./[node-2]/pg_hba.conf
   psql -p [port] -c 'SELECT pg_reload_conf();'
 
-Further information:
-^^^^^^^^^^^^^^^^^^^^
+Further information
+^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
   :maxdepth: 1
