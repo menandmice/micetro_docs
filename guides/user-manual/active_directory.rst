@@ -1,7 +1,7 @@
 
 .. meta::
    :description: Integrating Active Directory (AD) sites in Micetro, view subnets within these sites and add, remove and move subnets between the sites.
-   :keywords: active directory, micetro, subnets 
+   :keywords: Micetro active directory, micetro, micetro subnets 
    
    .. _active-directory:
 
