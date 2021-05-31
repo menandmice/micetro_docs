@@ -1,6 +1,6 @@
 .. meta::
    :description: How to launch the Men&Mice Management Console
-   :keywords: management, console, Men&Mice
+   :keywords: DNS management, DDI, Men&Mice Management Console
 
 .. _console:
 
