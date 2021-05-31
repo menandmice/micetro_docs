@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to install the Micetro provider for Terraform 
-   :keywords: terraform, install, Micetro, Mac, Linux, Windows  
+   :description: How to install the Micetro by Men&Mice provider for Terraform 
+   :keywords: Micetro 
 
 .. _terraform-install:
 
