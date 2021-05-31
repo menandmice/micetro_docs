@@ -1,6 +1,6 @@
 .. meta::
-   :description: DHCP Kea and Micetro - adding, configuring, properties 
-   :keywords: ISC, Kea, DHCP, Micetro 
+   :description: DHCP Kea and Micetro by Men&Mice - adding, configuring, properties 
+   :keywords: DHCP Kea, DHCP, Micetro by Men&Mice 
 
 .. _dhcp-kea:
 
