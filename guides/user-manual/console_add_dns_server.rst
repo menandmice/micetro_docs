@@ -1,6 +1,6 @@
 .. meta::
    :description: How to add new DNS server in the Men&Mice Management Console 
-   :keywords: New, DNS, server, management console
+   :keywords: DNS, DNS server, DNS management console
 
 .. _console-new-dns-server:
 
