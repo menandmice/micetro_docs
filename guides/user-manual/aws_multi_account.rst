@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to connect Micetro to multiple AWS accounts using single credentials
-   :keywords: credentials, AWS, Micetro
+   :description: How to connect Micetro by Men&Mice to multiple AWS accounts using single credentials
+   :keywords: Micetro credentials, AWS managment console, Micetro by Men&Mice, 
 
 .. _aws-multi-account:
 
