@@ -1,6 +1,6 @@
 .. meta::
    :description: Managing two types Men&Mice Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance
-   :keywords: appliance, management, DNS/DHCP appliance, DNS caching appliance  
+   :keywords: Men&Mice appliances, DNS management, DNS/DHCP appliance, DNS caching appliance, Men&Mice
 
 .. _appliance-management:
 
