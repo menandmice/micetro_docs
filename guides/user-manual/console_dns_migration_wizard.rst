@@ -1,6 +1,6 @@
 .. meta::
-   :description: What is a Zone Migration Wizard 
-   :keywords: dns, console, migration, wizard, zone
+   :description: The *Zone Migration Wizard* allows users to migrate one or more zones from one server to another, including all data in the zone.
+   :keywords: dns, dns console, dns migration, 
 
 .. _console-dns-migration-wizard:
 
