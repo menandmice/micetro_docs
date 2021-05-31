@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to create a forward zone in the Men&Mice Management Console
-   :keywords: console, forward, zone
+   :description: How to create a forward zone in the Micetro by Men&Mice Management Console
+   :keywords: DNS zones, IP address management
 
 .. _console-forward-zone:
 
