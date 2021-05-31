@@ -1,6 +1,6 @@
 .. meta::
-   :description: ISC DHCP servers in the Men&Mice Management Console 
-   :keywords: ISC, DHCP, management, console 
+   :description: ISC DHCP servers in the Micetro by Men&Mice Management Console 
+   :keywords: ISC DHCP servers, Server management
    
 .. _dhcp-isc:
 
