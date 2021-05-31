@@ -1,6 +1,6 @@
 .. meta::
-   :description: Options, example usage of Men&Mice FreeIP lookup plugin
-   :keywords: Men&Mice, FreeIP, lookup, plugin 
+   :description: This Men&Mice FreeIP lookup plugin finds one or more free IP addresses in a certain network, defined in Micetro.
+   :keywords: Men&Mice, Micetro by Men&Mice, Men&Mice FreeIP lookup plugin
 
 .. _ansible-mm_freeip:
 
