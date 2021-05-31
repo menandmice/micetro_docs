@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to manage Cisco DHCP servers in the Men&Mice Management Console 
-   :keywords: Cisco, DHCP, server, management console  
+   :description: How to manage Cisco DHCP servers in the Micetro by Men&Mice Management Console 
+   :keywords: Cisco DHCP server, Cisco DHCP   
 
 .. _dhcp-cisco:
 
