@@ -1,6 +1,6 @@
 .. meta::
    :description: Micetro license management-adding, removing license keys
-   :keywords: module, DNS, IPAM, DHCP, Workflow, Reporting, license, Virtual Appliances, license management
+   :keywords: DNS, IPAM, DHCP Modules, IPAM modules, DNS modules
 
 .. _admin-license:
 
