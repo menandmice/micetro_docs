@@ -1,6 +1,6 @@
 .. meta::
-   :description: Managing DNS zones in Micetro
-   :keywords: DNS zones, Micetro, Ansible
+   :description: Managing DNS zones in Micetro by Men&Mice
+   :keywords: DNS zones, Micetro DNS zones, Active directory, DNS server
 
 .. _ansible-mm_zone:
 
