@@ -1,6 +1,6 @@
 .. meta::
-   :description: Managing groups in Micetro
-   :keywords: Ansible, groups, Micetro, management
+   :description: Managing groups in Micetro by Men&Mice
+   :keywords: Ansible, Micetro API, Micetro by Men&Mice
 
 .. _ansible-mm_group:
 
