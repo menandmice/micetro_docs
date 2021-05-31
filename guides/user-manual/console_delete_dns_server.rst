@@ -1,6 +1,6 @@
 .. meta::
-   :description: The command to remove a server from the Management Console 
-   :keywords: remove, command, management console 
+   :description: The command to remove a server from the Management Console in Micetro by Men&Mice
+   :keywords: Micetro. DNS management, DNS server, Men&Mice appliance, appliance management
 
 .. _console-delete-dns-server:
 
