@@ -1,6 +1,6 @@
 .. meta::
-   :description: The Men&Mice Health Monitoring provides an overview of the general health of Micetro and other services  
-   :keywords: health, monitoring, console  
+   :description: The Men&Mice Health Monitoring provides an overview of the general health of Micetro and other systems and services  
+   :keywords: DNS health monitoring
 
 .. _console-health-bar:
 
