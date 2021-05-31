@@ -1,6 +1,6 @@
 .. meta::
-   :description: User authentication methods available with Micetro
-   :keywords: external, authentication 
+   :description: User authentication methods available with Micetro by Men&Mice
+ :keywords: Active directry, Windows active directory
 
 .. _external-auth:
 
