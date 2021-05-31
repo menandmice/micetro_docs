@@ -1,7 +1,6 @@
 .. meta::
-   :description: Toolbars in the Men&Mice Management Console 
-   :keywords: toolbars, management console 
-
+   :description: Toolbars in the Micetro by Men&Mice Management Console 
+   :keywords: Micetro, Men&Mice
 .. _console-toolbars:
 
 Toolbars
