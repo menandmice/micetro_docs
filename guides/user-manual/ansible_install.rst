@@ -1,6 +1,6 @@
 .. meta::
    :description: Installing Micetro through the Ansible integration modules and plugins
-   :keywords: Ansible, installation, Micetro, requirements
+   :keywords: Ansible control node in Micetro, Micetro installation, Micetro requirements, Men&Mice
 
 .. _ansible-install:
 
