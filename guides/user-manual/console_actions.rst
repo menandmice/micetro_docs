@@ -1,6 +1,6 @@
 .. meta::
-   :description: A list of actions in the Men&Mice Management Console 
-   :keywords: actions, management, console
+   :description: A list of actions in the Men&Mice Management Console includes DNS zone, DNS record, IP address range
+   :keywords: DNS zone, DNS record, DNS management
 
 .. _console-actions:
 
