@@ -1,6 +1,6 @@
 .. meta::
-   :description: Using the Management Console to view all of the existing DNS zones on all servers  
-   :keywords: plaintext, markup language
+   :description: You can use the Management Console in Micetro to view all of the existing DNS zones at once, regardless of the server to which they belong.
+   :keywords: DNS zones, DDI Solution 
 
 .. _console-dns-zone-viewing:
 
