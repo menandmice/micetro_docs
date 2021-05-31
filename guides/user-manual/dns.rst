@@ -1,6 +1,6 @@
 .. meta::
    :description: DNS servers, zones, records, policies 
-   :keywords: DNS
+   :keywords: DNS servers
 
 .. _dns:
 
