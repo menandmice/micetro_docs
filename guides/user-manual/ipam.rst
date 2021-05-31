@@ -1,6 +1,6 @@
 .. meta::
-   :description: IP address management in the Men&Mice Management Console 
-   :keywords: IPAM, management, console  
+   :description: IP address management (IPAM) in the Micetro by Men&Mice Management Console 
+   :keywords: IPAM, IP address management 
 
 .. _ipam:
 
