@@ -1,6 +1,6 @@
 .. meta::
-   :description: Ansible modules
-   :keywords: Ansible, module
+   :description: Ansible modules in Micetro by Men&Mice
+   :keywords: Ansible modules
 
 .. _ansible-modules:
 
