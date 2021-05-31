@@ -1,6 +1,6 @@
 .. meta::
-   :description: DNS resource records in the Men&Mice Management Console 
-   :keywords: DNS, records, management console 
+   :description: DNS resource records in the Micetro by Men&Mice Management Console 
+   :keywords: DNS records, DNS management, DNS
 
 .. _dns-records:
 
