@@ -1,6 +1,6 @@
 .. meta:: 
-   :description: Access control to Micetro for users, groups, roles
-   :keywords: access control, access, admin
+   :description: Access control to Micetro for users, groups and roles
+   :keywords: Micetro access model
 
 .. _access-control:
 
