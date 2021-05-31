@@ -1,6 +1,6 @@
 .. meta::
-   :description: Terraform Men&Mice DNS record 
-   :keywords: Terraform, DNS, record  
+   :description: Terraform Micetro by Men&Mice DNS record 
+   :keywords: DNS record, DNS  
 
 .. _terraform-dns-record:
 
