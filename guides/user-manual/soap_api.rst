@@ -1,6 +1,6 @@
 .. meta::
-   :description: The introduction to the SOAP API for Micetro
-   :keywords: SOAP, API, Micetro 
+   :description: The introduction to the SOAP API in Micetro by Men&Mice
+   :keywords: SOAP API, Micetro 
 
 .. _soap-api:
 
