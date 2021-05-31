@@ -1,6 +1,6 @@
 .. meta::
-   :description: Terraform Men&Mice DNS zone 
-   :keywords: Terraform, DNS, zone 
+   :description: Terraform Micetro by Men&Mice DNS zone 
+   :keywords: Terraform, DNS zone
 
 .. _terraform-dns-zone:
 
