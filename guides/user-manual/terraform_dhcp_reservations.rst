@@ -1,6 +1,6 @@
 .. meta::
-   :description: The Men&Mice DHCP reservation 
-   :keywords: Terraform, DHCP, reservation 
+   :description: The Micetro by Men&Mice DHCP reservation 
+   :keywords: Terraform, DHCP reservation 
 
 .. _terraform-dhcp-reservations:
 
