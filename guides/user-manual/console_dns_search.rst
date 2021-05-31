@@ -1,6 +1,6 @@
 .. meta::
-   :description: The Zone tab allows users to search any or all fields in the zone for a particular keyword or numeric value
-   :keywords: DNS, search, zone 
+   :description: The Zone tab in Micetro allows users to search any or all fields in the zone for a particular keyword or numeric value
+   :keywords: DNS solution, Micetro by Men&Mice
 
 .. _console-dns-search:
 
