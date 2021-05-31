@@ -1,6 +1,6 @@
 .. meta::
-   :description: Terraform IPAM record
-   :keywords: terraform, IPAM, record
+   :description: Terraform IPAM record in Micetro by Men&Mice
+   :keywords: terraform, IPAM, IPAM record
 
 .. _terraform-ipam-record:
 
