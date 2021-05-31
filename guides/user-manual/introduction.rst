@@ -1,6 +1,6 @@
 .. meta::
-   :description: The introduction to Micetro by Men&Mice 
-   :keywords: user manual, Micetro 
+   :description: The introduction to Micetro by Men&Mice DDI Solution (DNS, DHCP & IPAM)
+   :keywords: DDI solution, Micetro by Men&Mice, IPAM
 
 .. _manual-introduction:
 
