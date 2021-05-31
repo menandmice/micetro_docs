@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to use cloud integration
-   :keywords: cloud, integration, IPAM, DNS 
+   :description: How to use cloud integration in Micetro by Men&Mice
+   :keywords: cloud integration, cloud network
 
 .. _using-cloud:
 
