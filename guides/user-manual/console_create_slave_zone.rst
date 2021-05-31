@@ -1,6 +1,6 @@
 .. meta::
    :description: How to create a Slave Zone in the Men&Mice management console
-   :keywords: slave, zone, management, console, Men&Mice 
+   :keywords: DNS zones, DNS management, DNS console, Men&Mice 
 
 .. _console-create-slave-zone:
 
