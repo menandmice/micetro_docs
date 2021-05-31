@@ -1,7 +1,7 @@
 .. meta::
-   :description: Managing user accounts and user properties in Micetro
-   :keywords: user, properties, accounts, Micetro, Ansible 
-
+   :description: Managing user accounts and user properties in Micetro by Men&Mice
+   :keywords: User properties in Micetro, Micetro by Men&Mice, DNS administrator, IPAM administrator, DHCP administrator
+   
 .. _ansible-mm_user:
 
 mm_user
