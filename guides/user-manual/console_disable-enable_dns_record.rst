@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to disable and/or enable DNS records
-   :keywords: disable, enable, dns, records 
+   :description: How to disable and/or enable DNS records in Micetro by Men&Mice
+   :keywords: disable DNS records, dns, dns records 
 
 .. _console-disable-enable-dns-record:
 
