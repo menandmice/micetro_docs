@@ -1,6 +1,6 @@
 .. meta::
-   :description: DHCP 
-   :keywords: DHCP 
+   :description: DHCP servers
+   :keywords: DHCP servers
 
 .. _dhcp:
 
