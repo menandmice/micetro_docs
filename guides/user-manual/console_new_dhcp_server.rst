@@ -1,6 +1,6 @@
 .. meta::
-   :description: Adding a new DHCP server in the Men&Mice Management Console 
-   :keywords: DHCP, server, management, console 
+   :description: Adding a new DHCP server in the Micetro by Men&Mice Management Console. 
+   :keywords: DHCP server, DHCP
    
 .. _console-new-dhcp-server:
 
