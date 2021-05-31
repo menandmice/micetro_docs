@@ -1,6 +1,6 @@
 .. meta::
    :description: How to perform specific actions in the Men&Mice Management Console associated with maintaining Caching DNS servers on a Men&Mice DNS Caching Appliance
-   :keywords: management console, DNS caching, appliance
+   :keywords: DNS management console, DNS caching, DNS caching appliance, DNS servers
 
 .. _caching-appliance:
 
