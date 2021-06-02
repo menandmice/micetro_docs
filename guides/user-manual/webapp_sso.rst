@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to configure the single sign-on in the Men&Mice Web Application 
-   :keywords: Single sign-on, configure, Micetro
+   :description: How to configure the single sign-on in the Micetro by Men&Mice Web Application 
+   :keywords: Active directory
 
 .. _webapp-sso:
 
