@@ -1,6 +1,6 @@
 .. meta::
    :description: The introduction to the Quickfilter in the Men&Mice Web Application
-   :keywords: web app, quickfilter 
+   :keywords: Men&Mice
 
 .. _webapp-quick-filter:
 
