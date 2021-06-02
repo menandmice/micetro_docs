@@ -1,6 +1,6 @@
 .. meta::
    :description: User management information including how to add, edit or remove user accounts and more, in the Micetro web application  
-   :keywords: user, management, Micetro, web app 
+   :keywords: Micetro web application
 
 .. _webapp-user-management:
 
