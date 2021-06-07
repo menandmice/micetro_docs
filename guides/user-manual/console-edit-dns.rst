@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to change the name or IP Address used to connect to a DNS server
+   :keywords: DNS server, IP address server
+
 .. _console-edit-dns-server:
 
 Edit DNS Server Name

@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Quick command feature in the Micetro by Men&Mice Web Application 
+   :keywords: Micetro, Men&Mice  
+
 .. _webapp-quick-command:
 
 Quick command

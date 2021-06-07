@@ -1,3 +1,7 @@
+.. meta::
+   :description: Defining and adding custom properties used for entry of relevant data  
+   :keywords: Micetro custom properties
+   
 .. _admin-custom-properties:
 
 Define Custom Properties

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Before the IP address ranges are imported into Micetro the administrator has to identify which custom properties he wants to maintain for IP address ranges and individual IP addresses (devices).
+   :keywords: IPAM, IP address, Micetro, IP address management
 
 .. _import-ipam-old:
 

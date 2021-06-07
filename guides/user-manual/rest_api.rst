@@ -1,3 +1,7 @@
+.. meta::
+   :description: The introduction to REST API for Micetro by Men&Mice
+   :keywords: Rest API, Micetro 
+
 .. _rest-api:
 
 REST API for Micetro

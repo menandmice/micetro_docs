@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: The Virtual DNS/DHCP Appliance System is an integrated DNS and DHCP server focusing on performance and reliability.
+   :keywords: DNS appliance, DHCP appliance, DNS, DHCP
 
 .. _dns-dhcp-appliance:
 

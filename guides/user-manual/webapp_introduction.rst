@@ -1,3 +1,7 @@
+.. meta::
+   :description: Introduction to the Micetro by Men&Mice Web Application  
+   :keywords: DNS, DNS records  
+
 .. _webapp-introduction:
 
 Introduction

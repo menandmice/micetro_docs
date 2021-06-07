@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing DNS records in Micetro. To enable multiple records with the same name in the Ansible modules, there is no possibility to change a record. 
+   :keywords: DNS, DNS records, Micetro by Men&Mice, Ansible modules
+
 .. _ansible-mm_dnsrecord:
 
 mm_dnsrecord

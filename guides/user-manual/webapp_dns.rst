@@ -1,3 +1,7 @@
+.. meta::
+   :description: DNS management in the Micetro by Men&Mice Web Application
+   :keywords: DNS management, DNS
+
 .. _webapp-dns:
 
 DNS management

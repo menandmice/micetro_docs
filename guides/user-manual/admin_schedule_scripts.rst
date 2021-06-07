@@ -1,3 +1,7 @@
+.. meta::
+   :description: In Micetro sheduled scripts allow the administrator to configure the system to run on schedule   
+   :keywords: Micetro scheduled scripts, Micetro administrator
+
 .. _admin-schedule-scripts:
 
 Scheduled Scripts

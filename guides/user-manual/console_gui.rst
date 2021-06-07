@@ -1,3 +1,7 @@
+.. meta::
+   :description: When the Management Console is started up, the *Manager Window* displays in the center. This window is the heart of the Men&Mice Management Console, providing a single interface with nearly every feature in Micetro.
+   :keywords: Men&Mice, Micetro by Men&Mice
+
 .. _console-gui:
 
 Management Console Interface

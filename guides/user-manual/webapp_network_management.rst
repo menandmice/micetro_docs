@@ -1,3 +1,7 @@
+.. meta::
+   :description: Network management in the Micetro by Men&Mice Web Application  
+   :keywords: network management, network
+
 .. _webapp-network-management:
 
 Network management

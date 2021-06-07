@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to import IP address ranges or IP addresses into Micetro by Men&Mice
+   :keywords: IPAM, IPAM data, Micetro 
+
 .. _webapp-import-ipam-data:
 
 Import IPAM data

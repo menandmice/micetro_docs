@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Inspector in the Micetro by Men&Mice Web Application overview 
+   :keywords: DNS zone, DDI, Micetro
+
 .. _webapp-inspector:
 
 The Inspector

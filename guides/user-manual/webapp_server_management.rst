@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to manage DNS and DHCP servers in the Micetro by Men&Mice Web Application
+   :keywords: DNS servers, DHCP servers, DNS server management, DHCP server management
+
 .. _webapp-server-management:
 
 Server management

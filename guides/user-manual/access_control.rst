@@ -1,3 +1,7 @@
+.. meta:: 
+   :description: Access control to Micetro by Men&Mice for users, groups and roles
+   :keywords: Micetro access model
+
 .. _access-control:
 
 Access control

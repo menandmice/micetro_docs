@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to import DNS records in the Micetro by Men&Mice Web Application 
+   :keywords: DNS records, DNS import
+
 .. _webapp-import-dns-records:
 
 Import DNS Records

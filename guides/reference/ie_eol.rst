@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: As of the 9.3.0 version of Micetro, Internet Explorer will no longer be supported for the Web Application. Customers currently using Internet Explorer to access the Web Application will be redirected to the old Web UI.
+   :keywords: Microsoft, Men&Mice, Web application
 
 .. _ie-eol:
 

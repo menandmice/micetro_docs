@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: The user is able to click a link from the Management Console to get more details about each error / warning that is shown there.
+   :keywords: Micetro, Management console
 
 .. _health-bar-information:
 

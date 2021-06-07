@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to configure LDAP authentication in Micetro by Men&Mice
+   :keywords: Men&Mice central service,  
+
 .. _configure-ldap:
 
 Configure LDAP authentication

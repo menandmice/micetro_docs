@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: To ensure the system runs smoothly, use the Management Console to update the default timeout value for the ``named-checkconf`` files.
+   :keywords: Micetro, Men&Mice
 
 .. _named-checkconf-timeout:
 

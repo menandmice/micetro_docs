@@ -1,3 +1,7 @@
+.. meta::
+   :description: Overview, analysis, viewing and deleting of DNS zones in Micetro by Men&Mice
+   :keywords: DNS zones, DNS servers
+
 .. _dns-zones:
 
 DNS zones
