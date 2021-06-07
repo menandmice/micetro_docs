@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _firewall-ports:
 
 Networking requirements

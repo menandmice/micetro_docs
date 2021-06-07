@@ -2,7 +2,6 @@
    :description: BIND supports several extensions to the standard zone file format, known as directives or control statements; all directives start with ``$``. With one exception, the ``$TTL`` directive, Micetro doesn’t display these directives in the zone window.
    :keywords: BIND support, Micetro
 
-
 .. _dns-controller-generate:
 
 Expanding $GENERATE directives into records

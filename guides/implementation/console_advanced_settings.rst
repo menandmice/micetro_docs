@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _console-advanced-settings:
 
 Advanced System Settings

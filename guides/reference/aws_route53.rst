@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _aws-route53:
 
 Configuring Amazon Route53

@@ -1,3 +1,7 @@
+.. meta::
+   :description: Adding DHCP servers to Micetro
+   :keywords: DHCP, Micetro, Microsoft DHCP, ISC DHCP, Kea, Cisco DHCP 
+
 .. _adding-dhcp:
 
 Add DHCP Servers

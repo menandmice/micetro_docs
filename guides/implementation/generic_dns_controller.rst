@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _generic-dns-controller:
 
 Generic DNS Server Controller

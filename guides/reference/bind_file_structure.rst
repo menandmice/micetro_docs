@@ -1,6 +1,7 @@
 .. meta::
    :description: When Micetro is installed on a server running BIND, it needs to perform several changes to the server configuration file structure. This section describes these changes and includes an overview diagram that shows how the server configuration files are processed
    :keywords: bind, micetro
+
 .. _bind-file-structure:
 
 BIND DNS File Structure

@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _first-login:
 
 First login

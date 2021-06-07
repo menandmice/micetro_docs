@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _running-micetro:
 
 Running the Men&Mice components (Central, Controllers)

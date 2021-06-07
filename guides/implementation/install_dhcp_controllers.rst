@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _install-dhcp-controllers:
 
 Men&Mice DHCP Server Controllers
@@ -117,8 +121,6 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Proceed to :ref:`install-webapp`.
-
 Men&Mice Central running on Windows
 -----------------------------------
 
@@ -158,5 +160,3 @@ Managing Cisco IOS with DHCP Support
 Men&Mice DHCP Server Controller can also manage Cisco IOS servers with DHCP support. There is no need to install any software on the Cisco device, but it is necessary to create a user account on the device that has the ability to telnet or SSH in. You will be asked for the username and password when adding the server.
 
 When adding a Cisco IOS server to Men&Mice Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Men&Mice Central will look for a copy of the DHCP Server Controller on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Server Controller that is on the same network segment as the Cisco IOS server.
-
-Proceed to :ref:`install-webapp`.

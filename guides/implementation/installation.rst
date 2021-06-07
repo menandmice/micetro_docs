@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _installation:
 
 Installation
@@ -11,6 +15,7 @@ Installation
   binaries
   config-files
   install_central
+  central_database
   install_console
   install_controllers
   install_webapp

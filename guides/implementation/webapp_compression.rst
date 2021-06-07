@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _webapp-compression:
 
 Enable content compression for Apache

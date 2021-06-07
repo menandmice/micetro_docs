@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _config-files:
 
 Location of important config and log files

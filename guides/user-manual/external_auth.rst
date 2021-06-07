@@ -71,26 +71,16 @@ To enable Active Directory Single Sign-on, do the following:
 Web Interface
 ^^^^^^^^^^^^^
 
-When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on an IIS Server.
+When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on a Microsoft Windows Server.
 
-To enable single sign-on in the web interface, do the following:
+To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro.
 
-1. Make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro.
-
-2. Using the IIS Administrator application, select an authentication method other than Anonymous and Basic for the MenandMice web folder.
-
-3. Edit the file Index.htm in the MenandMice web folder, and change the redirection so SSO=1 argument is specified.
-
-4. Make Index.htm the default document for the site.
-
-.. _disable-kernel-mode-auth:
-
-Disabling Kernel Mode Authentication
-""""""""""""""""""""""""""""""""""""
-
-The Windows Authentication in IIS has by default the Kernel Mode Authentication enabled, which blocks the SSO.
-
-In the IIS Management Console, go to :menuselection:`Windows Authentication --> advanced settings` and set the "Kernel Mode Authentication" to *disabled*.
+..
+  .. _disable-kernel-mode-auth:
+  Disabling Kernel Mode Authentication
+  """"""""""""""""""""""""""""""""""""
+  The Windows Authentication in IIS has by default the Kernel Mode Authentication enabled, which blocks the SSO.
+  In the IIS Management Console, go to :menuselection:`Windows Authentication --> advanced settings` and set the "Kernel Mode Authentication" to *disabled*.
 
 Application Log In
 ------------------

@@ -209,7 +209,7 @@ Hovering over the :guilabel:`i` icon will list further information or show a lis
 
   * *Network* will show more details on the network.
 
-  .. image:: ../../images/create-DNS-record-ipam-insights-networkMicetro.png
+  .. image:: ../../images/create-DNS-record-ipam-insights-network-Micetro.png
     :width: 75%
     :align: center
 

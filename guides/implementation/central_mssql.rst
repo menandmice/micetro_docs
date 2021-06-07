@@ -1,9 +1,13 @@
+.. meta::
+   :description: Configuring Microsoft SQL Server as the database backend for Micetro by Men&Mice
+   :keywords: Microsoft SQL Server, Micetro, database, DDI database
+
 .. _central-mssql:
 
 Microsoft SQL Server
 --------------------
 
-.. warning::
+.. important::
   We recommend that the network latency between the SQL server and M&M Central is **no more than 5 ms**. Otherwise, the performance of M&M in conjunction with SQL Server can't be guaranteed to be acceptable.
   We recommend that the SQL Server database is managed and maintained by a database administrator (DBA).
 
@@ -12,9 +16,7 @@ Setting up the Database
 
 Micetro requires that a blank database is created on the database server, with the collation SQL_Latin1_General_CP1_CS_AS, and a login (Windows or SQL server authenticated) that has db_owner access to that database and an effective default schema of mmCentral.
 
-The attached CreateDatabase.sql is a suggestion for the database and database server setup. Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
-
-.. THERE IS NO SCRIPT ATTACHED HERE.
+The :ref:`createdatabase_sql` is a suggestion for the database and database server setup. Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
 
 Before you run the script please go through the script and change the necessary entries accordingly. This includes path strings (default C:/Data) and very important also the password, which is set by default to "1234" in the script!
 
@@ -31,91 +33,34 @@ Subsequently the script will create:
   ``COLLATE SQL_Latin1_General_CP1_CS_AS``
 
 .. note::
-  For further details take a look at the CreateDatabase.sql script.
+  For further details take a look at the :ref:`createdatabase_sql` script.
 
 Configuring the connection parameters
 
 .. warning::
-  If it's a dedicated server please don't forget to `enable the TCP/IP protocol with the SQL Configuration Manager <https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol?redirectedfrom=MSDN&view=sql-server-ver15>`_.
+  If you're configuring MS SQL on a dedicated server, make sure to `enable the TCP/IP protocol with the SQL Configuration Manager <https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol?redirectedfrom=MSDN&view=sql-server-ver15>`_.
 
 .. _central-mssql-windows:
 
 Men&Mice Central running on Windows
 """""""""""""""""""""""""""""""""""
 
-.. note::
-  Please note that the following needs to be run from the data directory, i.e. the same directory that contains the preferences file for Central. Otherwise the connection information for SQL Server will not be appended to the preferences file.
+The ``preferences.cfg`` file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
 
-1. Download the `Men&Mice mmdbprefs.exe tool <ftp://ftp.menandmice.com/pub/mmsuite/misc/dbprefstool/mmdbprefs.exe>`_.
-
-2. Copy the mmdbprefs.exe into the data directory of the Men&Mice Central.
-
-  Usually located in one of these locations:
-  * C:\Program Files\Men and Mice\Central\Data
-  * C:\Program Files(x86)\Men and Mice\Central\Data
-  * C:\ProgramData\Men and Mice\Central (Windows Server 2008 R2 and later)
-
-Start the mmdbprefs.exe tool with a double-click, and proceed with the configuration wizard:
-
-.. code-block::
-
-  Choose database provider to use:
-
-        1. SQLite
-        2. MSSQL
-
-Select **2** for MS SQL, and press *Enter*.
-
-.. code-block::
-
-  Enter database server:
-  >
-
-Type in the database server in the following format:
+The ``preferences.cfg`` file for normal user/password authentication should look like:
 
 .. code-block::
   :linenos:
 
-  <ip/dns name of SQL server><,port>\<Instance name>@<Database name>
-
-  For example:
-  192.168.2.12\INSTANCENAME@databasename
-  or
-  192.168.2.12,1433@databasename
-
-Press *Enter* to continue.
-
-.. code-block::
-
-  Enter database user name:
-  >
-
-Type in the username ("mmSuiteDBUser" in the example script) that will be used to connect to your database instance on the specified SQL server, and press Enter.
-
-.. note::
-  If the database user name is left empty, Windows Authentication will be used instead of a user-based connection. (This requires to run the Central service under credentials that have access by Windows Authentication to the database).
-
-.. code-block::
-
-  Enter database password:
-  >
-
-Type in the password (it will not be displayed in the shell) and press *Enter*.
-
-The preferences.cfg file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: database, databaseserver, databaseusername and databasepassword
-
-The preferences.cfg file for normal user/password authentication should look like:
-
-.. code-block::
-  :linenos:
-
-  <password value="the fingerprint hash"/>
+  <password value="plaintext:PASSWORD"/>
   <database value="MSSQL"/>
-  <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g. SQLEXPRESS>@,<name of database, e.g. mmsuite"/>
+  <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g. SQLEXPRESS>@,<name of database, e.g. micetro"/>
   <databaseusername value="mmSuiteDBUser"/>
-  <databasepassword value="password hash"/>
+  <databasepassword value="plaintext:DBPASSWORD"/>
 
-An example preferences.cfg file for the Windows Authentication method should look like (databaseusername tag must be present and the value attribute must be set to empty string):
+The ``plaintext:`` directive in the password inputs allows you to enter the passwords in plaintext, which Central will automatically encrypt and replace with the hash during first startup.
+
+An example ``preferences.cfg`` file for the Windows Authentication method should look like (``databaseusername`` tag must be present and the value attribute must be set to empty string):
 
 .. code-block::
   :linenos:
@@ -127,17 +72,15 @@ An example preferences.cfg file for the Windows Authentication method should loo
 
 Restart Central and verify it’s running. If the database connection fails, the service will fail to start with the appropriate error message.
 
-Proceed to :ref:`central-ha` or :ref:`install-controllers`.
-
 Men&Mice Central running on Linux
 """""""""""""""""""""""""""""""""""
 
 .. warning::
   A ODBC driver will need to be `installed on the Linux machine to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
 
-Navigate to the data directory of the Men&Mice Central, usually located in /var/mmsuite/mmcentral.
+Navigate to the data directory of the Men&Mice Central, usually located in ``/var/mmsuite/mmcentral``.
 
-Edit the preferences.cfg file with in that directory with the following:
+Edit the ``preferences.cfg`` file with in that directory with the following:
 
 .. code-block::
   :linenos:
@@ -148,7 +91,7 @@ Edit the preferences.cfg file with in that directory with the following:
   <DatabasePassword value="plaintext:<your password here>" />
 
 .. note::
-  If the DatabasePassword value is prefixed by "plaintext:", it will be swapped out by the Men&Mice Central for a password hash during start up.
+  If the ``DatabasePassword`` value is prefixed by ``plaintext:``, it will be replaced by Men&Mice Central for a password hash during start up.
 
 Connecting to the MS SQL database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,5 +108,3 @@ Restart Central and verify it’s running:
   systemctl status mmcentral
 
 If the database connection fails, the service will fail to start with the appropriate error message.
-
-Proceed to :ref:`central-ha` or :ref:`install-controllers`.

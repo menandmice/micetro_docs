@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _gplv2-license:
 
 GPL V2 LICENSE

@@ -2,7 +2,6 @@
    :description: By default, Micetro automatically adjusts zone transfer settings for slave zones. If this is not a desired behavior for your environment, you can disable it:
    :keywords: Micetro, Men&Mice
 
-
 .. _disable-auto-zone-transfer:
 
 Disable “Automatic adjustment of Zone Transfer”
