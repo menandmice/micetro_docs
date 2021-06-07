@@ -1,5 +1,5 @@
 .. meta::
-   :description: User management information including how to add, edit or remove user accounts and more, in the Micetro web application  
+   :description: User management information including how to add, edit or remove user accounts and more, in the Micetro web application
    :keywords: Micetro web application
 
 .. _webapp-user-management:
@@ -18,7 +18,7 @@ User Management involves both creating groups as well as creating :ref:`users` t
 Users
 =====
 
-Each user defined in can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
+Each user defined in Micetro can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
 
 .. note::
   "administrator" is the user already configured for the application. In order to manage users, you have to be logged in as a user who has user management privileges.

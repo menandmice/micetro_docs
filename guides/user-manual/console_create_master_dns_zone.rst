@@ -1,6 +1,7 @@
 .. meta::
-   :description: How to create a master zone in Micetro by Men&Mice Management Console 
+   :description: How to create a master zone in Micetro by Men&Mice Management Console
    :keywords: DNS console
+
 .. _console-create-master-dns-zone:
 
 Master Zone (Management Console)

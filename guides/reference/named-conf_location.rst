@@ -1,6 +1,6 @@
 .. meta::
-   :description: The Men&Mice DNS Server Controller (``mmremote``) relies on the BIND tool ``named-checkconf`` to verify if the BIND configuration ``named.conf`` is valid.
-   :keywords: Bind, DNS server, Men&Mice 
+   :description: The Men&Mice DNS Server Controller relies on the BIND tool named-checkconf to verify if the BIND configuration is valid.
+   :keywords: Bind, DNS server, Men&Mice, named.conf 
 
 .. _named.conf-location:
 

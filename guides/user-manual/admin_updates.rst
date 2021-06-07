@@ -1,6 +1,6 @@
 .. meta::
-   :description: Updating/correcting from feedback; fixing typos; syncing Terraform
-   :keywords: Terraform
+   :description:
+   :keywords: 
 
 .. _admin-updates:
 
