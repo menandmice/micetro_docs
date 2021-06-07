@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to handle external changes with Kea in Micetro by Men&Mice
+   :keywords: KEA DHCP servers, KEA DHCP
+
 .. _dhcp-kea-external-changes:
 
 Handling external changes with Kea

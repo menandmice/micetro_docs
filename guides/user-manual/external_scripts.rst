@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to run external scripts and the types of script interfaces in Micetro by Men&Mice
+   :keywords: DNS records, DNS
+
 .. _external-scripts:
 
 External scripts

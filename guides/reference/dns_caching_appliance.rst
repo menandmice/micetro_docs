@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _dns-caching-appliance:
 
 Virtual Caching Appliance Setup Guide

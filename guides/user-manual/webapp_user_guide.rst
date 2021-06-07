@@ -1,15 +1,11 @@
+.. meta::
+   :description: A guide to using the Men&Mice Web Application 
+   :keywords: web app, user guide, Micetro 
+
 .. _webapp-user-guide:
 
 Using the Web Application
 =========================
-
-Installing the Web Application
-------------------------------
-
-Installing the Web Application for Micetro is straightforward: just follow the instructions in the :ref:`install-webapp` in the Implementation Guide.
-
-.. note::
-  The web application cannot be installed on the same server as the old web interface. It needs to be on a separate virtual host.
 
 Logging in
 ----------

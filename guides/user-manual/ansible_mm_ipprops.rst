@@ -1,3 +1,7 @@
+.. meta::
+   :description: Set properties on an IP address in Micetro by Men&Mice
+   :keywords: Micetro properties, IP address management, Micetro
+
 .. _ansible-mm_ipprops:
 
 mm_ipprops

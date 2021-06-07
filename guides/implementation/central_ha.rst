@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring High Availability for Micetro's server component
+   :keywords: high availability, failover, Micetro
+
 .. _central-ha:
 
 Configure High Availability for Men&Mice Central
@@ -11,7 +15,7 @@ Failover instances of Men&Mice Central can be configured to build a high availab
   High Availability is also available for the database backend, see :ref:`psql-ha` and :ref:`mssql-ha` for more information.
 
 .. note::
-  For fine-tuning the settings for the Central High Availability cluster, see :ref:`ha-tweaks`.
+  For fine-tuning the settings for the Central High Availability cluster, see :ref:`ha-tweaks-central`.
 
 .. _central-ha-unix:
 
@@ -151,7 +155,7 @@ The procedure for updating the Central servers in High Availability is as follow
 
 1. Turn off the Central service on each secondary server
 
-2. Upgrade the primary server manually using an installer. An installer can be downloaded from http://download.menandmice.com/
+2. Upgrade the primary server manually using an installer. An installer can be downloaded from https://download.menandmice.com/
 
 3. Upgrade each secondary server manually using an installer. After the upgrade finished successfully, the service will be started again.
 

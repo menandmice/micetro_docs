@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring and managing xDNS Redundancy groups in Micetro by Men&Mice
+   :keywords: xDNS Redundancy, DNS, Micetro 
+
 .. _xdns-redundancy-groups:
 
 xDNS Zone Redundancy Groups

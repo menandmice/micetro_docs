@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to maintain DNS servers in the Micetro by Men&Mice Management Console 
+   :keywords: DNS, DNS server, DNS management console 
+
 .. _dns-servers:
 
 Authoritative DNS Servers

@@ -1,3 +1,7 @@
+.. meta::
+   :description: Introduction to the Micetro by Men&Mice Web Application  
+   :keywords: DNS, DNS records  
+
 .. _webapp-introduction:
 
 Introduction
@@ -13,15 +17,15 @@ The Web Application is split into five main sections:
 
 4. :ref:`webapp-workflows`
 
-5. :ref:`webapp-server-management`
+5. :ref:`webapp-admin`
 
-From the DNS section it is possible to:
+From the **DNS** section it is possible to:
 
-* Create new DNS zones (previously limited to master and slave zones in the first version)
+* Create, delete, and edit DNS zones
 
 * Manage DNS records within the DNS zones
 
-From the Network section it is possible to:
+From the **Networks** section it is possible to:
 
 * Create a new network range or a DHCP scope
 
@@ -33,7 +37,7 @@ From the Network section it is possible to:
 
 * Add DNS hosts for IP addresses
 
-In the Reporting section it is possible to:
+In the **Reporting** section (activated with a separate license key) it is possible to:
 
 * Create and save new reporting definitions
 

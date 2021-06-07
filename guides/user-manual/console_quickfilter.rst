@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Quick Filter functionality in the Micetro by Men&Mice Management Console 
+   :keywords: dns data records
+
 .. _console-quickfilter:
 
 Quick Filter (Management Console)

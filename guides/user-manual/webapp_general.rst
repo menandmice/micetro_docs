@@ -1,3 +1,7 @@
+.. meta::
+   :description: General information about the Micetro by Men&Mice Web Application
+   :keywords: Micetro by Men&Mice
+
 .. _webapp-general:
 
 General

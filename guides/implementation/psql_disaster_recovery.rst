@@ -1,3 +1,7 @@
+.. meta::
+   :description: Disaster scenarios and recovery with PostgreSQL high availability in Micetro by Men&Mice
+   :keywords: disaster recovery, PostgreSQL, high availability, Micetro 
+
 .. _psql-disaster-recovery:
 
 Possible disaster scenarios
@@ -33,8 +37,8 @@ Possible disaster scenarios
   |                       | All       | Database unavailable, no replication, no failover possible.                               |
   +-----------------------+-----------+-------------------------------------------------------------------------------------------+
   | ``pg_autoctl``        |           |                                                                                           |
-  |  corrupted and/or     | All       | Database unavailable, no replication, no failover possible.                               |
-  |  deleted              |           |                                                                                           |
+  | corrupted and/or      | All       | Database unavailable, no replication, no failover possible.                               |
+  | deleted               |           |                                                                                           |
   +-----------------------+-----------+-------------------------------------------------------------------------------------------+
 
 Controlled switchover

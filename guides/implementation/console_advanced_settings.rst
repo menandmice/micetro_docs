@@ -1,3 +1,7 @@
+.. meta::
+   :description: Advanced system settings in the Management Console for Micetro by Men&Mice
+   :keywords: advanced configuration, Micetro 
+
 .. _console-advanced-settings:
 
 Advanced System Settings

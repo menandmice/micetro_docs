@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Men&Mice Health Monitoring provides an overview of the general health of Micetro and other systems and services  
+   :keywords: DNS health monitoring
+
 .. _console-health-bar:
 
 Health Monitoring Bar
@@ -13,7 +17,7 @@ Categories
 
 The health status is displayed to the user from the health bar which is positioned at the bottom of the management console window. The status indicators are split into five categories
 
-* Men&Mice Suite
+* Micetro
 
 * DNS
 

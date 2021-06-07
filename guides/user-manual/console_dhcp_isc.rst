@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing groups and hosts within groups on an ISC DHCP server, managing host entries that are defined in the global scope in Micetro.
+   :keywords: ISC DHCP, DHCP management, DHCP Management console
+
 .. _console-dhcp-isc:
 
 ISC DHCP (Management Console)

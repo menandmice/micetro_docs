@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing custom properties in Micetro by Men&Mice with examples
+   :keywords: Micetro, Men&Mice, Micetro custom properties
+
 .. _ansible-mm_props:
 
 mm_props

@@ -1,3 +1,7 @@
+.. meta::
+   :description: Reports management in the Men&Mice Web Application 
+   :keywords: micetro
+
 .. _webapp-reporting:
 
 Reports Management

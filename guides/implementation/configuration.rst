@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring Micetro by Men&Mice
+   :keywords: Micetro, configuration 
+
 .. _configuration:
 
 Configuration
@@ -12,4 +16,3 @@ Configuration
   adding_dns
   adding_dhcp
   adding_ip_ranges
-  central_ha

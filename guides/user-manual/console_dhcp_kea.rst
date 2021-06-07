@@ -1,3 +1,7 @@
+.. meta::
+   :description: Kea DHCP server Management Console in Micetro by Men&Mice
+   :keywords: KEA DHCP server, DHCP management, DHCP Management Console, Micetro by Men&Mice
+
 .. _console-dhcp-kea:
 
 ISC Kea DHCP (Management Console)

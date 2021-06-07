@@ -1,16 +1,13 @@
+.. meta::
+   :description: How to install Men&Mice Central, the server component for Micetro by Men&Mice
+   :keywords: Micetro, Men&Mice Central, server, installation, how to
+
 .. _install-central:
 
 Men&Mice Central
 ================
 
 Men&Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing data such as zone history logs, user accounts and permissions, etc. You must have at least one copy of Central installed in the environment. Central does not need to be installed on a DNS server.
-
-.. toctree::
-  :maxdepth: 1
-  :hidden:
-
-  install_central
-  central_database
 
 .. _install-central-linux:
 
@@ -44,8 +41,6 @@ Here are the questions asked by the installer that pertain to Men&Mice Central:
 
 * Where do you want to install the Men&Mice Central binary?
 
-Proceed to :ref:`central-database`.
-
 Removing Men&Mice Central
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -73,5 +68,3 @@ Men&Mice Central on Windows
   Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
 
   When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
-
-Proceed to :ref:`central-database`.

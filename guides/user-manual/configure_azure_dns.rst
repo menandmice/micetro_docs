@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring Azure DNS and integrating Azure with Micetro
+   :keywords: Azure DNS, DNS Management, Micetro by Men&Mice
+
 .. _configure-azure-dns:
 
 Configure Azure DNS

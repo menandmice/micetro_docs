@@ -1,3 +1,7 @@
+.. meta::
+   :description: Find Orphaned PTR Records, Concurrent Leases, Show Round Robin Records, Show Multiply Defined PTR Records as part of network maintenance in Micetro.
+   :keywords: network space, Micetro, network maintenance, PTR records 
+
 .. _admin-maintenance:
 
 Maintenance

@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to raise logging level for the Men&Mice DNS Server Controller for troubleshooting
+   :keywords: Micetro, DNS, DNS Server Controller, troubleshooting, Linux 
+
 .. _controller-loglevel:
 
 Raise log level for DNS Server Controller

@@ -1,3 +1,7 @@
+.. meta::
+   :description: Fixing missing permissions on the Men&Mice DNS Server controller
+   :keywords: named.conf, Micetro, Men&Mice DNS Server Controller, BIND, troubleshooting, permissions 
+
 .. _controller-perms:
 
 Setting up permissions for DNS Server Controller

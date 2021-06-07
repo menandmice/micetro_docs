@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring server log level for troubleshooting Micetro
+   :keywords: logging, Micetro, troubleshooting
+
 .. _central-loglevel:
 
 Raise log level for Central

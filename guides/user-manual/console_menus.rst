@@ -1,3 +1,7 @@
+.. meta::
+   :description: Menu bars and commands in the Micetro by Men&Mice Management Console 
+   :keywords: Men&Mice, Micetro
+
 .. _console-menus:
 
 Menu Bars

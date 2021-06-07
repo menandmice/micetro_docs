@@ -1,3 +1,7 @@
+.. meta::
+   :description: The filtering sidebar in Micetro acts as a selector in each context, and allows users to quickly find the zones or networks.
+   :keywords: network zones, networks
+
 .. _webapp-filtering:
 
 Filtering sidebar

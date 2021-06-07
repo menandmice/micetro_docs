@@ -1,3 +1,7 @@
+.. meta::
+   :description: Web application 
+   :keywords: Micetro
+
 .. _web-application:
 
 Web Application

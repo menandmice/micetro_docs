@@ -1,3 +1,7 @@
+.. meta::
+   :description: Terraform Micetro by Men&Mice DHCP scope
+   :keywords: terraform, DHCP scope,
+
 .. _terraform-dhcp-reservations:
 
 menandmice_dhcp_scope

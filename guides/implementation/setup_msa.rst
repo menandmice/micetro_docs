@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to set up a Managed Service Account for managing Microsoft DNS and DHCP with Micetro by Men&Mice
+   :keywords: Microsoft DNS, Microsoft DHCP, Managed Service Account, Micetro 
+
 .. _setup-msa:
 
 Setting up a Managed Service Account to run M&M DNS/DHCP Server Controllers
