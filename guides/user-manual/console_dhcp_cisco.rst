@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to add a Cisco DHCP server in Micetro by Men&Mice
+   :keywords: Cisco DHCP server, DHCP server, DHCP
+
 .. _console-dhcp-cisco:
 
 Cisco DHCP

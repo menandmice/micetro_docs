@@ -1,3 +1,7 @@
+.. meta::
+   :description: Adding IP address ranges to Micetro
+   :keywords: IPAM, Micetro, IP address management, IP address ranges
+
 .. _adding-ip-ranges:
 
 IP Address Ranges and devices

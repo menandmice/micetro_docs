@@ -1,3 +1,7 @@
+.. meta::
+   :description: Micetro native integration with cloud based DNS services, IP address related data management for Azure and AWS  
+   :keywords: Micetro by Men&Mice, multicloud, multicloud integration 
+
 .. _cloud-integration:
 
 Overview

@@ -1,3 +1,7 @@
+.. meta:: 
+   :description: An introduction to the Workflow module that allows the user to submit 'change requests' for creating, modifying or deleting DNS records
+   :keywords: Workflow, Management
+   
 .. _webapp-workflows:
 
 Workflow Management

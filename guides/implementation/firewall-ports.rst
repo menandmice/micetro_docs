@@ -1,3 +1,7 @@
+.. meta::
+   :description: Required firewall ports for Micetro by Men&Mice
+   :keywords: firewall, ports, security, Micetro 
+
 .. _firewall-ports:
 
 Networking requirements

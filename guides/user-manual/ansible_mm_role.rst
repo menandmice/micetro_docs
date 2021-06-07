@@ -1,3 +1,7 @@
+.. meta::
+   :description: Managing roles in Micetro by Men&Mice
+   :keywords: Micetro, DDI, Ansible
+
 .. _ansible-mm_role:
 
 mm_role

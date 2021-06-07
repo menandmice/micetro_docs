@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Promote Zone feature in Micetro by Men&Mice makes it possible to change a slave zone to a master zone
+   :keywords: Men&Mice, dns server
+
 .. _console-dns-promote-secondary-to-primary:
 
 Promote Slave to Master (Management Console)

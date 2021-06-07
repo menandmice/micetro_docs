@@ -1,3 +1,7 @@
+.. meta::
+   :description: Access control primer and user management in Micetro by Men&Mice
+   :keywords: access control, user management, Micetro 
+
 .. _user-management:
 
 Micetro User Management

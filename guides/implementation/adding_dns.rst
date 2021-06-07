@@ -1,3 +1,7 @@
+.. meta::
+   :description: Adding DNS servers (Microsoft DNS, BIND, Azure DNS, AWS Route 53, NS1, Akamai Fast DNS, PowerDNS, etc.) to Micetro
+   :keywords: DNS, Micetro, DNS management, Active Directory DNS
+
 .. _adding-dns:
 
 Adding DNS servers

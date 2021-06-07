@@ -1,3 +1,7 @@
+.. meta::
+   :description: Zone types and icons within the Management Console in Micetro by Men&Mice
+   :keywords: dns management console, dns management
+
 .. _console-dns-zone-icons:
 
 Zone Icons (Management Console)

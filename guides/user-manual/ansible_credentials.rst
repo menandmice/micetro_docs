@@ -1,3 +1,7 @@
+.. meta::
+   :description: Ansible credentials matrix
+   :keywords: Ansible and Micetro
+
 .. _ansible-credentials:
 
 Credential matrix

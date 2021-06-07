@@ -1,3 +1,7 @@
+.. meta::
+   :description: The ISC DHCP, Kea DHCP, Cisco and MS DHCP server options in Micetro by Men&Mice
+   :keywords: ISC DHCP, DHCP Servers, Men&Mice
+
 .. _console-dhcp-options:
 
 Options (Management Console)

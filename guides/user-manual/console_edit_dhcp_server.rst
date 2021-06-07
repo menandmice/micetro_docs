@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to change the name or IP Address used to connect to a DHCP server in Micetro by Men&Mice
+   :keywords: dhcp, dhcp server
+   
 .. _console-edit-dhcp-server:
 
 Edit DHCP Server Name (Management Console)

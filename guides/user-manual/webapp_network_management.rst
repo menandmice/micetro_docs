@@ -1,3 +1,7 @@
+.. meta::
+   :description: Network management in the Micetro by Men&Mice Web Application  
+   :keywords: network management, network
+
 .. _webapp-network-management:
 
 Network management
@@ -112,7 +116,7 @@ Enabling / Disabling DHCP scopes
 
 To disable a DHCP scope, select the scope in the list and use :menuselection:`Actions --> Disable scope`.
 
-To enable a DHCP scope, select the scope in the list and use :menuseleciton:`Actions --> Enable scope`.
+To enable a DHCP scope, select the scope in the list and use :menuselection:`Actions --> Enable scope`.
 
 Edit DHCP options for a scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -179,22 +183,22 @@ IP Address Ranges
 | PTR status        | Shows the status of the Address (A) record and Pointer (PTR) record mappings.            |
 |                   | This column can have three values:                                                       |
 |                   |                                                                                          |
-|                   | **Empty**. there are no DNS records for the host. It is also empty if a                  |
+|                   | **Empty**. There are no DNS records for the host. It is also empty if a                  |
 |                   | PTR record exists where the domain in the data section of the PTR record                 |
 |                   | is not managed by the system.                                                            |
 |                   |                                                                                          |
-|                   | **OK**. there is a match between the A and the corresponding PTR record(s).              |
+|                   | **OK**. There is a match between the A and the corresponding PTR record(s).              |
 |                   |                                                                                          |
-|                   | **Verify**. there is no match between the A and the PTR records for the host. The most   |
+|                   | **Verify**. There is no match between the A and the PTR records for the host. The most   |
 |                   | common reasons are:                                                                      |
 |                   |                                                                                          |
-|                   |    * There is an A record but the PTR record is missing.                                 |
-|                   |    * There is a PTR record but the A record is missing.                                  |
-|                   |    * The data section in the PTR record does not correspond to the name of the A record. |
+|                   | * There is an A record but the PTR record is missing.                                    |
+|                   | * There is a PTR record but the A record is missing.                                     |
+|                   | * The data section in the PTR record does not correspond to the name of the A record.    |
 +-------------------+------------------------------------------------------------------------------------------+
-| Last seen         |	The date and time which the IP address was last seen during discovery.                   |
+| Last seen         | The date and time which the IP address was last seen during discovery.                   |
 +-------------------+------------------------------------------------------------------------------------------+
-| Device            |	If the IP address is associated with a device, the name of the device is shown.          |
+| Device            | If the IP address is associated with a device, the name of the device is shown.          |
 +-------------------+------------------------------------------------------------------------------------------+
 
 DHCP Scopes

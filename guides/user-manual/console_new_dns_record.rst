@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to insert a new record in the zone tab in the Micetro by Men&Mice Management Console 
+   :keywords: DNS record, DHCP record, IPAM
+
 .. _console-new-dns-record:
 
 New Records (Management Console)

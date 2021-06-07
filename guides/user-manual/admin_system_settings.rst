@@ -1,3 +1,7 @@
+.. meta::
+   :description: Micetro´s system Settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use and other advanced settings.   
+   :keywords: DNS, DHCP, Micetro´s system settings
+
 .. _admin-system-settings:
 
 System Settings

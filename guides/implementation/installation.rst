@@ -1,3 +1,7 @@
+.. meta::
+   :description: Installing Micetro by Men&Mice
+   :keywords: Micetro 
+
 .. _installation:
 
 Installation

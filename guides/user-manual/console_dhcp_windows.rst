@@ -1,3 +1,7 @@
+.. meta::
+   :description: Microsoft DHCP server properties in Micetro by men&mice
+   :keywords: Microsoft DHCP, DHCP server
+
 .. _console-dhcp-windows:
 
 Microsoft DHCP (Management Console)

@@ -1,3 +1,7 @@
+.. meta::
+   :description: API authentication methods including the login command in Micetro by Men&Mice
+   :keywords: Micetro´s API, Micetro authentication
+
 .. _api-auth:
 
 API Authentication methods

@@ -1,3 +1,7 @@
+.. meta::
+   :description: Defining options on Microsoft DHCP servers in Micetro by Men&Mice
+   :keywords: DHCP, DHCP servers, DHCP Windows, 
+
 .. _dhcp-windows:
 
 Microsoft DHCP

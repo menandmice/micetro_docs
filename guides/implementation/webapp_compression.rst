@@ -1,3 +1,7 @@
+.. meta::
+   :description: Enabling content compression in Apache for the Micetro Web Application
+   :keywords: Apache, Micetro, how to 
+
 .. _webapp-compression:
 
 Enable content compression for Apache

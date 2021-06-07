@@ -1,3 +1,7 @@
+.. meta::
+   :description: Migrating stored data to the PostgreSQL database backend to use with Micetro by Men&Mice
+   :keywords: database migration, data migration, Micetro, PostgreSQL
+
 .. _db-migrate:
 
 Migrate data from another database

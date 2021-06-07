@@ -1,3 +1,7 @@
+.. meta::
+   :description: Advanced configuration options for Micetro by Men&Mice
+   :keywords: Micetro, configuration
+
 .. _advanced-config:
 
 Advanced configuration

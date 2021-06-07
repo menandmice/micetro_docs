@@ -1,3 +1,7 @@
+.. meta::
+   :description: Kea DHCP High Availability and Micetro by Men&Mice
+   :keywords: Kea DHCP, DHCP servers, KEA DHCP servers
+
 .. _dhcp-kea-ha:
 
 .. |kea-ok| image:: ../../images/kea-ok.png

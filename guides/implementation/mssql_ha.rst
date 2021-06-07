@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring Always On Availability for Microsoft SQL Server with Micetro by Men&Mice
+   :keywords: high availability, Microsoft SQL Server, Micetro 
+
 .. _mssql-ha:
 
 Always On Availability Groups

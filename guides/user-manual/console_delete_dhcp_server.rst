@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to delete a DHCP server in the Men&Mice Management Console 
+   :keywords: DHCP server
+
 .. _console-delete-dhcp-server:
 
 Delete (Management Console)

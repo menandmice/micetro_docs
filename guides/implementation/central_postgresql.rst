@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring PostgreSQL as the database backend for Micetro by Men&Mice
+   :keywords: PostgreSQL, Micetro, database, DDI database
+
 .. _central-postgresql:
 
 PostgreSQL
@@ -42,8 +46,6 @@ Restart Central and verify it’s running:
 
 If the database connection fails, the service will fail to start with the appropriate error message.
 
-Proceed to :ref:`psql-ha`, :ref:`central-ha`, or :ref:`install-controllers`.
-
 .. _central-psql-windows:
 
 Men&Mice Central running on Windows
@@ -71,5 +73,3 @@ An example preferences.cfg file for the Windows Authentication method should loo
   <database value="postgresql"/>
   <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
   <databaseusername value=""/>
-
-Proceed to :ref:`psql-ha`, :ref:`central-ha`, or :ref:`install-controllers`.

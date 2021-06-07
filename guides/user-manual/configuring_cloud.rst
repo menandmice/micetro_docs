@@ -1,3 +1,7 @@
+.. meta::
+   :description: How to set up and configure cloud integration in Micetro by Men&Mice
+   :keywords: multicloud, AWS cloud integration, DNS controller
+
 .. _configuring-cloud:
 
 Configure Cloud Integration

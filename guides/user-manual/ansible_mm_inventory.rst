@@ -1,3 +1,7 @@
+.. meta::
+   :description: Micetro inventory plugin supports reading configuration from both a YAML configuration file and environment variables
+   :keywords: Micetro by Men&Mice, Micetro inventory plugin
+
 .. _ansible-mm_inventory:
 
 mm_inventory plugin

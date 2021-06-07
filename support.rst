@@ -1,3 +1,7 @@
+.. meta::
+   :description:
+   :keywords:
+
 .. _support:
 
 Contacting Support

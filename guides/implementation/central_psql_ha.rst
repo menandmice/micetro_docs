@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring database high availability with PostgreSQL for Micetro by Men&Mice
+   :keywords: PostgreSQL, high availability, failover, Micetro, database
+
 .. _central-psql-ha:
 
 Connect Central to the PostgreSQL high availability cluster

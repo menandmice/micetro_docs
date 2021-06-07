@@ -1,3 +1,7 @@
+.. meta::
+   :description: Configuring SSL for the Men&Mice Web Application
+   :keywords: Apache, Microsoft IIS, SSL, Micetro 
+
 .. _webapp-ssl:
 
 Setup SSL for the Web Application
@@ -116,7 +120,7 @@ Add the following rule xml to the rewrite > rules section of the xml, at the top
 In the IIS manager, select the :guilabel:`Default Web site`, right click, and select :menuselection:`Manage Website --> Restart` to make the changes to the web.config take effect.
 
 .. image:: ../../images/iis-ssl-step4.png
-  :width: 90%
+  :width: 60%
   :align: center
 
 With *Default Web Site* selected in the left sidebar, double click on :guilabel:`URL Rewrite` in the middle pane. Verify the rule *HTTP to HTTPS redirect* is at the top of the rewrite rules
@@ -137,13 +141,13 @@ In Pattern field enter ``(.*)``
 Under conditions click :guilabel:`Add` and enter the following condition:
 
 .. image:: ../../images/iis-ssl-step5.png
-  :width: 90%
+  :width: 60%
   :align: center
 
 In the **Action** pane on the bottom, choose *Redirect* from the :guilabel:`Action type` dropdown, and set redirect URL to ``https://{HTTP_HOST}/{R:1}`` and the redirect type to *Permanent (301)*.
 
 .. image:: ../../images/iis-ssl-step6.png
-  :width: 90%
+  :width: 70%
   :align: center
 
 Click :guilabel:`Apply` in the **Actions** pane on the left. And click :guilabel:`Back to rules`.

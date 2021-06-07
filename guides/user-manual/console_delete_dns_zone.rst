@@ -1,3 +1,7 @@
+.. meta::
+   :description: The command to delete a zone from one or more servers in Micetro by Men&Mice
+   :keywords: DNS zones, Men&Mice
+
 .. _console-delete-dns-zone:
 
 Delete zone (Management Console)

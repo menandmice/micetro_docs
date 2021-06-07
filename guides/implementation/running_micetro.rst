@@ -1,3 +1,7 @@
+.. meta::
+   :description: Running and restarting Micetro components
+   :keywords: Micetro, maintenance 
+
 .. _running-micetro:
 
 Running the Men&Mice components (Central, Controllers)

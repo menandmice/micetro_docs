@@ -1,3 +1,7 @@
+.. meta::
+   :description: The Devices feature in the Micetro by Men&Mice Management Console - definition and usage
+   :keywords: IP address device, IP address, device scan
+
 .. _devices:
 
 Devices

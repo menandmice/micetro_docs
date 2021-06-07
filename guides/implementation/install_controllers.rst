@@ -1,3 +1,7 @@
+.. meta::
+   :description: Installing server controllers for Micetro by Men&Mice
+   :keywords: Micetro, server controller, DNS, DHCP, Active Directory 
+
 .. _install-controllers:
 
 Server controllers

@@ -1,3 +1,7 @@
+.. meta::
+   :description: Setting a static value for Men&Mice Central in the Men&Mice Web Application
+   :keywords: Micetro 
+
 .. _webapp-fixed-central:
 
 Configure the web application to use a fixed M&M Central server

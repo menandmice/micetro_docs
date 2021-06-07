@@ -1,3 +1,7 @@
+.. meta::
+   :description: Download binaries for Micetro by Men&Mice
+   :keywords: download, Micetro, Linux, Windows
+
 .. _binaries:
 
 Micetro by Men&Mice components
@@ -11,9 +15,9 @@ Linux
 
 `Download <download.menandmice.com>`_ the following installer packages:
 
-* Men&Mice Central: ``mmsuite-central-10.0.linux.x64.tgz``
-* Men&Mice Server Controller: ``mmsuite-controllers-10.0.linux.x64.tgz``
-* Men&Mice Web Application: ``mmsuite-web-application-10.0.linux.x64.tgz``
+* Men&Mice Central: ``mmsuite-central-10.0.2.2.linux.x64.tgz``
+* Men&Mice Server Controller: ``mmsuite-controllers-10.0.2.linux.x64.tgz``
+* Men&Mice Web Application: ``mmsuite-web-application-10.0.2.linux.x64.tgz``
 * Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
 
 .. note::
@@ -24,9 +28,9 @@ Windows
 
 `Download <download.menandmice.com>`_ the following installer packages:
 
-* Men&Mice Central: ``Men_and_Mice_Central_x64_10.0.exe``
-* Men&Mice Server Controller: ``Men_and_Mice_Controllers_x64_10.0.exe``
-* Men&Mice Web Application: ``Men_and_Mice_Web_Application_x64_10.0.exe``
+* Men&Mice Central: ``Men_and_Mice_Central_x64_10.0.2.exe``
+* Men&Mice Server Controller: ``Men_and_Mice_Controllers_x64_10.0.2.exe``
+* Men&Mice Web Application: ``Men_and_Mice_Web_Application_x64_10.0.2.exe``
 * Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
 
 .. note::
