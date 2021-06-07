@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Using SQLite as the database backend for Micetro by Men&Mice
+   :keywords: SQLite, Micetro, database 
 
 .. _central-sqlite:
 

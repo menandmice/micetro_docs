@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Configuring SSL for the Men&Mice Web Application
+   :keywords: Apache, Microsoft IIS, SSL, Micetro 
 
 .. _webapp-ssl:
 

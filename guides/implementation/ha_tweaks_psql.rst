@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Tweaking the High Availability settings for PostgreSQL in Micetro by Men&Mice
+   :keywords: high availability, failover, PostgreSQL, Micetro 
 
 .. _ha-tweaks-psql:
 

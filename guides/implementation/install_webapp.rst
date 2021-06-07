@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Installing the browser-based user interface and web service for Micetro by Men&Mice
+   :keywords: browser, web application, web service, Micetro, Apache, Microsoft IIS 
 
 .. _install-webapp:
 
@@ -18,8 +18,8 @@ Extract and install the Men&Mice Web Application install package (as root):
 .. code-block:: bash
   :linenos:
 
-  tar -xzvf mmsuite-web-application-10.0.linux.x64.tgz
-  cd mmsuite-web-application-10.0.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
+  tar -xzvf mmsuite-web-application-10.0.2.linux.x64.tgz
+  cd mmsuite-web-application-10.0.2.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
 
 Where ``web-application.domain.tld`` is the domain on which the Web Application will be accessed.
 

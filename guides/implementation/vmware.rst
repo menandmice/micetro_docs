@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Installing the VMware plugin for Micetro by Men&Mice
+   :keywords: VMware, Micetro, vRealize Orchestrator 
 
 .. _vmware:
 

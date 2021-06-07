@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Configuring a PostgreSQL High Availability cluster to use with Micetro by Men&Mice
+   :keywords: high availability, database, failover, PostgreSQL, Micetro 
 
 .. _psql-ha:
 

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Implementation Guide for Micetro by Men&Mice
+   :keywords: implementation, Micetro, deployment 
 
 .. _implementation:
 

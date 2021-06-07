@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Minimum system requirements for Micetro by Men&Mice
+   :keywords: system requirements, Micetro 
 
 .. _system-requirements:
 

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Required firewall ports for Micetro by Men&Mice
+   :keywords: firewall, ports, security, Micetro 
 
 .. _firewall-ports:
 

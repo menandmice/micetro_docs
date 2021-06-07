@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Configuring Micetro by Men&Mice
+   :keywords: Micetro, configuration 
 
 .. _configuration:
 

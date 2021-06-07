@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Installing the Men&Mice DNS Server Controller for Micetro by Men&Mice
+   :keywords: DNS, DNS Server Controller, Micetro, BIND, Unbound
 
 .. _install-dns-controllers:
 

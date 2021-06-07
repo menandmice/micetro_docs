@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Example SQL setup for Micetro by Men&Mice
+   :keywords: Micetro, SQL, database
 
 .. _createdatabase_sql:
 

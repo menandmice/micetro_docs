@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Installing Micetro by Men&Mice on the Microsoft Azure cloud platform
+   :keywords: Micetro, installation, Azure, cloud, Azure Marketplace 
 
 .. _installation-azure:
 

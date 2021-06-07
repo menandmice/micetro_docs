@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: First login and default credentials for Micetro by Men&Mice
+   :keywords: Micetro 
 
 .. _first-login:
 

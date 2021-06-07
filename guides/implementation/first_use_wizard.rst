@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: First use wizard in Micetro by Men&Mice
+   :keywords: Micetro 
 
 .. _first-use-wizard:
 

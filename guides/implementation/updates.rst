@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: How to update Micetro by Men&Mice
+   :keywords: update, Micetro 
 
 .. _updates:
 

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Disaster scenarios and recovery with PostgreSQL high availability in Micetro by Men&Mice
+   :keywords: disaster recovery, PostgreSQL, high availability, Micetro 
 
 .. _psql-disaster-recovery:
 

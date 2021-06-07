@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Location of important configuration files for Micetro by Men&Mice
+   :keywords: configuration, Micetro 
 
 .. _config-files:
 

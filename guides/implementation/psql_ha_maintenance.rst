@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Maintenance operations for the PostgreSQL High Availability cluster with Micetro by Men&Mice
+   :keywords: high availability, database maintenance, failover, PostgreSQL, Micetro 
 
 .. _psql-ha-maintenance:
 

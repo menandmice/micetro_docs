@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Installing the Men&Mice DHCP Server Controller for Micetro by Men&Mice
+   :keywords: DHCP, DHCP Server Controller, ISC DHCP, Kea, Micetro 
 
 .. _install-dhcp-controllers:
 

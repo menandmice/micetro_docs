@@ -1,5 +1,5 @@
 .. meta::
-   :description: Agent-free management of DNS and DHCP servers in Micetro
+   :description: Agent-free management of DNS (Microsoft DNS) and DHCP (Microsoft DHCP, ISC Kea) servers in Micetro
    :keywords: DNS management, DHCP management, DNS, DHCP, agent-free, Micetro
 
 .. _agent-free-dns-dhcp:

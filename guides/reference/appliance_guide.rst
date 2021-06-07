@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Guide to using the Men&Mice Virtual Appliances
+   :keywords: virtual appliance, Micetro 
 
 .. _appliance-guide:
 

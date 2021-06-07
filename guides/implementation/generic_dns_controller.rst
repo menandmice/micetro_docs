@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Using the Men&Mice Generic DNS Server Controller in Micetro by Men&Mice
+   :keywords: DNS, DNS Server Controller, Micetro
 
 .. _generic-dns-controller:
 

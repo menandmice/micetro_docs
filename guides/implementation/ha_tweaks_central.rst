@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Tweaking the High Availability settings for Men&Mice Central
+   :keywords: high availability, failover, Men&Mice Central, Micetro 
 
 .. _ha-tweaks-central:
 

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: How to install Men&Mice Central, the server component for Micetro by Men&Mice
+   :keywords: Micetro, Men&Mice Central, server, installation, how to
 
 .. _install-central:
 

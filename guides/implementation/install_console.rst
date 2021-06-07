@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: How to install the Men&Mice Management Console, the Windows client for Micetro by Men&Mice
+   :keywords: Micetro, Windows client, installation 
 
 .. _install-console:
 

@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: How to increase proxy timeout for the Men&Mice Web Application
+   :keywords: Micetro 
 
 .. _webserver-proxy-timeout:
 

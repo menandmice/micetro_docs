@@ -1,6 +1,6 @@
 .. meta::
-   :description:
-   :keywords:
+   :description: Running and restarting Micetro components
+   :keywords: Micetro, maintenance 
 
 .. _running-micetro:
 
