@@ -163,7 +163,7 @@ IP Address Ranges
 +-------------------+------------------------------------------------------------------------------------------+
 | Column            | Description                                                                              |
 +===================+==========================================================================================+
-| Address           |	An IP address within the IP address range                                                |
+| Address           | An IP address within the IP address range.                                               |
 +-------------------+------------------------------------------------------------------------------------------+
 | State             | For IP address ranges, the possible states for IP addresses are:                         |
 |                   |                                                                                          |
@@ -174,27 +174,27 @@ IP Address Ranges
 | Last known        | The last known MAC address associated with the IP address.                               |
 | MAC Address       | (Obtained through discovery.)                                                            |
 +-------------------+------------------------------------------------------------------------------------------+
-| DNS names	        | A list of DNS hostnames associated with the IP address                                   |
+| DNS names         | A list of DNS hostnames associated with the IP address.                                  |
 +-------------------+------------------------------------------------------------------------------------------+
 | PTR status        | Shows the status of the Address (A) record and Pointer (PTR) record mappings.            |
 |                   | This column can have three values:                                                       |
 |                   |                                                                                          |
-|                   | **Empty**. there are no DNS records for the host. It is also empty if a                  |
+|                   | **Empty**. There are no DNS records for the host. It is also empty if a                  |
 |                   | PTR record exists where the domain in the data section of the PTR record                 |
 |                   | is not managed by the system.                                                            |
 |                   |                                                                                          |
-|                   | **OK**. there is a match between the A and the corresponding PTR record(s).              |
+|                   | **OK**. There is a match between the A and the corresponding PTR record(s).              |
 |                   |                                                                                          |
-|                   | **Verify**. there is no match between the A and the PTR records for the host. The most   |
+|                   | **Verify**. There is no match between the A and the PTR records for the host. The most   |
 |                   | common reasons are:                                                                      |
 |                   |                                                                                          |
-|                   |    * There is an A record but the PTR record is missing.                                 |
-|                   |    * There is a PTR record but the A record is missing.                                  |
-|                   |    * The data section in the PTR record does not correspond to the name of the A record. |
+|                   | * There is an A record but the PTR record is missing.                                    |
+|                   | * There is a PTR record but the A record is missing.                                     |
+|                   | * The data section in the PTR record does not correspond to the name of the A record.    |
 +-------------------+------------------------------------------------------------------------------------------+
-| Last seen         |	The date and time which the IP address was last seen during discovery.                   |
+| Last seen         | The date and time which the IP address was last seen during discovery.                   |
 +-------------------+------------------------------------------------------------------------------------------+
-| Device            |	If the IP address is associated with a device, the name of the device is shown.          |
+| Device            | If the IP address is associated with a device, the name of the device is shown.          |
 +-------------------+------------------------------------------------------------------------------------------+
 
 DHCP Scopes
