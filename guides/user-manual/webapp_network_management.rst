@@ -167,7 +167,7 @@ IP Address Ranges
 +-------------------+------------------------------------------------------------------------------------------+
 | Column            | Description                                                                              |
 +===================+==========================================================================================+
-| Address           |	An IP address within the IP address range.                                               |
+| Address           | An IP address within the IP address range.                                               |
 +-------------------+------------------------------------------------------------------------------------------+
 | State             | For IP address ranges, the possible states for IP addresses are:                         |
 |                   |                                                                                          |
