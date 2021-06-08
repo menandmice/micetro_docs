@@ -1,5 +1,5 @@
 .. meta::
-   :description: Network management in the Micetro by Men&Mice Web Application  
+   :description: Network management in the Micetro by Men&Mice Web Application
    :keywords: network management, network
 
 .. _webapp-network-management:
@@ -167,7 +167,7 @@ IP Address Ranges
 +-------------------+------------------------------------------------------------------------------------------+
 | Column            | Description                                                                              |
 +===================+==========================================================================================+
-| Address           |	An IP address within the IP address range                                                |
+| Address           |	An IP address within the IP address range.                                               |
 +-------------------+------------------------------------------------------------------------------------------+
 | State             | For IP address ranges, the possible states for IP addresses are:                         |
 |                   |                                                                                          |
@@ -178,7 +178,7 @@ IP Address Ranges
 | Last known        | The last known MAC address associated with the IP address.                               |
 | MAC Address       | (Obtained through discovery.)                                                            |
 +-------------------+------------------------------------------------------------------------------------------+
-| DNS names	        | A list of DNS hostnames associated with the IP address                                   |
+| DNS names         | A list of DNS hostnames associated with the IP address.                                  |
 +-------------------+------------------------------------------------------------------------------------------+
 | PTR status        | Shows the status of the Address (A) record and Pointer (PTR) record mappings.            |
 |                   | This column can have three values:                                                       |
