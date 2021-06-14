@@ -20,7 +20,7 @@ The Men&Mice DNS Server Controller uses the ``nomcc`` Python library to control 
 Install ``nomcc`` Python library according to the instructions on its `Github repository <https://github.com/akamai/nomcc>`_.
 
 .. note::
-  The Python library ``crypto`` might be needed to be isntalled as a dependency for ``nomcc``.
+  The Python library ``crypto`` might be needed to be installed as a dependency for ``nomcc``.
 
 In the file ``/etc/channel.conf`` make sure the channel name set to ``ansp``:
 
@@ -32,7 +32,7 @@ In the file ``/etc/channel.conf`` make sure the channel name set to ``ansp``:
 Installing the Men&Mice Generic DNS Server Controller
 -----------------------------------------------------
 
-1. Follow the instructions on :ref:`generic-dns-controller` and use the install parameter ``--generic-dns-controller``.  This will install the base Generic DNS Server Controller.
+1. Follow the instructions on :ref:`generic-dns-controller` and use the install parameter ``--generic-dns-controller``. This will install the base Generic DNS Server Controller.
 
 2. Copy the provided :ref:`nomcc-script` script to a local directory such as ``/var/mmSuite/scripts/``:
 
