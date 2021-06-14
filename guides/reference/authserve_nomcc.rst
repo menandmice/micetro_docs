@@ -10,7 +10,7 @@ Configuring AuthServe
 The Men&Mice Generic DNS Server Controller is able to connect to and control an Akamai AuthServe DNS server through the ``nomcc`` Python library.
 
 .. important::
-  Each AuthServe DNS Server requires an instance of the Generic DNS Server Controller (see :ref:``) installed on the same machine.
+  Each AuthServe DNS Server requires an instance of the Generic DNS Server Controller (see :ref:`generic-dns-controller`) installed on the same machine.
 
 Installing the nomCC library
 ----------------------------
@@ -62,4 +62,4 @@ Fill in the server name and IP address, and from the **Type** dropdown menu sele
 
 .. image:: ../../images/authserve-DNS-Micetro.png
   :width: 80%
-  :align: center 
+  :align: center
