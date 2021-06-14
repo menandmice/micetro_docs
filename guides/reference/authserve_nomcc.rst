@@ -15,7 +15,7 @@ The Men&Mice Generic DNS Server Controller is able to connect to and control an 
 Installing the nomCC library
 ----------------------------
 
-The Men&Mice DNS Server Controller uses tge ``nomcc`` Python library to control the AuthServe service.
+The Men&Mice DNS Server Controller uses the ``nomcc`` Python library to control the AuthServe service.
 
 Install ``nomcc`` Python library according to the instructions on its `Github repository <https://github.com/akamai/nomcc>`_.
 
@@ -27,7 +27,7 @@ In the file ``/etc/channel.conf`` make sure the channel name set to ``ansp``:
 .. code-block::
   :linenos:
 
-  ansp          172.30.180.176#9553    qJgOtzsmhI7KoshVWWDZPqI5c9G0pGd5dfVoQLllXO80dqoo
+  ansp          9553    qJgOtzsmhI7KoshVWWDZPqI5c9G0pGd5dfVoQLllXO80dqoo
 
 Installing the Men&Mice Generic DNS Server Controller
 -----------------------------------------------------
