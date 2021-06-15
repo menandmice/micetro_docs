@@ -1,0 +1,40 @@
+.. _9.3.13-release:
+
+9.3.13
+------
+
+*Date*
+
+* Modifying DHCP scope options on split and failover scopes  in the Web Application will no longer result in the option being set to a blank value.
+
+* Custom properties for DNS records in the Web Application are saved as expected.
+
+* Azure DNS no longer returns an empty list of DNS zone erroneously, and trigger the system to remove all DNS zones.
+
+* Fixed the incorrect PTR record issue that prevented managing DHCP failover scopes when using anycast.
+
+* Fixed a permission issue and users that do not have access to the Reporting module can no longer download reports.
+
+* Adding a TXT record to Akamai containing more than 255 characters no longer fails with an "invalid json body" error.
+
+* Improved documentation for the external authentication methods in the Men&Mice Web Service (MMWS).
+
+* AD integrated zones are listed as expected when selecting a domain controller under the DNS services in the Web Application.
+
+* Deleting a server using a combination of DHCP scopes in failover and a split scope configuration again works as expected.
+
+* Fixed a permission issue in the Web Application for various system settings affecting non-admin users at login.
+
+* Changing a CNAME to an A record no longer fails for AWS private zones.
+
+* History entries are again created as expected when subnets are added externally through synchronization.
+
+* Discovery data for IP addresses is again updated accordingly with new data.
+
+* Ping check on the DNS/DHCP appliance is working as expected.
+
+* Fixed an issue preventing bulk deletion of DNS records in AWS.
+
+* A history entry is properly registered when promoting a slave to a master zone.
+
+* Disabled the ability for user to change passwords when logged in through a domain in Active directory.
