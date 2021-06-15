@@ -1,0 +1,8 @@
+.. _9.3.12-release:
+
+9.3.12
+------
+
+*May 28th, 2021*
+
+* The DHCP software (ISC DHCP) on the Men&Mice Virtual Appliances was patched for the following vulnerability: CVE-2021-25217

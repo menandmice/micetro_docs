@@ -8,14 +8,7 @@ Release notes
 
 Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:`9.3.3-release`, :ref:`9.3.4-release`, :ref:`9.3.5-release`, :ref:`9.3.6-release`, :ref:`9.3.7-release`, :ref:`9.3.8-release`, :ref:`9.3.9-release`, :ref:`9.3.10-release`, :ref:`9.3.11-release`, :ref:`9.3.12-release`
 
-.. _9.3.12-release:
-
-9.3.12
-------
-
-*May 28th, 2021*
-
-* The DHCP software (ISC DHCP) on the Men&Mice Virtual Appliances was patched for the following vulnerability: CVE-2021-25217
+.. include:: release_notes/9.3.12.rst
 
 .. _9.3.11-release:
 
