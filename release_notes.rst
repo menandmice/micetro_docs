@@ -10,10 +10,10 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`10.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`
+Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`
 
 .. include:: release_notes/10.0.2.rst
 
-.. include:: release_notes/10.0.1.rst 
+.. include:: release_notes/10.0.1.rst
 
 .. include:: release_notes/10.0.0.rst
