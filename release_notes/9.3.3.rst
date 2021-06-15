@@ -1,0 +1,36 @@
+.. _9.3.3-release:
+
+9.3.3
+-----
+
+*May 18th, 2020*
+
+This is a maintenance release containing various fixes and improvements.
+
+Improvements
+^^^^^^^^^^^^
+
+* Dynamic update timeout is now configurable
+
+* It is now possible to disable automatic updates of PTR records
+
+* Improved AWS multi account discovery performance
+
+* Improvement performance with API filtering
+
+* Improved handling of Route53 octal encoded characters
+
+Bug fixes
+^^^^^^^^^
+
+* An issue was fixed where Men&Mice Central could not communicate as expected with newer Cisco IOS versions
+
+* An issue was fixed where race conditions in network discovery could cause the Men&Mice Central service to go down
+
+* An issue was fixed where an attempt was made to synchronize recently removed DNS servers, causing the sync to abort for all servers
+
+* An issue was fixed where thread information was not being logged to the debug log
+
+* An issue was fixed with adding a scope in the Web Application to a Cisco IOS DHCP server
+
+* An issue was fixed where the IP address last seen column in the Web Application was not updated after an IP address was pinged

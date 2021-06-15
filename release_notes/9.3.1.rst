@@ -1,0 +1,15 @@
+.. _9.3.1-release:
+
+9.3.0
+-----
+
+*January 24th, 2020*
+
+This is a maintenance release containing various fixes and improvements.
+
+Bug fixes
+^^^^^^^^^
+
+* An issue was fixed in the web application where DNS zones hosted on the Akamai Fast DNS cloud provider were not properly handled.
+
+* An issue was fixed where Men&Mice Central could crash due to mishandling of DNSSEC related records.

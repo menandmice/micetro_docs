@@ -1,0 +1,31 @@
+.. _9.3.7-release:
+
+9.3.7
+-----
+
+*September 4th, 2020*
+
+This is a maintenance release containing various fixes.
+
+Bug fixes
+^^^^^^^^^
+
+* An issue was fixed where an if/else statement in the dhcp configuration of ISC DHCP was not handled properly
+
+* An issue was fixed where the installer for the Web Application was overwriting the mmweb.conf file
+
+* An issue was fixed in the Web Application where the "Create DHCP scope" checkbox was enabled when no DHCP servers were available.
+
+* An issue was fixed in the Web Application where the screen could lock up during an import
+
+* An issue was fixed where the DHCP Controller would lose connection to Cisco DHCP and does not recover until it gets restarted.
+
+* An issue was fixed where a large DNS zone hosted on Dyn could cause an error regarding SOA not being present
+
+* An issue was fixed on the Men & Mice DDI appliances where a slaves directory would be missing in the initial config.
+
+* An issue was fixed where a DHCP option would be erroneously deleted when switching between hex and binary.
+
+* An issue was fixed where the DHCP controller could stop due to an error that the configuration was not correct.
+
+* An issue was fixed where Free IP addresses would be listed in a failover DHCP as Assigned (Pool)

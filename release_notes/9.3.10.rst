@@ -1,0 +1,28 @@
+.. _9.3.10-release:
+
+9.3.10
+------
+
+*April 13th, 2021*
+
+* An issue was fixed where editing master servers for a forward zone through the web application did not behave as expected
+
+* An issue was fixed where the initial Azure DNS synchronization erroneously removed all zones and added them again
+
+* An issue was fixed where a GET  REST API command on DNSZone with a set DNSRecords filter could crash Men&Mice Central.
+
+* An issue was fixed where adding a TXT record to AWS and the record data contains an "&" it would erroneously be converted into "&amp;"
+
+* An issue was fixed where VPCs were not being discovered because of an authorization issue
+
+* An issue was fixed where to clear an IP address would require the access bit "Use IP addresses in DNS"
+
+* An issue was fixed where TXT records that exceeded 255 characters in length were not handled correctly on NS1
+
+* An issue was fixed where CAA records with additional double quotes were not handled correctly on NSONE
+
+* An issue was fixed where it was not possible to create a new subnet in the web application when using the Edge web browser
+
+* An issue was fixed where trying to create a new network in the web application would result in an endless loop at comment field when user does not have access
+
+* An issue was fixed in the web application where the Lease MAC addresses were not formatted properly

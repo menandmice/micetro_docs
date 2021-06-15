@@ -1,0 +1,54 @@
+.. _9.3.8-release:
+
+9.3.8
+-----
+
+*October 12th, 2020*
+
+This is a maintenance release containing various fixes and improvements.
+
+Bug fixes
+^^^^^^^^^
+
+* An issue was fixed where adding of DNS records to AWS would fail when an RRSet with a different casing was present
+
+* An issue was fixed involving authentication when using SSO
+
+Improvements
+^^^^^^^^^^^^
+
+* An option was added in advanced system settings to toggle between case sensitive / non-case sensitive for values
+
+* The allocation wizard in the Management Console and the old web interface has been changed so that it does not copy read-only custom properties from the parent subnet anymore
+
+* Logging for AWS account discovery was improved
+
+* The following DNS record types are now supported in the Web Application
+
+  - WKS
+
+  - RP
+
+  - AFSDB
+
+  - LOC
+
+  - SSHFP
+
+  - SPF
+
+  - DNSKEY (read only)
+
+  - NSEC (read only)
+
+  - NSEC3 (read only)
+
+  - NSEC3PARAM (read only for now at least)
+
+  - RRSIG (read only)
+
+  - DS
+
+  - DLV (read only)
+
+* The web service has been disabled on the Men&Mice Appliances

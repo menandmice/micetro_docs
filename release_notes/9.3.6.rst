@@ -1,0 +1,27 @@
+.. _9.3.6-release:
+
+9.3.6
+-----
+
+*August 20th, 2020*
+
+This is a maintenance release containing a security update.
+
+Appliances
+^^^^^^^^^^
+
+* BIND on the Men&Mice DDI appliance was upgraded due to the CVE-2020-8622,CVE-2020-8623 and CVE-2020-8624 vulnerabilities
+
+Bug fixes
+^^^^^^^^^
+
+* An issue was fixed where a delay when logging in to a Cisco DHCP server was not handled properly
+
+* An issue was fixed where an exception when logging in to a Cisco DHCP server was not handled properly
+
+Improvements
+^^^^^^^^^^^^
+
+* The handling of DNS resolving servers was improved
+
+* The handling of updating the service status of DNS servers was improved

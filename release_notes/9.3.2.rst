@@ -1,0 +1,46 @@
+.. _9.3.2-release:
+
+9.3.2
+-----
+
+*February 21st, 2020*
+
+This is a maintenance release containing various fixes and improvements.
+
+Bug fixes
+^^^^^^^^^
+
+* An issue was fixed in the web application where the "Create" button above the lists was disabled if nothing was selected.
+
+* An issue was fixed where it was not possible to create a DNS entry on an AD integrated DNS zone.
+
+* An issue was fixed where Men&Mice Central could crash in certain circumstances.
+
+* An issue was fixed where re-adding a DHCP pool would return an error indicating an already existing pool.
+
+* An issue was fixed in the web application where it was not possible to create a DHCP reservation.
+
+* An issue was fixed where utilization and number of free addresses were not shown initially for DHCP scopes that were synced externally.
+
+* An issue was fixed in the web application where the Import task would not handle importing from a CSV file.
+
+* An issue was fixed where the REST API call for GetAvailableAddressBlocks for an IPv6 address range would not work as expected.
+
+* An issue was fixed in the web application where importing IP address ranges could fail with an error "Unknown element: iscontainer".
+
+* An issue was fixed where a race condition could lead to a DHCP scope on a MS DHCP having two address pools.
+
+* An issue was fixed in the web application where the report preview window could get into an always busy state.
+
+* An issue was fixed in the web application where the column configuration drop down for the Networks / DNS list would not be entirely visible when the screen height was not high enough.
+
+* An issue was fixed where the xDNS creation wizard could end up in an abnormal state.
+
+* An issue was fixed in the web application where editing SOA for multiple DNS zones would not be handled properly.
+
+Improvements
+^^^^^^^^^^^^
+
+* Various UI/UX improvements in the web application.
+
+* Various performance and stability enhancements.

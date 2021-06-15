@@ -1,0 +1,18 @@
+.. _9.3.4-release:
+
+9.3.4
+-----
+
+*May 19th, 2020*
+
+This is a maintenance release containing various fixes and improvements.
+
+Appliances
+^^^^^^^^^^
+
+* BIND on the Men&Mice appliances was upgraded due to CVE-2020-8616 and CVE-2020-8617 vulnerabilities
+
+Bug fixes
+^^^^^^^^^
+
+* Improved service state detection for DNS and DHCP server controllers
