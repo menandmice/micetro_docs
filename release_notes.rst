@@ -12,6 +12,9 @@ Release notes
 
 Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`
 
+..
+  .. include:: release_notes/10.0.3.rst 
+
 .. include:: release_notes/10.0.2.rst
 
 .. include:: release_notes/10.0.1.rst

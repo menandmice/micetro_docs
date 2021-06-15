@@ -1,0 +1,78 @@
+.. meta::
+   :description: Release notes for Micetro by Men&Mice 10.0.3
+   :keywords: Micetro, release notes, releases, update notes
+
+.. _10.0.3-release:
+
+10.0.3
+------
+
+*Date*
+
+* Fixed a labeling issue in the Web Application's Workflow module.
+
+* Modifying DHCP scope options on split and failover scopes in the Web Application will no longer result in the option being set to a blank value.
+
+* Azure DNS no longer returns an empty list of DNS zone erroneously, and trigger the system to remove all DNS zones.
+
+* Fixed an issue that prevented the creation of DNS zones through the generic DNS Server Controller.
+
+* Fixed the incorrect PTR record issue that prevented managing DHCP failover scopes when using anycast.
+
+* Fixed a permission issue and users that do not have access to the Reporting module can no longer download reports.
+
+* Adding a TXT record to Akamai containing more than 255 characters no longer fails with an “invalid json body” error.
+
+* Improved documentation for the external authentication methods in the Men&Mice Web Service (MMWS).
+
+* Optimized how Micetro handles a large amount of routers configured in SNMP profiles.
+
+* AD integrated zones are listed as expected when selecting a domain controller under the DNS services in the Web Application.
+
+* Scrollbars will no longer erroneously appear in the Quick Command dialog.
+
+* Folder names containing a slash character display correctly in the footer.
+
+* Improved accessibility for static-stub, stub, and forward DNS zone types in the list of zones.
+
+* The installers properly detect the correct Python version on newer versions of Ubuntu and CentOS.
+
+* Fixed an issue in the REST API command for DHCP scopes where an error was displayed indicating an unknown element.
+
+* DNS zone transfer settings for slave zones can be edited as expected.
+
+* Revealing a related IP address no longer results in an endlessly loading indicator in the Web Application.
+
+* Separators in forms are displayed properly in the Web Application.
+
+* Fixed an issue where the DNS zone name contained the name of the authoritative DNS server in the Web Application.
+
+* Adding a stub DNS zone properly reload the list of DNS zones.
+
+* Fixed an issue causing DNS views from a different address space showing.
+
+* Modifying a related DNS record through IPAM in the Web Application will properly update the custom properties as expected.
+
+* Deleting a server using a combination of DHCP scopes in failover and a split scope configuration again works as expected.
+
+* The related DNS data in the Web Application's Inspector is populated immediately after creating a related DNS record.
+
+* Fixed an issue causing a user in the Administrators role being unable to access the Workflow module.
+
+* History entries are properly created after editing a DHCP reservation.
+
+* Fixed an issue causing a value entered in the DHCP option 3 to be misinterpreted as IPv6 address but displayed as IPv4.
+
+* Pressing cancel in a dialog properly warns the user of unsaved changes in the User Management section.
+
+* Changing a CNAME to an A record no longer fails for AWS private zones.
+
+* History entries are again created as expected when subnets are added externally through synchronization.
+
+* Discovery data for IP addresses is again updated accordingly with new data.
+
+* Ping check on the DNS/DHCP appliance is working as expected.
+
+* Fixed an issue preventing bulk deletion of DNS records in AWS.
+
+* A history entry is properly registered when promoting a slave to a master zone.
