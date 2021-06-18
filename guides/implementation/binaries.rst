@@ -9,7 +9,7 @@ Linux
 .. important::
   All Men&Mice non-Windows components (Central, Controller, and the Web Application) require python (version 2.7 or above) to be installed on the target server.
 
-`Download <download.menandmice.com>`_ the following installer packages:
+`Download <https://download.menandmice.com>`_ the following installer packages:
 
 * Men&Mice Central: ``mmsuite-central-9.3.10.linux.x64.tgz``
 * Men&Mice Server Controller: ``mmsuite-controllers-9.3.10.linux.x64.tgz`` (To be installed on each DNS and DHCP server.)
@@ -22,7 +22,7 @@ Linux
 Windows
 -------
 
-`Download <download.menandmice.com>`_ the following installer packages:
+`Download <https://download.menandmice.com>`_ the following installer packages:
 
 * Men&Mice Central: ``Men_and_Mice_Central_x64_10.0.exe``
 * Men&Mice Server Controller: ``Men_and_Mice_Controllers_x64_9.3.10.exe`` (To be installed on each DNS and DHCP server.)
