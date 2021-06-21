@@ -41,6 +41,9 @@ Configuring the connection parameters
 Men&Mice Central running on Windows
 """""""""""""""""""""""""""""""""""
 
+.. note::
+  To use Windows Authentication with the Men&Mice Suite and Microsoft SQL Server, make sure Men&Mice Central is running under an Active Directory service account that is a member of the local administrators group.
+
 The ``preferences.cfg`` file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: database, databaseserver, databaseusername and databasepassword
 
 The ``preferences.cfg`` file for normal user/password authentication should look like:

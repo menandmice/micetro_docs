@@ -52,7 +52,7 @@ Databases
   :widths: 20, 20, 60
 
   "SQLite", "N/A [4]_", "Windows, Linux, Solaris"
-  "Microsoft SQL Server", "2008 R2, 2012, 2014, 2016", "Windows"
+  "Microsoft SQL Server", "2008 R2, 2012, 2014, 2016, 2019", "Windows"
 
 .. [4] The SQLite database is embedded into the Men&Mice Central application.
 
