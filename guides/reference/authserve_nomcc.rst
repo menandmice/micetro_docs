@@ -53,8 +53,8 @@ Installing the Men&Mice Generic DNS Server Controller
 
   systemctl start mmremoted
 
-Adding AutServe DNS server(s) to Micetro
-----------------------------------------
+Adding AuthServe DNS server(s) to Micetro
+-----------------------------------------
 
 With the Men&Mice DNS Server Controller running on **all** AuthServe DNS servers you'd like to add, open the Men&Mice Web Application, navigate to :menuselection:`Admin --> Server Management` and click on :guilabel:`+ Add DNS Server`.
 
