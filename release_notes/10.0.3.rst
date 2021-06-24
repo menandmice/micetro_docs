@@ -25,8 +25,6 @@
 
 * Improved documentation for the external authentication methods in the Men&Mice Web Service (MMWS).
 
-* Optimized how Micetro handles a large amount of routers configured in SNMP profiles.
-
 * AD integrated zones are listed as expected when selecting a domain controller under the DNS services in the Web Application.
 
 * Scrollbars will no longer erroneously appear in the Quick Command dialog.
@@ -66,8 +64,6 @@
 * Pressing cancel in a dialog properly warns the user of unsaved changes in the User Management section.
 
 * Changing a CNAME to an A record no longer fails for AWS private zones.
-
-* History entries are again created as expected when subnets are added externally through synchronization.
 
 * Discovery data for IP addresses is again updated accordingly with new data.
 
