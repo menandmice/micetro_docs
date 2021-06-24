@@ -3,7 +3,7 @@
 9.3.13
 ------
 
-*Date*
+*June 24th, 2021.*
 
 * Modifying DHCP scope options on split and failover scopes  in the Web Application will no longer result in the option being set to a blank value.
 
