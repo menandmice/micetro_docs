@@ -43,7 +43,7 @@ New features
 
 * Windows DNS users can now manage all their zone transfer and notify settings in the Web Application.
 
-* We heard you liked DNS records, so we’ve put support for new record types in the Web Application: WKS, RP, AFSDB, LOC, SSHFP, SPF, DNSKEY (read only), NSEC (read only), NSEC3 (read only), NSEC3PARAM, RRSIG (read only), DS, DLV (read only).
+* We heard you liked DNS records, so we’ve put support for new record types in the Web Application: WKS, RP, AFSDB, LOC, SSHFP, SPF, DNSKEY (read only), NSEC (read only), NSEC3 (read only), NSEC3PARAM (read only), RRSIG (read only), DS, DLV (read only).
 
 * You can now manage users, groups and roles in the Web Application. Group hug!
 
