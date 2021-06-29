@@ -27,7 +27,6 @@ For example:
 This would create 254 PTR records, all of similar format, looking like this:
 
 .. code-block::
-  :linenos:
 
   1.0.168.192.in-addr.arpa. PTR host-1.dsl.example.net.
   2.0.168.192.in-addr.arpa. PTR host-2.dsl.example.net.
@@ -49,7 +48,6 @@ To follow these instructions, you'll need to figure out where your named data di
 named.conf contains a set of 5 ``include`` statements, referring to the absolute path of files in $NAMED/conf/. So if your $NAMED directory is /var/named, the include statements will look like this:
 
 .. code-block::
-  :linenos:
 
   include "/var/named/conf/logging";
   include "/var/named/conf/user_before";
@@ -60,7 +58,6 @@ named.conf contains a set of 5 ``include`` statements, referring to the absolute
 Edit the file $NAMED/mmsuite/preferences.cfg. Add the following line:
 
 .. code-block::
-  :linenos:
 
   <ExpandControlStatements value="1"/>
 

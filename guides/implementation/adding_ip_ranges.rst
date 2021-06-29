@@ -18,7 +18,6 @@ Subnets (IP Address Ranges)
 """""""""""""""""""""""""""
 
 .. code-block::
-  :linenos:
 
   network_address, subnet_mask, is_subnet, locked, can_auto_assign, Title,[custom_property_1,...]
 
@@ -57,7 +56,6 @@ The "Define Custom Properties" window, which appears when :guilabel:`Define Cust
 After the custom properties have been defined for IP Address Ranges and IP Addresses the file to import the subnets will look like the following in the csv format (note that the first line is needed in the file):
 
 .. code-block::
-  :linenos:
 
   network_address,subnet_mask,is_subnet,locked,can_auto_assign,Title,Description,Status
   192.168.202.0,255.255.255.0,1,0,0,First subnet,,used
@@ -87,7 +85,6 @@ If the file is reported clean, the data can be imported using:
 Importing the device data (IP addresses) is very similar to the process above.  As noted earlier, the company has the custom properties "Description" and "Device Name" for IP Addresses:
 
 .. code-block::
-  :linenos:
 
   address,Description, Device Name
   192.168.202.253,Router 1, my_device_1.mydom.com.

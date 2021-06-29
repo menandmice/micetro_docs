@@ -27,7 +27,6 @@ Table of Contents
 .. toctree::
     :caption: Men&Mice Suite
     :maxdepth: 1
-    :hidden:
 
     release_notes
     security_announcements
@@ -37,7 +36,6 @@ Table of Contents
 .. toctree::
      :caption: Installing the Suite
      :maxdepth: 3
-     :hidden:
 
      guides/implementation/implementation
      guides/implementation/configuration
@@ -47,7 +45,6 @@ Table of Contents
 .. toctree::
      :caption: Using The Men&Mice Suite
      :maxdepth: 3
-     :hidden:
 
      guides/user-manual/introduction
      guides/user-manual/console
@@ -64,6 +61,5 @@ Table of Contents
 .. toctree::
     :caption: Reference articles
     :maxdepth: 1
-    :hidden:
 
     guides/reference/reference

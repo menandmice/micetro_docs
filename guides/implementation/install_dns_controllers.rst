@@ -257,7 +257,6 @@ To configure the DNS Server Controller to use a different address, edit the serv
 If the file does not exist, create it. The file is a text file in a simple XML-based format. Add the following element, replacing the dummy address here with the server's correct network address:
 
 .. code-block::
-  :linenos:
 
   <DNSServerAddress value="192.0.2.1"/>
 
@@ -288,7 +287,6 @@ If the Controller should be configured to run a connector script in order to int
 The file is a text file in a simple XML-based format. Add the following element, replacing the dummy script interpreter and script:
 
 .. code-block:: XML
-  :linenos:
 
   <GenericDNSScript value="python /scripts/genericDNS.py" />
 

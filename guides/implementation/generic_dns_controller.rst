@@ -23,7 +23,6 @@ How to install and configure the Generic DNS Server Controller:
 3. Following an example config for the python interpreter and a connector script located on the C drive in the scripts sub-directory:
 
 .. code-block::
-  :linenos:
 
   <GenericDNSScript value="c:\python27\python.exe c:\scripts\genericDNS.py" />
 

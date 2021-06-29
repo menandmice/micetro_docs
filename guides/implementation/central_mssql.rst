@@ -49,7 +49,6 @@ The ``preferences.cfg`` file in the data directory contains (beside the fingerpr
 The ``preferences.cfg`` file for normal user/password authentication should look like:
 
 .. code-block::
-  :linenos:
 
   <password value="plaintext:PASSWORD"/>
   <database value="MSSQL"/>
@@ -62,7 +61,6 @@ The ``plaintext:`` directive in the password inputs allows you to enter the pass
 An example preferences.cfg file for the Windows Authentication method should look like (databaseusername tag must be present and the value attribute must be set to empty string):
 
 .. code-block::
-  :linenos:
 
   <password value="plaintext:PASSWORD"/>
   <database value="MSSQL"/>
@@ -84,7 +82,6 @@ Navigate to the data directory of the Men&Mice Central, usually located in /var/
 Edit the preferences.cfg file with in that directory with the following:
 
 .. code-block::
-  :linenos:
 
   <Database value="MSSQL" />
   <DatabaseServer value="ip/dns name of SQL server><,port>\<Instance name>@<Database name>" />
@@ -125,7 +122,6 @@ Men&Mice Central supports the use of Always On Availability Groups (v9.3.0 and a
 To use Always On Availability Groups, change the DatabaseServer value in the preferences.cfg to the virtual IP address or the FQDN of the availability group listener:
 
 .. code-block::
-  :linenos:
 
   <DatabaseServer value="virtual ip/fqdn of availability group listener><,port>\<Instance name>@<Database name>" />
 

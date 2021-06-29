@@ -402,7 +402,6 @@ Timespan formats
 ^^^^^^^^^^^^^^^^
 
 .. code-block::
-  :linenos:
 
   <num><time unit>
   <time unit> ::= s (seconds), m (minutes), h (hours), d (days), w (weeks), M (months), y (years)
@@ -413,7 +412,6 @@ Date time formats
 General date time format consist of date and/or time (separated by a space).
 
 .. code-block::
-  :linenos:
 
   <datetime> ::= <date> <time>
   <time> ::= HH:MM[:SS[:TTT]][ AM|PM]
@@ -424,14 +422,12 @@ General date time format consist of date and/or time (separated by a space).
 Timestamps formatted according to RFC3339.
 
 .. code-block::
-  :linenos:
 
   YYYY-MM-DDTHH:MM:SS[time-secfrac][time-offset]
 
 Current time deltas, i.e. a date time relative from now, can also be used.
 
 .. code-block::
-  :linenos:
 
   -|+ <num><time unit>
   <time unit> ::= s (seconds), m (minutes), h (hours), d (days), w (weeks), M (months), y (years)

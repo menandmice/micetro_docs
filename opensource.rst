@@ -7,7 +7,7 @@ Open-source licenses
   :header: "Name", "Version", "License"
   :widths: 20, 10, 70
 
-  "BIND", "", ":ref:`isc-license`"
-  "DHCP", "", ":ref:`isc-license`"
-  "Unbound", "", ":ref:`bsd-license`"
-  "TinyCore", "", ":ref:`gplv2-license`"
+  "BIND", "9.11.31", ":ref:`isc-license`"
+  "DHCP", "4.4.2-P1", ":ref:`isc-license`"
+  "Unbound", "1.10.1", ":ref:`bsd-license`"
+  "TinyCore", "4.7.5", ":ref:`gplv2-license`"

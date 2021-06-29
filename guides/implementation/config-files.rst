@@ -17,7 +17,8 @@ Linux
    "``/var/mmsuite/mmcentral.log``",	"Men&Mice Central logfile."
    "``/var/mmsuite/dns_server_controller/logs/``",	"Men&Mice DNS Server Controller logfile."
 
-Windows
--------
+..
+  Windows
+  -------
 
 .. TBD

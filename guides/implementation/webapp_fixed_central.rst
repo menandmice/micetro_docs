@@ -13,14 +13,12 @@ Steps to configure a fixed Server name for the Web Application login dialog
 1. Edit the preferences.cfg file of the M&M Web Services (c:\ProgramData\Men and Mice\Web Services\preferences.cfg). If not already there add a XML-Tag for the default M&M Central server name:
 
 .. code-block::
-  :linenos:
 
   <DefaultCentralServer value="your M&M Central DNS name or IP" />
 
 2. Add another XML-tag to configure the Web App to use the DefaultCentralServer as fixed server name:
 
 .. code-block::
-  :linenos:
 
   <FixedCentralServer value="1" />
 

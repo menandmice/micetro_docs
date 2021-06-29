@@ -6,7 +6,6 @@ mm_ldap.py
 Copy the following block to a file and save it as ``mm_ldap.py``. Modify the variables as needed.
 
 .. code-block:: python
-  :linenos:
 
   """
   LDAP module for the Men & Mice Suite.

@@ -629,7 +629,6 @@ The Men&Mice Suite will automatically backup configuration for all BIND DNS serv
 Automatic backup can be disabled by setting the property ``BackupDNSServers`` value in Men&Mice central preferences to zero:
 
 .. code-block::
-  :linenos:
 
   <BackupDNSServers value="0" />
 

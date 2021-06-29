@@ -36,7 +36,6 @@ To create a TSIG key to use with BIND:
 2. Create a new key using the command rndc-confgen, like this: rndc-confgen -a This will create a file named rndc.key, typically in either /etc or /etc/bind. The contents of the file will look something like this:
 
   .. code-block::
-    :linenos:
 
     key rndc-key { algorithm hmac-md5; secret "Qqn05iUpjzmNoXxLJi5vXw=="; };
 

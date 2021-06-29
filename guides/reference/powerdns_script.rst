@@ -6,7 +6,6 @@ genericDNSPowerDNS.py
 Copy the following block to a file and save it as ``genericDNSPowerDNS.py``. Modify the variables as needed.
 
 .. code-block:: python
-  :linenos:
 
   #!/usr/bin/env python
   '''

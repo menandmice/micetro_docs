@@ -20,7 +20,6 @@ and set the correct ownership.
 2. Create a file preferences.cfg in the mmsuite directory and configure the connector script with a XML-tag as described in Generic DNS Server Controller. E.g. on Linux:
 
 .. code-block::
-  :linenos:
 
   <GenericDNSScript value="python /your/script/directory/genericDNS.py" />
 
@@ -33,6 +32,5 @@ Download the script from :ref:`powerdns-script`.
 6. Add to the begin of the parameter list your created controller working directory with the -d parameter, .i.e.
 
 .. code-block::
-  :linenos:
 
   PARAMS="-d /var/mmsuite/dns_server_controller  ...rest of the params"

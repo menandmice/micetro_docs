@@ -6,6 +6,5 @@ Enable content compression for Apache
 To speed up response time for large operations, add the following line to ``mmws.conf``:
 
 .. code-block::
-  :linenos:
 
   AddOutputFilterByType DEFLATE application/json

@@ -175,7 +175,6 @@ The properties to be added are:
 Example:
 
 .. code-block::
-  :linenos:
 
   <RADIUSServer value="192.168.1.3"/><RADIUSPort value="1515"/><RADIUSSharedSecret value="MyBigSecret"/><RADIUSAuthentication value="1"/>
 

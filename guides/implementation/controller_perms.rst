@@ -9,7 +9,6 @@ Setting up permissions for DNS Server Controller
 To prevent this, make sure ``named-checkconf`` is executable, and edit the Controller’s configuration file (``/var/named/mmsuite/preferences.cfg``) to include the following lines:
 
 .. code-block::
-  :linenos:
 
   <fingerprint value="<some-hex-values>"/> <named-checkconf value="/usr/sbin/named-checkconf"/>
 

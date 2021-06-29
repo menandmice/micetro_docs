@@ -11,7 +11,6 @@ The local time of the cluster member machines are used to update the heartbeat t
 By default the Central instances update the heartbeat timestamp in the database every 10 seconds, as set in the ``/var/mmsuite/mmcentral/preferences.cfg file``:
 
 .. code-block::
-  :linenos:
 
   <HeartbeatInterval value=“10” />
 
@@ -25,7 +24,6 @@ The default maximum downtime is set for 30 seconds. When the current time [UTC �
 The default maximum downtime can be overwritten in the ``/var/mmsuite/mmcentral/preferences.cfg`` for each Central instance:
 
 .. code-block::
-  :linenos:
 
   <HeartbeatMaxAllowedDowntime value=“30” />
 

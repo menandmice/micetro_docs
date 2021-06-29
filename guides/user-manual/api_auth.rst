@@ -44,7 +44,6 @@ Basic Authentication
 For Basic Authentication, simply include a header like:
 
 .. code-block::
-  :linenos:
 
   Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
 
@@ -67,7 +66,6 @@ This way, the user name and password are not provided in the header, and the API
 To enable the Negotiate header Authorization in M&M Web Services, add the following line to C:\ProgramData\Men and Mice\Web Services\preferences.cfg, and restart the M&M Web Services service
 
 .. code-block::
-  :linenos:
 
   <AuthorizationMethods value="Basic,Kerberos,NTLM" />
 
@@ -83,7 +81,6 @@ When using M&M Web Services as an API endpoint, refer to the Negotiate header Au
 When using the M&M Web Extension that comes with the M&M Web Interface as an API endpoint, single sign-on is achieved by invoking a POST http request to
 
 .. code-block::
-  :linenos:
 
   http://<web server>/_mmwebext/mmwebext.dll?RequestSSO
 
@@ -92,7 +89,6 @@ The body of the http request should include simply the M&M Central server name.
 If IIS is correctly configured (see :ref:`disable-kernel-mode-auth`), this request will return an XML similar to what the Login SOAP command would return:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <soap:Body>

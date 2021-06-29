@@ -10,7 +10,6 @@ If the ``named-checkconf`` is not found on any of the standard directories durin
 To fix this, add a configuration parameter pointing to the ``named-checkconf`` tool to the DNS Server Controller configuration file ``preferences.cfg`` (usually in ``/var/named/mmsuite/preferences.cfg``)
 
 .. code-block::
-  :linenos:
 
   <fingerprint value="<some-hex-values>"/>
   <named-checkconf value="/usr/sbin/named-checkconf"/>
