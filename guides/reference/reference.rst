@@ -21,4 +21,6 @@ Micetro reference articles
   disable_auto_zone-transfer
   dns_controller_include
   dns_controller_generate
+  snmp_oid
+  access_control_example
   ie_eol
