@@ -53,7 +53,6 @@ The ``preferences.cfg`` file in the data directory contains (beside the fingerpr
 The ``preferences.cfg`` file for normal user/password authentication should look like:
 
 .. code-block::
-  :linenos:
 
   <password value="plaintext:PASSWORD"/>
   <database value="MSSQL"/>
@@ -66,7 +65,6 @@ The ``plaintext:`` directive in the password inputs allows you to enter the pass
 An example ``preferences.cfg`` file for the Windows Authentication method should look like (``databaseusername`` tag must be present and the value attribute must be set to empty string):
 
 .. code-block::
-  :linenos:
 
   <password value="the fingerprint hash"/>
   <database value="MSSQL"/>
@@ -86,7 +84,6 @@ Navigate to the data directory of the Men&Mice Central, usually located in ``/va
 Edit the ``preferences.cfg`` file with in that directory with the following:
 
 .. code-block::
-  :linenos:
 
   <Database value="MSSQL" />
   <DatabaseServer value="ip/dns name of SQL server><,port>\<Instance name>@<Database name>" />

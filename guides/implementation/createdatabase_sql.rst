@@ -8,7 +8,6 @@ CreateDatabase.sql
 """"""""""""""""""
 
 .. code-block:: SQL
-  :linenos:
 
   /*
 

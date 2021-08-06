@@ -16,7 +16,6 @@ After installing the DNS Server Controller, create the directory ``/var/mmsuite/
 Edit the ``/var/mmsuite/dns_server_controller/preferences.cfg`` file and add/edit the following:
 
 .. code-block::
-  :linenos:
 
   <LogFileName value="/var/mmsuite/dns_server_controller/logs/mmremote.log" />
   <LogLevel value="5" />

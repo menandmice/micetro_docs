@@ -79,7 +79,6 @@ Start your vRealize Orchestrator as per usual and go to Workflows. The Micetro w
 Fill in the configuration detail for your Micetro and click the :guilabel:`Submit` button. If everything is in order, the following notification will appear in the workflow log: "You have successfully connected to Micetro". If the information entered doesn't match your Micetro setup, an error message will be displayed, indicating what went wrong. E.g.
 
 .. code-block::
-  :linenos:
 
   "{"error":{"code":16394,"message":"Invalid username or password."},"jsonrpc":"2.0","id":3}"
 

@@ -25,7 +25,6 @@ Linux
 1. On the existing (or designated as *primary*) server running Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg``, adding
 
 .. code-block::
-  :linenos:
 
   <ClusterMemberName value="somename"/>
 
@@ -88,7 +87,6 @@ Windows
 1. In the existing (or designated as *primary*) server running Central, edit the preferences file ``preferences.cfg``, adding
 
 .. code-block::
-  :linenos:
 
   <ClusterMemberName value="somename"/>
 

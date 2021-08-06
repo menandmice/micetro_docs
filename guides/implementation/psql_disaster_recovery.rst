@@ -79,7 +79,6 @@ On the current primary database machine:
 Edit the ``preferences.cfg file`` for Central, and change the following line, using the connection string:
 
 .. code-block::
-  :linenos:
 
   postgres://[node-?]:[port]/mmsuite?target_session_attrs=read-write
 

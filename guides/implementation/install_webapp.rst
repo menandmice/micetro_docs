@@ -16,7 +16,6 @@ Install the Web Application on Linux
 Extract and install the Men&Mice Web Application install package (as root):
 
 .. code-block:: bash
-  :linenos:
 
   tar -xzvf mmsuite-web-application-10.0.2.linux.x64.tgz
   cd mmsuite-web-application-10.0.2.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
