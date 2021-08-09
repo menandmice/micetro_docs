@@ -114,7 +114,6 @@ This can be done through the AWS Management Console or by using the AWS CLI comm
 7. Type a name for your policy into the **Policy Name** field. Paste the following policy into the Policy Document field. Replace ``123456789012`` with the ID of the account where the role is located and replace ``RoleName`` with the name of the role that should be assumed on the account. Then click on the :guilabel:`Apply Policy` button.
 
 .. code-block::
-  :linenos:
 
   {
     "Version": "2012-10-17",

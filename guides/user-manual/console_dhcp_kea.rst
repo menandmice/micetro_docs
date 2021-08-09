@@ -38,7 +38,6 @@ Configuring the Kea hook library
 After installing the Kea hook library, open ``kea-dhcp4.conf`` and locate the ``hooks-libraries`` array. Add the hook to ``libdhcp_lease_cmds.so``:
 
 .. code-block::
-  :linenos:
 
   "hooks-libraries":[
       {

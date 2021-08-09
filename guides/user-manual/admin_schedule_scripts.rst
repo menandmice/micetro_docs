@@ -40,14 +40,12 @@ To enable this feature, create a user named ScriptRunner. This user must use the
 Example 1: The following example shows how the command line interface can be invoked by the scheduler to execute a backup. This statement can be entered directly into the Script name field:
 
 .. code-block::
-  :linenos:
 
   mmcmd -s 127.0.0.1 -u $u -p $p backup;exit
 
 Example 2: The following Visual Basic script checks which users are logged in and writes the list of logged in users to the file logger.txt. To invoke the script you would enter the following statement into the Script name field:
 
 .. code-block::
-  :linenos:
 
   cscript /B scripts\test.vbs $u $p
 

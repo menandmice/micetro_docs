@@ -41,7 +41,6 @@ This feature is currently not available.
 Below is a custom role definition that covers all the required permissions for DNS and IPAM. Please look at Azure documentation on how to create a custom role.
 
 .. code-block::
-  :linenos:
 
   {
   "Name": "Men&Mice Operator",

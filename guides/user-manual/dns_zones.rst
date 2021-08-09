@@ -314,7 +314,6 @@ You can manage RPZ zones from within Micetro with the Management Console. When y
   To use RPZ, a response-policy statement must exist in the DNS server options file. The :guilabel:`Response Policy Zone` checkbox is disabled if a response-policy statement is not present. For example
 
   .. code-block::
-    :linenos:
 
     options {
       ...

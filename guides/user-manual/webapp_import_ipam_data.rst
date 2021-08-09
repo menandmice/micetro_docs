@@ -176,7 +176,6 @@ Example 1
 This example creates imports two ranges, 1.2.3.0/24 and 1.2.4.0/24 with the respective titles and descriptions.
 
 .. code-block::
-  :linenos:
 
   Range,Title,Description
   1.2.3.0/24, My range, My first range to import
@@ -188,7 +187,6 @@ Example 2
 This example creates deletes two ranges, 1.2.3.0/24 and 1.2.4.0/24.
 
 .. code-block::
-  :linenos:
 
   Action,Range
   Delete,1.2.3.0/24
@@ -200,7 +198,6 @@ Example 3
 This example updates properties on the, 1.2.3.0/24 and 1.2.4.0/24. Notice how the mandatory Title column can be omitted during update, and will be left as is, whether currently empty or not.
 
 .. code-block::
-  :linenos:
 
   Action,Range,Location
   Update,1.2.3.0/24, US
@@ -212,7 +209,6 @@ Example 4
 This example updates information on two IP addresses.
 
 .. code-block::
-  :linenos:
 
   IP, Responsible Person
   1.2.3.10, Jon
@@ -226,7 +222,6 @@ Example 5
 This example clears Responsible Person property on two IP addresses.
 
 .. code-block::
-  :linenos:
 
   IP, Responsible Person
   1.2.3.10, $null
@@ -238,7 +233,6 @@ Example 6
 This example Adds DNS records to two IP addresses, and clears from the third.
 
 .. code-block::
-  :linenos:
 
   IP, DNS Hosts
   1.2.3.10, hostname.company.com hostname.company2.com

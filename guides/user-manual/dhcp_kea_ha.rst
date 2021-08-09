@@ -52,7 +52,6 @@ Kea DHCP servers in a High Availability environment must be already synced and c
 An example of a ``hook-libraries`` section of the configuration where Micetro will successfully detect the setup and act accordingly:
 
 .. code-block::
-  :linenos:
 
   "hooks-libraries": [{
       "library": "/usr/lib/kea/hooks/libdhcp_ha.so",

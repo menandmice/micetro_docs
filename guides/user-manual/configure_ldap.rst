@@ -50,7 +50,6 @@ LDAP configurations are stored in a JSON config file that should be stored in th
 The configuration file has the following schema:
 
 .. code-block::
-  :linenos:
 
   {
     "server": {
@@ -99,7 +98,6 @@ The configuration file has the following schema:
 Example configuration for connecting to an AD LDAP service:
 
 .. code-block::
-  :linenos:
 
   {
     "server": {

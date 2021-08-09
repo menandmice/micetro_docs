@@ -53,7 +53,6 @@ Example
 ^^^^^^^
 
 .. code-block::
-  :linenos:
 
   terraform {
     required_providers {

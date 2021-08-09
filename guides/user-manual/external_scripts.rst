@@ -55,7 +55,6 @@ Property Change Script Interface
 The XML schema for a property change script is as follows:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -90,7 +89,6 @@ The XML schema for a property change script is as follows:
 An example XML structure with three custom properties named Location, Country and Region might look as follows:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0"?>
   <externalScriptParameters username="administrator">
@@ -107,7 +105,6 @@ An example XML structure with three custom properties named Location, Country an
 Upon completion, the script must create a new XML structure and return it to Men&Mice Central. The schema for the XML structure that is returned is as follows:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd"
@@ -154,7 +151,6 @@ Upon completion, the script must create a new XML structure and return it to Men
 An example XML structure with three custom properties named Location, Country and region might look as follows:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0"?>
   <result success="1">
@@ -168,7 +164,6 @@ An example XML structure with three custom properties named Location, Country an
 Men&Mice Central uses the information in the XML structure to update other custom properties or to display an error message if the success attribute on the result element is set to 0. The following XML example shows how an error message can be returned by the external script.
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0"?><result success="0"><error code="1"message="The error message."></error></result>
 
@@ -180,7 +175,6 @@ Zone Content Change Script Interface
 The XML schema for a zone content change script is as follows:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -209,7 +203,6 @@ The XML schema for a zone content change script is as follows:
 An example XML structure for a zone change script might look as follows for a zone that exists in a view:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <externalScriptParameters userName="administrator">
@@ -226,7 +219,6 @@ An example XML structure for a zone change script might look as follows for a zo
 An example XML structure for a zone change script might look as follows for a zone that is not in a view:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <externalScriptParameters userName="administrator">
@@ -248,7 +240,6 @@ Subnet Monitoring Script Interface
 The XML schema for a subnet monitoring script is as follows:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -275,7 +266,6 @@ The value of the thresholdType element will be either static or dynamic dependin
 An example XML structure for a subnet monitoring script might look as follows for scope:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <scopeMonitor>
@@ -293,7 +283,6 @@ An example XML structure for a subnet monitoring script might look as follows fo
 The XML structure is slightly different if a superscope (MS DHCP) or a shared-network (ISC DHCP) configuration is used. An example XML structure for a scope monitoring script might look as follows for a superscope / shared-network configuration:
 
 .. code-block:: XML
-  :linenos:
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <scopeMonitor>
@@ -313,7 +302,6 @@ Example Visual Basic Script
 The following example script, written in Visual Basic, shows how a script could return different values depending on the user that is running the script. The script is called when an object property changes.
 
 .. code-block::
-  :linenos:
 
   Dim fso, stdin, stdout, stderr, xmlDoc
 
@@ -395,14 +383,12 @@ Instructions
 2. In Tools->System Settings->Monitoring, add it in the Default scope monitoring settings as follows:
 
 .. code-block::
-  :linenos:
 
   cscript /B /T:120 ./psExec.vbs ScopeMonScript.ps1 ignore ignore
 
 And then configure a dynamic threshold. The monitor will be executed every 10 minutes during the DHCP synchronization interval.
 
 .. code-block:: PowerShell
-  :linenos:
 
   param([Parameter(Mandatory=$false,ValueFromPipeLine=$false)]$UserName = "",
   [Parameter(Mandatory=$false,ValueFromPipeLine=$false)]$Password = "",

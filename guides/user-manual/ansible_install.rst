@@ -114,7 +114,6 @@ For the Ansible modules and plugins to function correctly a provider has to be d
 As the modules and plugins can be used by all systems under Ansible control, it is advised to define the API provider for the all group. Create a file all in the ``/etc/ansible/group_vars`` directory, or the ``/etc/ansible/inventory/group_vars`` directory (if your inventory is a directory instead of a file) which contains something similar to:
 
 .. code-block::
-  :linenos:
 
   ---
   provider:
@@ -189,7 +188,6 @@ Ansible configuration example
 Beneath is an example Ansible configuration file (``ansible.cfg``) with the assumption that all Micetro plugins and modules are installed in the ``/etc/ansible`` directory. Some lines end with a backslash ``\``, which indicates that the following should be appended, but these are split for code clarity.
 
 .. code-block::
-  :linenos:
 
   # ==============================================
   [defaults]
