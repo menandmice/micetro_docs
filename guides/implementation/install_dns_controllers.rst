@@ -94,7 +94,7 @@ In the newly created ``mmsuite-controllers-9.3.10.linux.x64`` directory run the 
 
   .. code-block:: bash
 
-    cd mmsuite-controllers-9.3.10.linux.x64 && ./install --skip-arrange
+    cd mmsuite-controllers-9.3.10.linux.x64 && ./install 
 
 Installer Questions
 ^^^^^^^^^^^^^^^^^^^
