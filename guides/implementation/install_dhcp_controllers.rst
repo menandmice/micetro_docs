@@ -107,7 +107,7 @@ In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the in
 
 .. code-block:: bash
 
-  cd mmsuite-controllers-10.0.linux.x64 && ./install --skip-arrange
+  cd mmsuite-controllers-10.0.linux.x64 && ./install 
 
 Ensure the ``named-checkconf`` file is readable:
 
