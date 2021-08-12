@@ -31,7 +31,7 @@ Enabling AD User Authentication Using Active Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 AD user authentication using Active Directory is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
-No specific configuration is needed for Men&Mice Central for AD user authentication using Active Directory.
+No specific configuration is needed for Men&Mice Central for user authentication using Active Directory.
 
 Configuring Users for AD Authentication
 """""""""""""""""""""""""""""""""""""""
@@ -150,7 +150,7 @@ Enabling RADIUS User Authentication
 
 To enable RADIUS authentication, you must add several properties to the Men&Mice Central configuration file preferences.cfg. This file is located in the data folder inside the Men&Mice Central data directory:
 
-* Windows: C:\Program Files\Men&Mice\Central\data
+* Windows: C:\\Program Files\\Men&Mice\\Central\\data
 
 * Mac OS X: ``/var/mmsuite/mmcentral``
 
