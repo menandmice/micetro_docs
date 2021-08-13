@@ -139,7 +139,7 @@ Men&Mice Virtual Appliances
 
 There are two types of Men&Mice Virtual Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance.
 
-The DNS/DHCP Appliance can be used as a DNS and a DHCP server. You can also use the DNS/DHCP Appliance act as a server for Micetro Web Application. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers. See :ref:`dns-dhcp-appliance` for more information.
+The DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers. See :ref:`dns-dhcp-appliance` for more information.
 
 The DNS Caching Appliance contains a high-performance Caching-only DNS server. See :ref:`caching-appliance` for more information.
 

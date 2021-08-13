@@ -7,6 +7,11 @@
 Access control
 ==============
 
+.. important::
+  Micetro 10.1 (released in September 2021) brought changes to the access management in order to make it more streamlined and easier to use, while keeping the flexibility. This page describes the new access control. IF you're using an older version, or would like information on the legacy access control model, see :ref:`access-control-legacy`.
+
+**[TO-DO: everything.]**
+
 The Micetro access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.
 
 The relationship between Groups, Users and Roles is as follows:
@@ -346,3 +351,144 @@ Through this function, you specify access privileges that should be set for obje
   The access control dialog box for IP Address Ranges and Scopes contains a checkbox, 'IP Address Ranges/Scopes inherit access by default'. If this checkbox is checked, a new range or scope will inherit all access bits from its parent. For more information on inherited access, refer to  IP Address Management—Range Access.
 
 From the menu bar, select :menuselection:`Tools --> Initial Access For`, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to :ref:`global-access` for details on working with this dialog box.
+
+.. toctree::
+  :maxdepth: 1
+
+  acl_access_flags
+  acl_general_roles
+  acl_specific_roles
+  acl_legacy_roles
+  acl_effective_access
+  acl_groups
+  acl_users
+
+----
+
+Access flags 
+------------
+
+:: 
+
+  {
+    Suite: {
+      access_adminUser: 'Administer users/groups',
+      access_adminIPAM: 'Administer IP address ranges',
+      access_adminDNS: 'Administer DNS servers',
+      access_adminDHCP: 'Administer DHCP servers',
+      access_adminAppliance: 'Administer appliances',
+      access_adminDevice: 'Administer devices',
+      access_IPAMModule: 'Access IPAM module',
+      access_DNSModule: 'Access DNS module',
+      access_DHCPModule: 'Access DHCP module',
+      access_console: 'Access to the Management Console',
+      access_commandLine: 'Access to the CLI',
+      access_web: 'Access to the web interface',
+      access_basicZoneView: 'Access to basic zone view in web interface',
+      access_advancedZoneView: 'Access to advanced zone view in web interface',
+      access_IPAMView: 'Access to IPAM view in web interface',
+      access_basicReporting: 'Access to basic reporting',
+      access_tasksView: 'Access to task list view in web interface',
+      access_viewHistory: 'Access to view history',
+      access_webHostEditor: 'Access to Host editor',
+      access_adminADSites: 'Access to manage AD Sites and Site Links',
+      access_adminClouds: 'Access to manage clouds',
+      access_workflowModule: 'Access Workflow module',
+      access_advancedReporting: 'Access to advanced reporting',
+      access_importDataCustom: 'Access to "Import Data" web task.',
+    },
+    DNSServer: {
+      access_editAccess: 'Edit DNS server access',
+      access_list: 'List (or view) DNS server',
+      access_viewHistory: 'View DNS server history',
+      access_options: 'Edit DNS server options',
+      access_addMaster: 'Add master zones',
+      access_addNonMaster: 'Add non-master zones',
+      access_viewLog: 'View DNS server log',
+      access_clearLog: 'Clear DNS server log',
+      access_editProperties: 'Edit DNS server properties',
+      access_manageLocalZones: 'Manage local zones',
+    },
+    DHCPServer: {
+      access_editAccess: 'Edit DHCP server access',
+      access_list: 'List (or view) DHCP server',
+      access_viewHistory: 'View DHCP server history',
+      access_readOptions: 'Read DHCP server options',
+      access_options: 'Read/write DHCP server options',
+      access_addScope: 'Add a scope',
+      access_editProperties: 'Edit DHCP server properties',
+      access_reservations: 'Edit reservations',
+      access_addGroup: 'Add a group',
+      access_readClassData: 'Read DHCP class data',
+      access_classData: 'Read/write DHCP class data',
+    },
+    DNSZone: {
+      access_editAccess: 'Edit zone access',
+      access_list: 'List (or view) zone',
+      access_viewHistory: 'View zone history',
+      access_enable: 'Enable/disable zone',
+      access_options: 'Edit zone options',
+      access_delete: 'Delete zone',
+      access_enableApex: 'Enable/disable apex records',
+      access_editApex: 'Edit apex records',
+      access_enableWildcard: 'Enable/disable wildcard records',
+      access_editWildcard: 'Edit wildcard records',
+      access_enableOther: 'Enable/disable other records',
+      access_editOther: 'Edit other records',
+      access_editProperties: 'Edit zone properties',
+    },
+    Range: {
+      access_editAccess: 'Edit range access',
+      access_list: 'List (or view) range',
+      access_viewHistory: 'View range history',
+      access_delete: 'Delete range',
+      access_editProperties: 'Edit range properties',
+      access_editDeviceProperties: 'Edit IP Address properties',
+      access_editDNSHosts: 'Use IP addresses in DNS',
+      access_createSubrange: 'Create subrange',
+      access_reuseAddress: 'Create multiple hosts per IP address',
+      access_pingAddresses: 'Ping IP addresses',
+      access_siteAssociation: 'Edit AD site association',
+      access_enable: 'Enable/disable scope',
+      access_readOptions: 'Read scope options',
+      access_options: 'Read/write scope options',
+      access_reservations: 'Edit reservations',
+      access_addressPools: 'Edit address pools',
+      access_exclusions: 'Edit exclusions',
+      access_releaseLeases: 'Release leases',
+      access_addGroup: 'Add a group',
+    },
+    DHCPGroup: {
+      access_editAccess: 'Edit DHCP group access',
+      access_list: 'List (or view) DHCP group',
+      access_viewHistory: 'View DHCP group history',
+      access_reservations: 'Edit reservations',
+      access_readOptions: 'Read DHCP group options',
+      access_options: 'Read/write DHCP group options',
+      access_delete: 'Delete DHCP group',
+    },
+    CloudNetwork: {
+      access_editAccess: 'Edit cloud network access',
+      access_list: 'List (or view) cloud network',
+      access_viewHistory: 'View cloud network history',
+      access_editProperties: 'Edit cloud network properties',
+      access_delete: 'Delete cloud network',
+    },
+    CloudService: {
+      access_editAccess: 'Edit cloud access',
+      access_list: 'List (or view) cloud',
+      access_viewHistory: 'View cloud history',
+      access_editProperties: 'Edit cloud properties',
+      access_createCloudNetwork: 'Create cloud network',
+    },
+    AddressSpace: {
+      access_editAccess: 'Edit address space access',
+      access_list: 'List (or view) address space',
+      access_viewHistory: 'View address space history',
+    },
+    ServerGroup: {
+      access_editAccess: 'Edit server group access',
+      access_list: 'List (or view) server group',
+      access_viewHistory: 'View server group history',
+    },
+  };

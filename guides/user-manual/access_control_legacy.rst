@@ -1,7 +1,7 @@
 .. _access-control-legacy:
 
-Access control
-==============
+Access control (Legacy, pre-10.1)
+=================================
 
 The Micetro access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.
 

@@ -56,7 +56,7 @@ Active Directory Single Sign-on
   :width: 60%
   :align: center
 
-You can enable the Single Sign-on so that Active Directory users do not have to authenticate when logging in through the Management Console or the Command Line Interface.
+You can enable the Single Sign-on so that Active Directory users do not have to authenticate when logging in through the Management Console.
 
 To enable Active Directory Single Sign-on, do the following:
 
@@ -118,7 +118,7 @@ When using AD Group level authentication, you must specify which groups in Micet
   :align: center
 
 Group Name
-  Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain "MYDOMAIN" contains the group "MM-ReadOnly". The group name must then be "MYDOMAIN\MM-ReadOnly".
+  Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain "MYDOMAIN" contains the group "MM-ReadOnly". The group name must then be "MYDOMAIN\\MM-ReadOnly".
 
 5. Click the checkbox for :guilabel:`Active Directory Integrated`.
 
