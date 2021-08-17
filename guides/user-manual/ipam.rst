@@ -93,16 +93,29 @@ While viewing the IP ranges, the :ref:`webapp-quickfilter` is available. When us
   :width: 90%
   :align: center
 
-New Ranges
-----------
+New Networks
+------------
 
-To create a new IP Address range, do the following:
+To create a new network, do the following:
 
 1. Open the :menuselection:`Networks` context.
 
-2. Click the :guilabel:`Create` button. The *Create network* dialog box displays.
+2. Click the :guilabel:`Create` button.
 
-3. Enter the appropriate value for the new network, as well as whether you want to create a DHCP scope or reserve network and broadcast addresses and click :guilabel:`Next`.
+3. Select what type of network (:ref:`ip-range-network`, :ref:`new-dhcp-scope`, :ref:`containers`) you'd like to create.
+
+4. Enter the appropriate values, grouped on pages depending on the type.
+
+.. note::
+  The *Create* dialog is different depending on the type: 
+  
+  * For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
+  
+  * A *DHCP scope* can be created with the network and broadcast address automatically configured. See :ref:`new-dhcp-scope`.
+  
+  * A *container* has no network or broadcast address. See :ref:`ipam-containers`.
+  
+5. Click :guilabel:`Finish`.
 
 Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the Networks component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.
 
@@ -113,10 +126,12 @@ It is possible to create subranges of existing ranges and DHCP scopes.
 
 .. _ipam-range-config:
 
-Range Configuration
--------------------
+Network Configuration
+----------------------
 
-When creating a new IP Address range, you must complete the Properties dialog box.
+When creating a new network, DHCP scope, or container, you must complete the Properties dialog box in the final step.
+
+**[TO-DO: screenshot.]**
 
 .. image:: ../../images/create-network-properties-Micetro.png
   :width: 60%
@@ -124,18 +139,10 @@ When creating a new IP Address range, you must complete the Properties dialog bo
 
 These properties are defined in :ref:`admin-custom-properties`.
 
-Range Modifications
-^^^^^^^^^^^^^^^^^^^
+Network Modifications
+^^^^^^^^^^^^^^^^^^^^^
 
-Once you have created an IP Address Range, it is easy for you to make changes to that IP Address Range. You can do the following:
-
-* Change the name of the IP Address range
-
-* Change the boundaries (start and end IP Address) of the IP Address range
-
-* Change the state of the IP Addresses in that IP Address range
-
-To modify an IP Address range, do the following:
+Once you have created a network, it is easy to make changes. 
 
 1. Select the range in the grid.
 
@@ -145,23 +152,23 @@ To modify an IP Address range, do the following:
 
 4. Click :guilabel:`Save`.
 
-Range Deletions
-^^^^^^^^^^^^^^^
+Network Deletions
+^^^^^^^^^^^^^^^^^
 
-You can always delete an IP Address Range definition. If you delete an IP Address Range, the IP Addresses that belonged to that range will get the attributes of the parent IP Address Range. If the range you are deleting has subranges, the subranges will become children of the unassigned ranges' parent.
+You can always delete a network definition. If you delete a network, the IP addresses that belonged to it will get the attributes of the parent network. If the network you are deleting has subranges, they will become children of the unassigned networks' parent.
 
-Use the following procedure to delete an IP Address Range definition:
+Use the following procedure to delete a network definition:
 
-1. Select IP range(s) you want to remove.
+1. Select network(s) you want to remove.
 
-2. From the ellipsis menu select :guilabel:`Delete network` or use :menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) range(s).
+2. From the ellipsis menu select :guilabel:`Delete network` or use :menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) network(s).
 
 3. Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
 
 IP Address List
 ---------------
 
-To view a list of host entries in a particular range, double-click on the range. This opens the grid where you can view and edit the properties of individual IP address entries.
+To view a list of host entries in a particular network, double-click on the network. This opens the grid where you can view and edit the properties of individual IP address entries.
 
 .. image:: ../../images/view-Networks-Micetro.png
   :width: 80%
