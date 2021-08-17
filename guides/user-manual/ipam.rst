@@ -50,8 +50,10 @@ Containers
 
 A Container is a section of the address space that has been reserved but not yet allocated. Containers can contain address ranges and scopes and you can set address privileges for containers that can be applied to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled that functionality in System Settings.
 
-Creating a Container
-^^^^^^^^^^^^^^^^^^^^
+.. _new-container:
+
+New container
+^^^^^^^^^^^^^
 
 A range that exists on network boundaries (a subnet) can be converted to a Container. Likewise, a Container can be converted to a range.
 
@@ -102,7 +104,7 @@ To create a new network, do the following:
 
 2. Click the :guilabel:`Create` button.
 
-3. Select what type of network (:ref:`ip-range-network`, :ref:`new-dhcp-scope`, :ref:`containers`) you'd like to create.
+3. Select what type of network (new network, :ref:`new-dhcp-scope`, :ref:`new-container`) you'd like to create.
 
 4. Enter the appropriate values, grouped on pages depending on the type.
 
@@ -127,7 +129,7 @@ It is possible to create subranges of existing ranges and DHCP scopes.
 .. _ipam-range-config:
 
 Network Configuration
-----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 When creating a new network, DHCP scope, or container, you must complete the Properties dialog box in the final step.
 
@@ -257,16 +259,23 @@ To move a IP Address information, do the following:
 
 6. Click :guilabel:`OK`. The IP Address information is moved to the new IP Address.
 
-Split Range Wizard (Management Console)
----------------------------------------
+Split Range Wizard
+------------------
 
 This wizard allows you to create multiple subranges of an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
-1. From the object list, click on :guilabel:`IP Address Ranges`.
+1. Open the :menuselection:`IPAM` context and select the range you'd like to split.
 
-2. From the list of ranges displayed right-click and, from the shortcut menu, select :guilabel:`Split into Subranges`. The *Split range wizard* displays.
+2. Use the :guilabel:`Action --> Allocate Subranges` action from the top bar or the ellipsis menu.
 
-3. For each of the resulting screens, make a selection/entry and move through the wizard.
+3. Configure the new subranges. If you choose fewer subnets that fit in the parent, you can also set the offset from where you want to start allocating. Click :guilabel:`Next` when finished configuring.
+
+4. Define the title and custom properties for the new subranges. Click :guilabel:`Next` when done.
+
+5. On the summary page verify the new subranges and click :guilabel:`Finish`.
+
+.. note::
+  For the split range wizard in the Management Console, see :ref:`console-split-range`.
 
 Update Reverse Records Wizard (Management Console)
 --------------------------------------------------
@@ -282,42 +291,29 @@ This wizard allows you to create reverse DNS zones for selected ranges.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
-Allocate Ranges Wizard (Management Console)
--------------------------------------------
+Join Ranges
+-----------
 
-This wizard allows you to create allocate a user-defined number of subranges from an existing range. The wizard can only be used on ranges that exist on subnet.
+1. In the :menuselection:`IPAM` context, select the ranges that you want to join.
 
-1. From the object list, click on :guilabel:`IP Address Ranges`.
+2. Use the :guilabel:`Action --> Join Ranges` action from the top bar or ellipsis menu.
 
-2. From the list of ranges displayed right-click and, from the shortcut menu, select :guilabel:`Allocate Ranges`. The *Allocate ranges wizard* displays.
-
-3. Follow the instructions provided by the wizard to create the number of subranges that you need.
-
-Join Ranges (Management Console)
---------------------------------
-
-This function allows you to select and join a number of ranges. The :guilabel:`Join Ranges` command is available if the selected ranges can be joined.
-
-1. Display the list of address ranges that you want to join.
-
-2. Select each of the desired ranges.
-
-3. Right-click and, from the shortcut menu, select :guilabel:`Join Ranges`.
+**[TO-DO: screenshot.]**
 
 .. image:: ../../images/console-ipam-join-ranges.png
   :width: 70%
   :align: center
 
-4. The Join Ranges dialog box displays.
+3. Set the properties for the joined range:
 
-Use Access
+Use Access from 
   Click the drop-down list and specify from which range you will gain access.
 
-Use Properties
+Use Properties from
   Click the drop-down list and specify from which range you will use the properties.
 
 Title
-  Enter a title for this range.
+  Enter a title for the new range.
 
 Description
   Type a description.
