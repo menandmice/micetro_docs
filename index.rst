@@ -61,6 +61,7 @@ Table of Contents
      guides/user-manual/web_application
      guides/user-manual/console
      guides/user-manual/administration
+     guides/user-manual/folder_management
      guides/user-manual/dns
      guides/user-manual/dhcp
      guides/user-manual/ipam
