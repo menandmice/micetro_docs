@@ -67,6 +67,8 @@ At any time, you can clear the text you have in the Quick Filter field by click 
   :width: 90%
   :align: center
 
+.. _console-saved-filter:
+
 Saving a Filter
 ^^^^^^^^^^^^^^^
 
