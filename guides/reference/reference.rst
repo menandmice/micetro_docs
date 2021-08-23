@@ -10,6 +10,7 @@ Micetro reference articles
 .. toctree::
   :maxdepth: 1
 
+  permissions
   appliance_guide
   health_bar_information
   dynamic_zones
