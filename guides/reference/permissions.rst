@@ -32,7 +32,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_adminClouds``", "**Access to manage clouds**", ""
     "``access_workflowModule``", "**Access Workflow module**", ""
     "``access_advancedReporting``", "**Access to advanced reporting**", "Build custom reports, and schedule reports."
-    "``access_importDataCustom``", "**Access to "Import Data" web task**", ""
+    "``access_importDataCustom``", "**Access to 'Import Data' web task**", ""
 
 .. csv-table:: DNS servers
     :header: "API", "Web application", "Notes"
