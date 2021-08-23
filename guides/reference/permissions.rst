@@ -17,7 +17,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_adminDevice``", "**Administer devices**", ""
     "``access_IPAMModule``", "**Access IPAM module**", ""
     "``access_DNSModule``", "**Access DNS module**", ""
-    "``access_DHCPModule``", "**Access DHCP module**", "Legacy permission, IPAM modules contains DHCP."
+    "``access_DHCPModule``", "**Access DHCP module**", "Legacy permission, IPAM module contains DHCP."
     "``access_console``", "**Access to the Management Console**", ""
     "``access_commandLine``", "**Access to the CLI**", "Legacy permission, the CLI (Command Line Interface) is no longer in use."
     "``access_web``", "**Access to the web interface**", ""
@@ -32,7 +32,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_adminClouds``", "**Access to manage clouds**", ""
     "``access_workflowModule``", "**Access Workflow module**", ""
     "``access_advancedReporting``", "**Access to advanced reporting**", "Build custom reports, and schedule reports."
-    "``access_importDataCustom``", "**Access to "Import Data" web task.**", ""
+    "``access_importDataCustom``", "**Access to "Import Data" web task**", ""
 
 .. csv-table:: DNS servers
     :header: "API", "Web application", "Notes"
