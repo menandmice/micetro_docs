@@ -5,15 +5,15 @@ Custom links in the web application
 
 You can add up to three custom links that show up on the Micetro login page.
 
-.. image:: ../../images/login-micetro.png 
-    :width: 80%
+.. image:: ../../images/login-custom-links.png 
+    :width: 60%
     :align: center 
 
 To add your custom links (for example internal support channel):
 
 1. Open the ``preferences.cfg`` file for Men&Mice Web Services.
 
-    * Default location on Windows: ``C:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``
+    * Default location on Windows: ``C:\ProgramData\Men and Mice\Web Services\preferences.cfg``
 
     * Default location on Linux: ``/var/mmsuite/web_services/preferences.cfg``
 
@@ -34,4 +34,4 @@ To add your custom links (for example internal support channel):
       systemctl restart mmws
 
 .. note::
-    The MMWS service always needs to be restarted after changes to the links.
+    The MMWS service always needs to be restarted after changes to its preferences file.
