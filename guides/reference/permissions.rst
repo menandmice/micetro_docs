@@ -1,4 +1,8 @@
-.. _micetro-permissions:
+.. meta:: 
+   :description: Permissions reference for Micetro by Men&Mice 10.1
+   :keywords: Micetro access model
+
+.. _permissions-reference:
 
 Permissions reference
 ---------------------
@@ -9,7 +13,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     :header: "API", "Web application", "Notes"
     :widths: 15, 25, 60
 
-    "``access_adminUser``", "**Administer users/groups**", ""
+    "``access_adminUser``", "**Administer users/groups**", "Needed to manage Roles."
     "``access_adminIPAM``", "**Administer IP address ranges**", ""
     "``access_adminDNS``", "**Administer DNS servers**", ""
     "``access_adminDHCP``", "**Administer DHCP servers**", ""
@@ -17,13 +21,13 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_adminDevice``", "**Administer devices**", ""
     "``access_IPAMModule``", "**Access IPAM module**", ""
     "``access_DNSModule``", "**Access DNS module**", ""
-    "``access_DHCPModule``", "**Access DHCP module**", "Legacy permission, IPAM module contains DHCP."
+    "``access_DHCPModule``", "**Access DHCP module**", "Needed to access DHCP functionality in the IPAM view. License for the IPAM module also unlocks the DHCP module."
     "``access_console``", "**Access to the Management Console**", ""
     "``access_commandLine``", "**Access to the CLI**", "Legacy permission, the CLI (Command Line Interface) is no longer in use."
-    "``access_web``", "**Access to the web interface**", ""
+    "``access_web``", "**Access to the web interface**", "Needed to access the web application."
     "``access_basicZoneView``", "**Access to basic zone view in web interface**", "Legacy permission, not available in the web application."
-    "``access_advancedZoneView``", "**Access to advanced zone view in web interface**", ""
-    "``access_IPAMView``", "**Access to IPAM view in web interface**", ""
+    "``access_advancedZoneView``", "**Access to advanced zone view in web interface**", "Needed to access DNS functionality in the web application."
+    "``access_IPAMView``", "**Access to IPAM view in web interface**", "Needed to access IPAM functionality in the web application."
     "``access_basicReporting``", "**Access to basic reporting**", "Manually run built-in reports."
     "``access_tasksView``", "**Access to task list view in web interface**", "Legacy permission, not available in the web application."
     "``access_viewHistory``", "**Access to view history**", ""
@@ -124,7 +128,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit address space access**", ""
-    "``access_list``", "**List (or view) address space**", ""
+    "``access_list``", "**List (or view) address space**", "Only needed to switch to an address space other than *Default*."
     "``access_viewHistory``", "**View address space history**", ""
 
 
