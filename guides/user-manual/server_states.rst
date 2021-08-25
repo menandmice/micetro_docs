@@ -19,7 +19,7 @@ Use the following table for more information on the indicators:
 
 .. csv-table::
     :header: "Indicator", "Component", "Explanation"
-    :width: 10, 10, 80
+    :widths: 10, 10, 80
 
     "Unknown", "Controller", "The status of the DNS/DHCP Server Controller is unknown."
     "OK", "Server, Controller", "The DNS/DHCP Server Controller and service are both OK."
