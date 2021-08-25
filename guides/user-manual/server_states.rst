@@ -9,7 +9,7 @@ Server states
 
 On the :menuselection:`Admin --> Server management` page Micetro displays an indicator of the state of the individual servers configured in the system.
 
-.. image:: ../images/server-states.jpg
+.. image:: ../../images/server-states.jpg
     :width: 80%
     :align: center 
 
