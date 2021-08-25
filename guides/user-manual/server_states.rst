@@ -13,7 +13,7 @@ On the :menuselection:`Admin --> Server management` page Micetro displays an ind
     :width: 80%
     :align: center 
 
-The inidcators can refer to either the Server Controller (see :ref:`install-controllers`) running on the DNS/DHCP server, or the DNS/DHCP server service itself. 
+The indicators can refer to either the Server Controller (see :ref:`install-controllers`) running on the DNS/DHCP server, or the DNS/DHCP server service itself. 
 
 Use the following table for more information on the indicators:
 
@@ -29,6 +29,6 @@ Use the following table for more information on the indicators:
     "Uninitialized", "Server", "The DNS/DHCP server is uninitialized and needs to be manually initialized."
     "Detached", "Server", "The DNS/DHCP server has been detached without removing it from Micetro."
     "Service Down", "Server", "The DNS/DHCP server is down and not responding to queries."
-    "Service Impaired", "Server", "The DNS/DHCP server is running but impaired. [1]_"
+    "Service Impaired", "Server", "The DNS/DHCP server is running but impaired. [1]_ "
 
 .. [1] In Kea HA configurations. See :ref:`dhcp-kea-ha`.
