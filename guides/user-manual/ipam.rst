@@ -259,10 +259,10 @@ To move a IP Address information, do the following:
 
 6. Click :guilabel:`OK`. The IP Address information is moved to the new IP Address.
 
-Split Range Wizard
-------------------
+Split/Allocate Range Wizard
+---------------------------
 
-This wizard allows you to create multiple subranges of an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
+This wizard allows you to create multiple subranges from an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
 1. Open the :menuselection:`IPAM` context and select the range you'd like to split.
 
@@ -275,7 +275,7 @@ This wizard allows you to create multiple subranges of an existing range. The wi
 5. On the summary page verify the new subranges and click :guilabel:`Finish`.
 
 .. note::
-  For the split range wizard in the Management Console, see :ref:`console-split-range`.
+  In the web application, the Split Range and Allocate Range wizards are merged together. For information on these wizards in the Management Console, see :ref:`console-split-range` and :ref:`console-allocate-ranges`.
 
 Update Reverse Records Wizard (Management Console)
 --------------------------------------------------

@@ -7,7 +7,7 @@
 General roles 
 -------------
 
-*General role*s are a role type whose permissions are automatically applied (if applicable) to all objects in Micetro, present and future.
+*General roles** are the default role type, whose permissions are automatically applied (if applicable) to all objects in Micetro, present and future.
 
 To create a *General role*, follow the instructions on :ref:`acl-roles`, and **check** the :guilabel:`General` checkbox in the role creation dialog. (The default value is checked.)
 
@@ -36,6 +36,12 @@ IPAM Administrators
 
 User Administrators
    Full access to User and Group objects.
+
+DNS viewers
+   Can view DNS objects and information, but not make changes.
+
+IPAM viewers 
+   Can view IPAM and DHCP objects and information, but not make changes.
 
 Requesters
    Able to make and queue DNS change requests. (See :ref:`webapp-workflows`.)

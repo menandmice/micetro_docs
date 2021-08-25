@@ -9,7 +9,10 @@ Folder management
 
 Folder management is an important organizational tool for objects (through :ref:`object-folders`) and saved filters (through :ref:`smart folders`).
 
-A partial list of folders is shown in the :ref:`webapp-quick-filter`, and the complete list of folders is located in the 'Folders' tab of the filtering sidebar. To switch to the 'Folders' tab, click the folder icon on the bottom of the sidebar.
+The list of folders is located in the 'Folders' tab of the filtering sidebar. To switch to the 'Folders' tab, click the folder icon on the bottom of the sidebar.
+
+.. tip::
+    Any object that has been placed in an object folder has an indicator next to its name in the grid. Hovering over the icon will display the name of the folder.
 
 Folders and contexts
 ^^^^^^^^^^^^^^^^^^^^

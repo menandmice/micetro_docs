@@ -421,6 +421,8 @@ This wizard allows you to create reverse DNS zones for selected ranges.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
+.. _console-allocate-ranges:
+
 Allocate Ranges Wizard
 ----------------------
 

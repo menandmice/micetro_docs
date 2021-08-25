@@ -7,14 +7,16 @@
 Groups
 ------
 
-Groups allow you to manage multiple individual users who have the same access and/or permissions across the system.
+Groups allow you to manage multiple individual users, based on needs for the same access across the system.
 
 Adding a New Group
 ^^^^^^^^^^^^^^^^^^
 
 1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar. The default groups are displayed here, as well as any other groups you have already created.
 
-2. Click the :guilabel:`Create` button. The *Create group* dialog box displays.
+2. Click the :guilabel:`Add` button and select whether to add an external (authenticated and managed through an external source such as Active Directory or LDAP) or create a local group (authenticated and managed through Micetro only). 
+
+For **local group** the following dialog box displays:
 
   Group name
     The name for the group you are creating.
@@ -28,11 +30,19 @@ Adding a New Group
   Roles
     Any roles that members of this group will automatically assume.
 
-.. image:: ../../images/admin-new-group.png
+  Users
+    Any users that you want to add to this group. (Users can be added/removed at any time.)
+   
+.. image:: ../../images/create-micetro-group.png
   :width: 60%
   :align: center
 
 3. When all selections/entries are made, click :guilabel:`Save`.
+
+.. note::
+   For **external groups**, the group name field must match the name in the external authentication. See :ref:`external-auth`.
+
+   External groups do not have a *Users* tab, and users cannot be added or removed through Micetro.
 
 Editing a Group
 ^^^^^^^^^^^^^^^

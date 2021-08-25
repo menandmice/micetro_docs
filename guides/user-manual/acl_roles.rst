@@ -9,13 +9,15 @@ Roles
 
 Through roles you can manage access control in Micetro.
 
+Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed through :ref:`acl-roles` configured with :ref:`acl-permissions`. :ref:`acl-users` and :ref:`acl-groups` do not have direct access to objects, only if they're **assigned to roles**. Administrators can control a user or group's access by assigning or removing them from roles.
+
 .. note::
     This page is for generic management of roles. See :ref:`acl-general-roles`, :ref:`acl-specific-roles`, and :ref:`acl-legacy-roles` for the particularities of the different role types.
 
 Adding a new role
 ^^^^^^^^^^^^^^^^^
 
-Through this function, you add new users who can then be assigned to groups.
+Through this function, you add new roles to Micetro.
 
 1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Roles` in the filtering sidebar. The built-in roles are displayed here, as well as all other roles that have been added to Micetro already.
 
@@ -31,15 +33,20 @@ Role name
 Description
   Brief description for the role.
 
-.. note::
-  To edit a role's permissions, see :ref:`access-control`.
+    .. tip::
+        Using clear and descriptive names and descriptions makes access management easier.
 
-3. When all necessary information is filled in, click :guilabel:`Save`.
+3. Switch over to the :guilabel:`Access` tab and set the permissions. (See :ref:`acl-permissions`.)
+
+4. When all necessary information and permissions are configured, click :guilabel:`Save`.
+
+.. note::
+    The default for new roles is :ref:`general-roles`.
 
 Editing a role
 ^^^^^^^^^^^^^^
 
-Through this function, you can edit the role's name and/or description.
+Through this function, you can edit the role's name, description, permissions, and attached users/groups.
 
 1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Roles` in the filtering sidebar.
 
@@ -47,7 +54,7 @@ Through this function, you can edit the role's name and/or description.
 
 3. From the ellipsis menu, select :guilabel:`Edit role properties` or use :menuselection:`Actions --> Edit role properties`.
 
-4. Make the desired changes to the role's information. In the :guilabel:`Users` tab you can remove users from the role(s).
+4. Make the desired changes to the role's information. In the :guilabel:`Users` and :guilabel:`Groups` tabs you can remove users/groups from the role.
 
 5. Click :guilabel:`Save` to save the changes.
 
@@ -87,6 +94,9 @@ It is possible to duplicate roles and copy the original's configured permissions
 4. Select which settings (permissions, groups, roles) to copy.
 
 5. Click :ref:`Create`.
+
+.. note::
+    Roles created from existing ones are always :ref:`general-roles`.
 
 .. toctree::
     :maxdepth: 1

@@ -13,9 +13,11 @@ Access control
 Overview
 --------
 
-Access control in Micetro is **role-based**. 
+Access control in Micetro is **role-based**.
 
-:ref:`acl-roles` are configured with :ref:`acl-permissions`. A set of :ref:`built-in-roles` are available that should cover most use cases. These are :ref:`general-roles`, applied to all objects (present and future) in Micetro. :ref:`specific-roles` exist for use cases where per-object permissions are required.
+Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed through :ref:`acl-roles` configured with :ref:`acl-permissions`. :ref:`acl-users` and :ref:`acl-groups` do not have direct access to objects, only if they're **assigned to roles**. Administrators can control a user or group's access by assigning or removing them from roles.
+
+A set of :ref:`built-in-roles` are available that should cover most use cases. These are :ref:`general-roles`, applied to all objects (present and future) in Micetro. :ref:`specific-roles` exist for use cases where per-object permissions are required.
 
 Groups, users, and roles 
 ------------------------
@@ -29,6 +31,8 @@ The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-role
 * Groups cannot contain groups
 
 * Users and groups can be assigned to any number of groups and roles
+
+.. _administrator:
 
 The ``administrator`` user
 ----------------------
@@ -51,7 +55,7 @@ Because Micetro's access controls are role-based, permissions are configured *on
 
 To grant restricted access on a per-object basis, see :ref:`acl-specific-roles`.
 
-To check access to a specific object in Micetro, see :ref:`acl-effective-access`.
+To check access to a specific object and troubleshoot access control issues, see :ref:`acl-effective-access`.
 
 ----
 

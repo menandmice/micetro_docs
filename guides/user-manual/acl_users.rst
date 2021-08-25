@@ -7,10 +7,13 @@
 Users
 -----
 
-Each user defined in Micetro can be a part of one or more groups. Before creating a user, it is recommended to define different groups so you can assign users directly to the desired group as you create their accounts.
+Users represent the individual people working with Micetro.
 
 .. note::
-  ``administrator`` is the user already configured for the application. In order to manage users, you have to be logged in as a user who has user management privileges.
+  In order to manage users, you have to be logged in as a user who has user management privileges. (Is attached to a role with the ``access_adminUser``/"Administer users/groups" permission enabled.)
+
+.. note::
+    At least one user, the ``administrator``, is always configured for Micetro. See :ref:`administrator`.
 
 Adding User Accounts
 ^^^^^^^^^^^^^^^^^^^^
