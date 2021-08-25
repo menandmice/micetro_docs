@@ -1,6 +1,6 @@
 .. meta:: 
    :description: Server states in the Micetro web application
-   :keywords: DNS server, DHCP server, DNS service, DHCP service 
+   :keywords: DNS server, DHCP server, DNS service, DHCP service, server controller
 
 .. _server-states:
 
