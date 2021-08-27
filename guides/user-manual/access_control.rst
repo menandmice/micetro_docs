@@ -30,7 +30,7 @@ The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-role
 
 * Groups cannot contain groups
 
-* Users and groups can be assigned to any number of groups and roles
+* Users and groups can be assigned to any number of roles
 
 .. _administrator:
 
