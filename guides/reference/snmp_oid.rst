@@ -45,4 +45,4 @@ CISCO-VRF-MIB:
 * cvVrfName: .1.3.6.1.4.1.9.9.711.1.1.1.1.2
 
 .. note::
-  Each device is only queried once, as the system checks the serial number and the sysName to discover both physical and virtual switches. Micetro does not synchronize with the same serial number twice.
+  Each device is only queried once, as the system checks the serial number and the sysName to discover both physical and virtual switches.
