@@ -1,6 +1,6 @@
 .. meta::
-   :description: IP address management (IPAM) in the Micetro by Men&Mice Management Console 
-   :keywords: IPAM, IP address management 
+   :description: IP address management (IPAM) in the Micetro by Men&Mice Management Console
+   :keywords: IPAM, IP address management
 
 .. _ipam:
 
@@ -20,6 +20,79 @@ Managing IP Addresses entails being able to create assignable ranges within the 
 
 .. note::
   In order to use the IP Address Management features in Micetro, you must have entered the license key for the IPAM module.
+
+Multiple Address Spaces
+-----------------------
+
+.. note::
+  For managing address spaces through the Management Console, see :ref:`console-address-spaces`.
+
+Micetro supports multiple address spaces.
+
+Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP address entries, and folders.
+
+.. note::
+  Changes to data in one address space do not affect data in any other address space.
+
+Items **shared** between address spaces are:
+
+* users, groups, and roles
+
+* custom property definitions (see :ref:`admin-custom-properties`)
+
+Address Space Management
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users with sufficient permissions are allowed to create, modify or delete address spaces as well as set access privileges for existing address spaces.
+
+Navigate to :menuselection:`Admin --> Configuration --> Address Spaces`
+
+**[TO-DO: screenshot.]**
+
+.. image:: ../../images/console-ipam-address-spaces.png
+  :width: 50%
+  :align: center
+
+To **create** a new address space, click the :guilabel:`Add` button in the top bar and enter the name and description for the address space.
+
+.. note::
+  The first address space is always named ``<default>``. It is not possible to rename or delete the *<default>* address space.
+
+  The *<default>* address space is the only address space that shows AD sites if *AD Site and Subnet* integration is enabled.
+
+To **edit** the name or description for an address space, select the address space and click the :guilabel:`Action --> Edit address space` button in the top bar or ellipsis menu.
+
+To **delete** an address space, select the address space and click the :guilabel:`Action --> Remove address space` button in the top bar or ellipsis menu.
+
+.. danger::
+  When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP address ranges, IP address entries, and folders). This action cannot be undone.
+
+.. note::
+  You cannot delete the *<default>* address space or the address space you are currently working in.
+
+To see and edit the **access controls** for an address space, select the address space and click the :guilabel:`Action --> Access` button in the top bar or ellipsis menu.
+
+Switching to a Different Address Space
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can only work in one address space at a time. You can see the current address space in the Manager window, above the object list.
+
+To switch to a different address space:
+
+1. Click the **User** icon in the top right corner of the Web Application.
+
+2. Select :guilabel:`Address Space` and select the address space you want to use.
+
+.. image:: ../../images/address-space-Micetro.png
+  :width: 50%
+  :align: center
+
+Moving Objects to a Different Address Space (Management Console)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See :ref:`console-address-spaces`.
+
+----
 
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
@@ -109,14 +182,14 @@ To create a new network, do the following:
 4. Enter the appropriate values, grouped on pages depending on the type.
 
 .. note::
-  The *Create* dialog is different depending on the type: 
-  
+  The *Create* dialog is different depending on the type:
+
   * For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
-  
+
   * A *DHCP scope* can be created with the network and broadcast address automatically configured. See :ref:`new-dhcp-scope`.
-  
+
   * A *container* has no network or broadcast address. See :ref:`ipam-containers`.
-  
+
 5. Click :guilabel:`Finish`.
 
 Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the Networks component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.
@@ -144,7 +217,7 @@ These properties are defined in :ref:`admin-custom-properties`.
 Network Modifications
 ^^^^^^^^^^^^^^^^^^^^^
 
-Once you have created a network, it is easy to make changes. 
+Once you have created a network, it is easy to make changes.
 
 1. Select the range in the grid.
 
@@ -306,7 +379,7 @@ Join Ranges
 
 3. Set the properties for the joined range:
 
-Use Access from 
+Use Access from
   Click the drop-down list and specify from which range you will gain access.
 
 Use Properties from
@@ -497,58 +570,3 @@ You can export the utilization history for one or more subnets to the Clipboard 
 * To export the utilization history for a single subnet from the :guilabel:`Address Utilization Window`, right-click the graph and select the time period you want to export. The data is copied to the Clipboard.
 
 * To export the utilization for multiple subnets, select the subnets, right-click and from the shortcut menu select :guilabel:`Export Address Utilization`. The data is saved in a CSV file.
-
-Multiple Address Spaces
------------------------
-
-Micetro supports multiple address spaces. Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP Address entries and object folders. Changes to data in one address space do not affect data in any other address space.
-
-Items shared between address spaces are the user and group lists and custom property definitions.
-
-Address Space Management (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The Address Space Management dialog box allows you to create, modify or delete address spaces as well as set access privileges for existing address spaces. To access the Address Space Management dialog box, you must be logged in as the administrator user.
-
-To open the Address Space Management dialog box, from the Tools menu, select Define Address Spaces.
-
-.. image:: ../../images/console-ipam-address-spaces.png
-  :width: 50%
-  :align: center
-
-To create a new address space, click the Add button and enter the name and description for the address space.  NOTE:  When more than one address space is defined, the first address space will be named <default>. It is not possible to rename or delete the <default> address space. Also, the <default> address space is the only address space that shows AD sites if AD Site and Subnet integration is enabled.  NOTE:  When a new address space is created, you must set the access for the address space to allow users to access it. When creating your first address space, two address spaces will actually be created, the <default> address space and the address space you created. You must set access for the <default> address space as well as for the new address space.
-
-To change the name or description for an address space, select the address space and click the Edit button.
-
-To delete an address space, select the address space and click the Delete button.
-
-.. danger::
-  When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP Address ranges, IP Address entries and folders). This action is not undoable.
-
-.. note::
-  You cannot delete the <default> address space or the address space you are currently working in.
-
-To set access privileges for an address space, select the address space and click the :guilabel:`Access` button.
-
-Switching to a Different Address Space
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can only work in one address space at a time. You can see the current address space in the Manager window, above the object list.
-
-To switch to a different address space:
-
-1. Click the **User** icon in the top right corner of the Web Application.
-
-2. Select :guilabel:`Address Space` and select the address space you want to use.
-
-.. image:: ../../images/address-space-Micetro.png
-  :width: 50%
-  :align: center
-
-Moving Objects to a Different Address Space (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-DNS servers, DHCP servers, IP Address ranges and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects do a different address space.
-
-.. note::
-  You cannot move folders between address spaces. Individual DHCP scopes cannot be moved between address spaces, but when you move a DHCP server to a different address space, all of its DHCP scopes are moved as well. Likewise, you cannot move individual DNS zones to a different address space, but moving a DNS server to a different address space will move all of its zones as well.

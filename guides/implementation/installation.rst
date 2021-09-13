@@ -1,6 +1,6 @@
 .. meta::
    :description: Installing Micetro by Men&Mice
-   :keywords: Micetro 
+   :keywords: Micetro
 
 .. _installation:
 
@@ -10,10 +10,10 @@ Installation
 .. toctree::
   :maxdepth: 1
 
-  system-requirements
-  firewall-ports
+  system_requirements
+  firewall_ports
   binaries
-  config-files
+  config_files
   install_central
   central_database
   install_console

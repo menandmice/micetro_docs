@@ -2,12 +2,12 @@
    :description: Kea DHCP High Availability and Micetro by Men&Mice
    :keywords: Kea DHCP, DHCP servers, KEA DHCP servers
 
-.. _dhcp-kea-ha:
-
 .. |kea-ok| image:: ../../images/kea-ok.png
 .. |kea-down| image:: ../../images/kea-down.png
 .. |kea-impaired| image:: ../../images/kea-impaired.png
 .. |kea-unreachable| image:: ../../images/kea-unreachable.png
+
+.. _dhcp-kea-ha:
 
 Kea DHCP High Availability
 ==========================
