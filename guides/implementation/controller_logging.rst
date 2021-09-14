@@ -2,10 +2,15 @@
    :description: How to enable logging for the Men&Mice DNS Server Controller
    :keywords: Micetro, DNS, DNS Server Controller, troubleshooting, Linux
 
+.. _controller-logging:
+
+Configuring logging for the Men&Mice Server Controllers
+=======================================================
+
 .. _dns-controller-loglevel:
 
-Raise log level for the DNS Server Controller
----------------------------------------------
+DNS Server Controller
+---------------------
 
 Linux
 ^^^^^
@@ -49,8 +54,8 @@ Restart the DNS Server Controller.
 
 .. _dhcp-controller-loglevel:
 
-Raise log level for the DHCP Server Controller
-----------------------------------------------
+DHCP Server Controller
+----------------------
 
 Linux
 ^^^^^
