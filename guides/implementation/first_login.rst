@@ -1,6 +1,6 @@
 .. meta::
    :description: First login and default credentials for Micetro by Men&Mice
-   :keywords: Micetro 
+   :keywords: Micetro
 
 .. _first-login:
 
@@ -15,6 +15,11 @@ The default credentials:
 * password: ``administrator``
 
 After logging in with the default administrator credentials, the system will prompt to change the administrator password.
+
+.. warning::
+  Do not lose the password set in this step for the ``administrator`` user. It cannot be recovered if lost.
+
+  Contact Men&Mice Customer Care if the *administrator* user password is lost.
 
 .. image:: ../../images/first_login.png
   :width: 60%

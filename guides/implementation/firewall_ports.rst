@@ -15,7 +15,7 @@ The following table lists all services and their respective ports to be opened f
   :header: "Service name", "Port", "Protocol", "Source(s)"
   :widths: 30, 10, 10, 60
 
-  "Men&Mice Central",	1231,	"TCP",	"Management Console, Web Application"
+  "Men&Mice Central",	1231,	"TCP",	"Management Console, Web Application, SOAP API"
   "Web Application",	"80/443",	"TCP",	"User’s browser"
   "PostgreSQL",	5432,	"TCP",	"Men&Mice Central"
   "PostgreSQL",	5000,	"TCP",	"PSQL HA nodes"
@@ -23,6 +23,5 @@ The following table lists all services and their respective ports to be opened f
   "DNS Server Controllers", 1337, "TCP", "Men&Mice Central"
   "DHCP Server Controllers", 4151, "TCP", "Men&Mice Central"
   "Men&Mice Updater", 4603, "TCP", "Men&Mice Central"
-  "Men&Mice Central", 1231, "TCP", "Management Console, Web Application, SOAP API"
 
 Make sure that the servers running these services have the corresponding ports open in their firewalls.
