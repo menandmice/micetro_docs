@@ -1,10 +1,10 @@
-.. meta:: 
+.. meta::
    :description: Access control flags in Micetro by Men&Mice 10.1
    :keywords: Micetro access model
 
 .. _acl-permissions:
 
-Permissions 
+Permissions
 -----------
 
 Permissions are **access flags**, configured on roles and pertaining to types of objects.
@@ -13,7 +13,7 @@ Permissions determine what type of objects the role has access to, and what kind
 
 For a full list of available permissions see :ref:`permissions-reference`.
 
-Setting permissions 
+Setting permissions
 ^^^^^^^^^^^^^^^^^^^
 
 .. note::
@@ -32,9 +32,16 @@ Setting permissions
 
 5. Click :guilabel:`Save`.
 
+.. note::
+  When setting access on a role, adding a permission will automatically enable all dependent permissions as well to prevent access problems.
+
+  An information button will appear on the top right of the dialog box, providing a summary of dependent permissions enables if hovered over.
+
+  Turning off the permissions will **not** disable the automatically enabled dependent permissions.
+
 .. _block-permission:
 
-Block permission 
+Block permission
 ----------------
 
 When a permission is enabled, it'll set the access flag to ``allow``, otherwise it'll set it as ``deny``.

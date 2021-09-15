@@ -1,7 +1,7 @@
-.. _access-control-example:
+.. _legacy-access-control-example:
 
-Role based access example
--------------------------
+[LEGACY] Role based access example (pre-10.1)
+---------------------------------------------
 
 Introduction
 ^^^^^^^^^^^^

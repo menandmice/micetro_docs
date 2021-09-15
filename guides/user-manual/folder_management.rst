@@ -1,13 +1,13 @@
 .. meta::
    :description: Folder management in Micetro by Men&Mice
-   :keywords: folder management, organization, Micetro 
+   :keywords: folder management, organization, Micetro
 
 .. _folder-management:
 
 Folder management
 =================
 
-Folder management is an important organizational tool for objects (through :ref:`object-folders`) and saved filters (through :ref:`smart folders`).
+Folder management is an important organizational tool for objects (through :ref:`object-folders`) and saved filters (through :ref:`smart-folders`).
 
 The list of folders is located in the 'Folders' tab of the filtering sidebar. To switch to the 'Folders' tab, click the folder icon on the bottom of the sidebar.
 
@@ -36,17 +36,17 @@ Creating folders
 
 2. Click on the ellipsis next to the parent/root folder's name, and select :guilabel:`Create folder` (for :ref:`object-folders`) or :guilabel:`Create smart folder` (for :ref:`smart-folders`).
 
-3. Fill in the name (for object folders) and the filter query (for smart folders only) and click :guilabel:`Create`. 
+3. Fill in the name (for object folders) and the filter query (for smart folders only) and click :guilabel:`Create`.
 
 .. note::
     Folder names don't need to be unique.
 
-Editing folders 
+Editing folders
 ^^^^^^^^^^^^^^^
 
 You can edit a folder's name or filter query (for smart folder) by clicking :guilabel:`Edit` from its ellipsis menu.
 
-Deleting folders 
+Deleting folders
 ^^^^^^^^^^^^^^^^
 
 You can delete a folder by clicking :guilabel:`Delete` from its ellipsis menu.
@@ -59,7 +59,7 @@ Folder types
 
 .. toctree::
     :maxdepth: 1
-    
+
     object_folders
     smart_folders
 

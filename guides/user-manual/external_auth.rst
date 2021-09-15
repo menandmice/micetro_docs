@@ -7,6 +7,9 @@
 External Authentication
 =======================
 
+.. note::
+  Unless indicated otherwise, instructions here are to be performed in the Management Console.
+
 Overview
 --------
 
@@ -40,7 +43,7 @@ To configure a user to use AD user authentication, do the following:
 
 1. From the menu, select :menuselection:`Tools --> User management`.
 
-2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to :ref:`users`.
+2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to :ref:`acl-users`.
 
 3. When the *Properties* dialog box display, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)
 
@@ -111,7 +114,7 @@ When using AD Group level authentication, you must specify which groups in Micet
 
 2. Click the :guilabel:`Groups` tab.
 
-3. Select the group to which you want to configure AD and click the Edit button. If the desired group is not shown, you will need to add the group. See :ref:`groups`.
+3. Select the group to which you want to configure AD and click the Edit button. If the desired group is not shown, you will need to add the group. See :ref:`acl-groups`.
 
 .. image:: ../../images/console_ad_groups_auth.png
   :width: 60%
@@ -193,7 +196,7 @@ To configure a user to use AD user authentication, do the following:
 
 1. From the menu bar, select :menuselection:`Tools --> User Management`. The *User and group management* dialog box displays.
 
-2. To add a new user, click the :guilabel:`Add` button. Refer to :ref:`users`. Follow the instructions with one exception: in the **Authentication** field, click the drop-down list and select RADIUS.
+2. To add a new user, click the :guilabel:`Add` button. Refer to :ref:`acl-users`. Follow the instructions with one exception: in the **Authentication** field, click the drop-down list and select RADIUS.
 
 3. To modify an existing user, double-click on the user's name to display the user *Properties* dialog box, and in the **Authentication** field, click the drop-down list and select RADIUS.
 

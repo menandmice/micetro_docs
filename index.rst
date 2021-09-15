@@ -1,6 +1,6 @@
 .. meta::
    :description: Product documentation for Micetro by Men&Mice
-   :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide 
+   :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide
 
 Micetro by Men&Mice 10.1
 ########################
@@ -14,16 +14,20 @@ Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software fo
 
 Deployed in any on-premise, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
-This documentation is divided into three parts:
+This documentation is divided into four parts:
 
 1. :ref:`implementation`
 2. :ref:`manual-introduction`
+3. :ref:`admin-overview`
 3. :ref:`reference`
 
-Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of Micetro's functionality. The Implementation Guide also details the update procedures.
+Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of Micetro's functionality. :ref:`admin-overview` is aimed at system administrators managing Micetro.
+
+.. tip::
+  Use the search function for quickly locating the information required.
 
 .. note::
-  For how-to articles and troubleshooting, visit the `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
+  For how-to articles and troubleshooting, see :ref:`reference` or visit the `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
 
 .. image:: images/menandmice.png
   :width: 60%
@@ -45,7 +49,7 @@ Table of Contents
     opensource
 
 .. toctree::
-     :caption: Installing Micetro
+     :caption: Micetro Install Guide
      :maxdepth: 3
 
      guides/implementation/implementation
@@ -54,13 +58,11 @@ Table of Contents
      guides/implementation/updates
 
 .. toctree::
-     :caption: Using Micetro
+     :caption: Micetro User Guide
      :maxdepth: 3
 
      guides/user-manual/introduction
-     guides/user-manual/web_application
-     guides/user-manual/console
-     guides/user-manual/administration
+     guides/user-manual/ui
      guides/user-manual/folder_management
      guides/user-manual/dns
      guides/user-manual/dhcp
@@ -71,7 +73,22 @@ Table of Contents
      guides/user-manual/automation
 
 .. toctree::
-    :caption: Reference articles
+    :caption: Micetro Admin Guide
+    :maxdepth: 3
+
+    guides/user-manual/administration
+    guides/user-manual/admin_system_settings
+    guides/user-manual/access_control
+    guides/user-manual/admin_license
+    guides/user-manual/admin_updates
+    guides/user-manual/admin_custom_properties
+    guides/user-manual/admin_schedule_scripts
+    guides/user-manual/admin_maintenance
+    guides/user-manual/appliance_management
+    guides/user-manual/caching_appliance
+
+.. toctree::
+    :caption: Micetro Reference
     :maxdepth: 3
 
     guides/reference/reference

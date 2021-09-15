@@ -1,10 +1,15 @@
 .. _access-control-example:
 
-Role based access example
+Role-based access example
 -------------------------
+
+.. note::
+  Access management has changed in Micetro 10.1. To view the access management example used in previous versions, switch to the appropriate version number using the version selector.
 
 Introduction
 ^^^^^^^^^^^^
+
+**[TO-DO: rewrite this completely. Lucky me. :-) ]**
 
 Micetro allows granular access control to objects. Starting with version 6.7 of Micetro/Men&Mice Suite beside *Users* and *Groups* also **Roles** can be configured.
 

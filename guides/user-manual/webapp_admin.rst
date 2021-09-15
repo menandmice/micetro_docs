@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Administrative functions in the Micetro Web Application
+  :keywords: admin, administration, server admin, access control, Micetro
 
 .. _webapp-admin:
 
@@ -11,4 +11,4 @@ Admin
   :maxdepth: 1
 
   webapp_server_management
-  webapp_user_management
+  webapp_access_management
