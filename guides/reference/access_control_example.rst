@@ -25,7 +25,7 @@ The seven :ref:`built-in-roles` have been designed to cover most use cases for a
 
 **Example:** adding a user or group to the *Administrators (built-in)* role, the user (or group members) automatically gain administrative access to all objects in Micetro.
 
-åUser defined roles
+User defined roles
 ^^^^^^^^^^^^^^^^^^
 
 As all DDI environments are different, Micetro allows creating user-defined roles flexibly.
