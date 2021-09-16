@@ -25,10 +25,7 @@ The seven :ref:`built-in-roles` have been designed to cover most use cases for a
 
 **Example:** adding a user or group to the *Administrators (built-in)* role, the user (or group members) automatically gain administrative access to all objects in Micetro.
 
-.. note::
-  License management can only be accessed by :ref:`administrator`.
-
-User defined roles
+åUser defined roles
 ^^^^^^^^^^^^^^^^^^
 
 As all DDI environments are different, Micetro allows creating user-defined roles flexibly.
@@ -38,9 +35,9 @@ As all DDI environments are different, Micetro allows creating user-defined role
 
 There are two ways of creating new roles in Micetro:
 
-1. Duplicating an existing role, and editing the permissions. See :ref:`duplicate-role`.
+1. (Preferred) Duplicating an existing role, and editing the permissions. See :ref:`duplicate-role`.
 
-2. Creating a role anew. See :ref:`new-role`.
+2. Creating a completely new role. See :ref:`new-role`.
 
 .. tip::
   Men&Mice recommends using the built-in roles as templates, and modifying the permission set for the duplicate roles.
@@ -152,7 +149,7 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
 
   "Ranges and DHCP scopes", "**Read scope options**"
 
-7. Notice that a blue :guilabel:`(i)` indicator appears on the top right. Hovering over will show that in order to add the selected permissions, additional permissions will be set:
+7. Notice that a blue :guilabel:`(i)` indicator appears on the top right. Hovering over will show that in order for the selected permissions to take effect, additional permissions will be set:
 
 .. csv-table::
   :header: "Group", "Permission"

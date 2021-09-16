@@ -1,4 +1,4 @@
-.. meta:: 
+.. meta::
    :description: Permissions reference for Micetro by Men&Mice 10.1
    :keywords: Micetro access model
 
@@ -6,6 +6,9 @@
 
 Permissions reference
 ---------------------
+
+.. information::
+  License management has no associated permission, and can only be accessed by :ref:`administrator`.
 
 The following tables list all the permissions in Micetro, as defined in the API and the web application.
 
