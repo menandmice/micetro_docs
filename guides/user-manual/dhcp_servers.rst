@@ -1,6 +1,6 @@
 .. meta::
-   :description: Maintaining DHCP servers in the Micetro by Men&Mice Management Console 
-   :keywords: DHCP servers, DHCP management console, DHCP Kea 
+   :description: Maintaining DHCP servers in the Micetro by Men&Mice Management Console
+   :keywords: DHCP servers, DHCP management console, DHCP Kea
 
 .. _dhcp-servers:
 
@@ -142,7 +142,7 @@ Checking the :guilabel:`Inherit Access` checkbox will have the selected scope in
 
 Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the scope. This means that whenever the access privileges in the scope are changed, the changes will be applied of all descendants of the scope.
 
-Regarding other access settings, refer to :ref:`global-access`.
+Regarding other access settings, refer to :ref:`access-control`.
 
 Remove
 ------

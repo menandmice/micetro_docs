@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to import DNS records in the Micetro by Men&Mice Web Application 
+   :description: How to import DNS records in the Micetro by Men&Mice Web Application
    :keywords: DNS records, DNS import
 
 .. _webapp-import-dns-records:
@@ -24,7 +24,7 @@ The user importing must have the following permissions:
 
 In addition, the user doing the import needs to have access to edit records in the zones used in the import.
 
-See :ref:`global-access` for further information on access controls.
+See :ref:`access-control` for further information on access controls.
 
 Import task
 -----------

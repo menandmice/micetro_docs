@@ -114,7 +114,7 @@ Checking the :guilabel:`Inherit Access` checkbox will have the selected scope in
 
 Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the scope. This means that whenever the access privileges in the scope are changed, the changes will be applied of all descendants of the scope.
 
-Regarding other access settings, refer to :ref:`global-access`.
+Regarding other access settings, refer to :ref:`access-control`.
 
 .. _ipam-containers:
 
@@ -145,7 +145,7 @@ A range that exists on network boundaries (a subnet) can be converted to a Conta
 
   * Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
 
-  Regarding other access settings, refer to :ref:`global-access`.
+  Regarding other access settings, refer to :ref:`access-control`.
 
 Viewing IP Address Ranges
 -------------------------

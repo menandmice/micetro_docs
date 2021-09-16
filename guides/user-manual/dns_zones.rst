@@ -130,7 +130,7 @@ If the zone you are analyzing is open, an icon with an exclamation mark is shown
 Access/Access for Non-Master for Zone(s)
 ----------------------------------------
 
-Refer to :ref:`global-access`.
+Refer to :ref:`access-control`.
 
 Delete zone
 -----------
@@ -230,9 +230,9 @@ Edit Preferred Servers
 ----------------------
 
 .. note::
-  This option is only available when working with AD integrated zones. (See :ref:`active-directory`.) 
-  
-DNS administrators can specify the server to use when opening an AD integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable. 
+  This option is only available when working with AD integrated zones. (See :ref:`active-directory`.)
+
+DNS administrators can specify the server to use when opening an AD integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable.
 
 1. Navigate to the :menuselection:`DNS` context and select the :guilabel:`AD Integrated` filter from the sidebar on the left.
 

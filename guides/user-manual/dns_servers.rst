@@ -1,6 +1,6 @@
 .. meta::
-   :description: How to maintain DNS servers in the Micetro by Men&Mice Management Console 
-   :keywords: DNS, DNS server, DNS management console 
+   :description: How to maintain DNS servers in the Micetro by Men&Mice Management Console
+   :keywords: DNS, DNS server, DNS management console
 
 .. _dns-servers:
 
@@ -127,7 +127,7 @@ To access this feature, do the following:
 Access
 ------
 
-See :ref:`global-access`.
+See :ref:`access-control`.
 
 .. _define-work-set:
 

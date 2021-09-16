@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to manage DHCP scopes in the Micetro by Men&Mice Management Console 
+   :description: How to manage DHCP scopes in the Micetro by Men&Mice Management Console
    :keywords: DHCP management, DHCP scopes
 
 .. _dhcp-scopes:
@@ -165,10 +165,10 @@ To create a new scope on the MS DHCP server, do the following:
 
 3. Edit the options for the DHCP scope.
 
-DHCP server 
+DHCP server
   The DHCP server for the scope.
 
-Enabled 
+Enabled
   If checked, the DHCP scope will start allocating IP addresses immediately. Uncheck it if you want to configure the scope further.
 
 Start/end of address pool
@@ -190,7 +190,7 @@ Start/end of address pool
 Access
 ------
 
-For complete details on this function, refer to :ref:`global-access`.
+For complete details on this function, refer to :ref:`access-control`.
 
 Scope Migration Wizard (Management Console)
 -------------------------------------------
