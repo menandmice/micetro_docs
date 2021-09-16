@@ -1,6 +1,6 @@
 .. meta::
    :description: How to import IP address ranges or IP addresses into Micetro by Men&Mice
-   :keywords: IPAM, IPAM data, Micetro 
+   :keywords: IPAM, IPAM data, Micetro
 
 .. _webapp-import-ipam-data:
 
@@ -20,6 +20,8 @@ The Import wizard can be used to import:
 
 * Devices and interfaces
 
+* DHCP reservations
+
 The data can either be pasted directly into the wizard or by using a file that is uploaded.
 
 .. image:: ../../images/bulk-import-ipam.png
@@ -29,7 +31,7 @@ The data can either be pasted directly into the wizard or by using a file that i
 Prerequisites
 -------------
 
-The user importing must have the following :ref:`global-access`:
+The user importing must have the following permissions:
 
 * Access to IPAM Module
 
@@ -38,6 +40,8 @@ The user importing must have the following :ref:`global-access`:
 * Access to IPAM view in Web Application
 
 * Access to "Import Data" web task
+
+(See :ref:`permissions-reference`.)
 
 Importing Data
 --------------
