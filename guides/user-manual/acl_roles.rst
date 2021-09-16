@@ -1,4 +1,4 @@
-.. meta:: 
+.. meta::
    :description: Roles in Micetro by Men&Mice 10.1
    :keywords: Micetro access model
 
@@ -13,6 +13,8 @@ Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed thr
 
 .. note::
     This page is for generic management of roles. See :ref:`acl-general-roles`, :ref:`acl-specific-roles`, and :ref:`acl-legacy-roles` for the particularities of the different role types.
+
+.. _new-role:
 
 Adding a new role
 ^^^^^^^^^^^^^^^^^
@@ -42,6 +44,9 @@ Description
 
 .. note::
     The default for new roles is :ref:`general-roles`.
+
+.. tip::
+  See :ref:`new-role-example` for an example process for creating a role anew.
 
 Editing a role
 ^^^^^^^^^^^^^^
@@ -85,9 +90,9 @@ It is possible to duplicate roles and copy the original's configured permissions
 
 2. Use the :guilabel:`+ Create --> From existing role` action from the top bar.
 
-.. image:: ../../images/duplicate-role.png 
+.. image:: ../../images/duplicate-role.png
   :width: 50%
-  :align: center 
+  :align: center
 
 3. Select the role to duplicate, and name the new role.
 
@@ -97,6 +102,9 @@ It is possible to duplicate roles and copy the original's configured permissions
 
 .. note::
     Roles created from existing ones are always :ref:`general-roles`.
+
+.. tip::
+  See :ref:`duplicate-role-example` for an example process for creating a role from an existing template.
 
 .. toctree::
     :maxdepth: 1

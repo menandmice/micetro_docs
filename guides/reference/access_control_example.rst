@@ -9,127 +9,173 @@ Role-based access example
 Introduction
 ^^^^^^^^^^^^
 
-**[TO-DO: rewrite this completely. Lucky me. :-) ]**
+**[TO-DO: Add screenshots.]**
 
-Micetro allows granular access control to objects. Starting with version 6.7 of Micetro/Men&Mice Suite beside *Users* and *Groups* also **Roles** can be configured.
+This article aims to provide practical information on :ref:`acl-roles`, and detailed, step-by-step breakdowns for two scenarios: creating a new, read-only role for DHCP scopes, and using the built-in *DNS viewers* role to set up a DNS read-write role.
 
-An advantage of Roles is the ability to add groups to roles, which makes the user/group/role concept more flexible. This article will provide some info on roles and a step by step list on how to setup a read only role for DNS/DHCP and IP address ranges.
+The information on this page, and the how-tos presented, will provide a blueprint to customize Micetro to your requirements.
 
 Built-in roles
 ^^^^^^^^^^^^^^
 
-By default Micetro has 5 roles built-in:
+The seven :ref:`built-in-roles` have been designed to cover most use cases for access control in Micetro. The access settings for the built-in roles can't be modified.
 
-* Administrators (built-in)
+.. tip::
+  Built-in roles are all :ref:`acl-general-roles` and applied to all objects in Micetro, existing or future.
 
-* DNS Administrators (built-in)
-
-* DHCP Administrators (built-in)
-
-* IPAM Administrators (built-in)
-
-* User Administrators (built-in)
-
-All roles are Administrator roles (full access) and all objects like DNS server, DNS zone, IP address range/scope have these roles assigned by default.
+**Example:** adding a user or group to the *Administrators (built-in)* role, the user (or group members) automatically gain administrative access to all objects in Micetro.
 
 .. note::
-  The access settings for the built-in roles can't be modified.
-
-If you would add a user or group for instance to the Administrators (built-in) role, the user or group members would get automatically administrative access to the objects in Micetro. Excluded is the "License Management", which can only be accessed by the account with the name "administrator".
-
-For details on the built-in roles please see :ref:`access-control`.
+  License management can only be accessed by :ref:`administrator`.
 
 User defined roles
 ^^^^^^^^^^^^^^^^^^
 
-Beside the built-in roles Micetro administrators have the option to create new roles. These user defined roles can then be used to specify granular access on the objects in Micetro. By adding group members to the role (e.g. Micetro users or AD groups) -  the members get the role defined access granted.
+As all DDI environments are different, Micetro allows creating user-defined roles flexibly.
 
-Example read/only role setup and access configuration
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+.. tip::
+  Creating new roles requires the *Administer users/groups* permission.
 
-As an example the following steps aim to illustrate how easy it is to setup a r/o role in Micetro
+There are two ways of creating new roles in Micetro:
 
-1. Login as "administrator" to the Management Console.
+1. Duplicating an existing role, and editing the permissions. See :ref:`duplicate-role`.
 
-2. Navigate to :menuselection:`Tools --> User Management` and select the **Roles** tab.
+2. Creating a role anew. See :ref:`new-role`.
 
-3. Press the :guilabel:`Add` button and specify the role name, e.g. ``ReadOnlyRole`` and confirm with :guilabel:`OK`.
+.. tip::
+  Men&Mice recommends using the built-in roles as templates, and modifying the permission set for the duplicate roles.
 
-**Add a user account or an AD group to the *ReadOnlyRole*:**
+----
 
-In the same dialog (:menuselection:`Tools --> User Management`) you can configure Users or Groups that can then be assigned as role members.
+.. _duplicate-role-example:
 
-**Example 1:** *Add an AD Group to the role*
+Example role configuration: DNS zone read-write
+"""""""""""""""""""""""""""""""""""""""""""""""
 
-1. If you want to add an AD group just click on the :guilabel:`Groups` tab.
+The following steps illustrate how to create a read-write role in Micetro for DNS zones, using a built-in role as a template.
 
-2. Press the :guilabel:`Add` button and specify the AD group (which must already exist in AD). The group name must be in the style: ``domain\groupname``.
+.. tip::
+  Using existing roles as templates makes refining access controls easier, as you can copy over not just permissions but also users and groups.
 
-3. Then tick the checkbox **ReadOnlyRole** in the *Roles* section and mark also the checkbox **Active Diretory Integrated** which is located underneath the Roles section box.
+1. Log in to the Web Application.
 
-.. information::
-  If you don't mark the checkbox for Active Directory integration the group would be created as Micetro group (members of an AD group are automatically added to Micetro when the AD group members login the first time).
+2. Navigate to :menuselection:`Admin --> Configuration --> Access Management` and select :guilabel:`Roles`.
 
-4. Confirm with :guilabel:`OK`. As mentioned it's not necessary to add single AD user accounts.
+3. Press the :guilabel:`Create` button and select :guilabel:`From existing role`.
 
-**Example 2:** *Add a Micetro user account to the role*
+4. From the dropdown **Select an existing role**, click on ``DNS Viewers (built-in)``.
 
-1. In the **User Management** dialog click on the :guilabel:`Users` tab.
+.. tip::
+  If you have the role selected in the grid, *From existing role* will automatically fill in the value for convenience.
 
-2. Press the :guilabel:`Add` button and specify the user name, e.g. ``readonlyuser`` and select for the *Authentication* "Men&Mice Internal".
-
-3. Specify a password for the account.
-
-4. In the **Roles** section box tick the checkbox for the **ReadOnlyRole** and confirm with :guilabel:`OK`.
-
-Next, define **how members of the role can access Micetro**.
+5. Edit the **Role name**.
 
 .. note::
-  After step 4 the users still can not view or access objects in Micetro (e.g. zones or ranges).
+  When duplicating a role, editing the **Description** is not available until the new role is created.
 
-1. Open the :menuselection:`Tools --> Global Access` dialog.
+6. Select what to copy from the existing role: **Permissions** (default), *Groups*, and/or *Users*.
 
-2. Press the :guilabel:`Add` button and add the ``ReadOnlyRole``
+.. information::
+  Duplicating roles will automatically set the role type to *General*.
 
-3. Specify the access bits (i.e. set the Allow checkbox) for the following entries:
+7. Click :guilabel:`Create` to save the new role.
 
-::
+After saving the new role, Micetro will automatically display the *Edit role properties* dialog for it.
 
-  Access IPAM module
-  Access DNS module
-  Access DHCP module
-  Access to Management Console
+8. Switch over to the :guilabel:`Access` tab, and enable the following permission:
 
-4. Confirm with :guilabel:`OK`.
+.. csv-table::
+  :header: "Group", "Permission"
+  :widths: 30, 70
 
-This means that members of the group can access the three modules and they are allowed to log in to Micetro only by the Management Console.
+  "DNS servers", "**Add master zones**"
+  "DNS servers", "**Add non-master zones**"
+  "DNS zones", "**Edit zone access**"
+  "DNS zones", "**List (or view) zone**"
+  "DNS zones", "**View zone history**"
+  "DNS zones", "**Enable/disable zone**"
+  "DNS zones", "**Edit zone options**"
+  "DNS zones", "**Delete zone**"
+  "DNS zones", "**Enable/disable apex records**"
+  "DNS zones", "**Edit apex records**"
+  "DNS zones", "**Enable/disable wildcard records**"
+  "DNS zones", "**Edit wildcard records**"
+  "DNS zones", "**Enable/disable other records**"
+  "DNS zones", "**Edit other records**"
+  "DNS zones", "**Edit zone properties**"
 
-In the next steps the access to the objects, like servers, zones and subnets are configured.
+.. tip::
+  Clicking the checkbox next to the **DNS zones** group will automatically select all permissions within the group.
 
-DNS server access config
-  1. Right-click on the DNS server that hosts the zone you want to configure to be r/o accessible by the role members.
+.. tip::
+  For a handy reference for available permissions, see :ref:`permissions-reference`.
 
-  2. Select **Access** and press the :guilabel:`Add` button and add the ReadOnlyRole to the list.
+8. (Optional) Switch to the :guilabel:`Groups` tab and select the group(s) you'd like to assign to the role.
 
-  3. Allow only the ``List (or view) DNS server`` access bit and confirm with :guilabel:`OK`.
+9. (Optional) Switch to the :guilabel:`Users` tab and select the user(s) you'd like to assign to the role.
 
-DNS zone access config
-  1. Click on the DNS zone (or mark multiple) and select **Access** and add the ReadOnlyRole.
+.. tip::
+  Users and groups can be assigned to and removed from roles any time.
 
-  2. Give again only ``List (or view) zone`` rights and confirm with :guilabel:`OK`.
+10. Click :guilabel:`Save` to update the role settings.
 
-IP address range access config
-  1. Click on **IP Address Ranges** and then click on the subnet/scope you want to allow to be visible to the members of the ReadOnlyRole. If you want to allow all subnets then you could click on the 0.0.0.0/0 or ::/0 base net and select Access.
+----
 
-  2. As before press the :guilabel:`Add` button and add the ReadOnlyRole to the object.
+.. _new-role-example:
 
-  3. Allow the ``List (or view) range`` access bit for the role and confirm the dialog with :guilabel:`OK`. If you clicked on the 0.0.0.0/0 or ::/0 you might want to configure inheritance by pressing the button :guilabel:`Apply access inheritance in child ranges`` in the *Access* dialog. This would then configure all subnets of 0.0.0.0/0 or ::/0 to inherit the settings of the base network.
+Example role configuration: DHCP read-only
+""""""""""""""""""""""""""""""""""""""""""
 
-  If scopes were in the list of selected subnets you want also to configure the access to the DHCP servers (otherwise the scopes would not show up for the role members).
+The following steps illustrate how to create a new, read-only role in Micetro for DHCP scopes only, without using the built-in role templates.
 
-    1. Please right-click on the DHCP server(s) and select **Access** and add the ReadOnlyRole and give the ``List (or view) DHCP server`` access bit and confirm with :guilabel:`OK`.
+1. Log in to the Web Application.
 
-After these steps the members of the group or the user are allowed to login by the Men&Mice Management console.
+2. Navigate to :menuselection:`Admin --> Configuration --> Access Management` and select :guilabel:`Roles`.
 
-To grant read/write rights just create a new specific role and specify additional access bit on the objects, e.g. additionally to the List (or view) access bit also give on zones "Edit other records" and on an IP address range "Use IP addresses in DNS". This would then allow the role members to edit records in the zone which are not in the zones apex (have not the same name as the zone itself, like the SOA record or NS records) and
-it would restrict A/AAAA records to the allowed subnets where the Use IP addresses in DNS is specified.
+3. Press the :guilabel:`Create` button and select :guilabel:`New role`
+
+4. Specify the **Role name**, e.g. ``DHCP Read-Only`` and add a **Description**.
+
+.. tip::
+  Using descriptive names and clear text for the description makes access management easier.
+
+5. Choose between the *General* or *Specific* role types.
+
+.. information::
+  The preferred role type in Micetro is the :ref:`acl-general-roles`. Specific roles exist to preserve backwards compatibility and added flexibility to edge use cases.
+
+6. Switch over to the :guilabel:`Access` tab, and enable the following permission:
+
+.. csv-table::
+  :header: "Group", "Permission"
+  :widths: 30, 70
+
+  "Ranges and DHCP scopes", "**Read scope options**"
+
+7. Notice that a blue :guilabel:`(i)` indicator appears on the top right. Hovering over will show that in order to add the selected permissions, additional permissions will be set:
+
+.. csv-table::
+  :header: "Group", "Permission"
+  :widths: 30, 70
+
+  "Micetro", "Access to the web interface"
+  "Micetro", "Access IPAM module"
+  "Micetro", "Access to IPAM view in web interface"
+  "DHCP servers", "List (or view) DHCP server"
+  "Ranges and DHCP scopes", "List (or view) range"
+  "Address spaces", "List (or view) address space"
+
+.. tip::
+  Micetro will automatically enable these permissions upon saving the new role. You can check the permissions granted to the role by switching to :guilabel:`View defined` using the radio button.
+
+.. tip::
+  For a handy reference for available permissions, see :ref:`permissions-reference`.
+
+8. (Optional) Switch to the :guilabel:`Groups` tab and select the group(s) you'd like to assign to the role.
+
+9. (Optional) Switch to the :guilabel:`Users` tab and select the user(s) you'd like to assign to the role.
+
+.. tip::
+  Users and groups can be assigned to and removed from roles any time.
+
+10. Click :guilabel:`Create` to create the role.
