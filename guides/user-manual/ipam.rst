@@ -182,7 +182,7 @@ To create a new network, do the following:
 4. Enter the appropriate values, grouped on pages depending on the type.
 
 .. note::
-  The *Create* dialog is different depending on the type:
+  The *Create* dialog is different depending on the type selected through the dropdown:
 
   * For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
 
@@ -334,6 +334,8 @@ To move a IP Address information, do the following:
 
 Split/Allocate Range Wizard
 ---------------------------
+
+**[TO-DO: add screenshot(s).]**
 
 This wizard allows you to create multiple subranges from an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
