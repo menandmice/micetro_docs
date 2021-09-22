@@ -11,6 +11,7 @@ Micetro reference articles
   :maxdepth: 1
 
   permissions
+  acl_migrate
   appliance_guide
   health_bar_information
   dynamic_zones
@@ -23,5 +24,6 @@ Micetro reference articles
   dns_controller_include
   dns_controller_generate
   snmp_oid
+  acl_console
   access_control_example
   ie_eol
