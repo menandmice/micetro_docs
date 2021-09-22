@@ -7,7 +7,7 @@
 License Management
 ==================
 
-The different functionalities of Micetro can be activated by specific license keys. 
+The different functionalities of Micetro can be activated by specific license keys.
 
 There are five different keys, one each for:
 
@@ -24,14 +24,12 @@ There are five different keys, one each for:
 
 * Reporting module
 
-**[TO-DO: screenshots.]**
-
 Viewing license keys
 --------------------
 
 The :guilabel:`Admin --> Configuration --> Licenses` page shows detailed information about every key configured in Micetro, including utilization by showing the number of DNS zones and IP Addresses in use.
 
-The License Management page displays cards for active modules with a list of associated license keys, either active or expired. The usage of the license (for example the number of DNS zones used, compared to the license limit) is shown in a usage bar in the upper right of the license card. The bottom right of the card shows the expiry date for the currently active license key. 
+The License Management page displays cards for active modules with a list of associated license keys, either active or expired. The usage of the license (for example the number of DNS zones used, compared to the license limit) is shown in a usage bar in the upper right of the license card. The bottom right of the card shows the expiry date for the currently active license key.
 
 .. image:: ../../images/license-management.png
   :width: 80%
@@ -40,7 +38,7 @@ The License Management page displays cards for active modules with a list of ass
 Expired keys
 ------------
 
-A notification will be shown when a license key is expired and when a license key is about to expire. This will only be shown to members in the administrators group. 
+A notification will be shown when a license key is expired and when a license key is about to expire. This will only be shown to members in the administrators group.
 
 Adding a License Key
 --------------------
@@ -50,7 +48,7 @@ Adding license keys for the first time
 
 When logging into a system that has no active licenses, the system will prompt the user and indicate that not active license keys are in the system and offer the user to enter new license keys through the license management page. Additional keys can be added by pasting text containing valid license keys to the textbox at the bottom of the license management page.
 
-1. Navigate to :menuselection:`Admin --> Configuration --> Licenses`. 
+1. Navigate to :menuselection:`Admin --> Configuration --> Licenses`.
 
 2. To add new key(s), scroll down to the "Import license keys" section and paste in the license key(s).
 

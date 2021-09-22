@@ -1,4 +1,4 @@
-.. meta:: 
+.. meta::
    :description: Access control for users in Micetro by Men&Mice 10.1
    :keywords: Micetro access model
 
@@ -24,29 +24,32 @@ Through this function, you add new users who can then be assigned to groups.
 
 2. Click the :guilabel:`Create` button. The *Create user* dialog box displays.
 
-  Name
-    Type the **username** that you want to as assign to this person.
+.. image:: ../../images/admin-add-user.png
+  :width: 70%
+  :align: center
+
+Name
+  Type the **username** that you want to as assign to this person.
 
   .. warning::
     Once you have created the user name, it is not possible to change it.
 
-  Full Name and Description
-    (Optional) Type the user's first and last name and a description of their duties (i.e., job title, department, etc.), respectively.
+Full Name and Description
+  (Optional) Type the user's first and last name and a description of their duties (i.e., job title, department, etc.), respectively.
 
-  Authentication type
-    Click the drop-down list and specify whether the user's login will be authenticated by Micetro or by an external authentication service (such as existing Active Directory account on the network).
+Authentication type
+  Click the drop-down list and specify whether the user's login will be authenticated by Micetro or by an external authentication service (such as existing Active Directory account on the network).
 
-  Email address
-    The user's email address. Used for sending notifications such as scheduled reports, subnet monitoring updates, etc.
+Email address
+  The user's email address. Used for sending notifications such as scheduled reports, subnet monitoring updates, etc.
 
-  Password/Confirm Password
-    If the **Authentication type** selected is *Men&Mice internal*, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above.
+Password/Confirm Password
+  If the **Authentication type** selected is *Men&Mice internal*, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above.
 
-  In the :guilabel:`Groups` and :guilabel:`Roles` tabs, select the user group(s) and role(s) to which you want to assign this user.
-    Each user can be assigned to none or to multiple groups and roles. 
+In the :guilabel:`Groups` and :guilabel:`Roles` tabs, select the user group(s) and role(s) to which you want to assign this user. Each user can be assigned to none or to multiple groups and roles.
 
-  .. note::
-    If you have not created your groups, you can always come back and edit the user accounts anytime and change the group assignments.
+.. note::
+  If you have not created your groups, you can always come back and edit the user accounts anytime and change the group assignments.
 
 3. When all selections/entries are made, click :guilabel:`Create`. The new user is added to the *Users* list and can now use Micetro.
 
