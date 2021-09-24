@@ -23,6 +23,7 @@ Micetro reference articles
   disable_auto_zone-transfer
   dns_controller_include
   dns_controller_generate
+  central_python_ldap
   snmp_oid
   acl_console
   access_control_example

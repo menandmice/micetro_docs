@@ -2,7 +2,7 @@
    :description: Using Python with Micetro on Windows Server
    :keywords: Micetro, Men&Mice Central, server, installation, how to, Python
 
-.. _central_python_ldap:
+.. _central-python-ldap:
 
 Installing Python for Men&Mice Central on Windows
 -------------------------------------------------

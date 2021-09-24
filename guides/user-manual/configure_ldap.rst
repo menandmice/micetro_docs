@@ -1,6 +1,6 @@
 .. meta::
    :description: How to configure LDAP authentication in Micetro by Men&Mice
-   :keywords: Men&Mice central service,  
+   :keywords: Men&Mice central service,
 
 .. _configure-ldap:
 
@@ -125,3 +125,8 @@ Configuring the Men&Mice Central service to authenticate users using an LDAP ser
 ---------------------------------------------------------------------------------------
 
 To configure the Men&Mice Central service, login as the superuser ``administrator`` through the Men&Mice Management Console. In the top left-hand corner select :menuselection:`Tools --> System Settings --> Advanced` and check the :guilabel:`Enable LDAP integration` checkbox.
+
+Using LDAP with Central running on Windows
+------------------------------------------
+
+To use LDAP with a Men&Mice Central server running on Windows, Python must be installed for all users. See :ref:`central-python-ldap`.
