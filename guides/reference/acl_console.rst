@@ -99,7 +99,7 @@ To add users or groups to a role:
 
 2. Select the user(s) and/or group(s), click :guilabel:`Edit` and in the bottom panel select the roles to attach the user(s)/group(s) to.
 
-.. image:: ../../acl-console-user-role-2021.png
+.. image:: ../../images/acl-console-user-role-2021.png
   :width: 90%
   :align: center
 
