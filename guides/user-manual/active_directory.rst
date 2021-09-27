@@ -134,7 +134,7 @@ To add subnet(s) to a site, or move between sites:
 .. note::
   Child subnets cannot be moved to a different site than the parent subnet unless the ``Enforce site inheritance`` checkbox is unchecked in the System Settings dialog box.
 
-  Subnets whose AD site settings are ingerited from a parent range will have a ``<AD Site Name> (inherited)`` notation added.
+  Subnets whose AD site settings are inherited from a parent range will have a ``<AD Site Name> (inherited)`` notation added.
 
   See :ref:`admin-general`.
 
