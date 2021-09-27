@@ -16,8 +16,8 @@ The SNMP protocol provides a common mechanism for devices on networks to relay m
 .. note::
   For configuring SNMP profiles using the Management Console, see :ref:`console-snmp-profiles`.
 
-Create new SNMP profile
-^^^^^^^^^^^^^^^^^^^^^^^
+Create a new SNMP profile
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before a router can be queried it must be placed in an SNMP profile containing the parameters necessary to access the SNMP information on the router.
 
@@ -86,4 +86,4 @@ SNMP scanning is done automatically in the background by Micetro. Users can init
 Use the :guilabel:`Scan profiles` action from the top bar to manually scan all profiles.
 
 .. warning::
-  This might take a long time, and can result in higher volumes of traffic.
+  This might take a long time and can result in higher volumes of traffic.
