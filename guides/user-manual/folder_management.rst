@@ -34,7 +34,7 @@ Access to folders
 
 See :ref:`access-control` for details on roles and permissions.
 
-Folders are **not shared** across address spaces, and cannot be moved from one address space to another.
+Folders are **not shared** across address spaces and cannot be moved from one address space to another.
 
 Creating folders
 ^^^^^^^^^^^^^^^^
