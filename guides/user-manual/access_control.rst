@@ -8,7 +8,7 @@ Access control
 ==============
 
 .. important::
-  Micetro 10.1 (released in September 2021) brought changes to the access management in order to make it more streamlined and easier to use, while keeping the flexibility. This page describes the new access control. IF you're using an older version, or would like information on the legacy access control model, see :ref:`access-control-legacy`.
+  Micetro 10.1 (released in September 2021) brought changes to the access management in order to make it more streamlined and easier to use, while keeping the flexibility. This page describes the new access control. If you're using an older version, or would like information on the legacy access control model, see :ref:`access-control-legacy`.
 
 Overview
 --------
@@ -21,7 +21,7 @@ Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed thr
   :width: 95%
   :align: center
 
-A set of :ref:`built-in-roles` are available that should cover most use cases. These are :ref:`general-roles`, applied to all objects (present and future) in Micetro. :ref:`specific-roles` exist for use cases where per-object permissions are required.
+A set of :ref:`acl-built-in-roles` are available that should cover most use cases. These are :ref:`acl-general-roles`, applied to all objects (present and future) in Micetro. :ref:`acl-specific-roles` exist for use cases where per-object permissions are required.
 
 Groups, users, and roles
 ------------------------
@@ -30,11 +30,11 @@ The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-role
 
 * Users and groups can be assigned to roles.
 
-* Groups can contain users
+* Groups can contain users.
 
-* Groups cannot contain groups
+* Groups *cannot* contain groups.
 
-* Users and groups can be assigned to any number of roles
+* Users and groups can be assigned to any number of roles.
 
 .. _administrator:
 

@@ -13,7 +13,7 @@ To create a *General role*, follow the instructions on :ref:`acl-roles`, and **s
 
 *Example:* The general role *DNS editor* has the ``Edit zone options`` permission enabled. Any 'DNS zone' type object in Micetro, whether already existing or added in the future, will be accessible to users/groups attached to this role.
 
-.. _built-in-roles:
+.. _acl-built-in-roles:
 
 Built-in roles
 ^^^^^^^^^^^^^^

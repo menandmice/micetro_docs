@@ -10,7 +10,7 @@ Users
 Users represent the individual people working with Micetro.
 
 .. note::
-  In order to manage users, you have to be logged in as a user who has user management privileges. (Is attached to a role with the ``access_adminUser``/"Administer users/groups" permission enabled.)
+  In order to manage users, you have to be logged in as a user who has user management privileges. (Is attached to a role with the ``access_adminUser``/"*Administer users/groups/roles*" permission enabled.)
 
 .. note::
     At least one user, the ``administrator``, is always configured for Micetro. See :ref:`administrator`.

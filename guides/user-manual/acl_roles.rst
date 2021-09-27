@@ -43,7 +43,7 @@ Description
 4. When all necessary information and permissions are configured, click :guilabel:`Save`.
 
 .. note::
-    The default for new roles is :ref:`general-roles`.
+    The default for new roles is :ref:`acl-general-roles`.
 
 .. tip::
   See :ref:`new-role-example` for an example process for creating a role anew.
@@ -96,12 +96,9 @@ It is possible to duplicate roles and copy the original's configured permissions
 
 3. Select the role to duplicate, and name the new role.
 
-4. Select which settings (permissions, groups, roles) to copy.
+4. Select which properties (permissions, groups, roles) to copy.
 
 5. Click :ref:`Create`.
-
-.. note::
-    Roles created from existing ones are always :ref:`general-roles`.
 
 .. tip::
   See :ref:`duplicate-role-example` for an example process for creating a role from an existing template.
