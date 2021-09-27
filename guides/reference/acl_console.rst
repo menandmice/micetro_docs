@@ -6,7 +6,7 @@
 
 .. _acl-console:
 
-Managing access control in the Management Console
+Managing access control in the Management Console 👣👣👣👣
 -------------------------------------------------
 
 Access control management in the Management Console uses the new access control model, but its features are slightly different than those available in the Web Application.
@@ -34,3 +34,27 @@ In the Management Console's :menuselection:`Tools --> User Management`, adding a
 
 Configuring access in the Management Console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adding a new role
+"""""""""""""""""
+
+1. Open :menuselection:`Tools --> User Management` and switch to the **Roles** tab.
+
+2. Click :guilabel:`Add`.
+
+3. Fill in the name and description for the role. Optionally, you can add users and groups to the role.
+
+4. Click :guilabel:`Ok`.
+
+.. important::
+  *Creating* the role doesn't set any access for the role in the Management Console. For configuring permissions, follow the steps in :ref:`console-role-perms`.
+
+.. _console-role-perms:
+
+Configuring access for a role
+"""""""""""""""""""""""""""""
+
+
+
+Removing a role
+"""""""""""""""
