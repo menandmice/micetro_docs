@@ -1,4 +1,4 @@
-.. meta:: 
+.. meta::
    :description: Access control to Micetro by Men&Mice for users, groups and roles
    :keywords: Micetro access model
 
@@ -17,9 +17,13 @@ Access control in Micetro is **role-based**.
 
 Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed through :ref:`acl-roles` configured with :ref:`acl-permissions`. :ref:`acl-users` and :ref:`acl-groups` do not have direct access to objects, only if they're **assigned to roles**. Administrators can control a user or group's access by assigning or removing them from roles.
 
+.. image:: ../../images/acl-overview.png
+  :width: 95%
+  :align: center
+
 A set of :ref:`built-in-roles` are available that should cover most use cases. These are :ref:`general-roles`, applied to all objects (present and future) in Micetro. :ref:`specific-roles` exist for use cases where per-object permissions are required.
 
-Groups, users, and roles 
+Groups, users, and roles
 ------------------------
 
 The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-roles` is as follows:
