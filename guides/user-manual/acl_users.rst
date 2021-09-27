@@ -38,13 +38,13 @@ Full Name and Description
   (Optional) Type the user's first and last name and a description of their duties (i.e., job title, department, etc.), respectively.
 
 Authentication type
-  Click the drop-down list and specify whether the user's login will be authenticated by Micetro or by an external authentication service (such as existing Active Directory account on the network).
+  Click the drop-down list and specify whether the user's login will be authenticated by Micetro or by an external authentication service (such as existing Active Directory account on the network). See :ref:`external-auth`.
 
 Email address
-  The user's email address. Used for sending notifications such as scheduled reports, subnet monitoring updates, etc.
+  The user's email address. Used for sending notifications such as scheduled reports, subnet monitoring updates, etc. Disabled with external authentication.
 
 Password/Confirm Password
-  If the **Authentication type** selected is *Men&Mice internal*, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above.
+  If the **Authentication type** selected is *Men&Mice internal*, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above. Disabled with external authentication.
 
 In the :guilabel:`Groups` and :guilabel:`Roles` tabs, select the user group(s) and role(s) to which you want to assign this user. Each user can be assigned to none or to multiple groups and roles.
 

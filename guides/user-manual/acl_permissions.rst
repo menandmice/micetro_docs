@@ -37,15 +37,13 @@ Setting permissions
 
   An information button will appear on the top right of the dialog box, providing a summary of dependent permissions enables if hovered over.
 
-  Turning off the permissions will **not** disable the automatically enabled dependent permissions.
+  Turning off the permission(s) will **not** disable the automatically enabled dependent permissions. Turning off the dependent permission(s) will still allow the role to be saved.
 
 .. _block-permission:
 
 Block permission
 ----------------
 
-When a permission is enabled, it'll set the access flag to ``allow``, otherwise it'll set it as ``deny``.
-
-When you **block** a permission on a role, it'll prevent any other role to overwrite that permission.
+When a permission is enabled, it'll set the access flag to ``allow``. When you **block** a permission on a role, it is set as ``deny`` and *prevent any other role* to overwrite that permission.
 
 *Example:* The role *Worfklow Blocked* has the "Access to Workflow module" permission blocked. The built-in role "DNS approvers" has this permission enabled. Attaching user ``janedoe`` to both roles will result in the user **not** being able to access the Workflow module. Even though the *DNS approvers* role would allow it, the permission block set in *Workflow Blocked* will prevent it to take effect.

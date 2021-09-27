@@ -83,7 +83,7 @@ Run the downloaded binary and follow the instructions on-screen.
 
   When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
 
-  The service account running Central needst to be added to the DNS Admins and/or DHCP Admins group to manage data.
+  The service account running Central needs to be added to the DNS Admins and/or DHCP Admins group to manage data.
 
 .. important::
   The installer creates the data directories for Men&Mice Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.

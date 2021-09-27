@@ -1,4 +1,4 @@
-.. meta:: 
+.. meta::
    :description: Access control for groups in Micetro by Men&Mice 10.1
    :keywords: Micetro access model
 
@@ -14,7 +14,7 @@ Adding a New Group
 
 1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar. The default groups are displayed here, as well as any other groups you have already created.
 
-2. Click the :guilabel:`Add` button and select whether to add an external (authenticated and managed through an external source such as Active Directory or LDAP) or create a local group (authenticated and managed through Micetro only). 
+2. Click the :guilabel:`Add` button and select whether to add an external (authenticated and managed through an external source such as Active Directory or LDAP) or create a local group (authenticated and managed through Micetro only).
 
 For **local group** the following dialog box displays:
 
@@ -32,17 +32,12 @@ For **local group** the following dialog box displays:
 
   Users
     Any users that you want to add to this group. (Users can be added/removed at any time.)
-   
+
 .. image:: ../../images/create-micetro-group.png
   :width: 60%
   :align: center
 
 3. When all selections/entries are made, click :guilabel:`Save`.
-
-.. note::
-   For **external groups**, the group name field must match the name in the external authentication. See :ref:`external-auth`.
-
-   External groups do not have a *Users* tab, and users cannot be added or removed through Micetro.
 
 Editing a Group
 ^^^^^^^^^^^^^^^
@@ -71,3 +66,15 @@ Through this function, you delete a group.
 3. From the ellipsis menu, select :guilabel:`Remove user` or use :menuselection:`Actions --> Remove user`.
 
 4. To remove the group, click the :guilabel:`Yes` button. The group is removed.
+
+External groups (Active Directory, LDAP)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For external groups, such as those managed in Active Directory, use the :guilabel:`Add --> AD Group` or :guilabel:`Add --> LDAP group`. The **group name** field must match the name in the external authentication. See :ref:`external-auth`.
+
+.. note::
+  External groups do not have a *Users* tab when adding the group to Micetro.
+
+  After the external group is added to Micetro, it will not contain users. Users are only added to the external group after their first login.
+
+For more information, see :ref:`active-directory` and :ref:`external-auth`.

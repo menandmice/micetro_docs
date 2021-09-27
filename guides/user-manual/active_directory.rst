@@ -11,7 +11,7 @@ AD Sites and Subnets
 Overview
 --------
 
-Micetro allows administrators to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites and add, remove, and move subnets between the sites. 
+Micetro allows administrators to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites and add, remove, and move subnets between the sites.
 
 .. note::
   AD sites and subnets integration is only available when Men&Mice Central is running on a Windows server, and it is enabled by default. See :ref:`admin-general`.
@@ -44,8 +44,6 @@ Adding an AD Forest
 .. image:: ../../images/add-ad-forest.png
   :width: 60%
   :align: center
-
-**[TO-DO: re-do screenshots.]**
 
 Use same Global Catalog as the Men&Mice Central server
   If checked, Micetro will use the same Global Catalog server as the Men&Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server's FQDN or IP address in the **Global Catalog Server** field.
@@ -106,7 +104,7 @@ Data from AD Forests is synchronized by Men&Mice Central regularly. To manually 
 AD Subnets
 ----------
 
-View subnets in a site 
+View subnets in a site
 ^^^^^^^^^^^^^^^^^^^^^^
 
 To view subnets within a specific site:
@@ -122,10 +120,10 @@ This will open the :menuselection:`IPAM --> Networks` context with a filter appl
 .. note::
   You can also use the :guilabel:`-> View` button in the Inspector of the selected AD site to open the subnet view.
 
-Moving subnets between AD sites 
+Moving subnets between AD sites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add subnet(s) to a site, or move between sites: 
+To add subnet(s) to a site, or move between sites:
 
 1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
 
@@ -135,12 +133,12 @@ To add subnet(s) to a site, or move between sites:
 
 .. note::
   Child subnets cannot be moved to a different site than the parent subnet unless the ``Enforce site inheritance`` checkbox is unchecked in the System Settings dialog box.
-  
+
   Subnets whose AD site settings are ingerited from a parent range will have a ``<AD Site Name> (inherited)`` notation added.
 
   See :ref:`admin-general`.
 
-Remove subnet from AD site 
+Remove subnet from AD site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
@@ -150,7 +148,7 @@ Remove subnet from AD site
 3. Click :guilabel:`Yes` to confirm the removal.
 
 
-Subnets outside of sites 
+Subnets outside of sites
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 To view subnets that don't belong to any AD site:
@@ -161,6 +159,6 @@ To view subnets that don't belong to any AD site:
 
 3. Sort the IP address ranges by the **AD Site** column in *ascending* order:
 
-.. image:: ../../images/subnets-outside-sites.png 
+.. image:: ../../images/subnets-outside-sites.png
   :width: 90%
   :align: center
