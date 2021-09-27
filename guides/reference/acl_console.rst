@@ -6,7 +6,7 @@
 
 .. _acl-console:
 
-Managing access control in the Management Console 👣👣👣👣
+Managing access control in the Management Console 👣👣
 -------------------------------------------------
 
 Access control management in the Management Console uses the new access control model, but its features are slightly different than those available in the Web Application.
@@ -47,14 +47,63 @@ Adding a new role
 4. Click :guilabel:`Ok`.
 
 .. important::
-  *Creating* the role doesn't set any access for the role in the Management Console. For configuring permissions, follow the steps in :ref:`console-role-perms`.
+  The function for *creating* the role doesn't contain options to set access for it in the Management Console. For configuring access, follow the steps in :ref:`console-role-perms`.
 
 .. _console-role-perms:
 
 Configuring access for a role
 """""""""""""""""""""""""""""
 
+.. note::
+  Unlike the in Web Application, configuring access for roles is sectioned by object type (i.e. DNS servers, zones, clouds, etc.).
 
+1. Open :menuselection:`Tools --> Role access for` and select the object type from the menu.
+
+.. note::
+  To manage access for Micetro (module access, setting user admins, etc.) use :menuselection:`Tools --> Micetro access`.
+
+.. image:: ../../images/acl-console-access-for.png
+  :width: 90%
+  :align: center
+
+2. In the **Access control** dialog, you'll see all roles that have relevant access configured on them.
+
+.. image:: ../../images/acl-console-access-control-dialog.png
+  :width: 60%
+  :align: center
+
+3. To configure access for the selected object type to a role:
+
+  3/1. Select the role in the top window, or click :ref:`Add...` to add a role that doesn't have access configured for the object type yet.
+
+  3/2. In the bottom panel, select all checkboxes for the access permissions you'd like to enable.
+
+  .. note::
+    Selecting **Deny** is the equivalent of **Block** in the Web Application. See :ref:`block-permission` for more details.
+
+4. Click :guilabel:`OK` when all the desired access permissions are set.
 
 Removing a role
 """""""""""""""
+
+To *remove a role's access permissions from an object type* use the :menuselection:`Tools --> Role access for` menu. Select the role in the top panel and click on :guilabel:`Remove`. This will remove all configured access permissions from the role, but **not the role itself**.
+
+To *remove a role from Micetro* use :menuselection:`Tools --> User Management` and click on the **Roles** tab. Select the role(s) to remove, and click :guilabel:`Remove`. This will remove **the role and all its configured access permissions** from Micetro completely.
+
+Adding users and groups to a role
+"""""""""""""""""""""""""""""""""
+
+To add users or groups to a role:
+
+1. Open :menuselection:`Tools --> User Management`.
+
+2. Select the user(s) and/or group(s), click :guilabel:`Edit` and in the bottom panel select the roles to attach the user(s)/group(s) to.
+
+.. image:: ../../acl-console-user-role-2021.png
+  :width: 90%
+  :align: center
+
+3. Click :guilabel:`OK` to save the new membership settings.
+
+.. information::
+  Using the **Roles** tab of :menuselection:`Tools --> User Management`, examining a role will display the users and groups attached to the role, but cannot be used for adding users/groups to it.
