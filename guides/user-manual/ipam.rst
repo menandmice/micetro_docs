@@ -302,17 +302,17 @@ Editing a DNS Host
 
 1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Edit`.
 
-3. Make the desired changes and click :guilabel:`Save`. The dialog box closes and the details are updated.
+2. Make the desired changes and click :guilabel:`Save`. The dialog box closes and the details are updated.
 
 Removing a DNS Host
 ^^^^^^^^^^^^^^^^^^^
 
-1. 1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
+1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
 
 Moving IP Address Information (Management Console)
 --------------------------------------------------
 
-IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained, and the associated DNS records are updated.
+IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained and the associated DNS records are updated.
 
 To move a IP Address information, do the following:
 
@@ -381,19 +381,19 @@ Join Ranges
 
 3. Set the properties for the joined range:
 
-Use Access from
-  Click the drop-down list and specify from which range you will gain access.
+  Use Access from
+    Click the drop-down list and specify from which range you will gain access.
 
-Use Properties from
-  Click the drop-down list and specify from which range you will use the properties.
+  Use Properties from
+    Click the drop-down list and specify from which range you will use the properties.
 
-Title
-  Enter a title for the new range.
+  Title
+    Enter a title for the new range.
 
 Description
   Type a description.
 
-5. Click :guilabel:`Join`.
+4. Click :guilabel:`Join`.
 
 Select Parent (Management Console)
 -------------
@@ -499,13 +499,13 @@ To change the monitoring settings for a subnet:
   :width: 50%
   :align: center
 
-1. Right-click and, from the shortcut menu, select :guilabel:`Set Subnet Monitoring`. The *Subnet Monitoring* dialog box displays.
+2. Right-click and, from the shortcut menu, select :guilabel:`Set Subnet Monitoring`. The *Subnet Monitoring* dialog box displays.
 
 Enabled
   When checked, the subnet will be monitored.
 
 Script to invoke
-  Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
+    Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
 
 E-mail addresses
   Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
@@ -522,7 +522,7 @@ Only perform action once (until fixed)
 Perform action when fixed
   When checked, the action is performed when the number of free addresses is no longer below the threshold.
 
-2. Click :guilabel:`OK` to confirm your settings.
+3. Click :guilabel:`OK` to confirm your settings.
 
 Removing Subnet Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -548,9 +548,9 @@ To view the utilization history:
   :width: 80%
   :align: center
 
-* The drop-down box in the top left section of the window allows you to choose the time period to view. You can choose between 30 days, 7 days or 24 hours.
+* The left drop-down box allows you to choose the time period to view. You can choose between 30 days, 7 days or 24 hours.
 
-* Use the drop-down box in the middle to choose whether you want to view the utilization by the actual address count or by percentage.
+* Use the middle drop-down box to choose whether you want to view utilization by the actual address count or by percentage.
 
 * If you are viewing the utilization of a scope, a dropdown box is displayed where you can choose whether you want to view the dynamic part of the scope (the address pool(s)) or the static part of the scope.
 
