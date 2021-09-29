@@ -18,7 +18,7 @@ Micetro allows administrators to integrate Active Directory (AD) sites into the 
 
   AD sites are only assigned to and visible in the ``Default`` address space.
 
-  To add/remove a subnet to/from a site, the user must have the *Can edit range properties* flag set for the subnet. **[TO-DO: update this when rewriting the access control page.]**
+  To add/remove a subnet to/from a site, the user must be assigned to a role with the *Edit range properties* permission set and the role applied to the object. See :ref:`access-control` for more details.
 
 AD sites and subnets are displayed in the :guilabel:`IPAM` context:
 

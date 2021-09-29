@@ -9,8 +9,6 @@ Role-based access example
 Introduction
 ^^^^^^^^^^^^
 
-**[TO-DO: Add screenshots.]**
-
 This article aims to provide practical information on :ref:`acl-roles` and detailed, step-by-step breakdowns for two scenarios: creating a new, read-only role for DHCP scopes, and using the built-in *DNS viewers* role to set up a DNS read-write role.
 
 The information on this page, and the how-tos presented, will provide a blueprint to customize Micetro to your requirements.
@@ -56,21 +54,45 @@ The following steps illustrate how to create a read-write role in Micetro for DN
 
 1. Log in to the Web Application.
 
+.. image:: ../../images/acl-example-1-step-1.png
+  :width: 90%
+  :align: center
+
 2. Navigate to :menuselection:`Admin --> Configuration --> Access Management` and select :guilabel:`Roles`.
 
+.. image:: ../../images/acl-example-1-step-2.png
+  :width: 90%
+  :align: center
+
 3. Press the :guilabel:`Create` button and select :guilabel:`From existing role`.
+
+.. image:: ../../images/acl-example-1-step-3.png
+  :width: 90%
+  :align: center
 
 4. From the dropdown **Select an existing role**, click on ``DNS Viewers (built-in)``.
 
 .. tip::
   If you have the role selected in the grid, *From existing role* will automatically fill in the value for convenience.
 
+.. image:: ../../images/acl-example-1-step-4.png
+  :width: 65%
+  :align: center
+
 5. Edit the **Role name**.
+
+.. image:: ../../images/acl-example-1-step-5.png
+  :width: 50%
+  :align: center
 
 .. note::
   When duplicating a role, editing the **Description** is not available until the new role is created.
 
 6. Select what to copy from the existing role: **Permissions** (default), *Groups*, and/or *Users*.
+
+.. image:: ../../images/acl-example-1-step-6.png
+  :width: 50%
+  :align: center
 
 .. information::
   Duplicating roles will automatically set the role type to *General*.
@@ -78,6 +100,10 @@ The following steps illustrate how to create a read-write role in Micetro for DN
 7. Click :guilabel:`Create` to save the new role.
 
 After saving the new role, Micetro will automatically display the *Edit role properties* dialog for it.
+
+.. image:: ../../images/acl-example-1-step-7.png
+  :width: 90%
+  :align: center
 
 8. Switch over to the :guilabel:`Access` tab and enable the following permission:
 
@@ -101,6 +127,10 @@ After saving the new role, Micetro will automatically display the *Edit role pro
   "DNS zones", "**Edit other records**"
   "DNS zones", "**Edit zone properties**"
 
+.. image:: ../../images/acl-example-1-step-8.png
+  :width: 65%
+  :align: center
+
 .. tip::
   Clicking the checkbox next to the **DNS zones** group will automatically select all permissions within the group.
 
@@ -109,7 +139,15 @@ After saving the new role, Micetro will automatically display the *Edit role pro
 
 9. (Optional) Switch to the :guilabel:`Groups` tab and select the group(s) you'd like to assign to the role.
 
+.. image:: ../../images/acl-example-1-step-9.png
+  :width: 70%
+  :align: center
+
 10. (Optional) Switch to the :guilabel:`Users` tab and select the user(s) you'd like to assign to the role.
+
+.. image:: ../../images/acl-example-1-step-10.png
+  :width: 70%
+  :align: center
 
 .. tip::
   Users and groups can be assigned to and removed from roles at any time.
@@ -127,16 +165,36 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
 
 1. Log in to the Web Application.
 
+.. image:: ../../images/acl-example-1-step-1.png
+  :width: 90%
+  :align: center
+
 2. Navigate to :menuselection:`Admin --> Configuration --> Access Management` and select :guilabel:`Roles`.
+
+.. image:: ../../images/acl-example-1-step-2.png
+  :width: 90%
+  :align: center
 
 3. Press the :guilabel:`Create` button and select :guilabel:`New role`
 
+.. image:: ../../images/acl-example-2-step-3.png
+  :width: 65%
+  :align: center
+
 4. Specify the **Role name**, e.g. ``DHCP Read-Only`` and add a **Description**.
+
+.. image:: ../../images/acl-example-2-step-4.png
+  :width: 90%
+  :align: center
 
 .. tip::
   Using descriptive names and clear text for the description makes access management easier.
 
 5. Choose between the *General* or *Specific* role types.
+
+.. image:: ../../images/acl-example-2-step-5.png
+  :width: 50%
+  :align: center
 
 .. information::
   The preferred role type in Micetro is the :ref:`acl-general-roles`. Specific roles exist to preserve backwards compatibility and added flexibility to edge use cases.
@@ -148,6 +206,10 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
   :widths: 30, 70
 
   "Ranges and DHCP scopes", "**Read scope options**"
+
+.. image:: ../../images/acl-example-2-step-6.png
+  :width: 65%
+  :align: center
 
 7. Notice that a blue :guilabel:`(i)` indicator appears on the top right. Hovering over will show that in order for the selected permissions to take effect, additional permissions will be set:
 
@@ -162,6 +224,10 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
   "Ranges and DHCP scopes", "List (or view) range"
   "Address spaces", "List (or view) address space"
 
+.. image:: ../../images/acl-example-2-step-7.png
+  :width: 90%
+  :align: center
+
 .. tip::
   Micetro will automatically enable these permissions upon saving the new role. You can check the permissions granted to the role by switching to :guilabel:`View defined` using the radio button.
 
@@ -170,7 +236,15 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
 
 8. (Optional) Switch to the :guilabel:`Groups` tab and select the group(s) you'd like to assign to the role.
 
+.. image:: ../../images/acl-example-2-step-8.png
+  :width: 50%
+  :align: center
+
 9. (Optional) Switch to the :guilabel:`Users` tab and select the user(s) you'd like to assign to the role.
+
+.. image:: ../../images/acl-example-2-step-9.png
+  :width: 50%
+  :align: center
 
 .. tip::
   Users and groups can be assigned to and removed from roles any time.
