@@ -42,3 +42,6 @@ This will restrict access to that particular object to the selected users/groups
   Situations may arise that adding a specific role to an object would not take effect because of missing permissions on parent objects. Micetro will calculate the necessary permissions needed, and can automatically add them to the relevant objects.
 
   A notification will display on the *Save comment* dialog, detailing the additional changes. If the user doesn't have the necessary access to set permissions of these objects, an advisory will display.
+
+.. note::
+  General roles can be restricted from accessing single objects. See :ref:`acl-object-access`.

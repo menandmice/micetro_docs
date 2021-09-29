@@ -79,7 +79,7 @@ Configuring access for a role
   3/2. In the bottom panel, select all checkboxes for the access permissions you'd like to enable.
 
   .. note::
-    Selecting **Deny** is the equivalent of **Block** in the Web Application. See :ref:`block-permission` for more details.
+    Selecting **Deny** is the equivalent of **Block** in the Web Application. See :ref:`block-permission` for more details. Setting 'deny' on a permission will block any other role to overwrite this setting.
 
 4. Click :guilabel:`OK` when all the desired access permissions are set.
 

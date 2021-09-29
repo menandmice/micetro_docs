@@ -47,3 +47,6 @@ Block permission
 When a permission is enabled, it'll set the access flag to ``allow``. When you **block** a permission on a role, it is set as ``deny`` and *prevent any other role* to overwrite that permission.
 
 *Example:* The role *Worfklow Blocked* has the "Access to Workflow module" permission blocked. The built-in role "DNS approvers" has this permission enabled. Attaching user ``janedoe`` to both roles will result in the user **not** being able to access the Workflow module. Even though the *DNS approvers* role would allow it, the permission block set in *Workflow Blocked* will prevent it to take effect.
+
+.. note::
+  Permissions that are not set are simply returned as "null." These empty access flags are **not** equivalent to 'deny' and **can** be overwritten by access flags configured in other roles.

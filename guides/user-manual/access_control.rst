@@ -34,6 +34,8 @@ The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-role
 
 * Groups *cannot* contain groups.
 
+* Users from externally managed groups, such as Active Directory, cannot be added to local groups.
+
 * Users and groups can be assigned to any number of roles.
 
 .. _administrator:
@@ -45,7 +47,7 @@ The built-in, local ``administrator`` user exists outside of regular access cont
 
 The password for the ``administrator`` user is configured during the :ref:`first-run-wizard`.
 
-The ``administrator`` user cannot be removed from Micetro, and cannot be authenticated by SSO.
+The ``administrator`` user cannot be removed from Micetro, and is always local (cannot be authenticated by SSO).
 
 New objects
 -----------
@@ -71,3 +73,4 @@ To check access to a specific object and troubleshoot access control issues, see
   acl_effective_access
   acl_users
   acl_groups
+  acl_object_access

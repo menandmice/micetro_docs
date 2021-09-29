@@ -29,10 +29,8 @@ Access to folders
 
 *Folders* are created globally: only users/groups attached to an Administrator role can create object or smart folders. Folders are visible to all users in the system.
 
-..note::
-  *Objects in folders* are only visible to those that have the correct role to view them.
-
-See :ref:`access-control` for details on roles and permissions.
+.. note::
+  *Objects in folders* are only visible to those that have the correct role to view them. See :ref:`access-control` for details on roles and permissions.
 
 Folders are **not shared** across address spaces and cannot be moved from one address space to another.
 

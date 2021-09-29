@@ -53,3 +53,6 @@ Approvers
    Built-in roles cannot be deleted.
 
    :ref:`acl-permissions` for built-in roles cannot be modified.
+
+.. note::
+  General roles can be restricted from accessing single objects. See :ref:`acl-object-access`.

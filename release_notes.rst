@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro by Men&Mice 10.0.x versions
+   :description: Release notes for Micetro by Men&Mice 10.1.x versions
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
