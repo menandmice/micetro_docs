@@ -1,4 +1,4 @@
-Men&Mice Suite 9.3.10
+Men&Mice Suite 9.3.13
 #####################
 
 Welcome to the Men&Mice Suite, a backend-agnostic DDI orchestration software for complex enterprise network environments.
@@ -34,7 +34,7 @@ Table of Contents
     opensource
 
 .. toctree::
-     :caption: Installing the Suite
+     :caption: Installing the Men&Mice Suite
      :maxdepth: 3
 
      guides/implementation/implementation
@@ -49,7 +49,6 @@ Table of Contents
      guides/user-manual/introduction
      guides/user-manual/console
      guides/user-manual/web_application
-     guides/user-manual/administration
      guides/user-manual/dns
      guides/user-manual/dhcp
      guides/user-manual/ipam
@@ -57,6 +56,21 @@ Table of Contents
      guides/user-manual/active_directory
      guides/user-manual/cloud
      guides/user-manual/automation
+
+.. toctree::
+    :caption: Men&Mice Suite Admin Guide
+    :maxdepth: 3
+
+    guides/user-manual/administration
+    guides/user-manual/admin_system_settings
+    guides/user-manual/access_control
+    guides/user-manual/admin_license
+    guides/user-manual/admin_updates
+    guides/user-manual/admin_custom_properties
+    guides/user-manual/admin_schedule_scripts
+    guides/user-manual/admin_maintenance
+    guides/user-manual/appliance_management
+    guides/user-manual/caching_appliance
 
 .. toctree::
     :caption: Reference articles
