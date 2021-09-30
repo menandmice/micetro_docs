@@ -12,17 +12,7 @@ DNS Records can be imported in the Micetro Web Application.
 Prerequisites
 -------------
 
-The user importing must have the following permissions:
-
-* Access to DNS Module
-
-* Access to the Web Application
-
-* Access to Advanced Zone view in Web Application
-
-* Access to "Import Data" web task
-
-In addition, the user doing the import needs to have access to edit records in the zones used in the import.
+The user importing must have access to edit records in the zones used in the import.
 
 See :ref:`access-control` for further information on access controls.
 
@@ -43,12 +33,6 @@ DNS bulk import format
 .. note::
   When choosing files, only plaintext CSV/TSV/TXT files are accepted. Excel spreadsheets need to be exported to one of these formats prior to importing.
 
-When the value in a particular column is empty, it is by default not cleared. Instead it is not included in the import. This makes it possible to update certain fields and leave others as is, in the same import.
-
-To clear values for a custom property, e.g. Location, use one of these clearing tokens instead of a blank value: ``$null``, ``%clear``, ``<none>``, ``<blank>``, or ``<empty>``.
-
-These tokens will only be interpreted to clear the field if field contains only the token and nothing else. For example if the field value is "This is <none>" in the import text, the field would not be cleared, but set to that value instead.
-
 Header line
 """""""""""
 
@@ -63,7 +47,16 @@ Built-in fields
 """""""""""""""
 
 action
-  (Default: **Add**) Add, Modify, or Delete.
+  (Default: **Add**) Add, Modify, or Remove.
+
+  .. tip::
+    The following aliases can be also used:
+
+    * Insert/Create = Add
+
+    * Update/Change = Modify
+
+    * Delete/Del = Remove
 
 name
   (required) Hostname of the record.
