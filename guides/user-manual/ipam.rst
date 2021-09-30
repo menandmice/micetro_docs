@@ -324,6 +324,8 @@ To move a IP Address information, do the following:
 
 6. Click :guilabel:`OK`. The IP Address information is moved to the new IP Address.
 
+.. _split-range-wizard:
+
 Split/Allocate Range Wizard
 ---------------------------
 
