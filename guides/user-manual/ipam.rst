@@ -47,10 +47,8 @@ Users with sufficient permissions are allowed to create, modify or delete addres
 
 Navigate to :menuselection:`Admin --> Configuration --> Address Spaces`
 
-**[TO-DO: screenshot.]**
-
-.. image:: ../../images/console-ipam-address-spaces.png
-  :width: 50%
+.. image:: ../../images/address-spaces.png
+  :width: 90%
   :align: center
 
 To **create** a new address space, click the :guilabel:`Add` button in the top bar and enter the name and description for the address space.
@@ -206,12 +204,6 @@ Network Configuration
 
 When creating a new network, DHCP scope, or container, you must complete the Properties dialog box in the final step.
 
-**[TO-DO: screenshot.]**
-
-.. image:: ../../images/create-network-properties-Micetro.png
-  :width: 60%
-  :align: center
-
 These properties are defined in :ref:`admin-custom-properties`.
 
 Network Modifications
@@ -335,8 +327,6 @@ To move a IP Address information, do the following:
 Split/Allocate Range Wizard
 ---------------------------
 
-**[TO-DO: add screenshot(s).]**
-
 This wizard allows you to create multiple subranges from an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
 1. Open the :menuselection:`IPAM` context and select the range you'd like to split.
@@ -344,6 +334,10 @@ This wizard allows you to create multiple subranges from an existing range. The 
 2. Use the :guilabel:`Action --> Allocate Subranges` action from the top bar or the ellipsis menu.
 
 3. Configure the new subranges. If you choose fewer subnets that fit in the parent, you can also set the offset from where you want to start allocating. Click :guilabel:`Next` when finished configuring.
+
+.. image:: ../../images/subranges-wizard.png
+  :width: 65%
+  :align: center
 
 4. Define the title and custom properties for the new subranges. Click :guilabel:`Next` when done.
 
@@ -373,10 +367,8 @@ Join Ranges
 
 2. Use the :guilabel:`Action --> Join Ranges` action from the top bar or ellipsis menu.
 
-**[TO-DO: screenshot.]**
-
-.. image:: ../../images/console-ipam-join-ranges.png
-  :width: 70%
+.. image:: ../../images/join-ranges.png
+  :width: 90%
   :align: center
 
 3. Set the properties for the joined range:
