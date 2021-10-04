@@ -10,7 +10,36 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`
+Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`
+
+.. _10.0.4-release:
+
+10.0.4
+------
+
+*October 5th, 2021.*
+
+* Multiline TXT records from Dyn are again correctly parsed. Feel free to store your experimental poetry in DNS records.
+
+* Micetro properly handles the limits and throttling of Azure cloud again. It also apologizes if it was too pushy or not pushy enough.
+
+* Adding or editing large SPF records in Azure or AWS no longer result in an error. Size matters not.
+
+* Improved the process of syncing cloud accounts with Micetro, preventing accidentally clearing and repopulating data.
+
+* Adding subnets to Micetro through external synchronization properly creates a history entry. Micetro remembers.
+
+* Fixed an SQL syntax error occuring when updating from 9.x to 10.0. It ws a tpyo, the responsible person had their hand slapped, everybody's happy.
+
+* Updating Men&Mice Central on Windows 2016 Server no longer fails. You can resume living on the bleeding edge and update Micetro to the latest version.
+
+* Improved connection reliability for customers with slower devices.
+
+* Micetro will properly reload the list of IP addresses after finishing a ping task. As a valued Men&Mice customer, you deserve only the freshest data.
+
+* Micetro will once again correctly read configuration information, and enable logging when configured.
+
+* MM-20545
 
 .. _10.0.3-release:
 
