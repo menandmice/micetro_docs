@@ -39,8 +39,6 @@ Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :r
 
 * Micetro will once again correctly read configuration information, and enable logging when configured.
 
-* MM-20545
-
 .. _10.0.3-release:
 
 10.0.3
