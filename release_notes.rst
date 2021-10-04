@@ -8,7 +8,7 @@ Release notes
 =============
 
 .. note::
-  All upcoming major releases are supported for 2 years.
+  Major releases are supported for 2 years.
 
 Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`
 
