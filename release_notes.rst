@@ -17,7 +17,7 @@ Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :r
 10.0.4
 ------
 
-*October 5th, 2021.*
+*October 6th, 2021.*
 
 * Multiline TXT records from Dyn are again correctly parsed. Feel free to store your experimental poetry in DNS records.
 
