@@ -55,4 +55,4 @@ The DNS agent will use two different methods to retrieve information from Micros
 The DNS agent on the DNS server must be able to transfer AD integrated zones from the local DNS server.
 
 .. note::
-  There is a global setting in that allows Micetro to adjust the zone transfer settings for dynamic or AD integrated zones. It is enabled by default but the administrator can change this setting. See :ref:`disable-auto-zone-transfer` for details.
+  There is a global setting in the Management Console that allows Micetro to adjust the zone transfer settings for dynamic or AD integrated zones. It is enabled by default but the administrator can change this setting. See :ref:`disable-auto-zone-transfer` for details.
