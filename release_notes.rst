@@ -42,7 +42,7 @@ Improvements
 
 * MM-20785	A new slide-in help is available for many functions, offering further details on functionality and syntax for their respective operations. Not a water slide in a theme park, but it is still weirdly satisfying.
 
-* MM-19898	Micetro components will no longer display errors if they're different minor versions. We're all one family here.
+* MM-19898	Micetro components will no longer display errors if they're reporting different minor versions. We're all one family here.
 
 * MM-18391	Users can import DHCP reservations to Micetro using the Web Application, including bulk import. Get yer CSV goodness on!
 
@@ -66,7 +66,7 @@ Bug fixes
 
 * MM-21082	Creating new reports will not crash the Web Application.
 
-* MM-21077	DNS and IPAM data is properly updated when changing address space. Multiverse mixup, we've had words with the Sorcerer Supreme.
+* MM-21077	DNS and IPAM data is properly updated when changing address spaces. Multiverse mixup, we've had words with the Sorcerer Supreme.
 
 * MM-21075	Using the Quick Filter properly highlights the query in the name column. As this is how it's supposed to work, this fix is a highlight to share.
 
@@ -78,15 +78,15 @@ Bug fixes
 
 * MM-21046	Creating a reservation in the Management Console will successfully close and refresh the IP data.
 
-* MM-21041	Users can once again able to edit and view Microsoft DHCP server options in the Management Console.
+* MM-21041	Users are once again able to edit and view Microsoft DHCP server options in the Management Console.
 
 * MM-21036	Creating a scope on a Cisco DHCP server again works as expected.
 
-* MM-21033	No longer possible for the logged in user to remove themselves. Word came down that it created a bunch of variants that bottlenecked the TVA, and who needs that.
+* MM-21033	No longer possible for the logged-in user to remove themselves. Word came down that it created a bunch of variants that bottlenecked the TVA, and who needs that?
 
 * MM-21021	Updating refresh times on SOA records will no longer fail with a cryptic error.
 
-* MM-21018	Tooltips no longer appear erroneously on top of the screen after closing their window. They understand now that they have to respect the boundaries as others, just like all polite UI elements do.
+* MM-21018	Tooltips no longer appear erroneously on top of the screen after closing their window. They understand now that they have to respect the boundaries of others, just like all polite UI elements do.
 
 * MM-21002	Editing a DHCP pool will no longer result in a locked up dialog window due to illegal from/to address input.
 
@@ -116,7 +116,7 @@ Bug fixes
 
 * MM-20481	The 'Edit reservation' button once again works as expected. Good button, have a cookie.
 
-* MM-20372	Resizing the Inspector panel will no longer causes sections to lock up. No DataTables left behind.
+* MM-20372	Resizing the Inspector panel will no longer cause sections to lock up. No DataTables left behind.
 
 * MM-20287	You can use 'Add to favorites' on IPAM objects as well. We don't like to play favorites, so we're giving favorites to all.
 
@@ -136,9 +136,9 @@ Bug fixes
 
 * MM-19444	The 'Edit configuration' task is no longer enabled for unreachable servers.
 
-* MM-17345	The 'Add DNS Zone' task from Quick Command properly fills out the name for the zone. Otherwise it's not magic, now is it.
+* MM-17345	The 'Add DNS Zone' task from Quick Command properly fills out the name for the zone. Otherwise it's not magic, now is it?
 
-* MM-16638	Clicking 'Save' on dialogs with no changes made closes the dialog; dialogs that have been modified are validated.
+* MM-16638	Clicking 'Save' on dialogs with no changes made closes the dialog. Clicking save on dialogs that have been modified validates the input.
 
 Other
 ^^^^^
