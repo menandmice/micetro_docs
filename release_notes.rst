@@ -64,23 +64,13 @@ Bug fixes
 
 *
 
-* MM-21082	Creating new reports will not crash the Web Application.
-
 * MM-21077	DNS and IPAM data is properly updated when changing address spaces. Multiverse mixup, we've had words with the Sorcerer Supreme.
 
 * MM-21075	Using the Quick Filter properly highlights the query in the name column. As this is how it's supposed to work, this fix is a highlight to share.
 
-* MM-21053	Address spaces will no longer be created partially in the Web Application. Mystical wholeness restored.
-
 * MM-21052	Using the 'View scopes' action on a DHCP server will properly show the scopes on the DHCP server. Because it. Has. One. Job.
 
-* MM-21050	The grid is properly reloaded after removing an AD Forest.
-
-* MM-21046	Creating a reservation in the Management Console will successfully close and refresh the IP data.
-
-* MM-21041	Users are once again able to edit and view Microsoft DHCP server options in the Management Console.
-
-* MM-21036	Creating a scope on a Cisco DHCP server again works as expected.
+* MM-21036	Creating a scope on a Cisco DHCP server no longer fails randomly.
 
 * MM-21033	No longer possible for the logged-in user to remove themselves. Word came down that it created a bunch of variants that bottlenecked the TVA, and who needs that?
 
@@ -92,11 +82,7 @@ Bug fixes
 
 * MM-21001	Converting a network to a DHCP scope will no longer have a missing field. It's returned safe and sound, we can take it off the milk cartons finally.
 
-* MM-20958	Using the 'View history' action will no longer return an error message.
-
-* MM-20956	Existing SNMP profiles are properly detected in the Web Application.
-
-* MM-20947	Adding license keys in the Web Application will properly disable the First Run Wizard in the Management Console. A wizard is never late, but it also shouldn't just show up willy-nilly either.
+* MM-20958	Using the 'View history' action will no longer return an error message when a filter is applied.
 
 * MM-20910	The 'Reserve' button will no longer disappear from the Action menu. This type of hide-and-seek is not appropriate in the workplace.
 
@@ -109,8 +95,6 @@ Bug fixes
 * MM-20607	Users can use the 'subType' field as a query paramaters within data from cloud providers. Suber!
 
 * MM-20593	Adding a cloud provider to Micetro properly runs synchronization for DNS data.
-
-* MM-20551	Router scanning will no longer crash Men&Mice Central. Scan away at will. Or when you need to.
 
 * MM-20511	Men&Mice Web Services will no longer report unhandled exceptions on a Windows Server. While Micetro is exceptional, we're plenty able to handle it.
 
