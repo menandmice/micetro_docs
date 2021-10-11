@@ -248,6 +248,8 @@ Use this function to fix inconsistencies between information in the registry and
 
 3. Choose whether you want to verify only or fix any inconsistencies and click :guilabel:`OK` to complete the action.
 
+For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
+
 Scope Policies (Windows Server 2012 or newer) (Management Console)
 ------------------------------------------------------------------
 
