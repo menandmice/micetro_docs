@@ -25,7 +25,7 @@ When you upgrade your Micetro components (see :ref:`updates`), the database will
 
 * access settings for legacy roles on objects are preserved, using the :ref:`acl-specific-roles` mechanism
 
-Migrating :ref:`acl_legacy_roles`
+Migrating :ref:`acl-legacy-roles`
 ---------------------------------
 
 Legacy roles are a transitional role type to help migration and preserve backward compatibility. Men&Mice recommends converting legacy roles as soon as possible.
@@ -33,7 +33,7 @@ Legacy roles are a transitional role type to help migration and preserve backwar
 Eythor:
   A (legacy) role is generated for any user or group previously in Initial access, which has general access for that object type, with the same permissions as the initial access had. the generated role will be called e.g. "Greg (User)" or "Dev (Group)"
 
-Converting to :ref:`acl_general_roles`
+Converting to :ref:`acl-general-roles`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Converting a legacy role into a general role removes all object-specific access, and makes it applicable to all objects in the system. If the legacy role had an exclusion for specific object types, it'll also be applied system-wide.
@@ -41,7 +41,7 @@ Converting a legacy role into a general role removes all object-specific access,
 Eythor:
   Legacy -> General: Wipes out all object specific access, including legacy overrides or exclusions from general access on specific objects, and any access defined for the role will apply to every object in the system.
 
-Converting to :ref:`acl_specific_roles`
+Converting to :ref:`acl-specific-roles`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Converting the legacy role into a specific role
