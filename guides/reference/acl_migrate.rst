@@ -30,7 +30,7 @@ Migrating :ref:`acl_legacy_roles`
 
 Legacy roles are a transitional role type to help migration and preserve backward compatibility. Men&Mice recommends converting legacy roles as soon as possible.
 
-..
+Eythor:
   A (legacy) role is generated for any user or group previously in Initial access, which has general access for that object type, with the same permissions as the initial access had. the generated role will be called e.g. "Greg (User)" or "Dev (Group)"
 
 Converting to :ref:`acl_general_roles`
@@ -38,7 +38,7 @@ Converting to :ref:`acl_general_roles`
 
 Converting a legacy role into a general role removes all object-specific access, and makes it applicable to all objects in the system. If the legacy role had an exclusion for specific object types, it'll also be applied system-wide.
 
-..
+Eythor:
   Legacy -> General: Wipes out all object specific access, including legacy overrides or exclusions from general access on specific objects, and any access defined for the role will apply to every object in the system.
 
 Converting to :ref:`acl_specific_roles`
@@ -46,5 +46,5 @@ Converting to :ref:`acl_specific_roles`
 
 Converting the legacy role into a specific role
 
-..
+Eythor:
   Legacy -> Specific (the hard one). If the legacy role was general for some object type, after converting to Specific it will not have access to any of the objects of that type. For other object types, we cleanup the access, such that any object specific overrides will instead inherit the access from the role. Example: if you had initial access on DNS servers before (e.g. list/view) but not on Zones, but had granted the role access to select zones, then after converting to Specific, the role will not have access to any servers (even if some servers had overridden/different permissions or were excluded) but it will have access to the same zones as before, with consistent permissions across these zones
