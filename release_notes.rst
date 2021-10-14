@@ -62,8 +62,6 @@ Bug fixes
 
 * BIND installer will no longer get stuck during installation. Sticks and stones may break our bones, but stuck things are just weird.
 
-*
-
 * DNS and IPAM data is properly updated when changing address spaces. Multiverse mixup, we've had words with the Sorcerer Supreme.
 
 * Using the Quick Filter properly highlights the query in the name column. As this is how it's supposed to work, this fix is a highlight to share.
