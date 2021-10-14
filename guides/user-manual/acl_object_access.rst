@@ -30,7 +30,7 @@ If needed, :ref:`acl-general-roles` can be excluded from access to the single ob
 The excluded role will still be shown in the list, but greyed out and struck through.
 
 .. information::
-  Specific roles cannot be excluded, as they're set on single objects. The 'exclude role' function is available to manage object access on a case-by-case basis for general roles.
+  Specific roles cannot be excluded, as they're set on single objects. The 'exclude role' function is available to manage (restrict) object access on a case-by-case basis for general roles.
 
 Access inheritance
 ^^^^^^^^^^^^^^^^^^
