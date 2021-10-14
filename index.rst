@@ -1,6 +1,6 @@
 .. meta::
    :description: Product documentation for Micetro by Men&Mice
-   :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide 
+   :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide
 
 Micetro by Men&Mice 10.0
 ########################
@@ -36,8 +36,12 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 Table of Contents
 -----------------
 
+Table of Contents
+-----------------
+
 .. toctree::
-    :caption: Micetro by Men&Mice
+    :caption: Men&Mice Suite
+    :maxdepth: 1
 
     release_notes
     security_announcements
@@ -45,7 +49,7 @@ Table of Contents
     opensource
 
 .. toctree::
-     :caption: Installing Micetro
+     :caption: Installing the Men&Mice Suite
      :maxdepth: 3
 
      guides/implementation/implementation
@@ -54,13 +58,12 @@ Table of Contents
      guides/implementation/updates
 
 .. toctree::
-     :caption: Using Micetro
+     :caption: Using The Men&Mice Suite
      :maxdepth: 3
 
      guides/user-manual/introduction
-     guides/user-manual/web_application
      guides/user-manual/console
-     guides/user-manual/administration
+     guides/user-manual/web_application
      guides/user-manual/dns
      guides/user-manual/dhcp
      guides/user-manual/ipam
@@ -70,7 +73,22 @@ Table of Contents
      guides/user-manual/automation
 
 .. toctree::
-    :caption: Reference articles
+    :caption: Men&Mice Suite Admin Guide
     :maxdepth: 3
+
+    guides/user-manual/administration
+    guides/user-manual/admin_system_settings
+    guides/user-manual/access_control
+    guides/user-manual/admin_license
+    guides/user-manual/admin_updates
+    guides/user-manual/admin_custom_properties
+    guides/user-manual/admin_schedule_scripts
+    guides/user-manual/admin_maintenance
+    guides/user-manual/appliance_management
+    guides/user-manual/caching_appliance
+
+.. toctree::
+    :caption: Reference articles
+    :maxdepth: 1
 
     guides/reference/reference
