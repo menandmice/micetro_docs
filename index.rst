@@ -34,7 +34,7 @@ Table of Contents
     opensource
 
 .. toctree::
-     :caption: Installing the Men&Mice Suite
+     :caption: Installing the Suite
      :maxdepth: 3
 
      guides/implementation/implementation
@@ -43,7 +43,7 @@ Table of Contents
      guides/implementation/updates
 
 .. toctree::
-     :caption: Using The Men&Mice Suite
+     :caption: Using the Suite
      :maxdepth: 3
 
      guides/user-manual/introduction
@@ -58,7 +58,7 @@ Table of Contents
      guides/user-manual/automation
 
 .. toctree::
-    :caption: Men&Mice Suite Admin Guide
+    :caption: Suite Admin Guide
     :maxdepth: 3
 
     guides/user-manual/administration
@@ -73,7 +73,7 @@ Table of Contents
     guides/user-manual/caching_appliance
 
 .. toctree::
-    :caption: Reference articles
+    :caption: Reference
     :maxdepth: 1
 
     guides/reference/reference
