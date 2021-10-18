@@ -6,8 +6,8 @@ For detailed information on the preferred method of access management, see :ref:
 
 .. _acl-console:
 
-Managing access control in the Management Console 👣👣
------------------------------------------------------
+Managing access control in the Management Console
+-------------------------------------------------
 
 Access control management in the Management Console uses the new access control model, but its features are slightly different than those available in the Web Application.
 
