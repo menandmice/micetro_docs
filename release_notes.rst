@@ -8,9 +8,7 @@ Release notes
 =============
 
 .. note::
-  All upcoming major releases are supported for 2 years.
-
-Jump to: :ref:`10.1-release`
+  Major releases are supported for 2 years.
 
 .. _10.1-release:
 
