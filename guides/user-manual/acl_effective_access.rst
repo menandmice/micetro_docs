@@ -32,7 +32,7 @@ Object access
       :width: 80%
       :align: center
 
-.. information::
+.. note::
    The *Effective access* dialog will display detailed warnings if permissions to the selected object are set, but a parent permission is not.
 
    *Example:* examining effective access on a DNS zone might reveal that the user is attached to a role that has permission to view DNS zones, but no permission to use the DNS module.

@@ -105,5 +105,5 @@ To add users or groups to a role:
 
 3. Click :guilabel:`OK` to save the new membership settings.
 
-.. information::
+.. note::
   Using the **Roles** tab of :menuselection:`Tools --> User Management`, examining a role will display the users and groups attached to the role, but cannot be used for adding users/groups to it.

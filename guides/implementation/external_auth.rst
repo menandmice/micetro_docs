@@ -211,3 +211,10 @@ Logging into Micetro
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Logging in to Micetro will not change when RADIUS user authentication is used. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro.
+
+.. toctree::
+  :maxdepth: 1
+
+  configure_ldap
+  api_auth
+  

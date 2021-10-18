@@ -22,17 +22,17 @@ Micetro consists of several components. Below, you will find a short description
   All communications between Men&Mice Management Console and the other Micetro components are encrypted.
 
 User Interfaces
-^^^^^^^^^^^^^^^
+---------------
 
 The Management Console connects directly to Men&Mice Central using TCP/IP, connecting to through TCP port 1231. The Men&Mice Web Application talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central also through TCP port 1231. (For more information on communication ports within Micetro, see :ref:`firewall-ports`.)
 
 Middle Layer
-^^^^^^^^^^^^
+------------
 
 The middle layer is responsible for collecting and synchronizing data and handle requests from different Interfaces. Men&Mice Central has its own database to store all related data. (See :ref:`central-database`.) The authoritative data is always the data source itself (i.e., the DNS or DHCP server). To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate to other services in order to get or set information - e.g., Microsoft Active Directory to authenticate users. (See :ref:`webapp-sso`.)
 
 Data Layer
-^^^^^^^^^^
+----------
 
 The Men&Mice DNS Server Controller communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
 
@@ -75,8 +75,8 @@ Micetro's Central component can also be installed on a second server that can be
 
 .. _about-dns-controller:
 
-Micetro's DNS Server Controller
-===============================
+Micetro's DNS Server Controllers
+================================
 
 The Men&Mice DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Men&Mice DNS Server Controller reads and writes zone data and option files, and sends commands to the DNS server. The Men&Mice DNS Server Controller listens on TCP port 1337.
 
@@ -100,8 +100,8 @@ Two DNS servers from each domain are added to Men&Mice Central.
 
 .. _about-dhcp-controller:
 
-Micetro's DHCP Server Controller
-================================
+Micetro's DHCP Server Controllers
+=================================
 
 The Men&Mice DHCP Server Controller is used to control the DHCP server.
 

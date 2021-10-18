@@ -390,7 +390,7 @@ Description
 4. Click :guilabel:`Join`.
 
 Select Parent (Management Console)
--------------
+----------------------------------
 
 .. image:: ../../images/console-ipam-select-parent.png
   :width: 70%

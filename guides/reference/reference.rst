@@ -15,10 +15,13 @@ Micetro reference articles
   appliance_guide
   health_bar_information
   dynamic_zones
-  aws-route53
+  aws_route53
   powerdns
+  external_scripts
   named-conf_location
   named-checkconf_timeout
+  change_updater_port
+  setup_msa
   bind_file_structure
   disable_auto_zone-transfer
   dns_controller_include

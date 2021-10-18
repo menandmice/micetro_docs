@@ -41,7 +41,7 @@ The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-role
 .. _administrator:
 
 The ``administrator`` user
-----------------------
+--------------------------
 
 The built-in, local ``administrator`` user exists outside of regular access controls. All permissions are enabled for this user (even if not attached to any role) and its permissions cannot be edited or overriden (see :ref:`block-permission`) by any role.
 

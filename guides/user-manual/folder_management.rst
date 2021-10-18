@@ -39,7 +39,7 @@ Creating folders
 
 1. Locate the parent folder under which you want to create the new folder. (Or the root folder,  .)
 
-.. information::
+.. note::
   The "root folder" is called *All zones* in the DNS context and *All ranges* in the IPAM context.
 
 2. Click on the ellipsis next to the parent/root folder's name, and select :guilabel:`Create folder` (for :ref:`object-folders`) or :guilabel:`Create smart folder` (for :ref:`smart-folders`).

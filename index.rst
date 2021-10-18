@@ -81,6 +81,7 @@ Table of Contents
     guides/user-manual/access_control
     guides/user-manual/admin_license
     guides/user-manual/admin_updates
+    guides/user/manual/snmp_profiles
     guides/user-manual/admin_custom_properties
     guides/user-manual/admin_schedule_scripts
     guides/user-manual/admin_maintenance

@@ -71,7 +71,6 @@ usage
   (Number) IP address usage bitmask.
 
 ..
-
   free_ip
     (Block List, Max: 1) Find a free IP address to claim (see :ref:`terraform-ipam-nested`).
 
@@ -90,30 +89,21 @@ username
   (String)
 
 ..
-
   .. _terraform-ipam-nested:
-
   Nested Schema for free_ip
   ^^^^^^^^^^^^^^^^^^^^^^^^^
-
   Required
   """"""""
-
   range
     (String) pick IP address from range with name.
-
   Optional
   """"""""
-
   exclude_dhcp
     (Boolean) Exclude IP address that are Assigned via DHCP.
-
   ping
     (Boolean) Verify ip is free with ``ping``.
-
   start_at
     (String) Start searching for IP from.
-
   temporary_claim_time
     (Number) Time in seconds to temporary claim IP address. So it won't be claimed by others, when the claim is in progress.
 
