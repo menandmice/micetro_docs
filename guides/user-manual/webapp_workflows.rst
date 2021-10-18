@@ -1,7 +1,7 @@
-.. meta:: 
+.. meta::
    :description: An introduction to the Workflow module that allows the user to submit 'change requests' for creating, modifying or deleting DNS records
    :keywords: Workflow, Management
-   
+
 .. _webapp-workflows:
 
 Workflow Management
@@ -33,7 +33,7 @@ Getting started
 
 In order to use the DNS requests in the Web application, the Workflow module needs to be purchased and enabled. The license key is added through the License Management dialog (see Administration Functions) in the Men&Mice Management Console.
 
-In order to use the Workflow module, there are two new workflow specific roles in User Management, "Requesters" and "Approvers" needed to be set. Users have to be added to the "Requesters" role to be able to submit requests. Administrative users have to be added to the "Approvers" role to be able to see requests made by others and approve them.
+In order to use the Workflow module, there are two new workflow specific roles in Access Management, "Requesters" and "Approvers" needed to be set. Users have to be added to the "Requesters" role to be able to submit requests. Administrative users have to be added to the "Approvers" role to be able to see requests made by others and approve them.
 
 In addition, Approvers are only able to approve requests that involve DNS Zones in which they have access to edit records.
 

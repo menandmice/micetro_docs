@@ -1,7 +1,7 @@
 .. meta::
    :description:
-   :keywords: 
+   :keywords:
 
 .. _admin-updates:
 
-.. include:: ../implementation/updates.rst
+See :ref:`updates`.

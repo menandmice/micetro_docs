@@ -35,7 +35,6 @@ To follow these instructions, you'll need to figure out where your named data di
 ``named.conf`` contains a set of 5 ``include`` statements, referring to the absolute path of files in ``$NAMED/conf/``. So if your $NAMED directory is ``/var/named``, the include statements will look like this:
 
 .. code-block::
-  :linenos:
 
   include "/var/named/conf/logging";
   include "/var/named/conf/user_before";
@@ -46,7 +45,6 @@ To follow these instructions, you'll need to figure out where your named data di
 Edit the file ``$NAMED/mmsuite/preferences.cfg``. Add the following line:
 
 .. code-block::
-  :linenos:
 
   <ExpandControlStatements value="1"/>
 

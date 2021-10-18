@@ -15,6 +15,5 @@ Men&Mice Central supports the use of Always On Availability Groups (v9.3.0 and a
 To use Always On Availability Groups, change the DatabaseServer value in the preferences.cfg to the virtual IP address or the FQDN of the availability group listener:
 
 .. code-block::
-  :linenos:
 
   <DatabaseServer value="virtual ip/fqdn of availability group listener><,port>\<Instance name>@<Database name>" />

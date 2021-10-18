@@ -1,28 +1,10 @@
 .. meta::
-   :description: Administration features in the Men&Mice Management Console to create and manage user accounts, define user groups, and controlling user/group access
-   :keywords: Micetro management console, Micetro, Men&Mice Management Console
-
-.. _administration:
-
-Administration functions
-************************
+   :description: Administration features in Micetro by Men&Mice
+   :keywords: Micetro admin guide, Micetro, Men&Mice
 
 .. _admin-overview:
 
-**Overview**
+Admin Guide
+===========
 
-This section describes the Administration features in the Men&Mice Management Console. These features include the ability to create and manage user accounts, define user groups, and controlling user/group access. (Group features are accessed through :menuselection:`Tools --> Users and Groups`.)
-
-.. toctree::
-  :maxdepth: 2
-
-  admin_system_settings
-  user_management
-  access_control
-  admin_license
-  admin_updates
-  admin_custom_properties
-  admin_schedule_scripts
-  admin_maintenance
-  appliance_management
-  caching_appliance
+This section describes the Administration features in Micetro.

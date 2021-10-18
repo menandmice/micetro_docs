@@ -1,6 +1,6 @@
 .. meta::
    :description: The supported SNMP OIDs in Micetro by Men&Mice.
-   :keywords: SNMP, service discovery, DHCP, ARP tables, Micetro 
+   :keywords: SNMP, service discovery, DHCP, ARP tables, Micetro
 
 .. _snmp-oid:
 

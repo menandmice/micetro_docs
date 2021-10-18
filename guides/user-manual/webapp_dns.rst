@@ -37,7 +37,7 @@ Opening a DNS zone can either by done by
 Creating a DNS zone
 ^^^^^^^^^^^^^^^^^^^
 
-Creating a new DNS zone can be done by clicking on the :guilabel:`Create` button above the DNS zone list.
+Creating a new DNS zone can be done by clicking on the :guilabel:`Create` button above the DNS zone list. From the dropdown, select the zone *type* (**Master**, **Slave**, **Stub**, or **Forward**).
 
 The following dialog presents the options for the operation:
 
@@ -50,7 +50,6 @@ The following dialog presents the options for the operation:
   :widths: 15, 85
 
   "Zone name", "The name of the DNS zone to be created as a fully qualified domain name (FQDN)"
-  "Zone type", "Can either one of the following: **Master**, **Slave**, **Stub**, **Forward**"
   "Master server", "Specifies the server which will act as the master server for the DNS zone"
   "Slave servers", "Specify which server(s) should act as slave servers for the DNS zone"
   "Open zone after creating", "If checked, the DNS zone will be opened right after it has been created"

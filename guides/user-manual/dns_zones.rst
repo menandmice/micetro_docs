@@ -130,7 +130,7 @@ If the zone you are analyzing is open, an icon with an exclamation mark is shown
 Access/Access for Non-Master for Zone(s)
 ----------------------------------------
 
-Refer to :ref:`global-access`.
+Refer to :ref:`access-control`.
 
 Delete zone
 -----------
@@ -226,18 +226,29 @@ This option is used to see on which servers a copy of a particular zone resides.
 
 .. _ad-preferred-servers:
 
-Edit Preferred Servers (Management Console)
--------------------------------------------
+Edit Preferred Servers
+----------------------
 
-This option is only available when working with AD integrated zones. (See :ref:`active-directory`.) It is used to specify the server to use when opening an AD integrated zone.
+.. note::
+  This option is only available when working with AD integrated zones. (See :ref:`active-directory`.)
 
-It is also possible to specify which server to use if the preferred server becomes unavailable—e.g., the server on the top of the list is tried first and, if that server is unavailable, the second server is tried, and so on.
+DNS administrators can specify the server to use when opening an AD integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable.
 
-1. From the menu bar, select :menuselection:`Zone --> Preferred Server`. The *Edit preferred server list* dialog box displays.
+1. Navigate to the :menuselection:`DNS` context and select the :guilabel:`AD Integrated` filter from the sidebar on the left.
 
-2. Change the order of your servers into the preferred order.
+2. Select the zone(s) you'd like to set preferred servers for.
 
-3. Click :guilabel:`OK`.
+2. Use :guilabel:`Action --> Edit preferred server` from the top bar or the ellipsis menu.
+
+3. Change the order of your servers into the preferred order. The server on the top of the list is tried first, then - if that server is unavailable - the second, and so on.
+
+3. Click :guilabel:`Save`.
+
+.. warning::
+  If you selected multiple zones, they might have different settings for preferred servers. Saving the configuration will overwrite the previous settings on all selected zones.
+
+.. note::
+  To manage preferred servers for an AD integrated zone in the Management Console, see :ref:`console-ad-preferred-servers`.
 
 Export (Management Console)
 ---------------------------
@@ -314,7 +325,6 @@ You can manage RPZ zones from within Micetro with the Management Console. When y
   To use RPZ, a response-policy statement must exist in the DNS server options file. The :guilabel:`Response Policy Zone` checkbox is disabled if a response-policy statement is not present. For example
 
   .. code-block::
-    :linenos:
 
     options {
       ...

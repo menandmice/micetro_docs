@@ -2,7 +2,7 @@
    :description: Terraform Micetro by Men&Mice DHCP scope
    :keywords: terraform, DHCP scope,
 
-.. _terraform-dhcp-reservations:
+.. _terraform-dhcp-scope:
 
 menandmice_dhcp_scope
 ---------------------
@@ -53,7 +53,6 @@ Example
 ^^^^^^^
 
 .. code-block::
-  :linenos:
 
   terraform {
     required_providers {

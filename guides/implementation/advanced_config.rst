@@ -16,3 +16,4 @@ Advanced configuration
   psql_ha
   ha_tweaks_central
   xdns_redundancy_groups
+  webapp_custom_links

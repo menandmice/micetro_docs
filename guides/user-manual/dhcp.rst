@@ -12,3 +12,4 @@ DHCP
 
   dhcp_servers
   dhcp_scopes
+  webapp_edit_dhcp

@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro by Men&Mice 10.0.x versions
+   :description: Release notes for Micetro by Men&Mice 10.1.x versions
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
@@ -10,436 +10,116 @@ Release notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`
+Jump to: :ref:`10.1-release`
 
-.. _10.0.4-release:
+.. _10.1-release:
 
-10.0.4
-------
-
-*October 6th, 2021.*
-
-* Multiline TXT records from Dyn are again correctly parsed. Feel free to store your experimental poetry in DNS records.
-
-* Micetro properly handles the limits and throttling of Azure cloud again. It also apologizes if it was too pushy or not pushy enough.
-
-* Adding or editing large SPF records in Azure or AWS no longer result in an error. Size matters not.
-
-* Improved the process of syncing cloud accounts with Micetro, preventing accidentally clearing and repopulating data.
-
-* Adding subnets to Micetro through external synchronization properly creates a history entry. Micetro remembers.
-
-* Fixed an SQL syntax error occuring when updating from 9.x to 10.0. It ws a tpyo, the responsible person had their hand slapped, everybody's happy.
-
-* Updating Men&Mice Central on Windows 2016 Server no longer fails. You can resume living on the bleeding edge and update Micetro to the latest version.
-
-* Improved connection reliability for customers with slower devices.
-
-* Micetro will properly reload the list of IP addresses after finishing a ping task. As a valued Men&Mice customer, you deserve only the freshest data.
-
-* Micetro will once again correctly read configuration information, and enable logging when configured.
-
-.. _10.0.3-release:
-
-10.0.3
-------
-
-*June 24th, 2021.*
-
-* Fixed a labeling issue in the Web Application's Workflow module.
-
-* Modifying DHCP scope options on split and failover scopes in the Web Application will no longer result in the option being set to a blank value.
-
-* Azure DNS no longer returns an empty list of DNS zone erroneously, and trigger the system to remove all DNS zones.
-
-* Fixed an issue that prevented the creation of DNS zones through the generic DNS Server Controller.
-
-* Fixed the incorrect PTR record issue that prevented managing DHCP failover scopes when using anycast.
-
-* Fixed a permission issue and users that do not have access to the Reporting module can no longer download reports.
-
-* Adding a TXT record to Akamai containing more than 255 characters no longer fails with an “invalid json body” error.
-
-* Improved documentation for the external authentication methods in the Men&Mice Web Service (MMWS).
-
-* AD integrated zones are listed as expected when selecting a domain controller under the DNS services in the Web Application.
-
-* Scrollbars will no longer erroneously appear in the Quick Command dialog.
-
-* Folder names containing a slash character display correctly in the footer.
-
-* Improved accessibility for static-stub, stub, and forward DNS zone types in the list of zones.
-
-* The installers properly detect the correct Python version on newer versions of Ubuntu and CentOS.
-
-* Fixed an issue in the REST API command for DHCP scopes where an error was displayed indicating an unknown element.
-
-* DNS zone transfer settings for slave zones can be edited as expected.
-
-* Revealing a related IP address no longer results in an endlessly loading indicator in the Web Application.
-
-* Separators in forms are displayed properly in the Web Application.
-
-* Fixed an issue where the DNS zone name contained the name of the authoritative DNS server in the Web Application.
-
-* Adding a stub DNS zone properly reload the list of DNS zones.
-
-* Fixed an issue causing DNS views from a different address space showing.
-
-* Modifying a related DNS record through IPAM in the Web Application will properly update the custom properties as expected.
-
-* Deleting a server using a combination of DHCP scopes in failover and a split scope configuration again works as expected.
-
-* The related DNS data in the Web Application's Inspector is populated immediately after creating a related DNS record.
-
-* Fixed an issue causing a user in the Administrators role being unable to access the Workflow module.
-
-* History entries are properly created after editing a DHCP reservation.
-
-* Fixed an issue causing a value entered in the DHCP option 3 to be misinterpreted as IPv6 address but displayed as IPv4.
-
-* Pressing cancel in a dialog properly warns the user of unsaved changes in the User Management section.
-
-* Changing a CNAME to an A record no longer fails for AWS private zones.
-
-* Discovery data for IP addresses is again updated accordingly with new data.
-
-* Ping check on the DNS/DHCP appliance is working as expected.
-
-* Fixed an issue preventing bulk deletion of DNS records in AWS.
-
-* A history entry is properly registered when promoting a slave to a master zone.
-
-.. _10.0.2-release:
-
-10.0.2
-------
-
-*May 28th, 2021*
-
-* The DHCP software (ISC DHCP) on the Men&Mice Virtual Appliances was patched for the following vulnerability: CVE-2021-25217
-
-.. _10.0.1-release:
-
-10.0.1
-------
-
-*April 29th, 2021*
-
-* The authoritative DNS software (BIND) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2021-25214, CVE-2021-25215
-
-.. _10.0.0-release:
-
-10.0
+10.1
 ----
 
-*April 20th 2021*
+*October 19th, 2021.*
 
 .. important::
-  **End-of-Life Announcement**
-
-  * Kea versions before 1.6 are no longer supported. Users must update their Kea servers *before* updating to Micetro 10.0.
-
-  * Microsoft DNS and DHCP servers version 2008 R2 are no longer supported.
-
-  * Solaris is no longer supported.
-
-  See :ref:`system-requirements` for supported platforms.
+  Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
 
 New features
 ^^^^^^^^^^^^
 
-* The Men&Mice Suite is now called \*drumroll please* **Micetro by Men&Mice**. Cue the (sheet) music.
+* New Access Control management: access controls in Micetro have been redesigned from the ground-up, and provide a fully role-based, flexible management. Existing configurations will be converted into the new model while preserving backward compatibility. Read :ref:`access-control` and :ref:`access-control-example` for details.
 
-* We talked about this many times, but at the risk of parroting (<snicker>) ourselves: ISC Kea 1.6 and 1.8 is now a fully supported DHCP server. Enjoy modern, high availability DHCP!
+* Folder management is now available in the Web Application. Users can organize DNS and IPAM objects using traditional folders and customizable smart folders (saved filters) to quicken their workflows. "Smart people use folders. Even smarter people use smart folders."
 
-* We’ve felt guilty for enjoying the famous Icelandic pools with just ourselves. So now you can get a piece of that action and manage DHCP pools in the Web Application.
-
-* You can now manage DNS and DHCP servers, and Men&Mice Virtual Appliances in the Web Application.
-
-* Are you one of those people who likes to update? We’re too! Micetro works with MS SQL Server 2019 now, the latest and greatest, so have at it.
-
-* If you’re not a fan of MS SQL or SQLite, worry not: Men&Mice Central can now be configured to use PostgreSQL as its database backend.
-
-* G-(Wo)Man? Enjoy managing your services in Azure Government cloud through Micetro and be Free(man).
-
-* Logging in to the Web Application before adding license keys in the Management Console sometimes created awkward situations, so now you can add your license keys in the Web Application without slowing your roll.
-
-* You can now promote secondary zones to primary zones in the Web Application.
-
-* Windows DNS users can now manage all their zone transfer and notify settings in the Web Application.
-
-* We heard you liked DNS records, so we’ve put support for new record types in the Web Application: WKS, RP, AFSDB, LOC, SSHFP, SPF, DNSKEY (read only), NSEC (read only), NSEC3 (read only), NSEC3PARAM (read only), RRSIG (read only), DS, DLV (read only).
-
-* You can now manage users, groups and roles in the Web Application. Group hug!
-
-* Static-stub zones are now supported in the Web Application
-
-* Some of y’all wanted search instead of filtering, so now you can switch the Quickfilter to a Quicksearch and back again. The Quickfilter will only show the matching records in the grid, while Quicksearch will highlight them but still display all other objects as well.
-
-* You can import DNS records into a zone with an “Import” task in the Web Application’s DNS context. No muss, no fuss.
+* AD Sites and Subnets management has been streamlined and integrated into the IPAM context of the Web Application.
 
 Improvements
 ^^^^^^^^^^^^
 
-* The Web Application now conforms to the WCAG Accessibility standard.
+* DNS administrators can manage preferred servers for DNS zones in the Web Application.
 
-* The "Related DHCP data" section in sidebar for IP addresses now includes a list of leases that are attached to the IP address. Like a Thanksgiving guest list, but make it DDI.
+* SNMP profile management is available in the Web Application.
 
-* You can select a DHCP server and view all the DHCP scopes without rummaging around in the UI.
+* A new slide-in help is available for many functions, offering further details on functionality and syntax for their respective operations. Not a water slide in a theme park, but it is still weirdly satisfying.
 
-* When you’re creating a new DNS zone, record, or network or DHCP scope, Micetro will use the selected item in the left sidebar as the default value.
+* Micetro components will no longer display errors if they're reporting different minor versions. We're all one family here.
 
-* An ellipsis menu has been added to list rows that provides action shortcuts for its respective object to make you (even more of) a DDI ninja.
+* Users can import DHCP reservations to Micetro using the Web Application, including bulk import. Get yer CSV goodness on!
 
-* When you’re logged in through a domain, you can no longer change your password. No cheating you sly foxes you.
+* Lease names are searchable in the Quick Command. So you can have a better leash on them. (We'll see ourselves out.)
 
-* The network list is now automatically updated after a ping is done.
+* Custom links can be added to the Micetro login screen.
 
-* The allocation wizard for IP address ranges in the Management Console and the old web interface no longer copies read-only custom properties.
+* Improved subnet management, including splitting and merging subnets. Alchemy, almost; although no turning iron into gold with Micetro. Yet.
 
-* The “preference” field in NAPTR DNS records is now a required field.
+Bug fixes
+^^^^^^^^^
 
-* The SNMP discovery has been improved, so virtual switches can be better identified uniquely.
+* Wildcard policies on AWS will display a descriptive error message (as they're not currently supported in Micetro).
 
-* You can filter by the ‘Type’ column when editing zone authority.
+* Users can use relative time (i.e. >=-7d) in the Reporting module. Because time is relative, and E equals m times c squared. Except in quantum, but let's not sweat the small stuff.
 
-* You can now find ‘Actions’ conveniently on the top, instead of in the Inspector.
+* BIND installer will no longer get stuck during installation. Sticks and stones may break our bones, but stuck things are just weird.
 
-* Indicators for server states have been improved. They were a tad bit confusing, which made you confused which made us sad. Now we can all be happy.
+* DNS and IPAM data is properly updated when changing address spaces. Multiverse mixup, we've had words with the Sorcerer Supreme.
 
-* Filtering a range that contains the IP address will no longer match the root range.
+* Using the Quick Filter properly highlights the query in the name column. As this is how it's supposed to work, this fix is a highlight to share.
 
-* Micetro now properly updates the ‘Last seen’ column if an IP address responds to an ad-hoc ping.
+* Using the 'View scopes' action on a DHCP server will properly show the scopes on the DHCP server. Because it. Has. One. Job.
 
-* Akamai Fast DNS server support has been added to the Web Application.
+* Creating a scope on a Cisco DHCP server no longer fails randomly.
 
-* Improved AWS multi-account discovery performance and security.
+* No longer possible for the logged-in user to remove themselves. Word came down that it created a bunch of variants that bottlenecked the TVA, and who needs that?
 
-* Detach/Attach used to be called Disable/Enable, which wasn’t really accurate since they did not disable/enable but detach/attach stuff. So now they’re called Detach/Attach. Nomen est omen.
+* Updating refresh times on SOA records will no longer fail with a cryptic error.
 
-* Validating the values specified for custom property drop-down fields is now case insensitive. We’re not casists.
+* Tooltips no longer appear erroneously on top of the screen after closing their window. They understand now that they have to respect the boundaries of others, just like all polite UI elements do.
 
-* Quick Command now displays authority/view if it finds multiple copies of a zone to make it, well, quicker.
+* Editing a DHCP pool will no longer result in a locked up dialog window due to illegal from/to address input.
 
-* The ‘Recent DNS zones’ and ‘Recent ranges’ in the filtering sidebar are now expanded by default. You can also select them to open the zone/range.
+* Converting a network to a DHCP scope will no longer have a missing field. It's returned safe and sound, we can take it off the milk cartons finally.
 
-* When you press the reload button inside a zone, Micetro does a DNS synchronization with the DNS server so you get crispy fresh data.
+* Using the 'View history' action will no longer return an error message when a filter is applied.
 
-Bugfixes
-^^^^^^^^
+* The 'Reserve' button will no longer disappear from the Action menu. This type of hide-and-seek is not appropriate in the workplace.
 
-* Ping discovery will update IP addresses in all IP address spaces, not just the default.
+* Streamlined the Men&Mice Central binary to reduce size. Took a lot of pilates, but now it's in much better shape.
 
-* The Apache web server will no longer try to log to the wrong directory and fail to start after installing the Web Application before Apache is started.
+* The 'Import records' task is no longer available in Quick Command. We don't know why it was there in the first place. It's not like we put it there. <whistles innocently>
 
-* CAA records with additional double quotes are handled correctly on NS1.
+* Login no longer fails if no DNS license key is activated. Some like IPAM with no pulp, and we don't judge.
 
-* TXT records with 255 characters or more are handled correctly on NS1.
+* Users can use the 'subType' field as a query parameters within data from cloud providers. Suber!
 
-* An issue was fixed where caching for basic and negotiate did not work as expected in mmWS.
+* Adding a cloud provider to Micetro properly runs synchronization for DNS data.
 
-* Akamai DNS zones in Micetro are no longer being accidentally removed during a DNS synchronization.
+* Men&Mice Web Services will no longer report unhandled exceptions on a Windows Server. While Micetro is exceptional, we're plenty able to handle it.
 
-* An issue was fixed where VPCs were not being discovered due to an authorization issue.
+* The 'Edit reservation' button once again works as expected. Good button, have a cookie.
 
-* TXT records to AWS Route 53 containing an ampersand should not be converted into "&amp."
+* Resizing the Inspector panel will no longer cause sections to lock up. No DataTables left behind.
 
-* Initial DNS syncs to Azure DNS pull data without removing DNS zones from Micetro and adding them back again.
+* You can use 'Add to favorites' on IPAM objects as well. We don't like to play favorites, so we're giving favorites to all.
 
-* The GetIPAMRecords API command for an array of IP addresses no longer forgets to return DHCP related data.
+* Removing a cloud account will properly remove all related data from Micetro. Having your ex's stuff around is never a good idea.
 
-* The password check for the admin account in the Azure Marketplace allows special characters.
+* Men&Mice Central will no longer run out of memory when scanning a large number of SNMP profiles. To paraphrase Lady Liberty: give Micetro your huddled SNMP masses yearning to breathe free.
 
-* An issue was fixed in the Azure marketplace configuration for a database where an incorrect error string was being shown for in invalid Azure SQL database username.
+* Pool indicators are refreshed when editing exclusions for a scope.
 
-* Men&Mice Central no longer tries to update the old web service when it updating mmws.
+* Deleting TXT records containing & in the data field no longer fails in AWS. & all rejoiced & the world was at peace again.
 
-* When selecting multiple DNS zones and editing SOA in the Web Application’s Inspector works as expected.
+* Using the Quick Filter for Networks will no longer cause loading skeletons to appear.
 
-* Quick Command in the Web Application will prompt for login when the session is expired.
+* Exceeding the retry limit in Azure will properly throw an exception.
 
-* Migrating a DNS zone from cloud providers no longer results in “DNS Server not found” errors when the server is found.
+* Fixed an issue where DNS administrators would not have access to a DNS record's history. Obviously they should. And now they do.
 
-* Synced the UI and API terminology for DNS/DHCP server states.
+* The 'Edit configuration' task is no longer enabled for unreachable servers.
 
-* Fixed the dialog windows when creating xDNS Redundancy groups with syntax correct zones in one platform but not in the other, erraneously suggesting you could cancel/undo.
+* The 'Add DNS Zone' task from Quick Command properly fills out the name for the zone. Otherwise it's not magic, now is it?
 
-* The DHCP Server Controller will handle if/else statements properly in the dhcpd.conf for ISC DHCP.
+* Clicking 'Save' on dialogs with no changes made closes the dialog. Clicking save on dialogs that have been modified validates the input. Save the cheerleader, save the world.
 
-* The login window after a session timeout will no longer have all the buttons disabled.
+Other
+^^^^^
 
-* Men&Mice Central will no longer display Microsoft DHCP scopes with two address pools.
-
-* Adding a cloud network will no longer report a database error.
-
-* An issue was fixed where the GetAvailableAddressBlocks API command for IPv6 was failing because of wrong default subnet mask.
-
-* An issue was fixed in the "SetProperties" API command where an empty "addresses" field was not allowed.
-
-* Tasks will no longer prompt for a save comment when no changes have been made.
-
-* The Web Application now allows all file types to be selected when importing data.
-
-* You can no longer create DNS zones on servers you don’t have access to. Also, Micetro will no longer blank on populating the ‘master server’ value on servers that don’t support it.
-
-* Utilization and free IP addresses will show up as expected when DHCP scopes were synced in from a MS DHCP server.
-
-* An issue was fixed in the web application where creating a DHCP reservation could result in an error indicating that the client identifier was not valid.
-
-* Deleting and re-adding DHCP pools no longer create ghost pools that’d prevent adding identical pools.
-
-* DNS synchronization will no longer try to sync removed DNS servers and end up aborting the sync process.
-
-* An issue was fixed where managing a Cisco DHCP server could result in an “unhandled exception” and unknown prompt messages.
-
-* Login timeouts for communications with DHCP servers are properly handled again.
-
-* Large Dyn DNS zones no longer claim that the SOA record isn’t present.
-
-* DHCP Option ID 120 value can no longer be deleted when editing a different option value.
-
-* Authentication through SSO no longer takes an overly long time.
-
-* Fixed REST Basic Authentication with passwords containing a colon.
-
-* Adding new DNS records to AWS is now case insensitive and will no longer fail when the same but case insensitive resource record set with the same name already exists in AWS Route 53 and other cloud providers.
-
-* Restarting a DHCP Server Controller is no longer necessary after losing connection to a Cisco DHCP server.
-
-* Report creation will no longer fail just because of missing required fields.
-
-* Editing ISC DHCP options for reservations with more than one address will no longer fail with an internal error.
-
-* When users set the checkbox "Show inherited options" in DHCP options, Micetro will remember the setting properly.
-
-* Installing the Web Application no longer fails because it wouldn’t overwrite some files.
-
-* Regex fields in reports are validated properly, and editing a filter criteria will no longer crash the Web Application.
-
-* An issue was fixed where old partial filters could be applied in the case of a very slow performing system.
-
-* It’s no longer possible to scroll a list heading out of view.
-
-* Disabling a DHCP scope on Cisco DHCP servers aren’t supported by the DHCP server, and the Web Application no longer shows actions for it.
-
-* Creating A records through workflows will now properly link the A record to its IP address.
-
-* Editing reservations in the Web Application will always preserve the client identifiers.
-
-* Editing DHCP reservations will work regardless where it’s started from, as intended.
-
-* Micetro will no longer have DHCP scopes in the database if no DHCP servers are configured.
-
-* Previewing a report will no longer cause the dialog window to be stuck and prevent users from downloading the report.
-
-* Opening a DNS record with read-only access will no longer result in access error.
-
-* Creating a DNS record will no longer report an access error if the Networks module isn’t activated.
-
-* Users can again add A records to AD zones.
-
-* Users can no longer create DNS entries on an AD integrated zone if the record already exists in a dynamic zone.
-
-* The 'Create a DHCP scope' checkbox is no longer enabled if no DHCP servers are available.
-
-* The "Create" button in the toolbar is no longer disabled if nothing is selected for a non-admin user.
-
-* An issue was fixed where adding a DHCP scope on a Cisco DHCP server could result in an error indicating that a pool already exists on server.
-
-* Lease MAC addresses are again properly formatted.
-
-* Disabled buttons are no longer clickable.
-
-* The default value for "Maximum number of days to keep results" in report scheduling is no longer empty and will not revert to empty on its own.
-
-* The Web Application Installer script will no longer assume certain XML elements in the IIS configuration.
-
-* Operators in reporting filters (such as startsWith, endsWith, and contains) no longer  behave differently between database types and field types.
-
-* The IN operator in reporting filters now can contain more than one item when used with reference and datetime column types.
-
-* The width of a column can no longer be less than the header label.
-
-* The Web Application installer on Linux will no longer overwrite the mmweb.conf file.
-
-* CAA record flag "0" will no longer get ignored.
-
-* Users can once again create and run “Access” reports.
-
-* Disabling DNS records in dynamic zones is not supported, and the Web Application won’t show the action.
-
-* Reports will no longer fail because the object type contains a space.
-
-* Users can run a DNS record report both directly or by saving it.
-
-* Using the quickfilter will highlight all matched strings.
-
-* Shorthand notations are no longer misinterpreted in the TTL column of DNS Records reports.
-
-* DNS zone authority information in the Inspector is automatically updated when zone instances are deleted.
-
-* IP Insights for subnets will again display properly at all times.
-
-* The ‘Delete’ task will no longer assume that DHCP reservations have a specific name.
-
-* Fixed DHCP options dialog.
-
-* ISC DHCP scopes can be enabled/disabled in the Web Application properly.
-
-* Users can properly download reports after clicking "Run."
-
-* Detailed errors will display while migrating DNS zones.
-
-* DDNS values are no longer missing for DHPC reservations.
-
-* Address pool inputs are visible even when disabled on Cisco servers.
-
-* The “Create report” link opens the Generate Report task.
-
-* Escaping an expired session instead of logging back in will no longer create an error.
-
-* Clearing an IP address will properly reload the grid as expected.
-
-* Adding changes to the Edit Zone task window will automatically enable the ‘Next’ button without having to manually exit the field first.
-
-* The “Find next free” and "Clear" actions for IP addresses no longer require the user to have access to  the DNS module.
-
-* Micetro will no longer show stale address pool information after converting a scope into a range.
-
-* An issue was fixed where pool validation could fail when converting an IP address range to a scope.
-
-* Long client identifiers will no longer cause the ellipsis menu button in the inspector to go out of view.
-
-* Users will get a “Preview is unavailable” message instead of a vague error message.
-
-* The “Create DHCP network” wizard will now properly validate data.
-
-* Scrollbars no longer appear in error dialogs, and text is wrapped.
-
-* Errors while creating a DNS zone will no longer display two error dialogs.
-
-* Report filtering criteria that only allowed true/false values now also supports yes/no.
-
-* Creating a CAA DNS record with the flag field on the default value will no longer cause an invalid field error.
-
-* Creating a network without having write permissions is properly denied and no longer creates a save comment loop.
-
-* Fixed encoding for Lease client identifiers.
-
-* The Migrate button in the “Migrate DNS zone” task is only enabled when the destination field is filled in.
-
-* Users can again properly edit reservations with the ClientIdentifier reservation method on Cisco servers.
-
-* The Web Application no longer shows the "Comment" field for DNS records on Akamai Fast DNS.
-
-* Improved the built-in API documentation.
-
-* Various stability improvements for Men&Mice Central.
-
-Virtual Appliances
-^^^^^^^^^^^^^^^^^^
-
-* The authoritative DNS software (BIND) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2020-8616, CVE-2020-8617, CVE-2020-8619, CVE-2020-8622, CVE-2020-8623 and CVE-2020-8624
-
-* The caching DNS software (Unbound) on the Men&Mice Virtual Appliances was patched for the following vulnerabilities: CVE-2020-12662 and CVE-2020-12663.
+* Various performance improvements and UX tweaks. Micetro does things faster and nicer.

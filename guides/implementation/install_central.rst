@@ -9,6 +9,11 @@ Men&Mice Central
 
 Men&Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing data such as zone history logs, user accounts and permissions, etc. You must have at least one copy of Central installed in the environment. Central does not need to be installed on a DNS server.
 
+.. _central-non-standard-install:
+
+.. important::
+  The installer was designed to be quick and straightforward. Pay attention to the steps, if you'd like to customize your installation. (Such as installing Central to a different path.)
+
 .. _install-central-linux:
 
 Men&Mice Central on Linux
@@ -64,7 +69,21 @@ To remove Men&Mice Central, first use the init script to stop the service (give 
 Men&Mice Central on Windows
 ---------------------------
 
+Run the downloaded binary and follow the instructions on-screen.
+
+.. note::
+  Installing Men&Mice Central does not require special privileges. The service will be started automatically after installation.
+
+.. image:: ../../images/install-windows-service.png
+  :width: 30%
+  :align: center
+
 .. note:: Running Men&Mice Central under a privileged user account
   Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
 
   When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
+
+  The service account running Central needs to be added to the DNS Admins and/or DHCP Admins group to manage data.
+
+.. important::
+  The installer creates the data directories for Men&Mice Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.

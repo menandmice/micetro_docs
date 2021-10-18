@@ -2,12 +2,12 @@
    :description: Kea DHCP High Availability and Micetro by Men&Mice
    :keywords: Kea DHCP, DHCP servers, KEA DHCP servers
 
-.. _dhcp-kea-ha:
-
 .. |kea-ok| image:: ../../images/kea-ok.png
 .. |kea-down| image:: ../../images/kea-down.png
 .. |kea-impaired| image:: ../../images/kea-impaired.png
 .. |kea-unreachable| image:: ../../images/kea-unreachable.png
+
+.. _dhcp-kea-ha:
 
 Kea DHCP High Availability
 ==========================
@@ -52,7 +52,6 @@ Kea DHCP servers in a High Availability environment must be already synced and c
 An example of a ``hook-libraries`` section of the configuration where Micetro will successfully detect the setup and act accordingly:
 
 .. code-block::
-  :linenos:
 
   "hooks-libraries": [{
       "library": "/usr/lib/kea/hooks/libdhcp_ha.so",

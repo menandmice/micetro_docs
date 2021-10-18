@@ -72,7 +72,7 @@ To enable or disable DNS and DHCP service on the Appliance:
 
 1. Select the :guilabel:`General` tab in the *Appliance Properties* dialog box.
 
-2. Click the :guilabel:`Configure `button in the *Server Status* section. The *Service Status* dialog box displays.
+2. Click the :guilabel:`Configure` button in the *Server Status* section. The *Service Status* dialog box displays.
 
 3. Select the services you want to run on the Appliance and click :guilabel:`Save`. If you enable a service, a server that has the same name as the appliance is displayed in the appropriate section in the object list in the Manager window. To disable a service, unselect the corresponding checkbox in the dialog box.
 
