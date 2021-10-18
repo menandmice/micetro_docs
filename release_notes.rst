@@ -10,7 +10,13 @@ Release notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`
+Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`, :ref:`10.0.5-release`
+
+.. _10.0.5-release:
+
+*October 19th, 2021.*
+
+* Fixed an issue where A records in an AD-integrated dynamic zone would result in a duplicate record with the same IP address. Everyone has their doppelgänger, but what's funny in a movie isn't so much in DDI.
 
 .. _10.0.4-release:
 
@@ -29,7 +35,7 @@ Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :r
 
 * Adding subnets to Micetro through external synchronization properly creates a history entry. Micetro remembers.
 
-* Fixed an SQL syntax error occuring when updating from 9.x to 10.0. It ws a tpyo, the responsible person had their hand slapped, everybody's happy.
+* Fixed an SQL syntax error occurring when updating from 9.x to 10.0. It ws a tpyo, the responsible person had their hand slapped, everybody's happy.
 
 * Updating Men&Mice Central on Windows 2016 Server no longer fails. You can resume living on the bleeding edge and update Micetro to the latest version.
 
