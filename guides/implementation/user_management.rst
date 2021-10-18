@@ -10,4 +10,4 @@ Micetro User Management
 .. note::
   Access management has changed in Micetro 10.1. To view the access management used in previous versions, switch to the appropriate version number using the version selector.
 
-.. include:: ../user-manual/access_control.rst
+For detailed information, see :ref:`access-control`.

@@ -62,7 +62,7 @@ In the same dialog (:menuselection:`Tools --> User Management`) you can configur
 
 3. Then tick the checkbox **ReadOnlyRole** in the *Roles* section and mark also the checkbox **Active Diretory Integrated** which is located underneath the Roles section box.
 
-.. information::
+.. note::
   If you don't mark the checkbox for Active Directory integration the group would be created as Micetro group (members of an AD group are automatically added to Micetro when the AD group members login the first time).
 
 4. Confirm with :guilabel:`OK`. As mentioned it's not necessary to add single AD user accounts.

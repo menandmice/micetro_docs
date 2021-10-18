@@ -19,6 +19,7 @@ Micetro uses *server controllers* to connect with DNS and DHCP servers in the ne
 
   install_dns_controllers
   install_dhcp_controllers
-  agent_free_dns-dhcp [1]_
+  agent_free_dns-dhcp
 
-.. [1] Servers in Active Directory environments can be connected without using a controller.
+.. note::
+  Servers in Active Directory environments can be connected without using a controller.

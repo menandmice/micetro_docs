@@ -19,7 +19,7 @@ This documentation is divided into four parts:
 1. :ref:`implementation`
 2. :ref:`manual-introduction`
 3. :ref:`admin-overview`
-3. :ref:`reference`
+4. :ref:`reference`
 
 Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of Micetro's functionality. :ref:`admin-overview` is aimed at system administrators managing Micetro.
 

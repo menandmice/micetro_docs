@@ -1,6 +1,6 @@
 .. meta::
    :description: Disaster scenarios and recovery with PostgreSQL high availability in Micetro by Men&Mice
-   :keywords: disaster recovery, PostgreSQL, high availability, Micetro 
+   :keywords: disaster recovery, PostgreSQL, high availability, Micetro
 
 .. _psql-disaster-recovery:
 
@@ -129,7 +129,7 @@ And re-run the application:
 
 Start the secondary machine(s):
 
-.. code-bloack:: bash
+.. code-block:: bash
 
   sudo su - postgres
   export PATH="$PATH:/usr/pgsql-12/bin"

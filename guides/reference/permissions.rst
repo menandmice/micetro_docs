@@ -7,7 +7,7 @@
 Permissions reference
 ---------------------
 
-.. information::
+.. note::
   License management has no associated permission, and can only be accessed by :ref:`administrator`.
 
 The following tables list all the permissions in Micetro, as defined in the API and the web application.

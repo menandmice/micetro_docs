@@ -2,7 +2,7 @@
    :description: How to perform specific actions in Micetro by Men&Mice associated with maintaining DHCP scopes
    :keywords: DHCP scopes, DHCP servers
 
-.. _dhcp-scopes:
+.. _console-dhcp-scopes:
 
 DHCP Scopes (Management Console, deprecated)
 ===========

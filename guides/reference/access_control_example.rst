@@ -94,7 +94,7 @@ The following steps illustrate how to create a read-write role in Micetro for DN
   :width: 50%
   :align: center
 
-.. information::
+.. note::
   Duplicating roles will automatically set the role type to *General*.
 
 7. Click :guilabel:`Create` to save the new role.
@@ -196,7 +196,7 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
   :width: 50%
   :align: center
 
-.. information::
+.. note::
   The preferred role type in Micetro is the :ref:`acl-general-roles`. Specific roles exist to preserve backwards compatibility and added flexibility to edge use cases.
 
 6. Switch over to the :guilabel:`Access` tab and enable the following permission:

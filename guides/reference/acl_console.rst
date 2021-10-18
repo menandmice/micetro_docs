@@ -2,12 +2,12 @@
    :description: Access control management with the Management Console in Micetro by Men&Mice
    :keywords: access control, access control management, role-based access, security, Micetro
 
-.. include:: ../user-manual/access_control.rst
+For detailed information on the preferred method of access management, see :ref:`access-control`.
 
 .. _acl-console:
 
 Managing access control in the Management Console 👣👣
--------------------------------------------------
+-----------------------------------------------------
 
 Access control management in the Management Console uses the new access control model, but its features are slightly different than those available in the Web Application.
 
@@ -99,7 +99,12 @@ To add users or groups to a role:
 
 2. Select the user(s) and/or group(s), click :guilabel:`Edit` and in the bottom panel select the roles to attach the user(s)/group(s) to.
 
-.. image:: ../../images/acl-console-user-role-2021.png
+..
+  .. image:: ../../images/acl-console-user-role-2021.png
+    :width: 90%
+    :align: center
+
+.. image:: ../../images/acl-console-user-role.png
   :width: 90%
   :align: center
 
