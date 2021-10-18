@@ -1,14 +1,11 @@
 .. meta::
-   :description: How to manage DHCP scopes in the Micetro by Men&Mice Management Console
-   :keywords: DHCP management, DHCP scopes
+   :description: How to perform specific actions in Micetro by Men&Mice associated with maintaining DHCP scopes
+   :keywords: DHCP scopes, DHCP servers
 
 .. _dhcp-scopes:
 
-DHCP scopes
+DHCP Scopes (Management Console, deprecated)
 ===========
-
-.. note::
-  To manage DHCP scopes in the Management console, see :ref:`console-dhcp-scopes`.
 
 Overview
 --------
@@ -23,127 +20,285 @@ All DHCP Scopes on All Servers
 
 You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In :menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
 
-.. image:: ../../images/dhcp-scopes-Micetro.png
+.. image:: ../../../images/dhcp-scopes-Micetro.png
   :width: 80%
   :align: center
 
 The :guilabel:`Utilization` column in the scope list displays the utilization of available addresses within the address pool(s) of each scope.
 
-Disabled scopes are shown as gray. The number of unassigned addresses is always shown as zero for disabled scopes.
+.. Disabled scopes are shown as gray. The number of unassigned addresses is always shown as zero for disabled scopes.
 
 Scopes on a Specific DHCP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is easy to view the DHCP scopes that reside on individual DHCP Servers that are being managed by Micetro. In the :menuselection:`Networks` context click the relevant DHCP server in the filtering sidebar's :guilabel:`DHCP servers` section.
+It is easy to view the DHCP scopes that reside on individual DHCP Servers that are being managed by the Management Console. Simply click on the plus :guilabel:`+` sign next to the DHCP Servers object in the *Object Section*, and select the DHCP server containing the scopes you want to view.
 
 Selected Scope Menus
 ^^^^^^^^^^^^^^^^^^^^
 
-When working with scopes, selecting one or more scopes enables an ellipsis menu and relevant actions from the :guilabel:`Actions` shortcut button. The available actions change based upon the type of the DHCP server the scope is hosted on.
+When working with scopes, a right-click, shortcut menu is offered. The menu options change, based upon the type of DHCP server the scope is hosted on: MS, ISC or Cisco.
 
-DHCP scope actions
-""""""""""""""""""
+MS Shortcut Menu
+""""""""""""""""
 
-Open network
-  Opens the selected scope.
+Open
+  Opens the currently selected IP Address.
 
-Edit network properties
+Delete
+  This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.
 
-Enable/disable scope
-  If you are no longer using a particular scope, but do not want to delete it completely because you may need it in the future, you can disable the scope instead. A scope that is disabled will be ignored by the DHCP server until it is re-enabled.
+History
+  Shows any changes made to the selected item. These changes are displayed in a new window.
 
-Convert to network
-  Converts the DHCP scope to a network.
+Ping
+  Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.
 
-Set folder
-  Adds the scope to a folder for easier access. See :ref:`object-folders`.
+Claim
+  Allows you to "claim" an address to prevent accidental assignment but without creating a DNS entry for it.
 
-Set discovery schedule
-  Sets discovery schedule for the scope.
+Create Address Pool
+  Creates an address pool for the selected scope. Complete the From and To fields in the DHCP Address Pool dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
 
-Set subnet monitoring
-  Configures subnet monitoring for the scope.
+Edit Address Pool
+  To edit an existing pool, click anywhere in the applicable address pool, right-click, select :guilabel:`Edit Address Pool` and, in the dialog box, make the desired edits.
 
-.. _dhcp-pools:
+Options for Pool
+  *ISC DHCP only.* To set options for a pool, click anywhere in the applicable address pool, right-click, select Options for Pool and, in the Options dialog box, make the desired changes.
 
-Manage DHCP pools
-  View and manage DHCP pools.
+Permits for Pool
+  *ISC DHCP only.* Allows you to specify permits for an address pool. To set access pool permits, do the following:
 
-  Add Pool
-    Creates an address pool for the selected scope. Complete the From and To fields in the dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
+    1. Click anywhere in the applicable address pool, right-click and select :guilabel:`Permits for Pool`. The *Pool Permits* dialog box displays.
 
-  Edit Address Pool
-    To edit an existing pool, select it and from the ellipsis menu select :guilabel:`Edit`.
+    2. Click :guilabel:`Add` to create a new access pool permit.
 
-  Delete Address Pool(s)
-    To delete an existing pool, select it and from the ellipsis menu select :guilabel:`Delete`.
+    3. Enter the permit settings and click :guilabel:`OK` to save the changes and close the dialog box.
 
-  Create Exclusion
-    *MS DHCP only*. Allows you to exclude a single IP Address or an entire range of addresses from being used. You can only exclude addresses that are already part of an address pool. To create an exclusion, specify the From and To IP Addresses. All the addresses between and including the ones entered will be excluded.
+    4. Use the :guilabel:`Edit` and :guilabel:`Delete` buttons to modify or delete existing permits.
 
-  Edit Exclusion
-    *MS DHCP only.* To edit an exclusion, select it and from the ellipsis menu select :guilabel:`Edit`.
+Delete Address Pool(s)
+  To delete an existing pool, click anywhere in the applicable assigned range, right-click and select :guilabel:`Delete Address Pool(s)`.
 
-  Delete Excluded Range(s)
-    *MS DHCP only.* To delete an exclusion, select it and from the ellipsis menu select :guilabel:`Delete`.
+Create Excluded Range
+  *MS DHCP only*. Allows you to exclude a single IP Address or an entire range of addresses from being used. You can only exclude addresses that are already part of an address pool. To create an excluded range, specify the From and To IP Addresses. All the addresses between and including the ones entered will be excluded.
 
-DHCP actions for IP addresses
-"""""""""""""""""""""""""""""
+Edit Excluded Range
+  *MS DHCP only.* To edit an existing range, click anywhere in the applicable excluded range, right-click, select :guilabel:`Edit Excluded Range` and, in the dialog box, make the desired edits.
 
-Open a DHCP scope (by double clicking it in the grid, selecting :guilabel:`Open network` from the ellipsis menu, or using :menuselection:`Actions --> Open network`) to view the IP addresses it contains.
+Delete Excluded Range(s)
+  *MS DHCP only.* To delete an existing range, click anywhere in the applicable excluded range, right-click and select :guilabel:`Delete Excluded Range(s)`. The entire excluded range is removed.
 
-Create DNS record
-  Creates an A record from the selected IP address. See :ref:`webapp-create-dns-record`.
-
-Edit IP address properties
-  Define values for any custom properties configured in the system.
-
-Claim/release IP address
-  Claims and releases the IP address(es).
-
-Ping IP address
-  Performs a ping on the selected IP address(es).
-
-Create DHCP reservation
+Create Reservation
   Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create a reservation, do the following:
 
-  Name
-    Assign a name to identify the reserved address.
+  1. Locate the IP Address you want to reserve, right-click on it, and select :guilabel:`Create Reservation` from the pop-up menu. The *DHCP Reservation* dialog box displays.
+
+    Name
+      Assign a name to identify the reserved address.
+
+    MAC Address
+      Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.
 
     Description
       (Optional) User defined description.
 
-    Reservation method
-      Hardware address or Client identifier
+    Supported Types
+      Select whether this reservation should support DHCP, BOOTP (i.e., Bootstrap Protocol), or Both (default).
 
-      Hardware address
-        Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.
+  2. To specify whether the DHCP server automatically updates record in the DNS server or not, click the :guilabel:`DNS` tab.
 
-      Client identifier
-        Use the *Ascii* and *Hex* switch on the right to change input type.
+  3. Enable DNS dynamic updates according to the settings below. Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.
 
-    Reservation type
-      Select whether this reservation should support DHCP, BOOTP (i.e., Bootstrap Protocol), or both (default).
+    Dynamically update DNS A and PTR records
+      Specifies that the DHCP server update forward and reverse lookups be based on the type of request made by the client during the lease process.
 
-Edit DHCP reservation
-  Edit an existing reservation.
+    Always dynamically update DNS A and PTR records
+      Specifies that the DHCP server update forward and reverse DNS lookups when a client acquires a lease, regardless of the type of request used to acquire it.
 
-Edit reservation options
-  Edit options for a reservation. Refer to :ref:`dhcp-options` for details on this dialog box.
+    Discard A and PTR records when lease is deleted
+      Specifies whether the DHCP server discards forward DNS lookups for clients when a lease expires.
 
-Delete DHCP reservation
+    Dynamically update DNS A and PTR records for DHCP clients that do not request updates
+      Specifies whether the DHCP server sends dynamic updates to the DNS server for DHCP clients that do not support performing these updates. If selected, clients running earlier versions of Windows are updated by the DHCP server for both their host (A) and pointer (PTR) resource records.
+
+  3. Click :guilabel:`OK`. The address is now listed as reserved in the DHCP Scope dialog box.
+
+Edit a Reservation
+  To edit an existing reservation, right-click on the reservation you want to change and select :guilabel:`Edit a Reservation`. Then, make the necessary edits.
+
+Options for a Reservation
+  To select options for a reservation, right-click on the reservation and select :guilabel:`Options for a Reservation`. The DHCP Reservations dialog box displays. Refer to :ref:`dhcp-options` for details on this dialog box.
+
+Delete Reservation(s)
   To delete an existing reservation, right-click on the reservation you want to remove and select :guilabel:`Delete Reservation(s)`.
 
-View history
-  Displays the object history for the selected IP address.
+ISC Shortcut Menu
+"""""""""""""""""
 
-.. _new-dhcp-scope:
+Open
+  Opens the currently selected IP Address.
 
-New DHCP scope
---------------
+Delete
+  This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.
 
-.. note::
-  Creating a scope on a Kea server configured for load balancing high availability, Micetro will automatically split the scope evenly between primary and secondary servers. See :ref:`dhcp-kea-ha`.
+History
+  Shows any changes made to the selected item. These changes are displayed in a new window.
+
+Ping
+  Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.
+
+Claim
+  Allows you to "claim" an address to prevent accidental assignment but without creating a DNS entry for it.
+
+Create Address Pool
+  Creates an address pool for the selected scope. Complete the From and To fields in the DHCP Address Pool dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
+
+Edit Address Pool
+  To edit an existing pool, click anywhere in the applicable assigned range, right-click, select :guilabel:`Edit Address Pool` and, in the dialog box, make the desired edits.
+
+Options for Pool
+  When selected, the *DHCP Options* dialog box displays. Refer to :ref:`dhcp-options` for details on this dialog box.
+
+Delete Address Pool(s)
+  To delete an existing pool, click anywhere in the applicable assigned range, right-click and select :guilabel:`Delete Address Pool(s)`.
+
+Create Reservation
+  Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create an address, do the following:
+
+    1. Locate the IP Address you want to reserve, right-click on it, and select :guilabel:`Create Reservation`. The *DHCP Reservation* dialog box displays.
+
+      Name
+        Assign a name to identify the reserved address.
+
+      MAC Address
+        Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.
+
+      DDNS hostname
+        Specifies the DNS domain name to use to store the A record for a DHCP client.
+
+      IP Address
+        Enter an IP Address for the reservation. You can add additional IP Addresses by clicking the plus sign and enter an IP Address in the field that displays.
+
+    2. Click :guilabel:`OK`.
+
+Edit a Reservation
+  To edit an existing reservation, right-click on the reservation you want to change and select :guilabel:`Edit a Reservation`. Then, make the necessary edits.
+
+Options for a Reservation
+  To select options for a reservation, right-click on the reservation and select :guilabel:`Options for a Reservation`. The *DHCP Reservations Options* dialog box displays. Refer to :ref:`dhcp-options` for details on this dialog box.
+
+Delete Reservation(s)
+  To delete an existing reservation, right-click on the reservation you want to remove and select :guilabel:`Delete Reservation(s)`.
+
+ISC Kea Shortcut Menu
+"""""""""""""""""""""
+
+Open
+  Opens the currently selected IP Address.
+
+Delete
+  This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.
+
+History
+  Shows any changes made to the selected item. These changes are displayed in a new window.
+
+Ping
+  Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.
+
+Claim
+  Allows you to "claim" an address to prevent accidental assignment but without creating a DNS entry for it.
+
+Create Address Pool
+  Creates an address pool for the selected scope. Complete the From and To fields in the DHCP Address Pool dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
+
+Edit Address Pool
+  To edit an existing pool, click anywhere in the applicable assigned range, right-click, select :guilabel:`Edit Address Pool` and, in the dialog box, make the desired edits.
+
+Options for Pool
+  When selected, the DHCP Options dialog box displays. Refer to :ref:`dhcp-options` for details on this dialog box.
+
+Delete Address Pool(s)
+  To delete an existing pool, click anywhere in the applicable assigned range, right-click and select :guilabel:`Delete Address Pool(s)`.
+
+Create Reservation
+  Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create an address, do the following:
+
+    3. Locate the IP Address you want to reserve, right-click on it, and select :guilabel:`Create Reservation`. The *DHCP Reservation* dialog box displays.
+
+      MAC Address
+        Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.
+
+      DDNS hostname
+        Specifies the DNS domain name to use to store the A record for a DHCP client.
+
+    2. Click :guilabel:`OK`.
+
+Edit a Reservation
+  To edit an existing reservation, right-click on the reservation you want to change and select :guilabel:`Edit a Reservation`. Then, make the necessary edits.
+
+Options for a Reservation
+  To select options for a reservation, right-click on the reservation and select :guilabel:`Options for a Reservation`. The *DHCP Reservations Options* dialog box displays. Refer to :ref:`dhcp-options` for details on this dialog box.
+
+Delete Reservation(s)
+  To delete an existing reservation, right-click on the reservation you want to remove and select :guilabel:`Delete Reservation(s)`.
+
+Cisco Shortcut Menu
+"""""""""""""""""""
+
+Open
+  Opens the currently selected IP Address.
+
+Delete
+  This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.
+
+History
+  Shows any changes made to the selected item. These changes are displayed in a new window.
+
+Ping
+  Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.
+
+Claim
+  Allows you to "claim" an address to prevent accidental assignment but without creating a DNS entry for it.
+
+Create Excluded Range
+  Allows you to exclude a single IP Address or an entire range of addresses from being used. You can only exclude addresses that are already part of an address pool. To create an excluded range, specify the From and To IP Addresses. All the addresses between and including the ones entered will be excluded.
+
+Edit Excluded Range
+  To edit an existing range, click anywhere in the applicable excluded range, right-click, select :guilabel:`Edit Excluded Range` and, in the dialog box, make the desired edits.
+
+Delete Excluded Range(s)
+  To delete an existing range, click anywhere in the applicable excluded range, right-click and select :guilabel:`Delete Excluded Range(s)`. The entire excluded range is removed.
+
+Create Reservation
+  Reservations can be created in address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create an address, do the following:
+
+  1. Locate the IP Address you want to reserve, right-click on it, and select :guilabel:`Create Reservation`. The *DHCP Reservation* dialog box displays.
+
+    Name
+      Assign a name to identify the reserved address.
+
+    Reservation Method
+      Choose the reservation method for this reservation. You can choose either Client Identifier or Hardware Address.
+
+    Client Identifier / MAC Address
+      Depending on your choice for Reservation Method, enter the Client Identifier or MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.
+
+    DDNS hostname
+      Specifies the DNS domain name to use to store the A record for a DHCP client.
+
+  2. Click :guilabel:`OK`.
+
+Edit a Reservation
+  To edit an existing reservation, right-click on the reservation you want to change and select :guilabel:`Edit a Reservation`. Then, make the necessary edits.
+
+Options for a Reservation
+  To select options for a reservation, right-click on the reservation and select :guilabel:`Options for a Reservation`. The *DHCP Reservations* dialog box displays. Refer to :ref:`dhcp-options` for details on this dialog box.
+
+Delete Reservation(s)
+  To delete an existing reservation, right-click on the reservation you want to remove and select :guilabel:`Delete Reservation(s)`.
+
+Scope Creation Wizard
+---------------------
 
 This section describes how to create and edit DHCP scopes with the new *DHCP Scope Creation Wizard*.
 
@@ -153,43 +308,83 @@ The Wizard has additional steps, or skips over some steps, depending on the type
 
 To create a new scope on the MS DHCP server, do the following:
 
-1. In :menuselection:`Networks` use the :guilabel:`Create` action and select :guilabel:`DHCP scope` from the dropdown.
+1. In the object list, right-click on :guilabel:`DHCP Scopes` and, from the shortcut menu, select :guilabel:`New Scope`. Alternatively, right click on an existing IP address range, and select :guilabel:`Convert To DHCP Scope`.
 
-.. image:: ../../images/create-dhcp-scope-Micetro.png
-  :width: 70%
+2. The *Scope Creation Wizard* dialog appears.
+
+.. image:: ../../../images/console-dhcp-scope-creation-wizard.png
+  :width: 60%
   :align: center
 
-2. Click :guilabel:`Next`.
+Subnet
+  Enter the subnet in CIDR notation, e.g. 5.5.5.0/24, and click :guilabel:`Next`.
 
-3. Edit the options for the DHCP scope.
-
-DHCP server
-  The DHCP server for the scope.
-
-Enabled
-  If checked, the DHCP scope will start allocating IP addresses immediately. Uncheck it if you want to configure the scope further.
-
-Start/end of address pool
-  Adjust the first and last IP address in the pool.
-
-3. Active Directory Site selection. If you have enabled :ref:`active-directory`, the Wizard will ask you which AD site the new DHCP Scope should be associated to.
+Server and scope type
+  Select the type, either Single scope, Split scope, or Failover scope (only on Windows 2012 and newer DHCP servers) and the DHCP server to create the scope on.
 
   .. note::
-    Leave it empty for no AD site.
+    When you change the type to Failover scope, only Windows 2012 and newer servers are shown.
 
-4. Scope properties.
+3. Select second server (Split scope) or Failover Relationship (Failover Scope).
 
-5. Summary. The changes the Wizard will perform are summarized here and applied once the user clicks "Finish".
+  .. note::
+    This step is skipped if Single scope was selected, or if Failover Scope is selected and there is only one Failover Relationship on the selected DHCP server.
 
-6. Save comment.
+4. Address pool. Enter the address range for the address pool. By default, it is set to cover the entire scope.
+
+5. Range properties. Enter the custom properties for the IP address range.
+
+6. Enabled or Disabled.
+
+7. Active Directory Site selection. If you have enabled :ref:`active-directory`, the Wizard will ask you which AD site the new DHCP Scope should be associated to.
+
+8. Scope properties.
+
+  .. note::
+    On Microsoft DHCP servers, if the scope is a part of a MS DHCP Superscope, enter the name of the Superscope here, or leave empty.
+
+  .. note::
+    On Cisco DHCP Servers the only configurable scope property is "Import All". When checked, it imports Dynamic Host Configuration Protocol (DHCP) option parameters into the DHCP server database. Refer to the Cisco IOS IP Addressing Command Reference document for more information.
+
+9. DNS Update Settings (only Microsoft DHCP servers)
+
+10. Save Comment
+
+11. Summary: The changes the Wizard will perform are summarized here and applied once the user clicks "Finish".
+
+.. warning::
+  Once the scope has been created, you must set access privileges for the scope if you want to allow users to make any changes to it, assuming the initial access for Ranges/Scopes has not been set appropriately.
 
 Access
 ------
 
-For complete details on this function, refer to :ref:`access-control`.
+For complete details on this function, refer to :ref:`global-access`.
 
-Scope Migration Wizard (Management Console)
--------------------------------------------
+Delete
+------
+
+Use the following procedure to remove a scope definition from the Management Console.
+
+1. Locate the DHCP Scope you want to remove and right-click on it.
+
+2. From the pop-up menu, select :guilabel:`Delete`. A dialog prompts you to confirm your decision to delete this scope.
+
+3. Click :guilabel:`OK` to delete the scope, or :guilabel:`Cancel` to leave it.
+
+Disable/Enable
+--------------
+
+If you are no longer using a particular scope, but do not want to delete it completely because you may need it in the future, you can disable the scope instead. A scope that is disabled will be ignored by the DHCP server until it is re-enabled. Use the following procedure to disable/enable a scope.
+
+1. Locate the DHCP Scope you want to disable/enable and right-click on it. Scopes that are currently disabled have faded icons next to them.
+
+2. From the pop-up menu, select :guilabel:`Disable` to disable this scope, or if the scope is already disabled, select :guilabel:`Enable` to reactivate it.
+
+.. note::
+  New scopes are always disabled by default so you can configure the properties before the DHCP server begins using it.
+
+Scope Migration Wizard
+----------------------
 
 The *Scope Migration Wizard* allows users to migrate one or more scopes from one server to another, including all data in the scope.
 
@@ -206,8 +401,8 @@ Server
 
 5. For each of the resulting screens, make a selection/entry and move through the wizard.
 
-Duplication Wizard (Management Console)
----------------------------------------
+Duplication Wizard
+------------------
 
 To duplicate a DHCP scope you should use the Duplicate Scope wizard. The duplicate will initially have the exact same properties as the original, but you will have the option to assign the duplicate to a different DHCP server and modify the duplicated values.
 
@@ -230,8 +425,8 @@ Folders
 
 Refer to :ref:`object-folders` for details on this function.
 
-Reconcile Scope (Management Console)
-------------------------------------
+Reconcile Scope
+---------------
 
 .. note::
   Applies to MS DHCP Servers only.
@@ -246,8 +441,30 @@ Use this function to fix inconsistencies between information in the registry and
 
 For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
 
-Scope Policies (Windows Server 2012 or newer) (Management Console)
-------------------------------------------------------------------
+Converting a Scope to a Range
+-----------------------------
+
+Use this function to convert an existing scope to an IP Address range, while keeping all the settings intact.
+
+1. In the *Object List*, select :guilabel:`DHCP Scopes` and then select a scope.
+
+2. From the menu bar, select :menuselection:`Range --> Convert to IP Address Range`.
+
+3. When the Men&Mice Management Console confirmation dialog box appears, click :guilabel:`Yes` to convert the range.
+
+Converting a Range to a Scope
+-----------------------------
+
+Use this function to convert an existing IP Address range to a scope, while keeping all the settings intact.
+
+1. In the *Object List*, select :guilabel:`IP Address Ranges` and then select a range.
+
+2. From the menu bar, select :menuselection:`Range --> Convert to DHCP Scope`, or right click and select :guilabel:`Convert to DHCP Scope`. The *Scope Creation Wizard* will appear, with the subnet field pre-populated for the selected range.
+
+3. Clicking :guilabel:`Next` will continue with the *Scope Creation Wizard* as normal.
+
+Scope Policies (Windows Server 2012 or newer)
+---------------------------------------------
 
 If you are managing DHCP servers on Windows Server 2012 or newer, you can use Micetro to set scope policies for individual scopes.
 
@@ -334,7 +551,19 @@ You can edit, delete or disable existing DHCP Scope Policies. You can also chang
 Other Functions
 ---------------
 
-At any time, you can modify the properties for a scope. Simply locate the item, and from the ellipsis menu select :guilabel:`Edit network properties`. For split scopes, the scope contents can be examined individually on each server.
+At any time, you can modify the properties for a scope. Simply locate the item, right-click and from the shortcut menu select :guilabel:`Properties`. When a scope is opened, the system displays one tab for each server on which the scope is defined. For split scopes, the scope contents can be examined individually on each server.
+
+In addition to the tabs displaying individual scope contents on each server, the DHCP scope dialog contains an *Overview* and *Statistics* tab, with a graphical overview of the scope contents, as well as statistics on pool utilization on all servers.
+
+For each DHCP server containing the scope, there is a bar depicting the placement of reservations, pools, and exclude ranges in different colors.
+
+* The top of the bar represents the IP Address at the start of the scope.
+
+* The bottom of the bar represents the IP Address at the end of the scope.
+
+This overview is useful in verifying that split scope configurations do not contain conflicts, such as overlapping pools or inconsistent reservations.
+
+The table in the lower part of the window contains aggregate statistics for the scope, i.e., effective pool size, the number of pool clients, and the pool utilization, summed up over all servers containing the scope.
 
 Deleting a Lease
 ^^^^^^^^^^^^^^^^
@@ -343,15 +572,17 @@ To delete a lease in a DHCP scope, do the following:
 
 1. Open the scope containing the lease you want to delete.
 
-2. Select the lease and from the ellpisis menu select :guilabel:`Release DHCP lease` or use :menuselection:`Actions --> Release DHCP lease`.
+2. Right-click on the lease and, from the shortcut menu, select :guilabel:`Release Lease`.
 
 IP Address Details
 ^^^^^^^^^^^^^^^^^^
 
-The IP Address details window contains all information pertaining to an IP Address in Micetro, including DNS records, DHCP reservations, and custom properties. To access the IP address details select an IP address in the DHCP scope dialog, and all information is displayed in the Inspector, including information on any DNS and DHCP data associated with the IP address. A reservation can be created by clicking the :guilabel:`+` button in the *Related DHCP data* section of the Inspector.
+The IP Address details window contains all information pertaining to an IP Address in the application, including DNS records, DHCP reservations, and custom properties. To access the *IP Address details* window from the DHCP scope dialog you need to double click on an IP Address in the DHCP scope dialog, or right-click on an IP Address and select the Open menu item.
 
-Subranges of Scopes (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The IP Address details window is documented in :ref:`ip-address-dialog`. However, when the IP Address details window is opened from the DHCP scope dialog, information on any DHCP reservation associated with the IP Address displays as well. A reservation can be created by clicking the Create button on the DHCP Panel. You can also create and edit a reservation directly from the DHCP scope dialog by selecting the appropriate menu item when right-clicking on an IP Address. The IP Address dialog box is not available if only a DHCP license key has been entered. In this case, the reservation dialog box will be displayed when double clicking an entry in the DHCP scope.
+
+Subranges of Scopes
+^^^^^^^^^^^^^^^^^^^
 
 It is possible to choose whether the contents of ranges that are created under scopes are displayed in a range view or a scope view. Use the Show DHCP data in subranges of scopes checkbox in the *System Settings* dialog box to choose the preferred display mode.
 
@@ -362,25 +593,25 @@ If the range view is selected, the subranges are opened in the range view and no
 Renaming a Scope
 ^^^^^^^^^^^^^^^^
 
-It is very simple to change the name and/or description of a scope in Micetro.
+It is very simple to change the name and/or description of a scope in the Management Console.
 
-1. Locate and select the DHCP Scope you want to rename.
+1. Locate the DHCP Scope you want to rename.
 
-2. From the ellipsis menu, select :guilabel:`Edit network properties`.
+2. Right-click and, from the shortcut menu, select :guilabel:`Properties`. The *DHCP Scope Properties* dialog box displays. NOTE: The dialog box may look different depending on the DHCP server type.
 
-3. Enter the **Title**, and any other value you wish to change.
+3. Enter the **Title** and **Description**.
 
-4. Click :guilabel:`Save`.
+4. Click :guilabel:`OK`. The newly renamed scope now displays in the Object List.
 
-Superscopes (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Superscopes
+^^^^^^^^^^^
 
 .. note::
   Superscopes are only supported on MS DHCP servers on Windows server.
 
 All MS Superscopes are listed in the object section under the heading :guilabel:`Superscopes`.
 
-.. image:: ../../images/console-dhcp-superscopes.png
+.. image:: ../../../images/console-dhcp-superscopes.png
   :width: 70%
   :align: center
 
@@ -396,8 +627,8 @@ To assign an existing scope to a superscope, do the following:
 
 4. Click :guilabel:`OK`. The scope is placed in the superscope. If the superscope did not exist, the new superscope is created and now displays as a new item in the object list.
 
-Moving IP Address Information (Management Console)
---------------------------------------------------
+Moving IP Address Information
+-----------------------------
 
 IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained, and the associated DNS records are updated. If a reservation is associated with the IP Address, the reservation information is moved with the IP Address if the destination address is in a DHCP scope that is hosted on a DHCP server of the same type. If the destination address is in a scope hosted on a different type of a DHCP server or the destination is in an IP Address range, the reservation information is discarded.
 
@@ -433,22 +664,24 @@ Configuring Host Discovery Using Ping
 
 1. Select one or more scopes.
 
-2. From the ellipsis menu select Set :guilabel:`Set discovery Schedule`.
+2. Right-click and, from the shortcut menu, select Set :guilabel:`Discovery Schedule`. The *Schedule* dialog box displays.
 
-3. Check the :guilabel:`Enable` option.
+3. Select the :guilabel:`Enable discovery schedule` option.
 
-  Frequency
-    Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
+  Schedule ____ every ___ day(s)/week(s)/month(s).
+    Click the drop-down list and select the frequency (e.g., Daily, Weekly, etc.) and the occurrences (e.g., 1 day, 2 weeks, etc.).
 
-  Every
-    Enter the frequency unit for discovery (e.g. days, weeks, etc.).
+  At ____.
+    Enter the time at which discovery should take place.
 
-  Next run
-    Select the start date and time.
+  Starting ____.
+    Click the drop-down list and select the start date.
 
-4. Click :guilabel:`Save`.
+4. Click :guilabel:`OK`.
 
-Once the schedule options have been set and saved, two columns - Last Seen and Last Known MAC Address - are added to the range or scope grid. The Last Seen column identifies when a host was last seen on the network.
+Once the schedule options have been set and saved, two columns - Last Seen and Last Known MAC Address - are added to the range or scope view. The Last Seen column identifies when a host was last seen on the network.
+
+..
 
 Green
   Host responded to the last PING request. The date and time are shown.
@@ -459,18 +692,20 @@ Orange
 Red
   Host has never responded to a PING request. The text Never is shown.
 
+The list of ranges contains a column that shows if a discovery schedule has been set for a range. The name of this column is Schedule. To quickly see all ranges that have a schedule set, you can use the Quick Filter and filter by this column by entering ``Schedule:Yes`` in the Quick Filter search field.
+
 At any time if you wish to disable host discovery, do the following:
 
 1. Select the object(s) for which you want to disable discovery.
 
-2. From the ellipsis menu, select :guilabel:`Set discovery schedule`.
+2. Right-click and, from the shortcut menu, select :guilabel:`Set Discovery Schedule`. The *Schedule* dialog box displays.
 
-3. Uncheck the :guilabel:`Enable` option.
+3. Uncheck the :guilabel:`Enable discovery schedule` option.
 
-4. Click :guilabel:`Save`.
+4. Click :guilabel:`OK`.
 
-Configuring Host Discovery by Querying Routers (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring Host Discovery by Querying Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To collect information about hosts by querying routers, you must first enable collection of IP information from routers.
 
@@ -484,8 +719,8 @@ To configure host discovery:
 
 4. Click :guilabel:`OK`.
 
-Failover Configurations and Split Scopes (Management Console)
--------------------------------------------------------------
+Failover Configurations and Split Scopes
+----------------------------------------
 
 Managing Failover Configurations (ISC DHCP)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -651,9 +886,6 @@ When using a failover configuration, it is possible to replicate scope informati
 Managing Failover Relationships
 """""""""""""""""""""""""""""""
 
-.. note::
-  In the Web Application, the failover mode, as well as the failover partners, is displayed in the Inspector's :guilabel:`High availability` section when a server or scope is selected that is configured for high availability.
-
 You can view, create, edit and delete existing failover relationships.
 
 **Adding a Failover Relationship**
@@ -687,7 +919,7 @@ Managing Split Scopes
 
 When a scope is hosted on multiple servers, the scope view lists all the servers that contain a copy of the scope. For scopes on MS servers, the line says 'Split Scope' and then lists the servers. For the ISC DHCP server, the line says 'Multiple Instances' and then lists the servers:
 
-.. image:: ../../images/console-dhcp-split-scopes.png
+.. image:: ../../../images/console-dhcp-split-scopes.png
   :width: 50%
   :align: center
 
@@ -706,4 +938,4 @@ Micetro detects when a split scope configuration is in place. Split scopes are h
 The servers listed in this dialog box all contain the scope to which the user was applying the change. By pressing the Enable button, all instances of the scope would be enabled.
 
 .. note::
-  Split scopes are only supported on MS DHCP and ISC Kea servers.
+  Split scopes are only supported on MS DHCP servers.
