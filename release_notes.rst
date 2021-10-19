@@ -10,7 +10,7 @@ Release notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`, :ref:`10.0.5-release`
+Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`, :ref:`10.0.5-release` 
 
 .. _10.0.5-release:
 
