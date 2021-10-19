@@ -160,7 +160,6 @@ Machine: node-2
 """""""""""""""
 
 .. code-block::
-  :linenos:
 
   sudo su - postgres
   export PATH="$PATH:/usr/pgsql-12/bin"
@@ -191,7 +190,6 @@ Machine: node-1
 Enter the ``postgresql`` database as user *postgres*:
 
 .. code-block::
-  :linenos:
 
   psql -p [port]
   > CREATE DATABASE mmsuite ENCODING = 'LATIN1' LC_CTYPE = 'POSIX' LC_COLLATE='POSIX' TEMPLATE template0;
@@ -200,7 +198,6 @@ Enter the ``postgresql`` database as user *postgres*:
 Edit the ``pg_hba.conf`` to allow access to the database from the outside:
 
 .. code-block::
-  :linenos:
 
   echo "host mmsuite postgres [ip-address-of-central-primary]/32 scram-sha-256" >> ./[node-1]/pg_hba.conf
   echo "host mmsuite postgres [ip-address-of-central-secondary]/32 scram-sha-256" >> ./[node-1]/pg_hba.conf
@@ -212,7 +209,6 @@ Machine: node-2
 Edit the ``pg_hba.conf`` to allow access to the database from the outside:
 
 .. code-block::
-  :linenos:
 
   echo "host mmsuite postgres [ip-address-of-central-primary]/32 scram-sha-256" >> ./[node-2]/pg_hba.conf
   echo "host mmsuite postgres [ip-address-of-central-secondary]/32 scram-sha-256" >> ./[node-2]/pg_hba.conf

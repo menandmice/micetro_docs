@@ -1,6 +1,6 @@
 .. meta::
    :description: Disaster scenarios and recovery with PostgreSQL high availability in Micetro by Men&Mice
-   :keywords: disaster recovery, PostgreSQL, high availability, Micetro 
+   :keywords: disaster recovery, PostgreSQL, high availability, Micetro
 
 .. _psql-disaster-recovery:
 
@@ -79,7 +79,6 @@ On the current primary database machine:
 Edit the ``preferences.cfg file`` for Central, and change the following line, using the connection string:
 
 .. code-block::
-  :linenos:
 
   postgres://[node-?]:[port]/mmsuite?target_session_attrs=read-write
 
@@ -130,7 +129,7 @@ And re-run the application:
 
 Start the secondary machine(s):
 
-.. code-bloack:: bash
+.. code-block:: bash
 
   sudo su - postgres
   export PATH="$PATH:/usr/pgsql-12/bin"

@@ -107,7 +107,6 @@ Ansible configuration
 Ansible needs to know about the ``mm_inventory`` plugin and also has some extra configuration options. First the ``mm_inventory`` plugin needs to be enabled, so Ansible can use it. This is done in the ``[inventory]`` section in the ``ansible.cfg`` file.
 
 .. code-block::
-  :linenos:
 
   [inventory]
   enable_plugins   = mm_inventory, host_list, auto
@@ -151,6 +150,5 @@ Now the inventory plugin can be used with Ansible, like:
 Or set the ``mm_inventory.yml`` as the Ansible inventory in the ``ansible.cfg`` file.
 
 .. code-block::
-  :linenos:
 
   inventory = mm_inventory.yml

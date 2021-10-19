@@ -1,5 +1,5 @@
 .. meta::
-   :description: Web application 
+   :description: Web application
    :keywords: Micetro
 
 .. _web-application:
@@ -18,8 +18,10 @@ Web Application
   webapp_dns
   webapp_import_dns_records
   webapp_network_management
+  webapp_import_ipam_data
   webapp_reporting
   webapp_sso
   webapp_quick_command
   webapp_quick_filter
   webapp_workflows
+  webapp_admin

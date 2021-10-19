@@ -37,3 +37,8 @@ Any actions that can be performed on a selected server can either be accessed in
   "Advanced server options", "Allows to view and edit advanced (BIND) server options for the selected server."
   "View history", "Allows to view history for the selected server."
   "Remove server", "Removes the selected server from the system."
+
+Server states 
+-------------
+
+See :ref:`server-states`.

@@ -1,11 +1,11 @@
 .. meta::
-   :description: The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers options in the Micetro by Men&Mice Management Console 
+   :description: The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers options in the Micetro by Men&Mice Management Console
    :keywords: KEA DHCP, DHCP servers, CISCO servers, Microsoft DHCP servers
 
-.. _console-dhcp-options:
+.. _dhcp-options:
 
-Options
--------
+Options (Management Console)
+----------------------------
 
 The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers offer different types of options: the MS DHCP server allows the user to choose between different option types (Standard, Microsoft Options and Microsoft Windows 2000 options). This drop-down list is only displayed if there are non-standard options defined on the ISC DHCP server.
 

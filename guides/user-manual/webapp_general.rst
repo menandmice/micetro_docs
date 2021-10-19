@@ -94,7 +94,7 @@ Top menu
   :width: 80%
   :align: center
 
-The top menu allows to switch between the three main sections of the Web Application (DNS, Networks, and Reporting). Additionally, the Quick commands, User Management, and Help is accessible.
+The top menu allows to switch between the four main sections of the Web Application (DNS, IPAM, Reports, and Admin). Additionally, the Quick commands, User menu, and Help is accessible.
 
 Navigating
 ^^^^^^^^^^

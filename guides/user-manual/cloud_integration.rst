@@ -1,6 +1,6 @@
 .. meta::
-   :description: Micetro native integration with cloud based DNS services, IP address related data management for Azure and AWS  
-   :keywords: Micetro by Men&Mice, multicloud, multicloud integration 
+   :description: Micetro native integration with cloud based DNS services, IP address related data management for Azure and AWS
+   :keywords: Micetro by Men&Mice, multicloud, multicloud integration
 
 .. _cloud-integration:
 
@@ -13,6 +13,9 @@ In previous versions to version 8.2, only Azure DNS was natively supported and A
 
 Supported Cloud Services
 ------------------------
+
+.. important::
+  To be able to connect and use cloud services, the DNS Server Controller must be installed on the same machine that is running Men&Mice Central. See :ref:`install-dns-controllers`.
 
 .. csv-table::
   :header: "Cloud service", "DNS", "IPAM"

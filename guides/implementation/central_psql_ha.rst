@@ -41,7 +41,6 @@ Update the /etc/hosts file:
 Add this to the Men&Mice Central ``preferences.cfg`` file:
 
 .. code-block::
-  :linenos:
 
   <Database value="postgresql"/>
   <DatabaseServer value="postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write" />
@@ -62,7 +61,6 @@ Update the /etc/hosts file:
 Add this to the Men&Mice Central ``preferences.cfg`` file:
 
 .. code-block::
-  :linenos:
 
   <Database value="postgresql"/>
   <DatabaseServer value="postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write" />

@@ -1,6 +1,6 @@
 .. meta::
-   :description: IP address management (IPAM) in the Micetro by Men&Mice Management Console 
-   :keywords: IPAM, IP address management 
+   :description: IP address management (IPAM) in the Micetro by Men&Mice Management Console
+   :keywords: IPAM, IP address management
 
 .. _ipam:
 
@@ -20,6 +20,77 @@ Managing IP Addresses entails being able to create assignable ranges within the 
 
 .. note::
   In order to use the IP Address Management features in Micetro, you must have entered the license key for the IPAM module.
+
+Multiple Address Spaces
+-----------------------
+
+.. note::
+  For managing address spaces through the Management Console, see :ref:`console-address-spaces`.
+
+Micetro supports multiple address spaces.
+
+Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP address entries, and folders.
+
+.. note::
+  Changes to data in one address space do not affect data in any other address space.
+
+Items **shared** between address spaces are:
+
+* users, groups, and roles
+
+* custom property definitions (see :ref:`admin-custom-properties`)
+
+Address Space Management
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users with sufficient permissions are allowed to create, modify or delete address spaces as well as set access privileges for existing address spaces.
+
+Navigate to :menuselection:`Admin --> Configuration --> Address Spaces`
+
+.. image:: ../../images/address-spaces.png
+  :width: 90%
+  :align: center
+
+To **create** a new address space, click the :guilabel:`Add` button in the top bar and enter the name and description for the address space.
+
+.. note::
+  The first address space is always named ``<default>``. It is not possible to rename or delete the *<default>* address space.
+
+  The *<default>* address space is the only address space that shows AD sites if *AD Site and Subnet* integration is enabled.
+
+To **edit** the name or description for an address space, select the address space and click the :guilabel:`Action --> Edit address space` button in the top bar or ellipsis menu.
+
+To **delete** an address space, select the address space and click the :guilabel:`Action --> Remove address space` button in the top bar or ellipsis menu.
+
+.. danger::
+  When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP address ranges, IP address entries, and folders). This action cannot be undone.
+
+.. note::
+  You cannot delete the *<default>* address space or the address space you are currently working in.
+
+To see and edit the **access controls** for an address space, select the address space and click the :guilabel:`Action --> Access` button in the top bar or ellipsis menu.
+
+Switching to a Different Address Space
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can only work in one address space at a time. You can see the current address space in the Manager window, above the object list.
+
+To switch to a different address space:
+
+1. Click the **User** icon in the top right corner of the Web Application.
+
+2. Select :guilabel:`Address Space` and select the address space you want to use.
+
+.. image:: ../../images/address-space-Micetro.png
+  :width: 50%
+  :align: center
+
+Moving Objects to a Different Address Space (Management Console)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See :ref:`console-address-spaces`.
+
+----
 
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
@@ -41,7 +112,7 @@ Checking the :guilabel:`Inherit Access` checkbox will have the selected scope in
 
 Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the scope. This means that whenever the access privileges in the scope are changed, the changes will be applied of all descendants of the scope.
 
-Regarding other access settings, refer to :ref:`global-access`.
+Regarding other access settings, refer to :ref:`access-control`.
 
 .. _ipam-containers:
 
@@ -50,8 +121,10 @@ Containers
 
 A Container is a section of the address space that has been reserved but not yet allocated. Containers can contain address ranges and scopes and you can set address privileges for containers that can be applied to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled that functionality in System Settings.
 
-Creating a Container
-^^^^^^^^^^^^^^^^^^^^
+.. _new-container:
+
+New container
+^^^^^^^^^^^^^
 
 A range that exists on network boundaries (a subnet) can be converted to a Container. Likewise, a Container can be converted to a range.
 
@@ -70,7 +143,7 @@ A range that exists on network boundaries (a subnet) can be converted to a Conta
 
   * Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
 
-  Regarding other access settings, refer to :ref:`global-access`.
+  Regarding other access settings, refer to :ref:`access-control`.
 
 Viewing IP Address Ranges
 -------------------------
@@ -93,16 +166,29 @@ While viewing the IP ranges, the :ref:`webapp-quickfilter` is available. When us
   :width: 90%
   :align: center
 
-New Ranges
-----------
+New Networks
+------------
 
-To create a new IP Address range, do the following:
+To create a new network, do the following:
 
 1. Open the :menuselection:`Networks` context.
 
-2. Click the :guilabel:`Create` button. The *Create network* dialog box displays.
+2. Click the :guilabel:`Create` button.
 
-3. Enter the appropriate value for the new network, as well as whether you want to create a DHCP scope or reserve network and broadcast addresses and click :guilabel:`Next`.
+3. Select what type of network (new network, :ref:`new-dhcp-scope`, :ref:`new-container`) you'd like to create.
+
+4. Enter the appropriate values, grouped on pages depending on the type.
+
+.. note::
+  The *Create* dialog is different depending on the type selected through the dropdown:
+
+  * For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
+
+  * A *DHCP scope* can be created with the network and broadcast address automatically configured. See :ref:`new-dhcp-scope`.
+
+  * A *container* has no network or broadcast address. See :ref:`ipam-containers`.
+
+5. Click :guilabel:`Finish`.
 
 Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the Networks component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.
 
@@ -113,29 +199,17 @@ It is possible to create subranges of existing ranges and DHCP scopes.
 
 .. _ipam-range-config:
 
-Range Configuration
--------------------
+Network Configuration
+^^^^^^^^^^^^^^^^^^^^^
 
-When creating a new IP Address range, you must complete the Properties dialog box.
-
-.. image:: ../../images/create-network-properties-Micetro.png
-  :width: 60%
-  :align: center
+When creating a new network, DHCP scope, or container, you must complete the Properties dialog box in the final step.
 
 These properties are defined in :ref:`admin-custom-properties`.
 
-Range Modifications
-^^^^^^^^^^^^^^^^^^^
+Network Modifications
+^^^^^^^^^^^^^^^^^^^^^
 
-Once you have created an IP Address Range, it is easy for you to make changes to that IP Address Range. You can do the following:
-
-* Change the name of the IP Address range
-
-* Change the boundaries (start and end IP Address) of the IP Address range
-
-* Change the state of the IP Addresses in that IP Address range
-
-To modify an IP Address range, do the following:
+Once you have created a network, it is easy to make changes.
 
 1. Select the range in the grid.
 
@@ -145,23 +219,23 @@ To modify an IP Address range, do the following:
 
 4. Click :guilabel:`Save`.
 
-Range Deletions
-^^^^^^^^^^^^^^^
+Network Deletions
+^^^^^^^^^^^^^^^^^
 
-You can always delete an IP Address Range definition. If you delete an IP Address Range, the IP Addresses that belonged to that range will get the attributes of the parent IP Address Range. If the range you are deleting has subranges, the subranges will become children of the unassigned ranges' parent.
+You can always delete a network definition. If you delete a network, the IP addresses that belonged to it will get the attributes of the parent network. If the network you are deleting has subranges, they will become children of the unassigned networks' parent.
 
-Use the following procedure to delete an IP Address Range definition:
+Use the following procedure to delete a network definition:
 
-1. Select IP range(s) you want to remove.
+1. Select network(s) you want to remove.
 
-2. From the ellipsis menu select :guilabel:`Delete network` or use :menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) range(s).
+2. From the ellipsis menu select :guilabel:`Delete network` or use :menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) network(s).
 
 3. Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
 
 IP Address List
 ---------------
 
-To view a list of host entries in a particular range, double-click on the range. This opens the grid where you can view and edit the properties of individual IP address entries.
+To view a list of host entries in a particular network, double-click on the network. This opens the grid where you can view and edit the properties of individual IP address entries.
 
 .. image:: ../../images/view-Networks-Micetro.png
   :width: 80%
@@ -220,17 +294,17 @@ Editing a DNS Host
 
 1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Edit`.
 
-3. Make the desired changes and click :guilabel:`Save`. The dialog box closes and the details are updated.
+2. Make the desired changes and click :guilabel:`Save`. The dialog box closes and the details are updated.
 
 Removing a DNS Host
 ^^^^^^^^^^^^^^^^^^^
 
-1. 1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
+1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
 
 Moving IP Address Information (Management Console)
 --------------------------------------------------
 
-IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained, and the associated DNS records are updated.
+IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained and the associated DNS records are updated.
 
 To move a IP Address information, do the following:
 
@@ -250,16 +324,29 @@ To move a IP Address information, do the following:
 
 6. Click :guilabel:`OK`. The IP Address information is moved to the new IP Address.
 
-Split Range Wizard (Management Console)
----------------------------------------
+.. _split-range-wizard:
 
-This wizard allows you to create multiple subranges of an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
+Split/Allocate Range Wizard
+---------------------------
 
-1. From the object list, click on :guilabel:`IP Address Ranges`.
+This wizard allows you to create multiple subranges from an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
-2. From the list of ranges displayed right-click and, from the shortcut menu, select :guilabel:`Split into Subranges`. The *Split range wizard* displays.
+1. Open the :menuselection:`IPAM` context and select the range you'd like to split.
 
-3. For each of the resulting screens, make a selection/entry and move through the wizard.
+2. Use the :guilabel:`Action --> Allocate Subranges` action from the top bar or the ellipsis menu.
+
+3. Configure the new subranges. If you choose fewer subnets that fit in the parent, you can also set the offset from where you want to start allocating. Click :guilabel:`Next` when finished configuring.
+
+.. image:: ../../images/subranges-wizard.png
+  :width: 65%
+  :align: center
+
+4. Define the title and custom properties for the new subranges. Click :guilabel:`Next` when done.
+
+5. On the summary page verify the new subranges and click :guilabel:`Finish`.
+
+.. note::
+  In the web application, the Split Range and Allocate Range wizards are merged together. For information on these wizards in the Management Console, see :ref:`console-split-range` and :ref:`console-allocate-ranges`.
 
 Update Reverse Records Wizard (Management Console)
 --------------------------------------------------
@@ -275,50 +362,35 @@ This wizard allows you to create reverse DNS zones for selected ranges.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
-Allocate Ranges Wizard (Management Console)
--------------------------------------------
+Join Ranges
+-----------
 
-This wizard allows you to create allocate a user-defined number of subranges from an existing range. The wizard can only be used on ranges that exist on subnet.
+1. In the :menuselection:`IPAM` context, select the ranges that you want to join.
 
-1. From the object list, click on :guilabel:`IP Address Ranges`.
+2. Use the :guilabel:`Action --> Join Ranges` action from the top bar or ellipsis menu.
 
-2. From the list of ranges displayed right-click and, from the shortcut menu, select :guilabel:`Allocate Ranges`. The *Allocate ranges wizard* displays.
-
-3. Follow the instructions provided by the wizard to create the number of subranges that you need.
-
-Join Ranges (Management Console)
---------------------------------
-
-This function allows you to select and join a number of ranges. The :guilabel:`Join Ranges` command is available if the selected ranges can be joined.
-
-1. Display the list of address ranges that you want to join.
-
-2. Select each of the desired ranges.
-
-3. Right-click and, from the shortcut menu, select :guilabel:`Join Ranges`.
-
-.. image:: ../../images/console-ipam-join-ranges.png
-  :width: 70%
+.. image:: ../../images/join-ranges.png
+  :width: 90%
   :align: center
 
-4. The Join Ranges dialog box displays.
+3. Set the properties for the joined range:
 
-Use Access
-  Click the drop-down list and specify from which range you will gain access.
+  Use Access from
+    Click the drop-down list and specify from which range you will gain access.
 
-Use Properties
-  Click the drop-down list and specify from which range you will use the properties.
+  Use Properties from
+    Click the drop-down list and specify from which range you will use the properties.
 
-Title
-  Enter a title for this range.
+  Title
+    Enter a title for the new range.
 
 Description
   Type a description.
 
-5. Click :guilabel:`Join`.
+4. Click :guilabel:`Join`.
 
 Select Parent (Management Console)
--------------
+----------------------------------
 
 .. image:: ../../images/console-ipam-select-parent.png
   :width: 70%
@@ -378,57 +450,15 @@ At any time if you wish to disable host discovery, do the following:
 
 4. Click :guilabel:`Save`.
 
-Configuring Host Discovery by Querying Routers (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring Host Discovery by Querying Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is possible to perform host discovery by performing SNMP queries on specified routers. SNMP v1, v2c and v3 is supported.
+See :ref:`snmp-profiles`.
 
-Before a router can be queried it must be placed in an SNMP profile. An SNMP profile contains the information necessary to access the SNMP information on the router. Note that multiple routers can share the same SNMP profile.
+Subnet Discovery
+----------------
 
-To create an SNMP profile:
-
-1. Select :menuselection:`Tools --> SNMP Profiles`. A new profile can be created, edited or removed. Additionally, a scan can be initiated. If the :guilabel:`Scan` button is greyed out, a scan is already in progress.
-
-2. To create a new profile, click :guilabel:`Add`. The *SNMP Profile* dialog box is displayed.
-
-3. Enter a profile name and choose the SNMP version to use. You can also specify a non-standard port to use for SNMP.
-
-4. Enter the necessary information to access the router using SNMP. The information is different depending on the SNMP version selected:
-
-  For SNMP v1 and v2c:
-
-  .. csv-table::
-    :widths: 15, 85
-
-    "Community", "Enter the SNMP community string (password) to use to access the routers using the profile."
-
-  For SNMP v3:
-
-  .. csv-table::
-    :widths: 15, 85
-
-    "Username",	"Enter a user name for accessing the routers using the profile."
-    "Authentication Protocol", "Choose the authentication protocol to use. The available protocols are MD5 and SHA."
-    "Authentication Password", "Enter the authentication password for the routers using the profile."
-    "Encryption Protocol", "Choose the encryption protocol to use. The available protocols are DES and AES."
-    "Encryption Password", "Enter the authentication password for the routers using the profile."
-
-5. Enter the IPv4 address of one or more routers that you want to query using this profile. Note that each router's IP address needs to be on a separate line in the text area.
-
-6. Click :guilabel:`OK` to save the settings and close the dialog box.
-
-You can edit an SNMP profile, for example if you want to add or remove routers from a profile.
-
-To edit an SNMP profile:
-
-1. Select :menuselection:`Tools --> SNMP Profiles`, select the SNMP profile you want do edit and click :guilabel:`Edit` in the dialog box that appears. The *SNMP Profile* dialog box is displayed for the selected entry.
-
-2. Make the required changes and click :guilabel:`OK` to save the changes and close the dialog box.
-
-Subnet Discovery (Management Console)
--------------------------------------
-
-The subnet discovery features enables Micetro to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in  configuring host discovery, but to enable this feature, make sure the :guilabel:`Synchronize subnets ...`  is checked.
+The subnet discovery features enables Micetro to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in configuring host discovery, but to enable this feature, make sure the :guilabel:`Synchronize subnets ...` is checked in the SNMP profile. See :ref:`snmp-profiles`.
 
 Add to/remove from Folder
 -------------------------
@@ -463,13 +493,13 @@ To change the monitoring settings for a subnet:
   :width: 50%
   :align: center
 
-1. Right-click and, from the shortcut menu, select :guilabel:`Set Subnet Monitoring`. The *Subnet Monitoring* dialog box displays.
+2. Right-click and, from the shortcut menu, select :guilabel:`Set Subnet Monitoring`. The *Subnet Monitoring* dialog box displays.
 
 Enabled
   When checked, the subnet will be monitored.
 
 Script to invoke
-  Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
+    Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
 
 E-mail addresses
   Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
@@ -486,7 +516,7 @@ Only perform action once (until fixed)
 Perform action when fixed
   When checked, the action is performed when the number of free addresses is no longer below the threshold.
 
-2. Click :guilabel:`OK` to confirm your settings.
+3. Click :guilabel:`OK` to confirm your settings.
 
 Removing Subnet Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -512,9 +542,9 @@ To view the utilization history:
   :width: 80%
   :align: center
 
-* The drop-down box in the top left section of the window allows you to choose the time period to view. You can choose between 30 days, 7 days or 24 hours.
+* The left drop-down box allows you to choose the time period to view. You can choose between 30 days, 7 days or 24 hours.
 
-* Use the drop-down box in the middle to choose whether you want to view the utilization by the actual address count or by percentage.
+* Use the middle drop-down box to choose whether you want to view utilization by the actual address count or by percentage.
 
 * If you are viewing the utilization of a scope, a dropdown box is displayed where you can choose whether you want to view the dynamic part of the scope (the address pool(s)) or the static part of the scope.
 
@@ -536,58 +566,3 @@ You can export the utilization history for one or more subnets to the Clipboard 
 * To export the utilization history for a single subnet from the :guilabel:`Address Utilization Window`, right-click the graph and select the time period you want to export. The data is copied to the Clipboard.
 
 * To export the utilization for multiple subnets, select the subnets, right-click and from the shortcut menu select :guilabel:`Export Address Utilization`. The data is saved in a CSV file.
-
-Multiple Address Spaces
------------------------
-
-Micetro supports multiple address spaces. Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP Address entries and object folders. Changes to data in one address space do not affect data in any other address space.
-
-Items shared between address spaces are the user and group lists and custom property definitions.
-
-Address Space Management (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The Address Space Management dialog box allows you to create, modify or delete address spaces as well as set access privileges for existing address spaces. To access the Address Space Management dialog box, you must be logged in as the administrator user.
-
-To open the Address Space Management dialog box, from the Tools menu, select Define Address Spaces.
-
-.. image:: ../../images/console-ipam-address-spaces.png
-  :width: 50%
-  :align: center
-
-To create a new address space, click the Add button and enter the name and description for the address space.  NOTE:  When more than one address space is defined, the first address space will be named <default>. It is not possible to rename or delete the <default> address space. Also, the <default> address space is the only address space that shows AD sites if AD Site and Subnet integration is enabled.  NOTE:  When a new address space is created, you must set the access for the address space to allow users to access it. When creating your first address space, two address spaces will actually be created, the <default> address space and the address space you created. You must set access for the <default> address space as well as for the new address space.
-
-To change the name or description for an address space, select the address space and click the Edit button.
-
-To delete an address space, select the address space and click the Delete button.
-
-.. danger::
-  When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP Address ranges, IP Address entries and folders). This action is not undoable.
-
-.. note::
-  You cannot delete the <default> address space or the address space you are currently working in.
-
-To set access privileges for an address space, select the address space and click the :guilabel:`Access` button.
-
-Switching to a Different Address Space
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can only work in one address space at a time. You can see the current address space in the Manager window, above the object list.
-
-To switch to a different address space:
-
-1. Click the **User** icon in the top right corner of the Web Application.
-
-2. Select :guilabel:`Address Space` and select the address space you want to use.
-
-.. image:: ../../images/address-space-Micetro.png
-  :width: 50%
-  :align: center
-
-Moving Objects to a Different Address Space (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-DNS servers, DHCP servers, IP Address ranges and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects do a different address space.
-
-.. note::
-  You cannot move folders between address spaces. Individual DHCP scopes cannot be moved between address spaces, but when you move a DHCP server to a different address space, all of its DHCP scopes are moved as well. Likewise, you cannot move individual DNS zones to a different address space, but moving a DNS server to a different address space will move all of its zones as well.

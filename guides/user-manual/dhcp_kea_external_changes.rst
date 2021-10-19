@@ -26,7 +26,6 @@ An example of the call to the control-agent:
 If successful, the result looks like this:
 
 .. code-block::
-  :linenos:
 
   [ { "result": 0, "text": "Configuration successful." } ]
 

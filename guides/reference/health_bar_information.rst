@@ -53,7 +53,7 @@ This error is shown when the Men&Mice DNS Server Controller is able to query the
 Failed to load ODBC Driver for SQL Server
 """""""""""""""""""""""""""""""""""""""""
 
-The preferred version of the Microsoft ODBD Driver for SQL Server failed to load. The latest version can be downloaded from `https://www.microsoft.com/en-us/download/details.aspx?id=53339`_.
+The preferred version of the Microsoft ODBD Driver for SQL Server failed to load. The latest version can be downloaded from `https://www.microsoft.com/en-us/download/details.aspx?id=53339 <https://www.microsoft.com/en-us/download/details.aspx?id=53339>`_.
 
 Failover partner Down
 """""""""""""""""""""
@@ -66,7 +66,7 @@ This warning is shown when the active Central server went down and a standby Cen
 License exceeded
 """"""""""""""""
 
-This warning is shown when the current license for Men&Mice component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact `sales@menandmice.com`_ to resolve the matter.
+This warning is shown when the current license for Men&Mice component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact `sales@menandmice.com <mailto:sales@menandmice.com>`_ to resolve the matter.
 
 Multiple PTR records in zone
 """"""""""""""""""""""""""""
@@ -82,7 +82,7 @@ For Men&Mice Suite version 8.1 and higher we recommend to use only SQL Server 20
 Scope contains inconsistencies that need reconciling
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when scope contains inconsistencies and it needs reconciling. See :ref:`console-dhcp-windows-reconcile` and `https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx`_ about reconciling a DHCP scope.
+This warning is shown when scope contains inconsistencies and it needs reconciling. See :ref:`console-dhcp-windows-reconcile` and `https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx <https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx>`_ about reconciling a DHCP scope.
 
 Scope is not part of a failover relationship on partner server
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

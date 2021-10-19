@@ -81,3 +81,5 @@ Use this function to fix inconsistencies between information in the registry and
 3. Choose the action to perform: **Verify** (only) or **Fix** (any inconsistencies).
 
 4. Click :guilabel:`OK` to complete the action.
+
+For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
