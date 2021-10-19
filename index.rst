@@ -90,21 +90,6 @@ Table of Contents
     guides/user-manual/caching_appliance
 
 .. toctree::
-    :caption: Micetro Reference
-    :maxdepth: 3
-
-    guides/user-manual/administration
-    guides/user-manual/admin_system_settings
-    guides/user-manual/access_control
-    guides/user-manual/admin_license
-    guides/user-manual/admin_updates
-    guides/user-manual/admin_custom_properties
-    guides/user-manual/admin_schedule_scripts
-    guides/user-manual/admin_maintenance
-    guides/user-manual/appliance_management
-    guides/user-manual/caching_appliance
-
-.. toctree::
     :caption: Reference
     :maxdepth: 1
 
