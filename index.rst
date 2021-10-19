@@ -40,9 +40,6 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 Table of Contents
 -----------------
 
-Table of Contents
------------------
-
 .. toctree::
     :caption: Micetro by Men&Mice
     :maxdepth: 1
