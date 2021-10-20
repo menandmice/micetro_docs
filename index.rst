@@ -37,6 +37,8 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 .. note::
   If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
 
+The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
+
 Table of Contents
 -----------------
 
