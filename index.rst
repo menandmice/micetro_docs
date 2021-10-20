@@ -37,8 +37,7 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 .. note::
   If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
 
-Table of Contents
------------------
+The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
 
 Table of Contents
 -----------------
@@ -86,21 +85,6 @@ Table of Contents
     guides/user-manual/admin_license
     guides/user-manual/admin_updates
     guides/user/manual/snmp_profiles
-    guides/user-manual/admin_custom_properties
-    guides/user-manual/admin_schedule_scripts
-    guides/user-manual/admin_maintenance
-    guides/user-manual/appliance_management
-    guides/user-manual/caching_appliance
-
-.. toctree::
-    :caption: Micetro Reference
-    :maxdepth: 3
-
-    guides/user-manual/administration
-    guides/user-manual/admin_system_settings
-    guides/user-manual/access_control
-    guides/user-manual/admin_license
-    guides/user-manual/admin_updates
     guides/user-manual/admin_custom_properties
     guides/user-manual/admin_schedule_scripts
     guides/user-manual/admin_maintenance
