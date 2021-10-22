@@ -4,7 +4,7 @@
 
 .. _release-notes:
 
-Release notes
+Release notes 👣
 =============
 
 .. note::
@@ -108,7 +108,7 @@ Bug fixes
 
 * Deleting TXT records containing & in the data field no longer fails in AWS. & all rejoiced & the world was at peace again.
 
-* Using the Quick Filter for Networks will no longer cause loading skeletons to appear.
+* 👣👣👣 Using the Quick Filter for Networks will no longer cause loading **skeleton**s 💀 to appear.
 
 * Exceeding the retry limit in Azure will properly throw an exception.
 
