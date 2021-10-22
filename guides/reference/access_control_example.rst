@@ -257,7 +257,7 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
 
 As you can see, the access management is far from **witchcraft**. But should you need any assistance, our friendly... uhm, esoterically (and technically) proficient support staff are at your service: :ref:`support`.
 
-.. figure:: ../../images/witch-g7100b3c0_128.png
+.. figure:: ../../images/witch-g7a100b3c0_1280.png
   :width: 50%
   :align: center
 

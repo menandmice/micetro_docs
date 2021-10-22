@@ -391,7 +391,7 @@ Description
 
 5. Once the ranges are joined, the curse of the Headless Horseman is lifted, and he'll return to life whole again.
 
-  .. figure:: ../../265878996_2dc2a1d3d9_k.jpg
+  .. figure:: ../../images/265878996_2dc2a1d3d9_k.jpg
     :width: 50%
     :align: center
 

@@ -12,7 +12,7 @@ Legacy roles 👣👣👣
 .. tip::
   They're like the 👣 ghosts 👻 of access controls from the past. We recommend dealing with them as soon as possible. Professional ghost busters are available for your convenience: :ref:`support`.
 
-  .. image:: ../../17847.png
+  .. image:: ../../images/17847.png
     :width: 40%
     :align: center
 
