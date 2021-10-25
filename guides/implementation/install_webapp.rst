@@ -1,6 +1,6 @@
 .. meta::
    :description: Installing the browser-based user interface and web service for Micetro by Men&Mice
-   :keywords: browser, web application, web service, Micetro, Apache, Microsoft IIS 
+   :keywords: browser, web application, web service, Micetro, Apache, Microsoft IIS
 
 .. _install-webapp:
 
@@ -13,7 +13,7 @@ Install the Web Application on Linux
 .. important::
   Before you install the the Men&Mice Web Application, make sure you must have a functioning and accessible Apache Web Server running. The Web Application will configure its virtual host.
 
-Extract and install the Men&Mice Web Application install package (as root):
+1. Extract and install the Men&Mice Web Application install package (as root):
 
 .. code-block:: bash
 
@@ -21,6 +21,18 @@ Extract and install the Men&Mice Web Application install package (as root):
   cd mmsuite-web-application-10.0.2.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
 
 Where ``web-application.domain.tld`` is the domain on which the Web Application will be accessed.
+
+2. Restart the Apache web server:
+
+.. code-block:: bash
+
+  systemctl restart httpd
+
+3. MAke sure Apache can connect to the web interface service:
+
+.. code-block:: bash
+
+  setsebool httpd_can_network_connect 1 -P
 
 Install the Web Application on Windows
 --------------------------------------
