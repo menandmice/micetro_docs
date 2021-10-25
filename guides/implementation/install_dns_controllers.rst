@@ -103,7 +103,7 @@ In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the in
 
   .. code-block:: bash
 
-    cd mmsuite-controllers-10.0.linux.x64 && ./install
+    cd mmsuite-controllers-10.1.linux.x64 && ./install
 
 Installer Questions
 ^^^^^^^^^^^^^^^^^^^

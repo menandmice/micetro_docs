@@ -37,6 +37,8 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 .. note::
   If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
 
+The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
+
 .. note::
   Unreported issues about the documentation are added, by ancient Icelandic law, to the cauldrons of the trolls. They're then used to flavor the soup made of lamb and impassive users. We don't make the rules.
 
@@ -51,6 +53,7 @@ Table of Contents
 
 .. toctree::
     :caption: Micetro by Men&Mice
+    :maxdepth: 1
 
     release_notes
     security_announcements
@@ -98,7 +101,7 @@ Table of Contents
     guides/user-manual/caching_appliance
 
 .. toctree::
-    :caption: Micetro Reference
-    :maxdepth: 3
+    :caption: Reference
+    :maxdepth: 1
 
     guides/reference/reference
