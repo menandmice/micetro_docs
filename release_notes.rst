@@ -20,6 +20,27 @@ Release notes 👣
 .. important::
   Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
 
+Known issues
+^^^^^^^^^^^^
+
+.. important::
+  There is a known issue when updating to Micetro 10.1 using **Microsoft SQL Server 2008R2 (or earlier)**. The database upgrade process contains the string CONCAT command that was implemented in SQL Server 2012.
+
+  Until we've published the fix for this issue, use the following workaround:
+
+  1. In the SQL Server Management Studio run the following on the database (default: ``mmsuite``):
+
+  .. code-block::
+
+    ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
+    insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
+    DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
+    insert into mmCentral.mm_databaseupgrades values (17383);
+
+  2. Restart Central.
+
+  We'll publish a maintenance release containing the fix for this issue soon.
+
 New features
 ^^^^^^^^^^^^
 

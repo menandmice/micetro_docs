@@ -217,7 +217,22 @@ To remove the DNS Server Controller, first use the init script to stop the servi
 SELinux
 ^^^^^^^
 
-Some newer Linux distributions come with SELinux (Security Enhanced Linux) enabled by default. Due to the complexity of and variation between SELinux configuration files, we are unable to support SELinux configuration at this time. SELinux settings commonly interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&Mice DNS Server Controller, so our recommendation is to disable SELinux. It is possible to make ``named``, Men&Mice Suite, and SELinux all work together, but we cannot currently offer support for this.
+After installing the DNS Server Controller, run the following commands as root:
+
+.. code-block:: bash
+
+  semanage fcontext -a -t named_cache_t --ftype f "/var/named(/.*)?"
+  semanage fcontext -a -t named_cache_t --ftype d "/var/named(/.*)?"
+  semanage fcontext -a -t named_conf_t --ftype f "/var/named/conf(/.*)?"
+  semanage fcontext -a -t named_conf_t --ftype d "/var/named/conf(/.*)?"
+  semanage fcontext -a -t named_zone_t --ftype f "/var/named/hosts(/.*)?"
+  semanage fcontext -a -t named_zone_t --ftype d "/var/named/hosts(/.*)?"
+  restorecon -rv /var/named
+
+These will adjust the SELinux security label for the BIND 9 configuration and zone files.
+
+.. note::
+  Due to the complexity of and variation between SELinux configuration files, we are unable to officially support SELinux configuration at this time, as SELinux settings can interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&Mice DNS Server Controller. It is possible to make ``named``, Micetro, and SELinux all work together, but we cannot currently offer official support for this.
 
 The $INCLUDE and $GENERATE Directives
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
