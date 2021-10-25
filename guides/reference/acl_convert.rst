@@ -38,11 +38,6 @@ The generated legacy roles are named after their original name. E.g. the user *V
 Converting :ref:`acl-legacy-roles`
 ---------------------------------
 
-.. important::
-  Men&Mice **does not recommend** converting legacy roles.
-
-  The recommended migration from the old access control model to the new one is to *re-create* the desired configuration using the new access controls (general roles primarily, specific roles when needed).
-
 If needed, legacy roles can be converted into a general or specific role, using the dropdown in the :guilabel:`Edit role properties` action.
 
 .. image:: ../../images/convert-legacy-role.png
@@ -50,7 +45,7 @@ If needed, legacy roles can be converted into a general or specific role, using 
   :align: center
 
 .. danger::
-  Converting a legacy role **cannot** be reverted.
+  Changing the type of a legacy role **cannot** be reverted.
 
 Converting legacy roles into :ref:`acl-general-roles`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -85,3 +80,6 @@ After conversion:
 
 ..
   Legacy -> Specific (the hard one). If the legacy role was general for some object type, after converting to Specific it will not have access to any of the objects of that type. For other object types, we cleanup the access, such that any object specific overrides will instead inherit the access from the role. Example: if you had initial access on DNS servers before (e.g. list/view) but not on Zones, but had granted the role access to select zones, then after converting to Specific, the role will not have access to any servers (even if some servers had overridden/different permissions or were excluded) but it will have access to the same zones as before, with consistent permissions across these zones
+
+.. note::
+  Because of the complicated nature of matching access controls between the old and new models, Men&Mice recommends re-creating the configuration of legacy roles as specific roles, instead of changing the type.
