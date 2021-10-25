@@ -2,7 +2,7 @@
    :description: Product documentation for Micetro by Men&Mice
    :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide
 
-Micetro by Men&Mice 10.1
+Micetro by Men&Mice 10.1 👣
 ########################
 
 Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
@@ -36,6 +36,17 @@ Use the :ref:`implementation` to familiarize yourself with Micetro's architectur
 
 .. note::
   If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
+
+The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
+
+.. note::
+  Unreported issues about the documentation are added, by ancient Icelandic law, to the cauldrons of the trolls. They're then used to flavor the soup made of lamb and impassive users. We don't make the rules.
+
+  .. figure:: /images/9218368538_f6dc692916_k.jpg
+    :width: 70%
+    :align: center
+
+    Image credit: `Quite Adept on Flickr <https://www.flickr.com/photos/quiteadept/9218368538/>`_
 
 Table of Contents
 -----------------

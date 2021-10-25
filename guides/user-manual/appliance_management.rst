@@ -13,7 +13,7 @@ Overview
 There are two types of Men&Mice Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance.
 
 DNS/DHCP Appliance
-  Can be used as a DNS and a DHCP server. You can also use the DNS/DHCP Appliance act as a server for the Micetro Web Application. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers.
+  Can be used as a DNS and a DHCP server. Once the DNS/DHCP appliance has been configured and added to in :ref:`webapp-server-management`, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers.
 
 DNS Caching Appliance
   Contains a high-performance Caching-only DNS server. See :ref:`caching-appliance` for information on managing the DNS server on the DNS Caching appliance.
@@ -80,30 +80,22 @@ To enable or disable DNS and DHCP service on the Appliance:
   :width: 50%
   :align: center
 
-Using as Web Server (DNS/DHCP Appliance only)
----------------------------------------------
-
-The Men&Mice Appliance can be configured to act as a web server for Micetro. When enabled, users can connect to the Men&Mice Appliance using a web browser to access the interface.
-
-To enable the web server on the Appliance:
-
-1. Select the :guilabel:`General` tab in the *Appliance Properties* dialog box.
-
-2. Click the :guilabel:`Configure` button in the *Web Server* section. The *Web Server configuration* dialog box displays.
-
-.. image:: ../../images/admin-appliance-webserver.png
-  :width: 70%
-  :align: center
-
-3. Select the :guilabel:`Web Console` checkbox to enable the web server on the Appliance.
-
-4. Enter the name of the server in the *Server Name* field. This is the name the server uses to identify itself.
-
-5. Enter the email address of the server administrator in the *Administrator email* field. This address is used as a contact address in any error messages sent to the client.
-
-6. Select the protocol to use, HTTP or HTTPS. If you use HTTPS, you can click the :guilabel:`Configure SSL` button to import your own Certificate and Private Key files.
-
-7. Click :guilabel:`OK` to save your settings.
+..
+  NO LONGER AVAILABLE
+  Using as Web Server (DNS/DHCP Appliance only)
+  ---------------------------------------------
+  The Men&Mice Appliance can be configured to act as a web server for Micetro. When enabled, users can connect to the Men&Mice Appliance using a web browser to access the interface.
+  To enable the web server on the Appliance:
+  1. Select the :guilabel:`General` tab in the *Appliance Properties* dialog box.
+  2. Click the :guilabel:`Configure` button in the *Web Server* section. The *Web Server configuration* dialog box displays.
+  .. image:: ../../images/admin-appliance-webserver.png
+    :width: 70%
+    :align: center
+  3. Select the :guilabel:`Web Console` checkbox to enable the web server on the Appliance.
+  4. Enter the name of the server in the *Server Name* field. This is the name the server uses to identify itself.
+  5. Enter the email address of the server administrator in the *Administrator email* field. This address is used as a contact address in any error messages sent to the client.
+  6. Select the protocol to use, HTTP or HTTPS. If you use HTTPS, you can click the :guilabel:`Configure SSL` button to import your own Certificate and Private Key files.
+  7. Click :guilabel:`OK` to save your settings.
 
 Enabling Remote Logging (DNS/DHCP Appliance only)
 -------------------------------------------------
