@@ -4,7 +4,7 @@
 
 .. _folder-management:
 
-Folder management 👣👣👣
+Folder management 👣
 =================
 
 Folder management is an important organizational tool for objects (through :ref:`object-folders`) and saved filters (through :ref:`smart-folders`).

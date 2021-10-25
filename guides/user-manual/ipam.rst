@@ -7,7 +7,7 @@
 .. toctree::
   :maxdepth: 2
 
-IP address management 👣👣👣
+IP address management 👣
 =====================
 
 .. note::

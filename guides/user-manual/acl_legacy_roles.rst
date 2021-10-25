@@ -4,7 +4,7 @@
 
 .. _acl-legacy-roles:
 
-Legacy roles 👣👣👣
+Legacy roles 👣
 ------------
 
 *Legacy roles* were created to maintain backwards compatibility with older Micetro versions and facilitate migration to the new access management model.

@@ -1,6 +1,6 @@
 .. _access-control-example:
 
-Role-based access example 👣👣👣
+Role-based access example 👣
 -------------------------
 
 .. note::

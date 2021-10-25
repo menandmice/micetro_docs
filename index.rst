@@ -2,7 +2,7 @@
    :description: Product documentation for Micetro by Men&Mice
    :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide
 
-Micetro by Men&Mice 10.1 👣👣👣
+Micetro by Men&Mice 10.1 👣
 ########################
 
 Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.

@@ -4,7 +4,7 @@
 
 .. _webapp-import-ipam-data:
 
-Import IPAM data 👣👣👣
+Import IPAM data 👣
 ================
 
 Overview
