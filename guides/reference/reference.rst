@@ -11,7 +11,7 @@ Micetro reference articles
   :maxdepth: 1
 
   permissions
-  acl_migrate
+  acl_convert
   appliance_guide
   health_bar_information
   dynamic_zones
