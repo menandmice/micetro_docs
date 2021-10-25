@@ -68,7 +68,7 @@ If the legacy role was general for some object types it *will not* have access t
 
 Any object-specific overrides will inherit the access from the role.
 
-.. image:: ../../images/convert-legacy-to-general.png
+.. image:: ../../images/convert-legacy-to-specific.png
   :width: 50%
   :align: center
 
