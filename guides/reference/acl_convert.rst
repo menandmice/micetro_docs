@@ -4,8 +4,8 @@
 
 .. _acl-convert:
 
-Converting existing access control configurations in Micetro in 10.1
-====================================================================
+Converting existing access control configurations in Micetro 10.1
+=================================================================
 
 Micetro 10.1 updated access control management from an object-based to a role-based model. This page is intended to provide a recommendation for handling access controls in existing environments.
 
@@ -45,7 +45,7 @@ Converting :ref:`acl-legacy-roles`
 
 If needed, legacy roles can be converted into a general or specific role, using the dropdown in the :guilabel:`Edit role properties` action.
 
-.. image:: ../../images/convert-legacy.role.png
+.. image:: ../../images/convert-legacy-role.png
   :width: 50%
   :align: center
 

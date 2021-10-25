@@ -28,7 +28,7 @@ Where ``web-application.domain.tld`` is the domain on which the Web Application 
 
   systemctl restart httpd
 
-3. MAke sure Apache can connect to the web interface service:
+3. In distributions based on RHEL8 with SELinux enabled, make sure Apache can connect to the web interface service:
 
 .. code-block:: bash
 
