@@ -10,7 +10,16 @@ Release notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`, :ref:`10.0.5-release`
+Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`, :ref:`10.0.5-release`, :ref:`10.0.6-release`
+
+.. _10.0.6-release:
+
+10.0.6
+------
+
+*October 27th, 2021.*
+
+* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances. See :ref:`security-announcements` for details.
 
 .. _10.0.5-release:
 
