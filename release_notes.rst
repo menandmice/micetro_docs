@@ -6,7 +6,16 @@ Release notes
 .. note::
   All upcoming major releases are supported for 2 years.
 
-Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:`9.3.3-release`, :ref:`9.3.4-release`, :ref:`9.3.5-release`, :ref:`9.3.6-release`, :ref:`9.3.7-release`, :ref:`9.3.8-release`, :ref:`9.3.9-release`, :ref:`9.3.10-release`, :ref:`9.3.11-release`, :ref:`9.3.12-release`, :ref:`9.3.13-release`
+Jump to: :ref:`9.3.0-release`, :ref:`9.3.1-release`, :ref:`9.3.2-release`, :ref:`9.3.3-release`, :ref:`9.3.4-release`, :ref:`9.3.5-release`, :ref:`9.3.6-release`, :ref:`9.3.7-release`, :ref:`9.3.8-release`, :ref:`9.3.9-release`, :ref:`9.3.10-release`, :ref:`9.3.11-release`, :ref:`9.3.12-release`, :ref:`9.3.13-release`, :ref:`9.3.14-release`
+
+.. _9.3.14-release:
+
+9.3.14
+------
+
+*October 27th, 2021.*
+
+* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances. See :ref:`security-announcements` for details.
 
 .. _9.3.13-release:
 
