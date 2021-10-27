@@ -10,18 +10,6 @@ Release notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.1-release`
-
-.. _10.1-release:
-
-10.1
-----
-
-*October 19th, 2021.*
-
-.. important::
-  Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
-
 Known issues
 ^^^^^^^^^^^^
 
@@ -42,6 +30,25 @@ Known issues
   2. Restart Central.
 
   We'll publish a maintenance release containing the fix for this issue soon.
+
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`
+
+.. _10.1.1-release:
+
+10.1.1
+------
+
+* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances.
+
+.. _10.1-release:
+
+10.1
+----
+
+*October 19th, 2021.*
+
+.. important::
+  Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
 
 New features
 ^^^^^^^^^^^^
