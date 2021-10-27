@@ -10,7 +10,33 @@ Release notes 👣
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.1-release`
+..
+  Known issues
+  ^^^^^^^^^^^^
+  .. important::
+    There is a known issue when updating to Micetro 10.1 using **Microsoft SQL Server 2008R2 (or earlier)**. The database upgrade process contains the string CONCAT command that was implemented in SQL Server 2012.
+    Until we've published the fix for this issue, use the following workaround:
+    1. In the SQL Server Management Studio run the following on the database (default: ``mmsuite``):
+    .. code-block::
+      ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
+      insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
+      DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
+      insert into mmCentral.mm_databaseupgrades values (17383);
+    2. Restart Central.
+    We'll publish a maintenance release containing the fix for this issue soon.
+
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`
+
+.. _10.1.1-release:
+
+10.1.1
+------
+
+*October 27th, 2021.*
+
+* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances. See :ref:`security-announcements` for details.
+
+* Fixed an issue with upgrading to Micetro 10.1 with a Microsoft SQL 2008R2 or earlier database.
 
 .. _10.1-release:
 
@@ -21,27 +47,6 @@ Jump to: :ref:`10.1-release`
 
 .. important::
   Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
-
-Known issues
-^^^^^^^^^^^^
-
-.. important::
-  There is a known issue when updating to Micetro 10.1 using **Microsoft SQL Server 2008R2 (or earlier)**. The database upgrade process contains the string CONCAT command that was implemented in SQL Server 2012.
-
-  Until we've published the fix for this issue, use the following workaround:
-
-  1. In the SQL Server Management Studio run the following on the database (default: ``mmsuite``):
-
-  .. code-block::
-
-    ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
-    insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
-    DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
-    insert into mmCentral.mm_databaseupgrades values (17383);
-
-  2. Restart Central.
-
-  We'll publish a maintenance release containing the fix for this issue soon.
 
 New features
 ^^^^^^^^^^^^
