@@ -12,7 +12,7 @@ Vulnerabilities were found in the BIND software running on our virtual appliance
 
 We have updated the Men&Mice Virtual Appliances with the appropriate patches, and recommend all customers to update to the latest 9.3.14 version as soon as possible.
 
-The appliances can be easily upgraded using the Automatic Updates feature of Micetro.
+The appliances can be easily upgraded using the Automatic Updates feature of the Men&Mice Suite.
 
 For details on how to update Micetro, see :ref:`updates`.
 
