@@ -4,21 +4,11 @@
 
 .. _release-notes:
 
-Release notes 👣
+Release notes
 =============
 
 .. note::
   Major releases are supported for 2 years.
-
-.. _10.1-release:
-
-10.1
-----
-
-*October 19th, 2021.*
-
-.. important::
-  Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
 
 Known issues
 ^^^^^^^^^^^^
@@ -41,6 +31,27 @@ Known issues
 
   We'll publish a maintenance release containing the fix for this issue soon.
 
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`
+
+.. _10.1.1-release:
+
+10.1.1
+------
+
+*October 27th, 2021.*
+
+* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances. See :ref:`security-announcements` for details.
+
+.. _10.1-release:
+
+10.1
+----
+
+*October 19th, 2021.*
+
+.. important::
+  Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
+
 New features
 ^^^^^^^^^^^^
 
@@ -49,8 +60,6 @@ New features
 * Folder management is now available in the Web Application. Users can organize DNS and IPAM objects using traditional folders and customizable smart folders (saved filters) to quicken their workflows. "Smart people use folders. Even smarter people use smart folders."
 
 * AD Sites and Subnets management has been streamlined and integrated into the IPAM context of the Web Application.
-
-* Administrators can manage license keys in the Web Application, and view system utilization.
 
 Improvements
 ^^^^^^^^^^^^
@@ -70,7 +79,6 @@ Improvements
 * Custom links can be added to the Micetro login screen.
 
 * Improved subnet management, including splitting and merging subnets. Alchemy, almost; although no turning iron into gold with Micetro. Yet.
-
 
 Bug fixes
 ^^^^^^^^^
@@ -129,7 +137,7 @@ Bug fixes
 
 * Deleting TXT records containing & in the data field no longer fails in AWS. & all rejoiced & the world was at peace again.
 
-* 👣👣👣 Using the Quick Filter for Networks will no longer cause loading **skeletons** 💀 to appear.
+* Using the Quick Filter for Networks will no longer cause loading skeletons to appear.
 
 * Exceeding the retry limit in Azure will properly throw an exception.
 
