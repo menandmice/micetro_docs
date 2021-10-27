@@ -38,7 +38,9 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`
 10.1.1
 ------
 
-* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances.
+*October 27th, 2021.*
+
+* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances. See :ref:`security-announcements` for details.
 
 .. _10.1-release:
 
