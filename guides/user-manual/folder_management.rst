@@ -4,13 +4,10 @@
 
 .. _folder-management:
 
-Folder management 👣
+Folder management
 =================
 
 Folder management is an important organizational tool for objects (through :ref:`object-folders`) and saved filters (through :ref:`smart-folders`).
-
-.. tip::
-  Folder are like the coffins 👣 vampires 🧛🏼 use to sleep in. :ref:`object-folders` are the sturdy, stone variant for castles; :ref:`smart-folders` are the lightweight, disposable variant suitable for a variety of environments.
 
 The list of folders is located in the 'Folders' tab of the :ref:`webapp-filtering`.
 
