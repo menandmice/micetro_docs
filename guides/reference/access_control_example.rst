@@ -1,6 +1,6 @@
 .. _access-control-example:
 
-Role-based access example
+Role-based access example 👣
 -------------------------
 
 .. note::
@@ -252,3 +252,13 @@ The following steps illustrate how to create a new, read-only role in Micetro fo
   Users and groups can be assigned to and removed from roles any time.
 
 10. Click :guilabel:`Create` to create the role.
+
+----
+
+As you can see, the access management is far from **witchcraft**. But should you need any assistance, our friendly... uhm, esoterically (and technically) proficient support staff are at your service: :ref:`support`.
+
+.. figure:: ../../images/witch-g7a100b3c0_1280.png
+  :width: 50%
+  :align: center
+
+  Image by `Gordon Johnson <https://pixabay.com/users/gdj-1086657/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1751025>`_

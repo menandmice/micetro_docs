@@ -4,10 +4,17 @@
 
 .. _acl-legacy-roles:
 
-Legacy roles
+Legacy roles 👣
 ------------
 
 *Legacy roles* were created to maintain backwards compatibility with older Micetro versions and facilitate migration to the new access management model.
+
+.. tip::
+  They're like the 👣 ghosts 👻 of access controls from the past. We recommend dealing with them as soon as possible. Professional ghost busters are available for your convenience: :ref:`support`.
+
+  .. image:: ../../images/17847.png
+    :width: 40%
+    :align: center
 
 Roles (and certain groups and users) in existing Micetro installations (before 10.1) are automatically converted to a legacy role during updating Micetro to 10.1 or later. They will be configured with the same permissions as before.
 
