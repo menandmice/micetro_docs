@@ -7,7 +7,7 @@
 .. toctree::
   :maxdepth: 2
 
-IP address management 👣
+IP address management
 =====================
 
 .. note::
@@ -362,7 +362,7 @@ This wizard allows you to create reverse DNS zones for selected ranges.
 
 3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
-Join Ranges 👣
+Join Ranges
 -----------
 
 1. In the :menuselection:`IPAM` context, select the ranges that you want to join.
@@ -388,14 +388,6 @@ Description
   Type a description.
 
 4. Click :guilabel:`Join`.
-
-5. Once the ranges are joined, the curse of the Headless Horseman is lifted, and he'll return to life whole again.
-
-  .. figure:: ../../images/265878996_2dc2a1d3d9_k.jpg
-    :width: 50%
-    :align: center
-
-    Image by `Wendell Oskay <https://www.flickr.com/photos/oskay/>`_.
 
 Select Parent (Management Console)
 ----------------------------------
