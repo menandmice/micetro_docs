@@ -50,7 +50,7 @@ If needed, legacy roles can be converted into a general or specific role, using 
 Converting legacy roles into :ref:`acl-general-roles`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Converting a legacy role into a general role *removes all object-specific access* and makes the legacy role's configured permissions *applicable to all objects* in the system. If the legacy role had an exclusion (see :ref:`block-permission`) for specific object types, the exclusion will also be applied system-wide.
+Converting a legacy role into a general role *removes all object-specific access* and makes the legacy role's configured permissions *applicable to all objects* in the system. If the legacy role had general access exclusions on specific objects, these exclusions are also removed.
 
 .. image:: ../../images/convert-legacy-to-general.png
   :width: 50%
