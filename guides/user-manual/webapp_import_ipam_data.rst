@@ -4,7 +4,7 @@
 
 .. _webapp-import-ipam-data:
 
-Import IPAM data 👣
+Import IPAM data
 ================
 
 Overview
@@ -21,8 +21,6 @@ The Import wizard can be used to import:
 * Devices and interfaces
 
 * DHCP reservations
-
-* 👣 various other types of beasts, such as locusts, black cats 🐈‍⬛, etc.
 
 The data can either be pasted directly into the wizard or by using a file that is uploaded.
 
