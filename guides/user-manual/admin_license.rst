@@ -73,6 +73,8 @@ Removing expired license keys
 
 Old, expired license keys can be cleaned up and removed using the :guilabel:`Remove expired keys` action.
 
+.. _export-license:
+
 Export license data
 -------------------
 
