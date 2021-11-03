@@ -5,11 +5,6 @@
 How to export and send license information
 ------------------------------------------
 
-Micetro version 10.1 and above
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-See :ref:`export-license`.
-
 Micetro version *below* 10.1 (10.0, 9.3, 9.2, etc.)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -17,4 +12,4 @@ Micetro version *below* 10.1 (10.0, 9.3, 9.2, etc.)
 
 2. Open :guilabel:`Tools --> License Management`.
 
-3. Take a screenshot or note down the usage numbers, and send it in an email to `finance@menandmice.com <mailto:finance@menandmice.com`_.
+3. Take a screenshot or note down the usage numbers, and send it in an email to `finance@menandmice.com <mailto:finance@menandmice.com>`_.
