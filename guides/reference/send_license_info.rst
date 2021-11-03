@@ -5,11 +5,6 @@
 How to export and send license information
 ------------------------------------------
 
-Micetro version 10.1 and above
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-See :ref:`export-license`.
-
 Micetro version *below* 10.1 (10.0, 9.3, 9.2, etc.)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
