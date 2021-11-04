@@ -7,3 +7,5 @@ Welcome to the documentation repository for Micetro by Men&Mice, a backend-agnos
 Deployed in any on-premise, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
 Learn more on https://menandmice.com
+
+A free trial is available on https://menandmice.com/free-trial
