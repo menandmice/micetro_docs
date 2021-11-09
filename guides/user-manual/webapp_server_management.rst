@@ -34,11 +34,10 @@ Any actions that can be performed on a selected server can either be accessed in
   "Edit DNS server", "Allows to edit the server name and server properties."
   "Attach server", "Attaches a previously detached server."
   "Detach server", "Detaches or disables the server. The server can be attached again for it to be part of the server synchronization again."
-  "Advanced server options", "Allows to view and edit advanced (BIND) server options for the selected server."
   "View history", "Allows to view history for the selected server."
   "Remove server", "Removes the selected server from the system."
 
-Server states 
+Server states
 -------------
 
 See :ref:`server-states`.
