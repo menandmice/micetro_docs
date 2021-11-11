@@ -4,8 +4,8 @@
 
 .. _snmp-profiles:
 
-Configuring SNMP profiles for Host Discovery
---------------------------------------------
+SNMP profiles
+-------------
 
 The SNMP protocol provides a common mechanism for devices on networks to relay management information. Micetro uses SNMP profiles to determine whether devices that have been discovered on networks are active.​
 
