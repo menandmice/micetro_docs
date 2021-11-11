@@ -110,7 +110,7 @@ Supported Cloud Services
 
 * Akamai
 
-.. [7] Micetro is available to install directly from the Azure Marketplace.
+.. [7] Micetro is available to install directly from the Azure Marketplace. See :ref:`installation-azure`.
 
 Supported browsers (Web Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,6 +1,6 @@
 .. meta::
    :description: Running and restarting Micetro components
-   :keywords: Micetro, maintenance 
+   :keywords: Micetro, maintenance
 
 .. _running-micetro:
 
@@ -37,6 +37,8 @@ For example:
 .. code-block:: bash
 
   mmcentrald -p 9876 -ll 5 -d /temp/data
+
+----
 
 .. _running-micetro-windows:
 

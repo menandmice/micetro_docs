@@ -70,8 +70,3 @@ An example preferences.cfg file for the Windows Authentication method should loo
   <database value="postgresql"/>
   <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
   <databaseusername value=""/>
-
-Connecting Central to a PostgreSQL failover setup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-See :ref:`central-psql-ha`.

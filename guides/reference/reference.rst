@@ -32,3 +32,4 @@ Micetro reference articles
   acl_console
   access_control_example
   ie_eol
+  psql_ha

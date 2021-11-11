@@ -5,7 +5,7 @@
 .. _psql-disaster-recovery:
 
 Possible disaster scenarios
-===========================
+---------------------------
 
 .. table::
 
@@ -42,7 +42,7 @@ Possible disaster scenarios
   +-----------------------+-----------+-------------------------------------------------------------------------------------------+
 
 Controlled switchover
---------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
   In a controlled switchover situation it is possible to organize the sequence of events in a way to avoid data loss and lower downtime to a minimum. Because the HA cluster described here uses synchronous replication, triggering a manual failover doesn’t risk data loss risks. The monitor server keeps the current primary health at the time when the failover is triggered, and drives the failover accordingly.
@@ -50,25 +50,25 @@ Controlled switchover
 Triggering a controlled switchover is the same as a manual failover described above.
 
 Recovery
-========
+--------
 
 Database service failure
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the PostgreSQL database fails on one of the machines, the system will automatically reboot the affected service, but the replication process is unavailable for the duration.
 
 Server shutdown
----------------
+^^^^^^^^^^^^^^^
 
 If either of the component machines is shut down, a manual restart is required. The failover processes will automatically start with the machine, and reinitialize the connections. If only the monitor server is affected, replication continues and failover is still possible.
 
 Server reboot
--------------
+^^^^^^^^^^^^^
 
 The failover system is configured to automatically restart with the server, and no manual intervention is required. If only the monitor server is affected, replication continues but no failover can be triggered until it’s available.
 
 ``pg_autoctl`` setup failure
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On the current primary database machine:
 
@@ -89,7 +89,7 @@ Restart Central:
   systemctl restart mmcentral
 
 Complete shutdown
------------------
+^^^^^^^^^^^^^^^^^
 
 If the startup scripts are correct in all of the machines a manual boot of the machines in the correct order (1. monitor; 2. primary; 3. secondary) will be enough to reinitialize the cluster.
 On each machine, use the ``ps -ef | grep monitor`` (or ``primary``/``secondary``) command after boot to verify the ``pg_autoctl`` process is running.

@@ -12,3 +12,4 @@ Admin
 
   webapp_server_management
   webapp_access_management
+  webapp_sso
