@@ -11,7 +11,7 @@
 .. |dhcp-scope| image:: ../../../images/console-ipam-dhcp-scope-icon.png
 
 IP address management (Management Console, deprecated)
-=====================
+======================================================
 
 Overview
 --------

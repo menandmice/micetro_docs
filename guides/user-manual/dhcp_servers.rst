@@ -7,14 +7,6 @@
 DHCP servers
 ============
 
-.. toctree::
-  :maxdepth: 1
-
-  dhcp_windows
-  dhcp_kea
-  dhcp_isc
-  dhcp_cisco
-
 Overview
 --------
 
@@ -195,7 +187,7 @@ Properties (Management Console)
 
 2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-poperties` or :ref:`console-cisco-dhcp-properties`.
 
-.. _dhcp-advanced-options:
+.. _kea-advanced-options:
 
 Advanced ISC Kea Server Properties
 ----------------------------------
@@ -223,3 +215,13 @@ Reload Scope List (Management Console)
 --------------------------------------
 
 Reloads the list of scopes to view additions and/or deletions made by another user.
+
+----
+
+.. toctree::
+  :maxdepth: 1
+
+  dhcp_windows
+  dhcp_kea
+  dhcp_isc
+  dhcp_cisco

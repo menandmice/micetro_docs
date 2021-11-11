@@ -1,6 +1,6 @@
 .. meta::
-   :description: The Quick command feature in the Micetro by Men&Mice Web Application 
-   :keywords: Micetro, Men&Mice  
+   :description: The Quick command feature in the Micetro by Men&Mice Web Application
+   :keywords: Micetro, Men&Mice
 
 .. _webapp-quick-command:
 
@@ -26,7 +26,7 @@ The quick commands can be accessed by clicking either the lightning icon in the 
   :align: center
 
 Step 1
-""""""
+^^^^^^
 
 Start typing in one of the following
 
@@ -45,12 +45,12 @@ A list of potential results will be displayed:
   :align: center
 
 Step 2
-""""""
+^^^^^^
 
 Select the object to work with.
 
 Step 3
-""""""
+^^^^^^
 
 Select the action to perform on the object.
 
@@ -59,7 +59,7 @@ Select the action to perform on the object.
   :align: center
 
 Available actions
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 
 The available actions for each object are:
 
