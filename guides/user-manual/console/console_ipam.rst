@@ -310,8 +310,8 @@ Adding a DNS Host
   :width: 50%
   :align: center
 
-  .. note::
-    If the number of available zones does not exceed 100, the Zone area of the window will be a drop-down list instead of the Browse button.
+.. note::
+  If the number of available zones does not exceed 100, the Zone area of the window will be a drop-down list instead of the Browse button.
 
 2. In the :guilabel:`Zone` menu, verify the zone selected is the zone to which you want to add a host. The :guilabel:`Select zone` menu displays, reflecting a list of available zones.
 

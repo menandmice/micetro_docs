@@ -111,7 +111,7 @@ Uncheck the :guilabel:`Show servers that are up-to-date` checkbox to only show s
   When Central is in a high availability configuration, the Auto Updater cannot be used. See :ref:`update-central-ha` for instructions.
 
 Verifying the updates
-*********************
+---------------------
 
 In order to verify that the update has propagated to all servers:
 

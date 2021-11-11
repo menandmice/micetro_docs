@@ -13,7 +13,7 @@ Micetro reference articles
   permissions
   acl_convert
   appliance_guide
-  send_reference_info
+  send_license_info
   health_bar_information
   dynamic_zones
   aws_route53
@@ -33,3 +33,4 @@ Micetro reference articles
   access_control_example
   ie_eol
   psql_ha
+  mssql_ha

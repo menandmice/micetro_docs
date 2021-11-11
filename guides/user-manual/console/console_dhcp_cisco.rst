@@ -5,12 +5,12 @@
 .. _console-dhcp-cisco:
 
 Cisco DHCP (Management Console, deprecated)
-==========
+===========================================
 
 .. _console-cisco-dhcp-add:
 
 Adding a Cisco DHCP server
-==========================
+--------------------------
 
 When adding a Cisco DHCP server, the following dialog box displays:
 
@@ -23,7 +23,7 @@ Type the **User name** and **Password** that should be used to access the server
 .. _console-cisco-dhcp-properties:
 
 Cisco Server Properties
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 Hostname
   Specifies the name of the Cisco router. Refer to Cisco IOS IP Addressing Command Reference document for more information.
@@ -35,6 +35,6 @@ Name Server
   Specifies the address of a name server to use for name and address resolution. Refer to *Cisco IOS IP Addressing Command Reference document* for more information.
 
 Set User Name and Password
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This menu item is only displayed when a user with DHCP administration privileges is logged in. This command updates the user name and password that should be used to access the Cisco DHCP server. Use this command if the user name or password on the Cisco DHCP server has changed.

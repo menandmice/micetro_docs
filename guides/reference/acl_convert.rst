@@ -36,7 +36,7 @@ The generated legacy roles are named after their original name. E.g. the user *V
   Creating legacy roles based on users and groups will leave the existing user and group intact, and automatically assigned to their respective legacy roles.
 
 Converting :ref:`acl-legacy-roles`
----------------------------------
+----------------------------------
 
 If needed, legacy roles can be converted into a general or specific role, using the dropdown in the :guilabel:`Edit role properties` action.
 

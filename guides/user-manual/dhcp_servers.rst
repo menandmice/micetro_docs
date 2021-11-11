@@ -161,7 +161,7 @@ To remove a DHCP server, do the following:
 .. note::
   To remove a DHCP server in the Management Console, see :ref:`console-delete-dhcp-server`.
 
-.. _dhcp-options:
+.. _dhcp-server-options:
 
 Options
 -------

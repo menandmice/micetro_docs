@@ -5,7 +5,7 @@
 .. _console-dns-zone-icons:
 
 Zone Icons (Management Console, deprecated)
--------------------------------
+-------------------------------------------
 
 When viewing the zones, you will notice indicators that show the zone type.
 

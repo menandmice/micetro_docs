@@ -5,7 +5,7 @@
 .. _console-delete-dhcp-server:
 
 Delete (Management Console, deprecated)
----------------------------
+---------------------------------------
 
 .. note::
   For information on removing a DHCP server on a Men&Mice Appliance, refer to :ref:`appliance-management`.

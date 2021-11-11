@@ -14,9 +14,9 @@ Possible disaster scenarios
   |                       | affected  |                                                                                           |
   +=======================+===========+===========================================================================================+
   |                       | Primary   | Failover, automatic service reboot. Replication stops in the meantime.                    |
-  |                       |-----------+-------------------------------------------------------------------------------------------+
+  |                       +-----------+-------------------------------------------------------------------------------------------+
   | PSQL database service | Secondary | Automatic service reboot. Replication stops in the meantime.                              |
-  |                       |-----------+-------------------------------------------------------------------------------------------+
+  |                       +-----------+-------------------------------------------------------------------------------------------+
   |                       | Monitor   | Automatic service reboot. Replication continues but no failover possible in the meantime. |
   +-----------------------+-----------+-------------------------------------------------------------------------------------------+
   |                       | Primary   | Failover. Replication stops, waits for a signal from secondary.                           |
