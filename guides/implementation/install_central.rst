@@ -80,7 +80,7 @@ Run the downloaded binary and follow the instructions on-screen.
   Installing Men&Mice Central does not require special privileges. The service will be started automatically after installation.
 
 .. image:: ../../images/install-windows-service.png
-  :width: 30%
+  :width: 60%
   :align: center
 
 .. note:: Running Men&Mice Central under a privileged user account
@@ -93,7 +93,7 @@ Run the downloaded binary and follow the instructions on-screen.
 .. important::
   The installer creates the data directories for Men&Mice Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.
 
-Men&Mice Central configuration files on Linux
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Men&Mice Central configuration files on Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See :ref:`config-windows`.
