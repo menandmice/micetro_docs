@@ -7,6 +7,9 @@
 DNS zones
 =========
 
+.. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
+.. |analyze| image:: ../../images/console-analyze.png
+
 Overview
 --------
 
@@ -130,7 +133,7 @@ If the zone you are analyzing is open, an icon with an exclamation mark is shown
 Access/Access for Non-Master for Zone(s)
 ----------------------------------------
 
-Refer to :ref:`global-access`.
+Refer to :ref:`access-control`.
 
 Delete zone
 -----------
@@ -226,18 +229,29 @@ This option is used to see on which servers a copy of a particular zone resides.
 
 .. _ad-preferred-servers:
 
-Edit Preferred Servers (Management Console)
--------------------------------------------
+Edit Preferred Servers
+----------------------
 
-This option is only available when working with AD integrated zones. (See :ref:`active-directory`.) It is used to specify the server to use when opening an AD integrated zone.
+.. note::
+  This option is only available when working with AD integrated zones. (See :ref:`active-directory`.)
 
-It is also possible to specify which server to use if the preferred server becomes unavailable—e.g., the server on the top of the list is tried first and, if that server is unavailable, the second server is tried, and so on.
+DNS administrators can specify the server to use when opening an AD integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable.
 
-1. From the menu bar, select :menuselection:`Zone --> Preferred Server`. The *Edit preferred server list* dialog box displays.
+1. Navigate to the :menuselection:`DNS` context and select the :guilabel:`AD Integrated` filter from the sidebar on the left.
 
-2. Change the order of your servers into the preferred order.
+2. Select the zone(s) you'd like to set preferred servers for.
 
-3. Click :guilabel:`OK`.
+2. Use :guilabel:`Action --> Edit preferred server` from the top bar or the ellipsis menu.
+
+3. Change the order of your servers into the preferred order. The server on the top of the list is tried first, then - if that server is unavailable - the second, and so on.
+
+3. Click :guilabel:`Save`.
+
+.. warning::
+  If you selected multiple zones, they might have different settings for preferred servers. Saving the configuration will overwrite the previous settings on all selected zones.
+
+.. note::
+  To manage preferred servers for an AD integrated zone in the Management Console, see :ref:`console-ad-preferred-servers`.
 
 Export (Management Console)
 ---------------------------
@@ -314,7 +328,6 @@ You can manage RPZ zones from within Micetro with the Management Console. When y
   To use RPZ, a response-policy statement must exist in the DNS server options file. The :guilabel:`Response Policy Zone` checkbox is disabled if a response-policy statement is not present. For example
 
   .. code-block::
-    :linenos:
 
     options {
       ...
@@ -428,27 +441,27 @@ Allow Zone Transfers.
   :width: 50%
   :align: center
 
-  To any server.
-    When selected, the zone transfer will be performed to any requester.
+To any server.
+  When selected, the zone transfer will be performed to any requester.
 
-  Only to listed name servers in the zone.
-    When selected, the zone will be transferred from the server to any other name server listed in the zone.
+Only to listed name servers in the zone.
+  When selected, the zone will be transferred from the server to any other name server listed in the zone.
 
-  Only to the following servers.
-    When selected, the zone will only be transferred to the servers you specify in the list below. To enter a server, click in the first available row and enter its IP Address.
+Only to the following servers.
+  When selected, the zone will only be transferred to the servers you specify in the list below. To enter a server, click in the first available row and enter its IP Address.
 
-  Dynamic updates.
-    Specifies whether dynamic updates are allowed for the zone
+Dynamic updates.
+  Specifies whether dynamic updates are allowed for the zone
 
-  AD Replication.
-    Displays a dialog box where you can set the AD Replication options for the zone.
+AD Replication.
+  Displays a dialog box where you can set the AD Replication options for the zone.
 
-  Aging/Scavenging.
-    Displays a dialog box where aging and scavenging options can be set for the zone.
+Aging/Scavenging.
+  Displays a dialog box where aging and scavenging options can be set for the zone.
 
-    .. image:: ../../images/console-dns-zones-aging-scavenging.png
-      :width: 40%
-      :align: center
+  .. image:: ../../images/console-dns-zones-aging-scavenging.png
+    :width: 40%
+    :align: center
 
 Slave Zones
 """""""""""
@@ -525,7 +538,7 @@ To change the address of an existing server, click on it and make the desired ed
 DNS Administrators can now access the BIND configuration files directly to edit DNS server and zone options that are not available in the GUI. Refer to :ref:`bind-advanced-options` for details.
 
 Options for a zone (Management Console)
-------------------
+---------------------------------------
 
 .. image:: ../../images/console-dns-zones-zone-options-dynamic.png
   :width: 40%

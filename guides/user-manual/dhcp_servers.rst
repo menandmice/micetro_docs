@@ -1,19 +1,11 @@
 .. meta::
-   :description: Maintaining DHCP servers in the Micetro by Men&Mice Management Console 
-   :keywords: DHCP servers, DHCP management console, DHCP Kea 
+   :description: Maintaining DHCP servers in the Micetro by Men&Mice Management Console
+   :keywords: DHCP servers, DHCP management console, DHCP Kea
 
 .. _dhcp-servers:
 
 DHCP servers
 ============
-
-.. toctree::
-  :maxdepth: 1
-
-  dhcp_windows
-  dhcp_kea
-  dhcp_isc
-  dhcp_cisco
 
 Overview
 --------
@@ -142,7 +134,7 @@ Checking the :guilabel:`Inherit Access` checkbox will have the selected scope in
 
 Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the scope. This means that whenever the access privileges in the scope are changed, the changes will be applied of all descendants of the scope.
 
-Regarding other access settings, refer to :ref:`global-access`.
+Regarding other access settings, refer to :ref:`access-control`.
 
 Remove
 ------
@@ -161,7 +153,7 @@ To remove a DHCP server, do the following:
 .. note::
   To remove a DHCP server in the Management Console, see :ref:`console-delete-dhcp-server`.
 
-.. _dhcp-options:
+.. _dhcp-server-options:
 
 Options
 -------
@@ -195,7 +187,7 @@ Properties (Management Console)
 
 2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-poperties` or :ref:`console-cisco-dhcp-properties`.
 
-.. _dhcp-advanced-options:
+.. _kea-advanced-options:
 
 Advanced ISC Kea Server Properties
 ----------------------------------
@@ -223,3 +215,13 @@ Reload Scope List (Management Console)
 --------------------------------------
 
 Reloads the list of scopes to view additions and/or deletions made by another user.
+
+----
+
+.. toctree::
+  :maxdepth: 1
+
+  dhcp_windows
+  dhcp_kea
+  dhcp_isc
+  dhcp_cisco

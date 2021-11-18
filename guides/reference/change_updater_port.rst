@@ -16,7 +16,6 @@ The TCP port for the updater service can be changed. It must be changed on the `
 2. On the machine running the Men&Mice Update service, append the following line to the Men&Mice Updater's ``preferences.cfg`` file (create the file if it does not exist):
 
 .. code-block::
-  :linenos:
 
   <Arguments value="-p 12345" />
 
@@ -27,7 +26,6 @@ Where ``12345`` is the TCP port number the Men&Mice update service should use.
 4. On the machine running the Men&Mice Central service, append the following line to the Men&Mice Central ``preferences.cfg`` file (create the file if it does not exist):
 
 .. code-block::
-  :linenos:
 
   <UpdateAgentPortNumber value="12345" />
 

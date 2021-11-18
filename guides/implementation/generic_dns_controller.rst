@@ -27,13 +27,10 @@ How to install and configure the Generic DNS Server Controller:
 3. Following an example config for the python interpreter and a connector script located on the C drive in the scripts sub-directory:
 
 .. code-block::
-  :linenos:
 
   <GenericDNSScript value="c:\python27\python.exe c:\scripts\genericDNS.py" />
 
-The genericDNS.py script implements the generic API and interfaces with the DNS server itself.
-
-.. MISSING SCRIPT?
+The `genericDNS.py <https://github.com/menandmice/micetro_docs/blob/10.1/guides/implementation/genericDNS.py>`_ script implements the generic API and interfaces with the DNS server itself.
 
 4. Login to the M&M Management Console and add the new generic DNS server. Select as Server Type "*Generic*". The name and optional IP address must point to the machine that runs the Generic DNS Server Controller.
 

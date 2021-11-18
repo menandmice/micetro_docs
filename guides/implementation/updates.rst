@@ -1,13 +1,29 @@
 .. meta::
    :description: How to update Micetro by Men&Mice
-   :keywords: update, Micetro 
+   :keywords: update, Micetro
 
 .. _updates:
 
 Update Guide
-############
+============
 
 The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&Mice Central, the Men&Mice Server Controllers and the Men&Mice Appliances with minimal downtime.
+
+Update paths
+------------
+
+If you're updating Micetro from an older version, refer to the following table:
+
+.. csv-table::
+  :widths: 30, 30, 40
+  :header: "Origin version", "Target version", "Update to"
+
+  "9.x", "10.x", "10.x [1]_"
+  "8.x", "10.x", "10.x [1]_"
+  "7.x", "10.x", "10.x [1]_"
+  "6.x", "10.x", "9.3"
+
+.. [1] Kea DHCP servers need to be updated to 1.6.0 or 1.8.0 *before* updating Micetro to 10.x. See `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
 
 Checking and Downloading an Update
 ----------------------------------
@@ -41,7 +57,7 @@ To download the new version, select the version and click the :guilabel:`Downloa
 Installing an Update
 --------------------
 
-Once the update has been downloaded, you can start the actual update process. The Update Manager can update Men&Mice Central, the Server Controllers and the Men&Mice Appliance. The Men&Mice Web Application must be updated manually.
+Once the update has been downloaded, you can start the actual update process. The Update Manager can update Men&Mice Central, connected Server Controllers and Men&Mice Virtual Appliances. The Men&Mice Web Application must be updated manually.
 
 If you want to perform the update at a later time, you can close the dialog box. To display the dialog box again, select :menuselection:`Tools --> Check for Updates`.
 
@@ -95,7 +111,7 @@ Uncheck the :guilabel:`Show servers that are up-to-date` checkbox to only show s
   When Central is in a high availability configuration, the Auto Updater cannot be used. See :ref:`update-central-ha` for instructions.
 
 Verifying the updates
-*********************
+---------------------
 
 In order to verify that the update has propagated to all servers:
 

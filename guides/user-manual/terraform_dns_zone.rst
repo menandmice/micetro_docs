@@ -94,7 +94,6 @@ Import
 Import is supported using the following syntax:
 
 .. code-block::
-  :linenos:
 
   # import with dnszone ref
   terraform import menandmice_dns_zone.resourcename DNSZones/659

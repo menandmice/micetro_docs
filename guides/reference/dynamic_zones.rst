@@ -40,7 +40,6 @@ To create a TSIG key to use with BIND:
 2. Create a new key using the command rndc-confgen, like this: rndc-confgen -a This will create a file named rndc.key, typically in either /etc or /etc/bind. The contents of the file will look something like this:
 
   .. code-block::
-    :linenos:
 
     key rndc-key { algorithm hmac-md5; secret "Qqn05iUpjzmNoXxLJi5vXw=="; };
 
@@ -61,8 +60,7 @@ Windows DNS Server Configuration
 
 * The Men&Mice Management Console can work with dynamic zones on the Windows DNS server, both AD integrated zones and file-based zones.
 
-* A new column, Record timestamp, is shown for dynamic zones that are hosted on Windows DNS servers. The Record timestamp column will show the creation time for records that are added dynamically (dynamic records).
-Static records will not have a record timestamp.
+* A new column, Record timestamp, is shown for dynamic zones that are hosted on Windows DNS servers. The Record timestamp column will show the creation time for records that are added dynamically (dynamic records). Static records will not have a record timestamp.
 
 * Dynamic zones are transferred from the DNS server using a zone transfer. If you restrict zone transfers from your DNS server, you should make sure that zone transfers are allowed to the IP Address of the DNS server itself.
 

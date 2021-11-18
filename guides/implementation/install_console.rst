@@ -1,15 +1,16 @@
 .. meta::
    :description: How to install the Men&Mice Management Console, the Windows client for Micetro by Men&Mice
-   :keywords: Micetro, Windows client, installation 
+   :keywords: Micetro, Windows client, installation
 
 .. _install-console:
 
 Management Console
 ==================
 
-Men&Mice Management Console is the main user interface of Micetro. Install on Windows or Mac OS X (5.1.3 only). (It can also be made to run on Mac OS X (will run using Boot Camp, virtualization software like Parallels, VMWare or Virtual PC or WINE) and Linux (using WINE), but we don’t provide support for this.) You can install multiple copies, wherever it’s needed. (With the Small Business Edition, only one copy can be used at a time.)
+Men&Mice Management Console is a soon-to-be deprecated, Windows-based user interface of Micetro. As a Windows-based application it needs to be installed on a Windows machine.
 
-The Men&Mice Management Console is a Windows-based application and needs to be installed on a Windows machine, or through a Wine session on Linux.
+.. note::
+  Functionality from the Management Console is in the process of being migrated to the :ref:`web-application`.
 
 Run the Men&Mice Management Console installer (with Administrative privileges). Once installed, launch the application:
 

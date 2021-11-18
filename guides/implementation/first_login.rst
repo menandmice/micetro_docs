@@ -1,6 +1,6 @@
 .. meta::
    :description: First login and default credentials for Micetro by Men&Mice
-   :keywords: Micetro 
+   :keywords: Micetro
 
 .. _first-login:
 
@@ -16,6 +16,11 @@ The default credentials:
 
 After logging in with the default administrator credentials, the system will prompt to change the administrator password.
 
+.. warning::
+  Do not lose the password set in this step for the ``administrator`` user. It cannot be recovered if lost.
+
+  Contact Men&Mice Customer Care if the *administrator* user password is lost.
+
 .. image:: ../../images/first_login.png
   :width: 60%
   :align: center
@@ -23,10 +28,7 @@ After logging in with the default administrator credentials, the system will pro
 License keys
 ------------
 
-.. note::
-  When logging in to the Web Application for the first time, and no license keys have been configured, administrators will be prompted and able to paste their license keys through the Web Application as well.
-
-License key management is done through the Management Console. See :ref:`admin-license` for more information.
+See :ref:`admin-license`.
 
 .. note::
   The IPAM license key unlocks **both** the DHCP and IPAM functionality of Micetro.

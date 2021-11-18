@@ -35,7 +35,6 @@ Create self-signed certificate:
 Place the files in the appropriate directories:
 
 .. code-block:: bash
-  :linenos:
 
   cp mmweb.key /etc/pki/tls/private/
   cp mmweb.c* /etc/pki/tls/certs/
@@ -46,7 +45,6 @@ Once the keyfiles are placed in their respective directories, edit the mmweb.con
 * add in the references to the key files (amend the path as necessary):
 
 .. code-block::
-  :linenos:
 
   SSLCertificateFile /etc/pki/tls/certs/mmweb.crt
   SSLCertificateKeyFile /etc/pki/tls/private/mmweb.key
@@ -54,7 +52,6 @@ Once the keyfiles are placed in their respective directories, edit the mmweb.con
 * enable SSL:
 
 .. code-block::
-  :linenos:
 
     SSLEngine on
     SSLProtocol all -SSLv2 -SSLv3
@@ -107,7 +104,6 @@ Locate and open the web.config file for your Default Website in notepad. This is
 Add the following rule xml to the rewrite > rules section of the xml, at the top below <clear />
 
 .. code-block::
-  :linenos:
 
   <rule name="HTTP to HTTPS redirect" enabled="true" stopProcessing="true">
       <match url="(.*)" />

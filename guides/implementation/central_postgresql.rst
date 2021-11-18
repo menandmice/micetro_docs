@@ -21,7 +21,6 @@ Edit the configuration file for Men&Mice Central:
 Find (or create) and set the following values:
 
 .. code-block::
-  :linenos:
 
   <database value="postgresql"/>
   <databaseserver value="HOSTNAME@DATABASE"/>
@@ -56,7 +55,6 @@ The preferences.cfg file in the data directory contains (beside the fingerprint 
 The preferences.cfg file for normal user/password authentication should look like:
 
 .. code-block::
-  :linenos:
 
   <password value="the fingerprint hash"/>
   <database value="postgresql"/>
@@ -67,7 +65,6 @@ The preferences.cfg file for normal user/password authentication should look lik
 An example preferences.cfg file for the Windows Authentication method should look like (databaseusername tag must be present and the value attribute must be set to empty string):
 
 .. code-block::
-  :linenos:
 
   <password value="the fingerprint hash"/>
   <database value="postgresql"/>

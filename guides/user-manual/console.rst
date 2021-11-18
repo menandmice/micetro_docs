@@ -75,6 +75,6 @@ Console functions
   console_gui
   console_menus
   console_toolbars
-  console_quickfilter
+  console/console_quickfilter
   console_actions
   console_health_bar

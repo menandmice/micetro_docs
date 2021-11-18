@@ -1,10 +1,10 @@
 .. meta::
-   :description: How to manage DHCP scopes in the Micetro by Men&Mice Management Console 
+   :description: How to manage DHCP scopes in the Micetro by Men&Mice Management Console
    :keywords: DHCP management, DHCP scopes
 
 .. _dhcp-scopes:
 
-DHCP Scopes
+DHCP scopes
 ===========
 
 .. note::
@@ -137,8 +137,10 @@ Delete DHCP reservation
 View history
   Displays the object history for the selected IP address.
 
-Scope Creation Wizard
----------------------
+.. _new-dhcp-scope:
+
+New DHCP scope
+--------------
 
 .. note::
   Creating a scope on a Kea server configured for load balancing high availability, Micetro will automatically split the scope evenly between primary and secondary servers. See :ref:`dhcp-kea-ha`.
@@ -151,21 +153,29 @@ The Wizard has additional steps, or skips over some steps, depending on the type
 
 To create a new scope on the MS DHCP server, do the following:
 
-1. In :menuselection:`Networks` select :guilabel:`Create` and tick the :guilabel:`Create a DHCP scope` checkbox.
+1. In :menuselection:`Networks` use the :guilabel:`Create` action and select :guilabel:`DHCP scope` from the dropdown.
 
-.. image:: ../../images/create-network-Micetro.png
+.. image:: ../../images/create-dhcp-scope-Micetro.png
   :width: 70%
   :align: center
 
-2. Edit the options for the DHCP scope.
+2. Click :guilabel:`Next`.
+
+3. Edit the options for the DHCP scope.
 
 DHCP server
-  Select from the dropdown menu.
+  The DHCP server for the scope.
+
+Enabled
+  If checked, the DHCP scope will start allocating IP addresses immediately. Uncheck it if you want to configure the scope further.
 
 Start/end of address pool
-  Define the address pool.
+  Adjust the first and last IP address in the pool.
 
 3. Active Directory Site selection. If you have enabled :ref:`active-directory`, the Wizard will ask you which AD site the new DHCP Scope should be associated to.
+
+  .. note::
+    Leave it empty for no AD site.
 
 4. Scope properties.
 
@@ -173,13 +183,10 @@ Start/end of address pool
 
 6. Save comment.
 
-.. warning::
-  Once the scope has been created, you must set access privileges for the scope if you want to allow users to make any changes to it, assuming the initial access for Ranges/Scopes has not been set appropriately.
-
 Access
 ------
 
-For complete details on this function, refer to :ref:`global-access`.
+For complete details on this function, refer to :ref:`access-control`.
 
 Scope Migration Wizard (Management Console)
 -------------------------------------------
@@ -236,6 +243,8 @@ Use this function to fix inconsistencies between information in the registry and
 2. Right-click the scope and select :guilabel:`Reconcile Scopes`.
 
 3. Choose whether you want to verify only or fix any inconsistencies and click :guilabel:`OK` to complete the action.
+
+For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
 
 Scope Policies (Windows Server 2012 or newer) (Management Console)
 ------------------------------------------------------------------

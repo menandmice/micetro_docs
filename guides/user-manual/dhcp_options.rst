@@ -1,11 +1,11 @@
 .. meta::
-   :description: The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers options in the Micetro by Men&Mice Management Console 
+   :description: The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers options in the Micetro by Men&Mice Management Console
    :keywords: KEA DHCP, DHCP servers, CISCO servers, Microsoft DHCP servers
 
-.. _console-dhcp-options:
+.. _dhcp-options:
 
-Options
--------
+Options (Management Console)
+----------------------------
 
 The ISC DHCP, Kea DHCP, Cisco and MS DHCP servers offer different types of options: the MS DHCP server allows the user to choose between different option types (Standard, Microsoft Options and Microsoft Windows 2000 options). This drop-down list is only displayed if there are non-standard options defined on the ISC DHCP server.
 
@@ -39,10 +39,10 @@ Properties
 
 2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-properties` or :ref:`console-cisco-dhcp-properties`.
 
-.. _console-dhcp-advanced-options:
+.. _dhcp-advanced-options:
 
-Advanced ISC DHCP and ISC Kea Server Properties
------------------------------------------------
+Advanced ISC DHCP and ISC Kea Server Properties (Management Console)
+--------------------------------------------------------------------
 
 DHCP Administrators can access the ISC DHCP and ISC Kea DHCP server configuration files directly to edit DHCP server properties that are not available in the GUI.
 

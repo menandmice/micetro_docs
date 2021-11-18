@@ -16,7 +16,7 @@ Setting up the Database
 
 Micetro requires that a blank database is created on the database server, with the collation SQL_Latin1_General_CP1_CS_AS, and a login (Windows or SQL server authenticated) that has db_owner access to that database and an effective default schema of mmCentral.
 
-The :ref:`createdatabase_sql` is a suggestion for the database and database server setup. Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
+The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ script is a suggestion for the database and database server setup. Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
 
 Before you run the script please go through the script and change the necessary entries accordingly. This includes path strings (default C:/Data) and very important also the password, which is set by default to "1234" in the script!
 
@@ -33,7 +33,7 @@ Subsequently the script will create:
   ``COLLATE SQL_Latin1_General_CP1_CS_AS``
 
 .. note::
-  For further details take a look at the :ref:`createdatabase_sql` script.
+  For further details take a look at the ``CreateDatabase.sql`` script.
 
 Configuring the connection parameters
 
@@ -53,7 +53,6 @@ The ``preferences.cfg`` file in the data directory contains (beside the fingerpr
 The ``preferences.cfg`` file for normal user/password authentication should look like:
 
 .. code-block::
-  :linenos:
 
   <password value="plaintext:PASSWORD"/>
   <database value="MSSQL"/>
@@ -66,7 +65,6 @@ The ``plaintext:`` directive in the password inputs allows you to enter the pass
 An example ``preferences.cfg`` file for the Windows Authentication method should look like (``databaseusername`` tag must be present and the value attribute must be set to empty string):
 
 .. code-block::
-  :linenos:
 
   <password value="the fingerprint hash"/>
   <database value="MSSQL"/>
@@ -86,7 +84,6 @@ Navigate to the data directory of the Men&Mice Central, usually located in ``/va
 Edit the ``preferences.cfg`` file with in that directory with the following:
 
 .. code-block::
-  :linenos:
 
   <Database value="MSSQL" />
   <DatabaseServer value="ip/dns name of SQL server><,port>\<Instance name>@<Database name>" />

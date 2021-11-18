@@ -103,7 +103,7 @@ In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the in
 
   .. code-block:: bash
 
-    cd mmsuite-controllers-10.0.linux.x64 && ./install --skip-arrange
+    cd mmsuite-controllers-10.0.linux.x64 && ./install
 
 Installer Questions
 ^^^^^^^^^^^^^^^^^^^
@@ -217,7 +217,25 @@ To remove the DNS Server Controller, first use the init script to stop the servi
 SELinux
 ^^^^^^^
 
-Some newer Linux distributions come with SELinux (Security Enhanced Linux) enabled by default. Due to the complexity of and variation between SELinux configuration files, we are unable to support SELinux configuration at this time. SELinux settings commonly interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&Mice DNS Server Controller, so our recommendation is to disable SELinux. It is possible to make ``named``, Men&Mice Suite, and SELinux all work together, but we cannot currently offer support for this.
+.. note::
+  The following commands apply to Linux distributions based on RedHat EL 8 or higher. Your distribution may differ.
+
+After installing the DNS Server Controller, run the following commands as root:
+
+.. code-block:: bash
+
+  semanage fcontext -a -t named_cache_t --ftype f "/var/named(/.*)?"
+  semanage fcontext -a -t named_cache_t --ftype d "/var/named(/.*)?"
+  semanage fcontext -a -t named_conf_t --ftype f "/var/named/conf(/.*)?"
+  semanage fcontext -a -t named_conf_t --ftype d "/var/named/conf(/.*)?"
+  semanage fcontext -a -t named_zone_t --ftype f "/var/named/hosts(/.*)?"
+  semanage fcontext -a -t named_zone_t --ftype d "/var/named/hosts(/.*)?"
+  restorecon -rv /var/named
+
+These will adjust the SELinux security label for the BIND 9 configuration and zone files.
+
+.. note::
+  Due to the complexity of and variation between SELinux configuration files, we are unable to officially support SELinux configuration at this time, as SELinux settings can interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&Mice DNS Server Controller. It is possible to make ``named``, Micetro, and SELinux all work together, but we cannot currently offer official support for this.
 
 The $INCLUDE and $GENERATE Directives
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -263,7 +281,6 @@ To configure the DNS Server Controller to use a different address, edit the serv
 If the file does not exist, create it. The file is a text file in a simple XML-based format. Add the following element, replacing the dummy address here with the server's correct network address:
 
 .. code-block::
-  :linenos:
 
   <DNSServerAddress value="192.0.2.1"/>
 
@@ -294,7 +311,6 @@ If the Controller should be configured to run a connector script in order to int
 The file is a text file in a simple XML-based format. Add the following element, replacing the dummy script interpreter and script:
 
 .. code-block:: XML
-  :linenos:
 
   <GenericDNSScript value="python /scripts/genericDNS.py" />
 
@@ -310,3 +326,8 @@ If Men&Mice Central is installed on a Windows host, then one option is to instal
 
 .. note::
   The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
+
+.. toctree::
+  :maxdepth: 1
+
+  generic_dns_controller

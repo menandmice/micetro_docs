@@ -34,7 +34,6 @@ The Quickfilter can be used as a free text search by simply entering a some stri
 The column to match against can also be specified by providing the name of the column, a condition operator, and the queried string.
 
 .. code-block::
-  :linenos:
 
   type=slave
   name=^example
