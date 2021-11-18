@@ -44,6 +44,7 @@ Table of Contents
 
 .. toctree::
     :caption: Micetro by Men&Mice
+    :maxdepth: 1
 
     release_notes
     security_announcements
@@ -90,7 +91,7 @@ Table of Contents
     guides/admin-manual/caching_appliance
 
 .. toctree::
-    :caption: Micetro Reference
-    :maxdepth: 3
+    :caption: Reference
+    :maxdepth: 1
 
     guides/reference/reference
