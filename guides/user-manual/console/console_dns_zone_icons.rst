@@ -5,7 +5,7 @@
 .. _console-dns-zone-icons:
 
 Zone Icons (Management Console, deprecated)
--------------------------------
+-------------------------------------------
 
 When viewing the zones, you will notice indicators that show the zone type.
 
@@ -17,7 +17,7 @@ When viewing the zones, you will notice indicators that show the zone type.
 .. |controls| image:: ../../../images/console-dns-zones-zone-controls-icon.png
 .. |analyze| image:: ../../../images/console-analyze.png
 
-  The Management Console displays zone type with the following icons:
+The Management Console displays zone type with the following icons:
 
 .. csv-table:: DNS zone icons in the Management Console
   :header: "Icon", "Description"

@@ -5,7 +5,7 @@
 .. _console-dns-search:
 
 Search (DNS) (Management Console, deprecated)
----------------------------------
+---------------------------------------------
 
 The Zone tab contains a powerful search utility that allows you to search any or all fields in the zone for a particular keyword or numeric value.
 

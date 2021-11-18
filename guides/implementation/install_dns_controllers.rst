@@ -217,6 +217,9 @@ To remove the DNS Server Controller, first use the init script to stop the servi
 SELinux
 ^^^^^^^
 
+.. note::
+  The following commands apply to Linux distributions based on RedHat EL 8 or higher. Your distribution may differ.
+
 After installing the DNS Server Controller, run the following commands as root:
 
 .. code-block:: bash

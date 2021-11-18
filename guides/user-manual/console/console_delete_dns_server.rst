@@ -5,7 +5,7 @@
 .. _console-delete-dns-server:
 
 Remove DNS servers (Management Console, deprecated)
-------
+---------------------------------------------------
 
 This command is only available with the Administrator account. Use this command to remove a server from the Management Console.
 

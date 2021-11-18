@@ -36,7 +36,7 @@ Adding a License Key
 
 2. To add a key, click the :guilabel:`Add Key` button. The *Add License Key* dialog box displays.
 
-.. image:: ../../images/admin-add-license.png
+.. image:: ../../../images/admin-add-license.png
   :width: 50%
   :align: center
 

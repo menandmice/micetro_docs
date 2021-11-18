@@ -64,6 +64,11 @@ Installing Men&Mice Central puts the following files on your system:
 
 To remove Men&Mice Central, first use the init script to stop the service (give it the "stop" argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. Also delete the data directory if desired.
 
+Men&Mice Central configuration files on Linux
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See :ref:`config-linux`.
+
 .. _install-central-windows:
 
 Men&Mice Central on Windows
@@ -75,7 +80,7 @@ Run the downloaded binary and follow the instructions on-screen.
   Installing Men&Mice Central does not require special privileges. The service will be started automatically after installation.
 
 .. image:: ../../images/install-windows-service.png
-  :width: 30%
+  :width: 60%
   :align: center
 
 .. note:: Running Men&Mice Central under a privileged user account
@@ -87,3 +92,8 @@ Run the downloaded binary and follow the instructions on-screen.
 
 .. important::
   The installer creates the data directories for Men&Mice Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.
+
+Men&Mice Central configuration files on Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See :ref:`config-windows`.
