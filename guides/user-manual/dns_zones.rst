@@ -7,6 +7,9 @@
 DNS zones
 =========
 
+.. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
+.. |analyze| image:: ../../images/console-analyze.png
+
 Overview
 --------
 
@@ -438,27 +441,27 @@ Allow Zone Transfers.
   :width: 50%
   :align: center
 
-  To any server.
-    When selected, the zone transfer will be performed to any requester.
+To any server.
+  When selected, the zone transfer will be performed to any requester.
 
-  Only to listed name servers in the zone.
-    When selected, the zone will be transferred from the server to any other name server listed in the zone.
+Only to listed name servers in the zone.
+  When selected, the zone will be transferred from the server to any other name server listed in the zone.
 
-  Only to the following servers.
-    When selected, the zone will only be transferred to the servers you specify in the list below. To enter a server, click in the first available row and enter its IP Address.
+Only to the following servers.
+  When selected, the zone will only be transferred to the servers you specify in the list below. To enter a server, click in the first available row and enter its IP Address.
 
-  Dynamic updates.
-    Specifies whether dynamic updates are allowed for the zone
+Dynamic updates.
+  Specifies whether dynamic updates are allowed for the zone
 
-  AD Replication.
-    Displays a dialog box where you can set the AD Replication options for the zone.
+AD Replication.
+  Displays a dialog box where you can set the AD Replication options for the zone.
 
-  Aging/Scavenging.
-    Displays a dialog box where aging and scavenging options can be set for the zone.
+Aging/Scavenging.
+  Displays a dialog box where aging and scavenging options can be set for the zone.
 
-    .. image:: ../../images/console-dns-zones-aging-scavenging.png
-      :width: 40%
-      :align: center
+  .. image:: ../../images/console-dns-zones-aging-scavenging.png
+    :width: 40%
+    :align: center
 
 Slave Zones
 """""""""""
@@ -535,7 +538,7 @@ To change the address of an existing server, click on it and make the desired ed
 DNS Administrators can now access the BIND configuration files directly to edit DNS server and zone options that are not available in the GUI. Refer to :ref:`bind-advanced-options` for details.
 
 Options for a zone (Management Console)
-------------------
+---------------------------------------
 
 .. image:: ../../images/console-dns-zones-zone-options-dynamic.png
   :width: 40%

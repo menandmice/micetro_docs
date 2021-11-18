@@ -17,8 +17,8 @@ Install the Web Application on Linux
 
 .. code-block:: bash
 
-  tar -xzvf mmsuite-web-application-10.0.2.linux.x64.tgz
-  cd mmsuite-web-application-10.0.2.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
+  tar -xzvf mmsuite-web-application.linux.x64.tgz
+  cd mmsuite-web-application.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
 
 Where ``web-application.domain.tld`` is the domain on which the Web Application will be accessed.
 
@@ -28,11 +28,13 @@ Where ``web-application.domain.tld`` is the domain on which the Web Application 
 
   systemctl restart httpd
 
-3. MAke sure Apache can connect to the web interface service:
+3. In distributions based on RHEL8 with SELinux enabled, make sure Apache can connect to the web interface service:
 
 .. code-block:: bash
 
   setsebool httpd_can_network_connect 1 -P
+
+----
 
 Install the Web Application on Windows
 --------------------------------------

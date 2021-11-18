@@ -5,7 +5,7 @@
 .. _console-dhcp-kea:
 
 ISC Kea DHCP (Management Console, deprecated)
-=================================
+=============================================
 
 .. danger::
   Starting with Micetro 10.0, older versions of the Kea DHCP server are no longer supported. See :ref:`system-requirements` for a list of supported versions. You need to remove your existing (older) Kea DHCP servers from the system, and update them to a supported version of Kea before updating to Micetro 10.0 from an older version of the Men&Mice Suite. Not doing so could result in lost access to and data from the older Kea servers in Micetro.

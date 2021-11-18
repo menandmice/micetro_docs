@@ -36,7 +36,7 @@ To switch to a different address space:
 
 2. Select :guilabel:`Address Space` and select the address space you want to use.
 
-.. image:: ../../images/address-space-Micetro.png
+.. image:: ../../../images/address-space-Micetro.png
   :width: 50%
   :align: center
 

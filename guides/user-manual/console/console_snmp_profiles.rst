@@ -1,7 +1,7 @@
 .. _console-snmp-profiles:
 
 Configuring Host Discovery by Querying Routers (Management Console, deprecated)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is possible to perform host discovery by performing SNMP queries on specified routers. SNMP v1, v2c and v3 is supported.
 

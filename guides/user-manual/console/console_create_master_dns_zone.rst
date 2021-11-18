@@ -5,7 +5,7 @@
 .. _console-create-master-dns-zone:
 
 Master Zone (Management Console, deprecated)
---------------------------------
+--------------------------------------------
 
 This procedure is the fastest way to add a new blank (i.e., empty) zone. If you want to duplicate an existing zone, you should use the :guilabel:`Duplicate` command instead.
 

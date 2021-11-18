@@ -1,13 +1,16 @@
 .. meta::
    :description: Configuring a PostgreSQL High Availability cluster to use with Micetro by Men&Mice
-   :keywords: high availability, database, failover, PostgreSQL, Micetro 
+   :keywords: high availability, database, failover, PostgreSQL, Micetro
 
 .. _psql-ha:
 
 Setting up the PostgreSQL High Availability environment
 =======================================================
 
-Micetro uses ``pg_auto_failover`` to create a high availability database cluster.
+.. important::
+  Configuring high availability for the database is the responsibility of your database team. The following information illustrates a possible setup using ``pg_auto_failover`` to create a high availability database cluster.
+
+  While all possible steps were taken to verify its accuracy, Men&Mice assumes no responsibility for the setup herein.
 
 Install pg_auto-failover
 ------------------------
@@ -220,6 +223,8 @@ Further information
 .. toctree::
   :maxdepth: 1
 
+  central_psql_ha
+  db_migrate
   ha_tweaks_psql
   psql_ha_maintenance
   psql_disaster_recovery

@@ -12,8 +12,6 @@ Failover instances of Men&Mice Central can be configured to build a high availab
 .. note::
   To run Micetro in High Availability mode you must be using the MSSQL or PostgreSQL database backend for Micetro. High Availability mode is not available for other database types.
 
-  High Availability is also available for the database backend, see :ref:`psql-ha` and :ref:`mssql-ha` for more information.
-
 .. note::
   For fine-tuning the settings for the Central High Availability cluster, see :ref:`ha-tweaks-central`.
 
@@ -78,6 +76,8 @@ Click the :guilabel:`Add` button and enter the name used in the first step. Set 
   Repeat these steps for each high availability failover you’d like to add. The priority for each failover member should be unique and higher than the primary.
 
 Proceed to :ref:`install-controllers`.
+
+----
 
 .. _central-ha-windows:
 

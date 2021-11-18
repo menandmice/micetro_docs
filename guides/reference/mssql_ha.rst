@@ -1,11 +1,16 @@
 .. meta::
    :description: Configuring Always On Availability for Microsoft SQL Server with Micetro by Men&Mice
-   :keywords: high availability, Microsoft SQL Server, Micetro 
+   :keywords: high availability, Microsoft SQL Server, Micetro
 
 .. _mssql-ha:
 
 Always On Availability Groups
-"""""""""""""""""""""""""""""
+-----------------------------
+
+.. important::
+  Configuring high availability for the database is the responsibility of your database team.
+
+  While all possible steps were taken to verify accuracy, Men&Mice assumes no responsibility for the information herein.
 
 .. note::
   Please note that Always On Availability Groups are only supported for Men&Mice Central running on Linux.

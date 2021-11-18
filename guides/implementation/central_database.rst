@@ -18,3 +18,6 @@ Micetro can be used with the following databases:
 
 .. note::
   High Availability for the database is only available for MS SQL and PostgreSQL.
+
+.. note::
+  Deploying Micetro using the Amazon Marketplace configures the environment automatically for Azure SQL. See :ref:`installation-azure` for details.

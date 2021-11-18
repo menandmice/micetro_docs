@@ -5,7 +5,7 @@
 .. _console-disable-enable-dns-record:
 
 Disable/Enable DNS Records (Management Console, deprecated)
-----------------------
+-----------------------------------------------------------
 
 You can disable a record without deleting it. The disabled record performs no function; however, it can be instantly enabled when its services are needed, without having to re-type the record.
 

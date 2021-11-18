@@ -5,7 +5,7 @@
 .. _console-dhcp-isc:
 
 ISC DHCP (Management Console, deprecated)
------------------------------
+-----------------------------------------
 
 .. |add-dhcp| image:: ../../../images/console-dhcp-add-icon.png
 .. |rename-dhcp| image:: ../../../images/console-dhcp-rename-icon.png

@@ -22,4 +22,4 @@ Micetro uses *server controllers* to connect with DNS and DHCP servers in the ne
   agent_free_dns-dhcp
 
 .. note::
-  Servers in Active Directory environments can be connected without using a controller.
+  Servers in Active Directory environments can be connected without using a controller. See :ref:`ms-agent-free`.

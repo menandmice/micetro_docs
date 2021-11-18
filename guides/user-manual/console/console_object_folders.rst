@@ -5,7 +5,7 @@
 .. _console-object-folders:
 
 Object Folders (Management Console, deprecated)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To help in organizing your IP Address ranges, DNS Zones, and DHCP scopes, you can create folders and subfolders into which you can place one or more objects. You can also rename and delete folders, as well as specify access to ranges within the folder (once objects have been moved into it).
 

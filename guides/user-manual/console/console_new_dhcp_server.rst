@@ -5,7 +5,7 @@
 .. _console-new-dhcp-server:
 
 New DHCP Server (Management Console, deprecated)
-------------------------------------
+------------------------------------------------
 
 .. note::
   When adding a DHCP server, the system automatically changes existing IP Address ranges to scopes if it finds IP Address ranges that contain the same start and end address as a scope on the DHCP server being added.
