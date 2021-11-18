@@ -5,7 +5,7 @@
 .. _console-dhcp-scopes:
 
 DHCP Scopes (Management Console, deprecated)
-===========
+============================================
 
 Overview
 --------

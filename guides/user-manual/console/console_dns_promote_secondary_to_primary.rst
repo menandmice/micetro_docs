@@ -5,7 +5,7 @@
 .. _console-dns-promote-secondary-to-primary:
 
 Promote Slave to Master (Management Console, deprecated)
---------------------------------------------
+--------------------------------------------------------
 
 The Promote Zone feature makes it possible to change a slave zone to a master zone. This might be necessary in emergency situations, for example if the master zone becomes unavailable for an extended period of time. This feature is only available for DNS Administrators.
 

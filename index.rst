@@ -72,24 +72,23 @@ Table of Contents
      guides/user-manual/ipam
      guides/user-manual/devices
      guides/user-manual/active_directory
-     guides/user-manual/cloud
      guides/user-manual/automation
 
 .. toctree::
     :caption: Micetro Admin Guide
     :maxdepth: 3
 
-    guides/user-manual/administration
-    guides/user-manual/admin_system_settings
-    guides/user-manual/access_control
-    guides/user-manual/admin_license
-    guides/user-manual/admin_updates
-    guides/user/manual/snmp_profiles
-    guides/user-manual/admin_custom_properties
-    guides/user-manual/admin_schedule_scripts
-    guides/user-manual/admin_maintenance
-    guides/user-manual/appliance_management
-    guides/user-manual/caching_appliance
+    guides/admin-manual/admin_system_settings
+    guides/admin-manual/access_control
+    guides/admin-manual/admin_license
+    guides/admin-manual/admin_updates
+    guides/admin-manual/webapp_admin
+    guides/admin-manual/snmp_profiles
+    guides/admin-manual/admin_custom_properties
+    guides/admin-manual/admin_schedule_scripts
+    guides/admin-manual/admin_maintenance
+    guides/admin-manual/appliance_management
+    guides/admin-manual/caching_appliance
 
 .. toctree::
     :caption: Reference

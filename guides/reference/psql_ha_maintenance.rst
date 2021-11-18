@@ -1,14 +1,14 @@
 .. meta::
    :description: Maintenance operations for the PostgreSQL High Availability cluster with Micetro by Men&Mice
-   :keywords: high availability, database maintenance, failover, PostgreSQL, Micetro 
+   :keywords: high availability, database maintenance, failover, PostgreSQL, Micetro
 
 .. _psql-ha-maintenance:
 
 PostgreSQL HA operations
-========================
+------------------------
 
 Triggering a failover
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 To call the function successfully, you need to figure out the formation and group of the group where the failover happens.
 The following commands when run on a ``pg_auto_failover`` keeper node provide for the necessary information:
@@ -38,14 +38,14 @@ Machine: monitor
   > select pgautofailover.perform_failover(formation_id => '[formation]', group_id => [group]);
 
 Implementing a controlled switchover
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is generally useful to distinguish a controlled switchover from a failover. In a controlled switchover situation it is possible to organize the sequence of events in a way to avoid data loss and lower downtime to a minimum.
 In the case of ``pg_auto_failover``, because we use synchronous replication, we don’t face data loss risks when triggering a manual failover. Moreover, our monitor knows the current primary health at the time when the failover is triggered and drives the failover accordingly.
 So to trigger a controlled switchover with ``pg_auto_failover`` you can use the same API as for a manual failover above.
 
 Maintenance of a secondary node
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is possible to put a secondary node in any group in a MAINTENANCE state so that the Postgres server is not doing synchronous replication anymore and can be taken down for maintenance purposes, such as security kernel upgrades or the like.
 
@@ -78,7 +78,7 @@ Show current state and events
   $ pg_autoctl show events --pgdata [monitor | node-1 | node-2]
 
 Monitoring ``pg_auto_failover`` in production
----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The monitor reports every state change decision to a LISTEN/NOTIFY channel named state. PostgreSQL logs on the monitor are also stored in a table, ``pgautofailover.event``, and broadcast by NOTIFY in the channel log.
 

@@ -5,7 +5,7 @@
 .. _console-forward-zone:
 
 Forward Zone (Management Console, deprecated)
-------------
+---------------------------------------------
 
 Through this function, you create a forward zone.
 

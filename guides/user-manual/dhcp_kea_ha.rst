@@ -130,22 +130,22 @@ After the primary Kea server has been added to Micetro, it will acts as the prim
 When both the primary Kea server and all its secondary/backup partners in the high availability environment are running and accessible, Micetro will report the Kea DHCP server as :guilabel:`OK`. |kea-ok|
 
 Primary server offline |kea-impaired|
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the primary server is offline (or unavailable for any reason, such as reporting itself in a disabled state, or becomes unreachable from Micetro) the secondary/standby server will take its place in Micetro. The user interface will report the Kea DHCP service :guilabel:`Impaired`. During this time, the single-source-of-truth will be the in-memory config on the secondary/standby server, and will remain this way until connection to the primary server is re-established.
 
 Secondary/standby/backup server offline |kea-impaired|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If any of the secondary/standby/backup servers are offline, replication to all other servers will still take place but Micetro will report the Kea DHCP service :guilabel:`Impaired`. When the affected secondary/standby/backup reports itself as active again, it will be automatically synchronized with the single-source-of-truth configuration. (The in-memory config of the primary Kea server.)
 
 Both primary and secondary/standby server offline |kea-down|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If both primary and secondary/standby servers go offline, Micetro will report the Kea DHCP service :guilabel:`Service down`. All further operations will result in an error reporting this downtime. All replication is stopped until either the primary or the secondary/standby servers report themselves as active. The first one to become active will be the single-source-of-truth, but the primary will always overwrite any secondary/backup when it becomes active.
 
 DHCP Server Controller offline |kea-unreachable|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the unlikely event that the DHCP Server Controller is offline, all Kea high availability information will be momentary lost. As soon as the Server Controller comes back online, Central will attempt to reconnect to the preconfigured primary Kea DHCP server. After reconnecting to the primary Kea server, the configuration will be parsed again, the high availability setup detected, and replication between servers begins again.
 

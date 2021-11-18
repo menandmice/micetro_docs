@@ -7,6 +7,9 @@
 Web Application
 ***************
 
+User Guide
+----------
+
 .. toctree::
   :maxdepth: 1
 
@@ -20,8 +23,11 @@ Web Application
   webapp_network_management
   webapp_import_ipam_data
   webapp_reporting
-  webapp_sso
   webapp_quick_command
   webapp_quick_filter
   webapp_workflows
-  webapp_admin
+
+Admin Guide
+-----------
+
+See :ref:`webapp-admin`.

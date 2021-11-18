@@ -10,6 +10,8 @@ Location of important config and log files
 .. important::
   The paths below represent the default values. Depending on your installation, your environment may be using different paths. See :ref:`central-non-standard-install`.
 
+.. _config-linux:
+
 Linux
 -----
 
@@ -27,7 +29,7 @@ Linux
    "``/var/mmsuite/dns_server_controller/logs/``",	"Men&Mice DNS Server Controller logfile."
    "``./[monitor]/pg_log/postgresql-[WeekDay].log``",	"PostgreSQL HA cluster monitor logfile."
 
-.. _config-files-windows:
+.. _config-windows:
 
 Windows
 -------

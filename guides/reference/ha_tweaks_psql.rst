@@ -1,14 +1,14 @@
 .. meta::
    :description: Tweaking the High Availability settings for PostgreSQL in Micetro by Men&Mice
-   :keywords: high availability, failover, PostgreSQL, Micetro 
+   :keywords: high availability, failover, PostgreSQL, Micetro
 
 .. _ha-tweaks-psql:
 
 PostgreSQL HA tweaks
-====================
+--------------------
 
 Lower timeout threshold
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Machine: monitor
 """"""""""""""""
@@ -31,7 +31,7 @@ We want to lower the database timeout value, i.e. when the failover should be pe
   SELECT name, setting FROM pg_settings WHERE name ~ 'pgautofailover\.node';
 
 Create a startup service
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 For each machine create a startup service that runs the ``pg_autoctl`` process:
 
@@ -60,7 +60,7 @@ Machine: node-2
   systemctl enable pgautofailover.service
 
 Configuring PostgreSQL logging
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Machine: monitor
 """"""""""""""""

@@ -5,7 +5,7 @@
 .. _db-migrate:
 
 Migrate data from another database
-==================================
+----------------------------------
 
 The new PostgreSQL High Availability setup has the database ``mmsuite`` but with no data. If you have a pre-existing database you need to migrate the data to the new setup.
 

@@ -5,7 +5,7 @@
 .. _console-quickfilter:
 
 Quick Filter (Management Console, deprecated)
-=================================
+=============================================
 
 .. note::
   The Quick Filter functionality is also available in the Web Application.

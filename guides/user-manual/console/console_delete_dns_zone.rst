@@ -5,7 +5,7 @@
 .. _console-delete-dns-zone:
 
 Delete zone (Management Console, deprecated)
---------------------------------
+--------------------------------------------
 
 Use this command to delete a zone from one or more servers. Before using this command, select the zone you want to delete from the Management Console; the Delete Zone dialog box displays and shows a list of servers on which that zone resides. By default, the zone will be removed from all servers (i.e., all servers are checked). If you want to keep it on one or more servers, clear the checkbox next to that server. Click the Delete button to remove the zone from the selected servers.
 

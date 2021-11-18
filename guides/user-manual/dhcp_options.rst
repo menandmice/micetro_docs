@@ -39,10 +39,10 @@ Properties
 
 2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-properties` or :ref:`console-cisco-dhcp-properties`.
 
-.. _console-dhcp-advanced-options:
+.. _dhcp-advanced-options:
 
-Advanced ISC DHCP and ISC Kea Server Properties
------------------------------------------------
+Advanced ISC DHCP and ISC Kea Server Properties (Management Console)
+--------------------------------------------------------------------
 
 DHCP Administrators can access the ISC DHCP and ISC Kea DHCP server configuration files directly to edit DHCP server properties that are not available in the GUI.
 
