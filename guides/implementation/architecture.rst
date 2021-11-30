@@ -14,7 +14,7 @@ Architecture overview
 
 Micetro is a non-destructive, software-defined overlay for managing DNS, DHCP, and IPAM in diverse network environments.
 
-.. image:: ../../images/micetro-mockup-1.png
+.. image:: ../../images/Micetro-Mockup-1.png
   :width: 50%
   :align: center
 
