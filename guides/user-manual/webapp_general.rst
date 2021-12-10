@@ -144,6 +144,6 @@ Date and time handling
 
 In certain places like scheduling a change in Workflow and scheduling a report generation in Reporting, the date and times must be in the same time zone as the Men&Mice Central uses.
 
-.. image:: ../../images/blackstar-schedule.png
+.. image:: ../../images/webui-date-time.png
   :width: 60%
   :align: center
