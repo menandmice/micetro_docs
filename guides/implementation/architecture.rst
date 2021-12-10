@@ -194,7 +194,7 @@ Web Application
 
 The Men&Mice Web Application can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Men&Mice Web Application talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central through TCP port 1231.
 
-.. image:: ../../images/Networks-Micetro.png
+.. image:: ../../images/IPAM1.png
   :width: 80%
   :align: center
 
