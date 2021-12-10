@@ -104,7 +104,7 @@ Step 2: Edit filtering criteria
 
 In the second step, the user has the option of editing the filtering criteria. The user might want to make some adjustments to the fields in the filter of the selected report definition, for example extending a time span or selecting a different username. It is also possible to change the filter completely and create a new report definition.
 
-.. image:: ../../images/blackstar-reports-param.png
+.. image:: ../../images/report-criteria.jpg
   :width: 70%
   :align: center
 
