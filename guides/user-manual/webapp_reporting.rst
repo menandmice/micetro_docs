@@ -56,7 +56,7 @@ A report definition is a recipe for the actual report. It contains the filter cr
 
 The list of report definitions is shown when first entering the Reports section.
 
-.. image:: ../../images/blackstar-reports.png
+.. image:: ../../images/reports.png
   :width: 90%
   :align: center
 
