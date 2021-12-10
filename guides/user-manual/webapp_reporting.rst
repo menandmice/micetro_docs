@@ -317,7 +317,7 @@ Both the report definition properties, the filtering criteria for the report and
 
 3. Clicking on "Edit" for the filtering criteria brings up the following dialog:
 
-.. image:: ../../images/report-edit-properties.png
+.. image:: ../../images/report-edit-filters.png
   :width: 70%
   :align: center
 
