@@ -27,7 +27,7 @@ Introduction
 
 The web application is centered around the grid listing objects in the system. (For example: DNS zones, DNS records, IP address ranges, DHCP scopes, IP addresses, etc.)
 
-.. image:: ../../images/blackstar-annotated.png
+.. image:: ../../images/webui-annotated.jpg
   :width: 90%
   :align: center
 
@@ -57,7 +57,7 @@ Folders can be used as containers of objects such as DNS zones and networks.
 
 The available folders, along with the folder hierarchy can be viewed in the filtering sidebar. Clicking on a folder will display the contents of the specific folder.
 
-.. image:: ../../images/webui-annotated.jpg
+.. image:: ../../images/webui-folders.png
   :width: 60%
   :align: center
 
