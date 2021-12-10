@@ -151,7 +151,7 @@ Step 3: Select columns
 
 It is possible to select which columns are to be included in the report result.
 
-.. image:: ../../images/blackstar-reports-output-columns.png
+.. image:: ../../images/report-columns.png
   :width: 70%
   :align: center
 
