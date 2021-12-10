@@ -57,7 +57,7 @@ Folders can be used as containers of objects such as DNS zones and networks.
 
 The available folders, along with the folder hierarchy can be viewed in the filtering sidebar. Clicking on a folder will display the contents of the specific folder.
 
-.. image:: ../../images/blackstar-folders.png
+.. image:: ../../images/web annotated.jpg
   :width: 60%
   :align: center
 
