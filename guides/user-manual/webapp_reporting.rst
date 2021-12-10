@@ -311,7 +311,7 @@ Both the report definition properties, the filtering criteria for the report and
 
 2. A dialog is presented which allows for specifying the properties for the report, along with editing the filtering criteria.
 
-.. image:: ../../images/blackstar-reports-edit.png
+.. image:: ../../images/report-edit-properties.png
   :width: 70%
   :align: center
 
