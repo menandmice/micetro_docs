@@ -83,7 +83,7 @@ In the list's footer, the number of results is shown:
 
 If a filter is applied, the filter string is highlighted:
 
-.. image:: ../../images/blackstar-filter-highlight.png
+.. image:: ../../images/webui-filter-example.png
   :width: 70%
   :align: center
 
