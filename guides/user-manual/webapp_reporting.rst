@@ -254,7 +254,7 @@ In this dialog a report can be scheduled to be generated at specific intervals. 
 
 2. The following dialog is shown where scheduling and scavenging can be configured.
 
-.. image:: ../../images/blackstar-schedule-report-generation.png
+.. image:: ../../images/report-schedule.jpg
   :width: 70%
   :align: center
 
