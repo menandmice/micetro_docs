@@ -77,7 +77,7 @@ Results
 
 In the list's footer, the number of results is shown:
 
-.. image:: ../../images/blackstar-results.png
+.. image:: ../../images/webui-results.png
   :width: 70%
   :align: center
 
