@@ -217,7 +217,7 @@ Previewing the report results can be done in various ways:
 .. note::
   The preview only shows up to the first 150 rows in the report. For the full report it needs to be downloaded.
 
-.. image:: ../../images/blackstar-reports-preview.png
+.. image:: ../../images/report-preview.png
   :width: 80%
   :align: center
 
