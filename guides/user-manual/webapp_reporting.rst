@@ -95,7 +95,7 @@ Step 1: Select source
 
 Select one of the existing reports or a data source as the basis of the new report definition.
 
-.. image:: ../../images/blackstar-reports-source.png
+.. image:: ../../images/new-report.png
   :width: 70%
   :align: center
 
