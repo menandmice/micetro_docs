@@ -90,7 +90,7 @@ If a filter is applied, the filter string is highlighted:
 Top menu
 --------
 
-.. image:: ../../images/blackstar-top.png
+.. image:: ../../images/webui-top-menu.png
   :width: 80%
   :align: center
 
