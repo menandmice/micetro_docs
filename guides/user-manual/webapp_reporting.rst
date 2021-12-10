@@ -439,6 +439,6 @@ Current time deltas, i.e. a date time relative from now, can also be used.
 
 To include more than one value for a particular field the field has to be added again to the filter with an "OR" condition. (For example: the Address records, where the record type field has to be either A or AAAA.)
 
-.. image:: ../../images/blackstar-reports-filter-or.png
+.. image:: ../../images/report-criteria-or.jpg
   :width: 70%
   :align: center
