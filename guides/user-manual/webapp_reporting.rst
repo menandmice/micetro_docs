@@ -170,7 +170,7 @@ By checking the "Open scheduling dialog after saving" users can schedule periodi
 Step 5: Schedule
 ^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/blackstar-reports-save.png
+.. image:: ../../images/report-save-run.png
   :width: 70%
   :align: center
 
