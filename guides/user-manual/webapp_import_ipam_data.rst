@@ -24,7 +24,7 @@ The Import wizard can be used to import:
 
 The data can either be pasted directly into the wizard or by using a file that is uploaded.
 
-.. image:: ../../images/bulk-import-ipam.png
+.. image:: ../../images/bulk-import.png
   :width: 90%
   :align: center
 
