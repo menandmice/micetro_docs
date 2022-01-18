@@ -27,7 +27,7 @@ Introduction
 
 The web application is centered around the grid listing objects in the system. (For example: DNS zones, DNS records, IP address ranges, DHCP scopes, IP addresses, etc.)
 
-.. image:: ../../images/blackstar-annotated.png
+.. image:: ../../images/webui-annotated.jpg
   :width: 90%
   :align: center
 
@@ -57,7 +57,7 @@ Folders can be used as containers of objects such as DNS zones and networks.
 
 The available folders, along with the folder hierarchy can be viewed in the filtering sidebar. Clicking on a folder will display the contents of the specific folder.
 
-.. image:: ../../images/blackstar-folders.png
+.. image:: ../../images/webui-folders.png
   :width: 60%
   :align: center
 
@@ -77,20 +77,20 @@ Results
 
 In the list's footer, the number of results is shown:
 
-.. image:: ../../images/blackstar-results.png
+.. image:: ../../images/webui-results.png
   :width: 70%
   :align: center
 
 If a filter is applied, the filter string is highlighted:
 
-.. image:: ../../images/blackstar-filter-highlight.png
+.. image:: ../../images/webui-filter-example.png
   :width: 70%
   :align: center
 
 Top menu
 --------
 
-.. image:: ../../images/blackstar-top.png
+.. image:: ../../images/webui-top-menu.png
   :width: 80%
   :align: center
 
@@ -126,7 +126,7 @@ The history for the following objects is made available as a task (in the inspec
 
 The history dialog can be used to view past changes. By clicking on the filter icon in the header for the history dialog, additional options are made available for filtering the history.
 
-.. image:: ../../images/blackstar-history.png
+.. image:: ../../images/webui-history-mmdemo.png
   :width: 80%
   :align: center
 
@@ -144,6 +144,6 @@ Date and time handling
 
 In certain places like scheduling a change in Workflow and scheduling a report generation in Reporting, the date and times must be in the same time zone as the Men&Mice Central uses.
 
-.. image:: ../../images/blackstar-schedule.png
+.. image:: ../../images/webui-date-time.png
   :width: 60%
   :align: center

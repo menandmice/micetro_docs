@@ -291,7 +291,7 @@ After selecting an IP address in the list, the available actions are shown in th
 Pinging an IP address
 ^^^^^^^^^^^^^^^^^^^^^
 
-An IP address or multiple IP addresses in the list can be pinged by: select them and then click on the :guilabel:`Ping IP address` task in the Inspector.
+An IP address or multiple IP addresses in the list can be pinged by selecting them and then clicking on the :guilabel:`Ping IP address` task in the Inspector.
 
 An indicator is shown during the ping. Afterwards a green or red indicator on the left of the IP address indicates a successful (green) or unsuccessful (red) ping.
 

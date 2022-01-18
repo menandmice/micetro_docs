@@ -10,7 +10,7 @@ DHCP servers
 Overview
 --------
 
-This section shows you how to perform specific actions in the Men&Mice Management Console associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
+This section shows you how to perform specific actions in Micetro associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
 
 .. note::
   The functions for this menu option are listed alphabetically after the New DHCP Server section.

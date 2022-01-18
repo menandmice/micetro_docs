@@ -25,7 +25,67 @@ Release notes
     2. Restart Central.
     We'll publish a maintenance release containing the fix for this issue soon.
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`
+
+.. _10.1.2-release:
+
+10.1.2
+------
+
+*December 15, 2021.*
+
+Improvements
+^^^^^^^^^^^^
+* Messages when no folders are present under DNS or IPAM are now more human readable and informational.
+
+* Links within the Micetro Management Console and Web UI now direct readers to updated documentation.
+
+* Consistent format shown for read-only Active Directory Sites in all dropdown menus.
+
+* Error message that appears when trying to change an SNMP profile name to an existing name has been improved to be more informational.
+
+Bug fixes
+^^^^^^^^^
+* There’s no longer a syntax error that pops up when modifying text records that contain data fields over 255 characters.
+
+* Admins will be able to add AD groups in the Web UI when AD Sites and Services feature has been disabled.
+
+* Selecting A or PTR records no longer intermittently causes unnecessary data fetching from server.
+
+* “PTR Status” column will now always show correct status for IP addresses.
+
+* NAPTR records are now correctly formatted before being sent to AWS Route 53.
+
+* Filtering scopes by server no longer shows scopes on unrelated servers with similar names. Your bulk clean-up operations are safe again!
+
+* Accurate informational error message pops up when trying to create a folder that already exists.
+
+* Fixed alignment issue under Access column when creating/editing permissions list for new Roles.
+
+* Correct SNMP profiles will appear when switching between Micetro Central platforms without having to refresh.
+
+* Find Next Free Address command in the web UI glitched at times but is now guaranteed to work correctly.
+
+* Expand/contract function when viewing nested CIDR boundaries, or “Tree View,” under the IPAM tab will work as expected.
+
+* Text for task in Groups under Access Control has been changed from “Remove User” to “Remove Group.” 
+
+* Create Network Wizard is now more intelligent when checking whether a range can be created.
+
+* Fixed rendering issue in filtering sidebar where two items might appear to be selected at the same time.
+
+* Column alignment in Import DNS Records” list has been corrected.
+
+* TXT records that include quotation marks can now be created on Akamai and Dyn DNS.
+
+* Fixed minor issues when adding, removing, and editing Active Directory Forests.
+
+* Extra comma(s) in the IN operator in the API no longer returns “No Results.”
+
+* Multiple minor improvements and fixes to make user experience better.
+
+* Improved string validation in a number of API commands.
+
 
 .. _10.1.1-release:
 
