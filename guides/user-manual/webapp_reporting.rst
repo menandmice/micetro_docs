@@ -56,7 +56,7 @@ A report definition is a recipe for the actual report. It contains the filter cr
 
 The list of report definitions is shown when first entering the Reports section.
 
-.. image:: ../../images/blackstar-reports.png
+.. image:: ../../images/reports.png
   :width: 90%
   :align: center
 
@@ -95,7 +95,7 @@ Step 1: Select source
 
 Select one of the existing reports or a data source as the basis of the new report definition.
 
-.. image:: ../../images/blackstar-reports-source.png
+.. image:: ../../images/new-report.png
   :width: 70%
   :align: center
 
@@ -104,7 +104,7 @@ Step 2: Edit filtering criteria
 
 In the second step, the user has the option of editing the filtering criteria. The user might want to make some adjustments to the fields in the filter of the selected report definition, for example extending a time span or selecting a different username. It is also possible to change the filter completely and create a new report definition.
 
-.. image:: ../../images/blackstar-reports-param.png
+.. image:: ../../images/report-criteria.jpg
   :width: 70%
   :align: center
 
@@ -151,7 +151,7 @@ Step 3: Select columns
 
 It is possible to select which columns are to be included in the report result.
 
-.. image:: ../../images/blackstar-reports-output-columns.png
+.. image:: ../../images/report-columns.png
   :width: 70%
   :align: center
 
@@ -170,7 +170,7 @@ By checking the "Open scheduling dialog after saving" users can schedule periodi
 Step 5: Schedule
 ^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/blackstar-reports-save.png
+.. image:: ../../images/report-save-run.png
   :width: 70%
   :align: center
 
@@ -217,7 +217,7 @@ Previewing the report results can be done in various ways:
 .. note::
   The preview only shows up to the first 150 rows in the report. For the full report it needs to be downloaded.
 
-.. image:: ../../images/blackstar-reports-preview.png
+.. image:: ../../images/report-preview.png
   :width: 80%
   :align: center
 
@@ -254,7 +254,7 @@ In this dialog a report can be scheduled to be generated at specific intervals. 
 
 2. The following dialog is shown where scheduling and scavenging can be configured.
 
-.. image:: ../../images/blackstar-schedule-report-generation.png
+.. image:: ../../images/report-schedule.jpg
   :width: 70%
   :align: center
 
@@ -311,13 +311,13 @@ Both the report definition properties, the filtering criteria for the report and
 
 2. A dialog is presented which allows for specifying the properties for the report, along with editing the filtering criteria.
 
-.. image:: ../../images/blackstar-reports-edit.png
+.. image:: ../../images/report-edit-properties.png
   :width: 70%
   :align: center
 
 3. Clicking on "Edit" for the filtering criteria brings up the following dialog:
 
-.. image:: ../../images/blackstar-reports-edit-filters.png
+.. image:: ../../images/report-edit-filters.png
   :width: 70%
   :align: center
 
@@ -439,6 +439,6 @@ Current time deltas, i.e. a date time relative from now, can also be used.
 
 To include more than one value for a particular field the field has to be added again to the filter with an "OR" condition. (For example: the Address records, where the record type field has to be either A or AAAA.)
 
-.. image:: ../../images/blackstar-reports-filter-or.png
+.. image:: ../../images/report-criteria-or.jpg
   :width: 70%
   :align: center
