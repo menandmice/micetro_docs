@@ -23,8 +23,7 @@ Operating systems
   :widths: 20, 20, 20, 10, 10, 10, 10
 
   "**Microsoft Windows**",,,,,,
-  "Windows Server 2008 R2 [3]_", "Y", "Y", "Y", "Y", "N/A", "Y"
-  "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A", "Y"
+    "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
@@ -45,7 +44,7 @@ Operating systems
 
 .. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
 
-.. [3] On January 14, 2020, Microsoft ends support for Windows server 2008 and 2008 R2 and therefore support for those server types will be deprecated in future versions of Micetro.
+.. [3] On January 14, 2020, Microsoft ended support for Windows server 2008 and 2008 R2 and therefore support for those server types are deprecated in versions 10.2 and above of Micetro.
 
 Databases
 ---------
@@ -56,7 +55,7 @@ Databases
 
   "PostgreSQL", 12, "Windows, Linux"
   "SQLite", "N/A [4]_", "Windows, Linux"
-  "Microsoft SQL Server", "2008 R2, 2012, 2014, 2016, 2019", "Windows"
+  "Microsoft SQL Server", "2012, 2014, 2016, 2019", "Windows"
 
 .. [4] The SQLite database is embedded into the Men&Mice Central application.
 
