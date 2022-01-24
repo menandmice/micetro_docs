@@ -4,7 +4,7 @@
 
 .. _console-dhcp-windows:
 
-Microsoft DHCP (Management Console)
+Microsoft DHCP
 -----------------------------------
 
 .. _console-ms-dhcp-properties:
