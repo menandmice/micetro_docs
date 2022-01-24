@@ -230,19 +230,25 @@ Folders
 
 Refer to :ref:`object-folders` for details on this function.
 
-Reconcile Scope (Management Console)
-------------------------------------
+Reconcile Scopes
+----------------
 
 .. note::
   Applies to MS DHCP Servers only.
 
 Use this function to fix inconsistencies between information in the registry and the DHCP database.
 
-1. In the *Object List*, select :guilabel:`DHCP Scopes` and then select a scope.
+1. Go to :guilabel:`IPAM` in the web UI
 
-2. Right-click the scope and select :guilabel:`Reconcile Scopes`.
+2. Select :guilabel:`DHCP Scopes`
 
-3. Choose whether you want to verify only or fix any inconsistencies and click :guilabel:`OK` to complete the action.
+3. Select one or multiple DHCP Scopes from :guilabel:`Microsoft Servers`
+
+4. Click on the ellipsis (or meatball) menu on the scope(s)
+
+5. Click on :guilabel:`Reconcile DHCP Scopes`
+
+6. If there are inconsistencies, a list will be presented. Click :guilabel:`Fix` to fix the inconsistincies.
 
 For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
 
