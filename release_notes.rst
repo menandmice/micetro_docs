@@ -30,8 +30,10 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`; :ref
 .. _10.2-release
 
 10.2
+------
 
-*January 2022*
+*January 2022.*
+
 New Features
 ^^^^^^^^^^^^
 
