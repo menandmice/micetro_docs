@@ -9,10 +9,121 @@ Define Custom Properties
 
 As an administrator, you may find that it is necessary to create some custom properties. These properties are used for entry of any data that you feel is relevant for an object. For example, if you want to specify a server is in a specific location, or indicate who is responsible for a particular server, etc. Custom properties can be defined for various object types.
 
-In addition, various properties can be set when working with custom properties.
+There are two Default Custom Properties built in to the Range object, Title and Description, which may not be changed. 
+
+.. image:: ../../images/title-custom-property.png
+  :width: 60%
+  :align: center
+
+In addition, various properties can be set when working with custom properties objects under DNS, DHCP, and IPAM.
 
 Adding a Custom Property
-------------------------
+-------------------------
+1.	Go to :guilabel:`Admin`
+
+2.	Click on :guilabel:`Configuration`
+
+3.	Select :guilabel:`Custom Properties`
+
+4.	Select the object type for which you’d like to create a new custom property
+
+5.	Click the action button on the right or the :guilabel:`Add Custom Property` button at the bottom of the property list
+
+6.	Specify the name of the new property
+
+7.	Fill in the details:
+
+Name:
+   Type a name for this custom property.
+
+Property Type:
+   Set the type for the property. By default, “Text” is selected. Click the drop-down list and select the desired property type - e.g., Text, Multiline, Select List, Yes/No, IP    Address, or Number.
+
+Required:
+   When selected, a user must enter a value in this field. If you select this option, you cannot select “Read only.”
+
+Read only:
+   When selected, the field is locked for editing. If you select this option, you cannot select “Required”
+
+.. image:: ../../images/create-custom-property.jpg
+  :width: 80%
+  :align: center
+
+8.	Enter the appropriate list options and values depending on the property type.
+
+9.	Click :guilabel:`Save`
+
+
+Adding a Cascading List to an Existing List
+-------------------------------------------
+
+In some situations nested lists will be necessary, for example when requesting location identity information. 
+
+1.	Go to :guilabel:`Admin`
+
+2.	Click on :guilabel:`Configuration`
+
+3.	Select :guilabel:`Custom Properties`
+
+4.	Hover over the parent custom property
+
+5.	Select :guilabel:`Add Cascading List Property`
+
+6.	Fill in the appropriate details in the proper format, where the parent option comes first. 
+
+For example: 
+   Site1:DC2
+   
+   Site1:DC3
+   
+   Site2:DC1
+   
+   Site2:DC2
+
+Editing the Property Order Under an Object Type
+-----------------------------------------------
+
+1.	Go to :guilabel:`Admin`
+
+2.	Click on :guilabel:`Configuration`
+
+3.	Select :guilabel:`Custom Properties`
+
+4.	Click on the object type for which you’d like to change the property order
+
+5.	Click on the pencil (edit) icon on the right
+
+6.	Drag the custom properties to the appropriate order
+
+Editing a Custom Property
+-------------------------
+1.	Go to :guilabel:`Admin`
+
+2.	Click on :guilabel:`Configuration`
+
+3.	Select :guilabel:`Custom Properties`
+
+4.	Hover over the Custom Property to change
+
+5.	Click the ellipsis (meatball) menu and select :guilabel:`Edit Property`
+
+Deleting a Custom Property
+--------------------------
+1.	Go to :guilabel:`Admin`
+
+2.	Click on :guilabel:`Configuration`
+
+3.	Select :guilabel:`Custom Properties`
+
+4.	Hover over the Custom Property to change
+
+5.	Click on the ellipsis (meatball) menu and select :guilabel:`Remove Property`
+
+
+
+
+Adding a Custom Property (Management Console)
+---------------------------------------------
 
 1. From the menu bar, select :menuselection:`Tools --> Define Custom Properties`. The *Define Custom Properties* dialog box displays.
 
@@ -80,8 +191,8 @@ Adding a Custom Property
 
 7. When all fields are added, click the :guilabel:`Save` button.
 
-Editing a Custom Property
--------------------------
+Editing a Custom Property (Management Console)
+----------------------------------------------
 
 To edit a custom property, do the following:
 
@@ -95,8 +206,8 @@ To edit a custom property, do the following:
 
 5. Click :guilabel:`OK`.
 
-Deleting a Custom Property
---------------------------
+Deleting a Custom Property (Management Console)
+-----------------------------------------------
 
 To delete a custom property, do the following:
 
@@ -110,13 +221,13 @@ To delete a custom property, do the following:
 
 5. Click :guilabel:`OK`.
 
-Displaying a Custom Property
-----------------------------
+Displaying a Custom Property (Management Console)
+-------------------------------------------------
 
 Once a custom property has been defined, it is possible to view and edit its contents by opening the Properties dialog for any object of the type for which the custom property has been defined.
 
-Opening a Custom Property URL
------------------------------
+Opening a Custom Property URL (Management Console)
+--------------------------------------------------
 
 Anytime you have specified a URL within a custom property, you can use this option to open the URL.
 
