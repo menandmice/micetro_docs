@@ -52,10 +52,12 @@ Updates
 
 * Microsoft has deprecated support for SQL Server 2008 R2 and therefore it will no longer be supported by Micetro
 
-* Micetro will no longer support the 32-bit Linux Operating System
+* Micetro will no longer support the 32-bit Linux Operating Systems
 
 Improvements
 ^^^^^^^^^^^^
+* Users are now able to create DHCP split scopes in the Web UI for both DHCPv4 and DHCPv6
+
 * When hovering over the folder icon next to a network or DNS zone, the tooltip now shows the full folder path when an object is in a subfolder
 
 * NAPTR records are now supported in AWS Route53
@@ -103,8 +105,9 @@ Bug Fixes
 
 * Editing a record in an AD integrated zone will no longer create duplicate records by leaving the old record in the zone
 
-* DHCP Option 43 is now stored as Hex value instead of ASCII making it possible to configure option 43 for ISC DHCP users. Is that accurate
-BGPD service, on DDI appliances, will now start automatically after a restart of the appliance
+* DHCP Option 43 is now stored as Hex value instead of ASCII making it possible to configure option 43 for ISC DHCP users.
+
+* If the BGPD service is enabled on DDI appliances it will now start automatically after a restart of the appliance
 
 * Increased the size of the externalID column in the mm_users db table to fix an issue where users with longer usernames couldn’t login
 
@@ -114,7 +117,7 @@ BGPD service, on DDI appliances, will now start automatically after a restart of
 
 * Hovering over an action button in the inspector on the right side of the Web UI no longer displays two tooltips.
 
-* Improved error messages shown when user navigates to a non-existent zone or range
+* Improved error message is now shown when a user tries to rename an SNMP profile with a name that already exists.
 
 * Labels in the Change Request dialog box under Workflow have been enlarged with legible text
 
