@@ -76,7 +76,7 @@ Improvements
 
 * When performing an action on multiple objects, task names are now displayed in plural form
 
-*Read-only Active Directory sites are not shown any longer in the dropdown for setting AD Sites for DHCP scopes or IP ranges
+* Read-only Active Directory sites are not shown any longer in the dropdown for setting AD Sites for DHCP scopes or IP ranges
 
 * When there are no DHCP or DNS servers present, the information shown reflects the empty state with helpful information
 
