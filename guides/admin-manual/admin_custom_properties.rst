@@ -12,7 +12,7 @@ As an administrator, you may find that it is necessary to create some custom pro
 There are two Default Custom Properties built in to the Range object, Title and Description, which may not be changed. 
 
 .. image:: ../../images/title-custom-property.png
-  :width: 60%
+  :width: 80%
   :align: center
 
 In addition, various properties can be set when working with custom properties objects under DNS, DHCP, and IPAM.
