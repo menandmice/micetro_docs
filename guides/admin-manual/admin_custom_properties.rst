@@ -79,6 +79,10 @@ For example:
    Site2:DC1
    
    Site2:DC2
+   
+.. image:: ../../images/cascading-custom-property.png
+  :width: 80%
+  :align: center
 
 Editing the Property Order Under an Object Type
 -----------------------------------------------
