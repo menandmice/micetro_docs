@@ -38,7 +38,7 @@ You must be logged in as a user with privileges to administer DHCP in order to a
 
 1. Navigate to :menuselection:`Admin --> Server Management` and select :guilabel:`Add DHCP server`. The *Add DHCP Server* dialog box is shown.
 
-.. image:: ../../images/add-dhcp-server.png
+.. image:: ../../images/add-dhcp-v6-on.png
   :width: 50%
   :align: center
 
