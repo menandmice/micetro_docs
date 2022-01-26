@@ -250,6 +250,10 @@ Use this function to fix inconsistencies between information in the registry and
 
 6. If there are inconsistencies, a list will be presented. Click :guilabel:`Fix` to fix the inconsistincies.
 
+.. image:: ../../images/reconcile-scopes.png
+  :width: 70%
+  :align: center
+
 For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
 
 Scope Policies (Windows Server 2012 or newer) (Management Console)
