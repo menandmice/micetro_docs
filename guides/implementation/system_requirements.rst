@@ -44,7 +44,11 @@ Operating systems
 
 .. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
 
-.. [3] On January 14, 2020, Microsoft ended support for Windows server 2008 and 2008 R2 and therefore support for those server types are deprecated in versions 10.2 and above of Micetro.
+.. note::
+   On January 14, 2020, Microsoft ended support for Windows server 2008 and 2008 R2 and therefore support for those server types are deprecated in versions 10.2 and above of    Micetro.
+   
+.. note::
+   32-bit Linux Operating Systems will no longer be supported in version 10.2 and above due to the lack of support from common Linux distros
 
 Databases
 ---------
