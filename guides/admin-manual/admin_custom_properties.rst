@@ -87,6 +87,18 @@ For example:
 Editing the Property Order Under an Object Type
 -----------------------------------------------
 
+The order in which the custom properties appear in this list will determine the order in which the property fields are displayed in the dialog box when creating or editing the respective object. You may get a preview of the order of fields which will appear in the dialogue box by clicking on the preview button (or the eye icon) in the upper right corner as shown in the top picture below.
+
+.. image:: ../../images/eye-icon.png
+   :width: 80%
+   :align: center
+   
+After clicking on the eye icon, you will see the preview such as the following image
+
+.. image:: ../../images/preview-custom-properties.jpg
+   :width: 60%
+   :align: center
+
 1.	Go to :guilabel:`Admin`
 
 2.	Click on :guilabel:`Configuration`
@@ -113,6 +125,14 @@ Editing a Custom Property
 
 Deleting a Custom Property
 --------------------------
+!DANGER!
+  
+When a custom property is removed that data will be lost for all of the objects on which it was configured.
+
+.. image:: ../../images/delete-custom-property.png
+   :width: 60%
+   :align: center
+   
 1.	Go to :guilabel:`Admin`
 
 2.	Click on :guilabel:`Configuration`
