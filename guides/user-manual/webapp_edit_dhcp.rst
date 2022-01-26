@@ -61,6 +61,8 @@ Configuring DHCPv6 and DDNS Options (Microsoft Only)
 .. image:: ../../images/ddns-dhcpv6-options.jpg
   :width: 70%
   :align: center
+  
+7. Click :guilabel:`Save` to save your settings
       
 Removing a DHCP option
 ----------------------
