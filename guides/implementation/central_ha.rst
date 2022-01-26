@@ -63,14 +63,14 @@ to the end of the file. ``somename`` is the unique name that will identify the C
   :width: 70%
   :align: center
 
-10. On the just added secondary server, install the Men&Mice Central application. If it’s already installed, make sure it’s stopped by using (as root):
+10. On the just added secondary server, install the Micetro Central application. If it’s already installed, make sure it’s stopped by using (as root):
 
 .. code-block:: bash
 
   systemctl stop mmcentral
   systemctl status mmcentral
 
-11. Copy the ``/var/mmsuite/mmcentral/preferences.cfg`` file from the first server to the second, and change the ``ClusterMemberName`` value to match the one set in step 6 (i.e. "central2"). Save the file and exit.
+11. Copy the ``/var/mmsuite/mmcentral/preferences.cfg`` file from the first server to the second, and change the ``ClusterMemberName`` value to match the one set up previously. Save the file and exit.
 
 12. Start Central on the secondary server:
 
@@ -130,7 +130,7 @@ to the end of the file. ``somename`` is the unique name that will identify the C
   mmcentral –stop
   mmcentral –start
 
-8. Login to the Management Console and verify that the current server is running with state "Active" in the :menuselection:`Tools --> Manage high availability` panel.
+8. Login to the web UI and verify that the current server is running with state "Active" 
 
 9. Repeat steps 3-6 to add another member to the HA configuration, but now use a priority of **20** or higher
 
@@ -138,13 +138,13 @@ to the end of the file. ``somename`` is the unique name that will identify the C
   :width: 70%
   :align: center
 
-10. On the just added secondary server, install the Men&Mice Central application. If it’s already installed, make sure it’s stopped:
+10. On the just added secondary server, install the Micetro Central application. If it’s already installed, make sure it’s stopped:
 
 .. code-block:: bash
 
   mmcentral –stop
 
-11. Copy the ``preferences.cfg`` file from the first server to the second, and change the ``ClusterMemberName`` value to match the one set in step 6 (i.e. "central2"). Save the file and exit.
+11. Copy the ``/var/mmsuite/mmcentral/preferences.cfg`` file from the first server to the second, and change the ``ClusterMemberName`` value to match the one set up previously. Save the file and exit.
 
 12. Start Central on the secondary server:
 
