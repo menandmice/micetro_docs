@@ -63,6 +63,9 @@ Databases
 
 .. [4] The SQLite database is embedded into the Men&Mice Central application.
 
+.. note::
+   SQL Server 2008 R2 will no longer be supported in Micetro versions 10.2 and above due to Microsoft ending support of these operating system
+
 DNS/DHCP Server software
 ------------------------
 
