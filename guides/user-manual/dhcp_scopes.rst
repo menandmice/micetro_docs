@@ -754,7 +754,7 @@ You can delete existing failover relationships. When a failover relationship is 
 
 2. Click the :guilabel:`Delete` button and click :guilabel:`Yes` in the confirmation dialog box.
 
-Managing Split Scopes
+Split Scopes
 ^^^^^^^^^^^^^^^^^^^^^
 
 When a scope is hosted on multiple servers, the scope view lists all the servers that contain a copy of the scope. For scopes on MS servers, the line says 'Split Scope' and then lists the servers. For the ISC DHCP server, the line says 'Multiple Instances' and then lists the servers:
@@ -779,3 +779,34 @@ The servers listed in this dialog box all contain the scope to which the user wa
 
 .. note::
   Split scopes are only supported on MS DHCP and ISC Kea servers.
+  
+Managing Split Scopes for DHCPv6
+--------------------------------
+  
+1. Select a DHCPv6 scope under :guilabel:`IPAM` >> :guilabel:`DHCP Scopes`
+  
+2. Click on :guilabel:`Action` and :guilabel:`Manage Scope Instances`
+  
+3. From the drop-down menu select a second server to manage the DHCP scope and click :guilabel:`Add` and enable the servers on which the split-scope should reside
+  
+.. note::
+   You can change the preference of the servers by clicking and dragging on the hamburger icon (three lines to the left of the server) to change the order of the servers. The second server will always have a preference of the **First Server Preference + 1** and each additional server will increment by 1.
+   
+4. Click :guilabel:`Save`
+  
+.. image:: ../../images/split-scopes-instances.png
+   :width: 60%
+   :align: center
+   
+5. On the same scope, click the :guilabel:`Action` menu and then select :guilabel:`Manage DHCP Exclusions`
+  
+6. Click on :guilabel:`Add Exclusion` for the first server and select the percentage for which you'd like to exclude from the first server and click :guilabel:`Add`
+  
+7. Click on :guilabel:`Add Exclusion` for the second server and select the percentage for which you'd like to exclude from the second server and click :guilabel:`Add`
+  
+.. image:: ../../images/split-scope-exclusions.png
+   :width: 60%
+   :align: center
+   
+8. Click :guilabel:`Save`
+ 
