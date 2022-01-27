@@ -245,6 +245,9 @@ An example of a network which is a DHCP scope:
 Creating a DHCP reservation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. Note::
+   DHCPv4 and DHCPv6 scopes inherit DHCP and DDNS Options from the parent DHCP server. DHCPv4 and DHCPv6 reservation inherit DHCP and DDNS options from the DHCP scope. However these options may be changed by editing the options for the specific scope or reservation.
+
 Inside a DHCP scope, select a specific IP address in the list, and then click on the "Reserve" button above the list.
 
 Creating a DHCPv6 reservation
@@ -291,9 +294,17 @@ Identity association identifier (IAID)
 Description
 
 4. Click :guilabel:`Save`
-   
-   
 
+Editing DHCPv6 Options for Reservations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For more information on configuring DHCPv6 options go to [DHCP Options](https://menandmice.com/docs/10.2/guides/user-manual/webapp_edit_dhcp)
+
+1. Go to :guilabel:`IPAM` >> :guilabel:`DHCP Scopes` and double-click on a scope
+
+2. Select a reservation and click on the ellipsis (or meatball) menu
+
+3. Select :guilabel:`Edit Reservation Options`
+   
 Adding a DNS host
 ^^^^^^^^^^^^^^^^^
 
