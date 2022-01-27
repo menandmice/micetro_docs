@@ -2,6 +2,10 @@
    :description: Viewing, adding, removing DHCP options in the Micetro by Men&Mice Web Application  
    :keywords: DHCP options, DDI
    
+   
+.. Note::
+   DHCPv4 and DHCPv6 scopes inherit DHCP and DDNS Options from the parent DHCP server. DHCPv4 and DHCPv6 reservation inherit DHCP and DDNS options from the DHCP scope. However these options may be changed by editing the options for the specific scope or reservation.
+   
 .. _webapp-edit-dhcp:
 
 Edit DHCP Options
