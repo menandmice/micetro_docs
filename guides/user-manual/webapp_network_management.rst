@@ -110,6 +110,7 @@ After selecting a network in the list, the available actions are shown in the In
   "Set subnet monitoring", "Allows for enabling and configuring subnet monitoring."
   "View history", "Opens a dialog which shows the history for the selected network."
   "Import", "Opens an import wizard where networks can be imported. See :ref:`webapp-import-ipam-data`."
+  
 
 Enabling / Disabling DHCP scopes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -245,6 +246,53 @@ Creating a DHCP reservation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Inside a DHCP scope, select a specific IP address in the list, and then click on the "Reserve" button above the list.
+
+Creating a DHCPv6 reservation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+New identifier information is required for DHCPv6 reservations and these are:
+
+Unique Identifier (DUID)
+   The globally unique identifier of the client system
+
+Identity Association Identifier (IAID)
+   The indentifier of the interface on the client system
+   
+ To create a DHCP reservation:
+ 
+ 1. Under :guilable:`IPAM` >> :guilabel:`DHCP Scopes` double-click on a Scope and click on :guilabel:`Reserve`
+ 
+ 2. Depending on whether an address was already selected from the grid before pressing :guilabel:`Reserve` choose from the following options:
+ 
+ Selected
+   The address which was selected prior to clicking on :guilabel:`Reserve`
+   
+ Automatic
+   A randomly selected IP address in that scope chosen by Micetro
+   
+ Manual entry
+   An IP address entered manually by the user
+   
+.. image:: ../../images/selected-dhcpv6-reservation.png
+   :width: 60%
+   :align: center
+   
+.. image:: ../../images/automatic-dhcpv6-reservation.png
+   :width: 60%
+   :align: center
+   
+3. Input the following information:
+
+Name
+
+Unique identifier (DUID)
+
+Identity association identifier (IAID)
+
+Description
+
+4. Click :guilabel:`Save`
+   
+   
 
 Adding a DNS host
 ^^^^^^^^^^^^^^^^^
