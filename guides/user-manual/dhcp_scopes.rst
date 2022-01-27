@@ -208,6 +208,43 @@ New DHCPv6 Scope
 
 5. Verify the information is correct and click :guilabel:`Finish`
 
+Manage DHCPv6 Exclusions
+------------------------
+When managing exclusions within a DHCPv6 pool it is possible to specify a percentage of a DHCPv6 scope rather than specifying a **From address** and **To address**
+
+1. Select a DHCP scope while under :guilabel:`IPAM` >> :guilabel:`DHCP scopes`
+
+2. Click :guilabel:`Action` and select :guilabel:`Manage DHCP Exclusions`
+
+3. Click the :guilabel:`Add Exclusion`
+
+4. A new pop up will appear. Choose to either create the exclusion range by :guilabel:`Manual Entry` or :guilabel:`Percentage` 
+
+5a. If you choose manual entry, input the **From address** and **To address** for the range you'd like to exclude from the DHCP scope
+
+5b. If you choose percentage, drag the percentage bar to the correct percentage of addresses you'd like to exclude and enter a **From address** only
+
+.. image:: ../../images/add-exclusion-percentage.png
+   :width: 50%
+   :align: center
+   
+.. Note::
+   If the exclusion range doesn't have the space to accomodate the percentage of IP addresses specified, it will not allow you to add this exclusion range until you pick an appropriate **From address** or lower the percentage.
+
+6. Click on :guilabel:`Add`
+
+Red bar
+   The exclusion range
+   
+Blue bar
+   Address Pool of dynamic allocation addresses
+   
+.. image:: ../../images/dhcp-exclusions.png
+   :width: 50%
+   :align: center
+
+7. Click :guilabel:`Save`
+
 Access
 ------
 
