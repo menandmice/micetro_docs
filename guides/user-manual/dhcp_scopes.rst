@@ -192,6 +192,22 @@ Start/end of address pool
 
 6. Save comment.
 
+New DHCPv6 Scope
+----------------
+
+1. Under :guilabel:`IPAM` click on :guilabel:`Create` and select :guilabel:`DHCP Scope`
+
+2. Enter the network information and click :guilabel:`Next`
+
+3. Enter the DHCP Server name and the preference, and put a check next to :guilabel:`Enabled` if you'd like to enable this scope on this server. Click :guilabel:`Next`
+
+.. Note::
+   The preference value is a new parameter required by Microsoft for DHCPv6 scopes. If the scope is assigned to multiple servers, the lowest preference assignment will be selected by the DHCP client
+   
+4. Enter the title as an identifier for this scope as well as the description and click :guilable:`Next`
+
+5. Verify the information is correct and click :guilabel:`Finish`
+
 Access
 ------
 
