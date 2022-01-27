@@ -136,6 +136,15 @@ Delete DHCP reservation
 
 View history
   Displays the object history for the selected IP address.
+  
+  
+Viewing DHCPv6 Scopes
+---------------------
+Unlike DHCPv4 scopes which display all the addresses within a scope, a DHCPv6 scope will only display addresses in use or which have been recently used. At the bottom of the web UI, a message will show how many active IP addresses are being shown. If there is an IP address with the status of **free** that IP address has recently been used, which can be seen by clicking on :guilabel:`View History` for that address.
+
+.. image:: ../../images/dhcpv6-scope.jpg
+  :width: 70%
+  :align: center
 
 .. _new-dhcp-scope:
 
