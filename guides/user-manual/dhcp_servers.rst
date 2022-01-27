@@ -128,7 +128,7 @@ To access this feature, do the following:
 .. note::
   To edit a DHCP server's name in the Management Console, see :ref:`console-edit-dhcp-server`.
   
-Toggle DHCPv6 Management on or off:
+Toggle DHCPv6 Management on or off
 -----------------------------------
 
 .. note::
