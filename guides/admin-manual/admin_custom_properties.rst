@@ -4,7 +4,7 @@
    
 .. _admin-custom-properties:
 
-Define Custom Properties
+Custom Properties
 ========================
 
 As an administrator, you may find that it is necessary to create some custom properties. These properties are used for entry of any data that you feel is relevant for an object. For example, if you want to specify a server is in a specific location, or indicate who is responsible for a particular server, etc. Custom properties can be defined for various object types.
@@ -84,10 +84,10 @@ For example:
   :width: 80%
   :align: center
 
-Editing the Property Order Under an Object Type
+Reordering Custom Properties
 -----------------------------------------------
 
-The order in which the custom properties appear in this list will determine the order in which the property fields are displayed in the dialog box when creating or editing the respective object. You may get a preview of the order of fields which will appear in the dialogue box by clicking on the preview button (or the eye icon) in the upper right corner as shown in the top picture below.
+The order in which the custom properties appear in this list will determine the order in which the property fields are displayed in the dialog box when creating or editing the respective object. You may get a preview of the order of fields which will appear in the dialog box by clicking on the preview button (or the eye icon) in the upper right corner as shown in the top picture below.
 
 .. image:: ../../images/eye-icon.png
    :width: 80%
