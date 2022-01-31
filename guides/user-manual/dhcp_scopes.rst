@@ -312,7 +312,7 @@ Use this function to fix inconsistencies between information in the registry and
 
 6. If there are inconsistencies, a list will be presented. Click :guilabel:`Fix` to fix the inconsistincies.
 
-.. image:: ../../images/reconcile-scopes.png
+.. image:: ../../images/reconciling-scopes.png
   :width: 70%
   :align: center
 
