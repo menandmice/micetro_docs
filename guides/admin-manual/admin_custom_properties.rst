@@ -95,7 +95,7 @@ The order in which the custom properties appear in this list will determine the 
    
 After clicking on the eye icon, you will see the preview such as the following image
 
-.. image:: ../../images/preview-custom-properties.jpg
+.. image:: ../../images/custom-preview-properties.jpg
    :width: 60%
    :align: center
 
