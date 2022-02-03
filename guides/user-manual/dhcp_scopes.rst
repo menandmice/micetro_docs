@@ -136,6 +136,15 @@ Delete DHCP reservation
 
 View history
   Displays the object history for the selected IP address.
+  
+  
+Viewing DHCPv6 Scopes
+---------------------
+Unlike DHCPv4 scopes which display all the addresses within a scope, a DHCPv6 scope will only display addresses in use or which have been recently used. At the bottom of the web UI, a message will show how many active IP addresses are being shown. If there is an IP address with the status of **free** that IP address has recently been used, which can be seen by clicking on :guilabel:`View History` for that address.
+
+.. image:: ../../images/dhcpv6-scope.jpg
+  :width: 70%
+  :align: center
 
 .. _new-dhcp-scope:
 
@@ -182,6 +191,59 @@ Start/end of address pool
 5. Summary. The changes the Wizard will perform are summarized here and applied once the user clicks "Finish".
 
 6. Save comment.
+
+New DHCPv6 Scope
+----------------
+
+1. Under :guilabel:`IPAM` click on :guilabel:`Create` and select :guilabel:`DHCP Scope`
+
+2. Enter the network information and click :guilabel:`Next`
+
+3. Enter the DHCP Server name and the preference, and put a check next to :guilabel:`Enabled` if you'd like to enable this scope on this server. Click :guilabel:`Next`
+
+.. Note::
+   The preference value is a new parameter required by Microsoft for DHCPv6 scopes. If the scope is assigned to multiple servers, the lowest preference assignment will be selected by the DHCP client
+   
+4. Enter the title as an identifier for this scope as well as the description and click :guilable:`Next`
+
+5. Verify the information is correct and click :guilabel:`Finish`
+
+Manage DHCPv6 Exclusions
+------------------------
+When managing exclusions within a DHCPv6 pool it is possible to specify a percentage of a DHCPv6 scope rather than specifying a **From address** and **To address**
+
+1. Select a DHCP scope while under :guilabel:`IPAM` >> :guilabel:`DHCP scopes`
+
+2. Click :guilabel:`Action` and select :guilabel:`Manage DHCP Exclusions`
+
+3. Click the :guilabel:`Add Exclusion`
+
+4. A new pop up will appear. Choose to either create the exclusion range by :guilabel:`Manual Entry` or :guilabel:`Percentage` 
+
+5a. If you choose manual entry, input the **From address** and **To address** for the range you'd like to exclude from the DHCP scope
+
+5b. If you choose percentage, drag the percentage bar to the correct percentage of addresses you'd like to exclude and enter a **From address** only
+
+.. image:: ../../images/add-exclusion-percentage.png
+   :width: 50%
+   :align: center
+   
+.. Note::
+   If the exclusion range doesn't have the space to accomodate the percentage of IP addresses specified, it will not allow you to add this exclusion range until you pick an appropriate **From address** or lower the percentage.
+
+6. Click on :guilabel:`Add`
+
+Red bar
+   The exclusion range
+   
+Blue bar
+   Address Pool of dynamic allocation addresses
+   
+.. image:: ../../images/dhcp-exclusions.png
+   :width: 50%
+   :align: center
+
+7. Click :guilabel:`Save`
 
 Access
 ------
@@ -230,19 +292,29 @@ Folders
 
 Refer to :ref:`object-folders` for details on this function.
 
-Reconcile Scope (Management Console)
-------------------------------------
+Reconcile Scopes
+----------------
 
 .. note::
   Applies to MS DHCP Servers only.
 
 Use this function to fix inconsistencies between information in the registry and the DHCP database.
 
-1. In the *Object List*, select :guilabel:`DHCP Scopes` and then select a scope.
+1. Go to :guilabel:`IPAM` in the web UI
 
-2. Right-click the scope and select :guilabel:`Reconcile Scopes`.
+2. Select :guilabel:`DHCP Scopes`
 
-3. Choose whether you want to verify only or fix any inconsistencies and click :guilabel:`OK` to complete the action.
+3. Select one or multiple DHCP Scopes from :guilabel:`Microsoft Servers`
+
+4. Click on the ellipsis (or meatball) menu on the scope(s)
+
+5. Click on :guilabel:`Reconcile DHCP Scopes`
+
+6. If there are inconsistencies, a list will be presented. Click :guilabel:`Fix` to fix the inconsistincies.
+
+.. image:: ../../images/reconciling-scopes.png
+  :width: 70%
+  :align: center
 
 For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
 
@@ -682,7 +754,7 @@ You can delete existing failover relationships. When a failover relationship is 
 
 2. Click the :guilabel:`Delete` button and click :guilabel:`Yes` in the confirmation dialog box.
 
-Managing Split Scopes
+Split Scopes
 ^^^^^^^^^^^^^^^^^^^^^
 
 When a scope is hosted on multiple servers, the scope view lists all the servers that contain a copy of the scope. For scopes on MS servers, the line says 'Split Scope' and then lists the servers. For the ISC DHCP server, the line says 'Multiple Instances' and then lists the servers:
@@ -707,3 +779,34 @@ The servers listed in this dialog box all contain the scope to which the user wa
 
 .. note::
   Split scopes are only supported on MS DHCP and ISC Kea servers.
+  
+Managing Split Scopes for DHCPv6
+--------------------------------
+  
+1. Select a DHCPv6 scope under :guilabel:`IPAM` >> :guilabel:`DHCP Scopes`
+  
+2. Click on :guilabel:`Action` and :guilabel:`Manage Scope Instances`
+  
+3. From the drop-down menu select a second server to manage the DHCP scope and click :guilabel:`Add` and enable the servers on which the split-scope should reside
+  
+.. note::
+   You can change the preference of the servers by clicking and dragging on the hamburger icon (three lines to the left of the server) to change the order of the servers. The second server will always have a preference of the **First Server Preference + 1** and each additional server will increment by 1.
+   
+4. Click :guilabel:`Save`
+  
+.. image:: ../../images/split-scopes-instances.png
+   :width: 60%
+   :align: center
+   
+5. On the same scope, click the :guilabel:`Action` menu and then select :guilabel:`Manage DHCP Exclusions`
+  
+6. Click on :guilabel:`Add Exclusion` for the first server and select the percentage for which you'd like to exclude from the first server and click :guilabel:`Add`
+  
+7. Click on :guilabel:`Add Exclusion` for the second server and select the percentage for which you'd like to exclude from the second server and click :guilabel:`Add`
+  
+.. image:: ../../images/split-scope-exclusions.png
+   :width: 60%
+   :align: center
+   
+8. Click :guilabel:`Save`
+ 

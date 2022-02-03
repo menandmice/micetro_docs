@@ -38,7 +38,7 @@ You must be logged in as a user with privileges to administer DHCP in order to a
 
 1. Navigate to :menuselection:`Admin --> Server Management` and select :guilabel:`Add DHCP server`. The *Add DHCP Server* dialog box is shown.
 
-.. image:: ../../images/add-dhcp-server.png
+.. image:: ../../images/add-dhcp-v6-on.jpg
   :width: 50%
   :align: center
 
@@ -62,6 +62,9 @@ Server Type
 
     Kea
       connect to a ISC Kea DHCP server. See :ref:`dhcp-kea`.
+      
+Manage DHCPv6 service (Microsoft only)
+   When using DHCPv6 in your Microsoft DHCP environment you may toggle this on to allow management of DHCPv6 from Micetro
 
 Agent-free (Microsoft and ISC Kea only)
   When using the agent-free connection method for Windows DHCP, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access` and :ref:`dhcp-windows`.
@@ -124,6 +127,22 @@ To access this feature, do the following:
 
 .. note::
   To edit a DHCP server's name in the Management Console, see :ref:`console-edit-dhcp-server`.
+  
+Toggle DHCPv6 Management on or off
+-----------------------------------
+
+.. note::
+   There is only one DHCP service on a Microsoft DHCP server. DHCPv4 and DHCPv6 are not decoupled in Microsoft as they are in Micetro. Any action performed on either DHCPv6 or DHCPv4 that requires a restart of the service will result in a restart of the single DHCP service on the Microsoft server.
+   
+1. Go to :guilabel:`Admin` and click on :guilabel:`Server Management`
+
+2. Expand :guilabel:`DHCP Servers` and select :guilabel:`Microsoft DHCP`
+
+3. Select one or multiple servers, hover over the selection to click on the ellipsis (or meatball) menu and click on :guilabel:`Edit DHCP Server`
+
+4. Check :guilabel:`Manage DHCPv6 service to enable DHCPv6 management on the server(s) you've selected
+
+5. Press :guilabel:`Confirm`
 
 Inherited Access (Management Console)
 -------------------------------------

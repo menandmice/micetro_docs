@@ -2,6 +2,10 @@
    :description: Viewing, adding, removing DHCP options in the Micetro by Men&Mice Web Application  
    :keywords: DHCP options, DDI
    
+   
+.. Note::
+   DHCPv4 and DHCPv6 scopes inherit DHCP and DDNS Options from the parent DHCP server. DHCPv4 and DHCPv6 reservation inherit DHCP and DDNS options from the DHCP scope. However these options may be changed by editing the options for the specific scope or reservation.
+   
 .. _webapp-edit-dhcp:
 
 Edit DHCP Options
@@ -35,6 +39,35 @@ Add a new DHCP option
 
 4. The option is now shown in the list and you can add values to the option.
 
+Configuring DHCPv6 and DDNS Options (Microsoft Only)
+-------------------------------------------
+
+1. Go to :guilable:`Admin` in the web UI and click on :gulabel:`Server Management`
+
+2. Expand :guilabel:`DHCP Servers` and select :guilabel:`Microsoft DHCP`
+
+3. Select one or multiple servers, hover over the selected server(s) and click on the ellipsis (or meatball) menu
+
+4. Click on the :guilabel:`Edit DHCPv6 Options` task
+
+5. Under the Options tab, select the appropriate options
+
+.. image:: ../../images/dhcpv6-options.png
+  :width: 70%
+  :align: center
+
+
+6. Click on the DNS tab and select whether you'd like to 
+   Enable DNS dynamic updates according to the settings below
+      i. Always dynamically update DNS records
+      ii. Discard AAAA and PTR records when lease is deleted
+      
+.. image:: ../../images/ddns-dhcpv6-options.jpg
+  :width: 70%
+  :align: center
+  
+7. Click :guilabel:`Save` to save your settings
+      
 Removing a DHCP option
 ----------------------
 

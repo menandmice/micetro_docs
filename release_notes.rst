@@ -25,7 +25,122 @@ Release notes
     2. Restart Central.
     We'll publish a maintenance release containing the fix for this issue soon.
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`; :ref:`10.2-release`
+
+.. _10.2-release
+
+10.2
+------
+
+*February 3, 2022.*
+
+New Features
+^^^^^^^^^^^^
+
+* DHCPv6 Management: Enjoy the same level of management and visibility for dynamically allocated IPv6 addresses as you have with IPv4 and DHCP in your Windows environments. Toggle DHCPv6 management on or off by server or enable it on multiple servers at once. For more information on configuration check [here] for details.
+
+* Custom Property Management: Custom Properties can now be managed through the Micetro web interface. Create searchable fields to track information about your DNS zones, DNS records, DHCP scopes, networks, IP ranges and other objects in Micetro. There are two Default Custom Properties built in to the Range object type that come with Micetro which are Title and Description.
+
+* HA Management: Administrators can now manage High Availability for Micetro Central by adding servers, defining priority, and executing failovers via the Web UI. 
+
+* Reconcile DHCP Scopes: Manage DHCP scope reconciliation for Microsoft DHCP server from the Micetro Web UI to ensure consistency between the DHCP database and DHCP registry.
+
+Updates
+^^^^^^^
+
+* Microsoft has deprecated support for Windows Server 2008 R2 and therefore Micetro will no longer support this Operating System
+
+* Microsoft has deprecated support for SQL Server 2008 R2 and therefore it will no longer be supported by Micetro
+
+* Micetro will no longer support the 32-bit Linux Operating Systems
+
+Improvements
+^^^^^^^^^^^^
+* Users are now able to create DHCP split scopes in the Web UI for both DHCPv4 and DHCPv6
+
+* When hovering over the folder icon next to a network or DNS zone, the tooltip now shows the full folder path when an object is in a subfolder
+
+* NAPTR records are now supported in AWS Route53
+
+* Colons are now supported when entering hex values in the UI. For example “f1:04:0a:03:e0:0a” is now accepted as an appropriate entry for a field which requires hex.
+
+* Admins may now manually specify a BIND user or BIND group when deploying Micetro to work with BIND
+
+* Folders are now sorted alphabetically in the left sidebar
+
+* The email support address shown under licensing support and error messages is now consistently the same address
+
+* When deleting a folder the folder name is now shown in the popup message confirming deletion
+
+* Improved the order of permissions to be consistent among multiple dialog boxes
+
+* When performing an action on multiple objects, task names are now displayed in plural form
+
+* Read-only Active Directory sites are not shown any longer in the dropdown for setting AD Sites for DHCP scopes or IP ranges
+
+* When there are no DHCP or DNS servers present, the information shown reflects the empty state with helpful information
+
+* For a zone or network that is contained within a folder, users can now click on the folder icon next to that object to view a list of all other objects contained within that folder. Hovering over that folder icon still shows the name of the folder.
+
+* When editing DHCP options to enter a subnet mask value, the IP insight information is no longer displayed as it is when entering IP address information
+
+* Users are no longer given the option to manage read-only forests under AD Sites
+
+* Users with correct permissions may now perform a bulk action of unblocking multiple roles at the same time.
+
+* When running reports users may now specify which DNS servers to include in the filter so as to avoid duplicate information within the report from redundant or testing servers for example.
+
+* By default, when there are no additional address spaces to the default address space, permissions will automatically be assigned to the default address space. When there are additional address spaces, then permissions will need to be managed specifically for each address space.
+
+* When editing a user under the Admin>>Configuration tab the user name will now be displayed in the dialog box.
+
+* Users may be authenticated with read-only domain controllers by setting the ReadOnlyDC preference value.
+
+* Reserved and Leased IP address states are now filterable/sortable in the IPAM grid for a network
+
+* The API call GetAvailableAddressBlocks will now claim subnets for a short amount of time so they can’t be used by others
+
+Bug Fixes
+^^^^^^^^^
+
+* Editing a record in an AD integrated zone will no longer create duplicate records by leaving the old record in the zone
+
+* DHCP Option 43 is now stored as Hex value instead of ASCII making it possible to configure option 43 for ISC DHCP users.
+
+* If the BGPD service is enabled on DDI appliances it will now start automatically after a restart of the appliance
+
+* Increased the size of the externalID column in the mm_users db table to fix an issue where users with longer usernames couldn’t login
+
+* In the “Delete Zone” dialog box, when master zones are selected, other unrelated zones are no longer selected as well.
+
+* Double clicking on the meatballs menu of a row in the IPAM or DNS grid only opens menu options instead of following the behavior of double clicking on the row itself to open the properties
+
+* Hovering over an action button in the inspector on the right side of the Web UI no longer displays two tooltips.
+
+* Improved error message is now shown when a user tries to rename an SNMP profile with a name that already exists.
+
+* Labels in the Change Request dialog box under Workflow have been enlarged with legible text
+
+* It’s now possible to create multi-string TXT records
+
+* Filtering scopes by server no longer shows scopes from unrelated servers
+
+* Next button will now appear so users may move forward when editing reports to adjust the utilization percentage in the Reports Wizard 
+
+* The admin page in the Web UI is no longer visible to those without privileges
+
+* Improved indicator display of subranges inside range folders
+
+* Improved error message shown when a user tried to rename an SNMP profile with a name that already exists
+
+* When using a REST call to add a DHCP reservation the reservation will now be added to the active and failover scope in the case that failover has been configured
+
+* Long DHCP reservation names no longer cause errors when sending requests to the servers
+
+* Renaming Azure accounts without re-entering the client secret management account credentials is now allowed
+
+* Multiple minor improvements and fixes to enhance user experience
+
 
 .. _10.1.2-release:
 

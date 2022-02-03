@@ -4,7 +4,7 @@
 
 .. _console-dhcp-windows:
 
-Microsoft DHCP (Management Console)
+Microsoft DHCP
 -----------------------------------
 
 .. _console-ms-dhcp-properties:
@@ -66,11 +66,30 @@ Defining Options on MS DHCP Servers
 
 .. note::
   You can only add or delete option definitions. You cannot change the properties of an existing option definition.
+  
+.. _web-dhcp-windows-reconcile:
+
+Reconcile Scopes in the Web UI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use this function to fix inconsistencies between information in the registry and the DHCP database.
+
+1. Go to IPAM
+
+2. Select :guilabel:`DHCP Scopes`
+
+3. Selece one or multiple DHCP Scopes from :guilabel:`Microsoft Servers`
+
+4. Click on the ellipsis (or meatball) menu
+
+5. Click on :guilabel:`Reconcile DHCP Scopes`
+
+6. If there are inconsistencies, a list will be presented with the option to fix them. Click :guilabel:`Fix` to fix them
+
 
 .. _console-dhcp-windows-reconcile:
 
-Reconcile Scopes
-^^^^^^^^^^^^^^^^
+Reconcile Scopes in the Management Console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use this function to fix inconsistencies between information in the registry and the DHCP database.
 
