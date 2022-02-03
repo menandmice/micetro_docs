@@ -27,10 +27,11 @@ Release notes
 
 Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`; :ref:`10.2-release`
 
-.. _10.2-release
+
+.. _10.2-release:
 
 10.2
-------
+----
 
 *February 3, 2022.*
 
