@@ -15,17 +15,18 @@ DNS Server Controller
 Linux
 ^^^^^
 
-After installing the DNS Server Controller, *create* the logging directory (``/var/mmsuite/dns_server_controller/logs/`` or specify your own):
+After installing the DNS Server Controller, *create* the logging directory (``/var/named/mmsuite/`` in CentOS or ``/var/cache/bind/mmsuite/ in Ubuntu`` or specify your own):
 
 .. code-block:: bash
 
-  mkdir /var/mmsuite/dns_server_controller/logs/
+  mkdir /var/named/mmsuite/logs/
 
-Edit the ``/var/mmsuite/dns_server_controller/preferences.cfg`` file and add/edit the following:
+Edit the ``/var/named/mmsuite/preferences.cfg`` file and add/edit the following:
 
 .. code-block::
 
-  <LogFileName value="/var/mmsuite/dns_server_controller/logs/mmremote.log" />
+  <LogFileName value="/var/named/mmsuite/logs/mmremote.log" />
+  <LogDestination value="3"/>
   <LogLevel value="5" />
 
 (Amend the directory path as needed.)
@@ -45,7 +46,8 @@ Windows
 
 .. code-block::
 
-  <LogFileName value="C:\ProgramData\Men and Mice\DNS Server Controller\mmremote.log" />
+  <LogFileName value="C:\ProgramData\Men and Mice\DNS Server Controller\logs\mmDnslog.txt" />
+  <LogDestination value="3"/>
   <LogLevel value="5" />
 
 (Amend the directory path as needed.)
@@ -71,6 +73,7 @@ Edit the ``/var/mmsuite/dhcp_server_controller/preferences.cfg`` file and add/ed
 .. code-block::
 
   <LogFileName value="/var/mmsuite/dhcp_server_controller/logs/mmremote.log" />
+  <LogDestination value="3"/>
   <LogLevel value="5" />
 
 (Amend the directory path as needed.)
@@ -91,6 +94,7 @@ Windows
 .. code-block::
 
   <LogFileName value="C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log" />
+  <LogDestination value="3"/>
   <LogLevel value="5" />
 
 (Amend the directory path as needed.)
