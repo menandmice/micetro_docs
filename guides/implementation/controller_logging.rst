@@ -73,6 +73,7 @@ Edit the ``/var/mmsuite/dhcp_server_controller/preferences.cfg`` file and add/ed
 .. code-block::
 
   <LogFileName value="/var/mmsuite/dhcp_server_controller/logs/mmremote.log" />
+  <LogDestination value="3"/>
   <LogLevel value="5" />
 
 (Amend the directory path as needed.)
@@ -93,6 +94,7 @@ Windows
 .. code-block::
 
   <LogFileName value="C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log" />
+  <LogDestination value="3"/>
   <LogLevel value="5" />
 
 (Amend the directory path as needed.)
