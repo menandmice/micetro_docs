@@ -42,6 +42,9 @@ Configuring the connection parameters
 
 .. _central-mssql-windows:
 
+.. warning::
+  A ODBC driver will need to be `installed on the Central server to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
+  
 Men&Mice Central running on Windows
 """""""""""""""""""""""""""""""""""
 
@@ -76,8 +79,7 @@ Restart Central and verify it’s running. If the database connection fails, the
 Men&Mice Central running on Linux
 """""""""""""""""""""""""""""""""""
 
-.. warning::
-  A ODBC driver will need to be `installed on the Linux machine to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
+
 
 Navigate to the data directory of the Men&Mice Central, usually located in ``/var/mmsuite/mmcentral``.
 
