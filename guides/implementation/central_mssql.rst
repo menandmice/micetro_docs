@@ -39,6 +39,9 @@ Configuring the connection parameters
 
 .. warning::
   If you're configuring MS SQL on a dedicated server, make sure to `enable the TCP/IP protocol with the SQL Configuration Manager <https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol?redirectedfrom=MSDN&view=sql-server-ver15>`_.
+  
+.. warning::
+  An ODBC driver will need to be `installed on the Central server to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
 
 .. _central-mssql-windows:
 
@@ -75,9 +78,6 @@ Restart Central and verify it’s running. If the database connection fails, the
 
 Men&Mice Central running on Linux
 """""""""""""""""""""""""""""""""""
-
-.. warning::
-  A ODBC driver will need to be `installed on the Linux machine to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
 
 Navigate to the data directory of the Men&Mice Central, usually located in ``/var/mmsuite/mmcentral``.
 
