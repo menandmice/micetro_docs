@@ -43,7 +43,7 @@ Configuring the connection parameters
 .. _central-mssql-windows:
 
 .. warning::
-  A ODBC driver will need to be `installed on the Central server to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
+  An ODBC driver will need to be `installed on the Central server to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
   
 Men&Mice Central running on Windows
 """""""""""""""""""""""""""""""""""
