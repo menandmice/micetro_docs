@@ -68,7 +68,7 @@ Bug Fixes
 
 * Web UI no longer shows error in server page when system does not have an active IPAM license
 
-* An accurate error message is given when an authentication server is unavailable 
+* An issue was fixed where an incorrect error message was displayed when login failed 
 
 * Multiple minor improvements and fixes to enhance user experience
 
