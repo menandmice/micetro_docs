@@ -42,6 +42,8 @@ Improvements
 
 * Admin users can now change custom property types when editing custom properties (except for Yes/No properties)
 
+* Users with manage access permissions can view and manage access for multiple objects at the same time.
+
 Bug Fixes
 ^^^^^^^^^
 * Cisco DHCP remote reservation issues fixed when MAC addresses are missing
@@ -49,6 +51,8 @@ Bug Fixes
 * Users are able to more easily reorder property columns in the grid of the Web UI
 
 * Editing reservations for split scopes now appropriately modifies the reservation for all servers
+
+* Deleting reservations for split scopes now appropriately deletes reservations for all servers
 
 * Custom properties modified with change requests from DNS Workflow are now properly logged in audit history
 
@@ -61,6 +65,10 @@ Bug Fixes
 * Fixed a problem where users were unable to bulk import DNS data when there are required custom fields on DNS record level
 
 * Resolved a problem where RPZ zone records can't be edited in the web UI
+
+* Web UI no longer shows error in server page when system does not have an active IPAM license
+
+* An accurate error message is given when an authentication server is unavailable 
 
 * Multiple minor improvements and fixes to enhance user experience
 
