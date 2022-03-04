@@ -32,7 +32,11 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`; :ref
 10.2.1
 ------
 
-*March 2022.*
+*March 4, 2022.*
+
+New Feature
+^^^^^^^^^^^
+* Users with manage access permissions can view and manage access for multiple objects at the same time.
 
 Improvements
 ^^^^^^^^^^^^
@@ -41,8 +45,6 @@ Improvements
 * Failed login attempts are now throttled to prevent brute force attacks
 
 * Admin users can now change custom property types when editing custom properties (except for Yes/No properties)
-
-* Users with manage access permissions can view and manage access for multiple objects at the same time.
 
 Bug Fixes
 ^^^^^^^^^
