@@ -25,7 +25,54 @@ Release notes
     2. Restart Central.
     We'll publish a maintenance release containing the fix for this issue soon.
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`; :ref:`10.2-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`; :ref:`10.2-release`, :ref:`10.2.1-release`
+
+.. _10.2.1-release
+
+10.2.1
+------
+
+*March 8, 2022.*
+
+New Feature
+^^^^^^^^^^^
+* Users with manage access permissions can view and manage access for multiple objects at the same time.
+
+Improvements
+^^^^^^^^^^^^
+* User can select to inherit parent access when managing access for multiple networks
+
+* Failed login attempts are now throttled to prevent brute force attacks
+
+* Admin users can now change custom property types when editing custom properties (except for Yes/No properties)
+
+Bug Fixes
+^^^^^^^^^
+* Cisco DHCP remote reservation issues fixed when MAC addresses are missing
+
+* Users are able to more easily reorder property columns in the grid of the Web UI
+
+* Editing reservations for split scopes now appropriately modifies the reservation for all servers
+
+* Deleting reservations for split scopes now appropriately deletes reservations for all servers
+
+* Custom properties modified with change requests from DNS Workflow are now properly logged in audit history
+
+* Requiring definition of custom properties which are children of optional properties is no longer possible
+
+* Setting DHCP boot-file-name option is now supported on Kea
+
+* An issue with editing large Kea configuration files is now fixed
+
+* Fixed a problem where users were unable to bulk import DNS data when there are required custom fields on DNS record level
+
+* Resolved a problem where RPZ zone records can't be edited in the web UI
+
+* Web UI no longer shows error in server page when system does not have an active IPAM license
+
+* An issue was fixed where an incorrect error message was displayed when login failed 
+
+* Multiple minor improvements and fixes to enhance user experience
 
 
 .. _10.2-release:
