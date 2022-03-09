@@ -25,9 +25,10 @@ Release notes
     2. Restart Central.
     We'll publish a maintenance release containing the fix for this issue soon.
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`,
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`
 
-.. _10.2.1-release
+
+.. _10.2.1-release:
 
 10.2.1
 ------
