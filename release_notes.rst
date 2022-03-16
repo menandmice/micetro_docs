@@ -33,6 +33,8 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref
 10.2.2
 ------
 
+*March 16, 2022.*
+
 Bug Fixes
 ^^^^^^^^^
 Fixed BIND v9.11 and v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2021-25220 and CVE-2022-0396 from ISC
