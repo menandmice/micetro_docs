@@ -25,8 +25,17 @@ Release notes
     2. Restart Central.
     We'll publish a maintenance release containing the fix for this issue soon.
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`
 
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`
+
+.. _10.2.2-release
+
+10.2.2
+------
+
+Bug Fixes
+^^^^^^^^^
+Fixed BIND v9.11 and v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2021-25220 and CVE-2022-0396 from ISC
 
 .. _10.2.1-release:
 
