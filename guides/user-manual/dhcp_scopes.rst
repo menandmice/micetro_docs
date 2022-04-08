@@ -204,7 +204,7 @@ New DHCPv6 Scope
 .. Note::
    The preference value is a new parameter required by Microsoft for DHCPv6 scopes. If the scope is assigned to multiple servers, the lowest preference assignment will be selected by the DHCP client
    
-4. Enter the title as an identifier for this scope as well as the description and click :guilable:`Next`
+4. Enter the title as an identifier for this scope as well as the description and click :guilabel:`Next`
 
 5. Verify the information is correct and click :guilabel:`Finish`
 
