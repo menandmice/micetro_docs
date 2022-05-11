@@ -4,7 +4,7 @@
 
 .. _install-dns-controllers:
 
-Men&Mice DNS Server Controllers
+Micetro DNS Server Controllers
 ===============================
 
 Men&Mice DNS Server Controller is the DNS server agent. It sits on each DNS server machine and manages the DNS service on your behalf.
@@ -73,11 +73,11 @@ To execute the deprecated installer for the Men&Mice Server Controllers please r
 
 The installer will ask a series of questions. Be prepared to answer them, as described for each component.
 
-Men&Mice Central running on Linux
+Micetro Controllers running on Linux
 ---------------------------------
 
 .. note::
-  Before installing Men&Mice DNS Server Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:
+  Before installing Micetro DNS Server Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:
 
   * Is there a starting configuration file, such as /etc/named.conf?
     * If not, you will need to create one.
@@ -262,15 +262,15 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Men&Mice Central running on Windows
+Micetrol controller running on Windows
 -----------------------------------
 
 Active Directory Integrated Zones and Other Dynamic Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to open a dynamic zone, Men&Mice Suite must read it from the DNS service rather than from a file. The way this is done is via *zone transfer*. On Windows Server 2003 and later, the zone transfer restriction setting in the zone's options window must be set to allow transfers to an explicit list of IP addresses that includes the server's own address. The default setting of allowing zone transfers to any server listed in the zone's NS records will not suffice.
+In order to open a dynamic zone, Micetro must read it from the DNS service rather than from a file. The way this is done is via *zone transfer*. On Windows Server 2003 and later, the zone transfer restriction setting in the zone's options window must be set to allow transfers to an explicit list of IP addresses that includes the server's own address. The default setting of allowing zone transfers to any server listed in the zone's NS records will not suffice.
 
-In some cases, Men&Mice DNS Server Controller will also need to be told specifically which interface to use when requesting zone transfers. If you have trouble opening a dynamic zone after setting the zone's transfer restrictions appropriately, check the Event Log / Application Log for messages from Men&Mice DNS Server Controller. If there is a message indicating that it was unable to get a zone transfer, note the address it tried to use; you can either add that IP address to the transfer restrictions list, or else edit a configuration file for Men&Mice DNS Server Controller.
+In some cases, Micetro DNS Server Controller will also need to be told specifically which interface to use when requesting zone transfers. If you have trouble opening a dynamic zone after setting the zone's transfer restrictions appropriately, check the Event Log / Application Log for messages from Men&Mice DNS Server Controller. If there is a message indicating that it was unable to get a zone transfer, note the address it tried to use; you can either add that IP address to the transfer restrictions list, or else edit a configuration file for Men&Mice DNS Server Controller.
 
 To configure the DNS Server Controller to use a different address, edit the service's preferences.cfg file on the DNS server computer. The file is located in one of the following two locations, where {Windows} is probably C:\\Windows:
 
@@ -289,7 +289,7 @@ Save the file, and then restart Men&Mice DNS Server Controller using :menuselect
 .. note::
   For Active Directory-integrated zones, other domain controllers running Microsoft DNS do not need to get zone transfers. This is because the zone data is replicated through LDAP, rather than through zone transfers. Thus, for an AD-integrated zone, the zone transfer restriction list might need only the server's own address.
 
-Running Men&Mice DNS Server Controller under a privileged user account / Server type: "Microsoft Agent-Free"
+Running Micetro DNS Server Controller under a privileged user account / Server type: "Microsoft Agent-Free"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Normally, the Men&Mice DNS Server Controller is installed on only *one* host in an Active Directory forest, or one copy per site. That installation can then manage all MS DNS servers in the forest, or in the site, using Microsoft's own DNS management API. In order for this to work, the service needs to run as a user that has DNS management privileges (i.e. the AD service account must be a member of the DNSAdmins group of the domain).
