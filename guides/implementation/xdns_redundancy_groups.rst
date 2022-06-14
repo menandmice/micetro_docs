@@ -1,176 +1,116 @@
 .. meta::
-   :description: Configuring and managing xDNS Redundancy groups in Micetro by Men&Mice
+   :description: Configuring and managing xDNS profiles in Micetro by Men&Mice
    :keywords: xDNS Redundancy, DNS, Micetro 
 
-.. _xdns-redundancy-groups:
+.. _xdns-redundancy:
 
-xDNS Zone Redundancy Groups
+xDNS Redundancy
 ===========================
 
 Overview
 --------
+xDNS offers service level, platform agnostic DNS redundancy. xDNS has been reimagined and simplified with the introduction of xDNS profiles. 
 
-Zone redundancy groups can be used to keep different zones in sync. If a DNS record is added, modified or deleted in a zone that is a member of a zone redundancy group, then the changes will be replicated to other zones in the group.
-
-Any unsigned non-AD integrated master zone can be added to a redundancy group, as long as it is not already a member of a different group.
-
-Manage xDNS Zone Redundancy Groups
-----------------------------------
-
-To manage xDNS Redundancy Groups select :menuselection:`Zone --> Manage xDNS Zone Redundancy Groups` in the Management Console.
-
-This will open the **xDNS Zone Redundancy Groups** Dialog. The dialog can be used to add, edit or remove a redundancy group.
-
-Adding a zone redundancy group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To add a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the :guilabel:`Add` button to open the *xDNS Zone Redundancy Group Wizard*:
-
-.. image:: ../../images/xdns-add-1.png
+.. image:: ../../images/xdns-profiles.png
   :width: 60%
   :align: center
 
-Select a unique name for the redundancy group and then click :guilabel:`Add` to select the zones to use in the group.
+xDNS Profiles 
+-------------
 
-The following dialog is displayed:
+xDNS Profiles groups together two or more DNS services which are to share the authority of a list of zones. Changes within and outside of Micetro are automatically replicated to all DNS services which have been added to the profile. If a conflict arises, Micetro will try to resolve it automatically using by default the conflict resolution strategy set on the profile. 
 
-.. image:: ../../images/xdns-add-2.png
+Creating/modifying an xDNS profile 
+---------------------------------
+
+To add an xDNS profile go to the Admin page under Configuration in Micetro, in the left-hand side bar click xDNS profiles. 
+
+Each profile has the following properties: 
+
+* Name, which must be unique among the xDNS profiles defined in the system 
+
+* Description, optional field to describe the purpose of the xDNS profile 
+
+* Conflict Strategy, controls whether Micetro attempts to overwrite or merge record conflicts which may occur during sync. This value also controls the default value for when adding new zones to the profile. 
+
+* Servers, two DNS services at least must be added to the profile.  
+
+* Each service can also be configured to reject external changes I.e., changes to record data on one service that is made outside of Micetro is not replicated by xDNS to other services. 
+
+.. image:: ../../images/create-xdns-profile.png
+  :width: 60%
+  :align: center
+  
+.. note::
+   The list of servers **cannot** be changed after the profile has been created 
+   
+ Users must have administrative access inside of Micetro to the DNS Services they wish to add to their xDNS profile. 
+ 
+Deleting an xDNS profile 
+-----------------------
+
+Once a xDNS profile has been deleted each service is left with a copy of the zones which had been added to the profile. Authority is still shared but all replication between them will stop. 
+
+Users must have administrative access inside of Micetro to all the DNS services which make up the xDNS profile to be able to delete the profile. 
+
+Adding zones to xDNS profiles
+------------------------------
+
+xDNS profiles do not include any of the zones to begin with. To add zones to an xDNS profile navigate to the DNS section and in the left-hand side bar select Master Zones. 
+
+.. note::
+xDNS only supports Master zones 
+
+Either from the Actions dropdown or the Meatball menu select the “Add to xDNS profile” task. 
+
+.. image:: ../../images/add-to-xdns-profile.png
+  :width: 60%
+  :align: center
+  
+When a profile is selected inside the task from the dropdown menu Micetro runs preflight checks and will display any warnings or potential errors which are detected. 
+
+.. image:: ../../images/xdns-preflight-errors.png
   :width: 60%
   :align: center
 
-Select zones to use in the redundancy group. Note that you can use the quick filter to reduce the number of zones displayed in the list. It is also possible to right click on the list to check or uncheck all zones.
+.. note::
+   To add a DNS zone to an xDNS profile users must have "create zone access" on all DNS services which make up the xDNS profile which is selected. 
+   
+ Adding a zone to xDNS will, if necessary, create zone instances on other DNS services which make up the profile selected and add delegation records. After which other record data in the source zone will be replicated over to the newly created zone instances. 
 
-Click the :guilabel:`Ok` button to close the zone selection dialog once the zones to use in the group have been selected:
+The overview grid for DNS zones will show only one instance, with the authority column showing the name of the profile which the zone has been added to. 
 
-.. image:: ../../images/xdns-add-3.png
+.. image:: ../../images/xdns-zone-authority.png
   :width: 60%
   :align: center
+  
+xDNS Status on Zones
+--------------------
 
-Click :guilabel:`Next` to select an initial zone to use when syncing the redundancy group:
+The status of the xDNS zones is shown in the inspector when selected. Each underlying zone instance is represented by the name of the DNS service and the traffic light. 
 
-.. image:: ../../images/xdns-add-4.png
+See table below for exact information about each color and state: 
+
+.. image:: ../../images/xdns-status.png
   :width: 60%
   :align: center
+  
+Multiselecting is supported if all xDNS zones are members of the same profile, with each entry being the aggregate state of the zone instances on each DNS service. If zones from multiple profiles are selected, then the xDNS status section will be hidden.
 
-The initial sync zone is used as a base for determining how to sync the zones. The initial sync zone will only be used for the first sync, when the group is created. After the zones have been synced for the first time, they will all be checked for changes that are replicated to other group members.
+Removing zones from an xDNS profile 
+------------------------------------
 
-Note that you will be given a chance to decide how to deal with records that conflict between zones before the redundancy group is created.
+Removing a zone will stop all replication between the zone instances on each DNS service, delegation will not be changed, nor will any zone instances be deleted. 
 
-Click :guilabel:`Next` to configure the sync policy for the zones in the redundancy group.
+Addendum
+--------
 
-.. image:: ../../images/xdns-add-5.png
-  :width: 60%
-  :align: center
+**xDNS zones and the API** 
 
-The sync policy specifies how each zone handles external changes from other zones in the group. The zones selected here will replicate the changes when other zones in the group are modified externally, outside of Micetro. The zones not selected will act as "readonly" and only receive updates done through Micetro or when the zone itself is modified externally, for example through it's corresponding cloud portal.
+xDNS zones are represented by a single instance in the API with the Authority value denoting the profile which they belong to. The individual zone instances are still accessible, for example by calling GetDNSZones and filtering to each DNS service via dnsServerRef parameter. 
 
-Click :guilabel:`Next` to write a save comment that will saved when the group is created:
+**Conflict strategy**  
 
-.. image:: ../../images/xdns-add-6.png
-  :width: 60%
-  :align: center
+*Overwrite existing zones*, if a zone with the same name exists on any of the other DNS services which make up the xDNS profile, its records will be overwritten with the record data from the zone instance which is being added to the xDNS profile.  
 
-Click :guilabel:`Next` to see a summary of how the group will be configured:
-
-.. image:: ../../images/xdns-add-7.png
-  :width: 60%
-  :align: center
-
-When the :guilabel:`Finish` button is clicked, a check is made to see if a zone contains any DNS records that are not in the zone that was selected as the initial sync zone. If there are no conflicts, then the redundancy group will be created and the wizard will close.
-
-If there are however any conflicts, then they will have to be resolved before the group is created:
-
-.. image:: ../../images/xdns-add-8.png
-  :width: 60%
-  :align: center
-
-The conflict can either be resolved by replicating the DNS record to other zones in the group or by deleting the record.
-
-Click :guilabel:`Next` to see a summary of the changes and then click "Finish" to create the zone redundancy group.
-
-It is also possible to create a redundancy group by right clicking selected zones and then click :guilabel:`Create xDNS Redundancy Group`:
-
-.. image:: ../../images/xdns-add-9.png
-  :width: 80%
-  :align: center
-
-The *xDNS Zone Redundancy Group Wizard* will then open with the selected zones.
-
-Edit a zone redundancy group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To edit a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the :guilabel:`Edit` button (or double click the group name) to open the xDNS Zone Redundancy Group Wizard.
-
-It is not possible to change the group name, but zones can be added and removed from the redundancy group.
-
-Here the master zone residing on the Azure Cloud service has been removed and the zone example.menandmice.is on the DNS server ext1.menandmice.is has been added to the group.
-
-.. image:: ../../images/xdns-edit.png
-  :width: 60%
-  :align: center
-
-Click :guilabel:`Next` to add a save comment.
-
-Click :guilabel:`Next` to see a summary for the changes that will be made:
-
-When the :guilabel:`Finish` button is clicked, a check is made to see if a zone being added contains any DNS records that are not in already in the group. If there are no conflicts, then the redundancy group will be modified and the wizard will close.
-
-If there are however any conflicts, then they will have to be resolved before the changes are applied:
-
-.. image:: ../../images/xdns-edit-2.png
-  :width: 60%
-  :align: center
-
-The conflict can either be resolved by replicating the DNS record to other zones in the group or by deleting the record.
-
-Click :guilabel:`Next` to see a summary of the changes and then click :guilabel:`Finish` to modify the zone redundancy group.
-
-It is also possible to add and remove a zone from a redundancy group by right clicking on a zone in a zone list:
-
-.. image:: ../../images/xdns-add-to-group.png
-  :width: 80%
-  :align: center
-
-The *xDNS Zone Redundancy Group Wizard* will then open with the selected zones.
-
-Removing a redundancy group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A redundancy group can be removed from within the xDNS Zone Redundancy Groups Dialog.
-
-Select one or more redundancy groups that you want to remove and click :guilabel:`Remove`.
-
-Confirm the removal, enter a save comment and click :guilabel:`Ok` to remove the selected zone redundancy groups.
-
-Re-syncing zone redundancy groups when all members are out-of-sync
-------------------------------------------------------------------
-
-When a zone in a redundancy group can not be kept in sync with other zones in the group (e.g. if a DNS server is offline), then its status will be set to "Out Of Sync". Once the zone comes back online it will automatically be synced with a different zone in the group that is in sync. The zone state will then be set to "In Sync". However, if all group members are out of sync, then the group has to be manually synced again.
-
-If a zone that is out of sync changes, then the changes will not be replicated to other zones in the group, until it is back in sync. Note that it is still possible to make changes to the zone and manage it in Micetro.  The changes will however not be replicated to other group members.
-
-To re-sync a redundancy group from within the xDNS Zone Redundancy Dialog, click the :guilabel:`Edit` button (or double click the group name) to open the xDNS Zone Redundancy Group Wizard:
-
-.. image:: ../../images/xdns-sync-1.png
-  :width: 60%
-  :align: center
-
-Click :guilabel:`Next` to select an initial sync zone to use:
-
-.. image:: ../../images/xdns-sync-2.png
-  :width: 60%
-  :align: center
-
-The initial zone will be used as a base when the group is re-synced. If there are any DNS record in other zones in the group that are not in the initial zone, then an option will be given on how to resolve the conflicts before the group is re-synced.
-
-Click :guilabel:`Next` to add a save comment.
-
-Click :guilabel:`Next` to see a summary of the changes that will be made:
-
-.. image:: ../../images/xdns-sync-3.png
-  :width: 60%
-  :align: center
-
-When the :guilabel:`Finish` button is clicked, a check is made to see if a zone in the redundancy group contains a DNS record that is not in the zone selected as the initial sync zone.
-
-If there are no conflicts, then the redundancy group will be re-synced and the wizard will close. If there are however any conflicts, then they will have to be resolved before the group can be re-synced.
+*Merge records*, if a zone with the same name exists on any secondary service, its contents will be merged with the contents of the zone on the primary service.  

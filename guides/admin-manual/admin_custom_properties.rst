@@ -83,6 +83,31 @@ For example:
 .. image:: ../../images/cascading-custom-property.png
   :width: 80%
   :align: center
+  
+Editing Cascading List Options
+------------------------------
+
+Once cascading list properties have been added to a list you may now edit the list using either :guilabel:`Tree View` or :guilabel:`Raw Data`
+
+1. Click on the meatball menu 
+2. Select :guilabel:`Edit cascading list options`
+
+The :guilabel:`Raw Data` view may be edited manually, though is most useful when copying and pasting information from an existing CSV document or spreadsheet. The values must be separated by colons with the top level value appearing first before the child. You may have multiple nested lists.
+
+.. image:: ../../images/edit-cascading-lists.png
+  :width: 80%
+  :align: center
+  
+The :guilabel:`Tree View` is useful when editing the nested lists manually. Here you may add, edit, or remove values for each nested list. The :guilabel:`Structure` menu on the left shows which levels are available, with the bottom level, or child list, showing a yellow tag next to it.
+
+.. image:: ../../images/edit-cascading-tree-view.jpg
+  :width: 80%
+  :align: center
+  
+You may also use the :guilabel:`Filter` to narrow down the available options to make it easier to modify the values. You may modify the values within the filtered view.
+
+.. note::
+   For complex cascading lists, where there is more than one child property of the same parent, you may only edit one options list at a time.
 
 Reordering Custom Properties
 -----------------------------------------------

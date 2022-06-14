@@ -17,6 +17,8 @@ This section discusses the available user authentication methods available with 
 
 In addition to Local User Authentication, Micetro currently supports two methods of AD user authentication using the Windows Active Directory user database and authentication through a RADIUS server.
 
+Micetro also supports multi-factor authentication (MFA) through two methods, Azure and Okta.
+
 Active Directory User Authentication
 ------------------------------------
 
@@ -33,7 +35,7 @@ Even when you are using AD User Authentication, you must create users in the Man
 Enabling AD User Authentication Using Active Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-AD user authentication using Active Directory is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
+AD user authentication using Active Directory is only possible when you run Micetro Central on a Windows machine. The machine running Micetro Central must be a member in an Active Directory domain or forest.
 No specific configuration is needed for Men&Mice Central for user authentication using Active Directory.
 
 Configuring Users for AD Authentication
@@ -218,3 +220,191 @@ Logging in to Micetro will not change when RADIUS user authentication is used. T
   configure_ldap
   api_auth
   
+
+Multi-factor Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Summary of Multi-factor Authentication
+--------------------------------------
+
+Micetro is adding support for multifactor authentication via two identity solutions, Azure Active Directory and Okta. 
+
+.. image:: ../../images/mfa-login.png
+  :width: 60%
+  :align: center
+  
+Once setup is completed the frontpage of Micetro will present buttons to redirect the user to the URL to authenticate against the identity solution they have configured in Micetro. 
+
+At first login using either Azure Active Directory, referred to hereafter as AAD, or Okta a new user account is created within Micetro with the type “External”, a new user type added just for users which are authenticated via external service. 
+
+A few properties are synchronized by Micetro; such as user’s email, full name, and group memberships. Any external changes to these properties are updated in Micetro on the next login. 
+
+By default, all external users are added automatically to the “All users (built-in)” group. If group memberships are among the properties being returned by the identity service, then Micetro will add the user to groups with a matching name inside Micetro. 
+
+  
+Installation/Setup
+^^^^^^^^^^^^^^^^^^
+Four things are needed to get external authentication setup in Micetro: 
+
+1. The external authentication system setting must be enabled 
+
+2. The Python program, mm_auth_cb.py, and its signature file need to be in Micetro Central’s data directory 
+
+3. Configuration file with all the parameters needed for the identity solution 
+
+4. Enabled HTTPS on the web server for the Web Application 
+
+  
+Enabling external authentication
+--------------------------------
+  
+External authentication needs to be enabled in advanced system settings in the management console.
+  
+  .. image:: ../../images/external-authentication-console.png
+  :width: 60%
+  :align: center
+
+It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and value of 1.
+
+Python script and signature
+---------------------------
+
+The Python script `mm_auth_cb.py` handles the authentication callback from the external provider. The same script serves both providers. The file containing the script needs to be placed in a folder named extensions under Central's data folder (usually C:\ProgramData\Men and Mice\Central on Windows or /var/mmsuite/mmcentral/ on Linux).
+
+Any errors from the script are logged by Central.
+
+**Python version and dependencies**
+
+For Okta, Python 3 is needed, but Python 2.7 can be used for Microsoft. The script has not been tested with a newer version than Python 3.10. 
+
+The required dependencies are **msal** for Microsoft and **okta_jwt_verifier** for Okta, and **requests** for both. 
+
+**Signature**
+
+For security reasons the script is signed and will not be run if there is not a matching signature file **mm_auth_cb.signature** found in the same folder.  
+
+The validation of the signature can be turned off with the system setting checkSignatureFor-ExternalAuthenticationScript – but that should not be done in a live environment except in extreme cases where changes are needed to the authentication callback script. 
+
+**Configuration**
+At start up the Micetro Central program will search the data directory for a file named **ext_auth_conf.json**, reading the contents of the file and storing it in the database along with the timestamp. 
+
+The structure of the JSON object inside the configuration file is different depending on the identity solution that is being configured. 
+  
+**Azure Active Directory** 
+
+Before the configuration file can be filled out it is necessary to create an App Registration in Azure AD for Micetro’s MFA functionality.  
+
+The setup requires navigation to the Azure Portal, and opening AAD. 
+
+1. In the left side bar, click on “App registration” and inside the newly opened “blade” (what Azure calls their subpages) click “New Registration” 
+
+2. Type the name, select the proper radio button value for supported authentication types and for the Redirect URI the platform should be web and the field should be **https://micetro.central.fqdn/mmws/auth_cb/microsoft** 
+
+3. Once the app has been registered the client ID should be viewable in the essentials panel for the app. 
+
+4. Navigate to Certificates and Secrets to generate a new secret for the App to use. 
+
+  .. image:: ../../images/azure-setup.png
+  :width: 60%
+  :align: center
+
+The contents of the configuration file `ext_auth_conf.json` are cached in database and the file can therefore be deleted after external authentication is up and running. The cached version is updated automatically based on the file timestamp. To clear the cached configuration from database empty the configuration file and make sure that the web application login page is no longer showing the external authentication button – before disabling external authentication in system settings.
+
+Any errors and warnings related to an invalid configuration are logged by Central. As the login page shown only a general error message in the case of a failure resulting from a misconfiguration it is necessary to examine the Central log to determine the cause.
+
+**Okta** 
+
+Before the configuration file can be filled out it is necessary to create an App Integration in Okta for Micetro’s external authentication functionality. 
+
+The setup requires opening the Okta Administrator page.
+
+1. In the left side bar expand “Application” and click “Applications” 
+
+2. In the Applications page click the button “Create App Integration”. 
+
+3. Choose OIDC as Sign-in method 
+
+4. Choose Web Application as Application type 
+
+5. Grant type: Authorization Code (default) 
+
+6. Sign-in redirect URIs: **https://micetro-central-fqdn/mmws/auth_cb/okta** 
+
+7. Sign-out redirect URIs: **https://micetro-central-fqdn/** 
+
+**Okta Authorization Server**
+
+An Okta config with server_id set to default means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been setup at Okta or be skipped (or empty) if the Org Authorization Server should be used. 
+
+**Caching** 
+
+The contents of the configuration file ext_auth_conf.json is cached in database and the file can therefore be removed after external authentication is up and running. The cached version is updated automatically based on the file timestamp. To clear the cached configuration from database, empty the configuration file and make sure that the web application login page is no longer showing the external authentication button – before disabling external authentication in system settings. 
+
+**Errors and Warnings**
+
+Any errors and warnings related to an invalid configuration are logged by Central. As the login page shows only a general error message in the case of a failure resulting from a misconfiguration it is necessary to examine the Central log to determine the cause. 
+
+External users are also automatically added to the “All users (built-in)“ group. If none of the groups the user belongs to supplies access to manage DNS, IPAM, or users the login will fail, and an error will be shown below the form: 
+
+.. image:: ../../images/mfa-error.png
+  :width: 60%
+  :align: center
+  
+**Group authorization** 
+
+Both new identity solutions can be used in conjunction with group authorization models in Micetro 
+
+Group membership is mirrored by matching group names, i.e., the user is added to groups (both AD and Internal, but not Built-in) in Micetro whose names match group names listed by the provider and removed from groups that do not match. If the provider does not list groups, the user's group membership is not altered. 
+
+.. note::
+  There are options to filter and transform the provided groups in the setup of the applications at the provider's end.
+  
+  
+**Mapping groups from Microsoft Azure AD**
+
+As Azure only returns group ID with the token the script makes an extra call to Microsoft Graph API to fetch the group names. The Graph URI used can be changed in the config (groups_uri), but it should generally not be needed. As there is a limit of about 200 group IDs that can be returned within the JSON Web Token filtering should be used to supply only the necessary groups. 
+
+`Configure group claims for applications by using Azure Active Directory <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims>`_
+
+**Mapping groups from Okta**
+
+To map group memberships from Okta an *ID Token Claim* has been created with the name "groups". Add an *OpenID Connect ID Token* to the application of the type “Filter“ with the name “groups“. 
+
+ .. image:: ../../images/oicd-token-claim.png
+  :width: 60%
+  :align: center
+  
+  
+Addendum
+^^^^^^^^
+
+**External changes to user profiles** 
+
+External changes to user’s email, full name, and group membership are automatically replicated in Micetro on next login by matching the external ID. 
+
+**Hide the regular login fields**
+
+It is possible to hide the regular login fields of the web application after external authentication has been enabled, as can be seen in the screenshot at the top of the page – instead of showing the login button below the login form. It is done with an advanced system setting named **disableWebAppLoginForm**:
+
+ .. image:: ../../images/hide-login-fields.png
+  :width: 60%
+  :align: center
+
+
+.. note::
+  The form will not be hidden if there is no external provider configured. The login form can be found be clicking the “Log in with Micetro“ down in the left corner of the login page.
+  
+**Separate hosts for Micetro Central and Micetro Web Application** 
+
+The Web Application/Web service is traditionally on the same host as the Micetro Central. The web service needs to communicate with central to get the external authentication info to show in the login window of the web app. 
+
+By default, the Web Service sends a query to localhost, if Micetro Central is on a different host from the Web Service then the preference value DefaultCentralServer can be added to the preferences file for the Web Service to point it in the right direction 
+  
+**Configuring External Auth via the API** 
+
+Instead of writing the JSON file and restarting the Micetro Central service, the API endpoint SetSharedConfiguration can be used. 
+
+.. note::
+   Only the 'administrator' user can use this command 
+
+Parameters for the API command are in key value pairs. 
