@@ -260,7 +260,7 @@ Enabling external authentication
   
 External authentication needs to be enabled in advanced system settings in the management console.
   
-  .. image:: ../../images/external-authentication-console.png
+.. image:: ../../images/external-authentication-console.png
   :width: 60%
   :align: center
 
@@ -304,7 +304,7 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 
 4. Navigate to Certificates and Secrets to generate a new secret for the App to use. 
 
-  .. image:: ../../images/azure-setup.png
+.. image:: ../../images/azure-setup.png
   :width: 60%
   :align: center
 
@@ -370,7 +370,7 @@ As Azure only returns group ID with the token the script makes an extra call to 
 
 To map group memberships from Okta an *ID Token Claim* has been created with the name "groups". Add an *OpenID Connect ID Token* to the application of the type “Filter“ with the name “groups“. 
 
- .. image:: ../../images/oicd-token-claim.png
+.. image:: ../../images/oicd-token-claim.png
   :width: 60%
   :align: center
   
@@ -386,7 +386,7 @@ External changes to user’s email, full name, and group membership are automati
 
 It is possible to hide the regular login fields of the web application after external authentication has been enabled, as can be seen in the screenshot at the top of the page – instead of showing the login button below the login form. It is done with an advanced system setting named **disableWebAppLoginForm**:
 
- .. image:: ../../images/hide-login-fields.png
+.. image:: ../../images/hide-login-fields.png
   :width: 60%
   :align: center
 
