@@ -248,7 +248,7 @@ Four things are needed to get external authentication setup in Micetro:
 
 1. The external authentication system setting must be enabled 
 
-2. The Python program, mm_auth_cb.py, and its signature file need to be in Micetro Central’s data directory 
+2. Download the `Python script <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip>`_ and `signature file <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip>`_ from GitHub. The Python program, mm_auth_cb.py, and its signature file need to be in Micetro Central’s data directory 
 
 3. Configuration file with all the parameters needed for the identity solution 
 
