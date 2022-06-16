@@ -38,6 +38,9 @@ New Features
 
 * Multi-vendor DNS Redundancy: xDNS has been improved and simplified with the introduction of xDNS profiles. Profiles group together two or more DNS services which are designated to share the authority of a list of zones. Changes within Micetro are replicated automatically to all services in the profile.
 
+.. note::
+   xDNS functionality has been removed from the Management Console (thick client). xDNS functionality is now only available in the web UI. The API functionality has       changed as well. Please check your API calls before upgrading to ensure consistent functionality.
+
 * Custom Properties Select List Enhancement: Manage cascading list options with ease. Configure options for a hierarchy of lists, with a single colon separated raw text list, or navigate and manage the options in a tree view editor.
 
 * KEA DHCPv6 Support: Micetro support added for managing Kea DHCPv6 servers
