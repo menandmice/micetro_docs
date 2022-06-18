@@ -1,6 +1,8 @@
 .. meta::
    :description: User authentication methods available with Micetro by Men&Mice
    :keywords: Active directory, Windows active directory
+   
+Jump to: :ref:`Multi-factor-Authentication`
 
 .. _external-auth:
 
@@ -220,12 +222,14 @@ Logging in to Micetro will not change when RADIUS user authentication is used. T
   configure_ldap
   api_auth
   
+.. _Multi-factor-Authentication:
 
-Multi-factor Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Multi-factor Authentication (MFA)
+---------------------------------
 
 Summary of Multi-factor Authentication
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Micetro is adding support for multifactor authentication via two identity solutions, Azure Active Directory and Okta. 
 
