@@ -26,7 +26,7 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.3-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`
 
 .. _10.3-release:
 
@@ -172,6 +172,37 @@ Bug Fixes
 * New API commands to create and get reservations from ranges
 
 * Various improvements and fixes
+.. _10.2.3-release:
+
+10.2.3
+------
+
+*July 5, 2022*
+
+Improvements
+^^^^^^^^^^^^
+
+* Micetro now detects, and reports, if Microsoft Server 2022 is the installed operating system.
+
+.. Note::
+  Microsoft Server 2022 is now supported in versions 10.2.3 and up
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed a bug where all DHCPv4 client identifiers were forced to MAC on Kea
+
+* Fixed a bug regarding the $GENERATE directive in BIND configs
+
+* Fixed a performance regression when viewing object history in large Micetro databases
+
+* Fixed disappearing values in scope options while hostnames are being resolved
+
+* Logging was improved to not include sensitive information when editing AD Forests, Users, and Cloud Services
+
+* New API commands to create and get reservations from ranges.
+
+* Various accessibility improvements were made to the Web Application
 
 .. _10.2.2-release:
 
