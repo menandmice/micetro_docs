@@ -54,7 +54,7 @@ Bug Fixes
 
 * Fixed disappearing values in scope options while hostnames are being resolved
 
-* Logging was improved to not include sensitive information when editing AD Forests
+* Logging was improved to not include sensitive information when editing AD Forests, Users, and Cloud Services
 
 * New API commands to create and get reservations from ranges.
 
