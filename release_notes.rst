@@ -26,7 +26,41 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`
+
+.. _10.3.1-release:
+
+10.3.1
+------
+
+Improvements and Bug Fixes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* An issue was fixed where the schedule date for a scheduled change request wasn't being saved
+
+* Fixed an issue where the quickfilter showed the value [object Object] when searching for a partial string of the word "object"
+
+* An issue with running the DNS Server Agent (Controller) installer for Bind in chroot on some Linux distributions was fixed
+
+* Improved dropdown menus so they may be viewed in smaller window size
+
+* Improved handling of MS DHCP JET Database errors when working with reservations on failover scopes
+
+* Micetro now uses the correct region endpoints when communicating with AWS in setups where the AWS region provider chain is returning the non default region
+
+* Fixed a performance regression when listing and filtering Networks in the Web application
+
+* Fixed a performance regression when viewing object history in large Micetro databases
+
+* Fixed a bug where a white screen error appeared if an IP address was selected on a disabled server
+
+* AD sites can now be sorted alphabetically in the AD sites grid
+
+* Logging was improved and now excludes sensitive information when editing AD Forests, Users and Cloud Services
+
+* Fixed issue where the "Reveal" action had sometimes to be executed twice to select a revealed IP address
+
+* Various imrpovements and bug fixes
 
 .. _10.3-release:
 
