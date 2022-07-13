@@ -28,7 +28,7 @@ Release notes
 
 Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`
 
-.. _10.3.1-release
+.. _10.3.1-release:
 
 10.3.1
 ------
