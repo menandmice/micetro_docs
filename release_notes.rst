@@ -60,7 +60,7 @@ Improvements and Bug Fixes
 
 * Fixed issue where the "Reveal" action had sometimes to be executed twice to select a revealed IP address
 
-* Various imrpovements and bug fixes
+* Various improvements and bug fixes
 
 
 .. _10.3-release:
