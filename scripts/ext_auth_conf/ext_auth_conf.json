@@ -7,7 +7,7 @@
     },
     "okta": {
         "domain": "<your Okta domain>",
-        "server_id": "<your Okta custom authentication server id>",
+        "server_id": "<'default' or your Okta custom authentication server id>",
         "client_id": "<client ID - provided by Okta>",
         "client_secret": "<client secret - provided by Okta>",
         "redirect_uri": "<your Micetro location>/mmws/auth_cb/okta"
