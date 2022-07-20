@@ -290,7 +290,7 @@ For security reasons the script is signed and will not be run if there is not a 
 The validation of the signature can be turned off with the system setting checkSignatureFor-ExternalAuthenticationScript – but that should not be done in a live environment except in extreme cases where changes are needed to the authentication callback script. 
 
 **Configuration**
-At start up the Micetro Central program will search the data directory for a file named **ext_auth_conf.json**, reading the contents of the file and storing it in the database along with the timestamp. 
+At start up the Micetro Central program will search the data directory for a file named **ext_auth_conf.json**, reading the contents of the file and storing it in the database along with the timestamp. Please find a sample of the **ext_auth_conf.json** file `here <https://github.com/menandmice/micetro_docs/tree/10.3/scripts/ext_auth_conf>`_
 
 The structure of the JSON object inside the configuration file is different depending on the identity solution that is being configured. 
   
