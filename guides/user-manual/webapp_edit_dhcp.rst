@@ -42,7 +42,7 @@ Add a new DHCP option
 Configuring DHCPv6 and DDNS Options (Microsoft Only)
 -------------------------------------------
 
-1. Go to :guilable:`Admin` in the web UI and click on :gulabel:`Server Management`
+1. Go to :guilabel:`Admin` in the web UI and click on :guilabel:`Server Management`
 
 2. Expand :guilabel:`DHCP Servers` and select :guilabel:`Microsoft DHCP`
 
