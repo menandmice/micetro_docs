@@ -26,7 +26,50 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`
+
+.. _10.3.2-release:
+
+10.3.2
+------
+Improvements and Bug Fixes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Improved logging for external authentication
+
+* Improved security of external authentication requests (PKCE and nonce)
+
+* Limited the default requested permission to only current user for authentication with Azure AD
+
+* Improved performance when adding DNS records
+
+* Updated xDNS profile grid to look more like other grids in the system
+
+* Improve UX of create network wizard when no existing folders
+
+* A bug was fixed where importing DHCP reservation on Kea gave an error
+
+* Fixed an issue where some auto suggestion fields would auto select the first suggestion
+
+* Fixed issue where an xDNS zone would not be visible in the Management Console if another zone with the same name in a different view was also added to xDNS
+
+* Fixed a problem with BIND possibly getting stuck when doing a logrotate if the appliance was configured to send the system log messages to a remote server
+
+* Fixed an issue where a view with the name "default" would not behave correctly in the UI
+
+* Fixed an issue where submit buttons for change requests in Workflow would render off screen on certain screen resolutions
+
+* Fixed issue where editing properties of an externally authenticated user would prevent him from logging in
+
+* Fixed an issue where some users were unable to switch between Address Spaces
+
+* Fixed issue where navigating web UI with the keyboard would sometimes clear unrelated fields
+
+* Fixed UI glitch where name of xDNS profile for a zone would sometimes not show up in the sidebar
+
+* Fixed an issue where the Inspector no longer showed complete list of master/slave servers in sidebar for cloud zones
+
+* A bug was fixed where the values were not showing up correctly for the filtering criteria when editing access reports
 
 .. _10.3.1-release:
 
@@ -206,6 +249,7 @@ Bug Fixes
 * New API commands to create and get reservations from ranges
 
 * Various improvements and fixes
+
 .. _10.2.3-release:
 
 10.2.3
