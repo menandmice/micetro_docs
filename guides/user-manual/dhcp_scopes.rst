@@ -195,6 +195,9 @@ Start/end of address pool
 New DHCPv6 Scope
 ----------------
 
+.. note::
+Micetro supports DHCPv6 for Microsoft and Kea DHCP
+
 1. Under :guilabel:`IPAM` click on :guilabel:`Create` and select :guilabel:`DHCP Scope`
 
 2. Enter the network information and click :guilabel:`Next`

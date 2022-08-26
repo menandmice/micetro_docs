@@ -15,6 +15,7 @@ Micetro can be used with the following databases:
   central_sqlite
   central_mssql
   central_postgresql
+  migrate-sqlite-sql-server
 
 .. note::
   High Availability for the database is only available for MS SQL and PostgreSQL.

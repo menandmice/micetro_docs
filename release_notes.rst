@@ -26,7 +26,262 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`
+
+.. _10.3.2-release:
+
+10.3.2
+------
+Improvements and Bug Fixes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Improved logging for external authentication
+
+* Improved security of external authentication requests (PKCE and nonce)
+
+* Limited the default requested permission to only current user for authentication with Azure AD
+
+* Improved performance when adding DNS records
+
+* Updated xDNS profile grid to look more like other grids in the system
+
+* Improve UX of create network wizard when no existing folders
+
+* A bug was fixed where importing DHCP reservation on Kea gave an error
+
+* Fixed an issue where some auto suggestion fields would auto select the first suggestion
+
+* Fixed issue where an xDNS zone would not be visible in the Management Console if another zone with the same name in a different view was also added to xDNS
+
+* Fixed a problem with BIND possibly getting stuck when doing a logrotate if the appliance was configured to send the system log messages to a remote server
+
+* Fixed an issue where a view with the name "default" would not behave correctly in the UI
+
+* Fixed an issue where submit buttons for change requests in Workflow would render off screen on certain screen resolutions
+
+* Fixed issue where editing properties of an externally authenticated user would prevent him from logging in
+
+* Fixed an issue where some users were unable to switch between Address Spaces
+
+* Fixed issue where navigating web UI with the keyboard would sometimes clear unrelated fields
+
+* Fixed UI glitch where name of xDNS profile for a zone would sometimes not show up in the sidebar
+
+* Fixed an issue where the Inspector no longer showed complete list of master/slave servers in sidebar for cloud zones
+
+* A bug was fixed where the values were not showing up correctly for the filtering criteria when editing access reports
+
+.. _10.3.1-release:
+
+10.3.1
+------
+
+Improvements and Bug Fixes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* An issue was fixed where the schedule date for a scheduled change request wasn't being saved
+
+* Fixed an issue where the quickfilter showed the value [object Object] when searching for a partial string of the word "object"
+
+* An issue with running the DNS Server Agent (Controller) installer for Bind in chroot on some Linux distributions was fixed
+
+* Improved dropdown menus so they may be viewed in smaller window size
+
+* Improved handling of MS DHCP JET Database errors when working with reservations on failover scopes
+
+* Micetro now uses the correct region endpoints when communicating with AWS in setups where the AWS region provider chain is returning the non default region
+
+* Fixed a performance regression when listing and filtering Networks in the Web application
+
+* Fixed a performance regression when viewing object history in large Micetro databases
+
+* Fixed a bug where a white screen error appeared if an IP address was selected on a disabled server
+
+* AD sites can now be sorted alphabetically in the AD sites grid
+
+* Logging was improved and now excludes sensitive information when editing AD Forests, Users and Cloud Services
+
+* Fixed issue where the "Reveal" action had sometimes to be executed twice to select a revealed IP address
+
+* Various improvements and bug fixes
+
+.. _10.3-release:
+
+10.3
+----
+New Features
+^^^^^^^^^^^^
+* Multi-factor Authentication: MFA has been added to Micetro. Supported platforms are Okta and AzureAD.
+
+* Multi-vendor DNS Redundancy: xDNS has been improved and simplified with the introduction of xDNS profiles. Profiles group together two or more DNS services which are designated to share the authority of a list of zones. Changes within Micetro are replicated automatically to all services in the profile.
+
+.. note::
+   xDNS functionality has been removed from the Management Console (thick client). xDNS functionality is now only available in the web UI. The API functionality has       changed as well. Please check your API calls before upgrading to ensure consistent functionality.
+
+* Custom Properties Select List Enhancement: Manage cascading list options with ease. Configure options for a hierarchy of lists, with a single colon separated raw text list, or navigate and manage the options in a tree view editor.
+
+* KEA DHCPv6 Support: Micetro support added for managing Kea DHCPv6 servers
+
+.. note::
+   "KEA DHCPv4" has now been changed to "Kea" in the Micetro server enumeration types, and this will need to be changed in all calls to the API
+  
+
+* DHCP administrators can view the lease history for an IPv4 address in the web UI.
+
+Improvements
+^^^^^^^^^^^^
+* IPv6 addresses are now written using shorthand notation from the API
+
+* Improved the error message when DNS/DHCP server controllers are outdated and incompatible with Micetro Central
+
+* BIND has been upgraded to v9.16 on the Micetro appliance
+
+* Role management: Groups are now listed in a single column to prevent problems with displaying very long group names
+
+* UI/UX improvements - Better keyboard event handling
+
+* Micetro now detects, and reports, if Microsoft Server 2022 is the installed operating system
+
+* Access Management: When managing access for multiple networks user can inherit parent access
+
+* Range was renamed to Network in texts where it applied to both ranges and scopes to avoid confusion
+
+* Filter now recognizes potential IPv6 and colon separated Mac Addresses
+
+* Built-in groups are read-only, when managing users in Micetro users cannot be added or removed from built-in groups
+
+* Better visual indication that a High-availability state switch has started and completed
+
+* All Micetro references to "Fast DNS" have been changed to "Edge DNS"
+
+* Managing BIND 9.16 is now supported in Micetro
+
+* Lists of objects do not show a folder indicator when all items in the list are in the same folder
+
+* Admin user can change custom property type when editing custom properties (except for Yes/No properties)
+
+* When installing Linux Bind Controller it is now possible to specify location of named-checkconf
+
+* Improve access to documentation from product empty states
+
+* Access Management enhancement: Users with manage access permissions can view and manage access for multiple objects at the same time
+
+* Added command to reconcile All DHCP scopes on a DHCP server in web UI
+
+* Service options no longer get stale in add zones/scopes forms
+
+* Held IP addresses can be released and claimed
+
+* General UI enhancements
+
+Bug Fixes
+^^^^^^^^^
+* DHCPv4 client identifiers are no longer forced to MAC on Kea services
+
+* Using ISC reservations no longer cause the API command SetIPAMRecord to fail
+
+* Fixed a bug involving the $GENERATE directive in BIND configs
+
+* Fixed a problem when not able to bulk import DNS data when there are required custom fields on record level
+
+* Resolved a problem when RPZ zone records can't be edited in Web UI
+
+* Adding a DHCP reservation via the REST API now automatically updates both failover scopes
+
+* Improving multi-selection behavior in the web UI
+
+* Changes made to primary servers will now persist as expected
+
+* Improved handling of down Kea servers in the web UI
+
+* Fixed a bug when no initial records shown in grid for new zones on cloud providers
+
+* Error messages no longer appear when leases are removed from split scope
+
+* Fixed a bug involving address pool creation on ISC DHCP servers with no prior pools
+
+* Column width changes are now persistent
+
+* Fixed a bug where under certain conditions Micetro would not communicate correctly to the active Kea server in a HA setup
+
+* Syntax is no longer changed in TTLs of records when using Workflow
+
+* Special characters are now handled in filters
+
+* The authority section of the Inspector is now updated when zones are migrated
+
+* An issue was fixed where the DHCP remote was unable to read reservations with a missing MAC address
+
+* An issue with rearranging columns in the web application was fixed
+
+* Fixed a problem when editing DHCP reservations on a split scope.
+
+* Record custom properties modified with change requests are now properly logged into audit history
+
+* The related DNS data section of the Inspector is now updated when addresses are cleared
+
+* Setting DHCP boot-file-name option is now supported on Kea
+
+* An issue when editing large Kea files was fixed
+
+* Web UI no longer shows error in service configration tab when system does not have an active IPAM license
+
+* SOA records containing number fields/time unit fields with spaces may now be modified
+
+* Users no longer need to refresh page to use a new address space
+
+* New API commands added to create and get reservations from ranges
+
+* Discovery Schedule and Subnet Monitoring settings are now displayed when viewing Scopes/Ranges
+
+* Users may now click Save when converting a lease to a DHCP reservation without editing the Create DHCP Reservation dialog box
+
+* Fixed a bug where in certain conditions Micetro would not communicate correctly with the active Kea server in HA setup
+
+* DHCP agents are now able to read reservations with missing MAC addresses
+
+* An issue with rearranging columns in the web UI was fixed
+
+* Setting DHCP boot-file-name option is now supported on Kea
+
+* An issue with editing large Kea configuration files was fixed.
+
+* New API commands to create and get reservations from ranges
+
+* Various improvements and fixes
+
+
+.. _10.2.3-release:
+
+10.2.3
+------
+
+*July 5, 2022*
+
+Improvements
+^^^^^^^^^^^^
+
+* Micetro now detects, and reports, if Microsoft Server 2022 is the installed operating system.
+
+.. Note::
+  Microsoft Server 2022 is now supported in versions 10.2.3 and up
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed a bug where all DHCPv4 client identifiers were forced to MAC on Kea
+
+* Fixed a bug regarding the $GENERATE directive in BIND configs
+
+* Fixed a performance regression when viewing object history in large Micetro databases
+
+* Fixed disappearing values in scope options while hostnames are being resolved
+
+* Logging was improved to not include sensitive information when editing AD Forests, Users, and Cloud Services
+
+* New API commands to create and get reservations from ranges.
+
+* Various accessibility improvements were made to the Web Application
 
 .. _10.2.2-release:
 

@@ -63,10 +63,10 @@ Server Type
     Kea
       connect to a ISC Kea DHCP server. See :ref:`dhcp-kea`.
       
-Manage DHCPv6 service (Microsoft only)
+Manage DHCPv6 service (Microsoft and Kea only)
    When using DHCPv5 in your Microsoft DHCP environment you may toggle this on to allow management of DHCPv6 from Micetro
 
-Agent-free (Microsoft and ISC Kea only)
+Agent-free (Microsoft and Kea only)
   When using the agent-free connection method for Windows DHCP, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access` and :ref:`dhcp-windows`.
 
 Proxy

@@ -27,6 +27,7 @@ Operating systems
   "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
+  "Windows Server 2022", "Y", "Y", "y", "Y", "N/A", "Y"
   "**Linux**",,,,,,
   "Redhat Enterprise Linux 6", "N", "Y", "Y", "Y", "N/A", "Y"
   "Redhat Enterprise Linux 7", "N", "Y", "Y", "Y", "N/A", "Y"
@@ -75,7 +76,7 @@ DNS/DHCP Server software
 
   "**DNS**"
   "Microsoft DNS", "2012, 2012 R2, 2016, 2019"
-  "ISC BIND", "9.6 - 9.14"
+  "ISC BIND", "9.6 - 9.16"
   "Unbound", "1.4.22 - 1.7.3"
   "PowerDNS Authoritative Server", "3.4 - 4.3"
   "**DHCP**"
