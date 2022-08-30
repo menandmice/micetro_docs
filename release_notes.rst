@@ -26,7 +26,23 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`
+
+.. _10.3.3-release:
+
+10.3.3
+------
+
+Improvements and Bug Fixes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Kea DHCP Multi-threading is now supported by Micetro when in High Availability
+
+* Fixed an issue where a user with access to edit IP address properties was unable to Claim IPs
+
+* Improved handling of errors during authentication when further user interaction is required to fulfill additional claims from Azure AD
+
+* Fixed errors related to IIS configuration corrupting location headers
 
 .. _10.3.2-release:
 
