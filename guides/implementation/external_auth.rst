@@ -248,45 +248,31 @@ Dependency Checklist
 * Central must have internet access to identity provider's endpoints
 
    * Azure
-      * http://graph.microsoft.com/ 
-      
-      * login.microsoftonline.com 
-      
-      * https://login.microsoftonline.com/[tenant_id]/oauth2/v2.0/authorize 
+      * login.microsoftonline.com
+
+      * graph.microsoft.com
      
    * Okta
-      * http://graph.okta.com/ 
-      
-      * login.okta.com 
-      
-      * https://login.okta.com/[tenant_id]/oauth2/v2.0/authorize 
+      * *.okta.com 
 
-* Internet access to Micetro's binaries
-   
-   * https://download.menandmice.com 
-   
 * Python with dependent libraries and requests package is installed on the Central server
 
-.. Note::
-   These endpoints are only required for version 10.0. In subsequent releases, ports can be closed
-   
    * Azure
       
-      * Azure – Python2.7 or Python3  
+      * msal >=1.17 – The Microsoft Authentication Library that enables Micetro to access the Cloud for AAD - https://pypi.org/project/msal/1.17.0/ 
       
-      * lmsal >=1.17 – The Microsoft Authentication Library that enables Micetro to access the Cloud for AAD - https://pypi.org/project/msal/1.17.0/ 
-      
-      * 3requests - https://pypi.org/project/requests/ 
+      * requests - https://pypi.org/project/requests/ 
       
    * Okta
-      * Okta – Python3 (required) 
       
-      * 2okta_jwt_verifier >=0.2.3 – Verifies Okta access and ID tokens - okta-jwt-verifier · PyPI  
+      * Python 3 required.
       
-      * 3requests - https://pypi.org/project/requests/ 
+      * okta_jwt_verifier >=0.2.3 – Verifies Okta access and ID tokens - okta-jwt-verifier · PyPI  
+      
+      * requests - https://pypi.org/project/requests/ 
       
 .. Note::
-   If running Central in HA mode, it is advised to disable the service on one of the partners to ensure installation is successful on each server, and to prevent the      servers from failing over during the installation.  
+   If running Central in HA mode, it is advised to disable the service on one of the partners to ensure installation is successful on each server, and to prevent the servers from failing over during the installation.
 
    Installation and configuration must be done on ALL Central servers in your environment. 
       
@@ -465,7 +451,7 @@ Configure Central Server
 
                "client_id": "xxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxx", 
 
-               "client_credential": "xxxx-xxxxxxxxxxxxxxxxxxxxx_xxxxxxxx", 
+               "client_credential": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
 
                "redirect_uri": "http://localhost/mmws/auth_cb/microsoft (must match what is configured in Azure)" 
 
@@ -481,11 +467,11 @@ Configure Central Server
 
                "domain": "Company_domain.okta.com", 
 
-               "server_id": "default", 
+               "server_id": "xxxxxxxxxxx|'default'", (can be skipped/empty)
 
                "client_id": "xxxxxxxxxxx", 
 
-               "client_secret": "xx_xxxxxxxxxxxxxxxxxxxxx_xxxxxxxxxxx", 
+               "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
 
                "redirect_uri": "http://localhost/mmws/auth_cb/okta (must match what is configured in Okta)" 
 
@@ -569,7 +555,7 @@ Logging for External Authentication can be enabled by putting your Central log i
 
 **External changes to user profiles**
 
-External changes to user’s email, full name, and group membership are automatically replicated in Micetro on next login by matching the external ID.
+External changes to user’s email, full name, and group membership are automatically replicated in Micetro on next login.
 
 **Separate hosts for Micetro Central and Micetro Web Application**
 
@@ -581,19 +567,3 @@ if Micetro Central is on a different host from the Web Service then you can add 
       
       * Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg 
       * Linux - /var/mmsuite/mmcentral/preferences.cfg
-      
-**Configuring External Auth via the API**
-
-Instead of writing the JSON file and restarting the Micetro Central service, the API endpoint SetSharedConfiguration can be used.
-
-.. Note::
-   Only the 'administrator' user can use this command.
-   
-   Paramaters for the API command are in key:value pairs
-   
-   
-
-
-
-
-   
