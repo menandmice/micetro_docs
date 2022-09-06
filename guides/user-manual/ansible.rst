@@ -7,6 +7,11 @@
 Ansible
 =======
 
+For the latest Ansible plug-in information please see the documentation and downloads contained on Galaxy and Github.
+https://galaxy.ansible.com/ansilabnl/micetro
+https://github.com/ansilabnl/micetro
+
+
 With the Ansible setup for Micetro by Men&Mice you can manage a Micetro installation through Ansible. The Ansible modules and plugins connect to the Micetro API and perform all needed actions.
 
 See :ref:`ansible-config-example` for an example configuration that you can use with the Ansible modules and plugins for Micetro.
