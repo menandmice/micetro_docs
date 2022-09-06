@@ -44,6 +44,9 @@ Improvements and Bug Fixes
 
 * Fixed errors related to IIS configuration corrupting location headers
 
+.. Note::
+   The Ansible plug-in for Micetro has been updated and is being maintained here in Galaxy (https://galaxy.ansible.com/ansilabnl/micetro) and in Github        (https://github.com/ansilabnl/micetro)
+
 .. _10.3.2-release:
 
 10.3.2
