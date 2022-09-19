@@ -255,23 +255,23 @@ This example shows how to set properties and add reservations to IPs, both DHCPv
 
 .. code-block::
 
-DHCPv4
-IP Address, Name, Method, ClientIdentifier, Type, DDNS hostname (optional)
-1.1.4.1, Test, HardwareAddress, 00:00:00:00:00:01, DHCP, ddi.com
-1.1.4.4, Test, ClientIdentifier, 00:00:00:00:00:04, BOOTP,
+   DHCPv4
+   IP Address, Name, Method, ClientIdentifier, Type, DDNS hostname (optional)
+   1.1.4.1, Test, HardwareAddress, 00:00:00:00:00:01, DHCP, ddi.com
+   1.1.4.4, Test, ClientIdentifier, 00:00:00:00:00:04, BOOTP,
 
 .. code-block::
 
-MS DHCPv6
-IP Address, Name, DUID, IAID
-2001::df07, Test, 0001ac2378bc0987, 1337
+   MS DHCPv6
+   IP Address, Name, DUID, IAID
+   2001::df07, Test, 0001ac2378bc0987, 1337
 
 .. code-block::
 
-Kea DHCPv6
-IP Address, Method, Clientidentifier, DDNS hostname (optional)
-2002::df27, HardwareAddress, 12:56:00:22:34:22, ddi.com
-2002::df28, ClientIdentifier, 67:48:21:99:59:11
+   Kea DHCPv6
+   IP Address, Method, Clientidentifier, DDNS hostname (optional)
+   2002::df27, HardwareAddress, 12:56:00:22:34:22, ddi.com
+   2002::df28, ClientIdentifier, 67:48:21:99:59:11
 
 Example 8
 ^^^^^^^^^
@@ -280,22 +280,22 @@ This example shows how to modify an already existing reservation.
 
 .. code-block::
 
-DHCPv4
-Action,IPAddress,ClientIdentifier,Name
-Update, 1.1.4.1,00:00:00:00:00:10, new name
-Update, 1.1.4.2,00:00:00:00:00:20, also a new name
+   DHCPv4
+   Action,IPAddress,ClientIdentifier,Name
+   Update, 1.1.4.1,00:00:00:00:00:10, new name
+   Update, 1.1.4.2,00:00:00:00:00:20, also a new name
 
 .. code-block::
 
-MS DHCPv6
-Action,IPAddress,DUID,IAID,Name
-Update, 2001::df07, 0001ac2378bc0987, 1337, new name
+   MS DHCPv6
+   Action,IPAddress,DUID,IAID,Name
+   Update, 2001::df07, 0001ac2378bc0987, 1337, new name
 
 .. code-block::
 
-Kea DHCPv6
-Action,IPAddress,ClientIdentifier,DDNSHostname (optional)
-Update, 2001:db8:6:0:e0f3:edc6:4dc0:df07, 78:00:77:66:55:55, hus.com
+   Kea DHCPv6
+   Action,IPAddress,ClientIdentifier,DDNSHostname (optional)
+   Update, 2001:db8:6:0:e0f3:edc6:4dc0:df07, 78:00:77:66:55:55, hus.com
 
 Example 9
 ^^^^^^^^^
@@ -304,12 +304,12 @@ This example shows how to remove a reservation from an IP address.
 
 .. code-block::
 
-DHCPv4
-Action,IPAddress
-Del,1.1.4.1
+   DHCPv4
+   Action,IPAddress
+   Del,1.1.4.1
 
 .. code-block::
 
-DHCPv6
-Action,IPAddress
-Del,2010::b897:2aaa:b854:c10c
+   DHCPv6
+   Action,IPAddress
+   Del,2010::b897:2aaa:b854:c10c
