@@ -36,10 +36,14 @@ To add a new Men&Mice Appliance, do the following:
   :width: 60%
   :align: center
 
-Appliance Name
-  Type the name (host name) of the Men&Mice Appliance. Note that his name is also used for the DNS and DHCP servers hosted on the Appliance.
+*Appliance Name*
+  Type the name (host name) of the Men&Mice Appliance. Note that this name is also used for the DNS and DHCP servers hosted on the Appliance.
 
-Appliance address (optional)
+.. Note::
+   It is recommended to use the FQDN (Fully Qualified Domain Name) as the Appliance Name and then leave the Add
+   
+*Appliance address (optional)*
+
   If desired, type the IPv4 address for the Appliance. This is not required, but doing so allows the Management Console to connect to the Appliance by IP Address instead of by name. The Appliance name will still be used when displaying Appliance information.
 
 2. Click :guilabel:`OK`. The Men&Mice Appliance is added and the Appliance Properties dialog box opens. Once added, the name of the newly added Appliance displays under Appliances in the Object Section. (You may need to click the :guilabel:`+` sign next to *Appliances* to see it.)
