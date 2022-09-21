@@ -36,7 +36,7 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref
 Improvements
 ^^^^^^^^^^^^
 
-* BIND has been upgraded to v9.16 on the Micetro appliance
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
 
 .. _10.3.3-release:
 
@@ -284,7 +284,7 @@ Bug Fixes
 
 Improvements
 ^^^^^^^^^^^^
-* BIND has been upgraded to v9.16 on the Micetro appliance
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
 
 .. _10.2.3-release:
 
@@ -496,7 +496,7 @@ Bug Fixes
 
 Improvements
 ^^^^^^^^^^^^
-* BIND has been upgraded to v9.16 on the Micetro appliance
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
 
 .. _10.1.2-release:
 
@@ -702,4 +702,4 @@ Other
 
 Improvements
 ^^^^^^^^^^^^
-* BIND has been upgraded to v9.16 on the Micetro appliance
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
