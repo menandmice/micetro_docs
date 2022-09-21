@@ -26,7 +26,17 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`
+
+.. _10.3.4-release:
+
+10.3.4
+------
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16 on the Micetro appliance
 
 .. _10.3.3-release:
 
@@ -269,6 +279,12 @@ Bug Fixes
 
 * Various improvements and fixes
 
+10.2.4
+------
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16 on the Micetro appliance
 
 .. _10.2.3-release:
 
@@ -475,6 +491,12 @@ Bug Fixes
 
 * Multiple minor improvements and fixes to enhance user experience
 
+10.1.4
+-------
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16 on the Micetro appliance
 
 .. _10.1.2-release:
 
@@ -674,3 +696,10 @@ Other
 ^^^^^
 
 * Various performance improvements and UX tweaks. Micetro does things faster and nicer.
+
+10.0.8
+------
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16 on the Micetro appliance
