@@ -26,7 +26,28 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`
+
+.. _10.3.5-release:
+
+10.3.5
+------
+
+Improvements
+^^^^^^^^^^^^
+
+* DHCPv6 scopes are now displayed in the Management Console (Thick Client)
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed an issue where removing IP addresses would sometimes result in database errors
+
+* Fixed an issue with the Search and Update functionality for IP addresses in the Management Console which sometimes caused database errors
+
+* Removed /64 limitation from the Allocate Subrange wizard. Users can now allocate IPv6 ranges all the way down to /128.
+
+* Various minor improvements and bug fixes
 
 .. _10.3.4-release:
 
