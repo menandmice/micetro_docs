@@ -26,7 +26,7 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`
 
 .. _10.3.5-release:
 
@@ -311,6 +311,8 @@ Bug Fixes
 
 * Various improvements and fixes
 
+.. _10.2.4-release:
+
 10.2.4
 ------
 
@@ -523,6 +525,8 @@ Bug Fixes
 
 * Multiple minor improvements and fixes to enhance user experience
 
+.. _10.1.4-release:
+
 10.1.4
 -------
 
@@ -728,6 +732,8 @@ Other
 ^^^^^
 
 * Various performance improvements and UX tweaks. Micetro does things faster and nicer.
+
+.. _10.0.8-release:
 
 10.0.8
 ------
