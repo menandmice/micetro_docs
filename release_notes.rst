@@ -32,6 +32,7 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref
 
 10.3.5
 ------
+October 14, 2022
 
 Improvements
 ^^^^^^^^^^^^
@@ -53,6 +54,7 @@ Bug Fixes
 
 10.3.4
 ------
+September 21, 2022
 
 Improvements
 ^^^^^^^^^^^^
@@ -63,6 +65,8 @@ Improvements
 
 10.3.3
 ------
+
+August 30, 2022
 
 Improvements and Bug Fixes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,6 +86,8 @@ Improvements and Bug Fixes
 
 10.3.2
 ------
+
+August 18, 2022
 Improvements and Bug Fixes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -126,6 +132,8 @@ Improvements and Bug Fixes
 10.3.1
 ------
 
+July 13, 2022
+
 Improvements and Bug Fixes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -159,6 +167,9 @@ Improvements and Bug Fixes
 
 10.3
 ----
+
+June 14, 2022
+
 New Features
 ^^^^^^^^^^^^
 * Multi-factor Authentication: MFA has been added to Micetro. Supported platforms are Okta and AzureAD.
