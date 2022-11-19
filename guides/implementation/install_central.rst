@@ -31,7 +31,7 @@ Extract and run the Men&Mice Central install package:
 .. code-block::
 
   tar -xzvf micetro-central-10.3.5.linux.x64.tgz
-  cd micetro-central-10.3.5.linux.x64.tgz
+  cd micetro-central-10.3.5.linux.x64
   ./install
 
 Installer Questions
