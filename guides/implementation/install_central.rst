@@ -30,8 +30,8 @@ Extract and run the Men&Mice Central install package:
 
 .. code-block::
 
-  tar -xzvf mmsuite-central-10.0.linux.x64.tgz
-  cd mmsuite-central-10.0.linux.x64
+  tar -xzvf micetro-central-10.3.5.linux.x64.tgz
+  cd micetro-central-10.3.5.linux.x64.tgz
   ./install
 
 Installer Questions
