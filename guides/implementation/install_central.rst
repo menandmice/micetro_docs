@@ -34,17 +34,12 @@ Extract and run the Men&Mice Central install package:
   cd micetro-central-10.3.5.linux.x64
   ./install
 
-Installer Questions
+After installation has finished, check for running mmcentral:
+.. code-block::
 
-Here are the questions asked by the installer that pertain to Men&Mice Central:
+  systemctl status mmcentral
+  
 
-* Do you want to install Men&Mice Central?
-
-* Where do you want Men&Mice Central to keep its configuration files?
-
-* Enter the user and group names under which you want to run Men&Mice Central.
-
-* Where do you want to install the Men&Mice Central binary?
 
 Removing Men&Mice Central
 ^^^^^^^^^^^^^^^^^^^^^^^^^
