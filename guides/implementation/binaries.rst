@@ -15,9 +15,9 @@ Linux
 
 `Download <https://download.menandmice.com>`_ the following installer packages:
 
-* Men&Mice Central: ``mmsuite-central-10.2.2.linux.x64.tgz``
-* Men&Mice Server Controller: ``mmsuite-controllers-10.2.2.linux.x64.tgz``
-* Men&Mice Web Application: ``mmsuite-web-application-10.2.2.linux.x64.tgz``
+* Men&Mice Central: ``micetro-central-10.3.5.linux.x64.tgz``
+* Men&Mice Server Controller: ``micetro-controllers-10.3.5.linux.x64.tgz``
+* Men&Mice Web Application: ``micetro-web-10.3.5.linux.x64.tgz``
 * Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
 
 .. note::
