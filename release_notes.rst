@@ -315,7 +315,7 @@ Bug Fixes
 
 10.2.5
 ------
-*November 11, 2022*
+*November 29, 2022*
 
 Bug Fixes
 ^^^^^^^^^
