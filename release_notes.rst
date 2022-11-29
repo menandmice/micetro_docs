@@ -26,7 +26,36 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`
+
+.. _10.2.5-release:
+
+10.2.5
+------
+*November 11, 2022*
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed a bug where CNAME and TXT records would sometimes be removed when they shouldn't while clearing IP addresses.
+
+* Fixed an issue where some auto suggestion fields would auto select the first suggestion.	
+
+* Fixed a bug where the quickfilter showed the value [object Object] when searching for a partial string of the word "object"
+
+* Fixed a problem with BIND possibly getting stuck when doing a logrotate if the appliance was configured to send the system log messages to a remote server.
+
+* Accessibility improvements in the UI
+
+
+.. _10.2.4-release:
+
+10.2.4
+------
+
+Improvements
+^^^^^^^^^^^^
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
 
 .. _10.2.3-release:
 
