@@ -32,7 +32,7 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref
 
 10.2.5
 ------
-*November 11, 2022*
+*November 29, 2022*
 
 Bug Fixes
 ^^^^^^^^^
