@@ -44,6 +44,8 @@ Configuration Files Diagram
 
 The following diagram provides an overview on how the configuration files are processed after the file structure has been updated by the Men&Mice Suite.
 
-.. image:: ../../bind_file_structure.png
+.. image:: ../../images/bind_file_structure.png
+  :width: 90%
+  :align: center
   :width: 90%
   :align: center
