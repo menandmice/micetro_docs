@@ -47,5 +47,3 @@ The following diagram provides an overview on how the configuration files are pr
 .. image:: ../../images/bind_file_structure.png
   :width: 90%
   :align: center
-  :width: 90%
-  :align: center
