@@ -28,7 +28,7 @@ After logging in with the default administrator credentials, the system will pro
 License keys
 ------------
 
-See :ref:`admin-license`.
+See :ref:`_admin-license`.
 
 .. note::
   The IPAM license key unlocks **both** the DHCP and IPAM functionality of Micetro.
