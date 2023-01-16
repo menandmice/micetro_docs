@@ -26,7 +26,30 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`
+
+.. _10.3.6-release:
+
+10.3.6
+------
+January 16, 2023
+
+Improvements
+^^^^^^^^^^^^
+* Improved Azure VPC/subnet synchronization to sync changes to VPC/subnet address space into Micetro
+
+* Accessibility improvements in the UI
+
+* Various UX improvements
+
+Bug Fixes
+^^^^^^^^^
+
+* Disabling scopes on KEA is no longer possible and has been disabled in the UI
+
+* Fixed issue where it was not possible to add change requests for ranges with invalid set of custom properties
+
+* Fixed a bug where CNAME and TXT records would sometimes be removed when they shouldn't while clearing IP addresses.
 
 .. _10.3.5-release:
 
