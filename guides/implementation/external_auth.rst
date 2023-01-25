@@ -416,9 +416,9 @@ Configure Central Server
       A Central restart is required after this statement is added to the Preferences.cfg file.
    
    2. **Create a new directory called "extensions"** in the Central data directory.
-      Windows:  C:\ProgramData\Menandmice\Central\extensions 
+      Windows:  "C:\ProgramData\Menandmice\Central\extensions" 
 
-      Linux:  /var/mmsuite/mmcentral/extenstions 
+      Linux:  /var/mmsuite/mmcentral/extensions
       
    3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
 
