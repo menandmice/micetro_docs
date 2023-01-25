@@ -25,7 +25,18 @@ Release notes
     2. Restart Central.
     We'll publish a maintenance release containing the fix for this issue soon.
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.5-release`
+
+.. _10.1.5-release:
+
+10.1.5
+------
+
+*January 25, 2023*
+
+Improvements
+^^^^^^^^^^^^
+Fixed BIND v9.16, v9.18, v9.19 vulnerabilities on the Micetro appliance addressed in CVE-2022-3094, CVE-2022-3736, CVE-2022-3924, CVE-2022-3488.
 
 .. _10.1.2-release:
 
