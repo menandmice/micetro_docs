@@ -10,7 +10,18 @@ Release notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`, :ref:`10.0.5-release`, :ref:`10.0.6-release`
+Jump to: :ref:`10.0.0-release`, :ref:`10.0.1-release`, :ref:`10.0.2-release`, :ref:`10.0.3-release`, :ref:`10.0.4-release`, :ref:`10.0.5-release`, :ref:`10.0.6-release`, :ref:`10.0.9-release`
+
+.. _10.0.9-release:
+
+10.0.9
+------
+
+*January 25, 2023*
+
+Improvements
+^^^^^^^^^^^^
+Fixed BIND v9.16, v9.18, v9.19 vulnerabilities on the Micetro appliance addressed in CVE-2022-3094, CVE-2022-3736, CVE-2022-3924, CVE-2022-3488.
 
 .. _10.0.6-release:
 
