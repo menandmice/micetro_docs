@@ -320,12 +320,13 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 
    4. Navigate to Certificates and Secrets to generate a new secret for the App to use. 
 
+
 .. Note::
    You will need this information for the Central configuration file.
    
    .. image:: ../../images/external-authentication-console.png
-  :width: 60%
-  :align: center
+      :width: 60%
+      :align: center
   
 Okta
 ^^^^
