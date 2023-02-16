@@ -378,7 +378,7 @@ Example PowerShell Script
 Instructions
 """"""""""""
 
-1. Copy the psExec.vbs and the ScopeMonScript.ps1 to the c:\ProgramData\Men and Mice\Central directory.
+1. Copy the psExec.vbs and the ScopeMonScript.ps1 to the c:\\ProgramData\\Men and Mice\\Central directory.
 
 2. In Tools->System Settings->Monitoring, add it in the Default scope monitoring settings as follows:
 
