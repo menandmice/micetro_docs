@@ -4,24 +4,16 @@
 
 .. _webapp-dns:
 
-DNS management
+Managing DNS Zones and Records
 ==============
 
 DNS Zones
 ---------
-
-Here is an overview of the main functionality for managing DNS zones.
-
-By default, the list shows only master DNS zones, but to see other types of DNS zones, the filtering sidebar offers options to select different types.
+The DNS page shows a list of the :ref:`DNS zones` in the system that you have access to view. By default, the list shows only primary zones, but you can select to view other types under **ZONE TYPES** in the left pane.
 
 .. image:: ../../images/DNS-Micetro.png
   :width: 90%
   :align: center
-
-Viewing the DNS zone list
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-After entering the DNS section of the Web Application, users are presented with a list of all DNS zones in the system that they have access to view.
 
 Opening a DNS zone
 ^^^^^^^^^^^^^^^^^^
