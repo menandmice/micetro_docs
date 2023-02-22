@@ -32,7 +32,6 @@ Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref
 
 10.3.7
 ------
-
 *January 25, 2023*
 
 Improvements
@@ -61,8 +60,6 @@ Bug Fixes
 * Fixed issue where it was not possible to add change requests for ranges with invalid set of custom properties
 
 * Fixed a bug where CNAME and TXT records would sometimes be removed when they shouldn't while clearing IP addresses.
-
-
 
 .. _10.3.5-release:
 
