@@ -4,12 +4,12 @@
 
 .. _admin-system-settings:
 
-System Settings
+System Settings (Management Console, deprecated)
 ================================================
 
-To configure system settings, select **ADMIN** on the top navigation bar. In the Admin workspace, click **CONFIGURATION **, and then select SYSTEM **SETTINGS** in the left pane.
+From the menu bar, select Tools, System Settings.
 
-The system settings include the following categories:
+The System Settings dialog box displays and includes these tabs:
 
   * :ref:`admin-general`
 
@@ -17,15 +17,15 @@ The system settings include the following categories:
 
   * :ref:`admin-error-checking`
 
+  * :ref:`admin-comments`
+
+  * :ref:`admin-external-commands`
+
   * :ref:`admin-dns`
 
   * :ref:`admin-ipam`
 
   * :ref:`admin-monitoring`
-
-  * :ref:`admin-advanced`
-
-  * :ref:`admin-management-console`
 
 .. _admin-general:
 
