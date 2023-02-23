@@ -1,6 +1,6 @@
 .. _console-split-range:
 
-Split Range Wizard (Management Console, deprecated)
+Split Range Wizard (Management Console, obsolete)
 ---------------------------------------------------
 
 This wizard allows you to create multiple subranges of an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.

@@ -4,7 +4,7 @@
 
 .. _console-new-dns-record:
 
-New Records (Management Console, deprecated)
+New Records (Management Console, obsolete)
 --------------------------------------------
 
 If you are comfortable editing the record table directly, you can use this procedure to insert a new record directly in the zone tab.

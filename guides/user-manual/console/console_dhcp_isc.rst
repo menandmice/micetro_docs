@@ -4,7 +4,7 @@
 
 .. _console-dhcp-isc:
 
-ISC DHCP (Management Console, deprecated)
+ISC DHCP (Management Console, obsolete)
 -----------------------------------------
 
 .. |add-dhcp| image:: ../../../images/console-dhcp-add-icon.png
@@ -137,7 +137,7 @@ DDNS Update Style
   Ad-hoc
 
     .. warning::
-      This update scheme is deprecated
+      This update scheme is obsolete
 
   Interim
     This is the recommended scheme for dynamic DNS updates

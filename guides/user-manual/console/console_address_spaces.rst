@@ -1,6 +1,6 @@
 .. _console-address-spaces:
 
-Address Space Management (Management Console, deprecated)
+Address Space Management (Management Console, obsolete)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Address Space Management dialog box allows you to create, modify or delete address spaces as well as set access privileges for existing address spaces. To access the Address Space Management dialog box, you must be logged in as the administrator user.

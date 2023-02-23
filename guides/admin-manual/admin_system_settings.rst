@@ -1,13 +1,21 @@
 .. meta::
-   :description: Micetro´s system Settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use and other advanced settings.   
-   :keywords: DNS, DHCP, Micetro´s system settings
+   :description: Micetro´+s system Settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use and other advanced settings.   
+   :keywords: DNS, DHCP, Micetro's system settings
 
 .. _admin-system-settings:
 
 System Settings
 ================================================
+Administrators can apply system-wide settings in System Settings.
 
-To configure system settings, select **ADMIN** on the top navigation bar. In the Admin workspace, click **CONFIGURATION **, and then select SYSTEM **SETTINGS** in the left pane.
+**To access the System Settings:**
+#. Select **ADMIN** on the top navigation bar.
+#. Click **CONFIGURATION** on the menu bar at the top of the admin workspace.
+#. Select **SYSTEM SETTINGS** in the left pane.
+
+.. image:: ../../images/admin-system-settings.png
+  :width: 50%
+  :align: center
 
 The system settings include the following categories:
 
@@ -44,13 +52,13 @@ Through this function, you can specify the following:
 
 To display the General Settings dialog box, do the following:
 
-1. From the menu bar, select :menuselection:`Tools --> System Settings`.
+#. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/console-system-settings.png
+  .. image:: ../../images/console-system-settings.png
   :width: 90%
   :align: center
 
-2. In the *System settings* dialog box, click the :guilabel:`General` tab.
+#. In the *System settings* dialog box, click the :guilabel:`General` tab.
 
 Allow Single Sign-on.
   When selected, Active Directory users do not have to authenticate when logging in through the Management Console or the Command Line Interface. See :ref:`external-auth`.
@@ -138,34 +146,6 @@ Inconsistencies between reservation descriptions in split scopes.
   When enabled, an icon displays in split scope entries if a reservation description in a split scope differs from the reservation description in another split scope instance. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it.
 
 When all selections/entries are made, click :guilabel:`OK`.
-
-.. _admin-comments:
-
-Save Comments
--------------
-
-When saving changes to various objects, the Save Comment window may display. When this window displays is determined by the selections you make on this tab. The user simply types comments into the dialog box, explaining a reason for any actions taken (e.g., delete object as it was a duplicate). Then the user clicks OK.
-
-To define when comments can be entered (and this can only be when logged on as a System Administrator), do the following:
-
-1. From the menu bar, select :menuselection:`Tools --> System Settings`.
-
-.. image:: ../../images/admin-comments.png
-  :width: 80%
-  :align: center
-
-2. In the *System settings* dialog box, click the :guilabel:`Save Comments` tab.
-
-3. Click in the checkbox next to all the instances in which you want the *Save Comment* dialog box to display.
-
-4. When all selections are made, click :guilabel:`OK`.
-
-.. _admin-external-commands:
-
-External Commands
------------------
-
-Refer to :ref:`external-scripts`.
 
 .. _admin-dns:
 
@@ -338,3 +318,7 @@ Enable collection of IP information from routers.
 
     Router SNMP community.
       Enter the SNMP community string (password) to use when querying the routers for IP information.
+
+.. _admin-advanced:
+
+.. _admin-management-console:

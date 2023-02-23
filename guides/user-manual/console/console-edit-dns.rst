@@ -4,7 +4,7 @@
 
 .. _console-edit-dns-server:
 
-Edit DNS Server Name (Management Console, deprecated)
+Edit DNS Server Name (Management Console, obsolete)
 -----------------------------------------------------
 
 This feature allows you to change the name or IP Address used to connect to a DNS server. This is useful if you need to refer to the server by another name or if you are connecting to the server by an IP Address and the IP Address has changed. You can also use this feature to change the connection method for MS DNS servers.

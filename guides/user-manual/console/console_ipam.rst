@@ -10,7 +10,7 @@
 .. |user-range| image:: ../../../images/console-ipam-user-created-range-icon.png
 .. |dhcp-scope| image:: ../../../images/console-ipam-dhcp-scope-icon.png
 
-IP address management (Management Console, deprecated)
+IP address management (Management Console, obsolete)
 ======================================================
 
 Overview

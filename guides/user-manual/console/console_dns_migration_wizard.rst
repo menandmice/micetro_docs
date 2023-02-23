@@ -4,7 +4,7 @@
 
 .. _console-dns-migration-wizard:
 
-Zone Migration Wizard (Management Console, deprecated)
+Zone Migration Wizard (Management Console, obsolete)
 ------------------------------------------------------
 
 The *Zone Migration Wizard* allows users to migrate one or more zones from one server to another, including all data in the zone.

@@ -4,7 +4,7 @@
 
 .. _admin-system-settings:
 
-System Settings (Management Console, deprecated)
+System Settings (Management Console, obsolete)
 ================================================
 
 From the menu bar, select Tools, System Settings.

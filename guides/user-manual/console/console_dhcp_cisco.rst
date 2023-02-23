@@ -4,7 +4,7 @@
 
 .. _console-dhcp-cisco:
 
-Cisco DHCP (Management Console, deprecated)
+Cisco DHCP (Management Console, obsolete)
 ===========================================
 
 .. _console-cisco-dhcp-add:

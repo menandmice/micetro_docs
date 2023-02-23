@@ -4,7 +4,7 @@
 
 .. _console-create-slave-zone:
 
-Slave Zone (Management Console, deprecated)
+Slave Zone (Management Console, obsolete)
 -------------------------------------------
 
 .. image:: ../../../images/console-dns-zones-create-slave.png

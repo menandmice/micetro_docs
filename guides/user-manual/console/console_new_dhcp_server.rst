@@ -4,7 +4,7 @@
 
 .. _console-new-dhcp-server:
 
-New DHCP Server (Management Console, deprecated)
+New DHCP Server (Management Console, obsolete)
 ------------------------------------------------
 
 .. note::

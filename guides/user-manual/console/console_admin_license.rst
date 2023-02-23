@@ -1,10 +1,10 @@
 .. _console-admin-license:
 
-License Management (Management Console, deprecated)
+License Management (Management Console, obsolete)
 ===================================================
 
 .. important::
-  This page describes the deprecated method of license management in the Management Console.
+  This page describes the obsolete method of license management in the Management Console.
 
   From version 10.1, license management has been migrated to the web application: see :ref:`admin-license`.
 
