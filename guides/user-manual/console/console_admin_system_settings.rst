@@ -46,7 +46,7 @@ To display the General Settings dialog box, do the following:
 
 1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/console-system-settings.png
+.. image:: ../../../images/console-system-settings.png
   :width: 90%
   :align: center
 
@@ -81,7 +81,7 @@ Through this function, you specify when log messages should be purged and whethe
 
 1. From the menu, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/admin-logging.png
+.. image:: ../../../images/admin-logging.png
   :width: 80%
   :align: center
 
@@ -113,7 +113,7 @@ The *Error Checking* tab allows you to specify how the system reports certain er
 
 1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/admin-error-checking.png
+.. image:: ../../../images/admin-error-checking.png
   :width: 80%
   :align: center
 
@@ -150,7 +150,7 @@ To define when comments can be entered (and this can only be when logged on as a
 
 1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/admin-comments.png
+.. image:: ../../../images/admin-comments.png
   :width: 80%
   :align: center
 
@@ -176,7 +176,7 @@ Use the *DNS settings* dialog box to specify various DNS related settings. To di
 
 1. From the menu bar, select :guilabel:`Tools --> System Settings`.
 
-.. image:: ../../images/admin-dns.png
+.. image:: ../../../images/admin-dns.png
   :width: 80%
   :align: center
 
@@ -210,7 +210,7 @@ The *IPAM* tab allows you to specify various IPAM related settings:
 
 1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/admin-ipam.png
+.. image:: ../../../images/admin-ipam.png
   :width: 80%
   :align: center
 
@@ -256,7 +256,7 @@ To display the Monitoring Settings dialog box, do the following:
 
 1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/admin-monitoring.png
+.. image:: ../../../images/admin-monitoring.png
   :width: 80%
   :align: center
 
@@ -278,7 +278,7 @@ Enable subnet monitoring.
 
     1. Click the Defaults... button. The Subnet Monitoring dialog box displays.
 
-    .. image:: ../../images/admin-subnet-monitoring.png
+    .. image:: ../../../images/admin-subnet-monitoring.png
       :width: 40%
       :align: center
 
