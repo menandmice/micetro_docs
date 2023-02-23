@@ -11,23 +11,23 @@ From the menu bar, select Tools, System Settings.
 
 The System Settings dialog box displays and includes these tabs:
 
-  * :ref:`admin-general`
+  * :ref:`admin-general-console`
 
-  * :ref:`admin-logging`
+  * :ref:`admin-logging-console`
 
-  * :ref:`admin-error-checking`
+  * :ref:`admin-error-checking-console`
 
-  * :ref:`admin-comments`
+  * :ref:`admin-comments-console`
 
-  * :ref:`admin-external-commands`
+  * :ref:`admin-external-commands-console`
 
-  * :ref:`admin-dns`
+  * :ref:`admin-dns-console`
 
-  * :ref:`admin-ipam`
+  * :ref:`admin-ipam-console`
 
-  * :ref:`admin-monitoring`
+  * :ref:`admin-monitoring-console`
 
-.. _admin-general:
+.. _admin-general-console:
 
 General
 -------
@@ -46,7 +46,7 @@ To display the General Settings dialog box, do the following:
 
 1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../../images/console-system-settings.png
+image:: ../../../images/console-system-settings.png
   :width: 90%
   :align: center
 
@@ -72,7 +72,7 @@ Advanced system settings.
 
 3. When the desired selections/entries are made, click :guilabel:`OK`.
 
-.. _admin-logging:
+.. _admin-logging-console:
 
 Logging
 -------
@@ -104,7 +104,7 @@ Lease History.
 
 3. When all selections/entries are made, click :guilabel:`OK`.
 
-.. _admin-error-checking:
+.. _admin-error-checking-console:
 
 Error Checking
 --------------
@@ -139,7 +139,7 @@ Inconsistencies between reservation descriptions in split scopes.
 
 When all selections/entries are made, click :guilabel:`OK`.
 
-.. _admin-comments:
+.. _admin-comments-console:
 
 Save Comments
 -------------
@@ -160,7 +160,7 @@ To define when comments can be entered (and this can only be when logged on as a
 
 4. When all selections are made, click :guilabel:`OK`.
 
-.. _admin-external-commands:
+.. _admin-external-commands-console:
 
 External Commands
 -----------------
@@ -193,7 +193,7 @@ DNSSEC.
 
 3. When the desired selections/entries are made, click :guilabel:`OK`.
 
-.. _admin-ipam:
+.. _admin-ipam-console:
 
 IPAM
 ----
@@ -245,7 +245,7 @@ Enable Cloud integration.
 
 3. When all selections/entries are made, click :guilabel:`OK`.
 
-.. _admin-monitoring:
+.. _admin-monitoring-console:
 
 Monitoring
 ----------
