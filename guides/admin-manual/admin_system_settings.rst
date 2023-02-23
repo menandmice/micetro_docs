@@ -9,17 +9,18 @@ System Settings
 Administrators can apply system-wide settings in System Settings.
 
 **To access the System Settings:**
+
 #. Select **ADMIN** on the top navigation bar.
 #. Click **CONFIGURATION** on the menu bar at the top of the admin workspace.
 #. Select **SYSTEM SETTINGS** in the left pane.
 
-.. image:: ../../images/admin-system-settings.png
-  :width: 50%
-  :align: center
+   .. image:: ../../images/admin-system-settings.png
+     :width: 65%
+     :align: center
 
-The system settings include the following categories:
+The System Settings include the following categories:
 
-  * :ref:`admin-general`
+  * :ref:`admin-generale`
 
   * :ref:`admin-logging`
 
@@ -35,7 +36,7 @@ The system settings include the following categories:
 
   * :ref:`admin-management-console`
 
-.. _admin-general:
+.. _admin-generale:
 
 General
 -------
