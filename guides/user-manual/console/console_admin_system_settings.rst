@@ -167,7 +167,7 @@ External Commands
 
 Refer to :ref:`external-scripts`.
 
-.. _admin-dns:
+.. _admin-dns-console:
 
 DNS
 ---
@@ -260,7 +260,7 @@ To display the Monitoring Settings dialog box, do the following:
   :width: 80%
   :align: center
 
-1. In the *System Settings* dialog box, click the :guilabel:`Monitoring` tab.
+2. In the *System Settings* dialog box, click the :guilabel:`Monitoring` tab.
 
 Ping before automatic assignment.
   When selected, when an IP Address is being auto-assigned, the system checks as to whether the IP Address is responding to a ping request before it is allocated to a new host. If the IP Address responds to the ping request, it is not used for auto-assignment.
