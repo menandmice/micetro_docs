@@ -46,8 +46,7 @@ To display the General Settings dialog box, do the following:
 
 1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: 
-../../../images/console-system-settings.png
+.. image:: ../../../images/console-system-settings.png
   :width: 90%
   :align: center
 
