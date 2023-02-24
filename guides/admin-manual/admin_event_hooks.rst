@@ -6,3 +6,12 @@
 
 Event Hooks
 =======================
+
+Event hooks...
+
+.. toctree::
+  :maxdepth: 1
+
+  admin_schedule_scripts
+  external_scripts
+ 
