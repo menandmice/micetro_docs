@@ -190,7 +190,7 @@ If views are not defined, the following files are created inside the data direct
   "Directory of zone statement files", "conf/zoneopt"
   "A sample zone statement file, for the zone 'localhost'.", "conf/zoneopt/localhost.opt"
   "Directory of primary master zone files", "hosts/masters"
-  "Directory of slave zone files", "hosts/slaves"
+  "Directory of secondary zone files", "hosts/slaves"
   "A sample zone file, for the primary master zone 'localhost.'", "hosts/masters/localhost-hosts"
 
 **With views**
@@ -206,7 +206,7 @@ If views are defined, the following files are created inside the data directory:
   "Directory of zone statement files for a particular view", "conf/zo_viewname"
   "A sample zone statement file, for the zone 'localhost'. in the view 'internal'", "conf/zo_internal/localhost.opt"
   "Directory of primary master zone files for a particular view", "hosts/view_viewname/masters"
-  "Directory of slave zone files for a particular view", "hosts/view_viewname/slaves"
+  "Directory of secondary zone files for a particular view", "hosts/view_viewname/slaves"
   "A sample zone file, for the primary master zone 'localhost.' in the view 'internal'", "hosts/view_internal/masters/localhost-hosts"
 
 Removing the DNS Server Controller and Reverting to Original Data
