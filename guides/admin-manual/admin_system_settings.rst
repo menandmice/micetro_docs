@@ -45,71 +45,49 @@ Here you can configure the following:
 
   * Save Comments for Micetro 
 
-  * Settings for AD Sites and Subnets integration 
+  * Settings for Active Directory (AD) Sites and Subnets integration 
 
   * Rules to determine when an IP address is considered as being in use 
 
-Enable AD sites and subnets integration.
-  Check this checkbox to enable the integration feature. When the integration is active, all sites and their corresponding subnets in Active Directory displays in Micetro and you can add and remove subnets in sites and move subnets to different sites. Once Sites and Subnets integration has been enabled, an  AD Sites  object displays in the object list on the left hand side of the Manager window and a new column, AD Site  displays in the range list in the Manager window. If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory against custom properties in Micetro, choose the custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will update the corresponding fields in Micetro and vice versa. See :ref:`active-directory`.
+Enable AD sites and subnets integration
+  When selected, all AD sites and their corresponding subnets will be displayed in Micetro, and you can add and remove subnets from sites and move subnets between different sites as needed. AD sites and subnets will be listed on the **AD Sites** menu in the IPAM workspace.
+  
+  If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory with custom properties in Micetro, choose the desired custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will automatically update the corresponding fields in Micetro, and vice versa. See :ref:`active-directory`.
 
-Enforce AD site inheritance.
-  Select this checkbox if you want to enforce site inheritance in AD. When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet. See :ref:`active-directory`.
+Enforce AD site inheritance
+  When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet. See :ref:`active-directory`.
 
-Determine Address in use.
-  This section contains several checkboxes that determine whether an IP Address should be considered as being in use. Check the appropriate checkboxes to specify which rules should be applied to the IP Addresses.
+Determine Address in use
+  Control how IP addresses are identified as being in use. To specify which rules should be applied to IP addresses, select the appropriate checkboxes.
 
-
-
-3. When the desired selections/entries are made, click :guilabel:`OK`.
 
 .. _admin-logging:
 
 Logging
 -------
 
-Through this function, you specify when log messages should be purged and whether lease history for DHCP servers should be collected.
+The Logging settings allow you to specify when log messages should be deleted and whether lease history for DHCP servers should be collected.
 
-1. From the menu, select :menuselection:`Tools --> System Settings`.
+Purge log message after ____  days
+  Enter the number of days the logs should be kept before they are deleted.
 
-.. image:: ../../images/admin-logging.png
-  :width: 80%
-  :align: center
-
-2. In the *System Settings* dialog box, click the :guilabel:`Logging` tab.
-
-Purge log message after ____  days.
-  When selected a number is typed in the field indicating the number of days the logs should be kept.
-
-Log extra information when address collection is triggered.
+Log extra information when address collection is triggered
   When selected, information about the start and duration of the address collection is written in the Micetro log file.
 
-Lease History.
-  Through this function, you configure the setting that allows for viewing the history of DHCP leases.
+Lease History
+  Here you can select to start collecting lease history for DHCP servers. By viewing the DHCP lease history, you can quickly identify any potential issues or conflicts.
+  
+  You can specify the number of days to keep the history before it is deleted, and if you want to save the history to a comma separated text file before it is deleted, select the **Flush lease history to file befor purging**, and then enter a name for the file.
 
-    * Collect lease history for DHCP servers. Click the checkbox to begin history collection for DHCP servers.
-
-    * Purge lease history after ___ days. Click the checkbox to select this option. Then, in the field, type the number of days to retain the history.
-
-    * Flush lease history to file before purging. To save the lease history to a comma separated text file before it is purged, click the checkbox, and then type the name of the file.
-
-3. When all selections/entries are made, click :guilabel:`OK`.
-
+    
 .. _admin-error-checking:
 
 Error Checking
 --------------
 
-The *Error Checking* tab allows you to specify how the system reports certain errors related to DHCP and DNS. This tab is also used to enable or disable DHCP scope monitoring.
+In this section you can specify how the system reports certain errors related to DHCP and DNS. You can also enable or disable DHCP scope monitoring.
 
-1. From the menu bar, select :menuselection:`Tools --> System Settings`.
-
-.. image:: ../../images/admin-error-checking.png
-  :width: 80%
-  :align: center
-
-2. In the *System Settings* dialog box, click the :guilabel:`Error Checking` tab.
-
-Ignore missing reverse zones.
+Ignore missing reverse zones
   An error message displays when Micetro is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting the Ignore missing reverse zones checkbox.
 
 Warn when creating A/AAAA records with name that already exists.
@@ -134,103 +112,75 @@ When all selections/entries are made, click :guilabel:`OK`.
 DNS
 ---
 
-Use the *DNS settings* dialog box to specify various DNS related settings. To display the DNS Settings dialog box, do the following:
+Here you can specify various DNS related settings. 
 
-1. From the menu bar, select :guilabel:`Tools --> System Settings`.
+Delegation records
+  When selected, Micetro will automatically create delegation records (NS records) in the corresponding parent zones whenever subzones are created. This ensures that the delegation chain between parent and subzones is maintained correctly.
 
-.. image:: ../../images/admin-dns.png
-  :width: 80%
-  :align: center
+Adjust Zone Transfer
+  Allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
 
-2. In the *System Settings* dialog box, click the :guilabel:`DNS` tab.
+DNSSEC
+  Include derived DNSSEC records when viewing DNSSEC signed zones in Micetro. Note that this will significantly increase the size of the Micetro database and may affect overall system performance.
 
-Delegation records.
-  When automatically create delegation records when creating new zones is selected, delegation records (NS records) are automatically created in the corresponding parent zones when subzones are created, maintaining a correct delegation chain between parent and subzones.
-
-Adjust Zone Transfer.
-  Select the checkbox to allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
-
-DNSSEC.
-  Select the checkbox to include derived DNSSEC records when viewing DNSSEC signed zones in Micetro. Note that this will increase the size of the Micetro database significantly and may affect overall system performance.
-
-3. When the desired selections/entries are made, click :guilabel:`OK`.
 
 .. _admin-ipam:
 
 IPAM
 ----
 
-The *IPAM* tab allows you to specify various IPAM related settings:
+This section allows you to specify various IPAM related settings:
 
   * How the system should handle new subranges if the parent range is in a folder.
 
-  * How the system should behave if DHCP scopes are removed outside Micetro.
-
   * How the system should behave when naming conflicts between existing IP Address ranges and DHCP scopes occur.
-
+  
+  * How the system should behave if DHCP scopes are removed outside Micetro.
+  
   * Whether the system should allow reservations inside address pools on ISC DHCP servers.
 
-1. From the menu bar, select :menuselection:`Tools --> System Settings`.
 
-.. image:: ../../images/admin-ipam.png
-  :width: 80%
-  :align: center
+Subranges
+  Select the desired options to determine what happens when a user creates a subrange of a range in a folder.
+  
+Name conflicts between ranges and scopes
+  Specify what happens if the name of an MS DHCP scope does not match the name of an existing IP Address range.
+  
+  When **Apply same rule for scope description as for scope name above** is selected, the system will use the same rules to update scope description as it does for updating scope names.
 
-2. In the *System Settings* dialog box, click the :guilabel:`IPAM` tab.
-
-Subranges.
-  The selection made here determines what happens when a user creates a subrange of a range in a folder. Click the desired action.
-
-DHCP Scope Deletion.
+DHCP Scope Deletion
   If a scope is removed directly from a DHCP server (instead of using Micetro), you can select whether to convert it to an IP Address range or remove it completely.
 
-Name conflicts between ranges and scopes.
-  The selection made her determines what happens if the name of an MS DHCP scope does not match the name of an existing IP Address range.
-
-Apply same rule for scope description as for scope name above.
-  When selected, the system will use the same rules to update scope description as it does for updating scope names.
-
-Allow reservations inside pools on ISC DHCP servers.
+Allow reservations inside pools on ISC DHCP servers
   When selected, the system allows users to create reservations inside pools on ISC DHCP servers. When a reservation is created inside a pool, the pool is split to make space for the reservation.
 
   .. warning::
     If a reservation that has been created inside a pool is deleted, the address is not made a part of the pool again.
 
-Show DHCP data in subranges of scopes.
+Show DHCP data in subranges of scopes
   When selected, the system will display contents of subranges of scopes in the same view that is used for scopes and users with the required privileges will be able to work with reservations in these subranges. If the checkbox is not selected, contents of subranges of scopes will be displayed in the regular range view.
 
-Allow allocation of IP Addresses from IP Address Containers.
+Allow allocation of IP Addresses from IP Address Containers
   When selected, the system will allow allocation of IP Addresses that reside in IP Address Containers. For more information on IP Address Containers,  refer to  IPAM Settings.
 
-Enable Cloud integration.
+Enable Cloud integration
   Check this checkbox to enable the Cloud integration feature. When Cloud integration is active you can add OpenStack clouds to Micetro. You can manage cloud networks and and you can add and remove subnets from cloud networks and move subnets to cloud networks. Cloud integration has been enabled, a :guilabel:`Cloud` object displays in the object list on the left hand side of the Manager window and a new column, *Cloud Network* displays in the range list in the Manager window.
 
-3. When all selections/entries are made, click :guilabel:`OK`.
 
 .. _admin-monitoring:
 
 Monitoring
 ----------
 
-Use the *Monitoring settings* dialog box to specify various monitoring related settings.
+Here you can specify various monitoring related settings.
 
-To display the Monitoring Settings dialog box, do the following:
-
-1. From the menu bar, select :menuselection:`Tools --> System Settings`.
-
-.. image:: ../../images/admin-monitoring.png
-  :width: 80%
-  :align: center
-
-1. In the *System Settings* dialog box, click the :guilabel:`Monitoring` tab.
-
-Ping before automatic assignment.
+Ping before automatic assignment
   When selected, when an IP Address is being auto-assigned, the system checks as to whether the IP Address is responding to a ping request before it is allocated to a new host. If the IP Address responds to the ping request, it is not used for auto-assignment.
 
-Automatic assignment ping timeout _____ ms.
+Automatic assignment ping timeout _____ ms
   Specifies how long the system should wait (in milliseconds) for a response to the ping request. If a response is not received within the specified time, the system considers this to be a non-responding IP Address.
 
-Enable subnet monitoring.
+Enable subnet monitoring
   When enabled, the system monitors the free addresses in DHCP address pools and subnets, and performs an action if the number of free addresses goes below a user-definable threshold. When subnet monitoring has been enabled, it is possible to configure the global settings for this feature by clicking the Details button.
 
   .. note::
@@ -272,7 +222,7 @@ Enable subnet monitoring.
 
   When subnet monitoring is enabled, you must specify the mail server and the sender e-mail address to use if you want the subnet monitor to send an e-mail. Place the appropriate information in the SMTP Server and Mail from fields.
 
-Enable sending SNMP traps.
+Enable sending SNMP traps
   When enabled, the system will send SNMP traps when certain events occur:
 
     * When the number of free IP Addresses in monitored subnets goes below a user-definable threshold.
@@ -281,13 +231,13 @@ Enable sending SNMP traps.
 
   When enabling sending of SNMP traps, you must provide additional information:
 
-    Manager name.
+    Manager name
       Enter the host name of the computer that should receive the SNMP traps.
 
-    Manager port.
+    Manager port
       Enter the port number the Manager uses for the SNMP traps.
 
-    Community.
+    Community
       Enter the community string (password) to use for the SNMP traps.
 
 Enable collection of IP information from routers.
@@ -306,7 +256,32 @@ Enable collection of IP information from routers.
 Advanced
 --------
 
+
+
 .. _admin-management-console:
 
 Management Console
 ------------------
+
+Inconsistencies in DHCP lease names and DNS names
+   When enabled, an icon displays for each DHCP lease for which the DNS name does not match the lease name. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it. 
+   
+Address pool collisions
+   When enabled, an icon displays in split scope entries if the address pool in the scope collides with the address pool of another split scope instance. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it. 
+   
+Inconsistencies between reservation names in split scopes
+   When enabled, an icon displays in split scope entries if a reservation name in a split scope differs from the reservation name in another split scope instance. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it. 
+   
+Inconsistencies between reservation descriptions in split scopes
+   When enabled, an icon displays in split scope entries if a reservation description in a split scope differs from the reservation description in another split scope instance. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it
+   
+   If a reservation that has been created inside a pool is deleted, the address is not made a part of the pool again. 
+   
+Show DHCP data in subranges of scopes
+   When selected, the system will display contents of subranges of scopes in the same view that is used for scopes and users with the required privileges will be able to work with reservations in these subranges. If the checkbox is not selected, contents of subranges of scopes will be displayed in the regular range view.
+   
+Ping before automatic assignment
+   When selected, when an IP Address is being auto assigned, the system checks as to whether the IP Address is responding to a ping request before it is allocated to a new host. If the IP Address responds to the ping request, it is not used for auto-assignment. 
+   
+Automatic assignment ping timeout _____ ms
+   Specifies how long the system should wait (in milliseconds) for a response to the ping request. If a response is not received within the specified time, the system considers this to be a non-responding IP Address. 
