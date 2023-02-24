@@ -32,14 +32,14 @@ How to install and configure the Generic DNS Server Controller:
 
 The `genericDNS.py <https://github.com/menandmice/micetro_docs/blob/10.1/guides/implementation/genericDNS.py>`_ script implements the generic API and interfaces with the DNS server itself.
 
-4. Login to the M&M Management Console and add the new generic DNS server. Select as Server Type "*Generic*". The name and optional IP address must point to the machine that runs the Generic DNS Server Controller.
+4. Log in to the M&M Management Console and add the new generic DNS server. Select as Server Type "*Generic*". The name and optional IP address must point to the machine that runs the Generic DNS Server Controller.
 
 Limitations
 -----------
 
-Reading, modifying zone/server options, reading logs, clearing cache, controlling the server itself is not possible by the API yet. Depending on the connector script, only master zones are currently supported. That means no slave zones or special zones like forward or stub zones are supported for Amazon Route53, but slave zones are supported for :ref:`powerdns`.
+Reading, modifying zone/server options, reading logs, clearing cache, controlling the server itself is not possible by the API yet. Depending on the connector script, only primary zones are currently supported. That means no secondary zones or special zones like forward or stub zones are supported for Amazon Route53, but secondary zones are supported for :ref:`powerdns`.
 
-Of course, the connector script could interface with a slave zone and return an error when Central tries to update the zone. However, the zone will show up as zone of the type "Master" in the M&M Suite. In other words, everything else than reading/writing/updating master zones and their zone data is currently not supported.
+Of course, the connector script could interface with a secondary zone and return an error when Central tries to update the zone. However, the zone will show up as zone of the type "Primary" in the M&M Suite. In other words, everything else than reading/writing/updating primary zones and their zone data is currently not supported.
 
 Available Connector Scripts
 ---------------------------
