@@ -4,7 +4,7 @@
 
 .. _console-forward-zone:
 
-Forward Zone (Management Console, deprecated)
+Forward Zone (Management Console, obsolete)
 ---------------------------------------------
 
 Through this function, you create a forward zone.

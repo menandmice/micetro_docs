@@ -42,7 +42,7 @@ Allows the user to see and edit SOA information for the selected DNS zone.
 Authority
 """""""""
 
-Lists all authoritative servers for the selected DNS zones. Allows for modifying which servers are slave servers for the DNS zone.
+Lists all authoritative servers for the selected DNS zones. Allows for modifying which servers are secondary servers for the DNS zone.
 
 DNS Records
 ^^^^^^^^^^^

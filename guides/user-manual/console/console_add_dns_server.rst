@@ -4,7 +4,7 @@
 
 .. _console-new-dns-server:
 
-New DNS Server (Management Console, deprecated)
+New DNS Server (Management Console, obsolete)
 -----------------------------------------------
 
 You must be logged in as a user with privileges to administer DNS in order to add a DNS server.

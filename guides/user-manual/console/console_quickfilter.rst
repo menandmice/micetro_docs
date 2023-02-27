@@ -4,7 +4,7 @@
 
 .. _console-quickfilter:
 
-Quick Filter (Management Console, deprecated)
+Quick Filter (Management Console, obsolete)
 =============================================
 
 .. note::

@@ -7,7 +7,7 @@
 Configuring PowerDNS
 ====================
 
-The PowerDNS connector script connects directly to the MySQL backend and allows management of zones in PowerDNS. Native mode and Master/Slave mode in the authoritative PowerDNS are currently supported.
+The PowerDNS connector script connects directly to the MySQL backend and allows management of zones in PowerDNS. Native mode and Primary/Secondary mode in the authoritative PowerDNS are currently supported.
 
 The installation works as described above. On Linux use the ``--generic-dns-controller`` parameter when executing the installer.
 

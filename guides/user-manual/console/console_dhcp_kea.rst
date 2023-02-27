@@ -4,7 +4,7 @@
 
 .. _console-dhcp-kea:
 
-ISC Kea DHCP (Management Console, deprecated)
+ISC Kea DHCP (Management Console, obsolete)
 =============================================
 
 .. danger::

@@ -1,6 +1,6 @@
 .. _console-join-ranges:
 
-Join Ranges (Management Console, deprecated)
+Join Ranges (Management Console, obsolete)
 --------------------------------------------
 
 This function allows you to select and join a number of ranges. The :guilabel:`Join Ranges` command is available if the selected ranges can be joined.

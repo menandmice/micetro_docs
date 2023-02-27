@@ -4,7 +4,7 @@
 
 .. _console-delete-dhcp-server:
 
-Delete (Management Console, deprecated)
+Delete (Management Console, obsolete)
 ---------------------------------------
 
 .. note::

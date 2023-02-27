@@ -33,7 +33,7 @@ Supported Cloud Services
 DNS
 ---
 
-The use of a cloud DNS service in Micetro is transparent to the user. Adding DNS zones, DNS records, or modifying the two is done in the same way as with other DNS servers in Micetro.  Currently only master zones can be created on cloud DNS services.
+The use of a cloud DNS service in Micetro is transparent to the user. Adding DNS zones, DNS records, or modifying the two is done in the same way as with other DNS servers in Micetro.  Currently only primary zones can be created on cloud DNS services.
 
 IPAM
 ----

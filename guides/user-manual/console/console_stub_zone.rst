@@ -4,7 +4,7 @@
 
 .. _console-stub-zone:
 
-Stub Zone (Management Console, deprecated)
+Stub Zone (Management Console, obsolete)
 ------------------------------------------
 
 Through this function, you create a stub zone.

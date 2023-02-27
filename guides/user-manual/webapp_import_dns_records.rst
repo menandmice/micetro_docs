@@ -65,13 +65,13 @@ zone
   The zone containing the record.
 
 authority
-  If multi-master, the authority of the zone.
+  If multi-primary, the authority of the zone.
 
 view
-  If multi-master, the view containing the zone.
+  If multi-primary, the view containing the zone.
 
 forest
-  If multi-master, the forest of the zone.
+  If multi-primary, the forest of the zone.
 
 type
   (required) The type (A, CNAME, MX, etc.) of the record.

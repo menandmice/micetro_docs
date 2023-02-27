@@ -4,7 +4,7 @@
 
 .. _console-dns-zone-viewing:
 
-Zone Viewing (Management Console, deprecated)
+Zone Viewing (Management Console, obsolete)
 ---------------------------------------------
 
 All Zones on All Servers

@@ -4,8 +4,8 @@
 
 .. _admin-schedule-scripts:
 
-Scheduled Scripts
-=================
+Scheduled Scripts (Management Console, obsolete)
+=================================================
 
 The administrator can configure the system to run scripts in a schedule – e.g., to back up the database every night at 3:00 AM, perform changes early in the morning, etc.
 

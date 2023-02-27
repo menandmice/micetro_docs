@@ -1,6 +1,6 @@
 .. _console-ad-preferred-servers:
 
-Edit Preferred Servers (Management Console, deprecated)
+Edit Preferred Servers (Management Console, obsolete)
 -------------------------------------------------------
 
 This option is only available when working with AD integrated zones. (See :ref:`active-directory`.) It is used to specify the server to use when opening an AD integrated zone.

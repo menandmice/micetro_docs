@@ -1,6 +1,6 @@
 .. _active-directory-console:
 
-AD Sites and Subnets (Management Console, deprecated)
+AD Sites and Subnets (Management Console, obsolete)
 =====================================================
 
 Overview

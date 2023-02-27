@@ -16,12 +16,12 @@ Building reports is easy and can be tailor-made by correlating related data in a
 
 The reports can be viewed within the Web Application, or downloaded in various formats for further analysis.
 
-When the Reports section is opened in the Web Application, the user is presented with a list of report definitions. Like every other part of the Web Application, this list can be filtered and searched.
+When the Reports section is opened in the Web Application, you are presented with a list of report definitions. Like every other part of the Web Application, this list can be filtered and searched.
 
 Reporting module
 ----------------
 
-Users can:
+You can:
 
 * create and save new report definitions
 
@@ -45,7 +45,7 @@ The main actions are shown in the action list above the list of report definitio
   "Schedule", "For more information, see Schedule regular report generation"
   "Delete", "For more information, see Delete a report definition"
 
-The "Create" action can be run without selecting a report, but all the other actions require the user to first select a report from the list.
+The "Create" action can be run without selecting a report, but all the other actions require you to first select a report from the list.
 
 Additional actions for reports are described in :ref:`report-actions`.
 
@@ -74,7 +74,7 @@ Creating a new report
 
 A new report definition can be created by clicking on the Create button above the report list, or by selecting the Create new report in the action list in the Inspector.
 
-With the wizard, the user can:
+With the wizard, you can:
 
 * change the report definition's source,
 
@@ -86,7 +86,7 @@ With the wizard, the user can:
 
 Additionally, it is possible to schedule a report to be generated at specific times or intervals.
 
-After running the report, the user is presented with a preview of the results and has the option of saving a copy of the report in a number of different formats. See :ref:`report-results`.
+After running the report, you are presented with a preview of the results and has the option of saving a copy of the report in a number of different formats. See :ref:`report-results`.
 
 A description of each report source is described in :ref:`report-sources`.
 
@@ -102,7 +102,7 @@ Select one of the existing reports or a data source as the basis of the new repo
 Step 2: Edit filtering criteria
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the second step, the user has the option of editing the filtering criteria. The user might want to make some adjustments to the fields in the filter of the selected report definition, for example extending a time span or selecting a different username. It is also possible to change the filter completely and create a new report definition.
+In the second step, you have the option of editing the filtering criteria. You might want to make some adjustments to the fields in the filter of the selected report definition, for example extending a time span or selecting a different username. It is also possible to change the filter completely and create a new report definition.
 
 .. image:: ../../images/report-criteria.jpg
   :width: 70%
@@ -129,7 +129,7 @@ This translates into: "*Show me hosts that have not answered during discovery in
 Comparison operator
 """""""""""""""""""
 
-Depending on the type of field the user is presented with different comparison operators.
+Depending on the type of field you are presented with different comparison operators.
 
 .. csv-table::
   :header: "String", "Number, timespan, date", "Boolean, pick-list, object"
@@ -161,11 +161,11 @@ It is possible to select which columns are to be included in the report result.
 Step 4: Save or run report definition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By checking the "Run once" box, the report definition will not be saved, and the user will be presented with a dialog that shows the report results.
+By selecting "Run once", the report definition will not be saved, and you will be presented with a dialog that shows the report results.
 
-Press the Finish button to run the report and get the results.
+Click **Finish** to run the report and get the results.
 
-By checking the "Open scheduling dialog after saving" users can schedule periodic executions of the report.
+By selecting "Open scheduling dialog after saving" you can schedule periodic executions of the report.
 
 Step 5: Schedule
 ^^^^^^^^^^^^^^^^
@@ -221,9 +221,9 @@ Previewing the report results can be done in various ways:
   :width: 80%
   :align: center
 
-In all cases, users will be presented with a preview of the report in a separate dialog. (As shown above.)
+In all cases, you will be presented with a preview of the report in a separate dialog. (As shown above.)
 
-The results can then be downloaded by pressing the download button. The dropdown menu offers a number of file formats to select from (ie. CSV, XML, JSON or SYLK).
+The results can then be downloaded by clicking the download button. The dropdown menu offers a number of file formats to select from (ie. CSV, XML, JSON or SYLK).
 
 .. tip::
   Sylk and CSV are handy for importing the data into a spreadsheet application for further processing.
@@ -264,7 +264,7 @@ Settings for schedule.
 .. csv-table::
   :widths: 30, 70
 
-  "Enabled", "When checked, scheduling is enabled for this report"
+  "Enabled", "When selected, scheduling is enabled for this report"
   "Frequency", "Specifies the frequency in which the report is scheduled to run."
   "Every", "Specifies the interval in which the report is scheduled to run."
   "Starts on", "Specifies the starting date for the report to be run on."
@@ -290,14 +290,14 @@ Use this option to create a new report definition based upon an existing one.
 
 1. Select a report definition in the list and click on the Duplicate action.
 
-2. The create new report wizard will be shown, and the user will be allowed to edit the filtering criteria for the new report. (As described in Step 2 in Creating a new report.)
+2. The create new report wizard will be shown, and you will be allowed to edit the filtering criteria for the new report. (As described in Step 2 in Creating a new report.)
 
 Delete a report definition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Select a user defined report definition in the list and click on the Delete action.
 
-2. A dialog is presented prompting the user if they want to delete the report definition.
+2. A dialog is presented prompting you if you want to delete the report definition.
 
 Edit report definition properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -350,7 +350,7 @@ Report sources
 
 There are 24 reports definitions in the list under Reports (not counting user defined reports).
 
-12 base report definition sources: sources that either allow the user to query one particular object type in the system (e.g. Activity); or sources that give access to a particular data relation in the system (e.g. Host discovery).
+12 base report definition sources: sources that either allow you to query one particular object type in the system (e.g. Activity); or sources that give access to a particular data relation in the system (e.g. Host discovery).
 
 12 derivatives of the base report sources showing the specification possibilities they offer. (Zone creation/deletion building upon Activity and IP reconciliation building upon Host discovery.)
 
@@ -373,7 +373,7 @@ There are 24 reports definitions in the list under Reports (not counting user de
 | DNS records                                                           | Address records                                                       |
 |                                                                       | Multi-labeled hosts                                                   |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| DNS zones                                                             | Enabled DNS zones of type slave                                       |
+| DNS zones                                                             | Enabled DNS zones of type secondary                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Host discovery [1]_                                                   | IP reconciliation                                                     |
 |                                                                       | Discovered devices                                                    |

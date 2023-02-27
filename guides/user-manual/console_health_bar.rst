@@ -10,12 +10,12 @@ Health Monitoring Bar
 Overview
 ^^^^^^^^
 
-The Men&Mice Health Monitoring provides the administrator with valuable information he needs to maintain his systems and services. First, a good overview of the general health of Micetro and related services. More importantly, it will give the administrator an indication if there is a problem that needs to be acted on and corrected, for example if there is a slave zone that is expiring or if there is a zone that has not been loaded on a server due to an error. Both cases can cause outages for users and therefore be a serious impact for the business.
+The Men&Mice Health Monitoring provides the administrator with valuable information they need to maintain their systems and services. First, a good overview of the general health of Micetro and related services. More importantly, it will give the administrator an indication if there is a problem that needs to be acted on and corrected, for example if there is a secondary zone that is expiring or if there is a zone that has not been loaded on a server due to an error. Both cases can cause outages for users and therefore be a serious impact for the business.
 
 Categories
 ^^^^^^^^^^
 
-The health status is displayed to the user from the health bar which is positioned at the bottom of the management console window. The status indicators are split into five categories
+The health status is displayed on the health bar which is positioned at the bottom of the management console window. The status indicators are split into five categories
 
 * Micetro
 
@@ -90,12 +90,12 @@ In any case of an warning or error above, there will be a detailed description o
 Ignoring indicators
 """""""""""""""""""
 
-By right clicking a status indicator in the health bar and selecting 'ignore', that status indicator can be ignored.
+By right clicking a status indicator in the health bar and selecting **ignore**, that status indicator can be ignored.
 
 Viewing error / warning indicators
 """"""""""""""""""""""""""""""""""
 
-In this window more details about the status indicator can be seen. Following are descriptions about what each column shows.
+In this window you can see more details about the status indicator. Following are descriptions about what each column shows.
 
 Message
   Details about the error / warning for this indicator
