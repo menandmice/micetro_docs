@@ -15,8 +15,7 @@ Administrators can apply system-wide settings in System Settings.
 #. Browse the categories under **System settings** in the left pane to find what you're looking for.
 
    .. image:: ../../images/admin-system-settings.png
-     :width: 75%
-     :align: center
+
 
 The System Settings include the following categories:
 
