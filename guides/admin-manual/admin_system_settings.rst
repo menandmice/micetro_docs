@@ -12,7 +12,7 @@ Administrators can apply system-wide settings in System Settings.
 
 #. Select **Admin** on the top navigation bar.
 #. Click **Configuration** on the menu bar at the top of the admin workspace.
-#. Select **System settings** in the left pane.
+#. Browse the categories under **System settings** in the left pane to find what you're looking for.
 
    .. image:: ../../images/admin-system-settings.png
      :width: 75%
