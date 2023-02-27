@@ -34,6 +34,7 @@ The System Settings include the following categories:
   * :ref:`admin-advanced`
 
   * :ref:`admin-management-console`
+  
 
 .. _admin-general:
 
@@ -50,7 +51,11 @@ Here you can configure the following:
 
 Single sign-on
 ^^^^^^^^^^^^^^^
-When activated, users do not have to authenticate when logging in through the Management Console or the Command Line Interface. For more information about Single sign-on, see :ref:`external_auth/#multi-factor-authentication`
+When activated, users do not have to authenticate when logging in through the Management Console or the Command Line Interface. For more information about Single sign-on, see :ref:`external_auth`.
+
+Save comments
+^^^^^^^^^^^^^^^
+By default, users can save changes in the system without writing a comment. Here you have the option to choose whether writing comments should be required or optional. If you choose to make comments **required**, users will need to include a comment whenever they save changes. If you choose to make comments **optional**, users can choose whether or not to include a comment when saving changes.
 
 AD sites and subnets
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -64,7 +69,7 @@ Enforce AD site inheritance
 
 Determine Address usage
 ^^^^^^^^^^^^^^^^^^^^^^^
-  Control how IP addresses are identified as being in use. To specify which rules should be applied to IP addresses, select the appropriate checkboxes.
+Control how IP addresses are identified as being in use. To specify which rules should be applied to IP addresses, select the appropriate checkboxes.
 
 
 .. _admin-logging:
@@ -82,9 +87,9 @@ Log extra information when address collection is triggered
 
 Lease History
 ^^^^^^^^^^^^^^
-  Here you can select to start collecting lease history for DHCP servers. By viewing the DHCP lease history, you can quickly identify any potential issues or conflicts.
+Here you can select to start collecting lease history for DHCP servers. By viewing the DHCP lease history, you can quickly identify any potential issues or conflicts.
   
-  You can specify the number of days to keep the history before it is deleted, and if you want to save the history to a comma separated text file before it is deleted, select the **Flush lease history to file befor purging**, and then enter a name for the file.
+You can specify the number of days to keep the history before it is deleted, and if you want to save the history to a comma separated text file before it is deleted, select the **Flush lease history to file befor purging**, and then enter a name for the file.
 
     
 .. _admin-error-checking:
@@ -112,15 +117,15 @@ Here you can specify various DNS related settings.
 
 Delegation records
 ^^^^^^^^^^^^^^^^^^^
-  When activated, Micetro will automatically create delegation records (NS records) in the corresponding parent zones whenever subzones are created. This ensures that the delegation chain between parent and subzones is maintained correctly.
+When activated, Micetro will automatically create delegation records (NS records) in the corresponding parent zones whenever subzones are created. This ensures that the delegation chain between parent and subzones is maintained correctly.
 
 Adjust Zone Transfer
 ^^^^^^^^^^^^^^^^^^^^
-  Allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
+Allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
 
 DNSSEC
 ^^^^^^
-  Include derived DNSSEC records when viewing DNSSEC signed zones in Micetro. Note that this will significantly increase the size of the Micetro database and may affect overall system performance.
+Include derived DNSSEC records when viewing DNSSEC signed zones in Micetro. Note that this will significantly increase the size of the Micetro database and may affect overall system performance.
 
 
 .. _admin-ipam:
@@ -140,8 +145,8 @@ This section allows you to specify various IPAM related settings:
 
 
 Subranges
-  Select the desired options to determine what happens when a user creates a subrange of a range in a folder.
-  
+The selection made here determines what happens when a user creates a subrange of a range in a folder.
+
 Name conflicts between ranges and scopes
   Specify what happens if the name of an MS DHCP scope does not match the name of an existing IP address range.
   
@@ -160,8 +165,8 @@ Allow reservations inside pools on ISC DHCP servers
 Allow allocation of IP addresses from IP address Containers
   When selected, the system will allow allocation of IP addresses that reside in IP address Containers. For more information on IP address Containers,  refer to  IPAM Settings.
 
-Enable Cloud integration
-  Check this checkbox to enable the Cloud integration feature. When Cloud integration is active you can add OpenStack clouds to Micetro. You can manage cloud networks and and you can add and remove subnets from cloud networks and move subnets to cloud networks. Cloud integration has been enabled, a :guilabel:`Cloud` object displays in the object list on the left hand side of the Manager window and a new column, *Cloud Network* displays in the range list in the Manager window.
+Disable scanning of VRF information
+   Clear this checkbox if you 
 
 
 .. _admin-monitoring:
