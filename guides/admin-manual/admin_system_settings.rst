@@ -194,13 +194,13 @@ Enable sending SNMP traps
 
   When enabling sending of SNMP traps, you must provide additional information:
 
-    Manager name
+   * Manager name
       Enter the host name of the computer that should receive the SNMP traps.
 
-    Manager port
+   * Manager port
       Enter the port number the Manager uses for the SNMP traps.
 
-    Community
+   * Community
       Enter the community string (password) to use for the SNMP traps.
 
 Service monitoring
