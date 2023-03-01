@@ -86,7 +86,6 @@ Table of Contents
     guides/admin-manual/snmp_profiles
     guides/admin-manual/admin_custom_properties
     guides/admin-manual/admin_event_hooks
-    guides/admin-manual/admin_schedule_scripts
     guides/admin-manual/admin_maintenance
     guides/admin-manual/appliance_management
     guides/admin-manual/caching_appliance
