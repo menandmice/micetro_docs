@@ -12,7 +12,7 @@ Use event hooks to monitor and run specific scripts based on certain events. Thi
 .. toctree::
   :maxdepth: 1
 
-  subnet_monitoring
+  subnet_monitoring_events
   external_scripts
   admin_schedule_scripts
   
