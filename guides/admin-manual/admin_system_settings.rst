@@ -166,7 +166,7 @@ Allow allocation of IP addresses from IP address Containers
   When selected, the system will allow allocation of IP addresses that reside in IP address Containers. For more information on IP address Containers,  refer to  IPAM Settings.
 
 Disable scanning of VRF information
-   Clear this checkbox if you 
+   By default, the system does not scan for VRF information. If you clear the checkbox, the system will begin scanning for VRF information. If an overlap is found between different VRFs, the system will log the issue. 
 
 
 .. _admin-monitoring:
@@ -203,6 +203,9 @@ Enable sending SNMP traps
     Community
       Enter the community string (password) to use for the SNMP traps.
 
+Service monitoring
+^^^^^^^^^^^^^^^^^^^
+When selected, the monitoring tool monitors the DNS and DHCP services on their respective servers. Decide on an appropriate interval for monitoring.
 
 .. _admin-advanced:
 
@@ -239,7 +242,7 @@ Show DHCP data in subranges of scopes
    
 Automatic assignment in zone window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Ping before automatic assignment
+Ping before                                                                 automatic assignment
    When selected, the system will check if the IP address is responsive to a pin request before it is allocated to a new host through auto-assignment. If the IP address responds to the ping request, it won't be used for auto-assignment. 
    
 Automatic assignment ping timeout _____ ms
