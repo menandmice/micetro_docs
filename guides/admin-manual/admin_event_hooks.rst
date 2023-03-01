@@ -7,11 +7,12 @@
 Event Hooks
 =======================
 
-Event hooks...
+Use event hooks to monitor and run specific scripts based on certain events. This gives you the ability to intercept and modify the platform's standard behaviour.
 
 .. toctree::
   :maxdepth: 1
 
+  subnet_monitoring
   admin_schedule_scripts
   external_scripts
  
