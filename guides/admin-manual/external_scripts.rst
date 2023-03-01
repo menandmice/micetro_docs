@@ -24,9 +24,11 @@ Adding a change event
 
 2. Click **Configuration** on the menu bar at the top of the admin workspace.
 
-3. Change events are displayed in the **Change Events** section. Click **Add**.
+3. Select **Event Hooks** in the left pane. 
 
-4. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then enter the **Script name** and necessary startup parameters.
+4. Change events are displayed in the **Change Events** section. Click **Add**.
+
+5. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then enter the **Script name** and necessary startup parameters.
 
    You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&Mice Central; however, if the script is stored in a different location, the path for the script must be entered.
    
