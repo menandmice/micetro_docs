@@ -7,7 +7,7 @@
 Event Hooks
 =======================
 
-Use event hooks to monitor and run specific scripts based on certain events. This gives you the ability to intercept and modify the platform's standard behaviour.
+Use event hooks to monitor and run specific scripts based on certain events. This gives you the ability to intercept and modify the platform's standard behavior.
 
 .. toctree::
   :maxdepth: 1
