@@ -4,25 +4,31 @@
 
 .. _webapp-server-management:
 
-Server management
+Service management
 =================
 
-Managing DNS and DHCP servers in the system is done by navigating to :guilabel:`Admin`.
+DNS and DHCP servers are managed in the Service Management area of the Admin workskpace:
 
-A list of all servers configured in the system is shown by default.
+1. Select **Admin** on the top navigation bar.
 
-In the left sidebar it is possible to choose from viewing DNS servers, DHCP servers, or Appliances (if configured in the system).
+2. Click **Service Management** on the menu bar at the top of the admin workspace.
+
+
 
 .. image:: ../../images/dns-context.png
   :width: 90%
   :align: center
 
-In the right hand sidebar, the properties of a selected server is shown. Any custom fields defined will also be displayed there.
+* By default, all services configured in the system are shown.
 
-Server Management actions
+* In the left pane you can choose from viewing DNS services, DHCP services, or Appliances (if configured in the system).
+
+* In the right pane, the properties of a selected server are shown. Any custom fields defined will also be displayed there.
+
+Service Management actions
 -------------------------
 
-Any actions that can be performed on a selected server can either be accessed in the :guilabel:`Actions` above the list or by hovering over a menu at the right hand side of the list.
+Any actions that can be performed on a selected server can either be accessed in the :guilabel:`Actions` above the list or by clicking the Row menu **...** button that appears when the pointer rests on the right hand side of the row.
 
 .. csv-table::
   :header: "Action", "Description"
