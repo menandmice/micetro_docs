@@ -36,32 +36,32 @@ Subnet monitoring defaults
 The Subnet monitoring events section lists the current defaults. To change the default values, click **Set Defaults** and make the desired changes in the dialog box.
 
 Enabled
-  When checked, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, leave this checkbox unchecked and enable monitoring for the individual subnets instead by selecting the subnet and then selecting Set Subnet Monitoring from the Range menu.
+  When selected, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, clear the checkbox and enable monitoring for the individual subnets instead by selecting the subnet, and then select Set Subnet Monitoring from the Range menu.
 
 Script to invoke
-  Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to Change Events for information on the script interface and the format for calling the script.
+  Enter the path of the script to run when the number of free addresses goes below the set threshold. See :ref:`admin-change-events` for information on the script interface and the format for calling the script.
 
 Email address
   The email address that should be the recipient of notification when the number of free addresses goes below the set threshold.
 
-Dynamic Threshold
+Dynamic threshold
   Enter the threshold for the free addresses in a DHCP scope address pool.
 
-Note
-For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
+.. note::
+   For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
 
-Static Threshold.
-Enter the threshold for the free addresses in a subnet.
+Static threshold
+   Enter the threshold for the free addresses in a subnet.
 
-Only perform action once (until fixed).
-When checked, the action is performed only once when the number of free addresses goes below the threshold.
+Only perform action once (until resolved)
+   When selected, the action is performed only once when the number of free addresses goes below the threshold.
 
-Perform action when fixed.
-When checked, the action is performed when the number of free addresses is no longer below the threshold.
+Perform action when resolved
+   When selected, the action is performed when the number of free addresses is no longer below the threshold.
  
 
 .. note::
-  The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. Refer to IP Address Management—Subnet Monitoring and Utilization History (section refers to management console, needs updating) for information on how to change monitoring settings for individual subnets.
+  The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. For information on how to change monitoring settings for individual subnets, see :ref:`ipam`, Subnet Monitoring and Utilization History.
 
 Subnet Monitoring Script Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -207,22 +207,23 @@ The monitor will be executed every 10 minutes during the DHCP synchronization in
     # possible issue fixed message
     }
 
+
 Example Python Script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 The following example script, written in Python, shows how a script could return different values depending on the input of custom fields. The script is called when an object property changes and it queries for country and city using a location code. The intended use here is to mark the locations of servers.
 
 .. code-block:: Python
 
-import sys
-import xml.etree.ElementTree as ET
+   import sys
+   import xml.etree.ElementTree as ET
 
-def get_custom_field_element(custom_fields, name):
+   def get_custom_field_element(custom_fields, name):
     element = custom_fields.find(f"./customField[@customFieldName='{name}']")
     if element is None:
         raise KeyError(f"Custom property '{name}' was not found.")
     return element
 
-def get_result(root):
+   def get_result(root):
     # username variable is not used but this is how to get the username
     username = root.get('userName')
     custom_fields = root.find("./customFields")
@@ -253,10 +254,10 @@ def get_result(root):
     result.append(custom_fields)
     return result
 
-# Read all input and parse as XML
-root = ET.fromstring(sys.stdin.read())
-result = get_result(root)
+   # Read all input and parse as XML
+   root = ET.fromstring(sys.stdin.read())
+   result = get_result(root)
 
-print('<?xml version="1.0"?>')
-# This will write the generated result xml to standard output
-ET.dump(result)
+   print('<?xml version="1.0"?>')
+   # This will write the generated result xml to standard output
+   ET.dump(result)
