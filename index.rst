@@ -79,14 +79,15 @@ Table of Contents
     :maxdepth: 3
     
     guides/admin-manual/webapp_admin
-    guides/admin-manual/admin_system_settings
+    guides/admin-manual/webapp_server_management
+    guides/admin-manual/webapp_configuration
     guides/admin-manual/access_control
-    guides/admin-manual/admin_license
-    guides/admin-manual/admin_updates
     guides/admin-manual/snmp_profiles
-    guides/admin-manual/admin_custom_properties
+    guides/admin-manual/admin_license
     guides/admin-manual/admin_event_hooks
-    guides/admin-manual/admin_schedule_scripts
+    guides/admin-manual/admin_custom_properties
+    guides/admin-manual/admin_system_settings     
+    guides/admin-manual/admin_updates   
     guides/admin-manual/admin_maintenance
     guides/admin-manual/appliance_management
     guides/admin-manual/caching_appliance
