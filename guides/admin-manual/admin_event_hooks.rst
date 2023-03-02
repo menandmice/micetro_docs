@@ -13,7 +13,7 @@ Use event hooks to monitor and run specific scripts based on certain events. Thi
   :maxdepth: 1
 
   admin_subnet_monitoring_events
-  external_scripts
+  admin-change-events
   admin_schedule_scripts
   
  
