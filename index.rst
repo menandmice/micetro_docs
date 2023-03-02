@@ -80,7 +80,6 @@ Table of Contents
     
     guides/admin-manual/webapp_admin
     guides/admin-manual/webapp_server_management
-    guides/admin-manual/webapp_configuration
     guides/admin-manual/access_control
     guides/admin-manual/snmp_profiles
     guides/admin-manual/admin_license
