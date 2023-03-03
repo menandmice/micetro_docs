@@ -4,8 +4,8 @@
 
 .. _access-control:
 
-Access control
-==============
+Access Management
+=================
 
 .. important::
   Micetro 10.1 (released in September 2021) brought changes to the access management in order to make it more streamlined and easier to use, while keeping the flexibility. This page describes the new access control. If you're using an older version, or would like information on the legacy access control model, see :ref:`access-control-legacy`.
