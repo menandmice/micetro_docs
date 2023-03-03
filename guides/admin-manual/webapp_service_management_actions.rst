@@ -15,7 +15,7 @@ Adding a Service
 
 2. Click :guilabel:`Service Managment` on the menu bar at the top of the admin workspace.
 
-3. Click :guilabel:`Add Service`.
+3. Click :guilabel:`Add Service`. The Add Service wizard opens.
 
 .. image:: ../../images/add-servive-dialog.png
 
@@ -25,34 +25,49 @@ Adding a Service
 
    * This step is skipped for cloud services.
 
-For ISC BIND and ISC DHCP this step is skipped as the agent must be installed on the service host.
+   * For ISC BIND and ISC DHCP this step is skipped, as the agent must be installed on the service host.
 
-With the exception of the service types mentioned above, the agent can be installed on the Micetro Central host, on the Service host or in the case of MS DNS/DHCP, ISC Kea and Cisco IOS on a different host.  If you have already added a service of this type before, you have the opportunity to either select from existing agents or create a new agent. A single agent can be used to manage multiple connections.
+    * With the exception of the service types mentioned above, the agent can be installed on the Micetro Central host, on the Service host or in the case of MS DNS/DHCP, ISC Kea and Cisco IOS on a different host.  If you have already added a service of this type before, you have the opportunity to either select from existing agents or create a new agent. A single agent can be used to manage multiple connections.
 
 .. image:: ../../images/add-kea.png
 
 .. image:: ../../images/add-kea-2.png
 
+    * In the case of AuthServe, an agent is registered in the installation process so it’s ready to use in the existing agent list when adding the service connection to Micetro.
 
+.. image:: ../../add-authserve.png
 
+    * To register a new agent provide a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable an IP address is needed here.
 
+* Add service:
 
+    * Cloud services: Each service type has its set of credentials in addition to the optional service name.
 
+    * On-premises services
 
+        * Provide the hostname or ip address of the service/server.
+
+        * AuthServe uses channel as the connection string.  Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name which maps to localhost.  To select a different host name the syntax is '"1.2.3.4#<someseceret>"’ Refer to AuthServe documentation for details.
+
+Editing Services
+----------------
+Services that have been added are listed in the services table.  To edit, click the Edit service action in the action menu on the selected service.
+
+Other Service Actions
+----------------------
+Depending on the selected service you can edit name and/or custom properties for the service.
 Any actions that can be performed on a selected server can either be accessed in the :guilabel:`Actions` above the list or by clicking the :guilabel:`Row menu (...)` button that appears when you hover over the right hand side of a row.
 
 .. csv-table::
   :header: "Action", "Description"
   :widths: 15, 85
 
-  "Add DNS server", "Adds a DNS server to the system."
-  "Add DHCP server", "Adds a DHCP server to the system."
-  "Add appliance", "Adds an Appliance to the system."
-  "Edit DNS server", "Allows to edit the server name and server properties."
-  "Attach server", "Attaches a previously detached server."
-  "Detach server", "Detaches or disables the server. The server can be attached again for it to be part of the server synchronization again."
-  "View history", "Allows to view history for the selected server."
-  "Remove server", "Removes the selected server from the system."
+  "Attach service", "Attaches a previously detached server/service." 
+  "Detach server", "Detaches or disables the server/service. When a server is detached, it is not synchronized with Micetro and excluded from various checks. When a server is detached, it is greyed out in the service view grid. The server can be attached again for it to be part of the server synchronization again.."
+  "View history", "Allows to view history for the selected server/service."
+  "Remove service", "Removes the selected server/service from Micetro. This option is only available with the Administrator account."
+  "Synchronize", "Triggers synchronization of zones and record or scopes."
+  
 
 Server states
 -------------
