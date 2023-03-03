@@ -13,6 +13,7 @@ Service Management is the place to connect DNS/DHCP and IPAM services that you w
 2. Click :guilabel:`Service Management` on the menu bar at the top of the admin workspace.
 
    .. image:: ../../images/dns-context-10.5.png      
+ 
    
    * By default, all services configured in the system are shown.
 
@@ -25,45 +26,79 @@ Service Management is the place to connect DNS/DHCP and IPAM services that you w
 
 Depending on the user permissions and available license keys, DNS and DHCP services and functions can be disabled or hidden.
 
-For DNS and DHCP administrators, it is recommended to be members of the built-in  **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. For more information on Micetro's granular role-based access controls, see :ref:`access_control`. 
+For DNS and DHCP administrators, it is recommended to be members of the built-in  **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
 
-When not using the built-in roles, users need to be members of a role with the following permissions. Note that other permissions could be needed to manage the services fully.
+When not using the built-in roles, users need to be members of a role with the following permissions. Note that other permissions could be needed to manage the services fully. For more information on Micetro's granular role-based access controls, see :ref:`access_control`. 
 
-To manage DNS services
+* To manage DNS services:
 
-Administer DNS servers
+   **Administer DNS servers**
 
-To manage DHCP services
+* To manage DHCP services:
 
-Administer DHCP servers
+   **Administer DHCP servers**
 
-To manage cloud services
+* To manage cloud services:
 
-Access to manage clouds
+   **Access to manage clouds**
 
-To manage appliance services
+* To manage appliance services:
 
-Administer appliances
+   **Administer appliances**
 
-Service Management actions
--------------------------
+Supported Platforms
+-------------------
+Micetro supports the following DNS and DHCP platforms
 
-Any actions that can be performed on a selected server can either be accessed in the :guilabel:`Actions` above the list or by clicking the :guilabel:`Row menu (...)` button that appears when you hover over the right hand side of a row.
+* DNS
 
-.. csv-table::
-  :header: "Action", "Description"
-  :widths: 15, 85
+  * AuthServe
 
-  "Add DNS server", "Adds a DNS server to the system."
-  "Add DHCP server", "Adds a DHCP server to the system."
-  "Add appliance", "Adds an Appliance to the system."
-  "Edit DNS server", "Allows to edit the server name and server properties."
-  "Attach server", "Attaches a previously detached server."
-  "Detach server", "Detaches or disables the server. The server can be attached again for it to be part of the server synchronization again."
-  "View history", "Allows to view history for the selected server."
-  "Remove server", "Removes the selected server from the system."
+  * AWS Route 53 (cloud)
 
-Server states
--------------
+  * Azure DNS (cloud)
 
-See :ref:`server-states`.
+  * BIND
+
+  * DynDNS (cloud), (Note DynDNS is EOL March 31st 2023)
+
+  * Edge DNS (cloud)
+
+  * Microsoft DNS
+
+  * NS1 (cloud)
+
+  * Unbound (deprecated, new services cannot be added)
+
+  * Men&Mice Appliance
+
+  * Men&Mice caching Appliance
+
+* DHCP
+
+  * Cisco IOS
+
+  * ISC DHCP
+
+  * Kea
+
+  * Microsoft DHCP
+
+  * Men&Mice Appliance
+  
+Micetro agents
+--------------
+To handle communication between Micetro and the external service, an Agent is needed. Depending on the type of service and if it’s on-premises or cloud, the agent is either installed on the respective machine, on the machine running Men&Mice central or, in some cases, on any machine that is in the same domain as the DNS/DHCP servers. A single agent can handle communication with multiple servers. Further information on agents and how to install them can be found here. (Link to Micetro Agents page)
+
+.. note::
+   When managing Microsoft DNS servers on remote computers with the DNS Server Controller, some actions for static zones may not be available:
+
+   * Disable resource record
+
+   * Enable resource record
+   
+   * View and edit record comments
+
+   * Disable zone
+
+   To perform these actions, you need to install the DNS Agent on the server and use that connection when adding the server.
