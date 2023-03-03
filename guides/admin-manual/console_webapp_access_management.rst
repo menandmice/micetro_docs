@@ -4,8 +4,8 @@
 
 .. _webapp-configuration:
 
-Access Management
-*****************
+Access Management (Management Console, obsolete)
+***************************************************
 
 Access Management involves both creating groups as well as creating :ref:`acl-users` to associate with :ref:`acl-groups`.
 
