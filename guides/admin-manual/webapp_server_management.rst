@@ -98,6 +98,7 @@ To handle communication between Micetro and the external service, an Agent is ne
 Adding a Service
 ----------------
 You must have the permission to administer DNS to add a new service to Micetro. Adding a new service is either a two or three step process, depending on the type of service being added.
+
 1. Select :guilabel:`Admin` on the top navigation bar.
 
 2. Click :guilabel:`Service Managment` on the menu bar at the top of the admin workspace.
