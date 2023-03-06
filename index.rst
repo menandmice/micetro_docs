@@ -79,7 +79,6 @@ Table of Contents
     :maxdepth: 3
     
     guides/admin-manual/webapp_server_management
-    guides/admin-manual/webapp_service_management_actions
     guides/admin-manual/access_control
     guides/admin-manual/snmp_profiles
     guides/admin-manual/admin_license
