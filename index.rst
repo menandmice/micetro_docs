@@ -70,7 +70,6 @@ Table of Contents
      guides/user-manual/ipam
      guides/user-manual/folder_management
      guides/user-manual/devices
-     guides/user-manual/active_directory
      guides/user-manual/automation
 
 .. toctree::
