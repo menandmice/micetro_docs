@@ -173,8 +173,7 @@ The list of services shows an indicator of the state of the individual services 
 
 .. image:: ../../images/server-states.jpg
     :width: 80%
-    :align: center 
-
+    
 The indicators can refer to either the Server Controller (see :ref:`install-controllers`) running on the DNS/DHCP server, or the DNS/DHCP server service itself. 
 
 Use the following table for more information on the indicators:
