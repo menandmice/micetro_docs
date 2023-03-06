@@ -5,7 +5,7 @@
 .. _webapp-server-management:
 
 Service Management
-=================
+===================
 Service Management is the place to connect DNS/DHCP and IPAM services that you want to orchestrate with Micetro. These services can be hosted on-premises, on appliances, or in the cloud. Services that have been connected are listed in a table in Service Management in the admin workspace.
 
 1. Select :guilabel:`Admin` on the top navigation bar.
