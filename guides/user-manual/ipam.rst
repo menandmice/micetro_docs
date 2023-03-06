@@ -1,5 +1,5 @@
 .. meta::
-   :description: IP address management (IPAM) in the Micetro by Men&Mice Management Console
+   :description: IP address management (IPAM) in the Micetro by Men&Mice
    :keywords: IPAM, IP address management
 
 .. _ipam:
@@ -7,11 +7,11 @@
 .. toctree::
   :maxdepth: 2
 
-IP address management
-=====================
+IPAM
+=====
 
 .. note::
-  To manage IP addresses in the Management Console, see :ref:`console-ipam`.
+  To manage IP addresses in the Management Console, see :ref:`console_ipam`.
 
 Overview
 --------
@@ -85,12 +85,6 @@ To switch to a different address space:
   :width: 50%
   :align: center
 
-Moving Objects to a Different Address Space (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-See :ref:`console-address-spaces`.
-
-----
 
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
@@ -102,17 +96,6 @@ Restriction on allowed IP Addresses
 
 Automatic assignment of IP Addresses
   The system administrator can configure Micetro so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.
-
-Range Access (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set *Inherited Access* for scopes. When you open the *Access* dialog box for a scope, the dialog box has an extra section for inherited access.
-
-Checking the :guilabel:`Inherit Access` checkbox will have the selected scope inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the scope as well.
-
-Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the scope. This means that whenever the access privileges in the scope are changed, the changes will be applied of all descendants of the scope.
-
-Regarding other access settings, refer to :ref:`access-control`.
 
 .. _ipam-containers:
 
@@ -147,13 +130,12 @@ A range that exists on network boundaries (a subnet) can be converted to a Conta
 
 Viewing IP Address Ranges
 -------------------------
-
 The **Networks** context shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
 
 .. image:: ../../images/Networks-Micetro.png
   :width: 90%
   :align: center
-
+|
 In the filtering sidebar, click on :guilabel:`IP Ranges`.
 
 You can choose between a flat and a hierarchical view for the Address Ranges scopes by selecting an appropriate button on the top right of the grid.
@@ -165,7 +147,7 @@ While viewing the IP ranges, the :ref:`webapp-quickfilter` is available. When us
 .. image:: ../../images/networks-tree-filter-Micetro.png
   :width: 90%
   :align: center
-
+|
 New Networks
 ------------
 
@@ -301,28 +283,6 @@ Removing a DNS Host
 
 1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
 
-Moving IP Address Information (Management Console)
---------------------------------------------------
-
-IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained and the associated DNS records are updated.
-
-To move a IP Address information, do the following:
-
-1. Locate the IP Address Range containing the IP Address.
-
-2. Double-click on it to display the list window.
-
-3. Find the applicable IP Address.
-
-4. Right-click and, from the shortcut menu, select :guilabel:`Move`.
-
-.. image:: ../../images/console-ipam-move.png
-  :width: 60%
-  :align: center
-
-5. In the *Move IP Address Information* dialog box, type the new IP Address.
-
-6. Click :guilabel:`OK`. The IP Address information is moved to the new IP Address.
 
 .. _split-range-wizard:
 
@@ -348,19 +308,6 @@ This wizard allows you to create multiple subranges from an existing range. The 
 .. note::
   In the web application, the Split Range and Allocate Range wizards are merged together. For information on these wizards in the Management Console, see :ref:`console-split-range` and :ref:`console-allocate-ranges`.
 
-Update Reverse Records Wizard (Management Console)
---------------------------------------------------
-
-This wizard allows you to create reverse DNS zones for selected ranges.
-
-.. note::
-  The wizard can only be used on ranges that exist on subnet boundaries and contain 254 or more IP Addresses (/24 or larger)
-
-1. From the object list, click on :guilabel:`IP Address Ranges`.
-
-2. From the list of ranges displayed, select the ranges, right-click and, from the shortcut menu, select :guilabel:`Update Reverse Records`. The *Reverse zone generation wizard* displays.
-
-3. For each of the resulting screens, make a selection/entry and move through the wizard.
 
 Join Ranges
 -----------
@@ -389,21 +336,6 @@ Description
 
 4. Click :guilabel:`Join`.
 
-Select Parent (Management Console)
-----------------------------------
-
-.. image:: ../../images/console-ipam-select-parent.png
-  :width: 70%
-  :align: center
-
-This function allows you to view the hierarchy for subnets when filtering is active.
-
-1. Locate the subrange for which you want to view the hierarchy.
-
-2. Right-click on the subrange and, from the shortcut menu, selects :guilabel:`Parent`. All available parent(s) are shown.
-
-3. Click on the parent and the system automatically moves you to that parent range.
-
 Host Discovery
 --------------
 
@@ -416,15 +348,15 @@ Configuring Host Discovery Using Ping
 
 2. From the ellipsis menu select :guilabel:`Set discovery schedule` or use :menuselection:`Actions --> Set discovery schedule`.
 
-3. Check the :guilabel:`Enable` option.
+3. Select the :guilabel:`Enable` option.
 
-  Frequency
+  * Frequency: 
     Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
 
-  Every
+  * Every: 
     Enter the frequency unit for discovery (e.g. days, weeks, etc.).
 
-  Next run
+  * Next run: 
     Select the start date and time.
 
 4. Click :guilabel:`Save`.
@@ -472,97 +404,160 @@ Adds or removes the currently selected IP Address Range from folders.
 
 2. From the ellipsis menu, select :guilabel:`Set folder` and add or remove the range from folders.
 
-Subnet Monitoring and Utilization History (Management Console)
---------------------------------------------------------------
 
-The Subnet Monitoring is used to monitor the free addresses in subnets and DHCP address pools and perform an action if the number of free addresses goes below a user-definable threshold. In addition, the utilization history for the monitored subnets and scopes is collected and you can view and export the historical utilization data.
+AD Sites and Subnets
+====================
 
-When Subnet Monitoring is enabled a global monitoring setting is applied to all subnets in the system. You can change the subnet monitoring settings for individual subnets and scopes, for example if you want to disable monitoring for a certain subnet or if you want to use a different threshold for the free addresses in a DHCP scope.  NOTE:  Only DHCP scopes that are enabled are monitored. Disabled scopes are ignored.
+Overview
+--------
+
+Micetro allows administrators to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites and add, remove, and move subnets between the sites.
 
 .. note::
-  The Subnet Monitoring needs to be enabled in the System Settings before continuing. See :ref:`admin-monitoring`.
+  AD sites and subnets integration is only available when Men&Mice Central is running on a Windows server, and it is enabled by default. See :ref:`admin-general`.
 
-Set Subnet Monitoring
+  AD sites are only assigned to and visible in the ``Default`` address space.
+
+  To add/remove a subnet to/from a site, the user must be assigned to a role with the *Edit range properties* permission set and the role applied to the object. See :ref:`access-control` for more details.
+
+AD sites and subnets are displayed in the :guilabel:`IPAM` context:
+
+* subnets in the main :menuselection:`IPAM --> Networks` grid, along with all other subnets in Micetro (if any). The *AD Site* column displays the site the subnet belongs to.
+
+* sites in a separate :menuselection:`IPAM --> AD sites` grid, grouped by Forests. The Inspector box on the right displays the subnets (if any) belonging to the selected AD site.
+
+AD Forests
+----------
+
+To manage sites and subnets, Micetro needs to be configured with AD Forest(s).
+
+.. note::
+  You can manage sites and subnets from multiple forests.
+
+Adding an AD Forest
+^^^^^^^^^^^^^^^^^^^
+
+1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+
+2. Use the :guilabel:`Add Forest` action from the top bar. A dialog box displays.
+
+.. image:: ../../images/add-ad-forest.png
+  :width: 60%
+  :align: center
+
+Use same Global Catalog as the Men&Mice Central server
+  If checked, Micetro will use the same Global Catalog server as the Men&Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server's FQDN or IP address in the **Global Catalog Server** field.
+
+Global Catalog Server
+  If you want to specify a Global Catalog server, enter the server's FQDN or IP address in this field. (To unlock this field, the :guilabel:`Use same Global Catalog as the Men&Mice Central server` checkbox needs to be unchecked.)
+
+Use the same credentials as the Men&Mice Central server
+  If checked, Micetro uses the same credentials as the Men&Mice Central server when accessing the site information.
+
+User and Password
+  If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. (To unlock these fields, the :guilabel:`Use the same credentials as the Men&Mice Central server` checkbox needs to be unchecked.)
+
+Set as read only
+  If checked, users will be able to display data from Active Directory, but unable to make any modifications.
+
+3. Click :guilabel:`OK` to save the changes. The forest is added and the sites belonging to the forest are displayed.
+
+Edit AD Forest
+^^^^^^^^^^^^^^
+
+To edit an existing AD Forest (to, for example, change the read-only status):
+
+1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+
+2. Use the :guilabel:`Edit AD Forest` action from the top bar or the ellipsis menu.
+
+3. Update the settings in the dialog box.
+
+4. Click :guilabel:`OK` to save your changes.
+
+Removing an AD Forest
 ^^^^^^^^^^^^^^^^^^^^^
 
-To change the monitoring settings for a subnet:
+To remove an AD Forest from Micetro:
 
-1. Select the subnet(s) for which you want to change the monitoring setting.
+1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
 
-.. image:: ../../images/console-ipam-subnet-monitoring.png
-  :width: 50%
-  :align: center
+2. Select the AD Forest(s) you want to remove.
 
-2. Right-click and, from the shortcut menu, select :guilabel:`Set Subnet Monitoring`. The *Subnet Monitoring* dialog box displays.
+2. Use the :guilabel:`Remove AD Forest` action from the top bar or the ellipsis menu.
 
-Enabled
-  When checked, the subnet will be monitored.
+3. Click :guilabel:`OK` in the confirmation box to remove the Forest(s).
 
-Script to invoke
-    Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
+Reloading the Sites in an AD Forest
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-E-mail addresses
-  Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
+Data from AD Forests is synchronized by Men&Mice Central regularly. To manually synchronize forests and reload the data for sites and subnets:
 
-Dynamic Threshold
-  Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
+1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
 
-Static Threshold
-  Enter the threshold for the free addresses in a subnet.
+2. Select the AD Forest(s) you want to synchronize.
 
-Only perform action once (until fixed)
-  When checked, the action is performed only once when the number of free addresses goes below the threshold.
+3. Use the :guilabel:`Synchronize` action from the top bar.
 
-Perform action when fixed
-  When checked, the action is performed when the number of free addresses is no longer below the threshold.
+3. Click :guilabel:`OK` in the confirmation box to synchronize the Forests.
 
-3. Click :guilabel:`OK` to confirm your settings.
+AD Subnets
+----------
 
-Removing Subnet Monitoring
+View subnets in a site
+^^^^^^^^^^^^^^^^^^^^^^
+
+To view subnets within a specific site:
+
+1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+
+2. Select the AD Forest the site is in, or use the :ref:`webapp-quick-filter` to find it by name.
+
+3. Use the :guilabel:`View networks` action with the site selected from the top bar or the ellipsis menu.
+
+This will open the :menuselection:`IPAM --> Networks` context with a filter applied to show all subnets that belong to the site.
+
+.. note::
+  You can also use the :guilabel:`-> View` button in the Inspector of the selected AD site to open the subnet view.
+
+Moving subnets between AD sites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To add subnet(s) to a site, or move between sites:
+
+1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
+
+2. Use the :guilabel:`Set AD Site` action from the top bar or the ellipsis menu.
+
+3. Set the (new) AD Site in the dropdown and click :guilabel:`Save`.
+
+.. note::
+  Child subnets cannot be moved to a different site than the parent subnet unless the ``Enforce site inheritance`` checkbox is unchecked in the System Settings dialog box.
+
+  Subnets whose AD site settings are inherited from a parent range will have a ``<AD Site Name> (inherited)`` notation added.
+
+  See :ref:`admin-general`.
+
+Remove subnet from AD site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can clear the monitor setting for individual subnets if you want to use the global subnet monitoring setting. To clear a monitoring setting for a subnet:
+1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
 
-1. Select the subnet(s) for which you want to clear the monitoring setting.
+2. Use the :guilabel:`Remove from AD Site` action from the top bar or the ellipsis menu.
 
-2. Right-click and, from the shortcut menu, select :guilabel:`Remove Subnet Monitoring`. The custom subnet monitoring setting is removed and the global monitoring setting is used instead.
+3. Click :guilabel:`Yes` to confirm the removal.
 
-View Utilization History (Management Console)
----------------------------------------------
+Subnets outside of sites
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can view the utilization history for a subnet or scope that is being monitored.
+To view subnets that don't belong to any AD site:
 
-To view the utilization history:
+1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
 
-1. Select the subnet for which you want to view the utilization history.
+2. Click on the ``Flat view`` button (see :ref:`webapp-quick-filter`) next to the Quick Filter to change the view.
 
-2. Right-click and, from the shortcut menu, select :guilabel:`View Address Utilization`. The *Address Utilization* window displays.
+3. Sort the IP address ranges by the **AD Site** column in *ascending* order:
 
-.. image:: ../../images/console-ipam-utilization-history.png
-  :width: 80%
+.. image:: ../../images/subnets-outside-sites.png
+  :width: 90%
   :align: center
-
-* The left drop-down box allows you to choose the time period to view. You can choose between 30 days, 7 days or 24 hours.
-
-* Use the middle drop-down box to choose whether you want to view utilization by the actual address count or by percentage.
-
-* If you are viewing the utilization of a scope, a dropdown box is displayed where you can choose whether you want to view the dynamic part of the scope (the address pool(s)) or the static part of the scope.
-
-* The blue Addresses line shows the number of used addresses in the subnet.
-
-* The red Threshold line shows the utilization threshold that is currently in effect for the subnet.
-
-* If the 30 day or 24 hour view is active, a gray 'envelope' is shown around the Addresses line. This shows the maximum and minimum utilization of addresses during the time period.
-
-* Moving the mouse cursor over the graph shows the actual data points, and if the 30 day or 24 hour view is active, the minimum, average and maximum values are shown for each data point.
-
-* You can view the address utilization for a superscope. When viewing the address utilization for a superscope, the total number of addresses in all of the scopes in the superscope are used for the utilization calculation.
-
-Export Utilization History
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can export the utilization history for one or more subnets to the Clipboard or into a CSV file.
-
-* To export the utilization history for a single subnet from the :guilabel:`Address Utilization Window`, right-click the graph and select the time period you want to export. The data is copied to the Clipboard.
-
-* To export the utilization for multiple subnets, select the subnets, right-click and from the shortcut menu select :guilabel:`Export Address Utilization`. The data is saved in a CSV file.
