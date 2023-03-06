@@ -199,12 +199,15 @@ You can set options for multiple servers by selecting all of the servers for whi
 .. note::
   To manage DHCP server option in the Management Console, see :ref:`console-dhcp-options`.
 
-Properties (Management Console)
--------------------------------
+Properties
+-----------
+DHCP server properties can be managed on the Service Management page.
 
-1. From the Object list, expand the DHCP Servers list.
+1. In the list of DHCP Services, select the appropriate DHCP service.
 
-2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-poperties` or :ref:`console-cisco-dhcp-properties`.
+2. Click :guilabel:`Action` at the top of the view, and then select :guilabel:`Edit configuration` on the menu. The *Edit Configuration* dialog box for the selected service opens. 
+
+Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-poperties` or :ref:`console-cisco-dhcp-properties`.
 
 .. _kea-advanced-options:
 
