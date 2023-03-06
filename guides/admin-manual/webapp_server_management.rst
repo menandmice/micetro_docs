@@ -116,6 +116,8 @@ Adding a Service
 3. Click :guilabel:`Add Service`. The Add Service wizard opens.
 
     .. image:: ../../images/add-servive-dialog.png
+      :width: 65%
+      :align: center 
 
 4. Choose the platform you want to use. You'll see a list of options to choose from, based on your license keys, DNS and IPAM. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to search for the right service.
 
@@ -138,7 +140,6 @@ Adding a Service
     * To register a new agent, click the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
 
 6. Add service:
-
   * Cloud services: Each service type has its set of credentials in addition to the optional service name.
 
   * On-premises services
