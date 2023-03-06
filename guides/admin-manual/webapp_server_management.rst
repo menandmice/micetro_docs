@@ -30,21 +30,13 @@ For DNS and DHCP administrators, it is recommended to be members of the built-in
 
 When not using the built-in roles, users need to be members of a role with the following permissions. Note that other permissions could be needed to manage the services fully. For more information on Micetro's granular role-based access controls, see :ref:`access_control`. 
 
-* To manage DNS services:
+* To manage DNS services: **Administer DNS servers**
 
-   **Administer DNS servers**
+* To manage DHCP services: **Administer DHCP servers**
 
-* To manage DHCP services:
+* To manage cloud services: **Access to manage clouds**
 
-   **Administer DHCP servers**
-
-* To manage cloud services:
-
-   **Access to manage clouds**
-
-* To manage appliance services:
-
-   **Administer appliances**
+* To manage appliance services: **Administer appliances**
 
 Supported Platforms
 -------------------
@@ -103,12 +95,9 @@ To handle communication between Micetro and the external service, an Agent is ne
 
    To perform these actions, you need to install the DNS Agent on the server and use that connection when adding the server.
    
-Service Management Actions
----------------------------
-You must have the permission to administer DNS to add a new service to Micetro. Adding a new service is either a two or three step process, depending on the type of service being added. 
-
 Adding a Service
-^^^^^^^^^^^^^^^^
+----------------
+You must have the permission to administer DNS to add a new service to Micetro. Adding a new service is either a two or three step process, depending on the type of service being added.
 1. Select :guilabel:`Admin` on the top navigation bar.
 
 2. Click :guilabel:`Service Managment` on the menu bar at the top of the admin workspace.
@@ -119,7 +108,6 @@ Adding a Service
       :width: 65%
 
 4. Choose the platform you want to use. You'll see a list of options to choose from, based on your license keys, DNS and IPAM. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to search for the right service.
-
 5. Select an agent: 
 
     .. image:: ../../images/add-kea.png
@@ -136,8 +124,7 @@ Adding a Service
    |
 
     * In the case of AuthServe, you can select from a list of available agents that were registered in the installation process.
-    |
-    
+        
     .. image:: ../../images/add-authserve.png
          :width: 65%
 
@@ -153,7 +140,7 @@ Adding a Service
     * AuthServe uses channel as the connection string. Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name which maps to localhost.  To select a different host name the syntax is '"1.2.3.4#<someseceret>"’. Refer to AuthServe documentation for details.
 
 Editing Services
-^^^^^^^^^^^^^^^^
+-----------------
 Depending on the service, you can change the name and/or custom properties for the service. For example, if you need to refer to the service by another name or if you are connecting to the service by an IP Address and the IP Address has changed. 
 
 To edit a service:
@@ -165,7 +152,7 @@ To edit a service:
 3. Make the necessary changes. Click :guilabel:`Confirm` to save the changes.
 
 Other Service Actions
-^^^^^^^^^^^^^^^^^^^^^
+----------------------
 Depending on the selected service you can edit name and/or custom properties for the service.
 Any actions that can be performed on a selected server can either be accessed in the :guilabel:`Actions` above the list or by clicking the :guilabel:`Row menu (...)` button that appears when you hover over the right hand side of a row.
 
