@@ -117,13 +117,13 @@ Adding a Service
 
     .. image:: ../../images/add-servive-dialog.png
       :width: 65%
-      :align: center 
 
 4. Choose the platform you want to use. You'll see a list of options to choose from, based on your license keys, DNS and IPAM. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to search for the right service.
 
 5. Select an agent: 
 
     .. image:: ../../images/add-kea.png
+      :width: 65%
 
    * This step is skipped for cloud services.
 
@@ -132,10 +132,14 @@ Adding a Service
    * With the exception of the service types mentioned above, the agent can be installed on the Micetro Central host, on the Service host, or in the case of MS DNS/DHCP, ISC Kea, and Cisco IOS on a different host. If you have already added a service of this type before, you have the opportunity to either select from existing agents or create a new agent. A single agent can be used to manage multiple connections.
 
     .. image:: ../../images/add-kea-2.png
+         :width: 65%
+   |
 
     * In the case of AuthServe, you can select from a list of available agents that were registered in the installation process.
+    |
     
     .. image:: ../../images/add-authserve.png
+         :width: 65%
 
     * To register a new agent, click the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
 
