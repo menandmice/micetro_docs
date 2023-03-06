@@ -7,7 +7,7 @@
 
 Service Management Actions
 =============================
-You must be logged in as a user with privileges to administer DNS in order to add a new service to Micetro. Adding a new service is either a two or three step process depending on the type of service being added. 
+You must have the permission to administer DNS to add a new service to Micetro. Adding a new service is either a two or three step process, depending on the type of service being added. 
 
 Adding a Service
 ----------------
@@ -17,41 +17,49 @@ Adding a Service
 
 3. Click :guilabel:`Add Service`. The Add Service wizard opens.
 
-.. image:: ../../images/add-servive-dialog.png
+    .. image:: ../../images/add-servive-dialog.png
 
-4. Choose the platform you want to use. You'll see a list of options to choose from, based on your license keys, DNS and IPAM. You can use the DNS, DHCP, and IPAM filters at the top to narrow down the list. You can also use the search box to search for the right service.
+4. Choose the platform you want to use. You'll see a list of options to choose from, based on your license keys, DNS and IPAM. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to search for the right service.
 
 5. Select an agent: 
+
+    .. image:: ../../images/add-kea.png
 
    * This step is skipped for cloud services.
 
    * For ISC BIND and ISC DHCP this step is skipped, as the agent must be installed on the service host.
 
-    * With the exception of the service types mentioned above, the agent can be installed on the Micetro Central host, on the Service host or in the case of MS DNS/DHCP, ISC Kea and Cisco IOS on a different host.  If you have already added a service of this type before, you have the opportunity to either select from existing agents or create a new agent. A single agent can be used to manage multiple connections.
+   * With the exception of the service types mentioned above, the agent can be installed on the Micetro Central host, on the Service host, or in the case of MS DNS/DHCP, ISC Kea, and Cisco IOS on a different host. If you have already added a service of this type before, you have the opportunity to either select from existing agents or create a new agent. A single agent can be used to manage multiple connections.
 
-.. image:: ../../images/add-kea.png
+    .. image:: ../../images/add-kea-2.png
 
-.. image:: ../../images/add-kea-2.png
+    * In the case of AuthServe, you can select from a list of available agents that were registered in the installation process.
+    
+    .. image:: ../../images/add-authserve.png
 
-    * In the case of AuthServe, an agent is registered in the installation process so it’s ready to use in the existing agent list when adding the service connection to Micetro.
+    * To register a new agent, click the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
 
-.. image:: ../../add-authserve.png
+6. Add service:
 
-    * To register a new agent provide a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable an IP address is needed here.
+  * Cloud services: Each service type has its set of credentials in addition to the optional service name.
 
-* Add service:
+  * On-premises services
 
-    * Cloud services: Each service type has its set of credentials in addition to the optional service name.
+    * Provide the hostname or IP address of the service/server.
 
-    * On-premises services
-
-        * Provide the hostname or ip address of the service/server.
-
-        * AuthServe uses channel as the connection string.  Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name which maps to localhost.  To select a different host name the syntax is '"1.2.3.4#<someseceret>"’ Refer to AuthServe documentation for details.
+    * AuthServe uses channel as the connection string. Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name which maps to localhost.  To select a different host name the syntax is '"1.2.3.4#<someseceret>"’. Refer to AuthServe documentation for details.
 
 Editing Services
 ----------------
-Services that have been added are listed in the services table.  To edit, click the Edit service action in the action menu on the selected service.
+Depending on the service, you can change the name and/or custom properties for the service. For example, if you need to refer to the service by another name or if you are connecting to the service by an IP Address and the IP Address has changed. 
+
+To edit a service:
+
+1. Locate the service you want to edit in the **Service Management** area. 
+
+2. Double click the service or select it, and then select :guilabel:`Edit service` on the :guilabel:`Action` menu. 
+
+3. Make the necessary changes. Click :guilabel:`Confirm` to save the changes.
 
 Other Service Actions
 ----------------------
