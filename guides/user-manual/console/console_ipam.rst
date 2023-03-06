@@ -101,7 +101,7 @@ When you open the Access dialog box for a Container, the dialog box has an extra
 
 * Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
 
-Regarding other access settings, refer to :ref:`global-access`.
+Regarding other access settings, refer to :ref:`access-control`.
 
 Container Utilization
 ^^^^^^^^^^^^^^^^^^^^^
