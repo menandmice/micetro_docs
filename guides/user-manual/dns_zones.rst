@@ -13,9 +13,9 @@ DNS zones
 Overview
 --------
 
-The commands associated with zone management (located in the *DNS* context of the Web Application or the :menuselection:`Zone menu` in the Management Console) are only available when a specific DNS server or DNS zone is selected. In other words, actions for the DNS zone are only available when DNS zones are listed. The default for the *DNS* context is displaying all zones. (In the Management Console, when DNS Zones is selected in the Object Browser, all DNS zones are listed on all servers.) However, when a particular name server is selected, only the zones being managed on that server are listed.
+The commands associated with zone management (located on the *DNS* page) are only available when a specific DNS server or DNS zone is selected. In other words, actions for the DNS zone are only available when DNS zones are listed. The default for the *DNS* context is displaying all zones. When a particular name server is selected, only the zones being managed on that server are listed.
 
-The Web Application's *DNS* context displays zone types in the second column.
+The *DNS* page shows zone types in the second column.
 
 .. csv-table::
   :header: "Indicator", "Description"
@@ -28,23 +28,20 @@ The Web Application's *DNS* context displays zone types in the second column.
   "Slave", "A slave zone. The corresponding master zone is displayed in the Inspector window on the left."
   "Forward", "A forward zone. The corresponding master zone is displayed in the Inspector window on the left."
 
-.. note::
-  For DNS zone indicators in the Management Console, see :ref:`console-dns-zone-icons`.
-
 Zone Viewing
 ------------
 
 All Zones on All Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use the Web Application to view all of the existing DNS zones at once, regardless of the server to which they belong.
+You view all of the existing DNS zones at once, regardless of the server to which they belong.
 
-In the Web Application, click the :guilabel:`DNS` on the top. This causes all existing zones (to which you have access) to appear in the grid.
+Click :guilabel:`DNS` on the top. This causes all existing zones (to which you have access) to appear in the grid.
 
 Single Name Server Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the filtering sidebar or through :menuselection:`Admin --> Server Management` of the Web Application, locate the DNS server that owns the zones you want to view and click on it. This will list all zones on the server. (In *Server Management* when a server is selected, select :guilabel:`Show zones` from the ellipsis menu to display all zones residing on the server.)
+In the filtering sidebar or through :menuselection:`Admin --> Service Management`, locate the DNS server that owns the zones you want to view, and then click on it. This will list all zones on the server. (In *Service Management* when a server is selected, select :guilabel:`Show zones` from the ellipsis menu to display all zones residing on the server.)
 
 .. image:: ../../images/DNS-single-server-zones-Micetro.png
   :width: 80%
@@ -67,7 +64,7 @@ To view the contents of a particular zone, double-click on it. This opens the Zo
 SOA
 ^^^
 
-Since the SOA record is seldom modified after it is created, the Inspector windows has a built-in control to allow you to hide the SOA data from view. On the right edge of the Inspector, next to the 'edit' button, you'll notice the open/close button (:guilabel:`>` and :guilabel:`v`, respectively) to show/hide the SOA information.
+Since the SOA record is seldom modified after it is created, the Inspector window has a built-in control that allows you to hide the SOA data from view. On the right edge of the Inspector, next to the :guilabel:`Edit` button, you'll notice the open/close button (:guilabel:`>` and :guilabel:`v`, respectively) to show/hide the SOA information.
 
 SOA Fields
 """"""""""
@@ -83,52 +80,6 @@ SOA Fields
   "Retry", "This determines the period that a slave server will wait before trying to re-contact the master zone (in the event that an earlier contact attempt is unsuccessful). The default value is 7200 seconds, or once every 2 hours."
   "Expire", "This value determines how long a slave server will keep serving a zone after its last successful contact to the master name server. Once the zone has expired, the slave stops giving information about the zone because it is deemed unreliable. The default expiration period is 604800 seconds, or 1 week."
   "Neg. caching", "This field is only available when connected to a BIND server. This value specifies how long a server will retain (cache) the knowledge that something does not exist. The default value is 86400 seconds, 24 hours."
-
-Zone Analysis (Management Console)
-----------------------------------
-
-.. note::
-  Importing DNS data into the Web Application (see :ref:`webapp-import-dns-records`) will automatically validate the data.
-
-The DNS Expert Zone Analysis engine allows zones to be analyzed for correctness in the Management Console.
-
-To analyze a zone, do any of the following:
-
-* Right-click on the zone you want to analyze, and from the shortcut menu select :menuselection:`Analyze`.
-
-* Choose :menuselection:`Zone --> Analyze`
-
-* Open the zone and click the Analyze button on the toolbar. |analyze|
-
-The results of the zone analysis are shown in a new window:
-
-.. image:: ../../images/console-dns-zones-zone-analysis.png
-  :width: 80%
-  :align: center
-
-Reanalyze
-  To perform the analysis again, press F5 or click the :guilabel:`Analyze` button.
-
-Filtering
-  It is possible to filter out messages of a certain type. When the checkbox :guilabel:`Don't show filtered messages` is selected, the filtering is active and these messages are not shown in the message list. Deselecting the checkbox disables the filtering and all messages are shown in the message list.
-
-Quick Filter
-  The Quick filter works the same as it does in other windows.
-
-Messages
-  The message list shows the results of the zone analysis. Messages are either warnings or errors (as indicated by the icon next to the message). Selecting a message will display detailed information about the message at the bottom of the window.
-
-Fix
-  When the application can fix an error, the :guilabel:`Fix` menu item becomes available. Selecting this menu item will display more information about the fix for the error.
-
-Filter out messages of this type
-  Selecting this item, will suppress the display of the selected error type unless the :guilabel:`Don't show filtered messages` checkbox is unselected. NOTE: This setting is global and it is applied to all subsequent analysis in all zones. If you right-click a filtered message, this item will read as Don't filter out messages of this type.
-
-  .. image:: ../../images/console-dns-zones-zone-analysis-filter.png
-    :width: 60%
-    :align: center
-
-If the zone you are analyzing is open, an icon with an exclamation mark is shown in the bottom left corner of the window. Clicking this icon will display the errors found during the analysis in a list at the bottom of the Zone tab. Closing the analysis window will clear the error message list in the Zone tab.
 
 Access/Access for Non-Master for Zone(s)
 ----------------------------------------
