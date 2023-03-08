@@ -70,6 +70,7 @@ Table of Contents
      guides/user-manual/ipam
      guides/user-manual/folder_management
      guides/user-manual/devices
+     guides/user-manual/console
      guides/user-manual/automation
 
 .. toctree::
