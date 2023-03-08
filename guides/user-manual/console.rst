@@ -78,3 +78,4 @@ Console functions
   console/console_quickfilter
   console_actions
   console_health_bar
+  devices
