@@ -64,12 +64,10 @@ Table of Contents
      :caption: Micetro User Guide
      :maxdepth: 3
 
-     guides/user-manual/ui
      guides/user-manual/dns
      guides/user-manual/dhcp
      guides/user-manual/ipam
-     guides/user-manual/folder_management
-     guides/user-manual/devices
+     guides/user-manual/folder_management     
      guides/user-manual/console
      guides/user-manual/automation
 
