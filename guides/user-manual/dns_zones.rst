@@ -10,6 +10,9 @@ DNS zones
 .. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
 .. |analyze| image:: ../../images/console-analyze.png
 
+.. note::
+   This information applies to the web interface. For information about DNS zone management in the M&M Management Console, see :ref:`console-dns-zones`.
+
 Overview
 --------
 
@@ -89,94 +92,31 @@ Refer to :ref:`access-control`.
 Delete zone
 -----------
 
-Use this command to delete a zone from one or more servers. Before using this command, select the zone you want to delete from the Management Console; the Delete Zone dialog box displays and shows a list of servers on which that zone resides. By default, the zone will be removed from all servers (i.e., all servers are checked). If you want to keep it on one or more servers, clear the checkbox next to that server. Click the Delete button to remove the zone from the selected servers.
+Use this command to delete a zone from one or more servers. 
 
-1. Select the zone(s) to delete.
+1. Select the zone(s) you want to delete.
 
-2. From the ellipsis menu select :guilabel:`Delete zone` or use :menuselection:`Actions --> Delete zone`. A confirmation dialog appears.
+2. From the ellipsis menu select :guilabel:`Delete zone` or use :menuselection:`Actions --> Delete zone`. The Delete Zone dialog box opens, showing each zone you selected and a list of servers that currently serve that zone. The zone(s) you selected will be deleted from every server that is checked on this list. To keep the zone on a particular server, clear the checkbox next to that server.
 
-3. To delete the zone(s) from the selected servers, click the :guilabel:`Yes` button. The zone is removed from the servers.
+3. To delete the zone(s) from the selected servers, click the :guilabel:`Delete` button. The zone is removed from the servers.
 
-.. warning::
-  The *Delete Zone* dialog, showing each zone you selected and a list of servers that currently serve that zone, is only available in the Management Console. There you are able to keep the zone on particular server(s) by clearing the checkbox next to that server(s).
 
-.. note::
-  See :ref:`console-delete-dns-zone` for the zone deletion operation in the Management Console.
+Migrating Zones
+-----------------
 
-Disable/Enable (Management Console)
------------------------------------
+In the Zone Migration Wizard you can migrate one or more zones from one server to another, including all data in the zone.
 
-.. note::
-  This function is only available in the Management Console.
-
-Disabling a Zone(s)
-^^^^^^^^^^^^^^^^^^^
-
-This function is only available for static master zones that have no slave zones. (For other types of zones (dynamic or AD integrated) the command is not visible. The Disable command deactivates the entire zone without deleting it. When disabled, the server ignores the contents of the zone. The zone can still be edited while disabled, but changes will not take effect until the zone is re-enabled.
-
-1. In the Object Section, select :guilabel:`DNS Zones` to view all zones, or under the DNS Servers object, select the server containing the zone you want to disable. This displays the zones in the Object List.
-
-2. Select the zone(s) that you want to disable. To select more than one zone, hold down the Ctrl key while making your selections.
-
-3. From the menu bar, select :menuselection:`Zone --> Disable Zone`. A dialog box prompts you to confirm your decision.
-
-4. To disable the selected zone(s), click the :guilabel:`Yes` button. The zone becomes disabled.
-
-Zones that are disabled appear faded in the Object List. They are still fully accessible and editable, but they will not be active until you re-enable them.
-
-Enabling a Zone(s)
-^^^^^^^^^^^^^^^^^^
-
-Use the following procedure to re-activate a zone that has been disabled.
-
-1. In the Object List, locate the zone(s) that you want to re-enable. To select more than one disabled zone, hold down the Ctrl key while making your selections.
-
-2. From the menu bar, select :menuselection:`Zone --> Enable Zone`. A dialog box prompts you to confirm your decision.
-
-3. To enable the zone(s), click the :guilabel:`Yes` button. The Object List refreshes itself and shows that the zone(s) has been restored to active status.
-
-Duplicate (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. tip::
-  In the Web Application, you can duplicate DNS zones by selecting :guilabel:`Migrate zone` from the ellipsis menu, or using :menuselection:`Actions --> Migrate zone` and leaving the *Remove original zone* checkbox **unchecked**.
-
-In the Management Console, use the following procedure to create a new zone that is an exact duplicate of an existing one, including master and slave servers, zone data and zone options.
-
-1. In the Object Section, select either :guilabel:`DNS Zones`, or select a specific server under the DNS Servers object. This lists the zones in the Object List.
-
-2. In the Object List, right-click on the zone you want to duplicate and select :guilabel:`Duplicate` from the popup menu. The *Create Zone* dialog box displays.
-
-3. Enter a name for the new zone in the **Zone Name** field.
-
-4. Click the :guilabel:`Create` button. A new zone is created with the same records, Master server, and Slave servers as the original.
-
-Zone Migration Wizard
----------------------
-
-The *Zone Migration Wizard* allows users to migrate one or more zones from one server to another, including all data in the zone.
-
-To migrate a zone, do the following:
+To migrate a zone:
 
 1. Select one or more zones.
 
-2. Select the ellipsis menu's :guilabel:`Migrate Zone` or use :menuselection:`Action --> Migrate zone`. The *Migrate Zone(s) Wizard* dialog box displays.
+2. On the ellipsis menu, select :guilabel:`Migrate Zone` or use :menuselection:`Action --> Migrate zone`. The Migrate Zone(s) Wizard dialog box opens.
 
-3. For each of the resulting screens, make a selection/entry and move through the wizard.
+3. Enter or select the necessary inormation.
 
-.. note::
-  For DNS zone migration in the Management Console, see :ref:`console-dns-migration-wizard`.
+.. tip::
+  You can duplicate DNS zones by leaving the **Remove original zone** checkbox unselected.
 
-View Related Servers (Management Console)
------------------------------------------
-
-This option is used to see on which servers a copy of a particular zone resides.
-
-1. In the Manager window, select one or more zones.
-
-2. Right-click and, from the shortcut menu, select :guilabel:`Related Servers`. A dialog box with information on where a copy of the zone resides displays.
-
-3. Click :guilabel:`OK` to close the dialog box.
 
 .. _ad-preferred-servers:
 
@@ -188,361 +128,65 @@ Edit Preferred Servers
 
 DNS administrators can specify the server to use when opening an AD integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable.
 
-1. Navigate to the :menuselection:`DNS` context and select the :guilabel:`AD Integrated` filter from the sidebar on the left.
+1. Navigate to the :menuselection:`DNS` page and select the :guilabel:`AD Integrated` filter from the sidebar on the left.
 
 2. Select the zone(s) you'd like to set preferred servers for.
 
-2. Use :guilabel:`Action --> Edit preferred server` from the top bar or the ellipsis menu.
+3. Use :guilabel:`Action --> Edit preferred server` from the top bar or the ellipsis menu.
 
-3. Change the order of your servers into the preferred order. The server on the top of the list is tried first, then - if that server is unavailable - the second, and so on.
+4. Change the order of your servers into the preferred order. The server on the top of the list is tried first, then - if that server is unavailable - the second, and so on.
 
-3. Click :guilabel:`Save`.
+5. Click :guilabel:`Save`.
 
 .. warning::
   If you selected multiple zones, they might have different settings for preferred servers. Saving the configuration will overwrite the previous settings on all selected zones.
 
-.. note::
-  To manage preferred servers for an AD integrated zone in the Management Console, see :ref:`console-ad-preferred-servers`.
-
-Export (Management Console)
----------------------------
-
-Use this command to export DNS zone files to standard format.
-
-1. Select the zone you want to export and open the :guilabel:`Zone` tab.
-
-2. From the menu, select :guilabel:`File --> Export`. The *Export zone to text file* dialog box displays.
-
-3. Provide a name and destination for the file and click the :guilabel:`Save` button. All exported files are saved in standard, readable format.
 
 Folders
 -------
 
-Refer to :ref:`object-folders` for details on this function.
+See :ref:`object-folders` for details on this function.
 
 .. _dns-forward-zone:
 
 Forward Zone
 ------------
 
-For creating a forward zone in the Web Application, see :ref:`webapp-create-dns-zone`.
+For creating a forward zone, see :ref:`webapp-create-dns-zone`.
 
-For creating a forward zone in the Management Console, see :ref:`console-forward-zone`.
-
-Import (Management Console)
----------------------------
-
-.. note::
-  This is a function that allows importing DNS *zones*. To import DNS *records* see :ref:`webapp-import-dns-records`.)
-
-Through this function, you can import multiple DNS zones at one time.
-
-1. Use :menuselection:`File --> Import Zone`. The *Import* dialog box displays.
-
-2. Locate the zones to be imported. The zones must within the same folder. To select multiple zones, press/hold the Ctrl key. Then click on each zone.
-
-3. Click :guilabel:`Open`. The files are uploaded and the *Import zones* dialog box displays.
-
-.. image:: ../../images/console-dns-zones-import-zones.png
-  :width: 50%
-  :align: center
-
-4. Click :guilabel:`Import`.
-
-If you happen to select an invalid zone, the following error message dialog box displays:
-
-.. image:: ../../images/console-dns-zones-import-invalid.png
-  :width: 50%
-  :align: center
-
-5. Click :guilabel:`OK` and when you return to the *Import zones* dialog box, clear the field containing the zone.
 
 Master Zone
 -----------
 
-For creating master zones in the Web Application, see :ref:`webapp-create-dns-zone`.
+For creating primary zones, see :ref:`webapp-create-dns-zone`.
 
-For creating master zones in the Management Console, see :ref:`console-create-master-dns-zone`.
 
-DNS Response Policy Zones (BIND only) (Management Console)
-----------------------------------------------------------
-
-The ISC BIND name server (9.8 or later) supports DNS Response Policy Zones (RPZ). You can find more information on RPZ at dnsrpz.info
-
-You can manage RPZ zones from within Micetro with the Management Console. When you open the *Options* dialog box for a master zone on a BIND server you will see the :guilabel:`Response Policy Zone` checkbox. To specify zone as an RPZ zone, just click the checkbox.
-
-.. image:: ../../images/console-dns-zones-rpz.png
-  :width: 50%
-  :align: center
-
-.. note::
-  To use RPZ, a response-policy statement must exist in the DNS server options file. The :guilabel:`Response Policy Zone` checkbox is disabled if a response-policy statement is not present. For example
-
-  .. code-block::
-
-    options {
-      ...
-      response-policy {zone "rpzzone.com" ;};
-      ...
-    };
-
-DNSSEC Zones (Management Console)
----------------------------------
-
-.. note::
-  DNSSEC signed zones can be listed in the Web Application by selecting *DNSSEC signed* in the filtering sidebar on the left.
-
-Zones containing DNSSEC records are labeled as "Signed" in the DNSSEC column in the zone list.
-
-When DNSSEC zones are opened, the system ignores most DNSSEC records unless the system setting to include DNSSEC records has been set.
-
-.. image:: ../../images/console-dns-zones-dnssec.png
-  :width: 70%
-  :align: center
-
-.. note::
-  All DNSSEC record types, with the exception of the DS and NSEC3PARAM record types, are read-only.
-
-DNSSEC Management on Windows Server 2012
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can use Micetro to manage DNSSEC on Windows Server 2012. You can sign and unsign zones. You can customize the zone signing parameters and add, edit and remove Key Signing Keys (KSK) and Zone Signing Keys (ZSK).
-
-The details of DNSSEC are beyond the scope of this documentation. For more information on Windows Server 2012 and DNSSEC, see the Microsoft web site http://www.microsoft.com.
-
-Signing Zones using DNSSEC
-""""""""""""""""""""""""""
-
-To sign a zone on a Windows Server 2012, do the following:
-
-1. With the zones displayed in the Object List, select the zone you wish to sign.
-
-2. Do one of the following to display the *Zone Signing* dialog box:
-
-  * Right-click on the zone record and select :guilabel:`Sign Zone`.
-
-  * From the menu bar, select :menuselection:`Zone --> Sign Zone`.
-
-.. image:: ../../images/console-dns-zones-sign-zone-wizard.png
-  :width: 70%
-  :align: center
-
-3. Select an option for signing the zone:
-
-Customize zone signing parameters.
-  Signs the zone with a new set of zone signing parameters. When this option is selected you can choose or create new Key Signing Keys (KSK) and Zone Signing Keys (ZSK).
-
-Sign the zone with parameters of an existing zone.
-  Signs the zone using parameters from an existing signed zone. To use this option, you must enter the name of the zone containing the parameters to use.
-
-Use default settings to sign the zone.
-  Signs the zone with the default zone signing parameters.
-
-4. Click :guilabel:`Next`. If you chose the *Customize zone signing parameters* option, the zone signing wizard allows you to choose KSK and ZSK for signing the zone. If you chose either of the other options, an overview panel displays in which you can see the zone signing parameters that will be used to sign the zone.
-
-5. Click :guilabel:`Finish` to complete the zone signing process.
-
-Unsigning Zones using DNSSEC
-""""""""""""""""""""""""""""
-
-To unsign a zone on a Windows Server 2012, do the following:
-
-1. With the zones displayed in the Object List, select the zone you wish to unsign.
-
-2. Do one of the following to unsign the zone:
-
-  * Right-click on the zone record and select :guilabel:`Unsign Zone`.
-
-  * From the menu bar, select :menuselection:`Zone --> Unsign Zone`.
-
-3. The zone is unsigned and all DNSSEC records are removed from the zone.
-
-Options (Management Console)
+Editing Zone Properties
 ----------------------------
 
-.. note::
-  Using the Web Application's :guilabel:`Properties` you can edit custom properties that's been configured for DNS zones.
+Using the :guilabel:`Edit Properties` option on the Action menu, you can edit custom properties that have been configured for DNS zones.
 
-The Zone Options dialog box is where you can configure individual settings for a specific zone on each server.
 
-Zone Options (Windows and BIND)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Promote Secondary to Primary
+----------------------------
 
-To access the zone options for a specific zone only, do the following:
+The Promote Zone feature makes it possible to change a secondary zone to a primary zone. This might be necessary in emergency situations, for example if the primary zone becomes unavailable for an extended period of time. This feature is only available for DNS Administrators.
 
-1. With the zones displayed in the Object List, select the zone you wish to configure.
-
-2. Do one of the following to display the Zone Options dialog box:
-
-  * Right-click on the zone record and select :guilabel:`Options`.
-
-  * From the menu bar, select :menuselection:`Zone --> Options`.
-
-  * On the toolbar, click the :guilabel:`Options` button.
-
-3. Depending on the type of zone you select, the Option dialog box varies.
-
-Master zones
-""""""""""""
-
-Allow Zone Transfers.
-  When enabled, zone transfers will occur according to the method indicated by the radio buttons below. You must select at least one of these methods.
-
-.. image:: ../../images/console-dns-zones-zone-options.png
-  :width: 50%
-  :align: center
-
-To any server.
-  When selected, the zone transfer will be performed to any requester.
-
-Only to listed name servers in the zone.
-  When selected, the zone will be transferred from the server to any other name server listed in the zone.
-
-Only to the following servers.
-  When selected, the zone will only be transferred to the servers you specify in the list below. To enter a server, click in the first available row and enter its IP Address.
-
-Dynamic updates.
-  Specifies whether dynamic updates are allowed for the zone
-
-AD Replication.
-  Displays a dialog box where you can set the AD Replication options for the zone.
-
-Aging/Scavenging.
-  Displays a dialog box where aging and scavenging options can be set for the zone.
-
-  .. image:: ../../images/console-dns-zones-aging-scavenging.png
-    :width: 40%
-    :align: center
-
-Slave Zones
-"""""""""""
-
-Allow Zone Transfers.
-  When enabled, zone transfers will occur according to the method indicated by the radio buttons below. You must select at least one of these methods.
-
-  To any server.
-    When selected, the zone transfer will be performed to any requester.
-
-  Only to listed name servers in the zone.
-    When selected, the zone will be transferred from the server to any other name server listed in the zone.
-
-  Only to the following servers.
-    When selected, the zone will only be transferred to the servers you specify in the list below. To enter a server, click in the first available row and enter its IP Address.
-
-IP Addresses of master.
-  Type the IP Address of the master servers for the zone.
-
-Stub/Forward Zones
-""""""""""""""""""
-
-Type the IP Address of the master servers for the zone.
-
-.. image:: ../../images/console-dns-zones-stub.png
-  :width: 30%
-  :align: center
-
-BIND Servers
-^^^^^^^^^^^^
-
-.. image:: ../../images/console-dns-zones-options-bind.png
-  :width: 50%
-  :align: center
-
-The Zone Options dialog box lets you specify an IP Address (or an address block) from which zone transfers can be allowed, or disallowed.
-
-The top section of the Options dialog box lets you designate the zone as either Static or Dynamic. Newly created zones are static by default, but can be changed to a dynamic zone (and vice versa) using this option. Refer to :ref:`dynamic-zones` for more information on dynamic zones versus static zones.
-
-Addresses that have already been setup to handle (i.e., allow or disallow) zone transfers are listed in the lower area of the Zone Options dialog box. If you want to change the settings associated with an address that is already listed here, select it and click on the Edit button. To remove the access control completely, select it from the list and click the Remove button.
-
-To specify a new address (or block) on which you want to implement access controls, do the following:
-
-1. Click the :guilabel:`Add` button. A small dialog box displays, prompting you to enter the server's IP Address, an address block, or to use one of the predefined names from the drop-down list (any, none, localhosts, localnets).
-
-.. image:: ../../images/console-dns-zones-allow-deny-address.png
-  :width: 30%
-  :align: center
-
-2. After entering the address, select either **Allow** or **Deny** to specify whether to permit or disallow access to/from this address.
-
-3, Click :guilabel:`OK` to save the selection. The new address is now listed in the Zone Options dialog box.
-
-.. note::
-  BIND uses journal files to keep track of changes to dynamic zones. The data in the journal files is merged with the zone data file at a designated interval. It is not possible to manually merge the data from the journal files to the zone data file. This means that if there is data in the zone's journal file when the zone type is changed to a static zone, the entries in the journal file will not be visible in the Management Console.
-
-Slave Zones on BIND Servers
-"""""""""""""""""""""""""""
-
-.. image:: ../../images/console-dns-zones-slave-zones-bind.png
-  :width: 40%
-  :align: center
-
-When a slave zone is hosted on a BIND server, the Options dialog box will look like the one below.
-
-Besides being able to setup the access control (as described in the previous section), you can also specify the IP Address of one or more master servers for the zone.
-
-The master servers are specified in the lower half of the Zone Options dialog box. To add a new server to the list, simply click in the white space and enter the IP Address of the master server you are assigning.
-
-To change the address of an existing server, click on it and make the desired edits.
-
-**Advanced Options**
-
-DNS Administrators can now access the BIND configuration files directly to edit DNS server and zone options that are not available in the GUI. Refer to :ref:`bind-advanced-options` for details.
-
-Options for a zone (Management Console)
----------------------------------------
-
-.. image:: ../../images/console-dns-zones-zone-options-dynamic.png
-  :width: 40%
-  :align: center
-
-If a zone exists on more than one server (e.g., in a master/slave configuration), it is possible to select the zone instance for which you want to set options.
-
-1. Select the applicable zone.
-
-2. From the menu bar, select :menuselection:`Zone --> Options for`.
-
-3. From the submenu, select the desired zone/zone instance (e.g., Master Zones only, Slave Zone only, etc.). The Zone Options dialog box displays.
-
-  Allow zone transfers
-    When selected, enables the zone transfer options.
-
-  To any server
-    When selected, the zone transfer will be performed to any requester.
-
-  Only to listed name servers in the zone
-    When selected, the zone will be transferred from the server to any other name server listed in the zone.
-
-  Only to the following servers
-    When selected, the zone will only be transferred to the servers you specify in the list below. To enter a server, click in the first available row and enter its IP Address.
-
-  Dynamic Updates
-    Specifies whether dynamic updates are allowed for the zone
-
-  Aging/Scavenging
-    Displays a dialog box where aging and scavenging options can be set for the zone.
-
-4. When all selections/entries are made, click :guilabel:`OK`.
-
-Promote Slave to Master
------------------------
-
-The Promote Zone feature makes it possible to change a slave zone to a master zone. This might be necessary in emergency situations, for example if the master zone becomes unavailable for an extended period of time. This feature is only available for DNS Administrators.
-
-When a slave zone is promoted, the following actions are performed:
+When a secondary zone is promoted, the following actions are performed:
 
 * Micetro checks whether the most recent copy of the zone is found in its internal database or on the server hosting the slave zone and uses the copy that is more recent.
 
-* The server hosting the slave zone is configured so that the zone is saved as a master zone on the server.
+* The server hosting the secondary zone is configured so that the zone is saved as a primary zone on the server.
 
-* The zone history and access privileges from the old master zone are applied to the new master zone.
+* The zone history and access privileges from the old primary zone are applied to the new primary zone.
 
-* The configurations of other instances of the slave zone are modified so that they will get the updates from the new master zone.
+* The configurations of other instances of the secondary zone are modified so that they will get the updates from the new primary zone.
 
-To promote a slave zone to a master zone, do the following:
+To promote a secondary zone to a primary zone:
 
-1. Select the slave zone.
+1. Select the secondary zone.
 
-2. Using the ellipsis menu's :guilabel:`Promote to master` or using :menuselection:`Actions --> Promote to master`. An information message displays:
+2. On the ellipsis menu, select :guilabel:`Promote to primary` or using :menuselection:`Actions --> Promote to primary`. An information message displays:
 
 .. image:: ../../images/DNS-promote-to-master-Micetro.png
   :width: 50%
@@ -550,68 +194,26 @@ To promote a slave zone to a master zone, do the following:
 
 3. Click :guilabel:`Save` to continue, or :guilabel:`Cancel` to discontinue the process.
 
-.. note::
-  To promote slave zones in the Management Console, see :ref:`console-dns-promote-secondary-to-primary`.
-
-Zone Controls (BIND only) (Management Console)
-----------------------------------------------
-
-The Zone Controls feature allows you to create and edit $GENERATE statements in static zones on BIND DNS servers.
-
-1. Open the zone you want to work with.
-
-2. On the Toolbar click the Zone Controls button |controls|. The Zone Controls dialog box opens, showing any $GENERATE statements that exist in the zone. The $GENERATE statements are shown in a multiline edit field.
-
-.. image:: ../../images/console-dns-zones-controls.png
-  :width: 50%
-  :align: center
-
-3. Make the necessary adjustments to the statements and click OK.
-
-.. note::
-  The fields for each $GENERATE statement must be separated by a tab.
-
-Reload (Management Console)
----------------------------
-
-Sends a command to the DNS server instructing it to reload the zone data.
-
-Set Folder
-----------
-
-Allows you to add or remove zones from folder.
-
-.. warning::
-  If you remove a zone from a folder, there is no way to undo this action.
-
-1. Highlight the zone you want to remove from a folder.
-
-2. From ellipsis menu select :guilabel:`Set folder` or use :menuselection:`Actions --> Set folder`.
-
 Search
 ------
 
-For search in the Web Application, see :ref:`webapp-quick-command`.
+For search, see :ref:`webapp-quick-command`.
 
-For searching in the DNS zone tab in the Management Console, see :ref:`console-dns-search`.
-
-Slave Zone
+Secondary Zone
 ----------
 
-For creating slave zones in the Web Application, see :ref:`webapp-create-dns-zone`.
+For creating slave zones, see :ref:`webapp-create-dns-zone`.
 
-For creating slave zones in the Management Console, see :ref:`console-create-slave-zone`.
 
 .. _dns-stub-zone:
 
 Stub Zone
 ---------
 
-For creating stub zones in the Web Application, see :ref:`webapp-create-dns-zones`.
+For creating stub zones, see :ref:`webapp-create-dns-zones`.
 
-For creating stub zones in the Management Console, see :ref:`console-stub-zone`.
 
 View History
 ------------
 
-Opens the History window and displays a log of all changes that have been made to the zone, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user. Refer to :ref:`webapp-object-change-history` for the Web Application and :ref:`console-object-change-history` for the Management Console.
+Opens the History window and displays a log of all changes that have been made to the zone, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user. See :ref:`webapp-object-change-history`.
