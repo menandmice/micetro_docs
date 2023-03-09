@@ -13,4 +13,4 @@ DNS
   dns_servers
   dns_zones
   dns_records
-  windows_dns_policies
+ 
