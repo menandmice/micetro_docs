@@ -69,7 +69,7 @@ Console Features
 ----------------
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   console_gui
   console_menus
