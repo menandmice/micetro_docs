@@ -77,7 +77,7 @@ Console Features
   console/console_quickfilter
   console_actions
   console_health_bar
-   console_dns_zones
-   devices
+  console_dns_zones
+  devices
  
 
