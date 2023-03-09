@@ -1,21 +1,21 @@
 .. meta::
-   :description: DNS resource records in the Micetro by Men&Mice Management Console 
+   :description: DNS resource records in the Micetro Web Application 
    :keywords: DNS records, DNS management, DNS
 
 .. _dns-records:
 
-DNS resource records
+DNS Resource Records
 ====================
 
 Overview
 --------
 
-Each zone contains DNS resource records that define how requests are processed or delegated by the zone. The :guilabel:`Open` action displays a streamlined interface that makes it easy to view, edit, and manipulate information within a zone.
+Each zone contains DNS resource records that define how requests are processed or delegated by the zone. To view the records for a particular zone, double-clik it, or select :guilabel:`Open zone`on the ellipsis (...) menu. In the record list you can view, edit, and manipulate information within a zone.
 
 .. image:: ../../images/DNS-records-Micetro.png
   :width: 90%
   :align: center
-
+|
 Types of Resource Records
 -------------------------
 
