@@ -79,3 +79,4 @@ Console Features
   console_health_bar
   devices
   console_dns_zones
+
