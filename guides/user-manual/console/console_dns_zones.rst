@@ -23,13 +23,13 @@ Zone Icons
 
 When viewing the zones, you will notice indicators that show the zone type.
 
-.. |static| image:: ../../images/console-dns-zone-static-icon.png
-.. |dynamic| image:: ../../images/console-dns-zone-dynamic-icon.png
-.. |ad| image:: ../../images/console-dns-zone-ad-icon.png
-.. |stub| image:: ../../images/console-dns-zone-stub-icon.png
-.. |forward| image:: ../../images/console-dns-zone-forward-icon.png
-.. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
-.. |analyze| image:: ../../images/console-analyze.png
+.. |static| image:: ../../../images/console-dns-zone-static-icon.png
+.. |dynamic| image:: ../../../images/console-dns-zone-dynamic-icon.png
+.. |ad| image:: ../../../images/console-dns-zone-ad-icon.png
+.. |stub| image:: ../../../images/console-dns-zone-stub-icon.png
+.. |forward| image:: ../../../images/console-dns-zone-forward-icon.png
+.. |controls| image:: ../../../images/console-dns-zones-zone-controls-icon.png
+.. |analyze| image:: ../../../images/console-analyze.png
 
 The Management Console displays zone type with the following icons:
 
@@ -63,7 +63,7 @@ Single Name Server Zones
 
 In the Object Section of the Management Console, locate the DNS server that owns the zones you want to view and click on it. (The DNS server(s) will be listed under the DNS Servers object. You may need to click the :guilabel:`+` sign in order to see it.) When a server is selected, the zone information for that server displays in the Objects List.
 
-.. image:: ../../images/console-dns-zones.png
+.. image:: ../../../images/console-dns-zones.png
   :width: 80%
   :align: center
 
@@ -116,7 +116,7 @@ To analyze a zone, do any of the following:
 
 The results of the zone analysis are shown in a new window:
 
-.. image:: ../../images/console-dns-zones-zone-analysis.png
+.. image:: ../../../images/console-dns-zones-zone-analysis.png
   :width: 80%
   :align: center
 
@@ -138,7 +138,7 @@ Fix
 Filter out messages of this type
   Selecting this item, will suppress the display of the selected error type unless the :guilabel:`Don't show filtered messages` checkbox is unselected. NOTE: This setting is global and it is applied to all subsequent analysis in all zones. If you right-click a filtered message, this item will read as Don't filter out messages of this type.
 
-  .. image:: ../../images/console-dns-zones-zone-analysis-filter.png
+  .. image:: ../../../images/console-dns-zones-zone-analysis-filter.png
     :width: 60%
     :align: center
 
@@ -290,7 +290,7 @@ Through this function, you can import multiple DNS zones at one time.
 
 3. Click :guilabel:`Open`. The files are uploaded and the *Import zones* dialog box displays.
 
-.. image:: ../../images/console-dns-zones-import-zones.png
+.. image:: ../../../images/console-dns-zones-import-zones.png
   :width: 50%
   :align: center
 
@@ -298,7 +298,7 @@ Through this function, you can import multiple DNS zones at one time.
 
 If you happen to select an invalid zone, the following error message dialog box displays:
 
-.. image:: ../../images/console-dns-zones-import-invalid.png
+.. image:: ../../../images/console-dns-zones-import-invalid.png
   :width: 50%
   :align: center
 
@@ -341,7 +341,7 @@ Zones containing DNSSEC records are labeled as "Signed" in the DNSSEC column in 
 
 When DNSSEC zones are opened, the system ignores most DNSSEC records unless the system setting to include DNSSEC records has been set.
 
-.. image:: ../../images/console-dns-zones-dnssec.png
+.. image:: ../../../images/console-dns-zones-dnssec.png
   :width: 70%
   :align: center
 
@@ -368,7 +368,7 @@ To sign a zone on a Windows Server 2012, do the following:
 
   * From the menu bar, select :menuselection:`Zone --> Sign Zone`.
 
-.. image:: ../../images/console-dns-zones-sign-zone-wizard.png
+.. image:: ../../../images/console-dns-zones-sign-zone-wizard.png
   :width: 70%
   :align: center
 
@@ -433,7 +433,7 @@ Master zones
 Allow Zone Transfers.
   When enabled, zone transfers will occur according to the method indicated by the radio buttons below. You must select at least one of these methods.
 
-.. image:: ../../images/console-dns-zones-zone-options.png
+.. image:: ../../../images/console-dns-zones-zone-options.png
   :width: 50%
   :align: center
 
@@ -455,7 +455,7 @@ AD Replication.
 Aging/Scavenging.
   Displays a dialog box where aging and scavenging options can be set for the zone.
 
-  .. image:: ../../images/console-dns-zones-aging-scavenging.png
+  .. image:: ../../../images/console-dns-zones-aging-scavenging.png
     :width: 40%
     :align: center
 
@@ -482,14 +482,14 @@ Stub/Forward Zones
 
 Type the IP Address of the master servers for the zone.
 
-.. image:: ../../images/console-dns-zones-stub.png
+.. image:: ../../../images/console-dns-zones-stub.png
   :width: 30%
   :align: center
 
 BIND Servers
 ^^^^^^^^^^^^
 
-.. image:: ../../images/console-dns-zones-options-bind.png
+.. image:: ../../../images/console-dns-zones-options-bind.png
   :width: 50%
   :align: center
 
@@ -503,7 +503,7 @@ To specify a new address (or block) on which you want to implement access contro
 
 1. Click the :guilabel:`Add` button. A small dialog box displays, prompting you to enter the server's IP Address, an address block, or to use one of the predefined names from the drop-down list (any, none, localhosts, localnets).
 
-.. image:: ../../images/console-dns-zones-allow-deny-address.png
+.. image:: ../../../images/console-dns-zones-allow-deny-address.png
   :width: 30%
   :align: center
 
@@ -517,7 +517,7 @@ To specify a new address (or block) on which you want to implement access contro
 Slave Zones on BIND Servers
 """""""""""""""""""""""""""
 
-.. image:: ../../images/console-dns-zones-slave-zones-bind.png
+.. image:: ../../../images/console-dns-zones-slave-zones-bind.png
   :width: 40%
   :align: center
 
@@ -536,7 +536,7 @@ DNS Administrators can now access the BIND configuration files directly to edit 
 Options for a zone 
 --------------------
 
-.. image:: ../../images/console-dns-zones-zone-options-dynamic.png
+.. image:: ../../../images/console-dns-zones-zone-options-dynamic.png
   :width: 40%
   :align: center
 
@@ -589,7 +589,7 @@ To promote a slave zone to a master zone:
 
 2. Right-click the slave zone you want to promote and, from the shortcut menu, select :guilabel:`Promote to master`. An information message displays:
 
-.. image:: ../../images/console-dns-zones-promote.png
+.. image:: ../../../images/console-dns-zones-promote.png
   :width: 30%
   :align: center
 
