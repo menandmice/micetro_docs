@@ -4,7 +4,7 @@
 
 .. _dns-zones:
 
-DNS zones
+DNS Zones
 =========
 
 .. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
