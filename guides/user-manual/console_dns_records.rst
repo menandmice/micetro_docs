@@ -2,9 +2,9 @@
    :description: DNS resource records in the Micetro by Men&Mice Management Console 
    :keywords: DNS records, DNS management, DNS
 
-.. _dns-records:
+.. _console-dns-records:
 
-DNS resource records
+DNS resource records (Management Console)
 ====================
 
 Overview
@@ -327,6 +327,23 @@ In addition to the supported record types in the table, Micetro supports the fol
 
 It is beyond the scope of this documentation to discuss DNSSEC management so these record types are not explained in detail. For further information on these resource record types and DNSSEC in general, we recommend the DNS Extensions section on the IETF web site.
 
+Resource Records
+----------------
+To select a *single resource record*, do the following:
+
+* Click on the gray square to the left of the record. This highlights the entire record.
+
+
+Once a record is selected, you can perform various editing actions on it, such as deleting, cutting, or copying. These are discussed in more detail later in this section. Many editing action can be performed on multiple records simultaneously. Simply select the records you want to operate on and perform the editing action as usual.
+
+To select non-consecutive records, do the following:
+
+* Hold down the Ctrl key and select each record as usual.
+
+* When you are done selecting records, release the Ctrl key. 
+
+* To select a contiguous series of records, select the first record in the series as usual, then hold down the [Shift] key and select the last record in the series. All records in between will automatically be selected.
+
 New Records
 -----------
 
@@ -334,31 +351,21 @@ If you are comfortable editing the record table directly, you can use this proce
 
 1. Open the zone to display the resource records in the zone you want to edit.
 
-2. In the grid, select the record that is directly *above* where you want to insert the new record.
+2. In the grid, select the record that is directly *above* where you want to insert the new record. 
 
-3. Click on :guilabel:`Create`. A new, blank record is added.
+3. Right-click anywhere in the selected record and, from the shortcut menu, select :guilabel:`Insert Record`. A new, blank record is added.
 
-4. Enter the **Record Name**.
+4. Starting with the Name field, enter the domain name.
 
 .. warning::
   If you enter a domain name that is not fully qualified (i.e., does not end in a trailing dot ``.``), Micetro will assume that you are using a local name and will automatically append the name of the zone onto the end of the name, making it a fully qualified domain name. That means when adding the name server ``ns1`` to the zone ``example.com``, you should enter either just ``ns1`` or ``ns1.example.com``. If you leave off the trailing dot Micetro will interpret your intention as ``ns1.example.com.example.com``. The information automatically filled in by the Web Application appears greyed out.
 
-5. In the **Type** field select the appropriate type from the dropdown. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, SRV, TXT, and SPF.
+5. In the **Type** field select the appropriate type from the dropdown. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, SRV, TXT, and SPF. The appropriate number of fields is automatically created in the Data field based on the type you entered. If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.
 
-  .. warning::
-    If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.
+6. Enter the appropriate data for your record type.
 
-6. After selecting the type, the relevant fields are automatically displayed.
+7. Click the :guilabel:`Save` button to save the new record to the zone.
 
-7. Fill in all apprioriate data fields.
-
-7. Click :guilabel:`Create now` button to save the new record to the zone, or :guilabel:`Add to request` to add it to the request queue. (See :ref:`webapp-workflows` for details on the request queue.)
-
-Micetro will not allow you to save the changes until all required information is filled in and the data is validated. In case of errors or missing information, the relevant fields will highlight in red.
-
-.. image:: ../../images/DNS-create-record-Micetro.png
-  :width: 80%
-  :align: center
 
 Deleting Records
 ----------------
@@ -367,10 +374,11 @@ Deleting a record removes both the data and the physical record from the grid. R
 
 1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making you selections.
 
-2. Select :guilabel:`Delete`. The record is immediately deleted from the zone.
+2. Right-click anywhere in the zone window, and select Delete Record from the context menu. The record is immediately deleted from the zone.
 
-Clearing Records (Management Console)
--------------------------------------
+
+Clearing Records 
+------------------
 
 When the whole record is selected, the :guilabel:`Clear` command works the same as the :guilabel:`Delete Record` command. The Clear command is really intended for deleting the contents of an individual field of data, leaving the rest of the record's data intact.
 
@@ -398,8 +406,8 @@ How to Disable a Record
 
 3. In the confirmation dialog, click :guilabel:`Save now` to save the changes, or :guilabel:`Add to request` to add it to the request queue. (See :ref:`webapp-workflows` for details on the request queue.)
 
-Cut, Copy, and Paste (Management Console)
------------------------------------------
+Cut, Copy, and Paste 
+---------------------
 
 When working with records in the Management Console, there is no need to enter the same records in different zones. All records can be copied (or moved) to other zones simply by copying and pasting them between different zone windows.
 
@@ -425,6 +433,7 @@ To cut, copy, and paste records, do the following:
 6. Right-click anywhere in the Zone window and choose :guilabel:`Paste` from the context menu. The new record(s) are pasted in the destination zone.The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.
 
 7. When you perform an editing action, the :menuselection:`Edit` menu's :guilabel:`Undo` command is modified to include that action. For example, if you disable a record, the Undo command changes to :guilabel:`Undo Disable`. Selecting this command will reverse the action and restore the previously deleted record. When you perform an Undo action, the Redo command becomes active. Selecting this command reverses the previous Undo action. If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.
+
 
 Undo/Redo Commands (Management Console)
 ---------------------------------------
