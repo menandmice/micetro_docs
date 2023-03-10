@@ -78,6 +78,7 @@ Console Features
   console_actions
   console_health_bar
   console_dns_zones
+  console_dns_records
   windows_dns_policies
   devices
  
