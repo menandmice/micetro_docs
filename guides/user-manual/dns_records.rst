@@ -348,21 +348,78 @@ To create a new DNS record:
     
 3. Fill in all apprioriate data fields.
 
-   * For A records, there is useful autocomplete behavior that can help finding a free IP address in a network.
+   * For A records, an autocomplete behavior helps finding a free IP address in a network.
 
-   Typing in the first digits of a network will allow you to see a list of networks to choose from.
+   When you type in the first digits of a network, you'll see a list of networks to choose from.
 
    .. image:: ../../images/create-DNS-record-ip-Micetro.png
     :width: 75%
     
-   Selecting the first item from the list will fill in the **Address** field with the next free IP address from that network. Additionally, insights for the specified IP address will be shown.
+   When you select an item from the list, the **Address** field will be filled in with the next free IP address from that network, along with an indicator on the address state: ``Free``, ``Reserved``, ``Claimed`` or ``Assigned``. You'll also see insights for the selected IP address.
 
-   After typing in an IP address or selecting from the list, an indicator will be given on the state of the IP address, whether it is ``Free``, ``Reserved``, ``Claimed`` or ``Assigned``.
-
-   .. image:: ../../images/create-DNS-record-ipam-Micetro.png
-     :width: 75%
+      .. image:: ../../images/create-DNS-record-ipam-Micetro.png
+      :width: 75%
     
 4. When you are finished, click :guilabel:`Create now` to save the new record to the zone, or :guilabel:`Add to request` to add it to the request queue. For more information about the request queue, see :ref:`webapp-workflows`.
+
+IP Address Insights
+^^^^^^^^^^^^^^^^^^^^
+Once you have entered/selected the IP address in the **Address** field, you'll be able to see some insights about the address and related objects. These insights give you more information about the IP address and can help you understand its state better.
+
+.. image:: ../../images/create-DNS-record-ipam-insights-Micetro.png
+  :width: 75%
+|
+Hover over the :guilabel:`i` icon to see more information or a list of objects:
+
+  * *Network* will show more details on the network.
+
+  * *Properties* will show a list of all defined properties for the specified IP address.
+
+  * *DNS hosts* will show a list of all defined DNS hosts for the specified IP address.
+
+  * *MAC address* will show a list of additional MAC information for the specified IP address.
+
+  * *Last seen* will show a list of additional information for the specified IP address.
+
+.. csv-table:: IPAM Insights
+  :widths: 15, 85
+
+  "Network", "The network containing the specified IP address"
+  "Network type", "Either an IP address range or a DHCP scope"
+  "Properties", "Various properties including custom properties, if defined."
+  "DHCP client",
+  "DNS hosts", "Lists all DNS hosts that are set for the specified IP address"
+  "MAC address", "The MAC address of the discovered device"
+  "Last seen", "The date for which the IP address was last seen"
+
+
+Time-to-live (TTL)
+""""""""""""""""""
+
+Throughout the system, the TTL value can either be specified in seconds or using the shorthand notation, such as:
+
+   **1s**: 1 second
+
+   **1m**: 1 minute
+
+   **1h**: 1 hour
+
+   **1d**: 1 day
+
+   **1w**: 1 week
+
+
+Editing a DNS record
+^^^^^^^^^^^^^^^^^^^^
+
+1. Select the DNS record in the DNS record list
+
+2. Either click :guilabel:`Edit` in the main task bar, or click on :guilabel:`Edit DNS record` in the row menu (...).
+
+3. A dialog box is displayed where you can modify the DNS record.
+
+4. Click :guilabel:`Save`.
+
 
 Deleting Records
 ----------------
@@ -373,24 +430,4 @@ Deleting a record removes both the data and the physical record from the grid.
 
 2. Click :guilabel:`Delete` on the task bar. The record is immediately deleted from the zone.
 
-
-Disable/Enable Records
-----------------------
-
-You can disable a record without deleting it. The disabled record performs no function; however, it can be instantly enabled when its services are needed, without having to re-type the record.
-
-.. note::
-  You cannot disable and enable records in dynamic zones.
-
-How to Disable a Record
-^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Select the record(s) that you want to disable. To select more than one record, hold down the Ctrl (Cmd on Mac) key while making your selections.
-
-2. From the ellipsis menu select :guilabel:`Disable DNS record` or use :menuselection:`Actions --> Disable DNS record`.
-
-.. note::
-  Disabled records are grayed out in the grid, and will show an *Enable DNS record* action instead.
-
-3. In the confirmation dialog, click :guilabel:`Save now` to save the changes, or :guilabel:`Add to request` to add it to the request queue. (See :ref:`webapp-workflows` for details on the request queue.)
 
