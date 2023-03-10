@@ -4,18 +4,19 @@
 
 .. _dhcp-servers:
 
-DHCP servers
-============
+DHCP services
+==============
 
 Overview
 --------
 
-This section shows you how to perform specific actions in Micetro associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
+This section shows how to perform specific actions in Micetro associated with maintaining your DHCP services, such as adding and deleting services and setting DHCP service options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
 
-.. note::
-  The functions for this menu option are listed alphabetically after the New DHCP Server section.
+New DHCP Server
+---------------
+You must be logged in as a user with privileges to administer DHCP in order to add a DHCP server.
 
-This page describes the process for adding new DHCP servers, and generic DHCP management information. For detailed information about the different DHCP platforms, refer to:
+This section describes the process for adding new DHCP servers, and generic DHCP management information. For detailed information about the different DHCP platforms, see:
 
 * :ref:`dhcp-windows`
 
@@ -25,18 +26,14 @@ This page describes the process for adding new DHCP servers, and generic DHCP ma
 
 * :ref:`dhcp-cisco`
 
-New DHCP Server
----------------
+.. note::
+  When adding a DHCP service, the system automatically changes existing IP Address ranges to scopes if it finds IP Address ranges that contain the same start and end address as a scope on the DHCP service being added.
+  
 
 .. note::
-  When adding a DHCP server, the system automatically changes existing IP Address ranges to scopes if it finds IP Address ranges that contain the same start and end address as a scope on the DHCP server being added.
+  For information on adding a DHCP service on a Men&Mice Appliance, see :ref:`appliance-management`.
 
-You must be logged in as a user with privileges to administer DHCP in order to add a DHCP server.
-
-.. note::
-  For information on adding a DHCP server on a Men&Mice Appliance, refer to :ref:`appliance-management`.
-
-1. Navigate to :menuselection:`Admin --> Server Management` and select :guilabel:`Add DHCP server`. The *Add DHCP Server* dialog box is shown.
+1. Navigate to :menuselection:`Admin --> Service Management` and click :guilabel:`Add Service`. The Add Service dialog box opens.
 
 .. image:: ../../images/add-dhcp-v6-on.jpg
   :width: 50%
@@ -190,7 +187,7 @@ You can set options for multiple servers by selecting all of the servers for whi
 
 2. Click the drop-down list to select which options you want to add. Upon selection, the setting is added to the dialog box for editing.
 
-6. When all selections/entries are made, click :guilabel:`Save` to save your changes.
+3. When all selections/entries are made, click :guilabel:`Save` to save your changes.
 
 .. note::
   To manage DHCP server option in the Management Console, see :ref:`console-dhcp-options`.
@@ -201,30 +198,30 @@ DHCP server properties can be managed on the Service Management page.
 
 1. In the list of DHCP Services, select the appropriate DHCP service.
 
-2. Click :guilabel:`Action` at the top of the view, and then select :guilabel:`Edit configuration` on the menu. The *Edit Configuration* dialog box for the selected service opens. 
+2.
 
-Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-poperties` or :ref:`console-cisco-dhcp-properties`.
+Refer to the applicable section based upon the service type: :ref:`dhcp-windows`, :ref:`dhcp-isc`, :ref:`dhcp-kea` or :ref:`dhcp-cisco`.
 
 .. _kea-advanced-options:
 
 Advanced ISC Kea Server Properties
 ----------------------------------
 
-DHCP Administrators can access the ISC Kea DHCP server configuration files directly to edit properties that are not available in the user interface.
+DHCP Administrators can access the ISC Kea DHCP service configuration files directly to edit properties that are not available in the user interface.
 
-To access the advanced options, do the following:
+To access the advanced options:
 
 1. Log in to Micetro as the DHCP administrator.
 
-2. Select a Kea DHCP server, select :guilabel:`Edit configuration` from the ellipsis menu or use :menuselection:`Actions --> Edit configuration`.
+2. Select a Kea DHCP service. Click :guilabel:`Action` in the task bar at the top, and then select :guilabel:`Edit configuration` on the menu. You can also access this option on the row menu (...). The Edit Configuration dialog box opens. 
 
-3. When the *Edit configuration* box displays, you can edit the configuration file for the server.
+3. Make the desired changes in the Edit Configuratio dialog box.
 
 .. image:: ../../images/edit-kea-config-Micetro.png
   :width: 80%
   :align: center
 
-5. Click :guilabel:`Save`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
+4. When you are finished, click :guilabel:`Save`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
 
 .. note::
   To edit advanced DHCP configuration in the Management Console, see :ref:`console-dhcp-advanced-options`.
