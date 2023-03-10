@@ -406,11 +406,10 @@ Adds or removes the currently selected IP Address Range from folders.
 
 
 AD Sites and Subnets
-====================
+--------------------
 
 Overview
---------
-
+^^^^^^^^^
 Micetro allows administrators to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites and add, remove, and move subnets between the sites.
 
 .. note::
@@ -427,7 +426,7 @@ AD sites and subnets are displayed in the :guilabel:`IPAM` context:
 * sites in a separate :menuselection:`IPAM --> AD sites` grid, grouped by Forests. The Inspector box on the right displays the subnets (if any) belonging to the selected AD site.
 
 AD Forests
-----------
+^^^^^^^^^^^^
 
 To manage sites and subnets, Micetro needs to be configured with AD Forest(s).
 
@@ -435,7 +434,7 @@ To manage sites and subnets, Micetro needs to be configured with AD Forest(s).
   You can manage sites and subnets from multiple forests.
 
 Adding an AD Forest
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 
 1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
 
@@ -463,7 +462,7 @@ Set as read only
 3. Click :guilabel:`OK` to save the changes. The forest is added and the sites belonging to the forest are displayed.
 
 Edit AD Forest
-^^^^^^^^^^^^^^
+"""""""""""""""
 
 To edit an existing AD Forest (to, for example, change the read-only status):
 
@@ -476,7 +475,7 @@ To edit an existing AD Forest (to, for example, change the read-only status):
 4. Click :guilabel:`OK` to save your changes.
 
 Removing an AD Forest
-^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 
 To remove an AD Forest from Micetro:
 
@@ -489,7 +488,7 @@ To remove an AD Forest from Micetro:
 3. Click :guilabel:`OK` in the confirmation box to remove the Forest(s).
 
 Reloading the Sites in an AD Forest
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""
 
 Data from AD Forests is synchronized by Men&Mice Central regularly. To manually synchronize forests and reload the data for sites and subnets:
 
