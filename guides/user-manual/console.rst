@@ -65,8 +65,8 @@ The First Use Wizard opens when you connect the Management Console to a newly in
 |
 2. Follow the instructions to complete each page, and then click :guilabel:`Finish`.
 
-Console Features
-----------------
+Console Features and Tasks
+---------------------------
 
 .. toctree::
   :maxdepth: 1
