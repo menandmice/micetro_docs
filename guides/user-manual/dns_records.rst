@@ -10,7 +10,7 @@ DNS Resource Records
 Overview
 --------
 
-Each zone contains DNS resource records that define how requests are processed or delegated by the zone. To view the records for a particular zone, double-clik it, or select :guilabel:`Open zone`on the ellipsis (...) menu. In the record list you can view, edit, and manipulate information within a zone.
+Each zone in the Domain Name System (DNS) contains a set of resource records that define how requests are processed or delegated within that zone. To view the resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the task bar at the top or on the row menu (...). Once you have opened the zone, you can view, edit, and manipulate the resource records.
 
 .. image:: ../../images/DNS-records-Micetro.png
   :width: 90%
@@ -19,7 +19,7 @@ Each zone contains DNS resource records that define how requests are processed o
 Types of Resource Records
 -------------------------
 
-There are varieties of resources records that actively affect zones, as well as several informational records that can be used to provide supporting data about a zone. The primary record types are described below.
+There are varieties of resource records that actively affect zones, as well as several informational records that can be used to provide supporting data about a zone. The primary record types are described below.
 
 NS
   The Name Server record is used to list a name server for this zone. NS records state the domain name of the zone's name servers. The name of an NS record is the fully qualified domain name of a zone. Every zone must have at least one NS record with the same name as the zone itself.
@@ -35,7 +35,7 @@ NS
 A
   Also known as an Address record, an A record declares the IP Address of a domain name. Defines a Hostname-to-IP Address mapping, or a forward mapping.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -48,7 +48,7 @@ PTR
 
   In the event that you have multiple A records concerning the same IP Address, choose one for the PTR record. If one of the host names is used for a mail server, give that hostname preference because a common use of reverse lookup is to check the source of e-mail.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -59,7 +59,7 @@ PTR
 CNAME
   Canonical Name records are used to define an alias. The canonical or primary DNS domain name used in the data is required and must resolve to a valid DNS domain name in the namespace. The name of the record is the name of the alias. Thus, if you want www.example.com to bring visitors to example.com, you'd need to add the line shown in following example:
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -70,7 +70,7 @@ CNAME
 MX
   Also known as Mail Exchange records, MX records create mail routes. Each exchanger host must have a corresponding host (A) address resource record in a valid zone. The first field in the record data is the preference number; this is the order in which mail hosts will be used by an outside mail server trying to send mail to a domain. Mail hosts will be contacted from the lowest preference number and work up to higher preference number. If two MX records have the same preference number, they will be used in random order. Mail servers with the same preference number will not forward to each other, nor will they forward to a mail server with a higher preference number.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -81,7 +81,7 @@ MX
 AAAA
   Maps a DNS domain name to an Internet Protocol (IP) version 6 128-bit address.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -94,7 +94,7 @@ WKS
 
   Three fields of data are required: IP Address, protocol, and a service list.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -108,7 +108,7 @@ WKS
 RP
   The Responsible Person record specifies the domain mailbox name for the person responsible for that domain. This name is then mapped to a domain name in for which (TXT) resource records exist in the same zone. When RP records are used in DNS queries, subsequent queries are used to retrieve associated text (TXT) resource record information. Two fields of data are required: the domain name you are searching, the domain where TXT resource records exist.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -127,7 +127,7 @@ AFSDB
 
   The second field is the server's host name.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -152,7 +152,7 @@ SRV
   Hostname
     The name of the domain.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -163,7 +163,7 @@ SRV
 HINFO
   The Host information resource record specifies the type of CPU and operating system, respectively, for the host DNS domain name. This information is used by some application protocols, such as FTP, which use special procedures when communicating with computers of a known CPU and operating system type. Hardware information belongs in the first data field and OS information in the second field, as shown in the example below.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -174,7 +174,7 @@ HINFO
 TXT
   A Text Record allows you to include up to 255 characters of free-form descriptive text in your zone file. The order of resource records in zone files is not preserved, so it is best to keep messages confined to one record.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -200,7 +200,7 @@ LOC
   .. note::
     The Microsoft DNS server does not support LOC records.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -229,7 +229,7 @@ NAPTR
   Replacement
     This field contains a domain name, which is the next domain name to query for, depending on the potential values found in the flags field.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -251,7 +251,7 @@ SSHFP
 
   For further information on this record type, see RFC 4255.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -264,7 +264,7 @@ SPF
 
   For further information on this record type, see RFC 4408.
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -291,7 +291,7 @@ TLSA
   Certificate associate data
     Specifies the certificate association data to be matched
 
-  Example
+  Example:
 
   .. csv-table::
     :header: "Name", "Type", "Data"
@@ -302,7 +302,7 @@ TLSA
 CAA
   The CAA (Certification Authority Authorization) DNS record is used to specify which Certification Authorities (CA) can issue certificates for the domain.
 
-  Example
+  Example:
 
   +--------------+------+---------------------------+
   | Name         | Type | Data                      |
@@ -331,75 +331,48 @@ In addition to the supported record types in the table, Micetro supports the fol
 
 It is beyond the scope of this documentation to discuss DNSSEC management so these record types are not explained in detail. For further information on these resource record types and DNSSEC in general, we recommend the DNS Extensions section on the IETF web site.
 
-Resource Records
-----------------
+Creating New Records
+--------------------
 
-To select a single resource record, click on the gray square to the left of the record. This highlights the entire record.
+.. note::
+  For importing DNS records in bulk, see :ref:`webapp-import-dns-records`.
+  
+To create a new DNS record:
 
-Once a record is selected, you can perform various editing actions on it, such as deleting, cutting, or copying. These are discussed in more detail later in this section. Many editing action can be performed on multiple records simultaneously. Simply select the records you want to operate on and perform the editing action as usual.
+1. Click :guilabel:`Create` in the main task bar. The Create DNS Record dialog box opens.
 
-To select non-consecutive records, do the following:
-
-1. Hold down the Ctrl key and select each record as usual.
-
-2. When you are done selecting records, release the Ctrl key.
-
-To select a contiguous series of records, select the first record in the series as usual, then hold down the [Shift] key and select the last record in the series. All records in between will automatically be selected.
-
-.. image:: ../../images/DNS-records-highlight-Micetro.png
-  :width: 70%
-  :align: center
-
-New Records
------------
-
-If you are comfortable editing the record table directly, you can use this procedure to insert a new record directly in the zone tab.
-
-1. Open the zone to display the resource records in the zone you want to edit.
-
-2. In the grid, select the record that is directly *above* where you want to insert the new record.
-
-3. Click on :guilabel:`Create`. A new, blank record is added.
-
-4. Enter the **Record Name**.
-
-.. warning::
-  If you enter a domain name that is not fully qualified (i.e., does not end in a trailing dot ``.``), Micetro will assume that you are using a local name and will automatically append the name of the zone onto the end of the name, making it a fully qualified domain name. That means when adding the name server ``ns1`` to the zone ``example.com``, you should enter either just ``ns1`` or ``ns1.example.com``. If you leave off the trailing dot Micetro will interpret your intention as ``ns1.example.com.example.com``. The information automatically filled in by the Web Application appears greyed out.
-
-5. In the **Type** field select the appropriate type from the dropdown. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, SRV, TXT, and SPF.
+2. Enter a name and select the record type. After selecting the type, the relevant fields are automatically displayed.
 
   .. warning::
-    If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.
+    If you save a new DNS record with the wrong type, you cannot change the type later. You have to delete the record and create a new one with the correct type.
+    
+3. Fill in all apprioriate data fields.
 
-6. After selecting the type, the relevant fields are automatically displayed.
+   * For A records, there is useful autocomplete behavior that can help finding a free IP address in a network.
 
-7. Fill in all apprioriate data fields.
+   Typing in the first digits of a network will allow you to see a list of networks to choose from.
 
-7. Click :guilabel:`Create now` button to save the new record to the zone, or :guilabel:`Add to request` to add it to the request queue. (See :ref:`webapp-workflows` for details on the request queue.)
+   .. image:: ../../images/create-DNS-record-ip-Micetro.png
+    :width: 75%
+    
+   Selecting the first item from the list will fill in the **Address** field with the next free IP address from that network. Additionally, insights for the specified IP address will be shown.
 
-Micetro will not allow you to save the changes until all required information is filled in and the data is validated. In case of errors or missing information, the relevant fields will highlight in red.
+   After typing in an IP address or selecting from the list, an indicator will be given on the state of the IP address, whether it is ``Free``, ``Reserved``, ``Claimed`` or ``Assigned``.
 
-.. image:: ../../images/DNS-create-record-Micetro.png
-  :width: 80%
-  :align: center
+   .. image:: ../../images/create-DNS-record-ipam-Micetro.png
+     :width: 75%
+    
+4. When you are finished, click :guilabel:`Create now` to save the new record to the zone, or :guilabel:`Add to request` to add it to the request queue. For more information about the request queue, see :ref:`webapp-workflows`.
 
 Deleting Records
 ----------------
 
-Deleting a record removes both the data and the physical record from the grid. Records beneath the deleted one are instantly moved up to fill in the space.
+Deleting a record removes both the data and the physical record from the grid. 
 
 1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making you selections.
 
-2. Select :guilabel:`Delete`. The record is immediately deleted from the zone.
+2. Click :guilabel:`Delete` on the task bar. The record is immediately deleted from the zone.
 
-Clearing Records (Management Console)
--------------------------------------
-
-When the whole record is selected, the :guilabel:`Clear` command works the same as the :guilabel:`Delete Record` command. The Clear command is really intended for deleting the contents of an individual field of data, leaving the rest of the record's data intact.
-
-1. In the *Zone* window, select the field (cell) whose contents you want to delete.
-
-2. Right-click anywhere in the zone window and select :guilabel:`Clear` from the context menu. The data is removed from the field. (The cell is not removed, and the rest of the record is unaffected.)
 
 Disable/Enable Records
 ----------------------
@@ -421,41 +394,3 @@ How to Disable a Record
 
 3. In the confirmation dialog, click :guilabel:`Save now` to save the changes, or :guilabel:`Add to request` to add it to the request queue. (See :ref:`webapp-workflows` for details on the request queue.)
 
-Cut, Copy, and Paste (Management Console)
------------------------------------------
-
-When working with records in the Management Console, there is no need to enter the same records in different zones. All records can be copied (or moved) to other zones simply by copying and pasting them between different zone windows.
-
-To facilitate this, the Copy and Paste functions do not use fully qualified host names, so it is easy to work with records between zones.
-
-This means that if you copy a record from the domain example.com, such as: ``www.example.com. CNAME example.com.`` and paste the record to sample.com, it displays as: www.sample.com. CNAME sample.com.
-
-To cut, copy, and paste records, do the following:
-
-1. Select the record(s) that you want to move or copy. To select multiple records, hold down the Ctrl key while making your selections.
-
-2. Right-click anywhere in the Zone window and choose either :guilabel:`Cut` (to move the record) or :guilabel:`Copy` (to duplicate the record elsewhere) from the context menu.
-
-.. note::
-  The Cut, Copy, Paste, and Clear commands can also be selected from the Edit menu in the main window.
-
-3. Open the destination zone in which you want to insert the record(s).
-
-4. In the destination zone, insert a new blank record in the location where you want to paste the records. To do this, right-click on the record immediately above where you want to paste the new one(s), then select :guilabel:`Insert Record` from the popup menu.
-
-5. Select the blank record.
-
-6. Right-click anywhere in the Zone window and choose :guilabel:`Paste` from the context menu. The new record(s) are pasted in the destination zone.The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.
-
-7. When you perform an editing action, the :menuselection:`Edit` menu's :guilabel:`Undo` command is modified to include that action. For example, if you disable a record, the Undo command changes to :guilabel:`Undo Disable`. Selecting this command will reverse the action and restore the previously deleted record. When you perform an Undo action, the Redo command becomes active. Selecting this command reverses the previous Undo action. If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.
-
-Undo/Redo Commands (Management Console)
----------------------------------------
-
-The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.
-
-When you perform an editing action, the Edit menu’s Undo command is modified to include that action. For example, if you disable a record, the Undo command changes to Undo Disable. Selecting this command will reverse the action and restore the previously deleted record.
-
-When you perform an Undo action, the :guilabel:`Redo` command becomes active. Selecting this command reverses the previous Undo action.
-
-If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.
