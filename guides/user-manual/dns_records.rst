@@ -410,7 +410,7 @@ Throughout the system, the TTL value can either be specified in seconds or using
 
 
 Editing a DNS record
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 1. Select the DNS record in the DNS record list
 
