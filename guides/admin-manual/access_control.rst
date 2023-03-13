@@ -54,6 +54,8 @@ New objects
 
 When a user imports or creates a new object (such as DNS zone, record, DHCP scope, IPAM range, etc.) in Micetro, the object is configured for a certain default access based on the permissions for the object type. General roles configured with permissions for the object type will have automatic access to the object.
 
+.. _access-control:
+
 Access control management
 -------------------------
 
