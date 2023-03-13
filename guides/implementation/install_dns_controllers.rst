@@ -380,8 +380,8 @@ Adding the Agent to Central
       * **Agent display name**: this box is optional and should be filled in if you want your agent to be displayed in the UI under some other name than the hostname/IP address.
       * **Agent setup key**: enter the setup key for the agent that you copied earlier from the agent installation script. If you forgot to copy it, you can also find it located in the ssl directory which can be found under the agent directory on the agent machine. The agent also prints it out on startup if it hasn’t been added to a Central server yet. The setup key is used to encrypt certificates that Central sends over to the agent. These certificates are then used to allow for a secure encrypted connection to be created between Central and the agent.
 
-.. note::
-   If the agent you are adding to Central has been previously added to a Central server you will have to remove the SSL directory and restart the agent before adding. The restart will generate a new setup key that you should use when adding the agent.
+      .. note::
+         If the agent you are adding to Central has been previously added to a Central server you will have to remove the SSL directory and restart the agent before adding. The restart will generate a new setup key that you should use when adding the agent.
 
 
    6. When you are finished, click :guilabel:`Next`.
