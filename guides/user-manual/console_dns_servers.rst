@@ -13,6 +13,54 @@ Overview
 This section shows you how to perform specific actions in the Men&Mice Management Console associated with maintaining your DNS servers, such as adding, and creating and editing zones and records.
 The commands associated with server management are located in the Server menu and several are accessible from the toolbar. The Server menu is only available when the DNS Servers object is selected in the Object Section of the Management Console.
 
+Server Access on Remote Computers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To manage DNS servers, each must have a DNS Server Controller installed. For the BIND DNS server, a DNS Server Controller must be installed on each DNS server you want to manage.
+
+If you plan to use Men&Mice Suite to manage any Microsoft DNS servers, install the DNS Server Controller on a Windows machine that is a member of the same domain or workgroup as the DNS servers. You may install multiple copies of the DNS Server Controller, for example if you want to manage Microsoft DNS Servers that reside in different forests. A single DNS Server Controller for Microsoft DNS Servers can manage multiple DNS servers. The DNS Server Controller must adhere to whatever restrictions and security standards are set forth in Microsoft Windows.
+
+To configure the DNS Server Controller to access DNS servers on remote computers, do the following:
+
+1. Before you can administer DNS servers, verify that the DNS Controller is running as a Windows User and has the necessary privileges.
+
+2. To enable DNS Management in Micetro, start the Windows Services program and open the properties dialog box for Men&Mice DNS Server Controller.
+
+3. Click the *Log On* tab. The :guilabel:`Local System account` radio button is most likely selected.
+
+4. Click the :guilabel:`This account` radio button and enter the name and password of a Windows User that is a member of the Administrators group.
+
+5. Close the dialog box and restart the Men&Mice DNS Server Controller service.
+
+.. note::
+  Some actions for static zones are not available if you are managing Microsoft DNS servers on remote computers using the DNS Server Controller. The following actions are not available:
+
+    * Disable resource record
+
+    * Enable resource record
+
+    * View and edit resource record comments
+
+    * Disable zone
+
+  If you need to be able to perform these actions, you must install the DNS Server Controller on the server and use the Microsoft with Agent Installed connection method when connecting to the server.
+  
+Define Work Set
+---------------
+
+It is possible to define a Work Set for servers in the Management Console. A Work Set contains a subset of all of the servers in the system and when a Work Set is active, only the servers in the Work Set are visible and the zones on the servers in the Work Set are the only zones visible. This feature is useful when many servers are defined, but you only work with a small number of them on a day-to-day basis.
+
+To define a Work Set, do the following:
+
+1. Select the server(s) you want to include in the Work Set.
+
+2. Right-click the selected server(s) and choose :guilabel:`Define Work Set`.
+
+To clear a Work Set, do the following:
+
+1. Click the :guilabel:`Clear Work Set` button in the Manager window. The Work Set is cleared.
+
+  
 .. _dns-options:
 
 Options 
