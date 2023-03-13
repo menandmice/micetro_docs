@@ -77,6 +77,7 @@ Console Features and Tasks
   console/console_quickfilter
   console_actions
   console_health_bar
+  console_dns_servers
   console_dns_zones
   console_dns_records
   windows_dns_policies
