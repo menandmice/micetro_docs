@@ -22,4 +22,4 @@ Micetro uses agents, also know as server controllers, to handle communication be
   agent_free_dns-dhcp
 
 .. note::
-  Servers in Active Directory environments can be connected without using an agent. See :ref:`ms-agent-free`.
+  Servers in Active Directory environments can be connected without using an agent. For more information, see :ref:`ms-agent-free` in *Agent-free management of DNS/DHCP servers*.
