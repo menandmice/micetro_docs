@@ -30,7 +30,7 @@ Use the toolbar to manage zones, such as creating, editing, and migrating zones.
 
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   dns_zones
   dns_records
