@@ -16,58 +16,74 @@ DNS Zones
 Overview
 --------
 
-The commands associated with zone management (located on the *DNS* page) are only available when a specific DNS server or DNS zone is selected. In other words, actions for the DNS zone are only available when DNS zones are listed. The default for the *DNS* context is displaying all zones. When a particular name server is selected, only the zones being managed on that server are listed.
+By default, the DNS page displays all primary zones in the system regardless of authority. 
 
-The *DNS* page shows zone types in the second column.
+.. image:: ../../images/DNS-Micetro.png
+   :width: 75%
+|
+The left sidebar offers several options for filtering and organizing the zones. The sidebar has three tabs: **Menu**, **Folders**, and **DNS services**. 
+
+
+.. image:: ../../images/sidebar-tabs.png
+   :width: 65%
+
+* The **Menu** tab offers various filtering options for zones, such as zone types, favorites, and reverse zones.
+
+* The **Folders** tab allows you to organize zones and filter queries into folders. For more information about folder management, see :ref:`folder-management`.
+
+* On the **DNS services** tab you can view zones by server/service. This can be useful if you have multiple DNS services and want to view the zones associated with each one separately.
+
+Micetro will remember your current tab selection when you navigate away from the DNS page and return to it later.
+
+Zone Types
+-----------
 
 .. csv-table::
-  :header: "Indicator", "Description"
+  :header: "Type", "Description"
   :widths: 15, 85
 
-  "Master (blue)", "A static master zone, which is always the original copy of the zone, and always present on that zone's master server."
-  "Master (yellow)", "A dynamic master zone, which is always the original copy of the zone, and always present on that zone's master server."
-  "Master (AD-integrated)", "(AD-integrated is displayed in a tooltip) An Active Directory Integrated zone."
-  "Stub", "A stub zone. The corresponding master zone(s) is displayed in the Inspector window on the left."
-  "Slave", "A slave zone. The corresponding master zone is displayed in the Inspector window on the left."
-  "Forward", "A forward zone. The corresponding master zone is displayed in the Inspector window on the left."
+  "Primary (blue)", "A static primary zone, which is always the original copy of the zone, and always present on that zone's primary server."
+  "Primary (yellow)", "A dynamic master zone, which is always the original copy of the zone, and always present on that zone's master server."
+  "Primary (purple)", "An Active Directory Integrated primary zone."
+  "Secondary", "A read-only copy of a primary zone or another secondary zone."
+  "Hint", "Root zone used for bootstrapping of recursive DNS servers."
+  "*Configuration types*", "*The below zone types are essentially a configuration that tells the (recursive) DNS server how to resolve zones it cannot resolve the normal way*."
+  "Stub", "A stub zone is a copy of a DNS zone that contains only resource records that identify the authoritative DNS servers for that zone. Stub zone is dynamically updated from the list of primary DNS servers."
+  "Static-stub", "A BIND specific zone type to configure conditional forwarding, similar to Stub but is static, that is, it has a set of preconfigured NS entries."
+  "Forward", "A forward zone contains a list of name server addresses, called forwarders, that are authoritative for the domain name in question. With forward zones queries are forced to go to the specified addresses."
+  "*Template*", "*AuthServe specific*."
+  "Options template", "This configuration template is specific to the AuthServe DNS server and can be used to add templated options configuration to multiple zones. Editing the options template will affect all zones using the template."
+ 
+Opening a DNS Zone
+------------------
+There are several ways to open a zone:
 
-Zone Viewing
-------------
+* select the zone in the list, and then click :guilabel:`Open` on the taskbar.
 
-All Zones on All Servers
-^^^^^^^^^^^^^^^^^^^^^^^^
+-OR-
 
-You view all of the existing DNS zones at once, regardless of the server to which they belong.
+* double click the zone.
 
-Click :guilabel:`DNS` on the top. This causes all existing zones (to which you have access) to appear in the grid.
+-OR-
 
-Single Name Server Zones
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-In the filtering sidebar or through :menuselection:`Admin --> Service Management`, locate the DNS server that owns the zones you want to view, and then click on it. This will list all zones on the server. (In *Service Management* when a server is selected, select :guilabel:`Show zones` from the ellipsis menu to display all zones residing on the server.)
-
-.. image:: ../../images/DNS-single-server-zones-Micetro.png
-  :width: 80%
-  :align: center
-
-.. tip::
-  The navigation indicator in the bottom left displays the name of the DNS server.
+* select the zone in the list, and then select :guilabel:`Open zone` on the Row menu (...).
 
 Zone Contents
-^^^^^^^^^^^^^
+-------------
 
-The Inspector window on the right provides a detailed look at the data inside of a zone. The header record (a.k.a. Start of Authority or SOA record) displays as a collection of fields above the resource records.
+The Inspector pane on the right provides a detailed look at the data inside of a zone. The header record (Start of Authority or SOA record) displays as a collection of fields above the resource records.
 
-To view the contents of a particular zone, double-click on it. This opens the Zone tab.
+Open the zone to view its contents. 
 
-.. image:: ../../images/DNS-zone-contents-Micetro.png
-  :width: 80%
-  :align: center
+.. image:: ../../images/DNS-zone-contents-Micetro-10.5.png
+   :width: 65%
+   
 
 SOA
 ^^^
 
-Since the SOA record is seldom modified after it is created, the Inspector window has a built-in control that allows you to hide the SOA data from view. On the right edge of the Inspector, next to the :guilabel:`Edit` button, you'll notice the open/close button (:guilabel:`>` and :guilabel:`v`, respectively) to show/hide the SOA information.
+Since the SOA record is seldom modified after it is created, you can hide the data from the Inspector pane. Simply click the section header (or :guilabel:`<` and :guilabel:`v`) to collapse or expand the information.
+
 
 SOA Fields
 """"""""""
@@ -76,18 +92,20 @@ SOA Fields
   :header: "Field", "Description"
   :widths: 15, 75
 
-  "Master", "This field gives the name of the server that acts as master server for the zone."
-  "Hostmaster", "This field is properly formatted by giving the e-mail address of the person responsible for zone with the @ symbol replaced with a period (.). For example, instead of hostmaster@example.com type hostmaster.example.com. The username part of the e-mail address cannot contain a (verbatim) dot (.). See RFC 1912 'Common DNS Operational and Configuration Errors', Section 2.2 for additional information."
-  "Serial", "The serial number is a ten-digit number consisting of the year, the month, the day, and a two-digit daily revision number. (Actually, it is any integer between 0 and ~ 4 billion, but the preceding is the standard convention.) To create a unique serial number, the Management Console adds 1 to the daily revision number every time the zone is saved."
-  "Refresh", "This is the period (in seconds) that determines how often slave servers will check with the master server to determine if their zone files are up to date. This is done by checking the serial number. The default value for this field is 28800, which equates to once every 8 hours."
-  "Retry", "This determines the period that a slave server will wait before trying to re-contact the master zone (in the event that an earlier contact attempt is unsuccessful). The default value is 7200 seconds, or once every 2 hours."
-  "Expire", "This value determines how long a slave server will keep serving a zone after its last successful contact to the master name server. Once the zone has expired, the slave stops giving information about the zone because it is deemed unreliable. The default expiration period is 604800 seconds, or 1 week."
+  "Primary", "The name of the server that acts as primary server for the zone."
+  "Hostmaster", "This field is properly formatted by giving the email address of the person responsible for zone with the @ symbol replaced with a period (.). For example, instead of hostmaster@example.com enter hostmaster.example.com. The username part of the email address cannot contain a (verbatim) dot (.). See RFC 1912 'Common DNS Operational and Configuration Errors', Section 2.2 for additional information."
+  "Serial", "The serial number is a ten-digit number consisting of the year, the month, the day, and a two-digit daily revision number. (Actually, it is any integer between 0 and ~ 4 billion, but the preceding is the standard convention.)"
+  "Refresh", "This is the period (in seconds) that determines how often secondary servers will check with the primary server to determine if their zone files are up to date. This is done by checking the serial number. The default value for this field is 28800, which equates to once every 8 hours."
+  "Retry", "This determines the period that a secondary server will wait before trying to re-contact the primary zone (in the event that an earlier contact attempt is unsuccessful). The default value is 7200 seconds, or once every 2 hours."
+  "Expire", "This value determines how long a secondary server will keep serving a zone after its last successful contact to the primmary name server. Once the zone has expired, the secondary server stops giving information about the zone because it is deemed unreliable. The default expiration period is 604800 seconds, or 1 week."
   "Neg. caching", "This field is only available when connected to a BIND server. This value specifies how long a server will retain (cache) the knowledge that something does not exist. The default value is 86400 seconds, 24 hours."
 
-Access/Access for Non-Master for Zone(s)
-----------------------------------------
+Managing Zones
+--------------
 
-Refer to :ref:`access-control`.
+Creating Zones
+^^^^^^^^^^^^^^^
+Creating a new DNS zone can be done by clicking on the Create button above the DNS zone list. From the dropdown, select the zone type (link to zone type table above) and an Add zone wizard will lead the user through the creation of the zone. Number of steps varies between zone types and also depending on how Micetro is configured.
 
 Delete zone
 -----------
@@ -142,24 +160,6 @@ DNS administrators can specify the server to use when opening an AD integrated z
   If you selected multiple zones, they might have different settings for preferred servers. Saving the configuration will overwrite the previous settings on all selected zones.
 
 
-Folders
--------
-
-See :ref:`object-folders` for details on this function.
-
-.. _dns-forward-zone:
-
-Forward Zone
-------------
-
-For creating a forward zone, see :ref:`webapp-create-dns-zone`.
-
-
-Master Zone
------------
-
-For creating primary zones, see :ref:`webapp-create-dns-zone`.
-
 
 Editing Zone Properties
 ----------------------------
@@ -198,19 +198,6 @@ Search
 ------
 
 For search, see :ref:`webapp-quick-command`.
-
-Secondary Zone
-----------
-
-For creating slave zones, see :ref:`webapp-create-dns-zone`.
-
-
-.. _dns-stub-zone:
-
-Stub Zone
----------
-
-For creating stub zones, see :ref:`webapp-create-dns-zones`.
 
 
 View History
