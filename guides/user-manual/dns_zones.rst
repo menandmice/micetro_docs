@@ -27,13 +27,15 @@ The left sidebar offers several options for filtering and organizing the zones. 
 .. image:: ../../images/sidebar-tabs.png
    :width: 65%
 
-* The **Menu** tab offers various filtering options for zones, such as zone types, favorites, and reverse zones.
+* The **Menu** tab offers the most commonly used filtering options for zones, such as zone types, favorites, and reverse zones.
 
 * The **Folders** tab allows you to organize zones and filter queries into folders. For more information about folder management, see :ref:`folder-management`.
 
 * On the **DNS services** tab you can view zones by server/service. This can be useful if you have multiple DNS services and want to view the zones associated with each one separately.
 
 Micetro will remember your current tab selection when you navigate away from the DNS page and return to it later.
+
+.. _dns-zone-types:
 
 Zone Types
 -----------
@@ -105,10 +107,18 @@ Managing Zones
 
 Creating Zones
 ^^^^^^^^^^^^^^^
-Creating a new DNS zone can be done by clicking on the Create button above the DNS zone list. From the dropdown, select the zone type (link to zone type table above) and an Add zone wizard will lead the user through the creation of the zone. Number of steps varies between zone types and also depending on how Micetro is configured.
+To create a new DNS zone:
 
-Delete zone
------------
+1. Click :guilabel:`Create` in the taskbar at the top of the DNS page.
+
+2. Select the zone type, see :ref:`dns-zone-types`.
+   
+3. 
+
+Add zone wizard will lead the user through the creation of the zone. Number of steps varies between zone types and also depending on how Micetro is configured.
+
+Deleting Zones
+^^^^^^^^^^^^^^^
 
 Use this command to delete a zone from one or more servers. 
 
