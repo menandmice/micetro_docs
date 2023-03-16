@@ -19,7 +19,7 @@ Overview
 By default, the DNS page displays all primary zones in the system regardless of authority. 
 
 .. image:: ../../images/DNS-Micetro.png
-   :width: 75%
+   :width: 85%
 |
 The left sidebar offers several options for filtering and organizing the zones. The sidebar has three tabs: **Menu**, **Folders**, and **DNS services**. 
 
@@ -44,7 +44,7 @@ Zone Types
   :header: "Type", "Description"
   :widths: 15, 85
 
-  "Primary (blue)", "A static primary zone, which is always the original copy of the zone, and always present on that zone's primary server."
+  "Primary (blue)", "A primary zone, which is always the original copy of the zone, and always present on that zone's primary server."
   "Primary (yellow)", "A dynamic master zone, which is always the original copy of the zone, and always present on that zone's master server."
   "Primary (purple)", "An Active Directory Integrated primary zone."
   "Secondary", "A read-only copy of a primary zone or another secondary zone."
@@ -52,38 +52,18 @@ Zone Types
   "*Configuration types*", "*The below zone types are essentially a configuration that tells the (recursive) DNS server how to resolve zones it cannot resolve the normal way*."
   "Stub", "A stub zone is a copy of a DNS zone that contains only resource records that identify the authoritative DNS servers for that zone. Stub zone is dynamically updated from the list of primary DNS servers."
   "Static-stub", "A BIND specific zone type to configure conditional forwarding, similar to Stub but is static, that is, it has a set of preconfigured NS entries."
-  "Forward", "A forward zone contains a list of name server addresses, called forwarders, that are authoritative for the domain name in question. With forward zones queries are forced to go to the specified addresses."
+  "Forward", "A forward zone contains a list of name server addresses, called forwarders, that can resolve queries for the zone. With forward zones queries are forced to go to the specified addresses."
   "*Template*", "*AuthServe specific*."
   "Options template", "This configuration template is specific to the AuthServe DNS server and can be used to add templated options configuration to multiple zones. Editing the options template will affect all zones using the template."
  
-Opening a DNS Zone
-------------------
-There are several ways to open a zone:
-
-* select the zone in the list, and then click :guilabel:`Open` on the taskbar.
-
--OR-
-
-* double click the zone.
-
--OR-
-
-* select the zone in the list, and then select :guilabel:`Open zone` on the Row menu (...).
-
 Zone Contents
--------------
+^^^^^^^^^^^^^
 
-The Inspector pane on the right provides a detailed look at the data inside of a zone. The header record (Start of Authority or SOA record) displays as a collection of fields above the resource records.
-
-Open the zone to view its contents. 
+The Inspector pane on the right provides a detailed look at the data inside of a zone. The header record (Start of Authority or SOA record) displays as a collection of fields. Select a zone to display details in the pane.
 
 .. image:: ../../images/DNS-zone-contents-Micetro-10.5.png
    :width: 65%
-   
-
-SOA
-^^^
-
+ |  
 Since the SOA record is seldom modified after it is created, you can hide the data from the Inspector pane. Simply click the section header (or :guilabel:`<` and :guilabel:`v`) to collapse or expand the information.
 
 
@@ -105,11 +85,15 @@ SOA Fields
 Managing Zones
 --------------
 
+Opening DNS Zones
+^^^^^^^^^^^^^^^^^^
+To view the contents of a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu (**...**). A list of the zone's resource records is displayed. For more information about DNS Resource Records, see :ref:`dns-records`.
+
 Creating Zones
 ^^^^^^^^^^^^^^^
 To create a new DNS zone:
 
-1. Click :guilabel:`Create` in the taskbar at the top of the DNS page.
+1. Click :guilabel:`Create` on the toolbar at the top of the DNS page.
 
 2. Select the zone type, see :ref:`dns-zone-types`.
    
@@ -153,7 +137,7 @@ To delete a zone from one or more servers:
 
 
 Migrating Zones
------------------
+^^^^^^^^^^^^^^^
 
 You can migrate one or more zones from one server to another, including all data in the zone.
 
@@ -181,8 +165,8 @@ To migrate a zone:
 
 .. _ad-preferred-servers:
 
-Edit Preferred Servers
-----------------------
+Editing Preferred Servers
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
   This option is only available when working with AD integrated zones. (See :ref:`active-directory`.)
@@ -210,14 +194,13 @@ DNS administrators can specify the server to use when opening an AD integrated z
 
 
 Editing Zone Properties
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can click :guilabel:`Edit Properties` on the taskbar to edit custom properties that have been configured for the selected zones.
+You can click :guilabel:`Edit Properties` on the toolbar to edit custom properties that have been configured for the selected zones.
 
 
 Promoting Secondary Zones
----------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^
 The Promote Zone feature makes it possible to change a secondary zone to a primary zone. This might be necessary in emergency situations, for example, if the primary zone becomes unavailable for an extended period of time. This feature is only available for DNS Administrators.
 
 When a secondary zone is promoted, the following actions are performed:
@@ -246,6 +229,6 @@ To promote a secondary zone to a primary zone:
 
 
 View History
-------------
+^^^^^^^^^^^^^
 
 The :guilabel:`View history` option on the :guilabel:Àction` menu opens the History window that shows a log of all changes that have been made to the zone, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user. See :ref:`webapp-object-change-history`.
