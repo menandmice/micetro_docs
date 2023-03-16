@@ -21,13 +21,6 @@ To grant other roles access to DNS information, make sure that they include the 
 .. note::
    To fully manage zones, additional permissions may be required, and specific access might be defined on individual zones.
    
- 
-Using the DNS page
--------------------
-The DNS page shows a list of all DNS zones across your network. The left pane provides filtering options for the zones and in the right pane you can see the properties for the selected zone.
-
-Use the toolbar to manage zones, such as creating, editing, and migrating zones. You can also search, filter, and configure the list. 
-
 
 .. toctree::
   :maxdepth: 1
