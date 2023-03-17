@@ -63,6 +63,7 @@ Zone Contents
 The Inspector pane on the right provides a detailed look at the data inside of a zone. Select the zone to view its contents.
 
 .. image:: ../../images/DNS-zone-contents-Micetro-10.5.png
+   :width: 65%
       
 You can hide information in the Inspector pane. Simply click a the header of the desired section (or :guilabel:`>` and :guilabel:`v`) to collapse or expand the section.
 
@@ -93,28 +94,55 @@ Creating Zones
 ^^^^^^^^^^^^^^^
 To create a new DNS zone:
 
-1. Click :guilabel:`Create` on the toolbar at the top of the DNS page.
+1. Click :guilabel:`Create` on the DNS page toolbar.
 
 2. Select the zone type, see :ref:`dns-zone-types`.
-   
+
+   .. image:: ../../images/dns-zone-create.png
+      :width: 65%
+      
 3. A wizard will lead you through the creation process. Number of steps varies between zone types and also depending on how Micetro is configured.
 
 Primary Zone
 """""""""""""
-When creating a primary zone it’s easy to find the right primary server by using the server filter. If xDNS profiles (link to xDNS Redundancy — Micetro by Men&amp;Mice latest documentation ) have been created on the instance, the zone can be added directly to an xDNS profile in the first step of the wizard.
+1. When creating a primary zone it’s easy to find the right primary server by using the server filter. If xDNS profiles :ref:`xdns-profiles` have been created on the instance, the zone can be added directly to an xDNS profile in the first step of the wizard.
+
+<Screenshot replication step AD integrated>
+
+<Screenshot replication step not AD integrated>
+
+<Screenshot custom property step with good demo data>
+
+2. If **custom properties** have been defined for zones, they can be edited in a separate step. Custom properties provide additional attributes that enhance the ability to understand, search and sort zone data in Micetro. Custom properties are displayed as columns in the DNS grid for each zone.
+
+<Screenshot folder step with good demo data>
+
+3. If **DNS folders** have been configured in Micetro, the new zone can be added directly to a folder. DNS folders are a neat way to organise zones in Micetro to have better overview and manageability. For more information about folders, see :ref:`folder-management`.
+
+<screenshot summary step with good demo data>
+
+4. The **summary** step summarises the configuration for the new zone before its created. To edit the configuration, go to the respective page of the wizard and make the desired changes.
 
 Secondary Zone
 """""""""""""""
 
 Stub Zone
 """""""""""
-When creating a stub zone, the zone name and one or more primary servers for the zone being copied is needed. When entering addresses for the primary servers, address resolution can be turned on or off by switching the toggle control above the text area.
+When creating a stub zone, you must provide the zone name and one or more primary servers for the zone being copied. You can use the toggle control above the text box to turn the address resolution on and off.
 
 Static-stub Zone
 """"""""""""""""
 
+<screenshot of initial setup step for static-stub>
+
+Forward zone
+""""""""""""
+
+<screenshot of initial setup step for static-stub>
+
 Options Template Zone
 """""""""""""""""""""""
+<screenshot of zone options step for Options Template>
 
 Deleting Zones
 ^^^^^^^^^^^^^^^
@@ -123,14 +151,8 @@ To delete a zone from one or more servers:
 
 1. Select the zone(s) you want to delete.
 
-2. Do one of the following:
-   
-  * On the :guilabel:`Action` menu, select :guilabel:`Delete zone`. 
-   
-   -OR-
-   
-  * On the Row menu (**...**), select :guilabel:`Delete zone`.
-   
+2. On the :guilabel:`Action` menu, select :guilabel:`Delete zone`. You can also select this option on the **Row menu (...)**.    
+      
 3. The Delete Zone dialog box opens, showing each zone you selected and a list of servers that currently serve that zone. The zone(s) you selected will be deleted from every server that is selected on this list. To keep the zone on a particular server, clear the checkbox for that server.
 
 4. Click :guilabel:`Delete`. The zone is removed from the servers.
@@ -145,17 +167,11 @@ To migrate a zone:
 
 1. Select the zone you want to migrate.
 
-2. Do one of the following:
+2. On the :guilabel:`Action` menu, select :guilabel:`Migrate zone`. You can also select this option on the **Row menu (...)**.  
    
-  * On the :guilabel:`Action` menu, select :guilabel:`Migrate zone`. 
-   
-   -OR-
-   
-  * On the Row menu (**...**), select :guilabel:`Migrate zone`.
+3. The Migrate Zone(s) dialog box opens.
 
-3. The Migrate Zone(s) Wizard dialog box opens.
-
-4. Select the DNS service to migrate the zone to. 
+4. Select the DNS service you want to migrate the zone to. 
 
 5. If you want remove the zone from the current service, select the :guilabel:`Remove original zone` checkbox.
 
@@ -169,7 +185,7 @@ Editing Preferred Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  This option is only available when working with AD integrated zones. (See :ref:`active-directory`.)
+  This option is only available when working with Active Directory (AD) integrated zones. For more inforamtion about AD, see :ref:`active-directory`.
 
 DNS administrators can specify the server to use when opening an AD integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable.
 
@@ -177,14 +193,8 @@ DNS administrators can specify the server to use when opening an AD integrated z
 
 2. Select the zone(s) you'd like to set preferred servers for.
 
-3. Do one of the following:
+3. On the :guilabel:`Action` menu, select :guilabel:`Edit preferred servers`. You can also select this option on the **Row menu (...)**.  :
    
-  * On the :guilabel:`Action` menu, select :guilabel:`Edit preferred servers`. 
-   
-   -OR-
-   
-  * On the Row menu (**...**), select :guilabel:`Edit preferred servers`.
-
 4. Arrange the order of your servers into the preferred order. The server on the top of the list is tried first, then, if that server is unavailable, the second, and so on.
 
 5. Click :guilabel:`Save`.
@@ -217,14 +227,8 @@ To promote a secondary zone to a primary zone:
 
 1. Select the secondary zone.
 
-2. Do one of the following:
+2. On the :guilabel:`Action` menu, select :guilabel:`Promote to primary`. You can also select this option on the **Row menu (...)**.  
    
-  * On the :guilabel:`Action` menu, select :guilabel:`Promote to primary`. 
-   
-   -OR-
-   
-  * On the Row menu (**...**), select :guilabel:`Promote to primary`.
-
 3. Click :guilabel:`Save` to continue, or :guilabel:`Cancel` to discontinue the process.
 
 
