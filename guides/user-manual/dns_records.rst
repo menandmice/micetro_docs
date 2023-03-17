@@ -116,7 +116,7 @@ To create a new DNS record:
   * Selecting an item from the list, will fill in the **Address** field with the next free IP address from that network, along with an indicator on the address state: ``Free``, ``Reserved``, ``Claimed`` or ``Assigned``. You'll also see insights for the selected IP address.
 
       .. image:: ../../images/create-DNS-record-ipam-Micetro.png
-      :width: 75%
+         :width: 75%
     
 4. When you are finished, click :guilabel:`Create now` to save the new record to the zone, or :guilabel:`Add to request` to add it to the request queue. For more information about the request queue, see :ref:`webapp-workflows`.
 
@@ -125,7 +125,7 @@ IP Address Insights
 Once you have entered/selected the IP address in the **Address** field, you'll be able to see some insights about the address and related objects. These insights give you more information about the IP address and can help you understand its state better.
 
 .. image:: ../../images/create-DNS-record-ipam-insights-Micetro.png
-  :width: 75%
+     :width: 75%
 |
 Hover over the :guilabel:`i` icon to see more information or a list of objects:
 
