@@ -19,7 +19,7 @@ Overview
 By default, the DNS page displays all primary zones in the system regardless of authority. 
 
 .. image:: ../../images/DNS-Micetro.png
-   :width: 85%
+   :width: 90%
 |
 The left sidebar offers several options for filtering and organizing the zones. The sidebar has three tabs: **Menu**, **Folders**, and **DNS services**. 
 
@@ -39,6 +39,7 @@ Micetro will remember your current tab selection when you navigate away from the
 
 Zone Types
 -----------
+Below are the zone types supported by Micetro.
 
 .. csv-table::
   :header: "Type", "Description"
@@ -59,18 +60,17 @@ Zone Types
 Zone Contents
 ^^^^^^^^^^^^^
 
-The Inspector pane on the right provides a detailed look at the data inside of a zone. The header record (Start of Authority or SOA record) displays as a collection of fields. Select a zone to display details in the pane.
+The Inspector pane on the right provides a detailed look at the data inside of a zone. Select the zone to view its contents.
 
 .. image:: ../../images/DNS-zone-contents-Micetro-10.5.png
-   :width: 65%
- |  
-Since the SOA record is seldom modified after it is created, you can hide the data from the Inspector pane. Simply click the section header (or :guilabel:`<` and :guilabel:`v`) to collapse or expand the information.
+      
+You can hide information in the Inspector pane. Simply click a the header of the desired section (or :guilabel:`>` and :guilabel:`v`) to collapse or expand the section.
 
+SOA 
+""""
+The Start of Authority or SOA record is displayed as a collection of fields in the Inspector pane.
 
-SOA Fields
-""""""""""
-
-.. csv-table::
+.. csv-table:: SOA Information
   :header: "Field", "Description"
   :widths: 15, 75
 
@@ -87,7 +87,7 @@ Managing Zones
 
 Opening DNS Zones
 ^^^^^^^^^^^^^^^^^^
-To view the contents of a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu (**...**). A list of the zone's resource records is displayed. For more information about DNS Resource Records, see :ref:`dns-records`.
+To view the DNS resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu (**...**). A list of the zone's resource records is displayed. For more information about DNS Resource Records, see :ref:`dns-records`.
 
 Creating Zones
 ^^^^^^^^^^^^^^^
