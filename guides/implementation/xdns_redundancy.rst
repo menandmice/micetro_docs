@@ -15,6 +15,8 @@ xDNS offers service level, platform agnostic DNS redundancy. xDNS has been reima
   :width: 60%
   :align: center
 
+.. _xdns-profiles:
+
 xDNS Profiles 
 -------------
 
