@@ -12,8 +12,8 @@ Overview
 
 This section shows how to perform specific actions in Micetro associated with maintaining your DHCP services, such as adding and deleting services and setting DHCP service options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
 
-New DHCP Server
----------------
+Adding a New DHCP Server
+------------------------
 You must be logged in as a user with privileges to administer DHCP in order to add a DHCP server.
 
 This section describes the process for adding new DHCP servers, and generic DHCP management information. For detailed information about the different DHCP platforms, see:
@@ -33,12 +33,12 @@ This section describes the process for adding new DHCP servers, and generic DHCP
 .. note::
   For information on adding a DHCP service on a Men&Mice Appliance, see :ref:`appliance-management`.
 
-1. Navigate to :menuselection:`Admin --> Service Management` and click :guilabel:`Add Service`. The Add Service dialog box opens.
+1. Navigate to :menuselection:`Admin --> Service Management`, and then click :guilabel:`Add Service`. The Add Service dialog box opens.
 
 .. image:: ../../images/add-dhcp-v6-on.jpg
   :width: 50%
   :align: center
-
+|
 Server Name
   Type either the (fully qualified) DNS name or the IP Address of the DHCP server.
 
@@ -127,9 +127,9 @@ Toggle DHCPv6 Management on or off
 .. note::
    There is only one DHCP service on a Microsoft DHCP server. DHCPv4 and DHCPv6 are not decoupled in Microsoft as they are in Micetro. Any action performed on either DHCPv6 or DHCPv4 that requires a restart of the service will result in a restart of the single DHCP service on the Microsoft server.
    
-1. Go to :guilabel:`Admin`, and then click :guilabel:`Server Management`.
+1. Go to :guilabel:`Admin`, and then click :guilabel:`Service Management`.
 
-2. Expand :guilabel:`DHCP Servers`, and select :guilabel:`Microsoft DHCP`.
+2. Expand :guilabel:`DHCP Services`, and select :guilabel:`Microsoft DHCP`.
 
 3. Select one or multiple servers, hover over the selection to click on the ellipsis (or meatball) menu, and then click :guilabel:`Edit DHCP Server`.
 
@@ -196,11 +196,14 @@ Properties
 -----------
 DHCP server properties can be managed on the Service Management page.
 
-1. In the list of DHCP Services, select the appropriate DHCP service.
+1. In the list of DHCP Services, select the appropriate DHCP server.
 
-2.
+2. On the :guilabe:`Action`, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**. 
 
-Refer to the applicable section based upon the service type: :ref:`dhcp-windows`, :ref:`dhcp-isc`, :ref:`dhcp-kea` or :ref:`dhcp-cisco`.
+   .. image:: ../../images/dhcp-edit-config.png
+      :width: 60%
+
+3. In the dialog box that opens, make the desired changes, and then click :guilabel:`Save`.
 
 .. _kea-advanced-options:
 
