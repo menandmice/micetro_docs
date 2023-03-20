@@ -54,7 +54,7 @@ A package for the new version is then downloaded and automatically prepared for 
 
 Deploying the update
 ^^^^^^^^^^^^^^^^^^^^^
-After the package has been prepared, the new version can be deployed by clicking the :guilabel:`Deploy Update`button. 
+After the package has been prepared, the new version can be deployed by clicking the :guilabel:`Deploy Update` button. 
 
 If the new version includes an updated Central component, Central will be restarted when the update is deployed. Otherwise, it keeps running and Micetro is seamlessly updated to the new version.
 
@@ -91,7 +91,7 @@ The :guilabel:`Status` column will highlight if there is an error with the compo
 
 Updating Appliances
 ^^^^^^^^^^^^^^^^^^^^
-The :guilabel:`Current status` show if any Appliances have updates pending. 
+Under :guilabel:`Current status` you can see if any Appliances have updates pending. 
 
 You can manually apply the update by clicking the :guilabel:`Update` button on the specific appliance. We recommend updating appliances one at a time.
 
