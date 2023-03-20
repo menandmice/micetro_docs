@@ -76,10 +76,10 @@ Table of Contents
     :caption: Micetro Admin Guide
     :maxdepth: 3
     
-    guides/admin-manual/webapp_server_management
-    guides/admin-manual/access_control
-    guides/admin-manual/snmp_profiles
     guides/admin-manual/admin_license
+    guides/admin-manual/access_control
+    guides/admin-manual/webapp_server_management
+    guides/admin-manual/snmp_profiles
     guides/admin-manual/admin_event_hooks
     guides/admin-manual/admin_custom_properties
     guides/admin-manual/admin_system_settings
