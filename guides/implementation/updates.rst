@@ -94,3 +94,13 @@ Updating Appliances
 The :guilabel:`Current status` show if any Appliances have updates pending. 
 
 You can manually apply the update by clicking the :guilabel:`Update` button on the specific appliance. We recommend updating appliances one at a time.
+
+Update Management in the Management Console
+-------------------------------------------------
+For information about how to update in the M&M Management Console, see:
+
+.. toctree::
+  :maxdepth: 1
+
+  console_updates
+ 
