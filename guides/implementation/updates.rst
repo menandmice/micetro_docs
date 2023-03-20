@@ -6,6 +6,8 @@
 
 Update Guide
 ============
+.. note::
+   This information applies to the web interface. For information about update management in the M&M Management Console, see :ref:`console-udates`.
 
 **Permissions:**
 
