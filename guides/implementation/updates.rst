@@ -37,18 +37,18 @@ To apply an update:
 
 3. You'll find available updates under :guilabel:`Micetro Version` in the left sidebar.
 
-.. image:: ../../images/available-updates.png
-  :width: 65%
+   .. image:: ../../images/available-updates.png
+    :width: 65%
 
 
 Preparing the Update
 ^^^^^^^^^^^^^^^^^^^^^
-Prepare the update by clicking :guilabel:`Prepare`.
+Click :guilabel:`Prepare Update` to start the update process.
 
 A package for the new version is then downloaded and automatically prepared for deployment by uploading a package to each DNS and DHCP server, as well as each appliance, if the new update package includes an update to that component. This is done to streamline the updating process, such that the update packages have already been uploaded the various components when the update is deployed.
 
 .. note::
-  The Status field will highlight if there are any errors with updating components. Hovering over the warning icon will provide more details to help you troubleshoot.
+  The :guilabel:`Status` column will highlight if there are any errors with updating components. Hover over the the warning icon for more details to help you troubleshoot.
 
 Deploying the update
 ^^^^^^^^^^^^^^^^^^^^^
@@ -85,7 +85,7 @@ You will see a list of all components, their current version and status.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^^
-The Status column will highlight if there is an error with the component, or if it is offline. Hover over the Offline or Error status for more details to help you troubleshoot.
+The :guilabel:`Status` column will highlight if there is an error with the component, or if it is offline. Hover over the Offline or Error status for more details to help you troubleshoot.
 
 Updating Appliances
 ^^^^^^^^^^^^^^^^^^^^
