@@ -59,6 +59,7 @@ Table of Contents
      guides/implementation/configuration
      guides/implementation/advanced_config
      guides/implementation/updates
+     guides/implementation/console -updates
 
 .. toctree::
      :caption: Micetro User Guide
