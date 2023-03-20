@@ -7,8 +7,8 @@
 .. toctree::
   :maxdepth: 2
 
-IPAM
-=====
+IP Adress Management (IPAM)
+===========================
 
 .. note::
   This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`.
@@ -25,6 +25,7 @@ Multiple Address Spaces
 -----------------------
 
 .. note::
+  For managing address spaces, see :ref:`address-spaces`.
   For managing address spaces through the Management Console, see :ref:`console-address-spaces`.
 
 Micetro supports multiple address spaces.
@@ -40,46 +41,17 @@ Items **shared** between address spaces are:
 
 * custom property definitions (see :ref:`admin-custom-properties`)
 
-Address Space Management
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Users with sufficient permissions are allowed to create, modify or delete address spaces as well as set access privileges for existing address spaces.
-
-Navigate to :menuselection:`Admin --> Configuration --> Address Spaces`
-
-.. image:: ../../images/address-spaces.png
-  :width: 90%
-  :align: center
-
-To **create** a new address space, click the :guilabel:`Add` button in the top bar and enter the name and description for the address space.
-
-.. note::
-  The first address space is always named ``<default>``. It is not possible to rename or delete the *<default>* address space.
-
-  The *<default>* address space is the only address space that shows AD sites if *AD Site and Subnet* integration is enabled.
-
-To **edit** the name or description for an address space, select the address space and click the :guilabel:`Action --> Edit address space` button in the top bar or ellipsis menu.
-
-To **delete** an address space, select the address space and click the :guilabel:`Action --> Remove address space` button in the top bar or ellipsis menu.
-
-.. danger::
-  When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP address ranges, IP address entries, and folders). This action cannot be undone.
-
-.. note::
-  You cannot delete the *<default>* address space or the address space you are currently working in.
-
-To see and edit the **access controls** for an address space, select the address space and click the :guilabel:`Action --> Access` button in the top bar or ellipsis menu.
 
 Switching to a Different Address Space
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can only work in one address space at a time. You can see the current address space in the Manager window, above the object list.
+You can only work in one address space at a time. You can see the current address space at the bottom of the :guilabel:`Networks` section on the :guilabel:`IPAM` page..
 
 To switch to a different address space:
 
-1. Click the **User** icon in the top right corner of the Web Application.
+1. Click the **User** icon in the top right corner.
 
-2. Select :guilabel:`Address Space` and select the address space you want to use.
+2. Point to :guilabel:`Address Space`, and then select the address space you want to use.
 
 .. image:: ../../images/address-space-Micetro.png
   :width: 50%
@@ -89,7 +61,7 @@ To switch to a different address space:
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
 
-When the IP Address management component is enabled, you may notice some differences when working with Address (A) records in DNS zone windows, such as:
+When the IPAM component is enabled, you may notice some differences when working with Address (A) records in DNS zone windows, such as:
 
 Restriction on allowed IP Addresses
   When IPAM is enabled, the system administrator may restrict which IP Addresses you are allowed to use. The system administrator can determine an IP Address range that you are allowed to work with. In addition, he/she can choose whether you can use an IP Address that has already been assigned in DNS.
@@ -106,38 +78,28 @@ A Container is a section of the address space that has been reserved but not yet
 
 .. _new-container:
 
-New container
+New Container
 ^^^^^^^^^^^^^
 
 A range that exists on network boundaries (a subnet) can be converted to a Container. Likewise, a Container can be converted to a range.
 
-1. In the **Networks** context select the range(s).
+1. Select :guilabel:`IPAM` on the top navigation bar.
 
-2. From the ellipsis menu select :guilabel:`Convert to container` or use :menuselection:`Actions --> Convert to container`.
+2. Select the range(s) you want to convert.
 
-3. Confirm that you want to convert the selected range(s) and add a save comment.
+3. On the :guilabel:`Action` menu, select :guilabel:`Convert to container`. You can also select this option on the **Row menu (...)**.
 
-.. note::
-  In the Management Console, you can set Inherited Access for Containers.
-
-  When you open the Access dialog box for a Container, the dialog box has an extra section for inherited access.
-
-  * Checking the :guilabel:`Inherit Access` checkbox will have the selected Container inherit all access bits from its parent. This means that whenever the access privileges for the parent are changed, they will be applied to the Container as well.
-
-  * Clicking the :guilabel:`Apply access inheritance in child ranges` button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.
-
-  Regarding other access settings, refer to :ref:`access-control`.
+4. Confirm that you want to convert the selected range(s), and add a save comment.
 
 Viewing IP Address Ranges
 -------------------------
-The **Networks** context shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
+The **IPAM** page shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
+In the filtering sidebar, select  :guilabel:`IP Ranges`.
 
-.. image:: ../../images/Networks-Micetro.png
-  :width: 90%
-  :align: center
+.. image:: ../../images/Networks-Micetro-10.5.png
+  :width: 80%
+
 |
-In the filtering sidebar, click on :guilabel:`IP Ranges`.
-
 You can choose between a flat and a hierarchical view for the Address Ranges scopes by selecting an appropriate button on the top right of the grid.
 
 If an Address range has no subranges, the utilization for the range is shown in the range list.
