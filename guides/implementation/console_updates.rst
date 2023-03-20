@@ -1,11 +1,11 @@
 .. meta::
-   :description: How to update Micetro by Men&Mice
+   :description: How to update Micetro by Men&Mice Managment Console
    :keywords: update, Micetro
 
-.. _updates:
+.. _console-updates:
 
-Update Guide
-============
+Update Guide - Management Console
+=================================
 
 The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&Mice Central, the Men&Mice Server Controllers and the Men&Mice Appliances with minimal downtime.
 
