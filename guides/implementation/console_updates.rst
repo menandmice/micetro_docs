@@ -4,8 +4,8 @@
 
 .. _console-updates:
 
-Update Guide - Management Console
-=================================
+Update Guide - Management Console (obsolete)
+==============================================
 
 The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&Mice Central, the Men&Mice Server Controllers and the Men&Mice Appliances with minimal downtime.
 
