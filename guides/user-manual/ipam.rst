@@ -11,7 +11,7 @@ IPAM
 =====
 
 .. note::
-  To manage IP addresses in the Management Console, see :ref:`console-ipam`.
+  This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`.
 
 Overview
 --------
