@@ -13,11 +13,6 @@ IPAM
 .. note::
   This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`.
 
-
-
-
-:ref:`console-ipam`
-
 Overview
 --------
 
@@ -62,7 +57,7 @@ To switch to a different address space:
   :width: 50%
   :align: center
 
-
+|
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
 
@@ -79,7 +74,7 @@ Automatic assignment of IP Addresses
 Containers
 ----------
 
-A Container is a section of the address space that has been reserved but not yet allocated. Containers can contain address ranges and scopes and you can set address privileges for containers that can be applied to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled that functionality in System Settings.
+A Container is a section of the address space that has been reserved but not yet allocated. Containers can contain address ranges and scopes, and you can set address privileges for containers that can be applied to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled that functionality in System Settings.
 
 .. _new-container:
 
@@ -99,28 +94,28 @@ A range that exists on network boundaries (a subnet) can be converted to a Conta
 Viewing IP Address Ranges
 -------------------------
 The **IPAM** page shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
+
 In the filtering sidebar, select  :guilabel:`IP Ranges`.
 
 .. image:: ../../images/Networks-Micetro-10.5.png
-  :width: 80%
-
-|
-You can choose between a flat and a hierarchical view for the Address Ranges scopes by selecting an appropriate button on the top right of the grid.
-
-If an Address range has no subranges, the utilization for the range is shown in the range list.
-
-While viewing the IP ranges, the :ref:`webapp-quickfilter` is available. When using the tree view while a filter is active, any parent ranges that don't fulfill the search criteria are faded out and the matches highlighted. For example, in the image below, we searched for the string ``1.4``.
-
-.. image:: ../../images/networks-tree-filter-Micetro.png
   :width: 90%
-  :align: center
+|
+* Use the buttons on the top right of the grid to choose between a flat and a hierarchical view for the Address Ranges scopes.
+
+* If an Address range has no subranges, the utilization for the range is shown in the range list.
+
+To narrow down the results shown when viewing IP ranges, you can use the :ref:`webapp-quick-filter`. When using the tree view with an active filter, any parent ranges that do not match the search criteria will be faded out while the matches highlighted. For example, in the image below, we searched for the string ``3.1``.
+
+.. image:: ../../images/ipam-tree-filter-Micetro.png
+  :width: 90%
+  
 |
 New Networks
 ------------
 
 To create a new network, do the following:
 
-1. Open the :menuselection:`Networks` context.
+1. Go to the **IPAM** page.
 
 2. Click the :guilabel:`Create` button.
 
@@ -129,13 +124,13 @@ To create a new network, do the following:
 4. Enter the appropriate values, grouped on pages depending on the type.
 
 .. note::
-  The *Create* dialog is different depending on the type selected through the dropdown:
+  The *Create* wizard is different depending on the type selected through the dropdown:
 
-  * For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
+* For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
 
-  * A *DHCP scope* can be created with the network and broadcast address automatically configured. See :ref:`new-dhcp-scope`.
+* A *DHCP scope* can be created with the network and broadcast address automatically configured. See :ref:`new-dhcp-scope`.
 
-  * A *container* has no network or broadcast address. See :ref:`ipam-containers`.
+* A *container* has no network or broadcast address. See :ref:`ipam-containers`.
 
 5. Click :guilabel:`Finish`.
 
@@ -151,7 +146,7 @@ It is possible to create subranges of existing ranges and DHCP scopes.
 Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^
 
-When creating a new network, DHCP scope, or container, you must complete the Properties dialog box in the final step.
+When creating a new network, DHCP scope, or container, you must complete the Properties page in the final step.
 
 These properties are defined in :ref:`admin-custom-properties`.
 
@@ -160,9 +155,9 @@ Network Modifications
 
 Once you have created a network, it is easy to make changes.
 
-1. Select the range in the grid.
+1. Select the range in the list.
 
-2. From the ellipsis menu select :guilabel:`Edit network properties` or use :menuselection:`Actions --> Edit network properties`.
+2. On the :guilabel:`Action` menu, select :guilabel:`Edit network properties`. You can also select this option on the **Row menu (..)**.
 
 3. Make the desired changes.
 
@@ -173,35 +168,31 @@ Network Deletions
 
 You can always delete a network definition. If you delete a network, the IP addresses that belonged to it will get the attributes of the parent network. If the network you are deleting has subranges, they will become children of the unassigned networks' parent.
 
-Use the following procedure to delete a network definition:
+To delete a network definition:
 
 1. Select network(s) you want to remove.
 
-2. From the ellipsis menu select :guilabel:`Delete network` or use :menuselection:`Actions --> Delete network`. A dialog prompts you to confirm your decision to delete the(se) network(s).
+2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`. You can also select this option on the **Row menu (..)**. 
 
-3. Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
+3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
 
 IP Address List
 ---------------
 
-To view a list of host entries in a particular network, double-click on the network. This opens the grid where you can view and edit the properties of individual IP address entries.
+To view a list of host entries in a particular network, double-click the network. This opens a list where you can view and edit the properties of individual IP address entries.
 
-.. image:: ../../images/view-Networks-Micetro.png
+.. image:: ../../images/view-Networks-Micetro-10.5.png
   :width: 80%
-  :align: center
-
-The filtering sidebar's :guilabel:`State` section can be used to show only **Free**, **Assigned**, **Claimed**.
+  
+The :guilabel:`State` section in the filtering sidebar can be used to show only **Free**, **Assigned**, **Claimed**.
 
 The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
 
-  Empty
-    The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
+ * **Empty**: The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
 
-  OK
-    If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
+ * **OK**: If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
 
-  Verify
-    If there is not a match between the A and the PTR records for the host, the status is listed as Verify. The most common reasons are:
+ * **Verify**: If there is not a match between the A and the PTR records for the host, the status is listed as Verify. The most common reasons are:
 
       * There is an A record but the PTR record is missing.
 
@@ -224,7 +215,7 @@ When you add or modify an existing IP address entry, the IP Address dialog box d
 .. image:: ../../images/ip-inspector-Micetro.png
   :width: 30%
   :align: center
-
+|
 .. _ipam-add-dns-host:
 
 Adding a DNS Host
@@ -286,20 +277,16 @@ Join Ranges
 .. image:: ../../images/join-ranges.png
   :width: 90%
   :align: center
-
+|
 3. Set the properties for the joined range:
 
-  Use Access from
-    Click the drop-down list and specify from which range you will gain access.
+   * **Use Access from**: Click the drop-down list and specify from which range you will gain access.
 
-  Use Properties from
-    Click the drop-down list and specify from which range you will use the properties.
+   * **Use Properties from**: Click the drop-down list and specify from which range you will use the properties.
 
-  Title
-    Enter a title for the new range.
+   * **Title**: Enter a title for the new range.
 
-Description
-  Type a description.
+   * **Description**: Type a description.
 
 4. Click :guilabel:`Join`.
 
@@ -330,14 +317,11 @@ Configuring Host Discovery Using Ping
 
 Once the schedule options have been set and saved, two columns - Last Seen and Last Known MAC Address - are added to the range grid. The Last Seen column identifies when a host was last seen on the network.
 
-Green
-  Host responded to the last PING request. The date and time are shown.
+* **Green**: Host responded to the last PING request. The date and time are shown.
 
-Orange
-  Host has responded in the past, but did not respond to the last PING request. The date and time of last response is shown.
+* **Orange**: Host has responded in the past, but did not respond to the last PING request. The date and time of last response is shown.
 
-Red
-  Host has never responded to a PING request. The text Never is shown.
+* **Red**: Host has never responded to a PING request. The text Never is shown.
 
 At any time if you wish to disable host discovery, do the following:
 
@@ -403,14 +387,14 @@ To manage sites and subnets, Micetro needs to be configured with AD Forest(s).
 Adding an AD Forest
 """""""""""""""""""
 
-1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
 2. Use the :guilabel:`Add Forest` action from the top bar. A dialog box displays.
 
-.. image:: ../../images/add-ad-forest.png
-  :width: 60%
-  :align: center
-
+   .. image:: ../../images/add-ad-forest.png
+     :width: 60%
+  
+|
 Use same Global Catalog as the Men&Mice Central server
   If checked, Micetro will use the same Global Catalog server as the Men&Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server's FQDN or IP address in the **Global Catalog Server** field.
 
@@ -433,9 +417,9 @@ Edit AD Forest
 
 To edit an existing AD Forest (to, for example, change the read-only status):
 
-1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
-2. Use the :guilabel:`Edit AD Forest` action from the top bar or the ellipsis menu.
+2. Select the :guilabel:`Edit AD Forest` action from the top toolbar or the **Row menu (...)**.
 
 3. Update the settings in the dialog box.
 
@@ -446,11 +430,11 @@ Removing an AD Forest
 
 To remove an AD Forest from Micetro:
 
-1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
 2. Select the AD Forest(s) you want to remove.
 
-2. Use the :guilabel:`Remove AD Forest` action from the top bar or the ellipsis menu.
+2. Select the :guilabel:`Remove AD Forest` action on the top toolbar or the **Row menu (...)**.
 
 3. Click :guilabel:`OK` in the confirmation box to remove the Forest(s).
 
@@ -459,7 +443,7 @@ Reloading the Sites in an AD Forest
 
 Data from AD Forests is synchronized by Men&Mice Central regularly. To manually synchronize forests and reload the data for sites and subnets:
 
-1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
 2. Select the AD Forest(s) you want to synchronize.
 
@@ -475,7 +459,7 @@ View subnets in a site
 
 To view subnets within a specific site:
 
-1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
 2. Select the AD Forest the site is in, or use the :ref:`webapp-quick-filter` to find it by name.
 
@@ -491,9 +475,9 @@ Moving subnets between AD sites
 
 To add subnet(s) to a site, or move between sites:
 
-1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
+1. On the **IPAM** page, select the subnet(s) in the list.
 
-2. Use the :guilabel:`Set AD Site` action from the top bar or the ellipsis menu.
+2. Select :guilabel:`Set AD Site` on the :guilabel:`Action` menu or the **Row menu (...)**.
 
 3. Set the (new) AD Site in the dropdown and click :guilabel:`Save`.
 
@@ -509,7 +493,7 @@ Remove subnet from AD site
 
 1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
 
-2. Use the :guilabel:`Remove from AD Site` action from the top bar or the ellipsis menu.
+2. Select :guilabel:`Remove from AD Site` on the :guilabel:`Action` menu or the **Row menu (...)**.
 
 3. Click :guilabel:`Yes` to confirm the removal.
 
@@ -518,12 +502,13 @@ Subnets outside of sites
 
 To view subnets that don't belong to any AD site:
 
-1. In the web application, navigate to :menuselection:`IPAM --> AD sites`.
+1.  On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
-2. Click on the ``Flat view`` button (see :ref:`webapp-quick-filter`) next to the Quick Filter to change the view.
+2. Click the ``Flat view`` button (see :ref:`webapp-quick-filter`) next to the Quick Filter to change the view.
 
 3. Sort the IP address ranges by the **AD Site** column in *ascending* order:
 
 .. image:: ../../images/subnets-outside-sites.png
   :width: 90%
   :align: center
+|
