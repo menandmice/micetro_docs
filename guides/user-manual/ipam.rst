@@ -249,9 +249,9 @@ Split/Allocate Range Wizard
 
 This wizard allows you to create multiple subranges from an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
 
-1. Open the :menuselection:`IPAM` context and select the range you'd like to split.
+1. On the **IPAM** page, select the range you'd like to split.
 
-2. Use the :guilabel:`Action --> Allocate Subranges` action from the top bar or the ellipsis menu.
+2. On the :guilabel:`Action` menu, select :guilabel:`Allocate subranges`. You can also select this option on the **Row menu (...)**.
 
 3. Configure the new subranges. If you choose fewer subnets that fit in the parent, you can also set the offset from where you want to start allocating. Click :guilabel:`Next` when finished configuring.
 
@@ -270,14 +270,14 @@ This wizard allows you to create multiple subranges from an existing range. The 
 Join Ranges
 -----------
 
-1. In the :menuselection:`IPAM` context, select the ranges that you want to join.
+1. On the **IPAM** page, select the ranges that you want to join.
 
-2. Use the :guilabel:`Action --> Join Ranges` action from the top bar or ellipsis menu.
+2. On the :guilabel:`Action` menu, select :guilabel: `Join Ranges`. You can also select this option on the **Row menu (...)**.
 
-.. image:: ../../images/join-ranges.png
-  :width: 90%
-  :align: center
-|
+   .. image:: ../../images/join-ranges.png
+      :width: 90%
+  
+  
 3. Set the properties for the joined range:
 
    * **Use Access from**: Click the drop-down list and specify from which range you will gain access.
@@ -300,7 +300,7 @@ Configuring Host Discovery Using Ping
 
 1. Select one or more IP ranges.
 
-2. From the ellipsis menu select :guilabel:`Set discovery schedule` or use :menuselection:`Actions --> Set discovery schedule`.
+2. On the :guilabel:`Action` menu, select :guilabel:`Set discovery schedule`. You can also select this option on the **Row menu (...)**.
 
 3. Select the :guilabel:`Enable` option.
 
@@ -327,7 +327,7 @@ At any time if you wish to disable host discovery, do the following:
 
 1. Select the object(s) for which you want to disable discovery.
 
-2. From the ellipsis menu, select :guilabel:`Set discovery schedule`.
+2. On the **Row menu (...)**, select :guilabel:`Set discovery schedule`.
 
 3. Uncheck the :guilabel:`Enable` option.
 
@@ -353,7 +353,7 @@ Adds or removes the currently selected IP Address Range from folders.
 
 1. Highlight the range you want to remove.
 
-2. From the ellipsis menu, select :guilabel:`Set folder` and add or remove the range from folders.
+2. On the **Row menu (...)**, select :guilabel:`Set folder` and add or remove the range from folders.
 
 
 AD Sites and Subnets
@@ -434,9 +434,9 @@ To remove an AD Forest from Micetro:
 
 2. Select the AD Forest(s) you want to remove.
 
-2. Select the :guilabel:`Remove AD Forest` action on the top toolbar or the **Row menu (...)**.
+3. Select the :guilabel:`Remove AD Forest` action on the top toolbar or the **Row menu (...)**.
 
-3. Click :guilabel:`OK` in the confirmation box to remove the Forest(s).
+4. Click :guilabel:`OK` in the confirmation box to remove the Forest(s).
 
 Reloading the Sites in an AD Forest
 """""""""""""""""""""""""""""""""""""
@@ -449,7 +449,7 @@ Data from AD Forests is synchronized by Men&Mice Central regularly. To manually 
 
 3. Use the :guilabel:`Synchronize` action from the top bar.
 
-3. Click :guilabel:`OK` in the confirmation box to synchronize the Forests.
+4. Click :guilabel:`OK` in the confirmation box to synchronize the Forests.
 
 AD Subnets
 ----------
