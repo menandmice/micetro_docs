@@ -11,7 +11,7 @@ IP Address Management (IPAM)
 ===========================
 
 .. note::
-  This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`. :ref:`console-address-spaces`
+  This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`. :ref:`console-ipam`
 
 Overview
 --------
