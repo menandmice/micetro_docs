@@ -7,11 +7,16 @@
 .. toctree::
   :maxdepth: 2
 
-IP Address Management (IPAM)
-===========================
+IPAM
+======
 
 .. note::
-  This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`. :ref:`console-ipam`
+  This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`.
+
+
+
+
+:ref:`console-ipam`
 
 Overview
 --------
