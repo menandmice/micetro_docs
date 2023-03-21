@@ -10,7 +10,7 @@
 
 .. _console-ipam:
 
-IP address management (Management Console, obsolete)
+IP address management - Management Console (obsolete)
 ======================================================
 
 Overview
