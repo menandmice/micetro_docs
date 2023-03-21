@@ -65,9 +65,8 @@ To move an object:
 
 2. Select a different address space from the  dropdown list, and then click :guilabel:`Confirm`.
 
-   .. image:: ../../images/address-spaces-move.png
-    :width: 90%
+.. image:: ../../images/address-spaces-move.png
+   
     
-|
 .. note::
    Moving servers in an xDNS profile to separate address spaces, is NOT supported in the Web app. This is also not possible for DHCP servers in a failover relationship.
