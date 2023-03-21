@@ -80,6 +80,7 @@ Table of Contents
     guides/admin-manual/webapp_server_management
     guides/admin-manual/snmp_profiles
     guides/admin-manual/admin_event_hooks
+    guides/admin-manual/address_spaces
     guides/admin-manual/admin_custom_properties
     guides/admin-manual/admin_system_settings
     guides/admin-manual/webapp_sso
