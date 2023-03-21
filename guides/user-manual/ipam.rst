@@ -463,7 +463,7 @@ To view subnets within a specific site:
 
 2. Select the AD Forest the site is in, or use the :ref:`webapp-quick-filter` to find it by name.
 
-3. Use the :guilabel:`View networks` action with the site selected from the top bar or the ellipsis menu.
+3. On the :guilabel:`Action` menu, select :guilabel:`View networks`. You can also select this option on the **Row menu (...)**.
 
 This will open the :menuselection:`IPAM --> Networks` context with a filter applied to show all subnets that belong to the site.
 
