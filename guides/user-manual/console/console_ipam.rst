@@ -1,14 +1,14 @@
 .. meta::
-   :description: IP address management (IPAM) in the Micetry by Men&Mice Management Console
+   :description: IP address management (IPAM) in the Men&Mice Management Console
    :keywords: IPAM, IP address managament
-
-.. _console-ipam:
 
 .. toctree::
   :maxdepth: 2
 
 .. |user-range| image:: ../../../images/console-ipam-user-created-range-icon.png
 .. |dhcp-scope| image:: ../../../images/console-ipam-dhcp-scope-icon.png
+
+.. _console-ipam:
 
 IP address management (Management Console, obsolete)
 ======================================================
