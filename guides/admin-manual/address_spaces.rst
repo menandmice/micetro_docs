@@ -28,24 +28,24 @@ Items **shared** between address spaces are:
 
 Address Space Managment
 -------------------------
-Users with sufficient permissions are allowed to create, modify or delete address spaces as well as set access privileges for existing address spaces.
+Users with sufficient permissions are allowed to create, modify, or delete address spaces as well as setting access privileges for existing address spaces.
 
-Navigate to :menuselection:`Admin --> Configuration --> Address Spaces`
+Go to :menuselection:`Admin --> Configuration --> Address Spaces`.
 
-.. image:: ../../images/address-spaces.png
+.. image:: ../../images/address-spaces-10.5.png
   :width: 90%
   :align: center
-
-To **create** a new address space, click the :guilabel:`Add` button in the top bar and enter the name and description for the address space.
+|
+To **create** a new address space, click :guilabel:`Add` at the top of the view, and then enter the name and description for the address space.
 
 .. note::
   The first address space is always named ``<default>``. It is not possible to rename or delete the *<default>* address space.
 
   The *<default>* address space is the only address space that shows AD sites if *AD Site and Subnet* integration is enabled.
 
-To **edit** the name or description for an address space, select the address space and click the :guilabel:`Action --> Edit address space` button in the top bar or ellipsis menu.
+To **edit** the name or description for an address space, select the address space, and then select :guilabel:`Edit address space` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
-To **delete** an address space, select the address space and click the :guilabel:`Action --> Remove address space` button in the top bar or ellipsis menu.
+To **delete** an address space, select the address space, and then select :guilabel:`Remove address space` on the c
 
 .. danger::
   When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP address ranges, IP address entries, and folders). This action cannot be undone.
@@ -53,8 +53,21 @@ To **delete** an address space, select the address space and click the :guilabel
 .. note::
   You cannot delete the *<default>* address space or the address space you are currently working in.
 
-To see and edit the **access controls** for an address space, select the address space and click the :guilabel:`Action --> Access` button in the top bar or ellipsis menu.
+To **see and edit the access controls** for an address space, select the address space, and then select :guilabel:`Access` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
 Moving Objects to a Different Address Space
 -------------------------------------------
-Object can be moved between address spaces by selecting the “Move to address space task” with an object like Network or Server selected. This will allow you to select a different address space in a dropdown.  Note moving servers in an xDNS profile to separate address spaces is NOT supported in the Web app. This is also not possible for DHCP servers in a failover relationship.
+You can move DNS servers, DHCP servers, IP Address renges, and individual IP Address entries between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects do a different address space.
+
+To move an object:
+
+1. Select the object you want to move, and then select :guilabel:`Move to address space` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
+
+2. Select a different address space from the  dropdown list, and then click :guilabel:`Confirm`.
+
+   .. image:: ../../images/address-spaces-move.png
+    :width: 90%
+    
+|
+.. note::
+   Moving servers in an xDNS profile to separate address spaces, is NOT supported in the Web app. This is also not possible for DHCP servers in a failover relationship.
