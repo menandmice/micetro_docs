@@ -41,8 +41,8 @@ Go to :menuselection:`Admin --> Configuration --> Address Spaces`.
 
 * To **delete** an address space, select the address space, and then select :guilabel:`Remove address space` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
-   .. danger::
-      When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP address ranges, IP address entries, and folders). This action cannot be undone.
+  .. danger::
+     When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP address ranges, IP address entries, and folders). This action cannot be undone.
 
 * To **see and edit the access controls** for an address space, select the address space, and then select :guilabel:`Access` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
