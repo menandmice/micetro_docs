@@ -70,6 +70,7 @@ Table of Contents
      guides/user-manual/folder_management     
      guides/user-manual/console
      guides/user-manual/automation
+     guides/user-manual/view_change_history
 
 .. toctree::
     :caption: Micetro Admin Guide
@@ -83,6 +84,7 @@ Table of Contents
     guides/admin-manual/address_spaces
     guides/admin-manual/admin_custom_properties
     guides/admin-manual/admin_system_settings
+    guides/admin-manual/view_object_history
     guides/admin-manual/webapp_sso
     guides/admin-manual/admin_updates   
     guides/admin-manual/admin_maintenance
