@@ -84,7 +84,6 @@ Table of Contents
     guides/admin-manual/address_spaces
     guides/admin-manual/admin_custom_properties
     guides/admin-manual/admin_system_settings
-    guides/admin-manual/view_object_history
     guides/admin-manual/webapp_sso
     guides/admin-manual/admin_updates   
     guides/admin-manual/admin_maintenance
