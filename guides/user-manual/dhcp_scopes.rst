@@ -4,7 +4,7 @@
 
 .. _dhcp-scopes:
 
-DHCP scopes
+DHCP Scopes
 ===========
 
 .. note::
@@ -40,7 +40,7 @@ Selected Scope Menus
 
 When working with scopes, selecting one or more scopes enables a row menu (...) and relevant actions from the :guilabel:`Actions` menu on the top toolbar. The available actions change based upon the type of the DHCP server the scope is hosted on.
 
-DHCP scope actions
+DHCP Scope Actions
 """"""""""""""""""
 
 Open network
@@ -87,7 +87,7 @@ Manage DHCP pools
   Delete Excluded Range(s)
     *MS DHCP only.* To delete an exclusion, select it, and then select :guilabel:`Delete` on the **Row menu (...)**.
 
-DHCP actions for IP addresses
+DHCP Actions for IP Addresses
 """""""""""""""""""""""""""""
 
 To view the IP addresses a DHCP scope contains, double click the scope the grid, select :guilabel:`Open network` on the **Row menu (...)**, or the :guilabel:`Action` menu.
@@ -148,7 +148,7 @@ Unlike DHCPv4 scopes which display all the addresses within a scope, a DHCPv6 sc
 |
 .. _new-dhcp-scope:
 
-New DHCP scope
+New DHCP Scope
 --------------
 
 .. note::
@@ -435,7 +435,7 @@ Viewing the configured DHCP options for a DHCP scope
 .. image:: ../../images/edit-dhcp-options.png
   :width: 70%
 
-Adding a new DHCP option
+Adding a New DHCP Option
 """"""""""""""""""""""""""
 
 1. Start typing into the :guilabel:`Add an option` field. Either type in the name of the option or the option number.
@@ -471,14 +471,14 @@ Configuring DHCPv6 and DDNS Options (Microsoft Only)
       
 7. Click :guilabel:`Save` to save your settings
       
-Removing a DHCP option
+Removing a DHCP Option
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Hovering over an option in the Edit Scope dialog box will display a trashcan icon to the right of the option.
 
 Clicking on the trashcan will remove the option.
 
-HEX and ASCII representation
+HEX and ASCII Representation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some DHCP options, such as DHCP option 43 (Vendor specific info) require the value to be in HEX format. In this case the UI offers the value to be viewed both as HEX and ASCII by selecting each option in tabs above the field, as seen in the figure below.
