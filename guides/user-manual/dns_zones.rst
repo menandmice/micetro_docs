@@ -96,53 +96,58 @@ To create a new DNS zone:
 
 1. Click :guilabel:`Create` on the DNS page toolbar.
 
-2. Select the zone type, see :ref:`dns-zone-types`.
+2. Select the zone type. For more information about zone types, see :ref:`dns-zone-types`.
 
    .. image:: ../../images/dns-zone-create.png
       :width: 65%
       
-3. A wizard will lead you through the creation process. Number of steps varies between zone types and also depending on how Micetro is configured.
+3. Follow the steps of the wizard. The number of steps varies depending on the zone type and how Micetro is configured.
 
 Primary Zone
 """""""""""""
-1. When creating a primary zone it’s easy to find the right primary server by using the server filter. If xDNS profiles :ref:`xdns-profiles` have been created on the instance, the zone can be added directly to an xDNS profile in the first step of the wizard.
+1. Use the server filter to select the DNS server where the zone should be created. If xDNS profiles :ref:`xdns-profiles` have been created on the instance, the zone can be added directly to an xDNS profile in the first step of the wizard.
 
-<Screenshot replication step AD integrated>
+   .. image:: ../../images/zone-flow-filter-all.png
+      :width: 65%
 
-<Screenshot replication step not AD integrated>
+2. If **custom properties** have been defined for zones, they can be edited in a separate step. Custom properties provide additional attributes that enhance the ability to understand, search and sort zone data in Micetro. 
 
-<Screenshot custom property step with good demo data>
+   .. image:: ../../images/zone-flow-custom-properties.png
+      :width: 65%
 
-2. If **custom properties** have been defined for zones, they can be edited in a separate step. Custom properties provide additional attributes that enhance the ability to understand, search and sort zone data in Micetro. Custom properties are displayed as columns in the DNS grid for each zone.
+   Custom properties are displayed as columns in the DNS grid for each zone.
 
-<Screenshot folder step with good demo data>
+
+   .. image:: ../../images/custom-properties-column.png
+      :width: 90%   
 
 3. If **DNS folders** have been configured in Micetro, the new zone can be added directly to a folder. DNS folders are a neat way to organise zones in Micetro to have better overview and manageability. For more information about folders, see :ref:`folder-management`.
 
-<screenshot summary step with good demo data>
-
+   .. image:: ../../images/zone-flow-folder.png
+      :width: 65%   
+      
 4. The **summary** step summarises the configuration for the new zone before its created. To edit the configuration, go to the respective page of the wizard and make the desired changes.
 
 Secondary Zone
 """""""""""""""
+When creating a stub zone, you need to specify the zone name and either the IP address or hostname of the primary servers that hold the zone you are creating a secondary copy for.
 
 Stub Zone
 """""""""""
 When creating a stub zone, you must provide the zone name and one or more primary servers for the zone being copied. You can use the toggle control above the text box to turn the address resolution on and off.
 
+
 Static-stub Zone
 """"""""""""""""
-
-<screenshot of initial setup step for static-stub>
-
+When creating a static-stub zone, you must provide the the zone name and a target DNS server. To configure how the resolve the zone, specify either hostnames or IP addresses on the zone options page.
+  
 Forward zone
 """"""""""""
-
-<screenshot of initial setup step for static-stub>
+Forward zones are similar to stub zones. You must provide zone name and a list of Forward servers as well as at least one target server for where to create the zone.
 
 Options Template Zone
 """""""""""""""""""""""
-<screenshot of zone options step for Options Template>
+The template zone option is available only if an AuthServe DNS server is connected to Micetro.
 
 Deleting Zones
 ^^^^^^^^^^^^^^^
