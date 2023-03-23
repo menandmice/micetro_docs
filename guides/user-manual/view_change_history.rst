@@ -7,11 +7,17 @@
 Viewing Change History
 ======================
 
-**Permission:** ``Access to view history`` on Micetro
+**Permissions:** 
 
-You can see a log of all changes you have made to andy object, including the date and time of change, actions taken, and any comments you have made.
+* Permission: ``Access to view history`` on Micetro.
+* Role: ``Administrator (built-in)``
+
+You can see a log of all changes made to any object, including the date and time of the change, the name of the user who made it, actions taken, and any comments entered by the user.
+
+All users can view their own object history, while administrators can see the history of all users.
 
 You can view the history of a specific object or all objects.
+
 
 **To view your own changes:**
 
@@ -27,6 +33,9 @@ You can view the history of a specific object or all objects.
 
 **To filter data in the Change History window:**
 
-1 Click the filter icon in the top right corner.
+1. Click the filter icon in the top right corner.
 
 2. Enter the relevant information and click :guilabel:`Search`.
+
+   .. image:: ../../images/history-filter.png
+      :width: 65%
