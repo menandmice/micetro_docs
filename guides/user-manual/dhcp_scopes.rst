@@ -21,25 +21,24 @@ Viewing Scopes
 All DHCP Scopes on All Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In :menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
+You can view all of the existing DHCP scopes at once, regardless of the server to which they belong. On the :guilabel:`IPAM` page, select :guilabel:`DHCP scopes` in the filtering sidebar on the left.
 
-.. image:: ../../images/dhcp-scopes-Micetro.png
+.. image:: ../../images/dhcp-scopes-Micetro-10.5.png
   :width: 80%
-  :align: center
+|
+The :guilabel:`Utilization` column in the scope list shows the utilization of available addresses within the address pool(s) of each scope.
 
-The :guilabel:`Utilization` column in the scope list displays the utilization of available addresses within the address pool(s) of each scope.
-
-Disabled scopes are shown as gray. The number of unassigned addresses is always shown as zero for disabled scopes.
+Disabled scopes appear dimmed. The number of unassigned addresses is always shown as zero for disabled scopes.
 
 Scopes on a Specific DHCP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is easy to view the DHCP scopes that reside on individual DHCP Servers that are being managed by Micetro. In the :menuselection:`Networks` context click the relevant DHCP server in the filtering sidebar's :guilabel:`DHCP servers` section.
+Adiministrators can view DHCP scopes that reside on individual DHCP Servers that are being managed by Micetro. On the :guilabel:`Admin` page, select the relevant DHCP server in the filtering sidebar under :guilabel:`DHCP Services`. On the :guilabel:`Action` menu, select :guilabel:`View scopes`. You can also select this option on the **Row menu (...)**.
 
 Selected Scope Menus
 ^^^^^^^^^^^^^^^^^^^^
 
-When working with scopes, selecting one or more scopes enables an ellipsis menu and relevant actions from the :guilabel:`Actions` shortcut button. The available actions change based upon the type of the DHCP server the scope is hosted on.
+When working with scopes, selecting one or more scopes enables a row menu (...) and relevant actions from the :guilabel:`Actions` menu on the top toolbar. The available actions change based upon the type of the DHCP server the scope is hosted on.
 
 DHCP scope actions
 """"""""""""""""""
@@ -48,6 +47,7 @@ Open network
   Opens the selected scope.
 
 Edit network properties
+   Change the title, description, and vlan id of the selected network.
 
 Enable/disable scope
   If you are no longer using a particular scope, but do not want to delete it completely because you may need it in the future, you can disable the scope instead. A scope that is disabled will be ignored by the DHCP server until it is re-enabled.
@@ -70,27 +70,27 @@ Manage DHCP pools
   View and manage DHCP pools.
 
   Add Pool
-    Creates an address pool for the selected scope. Complete the From and To fields in the dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
+    Creates an address pool for the selected scope. Fill in the :guilabel:`From` and :guilabel:`To` fields in the dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
 
   Edit Address Pool
-    To edit an existing pool, select it and from the ellipsis menu select :guilabel:`Edit`.
+    To edit an existing pool, select it, and then select :guilabel:`Edit` on the **Row menu (...)** .
 
   Delete Address Pool(s)
-    To delete an existing pool, select it and from the ellipsis menu select :guilabel:`Delete`.
+    To delete an existing pool, select it, and then select :guilabel:`Delete` on the **Row menu (...)**.
 
   Create Exclusion
     *MS DHCP only*. Allows you to exclude a single IP Address or an entire range of addresses from being used. You can only exclude addresses that are already part of an address pool. To create an exclusion, specify the From and To IP Addresses. All the addresses between and including the ones entered will be excluded.
 
   Edit Exclusion
-    *MS DHCP only.* To edit an exclusion, select it and from the ellipsis menu select :guilabel:`Edit`.
+    *MS DHCP only.* To edit an exclusion, select it, and then select :guilabel:`Edit` on the **Row menu (...)**.
 
   Delete Excluded Range(s)
-    *MS DHCP only.* To delete an exclusion, select it and from the ellipsis menu select :guilabel:`Delete`.
+    *MS DHCP only.* To delete an exclusion, select it, and then select :guilabel:`Delete` on the **Row menu (...)**.
 
 DHCP actions for IP addresses
 """""""""""""""""""""""""""""
 
-Open a DHCP scope (by double clicking it in the grid, selecting :guilabel:`Open network` from the ellipsis menu, or using :menuselection:`Actions --> Open network`) to view the IP addresses it contains.
+To view the IP addresses a DHCP scope contains, double click the scope the grid, select :guilabel:`Open network` on the **Row menu (...)**, or the :guilabel:`Action` menu.
 
 Create DNS record
   Creates an A record from the selected IP address. See :ref:`webapp-create-dns-record`.
@@ -176,21 +176,21 @@ DHCP server
   The DHCP server for the scope.
 
 Enabled
-  If checked, the DHCP scope will start allocating IP addresses immediately. Uncheck it if you want to configure the scope further.
+  If selected, the DHCP scope will start allocating IP addresses immediately. Clear this option if you want to configure the scope further.
 
 Start/end of address pool
   Adjust the first and last IP address in the pool.
 
-3. Active Directory Site selection. If you have enabled :ref:`active-directory`, the Wizard will ask you which AD site the new DHCP Scope should be associated to.
+4. Active Directory Site selection. If you have enabled :ref:`active-directory`, the Wizard will ask you which AD site the new DHCP Scope should be associated to.
 
   .. note::
     Leave it empty for no AD site.
 
-4. Scope properties.
+5. Scope properties.
 
-5. Summary. The changes the Wizard will perform are summarized here and applied once the user clicks "Finish".
+6. Summary. The changes the Wizard will perform are summarized here and applied once the user clicks "Finish".
 
-6. Save comment.
+7. Save comment.
 
 New DHCPv6 Scope
 ----------------
@@ -217,9 +217,9 @@ When managing exclusions within a DHCPv6 pool it is possible to specify a percen
 
 1. Select a DHCP scope while under :guilabel:`IPAM` >> :guilabel:`DHCP scopes`
 
-2. Click :guilabel:`Action` and select :guilabel:`Manage DHCP Exclusions`
+2. Click :guilabel:`Action`, and then select :guilabel:`Manage DHCP Exclusions`
 
-3. Click the :guilabel:`Add Exclusion`
+3. Click :guilabel:`Add Exclusion`
 
 4. A new pop up will appear. Choose to either create the exclusion range by :guilabel:`Manual Entry` or :guilabel:`Percentage` 
 
@@ -234,7 +234,7 @@ When managing exclusions within a DHCPv6 pool it is possible to specify a percen
 .. Note::
    If the exclusion range doesn't have the space to accomodate the percentage of IP addresses specified, it will not allow you to add this exclusion range until you pick an appropriate **From address** or lower the percentage.
 
-6. Click on :guilabel:`Add`
+6. Click :guilabel:`Add`
 
 Red bar
    The exclusion range
@@ -253,43 +253,16 @@ Access
 
 For complete details on this function, refer to :ref:`access-control`.
 
-
 Folders
 -------
 
 Refer to :ref:`object-folders` for details on this function.
 
-Reconcile Scopes
-----------------
-
-.. note::
-  Applies to MS DHCP Servers only.
-
-Use this function to fix inconsistencies between information in the registry and the DHCP database.
-
-1. Go to :guilabel:`IPAM` in the web UI
-
-2. Select :guilabel:`DHCP Scopes`
-
-3. Select one or multiple DHCP Scopes from :guilabel:`Microsoft Servers`
-
-4. Click on the ellipsis (or meatball) menu on the scope(s)
-
-5. Click on :guilabel:`Reconcile DHCP Scopes`
-
-6. If there are inconsistencies, a list will be presented. Click :guilabel:`Fix` to fix the inconsistincies.
-
-.. image:: ../../images/reconciling-scopes.png
-  :width: 70%
-  :align: center
-
-For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
-
 
 Other Functions
 ---------------
 
-At any time, you can modify the properties for a scope. Simply locate the item, and from the ellipsis menu select :guilabel:`Edit network properties`. For split scopes, the scope contents can be examined individually on each server.
+At any time, you can modify the properties for a scope. Simply locate the item, and from the **Row menu (...)** select :guilabel:`Edit network properties`. For split scopes, the scope contents can be examined individually on each server.
 
 Deleting a Lease
 ^^^^^^^^^^^^^^^^
@@ -298,22 +271,21 @@ To delete a lease in a DHCP scope, do the following:
 
 1. Open the scope containing the lease you want to delete.
 
-2. Select the lease and from the ellpisis menu select :guilabel:`Release DHCP lease` or use :menuselection:`Actions --> Release DHCP lease`.
+2. Select the lease and on the **Row menu (...)**  select :guilabel:`Release DHCP lease` or use :menuselection:`Action --> Release DHCP lease`.
 
 IP Address Details
 ^^^^^^^^^^^^^^^^^^
 
 The IP Address details window contains all information pertaining to an IP Address in Micetro, including DNS records, DHCP reservations, and custom properties. To access the IP address details select an IP address in the DHCP scope dialog, and all information is displayed in the Inspector, including information on any DNS and DHCP data associated with the IP address. A reservation can be created by clicking the :guilabel:`+` button in the *Related DHCP data* section of the Inspector.
 
-
 Renaming a Scope
 ^^^^^^^^^^^^^^^^
 
-It is very simple to change the name and/or description of a scope in Micetro.
+You can change the name and/or description of a scope in Micetro.
 
 1. Locate and select the DHCP Scope you want to rename.
 
-2. From the ellipsis menu, select :guilabel:`Edit network properties`.
+2. On the **Row menu (...)**, select :guilabel:`Edit network properties`.
 
 3. Enter the **Title**, and any other value you wish to change.
 
@@ -338,9 +310,9 @@ Configuring Host Discovery Using Ping
 
 1. Select one or more scopes.
 
-2. From the ellipsis menu select Set :guilabel:`Set discovery Schedule`.
+2. on the **Row menu (...)**, select :guilabel:`Set discovery Schedule`.
 
-3. Check the :guilabel:`Enable` option.
+3. Select the :guilabel:`Enable` option.
 
   Frequency
     Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
@@ -368,12 +340,11 @@ At any time if you wish to disable host discovery, do the following:
 
 1. Select the object(s) for which you want to disable discovery.
 
-2. From the ellipsis menu, select :guilabel:`Set discovery schedule`.
+2. On the **Row menu (...)** , select :guilabel:`Set discovery schedule`.
 
-3. Uncheck the :guilabel:`Enable` option.
+3. Clear the :guilabel:`Enable` option.
 
 4. Click :guilabel:`Save`.
-
 
 
 * The DHCP scope window will show every instance of the split scope in a separate tab, making it possible to work with all instances of the split scope in a single window.
@@ -392,9 +363,9 @@ Managing Split Scopes for DHCPv6
   
 1. Select a DHCPv6 scope under :guilabel:`IPAM` >> :guilabel:`DHCP Scopes`
   
-2. Click on :guilabel:`Action` and :guilabel:`Manage Scope Instances`
+2. Click :guilabel:`Action`, and then :guilabel:`Manage Scope Instances`
   
-3. From the drop-down menu select a second server to manage the DHCP scope and click :guilabel:`Add` and enable the servers on which the split-scope should reside
+3. In the drop-down menu select a second server to manage the DHCP scope, and then click :guilabel:`Add`. Enable the servers on which the split-scope should reside.
   
 .. note::
    You can change the preference of the servers by clicking and dragging on the hamburger icon (three lines to the left of the server) to change the order of the servers. The second server will always have a preference of the **First Server Preference + 1** and each additional server will increment by 1.
