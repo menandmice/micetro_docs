@@ -120,7 +120,7 @@ Primary Zone
 
    .. image:: ../../images/custom-properties-column.png
       :width: 90%   
-
+|
 3. If **DNS folders** have been configured in Micetro, the new zone can be added directly to a folder. DNS folders are a neat way to organise zones in Micetro to have better overview and manageability. For more information about folders, see :ref:`folder-management`.
 
    .. image:: ../../images/zone-flow-folder.png
