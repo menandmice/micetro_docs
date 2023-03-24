@@ -11,4 +11,6 @@ DHCP Services
   :maxdepth: 2
 
   dhcp_servers
-  
+  dhcp_windows
+  dhcp_kea
+  dhcp_isc
