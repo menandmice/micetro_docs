@@ -6,6 +6,7 @@
 
 DHCP Services
 **************
+In order to use the DHCP functionality of Micetro, you need to have a valid DHCP license key.
 
 .. toctree::
   :maxdepth: 2
