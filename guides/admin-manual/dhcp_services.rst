@@ -12,7 +12,8 @@ In order to use the DHCP functionality of Micetro, you need to have a valid DHCP
   :maxdepth: 2
 
   dhcp_servers
-  dhcp_windows
-  dhcp_kea
-  dhcp_isc
+  admin_dhcp_windows
+  admin_dhcp_kea
+  admin_dhcp_isc
+  admin_dhcp-cisco
 
