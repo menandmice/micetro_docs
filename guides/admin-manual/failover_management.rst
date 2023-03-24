@@ -14,7 +14,7 @@ Failover Management
 * Permission - DHCP administrator
 * Built-in role - ``DHCP Administrators (built-in)``
 
-**To add/remove a scope to a failover relationship **
+**To add/remove a scope to a failover relationship**
 
 * Permission bit - add a scope. 
 * Built-in role - DHCP Administrators (built-in)
