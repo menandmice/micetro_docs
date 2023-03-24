@@ -54,4 +54,4 @@ Disable dynamic updates for DNS PTR records
 
 Reconciling Scopes
 --------------------
-The :guilabel:`Reconcile DHCP Scopes` option is used to fix inconsistencies between information in the registry and the DHCP database. For more information about how to reconcile MS DHCP servers, see :ref:`dhcp-scopes-reconcile-scopes`.
+The :guilabel:`Reconcile DHCP Scopes` option is used to fix inconsistencies between information in the registry and the DHCP database. For more information about how to reconcile MS DHCP servers, see :ref:`reconcile-scopes`.
