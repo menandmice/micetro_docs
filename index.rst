@@ -65,7 +65,7 @@ Table of Contents
      :maxdepth: 3
 
      guides/user-manual/dns
-     guides/user-manual/dhcp
+     guides/user-manual/dhcp_scopes
      guides/user-manual/ipam
      guides/user-manual/folder_management     
      guides/user-manual/console
