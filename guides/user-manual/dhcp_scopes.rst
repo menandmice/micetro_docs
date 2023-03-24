@@ -404,7 +404,7 @@ Adding a New DHCP Option
 2. A list of available options will be displayed as you type.
 
    .. image:: ../../images/edit-scope-autocomplete.png
-   :width: 70%
+      :width: 70%
 
 3. Select the option you want to add.
 
