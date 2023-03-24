@@ -2,11 +2,10 @@
    :description: ISC DHCP servers in the Micetro by Men&Mice Management Console 
    :keywords: ISC DHCP servers, Server management
    
-.. _dhcp-isc:
+.. _admin-dhcp-isc:
 
 ISC DHCP
---------
-
+=========
 .. note::
   To manage ISC DHCP servers in the Management console, see :ref:`console-dhcp-isc`.
 
@@ -15,11 +14,17 @@ ISC DHCP
 Defining Options on ISC DHCP Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. In :menuselection:`Admin --> Server Management` select the applicable DHCP Server and select :guilabel:`Edit DHCP options` from the ellpisis menu or use :menuselection:`Actions --> Edit DHCP options`. The *Edit DHCP Options* box displays. The dialog box shows all custom options defined on the DHCP server. The available ISC DHCP options can be selected from the dropdown menu.
+1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner. 
 
-2. To add an option, select it from the option list. The option field is added to the dialog.
+2. Under **DHCP Services** in the filtering sidebar, select the applicable DHCP server. 
 
-3. To delete an option, hover over its field and click the trash button next to it.
+3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Managem DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
+
+4. The *Manage DHCP Options* dialog box opens, showing all custom options defined on the DHCP server. 
+
+5. Use the **Add an option** dropdown menu to select the ISC DHCP option you want to define.
+
+6. To delete an option, hover over its field, and theb click the trash can icon next to it.
 
 4. Click :guilabel:`Save` to save the changed option definitions.
 
