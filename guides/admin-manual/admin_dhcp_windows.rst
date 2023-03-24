@@ -2,7 +2,7 @@
    :description: Defining options on Microsoft DHCP servers in Micetro by Men&Mice
    :keywords: DHCP, DHCP servers, DHCP Windows
 
-.. _dhcp-windows:
+.. _admin-dhcp-windows:
 
 Microsoft DHCP
 ===============
@@ -27,7 +27,7 @@ Defining Options on MS DHCP Servers
  
 6. To delete an option, hover over its field, and then click the trash can icon next to it.
 
-5. Click :guilabel:`Save` to save the updated options.
+7. Click :guilabel:`Save` to save the updated options.
 
 .. _ms-dhcp-dns-options:
 
