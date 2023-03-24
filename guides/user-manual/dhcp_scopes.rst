@@ -189,9 +189,9 @@ When managing exclusions within a DHCPv6 pool it is possible to specify a percen
 
 4. A new pop up will appear. Choose to either create the exclusion range by :guilabel:`Manual Entry` or :guilabel:`Percentage`.
 
-5a. If you choose manual entry, input the **From address** and **To address** for the range you'd like to exclude from the DHCP scope.
+5. If you choose manual entry, enter the **From address** and **To address** for the range you'd like to exclude from the DHCP scope.
 
-5b. If you choose percentage, drag the percentage bar to the correct percentage of addresses you'd like to exclude and enter a **From address** only.
+   If you choose percentage, drag the percentage bar to the correct percentage of addresses you'd like to exclude, and enter a **From address** only.
 
 .. image:: ../../images/add-exclusion-percentage.png
    :width: 50%
@@ -202,15 +202,13 @@ When managing exclusions within a DHCPv6 pool it is possible to specify a percen
 
 6. Click :guilabel:`Add`.
 
-Red bar
-   The exclusion range
+   **Red bar**: The exclusion range
    
-Blue bar
-   Address Pool of dynamic allocation addresses
+   **Blue bar**: Address Pool of dynamic allocation addresses
    
-.. image:: ../../images/dhcp-exclusions.png
-   :width: 50%
-   :align: center
+   .. image:: ../../images/dhcp-exclusions.png
+      :width: 50%
+      :align: center
 
 7. Click :guilabel:`Save`
 
@@ -361,9 +359,9 @@ Managing Split Scopes for DHCPv6
    
 4. Click :guilabel:`Save`
   
-.. image:: ../../images/split-scopes-instances.png
-   :width: 60%
-   :align: center
+   .. image:: ../../images/split-scopes-instances.png
+    :width: 60%
+    :align: center
    
 5. On the same scope, click the :guilabel:`Action` menu and then select :guilabel:`Manage DHCP Exclusions`
   
@@ -371,9 +369,9 @@ Managing Split Scopes for DHCPv6
   
 7. Click on :guilabel:`Add Exclusion` for the second server and select the percentage for which you'd like to exclude from the second server and click :guilabel:`Add`
   
-.. image:: ../../images/split-scope-exclusions.png
-   :width: 60%
-   :align: center
+   .. image:: ../../images/split-scope-exclusions.png
+    :width: 60%
+    :align: center
    
 8. Click :guilabel:`Save`
  
@@ -395,8 +393,8 @@ Viewing the configured DHCP options for a DHCP scope
 
 3. A dialog box is displayed. Note that in order to see the options that have inherited values, you need to select the :guilabel:`Show inherited options` checkbox.
 
-.. image:: ../../images/edit-dhcp-options.png
-  :width: 70%
+   .. image:: ../../images/edit-dhcp-options.png
+    :width: 70%
 
 Adding a New DHCP Option
 """"""""""""""""""""""""""
@@ -405,8 +403,8 @@ Adding a New DHCP Option
 
 2. A list of available options will be displayed as you type.
 
-.. image:: ../../images/edit-scope-autocomplete.png
-  :width: 70%
+   .. image:: ../../images/edit-scope-autocomplete.png
+   :width: 70%
 
 3. Select the option you want to add.
 
