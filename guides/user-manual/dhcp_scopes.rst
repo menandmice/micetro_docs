@@ -55,11 +55,9 @@ DHCP Scope Actions
 
 * **Set discovery schedule**: Sets discovery schedule for the scope.
 
-* **Set subnet monitoring**: Configures subnet monitoring for the scope.
-
+* **Set subnet monitoring**: Configures subnet monitoring for the scope. 
 .. _dhcp-pools:
-
-* **Manage DHCP pools**:View and manage DHCP pools.
+* **Manage DHCP pools**: View and manage DHCP pools.
 
   * **Add Pool** : Creates an address pool for the selected scope. Fill in the :guilabel:`From` and :guilabel:`To` fields in the dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
 
@@ -143,14 +141,11 @@ To create a new scope on the MS DHCP server, do the following:
 
 3. Edit the options for the DHCP scope.
 
-DHCP server
-  The DHCP server for the scope.
+   * **DHCP server**: The DHCP server for the scope.
 
-Enabled
-  If selected, the DHCP scope will start allocating IP addresses immediately. Clear this option if you want to configure the scope further.
+   * **Enabled**: If selected, the DHCP scope will start allocating IP addresses immediately. Clear this option if you want to configure the scope further.
 
-Start/end of address pool
-  Adjust the first and last IP address in the pool.
+   * **Start/end of address pool**: Adjust the first and last IP address in the pool.
 
 4. Active Directory Site selection. If you have enabled :ref:`active-directory`, the Wizard will ask you which AD site the new DHCP Scope should be associated to.
 
@@ -169,34 +164,34 @@ New DHCPv6 Scope
 .. note::
 Micetro supports DHCPv6 for Microsoft and Kea DHCP
 
-1. Under :guilabel:`IPAM` click on :guilabel:`Create` and select :guilabel:`DHCP Scope`
+1. Under :guilabel:`IPAM` click on :guilabel:`Create` and select :guilabel:`DHCP Scope`..
 
-2. Enter the network information and click :guilabel:`Next`
+2. Enter the network information and click :guilabel:`Next`.
 
-3. Enter the DHCP Server name and the preference, and put a check next to :guilabel:`Enabled` if you'd like to enable this scope on this server. Click :guilabel:`Next`
+3. Enter the DHCP Server name and the preference, and put a check next to :guilabel:`Enabled` if you'd like to enable this scope on this server. Click :guilabel:`Next`.
 
-.. Note::
-   The preference value is a new parameter required by Microsoft for DHCPv6 scopes. If the scope is assigned to multiple servers, the lowest preference assignment will be selected by the DHCP client
+   .. Note::
+      The preference value is a new parameter required by Microsoft for DHCPv6 scopes. If the scope is assigned to multiple servers, the lowest preference assignment will be selected by the DHCP client
    
-4. Enter the title as an identifier for this scope as well as the description and click :guilabel:`Next`
+4. Enter the title as an identifier for this scope as well as the description and click :guilabel:`Next`.
 
-5. Verify the information is correct and click :guilabel:`Finish`
+5. Verify the information is correct and click :guilabel:`Finish`.
 
 Manage DHCPv6 Exclusions
 ------------------------
 When managing exclusions within a DHCPv6 pool it is possible to specify a percentage of a DHCPv6 scope rather than specifying a **From address** and **To address**
 
-1. Select a DHCP scope while under :guilabel:`IPAM` >> :guilabel:`DHCP scopes`
+1. Select a DHCP scope while under :guilabel:`IPAM` >> :guilabel:`DHCP scopes`.
 
-2. Click :guilabel:`Action`, and then select :guilabel:`Manage DHCP Exclusions`
+2. Click :guilabel:`Action`, and then select :guilabel:`Manage DHCP Exclusions`.
 
-3. Click :guilabel:`Add Exclusion`
+3. Click :guilabel:`Add Exclusion`.
 
-4. A new pop up will appear. Choose to either create the exclusion range by :guilabel:`Manual Entry` or :guilabel:`Percentage` 
+4. A new pop up will appear. Choose to either create the exclusion range by :guilabel:`Manual Entry` or :guilabel:`Percentage`.
 
-5a. If you choose manual entry, input the **From address** and **To address** for the range you'd like to exclude from the DHCP scope
+5a. If you choose manual entry, input the **From address** and **To address** for the range you'd like to exclude from the DHCP scope.
 
-5b. If you choose percentage, drag the percentage bar to the correct percentage of addresses you'd like to exclude and enter a **From address** only
+5b. If you choose percentage, drag the percentage bar to the correct percentage of addresses you'd like to exclude and enter a **From address** only.
 
 .. image:: ../../images/add-exclusion-percentage.png
    :width: 50%
@@ -205,7 +200,7 @@ When managing exclusions within a DHCPv6 pool it is possible to specify a percen
 .. Note::
    If the exclusion range doesn't have the space to accomodate the percentage of IP addresses specified, it will not allow you to add this exclusion range until you pick an appropriate **From address** or lower the percentage.
 
-6. Click :guilabel:`Add`
+6. Click :guilabel:`Add`.
 
 Red bar
    The exclusion range
@@ -311,14 +306,11 @@ Configuring Host Discovery Using Ping
 
 3. Select the :guilabel:`Enable` option.
 
-  Frequency
-    Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
+  * **Frequency**: Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
 
-  Every
-    Enter the frequency unit for discovery (e.g. days, weeks, etc.).
+  * **Every**: Enter the frequency unit for discovery (e.g. days, weeks, etc.).
 
-  Next run
-    Select the start date and time.
+  * **Next run**: Select the start date and time.
 
 4. Click :guilabel:`Save`.
 
@@ -364,8 +356,8 @@ Managing Split Scopes for DHCPv6
   
 3. In the drop-down menu select a second server to manage the DHCP scope, and then click :guilabel:`Add`. Enable the servers on which the split-scope should reside.
   
-.. note::
-   You can change the preference of the servers by clicking and dragging on the hamburger icon (three lines to the left of the server) to change the order of the servers. The second server will always have a preference of the **First Server Preference + 1** and each additional server will increment by 1.
+   .. note::
+      You can change the preference of the servers by clicking and dragging on the hamburger icon (three lines to the left of the server) to change the order of the servers. The second server will always have a preference of the **First Server Preference + 1** and each additional server will increment by 1.
    
 4. Click :guilabel:`Save`
   
