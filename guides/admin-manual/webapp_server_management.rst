@@ -200,8 +200,7 @@ DHCP Services
 .. toctree::
   :maxdepth: 2
 
-  dhcp_servers
   admin_dhcp_windows
   admin_dhcp_kea
   admin_dhcp_isc
-  admin_dhcp-cisco
+  admin_dhcp_cisco
