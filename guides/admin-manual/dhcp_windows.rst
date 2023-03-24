@@ -1,35 +1,38 @@
 .. meta::
    :description: Defining options on Microsoft DHCP servers in Micetro by Men&Mice
-   :keywords: DHCP, DHCP servers, DHCP Windows, 
+   :keywords: DHCP, DHCP servers, DHCP Windows
 
 .. _dhcp-windows:
 
 Microsoft DHCP
---------------
+===============
 
 .. _dhcp-windows-define-options:
 
 Defining Options on MS DHCP Servers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------
 
-1. In :menuselection:`Admin --> Server Management` select the applicable DHCP Server and select :guilabel:`Edit DHCP options` from the ellipsis menu or use :menuselection:`Actions --> Edit DHCP options`. The *Edit DHCP options* box displays. The dialog box shows all options defined on the DHCP server.
+1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner. 
 
-2. Use the drop-down menu to select the option you want to define.
+2. Under **DHCP Services** in the filtering sidebar, select the applicable Microsoft DHCP server. 
 
-.. image:: ../../images/windows-dhcp-options-Micetro.png
-  :width: 50%
-  :align: center
+3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Managem DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
 
-3. To add an option, select the option from the list. The option filed is added to the dialog box.
+4. The *Manage DHCP Options* dialog box opens, showing all options defined on the DHCP server.
 
-4. To delete an option, hover over its field and click the trash button next to it.
+5. Use the drop-down menu to select the option you want to define.
+
+   .. image:: ../../images/dhcpv6-options-10.5.png
+      :width: 50%
+ 
+6. To delete an option, hover over its field, and then click the trash can icon next to it.
 
 5. Click :guilabel:`Save` to save the updated options.
 
 .. _ms-dhcp-dns-options:
 
 MS DHCP options (DNS tab)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enable DNS dynamic updates according to the settings below.
   Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.
@@ -49,7 +52,6 @@ Dynamically update DNS A and PTR records for DHCP clients.
 Disable dynamic updates for DNS PTR records
   Turns off dynamic updates for PTR records.
 
-Reconcile Scopes
-----------------
-
-See :ref:`console-dhcp-windows-reconcile`.
+Reconciling Scopes
+--------------------
+The :guilabel:`Reconcile DHCP Scopes` option is used to fix inconsistencies between information in the registry and the DHCP database. For more information about how to reconcile MS DHCP servers, see :ref:`dhcp-scopes-reconcile-scopes`.
