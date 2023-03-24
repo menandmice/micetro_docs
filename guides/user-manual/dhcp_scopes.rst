@@ -222,6 +222,8 @@ Folders
 
 Refer to :ref:`object-folders` for details on this function.
 
+.. _reconcile-scopes:
+
 Reconcile Scopes
 ----------------
 
