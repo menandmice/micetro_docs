@@ -79,6 +79,7 @@ Table of Contents
     guides/admin-manual/admin_license
     guides/admin-manual/access_control
     guides/admin-manual/webapp_server_management
+    guides/admin-manual/failover_management
     guides/admin-manual/snmp_profiles
     guides/admin-manual/admin_event_hooks
     guides/admin-manual/address_spaces
