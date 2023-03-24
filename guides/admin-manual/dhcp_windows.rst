@@ -51,6 +51,20 @@ Dynamically update DNS A and PTR records for DHCP clients.
 
 Disable dynamic updates for DNS PTR records
   Turns off dynamic updates for PTR records.
+  
+Editing Server Properties
+--------------------------
+You can edit the configuration of Windows servers.
+
+1. Select the relevant Windows server.
+
+2. On the :guilabel:`Action` menu, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**. 
+
+3. In the **Edit Configuration** dialog box, make the desired changes, and then click :guilabel:`Save`.
+
+.. image:: ../../images/windows-dhcp-configuration.png
+   :width: 80%
+   
 
 Reconciling Scopes
 --------------------
