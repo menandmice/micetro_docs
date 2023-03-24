@@ -194,3 +194,13 @@ Use the following table for more information on the indicators:
 
 .. [1] In Kea HA configurations. See :ref:`dhcp-kea-ha`.
 
+DHCP Services
+--------------
+.. toctree::
+  :maxdepth: 2
+
+  dhcp_servers
+  admin_dhcp_windows
+  admin_dhcp_kea
+  admin_dhcp_isc
+  admin_dhcp-cisco
