@@ -81,6 +81,7 @@ Console Features and Tasks
   console_dns_zones
   console_dns_records
   windows_dns_policies
+  console_dhcp
   console_dhcp_scopes
   devices
  
