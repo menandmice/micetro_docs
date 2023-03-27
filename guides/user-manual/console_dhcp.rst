@@ -11,5 +11,5 @@ DHCP
   :maxdepth: 2
 
   console_dhcp_servers
-  console_dhcp_scopes
+  console/console_dhcp_scopes
  
