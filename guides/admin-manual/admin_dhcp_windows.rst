@@ -23,7 +23,7 @@ Defining Options on MS DHCP Servers
 5. Use the drop-down menu to select the option you want to define.
 
    .. image:: ../../images/dhcpv6-options-10.5.png
-      :width: 50%
+      :width: 65%
  
 6. To delete an option, hover over its field, and then click the trash can icon next to it.
 
