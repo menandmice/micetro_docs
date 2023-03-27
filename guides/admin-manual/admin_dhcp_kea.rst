@@ -70,42 +70,38 @@ When creating scopes on Kea servers configured in load balancing mode for high a
 
 Kea DHCP Server Properties
 --------------------------
+You can edit the configuration of Kea DHCP servers.
 
-.. image:: ../../images/console-kea-properties-new.png
-  :width: 80%
+1. On the **Admin** page, select the relevant Kea server.
+
+2. On the :guilabel:`Action` menu, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**.
+
+3. In the Edit Configuration dialog box, make the desired changes, and then click :guilabel:`Save`.
+
+.. image:: ../../images/kea-dhcp-config.png
+  :width: 75%
   :align: center
 
-Default/Maximum/Minimum Valid Lifetime
-  Specifies the time after which a lease will expire if not renewed.
+* **Default/Maximum/Minimum Valid Lifetime**: Specifies the time after which a lease will expire if not renewed.
 
-Renew Timer
-  Specifies the time when a client will begin a renewal procedure.
+* **Renew Timer**: Specifies the time when a client will begin a renewal procedure.
 
-Rebind Timer
-  Specifies the time when a client will begin a rebind procedure.
+* **Rebind Timer**: Specifies the time when a client will begin a rebind procedure.
 
-Match Client ID
-  Specifies if the server should ignore the client identifier during lease lookups and allocations for a particular subnet.
+* **Next Server**: Specifies the server address to use when clients want to obtain configuration from a TFTP server.
 
-Echo Client ID
-  Specifies if the server should send back client-id options when responding to clients.
+* **Echo Client ID**: Specifies if the server should send back client-id options when responding to clients.
 
-Decline Probation Period
-  Specifies a probation time that will be set on addresses that are in use by some unknown entity.
+* **Match Client ID**: Specifies if the server should ignore the client identifier during lease lookups and allocations for a particular subnet.
 
-Next Server
-  Specifies the server address to use when clients want to obtain configuration from a TFTP server.
+* **Decline Probation Period**: Specifies a probation time that will be set on addresses that are in use by some unknown entity.
 
-**Control Socket**
+* **Control Socket Name**: The path to the UNIX socket. Cannot be empty.
 
-  Name
-    The path to the UNIX socket. Cannot be empty.
-
-Server tag
-  The name used for this server in a High Availability setup.
+* **Server tag**: The name used for this server in a High Availability setup.
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   dhcp_kea_external_changes
   dhcp_kea_ha
