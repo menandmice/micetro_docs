@@ -66,6 +66,58 @@ When creating scopes on Kea servers configured in load balancing mode for high a
   :width: 50%
   :align: center
 
+
+Defining Options on Kea DHCP Servers
+-------------------------------------
+
+1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner. 
+
+2. Under **DHCP Services** in the filtering sidebar, select the applicable Kea DHCP server. 
+
+3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Manage DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
+
+4. The Manage DHCP Options dialog box opens, showing all options defined on the DHCP server.
+
+5. Use the drop-down menu to select the option you want to define.
+
+   .. image:: ../../images/kea-dhcp-options.png
+      :width: 65%
+ 
+6. To delete an option, hover over its field, and then click the trash can icon next to it.
+
+7. Click :guilabel:`Save` to save the updated options.
+
+Defining Custom DHCP Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Click the :guilabel:`Custom Options` tab.
+
+2. Select the appropriate :guilabel:`Vendor class`in the drop-down list.
+
+Adding a New Custom Option
+""""""""""""""""""""""""""
+1. Select :guilabel:`Add Custom Option`.
+
+2. Enter the desired ID. An error will show if that ID is not available or invalid.
+
+3. Enter a name.
+
+4. Select a Type in the dropdown list. Select the :guilabel:`Array` checkbox if the option is an Array.
+
+5. Click :guilabel:`Add`, and then :guilabel:`Save`.
+
+.. note::
+   Once an option has been defined, you can set its value on the :guilabel:`Edit Options` tab.
+   
+Editing an existing Custom Option
+""""""""""""""""""""""""""""""""""
+
+1. On the :guilabel:`Custom Options`tab in the Manage DHCP Options dialog box, select the relevant custom option.
+
+2. On the **Row menu (...)**, select :guilabel:`Edit`. 
+
+3. Edit the ID, and then click :guilabel:`Save`.
+
+
 .. _kea-dhcp-poperties:
 
 Kea DHCP Server Properties
