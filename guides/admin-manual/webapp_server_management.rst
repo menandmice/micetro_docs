@@ -196,6 +196,7 @@ Use the following table for more information on the indicators:
 
 DHCP Services
 --------------
+For detailed information about the different DHCP platforms and their configurations, refer to:
 
 .. toctree::
   :maxdepth: 1
