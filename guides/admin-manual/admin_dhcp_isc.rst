@@ -26,7 +26,35 @@ Defining Options on ISC DHCP Servers
 
 6. To delete an option, hover over its field, and theb click the trash can icon next to it.
 
-4. Click :guilabel:`Save` to save the changed option definitions.
+7. Click :guilabel:`Save` to save the changed option definitions.
+
+Defining Custom DHCP Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Click the :guilabel:`Custom Options` tab.
+
+2. Select the appropriate :guilabel:`Vendor class`in the drop-down list.
+
+Adding a New Custom Option
+""""""""""""""""""""""""""
+1. Select :guilabel:`Add Custom Option`.
+
+2. Enter the desired ID. An error will show if that ID is not available or invalid.
+
+3. Enter a name.
+
+4. Select a Type in the dropdown list. Select the :guilabel:`Array` checkbox if the option is an Array.
+
+5. Click :guilabel:`Add`, and then :guilabel:`Save`.
+
+.. note::
+   Once an option has been defined, you can set its value on the :guilabel:`Edit Options` tab.
+   
+
+Removing an Existing Custom Option
+"""""""""""""""""""""""""""""""""""
+1. On the :guilabel:`Custom Options`tab in the Manage DHCP Options dialog box, select the relevant custom option.
+
+2. On the **Row menu (...)**, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
 
 .. _isc-dhcp-properties:
 
