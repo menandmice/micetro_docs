@@ -33,7 +33,7 @@ Defining Custom DHCP Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the :guilabel:`Custom Options` tab.
 
-2. Select eh appropriate :guilabel:`Vendor class`in the drop-down list.
+2. Select the appropriate :guilabel:`Vendor class`in the drop-down list.
 
 Adding a New Custom Option
 """"""""""""""""""""""""""
@@ -50,6 +50,14 @@ Adding a New Custom Option
 .. note::
    Once an option has been defined, you can set its value on the :guilabel:`Edit Options` tab.
    
+Editing an existing Custom Option
+""""""""""""""""""""""""""""""""""
+
+1. On the :guilabel:`Custom Options`tab in the Manage DHCP Options dialog box, select the relevant custom option.
+
+2. On the **Row menu (...)**, select :guilabel:`Edit`. 
+
+3. Edit the ID, and then click :guilabel:`Save`.
 
 Removing an Existing Custom Option
 """""""""""""""""""""""""""""""""""
