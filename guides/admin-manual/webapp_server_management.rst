@@ -198,7 +198,7 @@ DHCP Services
 --------------
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   admin_dhcp_windows
   admin_dhcp_kea
