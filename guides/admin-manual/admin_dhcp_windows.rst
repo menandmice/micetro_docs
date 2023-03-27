@@ -63,7 +63,7 @@ You can edit the configuration of Windows servers.
 3. In the **Edit Configuration** dialog box, make the desired changes, and then click :guilabel:`Save`.
 
 .. image:: ../../images/windows-dhcp-configuration.png
-   :width: 80%
+   :width: 70%
    
 Toggling DHCPv6 Management On and Off
 --------------------------------------
