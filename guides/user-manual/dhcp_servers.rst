@@ -134,15 +134,15 @@ Toggle DHCPv6 Management on or off
 .. note::
    There is only one DHCP service on a Microsoft DHCP server. DHCPv4 and DHCPv6 are not decoupled in Microsoft as they are in Micetro. Any action performed on either DHCPv6 or DHCPv4 that requires a restart of the service will result in a restart of the single DHCP service on the Microsoft server.
    
-1. Go to :guilabel:`Admin` and click on :guilabel:`Server Management`
+1. Go to :guilabel:`Admin` and click on :guilabel:`Server Management`.
 
-2. Expand :guilabel:`DHCP Servers` and select :guilabel:`Microsoft DHCP`
+2. Expand :guilabel:`DHCP Servers` and select :guilabel:`Microsoft DHCP`.
 
-3. Select one or multiple servers, hover over the selection to click on the ellipsis (or meatball) menu and click on :guilabel:`Edit DHCP Server`
+3. Select one or multiple servers, hover over the selection to click on the ellipsis (or meatball) menu and click on :guilabel:`Edit DHCP Server`.
 
-4. Check :guilabel:`Manage DHCPv6 service to enable DHCPv6 management on the server(s) you've selected
+4. Check :guilabel:`Manage DHCPv6 service` to enable DHCPv6 management on the server(s) you've selected.
 
-5. Press :guilabel:`Confirm`
+5. Press :guilabel:`Confirm`.
 
 Inherited Access (Management Console)
 -------------------------------------
