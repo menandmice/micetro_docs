@@ -62,9 +62,15 @@ You can edit the configuration of Windows servers.
 
 3. In the **Edit Configuration** dialog box, make the desired changes, and then click :guilabel:`Save`.
 
-.. image:: ../../images/windows-dhcp-configuration.png
-   :width: 70%
+   .. image:: ../../images/windows-dhcp-configuration.png
+    :width: 70%
    
+ * **Conflict detection attempts**: Specifies the number of conflict detection attempts you want the DHCP server to make before it leases an address to a client.
+ * **Audit log file path**: Specifies the location of the DHCP server audit log files.
+ * **Database path**: Specifies the location of the DHCP server database.
+ * **Backup path**: Specifies the location for the database backup.
+
+
 Toggling DHCPv6 Management On and Off
 --------------------------------------
 .. note::
