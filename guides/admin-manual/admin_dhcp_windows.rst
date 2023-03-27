@@ -18,7 +18,7 @@ Defining Options on MS DHCP Servers
 
 3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Managem DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
 
-4. The *Manage DHCP Options* dialog box opens, showing all options defined on the DHCP server.
+4. The Manage DHCP Options dialog box opens, showing all options defined on the DHCP server.
 
 5. Use the drop-down menu to select the option you want to define.
 
@@ -65,6 +65,18 @@ You can edit the configuration of Windows servers.
 .. image:: ../../images/windows-dhcp-configuration.png
    :width: 80%
    
+Toggling DHCPv6 Management On and Off
+--------------------------------------
+.. note::
+   There is only one DHCP service on a Microsoft DHCP server. DHCPv4 and DHCPv6 are not decoupled in Microsoft as they are in Micetro. Any action performed on either DHCPv6 or DHCPv4 that requires a restart of the service will result in a restart of the single DHCP service on the Microsoft server.
+   
+1. On the **Admin** page, select one or multiple Microsoft DHCP servers.
+
+2. On the :guilabel:`Action` menu, select :guilabel:`Edit service`. You can also select this option on the **Row menu (...)**. 
+
+3. Select :guilabel:`Managem DHCPv6 service` to enable DHCPv6 management on the server(s) you selected.
+
+4. Click :guilabel:`Confirm`.
 
 Reconciling Scopes
 --------------------
