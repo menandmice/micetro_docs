@@ -16,7 +16,7 @@ Defining Options on MS DHCP Servers
 
 2. Under **DHCP Services** in the filtering sidebar, select the applicable Microsoft DHCP server. 
 
-3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Managem DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
+3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Manage DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
 
 4. The Manage DHCP Options dialog box opens, showing all options defined on the DHCP server.
 
@@ -29,10 +29,39 @@ Defining Options on MS DHCP Servers
 
 7. Click :guilabel:`Save` to save the updated options.
 
+Defining Custom DHCP Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Click the :guilabel:`Custom Options` tab.
+
+2. Select eh appropriate :guilabel:`Vendor class`in the drop-down list.
+
+Adding a New Custom Option
+""""""""""""""""""""""""""
+1. Select :guilabel:`Add Custom Option`.
+
+2. Enter the desired ID. An error will show if that ID is not available or invalid.
+
+3. Enter a name.
+
+4. Select a Type in the dropdown list. Select the :guilabel:`Array` checkbox if the option is an Array.
+
+5. Click :guilabel:`Add`, and then :guilabel:`Save`.
+
+.. note::
+   Once an option has been defined, you can set its value on the :guilabel:`Edit Options` tab.
+   
+
+Removing an Existing Custom Option
+"""""""""""""""""""""""""""""""""""
+1. On the :guilabel:`Custom Options`tab in the Manage DHCP Options dialog box, select the relevant custom option.
+
+2. On the **Row menu (...)**, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
+
 .. _ms-dhcp-dns-options:
 
-MS DHCP options (DNS tab)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring DNS Options
+^^^^^^^^^^^^^^^^^^^^^^^^
+* In the Manage DHCP Options dialog box, click the :guilabel:`DNS` tab.
 
 Enable DNS dynamic updates according to the settings below.
   Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.
