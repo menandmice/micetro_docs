@@ -196,3 +196,15 @@ External changes and Kea high availability
 
 See :ref:`dhcp-kea-ha-external-changes`.
 
+Managing Kea Client Classifications with Micetro
+------------------------------------------------
+You can manage Kea Client Classifications through Micetro. 
+
+1. On the **Admin** page, select :guilabel:`Kea`under in :guilabel:`DHCP Services`in the left sidebar.
+
+2. Select the relevant service, and then select :guilabel:`Manage client classes` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
+
+   .. image:: ../../images/kea-client-classifications.png
+      :width: 80%
+      
+ 
