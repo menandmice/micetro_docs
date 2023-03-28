@@ -131,15 +131,19 @@ Managing Failover Relationships for Windows DHCP Servers
    
 Setting up a Failover Relationship
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Go to Admin → Service Management → DHCP Services → Microsoft DHCP
+1. On the **Admin** page, select :guilabel:`Service Management`in the upper-left corner.
 
-Select one of the Windows Servers that you want in the relationship and choose ‘Failover management’
+2. In the left sidebar, under :guilabel:DHCP Services`, select :guilabel:`Microsoft DHCP`.
 
-Click 'Add Relationship' and setup the relationship as desired. For more information, see ((Failover Relationship Parameters))
+3. Select one of the Windows Servers that you want in the relationship, and then select :guilabel:Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
-After confirming the details in the summary tab, click ‘Add’
+4. Click :guilabel:`Add Relationship`, and set up the relationship as desired. For more information, see :ref:`failover-relationship-parameters`.
+
+4. After confirming the details in the summary tab, click :guilabel:`Add`.
 
 Removing a Failover Relationship 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Go to Admin → Service Management → DHCP Services → Microsoft DHCP
 
 Select one of the Windows Servers that you want to remove from the relationship and choose ‘Failover management’
@@ -166,7 +170,10 @@ Select one or more scopes, right-click the selection and select Deconfigure Fail
 
 Click Yes to confirm the action. The failover configuration for the selected scope(s) is removed.
 
+.. _failover-relationship-parameters:
+
 Failover Relationship Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Relationship Name
 Select the relationship you want to use for the failover configuration or enter a name if you want to create a new relationship. If you choose an existing relationship, you will not be able to change any of the relationship properties and you can simply click OK to complete the failover configuration for the scope.
 
