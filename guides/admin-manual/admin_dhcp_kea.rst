@@ -200,11 +200,63 @@ Managing Kea Client Classifications with Micetro
 ------------------------------------------------
 You can manage Kea Client Classifications through Micetro. 
 
-1. On the **Admin** page, select :guilabel:`Kea`under in :guilabel:`DHCP Services`in the left sidebar.
+1. On the **Admin** page, select :guilabel:`Kea` under :guilabel:`DHCP Services` in the left sidebar.
 
 2. Select the relevant service, and then select :guilabel:`Manage client classes` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
    .. image:: ../../images/kea-client-classifications.png
-      :width: 80%
+      :width: 70%
       
+   * If you have any client classes already defined on your server, you can find them listed on the respective service type tab (DHCPv4/DHCPv6). 
+   * From here you can create, edit existing, or remove client classes. Any of these actions will add an entry to the audit trail inside of Micetro which can be viewed by selecting the history action of a client class.
  
+Creating Client Classes
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Click :guilabel:`Create`.
+
+2. In the Create Client Classification dialob box, eneter the necessary information.
+
+   .. image:: ../../images/kea-client-classifications-create.png
+      :width: 70%
+
+   * Enter a name and create an expresstion. Each DHCP packet will be evaluated against the expression to determine if it thould belong to that client class. For information about how to create expressions, see the `Kea documentation <https://kea.readthedocs.io/en/kea-2.2.0/arm/classify.html#using-expressions-in-classification>`.
+   
+   * Optionally you can add a description. The description is not added to the Kea config, only saved in Micetro. Defining a client class as global is a Micetro-specific feature and is explained in detail below.
+   
+   * Select the :guilabel:`Global` checkbox if you want to create the client clss on all active Kea servers. Any modification or removal action on that client class will be replicated on all the active Kea servers.
+
+3. Go to the :guilabel:`Options` tab to set DHCP options on the client classes.
+
+4. For DHCPv4 client classes, you can specify BOOTP parameters.
+
+5. When you are finished, click :guilabel:`Create`.
+
+Assigning Client Classes
+------------------------
+You can limit the access to specific scopes and address pools by assigning a client class to them. then only packets that belong to the assigned client class will have access.
+
+To assign a client class to a scope:
+
+1. Go to the **IPAM** page, and select a Kea scope.
+
+2. On the :guilabel:`Action` menu, select :guilabel:`Manage DHCP pools`. You can also select this option on the **Row menu (...)**. 
+
+3. In the drop-down list, select the client class to assign to the scope. To unassign a client class, select the :guilabel:`Unassigned`.
+
+To assign a client class to a pool:
+
+1. Open a Kea scope.
+
+2. On the :guilabel:`Action` menu, select :guilabel:`Assign client classification`. You can also select this option on the **Row menu (...)**. 
+
+3. In the Manage DHCP Pools dialog box, select the pool.
+
+4. On the **Row menu (...)**, select :guilabel:`Assign client classification`. 
+
+.. image:: ../../images/kea-client-classifications-assign.png
+   :width: 70%
+   |
+Assigning client classes to scopes/pools shows up in the history of the respective ranges. You can filter ranges based on their assigned client classes with the property `clientClass`. 
+
+.. image:: ../../images/kea-client-classifications-filter.png
+   :width: 70%
