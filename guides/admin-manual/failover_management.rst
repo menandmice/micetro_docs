@@ -63,12 +63,188 @@ Failover relationships for Windows DHCP servers are created without adding scope
 
 Managing Failover Configurations for ISC DHCP
 ----------------------------------------------
+.. note::
+   When adding a server’s first failover peer, all other address pools on the server will be updated to refer to this failover peer.
 
+1. On the **Object** menu, select the DHCP Server that contains the scope for which you want to setup failover configuration.
+
+2. In the list of scopes, double-click on the applicable one.
+
+3. In the list of IP Addresses, right-click the applicable one, and then select :guilabel:`Create Address Pool` on the shortcut menu. The DHCP Address Pool dialog box displays.
+
+4. Move to the **Failover Peer** field, and click the drop-down list arrow.
+
+5. Select :guilabel:`Add new failover peer`.
+
+6. Click :guilabel:`OK`. The New Failover Peer dialog box displays.
+
+   * **Name**: Specifies the name of the failover peer.
+
+   * **Role**: Specifies the role of the failover peer. The available roles are Primary and Secondary.
+
+   * **Address**: Specifies the IP Address or DNS name on which the server should listen for connections from its failover peer.
+
+   * **Port**: Specifies the port number on which the server should listen for connections from its failover peer.
+
+   * **Peer Address**: Specifies the IP Address or DNS name to which the server should connect to reach its failover peer for failover messages.
+
+   * **Peer Port**: Specifies the port number to which the server should connect to reach its failover peer for failover messages.
+
+   * **Max Response Delay**: Specifies the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
+
+   * **Max Unacked Updates**: Specifies the number of messages the server can send before receiving an acknowledgement from its failover peer. According to ISC documentation, 10 seems to be a good value.
+
+   * **Max Client Lead Time**: Specifies the number of seconds for which a lease can be renewed by either server without contacting the other. Only specified on the primary failover peer.
+
+   * **Split Index**: Specifies the split between the primary and secondary failover peer for the purposes of load balancing. According to ISC documentation, 128 is really the only meaningful value. Only specified on the primary failover peer.
+
+   * **Load Balance Max Seconds**: Specifies the cutoff in seconds after which load balancing is disabled. According to ISC documentation, a value of 3 or 5 is recommended.
+
+7. Click :guilabel:`OK`. The DHCP Address Pool dialog box displays and shows the updated information.
+
+8. Click :guilabel:`OK`.
+
+If you need to EDIT or DELETE an existing failover peer, do the following:
+
+1. Locate the relevant ISC DHCP server.
+
+2. Right-click and, in the shortcut menu, select :guilabel:`Manage Failover Peers`. The Failover Peers for... dialog box displays. All failover peers are shown.
+
+3. To EDIT a failover peer, select it and click the :guilabel:`Edit` button. Then modify the Failover Peers … properties dialog box, as needed.
+
+4. To DELETE a failover peer, select it and click the :guilabel:`Delete` button.
+
+.. note::
+   In order to finalize the setup of the failover relationship, the scope needs to be migrated to the failover peer.
+
+.. note:: 
+   When deleting a failover peer through this dialog, if it is the last failover peer defined on the server, any references to it will be removed from existing address pools on the server. If there is one other failover peer left on the server, references to the failover peer being deleted will be changed to refer to the remaining failover peer. If, however, there are two or more other failover peers left on the server, the user will be prompted with a list of the remaining failover peers where he will have to choose which failover peer should be referenced by address pools currently referring to the failover peer being deleted.
+
+.. note::
+   When changing from one failover peer to another for some specific address pool, if the address pool is the last one referring to the (old) failover peer, the user will be warned that performing the action will result in the deletion of the failover peer.
 
 Managing Failover Relationships for Windows DHCP Servers
 --------------------------------------------------------
 
+.. note::
+   To manage failover between two Microsoft Servers, the DHCP Server Controller must be running as a service account with enough privileges to manage the DHCP service. For more information, see :ref:`install-dhcp-controllers`.
+   
+Setting up a Failover Relationship
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Go to Admin → Service Management → DHCP Services → Microsoft DHCP
 
+Select one of the Windows Servers that you want in the relationship and choose ‘Failover management’
+
+Click 'Add Relationship' and setup the relationship as desired. For more information, see ((Failover Relationship Parameters))
+
+After confirming the details in the summary tab, click ‘Add’
+
+Removing a Failover Relationship 
+Go to Admin → Service Management → DHCP Services → Microsoft DHCP
+
+Select one of the Windows Servers that you want to remove from the relationship and choose ‘Failover management’
+
+Select the correct relationship and select ‘Remove’
+
+If there are scopes associated with the relationship, you will be prompted to select which server you want the scopes to survive on and whether you want the scopes on the other server to be deleted or disabled.
+
+Setting up a Scope Failover Relationship on Management Console (Deprecated)
+To setup failover for a scope, do the following:
+
+On the object menu, select the DHCP Server that contains the scope(s) for which you want to setup failover configuration.
+
+You have two ways to choose the scopes you want to configure.
+
+From the list of scopes, select one or more scopes, right-click and select Configure Failover.Right-click the DHCP server and select Configure Failover. 
+
+A dialog box listing all configurable scopes displays. Select the scopes you want to configure and click Next. The failover configuration dialog box displays.
+
+Removing a Failover Configuration Relationship on Management Console (Deprecated)
+On the object menu, select the DHCP Server that contains the scope(s) for which you want to remove the failover configuration relationship.
+
+Select one or more scopes, right-click the selection and select Deconfigure Failover. A confirmation dialog box displays.
+
+Click Yes to confirm the action. The failover configuration for the selected scope(s) is removed.
+
+Failover Relationship Parameters
+Relationship Name
+Select the relationship you want to use for the failover configuration or enter a name if you want to create a new relationship. If you choose an existing relationship, you will not be able to change any of the relationship properties and you can simply click OK to complete the failover configuration for the scope.
+
+Partner Server
+Enter the name or IP Address of the partner DHCP server with which failover should be configured. You can select from the list of Windows Server 2012 machines or you can type the host name or IP Address of the partner server.
+
+Mode
+Select the failover mode you want to use. You can choose between Hot standby and Load balance.
+
+Role of Partner Server (Management Console only)
+If you chose the Hot standby mode, you must choose the role of the partner server. You can choose between Standby and Active. If you choose Standby the current server will be Active and vice versa.
+
+Maximum Client Lead Time
+If you don’t want to use the default values, enter the new values in the hours and minutes edit fields.
+
+Addresses reserved for standby server
+If you chose the Hot standby mode, you must enter the percentage of addresses that should be reserved to the standby server.
+
+Local server load balance percentage
+If you chose the Load balance mode, you need to specify the load balance percentage to use on the local server. The remaining percentage will be used on the partner server.
+
+State Switchover Interval
+Select this checkbox if you want to use Automatic State Switchover and specify the interval to use.
+
+Enable Message Authentication
+Select this checkbox if you want to use message authentication between the DHCP servers. If the message authentication is enabled, you must provide a shared secret for the message authentication.
+
+Replicating Failover Scopes
+When using a failover configuration relationship it is possible to replicate scope information between servers. This is possible for individual scopes, all scopes that share a failover relationship or all scopes on a particular DHCP server. 
+
+When a scope replication takes place, the scopes on the selected DHCP are considered the source scopes and the entire scope contents are replaced on the destination server.
+
+Replicating individual scopes
+Go to IPAM 
+Select a scope which is in a failover relationship and choose "Replicate Failover Scope"
+
+Select the destination server
+
+Click ‘Confirm’
+
+Replicating all scopes that share a failover relationship
+Go to Admin → Service Management → DHCP Services → Microsoft DHCP
+
+Select one of the Windows Servers that you want in the relationship and choose ‘Failover management’
+
+Click on the relevant Failover Relationship and select 'Replicate Failover Relationship' 
+
+Click ‘Confirm’
+
+To replicate all failover scopes on a DHCP server:
+When a replication takes place, the scopes on the selected DHCP server are considered the source scopes and the entire scope contents for each scope is replaced on the destination server.
+
+Go to Admin → Service Management → DHCP Services → Microsoft DHCP
+
+Select one of the Windows Servers that you want in the relationship and choose ‘Replicate Failover Relationships’
+
+Click ‘Confirm’
+
+To replicate individual scopes on management console (deprecated):
+On the object menu, select the DHCP Server that contains the scope(s) you want to replicate.
+
+Select one or more scopes, right-click the selection and select Replicate Scope. A confirmation dialog box displays.
+
+Click OK to confirm the action. The selected scope is replicated.
+
+To replicate all scopes that share a failover relationship on management console (deprecated):
+On the object menu, select the DHCP Server that contains the scopes you want to replicate.
+
+Right-click a scope using the desired relationship, and select Replicate Relationship. A confirmation dialog box displays.
+
+Click OK to confirm the action. The scopes that use the same relationship as the selected scope are replicated. 
+
+Note that this action may take some time if multiple scopes use the relationship.
+
+To replicate all failover scopes on a DHCP server on management console (deprecated):
+On the object menu, right-click the DHCP Server that contains the scopes you want to replicate and select Replicate Failover Scopes from the menu. A confirmation dialog box displays.
+
+Click OK to confirm the action. All failover scopes on the selected server are replicated. Note that this action may take some time if the server contains multiple failover scopes.
 
 
 
