@@ -35,7 +35,7 @@ The column to match against can also be specified by providing the name of the c
 
 .. code-block::
 
-  type=slave
+  type=secondary
   name=^example
   name=$arpa.
 
