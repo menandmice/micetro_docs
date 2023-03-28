@@ -219,7 +219,7 @@ Creating Client Classes
    .. image:: ../../images/kea-client-classifications-create.png
       :width: 70%
 
-   * Enter a name and create an expresstion. Each DHCP packet will be evaluated against the expression to determine if it thould belong to that client class. For information about how to create expressions, see the `Kea documentation <https://kea.readthedocs.io/en/kea-2.2.0/arm/classify.html#using-expressions-in-classification>`.
+   * Enter a name and create an expresstion. Each DHCP packet will be evaluated against the expression to determine if it thould belong to that client class. For information about how to create expressions, see the `Kea documentation <https://kea.readthedocs.io/en/kea-2.2.0/arm/classify.html#using-expressions-in-classification>`_.
    
    * Optionally you can add a description. The description is not added to the Kea config, only saved in Micetro. Defining a client class as global is a Micetro-specific feature and is explained in detail below.
    
@@ -235,7 +235,7 @@ Assigning Client Classes
 ------------------------
 You can limit the access to specific scopes and address pools by assigning a client class to them. then only packets that belong to the assigned client class will have access.
 
-To assign a client class to a scope:
+**To assign a client class to a scope:**
 
 1. Go to the **IPAM** page, and select a Kea scope.
 
@@ -243,7 +243,7 @@ To assign a client class to a scope:
 
 3. In the drop-down list, select the client class to assign to the scope. To unassign a client class, select the :guilabel:`Unassigned`.
 
-To assign a client class to a pool:
+**To assign a client class to a pool:**
 
 1. Open a Kea scope.
 
