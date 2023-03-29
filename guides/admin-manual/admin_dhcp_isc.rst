@@ -32,7 +32,7 @@ Defining Custom DHCP Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the :guilabel:`Custom Options` tab.
 
-2. Select the appropriate :guilabel:`Vendor class`in the drop-down list.
+2. Select the appropriate :guilabel:`Vendor class` in the drop-down list.
 
 Adding a New Custom Option
 """"""""""""""""""""""""""
