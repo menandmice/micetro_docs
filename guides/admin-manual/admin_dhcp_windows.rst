@@ -33,7 +33,7 @@ Defining Custom DHCP Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the :guilabel:`Custom Options` tab.
 
-2. Select the appropriate :guilabel:`Vendor class`in the drop-down list.
+2. Select the appropriate :guilabel:`Vendor class` in the drop-down list.
 
 Adding a New Custom Option
 """"""""""""""""""""""""""
@@ -117,7 +117,7 @@ Toggling DHCPv6 Management On and Off
 
 2. On the :guilabel:`Action` menu, select :guilabel:`Edit service`. You can also select this option on the **Row menu (...)**. 
 
-3. Select :guilabel:`Managem DHCPv6 service` to enable DHCPv6 management on the server(s) you selected.
+3. Select :guilabel:`Manage DHCPv6 service` to enable DHCPv6 management on the server(s) you selected.
 
 4. Click :guilabel:`Confirm`.
 
