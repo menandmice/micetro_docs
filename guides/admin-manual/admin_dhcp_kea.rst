@@ -32,7 +32,7 @@ Because Micetro uses the Kea API to communicate with the DHCP server(s), it requ
 .. note::
   On certain distributions (like RHEL) check that the kea-hooks package is also installed.
 
-Configuring the Kea hook library
+Configuring the Kea Hook Library
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After installing the Kea hook library, open ``kea-dhcp4.conf`` and locate the ``hooks-libraries`` array. Add the hook to ``libdhcp_lease_cmds.so``:
@@ -50,22 +50,12 @@ The location of the library depends on your distribution, use ``whereis libdhcp_
 
 After adding the library, restart Kea and the Kea Control Agent.
 
-Kea high availability
+Kea High Availability
 ---------------------
 
-Kea DHCP servers need to be configured for high availability **before** the primary server is added to Micetro. If the high availability is set up properly, once added to the system Micetro will recognize the failover nodes and the method (load balancing, hot standby, etc.) and configure the server objects accordingly.
+Kea DHCP servers need to be configured for high availability **before** the primary server is added to Micetro. If the high availability is set up properly, once added to the system, Micetro will recognize the failover nodes and the method (load balancing, hot standby, etc.) and configure the server objects accordingly.
 
 For more information, see :ref:`dhcp-kea-ha`.
-
-Split scopes in load balancing mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When creating scopes on Kea servers configured in load balancing mode for high availability, Micetro will split the available pool evenly between primary and secondary servers.
-
-.. image:: ../../images/kea-ha-lb-split-scopes-Micetro.png
-  :width: 50%
-  :align: center
-
 
 Defining Options on Kea DHCP Servers
 -------------------------------------
