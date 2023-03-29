@@ -133,125 +133,135 @@ Setting up a Failover Relationship
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. On the **Admin** page, select :guilabel:`Service Management`in the upper-left corner.
 
-2. In the left sidebar, under :guilabel:DHCP Services`, select :guilabel:`Microsoft DHCP`.
+2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Microsoft DHCP`.
 
-3. Select one of the Windows Servers that you want in the relationship, and then select :guilabel:Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
+3. Select one of the Windows Servers that you want in the relationship, and then select :guilabel:`Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
 4. Click :guilabel:`Add Relationship`, and set up the relationship as desired. For more information, see :ref:`failover-relationship-parameters`.
 
-4. After confirming the details in the summary tab, click :guilabel:`Add`.
+5. After confirming the details on the summary tab, click :guilabel:`Add`.
 
 Removing a Failover Relationship 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Go to Admin → Service Management → DHCP Services → Microsoft DHCP
+1. On the **Admin** page, select the Windows server that you want to remove from the relationship, then select :guilabel:`Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 
-Select one of the Windows Servers that you want to remove from the relationship and choose ‘Failover management’
+2. Select the relevant relationship, and then select :guilabel:`Remove` on the **Row menu (...)**.
 
-Select the correct relationship and select ‘Remove’
+3. If there are scopes associated with the relationship, you will be prompted to select which server you want the scopes to survive on and whether you want the scopes on the other server to be deleted or disabled.
 
-If there are scopes associated with the relationship, you will be prompted to select which server you want the scopes to survive on and whether you want the scopes on the other server to be deleted or disabled.
+Setting up a Failover Relationship on Management Console (obsolete)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Setting up a Scope Failover Relationship on Management Console (Deprecated)
-To setup failover for a scope, do the following:
+1. On the object menu, select the DHCP Server that contains the scope(s) for which you want to setup failover configuration.
 
-On the object menu, select the DHCP Server that contains the scope(s) for which you want to setup failover configuration.
+2. You have two ways to choose the scopes you want to configure.
 
-You have two ways to choose the scopes you want to configure.
+   * On the list of scopes, select one or more scopes, right-click and select :guilabel:`Configure Failover`. Right-click the DHCP server, and then select :guilabel:`Configure Failover`. 
 
-From the list of scopes, select one or more scopes, right-click and select Configure Failover.Right-click the DHCP server and select Configure Failover. 
+   * A dialog box listing all configurable scopes displays. Select the scopes you want to configure and click :guilabel:`Next`. The failover configuration dialog box displays.
 
-A dialog box listing all configurable scopes displays. Select the scopes you want to configure and click Next. The failover configuration dialog box displays.
+Removing a Failover Relationship on Management Console (obsolete)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. On the object menu, select the DHCP Server that contains the scope(s) for which you want to remove the failover relationship.
 
-Removing a Failover Configuration Relationship on Management Console (Deprecated)
-On the object menu, select the DHCP Server that contains the scope(s) for which you want to remove the failover configuration relationship.
+2. Select one or more scopes, right-click the selection, and then select :guilabel:`Deconfigure Failover`. A confirmation dialog box displays.
 
-Select one or more scopes, right-click the selection and select Deconfigure Failover. A confirmation dialog box displays.
-
-Click Yes to confirm the action. The failover configuration for the selected scope(s) is removed.
+3. Click :guilabel:`Yes` to confirm the action. The failover configuration for the selected scope(s) is removed.
 
 .. _failover-relationship-parameters:
 
 Failover Relationship Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Relationship Name
-Select the relationship you want to use for the failover configuration or enter a name if you want to create a new relationship. If you choose an existing relationship, you will not be able to change any of the relationship properties and you can simply click OK to complete the failover configuration for the scope.
+* Relationship Name
+   Select the relationship you want to use for the failover configuration or enter a name if you want to create a new relationship. If you choose an existing relationship, you will not be able to change any of the relationship properties and you can simply click OK to complete the failover configuration for the scope.
 
-Partner Server
-Enter the name or IP Address of the partner DHCP server with which failover should be configured. You can select from the list of Windows Server 2012 machines or you can type the host name or IP Address of the partner server.
+* Partner Server
+   Enter the name or IP Address of the partner DHCP server with which failover should be configured. You can select from the list of Windows Server 2012 machines or you can type the host name or IP Address of the partner server.
 
-Mode
-Select the failover mode you want to use. You can choose between Hot standby and Load balance.
+* Mode
+   Select the failover mode you want to use. You can choose between Hot standby and Load balance.
 
-Role of Partner Server (Management Console only)
-If you chose the Hot standby mode, you must choose the role of the partner server. You can choose between Standby and Active. If you choose Standby the current server will be Active and vice versa.
+* Role of Partner Server (Management Console only)
+   If you chose the Hot standby mode, you must choose the role of the partner server. You can choose between Standby and Active. If you choose Standby the current server will be Active and vice versa.
 
-Maximum Client Lead Time
-If you don’t want to use the default values, enter the new values in the hours and minutes edit fields.
+* Maximum Client Lead Time
+   If you don’t want to use the default values, enter the new values in the hours and minutes edit fields.
 
-Addresses reserved for standby server
-If you chose the Hot standby mode, you must enter the percentage of addresses that should be reserved to the standby server.
+* Addresses reserved for standby server
+   If you chose the Hot standby mode, you must enter the percentage of addresses that should be reserved to the standby server.
 
-Local server load balance percentage
-If you chose the Load balance mode, you need to specify the load balance percentage to use on the local server. The remaining percentage will be used on the partner server.
+* Local server load balance percentage
+   If you chose the Load balance mode, you need to specify the load balance percentage to use on the local server. The remaining percentage will be used on the partner server.
 
-State Switchover Interval
-Select this checkbox if you want to use Automatic State Switchover and specify the interval to use.
+* State Switchover Interval
+   Select this checkbox if you want to use Automatic State Switchover and specify the interval to use.
 
-Enable Message Authentication
-Select this checkbox if you want to use message authentication between the DHCP servers. If the message authentication is enabled, you must provide a shared secret for the message authentication.
+* Enable Message Authentication
+   Select this checkbox if you want to use message authentication between the DHCP servers. If the message authentication is enabled, you must provide a shared secret for the message authentication.
 
 Replicating Failover Scopes
-When using a failover configuration relationship it is possible to replicate scope information between servers. This is possible for individual scopes, all scopes that share a failover relationship or all scopes on a particular DHCP server. 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When using a failover relationship, it is possible to replicate scope information between servers. This is possible for individual scopes, all scopes that share a failover relationship, or all scopes on a particular DHCP server. 
 
 When a scope replication takes place, the scopes on the selected DHCP are considered the source scopes and the entire scope contents are replaced on the destination server.
 
-Replicating individual scopes
-Go to IPAM 
-Select a scope which is in a failover relationship and choose "Replicate Failover Scope"
+Replicating Individual Scopes
+"""""""""""""""""""""""""""""
+1. On the **IPAM** page, select a scope which is in a failover relationship.
 
-Select the destination server
+2. On the :guilabel:`Action` menu, select :guilabel:`Replicate failover scope`. You can also select this option on the **Row menu (...)**.
 
-Click ‘Confirm’
+3. Select the destination server, and then click :guilabel:`Confirm`.
 
-Replicating all scopes that share a failover relationship
-Go to Admin → Service Management → DHCP Services → Microsoft DHCP
+Replicating All Scopes that Share a Failover Relationship
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+1. On the **Admin** page, select the Microsoft DHCP server that you want in the relationship.
 
-Select one of the Windows Servers that you want in the relationship and choose ‘Failover management’
+2. On the :guilabel:`Action` menu, select :guilabel:`Failover management`. You can also select this option on the **Row menu (..)**.
 
-Click on the relevant Failover Relationship and select 'Replicate Failover Relationship' 
+3. Select the relevant failover relationship, and then select :guilabel:`Replicate failover relationship` on the **Row menu (...)**.
 
-Click ‘Confirm’
+4. Click :guilabel:`Confirm`.
 
-To replicate all failover scopes on a DHCP server:
-When a replication takes place, the scopes on the selected DHCP server are considered the source scopes and the entire scope contents for each scope is replaced on the destination server.
+Replicating All Failover Scopes on a DHCP Server
+"""""""""""""""""""""""""""""""""""""""""""""""""
+.. note::
+   When replication takes place, the scopes on the selected DHCP server are considered the source scopes and the entire scope contents for each scope is replaced on the destination server.
 
-Go to Admin → Service Management → DHCP Services → Microsoft DHCP
+1. On the **Admin** page, select one of the Microsoft DHCP servers that you want in the relationship.
 
-Select one of the Windows Servers that you want in the relationship and choose ‘Replicate Failover Relationships’
+2. On the :guilabel:`Action` menu, select :guilabel:`Recplicate failover relationships`. You can also select this option on the **Row menu (..)**.
 
-Click ‘Confirm’
+3. Click :guilabel:`Confirm`.
 
-To replicate individual scopes on management console (deprecated):
-On the object menu, select the DHCP Server that contains the scope(s) you want to replicate.
+Replicating Individual Scopes on Management Console (obsolete)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+1. On the Object menu, select the DHCP Server that contains the scope(s) you want to replicate.
 
-Select one or more scopes, right-click the selection and select Replicate Scope. A confirmation dialog box displays.
+2. Select one or more scopes, right-click the selection, and then select :guilabel:`Replicate Scope`. 
 
-Click OK to confirm the action. The selected scope is replicated.
+3. A confirmation dialog box displays. Click :guilabel:`OK` to confirm the action. The selected scope is replicated.
 
-To replicate all scopes that share a failover relationship on management console (deprecated):
-On the object menu, select the DHCP Server that contains the scopes you want to replicate.
+Replicating All Scopes that share a Failover Relationship on Management Console (obsolete)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+1. On the Object menu, select the DHCP Server that contains the scopes you want to replicate.
 
-Right-click a scope using the desired relationship, and select Replicate Relationship. A confirmation dialog box displays.
+2. Right-click a scope using the desired relationship, and then select :guilabel:`Replicate Relationship`. 
 
-Click OK to confirm the action. The scopes that use the same relationship as the selected scope are replicated. 
+3. A confirmation dialog box displays. Click :guilabel:`OK` to confirm the action. The scopes that use the same relationship as the selected scope are replicated. 
 
-Note that this action may take some time if multiple scopes use the relationship.
+.. note::
+   This action may take some time if multiple scopes use the relationship.
 
-To replicate all failover scopes on a DHCP server on management console (deprecated):
-On the object menu, right-click the DHCP Server that contains the scopes you want to replicate and select Replicate Failover Scopes from the menu. A confirmation dialog box displays.
+Replicating All Failover Scopes on a DHCP Server on Management Console (obsolete)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+1. On the Object menu, right-click the DHCP Server that contains the scopes you want to replicate, and then select :guilabel:`Replicate Failover Scopes` from the menu. 
 
-Click OK to confirm the action. All failover scopes on the selected server are replicated. Note that this action may take some time if the server contains multiple failover scopes.
+2. A confirmation dialog box displays Click :guilabel:`OK` to confirm the action. All failover scopes on the selected server are replicated. 
+
+.. note::
+   This action may take some time if the server contains multiple failover scopes.
 
 
 
