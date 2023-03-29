@@ -55,7 +55,6 @@ Table of Contents
      :caption: Micetro Install Guide
      :maxdepth: 2
 
-     guides/implementation/implementation
      guides/implementation/configuration
      guides/implementation/advanced_config
      guides/implementation/updates
