@@ -42,7 +42,7 @@ Filters for DNS zones
   :header: "Name", "Description"
   :widths: 20, 80
 
-  "Zone types", "Allows users to select between master, slave or other (for example stub, forward or AD integrated) zones"
+  "Zone types", "Allows users to select between master, secondary or other (for example stub, forward or AD integrated) zones"
   "DNS views", "Shows all existing views that are configured in the system as a list"
   "DNS services", "Shows all DNS servers configured in the system"
   "DNSSEC signed", "Shows all DNSSEC signed DNS zones"
