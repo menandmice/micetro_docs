@@ -367,7 +367,7 @@ Installing the Agent
    
 Adding the Agent to Central
 """""""""""""""""""""""""""
-   1. Select :guilabel:Admin`` on the top navigation bar.
+   1. Select :guilabel:`Admin` on the top navigation bar.
    2. Click :guilabel:`Service Management` on the menu bar at the top of the admin workspace.
    3. Click :guilabel:`Add Service` above the list of services.
    4. On the list of services, select **AuthServe**.
