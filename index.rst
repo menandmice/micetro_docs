@@ -53,7 +53,7 @@ Table of Contents
 
 .. toctree::
      :caption: Micetro Install Guide
-     :maxdepth: 3
+     :maxdepth: 2
 
      guides/implementation/implementation
      guides/implementation/configuration
@@ -62,7 +62,7 @@ Table of Contents
 
 .. toctree::
      :caption: Micetro User Guide
-     :maxdepth: 3
+     :maxdepth: 2
 
      guides/user-manual/dns
      guides/user-manual/dhcp_scopes
@@ -74,7 +74,7 @@ Table of Contents
 
 .. toctree::
     :caption: Micetro Admin Guide
-    :maxdepth: 3
+    :maxdepth: 2
     
     guides/admin-manual/admin_license
     guides/admin-manual/access_control
