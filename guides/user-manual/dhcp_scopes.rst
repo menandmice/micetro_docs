@@ -347,6 +347,15 @@ The servers listed in this dialog box all contain the scope to which the user wa
 .. note::
   Split scopes are only supported on MS DHCP and ISC Kea servers.
   
+Split Scopes in Load Balancing Mode
+-----------------------------------
+
+When creating scopes on Kea servers configured in load balancing mode for high availability, Micetro will split the available pool evenly between primary and secondary servers.
+
+.. image:: ../../images/kea-ha-lb-split-scopes-Micetro.png
+  :width: 50%
+  :align: center
+
 Managing Split Scopes for DHCPv6
 --------------------------------
   
