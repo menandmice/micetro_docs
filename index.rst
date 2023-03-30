@@ -16,12 +16,12 @@ Deployed in any on-premise, hybrid, or multicloud network environment, Micetro a
 
 This documentation is divided into four parts:
 
-1. :ref:`implementation`
-2. :ref:`manual-introduction`
-3. :ref:`admin-overview`
-4. :ref:`reference`
+1. Install Guide
+2. User Guide
+3. Admin Guide
+4. Referenct Guide
 
-Use the :ref:`implementation` to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The :ref:`manual-introduction` covers all of Micetro's functionality. :ref:`admin-overview` is aimed at system administrators managing Micetro.
+Use the **Install Guide** to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The **User Guide** covers all of Micetro's functionality. The **Admin Guide** is aimed at system administrators managing Micetro.
 
 .. tip::
   Use the search function for quickly locating the information required.
