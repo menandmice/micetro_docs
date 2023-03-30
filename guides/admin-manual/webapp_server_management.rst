@@ -6,7 +6,7 @@
 
 Service Management
 ===================
-Service Management is the place to connect DNS/DHCP and IPAM services that you want to orchestrate with Micetro. These services can be hosted on-premises, on appliances, or in the cloud. Services that have been connected are listed in Service Management of the admin workspace.
+Service Management is the place to connect DNS/DHCP and IPAM services that you want to orchestrate with Micetro. These services can be hosted on-premises, on appliances, or in the cloud. Services that have been connected are listed in Service Management of the Admin workspace.
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
@@ -26,9 +26,9 @@ Service Management is the place to connect DNS/DHCP and IPAM services that you w
 
 Depending on the user permissions and available license keys, DNS and DHCP services and functions can be disabled or hidden.
 
-Micetro has a granular role based :ref:`access_control`system. For DNS and DHCP administrators, it is recommended to be members of the built-in  **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
+Micetro has a granular role based :ref:`access-control`system. For DNS and DHCP administrators, it is recommended to be members of the built-in  **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
 
-When not using the built-in roles, users need to be members of a role with the following permissions. Note that other permissions could be needed to manage the services fully. For more information on Micetro's granular role-based access controls, see :ref:`access_control`. 
+When not using the built-in roles, users need to be members of a role with the following permissions. Note that other permissions could be needed to manage the services fully. For more information on Micetro's granular role-based access controls, see :ref:`access-control`. 
 
 * To manage DNS services: **Administer DNS servers**
 
@@ -80,7 +80,7 @@ Micetro supports the following DNS and DHCP platforms
   
 Micetro Agents
 --------------
-To handle communication between Micetro and the external service, an Agent is needed. Depending on the type of service and if it’s on-premises or cloud, the agent is either installed on the respective machine, on the machine running Men&Mice central or, in some cases, on any machine that is in the same domain as the DNS/DHCP servers. A single agent can handle communication with multiple servers. For more information on agents and how to install them, see :ref:`install_controllers`.
+To handle communication between Micetro and the external service, an Agent is needed. Depending on the type of service and if it’s on-premises or cloud, the agent is either installed on the respective machine, on the machine running Men&Mice central or, in some cases, on any machine that is in the same domain as the DNS/DHCP servers. A single agent can handle communication with multiple servers. For more information on agents and how to install them, see :ref:`install-controllers`.
 
 .. note::
    When managing Microsoft DNS servers on remote computers with the DNS Server Controller, some actions for static zones may not be available:
