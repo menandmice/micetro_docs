@@ -19,7 +19,7 @@ Services are managed on the **Admin** page in the :guilabel:`Service Management`
 For further details, see :ref:`adding-service` in the Admin Guide.
 
 .. note::
-  To add a new DNS server in the Management Console, the administrator will select :menuselection:`File --> New --> DNS Server`.
+  To add a new DNS server in the Management Console, select :menuselection:`File --> New --> DNS Server`.
 
 DNS Servers in Active Directory Integrated Zones
 ------------------------------------------------
