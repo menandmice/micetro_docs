@@ -4,8 +4,8 @@
 
 .. _adding-dhcp:
 
-Add DHCP Service
-================
+Adding DHCP Service
+===================
 
 DHCP servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
 
