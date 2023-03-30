@@ -46,7 +46,7 @@ User interface(s)
 .. image:: ../../images/micetro-mockup-2.png
   :width: 100%
   :align: center
-
+|
 .. note::
   All communications between the Micetro components are encrypted.
 
@@ -197,7 +197,7 @@ The Men&Mice Web Application can be installed on any server on the network runni
 .. image:: ../../images/IPAM1.png
   :width: 80%
   :align: center
-
+|
 .. tip::
   It is common practice to install the Web Application on the same server that Micetro's Central component is installed on.
 
@@ -211,7 +211,7 @@ Micetro's Management Console is a Windows-only rich client that can be installed
 .. image:: ../../images/console-Micetro.png
   :width: 80%
   :align: center
-
+|
 .. important::
   The Management Console is being deprecated in favor of the web application. No new features will be added to the Management Console.
 
