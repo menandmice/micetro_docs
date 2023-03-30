@@ -68,9 +68,12 @@ Table of Contents
      guides/user-manual/dhcp_scopes
      guides/user-manual/ipam
      guides/user-manual/folder_management     
+     guides/user-manual/webapp-reporting
+     guides/user-manual/webapp-workflows
+     guides/user-manual/view_change_history
      guides/user-manual/console
      guides/user-manual/automation
-     guides/user-manual/view_change_history
+     
 
 .. toctree::
     :caption: Micetro Admin Guide
