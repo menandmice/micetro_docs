@@ -4,7 +4,7 @@
 
 .. _adding-dns:
 
-Adding DNS Servers
+Adding DNS Service
 ==================
 
 After installation, Micetro contains no data about DNS servers. These need to be added.
