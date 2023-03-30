@@ -14,7 +14,7 @@ DNS servers require :ref:`install-controllers` and need to be added using their 
 .. note::
   Servers in Microsoft Active Directory environments can be added without installing a server controller. See :ref:`agent-free-dns-dhcp`.
 
-Services are managed on the **Admin** in the :guilabel:`Service Management` section. There you select :guilabel:`Add Service` to add a new server.
+Services are managed on the **Admin** page in the :guilabel:`Service Management` section. There you select :guilabel:`Add Service` to add a new server.
 
 For further details, see :ref:`adding-service` in the Admin Guide.
 
