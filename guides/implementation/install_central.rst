@@ -77,7 +77,7 @@ Run the downloaded binary and follow the instructions on-screen.
 .. image:: ../../images/install-windows-service.png
   :width: 60%
   :align: center
-
+|
 .. note:: Running Men&Mice Central under a privileged user account
   Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
 
