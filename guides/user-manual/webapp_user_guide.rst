@@ -4,43 +4,23 @@
 
 .. _webapp-user-guide:
 
-Using the Web Application
-=========================
+Using Micetro
+===============
 
-Logging in
-----------
+The application is split into 5 main sections:
 
-Server
-  The hostname or IP address of the server running Men&Mice Central
-
-Username
-  The username you want to log in as
-
-Password
-  The password for the specified user
-
-Log in with Single Sign-on
-  You can use existing SSO to log in. Note that the checkbox is only visible when the web server supports SSO.  For more information see :ref:`webapp-sso`.
-
-  .. note::
-    If you're logged in through an SSO service, the *Change password* operation is disabled in the :menuselection:`User menu`.
-
-.. image:: ../../images/login-Micetro.png
-  :width: 70%
-  :align: center
-
-Using the Men&Mice Web Application
-----------------------------------
-
-The Web Application is split into three main sections: :ref:`webapp-dns`, :ref:`webapp-network-management`, and :ref:`webapp-reporting`.
-
-For information on elements common to all sections, see :ref:`webapp-general`.
+* :ref:`dns`. On the DNS page, you can create, delete, and edit DNS zones. Here you also manage DNS records within the DNS zones.
+* :ref:`ipam`. On the IPAM page, you have the ability to perform various actions related to network and DHCP management, such as creating a new network range or DHCP scope, managing IP addresses within a network or DHCP scope and creating DHCP reserverations. You can also view related DNS data for IP addresses within a network and add DNS hosts for IP addresses.
+* :ref:`webapp-reporting`. The Reports page is activated with a separate license key and there you can create and save new reporting definitions, as well as schedule reports to be run at specific times.
+* :ref:`webapp-workflows`. The Workflow module reqiores a separate license key. The module allows you to submit ‘change requests’ for creating, modifying, or deleting DNS records.
+* **Admin**. The Admin page is the workspace for system administrators where they manage Micetro.
 
 .. _webapp-help:
 
-Getting help or support
+Getting Help or Support
 -----------------------
 
-Important information about how to get help and access the documentation can be found in the right sidebar on the front page of the Web Application.
+Information about how to get help and access the documentation can be found in the right sidebar on the front page.
 
-The help sidebar can also be accessed by clicking on the :guilabel:`?` icon in the top menu in all sections.
+You can also access the help sidebar by clicking the :guilabel:`?` icon in the top menu on all pages.
+
