@@ -4,7 +4,7 @@
 
 .. _adding-dhcp:
 
-Add DHCP Servers
+Add DHCP Service
 ================
 
 DHCP servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
@@ -50,32 +50,9 @@ The following table demonstrates the different options when adding a DHCP Server
 .. important::
   To add Kea servers to Micetro, they need to be configured with the ``libdhcp_lease_cmds.so`` library. See :ref:`add-kea-hooks` for details.
 
-1. Log in to the Web Application
+Services are managed on the **Admin** page in the :guilabel:`Service Management` section. There you select :guilabel:`Add Service` to add a new server.
 
-2. Navigate to :menuselection:`Admin --> Server Management`.
-
-3. Click :guilabel:`Add DHCP server` in the interface
-
-.. image:: ../../images/Admin-Micetro.png
-  :width: 80%
-  :align: center
-
-4. The *Add DHCP server* modal will display.
-
-5. Fill in the server’s FQDN. Optionally, you can specify its IP address (IPv4 or IPv6).
-
-6. Select the server type from the dropdown.
-
-.. image:: ../../images/add-dhcp-server.png
-  :width: 60%
-  :align: center
-
-7. Click :guilabel:`Confirm`.
-
-If the entered details are correct and the server is accessible, it will show up in the server management list and the Networks context.
-
-For further details, refer to :ref:`dhcp` in the User Guide.
-
+For further details, see :ref:`adding-service` in the Admin Guide.
 
 .. note::
-  To add a new DHCP server in the Management Console, the administrator will select :menuselection:`File --> New --> DHCP Server`.
+  To add a new DHCP server in the Management Console, select :menuselection:`File --> New --> DHCP Server`.
