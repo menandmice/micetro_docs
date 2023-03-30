@@ -95,6 +95,8 @@ To handle communication between Micetro and the external service, an Agent is ne
 
    To perform these actions, you need to install the DNS Agent on the server and use that connection when adding the server.
    
+.. _adding-service:
+
 Adding a Service
 ----------------
 You must have the permission to administer DNS to add a new service to Micetro.
