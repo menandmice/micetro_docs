@@ -38,7 +38,7 @@ Operations highlighted in the image:
 
   "Refresh list",	"Refreshes the list containing a list of zones, ranges, records or IP addresses"
   "Column configuration",	"Specifies which columns are visible in the list."
-  "Quickfilter", "The quickfilter functionality is described in :ref:`webapp-quickfilter`."
+  "Quickfilter", "The quickfilter functionality is described in :ref:`webapp-quick-filter`."
   "Toggle list or tree view",	"Toggles the 'Networks' list between list and tree views"
   "Refresh list", "Refreshes the contents of the list"
   "Add to favorites", "Adds the selected item in the list to favorites. The corresponding favorites filter in the sidebar shows all favorited items."
