@@ -47,7 +47,7 @@ To configure a user to use AD user authentication, do the following:
 
 1. From the menu, select :menuselection:`Tools --> User management`.
 
-2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to :ref:`acl-users`.
+2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. For more information, see :ref:`acl-users`.
 
 3. When the *Properties* dialog box display, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)
 
