@@ -1,5 +1,5 @@
 .. meta::
-   :description: IP address management (IPAM) in the Micetro by Men&Mice
+   :description: IP address management (IPAM) in Micetro by Men&Mice
    :keywords: IPAM, IP address management
 
 .. _ipam:
