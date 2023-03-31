@@ -64,6 +64,7 @@ Table of Contents
      :caption: Micetro User Guide
      :maxdepth: 3
 
+     guides/user-manual/webapp_user_guide
      guides/user-manual/dns
      guides/user-manual/dhcp_scopes
      guides/user-manual/ipam
