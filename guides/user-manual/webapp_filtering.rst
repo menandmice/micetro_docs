@@ -10,7 +10,7 @@ Filtering sidebar
 Overview
 --------
 
-The filtering sidebar acts as a selector in each context, and allows users to quickly find the zones or networks. Users can select pre-defined “filters” or selectors (shown in the image on the right, and described in tables below for other contexts in the system).
+The filtering sidebar acts as a selector in each context, and allows users to quickly find the zones or networks. Users can select pre-defined “filters” or selectors (described in tables below for other contexts in the system).
 
 The sidebar is open (displaying icon and text) by default, but can be collapsed to an icon-only mode. In case where a list of clickable items is needed the sidebar is automatically unfolded.
 
