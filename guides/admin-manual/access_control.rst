@@ -1,5 +1,5 @@
 .. meta::
-   :description: Access control to Micetro by Men&Mice for users, groups and roles
+   :description: Access control to Micetro by Men&Mice for users, groups, and roles
    :keywords: Micetro access model
 
 .. _access-control:
@@ -23,7 +23,7 @@ Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed thr
 
 A set of :ref:`acl-built-in-roles` are available that should cover most use cases. These are :ref:`acl-general-roles`, applied to all objects (present and future) in Micetro. :ref:`acl-specific-roles` exist for use cases where per-object permissions are required.
 
-Groups, users, and roles
+Groups, Users, and Roles
 ------------------------
 
 The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-roles` is as follows:
@@ -54,9 +54,8 @@ New objects
 
 When a user imports or creates a new object (such as DNS zone, record, DHCP scope, IPAM range, etc.) in Micetro, the object is configured for a certain default access based on the permissions for the object type. General roles configured with permissions for the object type will have automatic access to the object.
 
-.. _access-control:
 
-Access control management
+Access Control Management
 -------------------------
 
 Because Micetro's access controls are role-based, permissions are configured *on the role*, and propagated to any user or group attached to the role.
