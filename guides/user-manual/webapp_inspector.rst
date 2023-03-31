@@ -12,8 +12,6 @@ Overview
 
 The inspector, located to the right of the grid in each context, serves as an infobox for the selected objects (such as the DNS zone list) in the grid, as well as always showing the possible actions for the selected item at the top. In some cases it is possible to edit the information, such as DNS zone authority or the SOA record, for each zone.
 
-An example of an inspector for a DNS zone is shown in the image on the right.
-
 Actions
 -------
 
