@@ -4,24 +4,22 @@
 
 .. _admin-subnet-monitoring-events:
 
-Subnet monitoring events
+Subnet Monitoring Events
 =========================
 
 To access subnet monitoring events:
 
-#. Select **Admin** on the top navigation bar.
+#. On the **Admin** page, select :guilabel:`Configuration` in the upper-left corner.
 
-#. Click **Configuration** on the menu bar at the top of the admin workspace.
-
-#. Select **Event Hooks** in the left pane.
+#. Select :guilabel:`Event Hooks` in the filtering sidebar.
  
-Enabling subnet monitoring
+Enabling Subnet Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Subnet monitoring is enabled in the :ref:`admin-system-settings`. Click the Settings button in the upper right corner to go to the system settings where you can enable subnet monitoring in the system and configure email notifications.
+Subnet monitoring is enabled in the :ref:`admin-system-settings`. Click the **Settings** button in the upper-right corner to go to the System Settings where you can enable subnet monitoring in the system and configure email notifications.
 
 When enabled, the system monitors the free addresses in DHCP address pools and subnets, and performs an action if the number of free addresses goes below a user-definable threshold.
 
-When subnet monitoring is enabled, a new column, Monitoring, displays when viewing the subnet list. To quickly see all subnets that are monitored, you can use the Quick Filter and filter by this column by entering “Monitor: Yes” in the Quick Filter search field.
+When subnet monitoring is enabled, a new column, **Monitoring**, is added when viewing the subnet list. To filter the view by this column and quickly see all subnets that are monitored, you can enter "Monitor: Yes" in the Quick Filter search box.
 
 SMTP Server
 """""""""""
@@ -31,12 +29,12 @@ Mail from
 """""""""
 The email address from which notification emails will be sent when the number of addresses goes below a certain threshold.
 
-Subnet monitoring defaults
+Subnet Monitoring Defaults
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Subnet monitoring events section lists the current defaults. To change the default values, click **Set Defaults** and make the desired changes in the dialog box.
 
 Enabled
-  When selected, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, clear the checkbox and enable monitoring for the individual subnets instead by selecting the subnet, and then select Set Subnet Monitoring from the Range menu.
+  When selected, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, clear the checkbox and enable monitoring for the individual subnets instead by selecting the subnet on the **IPAM** page, and then selecting :guilabel:`Set subnet monitoring` on the :guilabel:`Action` menu.
 
 Script to invoke
   Enter the path of the script to run when the number of free addresses goes below the set threshold. See :ref:`admin-change-events` for information on the script interface and the format for calling the script.
@@ -61,7 +59,7 @@ Perform action when resolved
  
 
 .. note::
-  The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. For information on how to change monitoring settings for individual subnets, see :ref:`ipam`, Subnet Monitoring and Utilization History.
+  The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. For information on how to change monitoring settings for individual subnets, see :ref:`ipam`, Set Subnet Monitoring.
 
 Subnet Monitoring Script Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
