@@ -4,8 +4,8 @@
 
 .. _admin-change-events:
 
-Change events
-================
+Change Events
+==============
 
 Overview
 --------
@@ -18,21 +18,19 @@ The system can be configured to run scripts in the event that object properties 
 
 Scripts associated with object types are often used to perform lookups in external data sources and return data from these sources. 
 
-Adding a change event
+Adding a Change Event
 ^^^^^^^^^^^^^^^^^^^^^^
-1. Select **Admin** on the top navigation bar.
+1. On the **Admin** page, select :guilabel:`Configuration` in the upper-left corner.
 
-2. Click **Configuration** on the menu bar at the top of the admin workspace.
+2. Select :guilabel:`Event Hooks` in the filtering sidebar. 
 
-3. Select **Event Hooks** in the left pane. 
+3. Change events are displayed in the **Change Events** section. Click :guilabel:`Add`.
 
-4. Change events are displayed in the **Change Events** section. Click **Add**.
-
-5. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then enter the **Script name** and necessary startup parameters.
+4. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then enter the **Script name** and necessary startup parameters.
 
    You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&Mice Central; however, if the script is stored in a different location, the path for the script must be entered.
    
-5. When you are finished, click **Add**. 
+5. When you are finished, click :guilabel:`Add`. 
 
 Example 1:
   Running a python script named mytest.py. To run a script named mytest.py that is located in the Men&Mice Central directory using the python interpreter, the following would be placed in the appropriate field: python mytest.py.
@@ -40,9 +38,9 @@ Example 1:
 Example 2:
   Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
 
-Editing and deleting change events
+Editing and Deleting Change Events
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Click the **Action** (...) button for the event you want to edit or delete.
+#. Click :guilabel:`Action` for the event you want to edit or delete.
    
 #. Select the appropriate action on the pop-up menu, and make the desired changes.
 
