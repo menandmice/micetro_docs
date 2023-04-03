@@ -129,13 +129,12 @@ Step 1: Open the pending request.
 Open the pending request by clicking on the request queue icon in the top menu.
 
 .. image:: ../../images/workflows-pending.png
-  :width: 50%
-  :align: center
+   :align: center
 
 The following dialog box is displayed, where the user can review the DNS changes to submit or remove a DNS change from the queue.
 
 .. image:: ../../images/workflows-submit.png
-  :width: 70%
+  :width: 80%
   :align: center
 |
 Step 2: Scheduling
