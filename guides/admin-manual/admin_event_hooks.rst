@@ -14,11 +14,12 @@ Use event hooks to monitor and run specific scripts based on certain events. Thi
 * Permission: None (cannot create a custom role to access this)
 * Role: ``Administrators (built-in)`` 
 
+.. image:: ../../images/event-hooks.png
+   :width: 65%
+
 .. toctree::
   :maxdepth: 1
 
   admin_subnet_monitoring_events
   admin_change_events
   admin_scheduled_events
-  
- 
