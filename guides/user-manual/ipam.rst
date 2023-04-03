@@ -4,9 +4,6 @@
 
 .. _ipam:
 
-.. toctree::
-  :maxdepth: 2
-
 IPAM
 ======
 
