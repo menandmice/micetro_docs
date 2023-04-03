@@ -604,7 +604,7 @@ The Zone Controls feature allows you to create and edit $GENERATE statements in 
 
 2. On the Toolbar click the Zone Controls button |controls|. The Zone Controls dialog box opens, showing any $GENERATE statements that exist in the zone. The $GENERATE statements are shown in a multiline edit field.
 
-.. image:: ../../images/console-dns-zones-controls.png
+.. image:: ../../../images/console-dns-zones-controls.png
   :width: 50%
   :align: center
 
