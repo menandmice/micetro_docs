@@ -29,7 +29,7 @@ To configure scheduled events:
   
       To run a script named mytest.py that is located in the Men&Mice Central directory using the scripting host cscript, enter ``python mytest.py`` in the appropriate field.
 
-   *Example 2*: Running an executable named checkdata.exe. 
+    *Example 2*: Running an executable named checkdata.exe. 
   
       To run an executable named checkdata.exe that is located in the Men&Mice Central directory, enter ``checkdata.exe`` in the appropriate field.
 
@@ -37,8 +37,8 @@ To configure scheduled events:
 
       To enable this feature, create a user named ScriptRunner. This user must use the Men&Mice Internal authentication method. When this user has been created, you only have to enter $u as a user name and $p as a password when logging in to Micetro through the script.
 
-  .. note::
-   This method only works if the script scheduler invokes the script. When running the script, Micetro uses a temporary password that changes every time the script runs. For example, you could start a python script and pass in the username and password through arguments with ``python script.py $u $p``
+     .. note::
+      This method only works if the script scheduler invokes the script. When running the script, Micetro uses a temporary password that changes every time the script runs. For example, you could start a python script and pass in the username and password through arguments with ``python script.py $u $p``
 
 
    * **Run on**: Either enter the date and time the script should run, or use the datetime picker to select the date and time.
