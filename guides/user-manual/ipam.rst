@@ -352,6 +352,31 @@ Adds or removes the currently selected IP Address Range from folders.
 
 2. On the **Row menu (...)**, select :guilabel:`Set folder` and add or remove the range from folders.
 
+Set Subnet Monitoring
+^^^^^^^^^^^^^^^^^^^^^
+
+To change the monitoring settings for a subnet:
+
+1. Select the subnet(s) for which you want to change the monitoring setting.
+
+2. On the :guilabel:`Action` menu, select :guilabel:`Set subnet monitoring`. The Subnet Monitoring dialog box opens.
+
+  * **Enabled**: When selected, the subnet will be monitored.
+
+   * **Script to invoke**: Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
+
+   * **Email addresses**: Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
+
+* **Dynamic Threshold**: Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
+
+* **Static Threshold**: Enter the threshold for the free addresses in a subnet.
+
+* **Only perform action once (until fixed)**: When selected, the action is performed only once when the number of free addresses goes below the threshold.
+
+* **Perform action when fixed**: When selected, the action is performed when the number of free addresses is no longer below the threshold.
+
+3. Click :guilabel:`OK` to confirm your settings.
+
 
 AD Sites and Subnets
 --------------------
