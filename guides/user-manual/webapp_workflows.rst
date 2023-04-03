@@ -129,12 +129,11 @@ Step 1: Open the pending request.
 Open the pending request by clicking on the request queue icon in the top menu.
 
 .. image:: ../../images/workflows-pending.png
-   :align: center
-
+   
 The following dialog box is displayed, where the user can review the DNS changes to submit or remove a DNS change from the queue.
 
 .. image:: ../../images/workflows-submit.png
-  :width: 80%
+  :width: 90%
   :align: center
 |
 Step 2: Scheduling
@@ -162,15 +161,13 @@ Approving or Rejecting a Change Request
 Pending requests are indicated in the top menu.
 
 .. image:: ../../images/workflows-pending-requests.png
-  :width: 50%
-  :align: center
-
+|
 Selecting :guilabel:`Workflow` in the top menu displays the Workflow page with an overview of all requests that the user has access to view.
 
 Double clicking a pending request opens up the approval dialog box:
 
 .. image:: ../../images/workflows-approve.png
-  :width: 70%
+  :width: 90%
   :align: center
 
 The approval dialog box shows the request to be approved or rejected, as well the following details:
