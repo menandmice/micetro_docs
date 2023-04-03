@@ -14,9 +14,9 @@ This current version of the Workflow module is focused on DNS changes, so a comp
 
 Organizations can give users access within the organization and the ability to request DNS changes, in some or all of the DNS zones available in the organization.
 
-The Workflow module allows the user to submit 'change requests' for creating, modifying or deleting DNS records:
+The Workflow module allows the user to submit 'change requests' for creating, modifying, or deleting DNS records:
 
-1. The user makes a change in DNS. This can be adding a new DNS record or modifying or deleting an existing DNS record. Instead of saving the changes or creating the DNS record immediately, users with limited access have an option of creating a request to approve the change.
+1. The user makes a change in DNS. This can be adding a new DNS record, or modifying or deleting an existing DNS record. Instead of saving the changes or creating the DNS record immediately, users with limited access have an option of creating a request to approve the change.
 
 2. The request is created and can, be submitted for approval by users with necessary access.
 
@@ -28,29 +28,29 @@ The Workflow module allows the user to submit 'change requests' for creating, mo
   :width: 90%
   :align: center
 
-Getting started
+Getting Started
 ---------------
 
-In order to use the DNS requests in the Web application, the Workflow module needs to be purchased and enabled. The license key is added through the License Management dialog (see Administration Functions) in the Men&Mice Management Console.
+In order to use the DNS requests, the Workflow module needs to be purchased and enabled. For information about how to add license keys, see :ref:`admin-license`.
 
-In order to use the Workflow module, there are two new workflow specific roles in Access Management, "Requesters" and "Approvers" needed to be set. Users have to be added to the "Requesters" role to be able to submit requests. Administrative users have to be added to the "Approvers" role to be able to see requests made by others and approve them.
+In order to use the Workflow module, two new workflow specific roles in Access Management, "Requesters" and "Approvers", need to be set. Users have to be added to the "Requesters" role to be able to submit requests. Administrative users have to be added to the "Approvers" role to be able to see and approve requests made by others.
 
 In addition, Approvers are only able to approve requests that involve DNS Zones in which they have access to edit records.
 
 Requesters also need basic read-only access to the DNS Zones (and the containing DNS server) to be able to request changes, as well as the IP address ranges (to find available IP addresses).
 
-Overview of DNS Requests in the system
+Overview of DNS Requests in the System
 --------------------------------------
 
 When the Workflow module license key has been added and enabled, a new top menu item is visible.
 
-Open Requests shows an overview of the change requests in the system. (An icon is shown in the top menu to the right to indicate how many pending changes are in the queue. Clicking on the icon displays a dialog for submitting those changes as a request.)
+Open Requests shows an overview of the change requests in the system. An icon in the upper-right corenr indicates how many pending changes are in the queue. Clicking  the icon displays a dialog box for submitting those changes as a request. c
 
-.. image:: ../../images/blackstar-workflows.png
+.. image:: ../../images/workflows.png
   :width: 90%
   :align: center
 
-Filtering sidebar
+Filtering Sidebar
 -----------------
 
 The filtering sidebar has the following options for open DNS requests:
@@ -73,7 +73,7 @@ The following actions can be performed for a selected request in the list.
 
   "Open request", "Opens the request in a dialog where changes in it can be viewed and either approved or rejected"
   "Edit request properties", "Opens up a dialog where the properties for the request can be edited, if custom properties for Change Requests have been defined"
-  "Delete request", "Allows for cancelling the selected request"
+  "Delete request", "Allows for canceling the selected request"
   "View history", "Allows for viewing the history of the selected request"
 
 Inspector
@@ -93,7 +93,7 @@ The following items are listed in the Inspector's Properties section for a selec
   "Processed on", "Date the request was fully approved and applied"
   "Comment", "An optional comment the user provided when submitting the request"
 
-Creating a DNS request
+Creating a DNS Request
 ----------------------
 
 In order to create a DNS request, one of the following can be done:
@@ -104,7 +104,7 @@ In order to create a DNS request, one of the following can be done:
 
 * Delete a DNS record
 
-Additional options are available when creating, editing or removing a DNS record.
+Additional options are available when creating, editing, or removing a DNS record.
 
 .. note::
   Access restrictions will affect which users have these options available.
@@ -120,7 +120,7 @@ Authorized users and approvers can also submit change requests, even if they hav
 .. note::
   After a DNS request for a DNS change has been created, the corresponding IP address will be set in to a pending state and will not be available, for example when requesting the next Free IP address in the subnet.
 
-Submitting a change request
+Submitting a Cange Request
 ---------------------------
 
 Step 1: Open the pending request.
@@ -128,64 +128,64 @@ Step 1: Open the pending request.
 
 Open the pending request by clicking on the request queue icon in the top menu.
 
-.. image:: ../../images/blackstar-workflows-pending.png
+.. image:: ../../images/workflows-pending.png
   :width: 50%
   :align: center
 
-The following dialog is displayed, where the user can review the DNS changes to submit or remove a DNS change from the queue.
+The following dialog box is displayed, where the user can review the DNS changes to submit or remove a DNS change from the queue.
 
-.. image:: ../../images/blackstar-workflows-submit.png
+.. image:: ../../images/workflows-submit.png
   :width: 70%
   :align: center
-
+|
 Step 2: Scheduling
 """"""""""""""""""
 
-If the user want to make a scheduled change (i.e. the records are applied to the DNS server at a specific date and time) they need to check "Schedule request" and provide the date and time.
+If the user want to make a scheduled change (i.e. the records are applied to the DNS server at a specific date and time), they need to select :guilabel:`Schedule request`, and provide the date and time.
 
 Additionally, if custom properties have been defined for Change Requests, the user will be asked to enter those here, along with the optional Comment.
 
 .. note::
   All dates and times are according to the time zone setting on the Men&Mice Central server.
 
-.. image:: ../../images/blackstar-workflows-schedule-request.png
+.. image:: ../../images/workflow-schedule-request.png
   :width: 70%
   :align: center
-
+|
 Step 3: Submit the request
 """"""""""""""""""""""""""
 
-Clicking on Submit will submit the request which is followed by an indication of a successful submission, along with the ID (request number) for the request.
+Clicking :guilabel:`Submit` will submit the request which is followed by an indication of a successful submission, along with the ID (request number) for the request.
 
-Approving or rejecting a change request
+Approving or Rejecting a Change Request
 ---------------------------------------
 
 Pending requests are indicated in the top menu.
 
-.. image:: ../../images/blackstar-workflows-pending-requests.png
+.. image:: ../../images/workflows-pending-requests.png
   :width: 50%
   :align: center
 
-Clicking on the Workflow item in the top menu displays the Workflow page with an overview of all requests that the user has access to view.
+Selecting :guilabel:`Workflow` in the top menu displays the Workflow page with an overview of all requests that the user has access to view.
 
-Double clicking on a pending request opens up the approval dialog:
+Double clicking a pending request opens up the approval dialog box:
 
-.. image:: ../../images/blackstar-workflows-approve.png
+.. image:: ../../images/workflows-approve.png
   :width: 70%
   :align: center
 
-The approval dialog shows the request to be approved or rejected, as well the following details:
+The approval dialog box shows the request to be approved or rejected, as well the following details:
 
 .. csv-table::
   :widths: 10, 90
 
-  "Action", "Indicates what action is being performed: Add, Modify or Remove"
+  "Action", "Indicates what action is being performed: Add, Modify, or Remove"
   "Name", "The fully qualified DNS record name"
   "Type", "The DNS record type"
   "TTL", "The Time To Live of the DNS record"
   "Data", "The data being added. Hovering over the field shows the previous value, if being modified"
   "State", "The state of the change request"
 
-After clicking on the Approve button, the request is approved, and the data propagated accordingly.
-
-If the user clicks on the Reject button, they are prompted for a comment and then the request and all changes within the request is rejected.
+After clicking :guilabel:`Approve`, the request is approved, and the data propagated accordingly.
+           
+If the user clicks :guilabel:`Reject`, they are prompted for a comment and then the request and all changes within the request is rejected.
