@@ -40,7 +40,7 @@ Example 2:
 
 Editing and Deleting Change Events
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Click :guilabel:`Action` for the event you want to edit or delete.
+#. Click the Actions button (**...**) for the event you want to edit or delete.
    
 #. Select the appropriate action on the pop-up menu, and make the desired changes.
 
