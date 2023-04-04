@@ -10,9 +10,8 @@ Administrators can apply system-wide settings in System Settings.
 
 **To access the System Settings:**
 
-#. Select **Admin** on the top navigation bar.
-#. Click **Configuration** on the menu bar at the top of the admin workspace.
-#. Browse the categories under **System settings** in the left pane to find what you're looking for.
+#. On the **Admin** page, select **Configuration** in the upper-left corner.
+#. Browse the categories under **System settings** in the filtering sidebar to find what you're looking for.
 
    .. image:: ../../images/admin-system-settings.png
 
@@ -49,9 +48,11 @@ Here you can configure the following:
 
   * Rules to determine when an IP address is considered as being in use 
 
-Single sign-on
+Authentication
 ^^^^^^^^^^^^^^^
-When activated, users do not have to authenticate when logging in through the Management Console or the Command Line Interface. For more information about Single sign-on, see :ref:`external_auth`.
+Configure authentication methods, including single sign-on, LDAP integration, and external login providers. 
+
+When **single sign-on** is activated, users do not have to authenticate when logging in through the Management Console or the Command Line Interface. For more information about Single sign-on, see :ref:`external-auth`.
 
 Save comments
 ^^^^^^^^^^^^^^^
@@ -60,7 +61,7 @@ By default, users can save changes in the system without writing a comment. Here
 AD sites and subnets
 ^^^^^^^^^^^^^^^^^^^^^^
 Enable AD sites and subnets integration
-  When selected, all AD sites and their corresponding subnets will be displayed in Micetro, and you can add and remove subnets from sites and move subnets between different sites as needed. AD sites and subnets will be listed on the **AD Sites** menu in the IPAM workspace.
+  When selected, all AD sites and their corresponding subnets will be displayed in Micetro, and you can add and remove subnets from sites and move subnets between different sites as needed. AD sites and subnets will be listed on the **AD Sites** menu on the IPAM page.
   
   If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory with custom properties in Micetro, choose the desired custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will automatically update the corresponding fields in Micetro, and vice versa. See :ref:`active-directory`.
 
@@ -77,6 +78,8 @@ Control how IP addresses are identified as being in use. To specify which rules 
 Logging
 -------
 
+Micetro log
+^^^^^^^^^^^^
 The Logging settings allow you to specify when log messages should be deleted and whether lease history for DHCP servers should be collected.
 
 Purge log message after ____  days
@@ -145,7 +148,7 @@ This section allows you to specify various IPAM related settings:
 
 
 Subranges
-The selection made here determines what happens when a user creates a subrange of a range in a folder.
+   The selection made here determines what happens when a user creates a subrange of a range in a folder.
 
 Name conflicts between ranges and scopes
   Specify what happens if the name of an MS DHCP scope does not match the name of an existing IP address range.
@@ -163,10 +166,13 @@ Allow reservations inside pools on ISC DHCP servers
 
 
 Allow allocation of IP addresses from IP address Containers
-  When selected, the system will allow allocation of IP addresses that reside in IP address Containers. For more information on IP address Containers,  refer to  IPAM Settings.
+  When selected, the system will allow allocation of IP addresses that reside in IP address Containers. For more information on IP address Containers,  refer to  :ref:`ipam-containers`.
 
 Disable scanning of VRF information
    By default, the system does not scan for VRF information. If you clear the checkbox, the system will begin scanning for VRF information. If an overlap is found between different VRFs, the system will log the issue. 
+   
+Always show discovery info
+   Determines whether the columns related to host discovery should always be displayed when viewing contents of subnets or scopes.
 
 
 .. _admin-monitoring:
@@ -179,7 +185,7 @@ Here you can specify various monitoring related settings.
 Subnet monitoring
 ^^^^^^^^^^^^^^^^^
 Enable subnet monitoring
-  When enabled, the system monitors the free addresses in DHCP address pools and subnets and performs an action if the number of free addresses goes below a user-definable threshold. For further configuration, see the ``Subnet Monitoring section in Event Hooks``
+  When enabled, the system monitors the free addresses in DHCP address pools and subnets and performs an action if the number of free addresses goes below a user-definable threshold. For further configuration, see :ref:`admin-subnet-monitoring-events`.
 
 If you want the subnet monitor to send an email, you must specify the mail server and the sender email address to use. Enter the appropriate information in **SMTP Server** and **Mail from**. 
 
@@ -211,7 +217,47 @@ When selected, the monitoring tool monitors the DNS and DHCP services on their r
 
 Advanced
 --------
-Here you can configure advanced system settings, such as specifying a log file for Micetro Central and SSL Certificate policy. For more information about advanced system settings, see the Men&Mice `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
+Here you can configure advanced system settings, such as specifying a log file for Micetro Central and SSL Certificate policy. 
+
+.. csv-table::
+  :header: "Setting", "Description"
+  :widths: 25, 75
+ 
+  "Path to an SSL Root certificate", "Specifies the path to an SSL Root certificate is such a certificate is being used for the Cloud Integration feature."
+  "SSL Certificate policy",	"Specifies the SSL Certificate policy to use for the Cloud Integration feature."
+  "Default TTL of SOA record in new zones", "Specifies the default TTL value (in seconds) to use for the SOA record of new zones."
+  "Default TTL SOA field in new zones (MS)", "Specifies the default value (in seconds) to use for the TTL field in the SOA record of new zones. Only applicable for zones on Microsoft DNS servers."
+  "Default hostmaster SOA field in new zones", "Specifies the default value to use for the Hostmaster field in the SOA record of new zones."
+  "Default refresh SOA field in new zones",	"Specifies the default value (in seconds) to use for the Refresh field in the SOA record of new zones."
+  "Default retry SOA field in new zones", "Specifies the default value (in seconds) to use for the Retry field in the SOA record of new zones."
+  "Default expiry SOA field in new zones", "Specifies the default value (in seconds) to use for the Expiry field in the SOA record of new zones."
+  "Default negative caching SOA field in new zones (BIND)", "Specifies the default value (in seconds) to use for the Negative Caching field in the SOA record of new zones. Only applicable for zones on BIND DNS servers."
+  "Web proxy to use", "Specifies a proxy server to be used for outgoing connections for checking for updates and additionally for AWS cloud services."
+  "Web proxy port (defaults to port 80)", "Specifies the port of the proxy server to be used for outgoing connections for checking for updates and additionally for AWS cloud services."
+  "Username for web proxy authentication", "The username is used to authenticate a user agent with a proxy server."
+  "Password for web proxy authentication", "The password for web proxy authentication."
+  "Use web proxy settings when connecting to AWS", "If selected, the proxy settings configured will be used for connections to AWS."
+  "Directory for scripts that can be run from the SOAP interface", "Specifies the directory that contains scripts that may be run from the SOAP interface."
+  "Log performance of SOAP queries", "Determines whether execution time of SOAP queries should be logged. Mainly used for diagnostic purposes."
+  "Time in minutes between write-outs of SOAP performance log",	"If logging of SOAP query performance is enabled, this setting specifies how frequently the log should be written to disk."
+  "Automatically adjust local zone transfer settings for BIND", "By default, Micetro automatically adjusts zone transfer settings for secondary zones. Clear the checkbox if this is not a desired behavior for your environement."
+  "Automatically create reverse (PTR) records", "When selected, Micetro automatically creates reverse (PTR) records. PTR records are used for reverse DNS lookups, which are used to resolve an IP address to a domain name."
+  "Perform backup of MS and ISC DHCP servers", "Determines whether to perform a backup of Microsoft (MS) and Internet Systems Consortioum (ISC) Dynamic Host Configuration Protocol (DHCP) servers."
+  "Disable all health checks", "If selected, all health checks will be disabled."
+  "Disable collection of statistical information", "Select to stop the collection of statistical information."
+  "Use AWS CloudTrail events to optimize DNS synchronization", "Determines whether AWS CloudTrail events should be used to optimize DNS synchronization."
+  "IP ranges/scopes inherit access by default", "When you create a new IP range or scope, it will ineherit all access bits form its parent by default. If you want to change this behavior, clear this checkbox."
+  "Enable collection of IP information from routers",	"Determines whether the system can collect IP information from the ARP cache of routers. If selected, the system can collect this information."
+  "Timeout in seconds for named-checkconf", "Specifies the timeout value in seconds for named-checkonf files."
+  "Synchronize DNSSEC signed zones immediately after editing", "Determines whether DNSSEC signed zones should be synchronized immediately after they are changed. If selected, the zones are synchronized immediately. [2]_"
+  "Use case sensitive comparison when updating custom properties from scripts", "Specifies whether to take case sensitivity into account when comparing custom properties from scripts."
+  "Web app landing page", "By default, the Micetro frontpage is the landing page for the system. Clicking the Micetro logo will take you to the landing page."
+  "Web app server host", "Used to specify which host the web application is running on in order for auto update to work for the web application. Default is localhost (same server as Men&Mice Central)"
+  
+
+.. [1] Enabling this feature can affect performance of the system, especially when working with large DNSSEC zones.
+
+.. [2] Enabling this feature can affect the performance of the system.
 
 
 .. _admin-management-console:
