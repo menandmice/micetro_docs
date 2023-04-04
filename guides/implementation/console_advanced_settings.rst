@@ -6,7 +6,7 @@
 
 Advanced System Settings
 ************************
-To access the System Settings, go to the **Admin** page, and select :guilabel:`Configuration` in the upper-left corner. You'll find advanced settings under :guilabel:`System Settings`in the filtering sidebar.
+To access the System Settings, go to the **Admin** page, and select :guilabel:`Configuration` in the upper-left corner. You'll find advanced settings under :guilabel:`System Settings` in the filtering sidebar.
 
 To access the Advanced System Settings dialog box in the Management Console, open :guilabel:`System Settings`, and then click the :guilabel:`Advanced` button on the **General** tab.
 
