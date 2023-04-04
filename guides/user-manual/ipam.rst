@@ -377,6 +377,7 @@ To change the monitoring settings for a subnet:
 
 3. Click :guilabel:`OK` to confirm your settings.
 
+.. _active-directory:
 
 AD Sites and Subnets
 --------------------
