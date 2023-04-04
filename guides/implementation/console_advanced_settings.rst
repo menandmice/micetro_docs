@@ -6,13 +6,12 @@
 
 Advanced System Settings
 ************************
+To access the System Settings, go to the **Admin** page, and select :guilabel:`Configuration` in the upper-left corner. You'll find advanced settings under :guilabel:`System Settings`in the filtering sidebar.
 
-Starting with version 6.3.2, Micetro allows users to configure Advanced System Settings from within the Management Console.
-
-To access the Advanced System Settings dialog box, open :guilabel:`System Settings` and click the :guilabel:`Advanced` button in the *General* tab.
+To access the Advanced System Settings dialog box in the Management Console, open :guilabel:`System Settings`, and then click the :guilabel:`Advanced` button on the **General** tab.
 
 .. note::
-  The :guilabel:`Advanced System Settings` are only available for the build-in user "administrator".
+  The :guilabel:`Advanced System Settings` are only available for the built-in "administrator" user.
 
 Below, you will find a description of the currently available settings.
 
