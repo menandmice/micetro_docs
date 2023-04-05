@@ -39,10 +39,74 @@ New Features
 
 Improvements
 ^^^^^^^^^^^^
+* OS version display for different DNS and DHCP providers is now more consistent.
+
+* Improved dropdown menus to be able to be viewed in smaller window size
+
+* Various accessibility improvements were made to the Web Application
+
+* Logging was improved to not include sensitive information when editing AD Forests, Users and Cloud Services
+
+* Better handling of MS DHCP JET Database errors when working with reservations on failover scopes
+
+* Micetro now uses the correct region endpoints when communicating with AWS in setups where the AWS region provider chain is returning the non default region.
 
 Bug Fixes
 ^^^^^^^^^
 
+* Fixed AuthServe zone option validation where the Conf template (now Options template) and Federation fields did not allow underscore characters.
+
+* Performance has been improved when opening scopes on Kea.
+
+* Disabling scopes on Kea is no longer possible and has been disabled in the UI.
+
+* Reservation information is now shown in the old web UI.
+
+* Fixed an issue where it was not possible to add change requests for ranges with invalid set of custom properties.
+
+* Fixed a bug where license keys with expiry date were reported as inactive.
+
+* Fixed an issue where removing IP Addresses would sometimes result in database errors.
+
+* Fixed an issue with the Search and Update functionality for IP addresses in the Management Console causing a database error.
+
+* Fixed an issue where a user with access to edit IP address properties was unable to Claim IPs.
+
+* Removed /64 limitation from Allocate subrange wizard. Users can now allocate IPv6 ranges all the way down to /128.
+
+* Fixed an issue where promoting a zone would use data from a different primary zone with the same name.
+
+* Fixed a performance regression when listing and filtering Networks in the Web Application.
+
+* Fixed a bug where importing DHCP reservation on Kea gave an error.
+
+* Fixed a performance regression when viewing object history in large Micetro databases.
+
+* Fixed an issue where the schedule date for a scheduled change request wasn't being saved.
+
+* Fixed an issue where some auto suggestion fields would auto select the first suggestion.
+
+* Fixed issue where an xDNS zone would not be visible in the Management Console if another zone with the same name in a different view was also added to xDNS.
+
+* Fixed a bug where the quickfilter showed the value [object Object] when searching for a partial string of the word "object".
+
+* Fixed an issue with running the DNS Server Controller installer for Bind in chroot on some Linux distributions.
+
+* Fixed a problem with BIND possibly getting stuck when doing a logrotate if the appliance was configured to send the system log messages to a remote server.
+
+* Fixed an issue where a view with the name "default" would not behave correctly in the UI.
+
+* An issue was fixed where access was not retained when a zone was migrated.
+
+* An issue with setting custom properties with the AddDNSRecords API command was fixed.
+
+* Fixed an issue where submit buttons for change requests in Workflow would render off screen on certain screen resolutions.
+
+* An issue was fixed where if was not possible to add an IPv6 address of a primary server to a secondary zone.
+
+* An issue was fixed where scope name was not updated to reflect the name of the network.
+
+* An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
 
 .. _10.3.6-release:
 
