@@ -2,7 +2,7 @@
    :description: How to view object history and micetro logs
    :keywords: change history, object history, micetro logs, logging
 
-.. _logging:
+.. _admin-object-history:
 
 Viewing Object History
 ======================
