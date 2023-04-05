@@ -18,7 +18,6 @@ Linux
 * Men&Mice Central: ``micetro-central-10.5.0.linux.x64.tgz``
 * Men&Mice Server Controller: ``micetro-controllers-10.5.0.linux.x64.tgz``
 * Men&Mice Web Application: ``micetro-web-10.5.0.linux.x64.tgz``
-* Men&Mice Management Console: ``Men_and_Mice_Management_Console.exe``
 * Men&Mice AuthServe Agent: ``mm-authserve-agent.tar.gz``
 
 .. note::
