@@ -21,7 +21,7 @@ To configure scheduled events:
 
 5. Enter/select the neccessary information, and then click :guilabel:`Add`.
 
-   * **Enabled**: Select the checkbox to enable the scheduling process for the script. Likewise, at any time if you wish to disable the script, return to this dialog box and clearr this option.
+   * **Enabled**: Select the checkbox to enable the scheduling process for the script. Likewise, at any time if you wish to disable the script, return to this dialog box and clear this option.
 
    * **Script name**: Enter the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as the Men&Mice Central database file (mmsuite.db). If the script is stored in a different location, you must enter the path for the script.
 
