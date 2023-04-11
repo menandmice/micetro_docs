@@ -50,17 +50,16 @@ Below are the zone types supported by Micetro.
   "Primary (purple)", "An Active Directory Integrated primary zone."
   "Secondary", "A read-only copy of a primary zone or another secondary zone."
   "Hint", "Root zone used for bootstrapping of recursive DNS servers."
+  "Options template", "This configuration template is specific to the AuthServe DNS server and can be used to add templated options configuration to multiple zones. Editing the options template will affect all zones using the template."
   "*Configuration types*", "*The below zone types are essentially a configuration that tells the (recursive) DNS server how to resolve zones it cannot resolve the normal way*."
   "Stub", "A stub zone is a copy of a DNS zone that contains only resource records that identify the authoritative DNS servers for that zone. Stub zone is dynamically updated from the list of primary DNS servers."
   "Static-stub", "A BIND specific zone type to configure conditional forwarding, similar to Stub but is static, that is, it has a set of preconfigured NS entries."
   "Forward", "A forward zone contains a list of name server addresses, called forwarders, that can resolve queries for the zone. With forward zones queries are forced to go to the specified addresses."
-  "*Template*", "*AuthServe specific*."
-  "Options template", "This configuration template is specific to the AuthServe DNS server and can be used to add templated options configuration to multiple zones. Editing the options template will affect all zones using the template."
  
 Zone Contents
 ^^^^^^^^^^^^^
 
-The Inspector pane on the right provides a detailed look at the data inside of a zone. Select the zone to view its contents.
+The Inspector pane on the right provides a look at the SOA record and properties of the selected zone. 
 
 .. image:: ../../images/DNS-zone-contents-Micetro-10.5.png
    :width: 65%
@@ -69,7 +68,7 @@ You can hide information in the Inspector pane. Simply click a the header of the
 
 SOA 
 """"
-The Start of Authority or SOA record is displayed as a collection of fields in the Inspector pane.
+The Start of Authority, or SOA record, is displayed as a collection of fields in the Inspector pane.
 
 .. csv-table:: SOA Information
   :header: "Field", "Description"
@@ -80,7 +79,7 @@ The Start of Authority or SOA record is displayed as a collection of fields in t
   "Serial", "The serial number is a ten-digit number consisting of the year, the month, the day, and a two-digit daily revision number. (Actually, it is any integer between 0 and ~ 4 billion, but the preceding is the standard convention.)"
   "Refresh", "This is the period (in seconds) that determines how often secondary servers will check with the primary server to determine if their zone files are up to date. This is done by checking the serial number. The default value for this field is 28800, which equates to once every 8 hours."
   "Retry", "This determines the period that a secondary server will wait before trying to re-contact the primary zone (in the event that an earlier contact attempt is unsuccessful). The default value is 7200 seconds, or once every 2 hours."
-  "Expire", "This value determines how long a secondary server will keep serving a zone after its last successful contact to the primmary name server. Once the zone has expired, the secondary server stops giving information about the zone because it is deemed unreliable. The default expiration period is 604800 seconds, or 1 week."
+  "Expire", "This value determines how long a secondary server will keep serving a zone after its last successful contact to the primary name server. Once the zone has expired, the secondary server stops giving information about the zone because it is deemed unreliable. The default expiration period is 604800 seconds, or 1 week."
   "Neg. caching", "This field is only available when connected to a BIND server. This value specifies how long a server will retain (cache) the knowledge that something does not exist. The default value is 86400 seconds, 24 hours."
 
 Managing Zones
@@ -105,7 +104,7 @@ To create a new DNS zone:
 
 Primary Zone
 """""""""""""
-1. Use the server filter to select the DNS server where the zone should be created. If xDNS profiles :ref:`xdns-profiles` have been created on the instance, the zone can be added directly to an xDNS profile in the first step of the wizard.
+1. Use the server filter to select the DNS server where the zone should be created. If xDNS profiles have been created on the instance, the zone can be added directly to an xDNS profile in the first step of the wizard.
 
    .. image:: ../../images/zone-flow-filter-all.png
       :width: 65%
@@ -130,7 +129,7 @@ Primary Zone
 
 Secondary Zone
 """""""""""""""
-When creating a stub zone, you need to specify the zone name and either the IP address or hostname of the primary servers that hold the zone you are creating a secondary copy for.
+When creating a secondary zone, you need to specify the zone name and either the IP address or hostname of the primary servers that hold the zone you are creating a secondary copy for.
 
 Stub Zone
 """""""""""
@@ -178,10 +177,7 @@ To migrate a zone:
 
 4. Select the DNS service you want to migrate the zone to. 
 
-5. If you want remove the zone from the current service, select the :guilabel:`Remove original zone` checkbox.
-
-.. tip::
-  You can duplicate DNS zones by leaving the **Remove original zone** checkbox unselected.
+5. If you want remove the zone from the current service, select the :guilabel:`Remove original zone` checkbox. If the checkbox is left unselected, a copy of the zone is left on the current service.
 
 
 .. _ad-preferred-servers:
@@ -190,7 +186,7 @@ Editing Preferred Servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  This option is only available when working with Active Directory (AD) integrated zones. For more inforamtion about AD, see :ref:`active-directory`.
+  This option is only available when working with Active Directory (AD) integrated zones. For more information about AD, see :ref:`active-directory`.
 
 DNS administrators can specify the server to use when opening an AD integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable.
 
@@ -240,4 +236,4 @@ To promote a secondary zone to a primary zone:
 View History
 ^^^^^^^^^^^^^
 
-The :guilabel:`View history` option on the :guilabel:Àction` menu opens the History window that shows a log of all changes that have been made to the zone, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user. See :ref:`webapp-object-change-history`.
+The :guilabel:`View history` option on the :guilabel:`Action` menu opens the History window that shows a log of all changes that have been made to the zone, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. See :ref:`view-change-history`.
