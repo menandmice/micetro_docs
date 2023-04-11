@@ -133,11 +133,13 @@ Example PowerShell Script
 Instructions
 """"""""""""
 
-1. Copy the ScopeMonScript.ps1 to the c:\ProgramData\Men and Mice\Central directory.
+1. Copy the ScopeMonScript.ps1 to C:\ProgramData\Men and Mice.
 
-2. In Admin->Configuration->Event Hooks, under Subnet Monitoring, click **Set Defaults** and set the **Script to invoke** text box to ScopeMonScript.ps1.
+2. In Admin->Configuration->Event Hooks, under **Subnet monitoring events**, click :guilabel:`Set Defaults`.
 
-3. Then configure a dynamic threshold.
+3. Enter ScopeMonScript.ps1 in the **Script to invoke** text box.
+
+4. Configure a dynamic threshold.
 
 
 The monitor will be executed every 10 minutes during the DHCP synchronization interval.
