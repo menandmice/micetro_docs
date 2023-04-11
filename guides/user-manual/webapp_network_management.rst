@@ -31,7 +31,7 @@ Creating a network
 Step 1
 """"""
 
-Click on the :guilabel:`Create` button above the list, or click on :menuselection:`Actions --> Create new network` on the top or in the Inspector.
+Click the :guilabel:`Create` button above the list, or click on :menuselection:`Actions --> Create new network` on the top or in the Inspector.
 
 A wizard dialog appears to guide users through the process.
 
@@ -41,7 +41,7 @@ A wizard dialog appears to guide users through the process.
 
 1. Fill in the network along with the subnet mask.
 
-2. When creating a DHCP network, the check box :guilabel:`Create a DHCP network` should be checked. (See below for details.)
+2. When creating a DHCP network, the :guilabel:`Create a DHCP network` checkbox should be selected. (See below for details.)
 
 3. Specify if network and broadcast addresses should be reserved.
 
@@ -50,7 +50,7 @@ A wizard dialog appears to guide users through the process.
 Step 2 (optional)
 """""""""""""""""
 
-If the :guilabel:`Create a DHCP network` box was checked in Step 1, the following dialog is presented:
+If :guilabel:`Create a DHCP network` was selected in Step 1, the following dialog box is displayed:
 
 .. image:: ../../images/create-dhcp-Networks-Micetro.png
   :width: 60%
@@ -65,7 +65,7 @@ Step 3
 
 1. Fill in the **Title** and **Description**.
 
-2. Fill in to any custom fields to be defined in the system.
+2. Fill in any custom fields to be defined in the system.
 
 3. Click :guilabel:`Next`.
 
@@ -78,7 +78,7 @@ Users are presented with summary information about the network before it is crea
   :width: 60%
   :align: center
 
-1. To open the range after it has been created, check the :guilabel:`Open range after creating` box.
+1. To open the range after it has been created, select the :guilabel:`Open range after creating` checkbox.
 
 2. Optionally, add a save comment for audit trail purposes.
 
@@ -260,20 +260,20 @@ Unique Identifier (DUID)
 Identity Association Identifier (IAID)
    The indentifier of the interface on the client system
    
- To create a DHCP reservation:
+To create a DHCP reservation:
  
- 1. Under :guilable:`IPAM` >> :guilabel:`DHCP Scopes` double-click on a Scope and click on :guilabel:`Reserve`
+ 1. Under :guilabel:`IPAM` >> :guilabel:`DHCP Scopes`, double-click a Scope, and then click :guilabel:`Reserve`.
  
- 2. Depending on whether an address was already selected from the grid before pressing :guilabel:`Reserve` choose from the following options:
+ 2. Depending on whether an address was already selected from the grid before pressing :guilabel:`Reserve`, choose from the following options:
  
- Selected
-   The address which was selected prior to clicking on :guilabel:`Reserve`
+      Selected
+         The address which was selected prior to clicking on :guilabel:`Reserve`
    
- Automatic
-   A randomly selected IP address in that scope chosen by Micetro
+      Automatic
+         A randomly selected IP address in that scope chosen by Micetro
    
- Manual entry
-   An IP address entered manually by the user
+      Manual entry
+         An IP address entered manually by the user
    
 .. image:: ../../images/selected-dhcpv6-reservation.png
    :width: 60%
@@ -283,38 +283,37 @@ Identity Association Identifier (IAID)
    :width: 60%
    :align: center
    
-3. Input the following information:
+3. Enter the following information:
 
-Name
+   Name
+      Unique identifier (DUID)
 
-Unique identifier (DUID)
+   **Identity association identifier (IAID)**
 
-Identity association identifier (IAID)
+   **Description**
 
-Description
-
-4. Click :guilabel:`Save`
+4. Click :guilabel:`Save`.
 
 Editing DHCPv6 Options for Reservations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For more information on configuring DHCPv6 options go to [DHCP Options](https://menandmice.com/docs/10.2/guides/user-manual/webapp_edit_dhcp)
+For more information on configuring DHCPv6 options, see :ref:`edit-dhcp-server-name`
 
-1. Go to :guilabel:`IPAM` >> :guilabel:`DHCP Scopes` and double-click on a scope
+1. Go to :guilabel:`IPAM` >> :guilabel:`DHCP Scopes`, and double-click a scope.
 
-2. Select a reservation and click on the ellipsis (or meatball) menu
+2. Select a reservation, and then click the ellipsis (or meatball) menu.
 
-3. Select :guilabel:`Edit Reservation Options`
+3. Select :guilabel:`Edit Reservation Options`.
    
 Adding a DNS host
 ^^^^^^^^^^^^^^^^^
 
 To add a DNS host for a specific IP address within a IP address range or a scope:
 
-1. Select the IP address in the list
+1. Select the IP address in the list.
 
-2. In the Related DNS data section of the Inspector, click on the :guilabel:`+` button
+2. In the Related DNS data section of the Inspector, click the :guilabel:`+` button.
 
-3. A dialog will be displayed which allows for adding the record
+3. A dialog box will be displayed allowing for adding the record.
 
 .. image:: ../../images/Networks-related-dns-Micetro.png
   :width: 75%
