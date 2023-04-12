@@ -204,12 +204,12 @@ Creating Client Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click :guilabel:`Create`.
 
-2. In the Create Client Classification dialob box, eneter the necessary information.
+2. In the Create Client Classification dialog box, enter the necessary information.
 
    .. image:: ../../images/kea-client-classifications-create.png
       :width: 70%
 
-   * Enter a name and create an expresstion. Each DHCP packet will be evaluated against the expression to determine if it thould belong to that client class. For information about how to create expressions, see the `Kea documentation <https://kea.readthedocs.io/en/kea-2.2.0/arm/classify.html#using-expressions-in-classification>`_.
+   * Enter a name and create an expression. Each DHCP packet will be evaluated against the expression to determine if it should belong to that client class. For information about how to create expressions, see the `Kea documentation <https://kea.readthedocs.io/en/kea-2.2.0/arm/classify.html#using-expressions-in-classification>`_.
    
    * Optionally you can add a description. The description is not added to the Kea config, only saved in Micetro. Defining a client class as global is a Micetro-specific feature and is explained in detail below.
    
@@ -223,19 +223,11 @@ Creating Client Classes
 
 Assigning Client Classes
 ------------------------
-You can limit the access to specific scopes and address pools by assigning a client class to them. then only packets that belong to the assigned client class will have access.
+You can limit the access to specific scopes and address pools by assigning a client class to them. Then only packets that belong to the assigned client class will have access.
 
 **To assign a client class to a scope:**
 
 1. Go to the **IPAM** page, and select a Kea scope.
-
-2. On the :guilabel:`Action` menu, select :guilabel:`Manage DHCP pools`. You can also select this option on the **Row menu (...)**. 
-
-3. In the drop-down list, select the client class to assign to the scope. To unassign a client class, select the :guilabel:`Unassigned`.
-
-**To assign a client class to a pool:**
-
-1. Open a Kea scope.
 
 2. On the :guilabel:`Action` menu, select :guilabel:`Assign client classification`. You can also select this option on the **Row menu (...)**. 
 
@@ -243,10 +235,20 @@ You can limit the access to specific scopes and address pools by assigning a cli
 
 4. On the **Row menu (...)**, select :guilabel:`Assign client classification`. 
 
-.. image:: ../../images/kea-client-classifications-assign.png
-   :width: 70%
-   |
+   .. image:: ../../images/kea-client-classifications-assign.png
+      :width: 70%
+   
+
+**To assign a client class to a pool:**
+
+1. Open a Kea scope.
+
+2. On the :guilabel:`Action` menu, select :guilabel:`Manage DHCP pools`. You can also select this option on the **Row menu (...)**. 
+
+3. In the drop-down list, select the client class to assign to the scope. To unassign a client class, select :guilabel:`Unassigned`.
+
 Assigning client classes to scopes/pools shows up in the history of the respective ranges. You can filter ranges based on their assigned client classes with the property `clientClass`. 
 
 .. image:: ../../images/kea-client-classifications-filter.png
    :width: 70%
+
