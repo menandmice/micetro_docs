@@ -333,6 +333,8 @@ If Men&Mice Central is installed on a Windows host, then one option is to instal
 .. note::
   The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
    
+.. _authserve:   
+
 AuthServe Agent
 ---------------
   
