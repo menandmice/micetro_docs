@@ -32,11 +32,13 @@ Adding a Change Event
    
 5. When you are finished, click :guilabel:`Add`. 
 
-Example 1:
-  Running a python script named mytest.py. To run a script named mytest.py that is located in the Men&Mice Central directory using the python interpreter, the following would be placed in the appropriate field: python mytest.py.
+*Example 1*: Running a python script named mytest.py.
 
-Example 2:
-  Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: checkdata.exe.
+   To run a script named mytest.py that is located in the Men&Mice Central directory using the python interpreter, the following would be placed in the appropriate field: ``python mytest.py``.
+
+*Example 2*: Running an executable named checkdata.exe. 
+
+   To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: ``checkdata.exe``.
 
 Editing and Deleting Change Events
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,7 +55,7 @@ When Men&Mice Central runs an external script assoicated with a change event, it
 The XML structures differs a little depending on the type of script (property change, zone contents change, scope monitoring).
 
 .. note::
-   The API knows change events as External Scrips which is why the element name is externalScriptParameters.
+   The API knows change events as External Scripts which is why the element name is externalScriptParameters.
 
 Property Change Script Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
