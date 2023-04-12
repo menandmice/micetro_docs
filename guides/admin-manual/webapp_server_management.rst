@@ -6,7 +6,7 @@
 
 Service Management
 ===================
-Service Management is the place to connect DNS/DHCP and IPAM services that you want to orchestrate with Micetro. These services can be hosted on-premises, on appliances, or in the cloud. Services that have been connected are listed in Service Management of the Admin workspace.
+Service Management is the place to connect DNS/DHCP and IPAM services that you want to orchestrate with Micetro. These services can be hosted on-premises, on appliances, or in the cloud. Services that have been connected are listed on the **Service Management** on the Admin page.
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
@@ -26,7 +26,7 @@ Service Management is the place to connect DNS/DHCP and IPAM services that you w
 
 Depending on the user permissions and available license keys, DNS and DHCP services and functions can be disabled or hidden.
 
-Micetro has a granular role based :ref:`access-control`system. For DNS and DHCP administrators, it is recommended to be members of the built-in  **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
+Micetro has a granular role based :ref:`access-control` system. For DNS and DHCP administrators, it is recommended to be members of the built-in  **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
 
 When not using the built-in roles, users need to be members of a role with the following permissions. Note that other permissions could be needed to manage the services fully. For more information on Micetro's granular role-based access controls, see :ref:`access-control`. 
 
@@ -52,7 +52,7 @@ Micetro supports the following DNS and DHCP platforms
 
   * BIND
 
-  * DynDNS (cloud), (Note DynDNS is EOL March 31st 2023)
+  * DynDNS (cloud), (Note DynDNS is EOL May 31st 2023)
 
   * Edge DNS (cloud)
 
@@ -113,6 +113,7 @@ Adding a new service is either a two or three step process, depending on the typ
       :width: 65%
 
 4. Choose the platform you want to use. You'll see a list of options to choose from, based on your license keys, DNS and IPAM. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to search for the right service.
+
 5. Select an agent: 
 
     .. image:: ../../images/add-kea.png
@@ -128,12 +129,12 @@ Adding a new service is either a two or three step process, depending on the typ
          :width: 65%
    |
 
-    * In the case of AuthServe, you can select from a list of available agents that were registered in the installation process.
+    * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process.  
         
     .. image:: ../../images/add-authserve.png
          :width: 65%
 
-    * To register a new agent, click the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
+    * For AuthServe you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
 
 6. Add service:
   * Cloud services: Each service type has its set of credentials in addition to the optional service name.
@@ -142,7 +143,7 @@ Adding a new service is either a two or three step process, depending on the typ
 
     * Provide the hostname or IP address of the service/server.
 
-    * AuthServe uses channel as the connection string. Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name which maps to localhost.  To select a different host name the syntax is '"1.2.3.4#<someseceret>"’. Refer to AuthServe documentation for details.
+    * AuthServe uses channel as the connection string. Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name which maps to localhost. To select a different host name the syntax is ``"1.2.3.4#<someseceret>"``. Refer to AuthServe documentation for details.
 
 Editing Services
 -----------------
@@ -166,10 +167,10 @@ Any actions that can be performed on a selected server can either be accessed in
   :widths: 15, 85
 
   "Attach service", "Attaches a previously detached server/service." 
-  "Detach server", "Detaches or disables the server/service. When a server is detached, it is not synchronized with Micetro and excluded from various checks. When a server is detached, it is greyed out in the service view grid. The server can be attached again for it to be part of the server synchronization again.."
+  "Detach server", "Detaches or disables the server/service. When a server is detached, it is not synchronized with Micetro and excluded from various checks. When a server is detached, it is greyed out in the service view grid. The server can be attached again for it to be part of the server synchronization again."
   "View history", "Allows to view history for the selected server/service."
   "Remove service", "Removes the selected server/service from Micetro. This option is only available with the Administrator account."
-  "Synchronize", "Triggers synchronization of zones and record or scopes."
+  "Synchronize", "Triggers synchronization of zones and records or scopes."
   
 
 Service States
