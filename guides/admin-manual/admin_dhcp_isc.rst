@@ -49,10 +49,17 @@ Adding a New Custom Option
 .. note::
    Once an option has been defined, you can set its value on the :guilabel:`Edit Options` tab.
    
+Editing an Existing Cusotom Option
+""""""""""""""""""""""""""""""""""
+1. On the :guilabel:`Custom Options` tab in the Manage DHCP Options dialog box, select the relevant custom option.
+
+2. On the **Row menu (...)**, select :guilabel:`Edit`.
+
+3. Edit the ID, and then click :guilabel:`Save`.
 
 Removing an Existing Custom Option
 """""""""""""""""""""""""""""""""""
-1. On the :guilabel:`Custom Options`tab in the Manage DHCP Options dialog box, select the relevant custom option.
+1. On the :guilabel:`Custom Options` tab in the Manage DHCP Options dialog box, select the relevant custom option.
 
 2. On the **Row menu (...)**, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
 
