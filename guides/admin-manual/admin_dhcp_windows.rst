@@ -105,7 +105,7 @@ Toggling DHCPv6 Management On and Off
 .. note::
    There is only one DHCP service on a Microsoft DHCP server. DHCPv4 and DHCPv6 are not decoupled in Microsoft as they are in Micetro. Any action performed on either DHCPv6 or DHCPv4 that requires a restart of the service will result in a restart of the single DHCP service on the Microsoft server.
    
-1. On the **Admin** page, select one or multiple Microsoft DHCP servers.
+1. On the **Admin** page, select the relevant Microsoft DHCP server.
 
 2. On the :guilabel:`Action` menu, select :guilabel:`Edit service`. You can also select this option on the **Row menu (...)**. 
 
