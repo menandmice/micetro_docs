@@ -7,7 +7,7 @@
 Scheduled Events
 ================
 
-The administrator can configure the system to run scripts in a schedule, such as backing up the database every night at 3:00 AM, performing changes early in the morning, etc.
+The administrator can configure the system to run scripts in a schedule, such as collecting a list of all users that performed at least one operation that day at midnight, etc.
 
 To configure scheduled events:
 
@@ -27,7 +27,7 @@ To configure scheduled events:
 
     *Example 1*: Running a script named mytest.py. 
   
-      To run a script named mytest.py that is located in the Men&Mice Central directory using the scripting host cscript, enter ``python mytest.py`` in the appropriate field.
+      To run a script named mytest.py that is located in the Men&Mice Central directory using the python interpreter, enter ``python mytest.py`` in the appropriate field.
 
     *Example 2*: Running an executable named checkdata.exe. 
   
