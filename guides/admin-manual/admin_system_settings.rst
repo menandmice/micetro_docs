@@ -31,8 +31,6 @@ The System Settings include the following categories:
   * :ref:`admin-monitoring`
 
   * :ref:`admin-advanced`
-
-  * :ref:`admin-management-console`
   
 
 .. _admin-general:
@@ -42,6 +40,8 @@ General
 
 Here you can configure the following:
 
+  * Authentication methods
+  
   * Save Comments for Micetro 
 
   * Settings for Active Directory (AD) Sites and Subnets integration 
@@ -56,7 +56,11 @@ When **single sign-on** is activated, users do not have to authenticate when log
 
 Save comments
 ^^^^^^^^^^^^^^^
-By default, users can save changes in the system without writing a comment. Here you have the option to choose whether writing comments should be required or optional. If you choose to make comments **required**, users will need to include a comment whenever they save changes. If you choose to make comments **optional**, users can choose whether or not to include a comment when saving changes.
+By default, users can save changes in the system without writing a comment. Here you have the option to set the comment requirements for Micetro tasks, including options to turn off the save comment dialog box, make it optional, or require it. 
+
+   * If you choose to make comments **required**, users will need to include a comment whenever they save changes. 
+   * If you choose to make comments **optional**, users can choose whether or not to include a comment when saving changes.
+   * When **off** is selected, the save comment dialog box will not appear when users save changes. 
 
 AD sites and subnets
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -68,7 +72,7 @@ Enable AD sites and subnets integration
 Enforce AD site inheritance
   When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet. See :ref:`active-directory`.
 
-Determine Address usage
+Determine address usage
 ^^^^^^^^^^^^^^^^^^^^^^^
 Control how IP addresses are identified as being in use. To specify which rules should be applied to IP addresses, select the appropriate checkboxes.
 
@@ -77,30 +81,29 @@ Control how IP addresses are identified as being in use. To specify which rules 
 
 Logging
 -------
+The Logging settings allow you to specify when log messages should be deleted and whether lease history for DHCP servers should be collected.
 
 Micetro log
 ^^^^^^^^^^^^
-The Logging settings allow you to specify when log messages should be deleted and whether lease history for DHCP servers should be collected.
-
-Purge log message after ____  days
+Purge log message after (# of days)
   Enter the number of days the logs should be kept before they are deleted.
 
 Log extra information when address collection is triggered
   When selected, information about the start and duration of the address collection is written in the Micetro log file.
 
-Lease History
+Lease history
 ^^^^^^^^^^^^^^
 Here you can select to start collecting lease history for DHCP servers. By viewing the DHCP lease history, you can quickly identify any potential issues or conflicts.
   
-You can specify the number of days to keep the history before it is deleted, and if you want to save the history to a comma separated text file before it is deleted, select the **Flush lease history to file befor purging**, and then enter a name for the file.
+You can specify the number of days to keep the history before it is deleted, and if you want to save the history to a comma separated text file before it is deleted, select the **Flush lease history to file before purging**, and then enter a name for the file.
 
     
 .. _admin-error-checking:
 
-Error Checking
+Error checking
 --------------
 
-In this section you can specify how the system reports certain errors related to DHCP and DNS. You can also enable or disable DHCP scope monitoring.
+In this section you can specify how the system reports certain errors related to DNS.
 
 DNS errors
 ^^^^^^^^^^
@@ -122,7 +125,7 @@ Delegation records
 ^^^^^^^^^^^^^^^^^^^
 When activated, Micetro will automatically create delegation records (NS records) in the corresponding parent zones whenever subzones are created. This ensures that the delegation chain between parent and subzones is maintained correctly.
 
-Adjust Zone Transfer
+Adjust zone transfer
 ^^^^^^^^^^^^^^^^^^^^
 Allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
 
@@ -155,7 +158,7 @@ Name conflicts between ranges and scopes
   
   When **Apply same rule for scope description as for scope name above** is selected, the system will use the same rules to update scope description as it does for updating scope names.
 
-DHCP Scope Deletion
+DHCP scope deletion
   If a scope is removed directly from a DHCP server (instead of using Micetro), you can select whether to convert it to an IP address range or remove it completely.
 
 Allow reservations inside pools on ISC DHCP servers
@@ -165,7 +168,7 @@ Allow reservations inside pools on ISC DHCP servers
     If a reservation that has been created inside a pool is deleted, the address is not made a part of the pool again.
 
 
-Allow allocation of IP addresses from IP address Containers
+Allow allocation of IP addresses from IP Address Containers
   When selected, the system will allow allocation of IP addresses that reside in IP address Containers. For more information on IP address Containers,  refer to  :ref:`ipam-containers`.
 
 Disable scanning of VRF information
@@ -259,37 +262,3 @@ Here you can configure advanced system settings, such as specifying a log file f
 
 .. [2] Enabling this feature can affect the performance of the system.
 
-
-.. _admin-management-console:
-
-Management Console
-------------------
-These settings are only for users of the Management Console.
-
-
-DHCP errors
-^^^^^^^^^^^^^^^^^^^
-Inconsistencies in DHCP lease names and DNS names
-   When activated, an icon will appear next to each DHCP lease that has a DNS name that doesn't match the name of the lease. The user can click on the icon to view more information about the error, including steps to fix the issue (if applicable). 
-   
-Address pool collisions
-   When activated, an icon will appear next to split scope entries if the address pool in the scope collides with the address pool of another split scope instance. The user can click on the icon to view more information about the error, including steps to fix the issue (if applicable). 
-   
-Inconsistencies between reservation names in split scopes
-   When activated, an icon will appear next to split scope entries if a reservation name in a split scope differs from the reservation name in another split scope instance. The user can click on the icon to view more information about the error, including steps to fix the issue (if applicable). 
-   
-Inconsistencies between reservation descriptions in split scopes
-   When activated, an icon will appear next to scope entries if a reservation description in a split scope differs from the reservation description in another split scope instance. The user can click on the icon to view more information about the error, including steps to fix the issue (if applicable).
-   
-   If a reservation that has been created inside a pool is deleted, the address is not made a part of the pool again. 
-   
-Show DHCP data in subranges of scopes
-   When selected, the system will display contents of subranges of scopes in the same view that is used for scopes and users with the required privileges will be able to work with reservations in these subranges. If the checkbox is not selected, contents of subranges of scopes will be displayed in the regular range view.
-   
-Automatic assignment in zone window
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Ping before                                                                 automatic assignment
-   When selected, the system will check if the IP address is responsive to a pin request before it is allocated to a new host through auto-assignment. If the IP address responds to the ping request, it won't be used for auto-assignment. 
-   
-Automatic assignment ping timeout _____ ms
-   Specifies how long the system should wait (in milliseconds) for a response to the ping request. If a response is not received within the specified time, the system considers this to be a non-responding IP address. 
