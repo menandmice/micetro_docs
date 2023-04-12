@@ -125,27 +125,32 @@ You can edit the configuration of Kea DHCP servers.
 
 3. In the Edit Configuration dialog box, make the desired changes, and then click :guilabel:`Save`.
 
-.. image:: ../../images/kea-dhcp-config.png
-  :width: 75%
-  :align: center
+   .. image:: ../../images/kea-dhcp-config.png
+      :width: 75%
+|
 
-* **Default/Maximum/Minimum Valid Lifetime**: Specifies the time after which a lease will expire if not renewed.
+   * **Default/Maximum/Minimum Valid Lifetime**: Specifies the time after which a lease will expire if not renewed.
 
-* **Renew Timer**: Specifies the time when a client will begin a renewal procedure.
+   * **Renew Timer**: Specifies the time when a client will begin a renewal procedure.
 
-* **Rebind Timer**: Specifies the time when a client will begin a rebind procedure.
+   * **Rebind Timer**: Specifies the time when a client will begin a rebind procedure.
 
-* **Next Server**: Specifies the server address to use when clients want to obtain configuration from a TFTP server.
+   * **Next Server**: Specifies the server address to use when clients want to obtain configuration from a TFTP server.
 
-* **Echo Client ID**: Specifies if the server should send back client-id options when responding to clients.
+   * **Echo Client ID**: Specifies if the server should send back client-id options when responding to clients.
 
-* **Match Client ID**: Specifies if the server should ignore the client identifier during lease lookups and allocations for a particular subnet.
+   * **Match Client ID**: Specifies if the server should ignore the client identifier during lease lookups and allocations for a particular subnet.
 
-* **Decline Probation Period**: Specifies a probation time that will be set on addresses that are in use by some unknown entity.
+   * **Decline Probation Period**: Specifies a probation time that will be set on addresses that are in use by some unknown entity.
 
-* **Control Socket Name**: The path to the UNIX socket. Cannot be empty.
+   * **Control Socket Name**: The path to the UNIX socket. Cannot be empty.
 
-* **Server tag**: The name used for this server in a High Availability setup.
+   * **Server tag**: An arbitrary string used to associate configuration elements with specific Kea server instances in a configuration database, allowing for shared or unique configurations among multiple servers.
+
+Raw Configuration
+^^^^^^^^^^^^^^^^^^
+The v4 and v6 properties tabs are the most commonly used properties for configuring Kea DHCP services. For more specialized configurations, you can define additional properties on the Raw Configuration tab. This allows you to edit configuration files directly on the server for both DHCPv4 and DHCPv6. Please note that when editing these files, there is minimal error handling, so caution should be taken when making changes and saving them.
+
 
 Handling External Changes with Kea
 ------------------------------------
