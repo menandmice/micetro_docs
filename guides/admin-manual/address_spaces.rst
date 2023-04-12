@@ -53,7 +53,7 @@ Go to :menuselection:`Admin --> Configuration --> Address Spaces`.
 
 Moving Objects to a Different Address Space
 -------------------------------------------
-You can move DNS servers, DHCP servers, IP Address renges, and individual IP Address entries between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects do a different address space.
+You can move DNS servers, DHCP servers, and IP Address ranges between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects to a different address space.
 
 To move an object:
 
