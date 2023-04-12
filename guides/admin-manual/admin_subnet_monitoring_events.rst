@@ -128,16 +128,16 @@ Example PowerShell Script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  Powershell scripts can be run natively by Men&Mice by starting the command with "powershell", "powershell.exe" or simply with the path to the .ps1 file. Powershell can then read the stdin with [Console]::In.ReadToEnd()
+  Powershell scripts can be run natively by Men&Mice by starting the command with ``powershell``, ``powershell.exe`` or simply with the path to the ``.ps1`` file. Powershell can then read the stdin with ``[Console]::In.ReadToEnd()``.
 
 Instructions
 """"""""""""
 
-1. Copy the ScopeMonScript.ps1 to C:\ProgramData\Men and Mice.
+1. Copy the ``ScopeMonScript.ps1`` to ``C:\\ProgramData\\Men and Mice\\Central``.
 
 2. In Admin->Configuration->Event Hooks, under **Subnet monitoring events**, click :guilabel:`Set Defaults`.
 
-3. Enter ScopeMonScript.ps1 in the **Script to invoke** text box.
+3. Enter ``ScopeMonScript.ps1`` in the **Script to invoke** text box.
 
 4. Configure a dynamic threshold.
 
