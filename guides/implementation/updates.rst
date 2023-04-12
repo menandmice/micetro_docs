@@ -29,7 +29,7 @@ The :guilabel:`Current status` display in :guilabel:`Micetro Version` gives you 
 
 Updating Micetro
 ----------------
-Before updating Micetro, we strongly recommend reading the Release Notes first, see :ref: `release-notes`. 
+Before updating Micetro, we strongly recommend reading the Release Notes first, see :ref:`release-notes`. 
 
 To apply an update:
 
@@ -52,9 +52,10 @@ A package for the new version is then downloaded and automatically prepared for 
 .. note::
   The :guilabel:`Status` column will highlight if there are any errors with updating components. Hover over the the warning icon for more details to help you troubleshoot.
 
-Deploying the update
+Deploying the Update
 ^^^^^^^^^^^^^^^^^^^^^
-After the package has been prepared, the new version can be deployed by clicking the :guilabel:`Deploy Update` button. 
+After the package has been prepared, the new version can be deployed by clicking the 
+:guilabel:`Deploy Update` button. 
 
 If the new version includes an updated Central component, Central will be restarted when the update is deployed. Otherwise, it keeps running and Micetro is seamlessly updated to the new version.
 
@@ -62,7 +63,7 @@ Once the update has been deployed, each of the Micetro components that need to b
 
 Men&Mice Appliances will need to be updated manually in the :guilabel:`Current Status` section.
 
-Update paths
+Update Paths
 ^^^^^^^^^^^^^
 
 If you're updating Micetro from an older version, refer to the following table:
