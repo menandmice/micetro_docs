@@ -32,66 +32,75 @@ Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref
 
 10.5.0
 ------
-April x, 2023
+April 18, 2023
 
 New Features
 ^^^^^^^^^^^^
-* Object history can now be viewed in the Web Application, helping you to quickly and easily tracing system activities in the event of an incident or problem. Additionally, we've made some minor improvements to the data available. All users can now view their own object change history.
+* **Akamai AuthServe Integration**: New service agent that supports the day-to-day operations and management of AuthServe DNS server. We have introduced a new Configuration Template feature, that can be used to apply pre-defined configuration template to multiple zones. When making bulk configuration changes across all zones, as you can simply update the template zone and the changes will automatically apply to all related zones. Furthermore, we have added the ability to edit AuthServe zone options while adding new zones. Last but not least, we have introduced support for several new record types, including HTTPS, SVCB, CDS, CDNSKEY, and CSYNC.
 
-* Microsoft DHCP server-to-server failover relationships can now be managed in the Web Application.
+* **Support for Kea Client Classes**: We have added support for Client Classifications on Kea DHCP servers (both v4 and v6).
 
-* Creating zones in Micetro has a new look and feel to make creating zones more intuitive. Custom properties can be added to all zone types and zones can be added to folders when they are created.
+* **Global Object History**: You can now be view global object history in the Web Application, helping you to quickly and easily tracing system activities in the event of an incident or problem. Additionally, we have made some minor improvements to the data available. Additionally, all users can now view their own object change history.
 
-* Scheduled Scripts has been renamed to Scheduled Events. External Scripts has been renamed to Change Events. Scheduled Events, Change Events, and Subnet Monitoring Events can be managed through the Admin page of the Web Application.
+* **Service Management**: We've renamed Server Management to Service Management and made significant improvements to enhance user experience. In addition, we've streamlined the process of adding DNS, DHCP, and IPAM services with a single button that allows you to easily filter by provider or service name. Service agents handle the communictaion between Men&Mice central and the added services. As part of the installation process, agents (or controllers) are installed on the corresponding servers. If you're adding services from MS, Cisco, or AuthServe, a single agent can act as a proxy to connect to multiple services, simplifying the process.
 
-* Custom DHCP IPv4 and IPv6 options can now be defined in the Web Application for individual Microsoft, Kea, and ISC servers.
+* **Event Hooks**: Scheduled Scripts are now called Scheduled Events, while External Scripts has been renamed to Change Events. You can manage these events, along with Subnet Monitoring Events on the Admin page of the Web Application.
 
-* Servers and Ranges can now be moved between address spaces in the Web Application when there are more than one defined address spaces. (IPs cannot be moved between address spaces).
+* **System Settings**: Administrators can now manage the System Settings for Micetro in the Web Application.
 
-* New in Web UI: Manage DHCP server properties.
+* **Move Objects Between Address Spaces**: In the Web Application, servers and ranges can now be moved between multiple defined address spaces. However, it is not possible to move IP addresses between address spaces.
 
-* System Settings can now be managed in the Web Application.
+* **DHCP Management**: We have added the following DHCP management features to the Web Application:
 
-* Support has been added for Client Classifications on Kea DHCP servers (both v4 and v6).
+   * Microsoft DHCP server-to-server failover relationships management.
 
-* Server Management has been renamed to Service Management and the look and feel revamped to optimise user experience. DNS, DHCP, and IPAM services are added from a single button where you can filter by type of provider or name of service. Service agents handle the communication between Men&Mice central and the service being added, agents (or controllers) are installed on the respective servers as part of the installation process. When adding services from MS or Cisco, or AuthServe one agent can be used a proxy to connect to multiple services.
+   * Definition of custom DHCP IPv4 and IPv6 options for individual Microsoft, Kea, and ISC services.
+   
+   * Management of DHCP server properties.
 
-* New AuthServe agent that supports AuthServ DNS server day to day operations and management. Configuration Template is a special type of zone that can be used to apply a templated config to multiple zones and be used to make bulk config changes across all zones by updating the template zone. AuthServe zone options can be edited while adding zones. New record type support: HTTPS, SVCB, CDS, CDNSKEY, CSYNC
+* **Zone Creation Workflow**: We have introduced a new look and feel for creating zones that makes it more intuitive. Custom properties can be added to all zone types and zones can be added to folders during the creation process.
 
-* Micetro administrators (Administrators role) using the web interface are now notified when new product updates are available and can update Micetro to a more recent version via the web-app.
+* **Micetro Update Management**: Administrators are now notified when new product updates are available and can update Micetro to a more recent version directly in the Web Application.
 
-* Master/Slave terminology on DNS Zones has been replaced with Primary/Secondary.
+* **Primary and Secondary Zones**: Master/Slave terminology on DNS Zones has been replaced with Primary/Secondary.
 
 Improvements
 ^^^^^^^^^^^^
+* General UI/UX improvements.
+
+* The drop-down menus have been improved to ensure that they can be viewed in smaller window sizes.
+
 * OS version display for different DNS and DHCP providers is now more consistent.
 
-* Improved dropdown menus to be able to be viewed in smaller window size
+* Various accessibility improvements were made to the Web Application.
 
-* Various accessibility improvements were made to the Web Application
+* Logging was improved to not include sensitive information when editing AD Forests, Users. and Cloud Services.
 
-* Logging was improved to not include sensitive information when editing AD Forests, Users and Cloud Services
-
-* Better handling of MS DHCP JET Database errors when working with reservations on failover scopes
+* Better handling of MS DHCP JET Database errors when working with reservations on failover scopes.
 
 * Micetro now uses the correct region endpoints when communicating with AWS in setups where the AWS region provider chain is returning the non default region.
 
-* Ordering of grid columns is IPAM view improved so that Discovery properties, when set to be shown, are displayed after custom properties.
+* Ordering of grid columns in the IPAM view has been improved so that Discovery properties, when set to be shown, are displayed after custom properties.
 
 * Bind 9.18 is now supported by Micetro.
 
 * Micetro is verified to run on Red Hat Enterprise Linux 9.
 
-* The DHCP remote now supports HTTPS connections to the ISC Kea Control Agent. To enable this feature, the following configuration options must be specified in the Kea Control Agent configuration:
+* The DHCP remote now supports HTTPS connections to the ISC Kea Control Agent.
 
-- `trust-anchor`: the file path to the certificate authority (CA) certificate, used to verify the authenticity of the server's certificate
-- `cert-file`: the file path to the client's certificate, presented to the server during the SSL/TLS handshake
-- `key-file`: the file path to the private key associated with the client's certificate
-- `cert-required`: a boolean value indicating whether client certificate authentication is required. Currently, this feature is not supported and must be set to false.
+  .. note::
+      This feature was added in Kea 2.0. We officially support version 1.8.
+  
+  To enable this feature, the following configuration options must be specified in the Kea Control Agent configuration:
 
-Note that with cert-required set to false, SSL authentication is disabled. This means that the server will not verify the client's certificate, and the connection will be secured only by the server's certificate.
+   * `trust-anchor`: the file path to the certificate authority (CA) certificate, used to verify the authenticity of the server's certificate
+   * `cert-file`: the file path to the client's certificate, presented to the server during the SSL/TLS handshake
+   * `key-file`: the file path to the private key associated with the client's certificate
+   * `cert-required`: a boolean value indicating whether client certificate authentication is required. Currently, this feature is not supported and must be set to false.
 
-In addition to SSL/TLS, the Kea Control Agent also supports basic authentication. This can be configured using the `authentication` option, which specifies a username and password that the client must provide in order to access the Kea Control Agent.
+  Note that with cert-required set to false, SSL authentication is disabled. This means that the server will not verify the client's certificate, and the connection will be secured only by the server's certificate.
+   
+  In addition to SSL/TLS, the Kea Control Agent also supports basic authentication. This can be configured using the `authentication` option, which specifies a username and password that the client must provide in order to access the Kea Control Agent.
 
 * DHCPv6 Scopes are now displayed in the Management Console.
 
@@ -103,23 +112,22 @@ In addition to SSL/TLS, the Kea Control Agent also supports basic authentication
 
 * Discovery schedule can be configured for multiple ranges at a time.
 
-* When allocating subranges, users can select between 16 options instead of 8 in the Micetro web UI.
+* When allocating subranges, users can select between 16 options instead of 8 in the Web Application.
 
-* The horizontal tabs in dialogs have changed to vertical tabs listed on the left hand side of the dialog
+* The layout of dialog box tabs has been updated, with the previous horizontal orientation being replaced by a vertical arrangement on the left-hand side of the dialog. This change provides a more streamlined and intuitive user experience, making it easier to navigate between different sections of the dialog box
 
-* The build date of the web ui can now be seen when hovering over the version number on the login page
+* The build date of the Web Application can now be seen when hovering over the version number on the login page.
 
-* Updated xDNS profile grid to look more like other grids in the system. xDNS Profiles can now be opened by double clicking the relevant row	
+* xDNS profile grid has been updated to look more like other grids in the system. xDNS Profiles can now be opened by double clicking the relevant row.
 
 * ISC-built packages of BIND are now supported by the Micetro installer.
 
-* Added new API command for retrieving multiple free IP addresses located inside a given IP range	
+* We have added a new API command for retrieving multiple free IP addresses located inside a given IP range.
 
-* Improve UX of create network wizard when no existing folders
+* The user experience of the Create network wizard has been enhanced when no existing folders are present.
 
 * The old web interface is no longer packaged with the Micetro Web Application.
 
-* 	General UI/UX improvements
 
 Bug Fixes
 ^^^^^^^^^
