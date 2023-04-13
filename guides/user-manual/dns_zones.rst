@@ -109,23 +109,29 @@ Primary Zone
    .. image:: ../../images/zone-flow-filter-all.png
       :width: 65%
 
-2. If **custom properties** have been defined for zones, they can be edited in a separate step. Custom properties provide additional attributes that enhance the ability to understand, search and sort zone data in Micetro. 
+2. Optional. You can select server(s) to host an identical copy of the zone. The zone files from the primary DNS are synced to the secondary DNS through a zone transfer.
+
+    .. image:: ../../images/zone-flow-redundancy.png
+      :width: 65%
+
+3. If **custom properties** have been defined for zones, they can be edited in a separate step. Custom properties provide additional attributes that enhance the ability to understand, search, and sort zone data in Micetro. 
 
    .. image:: ../../images/zone-flow-custom-properties.png
       :width: 65%
 
    Custom properties are displayed as columns in the DNS grid for each zone.
 
+4. On the **Options** page you can specify which DNS servers should receive notifications when changes are made to the zone and to which servers it is allowed to perform zone transfers. 
 
-   .. image:: ../../images/custom-properties-column.png
-      :width: 90%   
-|
-3. If **DNS folders** have been configured in Micetro, the new zone can be added directly to a folder. DNS folders are a neat way to organise zones in Micetro to have better overview and manageability. For more information about folders, see :ref:`folder-management`.
+   .. image:: ../../images/zone-flow-options.png
+      :width: 65%
+
+5. If **DNS folders** have been configured in Micetro, the new zone can be added directly to a folder. DNS folders are a neat way to organise zones in Micetro to have better overview and manageability. For more information about folders, see :ref:`folder-management`.
 
    .. image:: ../../images/zone-flow-folder.png
       :width: 65%   
       
-4. The **summary** step summarises the configuration for the new zone before its created. To edit the configuration, go to the respective page of the wizard and make the desired changes.
+6. The **summary** step summarises the configuration for the new zone before its created. To edit the configuration, go to the respective page of the wizard and make the desired changes.
 
 Secondary Zone
 """""""""""""""
