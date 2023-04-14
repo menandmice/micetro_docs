@@ -36,11 +36,11 @@ April 18, 2023
 
 New Features
 ^^^^^^^^^^^^
-* **Micetro Update Management**: Micetro can now be updated to a more recent version directly in the Web Application. In a new and intuitive interface, Micetro Version, administrators will be notified when new product updates are available. There they can easily review the updates, view the current status of all Micetro components, retry failed updates, and troubleshoot any update.
+* **Micetro Update Management**: Micetro can now be updated to a more recent version directly in the Web Application. In a new and intuitive interface administrators will be notified when new product updates are available. There they can easily review the updates, view the current status of all Micetro components, retry failed updates, and troubleshoot any update.
 
-* **Service Management**: We've renamed Server Management to Service Management and made significant improvements to enhance user experience. In addition, we've streamlined the process of adding DNS, DHCP, and IPAM services with a single button that allows you to easily filter by provider or service name. Service agents handle the communication between Men&Mice central and the added services. As part of the installation process, agents (or controllers) are installed on the corresponding servers. If you're adding services from MS, Cisco, or AuthServe, a single agent can act as a proxy to connect to multiple services, simplifying the process.
+* **Service Management**: Server Management has been renamed to Service Management and significant improvements have been made to enhance user experience. In addition, we've streamlined the process of adding DNS, DHCP, and IPAM services with a single button that allows you to easily filter by provider or service name.
 
-* **Akamai AuthServe Integration**: New service agent that supports the day-to-day operations and management of AuthServe DNS server. We have introduced the Options Template zone, that can be used to apply a templated config to multiple zones. With AuthServe we introduce the following new record types: HTTPS, SVCB, CDS, CDNSKEY, and CSYNC.
+* **Akamai AuthServe Integration**: Support for Akamai's AuthServe DNS server has been added. Options Templates and the following record types are supported for the server: HTTPS, SVCB, CDS, CDNSKEY, and CSYNC.
 
 * **Support for Kea Client Classes**: We have added support for Client Classifications on Kea DHCP servers (both v4 and v6).
 
@@ -50,7 +50,7 @@ New Features
 
 * **System Settings**: Administrators can now manage the System Settings for Micetro in the Web Application.
 
-* **Move Objects Between Address Spaces**: In the Web Application, servers and ranges can now be moved between multiple defined address spaces. However, it is not possible to move IP addresses between address spaces.
+* **Move Objects Between Address Spaces**: In the Web Application, servers and ranges can now be moved between address spaces in Micetro.
 
 * **DHCP Management**: We have added the following DHCP management features to the Web Application:
 
@@ -60,27 +60,23 @@ New Features
    
    * Management of DHCP server properties.
 
-* **Zone Creation Workflow**: We have introduced a new intuitive wizard for creating zones. Custom properties can be added to all zone types and zones can be added to folders during the creation process.
+* **Zone Creation Workflow**: We have introduced a new intuitive wizard for creating zones. Among other improvements, custom properties can be added to all zone types and zones can be added to folders during the creation process.
 
 * **Primary and Secondary Zones**: Master/Slave terminology has been replaced with Primary/Secondary in the Web Application.
 
 Improvements
 ^^^^^^^^^^^^
-* The old web interface is no longer packaged with the Micetro Web Application.
-
-* We have made various UI/UX and accessibility improvements.
+* The old web interface is no longer packaged with Micetro.
 
 * OS version display for different DNS and DHCP providers is now more consistent.
 
 * The logging functionality was upgraded to exclude sensitive information when modifying AD Forests, Users, and Cloud Services.
 
-* Better handling of MS DHCP JET Database errors when working with reservations on failover scopes.
-
-* Micetro now uses the correct region endpoints when communicating with AWS in setups where the AWS region provider chain is returning the non default region.
+* Better handling of Microsoft DHCP JET Database errors when working with reservations on failover scopes.
 
 * Ordering of grid columns in the IPAM view has been improved so that Discovery properties, when set to be shown, are displayed after custom properties.
 
-* Bind 9.18 is now supported by Micetro.
+* BIND 9.18 is now supported by Micetro.
 
 * Micetro is verified to run on Red Hat Enterprise Linux 9.
 
@@ -91,11 +87,7 @@ Improvements
   
 * DHCPv6 Scopes are now displayed in the Management Console.
 
-* Kea DHCP Multi-threading is now supported by Micetro when in High Availability.
-
-* Type is now required when importing reservations to a MS DHCP scope.
-
-* Improved performance when adding DNS records.
+* Type is now required when importing reservations to a Microsoft DHCP scope.
 
 * Discovery schedule can be configured for multiple ranges at a time.
 
@@ -109,55 +101,18 @@ Improvements
 
 * We have added a new API command for retrieving multiple free IP addresses located inside a given IP range.
 
-* The user experience of the Create network wizard has been enhanced when no existing folders are present.
-
-* The old web interface is no longer packaged with the Micetro Web Application.
-
+* Various UI/UX and accessibility improvements.
 
 Bug Fixes
 ^^^^^^^^^
 
-* Fixed AuthServe zone option validation where the Conf template (now Options template) and Federation fields did not allow underscore characters.
-
 * Performance has been improved when opening scopes on Kea.
-
-* Disabling scopes on Kea is no longer possible and has been disabled in the UI.
-
-* Reservation information is now shown in the old web UI.
 
 * Fixed an issue where it was not possible to add change requests for ranges with invalid set of custom properties.
 
 * Fixed a bug where license keys with expiry date were reported as inactive.
 
-* Fixed an issue where removing IP Addresses would sometimes result in database errors.
-
-* Fixed an issue with the Search and Update functionality for IP addresses in the Management Console causing a database error.
-
-* Fixed an issue where a user with access to edit IP address properties was unable to Claim IPs.
-
-* Removed /64 limitation from Allocate subrange wizard. Users can now allocate IPv6 ranges all the way down to /128.
-
 * Fixed an issue where promoting a zone would use data from a different primary zone with the same name.
-
-* Fixed a performance regression when listing and filtering Networks in the Web Application.
-
-* Fixed a bug where importing DHCP reservation on Kea gave an error.
-
-* Fixed a performance regression when viewing object history in large Micetro databases.
-
-* Fixed an issue where the schedule date for a scheduled change request wasn't being saved.
-
-* Fixed an issue where some auto suggestion fields would auto select the first suggestion.
-
-* Fixed issue where an xDNS zone would not be visible in the Management Console if another zone with the same name in a different view was also added to xDNS.
-
-* Fixed a bug where the quickfilter showed the value [object Object] when searching for a partial string of the word "object".
-
-* Fixed an issue with running the DNS Server Controller installer for Bind in chroot on some Linux distributions.
-
-* Fixed a problem with BIND possibly getting stuck when doing a logrotate if the appliance was configured to send the system log messages to a remote server.
-
-* Fixed an issue where a view with the name "default" would not behave correctly in the UI.
 
 * An issue was fixed where access was not retained when a zone was migrated.
 
