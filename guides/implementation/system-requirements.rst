@@ -23,7 +23,7 @@ Operating systems
   :widths: 20, 20, 20, 10, 10, 10, 10
 
   "**Microsoft Windows**",,,,,,
-    "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A", "Y"
+  "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
@@ -32,6 +32,7 @@ Operating systems
   "Redhat Enterprise Linux 6", "N", "Y", "Y", "Y", "N/A", "Y"
   "Redhat Enterprise Linux 7", "N", "Y", "Y", "Y", "N/A", "Y"
   "Redhat Enterprise Linux 8", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Redhat Enterprise Linux 9", "N", "Y", "Y", "Y", "N/A", "Y"
   "CentOS 6", "N", "Y", "Y", "Y", "N/A", "Y"
   "CentOS 7", "N", "Y", "Y", "Y", "N/A", "Y"
   "CentOS 8", "N", "Y", "Y", "Y", "N/A", "Y"
@@ -76,7 +77,7 @@ DNS/DHCP Server software
 
   "**DNS**"
   "Microsoft DNS", "2012, 2012 R2, 2016, 2019"
-  "ISC BIND", "9.6 - 9.16"
+  "ISC BIND", "9.6 - 9.18"
   "Unbound", "1.4.22 - 1.7.3"
   "PowerDNS Authoritative Server", "3.4 - 4.3"
   "**DHCP**"
