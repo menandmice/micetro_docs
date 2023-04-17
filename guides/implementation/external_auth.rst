@@ -498,7 +498,7 @@ If for some reason you want to clear the cached configuration file in the databa
 4. Disable the external authentication in System Settings.
       
 5. **Enable external authentication in the Micetro system settings**
-      From Console go to “Tools->System Settings->Advanced” and search for “external auth”. 
+   In the Management Console, go to “Tools->System Settings->Advanced” and search for “external auth”. 
       
       .. image:: ../../images/external-authentication-console.png
           :width: 60%
