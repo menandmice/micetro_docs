@@ -19,7 +19,7 @@ This documentation is divided into four parts:
 1. Install Guide
 2. User Guide
 3. Admin Guide
-4. Referenct Guide
+4. Reference Guide
 
 Use the **Install Guide** to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The **User Guide** covers all of Micetro's functionality. The **Admin Guide** is aimed at system administrators managing Micetro.
 
