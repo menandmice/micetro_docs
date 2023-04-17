@@ -13,9 +13,9 @@ How to install and configure the Generic DNS Server Controller:
 
 1. Install:
 
-* On Windows, run the Controller installer (x32 or x64 - depending on the OS version). There is no special Generic Controller installer - just use the normal Controller installer.
+   * On Windows, run the Controller installer (x32 or x64 - depending on the OS version). There is no special Generic Controller installer - just use the normal Controller installer.
 
-* On Unix run the Controller installer with the parameter ``--generic-dns-controller``.
+   * On Unix run the Controller installer with the parameter ``--generic-dns-controller``.
 
 2. Install a script interpreter. We recommend using Python as we provide example connector scripts for Python (2.7.x).
 
@@ -24,7 +24,7 @@ How to install and configure the Generic DNS Server Controller:
   .. note::
     On Windows 2008/2012 R2 the preferences.cfg file is located under the hidden directory C:\ProgramData\Men and Mice\DNS Server Controller
 
-3. Following an example config for the python interpreter and a connector script located on the C drive in the scripts sub-directory:
+4. Following an example config for the python interpreter and a connector script located on the C drive in the scripts sub-directory:
 
 .. code-block::
 
@@ -32,7 +32,7 @@ How to install and configure the Generic DNS Server Controller:
 
 The `genericDNS.py <https://github.com/menandmice/micetro_docs/blob/10.1/guides/implementation/genericDNS.py>`_ script implements the generic API and interfaces with the DNS server itself.
 
-4. Log in to the M&M Management Console and add the new generic DNS server. Select as Server Type "*Generic*". The name and optional IP address must point to the machine that runs the Generic DNS Server Controller.
+5. Log in to the M&M Management Console and add the new generic DNS server. Select as Server Type "*Generic*". The name and optional IP address must point to the machine that runs the Generic DNS Server Controller.
 
 Limitations
 -----------
