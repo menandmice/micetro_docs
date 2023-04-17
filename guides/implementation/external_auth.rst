@@ -127,9 +127,9 @@ When using AD Group level authentication, you must specify which groups in Micet
 Group Name
   Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain "MYDOMAIN" contains the group "MM-ReadOnly". The group name must then be "MYDOMAIN\\MM-ReadOnly".
 
-5. Click the checkbox for :guilabel:`Active Directory Integrated`.
+4. Click the checkbox for :guilabel:`Active Directory Integrated`.
 
-6. Click :guilabel:`OK`.
+5. Click :guilabel:`OK`.
 
 .. note::
   Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
@@ -412,8 +412,8 @@ Configure Central Server
          
          * Linux - /var/mmsuite/mmcentral/preferences.cfg 
          
-.. Note::
-      A Central restart is required after this statement is added to the Preferences.cfg file.
+   .. Note::
+         A Central restart is required after this statement is added to the Preferences.cfg file.
    
    2. **Create a new directory called "extensions"** in the Central data directory.
       Windows:  C:\ProgramData\Menandmice\Central\extensions 
@@ -489,17 +489,15 @@ The contents of the configuration file ext_auth_conf.json are cached in the 
 
 If for some reason you want to clear the cached configuration file in the database. 
 
-      1. Empty the .json configuration file 
+1. Empty the .json configuration file.
 
-      2. Go to Console Advanced System Settings and ensure that you have the “Default web form” enabled (Tools->System Settings->Advanced) 
+2. Go to Console Advanced System Settings and ensure that you have the “Default web form” enabled (Tools->System Settings->Advanced).
 
-      3. Test with your browser to ensure you can login locally 
+3. Test with your browser to ensure you can login locally.
 
-      4. Disable the external authentication in System Settings 
+4. Disable the external authentication in System Settings.
       
-   
-   
-   5. **Enable external authentication in the Micetro system settings**
+5. **Enable external authentication in the Micetro system settings**
       From Console go to “Tools->System Settings->Advanced” and search for “external auth”. 
       
       .. image:: ../../images/external-authentication-console.png
@@ -510,7 +508,7 @@ It is also possible to enable it via an API call to SetSystemSettings with a sys
 
 This will enable the SSO login in the web. 
 
-   6. Turn off default login form (optional)
+6. Turn off default login form (optional)
    
    If you only want to offer users SSO/MFA login, you can disable the default web app login form.  
    
