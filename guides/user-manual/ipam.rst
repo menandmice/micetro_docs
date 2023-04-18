@@ -340,7 +340,7 @@ Subnet Discovery
 
 The subnet discovery features enables Micetro to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in configuring host discovery, but to enable this feature, make sure the :guilabel:`Synchronize subnets ...` is checked in the SNMP profile. See :ref:`snmp-profiles`.
 
-Add to/remove from Folder
+Add to/Remove from Folder
 -------------------------
 
 Adds or removes the currently selected IP Address Range from folders.
