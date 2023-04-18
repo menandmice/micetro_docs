@@ -51,7 +51,7 @@ Using the :guilabel:`Action --> Access` action from the top bar or ellipsis menu
 .. image:: ../../images/inherit-access-checkbox.png
   :width: 70%
   :align: center
-
+|
 .. important::
   Existing access settings are **not** modified by *disabling* inheritance, but **it is overwritten** when *enabling* it.
 
