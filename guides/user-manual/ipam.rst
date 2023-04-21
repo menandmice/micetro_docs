@@ -273,8 +273,7 @@ Join Ranges
 
    .. image:: ../../images/join-ranges.png
       :width: 90%
-  
-  
+   
 3. Set the properties for the joined range:
 
    * **Use Access from**: Click the drop-down list and specify from which range you will gain access.
