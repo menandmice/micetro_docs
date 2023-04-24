@@ -60,10 +60,10 @@ Databases
   :widths: 20, 20, 60
 
   "PostgreSQL", 12, "Windows, Linux"
-  "SQLite", "N/A [4]_", "Windows, Linux"
+  "SQLite", "N/A [3]_", "Windows, Linux"
   "Microsoft SQL Server", "2012, 2014, 2016, 2019", "Windows"
 
-.. [4] The SQLite database is embedded into the Men&Mice Central application.
+.. [3] The SQLite database is embedded into the Men&Mice Central application.
 
 .. note::
    Microsoft SQL Server 2008 R2 will no longer be supported in Micetro versions 10.2 and above due to Microsoft ending support of these operating system
@@ -95,18 +95,18 @@ Other
 Men&Mice Web Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Microsoft IIS [5]_
+* Microsoft IIS [4]_
 
-* Apache 2 Web server 2.2/2.4 [6]_
+* Apache 2 Web server 2.2/2.4 [5]_
 
-.. [5] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
+.. [4] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
 
-.. [6] The Apache web server are supported on all platforms except Windows.
+.. [5] The Apache web server are supported on all platforms except Windows.
 
 Supported Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Azure [7]_
+* Azure [6]_
 
 * Amazon Web Services (AWS)
 
@@ -118,7 +118,7 @@ Supported Cloud Services
 
 * Akamai
 
-.. [7] Micetro is available to install directly from the Azure Marketplace. See :ref:`installation-azure`.
+.. [6] Micetro is available to install directly from the Azure Marketplace. See :ref:`installation-azure`.
 
 Supported browsers (Web Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
