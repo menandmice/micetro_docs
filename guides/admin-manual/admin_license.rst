@@ -27,14 +27,23 @@ There are five different keys, one each for:
 Viewing license keys
 --------------------
 
-The :guilabel:`Admin --> Configuration --> Licenses` page shows detailed information about every key configured in Micetro, including utilization by showing the number of DNS zones and IP Addresses in use.
+Go to :menuselection:`Admin --> Configuration --> Licenses` to see information about the licenses that are currently active on your system.  Each active module has a card that shows its associated license keys. These license keys can be either active or expired.
 
-The License Management page displays cards for active modules with a list of associated license keys, either active or expired. The usage of the license (for example the number of DNS zones used, compared to the license limit) is shown in a usage bar in the upper right of the license card. The bottom right of the card shows the expiry date for the currently active license key.
+The card also displays how much of the license you have used, for example, the number of DNS zones you have used compared to the limit of the license. This information is shown in a usage bar that is located in the upper right-hand corner of the card.
+
+In addition to this, the card also shows the expiry date for the currently active license key. This information is located in the bottom right-hand corner of the card.
 
 .. image:: ../../images/license-management.png
   :width: 80%
   :align: center
 
+By selecting :guilabel:`License Details`, you can quickly and easily see how much of your licenses are currently being used, as well as any issues related to your licenses. 
+
+.. image:: ../../images/license-management-summary.png
+   :width: 65%
+   :align: center
+   
+   
 Expired keys
 ------------
 
