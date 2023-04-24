@@ -39,4 +39,19 @@ An IP is counted as “in use” by Micetro when:
 .. note::
    Micetro will only count dual-stacked clients as one IP (IPV4/IPV6).
 
-These settings are all checked on by default upon installation.
+.. image:: ../../images/system-settings-address-usage.png
+   :width: 65%
+
+By deault, the address usage settings are all selected upon installation.
+
+Micetro allows Administrators to toggle the license count configuration on and off to get a more granular picture of where the usage is coming from, which will then allow them to focus on clean-up.
+
+Common Reasons for Excessive IP Usage:
+
+*	Stale DNS records (static or missed by AD scavenging)
+*	Old automation tools that were using the Custom Properties on the IPs, but were not cleaned up
+*	Old claims that were not cleaned up
+*	DHCP reservations that are not in use
+*	DHCP lease times need to be adjusted
+
+
