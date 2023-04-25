@@ -655,6 +655,8 @@ You can clear the monitor setting for individual subnets if you want to use the 
 
 2. Right-click and, from the shortcut menu, select :guilabel:`Remove Subnet Monitoring`. The custom subnet monitoring setting is removed and the global monitoring setting is used instead.
 
+.. _console-ipam-utilization-history:
+
 View Utilization History
 ------------------------
 
