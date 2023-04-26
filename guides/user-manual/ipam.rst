@@ -273,8 +273,7 @@ Join Ranges
 
    .. image:: ../../images/join-ranges.png
       :width: 90%
-  
-  
+   
 3. Set the properties for the joined range:
 
    * **Use Access from**: Click the drop-down list and specify from which range you will gain access.
@@ -340,7 +339,7 @@ Subnet Discovery
 
 The subnet discovery features enables Micetro to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in configuring host discovery, but to enable this feature, make sure the :guilabel:`Synchronize subnets ...` is checked in the SNMP profile. See :ref:`snmp-profiles`.
 
-Add to/remove from Folder
+Add to/Remove from Folder
 -------------------------
 
 Adds or removes the currently selected IP Address Range from folders.

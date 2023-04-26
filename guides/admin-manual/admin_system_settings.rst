@@ -74,7 +74,7 @@ Enforce AD site inheritance
 
 Determine address usage
 ^^^^^^^^^^^^^^^^^^^^^^^
-Control how IP addresses are identified as being in use. To specify which rules should be applied to IP addresses, select the appropriate checkboxes.
+Control how IP addresses are identified as being in use. By default, these settings are all selected. To specify which rules should be applied to IP addresses and get a more granular picture of where the usage is coming from, select/clear the appropriate checkboxes.
 
 
 .. _admin-logging:
