@@ -13,7 +13,7 @@ As you connect to the services and enable discovery, Micetro reads incoming data
   M&M does not lock the system in any way if the license count is exceeded. Sustaining services is our top priority.
 
 .. image:: ../../images/license-management-ip-usage.png
-   :width: 75%
+   :width: 85%
 
 How Micetro Calculates IP Address Usage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -38,11 +38,11 @@ Micetro considers an IP address to be “in use” when:
 In the **System Settings**, there is a section called **Determine address usage**. 
 
 .. image:: ../../images/system-settings-address-usage.png
-   :width: 75%
+   :width: 85%
 
-By deault, all address usage settings are selected upon installation.
+By deault, all these settings are selected upon installation.
 
-Micetro allows Administrators to toggle the license count configuration on and off to get a more granular picture of where the usage is coming from, which will then allow them to focus on clean-up.
+Administrators can toggle the license count configuration on and off to get a more granular picture of where the usage is coming from, which will then allow them to focus on clean-up.
 
 Common Reasons for Excessive IP Usage:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -62,7 +62,7 @@ Network Utilization
 Network Utilization is shown in the IPAM (IP address management) module. For more information about utilization history, see :ref:`console-ipam-utilization-history`.
 
 .. image:: ../../images/ipam-utilization.png
-   :width: 65%
+   :width: 85%
    
 
 .. tip::
@@ -76,7 +76,7 @@ Network Utilization is shown in the IPAM (IP address management) module. For mor
 
 
 .. image:: ../../images/ipam-utilization-filter.png
-   :width: 65%
+   :width: 85%
 
 
 Viewing and Reclaiming IPs at the IP Level
@@ -92,7 +92,7 @@ When you open a static Range or a DHCP scope, you can also see the DNS data on t
    Deleting a range does not delete the DNS data out of the zone. If a new range is created and the DNS data is still in the zone, it will re-populate in the tool.
    
 .. image:: ../../images/ipam-clear-addresses.png
-   :width: 65%
+   :width: 90%
 
 
 Cleaning up Stale DNS Records
@@ -106,7 +106,7 @@ It is not uncommon for AD records to be missed in Scavenging. Micetro gives you 
 Then sort by **TIMESTAMP**. You can choose to delete records in bulk here (shift or ctrl, then select) based on the age of the record. This is a good indicator that the AD Scavenging should also be adjusted.
 
 .. image:: ../../images/dns-ad-records-timestamp.png
-   :width: 65%
+   :width: 90%
    
 These are just a few ways that Micetro can be used to assist you in reclaiming IP space. Micetro is designed to help administrators gain a better understanding of their networks and users.
 
