@@ -25,12 +25,10 @@ In REST, the focus is on resources. You specify a resource with a URL (Uniform R
 
 The four most common HTTP verbs are GET, PUT, POST, and DELETE.
 
-.. code-block::
-
-   GET – Retrieves resources
-   PUT – Modifies an existing resource
-   POST – Creates a new resource
-   DELETE – Delete a resource
+   * **GET** – Retrieves resources
+   * **PUT** – Modifies an existing resource
+   * **POST** – Creates a new resource
+   * **DELETE** – Delete a resource
 
 An example of a resource would be a DNS zone, defined in our REST API as ``dnsZones``. The combination of URL and HTTP verb to retrieve all DNS zones in Micetro would be:
 
@@ -104,8 +102,8 @@ The Micetro REST API offers a range of arguments that can be included in either 
 
 These arguments are all optional. By default, the API assumes that the Micetro Central instance is located on the same machine as the Web Services, which is usually the case. In addition to these arguments, the Micetro REST API also supports other authentication mechanisms, such as Basic Authentication, Windows NTLM, and Kerberos.
 
-Filtering and Sorting
-"""""""""""""""""""""
+Filtering and Sorting Arguments
+"""""""""""""""""""""""""""""""
 When using the GET operations in the Micetro REST API, you can take advantage of powerful arguments to filter, sort, or limit the results returned.
 
 * **filter** – specifies the criteria to use when filtering results.
@@ -135,9 +133,32 @@ To get the first 50 zones in the system in reverse order:
    GET http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones?sortBy=name&sortOrder=descending&limit=50
 
 For a more detailed explanation of filtering and sorting in the Micetro REST API, see our `REST API whitepaper <https://www.menandmice.com/resources/whitepapers/rest-api>`_.
- 
 
+Creation, Modification, and Deletion Arguments
+""""""""""""""""""""""""""""""""""""""""""""""
+Creating, modifying and deleting resources require the use of other HTTP verbs, such as POST, PUT, and DELETE. These operations typically require more information than other API calls, and the data can be passed either in the URL or in the body of the HTTP request.
 
+For example, to add a DNS record to a zone, you can use the following URL:
 
+.. code-block::
+
+   POST http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/test.menandmice.com./dnsRecords?dnsRecord={“name”:”restart”, “type”: “A”, “data”: “1.2.3.4”}
+
+To modify the newly created DNS record, you can use the following URL:
+
+.. code-block::
+
+   PUT http(s)://<micetro.yourdomain.tld>/mmws/api/dnsRecords/name.test.menandmice.com./#### Fill in rest of the example ###
+
+To delete the DNS record, you can use the following URL:
+
+.. code-block::
+
+   DELETE http(s)://<micetro.yourdomain.tld>/mmws/api/dnsRecords/name.test.menandmice.com.
+
+.. note::
+   For more complex objects, it's recommended to provide the data in the body of the HTTP request rather than in the URL.
+   
 .. tip::
-  You can import the ``swagger.js`` component into 3rd party applications (such as Postman) using the url ``http(s)://micetro.yourdomain.tld/mmws/api/swagger.json``.
+   The API definition can be downloaded from the Web Services and then imported into a 3rd party API development tool such as Postman. To retrieve the API definition in JSON form, navigate to the url ``http(s)://micetro.yourdomain.tld/mmws/api/swagger.json``.
+
