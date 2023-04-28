@@ -25,10 +25,10 @@ In REST, the focus is on resources. You specify a resource with a URL (Uniform R
 
 The four most common HTTP verbs are GET, PUT, POST, and DELETE.
 
-   * **GET** – Retrieves resources
-   * **PUT** – Modifies an existing resource
-   * **POST** – Creates a new resource
-   * **DELETE** – Delete a resource
+   * ``GET`` – Retrieves resources
+   * ``PUT`` – Modifies an existing resource
+   * ``POST`` – Creates a new resource
+   * ``DELETE`` – Delete a resource
 
 An example of a resource would be a DNS zone, defined in our REST API as ``dnsZones``. The combination of URL and HTTP verb to retrieve all DNS zones in Micetro would be:
 
@@ -94,11 +94,11 @@ Arguments
 ^^^^^^^^^^
 The Micetro REST API offers a range of arguments that can be included in either the URL or the body of an HTTP request. Regardless of the resource being accessed, several arguments are always available:
 
-* **server** – the name or address of the Micetro Central server that you want to communicate with.
-* **loginName** – the username of the user attempting to authenticate.
-* **password** – the password of the user attempting to authenticate.
-* **session** – the unique ID of a valid user session.
-* **pretty** – if set to 'true', the API returns  data in a more readable format.
+* ``server`` – the name or address of the Micetro Central server that you want to communicate with.
+* ``loginName`` – the username of the user attempting to authenticate.
+* ``password`` – the password of the user attempting to authenticate.
+* ``session`` – the unique ID of a valid user session.
+* ``pretty`` – if set to 'true', the API returns  data in a more readable format.
 
 These arguments are all optional. By default, the API assumes that the Micetro Central instance is located on the same machine as the Web Services, which is usually the case. In addition to these arguments, the Micetro REST API also supports other authentication mechanisms, such as Basic Authentication, Windows NTLM, and Kerberos.
 
@@ -106,11 +106,11 @@ Filtering and Sorting Arguments
 """""""""""""""""""""""""""""""
 When using the GET operations in the Micetro REST API, you can take advantage of powerful arguments to filter, sort, or limit the results returned.
 
-* **filter** – specifies the criteria to use when filtering results.
-* **offset** – specifies the starting point for returning a list of values
-* **limit** – specifies the maximum number of entries to include when returning a list of values.
-* **sortBy** – specifies the field to use when sorting values.
-* **sortOrder** – specifies whether to sort in ascending or descending order.
+* ``filter`` – specifies the criteria to use when filtering results.
+* ``offset`` – specifies the starting point for returning a list of values
+* ``limit`` – specifies the maximum number of entries to include when returning a list of values.
+* ``sortBy`` – specifies the field to use when sorting values.
+* ``sortOrder`` – specifies whether to sort in ascending or descending order.
 
 Here are some examples of how to use these arguments:
 
