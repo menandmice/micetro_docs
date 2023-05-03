@@ -25,7 +25,6 @@ You can see a log of all changes made to any object, including the date and time
 2. Use the search options to filter the results.
 
     .. image:: ../../images/logging-object-history.png
-      :width: 80%
   
   * When searching for a change log, you must narrow your search down by :guilabel:`Object type` to make the search more efficient. 
   * Use  :guilabel:`Made by user` to view changes by a specific user.
