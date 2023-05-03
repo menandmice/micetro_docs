@@ -8,7 +8,7 @@ Viewing Global Object History
 =============================
 
 .. note::
-  This information applies to the web interface. For information about change history in the M&M Management Console, see console-object-change-history.
+  This information applies to the web interface. For information about change history in the M&M Management Console, see :ref:`console-object-change-history`.
   
 **Permission:** 
 
