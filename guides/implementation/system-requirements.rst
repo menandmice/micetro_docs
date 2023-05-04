@@ -41,6 +41,7 @@ Operating systems
   "Ubuntu 16.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 18.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 20.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Ubuntu 22.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
 
 .. [1] The management console also works on non-server Windows that have not reached their EOL.
 
