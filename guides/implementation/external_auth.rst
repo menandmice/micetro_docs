@@ -324,8 +324,8 @@ The setup requires navigation to the Azure Portal, and opening AAD.
    You will need this information for the Central configuration file.
    
    .. image:: ../../images/external-authentication-console.png
-  :width: 60%
-  :align: center
+      :width: 60%
+      :align: center
   
 Okta
 ^^^^
@@ -422,9 +422,9 @@ Configure Central Server
       
    3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
 
-         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
+         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
 
-         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip>`_
+         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
          
          For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
@@ -498,7 +498,7 @@ If for some reason you want to clear the cached configuration file in the databa
 4. Disable the external authentication in System Settings.
       
 5. **Enable external authentication in the Micetro system settings**
-   In the Management Console, go to “Tools->System Settings->Advanced” and search for “external auth”. 
+   In the Management Console, go to :menuselection:`Tools --> System Settings --> Advanced` and search for “external auth”. 
       
       .. image:: ../../images/external-authentication-console.png
           :width: 60%
