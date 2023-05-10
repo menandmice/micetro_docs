@@ -323,7 +323,7 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 .. Note::
    You will need this information for the Central configuration file.
    
-   .. image:: ../../images/external-authentication-console.png
+.. image:: ../../images/external-authentication-console.png
       :width: 60%
       :align: center
   
