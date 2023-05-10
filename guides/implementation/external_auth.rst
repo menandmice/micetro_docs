@@ -390,8 +390,8 @@ As Azure only returns group ID with the token the script makes an extra call to 
 To map group memberships from Okta an *ID Token Claim* has been created with the name "groups". Add an *OpenID Connect ID Token* to the application of the type “Filter“ with the name “groups“. 
 
 .. image:: ../../images/oicd-token-claim.png
-  :width: 60%
-  :align: center
+   :width: 60%
+   :align: center
   
 Configure Central Server
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -422,9 +422,9 @@ Configure Central Server
       
    3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
 
-         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
+         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
 
-         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip>`_
+         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
          
          For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
@@ -498,7 +498,7 @@ If for some reason you want to clear the cached configuration file in the databa
 4. Disable the external authentication in System Settings.
       
 5. **Enable external authentication in the Micetro system settings**
-   In the Management Console, go to “Tools->System Settings->Advanced” and search for “external auth”. 
+   In the Management Console, go to :menuselection:`Tools --> System Settings --> Advanced` and search for “external auth”. 
       
       .. image:: ../../images/external-authentication-console.png
           :width: 60%
