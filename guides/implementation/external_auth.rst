@@ -212,7 +212,7 @@ To configure a user to use AD user authentication, do the following:
   :align: center
 
 Logging into Micetro
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Micetro has integrated with both Azure Active Directory and Okta to allow integration with multi-factor authentication and SSO.  
 
@@ -324,8 +324,8 @@ The setup requires navigation to the Azure Portal, and opening AAD.
    You will need this information for the Central configuration file.
    
    .. image:: ../../images/external-authentication-console.png
-  :width: 60%
-  :align: center
+      :width: 60%
+      :align: center
   
 Okta
 ^^^^
