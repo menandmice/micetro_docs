@@ -325,6 +325,7 @@ The setup requires navigation to the Azure Portal, and opening AAD.
    
 .. image:: ../../images/external-authentication-console.png
 
+
 Okta
 ^^^^
 

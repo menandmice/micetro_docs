@@ -13,7 +13,7 @@ Viewing Change History
 * Role: ``Administrator (built-in)``
 
 .. note::
-   For information about how to view object change history in the Management Console, see console-object-change-history.
+   For information about how to view object change history in the Management Console, see  :ref:`console-object-change-history`.
 
 You can see a log of all changes made to any object, including the date and time of the change, the name of the user who made it, actions taken, and any comments entered by the user.
 

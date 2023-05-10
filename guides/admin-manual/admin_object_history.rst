@@ -8,7 +8,7 @@ Viewing Global Object History
 =============================
 
 .. note::
-  This information applies to the web interface. For information about change history in the M&M Management Console, see console-object-change-history.
+  This information applies to the web interface. For information about change history in the M&M Management Console, see :ref:`console-object-change-history`.
   
 **Permission:** 
 
@@ -25,7 +25,7 @@ You can see a log of all changes made to any object, including the date and time
 2. Use the search options to filter the results.
 
     .. image:: ../../images/logging-object-history.png
-      :width: 65%
+      :width: 90%
   
   * When searching for a change log, you must narrow your search down by :guilabel:`Object type` to make the search more efficient. 
   * Use  :guilabel:`Made by user` to view changes by a specific user.
