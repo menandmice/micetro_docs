@@ -212,7 +212,7 @@ To configure a user to use AD user authentication, do the following:
   :align: center
 
 Logging into Micetro
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Micetro has integrated with both Azure Active Directory and Okta to allow integration with multi-factor authentication and SSO.  
 
@@ -320,12 +320,12 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 
    4. Navigate to Certificates and Secrets to generate a new secret for the App to use. 
 
-.. Note::
+.. note::
    You will need this information for the Central configuration file.
    
 .. image:: ../../images/external-authentication-console.png
 
-  
+
 Okta
 ^^^^
 
@@ -389,8 +389,8 @@ As Azure only returns group ID with the token the script makes an extra call to 
 To map group memberships from Okta an *ID Token Claim* has been created with the name "groups". Add an *OpenID Connect ID Token* to the application of the type “Filter“ with the name “groups“. 
 
 .. image:: ../../images/oicd-token-claim.png
-  :width: 60%
-  :align: center
+   :width: 60%
+   :align: center
   
 Configure Central Server
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -427,7 +427,7 @@ Configure Central Server
          
          For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
-   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file      named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
+   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
 
    The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
