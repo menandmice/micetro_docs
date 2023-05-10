@@ -323,10 +323,9 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 .. Note::
    You will need this information for the Central configuration file.
    
-   .. image:: ../../images/external-authentication-console.png
-  :width: 60%
-  :align: center
-  
+.. image:: ../../images/external-authentication-console.png
+
+
 Okta
 ^^^^
 
@@ -498,7 +497,7 @@ If for some reason you want to clear the cached configuration file in the databa
 4. Disable the external authentication in System Settings.
       
 5. **Enable external authentication in the Micetro system settings**
-   In the Management Console, go to “Tools->System Settings->Advanced” and search for “external auth”. 
+   In the Management Console, go to :menuselection:`Tools --> System Settings --> Advanced` and search for “external auth”. 
       
       .. image:: ../../images/external-authentication-console.png
           :width: 60%
