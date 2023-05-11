@@ -12,7 +12,7 @@ The *Effective access* dialog is useful for checking access for a user/group, an
 
 Administrator with access to managing users/groups in Micetro can check the effective access of a user or group based on the role(s) the user/group is assigned to.
 
-1. Navigate to :menuselection:`Admin --> Configuration` in the web application.
+1. Navigate to :menuselection:`Admin --> Configuration`.
 
 2. Select :guilabel:`Users` or :guilabel:`Groups`, depending on whose access you want to check.
 
@@ -33,7 +33,7 @@ Object access
       :align: center
 
 .. note::
-   The *Effective access* dialog will display detailed warnings if permissions to the selected object are set, but a parent permission is not.
+   The *Effective access* dialog box will display detailed warnings if permissions to the selected object are set, but a parent permission is not.
 
    *Example:* examining effective access on a DNS zone might reveal that the user is attached to a role that has permission to view DNS zones, but no permission to use the DNS module.
 

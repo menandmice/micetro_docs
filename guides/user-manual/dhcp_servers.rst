@@ -4,18 +4,19 @@
 
 .. _dhcp-servers:
 
-DHCP servers
-============
+DHCP services
+==============
 
 Overview
 --------
 
-This section shows you how to perform specific actions in Micetro associated with maintaining your DHCP servers, such as adding and deleting servers and setting DHCP server options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
+This section shows how to perform specific actions in Micetro associated with maintaining your DHCP services, such as adding and deleting services and setting DHCP service options. In order to use the DHCP functionality of Micetro you need to have a valid DHCP license key.
 
-.. note::
-  The functions for this menu option are listed alphabetically after the New DHCP Server section.
+Adding a New DHCP Server
+------------------------
+You must be logged in as a user with privileges to administer DHCP in order to add a DHCP server.
 
-This page describes the process for adding new DHCP servers, and generic DHCP management information. For detailed information about the different DHCP platforms, refer to:
+This section describes the process for adding new DHCP servers, and generic DHCP management information. For detailed information about the different DHCP platforms, see:
 
 * :ref:`dhcp-windows`
 
@@ -25,23 +26,19 @@ This page describes the process for adding new DHCP servers, and generic DHCP ma
 
 * :ref:`dhcp-cisco`
 
-New DHCP Server
----------------
+.. note::
+  When adding a DHCP service, the system automatically changes existing IP Address ranges to scopes if it finds IP Address ranges that contain the same start and end address as a scope on the DHCP service being added.
+  
 
 .. note::
-  When adding a DHCP server, the system automatically changes existing IP Address ranges to scopes if it finds IP Address ranges that contain the same start and end address as a scope on the DHCP server being added.
+  For information on adding a DHCP service on a Men&Mice Appliance, see :ref:`appliance-management`.
 
-You must be logged in as a user with privileges to administer DHCP in order to add a DHCP server.
-
-.. note::
-  For information on adding a DHCP server on a Men&Mice Appliance, refer to :ref:`appliance-management`.
-
-1. Navigate to :menuselection:`Admin --> Server Management` and select :guilabel:`Add DHCP server`. The *Add DHCP Server* dialog box is shown.
+1. Navigate to :menuselection:`Admin --> Service Management`, and then click :guilabel:`Add Service`. The Add Service dialog box opens.
 
 .. image:: ../../images/add-dhcp-v6-on.jpg
   :width: 50%
   :align: center
-
+|
 Server Name
   Type either the (fully qualified) DNS name or the IP Address of the DHCP server.
 
@@ -49,30 +46,26 @@ Server address (optional)
   If desired, type the IPv4 or IPv6 address for the server. This is not required, but doing so allows the Management Console to connect to the server by IP Address instead of by name.
 
 Server Type
-  Click the drop-down list, and select the desired server type.
+  Select the desired server type in the dropdown list.
 
-    Microsoft
-      connects to a Microsoft DHCP server. If you want to gather the lease history from the DHCP server, you must install a DHCP Server Controller on the server. See :ref:`dhcp-windows`.
+    **Microsoft**: connects to a Microsoft DHCP server. If you want to gather the lease history from the DHCP server, you must install a DHCP Server Controller on the server. See :ref:`dhcp-windows`.
 
-    ISC
-      connects to an ISC DHCP server. See :ref:`dhcp-isc`.
+    **ISC**: connects to an ISC DHCP server. See :ref:`dhcp-isc`.
 
-    Cisco
-      connects to a Cisco Router that is running DHCP server software. For more information, see :ref:`dhcp-cisco`.
+    **Cisco**: connects to a Cisco Router that is running DHCP server software. For more information, see :ref:`dhcp-cisco`.
 
-    Kea
-      connect to a ISC Kea DHCP server. See :ref:`dhcp-kea`.
+    **Kea**: connect to a ISC Kea DHCP server. See :ref:`dhcp-kea`.
       
 Manage DHCPv6 service (Microsoft and Kea only)
-   When using DHCPv5 in your Microsoft DHCP environment you may toggle this on to allow management of DHCPv6 from Micetro
+   When using DHCPv5 in your Microsoft DHCP environment, you can select this option to allow management of DHCPv6 from Micetro.
 
 Agent-free (Microsoft and Kea only)
-  When using the agent-free connection method for Windows DHCP, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, refer to :ref:`dhcp-remote-access` and :ref:`dhcp-windows`.
+  When using the agent-free connection method for Windows DHCP, it is not possible to gather the lease history from the DHCP server. For further information regarding this connection method, see :ref:`dhcp-remote-access` and :ref:`dhcp-windows`.
 
 Proxy
   If you are adding a Cisco DHCP or agent-free Microsoft or Kea server, you can specify the location of the DHCP Server Controller by entering the (fully qualified) DNS name or IP Address of the machine running the DHCP Server Controller. This option allows the system to connect to DHCP servers in different forests where a cross-forest trust does not exist. It also allows a non-Windows version of Men&Mice Central to manage Microsoft DHCP servers.
 
-2. Click :guilabel:`Confirm`. Once connected, the name of the newly added server displays in the grid of the *Server Management* context.
+2. Click :guilabel:`Confirm`. Once connected, the name of the newly added server is listed on the Server Management page.
 
 .. note::
   To add a DHCP server in the Management Console, see :ref:`console-new-dhcp-server`.
@@ -82,7 +75,7 @@ Proxy
 Server Access on Remote Computers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To manage DHCP servers you must have the DHCP Server Controller installed.
+To manage DHCP servers, you must have the DHCP Server Controller installed.
 
 * For the ISC DHCP server, a DHCP Server Controller must be installed on each DHCP server you want to manage.
 
@@ -119,7 +112,7 @@ To access this feature, do the following:
 
 1. Locate the DHCP server.
 
-2. From the ellipsis menu select :guilabel:`Edit DHCP server` or use :menuselection:`Actions --> Edit DHCP server`. The *Edit DHCP server* dialog box displays.
+2. From the ellipsis menu, select :guilabel:`Edit DHCP server` or use :menuselection:`Actions --> Edit DHCP server`. The Edit DHCP server dialog box opens.
 
 3. Change the **Server name**, **Server address** (optional), and **Server Type**. If applicable, you can edit the **Proxy** server's information.
 
@@ -134,15 +127,15 @@ Toggle DHCPv6 Management on or off
 .. note::
    There is only one DHCP service on a Microsoft DHCP server. DHCPv4 and DHCPv6 are not decoupled in Microsoft as they are in Micetro. Any action performed on either DHCPv6 or DHCPv4 that requires a restart of the service will result in a restart of the single DHCP service on the Microsoft server.
    
-1. Go to :guilabel:`Admin` and click on :guilabel:`Server Management`
+1. Go to :guilabel:`Admin`, and then click :guilabel:`Service Management`.
 
-2. Expand :guilabel:`DHCP Servers` and select :guilabel:`Microsoft DHCP`
+2. Expand :guilabel:`DHCP Services`, and select :guilabel:`Microsoft DHCP`.
 
-3. Select one or multiple servers, hover over the selection to click on the ellipsis (or meatball) menu and click on :guilabel:`Edit DHCP Server`
+3. Select one or multiple servers, hover over the selection to click on the ellipsis (or meatball) menu, and then click :guilabel:`Edit DHCP Server`.
 
-4. Check :guilabel:`Manage DHCPv6 service to enable DHCPv6 management on the server(s) you've selected
+4. Select :guilabel:`Manage DHCPv6 service` to enable DHCPv6 management on the server(s) you've selected.
 
-5. Press :guilabel:`Confirm`
+5. Click :guilabel:`Confirm`.
 
 Inherited Access (Management Console)
 -------------------------------------
@@ -165,7 +158,7 @@ To remove a DHCP server, do the following:
 
 1. In :menuselection:`Admin --> Server Management` locate the DHCP server.
 
-2. From the ellipsis menu select :guilabel:`Remove DHCP server`.
+2. From the ellipsis menu, select :guilabel:`Remove DHCP server`.
 
 4. In the confirmation dialog box, click :guilabel:`Yes`.
 
@@ -188,44 +181,50 @@ The ISC DHCP, Kea DHCP, Cisco, and MS DHCP servers offer different types of opti
 You can set options for multiple servers by selecting all of the servers for which you want to set options.
 
 .. note::
-  When setting options for multiple servers all of the servers must be of the same type.
+  When setting options for multiple servers, all of the servers must be of the same type.
 
 1. In :menuselection:`Admin --> Server management` select the applicable DHCP server(s) and use :menuselection:`Actions --> Edit DHCP options`. (Or :guilabel:`Edit DHCP options` from the ellipsis menu.) The *DHCP Server Options* window displays.
 
 2. Click the drop-down list to select which options you want to add. Upon selection, the setting is added to the dialog box for editing.
 
-6. When all selections/entries are made, click :guilabel:`Save` to save your changes.
+3. When all selections/entries are made, click :guilabel:`Save` to save your changes.
 
 .. note::
   To manage DHCP server option in the Management Console, see :ref:`console-dhcp-options`.
 
-Properties (Management Console)
--------------------------------
+Properties
+-----------
+DHCP server properties can be managed on the Service Management page.
 
-1. From the Object list, expand the DHCP Servers list.
+1. In the list of DHCP Services, select the appropriate DHCP server.
 
-2. Right-click on the server for which you want to manage properties and, from the shortcut menu, select :guilabel:`Properties`. The *Properties* dialog box for the selected server displays. Refer to the applicable section based upon the server type: :ref:`console-ms-dhcp-properties`, :ref:`console-isc-dhcp-properties`, :ref:`console-kea-dhcp-poperties` or :ref:`console-cisco-dhcp-properties`.
+2. On the :guilabe:`Action`, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**. 
+
+   .. image:: ../../images/dhcp-edit-config.png
+      :width: 60%
+
+3. In the dialog box that opens, make the desired changes, and then click :guilabel:`Save`.
 
 .. _kea-advanced-options:
 
 Advanced ISC Kea Server Properties
 ----------------------------------
 
-DHCP Administrators can access the ISC Kea DHCP server configuration files directly to edit properties that are not available in the user interface.
+DHCP Administrators can access the ISC Kea DHCP service configuration files directly to edit properties that are not available in the user interface.
 
-To access the advanced options, do the following:
+To access the advanced options:
 
 1. Log in to Micetro as the DHCP administrator.
 
-2. Select a Kea DHCP server, select :guilabel:`Edit configuration` from the ellipsis menu or use :menuselection:`Actions --> Edit configuration`.
+2. Select a Kea DHCP service. Click :guilabel:`Action` in the task bar at the top, and then select :guilabel:`Edit configuration` on the menu. You can also access this option on the row menu (...). The Edit Configuration dialog box opens. 
 
-3. When the *Edit configuration* box displays, you can edit the configuration file for the server.
+3. Make the desired changes in the Edit Configuratio dialog box.
 
 .. image:: ../../images/edit-kea-config-Micetro.png
   :width: 80%
   :align: center
 
-5. Click :guilabel:`Save`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
+4. When you are finished, click :guilabel:`Save`. The contents of the files are verified for correctness. If an error is found during verification, an error message displays and the changes are not saved.
 
 .. note::
   To edit advanced DHCP configuration in the Management Console, see :ref:`console-dhcp-advanced-options`.

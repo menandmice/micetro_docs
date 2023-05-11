@@ -47,7 +47,7 @@ To configure a user to use AD user authentication, do the following:
 
 1. From the menu, select :menuselection:`Tools --> User management`.
 
-2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to :ref:`acl-users`.
+2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. For more information, see :ref:`acl-users`.
 
 3. When the *Properties* dialog box display, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)
 
@@ -127,9 +127,9 @@ When using AD Group level authentication, you must specify which groups in Micet
 Group Name
   Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain "MYDOMAIN" contains the group "MM-ReadOnly". The group name must then be "MYDOMAIN\\MM-ReadOnly".
 
-5. Select the :guilabel:`Active Directory Integrated` checkbox.
+4. Click the checkbox for :guilabel:`Active Directory Integrated`.
 
-6. Click :guilabel:`OK`.
+5. Click :guilabel:`OK`.
 
 .. note::
   Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
@@ -212,7 +212,7 @@ To configure a user to use AD user authentication, do the following:
   :align: center
 
 Logging into Micetro
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Micetro has integrated with both Azure Active Directory and Okta to allow integration with multi-factor authentication and SSO.  
 
@@ -320,14 +320,12 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 
    4. Navigate to Certificates and Secrets to generate a new secret for the App to use. 
 
-
-.. Note::
+.. note::
    You will need this information for the Central configuration file.
    
-   .. image:: ../../images/external-authentication-console.png
-      :width: 60%
-      :align: center
-  
+.. image:: ../../images/external-authentication-console.png
+
+
 Okta
 ^^^^
 
@@ -391,8 +389,8 @@ As Azure only returns group ID with the token the script makes an extra call to 
 To map group memberships from Okta an *ID Token Claim* has been created with the name "groups". Add an *OpenID Connect ID Token* to the application of the type “Filter“ with the name “groups“. 
 
 .. image:: ../../images/oicd-token-claim.png
-  :width: 60%
-  :align: center
+   :width: 60%
+   :align: center
   
 Configure Central Server
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -413,8 +411,8 @@ Configure Central Server
          
          * Linux - /var/mmsuite/mmcentral/preferences.cfg 
          
-.. Note::
-      A Central restart is required after this statement is added to the Preferences.cfg file.
+   .. Note::
+         A Central restart is required after this statement is added to the Preferences.cfg file.
    
    2. **Create a new directory called "extensions"** in the Central data directory.
    
@@ -424,13 +422,13 @@ Configure Central Server
       
    3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
 
-         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
+         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
 
-         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip>`_
+         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
          
          For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
-   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file      named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
+   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
 
    The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
@@ -491,17 +489,16 @@ The contents of the configuration file ext_auth_conf.json are cached in the 
 
 If for some reason you want to clear the cached configuration file in the database. 
 
-      1. Empty the .json configuration file 
+1. Empty the .json configuration file.
 
-      2. Go to Console Advanced System Settings and ensure that you have the “Default web form” enabled (Tools->System Settings->Advanced) 
+2. Go to Console Advanced System Settings and ensure that you have the “Default web form” enabled (Tools->System Settings->Advanced).
 
-      3. Test with your browser to ensure you can login locally 
+3. Test with your browser to ensure you can login locally.
 
-      4. Disable the external authentication in System Settings 
-         
-   
-   5. **Enable external authentication in the Micetro system settings**
-      From Console go to “Tools->System Settings->Advanced” and search for “external auth”. 
+4. Disable the external authentication in System Settings.
+      
+5. **Enable external authentication in the Micetro system settings**
+   In the Management Console, go to :menuselection:`Tools --> System Settings --> Advanced` and search for “external auth”. 
       
       .. image:: ../../images/external-authentication-console.png
           :width: 60%
@@ -511,7 +508,7 @@ It is also possible to enable it via an API call to SetSystemSettings with a sys
 
 This will enable the SSO login in the web. 
 
-   6. Turn off default login form (optional)
+6. Turn off default login form (optional)
    
    If you only want to offer users SSO/MFA login, you can disable the default web app login form.  
    

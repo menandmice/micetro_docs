@@ -1,9 +1,9 @@
 .. _console-address-spaces:
 
-Address Space Management (Management Console, obsolete)
+Address Space Management - Management Console (obsolete)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Address Space Management dialog box allows you to create, modify or delete address spaces as well as set access privileges for existing address spaces. To access the Address Space Management dialog box, you must be logged in as the administrator user.
+The Address Space Management dialog box allows you to create, modify, or delete address spaces as well as set access privileges for existing address spaces. To access the Address Space Management dialog box, you must be logged in as the administrator user.
 
 To open the Address Space Management dialog box, from the Tools menu, select Define Address Spaces.
 
@@ -25,23 +25,8 @@ To delete an address space, select the address space and click the Delete button
 
 To set access privileges for an address space, select the address space and click the :guilabel:`Access` button.
 
-Switching to a Different Address Space
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can only work in one address space at a time. You can see the current address space in the Manager window, above the object list.
-
-To switch to a different address space:
-
-1. Click the **User** icon in the top right corner of the Web Application.
-
-2. Select :guilabel:`Address Space` and select the address space you want to use.
-
-.. image:: ../../../images/address-space-Micetro.png
-  :width: 50%
-  :align: center
-
-Moving Objects to a Different Address Space (Management Console)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Moving Objects to a Different Address Space 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 DNS servers, DHCP servers, IP Address ranges and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects do a different address space.
 

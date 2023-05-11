@@ -26,17 +26,105 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.7-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.5-release`
 
-.. _10.3.7-release:
+.. _10.5-release:
 
-10.3.7
+10.5
 ------
-*January 25, 2023*
+April 18, 2023
+
+New Features
+^^^^^^^^^^^^
+* **Micetro Update Management**: Micetro can now be updated to a more recent version directly in the Web Application. In a new and intuitive interface administrators will be notified when new product updates are available. There they can easily review the updates, view the current status of all Micetro components, retry failed updates, and troubleshoot any update.
+
+* **Service Management**: Server Management has been renamed to Service Management and significant improvements have been made to enhance user experience. In addition, we've streamlined the process of adding DNS, DHCP, and IPAM services with a single button that allows you to easily filter by provider or service name.
+
+* **Akamai AuthServe Integration**: Support for Akamai's AuthServe DNS server has been added. Options Templates and the following record types are supported for the server: HTTPS, SVCB, CDS, CDNSKEY, and CSYNC.
+
+* **Support for Kea Client Classes**: We have added support for Client Classifications on Kea DHCP servers (both v4 and v6).
+
+* **Global Object History**: In the Web Application you can now view global object history in one place, which was previously limitied to specific objects only. We have also made some minor improvements to the data available. This helps you to quickly and easily trace system activities in the event of an incident or problem. Additionally, all users can view their own object change history.
+
+* **Event Hooks**: Scheduled Scripts are now called Scheduled Events, while External Scripts has been renamed to Change Events. You can manage these events, along with Subnet Monitoring Events on the Admin page of the Web Application.
+
+* **System Settings**: Administrators can now manage the System Settings for Micetro in the Web Application.
+
+* **Move Objects Between Address Spaces**: In the Web Application, servers and ranges can now be moved between address spaces in Micetro.
+
+* **DHCP Management**: We have added the following DHCP management features to the Web Application:
+
+   * Microsoft DHCP server-to-server failover relationships management.
+
+   * Definition of custom DHCP IPv4 and IPv6 options for individual Microsoft, Kea, and ISC services.
+   
+   * Management of DHCP server properties.
+
+* **Zone Creation Workflow**: We have introduced a new intuitive wizard for creating zones. Among other improvements, custom properties can be added to all zone types and zones can be added to folders during the creation process.
+
+* **Primary and Secondary Zones**: Master/Slave terminology has been replaced with Primary/Secondary in the Web Application.
 
 Improvements
 ^^^^^^^^^^^^
-Fixed BIND v9.16, v9.18, v9.19 vulnerabilities on the Micetro appliance addressed in CVE-2022-3094, CVE-2022-3736, CVE-2022-3924, CVE-2022-3488.
+* The old web interface is no longer packaged with Micetro.
+
+* OS version display for different DNS and DHCP providers is now more consistent.
+
+* The logging functionality was upgraded to exclude sensitive information when modifying AD Forests, Users, and Cloud Services.
+
+* Better handling of Microsoft DHCP JET Database errors when working with reservations on failover scopes.
+
+* Ordering of grid columns in the IPAM view has been improved so that Discovery properties, when set to be shown, are displayed after custom properties.
+
+* BIND 9.18 is now supported by Micetro.
+
+* Micetro is verified to run on Red Hat Enterprise Linux 9.
+
+* The DHCP remote now supports HTTPS connections to the ISC Kea Control Agent.
+
+  .. note::
+      This feature was added in Kea 2.0. We officially support version 1.8.
+  
+* DHCPv6 Scopes are now displayed in the Management Console.
+
+* Type is now required when importing reservations to a Microsoft DHCP scope.
+
+* Discovery schedule can be configured for multiple ranges at a time.
+
+* When allocating subranges, users can select between 16 options instead of 8 in the Web Application.
+
+* The build date of the Web Application can now be seen when hovering over the version number on the login page.
+
+* xDNS profile grid has been updated to look more like other grids in the system. xDNS Profiles can now be opened by double clicking the relevant row.
+
+* ISC-built packages of BIND are now supported by the Micetro installer.
+
+* We have added a new API command for retrieving multiple free IP addresses located inside a given IP range.
+
+* Various UI/UX and accessibility improvements.
+
+Bug Fixes
+^^^^^^^^^
+
+* Performance has been improved when opening scopes on Kea.
+
+* Fixed an issue where it was not possible to add change requests for ranges with invalid set of custom properties.
+
+* Fixed a bug where license keys with expiry date were reported as inactive.
+
+* Fixed an issue where promoting a zone would use data from a different primary zone with the same name.
+
+* An issue was fixed where access was not retained when a zone was migrated.
+
+* An issue with setting custom properties with the AddDNSRecords API command was fixed.
+
+* Fixed an issue where submit buttons for change requests in Workflow would render off screen on certain screen resolutions.
+
+* An issue was fixed where it was not possible to add an IPv6 address of a primary server to a secondary zone.
+
+* An issue was fixed where scope name was not updated to reflect the name of the network.
+
+* An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
 
 .. _10.3.6-release:
 
@@ -121,6 +209,7 @@ Improvements and Bug Fixes
 ------
 
 August 18, 2022
+
 Improvements and Bug Fixes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -1,22 +1,28 @@
 .. meta::
-   :description: Installing the Men&Mice DNS Server Controller for Micetro by Men&Mice
-   :keywords: DNS, DNS Server Controller, Micetro, BIND, Unbound
+   :description: Installing the Men&Mice DNS Agent for Micetro by Men&Mice
+   :keywords: DNS, DNS Agent, Micetro, BIND, Unbound, AuthServe
 
 .. _install-dns-controllers:
 
-Micetro DNS Server Controllers
-===============================
+Micetro DNS Agents
+==================
 
-Men&Mice DNS Server Controller is the DNS server agent. It sits on each DNS server machine and manages the DNS service on your behalf.
+Micetro comes with two types of DNS agents: 
 
-By default, when executed the controller installer tries to figure out the installed service (e.g. BIND) automatically and will try to install it without further user input.
+   * the Men&Mice DNS Server Controller
+   * the Men&Mice AuthServe agent
 
-In case it can't install the service it will print out hints and further information.
+DNS Server Controller
+---------------------
+
+By default, when executed the controller installer tries to figure out the installed service (for example BIND) automatically and will try to install it without further user input.
+
+In case it cannot install the service it will print out hints and further information.
 
 .. note::
-  For DNS servers running BIND, the DNS Server Controllers need to be ran as the same user as BIND. (By default: ``named``.)
+  For DNS servers running BIND, the DNS Agents need to be run as the same user as BIND. (By default: ``named``.)
 
-  If BIND is running as a different user, or files are updated, make sure that the ``mmremote`` service is ran as the same user and has sufficient access to files and directories.
+  If BIND is running as a different user, or files are updated, make sure that the ``mmremote`` service is run as the same user and has sufficient access to files and directories.
 
 If the machine has multiple services installed, like ISC DHCP and ISC BIND DNS you want to specify explicitly the Men&Mice Controllers that should be installed.
 
@@ -64,7 +70,7 @@ If you run into issues with the new installer, the old interactive Perl based in
 
   deprecated_installer.pl
 
-To execute the deprecated installer for the Men&Mice Server Controllers please run it as follows:
+To execute the deprecated installer for the Men&Mice Controllers please run it as follows:
 
 .. code-block:: bash
 
@@ -77,7 +83,7 @@ Micetro Controllers running on Linux
 ---------------------------------
 
 .. note::
-  Before installing Micetro DNS Server Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:
+  Before installing Micetro DNS Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:
 
   * Is there a starting configuration file, such as /etc/named.conf?
     * If not, you will need to create one.
@@ -91,7 +97,7 @@ Micetro Controllers running on Linux
     * Does the named init script copy anything into the chroot jail when starting the service? (This is aimed at users of SUSE Linux.)
     * When the installer rearranges the data directory listed in named.conf, will that cause problems? (This again is aimed at users of SUSE Linux.)
 
-  * What user account owns the named process? Men&Mice DNS Server Controller must typically run as the same user. However, it is sometimes possible to use group membership instead.
+  * What user account owns the named process? Men&Mice DNS Controller must typically run as the same user. However, it is sometimes possible to use group membership instead.
 
 Extract the Men&Mice Controller install package (as root):
 
@@ -262,8 +268,8 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Micetrol controller running on Windows
------------------------------------
+Micetrol Server Controller running on Windows
+---------------------------------------------
 
 Active Directory Integrated Zones and Other Dynamic Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -289,8 +295,8 @@ Save the file, and then restart Men&Mice DNS Server Controller using :menuselect
 .. note::
   For Active Directory-integrated zones, other domain controllers running Microsoft DNS do not need to get zone transfers. This is because the zone data is replicated through LDAP, rather than through zone transfers. Thus, for an AD-integrated zone, the zone transfer restriction list might need only the server's own address.
 
-Running Micetro DNS Server Controller under a privileged user account / Server type: "Microsoft Agent-Free"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Running Micetro DNS Server Controller under a privileged user account / Server type: "Microsoft Server Controller-Free"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Normally, the Men&Mice DNS Server Controller is installed on only *one* host in an Active Directory forest, or one copy per site. That installation can then manage all MS DNS servers in the forest, or in the site, using Microsoft's own DNS management API. In order for this to work, the service needs to run as a user that has DNS management privileges (i.e. the AD service account must be a member of the DNSAdmins group of the domain).
 
@@ -320,12 +326,70 @@ Configure the DNS Server Controller to work with Microsoft Azure DNS
 For information on configuring Microsoft Azure DNS, see :ref:`configure-azure-dns`.
 
 Where to install Men&Mice DNS Server Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If Men&Mice Central is installed on a Windows host, then one option is to install Men&Mice DNS Server Controller on the same host. If this is not done, then the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.
 
 .. note::
   The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
+   
+.. _authserve:   
+
+AuthServe Agent
+---------------
+  
+Agent Setup
+^^^^^^^^^^^^
+  
+Download
+""""""""
+Download the latest package from https://download.menandmice.com/ and extract the installer into ``/var/mmsuite``. A different location for the agent can also be chosen if preferred.
+  
+.. code-block::
+ 
+   mkdir -p /var/mmsuite && cd /var/mmsuite
+
+   # Assuming the package is in local directory
+   tar oxzf ./mm-authserve-agent.tar.gz
+
+   # Ensure that the user running the service owns the agent files 
+   chown ${SUDO_USER:-$USER}: -R mm-authserve-agent
+
+   # Enter the extracted directory and proceed to configure the agent
+   cd mm-authserve-agent
+
+Installing the Agent
+""""""""""""""""""""
+
+   1. Install the agent as a service with ``sudo ./install``. Note that the install script requires Python. Make sure that the user that runs the install script is the same user that owns the ``mm-authserve-agent`` folder.
+   2. Copy the agent setup key that the install script prints out. The Men&Mice AuthServe Agent should now be up and running but you need to connect it to Central to be able to manage it through Micetro.
+
+.. note::
+   The Men&Mice AuthServe Agent runs on port 50051 and Central runs on port 1231. Ensure that no firewall settings prevent connection from Central to the agent.
+   
+Adding the Agent to Central
+"""""""""""""""""""""""""""
+   1. Select :guilabel:`Admin` on the top navigation bar.
+   2. Click :guilabel:`Service Management` on the menu bar at the top of the admin workspace.
+   3. Click :guilabel:`Add Service` above the list of services.
+   4. On the list of services, select **AuthServe**.
+   5. Click the :guilabel:`New Agent` tab, fill in the information`.
+   
+       .. image:: ../../images/add-authserve.png
+          :width: 65%
+      
+      *  **Agent host**: the hostname or IP address of the machine where the agent is located. Note that the Central machine must of course be able to communicate with the agent machine. 
+      * **Agent display name**: this box is optional and should be filled in if you want your agent to be displayed in the UI under some other name than the hostname/IP address.
+      * **Agent setup key**: enter the setup key for the agent that you copied earlier from the agent installation script. If you forgot to copy it, you can also find it located in the ssl directory which can be found under the agent directory on the agent machine. The agent also prints it out on startup if it hasn’t been added to a Central server yet. The setup key is used to encrypt certificates that Central sends over to the agent. These certificates are then used to allow for a secure encrypted connection to be created between Central and the agent.
+
+      .. note::
+         If the agent you are adding to Central has been previously added to a Central server you will have to remove the SSL directory and restart the agent before adding. The restart will generate a new setup key that you should use when adding the agent.
+
+
+   6. When you are finished, click :guilabel:`Next`.
+   7. Enter :guilabel:`Service name` and the Nominum Command Channel used to connect to ANS in the :guilabel:`Channel` box. If you have some custom properties defined for DNS servers in your Micetro setup, you can fill in values for them as well in this panel. 
+   8. Click :guilabel:`Add`. Micetro should now have a secure connection to the Men&Mice AuthServe Agent and you should be able to manage your AuthServe DNS server.
+
 
 .. toctree::
   :maxdepth: 1

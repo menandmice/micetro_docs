@@ -1,8 +1,6 @@
 .. meta::
-   :description: IP address management (IPAM) in the Micetry by Men&Mice Management Console
+   :description: IP address management (IPAM) in the Men&Mice Management Console
    :keywords: IPAM, IP address managament
-
-.. _console-ipam:
 
 .. toctree::
   :maxdepth: 2
@@ -10,7 +8,9 @@
 .. |user-range| image:: ../../../images/console-ipam-user-created-range-icon.png
 .. |dhcp-scope| image:: ../../../images/console-ipam-dhcp-scope-icon.png
 
-IP address management (Management Console, obsolete)
+.. _console-ipam:
+
+IP address management - Management Console (obsolete)
 ======================================================
 
 Overview
@@ -654,6 +654,8 @@ You can clear the monitor setting for individual subnets if you want to use the 
 1. Select the subnet(s) for which you want to clear the monitoring setting.
 
 2. Right-click and, from the shortcut menu, select :guilabel:`Remove Subnet Monitoring`. The custom subnet monitoring setting is removed and the global monitoring setting is used instead.
+
+.. _console-ipam-utilization-history:
 
 View Utilization History
 ------------------------

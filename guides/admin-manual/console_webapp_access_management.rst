@@ -2,10 +2,10 @@
    :description: User management information including how to add, edit or remove user accounts and more, in the Micetro web application
    :keywords: Micetro web application
 
-.. _webapp-access-management:
+.. _webapp-configuration:
 
-Access Management
-*****************
+Access Management (Management Console, obsolete)
+***************************************************
 
 Access Management involves both creating groups as well as creating :ref:`acl-users` to associate with :ref:`acl-groups`.
 
