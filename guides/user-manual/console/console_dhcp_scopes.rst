@@ -4,7 +4,7 @@
 
 .. _console-dhcp-scopes:
 
-DHCP Scopes (Management Console, obsolete)
+DHCP Scopes - Management Console (obsolete)
 ============================================
 
 Overview
@@ -14,19 +14,6 @@ This section shows you how to perform specific actions in Micetro associated wit
 
 Viewing Scopes
 --------------
-
-All DHCP Scopes on All Servers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can use the Web Application to view all of the existing DHCP scopes at once, regardless of the server to which they belong. In :menuselection:`Networks` select :guilabel:`DHCP scopes` from the filtering sidebar on the left.
-
-.. image:: ../../../images/dhcp-scopes-Micetro.png
-  :width: 80%
-  :align: center
-
-The :guilabel:`Utilization` column in the scope list displays the utilization of available addresses within the address pool(s) of each scope.
-
-.. Disabled scopes are shown as gray. The number of unassigned addresses is always shown as zero for disabled scopes.
 
 Scopes on a Specific DHCP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,7 +108,7 @@ Create Reservation
     Dynamically update DNS A and PTR records for DHCP clients that do not request updates
       Specifies whether the DHCP server sends dynamic updates to the DNS server for DHCP clients that do not support performing these updates. If selected, clients running earlier versions of Windows are updated by the DHCP server for both their host (A) and pointer (PTR) resource records.
 
-  3. Click :guilabel:`OK`. The address is now listed as reserved in the DHCP Scope dialog box.
+  4. Click :guilabel:`OK`. The address is now listed as reserved in the DHCP Scope dialog box.
 
 Edit a Reservation
   To edit an existing reservation, right-click on the reservation you want to change and select :guilabel:`Edit a Reservation`. Then, make the necessary edits.
@@ -223,7 +210,7 @@ Delete Address Pool(s)
 Create Reservation
   Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create an address, do the following:
 
-    3. Locate the IP Address you want to reserve, right-click on it, and select :guilabel:`Create Reservation`. The *DHCP Reservation* dialog box displays.
+    1. Locate the IP Address you want to reserve, right-click on it, and select :guilabel:`Create Reservation`. The *DHCP Reservation* dialog box displays.
 
       MAC Address
         Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.

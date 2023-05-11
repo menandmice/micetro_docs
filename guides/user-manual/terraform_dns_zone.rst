@@ -69,7 +69,7 @@ ref
   (String) Internal references to this DNS zone.
 
 type
-  (String) the DNS zone type. For example: ``Master``, ``Slave``, ``Hint``, ``Stub``, ``Forward``.
+  (String) the DNS zone type. For example: ``Primary``, ``Secondary``, ``Hint``, ``Stub``, ``Forward``.
 
 zskids
   (String) A comma separated string of IDs of ZSKs, starting with active keys, then inactive keys in parenthesis ``()``.
@@ -77,7 +77,7 @@ zskids
 ..
 
   masters
-    (List of String) List of all masters IP address, for slave zones.
+    (List of String) List of all masters IP address, for secondary zones.
 
   adpartition
     (String) The Active Directory partition if the zone is AD-integrated.

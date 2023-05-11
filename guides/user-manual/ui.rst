@@ -16,4 +16,3 @@ Micetro currently uses two user interfaces: the new, browser-based :ref:`web-app
   :maxdepth: 1
 
   web_application
-  console

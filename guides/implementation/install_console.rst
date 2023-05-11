@@ -4,8 +4,8 @@
 
 .. _install-console:
 
-Management Console
-==================
+Installing the Management Console
+===================================
 
 Men&Mice Management Console is a soon-to-be deprecated, Windows-based user interface of Micetro. As a Windows-based application it needs to be installed on a Windows machine.
 

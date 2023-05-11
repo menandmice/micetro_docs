@@ -4,7 +4,7 @@
 
 .. _snmp-profiles:
 
-SNMP profiles
+SNMP Profiles
 -------------
 
 The SNMP protocol provides a common mechanism for devices on networks to relay management information. Micetro uses SNMP profiles to determine whether devices that have been discovered on networks are active.​
@@ -12,14 +12,14 @@ The SNMP protocol provides a common mechanism for devices on networks to relay m
 .. image:: ../../images/snmp-profiles.png
   :width: 90%
   :align: center
-
+|
 .. note::
   For configuring SNMP profiles using the Management Console, see :ref:`console-snmp-profiles`.
 
-Create a new SNMP profile
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a New SNMP Profile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before a router can be queried it must be placed in an SNMP profile containing the parameters necessary to access the SNMP information on the router.
+Before a router can be queried, it must be placed in an SNMP profile containing the parameters necessary to access the SNMP information on the router.
 
 .. note::
   Multiple routers can share the same SNMP profile.
@@ -28,10 +28,10 @@ To create an SNMP profile:
 
 1. Navigate to :guilabel:`Admin --> Configuration --> SNMP Profiles`.
 
-2. Use the :guilabel:`Add Profile` action from the top bar.
+2. Select :guilabel:`Add Profile` on the top toolbar.
 
 .. image:: ../../images/add-snmp-profile.png
-  :width: 80%
+  :width: 70%
   :align: center
 
 3. Enter a profile name and choose the SNMP version to use. (Supported versions are SNMP v1, v2c, and v3.) You can also specify a non-standard port to use for SNMP.
@@ -62,28 +62,28 @@ To create an SNMP profile:
 
 6. Click :guilabel:`Next`.
 
-6. Paste or enter the IPv4 address of the router(s) that you want to query using this profile.
+7. Paste or enter the IPv4 address of the router(s) that you want to query using this profile.
 
 .. note::
   Each router's IP address needs to be on a separate line in the text area.
 
-6. Click :guilabel:`Add profile` to save the settings and create the profile.
+8. Click :guilabel:`Add profile` to save the settings and create the profile.
 
-Edit existing SNMP profile
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Editing Existing SNMP Profiles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can edit an existing SNMP profile, to change settings or modify the routers using it.
 
 1. Navigate to :menuselection:`Admin --> Configuration --> SNMP Profiles`.
 
-2. Use the :guilabel:`Action --> Edit SNMP Profile` action from the top bar or the ellipsis menu to edit a profile's settings. Use the :guilabel:`Edit routers` action to modify the list of routers using the profile.
+2. Select :guilabel:`Action --> Edit SNMP Profile` on the top toolbar or the **Row menu (...)** to edit a profile's settings. Select :guilabel:`Edit routers` to modify the list of routers using the profile.
 
-Scanning profiles
+Scanning Profiles
 ^^^^^^^^^^^^^^^^^
 
 SNMP scanning is done automatically in the background by Micetro. Users can initiate a manual scan of all configured profiles to pull ARP cache from the routers if needed.
 
-Use the :guilabel:`Scan profiles` action from the top bar to manually scan all profiles.
+Select :guilabel:`Scan profiles` on the top toolbar to manually scan all profiles.
 
 .. warning::
   This might take a long time and can result in higher volumes of traffic.

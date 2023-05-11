@@ -4,7 +4,7 @@
 
 .. _import-ipam-old:
 
-Importing the IP Address Ranges and Device Properties via CLI (deprecated)
+Importing the IP Address Ranges and Device Properties via CLI (obsolete)
 --------------------------------------------------------------------------
 
 Before the IP address ranges are imported into Micetro the administrator has to identify which custom properties he wants to maintain for IP address ranges and individual IP addresses (devices).

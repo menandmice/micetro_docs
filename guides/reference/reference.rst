@@ -11,6 +11,7 @@ Micetro reference articles
   :maxdepth: 1
 
   permissions
+  ip_count
   acl_convert
   appliance_guide
   send_license_info

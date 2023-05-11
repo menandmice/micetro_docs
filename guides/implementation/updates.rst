@@ -6,11 +6,65 @@
 
 Update Guide
 ============
+.. note::
+   This information applies to the web interface. For information about update management in the M&M Management Console, see :ref:`console-udates`.
 
-The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&Mice Central, the Men&Mice Server Controllers and the Men&Mice Appliances with minimal downtime.
+**Permissions:**
 
-Update paths
-------------
+* Permission: None (cannot create a custom role to access this)
+* Role: ``Administrators (built-in)``
+
+Micetro Version
+---------------
+The Update Manager notifies you when a new version of Micetro is available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Men&Mice Central and the Men&Mice Server Controllers. 
+
+Minor versions often only contain an update for a single component, such as the Micetro Appliances.
+
+Major version upgrades normally contain an update for every component.
+
+.. note::
+  In order to receive notifications and check for updates, you must be in a group that has administrative privileges. Only the Administrator user can perform the actual update.
+  
+The :guilabel:`Current status` display in :guilabel:`Micetro Version` gives you the status of all components at a quick glance so you know everything is up and running smoothly.
+
+Updating Micetro
+----------------
+Before updating Micetro, we strongly recommend reading the Release Notes first, see :ref:`release-notes`. 
+
+To apply an update:
+
+1. Select :guilabel:`Admin` on the top navigation bar.
+
+2. Click :guilabel:`Configuration` on the menu bar at the top of the admin workspace.
+
+3. You'll find available updates under :guilabel:`Micetro Version` in the left sidebar.
+
+   .. image:: ../../images/available-updates.png
+    :width: 65%
+
+
+Preparing the Update
+^^^^^^^^^^^^^^^^^^^^^
+Click :guilabel:`Prepare Update` to start the update process.
+
+A package for the new version is then downloaded and automatically prepared for deployment by uploading a package to each DNS and DHCP server, as well as each appliance, if the new update package includes an update to that component. This is done to streamline the updating process, such that the update packages have already been uploaded the various components when the update is deployed.
+
+.. note::
+  The :guilabel:`Status` column will highlight if there are any errors with updating components. Hover over the the warning icon for more details to help you troubleshoot.
+
+Deploying the Update
+^^^^^^^^^^^^^^^^^^^^^
+After the package has been prepared, the new version can be deployed by clicking the 
+:guilabel:`Deploy Update` button. 
+
+If the new version includes an updated Central component, Central will be restarted when the update is deployed. Otherwise, it keeps running and Micetro is seamlessly updated to the new version.
+
+Once the update has been deployed, each of the Micetro components that need to be upgraded is upgraded to the latest version. The update packages that were uploaded during the preparation step are put into place.
+
+Men&Mice Appliances will need to be updated manually in the :guilabel:`Current Status` section.
+
+Update Paths
+^^^^^^^^^^^^^
 
 If you're updating Micetro from an older version, refer to the following table:
 
@@ -25,103 +79,29 @@ If you're updating Micetro from an older version, refer to the following table:
 
 .. [1] Kea DHCP servers need to be updated to 1.6.0 or 1.8.0 *before* updating Micetro to 10.x. See `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
 
-Checking and Downloading an Update
-----------------------------------
 
-When you log into the system using the Management Console, an update notification is displayed when a new version of Micetro is available.
+Checking Status of Micetro Components and Appliances
+----------------------------------------------------
+To check the current status of Micetro Components and Appliances, go to :guilabel:`Current status` under :guilabel:`Micetro Version` in the left sidebar in the Configuration section of the Admin page.
 
-.. image:: ../../images/admin-new-update.png
-  :width: 50%
-  :align: center
+You will see a list of all components, their current version and status. 
 
-You can also check if an update is available by selecting :menuselection:`Tools --> Check for Updates`.
+Troubleshooting
+^^^^^^^^^^^^^^^^
+The :guilabel:`Status` column will highlight if there is an error with the component, or if it is offline. Hover over the Offline or Error status for more details to help you troubleshoot.
 
-.. note::
-  To receive update notifications and check for updates, you must be in a group with administration privileges. Only the Administrator user can perform the actual update.
+Updating Appliances
+^^^^^^^^^^^^^^^^^^^^
+Under :guilabel:`Current status` you can see if any Appliances have updates pending. 
 
-If you are not interested in receiving notifications for the update, select the :guilabel:`Don't show again for this version` checkbox. When the checkbox is checked, a notification for the specific update is no longer displayed, however, if a later update becomes available, the dialog box is displayed again.
+You can manually apply the update by clicking the :guilabel:`Update` button on the specific appliance. We recommend updating appliances one at a time.
 
-Click the Details button to get more information on the update. This displays a dialog box that shows all available updates.
+Update Management in the Management Console
+-------------------------------------------------
+For information about how to update in the M&M Management Console, see:
 
-.. image:: ../../images/admin-available-updates.png
-  :width: 70%
-  :align: center
+.. toctree::
+  :maxdepth: 1
 
-To view the release notes for an update, select the corresponding update and then click the :guilabel:`View Release Notes` button. This will show the release notes in a web browser.
-
-To download the new version, select the version and click the :guilabel:`Download` button. The new version is downloaded and stored on the Men&Mice Central server. Once the download has completed, you can start the update.
-
-.. note::
-  To download and perform the actual update you must be logged in as Administrator. If you are not logged in as Administrator, the Download button is disabled.
-
-Installing an Update
---------------------
-
-Once the update has been downloaded, you can start the actual update process. The Update Manager can update Men&Mice Central, connected Server Controllers and Men&Mice Virtual Appliances. The Men&Mice Web Application must be updated manually.
-
-If you want to perform the update at a later time, you can close the dialog box. To display the dialog box again, select :menuselection:`Tools --> Check for Updates`.
-
-The following instructions contain information on how to update Micetro after the update has been downloaded using the Update Manager.
-
-1. To start the update process, click the :guilabel:`Start Update` button in the update details dialog box. When you click :guilabel:`Start Update` the following happens:
-
-  * Men&Mice Central and the DNS and DHCP server controllers are updated. (See :ref:`update-central-ha` for updating Central in HA configuration.)
-
-  * If the update contains a new version of the Men&Mice Web Application, a dialog box is displayed where you can find instructions on manually updating the Men&Mice Web Application.
-
-  * If your environment contains a Men&Mice Appliance, the latest version of the Men&Mice Appliance software is uploaded to the Appliance, but isn't applied automatically.
-
-Updating an Appliance
-^^^^^^^^^^^^^^^^^^^^^
-
-As an update to the Men&Mice Appliance sometimes requires that the Appliance is restarted, the update is not applied automatically.
-
-To complete an Appliance update, you must manually initiate the update. To minimize service disruption you might want to update your Appliances in several batches.
-
-1. From the menu bar, select :menuselection:`Tools --> Update Status`. The *Update Status* dialog box displays. The dialog box shows the update status for all DNS and DHCP server controllers as well as all Men&Mice Appliances. If an update is pending for an Appliance, the status is listed as *Update pending* and a checkbox is displayed in the Update column.
-
-.. image:: ../../images/admin-update-appliance.png
-  :width: 80%
-  :align: center
-
-2. Click the checkbox to select the Appliance(s) you want to update.
-
-3. Click the :guilabel:`Update Appliances` button. This will update the selected appliance(s).
-
-Viewing Update Status
----------------------
-
-Through the *Update Status* dialog box, you can always view the update status for Micetro components. To display the Update Status dialog box, select :menuselection:`Tools --> Update Status`.
-
-.. image:: ../../images/admin-update-status.png
-  :width: 80%
-  :align: center
-
-The dialog box shows the update status for all DNS and DHCP server controllers as well as all Men&Mice Appliances. If an update is pending for an Appliance, the status is listed as Update pending and a checkbox is displayed in the Update column.
-
-Uncheck the :guilabel:`Show servers that are up-to-date` checkbox to only show servers that need to be updated.
-
-.. note::
-  The Auto Updater will update *all* connected server controllers along with Central.
-
-.. note::
-  If some Controllers can't be updated automatically please check if the M&M Updater daemon or Windows service is running on the server and if the port 4603/tcp is accessible from the machine that runs Central. See :ref:`firewall-ports` for more information.
-
-.. warning::
-  When Central is in a high availability configuration, the Auto Updater cannot be used. See :ref:`update-central-ha` for instructions.
-
-Verifying the updates
----------------------
-
-In order to verify that the update has propagated to all servers:
-
-1.	Log in to the Management Console
-
-2.	Navigate to :menuselection:`Tools --> Update Status`
-
-3.	Review the version reported for each of the listed components. The listed version number for Micetro is listed near the top, and should match the version of each component in the list.
-
-4.	Log in to the Web Application, click on the :guilabel:`User` icon in the top menu. Verify that the version listed there matches the version of the Men&Mice Central that was installed.
-
-.. note::
-  If there’s a version mismatch between components, the Management Console and Web Application will report an error when trying to log in. 
+  console_updates
+ 
