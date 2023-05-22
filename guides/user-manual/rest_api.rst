@@ -10,7 +10,7 @@ With the Micetro REST API administrators and software developers can create cust
 
 Installation
 ^^^^^^^^^^^^
-To use the REST API, you must install the Men&Mice Web Services and make sure you have the correct access permission. For more information about nstalling the application, see :ref:`install-webapp`.
+To use the REST API, you must install the Men&Mice Web Services and make sure you have the correct access permission. For more information about installing the application, see :ref:`install-webapp`.
 
 All APIs are bundled together in the installation of the Web Services. Once the Men&Mice Web Services is installed, you can access the API documentation via:
 
@@ -21,16 +21,16 @@ All APIs are bundled together in the installation of the Web Services. Once the 
 
 Getting Started
 ^^^^^^^^^^^^^^^
-In REST, the focus is on resources. You specify a resource with a URL (Uniform Resource Location) and then apply an operation on the resource using an HTTP verb.
+In REST, the focus is on resources. You specify a resource with a URL (Uniform Resource Location) and then apply an operation on the resource using an HTTP method.
 
-The four most common HTTP verbs are GET, PUT, POST, and DELETE.
+The four most common HTTP methods are GET, PUT, POST, and DELETE.
 
    * ``GET`` – Retrieves resources
    * ``PUT`` – Modifies an existing resource
    * ``POST`` – Creates a new resource
    * ``DELETE`` – Delete a resource
 
-An example of a resource would be a DNS zone, defined in our REST API as ``dnsZones``. The combination of URL and HTTP verb to retrieve all DNS zones in Micetro would be:
+An example of a resource would be a DNS zone, defined in our REST API as ``dnsZones``. The combination of URL and HTTP method to retrieve all DNS zones in Micetro would be:
 
 .. code-block::
 
@@ -39,42 +39,35 @@ An example of a resource would be a DNS zone, defined in our REST API as ``dnsZo
 A successful response looks like this:
 
 .. code-block::
-   
-   {
-     "dnsZones": [
-       {
-         "ref": "string",
-         "name": "string",
-         "dnsScopeName": "string",
-         "dynamic": true,
-         "adIntegrated": true,
-         "adReplicationType": "None",
-         "adPartition": "string",
-         "dnsViewRef": "string",
-         "dnsViewRefs": [
-           "string"
-         ],
-         "sourceZoneRef": "string",
-         "authority": "string",
-         "type": "Master",
-         "genericType": "string",
-         "dnssecSigned": true,
-         "kskIDs": "string",
-         "zskIDs": "string",
-         "customProperties": {
-           "key": "value"
-         },
-         "providerProperties": {},
-         "created": "2023-04-27T15:15:44.890Z",
-         "lastModified": "2023-04-27T15:15:44.890Z",
-         "displayName": "string",
-         "folderRef": "string",
-         "xdnsProfileRef": "string"
-       }
-     ],
-     "offset": 0,
-     "totalResults": 0
-   }
+
+   { 
+    "result": {
+        "dnsZones": [
+            {
+                "ref": "dnsZones/39404",
+                "name": "bobo.is.",
+                "dynamic": false,
+                "adIntegrated": false,
+                "dnsViewRef": "dnsViews/143",
+                "sourceZoneRef": "dnsZones/39404",
+                "authority": "bs-win-2.dev.lab.",
+                "type": "Master",
+                "dnssecSigned": false,
+                "kskIDs": "",
+                "zskIDs": "",
+                "customProperties": {
+                    "Location": "H-15",
+                    "Outward facing": "0",
+                },
+                "created": "May 19, 2023 13:29:15",
+                "lastModified": "May 19, 2023 13:29:16",
+                "displayName": "bobo.is."
+            }
+        ],
+        "totalResults": 1
+    }
+}
+
    
 References
 ^^^^^^^^^^
@@ -136,19 +129,19 @@ For a more detailed explanation of filtering and sorting in the Micetro REST API
 
 Creation, Modification, and Deletion Arguments
 """"""""""""""""""""""""""""""""""""""""""""""
-Creating, modifying and deleting resources require the use of other HTTP verbs, such as POST, PUT, and DELETE. These operations typically require more information than other API calls, and the data can be passed either in the URL or in the body of the HTTP request.
+Creating, modifying and deleting resources require the use of other HTTP methods, such as POST, PUT, and DELETE. These operations typically require more information than other API calls, and the data can be passed either in the URL or in the body of the HTTP request.
 
 For example, to add a DNS record to a zone, you can use the following URL:
 
 .. code-block::
 
-   POST http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/test.menandmice.com./dnsRecords?dnsRecord={“name”:”restart”, “type”: “A”, “data”: “1.2.3.4”}
+   POST http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/test.menandmice.com./dnsRecords?dnsRecord={“name”:”name”, “type”: “A”, “data”: “1.2.3.4”}
 
 To modify the newly created DNS record, you can use the following URL:
 
 .. code-block::
 
-   PUT http(s)://<micetro.yourdomain.tld>/mmws/api/dnsRecords/name.test.menandmice.com./#### Fill in rest of the example ###
+   PUT http(s)://<micetro.yourdomain.tld>/mmws/api/dnsRecords/name.test.menandmice.com./?properties={"data":"2.3.4.5"}
 
 To delete the DNS record, you can use the following URL:
 
