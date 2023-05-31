@@ -65,8 +65,8 @@ A successful response looks like this:
             }
         ],
         "totalResults": 1
-    }
-}
+      }
+   }
 
    
 References
