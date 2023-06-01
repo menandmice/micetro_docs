@@ -24,7 +24,7 @@ Micetro also supports multi-factor authentication (MFA) through two methods, Azu
 Active Directory User Authentication
 ------------------------------------
 
-The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to login to Micetro. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
+The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to login to Micetro. In large installations, this system has obvious benefits as users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
 
 Active Directory User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,7 +92,7 @@ To enable single sign-on in the web application, make sure that Single Sign-on a
 Application Log In
 ------------------
 
-Logging into Micetro will not change when AD user authentication is used and Single Sign-on is disabled. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro. If a distinguished user name is used, it must be entered in the same way when logging in.
+Logging in to Micetro will not change when AD user authentication is used and Single Sign-on is disabled. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro. If a distinguished user name is used, it must be entered in the same way when logging in.
 
 Group Level Active Directory User Authentication
 ------------------------------------------------
@@ -118,7 +118,7 @@ When using AD Group level authentication, you must specify which groups in Micet
 
 2. Click the :guilabel:`Groups` tab.
 
-3. Select the group to which you want to configure AD and click the Edit button. If the desired group is not shown, you will need to add the group. See :ref:`acl-groups`.
+3. Select the group to which you want to configure AD, and then click :guilabel:`Edit`. If the desired group is not shown, you will need to add the group. See :ref:`acl-groups`.
 
 .. image:: ../../images/console_ad_groups_auth.png
   :width: 60%
@@ -142,7 +142,7 @@ You do not have to create users in Micetro when the Group Level AD authenticatio
 RADIUS User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
+Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
 
 RADIUS User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,9 +200,9 @@ To configure a user to use AD user authentication, do the following:
 
 1. From the menu bar, select :menuselection:`Tools --> User Management`. The *User and group management* dialog box displays.
 
-2. To add a new user, click the :guilabel:`Add` button. Refer to :ref:`acl-users`. Follow the instructions with one exception: in the **Authentication** field, click the drop-down list and select RADIUS.
+2. To add a new user, click the :guilabel:`Add` button. Refer to :ref:`acl-users`. Follow the instructions with one exception: select RADIUS on the **Authentication** drop-down list.
 
-3. To modify an existing user, double-click on the user's name to display the user *Properties* dialog box, and in the **Authentication** field, click the drop-down list and select RADIUS.
+3. To modify an existing user, double-click on the user's name to display the user *Properties* dialog box, and select RADIUS on the **Authentication** drop-down list.
 
 .. note::
   When the RADIUS authentication method is selected, the **Password** field is disabled, since the password is not stored in Micetro.
@@ -286,7 +286,7 @@ To get the needed properties for the configuration an application first needs to
 If running Central in HA mode, it is advised to disable the service on one of the During this configuration, you will need to capture your Identity Provider’s credentials.  
 
 **Permissions**
-To be able to fetch the user’s profile info and group membership the application needs to be given permission to do that: 
+To be able to fetch the user’s profile info and group membership, the application needs to be given permission to do that: 
 
 .. list-table:: Microsoft Graph
    :widths: 20 20 20 20 20
@@ -297,26 +297,28 @@ To be able to fetch the user’s profile info and group membership the applicati
      - Description
      - Admin consent request
      - Status
-   * - GroupReadAll
+   * - GroupMember.Read.All
      - Delegated
-     - Read all groups
+     - Read group memberships
      - Yes
      - Granted for [name]
-   * - UserRead
+   * - User.Read
      - Delegated
      - Sign in and read user profile
      - No
      - Granted for [name]
-  
+
+The app asks for ``User.Read`` from the user, but an administrator needs to grant ``GroupMember.Read.All``. Group membership will not be synced if ``GroupMember.Read.All`` (or some wider groups permission) is not granted to the application by an administrator.
+
 **Register the Application**
 
 The setup requires navigation to the Azure Portal, and opening AAD. 
 
-   1. In the left side bar, click on “App registration” and inside the newly opened “blade” (what Azure calls their subpages) click “New Registration” 
+   1. On the left pane, select “App registration” and inside the newly opened “blade” (what Azure calls their subpages) click “New Registration” 
 
    2. Type the name, select the proper radio button value for supported authentication types and for the Redirect URI the platform should be web and the field should      be https://micetro.central.fqdn/mmws/auth_cb/microsoft 
 
-   3. Once the app has been registered the client ID should be viewable in the essentials panel for the app. 
+   3. Once the app has been registered, the client ID should be viewable in the essentials panel for the app. 
 
    4. Navigate to Certificates and Secrets to generate a new secret for the App to use. 
 
@@ -329,7 +331,7 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 Okta
 ^^^^
 
-To get the needed properties for othe configuration an application first needs to be set up at the provider.
+To get the needed properties for other configuration an application first needs to be set up at the provider.
 
 
 .. list-table:: Okta Application
@@ -349,13 +351,13 @@ To get the needed properties for othe configuration an application first needs t
    
 The setup requires opening the Okta Administrator page.
 
-   1. In the left side bar expand “Application” and click “Applications” 
+   1. On the left pane, expand “Application” and click “Applications”. 
 
-   2. In the Applications page click the button “Create App Integration”. 
+   2. On the Applications page, click “Create App Integration”. 
 
-   3. Choose OIDC as Sign-in method 
+   3. Select OIDC as Sign-in method. 
 
-   4. Choose Web Application as Application type 
+   4. Select Web Application as Application type.
 
    5. Grant type: Authorization Code (default) 
 
@@ -415,9 +417,10 @@ Configure Central Server
          A Central restart is required after this statement is added to the Preferences.cfg file.
    
    2. **Create a new directory called "extensions"** in the Central data directory.
-      Windows:  C:\ProgramData\Menandmice\Central\extensions 
+   
+         * Windows - C:\\ProgramData\\Men and Mice\\Central\\extensions
 
-      Linux:  /var/mmsuite/mmcentral/extenstions 
+         * Linux -  /var/mmsuite/mmcentral/extensions
       
    3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
 
@@ -433,15 +436,15 @@ Configure Central Server
 
    Micetro data directory: 
 
-      Windows:  C:\ProgramData\Menandmice\Central\ext_auth_conf.json 
+      Windows:  C:\\ProgramData\\Menandmice\\Central\\ext_auth_conf.json 
 
       Linux:  /var/mmsuite/mmcentral/ext_auth_conf.json 
 
    Add the contents below with credentials obtained from your Identity Provider.
    
-   Sample config::
-      Azure: 
-
+   Sample config:
+    Azure: 
+.. code-block::
          { 
 
             "microsoft": { 
@@ -458,8 +461,10 @@ Configure Central Server
 
          }	 
 
-        Okta: 
 
+Okta: 
+
+.. code-block::
          { 
 
             "okta": { 

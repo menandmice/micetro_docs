@@ -134,7 +134,7 @@ Adding a new service is either a two or three step process, depending on the typ
     .. image:: ../../images/add-authserve.png
          :width: 65%
 
-    * For AuthServe you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
+    * For AuthServe git you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
 
 6. Add service:
   * Cloud services: Each service type has its set of credentials in addition to the optional service name.

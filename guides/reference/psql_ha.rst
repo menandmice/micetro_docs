@@ -223,7 +223,6 @@ Further information
 .. toctree::
   :maxdepth: 1
 
-  central_psql_ha
   db_migrate
   ha_tweaks_psql
   psql_ha_maintenance
