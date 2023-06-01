@@ -154,4 +154,3 @@ To delete the DNS record, you can use the following URL:
    
 .. tip::
    The API definition can be downloaded from the Web Services and then imported into a 3rd party API development tool such as Postman. To retrieve the API definition in JSON form, navigate to the url ``http(s)://micetro.yourdomain.tld/mmws/api/swagger.json``.
-
