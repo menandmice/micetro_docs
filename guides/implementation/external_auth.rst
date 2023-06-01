@@ -297,17 +297,19 @@ To be able to fetch the user’s profile info and group membership, the applicat
      - Description
      - Admin consent request
      - Status
-   * - GroupReadAll
+   * - GroupMember.Read.All
      - Delegated
-     - Read all groups
+     - Read group memberships
      - Yes
      - Granted for [name]
-   * - UserRead
+   * - User.Read
      - Delegated
      - Sign in and read user profile
      - No
      - Granted for [name]
-  
+
+The app asks for ``User.Read`` from the user, but an administrator needs to grant ``GroupMember.Read.All``. Group membership will not be synced if ``GroupMember.Read.All`` (or some wider groups permission) is not granted to the application by an administrator.
+
 **Register the Application**
 
 The setup requires navigation to the Azure Portal, and opening AAD. 
@@ -434,7 +436,7 @@ Configure Central Server
 
    Micetro data directory: 
 
-      Windows:  C:\ProgramData\Menandmice\Central\ext_auth_conf.json 
+      Windows:  C:\\ProgramData\\Menandmice\\Central\\ext_auth_conf.json 
 
       Linux:  /var/mmsuite/mmcentral/ext_auth_conf.json 
 
