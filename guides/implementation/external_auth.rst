@@ -127,9 +127,9 @@ When using AD Group level authentication, you must specify which groups in Micet
 Group Name
   Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain "MYDOMAIN" contains the group "MM-ReadOnly". The group name must then be "MYDOMAIN\\MM-ReadOnly".
 
-5. Select the :guilabel:`Active Directory Integrated` checkbox.
+4. Select the :guilabel:`Active Directory Integrated` checkbox.
 
-6. Click :guilabel:`OK`.
+5. Click :guilabel:`OK`.
 
 .. note::
   Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
@@ -212,7 +212,7 @@ To configure a user to use AD user authentication, do the following:
   :align: center
 
 Logging into Micetro
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Micetro has integrated with both Azure Active Directory and Okta to allow integration with multi-factor authentication and SSO.  
 
@@ -297,17 +297,19 @@ To be able to fetch the user’s profile info and group membership, the applicat
      - Description
      - Admin consent request
      - Status
-   * - GroupReadAll
+   * - GroupMember.Read.All
      - Delegated
-     - Read all groups
+     - Read group memberships
      - Yes
      - Granted for [name]
-   * - UserRead
+   * - User.Read
      - Delegated
      - Sign in and read user profile
      - No
      - Granted for [name]
-  
+
+The app asks for ``User.Read`` from the user, but an administrator needs to grant ``GroupMember.Read.All``. Group membership will not be synced if ``GroupMember.Read.All`` (or some wider groups permission) is not granted to the application by an administrator.
+
 **Register the Application**
 
 The setup requires navigation to the Azure Portal, and opening AAD. 
@@ -396,7 +398,7 @@ To map group memberships from Okta an *ID Token Claim* has been created with the
   
 Configure Central Server
 ^^^^^^^^^^^^^^^^^^^^^^^^
-   1. Install Python and dependent libraries and packages on the Central server.
+1. Install Python and dependent libraries and packages on the Central server.
    
    When installing Python please ensure the following:
       * Python is available to "all user" (Windows)
@@ -415,14 +417,15 @@ Configure Central Server
          
 .. Note::
       A Central restart is required after this statement is added to the Preferences.cfg file.
-   
-   2. **Create a new directory called "extensions"** in the Central data directory.
+
+
+2. **Create a new directory called "extensions"** in the Central data directory.
    
          * Windows - C:\\ProgramData\\Men and Mice\\Central\\extensions
 
          * Linux -  /var/mmsuite/mmcentral/extensions
       
-   3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
+3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
 
          * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
 
@@ -430,7 +433,7 @@ Configure Central Server
          
          For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
-   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file      named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
+4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file      named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
 
    The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
@@ -500,7 +503,7 @@ If for some reason you want to clear the cached configuration file in the databa
       4. Disable the external authentication in System Settings 
          
    
-   5. **Enable external authentication in the Micetro system settings**
+5. **Enable external authentication in the Micetro system settings**
       From Console go to “Tools->System Settings->Advanced” and search for “external auth”. 
       
       .. image:: ../../images/external-authentication-console.png
@@ -511,7 +514,7 @@ It is also possible to enable it via an API call to SetSystemSettings with a sys
 
 This will enable the SSO login in the web. 
 
-   6. Turn off default login form (optional)
+6. Turn off default login form (optional)
    
    If you only want to offer users SSO/MFA login, you can disable the default web app login form.  
    
