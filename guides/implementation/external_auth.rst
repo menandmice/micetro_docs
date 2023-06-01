@@ -433,7 +433,7 @@ Configure Central Server
          
          For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
-4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file      named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
+4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
 
    The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
@@ -447,7 +447,6 @@ Configure Central Server
    
    Sample config::
       Azure: 
-
          { 
 
             "microsoft": { 
