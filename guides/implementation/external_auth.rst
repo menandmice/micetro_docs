@@ -439,14 +439,17 @@ Configure Central Server
 
    Micetro data directory: 
 
-      Windows:  C:\ProgramData\Menandmice\Central\ext_auth_conf.json 
+      Windows:  C:\\ProgramData\\Menandmice\\Central\\ext_auth_conf.json 
 
       Linux:  /var/mmsuite/mmcentral/ext_auth_conf.json 
 
    Add the contents below with credentials obtained from your Identity Provider.
    
-   Sample config::
-      Azure: 
+   Sample config:
+   
+Azure: 
+
+.. code-block::
          { 
 
             "microsoft": { 
@@ -463,8 +466,9 @@ Configure Central Server
 
          }	 
 
-        Okta: 
+Okta: 
 
+.. code-block::
          { 
 
             "okta": { 
