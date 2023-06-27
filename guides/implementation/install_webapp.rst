@@ -17,7 +17,7 @@ Install the Web Application on Linux
 
 .. code-block:: bash
 
-  tar -xzvf tar -xzvf micetro-web-application-10.3.5.linux.x64.tgz
+  tar -xzvf micetro-web-application-10.3.5.linux.x64.tgz
   cd micetro-web-application-10.3.5.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
 
 Where ``web-application.domain.tld`` is the domain on which the Web Application will be accessed.
