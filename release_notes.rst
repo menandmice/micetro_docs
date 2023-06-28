@@ -26,7 +26,18 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.5-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`
+
+.. _10.5.1-release:
+
+10.5.1
+------
+June 28, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.5-release:
 
@@ -125,6 +136,17 @@ Bug Fixes
 * An issue was fixed where scope name was not updated to reflect the name of the network.
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
+
+.. _10.3.8-release:
+
+10.3.8
+------
+June 28, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.3.6-release:
 
@@ -433,6 +455,17 @@ Bug Fixes
 
 * Various improvements and fixes
 
+.. _10.2.7-release:
+
+10.2.7
+------
+June 28, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
+
 .. _10.2.5-release:
 
 10.2.5
@@ -666,6 +699,17 @@ Bug Fixes
 * Renaming Azure accounts without re-entering the client secret management account credentials is now allowed
 
 * Multiple minor improvements and fixes to enhance user experience
+
+.. _10.1.6-release:
+
+10.1.6
+------
+June 28, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.1.4-release:
 
