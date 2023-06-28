@@ -26,18 +26,19 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.6-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`
 
-.. _10.2.6-release:
 
-10.2.6
+.. _10.2.7-release:
+
+10.2.7
 ------
-
-*January 25, 2023*
+June 28, 2023
 
 Improvements
 ^^^^^^^^^^^^
-Fixed BIND v9.16, v9.18, v9.19 vulnerabilities on the Micetro appliance addressed in CVE-2022-3094, CVE-2022-3736, CVE-2022-3924, CVE-2022-3488.
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.2.5-release:
 
@@ -100,7 +101,6 @@ Bug Fixes
 
 * Various accessibility improvements were made to the Web Application
 
-
 .. _10.2.2-release:
 
 10.2.2
@@ -110,7 +110,7 @@ Bug Fixes
 
 Bug Fixes
 ^^^^^^^^^
-* Fixed BIND v9.11 and v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2021-25220 and CVE-2022-0396 from ISC
+Fixed BIND v9.11 and v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2021-25220 and CVE-2022-0396 from ISC
 
 .. _10.2.1-release:
 
@@ -274,6 +274,25 @@ Bug Fixes
 
 * Multiple minor improvements and fixes to enhance user experience
 
+.. _10.1.6-release:
+
+10.1.6
+------
+June 28, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
+
+.. _10.1.4-release:
+
+10.1.4
+-------
+
+Improvements
+^^^^^^^^^^^^
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
 
 .. _10.1.2-release:
 
@@ -473,3 +492,12 @@ Other
 ^^^^^
 
 * Various performance improvements and UX tweaks. Micetro does things faster and nicer.
+
+.. _10.0.8-release:
+
+10.0.8
+------
+
+Improvements
+^^^^^^^^^^^^
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
