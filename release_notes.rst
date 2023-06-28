@@ -26,18 +26,19 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`,  :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.7-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`
 
-.. _10.3.7-release:
 
-10.3.7
+.. _10.3.8-release:
+
+10.3.8
 ------
-
-*January 25, 2023*
+June 28, 2023
 
 Improvements
 ^^^^^^^^^^^^
-Fixed BIND v9.16, v9.18, v9.19 vulnerabilities on the Micetro appliance addressed in CVE-2022-3094, CVE-2022-3736, CVE-2022-3924, CVE-2022-3488.
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.3.6-release:
 
@@ -61,8 +62,6 @@ Bug Fixes
 * Fixed issue where it was not possible to add change requests for ranges with invalid set of custom properties
 
 * Fixed a bug where CNAME and TXT records would sometimes be removed when they shouldn't while clearing IP addresses.
-
-
 
 .. _10.3.5-release:
 
@@ -124,6 +123,7 @@ Improvements and Bug Fixes
 ------
 
 August 18, 2022
+
 Improvements and Bug Fixes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -346,6 +346,17 @@ Bug Fixes
 * New API commands to create and get reservations from ranges
 
 * Various improvements and fixes
+
+.. _10.2.7-release:
+
+10.2.7
+------
+June 28, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.2.5-release:
 
@@ -580,6 +591,17 @@ Bug Fixes
 * Renaming Azure accounts without re-entering the client secret management account credentials is now allowed
 
 * Multiple minor improvements and fixes to enhance user experience
+
+.. _10.1.6-release:
+
+10.1.6
+------
+June 28, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.1.4-release:
 
