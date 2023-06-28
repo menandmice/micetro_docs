@@ -32,6 +32,8 @@ Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref
 10.1.6
 ------
 
+*June 28, 2023
+
 Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.1.5-release:
@@ -50,7 +52,7 @@ Fixed BIND v9.16, v9.18, v9.19 vulnerabilities on the Micetro appliance addresse
 10.1.2
 ------
 
-*December 15, 2021.*
+*December 15, 2021*
 
 Improvements
 ^^^^^^^^^^^^
@@ -110,7 +112,7 @@ Bug fixes
 10.1.1
 ------
 
-*October 27th, 2021.*
+*October 27th, 2021*
 
 * Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances. See :ref:`security-announcements` for details.
 
@@ -121,7 +123,7 @@ Bug fixes
 10.1
 ----
 
-*October 19th, 2021.*
+*October 19th, 2021*
 
 .. important::
   Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
