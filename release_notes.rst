@@ -26,8 +26,91 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`
 
+.. _10.5.2-release:
+
+10.5.2
+------
+July 11, 2023
+
+New Features
+^^^^^^^^^^^^
+* **Duplicate Network**: This feature allows you to easily duplicate networks along with their subranges, DHCP scopes and configurations under a new network address. Please note that this feature is  currently not supported for Cisco scopes, Cloud networks, and ranges in a non-CIDR format.
+
+Improvements
+^^^^^^^^^^^^
+
+* SNMP profiles now support more modern algorithms for authentication and encryption.
+
+* The **Create DNS record** task now automatically defaults to creating PTR records in reverse zones. Record types that are not applicable to reverse DNS are hidden from the list of available record types.
+
+* Users are now able to use passwords with a length between 4 and 100 characters.
+
+* Users can no longer accidentally convert AuthServe primary zones to secondaries when configuring an option template that has a list of primary servers defined.
+
+* Administrators can now specify default TTL values in system settings using BIND shorthand notation
+
+* The ISC configuration file can now be mofified through the Web Application.
+
+* When creating ISC Failover scopes, the scope and pool are now created on both servers.
+
+* The **Manage scope instances** task now only allows adding a scope instance to an ISC Failover scope if both servers have the failover peer specified on the scope/pool.
+
+* A new system setting has been added to control whether A/AAAA records at the zone apex are considered apex records for **Edit apex records** access checks on DNS zones.
+
+* The Generic DNS Controller can now be managed through the Web Application.
+
+* We now log a warning only once when the Central host machine does not support certain secure crypto protocols while connecting to AWS Cloud Services.
+
+* The Redundancy tab in the Create zone wizard is now visible by default.
+
+* Users can now define the valid lifetime for Kea DHCPv4 Scopes.
+
+* Users can now edit Kea DHCP Scope Relay IP Addresses directly through Micetro.
+
+* Servers on which users do not have zone creation access are no longer displayed in the Zone Creation Wizard.
+
+* Access for Replicate failover now requires DHCP admin access.
+
+
+Bug Fixes
+^^^^^^^^^
+* Micetro messages are now logged to files instead of the database to address a performance issue caused by an excessive accumulation of messages. Please note that during the upgrade, all messages in the database will be deleted.
+
+* Broken documentation link to Failover management has been fixed.
+
+* Broken documentation link to AD Sites and Subnets was fixed.
+
+* Fixed a bug that prevented users with read-only access to Active Directory from creating IP ranges.
+
+* Resolved an issue related to configuring a fixed Central server in the web service configuration.
+
+* Fixed an issue where DHCP option values in non-standard user class were not automatically replicated to the partner server in MS DHCP failover relationships.
+
+* When attempting to create a zone with an unknown zone type, a more descriptive error message is now returned.
+
+* We now exclude interfaces configuration from replication between ISC Kea peers.
+
+* Fixed a bug that previously prevented updating AuthServe Options Templates in certain situations.
+
+* Resolved an issue where the order of columns on the Service Management page was not being saved.
+
+* Deleting an Authserve zone that no longer exists will no longer return an error.
+
+* Fixed an issue that occurred when sending an empty HTTP body with utf-8 specified as content-type.
+
+* Fixed multiple time zone related issues in the Web Application.
+
+* Fixed an issue where adding a zone to a new folder wasn't possible
+
+* An issue was fixed where connections to MSSQL databases were not cached on Central running on Linux.
+ 
+* An issue was fixed where the Micetro Central service installer would not remove all temporary files during installation.
+
+* Various accessibility fixes have been implemented in the system settings.
+
+* Links to actions that are only applicable to primary zones have been updated accordingly.
 
 .. _10.5.1-release:
 
@@ -37,7 +120,6 @@ June 28, 2023
 
 Improvements
 ^^^^^^^^^^^^
-
 * Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
 .. _10.5-release:
