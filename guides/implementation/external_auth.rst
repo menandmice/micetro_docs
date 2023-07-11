@@ -532,7 +532,9 @@ The form will not be hidden if there is no external provider configured. The log
 Login and Grant User/Group Access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At first login, when using either Azure Active Directory (AAD) or Okta, **a new user account is created in Micetro**.  This user account will appear with the type “External”.
+At first login, when using either Azure Active Directory (AAD) or Okta, **a new user account is created in Micetro**.  This user account will appear with the type “External”. External changes to user’s email, full name and group membership are synced at subsequent logins by matching the external ID.
+
+A single user profile is thus not shared between an external user authenticated by Azure AD (or Okta) and AD-integrated SSO, instead they are treated as separate users in Micetro.
 
 By default, all external users are added automatically to the “All users (built-in)” group. If group memberships are among the properties being returned by the identity service, then Micetro will add the user to groups with a matching name inside Micetro.
 
