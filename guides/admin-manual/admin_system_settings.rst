@@ -36,8 +36,7 @@ The System Settings include the following categories:
 
 General
 -------
-
-Through this function, you can specify the following:
+Use the General settings to specify the following:
 
   * Authentication methods
   
@@ -57,9 +56,9 @@ Save comments
 ^^^^^^^^^^^^^^^
 By default, users can save changes in the system without writing a comment. Here you have the option to set the comment requirements for Micetro tasks, including options to turn off the save comment dialog box, make it optional, or require it. 
 
-   * If you choose to make comments **required**, users will need to include a comment whenever they save changes. 
-   * If you choose to make comments **optional**, users can choose whether or not to include a comment when saving changes.
    * When **off** is selected, the save comment dialog box will not appear when users save changes. 
+   * If you choose to make comments **optional**, users can choose whether or not to include a comment when saving changes.
+   * If you choose to make comments **required**, users will need to include a comment whenever they save changes.
 
 AD sites and subnets
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -68,7 +67,7 @@ Enable AD sites and subnets integration
   
   If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory with custom properties in Micetro, choose the desired custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will automatically update the corresponding fields in Micetro, and vice versa. See :ref:`active-directory`.
 
-   Enforce AD site inheritance.
+Enforce AD site inheritance.
      Select this checkbox if you want to enforce site inheritance in AD. When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet. See :ref:`active-directory`.
 
 Determine address usage
@@ -87,32 +86,32 @@ Micetro log
 Purge log message after (# of days)
   Enter the number of days the logs should be kept before they are deleted.
 
-Log extra information when address collection is triggered.
+Log extra information when address collection is triggered
   When selected, information about the start and duration of the address collection is written in the Micetro log file.
 
 Lease history
 ^^^^^^^^^^^^^^
 Here you can select to start collecting lease history for DHCP servers. By viewing the DHCP lease history, you can quickly identify any potential issues or conflicts.
   
-You can specify the number of days to keep the history before it is deleted, and if you want to save the history to a comma separated text file before it is deleted, select the **Flush lease history to file before purging**, and then enter a name for the file.
+You can specify the number of days to keep the history before it is deleted, and if you want to save the history to a comma separated text file before it is deleted, enter a name for the file in the **Flush lease history to file before purging** text box.
 
 .. _admin-error-checking:
 
 Error checking
 --------------
-
 In this section you can specify how the system reports certain errors related to DNS.
 
-Ignore missing reverse zones.
-  An error message displays when Micetro is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting the Ignore missing reverse zones checkbox.
+Stop A/AAAA records from being created if the name already exists
+  This setting prevents the creation of A/AAAA records when a name already exists in the system. This can be useful for avoiding conflicts or overwriting existing records in the DNS configuration.
 
+Ignore missing reverse zones.
+  An error message displays when Micetro is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting this checkbox.
 
 .. _admin-dns:
 
 DNS
 ---
-
-Use the *DNS settings* to specify various DNS related settings. 
+Use these settings to specify various DNS related settings. 
 
 Delegation records
 ^^^^^^^^^^^^^^^^^^^
@@ -135,12 +134,11 @@ Specify various IPAM related settings:
 
   * How the system should handle new subranges if the parent range is in a folder.
 
+  * How the system should behave when naming conflicts between existing IP Address ranges and DHCP scopes occur.
+    
   * How the system should behave if DHCP scopes are removed outside Micetro.
 
-  * How the system should behave when naming conflicts between existing IP Address ranges and DHCP scopes occur.
-
   * Whether the system should allow reservations inside address pools on ISC DHCP servers.
-
 
 Subranges
    The selection made here determines what happens when a user creates a subrange of a range in a folder.
@@ -181,14 +179,13 @@ Enable subnet monitoring
 
   .. note::
     The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. Refer to  IP Address Management—Subnet Monitoring and Utilization History  for information on how to change monitoring settings for individual subnets.
-
    
-  When subnet monitoring is enabled, a new column, Monitoring, displays when viewing the subnet list. To quickly see all subnets that are monitored, you can use the Quick Filter and filter by this column by entering "Monitor: Yes" in the Quick Filter search field.
+When subnet monitoring is enabled, a new column, Monitoring, displays when viewing the subnet list. To quickly see all subnets that are monitored, you can use the Quick Filter and filter by this column by entering "Monitor: Yes" in the Quick Filter search field.
 
   .. note::
     Only DHCP scopes that are enabled are monitored. Disabled scopes are ignored.
 
-  When subnet monitoring is enabled, you must specify the mail server and the sender e-mail address to use if you want the subnet monitor to send an e-mail. Place the appropriate information in the SMTP Server and Mail from fields.
+When subnet monitoring is enabled, you must specify the mail server and the sender e-mail address to use if you want the subnet monitor to send an e-mail. Place the appropriate information in the SMTP Server and Mail from fields.
 
 Enable sending SNMP traps.
   When enabled, the system will send SNMP traps when certain events occur:
@@ -212,7 +209,6 @@ Service monitoring
 ^^^^^^^^^^^^^^^^^^^
 When selected, the monitoring tool monitors the DNS and DHCP services on their respective servers. Decide on an appropriate interval for monitoring.
 
-  When this feature is enabled, some additional information must be provided:
 
 .. _admin-advanced:
 
@@ -224,8 +220,8 @@ Here you can configure advanced system settings, such as specifying a log file f
   :header: "Setting", "Description"
   :widths: 25, 75
  
-  "Path to an SSL Root certificate", "Specifies the path to an SSL Root certificate is such a certificate is being used for the Cloud Integration feature."
-  "SSL Certificate policy",	"Specifies the SSL Certificate policy to use for the Cloud Integration feature."
+  "SSL Certificate Authority Path", "Specifies the path to the SSL Root certificate used by the SSL Certificate policy."
+  "SSL Certificate policy",	"Determines the SSL Certificate policy applied to the Cloud Integration feature and update checks."
   "Default TTL of SOA record in new zones", "Specifies the default TTL value (in seconds) to use for the SOA record of new zones."
   "Default TTL SOA field in new zones (MS)", "Specifies the default value (in seconds) to use for the TTL field in the SOA record of new zones. Only applicable for zones on Microsoft DNS servers."
   "Default hostmaster SOA field in new zones", "Specifies the default value to use for the Hostmaster field in the SOA record of new zones."
