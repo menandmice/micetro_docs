@@ -1,19 +1,20 @@
 .. meta::
-   :description: Advanced system settings in the Management Console for Micetro by Men&Mice
-   :keywords: advanced configuration, Micetro 
+   :description: Advanced system settings in Micetro by Men&Mice
+   :keywords: advanced configuration, Micetro, system settings 
 
 .. _console-advanced-settings:
 
 Advanced System Settings
 ************************
-To access the System Settings, go to the **Admin** page, and select :guilabel:`Configuration` in the upper-left corner. You'll find advanced settings under :guilabel:`System Settings` in the filtering sidebar.
+.. note::  
+   The :guilabel:`Advanced System Settings` are only available for the built-in "administrator" user.
 
-To access the Advanced System Settings dialog box in the Management Console, open :guilabel:`System Settings`, and then click the :guilabel:`Advanced` button on the **General** tab.
+To access the System Settings:
 
-.. note::
-  The :guilabel:`Advanced System Settings` are only available for the built-in "administrator" user.
+1. On the **Admin** page, select :guilabel:`Configuration` in the upper-left corner. 
+2. Select :guilabel:`Advanced` under :guilabel:`System Settings` in the filtering sidebar.
 
-Below, you will find a description of the currently available settings.
+The following table shows a description of the currently available settings.
 
 .. csv-table::
   :header: "System setting name", "Description"
@@ -30,8 +31,8 @@ Below, you will find a description of the currently available settings.
   "Default refresh SOA field in new zones",	"Specifies the default value (in seconds) to use for the Refresh field in the SOA record of new zones."
   "Default retry SOA field in new zones", "Specifies the default value (in seconds) to use for the Retry field in the SOA record of new zones."
   "Default TTL of SOA record in new zones", "Specifies the default TTL value (in seconds) to use for the SOA record of new zones."
-  "Path to an SSL Root certificate", "Specifies the path to an SSL Root certificate is such a certificate is being used for the Cloud Integration feature."
-  "SSL Certificate policy",	"Specifies the SSL Certificate policy to use for the Cloud Integration feature."
+  "SSL Certificate Authority Path", "Specifies the path to the SSL Root certificate used by the SSL Certificate policy."
+  "SSL Certificate policy",	"Determines the SSL Certificate policy applied to the Cloud Integration feature and update checks."
   "Allow Migrate Scope to create two enabled scopes",	"Determines whether the Migrate Scope Wizard can create two enabled scopes."
   "Always show discovery info",	"Determines whether the columns related to host discovery should always be displayed when viewing contents of subnets or scopes."
   "Log file for Men&Mice Central", "Specifies the path and name of the log file to use when you want to log the output of Men&Mice Central to a file."
