@@ -23,17 +23,13 @@ The System Settings include the following categories:
 
   * :ref:`admin-error-checking`
 
-  * :ref:`admin-comments`
-
-  * :ref:`admin-external-commands`
-
   * :ref:`admin-dns`
 
   * :ref:`admin-ipam`
 
   * :ref:`admin-monitoring`
 
-  * :ref:`console-admin-advanced`
+  * :ref:`admin-advanced`
   
 
 .. _admin-general:
@@ -217,6 +213,8 @@ Service monitoring
 When selected, the monitoring tool monitors the DNS and DHCP services on their respective servers. Decide on an appropriate interval for monitoring.
 
   When this feature is enabled, some additional information must be provided:
+
+.. _admin-advanced:
 
 Advanced
 --------
