@@ -79,7 +79,7 @@ To execute the deprecated installer for the Men&Mice Controllers please run it a
 
 The installer will ask a series of questions. Be prepared to answer them, as described for each component.
 
-Micetro Controllers running on Linux
+Micetro Controllers Running on Linux
 ---------------------------------
 
 .. note::
