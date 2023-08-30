@@ -439,6 +439,8 @@ Updating the Agent
 """""""""""""""""""
 Currently, the  ``mmupdater`` service is not capable of updating the AuthServe agent, so the update process must be done manually. To update the agent, an Administrator must unzip the latest agent package and run the ``update.sh`` script. 
 
+**Related Topic:**
+
 .. toctree::
   :maxdepth: 1
 
