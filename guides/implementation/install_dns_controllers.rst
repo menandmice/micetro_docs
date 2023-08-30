@@ -9,8 +9,10 @@ Micetro DNS Agents
 
 Micetro comes with two types of DNS agents: 
 
-   * the Men&Mice DNS Server Controller
-   * the Men&Mice AuthServe agent
+   * the Men&Mice :ref:`dns-server`
+   * the Men&Mice :ref:`authserve` 
+
+.. _dns-server:
 
 DNS Server Controller
 ---------------------
@@ -80,7 +82,7 @@ To execute the deprecated installer for the Men&Mice Controllers please run it a
 The installer will ask a series of questions. Be prepared to answer them, as described for each component.
 
 Micetro Controllers Running on Linux
----------------------------------
+------------------------------------
 
 .. note::
   Before installing Micetro DNS Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:
@@ -328,7 +330,7 @@ For information on configuring Microsoft Azure DNS, see :ref:`configure-azure-dn
 Where to install Men&Mice DNS Server Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If Men&Mice Central is installed on a Windows host, then one option is to install Men&Mice DNS Server Controller on the same host. If this is not done, then the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.
+If Men&Mice Central is installed on a Windows host, one option is to install Men&Mice DNS Server Controller on the same host. If this is not done, the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.
 
 .. note::
   The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
@@ -373,12 +375,12 @@ Adding the Agent to Central
    2. Click :guilabel:`Service Management` on the menu bar at the top of the admin workspace.
    3. Click :guilabel:`Add Service` above the list of services.
    4. On the list of services, select **AuthServe**.
-   5. Click the :guilabel:`New Agent` tab, fill in the information`.
+   5. Click the :guilabel:`New Agent` tab, and fill in the information.
    
        .. image:: ../../images/add-authserve.png
           :width: 65%
       
-      *  **Agent host**: the hostname or IP address of the machine where the agent is located. Note that the Central machine must of course be able to communicate with the agent machine. 
+      *  **Agent host**: the hostname or IP address of the machine where the agent is located. Note that the Central machine must be able to communicate with the agent machine. 
       * **Agent display name**: this box is optional and should be filled in if you want your agent to be displayed in the UI under some other name than the hostname/IP address.
       * **Agent setup key**: enter the setup key for the agent that you copied earlier from the agent installation script. If you forgot to copy it, you can also find it located in the ssl directory which can be found under the agent directory on the agent machine. The agent also prints it out on startup if it hasn’t been added to a Central server yet. The setup key is used to encrypt certificates that Central sends over to the agent. These certificates are then used to allow for a secure encrypted connection to be created between Central and the agent.
 
@@ -390,6 +392,9 @@ Adding the Agent to Central
    7. Enter :guilabel:`Service name` and the Nominum Command Channel used to connect to ANS in the :guilabel:`Channel` box. If you have some custom properties defined for DNS servers in your Micetro setup, you can fill in values for them as well in this panel. 
    8. Click :guilabel:`Add`. Micetro should now have a secure connection to the Men&Mice AuthServe Agent and you should be able to manage your AuthServe DNS server.
 
+Updating the Agent
+"""""""""""""""""""
+Currently, the  ``mmupdater`` service is not capable of updating the AuthServe agent, so the update process must be done manually. To update the agent, an Administrator must unzip the latest agent package and run the ``update.sh`` script. 
 
 .. toctree::
   :maxdepth: 1
