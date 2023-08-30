@@ -17,18 +17,16 @@ Micetro comes with two types of DNS agents:
 DNS Server Controller
 ---------------------
 
-By default, when executed the controller installer tries to figure out the installed service (for example BIND) automatically and will try to install it without further user input.
-
-In case it cannot install the service it will print out hints and further information.
+By default, the installer attempts to automatically detect the installed DNS service (e.g., BIND) and install the appropriate controller. If it can't detect the service, it provides hints and additional information.
 
 .. note::
-  For DNS servers running BIND, the DNS Agents need to be run as the same user as BIND. (By default: ``named``.)
+  If you're running BIND DNS, ensure that the DNS Agents run as the same user as BIND (by default, ``named``.)
 
-  If BIND is running as a different user, or files are updated, make sure that the ``mmremote`` service is run as the same user and has sufficient access to files and directories.
+  If BIND is running as a different user, or files are updated, ensure that the ``mmremote`` service is run as the same user and has sufficient access to files and directories.
 
-If the machine has multiple services installed, like ISC DHCP and ISC BIND DNS you want to specify explicitly the Men&Mice Controllers that should be installed.
+For machines with multiple services (for example, ISC DHCP and ISC BIND DNS), explicitly specify the desired controllers during installation.
 
-To get the list of available controllers/parameters just run the installer script with the --help parameter:
+To view available controller options and parameters, run the installer script with the --help parameter:
 
   .. code-block:: bash
 
@@ -46,33 +44,32 @@ To get the list of available controllers/parameters just run the installer scrip
     --kea-dhcp-controller:  Install a DHCP server controller for Kea dhcp4.
     --update-controller:  Install update controller. Always installed, if another Men&Mice service is installed.
 
-Multiple controllers can be specified. If you want to, for example, have both ISC BIND and the generic DNS controller running on the machine just run the installer as follows:
+Running the Installer
+^^^^^^^^^^^^^^^^^^^^^
+* To install controllers automatically (recommended when you have a single service like BIND or Unbound):
+
+.. code-block:: bash
+
+  ./install --auto
+
+* For a specific set of controllers, run the installer as follows (example with ISC BIND and Generic DNS controller):
 
 .. code-block:: bash
 
   ./install --generic-dns-controller --bind-dns-controller --isc-dhcp-controller
 
-.. note::
-  If you have only a single service like BIND or Unbound installed we recommend to run the installer without parameter. It will then use the ``--auto`` parameter and figure out the service automatically.
-
-Quiet/unattended installation is possible with the ``--quiet`` parameter (no output at all):
+* For quiet/unattended installation with no output:
 
 .. code-block:: bash
 
   ./install --generic-dns-controller --bind-dns-controller --quiet
 
 .. note::
-  The Men&Mice Update Controller always gets automatically added to the list when another Men&Mice service is installed, e.g. in the above listed example the ``--update-controller`` gets added automatically.
+  The Men&Mice Update Controller is automatically added when another Men&Mice service is installed.
 
-If you plan to use the Generic DNS Controller, please see :ref:`generic-dns-controller`.
+If you plan to use the Generic DNS Controller, refer to the :ref:`generic-dns-controller` for more details.
 
-If you run into issues with the new installer, the old interactive Perl based installer is still present in the same archive as:
-
-.. code-block::
-
-  deprecated_installer.pl
-
-To execute the deprecated installer for the Men&Mice Controllers please run it as follows:
+In case of issues with the new installer, the old Perl-based installer is still available in the same archive as ``deprecated_installer.pl``. Run it as follows:
 
 .. code-block:: bash
 
@@ -84,30 +81,34 @@ The installer will ask a series of questions. Be prepared to answer them, as des
 Micetro Controllers Running on Linux
 ------------------------------------
 
-.. note::
-  Before installing Micetro DNS Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:
+Preliminary Checks
+^^^^^^^^^^^^^^^^^^
+Before installing the Micetro DNS Controller on a Linux system, ensure that you have thoroughly examined your system's configuration. Pay close attention to the following aspects:
 
-  * Is there a starting configuration file, such as /etc/named.conf?
-    * If not, you will need to create one.
-    * If there is, is it valid? It must load without errors.
+  * **Configuration File:** Check if there is a valid starting configuration file, typically located at ``/etc/named.conf``. If one doesn't exist, you will need to create it.
+    
+  * **Content of named.conf:** Verify that your ``named.conf`` file contains all the necessary statements as detailed below.
 
-  * Does named.conf contain the necessary statements? See the notes below.
+  * **Ownership of Named Data Directory:** Determine if the named init script changes the ownership of the named data directory. This is crucial, especially for certain Red Hat Linux versions and derivatives that may modify the ownership (check for the ``ENABLE_ZONE_WRITE`` setting).
 
-  * Does the named init script change the ownership of the named data directory? If so, this will cause problems and should be fixed. (This is aimed at users of some Red Hat Linux versions, and derivatives. Look for the ``ENABLE_ZONE_WRITE`` setting.)
+  * **Chroot Environment:** Check if named runs within a chroot environment. If it does, be aware of specific issues that may arise and consult the knowledge base for solutions. Pay attention to the following:
 
-  * Does named run in a chroot environment? If so, look for the following problems, and fix or work around any encountered. (Check the installation walkthroughs in the knowledge base for solutions.)
-    * Does the named init script copy anything into the chroot jail when starting the service? (This is aimed at users of SUSE Linux.)
-    * When the installer rearranges the data directory listed in named.conf, will that cause problems? (This again is aimed at users of SUSE Linux.)
+    * Does the named init script copy anything into the chroot jail when starting the service (relevant for SUSE Linux)?
 
-  * What user account owns the named process? Men&Mice DNS Controller must typically run as the same user. However, it is sometimes possible to use group membership instead.
+    * Consider potential problems that might occur when the installer rearranges the data directory listed in ``named.conf`` (relevant for SUSE Linux).
 
-Extract the Men&Mice Controller install package (as root):
+  * **User Account for Named:** Identify the user account that owns the named process. Typically, the Men&Mice DNS Controller should run under the same user account. However, it is occasionally possible to use group membership instead.
+
+Installation Steps
+^^^^^^^^^^^^^^^^^^
+
+1. Extract the Men&Mice Controller installation package (as root):
 
   .. code-block:: bash
 
     tar -xzvf mmsuite-controllers-10.0.linux.x64.tgz
 
-In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the installer script to install the Men&Mice Controller (as root):
+2. In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory, run the installer script to install the Men&Mice Controller (as root):
 
   .. code-block:: bash
 
@@ -116,15 +117,15 @@ In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory run the in
 Installer Questions
 ^^^^^^^^^^^^^^^^^^^
 
-Here are the questions asked by the installer that pertain to Men&Mice DNS Server Controller:
+During the installation process, the installer will prompt you with questions related to the Men&Mice DNS Server Controller. Be prepared to answer the following:
 
   * Do you want to install the Men&Mice DNS Server Controller?
   * Are you running named in a chroot() environment?
   * What is the chroot() directory?
   * Where is the BIND configuration file?
-  * Would you like the DNS Server Controller to run name-checkconf to verify changes when editing advanced server and zone options?
-  * Where is named-checkconf?
-  * The installer needs to rearrange the files in <directory> and restart the name server. A backup will be created. Is this OK?
+  * Would you like the DNS Server Controller to run ``name-checkconf`` to verify changes when editing advanced server and zone options?
+  * Where is ``named-checkconf`` located?
+  * The installer needs to rearrange the files in ``<directory>`` and restart the name server. A backup will be created. Is this OK?
   * Enter the user and group names under which you want to run the Men&Mice DNS Server Controller. This must be the user which is running named.
   * Where would you like to install the Men&Mice external static zone handling utilities?
   * Where do you want to install the Men&Mice Server Controller binaries?
@@ -139,34 +140,31 @@ Ensure the ``named-checkconf`` file is readable:
 Required named.conf Statements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Men&Mice DNS Server Controller requires that named.conf (including any files listed in include statements in named.conf) have certain settings. The following are required:
+The Men&Mice DNS Server Controller requires specific settings within the ``named.conf`` file (including any files listed in ``include`` statements in ``named.conf``). Ensure the following statements are present:
 
-directory
-  The directory substatement of the options statement must be present and must point to a directory that the installer can replace. Specifically, it may not refer to ``/``, ``/etc``, the root of a chroot jail, or any partition mount point. If you need to change or add the directory statement, you may then have to move files around or change the paths used elsewhere in your ``named.conf`` (or its included files).
+* ``directory``: The ``directory`` substatement of the ``options`` statement must be present and must point to a directory that the installer can replace. It should not refer to ``/``, ``/etc``, the root of a chroot jail, or any partition mount point. If you need to change or add the ``directory`` statement, be prepared to move files or update paths used elsewhere in your ``named.conf``.
 
-key
-  For BIND, there must be a key defined, so that Men&Mice DNS Server Controller can control named using ``rndc`` commands. It is common for there to be a key in a default file such as ``rndc.key``, which is almost always found in the same location as ``named.conf``; however, Men&Mice DNS Server Controller requires that this key be defined *explicitly* in ``named.conf``. If there is a file named ``rndc.key``, its contents can simply be copied directly into ``named.conf``.
+* ``key``: For BIND, there must be an explicitly defined key in ``named.conf`` to enable control of named using ``rndc`` commands. Copy the contents of the key file, such as ``rnds.key``, into ``named.conf`` if it's not explicitly defined.
 
-  To generate a key, the following command usually works, though you may have to specify a path to the command:
+  To generate a key, consider using the following command (adjust the path if needed):
 
   .. code-block:: bash
 
     rndc-confgen > /etc/rndc.conf
 
-  This creates the file ``rndc.conf`` in the default directory (usually ``/etc``, which may or may not be where you want it). This file contains a *complete* ``rndc`` configuration for local use, as well as key and controls statements, in comments, that can be copied into ``named.conf`` (after removing the comment marks).
+  This creates the ``rndc.conf`` file, which contains configuration for local use and key and controls statements that can be copied into ``named.conf``.
 
-controls
-  Men&Mice DNS Server Controller uses a controls statement for BIND. There must be a controls statement with an ``inet`` substatement that references an explicitly defined key (see above); the ``inet`` statement must allow connections from the loopback address, 127.0.0.1. If there is no controls statement defined, the installer will remind you to create one manually.
+* ``controls``: The Men&Mice DNS Server Controller uses a ``controls`` statement for BIND. There must be a ``controls`` statement with an ``inet`` substatement that references an explicitly defined key (as mentioned above). The ``inet`` statement should allow connections from the loopback address, ``127.0.0.1``. If no ``controls`` statement is defined, the installer will prompt you to create one manually.
 
 Changes in named.conf
 ^^^^^^^^^^^^^^^^^^^^^
 
-Installing Men&Mice DNS Server Controller rearranges your named configuration data, including rewriting ``named.conf`` and rearranging the data directory. The new configuration is functionally equivalent to the old, except the logging statement is either added or changed to add some new channels.
+Note that the installation of the Micetro DNS Server Controller will rearrange your named configuration data, including rewriting ``named.conf`` and reorganizing the data directory. The new configuration is functionally equivalent to the old one, except that the logging statement may be added or modified to include new channels.
 
 Common Files
 """"""""""""
 
-The file layout is a little different with or without BIND views. Here are the parts in common:
+The file layout differs slightly between instances with and without BIND views, but there are some common parts:
 
 .. csv-table::
   :header: "Description", "File(s) or directory"
@@ -220,7 +218,52 @@ If views are defined, the following files are created inside the data directory:
 Removing the DNS Server Controller and Reverting to Original Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To remove the DNS Server Controller, first use the init script to stop the service (give it the *stop* argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. To revert to your original data, stop named with its init script. Then delete the initial configuration file and the data directory and rename the originals, removing the ".bak" from their names.
+Stopping the Service
+""""""""""""""""""""
+Use the init script to stop the DNS Server Controller service. You can achieve this by providing the *stop* argument to the init script. For example:
+
+.. code-block:: bash
+
+   sudo /etc/init.d/dns-controller stop
+
+or
+
+.. code-block:: bash
+
+   sudo systemctl stop dns-controller
+
+Replace ``/etc/init.d/dns-controller`` and ``dns-controller`` with the appropriate paths and service names for your system.
+
+Removing Controller Files
+"""""""""""""""""""""""""
+Once the service is stopped, you can proceed to remove the DNS Server Controller files:
+
+   * Delete the daemon binary file associated with the DNS Server Controller.
+   * Delete the init script used to start the DNS Server Controller service.
+   * If the init script was registered as part of the boot system, remove any references to it. This may involve using system-specific tools or manually editing boot configuration files.
+
+Reverting to Original Data
+""""""""""""""""""""""""""
+If you wish to revert to your original DNS configuration and data, follow these additional steps:
+
+1. Stop the BIND or named service, which might have been managed by the DNS Server Controller, using its respective init script. For example:
+
+.. code-block:: bash
+
+   sudo /etc/init.d/named stop
+
+or
+
+.. code-block:: bash
+
+   sudo systemctl stop named
+
+2. With the BIND or named service stopped, you can proceed to restore your original DNS configuration and data:
+   * Delete the initial configuration file (``named.conf``) created by the DNS Server Controller. 
+   * Delete the data directory created by the DNS Server Controller.
+   * If you created backup files by renaming the originals with a ".bak" extension, restore the original files by removing the ".bak" extension from their names.
+
+These steps will effectively remove the DNS Server Controller and revert your DNS setup to its original state. Be cautious when performing these actions, as they may impact your DNS service.
 
 SELinux
 ^^^^^^^
@@ -243,12 +286,12 @@ After installing the DNS Server Controller, run the following commands as root:
 These will adjust the SELinux security label for the BIND 9 configuration and zone files.
 
 .. note::
-  Due to the complexity of and variation between SELinux configuration files, we are unable to officially support SELinux configuration at this time, as SELinux settings can interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&Mice DNS Server Controller. It is possible to make ``named``, Micetro, and SELinux all work together, but we cannot currently offer official support for this.
+  Due to the complexity of and variation between SELinux configuration files, we are currently unable to officially support SELinux configuration, as SELinux settings can interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&Mice DNS Server Controller. It is possible to make ``named``, Micetro, and SELinux all work together, but we cannot currently offer official support for this.
 
 The $INCLUDE and $GENERATE Directives
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please refer to the following articles for information about how these directives are handled in Men&Mice Suite.
+Refer to the following articles for information about how these directives are handled in Men&Mice Suite.
 
 * :ref:`dns-controller-include`
 
@@ -306,10 +349,10 @@ To configure Men&Mice DNS Server Controller to access DNS servers on remote comp
 
  1. Start the Windows 'Services' program and open the properties dialog box for Men&Mice DNS Server Controller.
  2. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
- 3. Click the :guilabel:`This account` radio button and enter the name and password of a Windows user that is a member of the Administrators group.
+ 3. Select the :guilabel:`This account` radio button and enter the name and password of a Windows user that is a member of the Administrators group.
  4. Close the dialog box and restart the Men&Mice DNS Server Controller service.
 
-If Men&Mice DNS Server Controller is run as a local system service (the default), then it will only be able to manage the MS DNS service on the same host.
+If Men&Mice DNS Server Controller is run as a local system service (the default), it will only be able to manage the MS DNS service on the same host.
 
 Enable the Generic DNS Server Controller functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -385,7 +428,7 @@ Adding the Agent to Central
       * **Agent setup key**: enter the setup key for the agent that you copied earlier from the agent installation script. If you forgot to copy it, you can also find it located in the ssl directory which can be found under the agent directory on the agent machine. The agent also prints it out on startup if it hasn’t been added to a Central server yet. The setup key is used to encrypt certificates that Central sends over to the agent. These certificates are then used to allow for a secure encrypted connection to be created between Central and the agent.
 
       .. note::
-         If the agent you are adding to Central has been previously added to a Central server you will have to remove the SSL directory and restart the agent before adding. The restart will generate a new setup key that you should use when adding the agent.
+         If the agent you are adding to Central has been previously added to a Central server, you will have to remove the SSL directory and restart the agent before adding. The restart will generate a new setup key that you should use when adding the agent.
 
 
    6. When you are finished, click :guilabel:`Next`.
