@@ -36,3 +36,5 @@ Micetro reference articles
   ie_eol
   psql_ha
   mssql_ha
+  free_trial_best_practices
+  free_trial_checklist
