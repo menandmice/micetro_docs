@@ -23,6 +23,10 @@ Memory Capacity: 8GB
 Disk Space: 50GB
 
 Additional Services Required: Web Services (IIS for Windows Server or Apache 2 Web for Linux Server installation)
+
+Optional Windows Management Console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Starting with version 10.1 of Micetro, the Windows Management Console was replaced with the Web UI. The Web UI is capable of most functionality and therefore the original Management Console is likely not necessary for your Micetro free trial. It is an optional download with features such as a built-in health dashboard. The Free Trial documentation will not address the management console, but you may check the rest of the documentation for more information on how to configure and use.
   
 Active Directory Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
