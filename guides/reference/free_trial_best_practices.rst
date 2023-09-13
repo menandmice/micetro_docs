@@ -38,3 +38,5 @@ Active Directory (AD) integration is not required if you're running Linux along 
 Micetro supports SSO and MFA with Active Diretory, Azure AD and Okta.
 
 For more information on setting up accounts please see the documentation here.
+
+=======
