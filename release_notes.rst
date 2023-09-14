@@ -4,7 +4,7 @@
 
 .. _release-notes:
 
-Release notes
+Release Notes
 =============
 
 .. note::
@@ -27,41 +27,27 @@ Release notes
 
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.6-release`
 
-.. _10.5.3-release:
+.. _10.6-release:
 
-10.5.3
+10.6
 ------
-September 11, 2023
+October X, 2023
 
 New Features
 ^^^^^^^^^^^^
-* **Default TTL Configuration**: Introducing a new system setting that allows users to customize the default Time To Live (TTL) for records created within zones belonging to xDNS profiles. that are in xDNS profiles.	This feature provides enhanced flexibility in managing your DNS records.
+
 
 Improvements
 ^^^^^^^^^^^^
-* Enhanced Central's handling of HTTPS certificates by now supporting multiple Certificate Authority (CA) files. Additionally, you can no longer select the Strict policy without specifying a CA file or directory, reinforcing security practices.
+* 
 
-* NS records are now generated correctly when creating AuthServe zones with secondaries, provided that Initial Records are not specified during zone creation. This enhancement streamlines the process of setting up secondary zones.
+* 
 
 Bug Fixes
 ^^^^^^^^^
-* Fixed an issue that previously prevented users from editing SNMP v2 profiles through the Management Console.
-
-* Fixed a bug where Micetro error messages were not displaying correctly in Windows Event Viewer.
-
-* Fixed a bug that resulted in an error when duplicating a range with certain custom properties.
-
-* Resolved a bug that previously hindered the creation of newly converted DHCP scopes on all relevant DHCP servers. 
-
-* Addressed an issue in the Management Console where DHCP scopes on Kea could unintentionally be disabled.
-
-* Resolved an issue where the association between DNS records and IP addresses was not being cleaned up correctly upon zone deletion.
-
-* Fixed a bug where Micetro would not functioning as expected when managing BIND servers with Catalog zones.
-
-* Fixed a bug that previously prevented the successful creation of a DHCP scope on all relevant DHCP servers when converting a range. 
+*  
 
 .. _10.5.2-release:
 
