@@ -1,0 +1,26 @@
+.. meta::
+   :description: Managing Appliances in the Micetreo Web Application
+   :keywords: Men&Mice appliances, DNS management, DNS/DHCP appliance, DNS caching appliance, Men&Mice, BDDS appliances
+
+.. _webapp-appliance-management:
+
+Appliance Management
+--------------------
+
+
+DNS Resolvers
+^^^^^^^^^^^^^^^^^^^^
+
+NTP
+^^^^
+
+Downloading Support Information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+.. toctree::
+  :maxdepth: 1
+
+  appliance_management
