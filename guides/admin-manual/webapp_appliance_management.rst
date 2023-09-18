@@ -5,18 +5,17 @@
 .. _webapp-appliance-management:
 
 Appliance Management
---------------------
+====================
 
-
+ 
 DNS Resolvers
-^^^^^^^^^^^^^^
+-------------
 
 NTP
-^^^^
+--------
 
 Downloading Support Information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+------------------------------
 
 
 
