@@ -93,7 +93,7 @@ Table of Contents
     guides/admin-manual/webapp_sso
     guides/admin-manual/admin_updates   
     guides/admin-manual/admin_maintenance
-    guides/admin-manual/appliance_management
+    guides/admin-manual/webapp_appliance_management
     guides/admin-manual/caching_appliance
 
 .. toctree::
