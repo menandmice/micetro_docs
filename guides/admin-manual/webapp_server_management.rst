@@ -12,7 +12,7 @@ To access Service Management:
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
-2. Click the :guilabel:`Service Management` tab in the upper-right corner.
+2. Click the :guilabel:`Service Management` tab in the upper-left corner.
 
    .. image:: ../../images/dns-context-10.6.png      
        :width: 65%
