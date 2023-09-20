@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro by Men&Mice 10.1.x versions
+   :description: Release notes for Micetro by Men&Mice 10.2.x versions
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
@@ -26,7 +26,23 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.5-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.5-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`
+
+.. _10.2.8-release:
+
+10.2.8
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Various accessibility improvements were made to the Web Application.
 
 .. _10.2.7-release:
 
