@@ -44,7 +44,7 @@ When not using the built-in roles, users need to be members of a role with the f
 
 Supported Platforms
 -------------------
-Micetro supports the following DNS and DHCP platforms
+Micetro supports the following DNS and DHCP platforms:
 
 * DNS
 
@@ -172,7 +172,7 @@ To edit BIND configuration files:
             :width: 65%
 |
    
-   * The various configuration files assoicated with the BIND server are available on the :guilabel:`File` drop-down list. From this list, select the specific configuration file that you want to modify. Configuration files may represent different aspects of the BIND server.
+   * The various configuration files associated with the BIND server are available on the :guilabel:`File` drop-down list. From this list, select the specific configuration file that you want to modify. Configuration files may represent different aspects of the BIND server.
 
    * If you're looking to make changes to specific settings within the selected configuration file, you can use the search box. Enter keywords or terms related to the settings you wish to modify.
 
