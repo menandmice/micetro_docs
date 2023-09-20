@@ -25,14 +25,25 @@ Release notes
     2. Restart Central.
     We'll publish a maintenance release containing the fix for this issue soon.
 
-Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.5-release`, :ref:`10.1.6-release`
+Jump to: :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.5-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`
+
+.. _10.1.7-release:
+
+10.1.7
+------
+*September 20, 2023*
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance
 
 .. _10.1.6-release:
 
 10.1.6
 ------
 
-*June 28, 2023
+*June 28, 2023*
 
 Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
