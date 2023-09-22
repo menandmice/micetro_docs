@@ -54,8 +54,8 @@ You can change the name or IP Address used to connect to your appliance. This is
 3. On the :guilabel:`Action` menu, select :guilabel:`Edit appliance`. You can also access this option on the Row menu by clicking :guilabel:`...`.
 4. Modify the appliance's name, and/or IP address (optional).
 
-.. Note::
-    Changing the name or IP address here only affects how you connect to the appliance. It does not alter the actual IP address of the appliance itself.
+   .. Note::
+       Changing the name or IP address here only affects how you connect to the appliance. It does not alter the actual IP address of the appliance itself.
 
 5. Click :guilabel:`Save` when you are done.
 
@@ -78,24 +78,39 @@ The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :g
 
 Adding DNS Resolvers for BDDS Appliances
 ------------------------------------------
-You can add IP addresses of DNS resolver servers.
+To ensure the optimal performance of your BDDS appliance, you can add the IP addresses of DNS resolver servers. This step helps your appliance efficiently resolve domain names and provide accurate network services.
 
+**To add DNS resolvers**:
 
+1. Locate the specific BDDS appliance for which you want to configure DNS resolvers. Ensure you select the correct appliance to avoid any disruptions in network services.
+2. On the :guilabel:`Action` menu, select :guilabel:`DNS resolvers`. You can also access this option on the Row menu :guilabel:`...`.
+3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to add. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can add multiple DNS resolvers by separating their IP addresses with commas or semicolons, depending on the configuration requirements of your BDDS appliance. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
+4. Click :guilabel:`Save` when you are done.
 
-NTP
---------
+Configuring NTP on BDDS Appliances
+----------------------------------
+Use the Network Time Protocol (NTP) service to maintain precise time synchronization across your network infrastructure. Accurate timekeeping ensures proper coordination of network events, security protocols, and compliance with reporting requirements.
+
+**To configure NTP**:
+
+1. Locate the specific BDDS appliance for which you wish to configure NTP. 
+2. On the :guilabel:`Action` menu, select :guilabel:`NTP configuration`. You can also access this option on the Row menu :guilabel:`...`. 
+3. Select the :guilabel:`Enable NTP service` checkbox to activate the NTP service on your BDDS appliance.
+4. In the text box, enter the hostname or IP address of the NTP server from which you want to synchronize your BDDS appliance's clock. 
+
+   .. Tip::
+      Consider using multiple NTP servers for redundancy and increased reliability, ensuring continued time synchronization even if one server becomes inaccessible. 
+
+5. Click :guilabel:`Save` when you are done.
 
 Downloading Support Information for BDDS Appliances
 ----------------------------------------------------
 To help in troubleshooting, you may be asked to download support information for your BDDS appliance. This support information file holds crucial details about your appliance setup, aiding our support team in diagnosing and resolving any issues you may encounter.
-
-the compression format for Data rakes for BDDS and perhaps if the filename are the same
-
-
+[What do we need to add here? What must the user consider/take notice of? (format for data rakes and same file names)]
 
 **To download support information**:
 
-1. Locate the specific BDDS appliance you are troubleshooting.
+1. Locate the specific BDDS appliance you are troubleshooting. 
 2. On the :guilabel:`Action` menu, select :guilabel:`Get support info`. You can also access this option on the Row menu :guilabel:`...`. 
 3. Click :guilabel:`Download`.
 4. Once the download is complete, forward the downloaded file to support@bluecatnetwoks.com.
@@ -105,23 +120,31 @@ the compression format for Data rakes for BDDS and perhaps if the filename are t
 
 Configuring SNMP Monitoring on BDDS Appliances
 -----------------------------------------------
-You can use SNMP monitoring to get various information about the Men&Mice Appliance and receive SNMP traps if certain events occur on the Appliance.
+You can use Simple Network Management Protocol (SNMP) monitoring to gather comprehensive information about the BDDS appliance and set up SNMP traps to receive notifications when specific events occur on the appliance.
 
-To configure SNMP Monitoring on the Men&Mice Appliance:
+Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP, which means that it relies on a community string (similar to a password) for authentication, making it relatively simple to set up.  Version v3, on the other hand, is a User-Based SNMP and provides enhanced security and authentication mechanisms. It introduces the concept of SNMP users and offers features like user authentication and data encryption.
 
-Select the :guilabel:`Services` tab in the Appliance Properties dialog box.
-Click the :guilabel:`Configure` button in the SNMP section. The SNMP configuration dialog box displays.
+**To configure SNMP Monitoring on BDDS appliances**:
 
-../../images/admin-appliance-snmp.png
+1. Locate the specific BDDS appliance for which you want to configure SNMP monitoring.
+2. On the :guilabel:`Action` menu, select :guilabel:`SNMP configuration`. You can also access this option on the Row menu :guilabel:`...`. 
+3. The SNMP configuration dialog box opens with several options:
 
-Check the :guilabel:`SNMP Agent Enabled` checkbox to enable the SNMP agent. When the SNMP agent is enabled, you can retrieve information about the system using SNMP.
-In the Community field, enter The community string (password) to use for the SNMP agent.
-In the System Contact field, enter the email address of a contact person for the system.
-Check the :guilabel:`SNMP Traps Enabled` checkbox to enable sending of SNMP traps. When sending SNMP traps is enabled, the appliances will send SNMP traps when certain events occur.
-In the Trap Manager field, enter the host name of the computer that should receive the SNMP traps.
-In the Trap Manager Port field, enter the port number the Manager uses for the SNMP traps.
-In the Trap Community field, enter the community string (password) to use for the SNMP traps.
-Click :guilabel:`Save` to save your settings and close the dialog box.
+   .. image:: ../../images/appliances-snmp-10.6.png
+      :width: 50%
+
+   * **Name**: You can enter the name that will be reported through SNMP. By default, this is set as Bluecat.
+   * **Location**: Enter a description of the system's physical location. By default, this is set as Toronto.
+   * **Contact**: Enter the email address of the contact person responsible for the system. By daefult, this is set as the email address for BlueCat's support.
+   * **Description**: Enter a brief description of the system.
+   * **Enable SNMP v2c**: Select this option to enable the SNMP v2c protocol. 
+    * **Community**: Enter the community string, which serves as a password for the SNMP v2c protocol.
+   * **Enable SNMP v3**: Select this option to enable the SNMP v3 protocol.
+    * **Username**: Enter the SNMP username for the SNMP user.
+    * **Authentication**: Select either **MD5** or **SHA** authentication, and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
+    * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the trap data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
+
+4. Click :guilabel:`Save` to save your settings and close the dialog box.
 
 Shutting Down or Restarting BDDS Appliances
 --------------------------------------------
