@@ -4,14 +4,14 @@
 
 .. _webapp-appliance-management:
 
-Integrating Appliances
-=======================
+Integrating and Managing Appliances
+===================================
 Micetro offers seamless integration with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. One of the key benefits of using Micetro with DNS/DHCP appliances is automation. It can automate routine tasks such as IP address allocation, DNS record updates, and DHCP lease management. This reduces manual effort and minimizes the risk of configuration errors.
 
 There are two types of appliances available within Micetro: 
 
 DNS/DHCP Appliance
-  Serves both DNS and DHCP functions. Once configured and added to your server management, you can manage it just like BIND and ISC DHCP servers.
+  Serves both DNS and DHCP functions. Once configured and added to your :ref:`webapp-server-management`, you can manage it just like BIND and ISC DHCP servers.
 DNS Caching Appliance
   Contains a high-performance Caching-only DNS server. For information about managing the DNS server on the DNS Caching appliance, see :ref:`caching-appliance`.
 
@@ -27,13 +27,13 @@ Appliances are accessed and managed on the :guilabel:`Admin` page:
 
 Adding a New Appliance to Micetro
 ---------------------------------
-You must have the permissions to administer DNS in order to add an appliance to Micetro.
+You must have the permissions to administer DNS to add an appliance to Micetro.
 
 Add a DNS/DHCP Server to Micetro to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface. Once the appliance has been added and configured, you can interact with the services just as you would with other DNS and DHCP services within Micetro.
 
 **To add an appliance**:
 
-1. Navigate to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page and click :guilabel:`Add Service`. The Add Service wizard opens.
+1. Navigate to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page, and click :guilabel:`Add Service`. The Add Service wizard opens.
 
    .. image:: ../../images/add-servive-dialog.png
       :width: 65%
@@ -41,7 +41,7 @@ Add a DNS/DHCP Server to Micetro to effectively manage services, optimize deploy
 2. Select the appliance you wish to integrate. 
 3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
 4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
-5. Click :guilabel:`Add`.
+5. Click :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
 
 Editing Appliance Name
 ------------------------
@@ -50,7 +50,7 @@ You can change the name or IP Address used to connect to your appliance. This is
 **To change the appliance name**:
 
 1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page. 
-2. In the filtering sidebar, select :guilabel:`Appliances`, then locate the specific appliance you wish to edit.
+2. In the filtering sidebar, select :guilabel:`Appliances`, then select the specific appliance you wish to edit.
 3. On the :guilabel:`Action` menu, select :guilabel:`Edit appliance`. You can also access this option on the Row menu by clicking :guilabel:`...`.
 4. Modify the appliance's name, and/or IP address (optional).
 
@@ -78,7 +78,7 @@ The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :g
 
 Adding DNS Resolvers for BDDS Appliances
 ------------------------------------------
-To ensure the optimal performance of your BDDS appliance, you can add the IP addresses of DNS resolver servers. This step helps your appliance efficiently resolve domain names and provide accurate network services.
+To ensure optimal performance of your BDDS appliance, you can add the IP addresses of DNS resolver servers. This step helps your appliance efficiently resolve domain names and provide accurate network services.
 
 **To add DNS resolvers**:
 
@@ -135,13 +135,13 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
 
    * **Name**: You can enter the name that will be reported through SNMP. By default, this is set as Bluecat.
    * **Location**: Enter a description of the system's physical location. By default, this is set as Toronto.
-   * **Contact**: Enter the email address of the contact person responsible for the system. By daefult, this is set as the email address for BlueCat's support.
+   * **Contact**: Enter the email address of the contact person responsible for the system. By default, this is set as the email address for BlueCat's support.
    * **Description**: Enter a brief description of the system.
    * **Enable SNMP v2c**: Select this option to enable the SNMP v2c protocol. 
     * **Community**: Enter the community string, which serves as a password for the SNMP v2c protocol.
    * **Enable SNMP v3**: Select this option to enable the SNMP v3 protocol.
     * **Username**: Enter the SNMP username for the SNMP user.
-    * **Authentication**: Select either **MD5** or **SHA** authentication, and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
+    * **Authentication**: Select either **MD5** or **SHA** authentication and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
     * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the trap data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
 
 4. Click :guilabel:`Save` to save your settings and close the dialog box.
@@ -149,7 +149,7 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
 Shutting Down or Restarting BDDS Appliances
 --------------------------------------------
 You can shut down or restart the BDDS appliances.
-A big difference is that for Micetro appliances you need to have physical access to the machine to turn it on again, for BDDS on hardware we have a Dell iDRAC (also more generally called an IPMI) on the machine which can be used for remote management to the machine including turning.
+
 .. warning::
    If you shut down the appliance, it will be turned off and you will need physical access to the appliance to turn it on again.
 
@@ -158,10 +158,12 @@ A big difference is that for Micetro appliances you need to have physical access
 1. Select the appliance you want to restart or shut down.
 2. On the :guilabel:`Action` menu, select :guilabel:`Shut down appliance` or :guilabel:`Restart appliance` and click :guilabel:`Yes` in the confirmation dialog box. The appliance shuts down or restarts, depending on your selection.
 
-Appliance management in the Men&Mice Management Console
---------------------------------------------------------
+**See also**:
 
 .. toctree::
   :maxdepth: 1
 
-  appliance_management
+updates
+webapp_server_management
+appliance_management
+ 
