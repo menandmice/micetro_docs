@@ -163,7 +163,7 @@ You can shut down or restart the BDDS appliances.
 .. toctree::
   :maxdepth: 1
 
-updates
-webapp_server_management
-appliance_management
+   updates
+   webapp_server_management
+   appliance_management
  
