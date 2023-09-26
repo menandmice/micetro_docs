@@ -11,3 +11,5 @@ Management Console (obsolete)
   :maxdepth: 1
 
   install_console
+  first_use_wizard
+
