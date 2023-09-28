@@ -26,19 +26,15 @@ Adding a Change Event
 
 3. Change events are displayed in the **Change Events** section. Click :guilabel:`Add`.
 
-4. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then enter the **Script name** and necessary startup parameters.
+4. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then select the **Script name**.
 
-   You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&Mice Central; however, if the script is stored in a different location, the path for the script must be entered.
+   It is assumed that the script is located in a folder named `scripts` under Central's data folder.
    
 5. When you are finished, click :guilabel:`Add`. 
 
-*Example 1*: Running a python script named mytest.py.
+*Example 1*: Running a Python script named mytest.py.
 
-   To run a script named mytest.py that is located in the Men&Mice Central directory using the python interpreter, the following would be placed in the appropriate field: ``python mytest.py``.
-
-*Example 2*: Running an executable named checkdata.exe. 
-
-   To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: ``checkdata.exe``.
+   To run a script named mytest.py that is located in the scripts folder using the python interpreter, simply start entering and select: ``mytest.py``.
 
 Editing and Deleting Change Events
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

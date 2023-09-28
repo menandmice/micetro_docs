@@ -2,7 +2,7 @@
    :description: In Micetro scheduled scripts allow the administrator to configure the system to run on schedule
    :keywords: Micetro scheduled scripts, Micetro administrator, event hooks, scheduled events
 
-.. _admin-scheduled-evnts:
+.. _admin-scheduled-events:
 
 Scheduled Events
 ================
@@ -23,24 +23,24 @@ To configure scheduled events:
 
    * **Enabled**: Select the checkbox to enable the scheduling process for the script. Likewise, at any time if you wish to disable the script, return to this dialog box and clear this option.
 
-   * **Script name**: Enter the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as the Men&Mice Central database file (mmsuite.db). If the script is stored in a different location, you must enter the path for the script.
+   * **Script name**: Select the script to use. It is assumed that the script is located in the scripts folder under Central's data folder.
 
     *Example 1*: Running a script named mytest.py. 
   
-      To run a script named mytest.py that is located in the Men&Mice Central directory using the python interpreter, enter ``python mytest.py`` in the appropriate field.
+      To run a script named mytest.py that is located in the the script folder, start typing in ``mytest.py`` in the field and select it from the dropdown.
 
     *Example 2*: Running an executable named checkdata.exe. 
   
-     To run an executable named checkdata.exe that is located in the Men&Mice Central directory, enter ``checkdata.exe`` in the appropriate field.
+     To run an executable named checkdata.exe that is located in scripts fodlder, start entering ``checkdata.exe`` in the field and select it from the dropdown.
 
-     It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access Micetro without having to enter a user name and password in the script itself.
+     It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access Micetro without having include a user name and password in the script itself.
 
-     To enable this feature, create a user named ScriptRunner. This user must use the Men&Mice Internal authentication method. When this user has been created, you only have to enter $u as a user name and $p as a password when logging in to Micetro through the script.
+     To enable this feature, create a user named ScriptRunner. This user must use the Men&Mice Internal authentication method. When this user has been created, you only have to check the checkbox below the typeahead field.
 
      .. note::
-      This method only works if the script scheduler invokes the script. When running the script, Micetro uses a temporary password that changes every time the script runs. For example, you could start a python script and pass in the username and password through arguments with ``python script.py $u $p``
+      This method only works if the script scheduler invokes the script. When running the script, Micetro uses a temporary password that changes every time the script runs. For example, you could start a python script and pass in the username and password through the first and second arguments with ``python script.py ScriptRunner xxx``
 
 
    * **Run on**: Either enter the date and time the script should run, or use the datetime picker to select the date and time.
 
-   * **Repeat every**: If this script should repeat at a desired frequency, select the checkbox. Then, in the next two fields, select the interval – for example, 1 week, 1 month, etc.
+   * **Repeat every**: If this script should repeat at a desired frequency, select the checkbox. Then, in the next two fields, select the interval, for example, 1 week, 1 month, etc.
