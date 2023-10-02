@@ -1,10 +1,10 @@
 .. meta::
    :description: Managing Appliances in the Micetreo Web Application
-   :keywords: Men&Mice appliances, DNS management, DNS/DHCP appliance, DNS caching appliance, Men&Mice, BDDS appliances
+   :keywords: Men&Mice appliances, DNS management, DNS/DHCP appliance, Men&Mice, BDDS appliances
 
 .. _webapp-appliance-management:
 
-Integrating and Managing Appliances
+Integrating and Managing BDDS Appliances
 ===================================
 Micetro offers seamless integration with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. One of the key benefits of using Micetro with DNS/DHCP appliances is automation. It can automate routine tasks such as IP address allocation, DNS record updates, and DHCP lease management. This reduces manual effort and minimizes the risk of configuration errors.
 
@@ -64,7 +64,7 @@ Removing Appliances
 This command is only available for the Administrator role.
 
 .. Warning::
-   When you remove an appliance from Micetro, the DNS and DHCP servers hosted on the appliance are removed from Micetro as well.
+   When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are removed from Micetro as well.
 
 **To remove an appliance from Micetro**:
 
@@ -76,15 +76,15 @@ Viewing Appliance History
 The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :guilabel:`...` opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see :ref:`view-change-history`.
 
 
-Adding DNS Resolvers for BDDS Appliances
+Setting DNS Resolvers for BDDS Appliances
 ------------------------------------------
 To ensure optimal performance of your BDDS appliance, you can add the IP addresses of DNS resolver servers. This step helps your appliance efficiently resolve domain names and provide accurate network services.
 
-**To add DNS resolvers**:
+**To set DNS resolvers**:
 
 1. Locate the specific BDDS appliance for which you want to configure DNS resolvers. Ensure you select the correct appliance to avoid any disruptions in network services.
 2. On the :guilabel:`Action` menu, select :guilabel:`DNS resolvers`. You can also access this option on the Row menu :guilabel:`...`.
-3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to add. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can add multiple DNS resolvers by separating their IP addresses with commas or semicolons, depending on the configuration requirements of your BDDS appliance. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
+3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by separating their IP addresses with commas or semicolons, depending on the configuration requirements of your BDDS appliance. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
 4. Click :guilabel:`Save` when you are done.
 
 Configuring NTP on BDDS Appliances
@@ -113,16 +113,16 @@ To help in troubleshooting, you may be asked to download support information for
 1. Locate the specific BDDS appliance you are troubleshooting. 
 2. On the :guilabel:`Action` menu, select :guilabel:`Get support info`. You can also access this option on the Row menu :guilabel:`...`. 
 3. Click :guilabel:`Download`.
-4. Once the download is complete, forward the downloaded file to support@bluecatnetwoks.com.
+4. Once the download is complete, forward the downloaded file to support@bluecatnetworks.com.
 
 .. Note::
    The support information file is packaged as a .tgz archive and contains various text files. If you wish to view the contents of the support information file, you can use any tool capable of extracting data from .tgz archives to access and review the enclosed text files.
 
 Configuring SNMP Monitoring on BDDS Appliances
 -----------------------------------------------
-You can use Simple Network Management Protocol (SNMP) monitoring to gather comprehensive information about the BDDS appliance and set up SNMP traps to receive notifications when specific events occur on the appliance.
+You can use Simple Network Management Protocol (SNMP) monitoring to gather comprehensive information about the BDDS appliance.
 
-Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP, which means that it relies on a community string (similar to a password) for authentication, making it relatively simple to set up.  Version v3, on the other hand, is a User-Based SNMP and provides enhanced security and authentication mechanisms. It introduces the concept of SNMP users and offers features like user authentication and data encryption.
+Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP, which means that it relies on a community string (similar to a password) for authentication, making it relatively simple to set up. Version v3, on the other hand, is a User-Based SNMP and provides enhanced security and authentication mechanisms. It introduces the concept of SNMP users and offers features like user authentication and data encryption.
 
 **To configure SNMP Monitoring on BDDS appliances**:
 
@@ -142,7 +142,7 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
    * **Enable SNMP v3**: Select this option to enable the SNMP v3 protocol.
     * **Username**: Enter the SNMP username for the SNMP user.
     * **Authentication**: Select either **MD5** or **SHA** authentication and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
-    * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the trap data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
+    * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
 
 4. Click :guilabel:`Save` to save your settings and close the dialog box.
 
@@ -150,8 +150,9 @@ Shutting Down or Restarting BDDS Appliances
 --------------------------------------------
 You can shut down or restart the BDDS appliances.
 
-.. warning::
-   If you shut down the appliance, it will be turned off and you will need physical access to the appliance to turn it on again.
+.. note::
+   For BDDS-25s appliance, which come equipped with an Integrated Dell Remote Access Controller (iDRAC), the iDRAC continues running when the appliance is shut down. This means that it can be accessed via the local network to power on the appliance without requiring physical access.
+If you shut down an appliance that is not equipped with iDRAC, it will be turned off and you will need physical access to the appliance to turn it on again.
 
 **To shut down or restart appliances**:
 
