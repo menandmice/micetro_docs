@@ -6,21 +6,11 @@
 
 Integrating and Managing BDDS Appliances
 ===================================
-Micetro offers seamless integration with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. One of the key benefits of using Micetro with DNS/DHCP appliances is automation. It can automate routine tasks such as IP address allocation, DNS record updates, and DHCP lease management. This reduces manual effort and minimizes the risk of configuration errors.
+Micetro seamlessly integrates with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. One of the key benefits of using Micetro with DNS/DHCP appliances is automation. It can streamline routine tasks such as IP address allocation, DNS record updates, and DHCP lease management, reducing manual effort and minimizing the risk of configuration errors.
 
-There are two types of appliances available within Micetro: 
+Once you have configured your BDDS appliance and added it to your :ref:`webapp-server-management`, you can manage it just like BIND and ISC DHCP servers.
 
-DNS/DHCP Appliance
-  Serves both DNS and DHCP functions. Once configured and added to your :ref:`webapp-server-management`, you can manage it just like BIND and ISC DHCP servers.
-DNS Caching Appliance
-  Contains a high-performance Caching-only DNS server. For information about managing the DNS server on the DNS Caching appliance, see :ref:`caching-appliance`.
-
-.. note::
-  Separate activation keys are required for adding and managing appliances, and distinct activation keys are used for the DNS/DHCP Appliance and the DNS Caching Appliance.
-
-Unless otherwise stated, the information in this chapter applies to both the DNS/DHCP Appliance and the DNS Caching Appliance.
-
-Appliances are accessed and managed on the :guilabel:`Admin` page:
+Appliances are accessed and managed on the :guilabel:`Admin` page on the :guilabel:`Service Management` tab:
 
 .. image:: ../../images/appliances-10.6.png
    :width: 80%
@@ -35,10 +25,10 @@ Add a DNS/DHCP Server to Micetro to effectively manage services, optimize deploy
 
 1. Navigate to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page, and click :guilabel:`Add Service`. The Add Service wizard opens.
 
-   .. image:: ../../images/add-servive-dialog.png
+   .. image:: ../../images/add-service-dialog.png
       :width: 65%
 
-2. Select the appliance you wish to integrate. 
+2. Select :guilabel:`Appliance`. 
 3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
 4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
 5. Click :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
@@ -59,25 +49,21 @@ You can change the name or IP Address used to connect to your appliance. This is
 
 5. Click :guilabel:`Save` when you are done.
 
-Removing Appliances
--------------------
-This command is only available for the Administrator role.
+Setting Appliance Services
+--------------------------
+You can enable or disable various appliance services to configure your BDDS appliance. 
 
-.. Warning::
-   When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are removed from Micetro as well.
+**To enable/disable appliance services**:
 
-**To remove an appliance from Micetro**:
+1. Locate the specific BDDS appliance for which you want set services.
+2. On the :guilabel:`Action` menu, select :guilabel:`Set appliance services`. You can also access this option on the Row menu :guilabel:`...`.
 
-1. Select the appliance(s) you want to remove. To select multiple appliances, hold down the Ctrl key while making your selection.
-2. On the :guilabel:`Action` menu, select :guilabel:`Remove appliance`. Click :guilabel:`Yes` to confirm.
+   * **SSH (Secure Shell)**: Enabling SSH allows secure remote access to your appliance. You can use an SSH client to connect and manage the appliance securely. Disabling SSH is not recommended unless you have a specific security requirement. Disabling SSH should only be considered for servers in a highly secure environment, and even then, it should only be done for short periods when absolutely necessary. Always ensure you have alternate secure methods for appliance management.
+   * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
+3. Click :guilabel:`Save` when you are done.
 
-Viewing Appliance History
----------------------------
-The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :guilabel:`...` opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see :ref:`view-change-history`.
-
-
-Setting DNS Resolvers for BDDS Appliances
-------------------------------------------
+Setting DNS Resolvers 
+----------------------
 To ensure optimal performance of your BDDS appliance, you can add the IP addresses of DNS resolver servers. This step helps your appliance efficiently resolve domain names and provide accurate network services.
 
 **To set DNS resolvers**:
@@ -86,6 +72,34 @@ To ensure optimal performance of your BDDS appliance, you can add the IP address
 2. On the :guilabel:`Action` menu, select :guilabel:`DNS resolvers`. You can also access this option on the Row menu :guilabel:`...`.
 3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by separating their IP addresses with commas or semicolons, depending on the configuration requirements of your BDDS appliance. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
 4. Click :guilabel:`Save` when you are done.
+
+Configuring SNMP Monitoring 
+----------------------------
+You can use Simple Network Management Protocol (SNMP) monitoring to gather comprehensive information about the BDDS appliance. SNMP is enabled by default on BDDS appliances, allowing you to access monitoring information without any additional configuration.
+
+Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP, which means that it relies on a community string (similar to a password) for authentication, making it relatively simple to set up. Version v3, on the other hand, is a User-Based SNMP and provides enhanced security and authentication mechanisms. It introduces the concept of SNMP users and offers features like user authentication and data encryption.
+
+**To configure SNMP Monitoring on BDDS appliances**:
+
+1. Locate the specific BDDS appliance for which you want to configure SNMP monitoring.
+2. On the :guilabel:`Action` menu, select :guilabel:`SNMP configuration`. You can also access this option on the Row menu :guilabel:`...`. 
+3. The SNMP configuration dialog box opens with several options:
+
+   .. image:: ../../images/appliances-snmp-10.6.png
+      :width: 50%
+
+   * **Name**: You can enter the name that will be reported through SNMP. By default, this is set as Bluecat.
+   * **Location**: Enter a description of the system's physical location. By default, this is set as Toronto.
+   * **Contact**: Enter the email address of the contact person responsible for the system. By default, this is set as the email address for BlueCat's support.
+   * **Description**: Enter a brief description of the system.
+   * **Enable SNMP v2c**: Select this option to enable the SNMP v2c protocol. 
+    * **Community**: Enter the community string, which serves as a password for the SNMP v2c protocol.
+   * **Enable SNMP v3**: Select this option to enable the SNMP v3 protocol.
+    * **Username**: Enter the SNMP username for the SNMP user.
+    * **Authentication**: Select either **MD5** or **SHA** authentication and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
+    * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
+
+4. Click :guilabel:`Save` to save your settings and close the dialog box.
 
 Configuring NTP on BDDS Appliances
 ----------------------------------
@@ -118,34 +132,6 @@ To help in troubleshooting, you may be asked to download support information for
 .. Note::
    The support information file is packaged as a .tgz archive and contains various text files. If you wish to view the contents of the support information file, you can use any tool capable of extracting data from .tgz archives to access and review the enclosed text files.
 
-Configuring SNMP Monitoring on BDDS Appliances
------------------------------------------------
-You can use Simple Network Management Protocol (SNMP) monitoring to gather comprehensive information about the BDDS appliance.
-
-Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP, which means that it relies on a community string (similar to a password) for authentication, making it relatively simple to set up. Version v3, on the other hand, is a User-Based SNMP and provides enhanced security and authentication mechanisms. It introduces the concept of SNMP users and offers features like user authentication and data encryption.
-
-**To configure SNMP Monitoring on BDDS appliances**:
-
-1. Locate the specific BDDS appliance for which you want to configure SNMP monitoring.
-2. On the :guilabel:`Action` menu, select :guilabel:`SNMP configuration`. You can also access this option on the Row menu :guilabel:`...`. 
-3. The SNMP configuration dialog box opens with several options:
-
-   .. image:: ../../images/appliances-snmp-10.6.png
-      :width: 50%
-
-   * **Name**: You can enter the name that will be reported through SNMP. By default, this is set as Bluecat.
-   * **Location**: Enter a description of the system's physical location. By default, this is set as Toronto.
-   * **Contact**: Enter the email address of the contact person responsible for the system. By default, this is set as the email address for BlueCat's support.
-   * **Description**: Enter a brief description of the system.
-   * **Enable SNMP v2c**: Select this option to enable the SNMP v2c protocol. 
-    * **Community**: Enter the community string, which serves as a password for the SNMP v2c protocol.
-   * **Enable SNMP v3**: Select this option to enable the SNMP v3 protocol.
-    * **Username**: Enter the SNMP username for the SNMP user.
-    * **Authentication**: Select either **MD5** or **SHA** authentication and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
-    * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
-
-4. Click :guilabel:`Save` to save your settings and close the dialog box.
-
 Shutting Down or Restarting BDDS Appliances
 --------------------------------------------
 You can shut down or restart the BDDS appliances.
@@ -159,6 +145,23 @@ If you shut down an appliance that is not equipped with iDRAC, it will be turned
 1. Select the appliance you want to restart or shut down.
 2. On the :guilabel:`Action` menu, select :guilabel:`Shut down appliance` or :guilabel:`Restart appliance` and click :guilabel:`Yes` in the confirmation dialog box. The appliance shuts down or restarts, depending on your selection.
 
+Removing Appliances
+-------------------
+This command is only available for the Administrator role.
+
+.. Warning::
+   When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are removed from Micetro as well.
+
+**To remove an appliance from Micetro**:
+
+1. Select the appliance(s) you want to remove. To select multiple appliances, hold down the Ctrl key while making your selection.
+2. On the :guilabel:`Action` menu, select :guilabel:`Remove appliance`. Click :guilabel:`Yes` to confirm.
+
+Viewing Appliance History
+---------------------------
+The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :guilabel:`...` opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see :ref:`view-change-history`.
+
+
 **See also**:
 
 .. toctree::
@@ -167,4 +170,5 @@ If you shut down an appliance that is not equipped with iDRAC, it will be turned
    updates
    webapp_server_management
    appliance_management
+   caching_appliance
  
