@@ -4,26 +4,24 @@
 
 .. _webapp-appliance-management:
 
-Integrating and Managing BDDS Appliances
+Integrating and Managing Appliances
 ===================================
-Micetro seamlessly integrates with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. One of the key benefits of using Micetro with DNS/DHCP appliances is automation. It can streamline routine tasks such as IP address allocation, DNS record updates, and DHCP lease management, reducing manual effort and minimizing the risk of configuration errors.
+Micetro seamlessly integrates with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. By integrating Micetro with appliances, you gain the power to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface.
 
-Once you have configured your BDDS appliance and added it to your :ref:`webapp-server-management`, you can manage it just like BIND and ISC DHCP servers.
+Once you have configured your appliance and added it to your :ref:`webapp-server-management`, you can interact with the services just as you would with other DNS and DHCP services within Micetro.
 
-Appliances are accessed and managed on the :guilabel:`Admin` page on the :guilabel:`Service Management` tab:
+Appliances are accessed and managed in :guilabel:`Service Management` on the :guilabel:`Admin` page. 
 
 .. image:: ../../images/appliances-10.6.png
    :width: 80%
 
 Adding a New Appliance to Micetro
 ---------------------------------
-You must have the permissions to administer DNS to add an appliance to Micetro.
-
-Add a DNS/DHCP Server to Micetro to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface. Once the appliance has been added and configured, you can interact with the services just as you would with other DNS and DHCP services within Micetro.
+You must have permissions to administer DNS to add an appliance to Micetro.
 
 **To add an appliance**:
 
-1. Navigate to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page, and click :guilabel:`Add Service`. The Add Service wizard opens.
+1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page, and select :guilabel:`Add Service`. The Add Service wizard opens.
 
    .. image:: ../../images/add-service-dialog.png
       :width: 65%
@@ -31,36 +29,36 @@ Add a DNS/DHCP Server to Micetro to effectively manage services, optimize deploy
 2. Select :guilabel:`Appliance`. 
 3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
 4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
-5. Click :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
+5. Select :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
 
 Editing Appliance Name
 ------------------------
-You can change the name or IP Address used to connect to your appliance. This is useful if you need to refer to the Appliance by another name or if you are connecting to the Appliance by an IP Address and the IP Address has changed.
+You can change the name or IP address used to connect to your appliance. This is useful if you need to refer to the appliance by another name or if you are connecting to the appliance by an IP address and the IP address has changed.
 
 **To change the appliance name**:
 
 1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page. 
 2. In the filtering sidebar, select :guilabel:`Appliances`, then select the specific appliance you wish to edit.
-3. On the :guilabel:`Action` menu, select :guilabel:`Edit appliance`. You can also access this option on the Row menu by clicking :guilabel:`...`.
+3. On the :guilabel:`Action` menu, select :guilabel:`Edit appliance`. You can also access this option on the Row menu by selecting :guilabel:`...`.
 4. Modify the appliance's name, and/or IP address (optional).
 
    .. Note::
        Changing the name or IP address here only affects how you connect to the appliance. It does not alter the actual IP address of the appliance itself.
 
-5. Click :guilabel:`Save` when you are done.
+5. Select :guilabel:`Save` when you are done.
 
 Setting Appliance Services
 --------------------------
-You can enable or disable various appliance services to configure your BDDS appliance. 
+You can enable or disable various appliance services to configure your appliance. 
 
 **To enable/disable appliance services**:
 
-1. Locate the specific BDDS appliance for which you want set services.
+1. Locate the specific appliance for which you want set services.
 2. On the :guilabel:`Action` menu, select :guilabel:`Set appliance services`. You can also access this option on the Row menu :guilabel:`...`.
 
    * **SSH (Secure Shell)**: Enabling SSH allows secure remote access to your appliance. You can use an SSH client to connect and manage the appliance securely. Disabling SSH is not recommended unless you have a specific security requirement. Disabling SSH should only be considered for servers in a highly secure environment, and even then, it should only be done for short periods when absolutely necessary. Always ensure you have alternate secure methods for appliance management.
    * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
-3. Click :guilabel:`Save` when you are done.
+3. Select :guilabel:`Save` when you are done.
 
 Setting DNS Resolvers 
 ----------------------
@@ -71,7 +69,7 @@ To ensure optimal performance of your BDDS appliance, you can add the IP address
 1. Locate the specific BDDS appliance for which you want to configure DNS resolvers. Ensure you select the correct appliance to avoid any disruptions in network services.
 2. On the :guilabel:`Action` menu, select :guilabel:`DNS resolvers`. You can also access this option on the Row menu :guilabel:`...`.
 3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by separating their IP addresses with commas or semicolons, depending on the configuration requirements of your BDDS appliance. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
-4. Click :guilabel:`Save` when you are done.
+4. Select :guilabel:`Save` when you are done.
 
 Configuring SNMP Monitoring 
 ----------------------------
@@ -99,7 +97,7 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
     * **Authentication**: Select either **MD5** or **SHA** authentication and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
     * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
 
-4. Click :guilabel:`Save` to save your settings and close the dialog box.
+4. Select :guilabel:`Save` to save your settings and close the dialog box.
 
 Configuring NTP on BDDS Appliances
 ----------------------------------
@@ -115,18 +113,17 @@ Use the Network Time Protocol (NTP) service to maintain precise time synchroniza
    .. Tip::
       Consider using multiple NTP servers for redundancy and increased reliability, ensuring continued time synchronization even if one server becomes inaccessible. 
 
-5. Click :guilabel:`Save` when you are done.
+5. Select :guilabel:`Save` when you are done.
 
 Downloading Support Information for BDDS Appliances
 ----------------------------------------------------
 To help in troubleshooting, you may be asked to download support information for your BDDS appliance. This support information file holds crucial details about your appliance setup, aiding our support team in diagnosing and resolving any issues you may encounter.
-[What do we need to add here? What must the user consider/take notice of? (format for data rakes and same file names)]
 
 **To download support information**:
 
 1. Locate the specific BDDS appliance you are troubleshooting. 
 2. On the :guilabel:`Action` menu, select :guilabel:`Get support info`. You can also access this option on the Row menu :guilabel:`...`. 
-3. Click :guilabel:`Download`.
+3. Select :guilabel:`Download`.
 4. Once the download is complete, forward the downloaded file to support@bluecatnetworks.com.
 
 .. Note::
@@ -138,12 +135,12 @@ You can shut down or restart the BDDS appliances.
 
 .. note::
    For BDDS-25s appliance, which come equipped with an Integrated Dell Remote Access Controller (iDRAC), the iDRAC continues running when the appliance is shut down. This means that it can be accessed via the local network to power on the appliance without requiring physical access.
-If you shut down an appliance that is not equipped with iDRAC, it will be turned off and you will need physical access to the appliance to turn it on again.
+   If you shut down an appliance that is not equipped with iDRAC, it will be turned off and you will need physical access to the appliance to turn it on again.
 
 **To shut down or restart appliances**:
 
 1. Select the appliance you want to restart or shut down.
-2. On the :guilabel:`Action` menu, select :guilabel:`Shut down appliance` or :guilabel:`Restart appliance` and click :guilabel:`Yes` in the confirmation dialog box. The appliance shuts down or restarts, depending on your selection.
+2. On the :guilabel:`Action` menu, select :guilabel:`Shut down appliance` or :guilabel:`Restart appliance` and select :guilabel:`Yes` in the confirmation dialog box. The appliance shuts down or restarts, depending on your selection.
 
 Removing Appliances
 -------------------
@@ -154,8 +151,8 @@ This command is only available for the Administrator role.
 
 **To remove an appliance from Micetro**:
 
-1. Select the appliance(s) you want to remove. To select multiple appliances, hold down the Ctrl key while making your selection.
-2. On the :guilabel:`Action` menu, select :guilabel:`Remove appliance`. Click :guilabel:`Yes` to confirm.
+1. Select the appliance(s) you want to remove. To select multiple appliances, hold down the **Ctrl** key while making your selection.
+2. On the :guilabel:`Action` menu, select :guilabel:`Remove appliance`. Select :guilabel:`Yes` to confirm.
 
 Viewing Appliance History
 ---------------------------
