@@ -162,11 +162,10 @@ The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :g
 
 **See also**:
 
+For information about how to update in the M&M Management Console, see:
+
 .. toctree::
   :maxdepth: 1
 
-   updates
-   webapp_server_management
-   appliance_management
-   caching_appliance
+  console_updates
  
