@@ -2,7 +2,7 @@
    :description: Product documentation for Micetro by Men&Mice
    :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide
 
-Micetro by Men&Mice 10.5
+Micetro by Men&Mice 10.6
 ########################
 
 Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
@@ -11,7 +11,7 @@ Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software fo
   :width: 70%
   :alt: Men&Mice
   :align: center
-
+|
 Deployed in any on-premises, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
 This documentation is divided into four parts:
@@ -93,7 +93,7 @@ Table of Contents
     guides/admin-manual/webapp_sso
     guides/admin-manual/admin_updates   
     guides/admin-manual/admin_maintenance
-    guides/admin-manual/appliance_management
+    guides/admin-manual/webapp_appliance_management
     guides/admin-manual/caching_appliance
 
 .. toctree::

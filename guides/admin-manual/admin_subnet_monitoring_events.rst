@@ -37,7 +37,7 @@ Enabled
   When selected, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, clear the checkbox and enable monitoring for the individual subnets instead by selecting the subnet on the **IPAM** page, and then selecting :guilabel:`Set subnet monitoring` on the :guilabel:`Action` menu.
 
 Script to invoke
-  Enter the path of the script to run when the number of free addresses goes below the set threshold. See :ref:`admin-change-events` for information on the script interface and the format for calling the script.
+  Select the script to run when the number of free addresses goes below the set threshold.
 
 Email address
   The email address that should be the recipient of notification when the number of free addresses goes below the set threshold.
@@ -128,16 +128,16 @@ Example PowerShell Script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  Powershell scripts can be run natively by Men&Mice by starting the command with ``powershell``, ``powershell.exe`` or simply with the path to the ``.ps1`` file. Powershell can then read the stdin with ``[Console]::In.ReadToEnd()``.
+  Powershell scripts (``.ps1`` extension) are run natively by Men&Mice on Windows  with ``powershell``. The script can then read the stdin with ``[Console]::In.ReadToEnd()``.
 
 Instructions
 """"""""""""
 
-1. Copy the ``ScopeMonScript.ps1`` to ``C:\\ProgramData\\Men and Mice\\Central``.
+1. Copy the ``ScopeMonScript.ps1`` to ``C:\\ProgramData\\Men and Mice\\Central\scripts`` (the scripts folder).
 
-2. In Admin->Configuration->Event Hooks, under **Subnet monitoring events**, click :guilabel:`Set Defaults`.
+2. In Admin > Configuration > Event Hooks, under **Subnet monitoring events**, click :guilabel:`Set Defaults`.
 
-3. Enter ``ScopeMonScript.ps1`` in the **Script to invoke** text box.
+3. Select ``ScopeMonScript.ps1`` in the **Script to invoke** typeahead field.
 
 4. Configure a dynamic threshold.
 

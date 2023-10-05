@@ -4,8 +4,8 @@
 
 .. _appliance-management:
 
-Appliance management
-====================
+Appliance management (Management Console, obsolete)
+===================================================
 
 Overview
 --------
