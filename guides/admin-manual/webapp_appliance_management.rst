@@ -161,8 +161,10 @@ The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :g
 
 **See also**:
 
-.. toctree::
-  :maxdepth: 1
+:ref:`updates`
 
-  central_ha
-  ha_tweaks_central
+:ref:`webapp-server-management`
+
+:ref:`appliance-management`
+
+:ref:`caching-appliance`
