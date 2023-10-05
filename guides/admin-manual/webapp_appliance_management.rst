@@ -159,13 +159,10 @@ Viewing Appliance History
 ---------------------------
 The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :guilabel:`...` opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see :ref:`view-change-history`.
 
-
 **See also**:
-
-For information about how to update in the M&M Management Console, see:
 
 .. toctree::
   :maxdepth: 1
 
-  console_updates
- 
+  central_ha
+  ha_tweaks_central
