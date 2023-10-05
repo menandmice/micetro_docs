@@ -27,8 +27,6 @@ Release Notes
 
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.6-release`
-
 .. _10.6-release:
 
 10.6
@@ -241,6 +239,23 @@ Bug Fixes
 * An issue was fixed where scope name was not updated to reflect the name of the network.
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
+
+
+.. _10.3.9-release:
+
+10.3.9
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed an issue where AWS debug log messages were excessively logged to the Micetro log.
 
 .. _10.3.8-release:
 
@@ -560,6 +575,23 @@ Bug Fixes
 
 * Various improvements and fixes
 
+
+.. _10.2.8-release:
+
+10.2.8
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Various accessibility improvements were made to the Web Application.
+
 .. _10.2.7-release:
 
 10.2.7
@@ -804,6 +836,17 @@ Bug Fixes
 * Renaming Azure accounts without re-entering the client secret management account credentials is now allowed
 
 * Multiple minor improvements and fixes to enhance user experience
+
+.. _10.1.7-release:
+
+10.1.7
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance
 
 .. _10.1.6-release:
 
