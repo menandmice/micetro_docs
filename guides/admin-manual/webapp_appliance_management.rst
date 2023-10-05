@@ -161,10 +161,10 @@ The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :g
 
 **See also**:
 
-:ref:`updates`
+* :ref:`updates`
 
-:ref:`webapp-server-management`
+* :ref:`webapp-server-management`
 
-:ref:`appliance-management`
+* :ref:`appliance-management`
 
-:ref:`caching-appliance`
+* :ref:`caching-appliance`
