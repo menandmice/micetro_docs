@@ -161,13 +161,13 @@ The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :g
 
 Backup and Restore
 ------------------
-Micetro automatically takes a backup of your appliance's configuration every 15 minutes. This backup includes any changes made since the last backup. Additionally, a full backup is taken once every 24 hours, and all the incremental backups are managed and cleaned up for you.
+Micetro automatically takes a backup of your appliance's configuration every 15 minutes, capturing any changes made since the last backup. Additionally, a full backup is taken once every 24 hours, and all the incremental backups are managed and cleaned up for you.
 
-You can use these backups to restore an appliance to a previous state. You can use a backup from a Men and Mice Appliance to initialize a BDDS appliance.
+When an appliance experiences a crash and becomes unusable, you can use these backups to set up a new appliance as a replacement, while maintaining the same IP address. 
 
-If you ever need to replace an unusable appliance with a new one using the same IP address, Micetro will automatically detect the new server as uninitialized. To start working with it, you need to initialize the server. 
+Micetro automatically detects the new server as uninitialized. To begin using the new server, you need to initialize the server. 
 
-**To initialize an uninitialized server**:
+**To initialize a server**:
 
 1. Locate the uninitilized server.
 2. On the :guilabel:`Action` menu, select :guilabel:`Initialize appliance`. You can also access this option on the Row menu :guilabel:`...`. 
@@ -177,7 +177,6 @@ If you ever need to replace an unusable appliance with a new one using the same 
 
 * **Use data from Micetro**: This option allows you to initialize the server using the data saved in Micetro.
 * **Use data from the new appliance**: Use this option if you want to initialize the server with the data from the new appliance itself.
-
 
 |
 **See also**:
