@@ -17,7 +17,7 @@ Appliances are accessed and managed in :guilabel:`Service Management` on the :gu
 
 Adding a New Appliance to Micetro
 ---------------------------------
-You must have permissions to administer DNS to add an appliance to Micetro.
+To add an appliance to Micetro, you need to have the Administrator role.
 
 **To add an appliance**:
 
@@ -56,7 +56,7 @@ You can enable or disable various appliance services to configure your appliance
 1. Locate the specific appliance for which you want set services.
 2. On the :guilabel:`Action` menu, select :guilabel:`Set appliance services`. You can also access this option on the Row menu :guilabel:`...`.
 
-   * **SSH (Secure Shell)**: Enabling SSH allows secure remote access to your appliance. You can use an SSH client to connect and manage the appliance securely. Disabling SSH is not recommended unless you have a specific security requirement. Disabling SSH should only be considered for servers in a highly secure environment, and even then, it should only be done for short periods when absolutely necessary. Always ensure you have alternate secure methods for appliance management.
+   * **SSH (Secure Shell)**: SSH service is enabled by default, providing secure remote access to your appliance. With the SSH client enabled you can connect to and manage the appliance securely. Disabling SSH is not recommended unless you have a specific security requirement. Disabling SSH should only be considered for servers in a highly secure environment, and even then, it should only be done for short periods when absolutely necessary. Always ensure you have alternate secure methods for appliance management.
    * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
 3. Select :guilabel:`Save` when you are done.
 
@@ -68,7 +68,7 @@ To ensure optimal performance of your appliance, you can add the IP addresses of
 
 1. Locate the specific appliance for which you want to configure DNS resolvers. Ensure you select the correct appliance to avoid any disruptions in network services.
 2. On the :guilabel:`Action` menu, select :guilabel:`DNS resolvers`. You can also access this option on the Row menu :guilabel:`...`.
-3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by separating their IP addresses with commas or semicolons, depending on the configuration requirements of your appliance. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
+3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by listing their IP addresses on separate lines. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
 4. Select :guilabel:`Save` when you are done.
 
 Configuring SNMP Monitoring 
@@ -108,7 +108,7 @@ Use the Network Time Protocol (NTP) service to maintain precise time synchroniza
 1. Locate the specific appliance for which you wish to configure NTP. 
 2. On the :guilabel:`Action` menu, select :guilabel:`NTP configuration`. You can also access this option on the Row menu :guilabel:`...`. 
 3. Select the :guilabel:`Enable NTP service` checkbox to activate the NTP service on your appliance.
-4. In the text box, enter the hostname or IP address of the NTP server from which you want to synchronize your appliance's clock. 
+4. In the text box, enter the hostnames or IP addresses of the NTP servers from which you want to synchronize your appliance's clock. 
 
    .. Tip::
       Consider using multiple NTP servers for redundancy and increased reliability, ensuring continued time synchronization even if one server becomes inaccessible. 
@@ -159,6 +159,27 @@ Viewing Appliance History
 ---------------------------
 The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :guilabel:`...` opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see :ref:`view-change-history`.
 
+Backup and Restore
+------------------
+Micetro automatically takes a backup of your appliance's configuration every 15 minutes. This backup includes any changes made since the last backup. Additionally, a full backup is taken once every 24 hours, and all the incremental backups are managed and cleaned up for you.
+
+You can use these backups to restore an appliance to a previous state. You can use a backup from a Men and Mice Appliance to initialize a BDDS appliance.
+
+If you ever need to replace an unusable appliance with a new one using the same IP address, Micetro will automatically detect the new server as uninitialized. To start working with it, you need to initialize the server. 
+
+**To initialize an uninitialized server**:
+
+1. Locate the uninitilized server.
+2. On the :guilabel:`Action` menu, select :guilabel:`Initialize appliance`. You can also access this option on the Row menu :guilabel:`...`. 
+
+ .. image:: ../../images/appliance-backup-restore-10.6.png
+      :width: 65%
+
+* **Use data from Micetro**: This option allows you to initialize the server using the data saved in Micetro.
+* **Use data from the new appliance**: Use this option if you want to initialize the server with the data from the new appliance itself.
+
+
+|
 **See also**:
 
 * :ref:`updates`
