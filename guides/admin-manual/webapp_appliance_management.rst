@@ -165,11 +165,11 @@ Micetro automatically takes a backup of your appliance's configuration every 15 
 
 When an appliance experiences a crash and becomes unusable, you can use these backups to set up a new appliance as a replacement, while maintaining the same IP address. 
 
-Micetro automatically detects the new server as uninitialized. To begin using the new server, you need to initialize the server. 
+Micetro automatically detects the new server as uninitialized. To begin using the new server, you need to initialize it. uninitialized
 
 **To initialize a server**:
 
-1. Locate the uninitilized server.
+1. Locate the uninitialized server.
 2. On the :guilabel:`Action` menu, select :guilabel:`Initialize appliance`. You can also access this option on the Row menu :guilabel:`...`. 
 
  .. image:: ../../images/appliance-backup-restore-10.6.png
