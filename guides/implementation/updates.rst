@@ -94,11 +94,19 @@ Updating Appliances
 --------------------
 :guilabel:`Appliance updates` shows if any Appliances have updates pending. There are three types of updates:
 
-* **Minor**: These updates typically include minor improvements or enhancements.
-* **Full**: Full updates are comprehensive and may include significant changes.
-* **Patch**: Patch updates address specific issues or vulnerabilities.
+* **Full**: Full updates are the most extensive and involve replacing the entire appliance, typically with the release of a new major version. These updates are versioned and around 700MB in size.
+* **Minor**: Minor updates consist of version upgrades, such as 9.4.1, and typically include minor improvements or enhancements. They are executed in the same way as full upgrades, using partition swap. For example, the 9.4.2 update includes all changes made in 9.4.1, so it's okay to go directly from 9.4.0 to 9.4.2. However, for customers with older appliance versions prior to 9.4, it's necessary to first install the 9.4.0 full upgrade before deploying 9.4.1 or 9.4.2. These updates are around 2-300MB in size. 
+* **Patch**: Patch updates are minor adjustments to individual components, such as BIND or ISC DHCP. They address specific issues or vulnerabilities.
 
-Updates are downloaded and then deployed. The :guilabel:`Status column shows the update status.
+Update Status
+^^^^^^^^^^^^^
+The update process involves downloading and deploying updates, which are reflected in the :guilabel:`Status column.
+
+* **Available**: Updates are ready for application but have not been downloaded yet.
+* **Deployed**: Updates have been applied and fully deployed. 
+* **Partially deployed**: Updates have been downloaded but not applied to every applicable appliance in the system.
+* **Downloaded**: Similar to **Partially deployed**, but updates have not been applied to any appliance in the system.
+* **Downloading**: This is a temporary state indicating that the patch or upgrade is currently being downloaded.
 
 .. note::
    It is recommended to update individual appliances one at a time to avoid simultaneous downtime for all appliances.
