@@ -443,8 +443,11 @@ Configure Central Server
    Add the contents below with credentials obtained from your Identity Provider.
    
    Sample config:
-    Azure: 
+
+Azure: 
+
 .. code-block::
+
          { 
 
             "microsoft": { 
@@ -465,6 +468,7 @@ Configure Central Server
 Okta: 
 
 .. code-block::
+
          { 
 
             "okta": { 
