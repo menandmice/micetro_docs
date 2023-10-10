@@ -8,7 +8,7 @@ Service Management
 ===================
 Service Management is the place for connecting and orchestrating DNS, DHCP, and IP Address Management (IPAM) services with Micetro. Your services can be hosted on-premises, deployed on specialized appliances, or reside in the cloud. Connected services are displayed on the **Service Management** tab on the Admin page.
 
-To access Service Management:
+**To access Service Management**:
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
@@ -150,7 +150,7 @@ Editing Services
 -----------------
 Depending on the service, you can change the name and/or custom properties for the service. For example, if you need to refer to the service by another name or if you are connecting to the service by an IP Address and the IP Address has changed. 
 
-To edit a service:
+**To edit a service**:
 
 1. Locate the service you want to edit. 
 
@@ -160,9 +160,11 @@ To edit a service:
 
 Editing the Raw Configuration on BIND Servers
 -----------------------------------------------
-For BIND servers, DNS Administrators can access and modify raw configuration files directly. This is useful for making changes to the server and zone options that are not available through the GUI.
+For BIND servers, DNS Administrators can access and modify their raw configuration files directly. This is particularly useful for making changes to the server and zone options that are not yet available through the GUI.
 
-To edit BIND configuration files:
+Before you can commit any changes, the configuration file undergoes syntax checks to ensure there are no errors.
+
+**To edit BIND configuration files**:
 
 1. Locate the BIND server that you want to configure.
 
