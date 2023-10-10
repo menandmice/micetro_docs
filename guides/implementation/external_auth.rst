@@ -24,7 +24,7 @@ Micetro also supports multi-factor authentication (MFA) through two methods, Azu
 Active Directory User Authentication
 ------------------------------------
 
-The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to login to Micetro. In large installations, this system has obvious benefits as users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
+The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to log in to Micetro. In large installations, this system has obvious benefits as users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
 
 Active Directory User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,7 +101,7 @@ The Group Level Active Directory (AD) User Authentication mechanism allows you t
 
 The login sequence is as follows for users with Group Level AD authentication:
 
-1. The user enters his/her user name and password in Micetro
+1. The user enters his/her username and password in Micetro
 
 2. Micetro uses the AD authentication mechanism to validate the user name and password. If the user name and password is correct, Micetro retrieves the group membership of the user from the AD.
 
@@ -343,8 +343,8 @@ To get the needed properties for other configuration an application first needs 
    * - Application type
      - Web Application
    * - Grant type
-     - Authorizationo Code (default)
-   * - Sign-in redirct URIs
+     - Authorization Code (default)
+   * - Sign-in redirect URIs
      - [Micetro URL]/mmws/auth_cb/okta
    * - Sign-out redirect URIs (optional)
      - [Micetro URL]
@@ -424,13 +424,13 @@ Configure Central Server
       
    3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
 
-         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
+         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
 
-         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
+         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip>`_
          
-         For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
+         For security reasons, the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
-   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
+   4. **Manually create a json configuration file in the Micetro data directory**.  At startup, the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
 
    The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
@@ -497,7 +497,7 @@ If for some reason you want to clear the cached configuration file in the databa
 
 2. Go to Console Advanced System Settings and ensure that you have the “Default web form” enabled (Tools->System Settings->Advanced).
 
-3. Test with your browser to ensure you can login locally.
+3. Test with your browser to ensure you can log in locally.
 
 4. Disable the external authentication in System Settings.
       
@@ -508,11 +508,11 @@ If for some reason you want to clear the cached configuration file in the databa
           :width: 60%
           :align: center
           
-It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and value of 1. 
+It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and a value of 1. 
 
-This will enable the SSO login in the web. 
+This will enable the SSO login on the web. 
 
-6. Turn off default login form (optional)
+6. Turn off the default login form (optional)
    
    If you only want to offer users SSO/MFA login, you can disable the default web app login form.  
    
@@ -541,7 +541,7 @@ By default, all external users are added automatically to the “All users (buil
 A few properties are synchronized by Micetro; such as user’s email, full name, and group memberships. Any external changes to these properties are updated in Micetro on the next login.
 
 .. Note::
-   After the new External accounts are added (automatically, when user first logs in), administrators will still need to grant access to the DNS/DHCP/IPAM roles. 
+   After the new External accounts are added (automatically, when the user first logs in), administrators will still need to grant access to the DNS/DHCP/IPAM roles. 
    
    If privileges have not yet been granted for the new external accounts, the user will get the below error:
    
@@ -559,7 +559,7 @@ Logging for External Authentication can be enabled by putting your Central log i
 
 **External changes to user profiles**
 
-External changes to user’s email, full name, and group membership are automatically replicated in Micetro on next login.
+External changes to the user’s email, full name, and group membership are automatically replicated in Micetro on the next login.
 
 **Separate hosts for Micetro Central and Micetro Web Application**
 
