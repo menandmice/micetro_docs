@@ -35,17 +35,19 @@ October X, 2023
 
 New Features
 ^^^^^^^^^^^^
-
+In Create Zone wizard, if the user types a subnet into the zone name, replace it with the corresponding reverse zone.
 
 Improvements
 ^^^^^^^^^^^^
-* 
+* Algorithm used to create session IDs updated to employ non-deterministic random values that are auto-seeded from underlying OS.
 
-* 
+* two pages still need a heading, “Object history“ and “Micetro logs“
+
+* pi/swagger.json produces openAPI version 3.x
 
 Bug Fixes
 ^^^^^^^^^
-*  
+*  Users are unable to create DNAME records in the Web Application.
 
 .. _10.5.2-release:
 
@@ -70,7 +72,7 @@ Improvements
 
 * Administrators can now specify default TTL values in system settings using BIND shorthand notation
 
-* The ISC configuration file can now be mofified through the Web Application.
+* The ISC configuration file can now be modified through the Web Application.
 
 * When creating ISC Failover scopes, the scope and pool are now created on both servers.
 
