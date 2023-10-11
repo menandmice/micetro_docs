@@ -15,7 +15,7 @@ Service Management is the place for connecting and orchestrating DNS, DHCP, and 
 2. Click the :guilabel:`Service Management` tab in the upper-left corner.
 
    .. image:: ../../images/dns-context-10.6.png      
-       :width: 65%
+       :width: 80%
    |
    * By default, all services configured in the system are shown.
 
@@ -66,25 +66,29 @@ Micetro supports the following DNS and DHCP platforms:
 
   * Unbound (deprecated, new services cannot be added)
 
+  * BlueCat DNS and DHCP server (BDDS) Appliance
+
   * Men&Mice Appliance
 
   * Men&Mice caching Appliance
 
 * DHCP
 
-  * Cisco IOS
-
-  * ISC DHCP
+  * Microsoft DHCP
 
   * Kea
 
-  * Microsoft DHCP
+  * ISC DHCP
+
+  * Cisco IOS
+
+  * BlueCat DNS and DHCP server (BDDS) Appliance
 
   * Men&Mice Appliance
   
 Micetro Agents
 --------------
-To handle communication between Micetro and the external service, an Agent is needed. Depending on the type of service and if it’s on-premises or cloud, the agent is either installed on the respective machine, on the machine running Men&Mice central or, in some cases, on any machine that is in the same domain as the DNS/DHCP servers. A single agent can handle communication with multiple servers. For more information on agents and how to install them, see :ref:`install-controllers`.
+To handle communication between Micetro and the external service, an agent is needed. Depending on the type of service and if it’s on-premises or cloud, the agent is either installed on the respective machine, on the machine running Men&Mice central or in some cases, on any machine that is in the same domain as the DNS/DHCP servers. A single agent can handle communication with multiple servers. For more information on agents and how to install them, see :ref:`install-controllers`.
 
 .. note::
    When managing Microsoft DNS servers on remote computers with the DNS Server Controller, some actions for static zones may not be available:
@@ -103,11 +107,11 @@ To handle communication between Micetro and the external service, an Agent is ne
 
 Adding a Service
 ----------------
-You must have the permission to administer DNS to add a new service to Micetro.
+You must have permission to administer DNS to add a new service to Micetro.
 
-Adding a new service is either a two or three step process, depending on the type of service being added.
+Adding a new service is either a two or three-step process, depending on the type of service being added.
 
-To add a service:
+**To add a service**:
 
 1. On the :guilabel:`Service Management` tab, click :guilabel:`Add Service`. The Add Service wizard opens.
 
@@ -130,12 +134,13 @@ To add a service:
     .. image:: ../../images/add-kea-2.png
          :width: 65%
    |
-    * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process.  
-        
+    
+   * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process.  
+   * For AuthServe git you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here. 
+
     .. image:: ../../images/add-authserve.png
          :width: 65%
 
-    * For AuthServe git you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
 
 4. Add service:
   * Cloud services: Each service type has its set of credentials in addition to the optional service name.
@@ -144,7 +149,7 @@ To add a service:
 
     * Provide the hostname or IP address of the service/server.
 
-    * AuthServe uses channel as the connection string. Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name which maps to localhost. To select a different host name the syntax is ``"1.2.3.4#<someseceret>"``. Refer to AuthServe documentation for details.
+    * AuthServe uses channel as the connection string. Channel name is mapped to a host name in a configuration file on the server. ‘ansp' is the default channel name that maps to localhost. To select a different host name the syntax is ``"1.2.3.4#<someseceret>"``. Refer to AuthServe documentation for details.
 
 Editing Services
 -----------------
@@ -154,43 +159,22 @@ Depending on the service, you can change the name and/or custom properties for t
 
 1. Locate the service you want to edit. 
 
-2. Select the service, and then select :guilabel:`Edit service` on the :guilabel:`Action` menu. You can also double click the service.
+2. Select the service, and then select :guilabel:`Edit service` on the :guilabel:`Action` menu. You can also double-click the service.
 
 3. Make the necessary changes. Click :guilabel:`Confirm` to save the changes.
 
-Editing the Raw Configuration on BIND Servers
------------------------------------------------
-For BIND servers, DNS Administrators can access and modify their raw configuration files directly. This is particularly useful for making changes to the server and zone options that are not yet available through the GUI.
-
-Before you can commit any changes, the configuration file undergoes syntax checks to ensure there are no errors.
-
-**To edit BIND configuration files**:
-
-1. Locate the BIND server that you want to configure.
-
-2. Select :guilabel:`Edit configuration` on the :guilabel:`Action` menu. You can also access this option on the Row menu :guilabel:`...`. 
-
-    .. image:: ../../images/bind-raw-config.png
-            :width: 65%
-|
-   
-   * The various configuration files associated with the BIND server are available on the :guilabel:`File` drop-down list. From this list, select the specific configuration file that you want to modify. Configuration files may represent different aspects of the BIND server.
-
-   * If you're looking to make changes to specific settings within the selected configuration file, you can use the search box. Enter keywords or terms related to the settings you wish to modify.
-
-3. Make your edits, and click :guilabel:`Save` when you are done.
 
 Other Service Actions
 ----------------------
 Depending on the service, you can modify both the service name and its custom properties.
-Any actions applicable to a selected server can either be accessed on the :guilabel:`Actions` menu located above the list, or by clicking the row menu :guilabel:`...` button that appears when you hover over the right hand side of a row.
+Any actions applicable to a selected server can either be accessed on the :guilabel:`Actions` menu located above the list, or by clicking the row menu :guilabel:`...` button that appears when you hover over the right-hand side of a row.
 
 .. csv-table::
   :header: "Action", "Description"
   :widths: 15, 85
 
   "Attach service", "Attaches a previously detached server/service." 
-  "Detach server", "Detaches or disables the server/service. When a server is detached, it is not synchronized with Micetro and excluded from various checks. When a server is detached, it is greyed out in the service view grid. The server can be attached again for it to be part of the server synchronization again."
+  "Detach server", "Detaches or disables the server/service. When a server is detached, it is not synchronized with Micetro and is excluded from various checks. When a server is detached, it is greyed out in the service view grid. The server can be attached again for it to be part of the server synchronization again."
   "Synchronize", "Triggers synchronization of zones and records or scopes."
   "Remove service", "Removes the selected server/service from Micetro. This option is only available with the Administrator account."
   "Access", "Shows which roles have access to the service and what actions they are authorized to perform. For more information about how to manage object access, see :ref:`acl-object-access`."
@@ -219,6 +203,29 @@ Use the following table for more information on the indicators:
     "Service Impaired", "Server", "The DNS/DHCP server is running but impaired. [1]_ "
 
 .. [1] In Kea HA configurations. See :ref:`dhcp-kea-ha`.
+
+Editing the Raw Configuration on BIND Servers
+-----------------------------------------------
+For BIND servers, DNS Administrators can access and modify their raw configuration files directly. This is particularly useful for making changes to the server and zone options that are not yet available through the GUI.
+
+Before you can commit any changes, the configuration file undergoes syntax checks to ensure there are no errors.
+
+**To edit BIND configuration files**:
+
+1. Locate the BIND server that you want to configure.
+
+2. Select :guilabel:`Edit configuration` on the :guilabel:`Action` menu. You can also access this option on the Row menu :guilabel:`...`. 
+
+    .. image:: ../../images/bind-raw-config.png
+            :width: 65%
+|
+   
+   * The various configuration files associated with the BIND server are available on the :guilabel:`File` drop-down list. From this list, select the specific configuration file that you want to modify. Configuration files may represent different aspects of the BIND server.
+
+   * If you're looking to make changes to specific settings within the selected configuration file, you can use the search box. Enter keywords or terms related to the settings you wish to modify.
+
+3. Make your edits, and click :guilabel:`Save` when you are done.
+
 
 DHCP Services
 --------------
