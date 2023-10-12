@@ -210,6 +210,9 @@ For BIND servers, DNS Administrators can access and modify their raw configurati
 
 Before you can commit any changes, the configuration file undergoes syntax checks to ensure there are no errors.
 
+.. note::
+    To edit the configuration, it's essential to have a good understanding of DNS and BIND configurations, as incorrect changes can affect the server's performance and security.
+
 **To edit BIND configuration files**:
 
 1. Locate the BIND server that you want to configure.
