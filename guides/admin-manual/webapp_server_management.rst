@@ -133,14 +133,12 @@ Adding a new service is either a two or three-step process, depending on the typ
 
     .. image:: ../../images/add-kea-2.png
          :width: 65%
-   |
-    
+       
    * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process.  
    * For AuthServe git you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here. 
 
     .. image:: ../../images/add-authserve.png
          :width: 65%
-
 
 4. Add service:
   * Cloud services: Each service type has its set of credentials in addition to the optional service name.
@@ -221,8 +219,7 @@ Before you can commit any changes, the configuration file undergoes syntax check
 
     .. image:: ../../images/bind-raw-config.png
             :width: 65%
-|
-   
+
    * The various configuration files associated with the BIND server are available on the :guilabel:`File` drop-down list. From this list, select the specific configuration file that you want to modify. Configuration files may represent different aspects of the BIND server.
 
    * If you're looking to make changes to specific settings within the selected configuration file, you can use the search box. Enter keywords or terms related to the settings you wish to modify.
