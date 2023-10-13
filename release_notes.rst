@@ -35,19 +35,27 @@ October X, 2023
 
 New Features
 ^^^^^^^^^^^^
-In Create Zone wizard, if the user types a subnet into the zone name, replace it with the corresponding reverse zone.
+* **BlueCat DNS/DHCP Server Appliance Integration**: You can now seamlessly manage BlueCat DNS/DHCP Server Appliances with Micetro. This combines the signature Micetro intuitiveness and ease-of-use with the robustness and reliability of the BlueCat DNS/DHCP Server appliance for efficient network administration. See :ref:`webapp-appliance-management` for details.
 
 Improvements
 ^^^^^^^^^^^^
-* Algorithm used to create session IDs updated to employ non-deterministic random values that are auto-seeded from underlying OS.
+* **Simplified Zone Creation**: In the Create Zone wizard, if you enter a subnet into **Zone name**, it will automatically be replaced with the corresponding reverse zone, streamlining the zone creation process.
 
-* two pages still need a heading, “Object history“ and “Micetro logs“
+* **Enhanced Session ID Algorithm**: We've updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
 
-* pi/swagger.json produces openAPI version 3.x
+* **Improved Screen Reader Support**: We have added hidden headings to the **Object History** and **Micetro Logs** pages. These hidden headings provide essential context for screen readers, ensuring a better user experience and improved accessibility for all users. 
+
+* **OpenAPI Version Update**: The pi/swagger.json now produces OpenAPI version 3.x for better compatibility and documentation of your APIs.
+
+* **Enhanced Subnet Management**: we have improved the way we handle changes to subnets. If the subnet_cmds hook is loaded for Kea, we no longer rely on the config_set command to modify subnets.
+
+* **Expanded DNSZoneOptions**: we've introduced enhancements to the DNSZoneOptions functionality. We now publish both the DNSZoneOptions object and its associated child objects, along with providing new APIs for getting and setting DNSZoneOptions.
+
+* **Improved Failover Relationship View**: Our frontend interface now allows you to view existing ISC DHCP failover relationships at the server level. This enhancement provides a clearer and more comprehensive view of your DHCP configurations, making it easier to manage and troubleshoot failover relationships.
 
 Bug Fixes
 ^^^^^^^^^
-*  Users are unable to create DNAME records in the Web Application.
+*  **Resolved DNAME Record Creation Issue**: Users can now successfully create DNAME records in the Web Application without encountering any issues.
 
 .. _10.5.2-release:
 
