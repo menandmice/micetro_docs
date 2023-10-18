@@ -27,8 +27,6 @@ Release Notes
 
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.6-release`
-
 .. _10.6-release:
 
 10.6
@@ -37,17 +35,27 @@ October X, 2023
 
 New Features
 ^^^^^^^^^^^^
-
+* **BlueCat DNS/DHCP Server Appliance Integration**: You can now seamlessly manage BlueCat DNS/DHCP Server Appliances with Micetro. This combines the signature Micetro intuitiveness and ease-of-use with the robustness and reliability of the BlueCat DNS/DHCP Server appliance for efficient network administration. See :ref:`webapp-appliance-management` for details.
 
 Improvements
 ^^^^^^^^^^^^
-* 
+* **Simplified Zone Creation**: In the Create Zone wizard, if you enter a subnet into **Zone name**, it will automatically be replaced with the corresponding reverse zone, streamlining the zone creation process.
 
-* 
+* **Enhanced Session ID Algorithm**: We've updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
+
+* **Improved Screen Reader Support**: We have added hidden headings to the **Object History** and **Micetro Logs** pages. These hidden headings provide essential context for screen readers, ensuring a better user experience and improved accessibility for all users. 
+
+* **OpenAPI Version Update**: The pi/swagger.json now produces OpenAPI version 3.x for better compatibility and documentation of your APIs.
+
+* **Enhanced Subnet Management**: we have improved the way we handle changes to subnets. If the subnet_cmds hook is loaded for Kea, we no longer rely on the config_set command to modify subnets.
+
+* **Expanded DNSZoneOptions**: we've introduced enhancements to the DNSZoneOptions functionality. We now publish both the DNSZoneOptions object and its associated child objects, along with providing new APIs for getting and setting DNSZoneOptions.
+
+* **Improved Failover Relationship View**: Our frontend interface now allows you to view existing ISC DHCP failover relationships at the server level. This enhancement provides a clearer and more comprehensive view of your DHCP configurations, making it easier to manage and troubleshoot failover relationships.
 
 Bug Fixes
 ^^^^^^^^^
-*  
+*  **Resolved DNAME Record Creation Issue**: Users can now successfully create DNAME records in the Web Application without encountering any issues.
 
 .. _10.5.2-release:
 
@@ -72,7 +80,7 @@ Improvements
 
 * Administrators can now specify default TTL values in system settings using BIND shorthand notation
 
-* The ISC configuration file can now be mofified through the Web Application.
+* The ISC configuration file can now be modified through the Web Application.
 
 * When creating ISC Failover scopes, the scope and pool are now created on both servers.
 
@@ -241,6 +249,23 @@ Bug Fixes
 * An issue was fixed where scope name was not updated to reflect the name of the network.
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
+
+
+.. _10.3.9-release:
+
+10.3.9
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed an issue where AWS debug log messages were excessively logged to the Micetro log.
 
 .. _10.3.8-release:
 
@@ -560,6 +585,23 @@ Bug Fixes
 
 * Various improvements and fixes
 
+
+.. _10.2.8-release:
+
+10.2.8
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Various accessibility improvements were made to the Web Application.
+
 .. _10.2.7-release:
 
 10.2.7
@@ -804,6 +846,17 @@ Bug Fixes
 * Renaming Azure accounts without re-entering the client secret management account credentials is now allowed
 
 * Multiple minor improvements and fixes to enhance user experience
+
+.. _10.1.7-release:
+
+10.1.7
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance
 
 .. _10.1.6-release:
 
