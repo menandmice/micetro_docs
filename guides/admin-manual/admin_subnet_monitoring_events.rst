@@ -137,7 +137,7 @@ Instructions
 
 2. In Admin > Configuration > Event Hooks, under **Subnet monitoring events**, click :guilabel:`Set Defaults`.
 
-3. Select ``ScopeMonScript.ps1`` in the **Script to invoke** typeahead field.
+3. Select ``ScopeMonScript.ps1`` in the **Script to invoke** field.
 
 4. Configure a dynamic threshold.
 

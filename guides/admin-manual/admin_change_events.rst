@@ -34,7 +34,7 @@ Adding a Change Event
 
 *Example 1*: Running a Python script named mytest.py.
 
-   To run a script named mytest.py that is located in the scripts folder using the python interpreter, simply start entering and select: ``mytest.py``.
+   To run a script named mytest.py that is located in the scripts folder, simply select ``mytest.py`` from the dropdown field.
 
 Editing and Deleting Change Events
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -7,10 +7,10 @@
 Script name validation policy
 =============================
 
-Changes to the script name field validation in versions 10.5.5 and 10.6
------------------------------------------------------------------------
+Changes to the script name field validation in versions 10.5.5
+--------------------------------------------------------------
 
-With version 10.5 there are significant changes to the script name fields for schedules scripts, change event scripts, subnet monitoring scripts, and report results scripts. The dialogs for the first three are accessible from the :guilabel:`Event hooks` page under :guilabel:`Admin` > :guilabel:`Configuration` > :guilabel:`Event Hooks` (:guilabel:`Add/Edit scheduled event`, :guilabel:`Add/Edit change event`, :guilabel:`Set default subnet monitoring`). The last field is found in the :guilabel:`Schedule` dialog for report definitions under :guilabel:`Reports` in the main menu.
+With version 10.5.5 there are significant changes to the script name fields for schedules scripts, change event scripts, subnet monitoring scripts, and report results scripts. The dialogs for the first three are accessible from the :guilabel:`Event hooks` page under :guilabel:`Admin` > :guilabel:`Configuration` > :guilabel:`Event Hooks` (:guilabel:`Add/Edit scheduled event`, :guilabel:`Add/Edit change event`, :guilabel:`Set default subnet monitoring`). The last field is found in the :guilabel:`Schedule` dialog for report definitions under :guilabel:`Reports` in the main menu.
 
 .. note::
    The changes introduce the notion of a **scripts folder** which is a folder named ``scripts`` located in Central's data folder. Any existing scripts should be moved there and new script should only be placed there. After existing script have been moved there the field values that refer to them need to be updated.
@@ -21,4 +21,4 @@ Existing values for script name fields will continue to work and saving without 
 
 For dialogs with script name fields that have values that don't meet the new requirements, the current value is shown in a read-only field. 
 
-The new script name field consists of a typeahead field for scripts located in the scripts folder and a checkbox to indicate that ScriptRunner authentication parameters should be used when invoking the script.
+The new script name field consists of a dropdown field for scripts located in the scripts folder and a checkbox to indicate that ScriptRunner authentication parameters should be used when invoking the script.

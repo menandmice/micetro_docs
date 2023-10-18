@@ -27,15 +27,15 @@ To configure scheduled events:
 
     *Example 1*: Running a script named mytest.py. 
   
-      To run a script named mytest.py that is located in the the script folder, start typing in ``mytest.py`` in the field and select it from the dropdown.
+      To run a script named mytest.py that is located in the the script folder, select ``mytest.py`` from the dropdown.
 
     *Example 2*: Running an executable named checkdata.exe. 
   
-     To run an executable named checkdata.exe that is located in scripts fodlder, start entering ``checkdata.exe`` in the field and select it from the dropdown.
+     To run an executable named checkdata.exe that is located in scripts folder, select ``checkdata.exe`` from the dropdown.
 
      It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access Micetro without having include a user name and password in the script itself.
 
-     To enable this feature, create a user named ScriptRunner. This user must use the Men&Mice Internal authentication method. When this user has been created, you only have to check the checkbox below the typeahead field.
+     To enable this feature, create a user named ScriptRunner. This user must use the Men&Mice Internal authentication method. When this user has been created, you only have to check the checkbox below the script dropdown field.
 
      .. note::
       This method only works if the script scheduler invokes the script. When running the script, Micetro uses a temporary password that changes every time the script runs. For example, you could start a python script and pass in the username and password through the first and second arguments with ``python script.py ScriptRunner xxx``
