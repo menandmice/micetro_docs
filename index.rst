@@ -12,19 +12,19 @@ Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software fo
   :alt: Men&Mice
   :align: center
 |
-Deployed in any on-premises, hybrid, or multi-cloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
+Deployed in any on-premises, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
 This documentation is divided into four parts:
 
-1. :ref:`implementation`
-2. :ref:`webapp-user-guide`
-3. :ref:`webapp-admin`
-4. :ref:`reference`
+1. Install Guide
+2. User Guide
+3. Admin Guide
+4. Reference Guide
 
 Use the **Install Guide** to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The **User Guide** covers all of Micetro's functionality. The **Admin Guide** is aimed at system administrators managing Micetro.
 
 .. tip::
-  Use the search function to quickly locate the information required.
+  Use the search function for quickly locating the information required.
 
 .. note::
   For how-to articles and troubleshooting, see :ref:`reference` or visit the `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
@@ -53,7 +53,7 @@ Table of Contents
 
 .. toctree::
      :caption: Micetro Install Guide
-     :maxdepth: 1
+     :maxdepth: 3
 
      guides/implementation/implementation
      guides/implementation/configuration
@@ -62,7 +62,7 @@ Table of Contents
 
 .. toctree::
      :caption: Micetro User Guide
-     :maxdepth: 1
+     :maxdepth: 3
 
      guides/user-manual/webapp_user_guide
      guides/user-manual/dns
@@ -78,9 +78,8 @@ Table of Contents
 
 .. toctree::
     :caption: Micetro Admin Guide
-    :maxdepth: 1
+    :maxdepth: 3
     
-    guides/admin-manual/webapp_admin    
     guides/admin-manual/admin_license
     guides/admin-manual/access_control
     guides/admin-manual/webapp_server_management

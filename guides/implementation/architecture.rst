@@ -58,13 +58,13 @@ Men&Mice Central
 
 .. _about-central:
 
-Men&Mice Central, through the connected database, stores all data including user-specific and centrally stored information.
+Men&Mice Central, through the connected database, stores all data including user specific and centrally stored information.
 
-Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management module is activated, Men&Mice Central is responsible for the management and allocation of IP Addresses.
+Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management module is activated, Men&Mice Central is responsible for management and allocation of IP Addresses.
 
 *Men&Mice Central listens on TCP port 1231.* See :ref:`firewall-ports` for more details.
 
-Men&Mice recommends the following table as guidelines for allocating sufficient resources for a smooth operation of Micetro:
+Men&Mice recommends the following table as guidelines for allocating sufficient resources for smooth operation of Micetro:
 
 +-----------------------+--------------------------------+-------------------------------------------------+
 | Size of environment   | Number of objects              | Hardware guidelines (per Central instance)      |
@@ -102,9 +102,9 @@ Data storage
 ------------
 
 .. note::
-  In case of conflict, the authoritative data is always the data source itself (the DNS or DHCP server).
+  In case of conflict, the authoritative data is always the data source itself (i.e., the DNS or DHCP server).
 
-By default, Men&Mice Central will use an embedded *SQLite* database. The embedded database is suitable for small to medium environments but larger environments should instead use a more robust database backend. Currently supported database platforms are MS SQL and PostgreSQL server.
+By default Men&Mice Central will use an embedded *SQLite* database.  The embedded database is suitable for small to medium environments but larger environments should instead use a more robust database backend. Currently supported database platforms are MS SQL and PostgreSQL server.
 
 Information on how to use MS SQL or PostgreSQL as the database for Men&Mice Central can be found in the :ref:`central-database` section.
 
@@ -116,7 +116,7 @@ Information on how to use MS SQL or PostgreSQL as the database for Men&Mice Cent
 Server controllers
 ------------------
 
-The Men&Mice Server Controllers are minimal-footprint services running on the DNS/DHCP server or alongside Men&Mice Central and facilitate the communication between the connected service and Central.
+The Men&Mice Server Controllers are minimal-footprint services running on the DNS/DHCP server or alongside Men&Mice Central, and facilitate the communication between the connected service and Central.
 
 .. _about-dns-controller:
 
@@ -129,9 +129,9 @@ The Men&Mice DNS Server Controller is used to control the DNS server and must be
   Micetro's DNS Server Controller (i.e., DNS agent) is installed on each DNS server that is to be managed.
 
 (Microsoft) AD environment
-  The DNS agent can be installed on some of the DNS servers or they can all be managed agent free. If they are to be managed agent-free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen. (See :ref:`agent-free-dns-dhcp`.)
+  The DNS agent can be installed on some of the DNS servers or they can all be managed agent free. If they are to be managed agent free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen. (See :ref:`agent-free-dns-dhcp`.)
 
-  The DNS Server Controller must be running as a user that has the necessary privileges.
+  The DNS Server Controller must be running as a user that has necessary privileges.
 
   If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (meaning that *all* zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Micetro will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
 
@@ -162,7 +162,7 @@ Cisco DHCP
 The DHCP Server Controller listens for connections from Men&Mice Central on TCP port 4151.
 
 .. tip::
-  There are a few strategies to install the Men&Mice DHCP Server Controller (DHCP agent).
+  There are a few strategies to install the Men&Mice DHCP Server Controller (i.e., DHCP agent).
 
   * In a Unix ISC DHCP environment, the DHCP agent is installed on all DHCP servers that are to be managed.
 
@@ -173,9 +173,9 @@ The DHCP Server Controller listens for connections from Men&Mice Central on TCP 
 
   * If some of the managed DHCP servers are not in the same forest as Micetro's Central component, and there is no trust between the forests, the administrator must install at least one DHCP agent in the foreign forest. That DHCP agent can act as a proxy between Central and the DHCP servers and must be running as a member of the AD DHCP Administrators group in the foreign forest.
 
-  * The DHCP agents can be installed on each managed DHCP server. In that scenario, the DHCP agent can be run as the Local System account, which means that no additional configuration is needed after the installation is complete.
+  * The DHCP agents can be installed on each managed DHCP servers. In that scenario, the DHCP agent can be run as the Local System account, which means that no additional configuration is needed after the installation is complete.
 
-Cisco IOS DHCP servers can be managed using Micetro. A Men&Mice DHCP Server Controller has to be installed on a machine in the environment, which will then act as a proxy to manage the Cisco IOS DHCP servers and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
+Cisco IOS DHCP servers can be managed using Micetro. A Men&Mice DHCP Server Controller has to be installed on a machine in the environment, which will then act as an proxy to manage the Cisco IOS DHCP servers, and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
 
 ----
 
@@ -206,7 +206,7 @@ The Men&Mice Web Application can be installed on any server on the network runni
 Management Console
 ^^^^^^^^^^^^^^^^^^
 
-Micetro's Management Console is a Windows-only rich client that can be installed on as many client computers as required and is typically installed on each administrator's workstation.
+Micetro's Management Console is a Windows-only rich client that can be installed on as many client computers as required, and is typically installed on each administrator's workstation.
 
 .. image:: ../../images/console-Micetro.png
   :width: 80%
@@ -218,15 +218,15 @@ Micetro's Management Console is a Windows-only rich client that can be installed
 ..
   Middle Layer
   ------------
-  The middle layer is responsible for collecting and synchronizing data and handling requests from different Interfaces. Men&Mice Central has its own database to store all related data. (See :ref:`central-database`.)  To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate with other services in order to get or set information - e.g., Microsoft Active Directory to authenticate users. (See :ref:`webapp-sso`.)
+  The middle layer is responsible for collecting and synchronizing data and handle requests from different Interfaces. Men&Mice Central has its own database to store all related data. (See :ref:`central-database`.)  To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate to other services in order to get or set information - e.g., Microsoft Active Directory to authenticate users. (See :ref:`webapp-sso`.)
 
 .. _about-virtual-appliances:
 
-Virtual Appliances (Optional)
-------------------------------
+Men&Mice Virtual Appliances (Optional)
+--------------------------------------
 
-There are two types of Virtual Appliances: a DNS/DHCP appliance and a DNS Caching Appliance.
+There are two types of Men&Mice Virtual Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance.
 
-The DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers. See :ref:`webapp-appliance-management` for more information.
+The DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers. See :ref:`dns-dhcp-appliance` for more information.
 
 The DNS Caching Appliance contains a high-performance Caching-only DNS server. See :ref:`caching-appliance` for more information.
