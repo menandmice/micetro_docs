@@ -23,7 +23,7 @@ Micetro requires that you create a new database the database server. The databas
   The script is preconfigured for an 8-core processor machine. As a best practice, it's recommended to create one temp file for each processor core. If you have a 2-core machine, comment out the last 6 temp file creation commands in the script.
 
 .. danger::
-  Running the script will drop the existing database using the name "mmsuite" without confrimation, so consider making a manual backup to prevent data loss.
+  Running the script will drop the existing database using the name "mmsuite" without confirmation, so consider making a manual backup to prevent data loss.
 
 After running the script, it will create:
 
@@ -33,12 +33,9 @@ After running the script, it will create:
 
 Configuring Connection Parameters
 """""""""""""""""""""""""""""""""
-
-If you're configuring MS SQL on a dedicated server, make sure to `enable the TCP/IP protocol with the SQL Configuration Manager <https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol?redirectedfrom=MSDN&view=sql-server-ver15>`_.
-
 .. _central-mssql-windows:
 
-Additionally, you'll need to `install an ODBC driver on the Central server to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
+We recommend `installing an ODBC driver on the Central server to enhance your ability to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
   
 For Men&Mice Central on Windows
 ********************************
@@ -55,22 +52,22 @@ For Men&Mice Central on Windows, you have two authentication methods to choose f
 
      <password value="the fingerprint hash"/>
      <database value="MSSQL"/>
-     <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite"/>
+     <databaseserver value="<name or ip of the SQL server>\<instance name, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite"/>
      <databaseusername value=""/>
 
 2. **Normal User/Password Authentication**:
 
-   For this method, youll need to configure the ``preferences.cfg`` file as follows:
+   For this method, you'll need to configure the ``preferences.cfg`` file as follows:
 
    .. code-block::
 
-     <password value="plaintext:PASSWORD"/>
+     <password value="the fingerprint hash"/>
      <database value="MSSQL"/>
      <databaseserver value="<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro"/>
      <databaseusername value="mmSuiteDBUser"/>
      <databasepassword value="plaintext:DBPASSWORD"/>
 
-   With this approach, you can use a dedicated SQL Server user for authentication. The ``plaintext:`` prefix in the password inputs allows you to enter the passwords in plaintext. Men&Mice Central will automatically encrypt and replace them with the hash during the initial startup.
+   With this approach, you can use a dedicated SQL Server user for authentication. The ``plaintext:`` prefix in the database password input allows you to enter the password in plaintext. Men&Mice Central will automatically encrypt and replace them with the hash during the initial startup.
 
 
 For Men&Mice Central on Linux
@@ -99,4 +96,4 @@ Once your database is set up, you can proceed with the normal installation proce
   systemctl restart mmcentral
   systemctl status mmcentral
 
-If there are any database connection issues, the service will fail to start and display the relevant error message.
+In the event of any database connection problems, the service will fail to start. These issues will be logged in the Central stratup log, located within the Central data directory at either /var/mmsuite/mmcentral/logs or C:\ProgramData\Men and Mice\Central\logs.
