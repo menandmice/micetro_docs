@@ -43,29 +43,34 @@ Additionally, you'll need to `install an ODBC driver on the Central server to be
 For Men&Mice Central on Windows
 ********************************
 
-To use Windows Authentication with Micetro and Microsoft SQL Server, ensure that Men&Mice Central runs under an Active Directory service account that is a member of the local administrators group.
+For Men&Mice Central on Windows, you have two authentication methods to choose from:
 
-The ``preferences.cfg`` file in the data directory contains four XML tags beside the "password" XML-tag for Central: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
+1. **Windows Authentication**:
+   
+   Ensure that Men&Mice Central runs under an Active Directory service account that is a member of the local administrators group.
 
-Here's how the file should look for normal user/password authentication:
+   Here's an example of how the ``preferences.cfg`` file should look like for the Windows Authentication method. Note that the "databaseusername" tag must be present and the "value" attribute must be set to an empty string.
 
-.. code-block::
+   .. code-block::
 
-  <password value="plaintext:PASSWORD"/>
-  <database value="MSSQL"/>
-  <databaseserver value="<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro"/>
-  <databaseusername value="mmSuiteDBUser"/>
-  <databasepassword value="plaintext:DBPASSWORD"/>
+     <password value="the fingerprint hash"/>
+     <database value="MSSQL"/>
+     <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite"/>
+     <databaseusername value=""/>
 
-The ``plaintext:`` prefix in the password inputs allows you to enter the passwords in plaintext. Men&Mice Central will automatically encrypt and replace them with the hash during the initial startup.
+2. **Normal User/Password Authentication**:
 
-Here's an example of how the ``preferences.cfg`` file should look like for the Windows Authentication method. Note that the "databaseusername" tag must be present and the "value" attribute must be set to an empty string.
-.. code-block::
+   For this method, youll need to configure the ``preferences.cfg`` file as follows:
 
-  <password value="the fingerprint hash"/>
-  <database value="MSSQL"/>
-  <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite"/>
-  <databaseusername value=""/>
+   .. code-block::
+
+     <password value="plaintext:PASSWORD"/>
+     <database value="MSSQL"/>
+     <databaseserver value="<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro"/>
+     <databaseusername value="mmSuiteDBUser"/>
+     <databasepassword value="plaintext:DBPASSWORD"/>
+
+   With this approach, you can use a dedicated SQL Server user for authentication. The ``plaintext:`` prefix in the password inputs allows you to enter the passwords in plaintext. Men&Mice Central will automatically encrypt and replace them with the hash during the initial startup.
 
 
 For Men&Mice Central on Linux
