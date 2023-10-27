@@ -13,7 +13,7 @@ A list of all servers configured in the system is shown by default.
 
 In the left sidebar it is possible to choose from viewing DNS servers, DHCP servers, or Appliances (if configured in the system).
 
-.. image:: ../../images/dns-context.png
+.. image:: ../../images/Admin-Micetro.png
   :width: 90%
   :align: center
 
