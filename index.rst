@@ -16,10 +16,10 @@ Deployed in any on-premises, hybrid, or multicloud network environment, Micetro 
 
 This documentation is divided into four parts:
 
-1. Install Guide
-2. User Guide
-3. Admin Guide
-4. Reference Guide
+1. :ref:`implementation`
+2. :ref:`webapp-user-guide`
+3. :ref:`webapp-admin`
+4. :ref:`reference`
 
 Use the **Install Guide** to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The **User Guide** covers all of Micetro's functionality. The **Admin Guide** is aimed at system administrators managing Micetro.
 
@@ -53,7 +53,7 @@ Table of Contents
 
 .. toctree::
      :caption: Micetro Install Guide
-     :maxdepth: 3
+     :maxdepth: 1
 
      guides/implementation/implementation
      guides/implementation/configuration
@@ -62,7 +62,7 @@ Table of Contents
 
 .. toctree::
      :caption: Micetro User Guide
-     :maxdepth: 3
+     :maxdepth: 1
 
      guides/user-manual/webapp_user_guide
      guides/user-manual/dns
@@ -78,7 +78,7 @@ Table of Contents
 
 .. toctree::
     :caption: Micetro Admin Guide
-    :maxdepth: 3
+    :maxdepth: 1
     
     guides/admin-manual/admin_license
     guides/admin-manual/access_control
