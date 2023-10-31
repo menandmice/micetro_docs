@@ -90,10 +90,10 @@ DNS/DHCP Server software
 .. danger::
   ISC Kea versions older than 1.6 are no longer supported. See :ref:`kea-update` for more details.
 
-Other
+Men&Mice Web Application
 -----
 
-Men&Mice Web Application
+Web servers
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft IIS [4]_
@@ -104,8 +104,21 @@ Men&Mice Web Application
 
 .. [5] The Apache web server are supported on all platforms except Windows.
 
-Supported Cloud Services
+Supported browsers
 ^^^^^^^^^^^^^^^^^^^^^^^^
+* Chrome
+
+* Firefox
+
+* Safari
+
+Screen resolution
+^^^^^^^^^^^^^^^^^^^^^^^^
+Micetro Web UI supports a minimum browser viewport area of 1366x768 pixels when using a maximum 100% zoom setting. Lower resolutions are not supported.
+
+Cloud Services
+-----
+The following cloud services are supported by Micetro
 
 * Azure [6]_
 
@@ -120,12 +133,3 @@ Supported Cloud Services
 * Akamai
 
 .. [6] Micetro is available to install directly from the Azure Marketplace. See :ref:`installation-azure`.
-
-Supported browsers (Web Application)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Chrome
-
-* Firefox
-
-* Safari
