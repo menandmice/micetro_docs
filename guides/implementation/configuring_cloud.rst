@@ -7,34 +7,34 @@
 Configure Cloud Integration
 ===========================
 
-Set up and configuration
-------------------------
-
-Before adding a cloud service instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+Before Adding a Cloud Service
+-----------------------------
 Micetro communicates with the cloud services through Men&Mice Central (IPAM) and the Men&Mice DNS controller (DNS).
 
-Before continuing, make sure:
+Before continuing, make sure that:
 
-* The DNS controller is installed and set up on the machine running Men&Mice Central. See :ref:`install-controllers`.
+* the DNS controller is installed and set up on the machine running Men&Mice Central. For information about how to install DNS controllers, see :ref:`install-controllers`.
 
-* The machine running central can connect to the specific cloud instance on port 443/TCP. See :ref:`firewall-ports`.
+* the machine running Central can connect to the specific cloud instance on port 443/TCP. For specific networking requirements, see :ref:`firewall-ports`.
 
-If you want to add multiple AWS cloud accounts using single credentials refer to :ref:`aws-multi-account`.
+If you intend to add multiple AWS cloud accounts using a single set of credentials, see :ref:`aws-multi-account`.
 
-Adding a cloud service
+Adding a Cloud Service
 ----------------------
 
-The following are the steps that are needed to start using a cloud service in Micetro.
+You must have permission to administer DNS to add a new service to Micetro.
 
-1. :menuselection:`File --> New --> Cloud Service`. Access the Cloud service wizard by right clicking :guilabel:`Cloud Services` in the *Object Browser* of the Management Console and selecting :guilabel:`New Cloud Service` or highlight :guilabel:`Cloud Services` in the *Object Browser* and clicking :guilabel:`+` sign in the manager window.
+**To start using a cloud service in Micetro**:
 
-2. The following dialog is shown:
+1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
 
-.. image:: ../../images/configure-cloud-service.png
-  :width: 50%
-  :align: center
+2. Select :guilabel:`Add Service`.
+
+3. Select the cloud provider you want to use and fill in the required information.
+
+   .. image:: ../../images/add-servive-dialog.png
+     :width: 50%
+     
 
 Proceed with one of the Cloud providers shown below and click :guilabel:`Next`:
 
@@ -195,22 +195,31 @@ Finishing the configuration
 
 After finishing going through the wizard, the DNS service (if applicable) and any subnets defined (if applicable) will be shown in the DNS servers and IP Address Ranges, respectively.
 
-Editing a cloud service instance
---------------------------------
-
-To edit the properties for a cloud instance, right click on a cloud instance in the *Object Browser* and select :guilabel:`Properties`.
-
-Removing a cloud service
+Editing a Cloud Service 
 ------------------------
 
-To remove a cloud service, right click on the specific cloud service in the *Object Browser* and select :guilabel:`Delete`.
+**To edit the properties for a cloud service**:
+
+1. Locate the service you want to edit in the Service Management area.
+
+2. Double-click the service or select it, and then select :guilabel:`Edit service` on the :guilabel:`Action` menu.
+
+3. Make the necessary changes. Select :guilabal:`Confirm` to save the changes.
+
+Removing a Cloud Service
+------------------------
+
+**To remove a cloud service**:
+
+1. Locate the service you want to delete in the Service Management area.
+
+2. Double-click the service or select it, and then select :guilabel:`Remove DNS service` on the :guilabel:`Action` menu.
 
 .. warning::
   By removing the cloud service, the associated DNS service and the corresponding zones will be removed. Additionally, any subnets and cloud networks will also be removed.
 
-Click :guilabel:`Yes` to remove the cloud service.
 
-Removing a cloud network
+Removing a Cloud Network
 ------------------------
 
-To remove a cloud network, right click on the specific cloud network in the object browser or in the manager window and select :guilabel:`Delete`.
+To remove a cloud network, right-click on the specific cloud network in the object browser or in the manager window and select :guilabel:`Delete`.
