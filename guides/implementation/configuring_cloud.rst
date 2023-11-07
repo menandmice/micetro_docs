@@ -4,11 +4,8 @@
 
 .. _configuring-cloud:
 
-Configure Cloud Integration
-===========================
-
-Before Adding a Cloud Service
------------------------------
+Configuring Cloud Integrations
+===============================
 Micetro communicates with the cloud services through Men&Mice Central (IPAM) and the Men&Mice DNS controller (DNS).
 
 Before continuing, make sure that:
@@ -200,7 +197,7 @@ Editing a Cloud Service
 
 **To edit the properties for a cloud service**:
 
-1. Locate the service you want to edit in the Service Management area.
+1. In the Service Management area on the Admin page, locate the service you want to edit.
 
 2. Double-click the service or select it, and then select :guilabel:`Edit service` on the :guilabel:`Action` menu.
 
@@ -211,7 +208,7 @@ Removing a Cloud Service
 
 **To remove a cloud service**:
 
-1. Locate the service you want to delete in the Service Management area.
+1. In the Service Management area on the Admin page, locate the service you want to delete.
 
 2. Double-click the service or select it, and then select :guilabel:`Remove DNS service` on the :guilabel:`Action` menu.
 
