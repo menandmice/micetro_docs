@@ -39,6 +39,10 @@ Improvements
 
 * **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
 
+Bug Fixes
+^^^^^^^^^
+
+* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
 
 .. _10.2.8-release:
 
