@@ -15,7 +15,7 @@ Microsoft SQL Server
 Setting up the Database
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Micetro requires that you create a new database the database server. The database should use the ``SQL_Latin1_General_CP1_CS_AS`` collation. Also, make sure to have a login (either Windows or SQL server authenticated) with db_owner access to this database and an effective default schema of mmCentral.
+Micetro requires that you create a new database on the database server. The database should use the ``SQL_Latin1_General_CP1_CS_AS`` collation. Also, make sure to have a login (either Windows or SQL server authenticated) with db_owner access to this database and an effective default schema of mmCentral.
 
 `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ is a suggested script for the database and database server setup. This script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only execute the necessary parts. Be sure to adjust path strings (default C:/Data) and, very importantly, the default password, which is set to "1234" in the script.
 
@@ -35,8 +35,9 @@ Configuring Connection Parameters
 """""""""""""""""""""""""""""""""
 .. _central-mssql-windows:
 
-We recommend `installing an ODBC driver on the Central server to enhance your ability to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
-  
+.. note::
+   To improve your compatibility with Microsoft SQL Server, you need to `install ODBC driver version 17 on the Central server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_. Please note that ODBC driver version 18 is not currently supported.
+
 For Men&Mice Central on Windows
 ********************************
 
