@@ -44,6 +44,8 @@ Bug Fixes
 
 * **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
 
+* Various bug fixes and improvements.
+
 .. _10.2.8-release:
 
 10.2.8
