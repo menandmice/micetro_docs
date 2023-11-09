@@ -1,34 +1,28 @@
 .. meta::
    :description: How to connect Micetro by Men&Mice to multiple AWS accounts using single credentials
-   :keywords: Micetro credentials, AWS management console, Micetro by Men&Mice, 
+   :keywords: Micetro credentials, AWS, Micetro by Men&Mice, 
 
 .. _aws-multi-account:
 
-Configuring an AWS multi-account setup
+Configuring AWS Multi-Account Setup
 ======================================
+You can connect Micetro to multiple AWS accounts using a single set of credentials. This is achieved by configuring a cloud account to assume roles in other accounts. The credentials you add to Micetro when setting up multiple AWS cloud accounts should belong to a user who is a member of a group. This group needs to be configured to allow members to assume AWS roles on other accounts with access to cloud networks (via EC2) or DNS services (via Route53).
 
-Overview
---------
-
-Micetro can be connected to multiple AWS accounts using single credentials. This is done by configuring a cloud account to be able to assume roles on other accounts. The credentials added to Micetro when adding multiple AWS cloud accounts, should belong to a user that is a member of a group. The group should be configured to allow members to assume AWS roles on other accounts with access to cloud networks(via EC2) or DNS Services(via Route53). Step-by-step instructions on how to configure this setup can be found below.
-
-Set up and configuration
+Set Up and Configuration
 ------------------------
 
-The following steps should be taken when configuring an AWS account to assume roles on other accounts for Micetro.
+I.  Creating a Group with User Access to Roles on Other Accounts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-I. Creating a group containing the user that should have access to the roles on the other accounts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Find a pre-existing user that you want to use, or create a new user.
+1. Find or create a user.
 
 This can be done through the AWS Management Console or using the AWS CLI command ``[iam|create-user]``
 
-Open the :guilabel:`IAM service` in the management console.
+2. Open the :guilabel:`IAM service` in the management console.
 
 ..
 
-2. Select :guilabel:`Users` from the left-hand menu or under IAM resources.
+2. Select :guilabel:`Users` on the left-hand menu or under IAM resources.
 
 3. Either select an existing user to use, or create a new user by clicking :guilabel:`Add user` and following the steps described in the wizard. If a new user is created, make sure to allow programmatic access so that an access key ID and secret access key pair can be used to add the account to Micetro. The user must also have the IAMReadOnlyAccess policy attached. If you want to manage Route53 and VPCs on the account where the user is located, the AmazonRoute53FullAccess and AmazonEC2Full access policies should also be attached.
 
@@ -57,24 +51,26 @@ This can be done through the AWS Management Console or by using the AWS CLI comm
 
 12. Select the checkbox next to the user that should be added to the group. This should either be the user created earlier, or a pre-existing user you've decided to use. Then click on the :guilabel:`Add Users` button.
 
-II. For each account that the user should have access to, create and configure a role on the account
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+II.  Creating and Configuring Roles for Each Account
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps should be performed for each account that the user should have access to.
+1. Create a role:
+   
+   * Log in to the account that the user should have access to using the AWS Management Console.
 
-Now a role has to be created on the accounts that the user should have access to, the role has to be assumable by the user.
+   * Open the **IAM** service.
 
-This can be done through the AWS Management Console or by using the AWS CLI command ``[iam|create-role]``
+   * Select :guilabel:`Roles` on the left menu or under the IAM resource.
 
-1. Log in to the account that the user should have access to using the AWS Management Console.
+   * Select :guilabel:`Create role`.
 
-2. Open the **IAM** service in the management console.
+2. Choose trusted entity:
+   
+   * Select :guilabel:`Another AWS account` as the trusted entity type. 
 
-3. Select :guilabel:`Roles` from the menu on the left or under the IAM resource.
+   * Enter the Account ID of the account containing the user who needs access. 
 
-4. Press the :guilabel:`Create role` button.
-
-5. Select :guilabel:`Another AWS account` as the type of trusted entity. In the Account ID window, put the account ID of the account that contains the user that should be able to access this account. Then click :guilabel:`Next: Permissions`.
+   * Select :guilabel:`Next: Permissions`.
 
 6. Now attach necessary policies for Micetro to the role. You can attach the policies by searching for them by name in the search window and then checking the checkbox next to their name. After all necessary policies have been attached, click on the :guilabel:`Next: Tags` button. Micetro needs the following AWS policies to be attached.
 
