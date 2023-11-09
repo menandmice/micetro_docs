@@ -450,6 +450,7 @@ Configure Central Server
 Azure: 
 
 .. code-block::
+        
          { 
 
             "microsoft": { 
@@ -469,6 +470,7 @@ Azure:
 Okta: 
 
 .. code-block::
+
          { 
 
             "okta": { 
