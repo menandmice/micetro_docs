@@ -152,7 +152,6 @@ Fill in the fields required to connect to AWS:
    :width: 50%
 
 * 	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see: https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
-Read more: :ref:`aws-multi-account`.
 
 * For information about how to add multiple AWS cloud accounts using single credentials, see: :ref:`aws-multi-account`.
 
