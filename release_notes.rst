@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro by Men&Mice 10.1.x versions
+   :description: Release notes for Micetro by Men&Mice 10.5.x versions
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
@@ -27,7 +27,37 @@ Release notes
 
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`,
+
+.. _10.5.5-release:
+
+10.5.5
+------
+November 17, 2023
+
+Improvements
+^^^^^^^^^^^^
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
+
+* **Script Name Fields**: The script name fields (:menuselection:`Admin --> Configuration --> Event Hooks`) now only accept script names and validate the existence of the script in a folder named "scripts" under Central's data folder. Default paths are C:\ProgramData\Menandmice\Central\scripts on Windows and /var/mmsuite/mmcentral/scripts on Linux. 
+
+   While existing values for script names will continue to function, updating the value requires moving referenced scripts to the scripts folder before they can be selected in the UI.
+
+   The system setting "Folder for scripts to be run from the API" (RunCommandsFromDirectory) has been deprecated. The current value remains functional but cannot be modified, only cleared. The default value is the scripts folder mentioned above. Scripts invoked through the RunCommand API should also be moved to the scripts folder.
+
+   The 'parameters' argument to the RunCommand API has been deprecated. While these changes are not breaking, administrators are advised to take necessary actions, as all script invocations are expected to be limited to the scripts folder in a future major release.
+
+Bug Fixes
+^^^^^^^^^
+* Resolved an issue where SNMP profiles were not displayed in the table when the number of profiles exceeded a specific threshold.
+
+* Fixed an issue where records in recently promoted AuthServe zones could not be edited.
+
+* Addressed an error where the importing of host records for IP addresses would fail.	
+
+* Resolved slowness issues when deleting a zone with a few records from AuthServe. Improved performance when deleting a zone on a Central with a PostgreSQL database.
+
+* Various bug fixes and improvements.	
 
 .. _10.5.4-release:
 
@@ -266,6 +296,27 @@ Bug Fixes
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
 
+10.3.10
+-------
+November 17, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
+
+Bug Fixes
+^^^^^^^^^
+
+* Resolved an issue where SNMP profiles were not displayed in the table when the number of profiles exceeded a specific threshold.
+
+* Resolved a bug where Micetro erroneously synchronized interface configurations to the partner DHCPv6 server. The fix ensures that interface configurations are now excluded from replication between ISC Kea peers.
+
+* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
+
+* DNS synchronization for NS1 cloud service was fixed after the provider stopped modifying the zone serial number after updates.DNS sync for NS1 cloud service was fixed after the provider stopped modifying zone serial after updates.	
+
+* Various bug fixes and improvements.
 
 .. _10.3.9-release:
 
@@ -601,6 +652,21 @@ Bug Fixes
 
 * Various improvements and fixes
 
+10.2.9
+------
+November 17, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
+
+Bug Fixes
+^^^^^^^^^
+
+* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
+
+* Various bug fixes and improvements.
 
 .. _10.2.8-release:
 
