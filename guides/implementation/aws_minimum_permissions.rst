@@ -68,7 +68,7 @@ Permissions in a Multi-Account Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In an AWS multi-account setup, additional permissions are necessary. For more information about multi-account setup, see :ref:`aws-multi-account`.
 
-* The user integrated into Micetro must possess inline group policies enabling the user to execute sts:AssumeRole on the designated accounts it needs to connect to.
+* The user integrated into Micetro must possess inline group policies enabling the user to execute **sts:AssumeRole** on the designated accounts it needs to connect to.
 
 * In the accounts where roles are assumed from the Micetro user, roles must already be configured, with the account containing the Micetro user designated as a trusted entity.
 
