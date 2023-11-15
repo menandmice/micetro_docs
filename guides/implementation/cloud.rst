@@ -34,4 +34,5 @@ Supported Cloud Services
 
   cloud_integration
   aws_multi_account
+  aws_minimum_permissions
   
