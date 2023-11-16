@@ -296,6 +296,8 @@ Bug Fixes
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
 
+.. _10.3.9-release:
+
 10.3.10
 -------
 November 17, 2023
@@ -651,6 +653,8 @@ Bug Fixes
 * New API commands to create and get reservations from ranges
 
 * Various improvements and fixes
+
+.. _10.2.9-release:
 
 10.2.9
 ------
