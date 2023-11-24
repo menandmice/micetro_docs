@@ -38,27 +38,27 @@ Before updating Micetro, we strongly recommend reading the Release Notes first, 
 
 3. Find available updates under :guilabel:`Micetro Version` in the left sidebar.
 
-   .. image:: ../../images/available-updates.png
+   .. image:: ../../images/available-updates-10.6.png
     :width: 65%
 
 
 Preparing the Update
 ^^^^^^^^^^^^^^^^^^^^^
-The update is prepared to streamline the updating process by ensuring that update packages are already uploaded to the various components when the update is deployed.
+To streamline the updating process, the update is prepared by making sure that update packages are uploaded to the various components before the update is actually deployed.
 
-1. Click :guilabel:`Prepare Update` to start the update process.
+**To prepare an update**:
+
+1. Select :guilabel:`Prepare Update` to start the update process.
 
 2. A package for the new version is downloaded and prepared for deployment. This includes uploading a package to each DNS and DHCP server, as well as each appliance, if the new update package includes an update for them. 
 
 Deploying the Update
 ^^^^^^^^^^^^^^^^^^^^^
-After the package has been prepared, click :guilabel:`Deploy Update` to deploy the new version. 
+Once the package has been prepared, select :guilabel:`Deploy Update` to deploy the new version. 
 
 If the new version includes an updated Central component, it will restart. Otherwise, Micetro seamlessly updates to the new version.
 
-Once the update has been deployed, each Micetro component that requires an upgrade is upgraded to the latest version. The update packages that were uploaded during preparation are put into place.
-
-Men&Mice Appliances will need to be updated manually in the :guilabel:`Current Status` section.
+After the update has been deployed, each Micetro component requiring an upgrade is upgraded to the latest version. The update packages that were uploaded during the preparation phase are put into place.
 
 Update Paths
 ^^^^^^^^^^^^^
@@ -76,8 +76,8 @@ If you're updating Micetro from an older version, refer to the following table:
 .. [1] Kea DHCP servers must be updated to 1.6.0 or 1.8.0 *before* updating Micetro to 10.x. See `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
 
 
-Checking Status of Micetro Components and Appliances
-----------------------------------------------------
+Checking the Status of Micetro Components and Appliances
+--------------------------------------------------------
 You can see the status of all components at a quick glance so you know everything is up and running smoothly.
 
 **To check the current status of Micetro Components and Appliances**:
@@ -91,32 +91,36 @@ Troubleshooting
 The :guilabel:`Status` column will highlight if there is an error with the component, or if it is offline. Hover over the Offline or Error status for more details to help you troubleshoot.
 
 Updating Appliances
-^^^^^^^^^^^^^^^^^^^^
-Under :guilabel:`Current status` you can see if any Appliances have updates pending. 
-
-You can manually apply the update by clicking the :guilabel:`Update` button on the specific appliance. We recommend updating appliances one at a time.
-
-
+--------------------
 :guilabel:`Appliance updates` shows if any Appliances have updates pending. There are three types of updates:
 
-* **Minor**: These updates typically include minor improvements or enhancements.
-* **Full**: Full updates are comprehensive and may include significant changes.
-* **Patch**: Patch updates address specific issues or vulnerabilities.
+* **Full**: Full updates are the most extensive and involve replacing the entire appliance, typically with the release of a new major version. These updates are versioned and around 700MB in size.
+* **Minor**: Minor updates consist of version upgrades, such as 9.4.1, and typically include minor improvements or enhancements. They are executed in the same way as full upgrades, using partition swap. For example, the 9.4.2 update includes all changes made in 9.4.1, so it's okay to go directly from 9.4.0 to 9.4.2. However, for customers with older appliance versions prior to 9.4, it's necessary to first install the 9.4.0 full upgrade before deploying 9.4.1 or 9.4.2. These updates are around 2-300MB in size. 
+* **Patch**: Patch updates are minor adjustments to individual components, such as BIND or ISC DHCP. They address specific issues or vulnerabilities.
 
-Updates are downloaded and then deployed. The :guilabel:`Status column shows the update status.
+Update Status
+^^^^^^^^^^^^^
+The update process involves downloading and deploying updates, which are reflected in the :guilabel:`Status` column.
+
+* **Available**: Updates are ready for application but have not been downloaded yet.
+* **Deployed**: Updates have been applied and fully deployed. 
+* **Partially deployed**: Updates have been downloaded but not applied to every applicable appliance in the system.
+* **Downloaded**: Similar to **Partially deployed**, but updates have not been applied to any appliance in the system.
+* **Downloading**: This is a temporary state indicating that the patch or upgrade is currently being downloaded.
 
 .. note::
    It is recommended to update individual appliances one at a time to avoid simultaneous downtime for all appliances.
 
-**To update and appliance**:
+**To update an appliance**:
 
-1. Go to :guilabel:`Appliance updates` under :guilabel:`Micetro Version`. 
-2. On the Row menu :guilabel:`...` for the relevant update, select :guilabel:`Download`.
+1. Go to the :guilabel:`Configuration` tab on the **Admin** page.
+2. Select :guilabel:`Appliance updates` under :guilabel:`Micetro Version` in the left sidebar. 
+3. On the Row menu :guilabel:`...` for the relevant update, select :guilabel:`Download`.
 
-    .. image:: ../../images/appliances-download-10.6.png
-    :width: 65%
+   .. image:: ../../images/appliances-download-10.6.png
+      :width: 65%
 
-3. Once the download is complete, the update status becomes :guilabel:`Downloaded`. Initiate the update process by selecting :guilabel:`Deploy` on the Row menu.
+4. Once the download is complete, the update status becomes :guilabel:`Downloaded`. Initiate the update process by selecting :guilabel:`Deploy` on the Row menu.
 
 Update Management in the Management Console
 -------------------------------------------------
@@ -126,4 +130,3 @@ For information about how to update in the M&M Management Console, see:
   :maxdepth: 1
 
   console_updates
- 
