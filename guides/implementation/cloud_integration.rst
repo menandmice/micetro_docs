@@ -4,15 +4,24 @@
 
 .. _cloud-integration:
 
-Configuring Cloud Integrations
+Setting UP Cloud Integrations
 ==============================
-Micetro communicates with the cloud services through Men&Mice Central (IPAM) and the Men&Mice DNS controller (DNS).
 
-Before continuing, make sure that:
+Prerequisites
+-------------
+For IP Address Management (IPAM), Micetro connects with the cloud service through Men&Mice Central, and for DNS management, the Men&Mice DNS controller is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
 
-   * The DNS controller is installed and set up on the machine running Men&Mice Central. For information about how to install DNS controllers, see :ref:`install-controllers`.
+1. **DNS Controller Installation and Setup**:
 
-   * The machine running Central can connect to the specific cloud instance on port 443/TCP. For specific networking requirements, see :ref:`firewall-ports`.
+* Ensure that the DNS controller is installed on the machine where Men&Mice Central is running.
+* For instructions on installing DNS controllers, see :ref:`install-controllers`.
+
+2. **Network Connectivity**:
+
+* Verify that the machine running Men&Mice Central can establish a connection to the specific cloud instance.
+* The connection should be established on port 443/TCP. This is a specific network port used for secure communication.
+* For detailed networking requirements, see :ref:`firewall-ports`.
+
 
 If you intend to add multiple AWS cloud accounts using a single set of credentials, see:ref:`aws-multi-account`.
 
@@ -80,11 +89,10 @@ Fill in the  fields required to connect to Azure:
 .. image:: ../../images/add-azure-dns.png
    :width: 50%
 
-Frequently Asked Questions
-""""""""""""""""""""""""""
-*	Can I configure a proxy for the connection to Azure services?
+.. Note::
+   At present, configuring a proxy for connections to Azure services is not supported. 
 
-   This feature is currently not available.
+
 
 *	What are the minimum permissions required for Micetro to integrate fully with Azure?
 
@@ -130,24 +138,6 @@ Fill in the fields required to connect to AWS:
 * For information about how to add multiple AWS cloud accounts using single credentials, see: :ref:`aws-multi-account`.
 * For information about the minimum permissions required for adding AWS accounts, see :ref:`aws-minimum-permissions`.
 
-.. _connect-openstack:
-
-Openstack
-^^^^^^^^^
-
-Fill in the fields required to connect to OpenStack:
-
-+-----------------+-----------------------------------------------------------+
-| Name            | The name of the cloud service in Micetro                  |
-+-----------------+-----------------------------------------------------------+
-| Server Node     |                                                           |
-+-----------------+                                                           |
-| User Name       | The credentials needed for Micetro to connect to          |
-+-----------------+ the cloud instance                                        |
-| Password        |                                                           |
-+-----------------+                                                           |
-| Require HTTPS   |                                                           |
-+-----------------+-----------------------------------------------------------+
 
 .. _connect-ns1:
 
@@ -163,14 +153,6 @@ Fill in the fields required to connect to NS1:
 
 .. _connect-dyn:
 
-Dyn DNS
-^^^^^^^
-
-Fill in the fields required to connect to Dyn:
-
-.. image:: ../../images/add-dyn-dns.png
-   :width: 50%
-
 
 Editing Cloud Services
 -----------------------
@@ -183,14 +165,14 @@ Editing Cloud Services
 
 Removing Cloud Services
 ------------------------
+.. warning::
+  By removing the cloud service, the associated DNS service and the corresponding zones will be removed. Additionally, any subnets and cloud networks will also be removed.
 
 **To remove a cloud service**:
 
 1.	In the **Service Management** area, select the service you want to remove.
 2.	On the :guilabel:`Action` menu, select :guilabel:`Remove DNS service`.
 
-.. warning::
-  By removing the cloud service, the associated DNS service and the corresponding zones will be removed. Additionally, any subnets and cloud networks will also be removed.
 
 Removing Cloud Networks
 ------------------------
