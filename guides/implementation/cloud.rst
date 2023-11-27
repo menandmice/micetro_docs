@@ -14,7 +14,7 @@ Supported Cloud Services
 ------------------------
 
 .. important::
-  To use cloud services, the DNS Server Controller must be installed on the same machine as Men&Mice Central. See :ref:`install-dns-controllers`.
+  To use cloud services, the DNS Server Controller must be installed on the same machine as Men&Mice Central. For information about how to install DNS controllers, see :ref:`install-dns-controllers`.
 
 .. csv-table::
   :header: "Cloud service", "DNS", "IPAM"
@@ -23,10 +23,8 @@ Supported Cloud Services
   "Akamai",	"Yes (Akamai Fast DNS)", "N/A"
   "Azure", "Yes (Azure DNS [1]_)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
-  "OpenStack", "No", "Yes"
   "NS1", "Yes", "N/A"
-  "Dyn", "Yes",	"N/A"
-
+  
 .. [1] see :ref:`configure-azure-dns`
 
 .. toctree::
