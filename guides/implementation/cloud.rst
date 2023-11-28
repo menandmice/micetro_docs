@@ -6,15 +6,6 @@
 
 Cloud Integration
 *****************
-
-   .. toctree::
-     :maxdepth: 1
-
-     cloud_integration
-     aws_multi_account
-     cloud_minimum_permissions
-     configure_azure_dns
-  
 Micetro provides native integration with cloud-based DNS services and can manage IP address-related data for Azure and AWS, including virtual networks and subnets that exist in cloud accounts.
 
 Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  It's worth noting that, at present, cloud DNS services only support the creation of primary zones.
@@ -33,7 +24,11 @@ Supported Cloud Services
   "Azure", "Yes (Azure DNS)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "NS1", "Yes", "N/A"
-
+|
 
 **See also**:
 
+* :ref:`cloud_integration`
+* :ref:`aws_multi_account`
+* :ref:`cloud_minimum_permissions`
+* :ref:`configure_azure_dns`
