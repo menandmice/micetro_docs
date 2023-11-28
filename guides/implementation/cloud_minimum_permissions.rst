@@ -4,9 +4,9 @@
 
 .. _cloud-minimum-permissions:
 
-Integrating Cloud Services with Micetro: Permissions Guide for AWS and Azure
-============================================================================
-This page provides the minimum and recommended permissions necessary for successfully adding AWS and Azure services to Micetro. Whether you're dealing with DNS, IPAM, or cloud network management, ensuring the correct permissions is essential for a seamless integration experience.
+Integrating Cloud Services with Micetro: Permissions Guide for AWS
+==================================================================
+This page provides the minimum and recommended permissions necessary for successfully adding AWS services to Micetro. Whether you're dealing with DNS, IPAM, or cloud network management, ensuring the correct permissions is essential for a seamless integration experience.
 
 Minimum Permissions for Adding AWS Account
 -------------------------------------------
@@ -75,31 +75,4 @@ In an AWS multi-account setup, additional permissions are necessary. For more in
 
 * Furthermore, the roles assumed in these accounts should be assigned the DNS and/or cloud network permissions outlined in the required/recommended permission list above.
 
-
-Minimum Permissions for Micetro Integration with Azure
--------------------------------------------------------
-To fully integrate Micetro with Azure, the following custom role definition is required. This role covers all necessary permissions for DNS and IPAM. Please refer to Azure documentation for instructions on creating a custom role.
-
-.. code-block::
-
-  {
-  "Name": "Men&Mice Operator",
-  "IsCustom": true,
-  "Description": "Can manage DNS and IPAM related resources.",
-  "Actions": [
-    "Microsoft.Network/dnsZones/*",
-    "Microsoft.Network/virtualNetworks/read",
-    "Microsoft.Network/virtualNetworks/write",
-    "Microsoft.Network/virtualNetworks/delete",
-    "Microsoft.Network/virtualNetworks/subnets/read",
-    "Microsoft.Network/virtualNetworks/subnets/write",
-    "Microsoft.Network/virtualNetworks/subnets/delete",
-    "Microsoft.Compute/virtualMachines/read",
-    "Microsoft.Compute/virtualMachines/instanceView/read",
-    "Microsoft.Network/networkInterfaces/ipConfigurations/read",
-    "Microsoft.Resources/subscriptions/resourceGroups/read"
-    ],
-  "AssignableScopes": [
-    "/subscriptions/<your subscription id or specify a more granular scope>"
-    ]
   }
