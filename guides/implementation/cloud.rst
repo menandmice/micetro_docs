@@ -45,7 +45,7 @@ For IP Address Management (IPAM), Micetro connects with the cloud service throug
    * For detailed networking requirements, see :ref:`firewall-ports`.
 
 
-If you intend to add multiple AWS cloud accounts using a single set of credentials, see:ref:`aws-multi-account`.
+If you intend to add multiple AWS cloud accounts using a single set of credentials, see :ref:`aws-multi-account`.
 
 Adding Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^
