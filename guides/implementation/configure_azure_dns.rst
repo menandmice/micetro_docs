@@ -7,7 +7,7 @@
 Configure Azure DNS
 ===================
 
-Azure is natively supported through Cloud Integration. An Azure or Azure Government subscription may be added with the *Configure Cloud Service Account Wizard* (see :ref:`configuring-cloud`) in the Management Console.
+Azure is seamlessly integrated into Micetro through Cloud Integration. For information about how to add Azure service to Micetro, see :ref:`cloud-integration`.
 
 .. note::
    At present, configuring a proxy for connections to Azure services is not supported. 
