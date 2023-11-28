@@ -11,6 +11,8 @@ Micetro reference articles
   :maxdepth: 1
 
   permissions
+  cloud_minimum_permissions
+  aws_multi_account
   ip_count
   acl_convert
   appliance_guide
