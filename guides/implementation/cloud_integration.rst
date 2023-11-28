@@ -89,38 +89,10 @@ Fill in the  fields required to connect to Azure:
 .. image:: ../../images/add-azure-dns.png
    :width: 50%
 
+* For information about the minimum permissions required for integrating fully with Azure, see :ref:`cloud-minimum-permissions`.
+
 .. Note::
    At present, configuring a proxy for connections to Azure services is not supported. 
-
-
-
-*	What are the minimum permissions required for Micetro to integrate fully with Azure?
-
-   Below is a custom role definition that covers all the required permissions for DNS and IPAM. Please look at Azure documentation on how to create a custom role.
-
-.. code-block::
-
-  {
-  "Name": "Men&Mice Operator",
-  "IsCustom": true,
-  "Description": "Can manage DNS and IPAM related resources.",
-  "Actions": [
-    "Microsoft.Network/dnsZones/*",
-    "Microsoft.Network/virtualNetworks/read",
-    "Microsoft.Network/virtualNetworks/write",
-    "Microsoft.Network/virtualNetworks/delete",
-    "Microsoft.Network/virtualNetworks/subnets/read",
-    "Microsoft.Network/virtualNetworks/subnets/write",
-    "Microsoft.Network/virtualNetworks/subnets/delete",
-    "Microsoft.Compute/virtualMachines/read",
-    "Microsoft.Compute/virtualMachines/instanceView/read",
-    "Microsoft.Network/networkInterfaces/ipConfigurations/read",
-    "Microsoft.Resources/subscriptions/resourceGroups/read"
-    ],
-  "AssignableScopes": [
-    "/subscriptions/<your subscription id or specify a more granular scope>"
-    ]
-  }
 
 
 .. _connect-aws:
@@ -136,7 +108,7 @@ Fill in the fields required to connect to AWS:
 * 	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see: https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
 
 * For information about how to add multiple AWS cloud accounts using single credentials, see: :ref:`aws-multi-account`.
-* For information about the minimum permissions required for adding AWS accounts, see :ref:`aws-minimum-permissions`.
+* For information about the minimum permissions required for adding AWS accounts, see :ref:`cloud-minimum-permissions`.
 
 
 .. _connect-ns1:
