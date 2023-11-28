@@ -21,12 +21,10 @@ Supported Cloud Services
   :widths: 10, 30, 30
 
   "Akamai",	"Yes (Akamai Fast DNS)", "N/A"
-  "Azure", "Yes (Azure DNS [1]_)", "Yes"
+  "Azure", "Yes (Azure DNS)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "NS1", "Yes", "N/A"
   
-.. [1] see :ref:`configure-azure-dns`
-
 .. toctree::
   :maxdepth: 2
 
