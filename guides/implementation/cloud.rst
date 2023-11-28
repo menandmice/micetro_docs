@@ -25,13 +25,11 @@ Supported Cloud Services
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "NS1", "Yes", "N/A"
 |
+.. toctree::
+  :maxdepth: 1
 
-**See also**:
-
-* :ref:`cloud-integration`
-
-* :ref:`aws-multi-account`
-
-* :ref:`cloud-minimum-permissions`
-
-* :ref:`configure-azure-dns`
+  cloud_integration
+  cloud_minimum_permissions
+  aws_multi_account
+  configure_azure_dns
+  
