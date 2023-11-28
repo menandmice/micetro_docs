@@ -2,7 +2,7 @@
    :description: Minimum permissions for adding AWS and Azure accounts to Micetro
    :keywords: Micetro credentials, AWS management console, Micetro by Men&Mice, Azure 
 
-.. _aws-minimum-permissions:
+.. _cloud-minimum-permissions:
 
 Integrating Cloud Services with Micetro: Permissions Guide for AWS and Azure
 ============================================================================
