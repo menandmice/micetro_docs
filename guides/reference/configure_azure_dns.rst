@@ -36,7 +36,6 @@ Retrieve the necessary details for the Azure service principal, including Tenant
 Minimum Permissions for Micetro Integration with Azure
 ------------------------------------------------------
 To fully integrate Micetro with Azure, the following custom role definition is required. This role covers all necessary permissions for DNS and IPAM. Please refer to Azure documentation for instructions on creating a custom role.
-**What are the minimum permissions required for Micetro to integrate fully with Azure?**
 
 .. code-block::
 
