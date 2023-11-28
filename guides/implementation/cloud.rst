@@ -28,10 +28,10 @@ Supported Cloud Services
 
 **See also**:
 
-* :ref:`cloud_integration`
+* :ref:`cloud-integration`
 
-* :ref:`aws_multi_account`
+* :ref:`aws-multi-account`
 
-* :ref:`cloud_minimum_permissions`
+* :ref:`cloud-minimum-permissions`
 
-* :ref:`configure_azure_dns`
+* :ref:`configure-azure-dns`
