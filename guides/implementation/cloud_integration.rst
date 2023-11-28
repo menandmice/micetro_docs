@@ -66,9 +66,7 @@ Fill in the  fields required to connect to Azure:
 .. image:: ../../images/add-azure-dns.png
    :width: 50%
 
-* For information about the minimum permissions required for integrating fully with Azure, see :ref:`cloud-minimum-permissions`.
 * For information about how to configure Azure DNS, see :ref:`configure-azure-dns`.
-
 
 .. _connect-aws:
 
