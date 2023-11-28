@@ -13,6 +13,7 @@ Micetro reference articles
   permissions
   cloud_minimum_permissions
   aws_multi_account
+  configure_azure_dns
   ip_count
   acl_convert
   appliance_guide
