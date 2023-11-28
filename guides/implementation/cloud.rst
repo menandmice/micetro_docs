@@ -29,6 +29,9 @@ Supported Cloud Services
 **See also**:
 
 * :ref:`cloud_integration`
+
 * :ref:`aws_multi_account`
+
 * :ref:`cloud_minimum_permissions`
+
 * :ref:`configure_azure_dns`
