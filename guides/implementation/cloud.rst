@@ -10,6 +10,14 @@ Micetro provides native integration with cloud-based DNS services and can manage
 
 Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  It's worth noting that, at present, cloud DNS services only support the creation of primary zones.
 
+.. toctree::
+  :maxdepth: 1
+
+  cloud_integration
+  cloud_minimum_permissions
+  aws_multi_account
+  configure_azure_dns
+
 Supported Cloud Services
 ------------------------
 
@@ -24,12 +32,3 @@ Supported Cloud Services
   "Azure", "Yes (Azure DNS)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "NS1", "Yes", "N/A"
-|
-.. toctree::
-  :maxdepth: 1
-
-  cloud_integration
-  cloud_minimum_permissions
-  aws_multi_account
-  configure_azure_dns
-  
