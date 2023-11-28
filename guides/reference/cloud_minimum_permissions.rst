@@ -75,4 +75,4 @@ In an AWS multi-account setup, additional permissions are necessary. For more in
 
 * Furthermore, the roles assumed in these accounts should be assigned the DNS and/or cloud network permissions outlined in the required/recommended permission list above.
 
-  }
+
