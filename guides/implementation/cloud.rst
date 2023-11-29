@@ -26,7 +26,7 @@ Supported Cloud Services
   "NS1", "Yes", "N/A"
 
 
-Setting UP Cloud Integrations
+Setting Up Cloud Integrations
 -----------------------------
 
 Prerequisites
@@ -147,7 +147,6 @@ Removing Cloud Networks
 
 1. On the **IPAM** page, select the specific cloud network.
 2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`.
-
 |
 **See also**:
 
