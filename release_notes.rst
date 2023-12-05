@@ -32,7 +32,7 @@ Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref
 
 10.3.10
 -------
-November 17, 2023
+December 5, 2023
 
 Improvements
 ^^^^^^^^^^^^
@@ -393,7 +393,7 @@ Bug Fixes
 
 10.2.9
 ------
-November 17, 2023
+December 5, 2023
 
 Improvements
 ^^^^^^^^^^^^
