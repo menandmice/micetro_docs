@@ -12,7 +12,7 @@ Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software fo
   :alt: Men&Mice
   :align: center
 
-Deployed in any on-premise, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
+Deployed in any on-premises, hybrid, or multi-cloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
 This documentation is divided into four parts:
 
