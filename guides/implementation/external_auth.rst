@@ -428,7 +428,6 @@ Configure Central Server
 
          * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip>`_
 
-         
          For security reasons, the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
          
    4. **Manually create a json configuration file in the Micetro data directory**.  At startup, the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
