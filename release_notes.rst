@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro by Men&Mice 10.1.x versions
+   :description: Release notes for Micetro by Men&Mice 10.3.x versions
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
@@ -26,7 +26,34 @@ Release notes
     We'll publish a maintenance release containing the fix for this issue soon.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.5-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.5-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`
+
+.. _10.3.10-release:
+
+10.3.10
+-------
+December 5, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
+
+
+Bug Fixes
+^^^^^^^^^
+
+* Resolved an issue where SNMP profiles were not displayed in the table when the number of profiles exceeded a specific threshold.
+
+* Resolved a bug where Micetro erroneously synchronized interface configurations to the partner DHCPv6 server. The fix ensures that interface configurations are now excluded from replication between ISC Kea peers.
+
+* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
+
+* DNS synchronization for NS1 cloud service was fixed after the provider stopped modifying the zone serial number after updates.DNS sync for NS1 cloud service was fixed after the provider stopped modifying zone serial after updates.	
+
+* Various bug fixes and improvements.
+
+
 
 .. _10.3.9-release:
 
@@ -361,6 +388,41 @@ Bug Fixes
 * New API commands to create and get reservations from ranges
 
 * Various improvements and fixes
+
+.. _10.2.9-release:
+
+10.2.9
+------
+December 5, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
+
+Bug Fixes
+^^^^^^^^^
+
+* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
+
+* Various bug fixes and improvements.
+
+.. _10.2.8-release:
+
+10.2.8
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Various accessibility improvements were made to the Web Application.
+
 
 .. _10.2.7-release:
 
