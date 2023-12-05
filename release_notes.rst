@@ -282,7 +282,7 @@ Bug Fixes
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
 
-.. _10.3.9-release:
+.. _10.3.10-release:
 
 10.3.10
 -------
