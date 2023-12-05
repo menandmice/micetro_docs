@@ -40,5 +40,8 @@ You have the option to revert changes to DNS records and custom properties for a
 
 2. Select :guilabel:`Undo`.
 
+     .. image:: ../../images/global-object-history-undo.png
+      :width: 70%
+
 3. Enter a comment for the action, and select :gulabel:`Save` to confirm the undo action and revert the selected change.
 
