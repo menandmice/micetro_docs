@@ -1,11 +1,12 @@
 .. meta::
-   :description: How to view the change history for a user or an object
-   :keywords: change history, object history
+   :description: How to view the object change history for a user or an object
+   :keywords: change history, object history, undo changes
 
 .. _view-change-history:
 
-Viewing Change History
-======================
+Viewing Object Change History
+=============================
+You can access and navigate all changes made to any object in Micetro. The object change history provides a detailed log of all modifications made to any object, including timestamps, user information, actions taken, and user-entered comments.
 
 **Permissions:** 
 
@@ -15,12 +16,9 @@ Viewing Change History
 .. note::
    For information about how to view object change history in the Management Console, see  :ref:`console-object-change-history`.
 
-You can see a log of all changes made to any object, including the date and time of the change, the name of the user who made it, actions taken, and any comments entered by the user.
-
-All users can view their own object change history, while administrators can see the history of all users.
+All users can view their own object change history, while administrators have access to the history of all users.
 
 You can view the history of a specific object or all objects.
-
 
 **To view your own changes:**
 
@@ -38,10 +36,25 @@ You can view the history of a specific object or all objects.
 
 1. Click the filter icon in the top right corner.
 
-2. Enter/select the relevant information and click :guilabel:`Search`.
+2. Enter or select the relevant information and click :guilabel:`Search`.
 
    .. image:: ../../images/history-filter.png
       :width: 80%
 
-   * If you're viewing global object history, you can select an object type to narrow down the results.
-   * Administrators have the option to enter a username in the :guilabel:`Made by user` box to view changes by specific users.
+   * If you're viewing global object history, you can narrow down results by selecting an object type.
+   * Administrators can specify a username in the :guilabel:`Made by user` box to filter changes by specific users.
+
+Undoing Changes
+---------------
+You have the option to revert changes to DNS records and custom properties for all objects.
+
+**To undo changes**:
+
+1. Locate the specific action in the object history window that you want to undo, and click on the row menu (...) associated with it.
+
+2. Select :guilabel:`Undo`.
+
+   .. image:: ../../images/object-history-undo.png
+      :width: 80%
+
+3. Enter a comment for the action, and select :guilabel:`Save` to confirm the undo action and revert the selected change.
