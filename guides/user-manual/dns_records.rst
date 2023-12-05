@@ -184,6 +184,22 @@ Deleting Records
 
 Deleting a record removes both the data and the physical record from the grid. 
 
-1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making you selections.
+1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making your selections.
 
 2. Click :guilabel:`Delete` on the task bar. The record is immediately deleted from the zone.
+
+Undoing Changes to Records
+--------------------------
+If you need to revert or undo changes made to DNS records, Micetro provides a straightforward process through its history feature. It's essential to use this feature carefully, especially when dealing with critical DNS configurations.
+
+**To undo changes**:
+
+1.	Locate the zone where the changes were made, and click on the row menu (...) associated with it.
+
+2. Select :guilabel:`View history`.
+
+3.	Locate the specific action you want to undo within the history.
+
+4.	Select :guilabel:`Undo` option on the Row menu (…). This action will roll back the selected change, restoring the DNS records to their previous state.
+
+For more information about viewing object change history, see :ref:`view-change-history`.
