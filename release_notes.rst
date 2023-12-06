@@ -4,7 +4,7 @@
 
 .. _release-notes:
 
-Release notes
+Release Notes
 =============
 
 .. note::
@@ -25,13 +25,13 @@ Improvements
 
 * **Script Name Fields**: The script name fields (:menuselection:`Admin --> Configuration --> Event Hooks`) now only accept script names and validate the existence of the script in a folder named "scripts" under Central's data folder. Default paths are "C:\\ProgramData\\Men and Mice\\Central\\scripts" on Windows and /var/mmsuite/mmcentral/scripts on Linux. 
 
-   While existing values for script names will continue to function, updating the value requires moving referenced scripts to the scripts folder before they can be selected in the UI.
+  While existing values for script names will continue to function, updating the value requires moving referenced scripts to the scripts folder before they can be selected in the UI.
 
-   The system setting "Folder for scripts to be run from the API" (RunCommandsFromDirectory) has been deprecated. The current value remains functional but cannot be modified, only cleared. The default value is the scripts folder mentioned above. Scripts invoked through the RunCommand API should also be moved to the scripts folder.
+  The system setting "Folder for scripts to be run from the API" (RunCommandsFromDirectory) has been deprecated. The current value remains functional but cannot be modified, only cleared. The default value is the scripts folder mentioned above. Scripts invoked through the RunCommand API should also be moved to the scripts folder.
 
-   The 'parameters' argument to the RunCommand API has been deprecated.
+  The 'parameters' argument to the RunCommand API has been deprecated.
 
-   While these changes are not breaking, administrators are advised to take necessary actions, as all script invocations are expected to be limited to the scripts folder in a future major release.
+  While these changes are not breaking, administrators are advised to take necessary actions, as all script invocations are expected to be limited to the scripts folder in a future major release.
 
 Bug Fixes
 ^^^^^^^^^
@@ -282,7 +282,7 @@ Bug Fixes
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
 
-.. _10.3.9-release:
+.. _10.3.10-release:
 
 10.3.10
 -------
