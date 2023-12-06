@@ -37,7 +37,11 @@ December 5, 2023
 Improvements
 ^^^^^^^^^^^^
 
-* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability.
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability. This improvement addresses the security vulnerability outlined in CVE-2023-4080.
+
+addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911
+
+
 
 Bug Fixes
 ^^^^^^^^^
