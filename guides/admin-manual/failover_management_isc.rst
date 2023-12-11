@@ -4,49 +4,60 @@
 
 .. _failover-management-isc:
 
-Managing Failover Configurations for ISC DHCP
+Managing Failover Relationships for ISC DHCP
 =============================================
   
 .. note::
    When adding a server’s first failover peer, all other address pools on the server will be updated to refer to this failover peer.
 
-1. On the **Object** menu, select the DHCP Server that contains the scope for which you want to setup failover configuration.
+Setting Up a Failover Relationship
+----------------------------------
+API supports creation using halXMLCommandAddDHCPFailoverRelationship.
 
-2. In the list of scopes, double-click on the applicable one.
+**To add a failover relationship**:
 
-3. In the list of IP Addresses, right-click the applicable one, and then select :guilabel:`Create Address Pool` on the shortcut menu. The DHCP Address Pool dialog box displays.
+1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
 
-4. Move to the **Failover Peer** field, and click the drop-down list arrow.
+2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`ISC DHCP`.
 
-5. Select :guilabel:`Add new failover peer`.
+3. Select the ISC DHCP server housing the scope for which you want to establish failover configuration, and then select :guilabel:`Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)``.
 
-6. Click :guilabel:`OK`. The New Failover Peer dialog box displays.
+4. Select :guilabel:`Add Relationship`.
 
-   * **Name**: Specifies the name of the failover peer.
+5. Complete the **Add Relationship** dialog box:
 
-   * **Role**: Specifies the role of the failover peer. The available roles are Primary and Secondary.
+   .. image:: ../../images/failover-isc-add-relationship.png
+      :width: 65%
 
-   * **Address**: Specifies the IP Address or DNS name on which the server should listen for connections from its failover peer.
+   * **Failover name**: Specify the name of the failover peer.
 
-   * **Port**: Specifies the port number on which the server should listen for connections from its failover peer.
+   * **Partner server**: Select the partner server for the failover configuration.
 
-   * **Peer Address**: Specifies the IP Address or DNS name to which the server should connect to reach its failover peer for failover messages.
+   * **Port**: Specify the port number on which the server should listen for connections from its failover peer.
+   
+   * **Maximum client lead time**: Specify the number of seconds for which a lease can be renewed by either server without contacting the other. Only specified on the primary failover peer.
 
-   * **Peer Port**: Specifies the port number to which the server should connect to reach its failover peer for failover messages.
+   * **Max response delay**: Specify the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
 
-   * **Max Response Delay**: Specifies the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
+   * **Load balance max seconds**: Specify the cutoff in seconds after which load balancing is disabled. According to ISC documentation, a value of 3 or 5 is recommended.
 
-   * **Max Unacked Updates**: Specifies the number of messages the server can send before receiving an acknowledgement from its failover peer. According to ISC documentation, 10 seems to be a good value.
+   * **Max unacked updates**: Specify the number of messages the server can send before receiving an acknowledgment from its failover peer. According to ISC documentation, 10 seems to be a good value.
 
-   * **Max Client Lead Time**: Specifies the number of seconds for which a lease can be renewed by either server without contacting the other. Only specified on the primary failover peer.
+6. Click :guilabel:`Add`.
 
-   * **Split Index**: Specifies the split between the primary and secondary failover peer for the purposes of load balancing. According to ISC documentation, 128 is really the only meaningful value. Only specified on the primary failover peer.
 
-   * **Load Balance Max Seconds**: Specifies the cutoff in seconds after which load balancing is disabled. According to ISC documentation, a value of 3 or 5 is recommended.
+Editing Failover Relationships
+---------------------------------
+Modify through API using halXMLCommandModifyDHCPFailoverRelationship.
 
-7. Click :guilabel:`OK`. The DHCP Address Pool dialog box displays and shows the updated information.
+**To edit a failover relationship**:
 
-8. Click :guilabel:`OK`.
+1. Locate the DHCP server with the relationship.
+
+2. Select :guilabel:`Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)``.
+
+Removing a Failover Relationship
+--------------------------------
 
 If you need to EDIT or DELETE an existing failover peer, do the following:
 
@@ -66,3 +77,12 @@ If you need to EDIT or DELETE an existing failover peer, do the following:
 
 .. note::
    When changing from one failover peer to another for some specific address pool, if the address pool is the last one referring to the (old) failover peer, the user will be warned that performing the action will result in the deletion of the failover peer.
+
+Adding Scopes to Failover Relationships
+---------------------------------------
+
+Removing Scopes from Failover Relationships
+-------------------------------------------
+
+
+
