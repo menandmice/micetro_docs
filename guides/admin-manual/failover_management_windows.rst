@@ -59,33 +59,30 @@ Failover Relationship Parameters
    
 Replicating Failover Scopes
 ----------------------------
-When using a failover relationship, it is possible to replicate scope information between servers. This is possible for individual scopes, all scopes that share a failover relationship, or all scopes on a particular DHCP server. 
+When configuring a failover relationship, you can replicate scope information between servers. This is possible for individual scopes, all scopes that share a failover relationship, or all scopes on a particular DHCP server. 
 
-When a scope replication takes place, the scopes on the selected DHCP are considered the source scopes, and the entire scope contents are replaced on the destination server.
+During the scope replication process, the scopes on the selected DHCP are considered the source scopes, and the entire content of these scopes is subsequently replaced on the destination server.
 
-Replicating Individual Scopes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. On the **IPAM** page, select the Microsoft DHCP server that contains the relationship.
+Individual Scopes
+^^^^^^^^^^^^^^^^^^
+1. On the **IPAM** page, select a scope in a failover relationship.
 
 2. On the :guilabel:`Action` menu, select :guilabel:`Replicate failover scope`. You can also select this option on the **Row menu (...)**.
 
-3. Select a source server, and then click :guilabel:`Confirm`.
+3. Select the destination server, and then click :guilabel:`Confirm`.
 
-Replicating All Scopes that Share a Failover Relationship
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. On the **Admin** page, select the Microsoft DHCP server that you want in the relationship.
+All Scopes in a Failover Relationship
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. On the **Admin** page, select on of the Microsoft DHCP servers that you want in the relationship.
 
 2. On the :guilabel:`Action` menu, select :guilabel:`Failover management`. You can also select this option on the **Row menu (..)**.
 
-3. Select the relevant failover relationship, and then select :guilabel:`Replicate failover relationship` on the **Row menu (...)**.
+3. Select the failover relationship, and then select :guilabel:`Replicate failover relationship` on the **Row menu (...)**.
 
 4. Click :guilabel:`Confirm`.
 
-Replicating All Failover Scopes on a DHCP Server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. note::
-   When replication takes place, the scopes on the selected DHCP server are considered the source scopes and the entire scope contents for each scope is replaced on the partner server.
-
+All Failover Scopes on a DHCP Server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. On the **Admin** page, select one of the Microsoft DHCP servers that you want in the relationship.
 
 2. On the :guilabel:`Action` menu, select :guilabel:`Recplicate failover relationships`. You can also select this option on the **Row menu (..)**.
