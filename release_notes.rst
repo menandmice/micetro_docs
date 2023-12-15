@@ -19,13 +19,6 @@ Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref
 ------
 December 5, 2023
 
-
-Micetro fails to find the Python executable pointed to in a PythonExecutablePath preference if the given path contains spaces. This can affect external and LDAP authentication setups. Work-arounds are either to add the Python path to the PATH environment variable in Windows or to add &quot; on either side of the preference value, e.g. <PythonExecutablePath value="&quot;C:\Path with spaces\python.exe&quot;" />
-
-
-
-
-
 Known Issues
 ^^^^^^^^^^^^
 *Issue: Micetro Unable to Locate Python Executable with Spaces in Path*
