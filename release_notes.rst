@@ -19,6 +19,20 @@ Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref
 ------
 December 5, 2023
 
+Known Issues
+^^^^^^^^^^^^
+*Issue: Micetro Unable to Locate Python Executable with Spaces in Path*
+
+Micetro experiences difficulty locating the Python executable when the ``PythonExecutablePath`` preference points to a path that contains spaces, impacting external and LDAP authentication configurations.
+
+**Workarounds**:
+
+* Add the Python path to the ``PATH`` environment variable in Windows.
+
+-OR-
+
+* Encase the ``PythonExecutablePath`` preference value with quotation marks on either side. Example: ``<PythonExecutablePath value="&quot;C:\Path with spaces\python.exe&quot;"/>``
+
 Improvements
 ^^^^^^^^^^^^
 * **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability. This improvement addresses the security vulnerability outlined in CVE-2023-4080.
@@ -1026,25 +1040,29 @@ Bug fixes
 10.1
 ----
 
-*October 19th, 2021.*
+*October 19th, 2021*
 
 .. important::
-  Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
+   Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
 
 Known issues
 ^^^^^^^^^^^^
 
-..
   .. important::
     There is a known issue when updating to Micetro 10.1 using **Microsoft SQL Server 2008R2 (or earlier)**. The database upgrade process contains the string CONCAT command that was implemented in SQL Server 2012.
     Until we've published the fix for this issue, use the following workaround:
+
     1. In the SQL Server Management Studio run the following on the database (default: ``mmsuite``):
-    .. code-block::
-      ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
-      insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
-      DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
-      insert into mmCentral.mm_databaseupgrades values (17383);
+
+       .. code-block::
+
+            ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
+            insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
+            DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
+            insert into mmCentral.mm_databaseupgrades values (17383);
+
     2. Restart Central.
+
     We'll publish a maintenance release containing the fix for this issue soon.
 
 New features
