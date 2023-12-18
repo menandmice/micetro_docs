@@ -399,26 +399,16 @@ To map group memberships from Okta an *ID Token Claim* has been created with the
 Configure Central Server
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Install Python and dependent libraries and packages on the Central server.
-   
+
+  For information about how to install Python on Windows, see :ref:`central_python_ldap`.
+
    When installing Python please ensure the following:
-      * Python is available to "all user" (Windows)
+      * Python is added to ``PATH`` and available to the user running Central
       
       * That you are using a ratified (tested by Men&Mice) version of Python (see dependency checklist)
       
       * Python is installed in the "Default" environment
-      
-      * Add the below XML-tag to the Preferences.cfg to set the path::
-      
-         <PythonExecutablePath value="C:\\Python39\\python.exe" /> 
-
-         * Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg 
-         
-         * Linux - /var/mmsuite/mmcentral/preferences.cfg 
-         
-.. Note::
-      A Central restart is required after this statement is added to the Preferences.cfg file.
-
-
+     
 2. **Create a new directory called "extensions"** in the Central data directory.
    
          * Windows - C:\\ProgramData\\Men and Mice\\Central\\extensions
