@@ -58,7 +58,6 @@ Micetro can be used to manage failover configurations for Windows, ISC DHCP, and
 .. toctree::
   :maxdepth: 1
 
-  failover_management_windows
   failover_management_isc
   dhcp_kea_ha
- 
+  failover_management_windows
