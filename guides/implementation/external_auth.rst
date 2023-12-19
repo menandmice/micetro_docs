@@ -24,12 +24,12 @@ Micetro also supports multi-factor authentication (MFA) through two methods, Azu
 Active Directory User Authentication
 ------------------------------------
 
-The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to log in to Micetro. In large installations, this system has obvious benefits as users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
+The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to log in to Micetro. In large installations, this system has obvious benefits as users do not have to maintain their passwords in multiple locations. The password rules (expiry, minimum password length, etc.) applied within the organization automatically apply to Micetro.
 
 Active Directory User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Even when you are using AD User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between AD vs. local user authentication is that when AD user authentication is used, users are authenticated using the AD User Authentication system before they can access the Management Console. When AD User Authentication is used, the user password is not stored in the Men&Mice software.
+Even when using AD User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between AD vs. local user authentication is that when AD user authentication is used, users are authenticated using the AD User Authentication system before they can access the Management Console. When AD User Authentication is used, the user password is not stored in the Men&Mice software.
 
 .. note::
   Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using AD user authentication, while other users log in using local user authentication.
@@ -49,7 +49,7 @@ To configure a user to use AD user authentication, do the following:
 
 2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. For more information, see :ref:`acl-users`.
 
-3. When the *Properties* dialog box display, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)
+3. When the *Properties* dialog box displays, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)
 
 4. Click :guilabel:`OK`.
 
@@ -80,7 +80,7 @@ Web Interface
 
 When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on a Microsoft Windows Server.
 
-To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro.
+To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web are enabled in Micetro.
 
 ..
   .. _disable-kernel-mode-auth:
@@ -132,7 +132,7 @@ Group Name
 5. Click :guilabel:`OK`.
 
 .. note::
-  Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member in an Active Directory domain or forest.
+  Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member of an Active Directory domain or forest.
 
 Configuring Users and Access Privileges
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -142,12 +142,12 @@ You do not have to create users in Micetro when the Group Level AD authenticatio
 RADIUS User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
+Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (expiry, minimum password length, etc.) applied within the organization automatically apply to Micetro.
 
 RADIUS User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Even when you are using RADIUS User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between RADIUS vs. local user authentication is that when RADIUS user authentication is used, users are authenticated using the RADIUS User Authentication system before they can access the Management Console. When RADIUS User Authentication is used, the user password is not stored in the Men&Mice software.
+Even when using RADIUS User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between RADIUS vs. local user authentication is that when RADIUS user authentication is used, users are authenticated using the RADIUS User Authentication system before they can access the Management Console. When RADIUS User Authentication is used, the user password is not stored in the Men&Mice software.
 
 .. note::
   Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using RADIUS user authentication, while other users log in using local user authentication.
@@ -194,7 +194,7 @@ After editing the file, restart Men&Mice Central.
 Configuring Users
 ^^^^^^^^^^^^^^^^^
 
-To allow a user to log in to the Men&Mice system, the user must exist in the Men&Mice user database. If the user does not exist in the Men&Mice user database, they are not allowed to log in, even if they provide a valid user name and password in the RADIUS login system.
+To allow a user to log in to the Men&Mice system, the user must exist in the Men&Mice user database. If the user does not exist in the Men&Mice user database, they are not allowed to log in, even if they provide a valid username and password in the RADIUS login system.
 
 To configure a user to use AD user authentication, do the following:
 
@@ -216,7 +216,7 @@ Logging into Micetro
 
 Micetro has integrated with both Azure Active Directory and Okta to allow integration with multi-factor authentication and SSO.  
 
-Once configured the frontpage of Micetro will present buttons to redirect the user to the provider’s URL for authentication.  
+Once configured the front page of Micetro will present buttons to redirect the user to the provider’s URL for authentication.  
 
 .. toctree::
   :maxdepth: 1
@@ -331,7 +331,7 @@ The setup requires navigation to the Azure Portal, and opening AAD.
 Okta
 ^^^^
 
-To get the needed properties for other configuration an application first needs to be set up at the provider.
+To get the needed properties for other configurations an application first needs to be set up at the provider.
 
 
 .. list-table:: Okta Application
@@ -368,7 +368,7 @@ The setup requires opening the Okta Administrator page.
 
 **Okta Authorization Server**
 
-An Okta config with server_id set to default means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been setup at Okta or be skipped (or empty) if the Org Authorization Server should be used. 
+An Okta config with server_id set to default means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been set up at Okta or be skipped (or empty) if the Org Authorization Server should be used. 
 
 **Group authorization** 
 
@@ -398,23 +398,14 @@ Configure Central Server
 ^^^^^^^^^^^^^^^^^^^^^^^^
    1. Install Python and dependent libraries and packages on the Central server.
    
+   For information about how to install Python on Windows, see :ref:`central-python-ldap`.
+
    When installing Python please ensure the following:
-      * Python is available to "all user" (Windows)
+      * Python is added to ``PATH`` and available to the user running Central
       
       * That you are using a ratified (tested by Men&Mice) version of Python (see dependency checklist)
       
       * Python is installed in the "Default" environment
-      
-      * Add the below XML-tag to the Preferences.cfg to set the path::
-      
-         <PythonExecutablePath value="C:\\Python39\\python.exe" /> 
-
-         * Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg 
-         
-         * Linux - /var/mmsuite/mmcentral/preferences.cfg 
-         
-   .. Note::
-         A Central restart is required after this statement is added to the Preferences.cfg file.
    
    2. **Create a new directory called "extensions"** in the Central data directory.
    
@@ -531,12 +522,12 @@ This will enable the SSO login on the web.
       :align: center
       
 .. Note::
-The form will not be hidden if there is no external provider configured. The login form can be found be clicking the “Log in with Micetro“ down in the left corner of the login page.
+The form will not be hidden if there is no external provider configured. The login form can be found by clicking the “Log in with Micetro“ down in the left corner of the login page.
 
 Login and Grant User/Group Access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At first login, when using either Azure Active Directory (AAD) or Okta, **a new user account is created in Micetro**.  This user account will appear with the type “External”. External changes to user’s email, full name and group membership are synced at subsequent logins by matching the external ID.
+At first login, when using either Azure Active Directory (AAD) or Okta, **a new user account is created in Micetro**.  This user account will appear with the type “External”. External changes to the user’s email, full name, and group membership are synced at subsequent logins by matching the external ID.
 
 A single user profile is thus not shared between an external user authenticated by Azure AD (or Okta) and AD-integrated SSO, instead they are treated as separate users in Micetro.
 
