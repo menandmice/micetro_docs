@@ -4,8 +4,8 @@
 
 .. _failover-management-isc:
 
-Managing Failover Relationships for ISC DHCP
-=============================================
+Managing Failover Relationships for ISC DHCP Servers
+====================================================
   
 .. note::
    When adding a server’s first failover peer, all other address pools on the server will be updated to refer to this failover peer.
