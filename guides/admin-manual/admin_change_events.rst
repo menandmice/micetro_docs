@@ -32,7 +32,7 @@ Adding a Change Event
    
 5. When you are finished, click :guilabel:`Add`. 
 
-*Example 1*: Running a Python script named mytest.py.
+*Example*: Running a Python script named mytest.py.
 
    To run a script named mytest.py that is located in the scripts folder, simply select ``mytest.py`` from the dropdown field.
 
@@ -46,9 +46,9 @@ Editing and Deleting Change Events
 Script Interfaces
 -----------------
 
-When Men&Mice Central runs an external script assoicated with a change event, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
+When Men&Mice Central runs an external script associated with a change event, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
 
-The XML structures differs a little depending on the type of script (property change, zone contents change, scope monitoring).
+The XML structures differ a little depending on the type of script (property change, zone contents change, scope monitoring).
 
 .. note::
    The API knows change events as External Scripts which is why the element name is externalScriptParameters.
@@ -152,7 +152,7 @@ Upon completion, the script must create a new XML structure and return it to Men
   </xs:element>
   </xs:schema>
 
-An example XML structure with three custom properties named Location, Country and region might look as follows:
+An example XML structure with three custom properties named Location, Country, and region might look as follows:
 
 .. code-block:: XML
 
