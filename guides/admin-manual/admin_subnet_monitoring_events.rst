@@ -17,7 +17,7 @@ Enabling Subnet Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Subnet monitoring is enabled in the :ref:`admin-system-settings`. Click the **Settings** button in the upper-right corner to go to the System Settings where you can enable subnet monitoring in the system and configure email notifications.
 
-When enabled, the system monitors the free addresses in DHCP address pools and subnets, and performs an action if the number of free addresses goes below a user-definable threshold.
+When enabled, the system monitors the free addresses in DHCP address pools and subnets and acts if the number of free addresses goes below a user-definable threshold.
 
 When subnet monitoring is enabled, a new column, **Monitoring**, is added when viewing the subnet list. To filter the view by this column and quickly see all subnets that are monitored, you can enter "Monitor: Yes" in the Quick Filter search box.
 
@@ -37,7 +37,7 @@ Enabled
   When selected, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, clear the checkbox and enable monitoring for the individual subnets instead by selecting the subnet on the **IPAM** page, and then selecting :guilabel:`Set subnet monitoring` on the :guilabel:`Action` menu.
 
 Script to invoke
-  Enter the path of the script to run when the number of free addresses goes below the set threshold. See :ref:`admin-change-events` for information on the script interface and the format for calling the script.
+  Select the script to run when the number of free addresses goes below the set threshold.
 
 Email address
   The email address that should be the recipient of notification when the number of free addresses goes below the set threshold.
@@ -85,7 +85,7 @@ The XML schema for a subnet monitoring script is as follows:
   </xs:element>
   </xs:schema>
 
-The value of the thresholdType element will be either static or dynamic depending on whether the threshold being crossed is one of dynamically allocatable addresses (that is, available addresses in address pools) or if it is a threshold set for static addresses (that is, available addresses outside of address pools).
+The value of the thresholdType element will be either static or dynamic depending on whether the threshold being crossed is one of the dynamically allocatable addresses (that is, available addresses in address pools) or if it is a threshold set for static addresses (that is, available addresses outside of address pools).
 
 .. note::
   The global subnet monitor, set through the :ref:`admin-system-settings`, is the only one that takes superscopes into account. When the global subnet monitor actions are performed, due to the conditions being met for a superscope, the XML generated will contain a <server> tag and a <superscope> tag.
@@ -128,16 +128,16 @@ Example PowerShell Script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  Powershell scripts can be run natively by Men&Mice by starting the command with ``powershell``, ``powershell.exe`` or simply with the path to the ``.ps1`` file. Powershell can then read the stdin with ``[Console]::In.ReadToEnd()``.
+  Powershell scripts (``.ps1`` extension) are run natively by Men&Mice on Windows  with ``powershell``. The script can then read the stdin with ``[Console]::In.ReadToEnd()``.
 
 Instructions
 """"""""""""
 
-1. Copy the ``ScopeMonScript.ps1`` to ``C:\\ProgramData\\Men and Mice\\Central``.
+1. Copy the ``ScopeMonScript.ps1`` to ``C:\\ProgramData\\Men and Mice\\Central\scripts`` (the scripts folder).
 
-2. In Admin->Configuration->Event Hooks, under **Subnet monitoring events**, click :guilabel:`Set Defaults`.
+2. In Admin > Configuration > Event Hooks, under **Subnet monitoring events**, click :guilabel:`Set Defaults`.
 
-3. Enter ``ScopeMonScript.ps1`` in the **Script to invoke** text box.
+3. Select ``ScopeMonScript.ps1`` in the **Script to invoke** field.
 
 4. Configure a dynamic threshold.
 

@@ -23,3 +23,4 @@ Use event hooks to monitor and run specific scripts based on certain events. Thi
   admin_subnet_monitoring_events
   admin_change_events
   admin_scheduled_events
+  admin_script_name_validation_policy
