@@ -26,19 +26,15 @@ Adding a Change Event
 
 3. Change events are displayed in the **Change Events** section. Click :guilabel:`Add`.
 
-4. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then enter the **Script name** and necessary startup parameters.
+4. In the Add Change Event dialog box, select the **Object type** (Zone, IP Address etc.), and then select the **Script name**.
 
-   You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&Mice Central; however, if the script is stored in a different location, the path for the script must be entered.
+   It is assumed that the script is located in a folder named `scripts` under Central's data folder.
    
 5. When you are finished, click :guilabel:`Add`. 
 
-*Example 1*: Running a python script named mytest.py.
+*Example*: Running a Python script named mytest.py.
 
-   To run a script named mytest.py that is located in the Men&Mice Central directory using the python interpreter, the following would be placed in the appropriate field: ``python mytest.py``.
-
-*Example 2*: Running an executable named checkdata.exe. 
-
-   To run an executable named checkdata.exe that is located in the Men&Mice Central directory the following would be placed in the appropriate field: ``checkdata.exe``.
+   To run a script named mytest.py that is located in the scripts folder, simply select ``mytest.py`` from the dropdown field.
 
 Editing and Deleting Change Events
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,9 +46,9 @@ Editing and Deleting Change Events
 Script Interfaces
 -----------------
 
-When Men&Mice Central runs an external script assoicated with a change event, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
+When Men&Mice Central runs an external script associated with a change event, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
 
-The XML structures differs a little depending on the type of script (property change, zone contents change, scope monitoring).
+The XML structures differ a little depending on the type of script (property change, zone contents change, scope monitoring).
 
 .. note::
    The API knows change events as External Scripts which is why the element name is externalScriptParameters.
@@ -156,7 +152,7 @@ Upon completion, the script must create a new XML structure and return it to Men
   </xs:element>
   </xs:schema>
 
-An example XML structure with three custom properties named Location, Country and region might look as follows:
+An example XML structure with three custom properties named Location, Country, and region might look as follows:
 
 .. code-block:: XML
 
