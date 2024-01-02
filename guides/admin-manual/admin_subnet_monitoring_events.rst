@@ -17,7 +17,7 @@ Enabling Subnet Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Subnet monitoring is enabled in the :ref:`admin-system-settings`. Click the **Settings** button in the upper-right corner to go to the System Settings where you can enable subnet monitoring in the system and configure email notifications.
 
-When enabled, the system monitors the free addresses in DHCP address pools and subnets, and performs an action if the number of free addresses goes below a user-definable threshold.
+When enabled, the system monitors the free addresses in DHCP address pools and subnets and acts if the number of free addresses goes below a user-definable threshold.
 
 When subnet monitoring is enabled, a new column, **Monitoring**, is added when viewing the subnet list. To filter the view by this column and quickly see all subnets that are monitored, you can enter "Monitor: Yes" in the Quick Filter search box.
 
@@ -85,7 +85,7 @@ The XML schema for a subnet monitoring script is as follows:
   </xs:element>
   </xs:schema>
 
-The value of the thresholdType element will be either static or dynamic depending on whether the threshold being crossed is one of dynamically allocatable addresses (that is, available addresses in address pools) or if it is a threshold set for static addresses (that is, available addresses outside of address pools).
+The value of the thresholdType element will be either static or dynamic depending on whether the threshold being crossed is one of the dynamically allocatable addresses (that is, available addresses in address pools) or if it is a threshold set for static addresses (that is, available addresses outside of address pools).
 
 .. note::
   The global subnet monitor, set through the :ref:`admin-system-settings`, is the only one that takes superscopes into account. When the global subnet monitor actions are performed, due to the conditions being met for a superscope, the XML generated will contain a <server> tag and a <superscope> tag.
