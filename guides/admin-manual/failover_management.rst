@@ -1,14 +1,17 @@
 .. meta::
-   :description: Managing failover configurations for Windows, ISC, and KEA DHCP servers in Micetro
-   :keywords: failover management, Windows, ISC, Kea, DHCP
+   :description: Managing failover configurations for Microsoft, ISC, and KEA DHCP servers in Micetro
+   :keywords: failover management, Microsoft, ISC, Kea, DHCP
 
 .. _failover-management:
 
 Failover Management
 ====================
-Managing failover relationships for DHCP servers is crucial for ensuring high availability and seamless operation.
+Micetro can be used to manage failover configurations for ISC DHCP, Kea DHCP, and Microsoft servers. Failover is a feature that improves the reliability and availability of DHCP services by creating redundancy between two DHCP servers. This failover mechanism ensures that if one server becomes unavailable, the other can seamlessly take over the DHCP service, minimizing downtime and disruption to network operations. Servers can be configured in Hot Standby or Load Balancing modes, depending on the server type.
 
-The following permissions and roles are required for effective failover management across ISC DHCP, Kea DHCP, and Windows DHCP servers:
+.. note::
+  Both servers must be in Micetro for the functionality to work.
+
+The following permissions and roles are required for effective failover management across ISC DHCP, Kea DHCP, and Microsoft DHCP servers:
 
 **To manage failover relationships**:
 
@@ -36,24 +39,8 @@ The following permissions and roles are required for effective failover manageme
 * Access bits: ``"Administer DHCP servers"``
 * Built-in role: ``DHCP Administrators (built-in)``
 
-.. note::
-   The permissions to replicate scopes are on the scope level. This is not to be confused with the "Edit reservation" permission bit on the server level, which does not apply in this context.
+----------------------------------------------------
 
------------------------------------
-
-Micetro can be used to manage failover configurations for Windows, ISC DHCP, and Kea DHCP servers. The term "Failover" is used interchangeably with "High Availability" in the context of Kea DHCP.
-
-* DHCP failover synchronizes IP address lease information between two DHCP servers.
-
-* Servers can be configured in Hot Standby, Load Balancing, or High Availability modes, depending on the server type.
-
-* Failover can be set up for a single scope or multiple scopes on the same server.
-
-* As an overlay solution, Micetro can also add some additional functionality that is not available natively.
-
-
-.. note::
-  Both servers must be in Micetro for the functionality to work.
   
 .. toctree::
   :maxdepth: 1
