@@ -1,5 +1,5 @@
 .. meta::
-   :description: Installing the Men&Mice DNS Agent for Micetro by Men&Mice
+   :description: Installing the DNS Agent for Micetro by Men&Mice
    :keywords: DNS, DNS Agent, Micetro, BIND, Unbound, AuthServe
 
 .. _install-dns-controllers:
@@ -9,7 +9,7 @@ Micetro DNS Agents
 
 Micetro comes with two types of DNS agents: 
 
-   * the Men&Mice :ref:`dns-server`
+   * the Micetro :ref:`dns-server`
    * the Men&Mice :ref:`authserve` 
 
 .. _dns-server:
@@ -33,7 +33,7 @@ To view available controller options and parameters, run the installer script wi
     cd archive-name
     ./install --help
 
-    Men&Mice server controller installer.
+    Micetro server controller installer.
     --help:  Print help.
     --quiet:  Suppress output during install.
     --auto:  Automatically determine what controllers to install. Default if no other option is given.
@@ -65,7 +65,7 @@ Running the Installer
   ./install --generic-dns-controller --bind-dns-controller --quiet
 
 .. note::
-  The Men&Mice Update Controller is automatically added when another Men&Mice service is installed.
+  The Micetro Update Controller is automatically added when another Men&Mice service is installed.
 
 If you plan to use the Generic DNS Controller, refer to the :ref:`generic-dns-controller` for more details.
 
@@ -97,38 +97,38 @@ Before installing the Micetro DNS Controller on a Linux system, ensure that you 
 
     * Consider potential problems that might occur when the installer rearranges the data directory listed in ``named.conf`` (relevant for SUSE Linux).
 
-  * **User Account for Named:** Identify the user account that owns the named process. Typically, the Men&Mice DNS Controller should run under the same user account. However, it is occasionally possible to use group membership instead.
+  * **User Account for Named:** Identify the user account that owns the named process. Typically, the Micetro DNS Controller should run under the same user account. However, it is occasionally possible to use group membership instead.
 
 Installation Steps
 ^^^^^^^^^^^^^^^^^^
 
-1. Extract the Men&Mice Controller installation package (as root):
+1. Extract the Micetro Controller installation package (as root):
 
   .. code-block:: bash
 
-    tar -xzvf mmsuite-controllers-10.0.linux.x64.tgz
+    tar -xzvf micetro-controllers-10.0.linux.x64.tgz
 
-2. In the newly created ``mmsuite-controllers-10.0.linux.x64`` directory, run the installer script to install the Men&Mice Controller (as root):
+2. In the newly created ``micetro-controllers-10.0.linux.x64`` directory, run the installer script to install the Micetro Controller (as root):
 
   .. code-block:: bash
 
-    cd mmsuite-controllers-10.1.linux.x64 && ./install
+    cd micetro-controllers-10.1.linux.x64 && ./install
 
 Installer Questions
 ^^^^^^^^^^^^^^^^^^^
 
-During the installation process, the installer will prompt you with questions related to the Men&Mice DNS Server Controller. Be prepared to answer the following:
+During the installation process, the installer will prompt you with questions related to the Micetro DNS Server Controller. Be prepared to answer the following:
 
-  * Do you want to install the Men&Mice DNS Server Controller?
+  * Do you want to install the Micetro DNS Server Controller?
   * Are you running named in a chroot() environment?
   * What is the chroot() directory?
   * Where is the BIND configuration file?
   * Would you like the DNS Server Controller to run ``name-checkconf`` to verify changes when editing advanced server and zone options?
   * Where is ``named-checkconf`` located?
   * The installer needs to rearrange the files in ``<directory>`` and restart the name server. A backup will be created. Is this OK?
-  * Enter the user and group names under which you want to run the Men&Mice DNS Server Controller. This must be the user which is running named.
+  * Enter the user and group names under which you want to run the Micetro DNS Server Controller. This must be the user that is running named.
   * Where would you like to install the Men&Mice external static zone handling utilities?
-  * Where do you want to install the Men&Mice Server Controller binaries?
+  * Where do you want to install the Micetro Server Controller binaries?
   * BIND needs to be restarted. Would you like to restart it now?
 
 Ensure the ``named-checkconf`` file is readable:
@@ -140,7 +140,7 @@ Ensure the ``named-checkconf`` file is readable:
 Required named.conf Statements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Men&Mice DNS Server Controller requires specific settings within the ``named.conf`` file (including any files listed in ``include`` statements in ``named.conf``). Ensure the following statements are present:
+The Micetro DNS Server Controller requires specific settings within the ``named.conf`` file (including any files listed in ``include`` statements in ``named.conf``). Ensure the following statements are present:
 
 * ``directory``: The ``directory`` substatement of the ``options`` statement must be present and must point to a directory that the installer can replace. It should not refer to ``/``, ``/etc``, the root of a chroot jail, or any partition mount point. If you need to change or add the ``directory`` statement, be prepared to move files or update paths used elsewhere in your ``named.conf``.
 
@@ -154,7 +154,7 @@ The Men&Mice DNS Server Controller requires specific settings within the ``named
 
   This creates the ``rndc.conf`` file, which contains configuration for local use and key and controls statements that can be copied into ``named.conf``.
 
-* ``controls``: The Men&Mice DNS Server Controller uses a ``controls`` statement for BIND. There must be a ``controls`` statement with an ``inet`` substatement that references an explicitly defined key (as mentioned above). The ``inet`` statement should allow connections from the loopback address, ``127.0.0.1``. If no ``controls`` statement is defined, the installer will prompt you to create one manually.
+* ``controls``: The Micetro DNS Server Controller uses a ``controls`` statement for BIND. There must be a ``controls`` statement with an ``inet`` substatement that references an explicitly defined key (as mentioned above). The ``inet`` statement should allow connections from the loopback address, ``127.0.0.1``. If no ``controls`` statement is defined, the installer will prompt you to create one manually.
 
 Changes in named.conf
 ^^^^^^^^^^^^^^^^^^^^^
@@ -170,9 +170,9 @@ The file layout differs slightly between instances with and without BIND views, 
   :header: "Description", "File(s) or directory"
   :widths: 40, 60
 
-  "Men&Mice DNS Server Controller daemon", "mmremoted, usually in /usr/sbin or /usr/local/sbin"
-  "Men&Mice external static zone handling utilities", "mmedit and mmlock, usually in /usr/bin or /usr/local/bin"
-  "Data directory for Men&Mice DNS Server Controller", "Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Server Controller was installed"
+  "Micetro DNS Server Controller daemon", "mmremoted, usually in /usr/sbin or /usr/local/sbin"
+  "Micetro external static zone handling utilities", "mmedit and mmlock, usually in /usr/bin or /usr/local/bin"
+  "Data directory for Micetro DNS Server Controller", "Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Server Controller was installed"
   "Backup of original data directory", "Same as above, with '.bak' appended to the path"
   "New starting configuration file", "Usually either /etc/named.conf or /etc/namedb/named.conf; possibly located within a chroot jail"
   "Backup of original starting configuration file", "Same as above, with '.bak' appended to the path"
@@ -286,12 +286,12 @@ After installing the DNS Server Controller, run the following commands as root:
 These will adjust the SELinux security label for the BIND 9 configuration and zone files.
 
 .. note::
-  Due to the complexity of and variation between SELinux configuration files, we are currently unable to officially support SELinux configuration, as SELinux settings can interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&Mice DNS Server Controller. It is possible to make ``named``, Micetro, and SELinux all work together, but we cannot currently offer official support for this.
+  Due to the complexity of and variation between SELinux configuration files, we are currently unable to officially support SELinux configuration, as SELinux settings can interfere with the normal operation of named after its configuration has been rewritten by the installer for Micetro DNS Server Controller. It is possible to make ``named``, Micetro, and SELinux all work together, but we cannot currently offer official support for this.
 
 The $INCLUDE and $GENERATE Directives
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Refer to the following articles for information about how these directives are handled in Men&Mice Suite.
+Refer to the following articles for information about how these directives are handled in Micetro.
 
 * :ref:`dns-controller-include`
 
@@ -300,7 +300,7 @@ Refer to the following articles for information about how these directives are h
 Installation with Dynamic Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Men&Mice Suite expects dynamic zones to be made dynamic by allowing signed updates. Any dynamic zone must have an allow-update statement whose ACL contains a key. If you do not otherwise have a need for signed updates, add the rndc key (or any other key) to the list.
+Micetro expects dynamic zones to be made dynamic by allowing signed updates. Any dynamic zone must have an allow-update statement whose ACL contains a key. If you do not otherwise need signed updates, add the rndc key (or any other key) to the list.
 
 Furthermore, after installation, be sure that your server allows zone transfers of dynamic zones to the loopback address, 127.0.0.1, or users will be unable to open dynamic zones from this server. Zone transfer restrictions can be set or changed in the server's and in each zone's **Options** window in the Men&Mice Management Console.
 
@@ -319,9 +319,9 @@ Micetrol Server Controller running on Windows
 Active Directory Integrated Zones and Other Dynamic Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to open a dynamic zone, Micetro must read it from the DNS service rather than from a file. The way this is done is via *zone transfer*. On Windows Server 2003 and later, the zone transfer restriction setting in the zone's options window must be set to allow transfers to an explicit list of IP addresses that includes the server's own address. The default setting of allowing zone transfers to any server listed in the zone's NS records will not suffice.
+To open a dynamic zone, Micetro must read it from the DNS service rather than from a file. The way this is done is via *zone transfer*. On Windows Server 2003 and later, the zone transfer restriction setting in the zone's options window must be set to allow transfers to an explicit list of IP addresses that includes the server's address. The default setting of allowing zone transfers to any server listed in the zone's NS records will not suffice.
 
-In some cases, Micetro DNS Server Controller will also need to be told specifically which interface to use when requesting zone transfers. If you have trouble opening a dynamic zone after setting the zone's transfer restrictions appropriately, check the Event Log / Application Log for messages from Men&Mice DNS Server Controller. If there is a message indicating that it was unable to get a zone transfer, note the address it tried to use; you can either add that IP address to the transfer restrictions list, or else edit a configuration file for Men&Mice DNS Server Controller.
+In some cases, Micetro DNS Server Controller will also need to be told specifically which interface to use when requesting zone transfers. If you have trouble opening a dynamic zone after setting the zone's transfer restrictions appropriately, check the Event Log / Application Log for messages from Micetro DNS Server Controller. If there is a message indicating that it was unable to get a zone transfer, note the address it tried to use; you can either add that IP address to the transfer restrictions list or else edit a configuration file for Micetro DNS Server Controller.
 
 To configure the DNS Server Controller to use a different address, edit the service's preferences.cfg file on the DNS server computer. The file is located in one of the following two locations, where {Windows} is probably C:\\Windows:
 
@@ -335,7 +335,7 @@ If the file does not exist, create it. The file is a text file in a simple XML-b
 
   <DNSServerAddress value="192.0.2.1"/>
 
-Save the file, and then restart Men&Mice DNS Server Controller using :menuselection:`Administrative Tools --> Services` in Windows. Then also restart Men&Mice Central, so that it can cache the zone's contents.
+Save the file, and then restart Micetro DNS Server Controller using :menuselection:`Administrative Tools --> Services` in Windows. Then also restart Men&Mice Central, so that it can cache the zone's contents.
 
 .. note::
   For Active Directory-integrated zones, other domain controllers running Microsoft DNS do not need to get zone transfers. This is because the zone data is replicated through LDAP, rather than through zone transfers. Thus, for an AD-integrated zone, the zone transfer restriction list might need only the server's own address.
@@ -343,16 +343,16 @@ Save the file, and then restart Men&Mice DNS Server Controller using :menuselect
 Running Micetro DNS Server Controller under a privileged user account / Server type: "Microsoft Server Controller-Free"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Normally, the Men&Mice DNS Server Controller is installed on only *one* host in an Active Directory forest, or one copy per site. That installation can then manage all MS DNS servers in the forest, or in the site, using Microsoft's own DNS management API. In order for this to work, the service needs to run as a user that has DNS management privileges (i.e. the AD service account must be a member of the DNSAdmins group of the domain).
+Normally, the Micetro DNS Server Controller is installed on only *one* host in an Active Directory forest, or one copy per site. That installation can then manage all MS DNS servers in the forest, or in the site, using Microsoft's own DNS management API. In order for this to work, the service needs to run as a user that has DNS management privileges (i.e. the AD service account must be a member of the DNSAdmins group of the domain).
 
-To configure Men&Mice DNS Server Controller to access DNS servers on remote computers, do the following:
+To configure Micetro DNS Server Controller to access DNS servers on remote computers, do the following:
 
- 1. Start the Windows 'Services' program and open the properties dialog box for Men&Mice DNS Server Controller.
+ 1. Start the Windows 'Services' program and open the properties dialog box for Micetro DNS Server Controller.
  2. Click the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
  3. Select the :guilabel:`This account` radio button and enter the name and password of a Windows user that is a member of the Administrators group.
- 4. Close the dialog box and restart the Men&Mice DNS Server Controller service.
+ 4. Close the dialog box and restart the Micetro DNS Server Controller service.
 
-If Men&Mice DNS Server Controller is run as a local system service (the default), it will only be able to manage the MS DNS service on the same host.
+If Micetro DNS Server Controller is run as a local system service (the default), it will only be able to manage the MS DNS service on the same host.
 
 Enable the Generic DNS Server Controller functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -370,13 +370,13 @@ Configure the DNS Server Controller to work with Microsoft Azure DNS
 
 For information on configuring Microsoft Azure DNS, see :ref:`configure-azure-dns`.
 
-Where to install Men&Mice DNS Server Controller
+Where to install Micetro DNS Server Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If Men&Mice Central is installed on a Windows host, one option is to install Men&Mice DNS Server Controller on the same host. If this is not done, the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.
+If Men&Mice Central is installed on a Windows host, one option is to install Micetro DNS Server Controller on the same host. If this is not done, the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.
 
 .. note::
-  The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Men&Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.
+  The Men&Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Micetro DNS Server Controller in the same local network (the same site, typically) as the DNS server.
    
 .. _authserve:   
 
@@ -425,10 +425,10 @@ Adding the Agent to Central
       
       *  **Agent host**: the hostname or IP address of the machine where the agent is located. Note that the Central machine must be able to communicate with the agent machine. 
       * **Agent display name**: this box is optional and should be filled in if you want your agent to be displayed in the UI under some other name than the hostname/IP address.
-      * **Agent setup key**: enter the setup key for the agent that you copied earlier from the agent installation script. If you forgot to copy it, you can also find it located in the ssl directory which can be found under the agent directory on the agent machine. The agent also prints it out on startup if it hasn’t been added to a Central server yet. The setup key is used to encrypt certificates that Central sends over to the agent. These certificates are then used to allow for a secure encrypted connection to be created between Central and the agent.
+      * **Agent setup key**: enter the setup key for the agent that you copied earlier from the agent installation script. If you forgot to copy it, you can also find it in the ssl directory which can be found under the agent directory on the agent machine. The agent also prints it out on startup if it hasn’t been added to a Central server yet. The setup key is used to encrypt certificates that Central sends over to the agent. These certificates are then used to allow for a secure encrypted connection to be created between Central and the agent.
 
       .. note::
-         If the agent you are adding to Central has been previously added to a Central server, you will have to remove the SSL directory and restart the agent before adding. The restart will generate a new setup key that you should use when adding the agent.
+         If the agent you are adding to Central has been previously added to a Central server, you will have to remove the SSL directory and restart the agent before adding it. The restart will generate a new setup key that you should use when adding the agent.
 
 
    6. When you are finished, click :guilabel:`Next`.
