@@ -128,7 +128,7 @@ ISC DHCP scopes participating in failover relationships are grouped and labeled 
 * Locate the specific scope on the **IPAM** page, then select :guilabel:`Remove from failover` on the :guilabel:`Action` or the **Row (...)** menu. 
 
    .. image:: ../../images/failover-isc-remove-scope.png
-   :width: 65%
+      :width: 65%
 
    *	Decide whether to delete or disable the secondary scope.
    *	On removal, the failover peer statement is cleared from each pool in the scope.
@@ -140,7 +140,7 @@ ISC DHCP scopes participating in failover relationships are grouped and labeled 
 * Locate the specific scope on the **IPAM** page, then select :guilabel:`Manage scope instances` on :guilabel:`the Action` or the **Row (...)** menu. Select :guilabel:`Remove scope instance` for the relevant server.
 
    .. image:: ../../images/failover-isc-remove-scope-instance.png
-   :width: 65%
+      :width: 65%
 
 -OR-
 
@@ -169,7 +169,7 @@ You can modify ISC failover relationship options on a per-relationship basis.
    *	**MaxResponseDelay**: Specify the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
    *	**MaxUnackedUpdates**: Specify the number of messages the server can send before receiving an acknowledgment from its failover peer. According to ISC documentation, 10 seems to be a good value.
 
-Removing a Failover Relationship
+Removing Failover Relationships
 --------------------------------
 
 **To remove failover relationships, do one of the following**:
