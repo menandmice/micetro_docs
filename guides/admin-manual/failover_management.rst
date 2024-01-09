@@ -46,5 +46,5 @@ The following permissions and roles are required for effective failover manageme
   :maxdepth: 1
 
   failover_management_isc
-  dhcp_kea_ha
+  failover_management_kea
   failover_management_windows
