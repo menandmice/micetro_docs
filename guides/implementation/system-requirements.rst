@@ -4,7 +4,7 @@
 
 .. _system-requirements:
 
-System requirements
+System Requirements
 ===================
 
 The minimum system requirements and supported platforms for Micetro by Men&Mice are as follows:
@@ -15,7 +15,7 @@ Hardware
 .. note::
   The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture-overview` for details.
 
-Operating systems
+Operating Systems
 -----------------
 
 .. csv-table:: Operating systems
@@ -23,8 +23,6 @@ Operating systems
   :widths: 20, 20, 20, 10, 10, 10, 10
 
   "**Microsoft Windows**",,,,,,
-  "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A", "Y"
-  "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2022", "Y", "Y", "Y", "Y", "N/A", "Y"
@@ -48,10 +46,11 @@ Operating systems
 .. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
 
 .. note::
-   On January 14, 2020, Microsoft ended support for Windows server 2008 and 2008 R2 and therefore support for those server types are deprecated in versions 10.2 and above of    Micetro.
-   
+   * As of October 10, 2023, Microsoft has officially discontinued support for Windows Server 2012 and 2012 R2. Micetro software may continue to function; however, its performance and reliability cannot be guaranteed, as the underlying operating system is no longer officially supported by Microsoft.
+   * As of January 14, 2020, Microsoft discontinued support for Windows Server 2008 and 2008 R2. Consequently, support for these server types is deprecated in Micetro versions 10.2 and above.
+
 .. note::
-   32-bit Linux Operating Systems will no longer be supported in version 10.2 and above due to the lack of support from common Linux distros
+   32-bit Linux Operating Systems will no longer be supported in version 10.2 and above due to the lack of support from common Linux distros.
 
 Databases
 ---------
