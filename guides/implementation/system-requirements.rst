@@ -66,9 +66,9 @@ Databases
 .. [3] The SQLite database is embedded into the Men&Mice Central application.
 
 .. note::
-   Microsoft SQL Server 2008 R2 will no longer be supported in Micetro versions 10.2 and above due to Microsoft ending support of these operating system
+   Microsoft SQL Server 2008 R2 will no longer be supported in Micetro versions 10.2 and above due to Microsoft ending support of this operating system.
 
-DNS/DHCP Server software
+DNS/DHCP Server Software
 ------------------------
 
 .. csv-table:: DNS & DHCP server software
@@ -77,7 +77,7 @@ DNS/DHCP Server software
 
   "**DNS**"
   "Microsoft DNS", "2012, 2012 R2, 2016, 2019, 2022"
-  "ISC BIND", "9.6 - 9.18"
+  "ISC BIND", "9.16 - 9.18"
   "Unbound", "1.4.22 - 1.7.3"
   "PowerDNS Authoritative Server", "3.4 - 4.3"
   "**DHCP**"
@@ -101,7 +101,7 @@ Men&Mice Web Application
 
 .. [4] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
 
-.. [5] The Apache web server are supported on all platforms except Windows.
+.. [5] The Apache web server is supported on all platforms except Windows.
 
 Supported Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -120,7 +120,7 @@ Supported Cloud Services
 
 .. [6] Micetro is available to install directly from the Azure Marketplace. See :ref:`installation-azure`.
 
-Supported browsers (Web Application)
+Supported Browsers (Web Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Chrome
