@@ -10,7 +10,7 @@ Free Trial Best Practices
 Configure and size your free trial servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. note::
-  If you're installing Micetro in a test environment, you're server sizes may be much smaller than what's required from Micetro in a production environment. 
+  If you're installing Micetro in a test environment, your server sizes may be much smaller than what's required from Micetro in a production environment. 
   The following sizes assume you'll keep this version of Micetro in production after testing the free trial.
 
 
@@ -33,9 +33,9 @@ Active Directory Integration
 Active Directory (AD) integration is not required if you're running Linux along with other non-Windows based DNS and DHCP services. However, if you would like to see how AD integration works with Micetro, Micetro Central must be installed on a Windows Server in your AD domain or forest.
 
 .. note::
-  You will need an Active Directory (AD) service account with DNS/DHCP administrative privileges (or read-only if preferable) to setup Micetro DNS/DHCP agents. Micetro works by connecting to your current DNS and DHCP services and pulling that information into a centralized UI where you gain visibility and control.
+  You will need an Active Directory (AD) service account with DNS/DHCP administrative privileges (or read-only if preferable) to set up Micetro DNS/DHCP agents. Micetro works by connecting to your current DNS and DHCP services and pulling that information into a centralized UI where you gain visibility and control.
 
-Micetro supports SSO and MFA with Active Diretory, Azure AD and Okta.
+Micetro supports SSO and MFA with Active Directory, Azure AD, and Okta.
 
 For more information on setting up accounts please see the documentation here.
 
