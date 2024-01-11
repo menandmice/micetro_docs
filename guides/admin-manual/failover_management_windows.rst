@@ -1,27 +1,61 @@
 .. meta::
-   :description: Managing failover configurations for Windows Servers in Micetro
-   :keywords: failover management, Microsoft, DHCP
+   :description: Managing failover configurations for Microsoft Services in Micetro
+   :keywords: failover management, Microsoft, DHCP, Windows
 
 .. _failover-management-windows:
 
 
-Managing Failover Relationships for Microsoft DHCP Servers
-==========================================================
+Managing Failover Relationships for Microsoft DHCP Services
+===========================================================
 
-When creating failover relationships for Microsoft DHCP servers, scopes are not added to the relationship at the time of creation. Instead, the scopes are added later on by using the "Add scope to failover" action.
+When creating failover relationships for Microsoft DHCP servers, scopes are not added to the relationship at the time of creation. Instead, the scopes are added later by using the :guilabel:`Add scope to failover` action.
 
 .. note::
    To manage failover between two Microsoft Servers, the DHCP Server Controller must be running as a service account with enough privileges to manage the DHCP service. For more information, see :ref:`install-dhcp-controllers`.
 
-Setting up a Failover Relationship
-----------------------------------
+Viewing Existing Microsoft DHCP Failover Relationships
+------------------------------------------------------
+You can view existing Microsoft DHCP failover relationships at the server level. Micetro automatically detects and syncs all existing failover relationships. 
+
+You can retrieve failover relationships through the API using GetDHCPFailoverRelationship(s). 
+
+**To view failover relationships in Micetro**:
+
+1.	On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
+2.	In the left sidebar, under  :guilabel:`DHCP Services`, select :guilabel:`Microsoft DHCP`.
+3. Select the server you want to view, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the **Row (...)** menu.
+4. The Failover Management window will show all relationships associated with the selected server.
+
+
+Creating Failover Relationships for Microsoft DHCP
+--------------------------------------------------
+Micetro manages failover relationships at both the scope and server levels. Scopes group IP addresses logically and help to manage failover efficiently. DHCP configurations can be customized per scope to suit the specific requirements of different network segments.
+
+API supports creation using ``AddDHCPFailoverRelationship``.
+
+The following parameters are used for the AddDHCPFailoverRelationship command:
+
+* **Name**: The name of the DHCP failover relationship to be created.
+* **PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
+* **SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
+* **FailoverMode**: The DHCP failover mode to use.
+* **Mclt**: Specify the number of seconds for which a lease can be renewed by either server without contacting the other.
+* **SafePeriod**: Safe period time in seconds, that the DHCPv4 server will wait before transitioning the server from the COMMUNICATION-INT state to PARTNER-DOWN.
+* **Percentage**: Indicates the percentage of the DHCPv4 client load that will be shared between the primary and secondary servers in the failover relationship.
+* **SharedSecret**: The shared secret key associated with this failover relationship.
+
+**To create a failover relationship in Micetro**:
+
 1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
 
 2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Microsoft DHCP`.
 
-3. Select the Windows Server that you want as the primary server in the relationship, and then select :guilabel:`Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
+3. Select the Windows Server that you want as the primary server in the relationship, and then select :guilabel:`Failover management` on the :guilabel:`Action` or the **Row (...)** menu.
 
-4. Click :guilabel:`Add Relationship`, and configure the desired relationship parameters.
+4. Select :guilabel:`Add Relationship` in the lower left corner, and complete the **Add Relationship** dialog box:
+
+   .. image:: ../../images/failover-add-microsoft.png
+      :width: 65%
 
    * **Failover Name**: The name for the relationship.
 
@@ -41,14 +75,97 @@ Setting up a Failover Relationship
 
 5. After confirming the details on the Summary tab, click :guilabel:`Add`.
 
-Removing a Failover Relationship 
+Adding Scopes to Microsoft DHCP Failover Relationships
+------------------------------------------------------
+.. note::
+   Micetro supports only one failover relationship per scope. In cases where a scope has multiple pools with different failover peers, Micetro will only show and operate on the failover peer found in the first pool.
+
+Failover relationships will initially appear as "Empty" and must be activated by adding a scope on the IPAM page. You can either create a new scope or select an existing one. 
+Once you have added a scope, the failover peer statement will automatically be added to any existing pools within the scope. If the failover relationship was previously empty, it will be created on the ISC DHCP server. 
+
+**To add scopes to the relationship, do one of the following**:
+
+*	On the **IPAM** page, locate the scope, then select :guilabel:`Add scope to failover` on the :guilabel:`Action` or the **Row (...)** menu:
+
+   .. image:: ../../images/failover-add-scope.png
+      :width: 65%
+
+-OR-
+
+* Create a new scope, and select the failover relationship during creation:
+
+   .. image:: ../../images/failover-create-scope.png
+      :width: 65%
+
+-OR-
+
+* API offers AdsdDHCPScopesFromDHCPFailoverRelationship which adds scopes to failover relationships, just specify a reference to the DHCP Scope and the failover relationship name.
+
+.. note::
+   At least one pool must exist in the scope before adding it to the failover relationship.
+
+If the failover relationship was empty before the scope was added to it, the status will change from “Empty” to “Normal”.
+
+.. image:: ../../images/failover-state-isc.png
+   :width: 65%
+
+Removing Scopes from Failover Relationships
+--------------------------------------------
+ISC DHCP scopes participating in failover relationships are grouped and labeled as such in the **Authority** column on the **IPAM** page. The **Failover relationship** column displays the name of the failover relationship to which the scope belongs.
+
+**To remove a scope from a failover relationship, do one of the following**:
+
+* Locate the specific scope on the **IPAM** page, then select :guilabel:`Remove from failover` on the :guilabel:`Action` or the **Row (...)** menu. 
+
+   .. image:: ../../images/failover-isc-remove-scope.png
+      :width: 65%
+
+   *	Decide whether to delete or disable the secondary scope.
+   *	On removal, the failover peer statement is cleared from each pool in the scope.
+   *	If the scope was the only one with the failover peer statement in its pools, the failover peer definition is removed. 
+   *	The failover relationship is marked as "Empty" to be used later or removed.
+
+-OR-
+
+* Locate the specific scope on the **IPAM** page, then select :guilabel:`Manage scope instances` on :guilabel:`the Action` or the **Row (...)** menu. Select :guilabel:`Remove scope instance` for the relevant server.
+
+   .. image:: ../../images/failover-isc-remove-scope-instance.png
+      :width: 65%
+
+-OR-
+
+* The API offers ``RemoveDHCPScopesFromDHCPFailoverRelationship`` which removes scopes to failover relationships. Just specify a reference to the DHCP Scope, the failover relationship name, and the proper deconfigure action.
+
+Modifying Failover Relationships
+--------------------------------
+You can modify ISC failover relationship options on a per-relationship basis. 
+
+**To modify a failover relationship, do one of the following**:
+
+1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to modify, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the **Row (...)** menu.
+2.	Select the relevant relationship, and then select :guilabel:`Edit` on the **Row (...)** menu.
+3.	Make the desired changes and select :guilabel:`Save`.
+
+-OR-
+
+* The API offers ModifyDHCPFailoverRelationship. The following parameters are used for the ModifyDHCPFailoverRelationship command:
+
+   *	**Name**: The name of the DHCP failover relationship to be created.
+   *	**PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
+   *	**SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
+   *	**Mclt**: Specify the number of seconds for which a lease can be renewed by either server without contacting the other.
+   *	**Port**: Specify the port number on which the server should listen for connections from its failover peer.
+   *	**LoadBalanceMaxSeconds**: Specify the cutoff in seconds after which load balancing is disabled. According to ISC documentation, a value of 3 or 5 is recommended.  
+   *	**MaxResponseDelay**: Specify the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
+   *	**MaxUnackedUpdates**: Specify the number of messages the server can send before receiving an acknowledgment from its failover peer. According to ISC documentation, 10 seems to be a good value.
+
+
+Removing Failover Relationships 
 --------------------------------
 
-1. On the **Admin** page, select the Windows server containing the relationship.
+1. On the **Admin** page, select the Windows server containing the relationship you want to remove, then select :guilabel:`Failover management` on either the :guilabel:`Action` or the **Row (...)** menu.
 
-2. Select :guilabel:`Failover management` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
-
-3. Select the relevant relationship, and then select :guilabel:`Remove` on the **Row menu (...)**.
+2. Select the relevant relationship, and then select :guilabel:`Remove` on the **Row menu (...)**.
 
 4. If associated relationships exist, you will be prompted to select the server where the scopes should persist and decide whether to delete or disable scopes on the other server.
 
@@ -59,28 +176,32 @@ When configuring a failover relationship, you can replicate scope information be
 
 During the scope replication process, the scopes on the selected DHCP are considered the source scopes, and the entire content of these scopes is subsequently replaced on the destination server.
 
-Individual Scopes
-^^^^^^^^^^^^^^^^^^
+Replicating Individual Scopes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. On the **IPAM** page, select a scope in a failover relationship.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Replicate failover scope`. You can also select this option on the **Row menu (...)**.
+2. Select :guilabel:`Recplicate failover relationships` on either the :guilabel:`Action` or the **Row menu (..)**.
 
 3. Select the destination server, and then click :guilabel:`Confirm`.
 
-All Scopes in a Failover Relationship
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Replicating All Scopes in a Failover Relationship
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. On the **Admin** page, select on of the Microsoft DHCP servers that you want in the relationship.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Failover management`. You can also select this option on the **Row menu (..)**.
+2. Select :guilabel:`Recplicate failover relationships` on either the :guilabel:`Action` or the **Row menu (..)**.
 
 3. Select the failover relationship, and then select :guilabel:`Replicate failover relationship` on the **Row menu (...)**.
 
 4. Click :guilabel:`Confirm`.
 
-All Failover Scopes on a DHCP Server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Replicating All Failover Scopes on a DHCP Server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   During the replication process, the scopes designated on the chosen DHCP server serve as the source scopes. Subsequently, the entire contents of each scope are substituted on the partner server, ensuring a comprehensive and synchronized replication of scope information between the two servers.
+
 1. On the **Admin** page, select one of the Microsoft DHCP servers that you want in the relationship.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Recplicate failover relationships`. You can also select this option on the **Row menu (..)**.
+2. Select :guilabel:`Recplicate failover relationships` on either the :guilabel:`Action` or the **Row menu (..)**.
 
 3. Click :guilabel:`Confirm`.
