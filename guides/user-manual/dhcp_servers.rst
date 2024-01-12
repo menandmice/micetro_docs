@@ -198,7 +198,7 @@ DHCP server properties can be managed on the Service Management page.
 
 1. In the list of DHCP Services, select the appropriate DHCP server.
 
-2. On the :guilabe:`Action`, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**. 
+2. On the :guilabel:`Action`, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**. 
 
    .. image:: ../../images/dhcp-edit-config.png
       :width: 60%
@@ -218,7 +218,7 @@ To access the advanced options:
 
 2. Select a Kea DHCP service. Click :guilabel:`Action` in the task bar at the top, and then select :guilabel:`Edit configuration` on the menu. You can also access this option on the row menu (...). The Edit Configuration dialog box opens. 
 
-3. Make the desired changes in the Edit Configuratio dialog box.
+3. Make the desired changes in the Edit Configuration dialog box.
 
 .. image:: ../../images/edit-kea-config-Micetro.png
   :width: 80%
