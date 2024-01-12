@@ -24,7 +24,7 @@ Kea DHCP High Availability
 .. warning::
   Synchronized clocks are **essential** for the reliable operation of the High Availability setup. If a clock skew is not corrected and exceeds *60 seconds*, the High Availability service on each server will be terminated.
 
-High Availability hooks library
+High Availability Hooks Library
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The High Availability hooks library must be present on the file system **before** the Kea DHCP servers can be managed in High Availability mode.
 
@@ -35,12 +35,12 @@ The High Availability hooks library must be present on the file system **before*
 
 Two modes of failover operation are supported:
 
-Load-balancing
+Load Balancing
    * Designate one server as primary and another as secondary.
    * During normal operation, they are identical.
    * Upon simultaneous startup and lease database synchronization, the primary server always synchronizes first. The secondary waits for the primary to complete before starting its own synchronization.
 
-Hot standby
+Hot Standby
    * Designate one server as primary and another as secondary.
    * Only the primary server responds to DHCP requests during normal operation.
    * The secondary (or standby) receives lease updates from the primary over the control channel.
