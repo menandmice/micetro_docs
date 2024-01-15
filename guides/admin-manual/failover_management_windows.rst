@@ -88,7 +88,7 @@ The following parameters are used for the AddDHCPFailoverRelationship command:
 Adding Scopes to Microsoft DHCP Failover Relationships
 ------------------------------------------------------
 Failover relationships will initially appear as "Empty" and must be activated by adding a scope on the IPAM page. You can either create a new scope or select an existing one. 
-Once you have added a scope, the failover peer statement will automatically be added to any existing pools within the scope. If the failover relationship was previously empty, it will be created on the Microsoft DHCP server. 
+If the failover relationship was previously empty, it will be created on the Microsoft DHCP server. 
 
 **To add scopes to the relationship, do one of the following**:
 
@@ -107,9 +107,6 @@ Once you have added a scope, the failover peer statement will automatically be a
 -OR-
 
 * API offers AdsdDHCPScopesFromDHCPFailoverRelationship which adds scopes to failover relationships. Specify a reference to the DHCP Scope and the failover relationship name.
-
-.. note::
-   At least one pool must exist in the scope before adding it to the failover relationship.
 
 If the failover relationship was empty before the scope was added to it, the status will change from “Empty” to “Normal”.
 
