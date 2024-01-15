@@ -113,7 +113,7 @@ Removing an Existing Custom Option
 
 2. On the **Row menu (...)**, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
 
-.. _kea-dhcp-poperties:
+.. _kea-dhcp-properties:
 
 Kea DHCP Server Properties
 --------------------------
