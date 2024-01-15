@@ -20,18 +20,18 @@ You can retrieve failover relationships through the API using ``GetDHCPFailoverR
 
 2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`ISC DHCP`.
 
-3. Select the server you want to view, and then select :guilabel:`Failover management` either on either the :guilabel:`Action` or the Row :guilabel:`...` menu``.
+3. Select the server you want to view, and then select :guilabel:`Failover management` either on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 4.	The Failover Management window will show all relationships associated with the selected server.
 
    .. image:: ../../images/failover-view.png
-      :width: 75%
+      :width: 80%
 
 
 For ISC DHCP services, scopes engaged in failover relationships are grouped and labeled as such in the Authority column on the DHCP Scopes view on the IPAM page. Additionally, the Failover Relationship column displays the name of the specific failover relationship the scope belongs to. The right pane shows failover information for the selected server.
 
-   .. image:: ../../images/failover-view-isc.png
-      :width: 75%
+.. image:: ../../images/failover-view-isc.png
+   :width: 80%
 
 Creating Failover Relationships for ISC DHCP
 --------------------------------------------
@@ -99,18 +99,18 @@ Once you have added a scope, the failover peer statement will automatically be a
 *	On the **IPAM** page, locate the scope, then select :guilabel:`Add scope to failover` on either the :guilabel:`Action` or the Row :guilabel:`...` menu:
 
    .. image:: ../../images/failover-add-scope.png
-      :width: 75%
+      :width: 80%
 
 -OR-
 
 * Create a new scope, and select the failover relationship during creation:
 
    .. image:: ../../images/failover-create-scope.png
-      :width: 75%
+      :width: 80%
 
 -OR-
 
-* API offers AdsdDHCPScopesFromDHCPFailoverRelationship which adds scopes to failover relationships, just specify a reference to the DHCP Scope and the failover relationship name.
+* API offers ``AdsdDHCPScopesFromDHCPFailoverRelationship`` which adds scopes to failover relationships. Specify a reference to the DHCP Scope and the failover relationship name.
 
 .. note::
    At least one pool must exist in the scope before adding it to the failover relationship.
@@ -118,7 +118,7 @@ Once you have added a scope, the failover peer statement will automatically be a
 If the failover relationship was empty before the scope was added to it, the status will change from “Empty” to “Normal”.
 
 .. image:: ../../images/failover-state-isc.png
-   :width: 75%
+   :width: 80%
 
 Removing Scopes from Failover Relationships
 --------------------------------------------
@@ -130,7 +130,7 @@ ISC DHCP scopes participating in failover relationships are grouped and labeled 
 
    .. image:: ../../images/failover-isc-remove-scope.png
       :width: 80%
-
+|
    *	Decide whether to delete or disable the secondary scope.
    *	On removal, the failover peer statement is cleared from each pool in the scope.
    *	If the scope was the only one with the failover peer statement in its pools, the failover peer definition is removed. 
@@ -141,7 +141,7 @@ ISC DHCP scopes participating in failover relationships are grouped and labeled 
 * Locate the specific scope on the **IPAM** page, then select :guilabel:`Manage scope instances` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. Select :guilabel:`Remove scope instance` for the relevant server.
 
    .. image:: ../../images/failover-isc-remove-scope-instance.png
-      :width: 75%
+      :width: 80%
 
 -OR-
 
@@ -159,7 +159,7 @@ You can modify ISC failover relationship options on a per-relationship basis.
 
 -OR-
 
-* The API offers ModifyDHCPFailoverRelationship. The following parameters are used for the ModifyDHCPFailoverRelationship command:
+* The API offers ``ModifyDHCPFailoverRelationship``. The following parameters are used for the ``ModifyDHCPFailoverRelationship`` command:
 
    *	**Name**: The name of the DHCP failover relationship to be created.
    *	**PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
@@ -181,7 +181,7 @@ Removing Failover Relationships
 
 -OR-
 
-* The API offers RemoveDHCPFailoverRelationships. Just specify a reference to the ISC DHCP service, the name of the failover relationship, and the proper deconfigure action.
+* The API offers ``RemoveDHCPFailoverRelationships``. Specify a reference to the ISC DHCP service, the name of the failover relationship, and the proper deconfigure action.
 
 Address Pool Failover Display
 ------------------------------
