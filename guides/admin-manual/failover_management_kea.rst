@@ -90,7 +90,7 @@ Below is a snippet from the ``hook-libraries`` section, showing how Micetro can 
 
 * ``this-server-name`` (Server Tag): This field must reflect the Kea DHCP server where the configuration file resides.
 
-   This setting is also available via :menuselection:`Admin --> Service Management --> Select Server --> Action --> Edit Configuration` under the name **Server tag**. See :ref:`kea-dhcp-poperties`.
+   This setting is also available via :menuselection:`Admin --> Service Management --> (Server) --> Action --> Edit Configuration` under the name **Server tag**. See :ref:`kea-dhcp-server-poperties`.
 
 * ``max-response-delay``: This value should be greater than the ``heartbeat-delay`` duration and is typically set higher than the combined duration of multiple ``heartbeat-delay`` values.
 
@@ -182,13 +182,13 @@ You can retrieve failover relationships through the API using the ``GetDHCPFailo
 4.	The Failover Management window will show all relationships associated with the selected server.
 
    .. image:: ../../images/failover-view-kea.png
-      :width: 65%
+      :width: 75%
 
 
 The right pane shows failover information for the selected Kea DHCP server.
 
    .. image:: ../../images/failover-view-kea-pane.png
-      :width: 65%
+      :width: 75%
 
 
 Creating Failover Relationships for Kea DHCP
@@ -215,12 +215,12 @@ The following parameters are used for the ``AddDHCPFailoverRelationship`` comman
 
 2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Kea`.
 
-3. Select the Kea DHCP server housing the scope for which you want to establish failover configuration, and then select :guilabel:`Failover management` on the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3. Select the Kea DHCP server housing the scope for which you want to establish failover configuration, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 4. Select :guilabel:`Add Relationship` in the lower left corner, and complete the **Add Relationship** dialog box:
 
    .. image:: ../../images/failover-add-kea.png
-      :width: 65%
+      :width: 75%
 
    * **Failover name**: Specify the name of the failover peer.
 
