@@ -43,7 +43,7 @@ When creating failover relationships for Microsoft DHCP servers, scopes are not 
 
 API supports creation using ``AddDHCPFailoverRelationship``.
 
-The following parameters are used for the AddDHCPFailoverRelationship command:
+The following parameters are used for the ``AddDHCPFailoverRelationship`` command:
 
 * **Name**: The name of the DHCP failover relationship to be created.
 * **PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
@@ -65,7 +65,7 @@ The following parameters are used for the AddDHCPFailoverRelationship command:
 4. Select :guilabel:`Add Relationship` in the lower left corner, and complete the **Add Relationship** wizard:
 
    .. image:: ../../images/failover-add-microsoft.png
-      :width: 65%
+      :width: 80%
 
    * **Failover Name**: The name for the relationship.
 
@@ -95,23 +95,23 @@ If the failover relationship was previously empty, it will be created on the Mic
 *	On the **IPAM** page, locate the scope, then select :guilabel:`Add scope to failover` on either the :guilabel:`Action` or the Row :guilabel:`...` menu:
 
    .. image:: ../../images/failover-add-scope.png
-      :width: 65%
+      :width: 80%
 
 -OR-
 
 * Create a new scope, and select the failover relationship during creation:
 
    .. image:: ../../images/failover-create-scope.png
-      :width: 65%
+      :width: 80%
 
 -OR-
 
-* API offers AdsdDHCPScopesFromDHCPFailoverRelationship which adds scopes to failover relationships. Specify a reference to the DHCP Scope and the failover relationship name.
+* API offers ``AdsdDHCPScopesFromDHCPFailoverRelationship`` which adds scopes to failover relationships. Specify a reference to the DHCP Scope and the failover relationship name.
 
 If the failover relationship was empty before the scope was added to it, the status will change from “Empty” to “Normal”.
 
 .. image:: ../../images/failover-state-microsoft.png
-   :width: 65%
+   :width: 80%
 
 Removing Scopes from Failover Relationships
 --------------------------------------------
@@ -122,8 +122,8 @@ Microsoft DHCP scopes participating in failover relationships are grouped and la
 * Locate the specific scope on the **IPAM** page, then select :guilabel:`Remove from failover` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
 
    .. image:: ../../images/failover-microsoft-remove-scope.png
-      :width: 65%
-
+      :width: 80%
+|
    *	Decide whether to delete or disable the secondary scope.
 
 -OR-
@@ -131,7 +131,7 @@ Microsoft DHCP scopes participating in failover relationships are grouped and la
 * Locate the specific scope on the **IPAM** page, then select :guilabel:`Manage scope instances` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. Select :guilabel:`Remove scope instance` for the relevant server.
 
    .. image:: ../../images/failover-microsoft-remove-scope-instance.png
-      :width: 65%
+      :width: 805%
 
 -OR-
 
