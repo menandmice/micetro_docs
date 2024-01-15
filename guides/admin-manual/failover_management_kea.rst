@@ -90,7 +90,7 @@ Below is a snippet from the ``hook-libraries`` section, showing how Micetro can 
 
 * ``this-server-name`` (Server Tag): This field must reflect the Kea DHCP server where the configuration file resides.
 
-   This setting is also available via :menuselection:`Admin --> Service Management --> (Server) --> Action --> Edit Configuration` under the name **Server tag**. See :ref:`kea-dhcp-server-poperties`.
+  This setting is also available via :menuselection:`Admin --> Service Management --> (Server) --> Action --> Edit Configuration` under the name **Server tag**. See :ref:`kea-dhcp-server-properties`.
 
 * ``max-response-delay``: This value should be greater than the ``heartbeat-delay`` duration and is typically set higher than the combined duration of multiple ``heartbeat-delay`` values.
 
@@ -182,13 +182,13 @@ You can retrieve failover relationships through the API using the ``GetDHCPFailo
 4.	The Failover Management window will show all relationships associated with the selected server.
 
    .. image:: ../../images/failover-view-kea.png
-      :width: 75%
+      :width: 80%
 
 
 The right pane shows failover information for the selected Kea DHCP server.
 
    .. image:: ../../images/failover-view-kea-pane.png
-      :width: 75%
+      :width: 80%
 
 
 Creating Failover Relationships for Kea DHCP
@@ -198,6 +198,8 @@ Each Kea DHCP server supports the creation of one Kea DHCPv4 and one Kea DHCPv6 
 If a Kea DHCP server functions as a secondary server in a failover relationship, creating additional relationships with it as a primary server is not possible.
 
 Micetro currently supports two failover server types in a relationship: one primary and one secondary. Therefore, creating failover relationships with backup servers is not supported.
+
+**To create a failover relationship through the API**:
 
 API supports creation using ``AddDHCPFailoverRelationship``.
 
@@ -220,7 +222,7 @@ The following parameters are used for the ``AddDHCPFailoverRelationship`` comman
 4. Select :guilabel:`Add Relationship` in the lower left corner, and complete the **Add Relationship** dialog box:
 
    .. image:: ../../images/failover-add-kea.png
-      :width: 75%
+      :width: 80%
 
    * **Failover name**: Specify the name of the failover peer.
 
@@ -248,5 +250,7 @@ Removing Failover Relationships
 1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to modify, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 2.	Select the relevant relationship, and then select :guilabel:`Remove` on the Row :guilabel:`...` menu.
 3.	Decide whether to delete or disable the secondary scopes.
+
+-OR-
 
 * The API offers ``RemoveDHCPFailoverRelationships``. Just specify a reference to the Kea DHCP service, the name of the failover relationship, and the proper deconfigure action.
