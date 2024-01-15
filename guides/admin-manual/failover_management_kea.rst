@@ -88,13 +88,11 @@ Below is a snippet from the ``hook-libraries`` section, showing how Micetro can 
           }]
       }
 
-``this-server-name`` (Server Tag):
-   This field must reflect the Kea DHCP server where the configuration file resides.
+* ``this-server-name`` (Server Tag): This field must reflect the Kea DHCP server where the configuration file resides.
 
-   This setting is also available via :guilabel:`Server Properties` in Micetro under the name **Server tag**. See :ref:`kea-dhcp-properties`.
+   This setting is also available via :menuselection:`Admin --> Service Management --> Select Server --> Action --> Edit Configuration` under the name **Server tag**. See :ref:`kea-dhcp-poperties`.
 
-``max-response-delay``:
-  This value should be greater than the ``heartbeat-delay`` duration and is typically set higher than the combined duration of multiple ``heartbeat-delay`` values.
+* ``max-response-delay``: This value should be greater than the ``heartbeat-delay`` duration and is typically set higher than the combined duration of multiple ``heartbeat-delay`` values.
 
   In the event of communication interruption, the server may transition to the ``partner-down`` state (when ``max-unacked-clients`` is 0) or initiate the failure-detection procedure. Setting ``max-unacked-clients`` to 0 ensures vigilant Kea servers that promptly change states upon connection loss. To allow some flexibility, consider setting ``max-unacked-clients`` to a positive number, for example, *5*.
 
@@ -109,14 +107,11 @@ Configuring the DHCP Server Controller
 
 The ``preferences.cfg`` file can be used to fine-tune the Kea High Availability setup within the DHCP Server Controller.
 
-``keaReplicateConfig``:
-  If set to 0, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is **1**. Example: ``<keaReplicateConfig value=”0”/>``
+* ``keaReplicateConfig``: If set to 0, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is **1**. Example: ``<keaReplicateConfig value=”0”/>``
 
-``keaControlAgentHost``:
-  Specifies the host to use when connecting to a control agent. The default value is ``127.0.0.1`` if the Kea Control Agent is running on the same machine, or it is the IP address of the server added to Micetro.
+* ``keaControlAgentHost``: Specifies the host to use when connecting to a control agent. The default value is ``127.0.0.1`` if the Kea Control Agent is running on the same machine, or it is the IP address of the server added to Micetro.
 
-``keaControlAgentPort``:
-  Defines the port to use when connecting to the Kea Control Agent. The default value is ``8000``.
+* ``keaControlAgentPort``: Defines the port to use when connecting to the Kea Control Agent. The default value is ``8000``.
 
 
 Adding a High Availability-enabled Kea DHCP Server to Micetro
@@ -135,27 +130,27 @@ After the primary Kea server has been added to Micetro, it assumes the primary r
 
 Normal Operation
 """""""""""""""""
-When both the primary Kea server and its secondary/backup partners are running and accessible, Micetro reports the Kea DHCP server status as :guilabel:`OK`. |kea-ok|
+When both the primary Kea server and its secondary/backup partners are running and accessible, Micetro reports the Kea DHCP server status as :guilabel:`OK`. 
 
-Primary Server Offline |kea-impaired|
-"""""""""""""""""""""""""""""""""""""
+Primary Server Offline 
+"""""""""""""""""""""""
 If the primary server is offline or unreachable from Micetro, the secondary/standby server takes over. Micetro reports the Kea DHCP service as :guilabel:`Impaired` during this period. The single source of truth becomes the in-memory config on the secondary/standby server until reconnection to the primary server is established.
 
-Secondary/Standby/Backup Server Offline |kea-impaired|
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-If any of the secondary/standby/backup server is offline, replication continues, but Micetro reports the Kea DHCP service as :guilabel:`Impaired`. When the affected server reactivates, automatic synchronization with the single source of truth occurs. (The in-memory config of the primary Kea server.)
+Secondary/Standby/Backup Server Offline 
+""""""""""""""""""""""""""""""""""""""""
+If any of the secondary/standby/backup servers are offline, replication continues, but Micetro reports the Kea DHCP service as :guilabel:`Impaired`. When the affected server reactivates, automatic synchronization with the single source of truth occurs. (The in-memory config of the primary Kea server.)
 
-Both Primary and Secondary/Standby Server Offline |kea-down|
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Both Primary and Secondary/Standby Server Offline 
+"""""""""""""""""""""""""""""""""""""""""""""""""
 If both primary and secondary/standby servers go offline, Micetro reports the Kea DHCP service as :guilabel:`Service down`. All operations result in errors, and replication is stopped until either the primary or the secondary/standby servers become active. The first active server becomes the single source of truth, with the primary overwriting any secondary/backup when it becomes active.
 
-DHCP Server Controller Offline |kea-unreachable|
-""""""""""""""""""""""""""""""""""""""""""""""""
-In the unlikely event of the DHCP Server Controller going offline, Kea High Availability information is momentarily lost. Upon the Controller's reconnection, Central attempts to reconnect to the preconfigured primary Kea DHCP server. After reconnecting, the configuration is parsed, the High Availability setup detected, and replication between servers resumes.
+DHCP Server Controller Offline 
+""""""""""""""""""""""""""""""
+In the unlikely event of the DHCP Server Controller going offline, Kea High Availability information is momentarily lost. Upon the Controller's reconnection, Central attempts to reconnect to the preconfigured primary Kea DHCP server. After reconnecting, the configuration is parsed, the High Availability setup is detected, and replication between servers resumes.
 
 .. note::
   * If the DHCP Server Controller goes down while using the secondary/backup Kea server (due to primary downtime), the system will **not** be able to reconnect successfully. The primary Kea server must be reestablished to a working state before the system can reconnect.
-  * If the DHCP Server Controller goes offline while the primary Kea server is down, reconnection is possible only when the primary Kea server becomes active again.
+  * If the DHCP Server Controller goes offline while the primary Kea server is down, reconnection is only possible when the primary Kea server becomes active again.
 
 Making External Changes to Kea Servers in High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -182,7 +177,7 @@ You can retrieve failover relationships through the API using the ``GetDHCPFailo
 
 2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Kea`.
 
-3. Select the server you want to view, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the **Row (...) menu``.
+3. Select the server you want to view, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu``.
 
 4.	The Failover Management window will show all relationships associated with the selected server.
 
@@ -220,11 +215,11 @@ The following parameters are used for the ``AddDHCPFailoverRelationship`` comman
 
 2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Kea`.
 
-3. Select the Kea DHCP server housing the scope for which you want to establish failover configuration, and then select :guilabel:`Failover management` on the :guilabel:`Action` or the **Row (...)** menu.
+3. Select the Kea DHCP server housing the scope for which you want to establish failover configuration, and then select :guilabel:`Failover management` on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 4. Select :guilabel:`Add Relationship` in the lower left corner, and complete the **Add Relationship** dialog box:
 
-   .. image:: ../../images/failover-isc-add-kea.png
+   .. image:: ../../images/failover-add-kea.png
       :width: 65%
 
    * **Failover name**: Specify the name of the failover peer.
@@ -241,4 +236,17 @@ The following parameters are used for the ``AddDHCPFailoverRelationship`` comman
    * Enable failover by having two hook libraries exist on the filesystem: libdhcp_lease_cmds.so and libdhcp_ha.so. The latter implements the HA feature, and the former enables control commands necessary for HA to manage leases on remote servers. 
    * Micetro searches for hooks in the default location (/usr/local/lib/kea/hooks/). If the hooks are elsewhere, you must specify the correct location using the keaHooksLocation preference value for the DHCP Remote Controller.
 
+Modifying Failover Relationships
+--------------------------------
+It is not possible to modify Kea failover relationships. They must be removed and re-added if any changes are to be made.
 
+Removing Failover Relationships
+-------------------------------
+
+**To remove failover relationships, do one of the following**:
+
+1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to modify, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
+2.	Select the relevant relationship, and then select :guilabel:`Remove` on the Row :guilabel:`...` menu.
+3.	Decide whether to delete or disable the secondary scopes.
+
+* The API offers ``RemoveDHCPFailoverRelationships``. Just specify a reference to the Kea DHCP service, the name of the failover relationship, and the proper deconfigure action.
