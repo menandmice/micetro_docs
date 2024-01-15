@@ -29,6 +29,9 @@ You can retrieve failover relationships through the API using GetDHCPFailoverRel
 3. Select the server you want to view, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 4. The Failover Management window will show all relationships associated with the selected server.
 
+   .. image:: ../../images/failover-microsoft-view.png
+      :width: 65%
+
 
 Creating Failover Relationships for Microsoft DHCP
 --------------------------------------------------
@@ -85,7 +88,7 @@ The following parameters are used for the AddDHCPFailoverRelationship command:
 Adding Scopes to Microsoft DHCP Failover Relationships
 ------------------------------------------------------
 Failover relationships will initially appear as "Empty" and must be activated by adding a scope on the IPAM page. You can either create a new scope or select an existing one. 
-Once you have added a scope, the failover peer statement will automatically be added to any existing pools within the scope. If the failover relationship was previously empty, it will be created on the ISC DHCP server. 
+Once you have added a scope, the failover peer statement will automatically be added to any existing pools within the scope. If the failover relationship was previously empty, it will be created on the Microsoft DHCP server. 
 
 **To add scopes to the relationship, do one of the following**:
 
@@ -125,9 +128,6 @@ Microsoft DHCP scopes participating in failover relationships are grouped and la
       :width: 65%
 
    *	Decide whether to delete or disable the secondary scope.
-   *	On removal, the failover peer statement is cleared from each pool in the scope.
-   *	If the scope was the only one with the failover peer statement in its pools, the failover peer definition is removed. 
-   *	The failover relationship is marked as "Empty" to be used later or removed.
 
 -OR-
 
@@ -152,16 +152,16 @@ You can modify ISC failover relationship options on a per-relationship basis.
 
 -OR-
 
-* The API offers ModifyDHCPFailoverRelationship. The following parameters are used for the ModifyDHCPFailoverRelationship command:
+* The API offers ``ModifyDHCPFailoverRelationship``. The following parameters are used for the ``ModifyDHCPFailoverRelationship`` command:
 
-   *	**Name**: The name of the DHCP failover relationship to be created.
-   *	**PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
-   *	**SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
-   *	**Mclt**: Specify the number of seconds for which either server can renew a lease without contacting the other.
-   *	**Port**: Specify the port number on which the server should listen for connections from its failover peer.
-   *	**LoadBalanceMaxSeconds**: Specify the cutoff in seconds after which load balancing is disabled. According to Microsoft documentation, a value of 3 or 5 is recommended.  
-   *	**MaxResponseDelay**: Specify the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
-   *	**MaxUnackedUpdates**: Specify the number of messages the server can send before receiving an acknowledgment from its failover peer. According to Microsoft documentation, 10 seems to be a good value.
+   * **Name**: The name of the DHCP failover relationship to be created.
+   * **PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
+   * **SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
+   * **FailoverMode**: The DHCP failover mode to use.
+   * **Mclt**: Specify the number of seconds for which either server can renew a lease without contacting the other.
+   * **SafePeriod**: Safe period time in seconds, that the DHCPv4 server will wait before transitioning the server from the COMMUNICATION-INT state to PARTNER-DOWN.
+   * **Percentage**: Indicates the percentage of the DHCPv4 client load that will be shared between the primary and secondary servers in the failover relationship.
+   * **SharedSecret**: The shared secret key associated with this failover relationship.
 
 
 Removing Failover Relationships 
