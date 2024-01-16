@@ -16,7 +16,7 @@ Update Guide
 
 Micetro Version
 ---------------
-Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Men&Mice Central and the Men&Mice Server Controllers. 
+Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Men&Mice Central and the Micetro Server Controllers. 
 
 * Minor versions often only contain an update for a single component, such as the Micetro Appliances.
 
@@ -39,7 +39,7 @@ Before updating Micetro, we strongly recommend reading the Release Notes first, 
 3. Find available updates under :guilabel:`Micetro Version` in the left sidebar.
 
    .. image:: ../../images/available-updates-10.6.png
-    :width: 65%
+    :width: 80%
 
 
 Preparing the Update
@@ -50,7 +50,7 @@ To streamline the updating process, the update is prepared by making sure that u
 
 1. Select :guilabel:`Prepare Update` to start the update process.
 
-2. A package for the new version is downloaded and prepared for deployment. This includes uploading a package to each DNS and DHCP server, as well as each appliance, if the new update package includes an update for them. 
+2. A package for the new version is downloaded and prepared for deployment. This includes uploading a package to each DNS and DHCP server, as well as each appliance if the new update package includes an update for them. 
 
 Deploying the Update
 ^^^^^^^^^^^^^^^^^^^^^
@@ -58,7 +58,7 @@ Once the package has been prepared, select :guilabel:`Deploy Update` to deploy t
 
 If the new version includes an updated Central component, it will restart. Otherwise, Micetro seamlessly updates to the new version.
 
-After the update has been deployed, each Micetro component requiring an upgrade is upgraded to the latest version. The update packages that were uploaded during the preparation phase are put into place.
+After the update has been deployed, each Micetro component requiring an upgrade is upgraded to the latest version. The update packages uploaded during the preparation phase are put into place.
 
 Update Paths
 ^^^^^^^^^^^^^
@@ -68,6 +68,7 @@ If you're updating Micetro from an older version, refer to the following table:
   :widths: 30, 30, 40
   :header: "Origin version", "Target version", "Update to"
 
+  "10.x", "11.x", "11.x [1]_"
   "9.x", "10.x", "10.x [1]_"
   "8.x", "10.x", "10.x [1]_"
   "7.x", "10.x", "10.x [1]_"
@@ -78,7 +79,7 @@ If you're updating Micetro from an older version, refer to the following table:
 
 Checking the Status of Micetro Components and Appliances
 --------------------------------------------------------
-You can see the status of all components at a quick glance so you know everything is up and running smoothly.
+You can see the status of all components at a glance so you know everything is up and running smoothly.
 
 **To check the current status of Micetro Components and Appliances**:
 
@@ -95,12 +96,12 @@ Updating Appliances
 :guilabel:`Appliance updates` shows if any Appliances have updates pending. There are three types of updates:
 
 * **Full**: Full updates are the most extensive and involve replacing the entire appliance, typically with the release of a new major version. These updates are versioned and around 700MB in size.
-* **Minor**: Minor updates consist of version upgrades, such as 9.4.1, and typically include minor improvements or enhancements. They are executed in the same way as full upgrades, using partition swap. For example, the 9.4.2 update includes all changes made in 9.4.1, so it's okay to go directly from 9.4.0 to 9.4.2. However, for customers with older appliance versions prior to 9.4, it's necessary to first install the 9.4.0 full upgrade before deploying 9.4.1 or 9.4.2. These updates are around 2-300MB in size. 
+* **Minor**: Minor updates consist of version upgrades, such as 9.4.1, and typically include minor improvements or enhancements. They are executed in the same way as full upgrades, using partition swap. For example, the 9.4.2 update includes all changes made in 9.4.1, so it's okay to go directly from 9.4.0 to 9.4.2. However, for customers with older appliance versions before 9.4, it's necessary to first install the 9.4.0 full upgrade before deploying 9.4.1 or 9.4.2. These updates are around 2-300MB in size. 
 * **Patch**: Patch updates are minor adjustments to individual components, such as BIND or ISC DHCP. They address specific issues or vulnerabilities.
 
 Update Status
 ^^^^^^^^^^^^^
-The update process involves downloading and deploying updates, which are reflected in the :guilabel:`Status` column.
+The update process involves downloading and deploying updates reflected in the :guilabel:`Status` column.
 
 * **Available**: Updates are ready for application but have not been downloaded yet.
 * **Deployed**: Updates have been applied and fully deployed. 
@@ -120,7 +121,7 @@ The update process involves downloading and deploying updates, which are reflect
    .. image:: ../../images/appliances-download-10.6.png
       :width: 65%
 
-4. Once the download is complete, the update status becomes :guilabel:`Downloaded`. Initiate the update process by selecting :guilabel:`Deploy` on the Row menu.
+4. Once the download is complete, the update status becomes :guilabel:`Pending`. Initiate the update process by selecting :guilabel:`Deploy` on the Row menu.
 
 Update Management in the Management Console
 -------------------------------------------------
