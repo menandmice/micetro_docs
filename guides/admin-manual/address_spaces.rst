@@ -26,7 +26,7 @@ Items **shared** between address spaces are:
 
 * custom property definitions (see :ref:`admin-custom-properties`)
 
-Address Space Managment
+Address Space Management
 -------------------------
 Users with sufficient permissions are allowed to create, modify, or delete address spaces as well as setting access privileges for existing address spaces.
 
