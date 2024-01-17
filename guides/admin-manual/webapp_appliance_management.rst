@@ -23,24 +23,25 @@ To add an appliance to Micetro, you need to have the Administrator role.
 
 1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page, and select :guilabel:`Add Service`. The Add Service wizard opens.
 
-   .. image:: ../../images/add-service-dialog.png
+   .. image:: ../../images/add-servive-dialog.png
       :width: 65%
 
 2. Select :guilabel:`Appliance`. 
 3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
 4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
-5. Select :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
+5. Enable or disable appliance services. By default, **DNS** and **DHCP** services are activated. You can enable a **SSH** (Secure Shell) client to securely access and manage network devices and servers over an unsecured network.
+6. Select :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
 
 Editing Appliance Name
-------------------------
-You can change the name or IP address used to connect to your appliance. This is useful if you need to refer to the appliance by another name or if you are connecting to the appliance by an IP address and the IP address has changed.
+-----------------------
+You can change the name or IP address used to connect to your appliance. This is useful if you need to refer to the appliance by another name or if you are connecting to the appliance by an IP address and the IP address has changed. 
 
 **To change the appliance name**:
 
 1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page. 
 2. In the filtering sidebar, select :guilabel:`Appliances`, then select the specific appliance you wish to edit.
-3. On the :guilabel:`Action` menu, select :guilabel:`Edit appliance`. You can also access this option on the Row menu by selecting :guilabel:`...`.
-4. Modify the appliance's name, and/or IP address (optional).
+3. Select :guilabel:`Edit appliance` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+4. Modify the appliance's name, an/or IP address (optional).
 
    .. Note::
        Changing the name or IP address here only affects how you connect to the appliance. It does not alter the actual IP address of the appliance itself.
@@ -53,12 +54,15 @@ You can enable or disable various appliance services to configure your appliance
 
 **To enable/disable appliance services**:
 
-1. Locate the specific appliance for which you want set services.
-2. On the :guilabel:`Action` menu, select :guilabel:`Set appliance services`. You can also access this option on the Row menu :guilabel:`...`.
+1. Locate the specific appliance for which you want to set services.
+2. Select :guilabel:`Set appliance services` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3. Enable or disable the desired services:
 
+   * **DNS**: Enable this service to allow your appliance to participate in domain name resolution on the network.
+   * **DHCP**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
    * **SSH (Secure Shell)**: SSH service is enabled by default, providing secure remote access to your appliance. With the SSH client enabled you can connect to and manage the appliance securely. Disabling SSH is not recommended unless you have a specific security requirement. Disabling SSH should only be considered for servers in a highly secure environment, and even then, it should only be done for short periods when absolutely necessary. Always ensure you have alternate secure methods for appliance management.
    * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
-3. Select :guilabel:`Save` when you are done.
+4. Select :guilabel:`Save` when you are done.
 
 Setting DNS Resolvers 
 ----------------------
@@ -67,9 +71,25 @@ To ensure optimal performance of your appliance, you can add the IP addresses of
 **To set DNS resolvers**:
 
 1. Locate the specific appliance for which you want to configure DNS resolvers. Ensure you select the correct appliance to avoid any disruptions in network services.
-2. On the :guilabel:`Action` menu, select :guilabel:`DNS resolvers`. You can also access this option on the Row menu :guilabel:`...`.
-3. In the DNS resolvers configuration dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by listing their IP addresses on separate lines. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
+2. Select :guilabel:`Configure DNS resolvers` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3. In the Configure DNS resolvers dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by listing their IP addresses on separate lines. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
 4. Select :guilabel:`Save` when you are done.
+
+Configuring NTP on Appliances
+------------------------------
+Use the Network Time Protocol (NTP) service to maintain precise time synchronization across your network infrastructure. Accurate timekeeping ensures proper coordination of network events, security protocols, and compliance with reporting requirements.
+
+**To configure NTP**:
+
+1. Locate the specific appliance for which you wish to configure NTP. 
+2. Select :guilabel:`Configure NTP` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
+3. Select the :guilabel:`Enable NTP service` checkbox to activate the NTP service on your appliance.
+4. In the text box, enter the hostnames or IP addresses of the NTP servers from which you want to synchronize your appliance's clock. 
+
+   .. Tip::
+      Consider using multiple NTP servers for redundancy and increased reliability, ensuring continued time synchronization even if one server becomes inaccessible. 
+
+5. Select :guilabel:`Save` when you are done.
 
 Configuring SNMP Monitoring 
 ----------------------------
@@ -80,8 +100,8 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
 **To configure SNMP Monitoring on appliances**:
 
 1. Locate the specific appliance for which you want to configure SNMP monitoring.
-2. On the :guilabel:`Action` menu, select :guilabel:`SNMP configuration`. You can also access this option on the Row menu :guilabel:`...`. 
-3. The SNMP configuration dialog box opens with several options:
+2. Select :guilabel:`Configure SNMP` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
+3. The Configure SNMP dialog box opens with several options:
 
    .. image:: ../../images/appliances-snmp-10.6.png
       :width: 60%
@@ -99,21 +119,39 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
 
 4. Select :guilabel:`Save` to save your settings and close the dialog box.
 
-Configuring NTP on Appliances
-------------------------------
-Use the Network Time Protocol (NTP) service to maintain precise time synchronization across your network infrastructure. Accurate timekeeping ensures proper coordination of network events, security protocols, and compliance with reporting requirements.
+Configuring Syslog
+------------------
+Go to admin page and select BDDS appliance and run task 'Configure Syslog'. There you can add/remove/edit remote syslog servers:
 
-**To configure NTP**:
 
-1. Locate the specific appliance for which you wish to configure NTP. 
-2. On the :guilabel:`Action` menu, select :guilabel:`NTP configuration`. You can also access this option on the Row menu :guilabel:`...`. 
-3. Select the :guilabel:`Enable NTP service` checkbox to activate the NTP service on your appliance.
-4. In the text box, enter the hostnames or IP addresses of the NTP servers from which you want to synchronize your appliance's clock. 
 
-   .. Tip::
-      Consider using multiple NTP servers for redundancy and increased reliability, ensuring continued time synchronization even if one server becomes inaccessible. 
+Configuring a remote logging server on BDDS through Micetro involves specifying several properties: 
 
-5. Select :guilabel:`Save` when you are done.
+IP Address: Assign an IP address to each remote logging server. 
+
+Port: Designate a port for communication. 
+
+Transport Protocol: Choose the transport protocol that aligns with the requirements. Options are TCP and UDP. 
+
+Log Level: Set the applicable log level. Options are "warning", "info", "error", "critical", "emergency", "notice" and "alert". 
+
+Service Types: Define the service types to filter by. Options are "dns", "dhcp" and "others". 
+
+Timestamp Configuration: Determine whether to use ISO format for timestamps. 
+
+This can be customized individually for each remote server and locally on the BDDS itself. 
+
+Syslog protocol: Either choose to use RFC5424 (Syslog protocol), or if not chosen then the syslog protocol defaults to RFC-3164 (BDS syslog protocol). 
+
+ISO Timestamp and RFC5424: By default, both ISO Timestamp and RFC5424 are set to false.
+
+Editing Network Settings
+------------------------
+
+
+Moving Appliances to a Different Address Space
+-----------------------------------------------
+DNS servers, DHCP servers, IP Address ranges, and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects to a different address space.
 
 Downloading Support Information for Appliances
 -----------------------------------------------
@@ -122,7 +160,7 @@ To help in troubleshooting, you may be asked to download support information for
 **To download support information**:
 
 1. Locate the specific appliance you are troubleshooting. 
-2. On the :guilabel:`Action` menu, select :guilabel:`Get support info`. You can also access this option on the Row menu :guilabel:`...`. 
+2. Select :guilabel:`Get support info` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
 3. Select :guilabel:`Download`.
 4. Once the download is complete, forward the downloaded file to support@bluecatnetworks.com.
 
@@ -170,13 +208,13 @@ Micetro automatically detects the new server as uninitialized. To begin using th
 **To initialize a server**:
 
 1. Locate the uninitialized server.
-2. On the :guilabel:`Action` menu, select :guilabel:`Initialize appliance`. You can also access this option on the Row menu :guilabel:`...`. 
+2. Select :guilabel:`Initialize appliance` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
- .. image:: ../../images/appliance-backup-restore-10.6.png
+   .. image:: ../../images/appliance-backup-restore-11.png
       :width: 65%
 
-* **Use data from Micetro**: This option allows you to initialize the server using the data saved in Micetro.
-* **Use data from the new appliance**: Use this option if you want to initialize the server with the data from the new appliance itself.
+   * **Use data from Micetro**: This option allows you to initialize the server using the data saved in Micetro.
+   * **Use data from the new appliance**: Use this option if you want to initialize the server with the data from the new appliance itself.
 
 |
 **See also**:
