@@ -46,7 +46,7 @@ Operating systems
 .. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
 
 .. note::
-   On January 14, 2020, Microsoft ended support for Windows server 2008 and 2008 R2 and therefore support for those server types are deprecated in versions 10.2 and above of    Micetro.
+   On January 14, 2020, Microsoft ended support for Windows server 2008 and 2008 R2 and therefore support for those server types is deprecated in versions 10.2 and above of Micetro.
    
 .. note::
    32-bit Linux Operating Systems will no longer be supported in version 10.2 and above due to the lack of support from common Linux distros
@@ -100,7 +100,7 @@ Men&Mice Web Application
 
 .. [5] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
 
-.. [6] The Apache web server are supported on all platforms except Windows.
+.. [6] The Apache web server is supported on all platforms except Windows.
 
 Supported Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -122,8 +122,10 @@ Supported Cloud Services
 Supported browsers (Web Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Chrome
+* Microsoft Edge
 
-* Firefox
+* Google Chrome
 
-* Safari
+* Mozilla Firefox
+
+* Apple Safari
