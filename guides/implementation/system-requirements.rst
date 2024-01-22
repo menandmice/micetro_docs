@@ -4,7 +4,7 @@
 
 .. _system-requirements:
 
-System requirements
+System Requirements
 ===================
 
 The minimum system requirements and supported platforms for Micetro by Men&Mice are as follows:
@@ -15,10 +15,10 @@ Hardware
 .. note::
   The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture-overview` for details.
 
-Operating systems
+Operating Systems
 -----------------
 
-.. csv-table:: Operating systems
+.. csv-table:: Operating Systems
   :header: "Operating system", "Management Console [1]_", "Server Controllers", "Men&Mice Central", "Web Application", "API [2]_", "Command Line Interface"
   :widths: 20, 20, 20, 10, 10, 10, 10
 
@@ -45,13 +45,13 @@ Operating systems
 
 .. [1] The management console also works on non-server Windows that have not reached their EOL.
 
-.. [2] The REST and SOAP APIs are bundled into the Web Application, both for Windows and Linux.
+[[2] The REST and SOAP APIs are bundled into the Web Application for Windows and Linux.
 
 .. note::
-   On January 14, 2020, Microsoft ended support for Windows server 2008 and 2008 R2 and therefore support for those server types are deprecated in versions 10.2 and above of    Micetro.
+   On January 14, 2020, Microsoft ended support for Windows Server 2008 and 2008 R2, and therefore support for those server types is deprecated in versions 10.2 and above of Micetro.
    
 .. note::
-   32-bit Linux Operating Systems will no longer be supported in version 10.2 and above due to the lack of support from common Linux distros
+   Starting from version 10.2, support for 32-bit Linux Operating Systems will be discontinued due to the lack of support from common Linux distributions.
 
 Databases
 ---------
@@ -67,9 +67,9 @@ Databases
 .. [3] The SQLite database is embedded into the Men&Mice Central application.
 
 .. note::
-   Microsoft SQL Server 2008 R2 will no longer be supported in Micetro versions 10.2 and above due to Microsoft ending support of these operating system
+   In Micetro versions 10.2 and later, support for Microsoft SQL Server 2008 R2 will be discontinued, aligning with Microsoft's decision to end support for these operating systems.
 
-DNS/DHCP Server software
+DNS/DHCP Server Software
 ------------------------
 
 .. csv-table:: DNS & DHCP server software
@@ -102,7 +102,7 @@ Men&Mice Web Application
 
 .. [4] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
 
-.. [5] The Apache web server are supported on all platforms except Windows.
+.. [5] The Apache web server is supported on all platforms except Windows.
 
 Supported Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,13 +119,15 @@ Supported Cloud Services
 
 * Akamai
 
-.. [6] Micetro is available to install directly from the Azure Marketplace. See :ref:`installation-azure`.
+.. [6] Micetro can be installed directly from the Azure Marketplace. See :ref:`installation-azure`.
 
-Supported browsers (Web Application)
+Supported Browsers (Web Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Chrome
+* Microsoft Edge
 
-* Firefox
+* Google Chrome
 
-* Safari
+* Mozilla Firefox
+
+* Apple Safari
