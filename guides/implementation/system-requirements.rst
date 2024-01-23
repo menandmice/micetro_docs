@@ -77,18 +77,17 @@ DNS/DHCP Server Software
   :widths: 40, 60
 
   "**DNS**"
-  "Microsoft DNS", "2012, 2012 R2, 2016, 2019, 2022"
+  "Microsoft DNS", "2016, 2019, 2022"
   "ISC BIND", "9.6 - 9.18"
-  "Unbound", "1.4.22 - 1.7.3"
   "PowerDNS Authoritative Server", "3.4 - 4.3"
   "**DHCP**"
-  "Microsoft DHCP", "2012, 2012 R2, 2016, 2019, 2022"
-  "ISC DHCP", "3.0.6 - 4.4.1"
-  "ISC Kea", "1.6, 1.8"
+  "Microsoft DHCP", "2016, 2019, 2022"
+  "ISC DHCP", "4.4.1 and higher"
+  "ISC Kea", "2.2, 2.4"
   "Cisco IOS with DHCP support", "12.3 - 16.09"
 
 .. danger::
-  ISC Kea versions older than 1.6 are no longer supported. See :ref:`kea-update` for more details.
+  ISC Kea versions 2.0 and older are no longer supported. See :ref:`kea-update` for more details.
 
 Other
 -----
