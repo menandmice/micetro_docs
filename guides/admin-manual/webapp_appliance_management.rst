@@ -29,7 +29,7 @@ To add an appliance to Micetro, you need to have the Administrator role.
 2. Select :guilabel:`Appliance`. 
 3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
 4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
-5. Enable or disable appliance services. By default, **DNS** and **DHCP** services are activated. You can enable a **SSH** (Secure Shell) client to securely access and manage network devices and servers over an unsecured network.
+5. Enable or disable appliance services. By default, **DNS** and **DHCP** services are activated.  If you require remote remote access to your appliance for specific purposes, you can enable the **SSH** (Secure Shell) client.
 6. Select :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
 
 Editing Appliance Name
@@ -60,12 +60,12 @@ You can enable or disable various appliance services to configure your appliance
 
    * **DNS**: Enable this service to allow your appliance to participate in domain name resolution on the network.
    * **DHCP**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
-   * **SSH (Secure Shell)**: SSH service is enabled by default, providing secure remote access to your appliance. With the SSH client enabled you can connect to and manage the appliance securely. Disabling SSH is not recommended unless you have a specific security requirement. Disabling SSH should only be considered for servers in a highly secure environment, and even then, it should only be done for short periods when absolutely necessary. Always ensure you have alternate secure methods for appliance management.
+   * **SSH (Secure Shell)**: The SSH service is not enable by default. You can enable it when secure remote access is needed, such as for troubleshooting purposes.
    * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
 4. Select :guilabel:`Save` when you are done.
 
-Setting DNS Resolvers 
-----------------------
+Configuring DNS Resolvers 
+-------------------------
 To ensure optimal performance of your appliance, you can add the IP addresses of DNS resolver servers. This step helps your appliance efficiently resolve domain names and provide accurate network services.
 
 **To set DNS resolvers**:
@@ -119,31 +119,31 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
 
 4. Select :guilabel:`Save` to save your settings and close the dialog box.
 
-Configuring Syslog
-------------------
-Go to admin page and select BDDS appliance and run task 'Configure Syslog'. There you can add/remove/edit remote syslog servers:
+Configuring Remote Logging Servers (Syslog)
+-------------------------------------------
+You can define multiple remote logging servers on your appliance to meet a variety of logging needs. Configuring a remote logging server on an appliance through Micetro involves specifying several properties.
 
+**To configure Syslog**:
 
+1. Locate the specific appliance for which you want to configure Syslog.
+2. Select :guilabel:`Configure Syslog` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
+3. In the Configure Syslog dialog box, select :guilabel:`Add Server` to add a new logging server. Alternatively, modify the configuration of an existing server by selecting it and then :guilabel:`Edit` on the Row :guilabel:`...` menu. 
 
-Configuring a remote logging server on BDDS through Micetro involves specifying several properties: 
+   .. image:: ../../images/appliance-edit-syslog.png
+      :width: 65%
 
-IP Address: Assign an IP address to each remote logging server. 
+   * **Server Address**: Assign an IP address to each remote logging server. 
+   * **Port Number**: Specify the communication port. 
+   * **Protocol**: Select the transport protocol that aligns with the requirements (TCP or UDP). 
+   * **Log Level**: Select the desired log level.
+   * **Service Types**: Define service types to filter by. 
+   * **With ISO Timestamp**: Decide whether to use the ISO format for timestamps, with customization available for each remote server and locally on the appliance itself. 
+   * **RFC-5424**: Choose between using RFC-5424 (Syslog protocol) or defaulting to RFC-3164 (BDS syslog protocol) if not explicitly selected. 
 
-Port: Designate a port for communication. 
+**To remove a remote syslog server**:
 
-Transport Protocol: Choose the transport protocol that aligns with the requirements. Options are TCP and UDP. 
-
-Log Level: Set the applicable log level. Options are "warning", "info", "error", "critical", "emergency", "notice" and "alert". 
-
-Service Types: Define the service types to filter by. Options are "dns", "dhcp" and "others". 
-
-Timestamp Configuration: Determine whether to use ISO format for timestamps. 
-
-This can be customized individually for each remote server and locally on the BDDS itself. 
-
-Syslog protocol: Either choose to use RFC5424 (Syslog protocol), or if not chosen then the syslog protocol defaults to RFC-3164 (BDS syslog protocol). 
-
-ISO Timestamp and RFC5424: By default, both ISO Timestamp and RFC5424 are set to false.
+1. In the Configure Syslog dialog box, select the server you wish to remove.
+2. On the Row :guilabel:`...` menu, select :guilabel:`Remove`.
 
 Editing Network Settings
 ------------------------
