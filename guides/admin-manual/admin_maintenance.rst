@@ -4,8 +4,8 @@
 
 .. _admin-maintenance:
 
-Maintenance
-===========
+Maintenance  (Management Console, obsolete)
+============================================
 
 Micetro contains several options for cleaning up the network space. To access the network maintenance functions, select :menuselection:`Tools --> Maintenance` and then the maintenance operation you want to perform.
 
