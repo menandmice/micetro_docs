@@ -1,11 +1,11 @@
 .. meta::
-   :description: Product documentation for Micetro by Men&Mice
-   :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide
+   :description: Product documentation for Micetro
+   :keywords: Micetro, Micetro, Men&Mice, documentation, user guide, admin guide
 
-Micetro by Men&Mice 11.0
-########################
+Micetro 11.0
+#############
 
-Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
+Welcome to Micetro, a backend-agnostic DDI orchestration software for complex enterprise network environments.
 
 .. image:: images/micetro.png
   :width: 70%
@@ -28,14 +28,6 @@ Use the **Install Guide** to familiarize yourself with Micetro's architecture an
 
 .. note::
   For how-to articles and troubleshooting, see :ref:`reference` or visit the `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
-
-.. image:: images/menandmice.png
-  :width: 60%
-  :alt: Micetro by Men&Mice
-  :align: center
-|
-.. note::
-  If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
 
 The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
 
@@ -93,13 +85,21 @@ Table of Contents
     guides/admin-manual/admin_object_history
     guides/admin-manual/webapp_sso
     guides/admin-manual/admin_updates   
-    guides/admin-manual/admin_maintenance
-    guides/admin-manual/webapp_appliance_management
-    guides/admin-manual/caching_appliance
 
 .. toctree::
     :caption: Reference
     :maxdepth: 1
 
     guides/reference/reference
+
+.. toctree::
+    :caption: Management Console
+    :maxdepth: 1
+
+    guides/implementation/install_console
+    guides/user-manual/console
+    guides/admin-manual/appliance_management
+    guides/admin-manual/caching_appliance
+    guides/admin-manual/admin_maintenance
+
 
