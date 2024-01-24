@@ -315,6 +315,7 @@ To configure IPv6 routing on the Appliance, do the following:
 6. Enter the **destination**, **prefix** and **gateway** and choose the **interface** for the route. Click :guilabel:`OK` to add the route.
 
 To edit or delete routes, use the :guilabel:`Edit` and :guilabel:`Delete` buttons next to the *IPv6 Routes* list.
+
 Moving Appliances to a Different Address Space
 -----------------------------------------------
 DNS servers, DHCP servers, IP Address ranges, and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects to a different address space.
