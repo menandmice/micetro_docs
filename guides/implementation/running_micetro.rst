@@ -4,7 +4,7 @@
 
 .. _running-micetro:
 
-Running the Men&Mice components (Central, Controllers)
+Running the Micetro Components (Central, Controllers)
 ======================================================
 
 .. _running-micetro-unix:
@@ -12,7 +12,7 @@ Running the Men&Mice components (Central, Controllers)
 Linux
 -----
 
-After installation, all Men&Mice components are configured as system processes available through ``systemctl``. Only use ``systemctl`` to stop, (re)start, and query the status of the components, i.e.:
+After installation, all Micetro components are configured as system processes available through ``systemctl``. Only use ``systemctl`` to stop, (re)start, and query the status of the components, i.e.:
 
 .. code-block:: bash
 
@@ -60,17 +60,17 @@ Men&Mice Central runs as a service and you can start and stop Men&Mice Central u
   "mmcentral –v", "Displays version information"
   "mmcentral –h", "Displays available command line options for Men&Mice Central"
 
-Men&Mice Controllers
+Micetro Controllers
 ^^^^^^^^^^^^^^^^^^^^
 
-The Men&Mice DNS Server Controller runs as a service and you can start and stop the Server Controller using the Services application. You can also control the Men&Mice DNS Server Controller using these command line options:
+The Micetro DNS Server Controller runs as a service and you can start and stop the Server Controller using the Services application. You can also control the Micetro DNS Server Controller using these command line options:
 
 .. csv-table::
   widths: 30, 70
 
-  "mmremote –i", "Installs the Men&Mice DNS Server Controller as a service"
-  "mmremote –u", "Uninstalls the Men&Mice DNS Server Controller"
-  "mmremote –start", "Starts the Men&Mice DNS Server Controller service"
-  "mmremote –stop", "Stops the Men&Mice DNS Server Controller service"
+  "mmremote –i", "Installs the Micetro DNS Server Controller as a service"
+  "mmremote –u", "Uninstalls the Micetro DNS Server Controller"
+  "mmremote –start", "Starts the Micetro DNS Server Controller service"
+  "mmremote –stop", "Stops the Micetro DNS Server Controller service"
   "mmremote –v", "Displays version information"
-  "mmremote –h", "Displays available command line options for the Men&Mice DNS Server Controller"
+  "mmremote –h", "Displays available command line options for the Micetro DNS Server Controller"
