@@ -10,44 +10,98 @@ Release Notes
 .. note::
   Major releases are only supported for 2 years.
 
-..
-  Known issues
-  ^^^^^^^^^^^^
-  .. important::
-    There is a known issue when updating to Micetro 10.1 using **Microsoft SQL Server 2008R2 (or earlier)**. The database upgrade process contains the string CONCAT command that was implemented in SQL Server 2012.
-    Until we've published the fix for this issue, use the following workaround:
-    1. In the SQL Server Management Studio run the following on the database (default: ``mmsuite``):
-    .. code-block::
-      ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
-      insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
-      DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
-      insert into mmCentral.mm_databaseupgrades values (17383);
-    2. Restart Central.
-    We'll publish a maintenance release containing the fix for this issue soon.
 
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`,
 
+.. _10.5.5-release:
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.6-release`
-
-.. _10.6-release:
-
-10.6
+10.5.5
 ------
-October X, 2023
+December 5, 2023
 
-New Features
+Known Issues
 ^^^^^^^^^^^^
+*Issue: Micetro Unable to Locate Python Executable with Spaces in Path*
 
+Micetro experiences difficulty locating the Python executable when the ``PythonExecutablePath`` preference points to a path that contains spaces, impacting external and LDAP authentication configurations.
+
+**Workarounds**:
+
+* Add the Python path to the ``PATH`` environment variable in Windows.
+
+-OR-
+
+* Encase the ``PythonExecutablePath`` preference value with quotation marks on either side. Example: ``<PythonExecutablePath value="&quot;C:\Path with spaces\python.exe&quot;"/>``
 
 Improvements
 ^^^^^^^^^^^^
-* 
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability. This improvement addresses the security vulnerability outlined in CVE-2023-4080.
 
-* 
+* **Script Name Fields**: The script name fields (:menuselection:`Admin --> Configuration --> Event Hooks`) now only accept script names and validate the existence of the script in a folder named "scripts" under Central's data folder. Default paths are "C:\\ProgramData\\Men and Mice\\Central\\scripts" on Windows and /var/mmsuite/mmcentral/scripts on Linux. This improvement addresses the security vulnerability outlined in CVE-2023-4079.
+
+  While existing values for script names will continue to function, updating the value requires moving referenced scripts to the scripts folder before they can be selected in the UI.
+
+  The system setting "Folder for scripts to be run from the API" (RunCommandsFromDirectory) has been deprecated. The current value remains functional but cannot be modified, only cleared. The default value is the scripts folder mentioned above. Scripts invoked through the RunCommand API should also be moved to the scripts folder.
+
+  The 'parameters' argument to the RunCommand API has been deprecated.
+
+  While these changes are not breaking, administrators are advised to take necessary actions, as all script invocations are expected to be limited to the scripts folder in a future major release.
 
 Bug Fixes
 ^^^^^^^^^
-*  
+* Resolved an issue where SNMP profiles were not displayed in the table when the number of profiles exceeded a specific threshold.
+
+* Fixed an issue where records in recently promoted AuthServe zones could not be edited.
+
+* Addressed an error where the importing of host records for IP addresses would fail.	
+
+* Resolved slowness issues when deleting a zone with a few records from AuthServe. Improved performance when deleting a zone on a Central with a PostgreSQL database.
+
+* Various bug fixes and improvements.	
+
+.. _10.5.4-release:
+
+10.5.4
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+.. _10.5.3-release:
+
+10.5.3
+------
+September 11, 2023
+
+New Features
+^^^^^^^^^^^^
+* **Default TTL Configuration**: Introducing a new system setting that allows users to customize the default Time To Live (TTL) for records created within zones belonging to xDNS profiles. that are in xDNS profiles.	This feature provides enhanced flexibility in managing your DNS records.
+
+Improvements
+^^^^^^^^^^^^
+* Enhanced Central's handling of HTTPS certificates by now supporting multiple Certificate Authority (CA) files. Additionally, you can no longer select the Strict policy without specifying a CA file or directory, reinforcing security practices.
+
+* NS records are now generated correctly when creating AuthServe zones with secondaries, provided that Initial Records are not specified during zone creation. This enhancement streamlines the process of setting up secondary zones.
+
+Bug Fixes
+^^^^^^^^^
+* Fixed an issue that previously prevented users from editing SNMP v2 profiles through the Management Console.
+
+* Fixed a bug where Micetro error messages were not displaying correctly in Windows Event Viewer.
+
+* Fixed a bug that resulted in an error when duplicating a range with certain custom properties.
+
+* Resolved a bug that previously hindered the creation of newly converted DHCP scopes on all relevant DHCP servers. 
+
+* Addressed an issue in the Management Console where DHCP scopes on Kea could unintentionally be disabled.
+
+* Resolved an issue where the association between DNS records and IP addresses was not being cleaned up correctly upon zone deletion.
+
+* Fixed a bug where Micetro would not functioning as expected when managing BIND servers with Catalog zones.
+
+* Fixed a bug that previously prevented the successful creation of a DHCP scope on all relevant DHCP servers when converting a range. 
 
 .. _10.5.2-release:
 
