@@ -11,13 +11,11 @@ Installation
   :maxdepth: 1
 
   system_requirements
-  system_requirements
   firewall_ports
   binaries
   config_files
   install_central
   central_database
-  install_console
   install_controllers
   cloud
   install_webapp
