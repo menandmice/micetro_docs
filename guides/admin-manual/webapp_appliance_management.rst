@@ -1,6 +1,6 @@
 .. meta::
    :description: Managing Appliances in the Micetreo Web Application
-   :keywords: Men&Mice appliances, DNS management, DNS/DHCP appliance, DNS caching appliance, Men&Mice, BDDS appliances
+   :keywords: appliances, DNS management, DNS/DHCP appliance, BDDS appliances, MDDS appliances
 
 .. _webapp-appliance-management:
 
@@ -147,7 +147,7 @@ You can define multiple remote logging servers on your appliance to meet diverse
 
 Configuring Network Settings
 ----------------------------
-Using the network settings, you can enable or disable IPv6 and change the IP address, network mask, and routing information for the appliance. You can also enable and configure the secondary network interface (eth1) on the appliance.
+Using the network settings, you can configure the routing information for the appliance. You can also enable and configure the secondary network interface (eth1) on the appliance. You can set additional IP addresses and VLANs
 
 Enabling/Disabling the Secondary Network Interface (eth1)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -166,155 +166,47 @@ The appliance has two network interfaces. The primary network interface (eth0) i
 
 4. Click :guilabel:`Save` to save your settings.
 
-Enabling/disabling IPv6 addresses on the primary/secondary network interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Managing Application Interfaces
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-IPv6 can be enabled on either or both of the network interfaces on the Men&Mice Appliance.
+**To manage application interfaces:*
 
-To enable or disable IPv6 on the Men&Mice Appliance do the following:
+1. Locate the specific appliance for which you want to manage interfaces.
+2. Select :guilabel:`Network settings` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
+3. Click the Row :guilabel:`...` menu for the relevant interface and select to add, edit or remove a sub-interface.
 
-1. Select the :guilabel:`Network` tab in the *Appliance Properties* dialog box.
+   * **Add an address**
+      
 
-2. Click the :guilabel:`Configure` button in the *Interface* section for the interface you want to configure. The *interface configuration* dialog box displays.
 
-3. Click the :guilabel:`IPv6` tab in the *interface configuration* dialog box.
 
-..
+Editing Loopback Interfaces
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4. Check the :guilabel:`IPv6 Enabled` checkbox to enable IPv6 on the selected interface. To disable IPv6 on the interface interface, uncheck the checkbox.
 
-5. Click :guilabel:`Save` to save your settings.
+Configuring Static Routes
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Tailor your appliance's network connectivity by managing and customizing routes to reach specific networks. It's crucial to enter valid route information, as invalid routes can render the server inaccessible. 
 
-When IPv6 is enabled, the Link-local address and any dynamically assigned addresses for the interface are displayed in the dialog box.
+It is not possible to edit the default route.
 
-Configuring IPv4 addresses on the primary/secondary network interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**To add a route**:
 
-Each interface on the Men&Mice Appliance can have one or more IPv4 addresses assigned to it.
+1. Locate the specific appliance for which you need to configure a route.
+2. Select :guilabel:`Network settings` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
+3. In the Network Settings dialog box, select the :guilabel:`Routes` tab. 
 
-To configure IPv4 addresses on the Appliance, do the following:
+   .. image:: ../../images/appliance-network-routes.png
+     :width: 50%
 
-1. Select the :guilabel:`Network` tab in the *Appliance Properties* dialog box.
+4. Selct the :guilabel:`Add` button, and enter the required information:
 
-2. Click the :guilabel:`Configure` button in the *Interface* section for the interface you want to configure. The *interface configuration* dialog box is displayed with the *IPv4* tab selected.
+   * **Destination**: The network IP address of a destination network.
+   * **Gateway**: The IP address leading to the remote network
 
-.. image:: ../../images/admin-appliance-ipv4.png
-  :width: 50%
-  :align: center
+5. Click :guilabel:`Set` to apply the configured route.
 
-3. In the **IPv4 Address** field enter the IPv4 IP address for the Men&Mice Appliance. NOTE: The main IPv4 address on the primary network interface (eth0) is used by Micetro to communicate with the Appliance. If you change the main IPv4 address of the primary network interface, you will lose the connection to the Appliance once the changes are saved, and you must update the connection information for the Appliance. Refer to :ref:`edit-appliance-name` for details on how to change the connection information.
-
-4. In the **Subnet Mask** field, enter the subnet mask to use.
-
-5. In the **Default Route** field, enter the default IPv4 route.
-
-6. If you want to add more IPv4 IP addresses for the Men&Mice Appliance, click the :guilabel:`Add` button next to the IPv4 Aliases list and enter the relevant IP address information.
-
-To edit or delete additional IPv4 addresses, use the :guilabel:`Edit` and :guilabel:`Delete` buttons next to the IPv4 Aliases list.
-
-Configuring IPv6 addresses on the primary/secondary network interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Each interface on the Men&Mice Appliance can have one or more addresses assigned to it.
-
-To configure IPv6 addresses on the Appliance, do the following:
-
-1. Select the :guilabel:`Network` tab in the *Appliance Properties* dialog box.
-
-2. Click the :guilabel:`Configure` button in the *Interface* section for the interface you want to configure. The *interface configuration* dialog box is displayed with the *IPv4* tab selected.
-
-3. Click the :guilabel:`IPv6` tab in the *interface configuration* dialog box
-
-.. image:: ../../images/admin-appliance-configure-ipv6.png
-  :width: 50%
-  :align: center
-
-4. Select the :guilabel:`IPv6 Enabled` checkbox to enable IPv6
-
-5. Click the :guilabel:`Add` button to add a new IPv6 address.
-
-.. image:: ../../images/admin-appliance-add-ipv6.png
-  :width: 50%
-  :align: center
-
-6. Enter the **IPv6 address** and the **Prefix length**.
-
-7. Click :guilabel:`OK` to add the IPv6 address.
-
-To edit or delete IPv6 addresses, use the :guilabel:`Edit` and :guilabel:`Delete` buttons next to the IPv4 Addresses list.
-
-Configuring the Network Mode on the primary/secondary network interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-It is possible to change the network speed and duplex mode for the network interfaces on the Men&Mice Appliance.
-
-To change the Network Mode on the Men&Mice Appliance do the following:
-
-1. Select the :guilabel:`Network` tab in the *Appliance Properties* dialog box.
-
-2. Click the :guilabel:`Configure` button in the *Interface* section for the interface you want to configure. The *interface configuration* dialog box displays.
-
-3. Click the :guilabel:`Hardware` tab in the *interface configuration* dialog box. The MAC address of the interface is shown and a drop-down box with the available network modes displays.
-
-.. image:: ../../images/admin-appliance-network-mode.png
-  :width: 50%
-  :align: center
-
-Configuring IPv4 routing information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To configure IPv4 routing on the Appliance, do the following:
-
-1. Select the :guilabel:`Network` tab in the *Appliance Properties* dialog box.
-
-2. Click the :guilabel:`Configure` button in the *Routing* section. The *routing configuration* dialog box is displayed with the *IPv4* tab selected.
-
-.. image:: ../../images/admin-appliance-ipv4-routing.png
-  :width: 50%
-  :align: center
-
-3. Enter the **default route** to use for IPv4.
-
-4. If needed, click the :guilabel:`Add` button to add a new IPv4 route.
-
-.. image:: ../../images/admin-appliance-add-ipv4-route.png
-  :width: 50%
-  :align: center
-
-5. Enter the **destination**, **prefix**, and **gateway**.
-
-6. Click :guilabel:`OK` to add the route.
-
-To edit or delete routes, use the :guilabel:`Edit` and :guilabel:`Delete` buttons next to the IPv4 Routes list.
-
-Configuring IPv6 routing information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To configure IPv6 routing on the Appliance, do the following:
-
-1. Select the :guilabel:`Network` tab in the *Appliance Properties* dialog box.
-
-2. Click the :guilabel:`Configure` button in the *Routing* section. The *routing configuration* dialog box is displayed with the *IPv4* tab selected.
-
-3. Click the :guilabel:`IPv6` tab in the *routing configuration* dialog box.
-
-.. image:: ../../images/admin-appliance-ipv6-routing.png
-  :width: 50%
-  :align: center
-
-4. Enter the **default route** to use for IPv6 and choose the interface for the route. You can choose the enabled interfaces or Auto.
-
-5. If needed, click the :guilabel:`Add` button to add a new IPv6 route.
-
-.. THIS DOESN'T SEEM LIKE THE RIGHT SCREENSHOT 🧐
-
-.. image:: ../../images/admin-appliance-add-ipv6-route.png
-  :width: 50%
-  :align: center
-
-6. Enter the **destination**, **prefix** and **gateway** and choose the **interface** for the route. Click :guilabel:`OK` to add the route.
-
-To edit or delete routes, use the :guilabel:`Edit` and :guilabel:`Delete` buttons next to the *IPv6 Routes* list.
+For route modifications, select :guilabel:`Edit` or :guilabel:`Remove` on the Row :guilabel:`...` menu for the desired route. 
 
 Moving Appliances to a Different Address Space
 -----------------------------------------------
