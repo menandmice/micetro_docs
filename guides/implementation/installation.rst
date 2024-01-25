@@ -20,7 +20,6 @@ Installation
   cloud
   install_webapp
   vmware
-  system_requirements
 
 Deploying Micetro on Azure
 --------------------------
