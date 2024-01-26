@@ -1,10 +1,10 @@
 .. meta::
-   :description: Required firewall ports for Micetro by Men&Mice
+   :description: Required firewall ports for Micetro
    :keywords: firewall, ports, security, Micetro
 
 .. _firewall-ports:
 
-Networking requirements
+Networking Requirements
 =======================
 
 Certain ports need to be open for Micetro’s different components to communicate with each other.
@@ -22,6 +22,6 @@ The following table lists all services and their respective ports to be opened f
   "Kea", 8000, "TCP", "Kea Control Agent"
   "DNS Server Controllers", 1337, "TCP", "Men&Mice Central"
   "DHCP Server Controllers", 4151, "TCP", "Men&Mice Central"
-  "Men&Mice Updater", 4603, "TCP", "Men&Mice Central"
+  "Micetro Updater", 4603, "TCP", "Men&Mice Central"
 
 Make sure that the servers running these services have the corresponding ports open in their firewalls.
