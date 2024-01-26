@@ -16,18 +16,13 @@ Deployed in any on-premises, hybrid, or multicloud network environment, Micetro 
 
 This documentation is divided into four parts:
 
-1. :ref:`implementation`
-2. :ref:`webapp-user-guide`
-3. :ref:`webapp-admin`
-4. :ref:`reference`
-
-Use the **Install Guide** to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The **User Guide** covers all of Micetro's functionality. The **Admin Guide** is aimed at system administrators managing Micetro.
+1. **Installation Guide**: Get acquainted with Micetro's architecture and follow step-by-step installation procedures tailored for various platforms.
+2. **User Guide**: Explore the comprehensive coverage of Micetro's functionalities to maximize your user experience.
+3. **Admin Guide**: Tailored for system administrators, this guide equips you with the knowledge needed to effectively manage Micetro.
+4. **Reference Guide**: Find detailed how-to articles and troubleshooting tips to address any challenges that may arise. 
 
 .. tip::
   Use the search function to quickly locate the information required.
-
-.. note::
-  For how-to articles and troubleshooting, see :ref:`reference` or visit the `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
 
 The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
 
@@ -44,7 +39,7 @@ Table of Contents
     opensource
 
 .. toctree::
-     :caption: Micetro Install Guide
+     :caption: Micetro Installation Guide
      :maxdepth: 1
 
      guides/implementation/implementation
@@ -84,7 +79,8 @@ Table of Contents
     guides/admin-manual/admin_system_settings
     guides/admin-manual/admin_object_history
     guides/admin-manual/webapp_sso
-    guides/admin-manual/admin_updates   
+    guides/admin-manual/webapp_appliance_management
+    guides/implementation/updates
 
 .. toctree::
     :caption: Reference
