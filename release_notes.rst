@@ -99,7 +99,7 @@ Bug Fixes
 
 * Resolved an issue where the association between DNS records and IP addresses was not being cleaned up correctly upon zone deletion.
 
-* Fixed a bug where Micetro would not functioning as expected when managing BIND servers with Catalog zones.
+* Fixed a bug where Micetro would not function as expected when managing BIND servers with Catalog zones.
 
 * Fixed a bug that previously prevented the successful creation of a DHCP scope on all relevant DHCP servers when converting a range. 
 
@@ -126,7 +126,7 @@ Improvements
 
 * Administrators can now specify default TTL values in system settings using BIND shorthand notation
 
-* The ISC configuration file can now be mofified through the Web Application.
+* The ISC configuration file can now be modified through the Web Application.
 
 * When creating ISC Failover scopes, the scope and pool are now created on both servers.
 
@@ -165,7 +165,7 @@ Bug Fixes
 
 * When attempting to create a zone with an unknown zone type, a more descriptive error message is now returned.
 
-* We now exclude interfaces configuration from replication between ISC Kea peers.
+* We now exclude interface configuration from replication between ISC Kea peers.
 
 * Fixed a bug that previously prevented updating AuthServe Options Templates in certain situations.
 
@@ -173,9 +173,9 @@ Bug Fixes
 
 * Deleting an Authserve zone that no longer exists will no longer return an error.
 
-* Fixed an issue that occurred when sending an empty HTTP body with utf-8 specified as content-type.
+* Fixed an issue that occurred when sending an empty HTTP body with utf-8 specified as content type.
 
-* Fixed multiple time zone related issues in the Web Application.
+* Fixed multiple time zone-related issues in the Web Application.
 
 * Fixed an issue where adding a zone to a new folder wasn't possible
 
@@ -214,9 +214,9 @@ New Features
 
 * **Support for Kea Client Classes**: We have added support for Client Classifications on Kea DHCP servers (both v4 and v6).
 
-* **Global Object History**: In the Web Application you can now view global object history in one place, which was previously limitied to specific objects only. We have also made some minor improvements to the data available. This helps you to quickly and easily trace system activities in the event of an incident or problem. Additionally, all users can view their own object change history.
+* **Global Object History**: In the Web Application you can now view global object history in one place, which was previously limited to specific objects only. We have also made some minor improvements to the data available. This helps you to quickly and easily trace system activities in the event of an incident or problem. Additionally, all users can view their own object change history.
 
-* **Event Hooks**: Scheduled Scripts are now called Scheduled Events, while External Scripts has been renamed to Change Events. You can manage these events, along with Subnet Monitoring Events on the Admin page of the Web Application.
+* **Event Hooks**: Scheduled Scripts are now called Scheduled Events, while External Scripts have been renamed to Change Events. You can manage these events, along with Subnet Monitoring Events on the Admin page of the Web Application.
 
 * **System Settings**: Administrators can now manage the System Settings for Micetro in the Web Application.
 
@@ -278,9 +278,9 @@ Bug Fixes
 
 * Performance has been improved when opening scopes on Kea.
 
-* Fixed an issue where it was not possible to add change requests for ranges with invalid set of custom properties.
+* Fixed an issue where it was not possible to add change requests for ranges with an invalid set of custom properties.
 
-* Fixed a bug where license keys with expiry date were reported as inactive.
+* Fixed a bug where license keys with expiry dates were reported as inactive.
 
 * Fixed an issue where promoting a zone would use data from a different primary zone with the same name.
 
@@ -288,13 +288,53 @@ Bug Fixes
 
 * An issue with setting custom properties with the AddDNSRecords API command was fixed.
 
-* Fixed an issue where submit buttons for change requests in Workflow would render off screen on certain screen resolutions.
+* Fixed an issue where submit buttons for change requests in Workflow would render off-screen on certain screen resolutions.
 
 * An issue was fixed where it was not possible to add an IPv6 address of a primary server to a secondary zone.
 
 * An issue was fixed where scope name was not updated to reflect the name of the network.
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
+
+.. _10.3.10-release:
+
+10.3.10
+-------
+December 5, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability. This improvement addresses the security vulnerability outlined in CVE-2023-4080.
+
+Bug Fixes
+^^^^^^^^^
+
+* Resolved an issue where SNMP profiles were not displayed in the table when the number of profiles exceeded a specific threshold.
+
+* Resolved a bug where Micetro erroneously synchronized interface configurations to the partner DHCPv6 server. The fix ensures that interface configurations are now excluded from replication between ISC Kea peers.
+
+* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
+
+* DNS synchronization for NS1 cloud service was fixed after the provider stopped modifying the zone serial number after updates.
+
+* Various bug fixes and improvements.
+
+.. _10.3.9-release:
+
+10.3.9
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed an issue where AWS debug log messages were excessively logged to the Micetro log.
 
 .. _10.3.8-release:
 
@@ -614,6 +654,40 @@ Bug Fixes
 
 * Various improvements and fixes
 
+.. _10.2.9-release:
+
+10.2.9
+------
+December 5, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability. This improvement addresses the security vulnerability outlined in CVE-2023-4080.
+
+Bug Fixes
+^^^^^^^^^
+
+* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
+
+* Various bug fixes and improvements.
+
+.. _10.2.8-release:
+
+10.2.8
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance.
+
+Bug Fixes
+^^^^^^^^^
+
+* Various accessibility improvements were made to the Web Application.
+
 .. _10.2.7-release:
 
 10.2.7
@@ -859,6 +933,17 @@ Bug Fixes
 
 * Multiple minor improvements and fixes to enhance user experience
 
+.. _10.1.7-release:
+
+10.1.7
+------
+September 20, 2023
+
+Improvements
+^^^^^^^^^^^^
+
+* BIND has been upgraded to v9.16.44 on the Micetro appliance
+
 .. _10.1.6-release:
 
 10.1.6
@@ -955,25 +1040,29 @@ Bug fixes
 10.1
 ----
 
-*October 19th, 2021.*
+*October 19th, 2021*
 
 .. important::
-  Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
+   Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
 
 Known issues
 ^^^^^^^^^^^^
 
-..
   .. important::
     There is a known issue when updating to Micetro 10.1 using **Microsoft SQL Server 2008R2 (or earlier)**. The database upgrade process contains the string CONCAT command that was implemented in SQL Server 2012.
     Until we've published the fix for this issue, use the following workaround:
+
     1. In the SQL Server Management Studio run the following on the database (default: ``mmsuite``):
-    .. code-block::
-      ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
-      insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
-      DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
-      insert into mmCentral.mm_databaseupgrades values (17383);
+
+       .. code-block::
+
+            ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
+            insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
+            DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
+            insert into mmCentral.mm_databaseupgrades values (17383);
+
     2. Restart Central.
+
     We'll publish a maintenance release containing the fix for this issue soon.
 
 New features
