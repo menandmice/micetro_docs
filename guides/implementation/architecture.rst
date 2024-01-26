@@ -1,5 +1,5 @@
 .. meta::
-   :description: Architecture design of Micetro by Men&Mice
+   :description: Architecture design of Micetro
    :keywords: Micetro, system design, hardware requirements, DDI components
 
 .. _architecture:
@@ -9,7 +9,7 @@ Architecture
 
 .. _architecture-overview:
 
-Architecture overview
+Architecture Overview
 =====================
 
 Micetro is a non-destructive, software-defined overlay for managing DNS, DHCP, and IPAM in diverse network environments.
@@ -58,13 +58,13 @@ Men&Mice Central
 
 .. _about-central:
 
-Men&Mice Central, through the connected database, stores all data including user specific and centrally stored information.
+Men&Mice Central, through the connected database, stores all data including user-specific and centrally stored information.
 
-Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management module is activated, Men&Mice Central is responsible for management and allocation of IP Addresses.
+Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management module is activated, Men&Mice Central is responsible for the management and allocation of IP Addresses.
 
 *Men&Mice Central listens on TCP port 1231.* See :ref:`firewall-ports` for more details.
 
-Men&Mice recommends the following table as guidelines for allocating sufficient resources for smooth operation of Micetro:
+Use this table as a guide for allocating resources to ensure smooth operation of Micetro:
 
 +-----------------------+--------------------------------+-------------------------------------------------+
 | Size of environment   | Number of objects              | Hardware guidelines (per Central instance)      |
@@ -92,7 +92,7 @@ Men&Mice recommends the following table as guidelines for allocating sufficient 
     :width: 80%
     :align: center
 
-Additional instances of Micetro's Central can also be installed as a "cold standby". With Micetro's embedded SQLite data storage, the database is periodically copied from the active Central server to the cold standby and, if the active server becomes unavailable, the Central service on the cold standby can be activated. If Central is configured with a different database backend, the database needs it's own high availability setup for redundancy.
+Additional instances of Micetro's Central can also be installed as a "cold standby". With Micetro's embedded SQLite data storage, the database is periodically copied from the active Central server to the cold standby and, if the active server becomes unavailable, the Central service on the cold standby can be activated. If Central is configured with a different database backend, the database needs its own high availability setup for redundancy.
 
 See :ref:`central-ha` for running multiple Central instances for high availability.
 
@@ -116,45 +116,45 @@ Information on how to use MS SQL or PostgreSQL as the database for Men&Mice Cent
 Server controllers
 ------------------
 
-The Men&Mice Server Controllers are minimal-footprint services running on the DNS/DHCP server or alongside Men&Mice Central, and facilitate the communication between the connected service and Central.
+The Micetro Server Controllers are minimal-footprint services running on the DNS/DHCP server or alongside Men&Mice Central, and facilitate the communication between the connected service and Central.
 
 .. _about-dns-controller:
 
 DNS Server Controllers
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The Men&Mice DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Men&Mice DNS Server Controller reads and writes zone data and option files, and sends commands to the DNS server. The Men&Mice DNS Server Controller listens on TCP port 1337.
+The Micetro DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Micetro DNS Server Controller reads and writes zone data and option files, and sends commands to the DNS server. The Micetro DNS Server Controller listens on TCP port 1337.
 
 (Unix) BIND DNS environment
   Micetro's DNS Server Controller (i.e., DNS agent) is installed on each DNS server that is to be managed.
 
 (Microsoft) AD environment
-  The DNS agent can be installed on some of the DNS servers or they can all be managed agent free. If they are to be managed agent free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen. (See :ref:`agent-free-dns-dhcp`.)
+  The DNS agent can be installed on some of the DNS servers or they can all be managed agent free. If they are to be managed agent-free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen. (See :ref:`agent-free-dns-dhcp`.)
 
-  The DNS Server Controller must be running as a user that has necessary privileges.
+  The DNS Server Controller must be running as a user that has the necessary privileges.
 
   If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (meaning that *all* zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Micetro will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
 
   For more information see :ref:`ad-preferred-servers`.
 
 Other environments
-  The Men&Mice Server Controller service can also communicate with other DNS platforms, such as PowerDNS. See :ref:`generic-dns-controller` for more information.
+  The Micetro Server Controller service can also communicate with other DNS platforms, such as PowerDNS. See :ref:`generic-dns-controller` for more information.
 
 .. note::
-  The Men&Mice DNS Server Controller communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
+  The Micetro DNS Server Controller communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
 
 .. _about-dhcp-controller:
 
 DHCP Server Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The Men&Mice DHCP Server Controller is used to control the DHCP server.
+The Micetro DHCP Server Controller is used to control the DHCP server.
 
 ISC DHCP
   A copy should be installed on each DHCP server machine.
 
 MS DHCP
-  A copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connect to the DHCP service over the network. In order for this remote DHCP management to work, the DHCP Server Controller must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP Server Controller can manage several different DHCP servers.
+  A copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connected to the DHCP service over the network. For this remote DHCP management to work, the DHCP Server Controller must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP Server Controller can manage several different DHCP servers.
 
 Cisco DHCP
   The DHCP Server Controller can be installed on any machine.
@@ -162,7 +162,7 @@ Cisco DHCP
 The DHCP Server Controller listens for connections from Men&Mice Central on TCP port 4151.
 
 .. tip::
-  There are a few strategies to install the Men&Mice DHCP Server Controller (i.e., DHCP agent).
+  There are a few strategies to install the Micetro DHCP Server Controller (i.e., DHCP agent).
 
   * In a Unix ISC DHCP environment, the DHCP agent is installed on all DHCP servers that are to be managed.
 
@@ -173,9 +173,9 @@ The DHCP Server Controller listens for connections from Men&Mice Central on TCP 
 
   * If some of the managed DHCP servers are not in the same forest as Micetro's Central component, and there is no trust between the forests, the administrator must install at least one DHCP agent in the foreign forest. That DHCP agent can act as a proxy between Central and the DHCP servers and must be running as a member of the AD DHCP Administrators group in the foreign forest.
 
-  * The DHCP agents can be installed on each managed DHCP servers. In that scenario, the DHCP agent can be run as the Local System account, which means that no additional configuration is needed after the installation is complete.
+  * The DHCP agents can be installed on each managed DHCP server. In that scenario, the DHCP agent can be run as the Local System account, which means that no additional configuration is needed after the installation is complete.
 
-Cisco IOS DHCP servers can be managed using Micetro. A Men&Mice DHCP Server Controller has to be installed on a machine in the environment, which will then act as an proxy to manage the Cisco IOS DHCP servers, and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
+Cisco IOS DHCP servers can be managed using Micetro. A Micetro DHCP Server Controller has to be installed on a machine in the environment, which will then act as a proxy to manage the Cisco IOS DHCP servers and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
 
 ----
 
@@ -192,7 +192,7 @@ User Interface
 Web Application
 ^^^^^^^^^^^^^^^
 
-The Men&Mice Web Application can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Men&Mice Web Application talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central through TCP port 1231.
+The Micetro Web Application can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Application talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central through TCP port 1231.
 
 .. image:: ../../images/IPAM1.png
   :width: 80%
@@ -206,7 +206,7 @@ The Men&Mice Web Application can be installed on any server on the network runni
 Management Console
 ^^^^^^^^^^^^^^^^^^
 
-Micetro's Management Console is a Windows-only rich client that can be installed on as many client computers as required, and is typically installed on each administrator's workstation.
+Micetro's Management Console is a Windows-only rich client that can be installed on as many client computers as required and is typically installed on each administrator's workstation.
 
 .. image:: ../../images/console-Micetro.png
   :width: 80%
@@ -218,15 +218,12 @@ Micetro's Management Console is a Windows-only rich client that can be installed
 ..
   Middle Layer
   ------------
-  The middle layer is responsible for collecting and synchronizing data and handle requests from different Interfaces. Men&Mice Central has its own database to store all related data. (See :ref:`central-database`.)  To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate to other services in order to get or set information - e.g., Microsoft Active Directory to authenticate users. (See :ref:`webapp-sso`.)
+  The middle layer is responsible for collecting and synchronizing data and handling requests from different Interfaces. Men&Mice Central has its own database to store all related data. (See :ref:`central-database`.)  To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate with other services to get or set information - e.g., Microsoft Active Directory to authenticate users. (See :ref:`webapp-sso`.)
 
 .. _about-virtual-appliances:
 
-Men&Mice Virtual Appliances (Optional)
---------------------------------------
+Virtual Appliances (Optional)
+------------------------------
 
-There are two types of Men&Mice Virtual Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance.
+The MDDS DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the appliance has been configured, you work with the DNS and DHCP servers just as you would work with the BIND and ISC DHCP servers. See :ref:`webapp-appliance-management` for more information.
 
-The DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the DNS/DHCP appliance has been configured, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers. See :ref:`dns-dhcp-appliance` for more information.
-
-The DNS Caching Appliance contains a high-performance Caching-only DNS server. See :ref:`caching-appliance` for more information.
