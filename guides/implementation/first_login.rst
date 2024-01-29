@@ -4,7 +4,7 @@
 
 .. _first-login:
 
-First login
+First Login (Management Console, obsolete)
 ===========
 
 After installing and starting the required components (PostgreSQL, Men&Mice Central, at least one Controller, and the Web Application) administrators must use the Management Console (Windows Client) to log in to and initialize the system.
