@@ -151,7 +151,7 @@ Using the network settings, you can configure the routing information for the ap
 
 Managing Application Interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Network Settings dialog box lets you set up the interfaces on the appliance. You can create sub-interfaces, which divide a physical interface into multiple logical interfaces. Each sub-interface has a unique IP address and allows you to segment networks into smaller broadcast domains with VLANs. This improves network performance, security, and manageability. You can also modify the loopback address.
+The Network Settings dialog box lets you set up the interfaces on the appliance. You can create sub-interfaces, allowing you to logically divide a physical interface into multiple virtual interfaces, each with distinct IP addresses. This segmentation is crucial for efficiently managing network traffic and facilitating communication between different VLANs. You can also modify the loopback address.
 
 **To manage application interfaces:**
 
@@ -160,16 +160,17 @@ The Network Settings dialog box lets you set up the interfaces on the appliance.
 3. Click the Row :guilabel:`...` menu for the relevant interface and select to add, edit or remove a sub-interface.
 
 
-   .. image:: ../../images/appliances-add-subinterface.png
+   .. image:: ../../images/appliance-add-subinterface.png
       :width: 60%
 
-   * **Add an sub-interface**: Select :guilabel:`Add sub-snterface`. In the Add Sub-Interface dialog box, pro
-         * Activate or deactivate the interface by selecting or clearing the :guilabel:Active checkbox.
-         * Select the VLAN ID.
-         * Optionally, enter a description for the sub-interface.
-         * In the Addresses box, assign an IP address within each subnet to the sub-interface.
-   * **Edit a interface**: Deactivate the interface by clearing the :guilabel:Active checkbox if needed. Make any other necessary changes. Refer to the "Add a sub-interface" section for descriptions of the fields.
+   * **Add an sub-interface**: Select :guilabel:`Add sub-interface`. In the Add Sub-Interface dialog box, provide the following details:
+         * **Active** Checkbox: By default, the interface is active. Clear the :guilabel:`Active` checkbox if you want to deactivate the sub-interface temporarily.
+         * **VLAN ID**: Enter the approbriate VLAN ID.
+         * **Desctiption**: Optionally, enter a description for the sub-interface.
+         * **Addresses**: Enter the IP addresses you want to assign with the sub-interface.
+   * **Edit a interface**: Select :guilabel:`Edit` on the interface's Row :guilabel:`...` menu. Deactivate the interface by clearing the :guilabel:`Active` checkbox if needed. Make any other necessary changes. Refer to the "Add a sub-interface" section for descriptions of the fields.
    * **Remove a sub-interface**: Click the Row :guilabel:`...` menu for the sub-interface to delete, and then select :guilabel:`Remove`.
+   * **Modify the loopback address**: On the interface's Row :guilabel:`...` menu, select :guilabel:`Edit`, and then make the desired changes.
 
 
 Configuring Static Routes
