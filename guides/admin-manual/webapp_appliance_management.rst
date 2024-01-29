@@ -163,9 +163,10 @@ The Network Settings dialog box lets you set up the interfaces on the appliance.
    .. image:: ../../images/appliance-add-subinterface.png
       :width: 60%
 
-   * **Add an sub-interface**: Select :guilabel:`Add sub-interface`. In the Add Sub-Interface dialog box, provide the following details:
-         * **Active** Checkbox: By default, the interface is active. Clear the :guilabel:`Active` checkbox if you want to deactivate the sub-interface temporarily.
-         * **VLAN ID**: Enter the approbriate VLAN ID.
+   * **Add a sub-interface**: Select :guilabel:`Add sub-interface`. In the Add Sub-Interface dialog box, provide the following details:
+         
+         * **Active**: By default, the interface is active. Clear the :guilabel:`Active` checkbox if you want to deactivate the sub-interface temporarily.
+         * **VLAN ID**: Enter the appropriate VLAN ID.
          * **Desctiption**: Optionally, enter a description for the sub-interface.
          * **Addresses**: Enter the IP addresses you want to assign with the sub-interface.
    * **Edit a interface**: Select :guilabel:`Edit` on the interface's Row :guilabel:`...` menu. Deactivate the interface by clearing the :guilabel:`Active` checkbox if needed. Make any other necessary changes. Refer to the "Add a sub-interface" section for descriptions of the fields.
