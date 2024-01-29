@@ -60,7 +60,7 @@ You can enable or disable various appliance services to configure your appliance
 
    * **DNS**: Enable this service to allow your appliance to participate in domain name resolution on the network.
    * **DHCP**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
-   * **SSH (Secure Shell)**: The SSH service is not enable by default. You can enable it when secure remote access is needed, such as for troubleshooting purposes.
+   * **SSH (Secure Shell)**: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting purposes.
    * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
 4. Select :guilabel:`Save` when you are done.
 
@@ -147,41 +147,29 @@ You can define multiple remote logging servers on your appliance to meet diverse
 
 Configuring Network Settings
 ----------------------------
-Using the network settings, you can configure the routing information for the appliance. You can also enable and configure the secondary network interface (eth1) on the appliance. You can set additional IP addresses and VLANs
-
-Enabling/Disabling the Secondary Network Interface (eth1)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The appliance has two network interfaces. The primary network interface (eth0) is enabled by default.
-
-**To enable or disable the secondary network interface (eth1)**:
-
-1. Locate the specific appliance for which you want to configure network settings.
-2. Select :guilabel:`Network settings` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
-3. Check the :guilabel:`Enabled` checkbox to enable the eth1 interface. To disable the interface, uncheck the checkbox.
-
-   .. image:: ../../images/admin-appliance-secondary-network-interface.png
-     :width: 70%
-     :align: center
-
-4. Click :guilabel:`Save` to save your settings.
+Using the network settings, you can configure the routing information for the appliance. You can also enable and configure sub-interfaces and edit loopback addresses. 
 
 Managing Application Interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The Network Settings dialog box lets you set up the interfaces on the appliance. You can create sub-interfaces, which divide a physical interface into multiple logical interfaces. Each sub-interface has a unique IP address and allows you to segment networks into smaller broadcast domains with VLANs. This improves network performance, security, and manageability. You can also modify the loopback address.
 
-**To manage application interfaces:*
+**To manage application interfaces:**
 
 1. Locate the specific appliance for which you want to manage interfaces.
 2. Select :guilabel:`Network settings` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
 3. Click the Row :guilabel:`...` menu for the relevant interface and select to add, edit or remove a sub-interface.
 
-   * **Add an address**
-      
 
+   .. image:: ../../images/appliances-add-subinterface.png
+      :width: 60%
 
-
-Editing Loopback Interfaces
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   * **Add an sub-interface**: Select :guilabel:`Add sub-snterface`. In the Add Sub-Interface dialog box, pro
+         * Activate or deactivate the interface by selecting or clearing the :guilabel:Active checkbox.
+         * Select the VLAN ID.
+         * Optionally, enter a description for the sub-interface.
+         * In the Addresses box, assign an IP address within each subnet to the sub-interface.
+   * **Edit a interface**: Deactivate the interface by clearing the :guilabel:Active checkbox if needed. Make any other necessary changes. Refer to the "Add a sub-interface" section for descriptions of the fields.
+   * **Remove a sub-interface**: Click the Row :guilabel:`...` menu for the sub-interface to delete, and then select :guilabel:`Remove`.
 
 
 Configuring Static Routes
