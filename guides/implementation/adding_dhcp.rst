@@ -29,7 +29,7 @@ The following table demonstrates the different options when adding a DHCP Server
 | Microsoft                 | The DHCP Server Controller has been installed on the remote DHCP server.                                            |
 | with Agent Installed      | Micetro is able to track lease history data.                                                                        |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
-| ISC DHCP                  | Either a Unix server running the ISC DHCPD or a Men&Mice Appliance with the ``mm-dhcpd`` package installed          |
+| ISC DHCP                  | Either a Unix server running the ISC DHCPD or a Micetro Appliance with the ``mm-dhcpd`` package installed          |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
 | ISC Kea                   | A server running ISC Kea with the :ref:`kea-control-agent` installed and accessible for the DHCP Server Controller. |
 | (Agent-free) [1]_         |                                                                                                                     |
