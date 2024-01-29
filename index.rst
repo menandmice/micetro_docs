@@ -59,7 +59,6 @@ Table of Contents
      guides/user-manual/webapp_reporting
      guides/user-manual/webapp_workflows
      guides/user-manual/view_change_history
-     guides/user-manual/console
      guides/user-manual/automation
      
 
@@ -92,6 +91,8 @@ Table of Contents
     :maxdepth: 1
 
     guides/implementation/install_console
+    guides/implementation/first_login
+    guides/implementation/central_logging
     guides/user-manual/console
     guides/admin-manual/appliance_management
     guides/admin-manual/caching_appliance
