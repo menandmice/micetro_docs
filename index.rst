@@ -92,6 +92,7 @@ Table of Contents
 
     guides/implementation/install_console
     guides/implementation/first_login
+    guides/implementation/first_use_wizard
     guides/implementation/central_logging
     guides/user-manual/console
     guides/admin-manual/appliance_management
