@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to manage DNS and DHCP servers in the Micetro by Men&Mice Web Application
+   :description: How to manage DNS and DHCP servers in the Micetro Web Application
    :keywords: DNS servers, DHCP servers, DNS server management, DHCP server management
 
 .. _webapp-server-management:
@@ -66,9 +66,8 @@ Micetro supports the following DNS and DHCP platforms:
 
   * Unbound (deprecated, new services cannot be added)
 
-  * Men&Mice Appliance
+  * Micetro DDS Appliance
 
-  * Men&Mice caching Appliance
 
 * DHCP
 
@@ -80,7 +79,7 @@ Micetro supports the following DNS and DHCP platforms:
 
   * Microsoft DHCP
 
-  * Men&Mice Appliance
+  * Micetro Appliance
   
 Micetro Agents
 --------------

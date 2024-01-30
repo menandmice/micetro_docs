@@ -4,7 +4,7 @@
 
 .. _reference:
 
-Micetro reference articles
+Micetro Reference Articles
 ##########################
 
 .. toctree::

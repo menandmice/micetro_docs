@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to update Micetro by Men&Mice
+   :description: How to update Micetro
    :keywords: update, Micetro
 
 .. _updates:
@@ -75,7 +75,6 @@ If you're updating Micetro from an older version, refer to the following table:
   "6.x", "10.x", "9.3"
 
 .. [1] Kea DHCP servers must be updated to 1.6.0 or 1.8.0 *before* updating Micetro to 10.x. See `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
-
 
 Checking the Status of Micetro Components and Appliances
 --------------------------------------------------------
