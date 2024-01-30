@@ -47,7 +47,6 @@ Operating Systems
 
 .. note::
    * As of October 10, 2023, Microsoft has officially discontinued support for Windows Server 2012 and 2012 R2. Micetro software may continue to function; however, its performance and reliability cannot be guaranteed, as the underlying operating system is no longer officially supported by Microsoft.
-   * As of January 14, 2020, Microsoft discontinued support for Windows Server 2008 and 2008 R2. Consequently, support for these server types is deprecated in Micetro versions 10.2 and above.
 
 .. note::
    Starting from version 10.2, support for 32-bit Linux Operating Systems will be discontinued due to the lack of support from common Linux distributions.
