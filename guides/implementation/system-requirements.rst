@@ -60,14 +60,14 @@ Databases
   :header: "Database", "Supported version(s)", "Operating System of Men&Mice Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 12, "Windows, Linux"
+  "PostgreSQL", 11, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
-  "Microsoft SQL Server", "2012, 2014, 2016, 2019", "Windows"
+  "Microsoft SQL Server", "2014, 2016, 2017, 2019 and 2022", "Windows"
 
 .. [3] The SQLite database is embedded into the Men&Mice Central application.
 
 .. note::
-   In Micetro versions 10.2 and later, support for Microsoft SQL Server 2008 R2 will be discontinued, aligning with Microsoft's decision to end support for these operating systems.
+   In Micetro versions 11.0 and later, support for Microsoft SQL Server 2012 will be discontinued, aligning with Microsoft's decision to end support for these operating systems.
 
 DNS/DHCP Server Software
 ------------------------
