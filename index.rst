@@ -34,7 +34,6 @@ Table of Contents
     :maxdepth: 1
 
     release_notes
-    security_announcements
     support
     opensource
 
@@ -90,12 +89,12 @@ Table of Contents
     :caption: Management Console
     :maxdepth: 1
 
-    guides/management_console/management_console
+    guides/management-console/management_console
+    guides/user-manual/console
     guides/implementation/install_console
     guides/implementation/first_login
     guides/implementation/first_use_wizard
     guides/implementation/central_logging
-    guides/user-manual/console
     guides/admin-manual/appliance_management
     guides/admin-manual/caching_appliance
     guides/admin-manual/admin_maintenance

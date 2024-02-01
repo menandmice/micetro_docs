@@ -32,7 +32,7 @@ It is important that you write a clear description of the issue. Please include 
 Send an email to us
 -------------------
 
-Send an email to `support@menandmice.com <mailto:support@menandmice.com>`_ with the above information. We will get back to you as soon as possible.
+Send an email to `support@bluecatnetworks.com <mailto:support@bluecatnetworks.com>`_ with the above information. We will get back to you as soon as possible.
 
 Support Contracts
 -----------------

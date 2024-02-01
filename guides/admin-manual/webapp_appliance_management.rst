@@ -17,7 +17,7 @@ Appliances are accessed and managed in :guilabel:`Service Management` on the :gu
 
 Adding a New Appliance to Micetro
 ---------------------------------
-To add an appliance to Micetro, you need to have the Administrator role.
+To add an appliance to Micetro, you must have the Administrator role.
 
 **To add an appliance**:
 
@@ -41,7 +41,7 @@ You can change the name or IP address used to connect to your appliance. This is
 1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page. 
 2. In the filtering sidebar, select :guilabel:`Appliances`, then select the specific appliance you wish to edit.
 3. Select :guilabel:`Edit appliance` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
-4. Modify the appliance's name, an/or IP address (optional).
+4. Modify the appliance's name, and/or IP address (optional).
 
    .. Note::
        Changing the name or IP address here only affects how you connect to the appliance. It does not alter the actual IP address of the appliance itself.
@@ -60,7 +60,7 @@ You can enable or disable various appliance services to configure your appliance
 
    * **DNS**: Enable this service to allow your appliance to participate in domain name resolution on the network.
    * **DHCP**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
-   * **SSH (Secure Shell)**: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting purposes.
+   * **SSH (Secure Shell)**: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting.
    * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
 4. Select :guilabel:`Save` when you are done.
 
@@ -111,11 +111,11 @@ Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP
    * **Contact**: Enter the email address of the contact person responsible for the system. By default, this is set as the email address for BlueCat's support.
    * **Description**: Enter a brief description of the system.
    * **Enable SNMP v2c**: Select this option to enable the SNMP v2c protocol. 
-    * **Community**: Enter the community string, which serves as a password for the SNMP v2c protocol.
+   * **Community**: Enter the community string, which serves as a password for the SNMP v2c protocol.
    * **Enable SNMP v3**: Select this option to enable the SNMP v3 protocol.
-    * **Username**: Enter the SNMP username for the SNMP user.
-    * **Authentication**: Select either **MD5** or **SHA** authentication and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
-    * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
+   * **Username**: Enter the SNMP username for the SNMP user.
+   * **Authentication**: Select either **MD5** or **SHA** authentication and enter the user password for the SNMP user. If you select **None**, the SNMP service doesn't require user authentication and doesn't encrypt the data it returns.
+   * **Encryption**: Select either **DES** or **AES 128** encryption types, and provide the password used to encrypt the data. If you select **None**, the SNNMP service doesn't encrypt the data it returns.
 
 4. Select :guilabel:`Save` to save your settings and close the dialog box.
 
@@ -151,13 +151,13 @@ Using the network settings, you can configure the routing information for the ap
 
 Managing Application Interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Network Settings dialog box lets you set up the interfaces on the appliance. You can create sub-interfaces, allowing you to logically divide a physical interface into multiple virtual interfaces, each with distinct IP addresses. This segmentation is crucial for efficiently managing network traffic and facilitating communication between different VLANs. You can also modify the loopback address.
+The Network Settings let you set up the interfaces on the appliance. You can create sub-interfaces, allowing you to logically divide a physical interface into multiple virtual interfaces, each with distinct IP addresses. This segmentation is crucial for efficiently managing network traffic and facilitating communication between different VLANs. You can also modify the loopback address.
 
 **To manage application interfaces:**
 
 1. Locate the specific appliance for which you want to manage interfaces.
 2. Select :guilabel:`Network settings` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
-3. Click the Row :guilabel:`...` menu for the relevant interface and select to add, edit or remove a sub-interface.
+3. Click the Row :guilabel:`...` menu for the relevant interface and select to add, edit, or remove a sub-interface.
 
 
    .. image:: ../../images/appliance-add-subinterface.png
@@ -167,9 +167,9 @@ The Network Settings dialog box lets you set up the interfaces on the appliance.
          
          * **Active**: By default, the interface is active. Clear the :guilabel:`Active` checkbox if you want to deactivate the sub-interface temporarily.
          * **VLAN ID**: Enter the appropriate VLAN ID.
-         * **Desctiption**: Optionally, enter a description for the sub-interface.
+         * **Description**: Optionally, enter a description for the sub-interface.
          * **Addresses**: Enter the IP addresses you want to assign with the sub-interface.
-   * **Edit a interface**: Select :guilabel:`Edit` on the interface's Row :guilabel:`...` menu. Deactivate the interface by clearing the :guilabel:`Active` checkbox if needed. Make any other necessary changes. Refer to the "Add a sub-interface" section for descriptions of the fields.
+   * **Edit an interface**: Select :guilabel:`Edit` on the interface's Row :guilabel:`...` menu. Deactivate the interface by clearing the :guilabel:`Active` checkbox if needed. Make any other necessary changes. Refer to the "Add a sub-interface" section for descriptions of the fields.
    * **Remove a sub-interface**: Click the Row :guilabel:`...` menu for the sub-interface to delete, and then select :guilabel:`Remove`.
    * **Modify the loopback address**: On the interface's Row :guilabel:`...` menu, select :guilabel:`Edit`, and then make the desired changes.
 
@@ -189,7 +189,7 @@ It is not possible to edit the default route.
    .. image:: ../../images/appliance-network-routes.png
      :width: 50%
 
-4. Selct the :guilabel:`Add` button, and enter the required information:
+4. Select the :guilabel:`Add` button, and enter the required information:
 
    * **Destination**: The network IP address of a destination network.
    * **Gateway**: The IP address leading to the remote network
