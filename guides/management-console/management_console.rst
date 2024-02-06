@@ -11,16 +11,16 @@ Management Console (obsolete)
    :caption: Console Management Install Guide
    :maxdepth: 3
 
-   guides/implementation/install_console
+   install-console
    first_use_wizard
-   guides/implementation/console_updates
+   console_updates
 
 .. toctree::
    :caption: Console Management User Guide
    :maxdepth: 3
 
-   guides/user-manual/console
-   guides/user-manual/console_gui
+   console
+   console_gui
    console_menus
    console_toolbars
    console_quickfilter
