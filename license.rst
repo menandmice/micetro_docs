@@ -1,6 +1,6 @@
 .. _docs-license:
 
-Micetro by Men&Mice Documentation license
+Micetro Documentation license
 -----------------------------------------
 
 Copyright 2021 Men&Mice.

@@ -1,5 +1,5 @@
 .. meta::
-   :description: Overview, analysis, viewing and deleting of DNS zones in Micetro by Men&Mice
+   :description: Overview, analysis, viewing and deleting of DNS zones in Micetro
    :keywords: DNS zones, DNS servers
 
 .. _dns-zones:
@@ -70,7 +70,7 @@ SOA
 """"
 The Start of Authority, or SOA record, is displayed as a collection of fields in the Inspector pane.
 
-.. csv-table:: SOA Information
+.. csv-table:: 
   :header: "Field", "Description"
   :widths: 15, 75
 
@@ -161,7 +161,7 @@ To delete a zone from one or more servers:
 
 1. Select the zone(s) you want to delete.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Delete zone`. You can also select this option on the **Row menu (...)**.    
+2. Select :guilabel:`Delete zone` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.    
       
 3. The Delete Zone dialog box opens, showing each zone you selected and a list of servers that currently serve that zone. The zone(s) you selected will be deleted from every server that is selected on this list. To keep the zone on a particular server, clear the checkbox for that server.
 
@@ -177,7 +177,7 @@ To migrate a zone:
 
 1. Select the zone you want to migrate.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Migrate zone`. You can also select this option on the **Row menu (...)**.  
+2. Select :guilabel:`Migrate zone` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.  
    
 3. The Migrate Zone(s) dialog box opens.
 
@@ -200,7 +200,7 @@ DNS administrators can specify the server to use when opening an AD integrated z
 
 2. Select the zone(s) you'd like to set preferred servers for.
 
-3. On the :guilabel:`Action` menu, select :guilabel:`Edit preferred servers`. You can also select this option on the **Row menu (...)**.  :
+3. Select :guilabel:`Edit preferred servers` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
    
 4. Arrange the order of your servers into the preferred order. The server on the top of the list is tried first, then, if that server is unavailable, the second, and so on.
 
@@ -215,6 +215,17 @@ Editing Zone Properties
 
 You can click :guilabel:`Edit Properties` on the toolbar to edit custom properties that have been configured for the selected zones.
 
+Editing Zone Options (BIND)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can configure individual settings for a specific zone on each server.
+
+**To edit zone options for a BIND server**:
+
+1. Select the zone(s) for which you want to edit the options.
+
+2. Select :guilabel:`Edit zone options` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+
+3. 
 
 Promoting Secondary Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -234,7 +245,7 @@ To promote a secondary zone to a primary zone:
 
 1. Select the secondary zone.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Promote to primary`. You can also select this option on the **Row menu (...)**.  
+2. Select :guilabel:`Promote to primary` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.  
    
 3. Click :guilabel:`Save` to continue, or :guilabel:`Cancel` to discontinue the process.
 
