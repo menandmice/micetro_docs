@@ -14,7 +14,7 @@ In version 10.5.5, significant changes have been made to the validation of scrip
 
 **Where to Access the Script Name Fields**:
 
-Script name fields are used when adding or editing events and setting default subnet monitoring on the :guilabel:`Event hooks` page (:menuselection:`Admin --> Configuration` --> `Event Hooks`).  Additionally, the script name field is located in the :guilabel:`Schedule` dialog box for report definitions on the :guilabel:`Reports` page.
+Script name fields are used when adding or editing events and setting default subnet monitoring on the :guilabel:`Event hooks` page (:menuselection:`Admin --> Configuration --> Event Hooks`).  Additionally, the script name field is located in the :guilabel:`Schedule` dialog box for report definitions on the :guilabel:`Reports` page.
 
 **Key Points to Note**:
 
