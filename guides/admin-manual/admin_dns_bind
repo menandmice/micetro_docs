@@ -6,8 +6,6 @@
 
 BIND DNS
 =========
-This section describes the Server Options as they display in a BIND environment. 
-
 
 
 Editing Service Options
@@ -16,7 +14,7 @@ You can edit various service options for your BIND environment to customize your
 
 Query Restrictions
 ^^^^^^^^^^^^^^^^^^
-The Query restrictions panel allows you to restrict recursive DNS queries to only certain IP Addresses or address ranges.^
+The Query restrictions option allows you to restrict recursive DNS queries to only certain IP Addresses or address ranges.^
 
 **To configure a query restriction**:
 
