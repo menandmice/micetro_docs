@@ -9,15 +9,15 @@ Management Console (obsolete)
 
 .. toctree::
    :caption: Console Management Install Guide
-   :maxdepth: 3
+   :maxdepth: 1
 
-   install-console
+   install_console
    first_use_wizard
    console_updates
 
 .. toctree::
    :caption: Console Management User Guide
-   :maxdepth: 3
+   :maxdepth: 1
 
    console
    console_gui
@@ -35,11 +35,13 @@ Management Console (obsolete)
 
 .. toctree::
    :caption: Console Management Admin Guide
-   :maxdepth: 3
+   :maxdepth: 1
 
    console_snmp_profiles
    console_address_spaces
+   console_add_dns_server
+   console_dhcp_isc
+   console_dhcp_cisco
    admin_maintenance
    appliance_management
-   guides/admin-manual/caching_appliance
-   console_dns_servers
+   caching_appliance
