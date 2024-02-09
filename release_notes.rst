@@ -11,7 +11,66 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6`
+Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6`, :ref:`11.0.0-release`
+
+.. _11.0.0-release:
+
+11.0.0
+------
+February 29, 2024
+
+New Features
+^^^^^^^^^^^^
+
+* **BDDS**: Micetro now supports BDDS appliances from BlueCat, this is a new feature intended for customers that want to add BDDS appliances into their existing network infrastructure and manage them in Micetro along with other DNS/DHCP servers that they already have. The following functionality can be managed on BDDS appliances within Micetro
+
+   * BIND options which allows viewing and editing DNS options on BIND, both for DNS servers and zones
+   * Dynamic DNS updates
+   * Network interfaces
+   * Network services such as DNS, DHCP, NTP, resolv.conf and SNMP
+   * Syslog redirection which provides the flexibility to define multiple remote logging servers, meeting a variety of logging needs.
+   * Updates of BDDS appliances from within Micetro
+* **ISC DHCP failover**: ISC DHCP server-to-server failover relationships can now be managed within the Micetro
+* **Kea 2.4**: Micetro can now manage Kea 2.4 DHCP servers
+* **Kea failover**: Kea DHCP server-to-server failover relationships can now be managed within Micetro
+* **Kea premium hooks**: Micetro can now use Kea premium hooks in order to increase performance when working with Kea
+* **Micetro log**: Micetro logs can now be viewed from Admin > Logging > Micetro Logs. The logging output is improved with better structure and coloring. This greatly improves working with the Micetro log for not only customers but also Micetro developers and the customers support team
+* **Undo**: When viewing the history of events users can now choose to undo certain events, effectively reverting the change. These events are
+
+   * Create/delete/modify DNS records
+   * Custom property edits
+   * All create history events
+
+Improvements
+^^^^^^^^^^^^
+* **HA support for mmws**: Session handling has been moved from mmws to the Central server. This allows customers to have multiple mmWSs configured for redundancy, region, or load balancing reasons
+* **Multi-factor authentication**: Setup and configuration of multi-factor authentication is now much simpler than before. In the web UI it is now possible to navigate to Admin -> Configuration -> Authentication and there users can configure the fields needed for the integration with Okta (client id, redirect uri, scope etc.) and also test if that configuration is correct
+* **New remote for BIND**: There has been a new remote implemented for BIND which has all the same functionality as the old remote but also allows management of RPZ and dynamic zones
+* **Subscription license**: Handling of license keys has been changed to include subscription keys and allow longer expiration times
+
+Bug fixes
+^^^^^^^^^
+* Added support for Microsoft ODBC Driver 18 for SQL Server
+* When changing the state of DNS zone from static to dynamic then all existing records are shown correctly, this fixes an issue where the existing records disappeard and then re-appered again in the web UI
+* Reduced the excessive timeout when trying to acquire initial connection to agents
+* Senstive SNMP information is not logged out to the object history
+* Object history entries are now created for the NS record within a DNS zone
+* TTL can now be edited for Akamai Edge record sets in the web UI
+* Server grids in the web UI are now reloaded after synchronization
+* Switching address spaces does now reload service management view in the web UI
+
+Deprecated features
+^^^^^^^^^^^^^^^^^^^
+There are number of features and functionality that are being deprecated in version 11.0. To clarify, this version will be the last one where these feature are guaranteed to work and if necessary there will be patches of 11.0 provided for these features. A feature might continue to work in future major/minor releases as long as the relevant code is present in the Micetro solution but there are no guarantees for that as the code is not officially maintained. Following is a list of the features that are being deprecated
+
+* BIND 9.16 and earlier has been deprecated as as this version has been declared as end of life by ISC in Q1 2024, the same applies for the subscriber edition.
+* ISC DHCP 4.4.0 and earlier has been deprecated, 4.4.1 and later will continue to be supported by Micetro even though support for ISC DHCP as whole was dropped by ISC itself in December 2022. This is because ISC DHCP is still widely used by Micetro customers and will likely continue to be so for some time.
+* Kea 2.0 has been deprecated as a service that Micetro can overlay, this is because this version has reached end-of-life and is no longer supported by ISC. See the roadmap for ISC Kea [here](https://kb.isc.org/docs/aa-00896). It should also be noted that support for older versions of Kea are of course deprecated as well
+* Men & Mice appliances have been deprecated as a result of adding the support for BDDS appliances, it is recommended that all customers that are using either physical or virtual Men & Mice appliances migrate over to BDDS appliances as soon as possible. As a result of this, support for Unbound was also deprecated as the Men & Mice appliances were the main reason for that support in Micetro
+* Microsoft SQL Server 2012 has been deprecated as this database went to end of support at 12 July 2022. The same applies for older versions of Microsoft SQL Server. For more information on Microsoft SQL Server roadmap see [here](https://learn.microsoft.com/en-us/lifecycle/products/)
+* OpenStack has been deprecated as well as the versions that are currently supported in Micetro are already end of life so it was decided to drop this support instead of adding support for newer versions
+* PostgreSQL 11 is also deprecated as this database was out of support November 9 2023. For more information on the PostgreSQL roadmap see [here](https://www.postgresql.org/support/versioning/)
+* Windows Server 2012 and 2012 R2 are being deprecated because Microsoft announced end of support at 10 October 2023. Needless to say older versions of Windows Server are not supported either. This deprecation applies both for hosting the Micetro solution itself and as a DNS/DHCP server that Micetro can overlay
 
 .. _10.5.6-release:
 
