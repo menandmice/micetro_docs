@@ -26,7 +26,6 @@ Improvements
    * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load
    * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled
    * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution
-   * CVE-2023-5680: Cleaning an ECS-enabled cache may cause excessive CPU load
    * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition
    * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator
    * CVE-2023-50868: High CPU consumption in DNSSEC validator
@@ -345,7 +344,6 @@ Improvements
    * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load
    * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled
    * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution
-   * CVE-2023-5680: Cleaning an ECS-enabled cache may cause excessive CPU load
    * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition
    * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator
    * CVE-2023-50868: High CPU consumption in DNSSEC validator
