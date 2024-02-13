@@ -11,7 +11,25 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`
+
+.. _10.5.7-release:
+
+10.5.7
+------
+February 13, 2024
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16.47 on the Micetro appliance to address the following security vulnerabilities:
+
+   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load
+   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled
+   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution
+   * CVE-2023-5680: Cleaning an ECS-enabled cache may cause excessive CPU load
+   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition
+   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator
+   * CVE-2023-50868: High CPU consumption in DNSSEC validator
 
 .. _10.5.6-release:
 
@@ -313,6 +331,24 @@ Bug Fixes
 * An issue was fixed where scope name was not updated to reflect the name of the network.
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
+
+.. _10.3.11-release:
+
+10.3.11
+------
+February 13, 2024
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16.47 on the Micetro appliance to address the following security vulnerabilities:
+
+   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load
+   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled
+   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution
+   * CVE-2023-5680: Cleaning an ECS-enabled cache may cause excessive CPU load
+   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition
+   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator
+   * CVE-2023-50868: High CPU consumption in DNSSEC validator
 
 .. _10.3.10-release:
 
