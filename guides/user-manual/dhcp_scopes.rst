@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to manage DHCP scopes in the Micetro by Men&Mice Management Console
+   :description: How to manage DHCP scopes in the Micetro
    :keywords: DHCP management, DHCP scopes
 
 .. _dhcp-scopes:
@@ -129,7 +129,7 @@ Whenever you create a new scope, Micetro automatically checks whether the new sc
 
 The Wizard has additional steps, or skips over some steps, depending on the type of DHCP server the scope is being created on, and whether the :ref:`active-directory` integration has been enabled.
 
-To create a new scope on the MS DHCP server, do the following:
+**To create a new scope on the MS DHCP server**:
 
 1. In :menuselection:`Networks` use the :guilabel:`Create` action and select :guilabel:`DHCP scope` from the dropdown.
 
@@ -302,7 +302,7 @@ Configuring Host Discovery Using Ping
 
 1. Select one or more scopes.
 
-2. on the **Row menu (...)**, select :guilabel:`Set discovery Schedule`.
+2. On the **Row menu (...)**, select :guilabel:`Set discovery Schedule`.
 
 3. Select the :guilabel:`Enable` option.
 
@@ -372,17 +372,15 @@ Managing Split Scopes for DHCPv6
   
    .. image:: ../../images/split-scopes-instances.png
     :width: 60%
-    :align: center
    
 5. On the same scope, click the :guilabel:`Action` menu and then select :guilabel:`Manage DHCP Exclusions`
   
-6. Click on :guilabel:`Add Exclusion` for the first server and select the percentage for which you'd like to exclude from the first server and click :guilabel:`Add`
+6. Click :guilabel:`Add Exclusion` for the first server and select the percentage for which you'd like to exclude from the first server and click :guilabel:`Add`
   
-7. Click on :guilabel:`Add Exclusion` for the second server and select the percentage for which you'd like to exclude from the second server and click :guilabel:`Add`
+7. Click :guilabel:`Add Exclusion` for the second server and select the percentage for which you'd like to exclude from the second server and click :guilabel:`Add`
   
    .. image:: ../../images/split-scope-exclusions.png
     :width: 60%
-    :align: center
    
 8. Click :guilabel:`Save`
  
@@ -393,7 +391,7 @@ Editing DHCP Options
 ---------------------- 
 
 .. Note::
-   DHCPv4 and DHCPv6 scopes inherit DHCP and DDNS Options from the parent DHCP server. DHCPv4 and DHCPv6 reservation inherit DHCP and DDNS options from the DHCP scope. However these options may be changed by editing the options for the specific scope or reservation.
+   DHCPv4 and DHCPv6 scopes inherit DHCP and DDNS Options from the parent DHCP server. DHCPv4 and DHCPv6 reservation inherit DHCP and DDNS options from the DHCP scope. However, these options may be changed by editing the options for the specific scope or reservation.
 
 Viewing the configured DHCP options for a DHCP scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

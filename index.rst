@@ -91,12 +91,5 @@ Table of Contents
 
     guides/management-console/management_console
     guides/user-manual/console
-    guides/implementation/install_console
     guides/implementation/first_login
-    guides/implementation/first_use_wizard
     guides/implementation/central_logging
-    guides/admin-manual/appliance_management
-    guides/admin-manual/caching_appliance
-    guides/admin-manual/admin_maintenance
-
-

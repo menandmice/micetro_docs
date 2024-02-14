@@ -1,5 +1,5 @@
 .. meta::
-   :description: ISC DHCP servers in the Micetro by Men&Mice Management Console 
+   :description: ISC DHCP servers in the Micetro
    :keywords: ISC DHCP servers, Server management
    
 .. _admin-dhcp-isc:
@@ -16,13 +16,13 @@ Defining Options on ISC DHCP Servers
 
 1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner. 
 
-2. Under **DHCP Services** in the filtering sidebar, select the applicable DHCP server. 
+2. Under :guilabel:`DHCP Services` in the filtering sidebar, select :guilabel:`ISC DHCP`, and then the applicable DHCP server. 
 
-3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Managem DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
+3. On the :guilabel:`Action` or the Row :guilabel:`...` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Managem DHCPv6 options`. 
 
-4. The *Manage DHCP Options* dialog box opens, showing all custom options defined on the DHCP server. 
+4. The Manage DHCP Options dialog box opens, showing all custom options defined on the DHCP server. 
 
-5. Use the **Add an option** dropdown menu to select the ISC DHCP option you want to define.
+5. Use the :guilabel:`Add an option dropdown menu to select the ISC DHCP option you want to define.
 
 6. To delete an option, hover over its field, and theb click the trash can icon next to it.
 
@@ -30,7 +30,7 @@ Defining Options on ISC DHCP Servers
 
 Defining Custom DHCP Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Click the :guilabel:`Custom Options` tab.
+1. Go to the :guilabel:`Custom Options` tab.
 
 2. Select the appropriate :guilabel:`Vendor class` in the drop-down list.
 
@@ -53,7 +53,7 @@ Editing an Existing Cusotom Option
 """"""""""""""""""""""""""""""""""
 1. On the :guilabel:`Custom Options` tab in the Manage DHCP Options dialog box, select the relevant custom option.
 
-2. On the **Row menu (...)**, select :guilabel:`Edit`.
+2. On the Row :guilabel:`...` menu, select :guilabel:`Edit`.
 
 3. Edit the ID, and then click :guilabel:`Save`.
 
@@ -61,61 +61,90 @@ Removing an Existing Custom Option
 """""""""""""""""""""""""""""""""""
 1. On the :guilabel:`Custom Options` tab in the Manage DHCP Options dialog box, select the relevant custom option.
 
-2. On the **Row menu (...)**, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
+2. On the Row :guilabel:`...` menu, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
 
 .. _isc-dhcp-properties:
 
 ISC Server Properties
-"""""""""""""""""""""
-You can edit the configuration of ISC DHCP servers.
+^^^^^^^^^^^^^^^^^^^^^^
+You can edit the configuration of ISC DHCP servers to suit your requirements.
 
 1. Select the relevant server.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**. 
+2. Select :guilabel:`Edit configuration` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
 
 3. In the **Edit Configuration** dialog box, make the desired changes, and then click :guilabel:`Save`.
 
-.. image:: ../../images/dhcp-isc-config.png
-   :width: 80%
+  .. image:: ../../images/dhcp-isc-config-11.png
+     :width: 80%
 
-* **Authoritative**: Specifies whether the server is authoritative to determine if a DHCP request from a client is valid.
+  * **Authoritative**: Determines whether the server has the authority to validate DHCP requests from clients.
 
-* **DDNS Domain Name**: Specifies the DNS domain name to use to store the A record for a DHCP client.
+  * **DDNS Domain Name**: Specifies the DNS domain name used to store the A record for DHCP clients.
 
-* **DDNS Reverse Domain Name**: Specifies the DNS reverse domain name to use to store the PTR record for a DHCP client.
+  * **DDNS Reverse Domain Name**: Specifies the DNS reverse domain name for storing the PTR record of DHCP clients.
 
-* **DDNS Update Style**: Specifies how the DHCP server does DNS updates. The available styles are:
+  * **DDNS Update Style**: Determines the method used by the DHCP server to perform DNS updates. Options include:
 
-  * **None**: Dynamic DNS updates are not performed
+    * **None**: No dynamic DNS updates are performed.
 
-  * **Ad-hoc**: 
+    * **Ad-hoc** (deprecated): This update scheme is outdated.
 
-    .. warning::
-      This update scheme is deprecated
+    * **Interim**: Recommended method for dynamic DNS updates.
 
-  * **Interim**: This is the recommended scheme for dynamic DNS updates.
+  * **DDNS Updates**: Enables or disables DNS updates. This setting is only effective if DNS updates are globally enabled with the DDNS Update Style setting.
 
-* **DDNS Updates**: Specifies whether to perform DNS updates. This setting has no effect unless DNS updates are enabled globally with the DDNS Update Style setting.
+  * **DDNS TTL**: Sets the Time To Live (TTL) value, in seconds, for DNS updates.
 
-* **DDNS TTL**: Specifies (in seconds) the TTL value to use when performing a DNS update.
+  * **Default Lease Time**: Specifies the default lease duration, in seconds, for DHCP leases.
 
-* **Default Lease Time**: Specifies (in seconds) the default lease time to use for DHCP leases.
+  * **Log Facility**: Selects the syslog facility for logging DHCP server messages. Note that not all facilities may be available on all systems.
 
-* **Log Facility**: Specifies which syslog facility to use when logging DHCP server messages. All possible facilities are listed; however, not all of these facilities are available on all system.
+  * **Max/Min Lease Time**: Sets the maximum and minimum lease durations, in seconds, for DHCP leases.
 
-* **Max/Min Lease Time**: Specifies (in seconds) the maximum/minimum lease time to use for DHCP leases.
+  * **Get Lease Hostnames**: Specifies whether the DHCP server should perform a reverse DNS lookup for each address assigned to a client and send the result to the client as the hostname option.
 
-* **Get Lease Hostnames**: Specifies whether the DHCP server should perform a reverse DNS lookup for each address assigned to a client and send the result to the client in the hostname option.
+  * **One Lease per Client**: Controls whether existing leases held by a client should be released when requesting a new lease.
 
-* **One Lease per Client**: Specifies whether the DHCP server should free any existing leases held by a client when the client requests a new lease.
+  * **Ping Check**: Specifies whether the DHCP server should send an ICMP echo message to probe an IP Address before offering it to a DHCP client.
 
-* **Ping Check**: Specifies whether the DHCP server should send an ICMP echo message to probe an IP Address before offering it to a DHCP client.
+  * **Ping Timeout**: Specifies for how many seconds the DHCP server should wait for an ICMP echo response when Ping Check is active.
 
-* **Ping Timeout**: Specifies for how many seconds the DHCP server should wait for an ICMP echo response when Ping Check is active.
+  * **Filename**: Specifies the name of the initial boot file to be used by a client.
 
-* **Filename**: Specifies the name of the initial boot file to be used by a client.
+  * **Server Name**: Specifies the name of the server from which the client should load its boot file.
 
-* **Server Name**: Specifies the name of the server from which the client should load its boot file.
+  * **Next Server**: Specifies the host address of the server from which the initial boot file (specified by Filename) is to be loaded.
 
-* **Next Server**: Specifies the host address of the server from which the initial boot file (that is specified by Filename) is to be loaded.
 
+Configuring Dynamic Updates for ISC DHCP Server
+"""""""""""""""""""""""""""""""""""""""""""""""
+You can configure the ISC DHCP Server to update zones on Micetro appliances or BIND servers with dynamic updates using raw config editing.
+
+**To configure a ISC DHCP server to update zones dynamically**:
+
+1. Go to the :guilabel:`Raw Configuration` tab in the **Edit Configuration** dialog box.
+
+2. In the raw configuration editor, add the following statements:
+
+  .. code-block::
+      
+    key update-key
+    {
+      algorithm hmac-sha512;
+      secret "5B1...";
+    }
+
+    zone micetro.com 
+    {
+      primary 1.2.3.4;
+      key update-key;
+    }
+
+
+  Ensure that:
+    * The key is not surronded by double quotes.
+    * Each line contains only one declaration.
+    
+.. note::
+    It's crucial to maintain the format of the zone and key statements as documented. Failure to adhere to this format may lead to issues with dynamic updates.

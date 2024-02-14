@@ -27,7 +27,7 @@ It is important that you write a clear description of the issue. Please include 
 
 * Do you have any logfiles or screenshots available that might help diagnose the problem?
 
-* In which part of Micetro did the issue come up? E.g. Management Console, DNS/DHCP Controller, Men&Mice Central, Web Application?
+* In which part of Micetro did the issue come up? For example, Management Console, DNS/DHCP Controller, Men&Mice Central, Web Application?
 
 Send an email to us
 -------------------

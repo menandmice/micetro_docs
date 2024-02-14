@@ -1,6 +1,6 @@
 .. meta::
-   :description: Micetro´s system settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use and other advanced settings.   
-   :keywords: DNS, DHCP, Micetro´s system settings
+   :description: Micetro's system settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use and other advanced settings.   
+   :keywords: DNS, DHCP, Micetro's system settings
 
 .. _admin-system-settings:
 
@@ -12,12 +12,14 @@ To access the System Settings:
 #. On the **Admin** page, select :guilabel:`Configuration` in the upper-left corner.
 #. Browse the categories under :guilabel:`System settings` in the filtering sidebar to find what you're looking for.
 
-   .. image:: ../../images/admin-system-settings.png
-
+   .. image:: ../../images/admin-system-settings-11.png
+      :width: 80%
 
 The System Settings include the following categories:
 
   * :ref:`admin-general`
+
+  * :ref:`admin-authentication`
 
   * :ref:`admin-logging`
 
@@ -46,12 +48,6 @@ Use the General settings to specify the following:
 
   * Rules to determine when an IP address is considered as being in use
 
-Authentication
-^^^^^^^^^^^^^^^
-Configure authentication methods, including single sign-on, LDAP integration, and external login providers. 
-
-When **single sign-on** is activated, users do not have to authenticate when logging in through the Management Console or the Command Line Interface. For more information about Single sign-on, see :ref:`external-auth`.
-
 Save comments
 ^^^^^^^^^^^^^^^
 By default, users can save changes in the system without writing a comment. Here you have the option to set the comment requirements for Micetro tasks, including options to turn off the save comment dialog box, make it optional, or require it. 
@@ -73,6 +69,14 @@ Enforce AD site inheritance.
 Determine address usage
 ^^^^^^^^^^^^^^^^^^^^^^^
 Control how IP addresses are identified as being in use. By default, these settings are all selected. To specify which rules should be applied to IP addresses and get a more granular picture of where the usage is coming from, select/clear the appropriate checkboxes.
+
+.. _admin-authentication:
+
+Authentication
+^^^^^^^^^^^^^^^
+Configure authentication methods, including single sign-on, LDAP integration, and external login providers. 
+
+When **single sign-on** is activated, users do not have to authenticate when logging in through the Management Console or the Command Line Interface. For more information about Single sign-on, see :ref:`external-auth`.
 
 
 .. _admin-logging:

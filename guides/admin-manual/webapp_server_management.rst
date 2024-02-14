@@ -8,7 +8,7 @@ Service Management
 ===================
 Service Management is the place for connecting and orchestrating DNS, DHCP, and IP Address Management (IPAM) services with Micetro. Your services can be hosted on-premises, deployed on specialized appliances, or reside in the cloud. Connected services are displayed on the :guilabel:`Service Management` tab on the :guilabel:`Admin` page.
 
-**To access Service Management:
+**To access Service Management**:
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
@@ -117,8 +117,8 @@ Adding a new service is either a two or three step process, depending on the typ
 
 3. Select an agent: 
 
-    .. image:: ../../images/add-kea.png
-      :width: 65%
+   .. image:: ../../images/add-kea.png
+     :width: 65%
 
    * This step is skipped for cloud services.
 
@@ -218,7 +218,7 @@ Use the following table for more information on the indicators:
 
 DNS Services
 ------------
-See the following topics for information about configuring the different DNS platforms:
+See the following topic for information about configuring the BIND DNS platform:
 
 .. toctree::
   :maxdepth: 1

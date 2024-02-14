@@ -31,7 +31,8 @@ Management Console (obsolete)
    console_dns_records
    windows_dns_policies
    console_dhcp
-   devices
+   console_dhcp_scopes
+   console_devices
 
 .. toctree::
    :caption: Console Management Admin Guide

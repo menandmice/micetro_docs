@@ -17,13 +17,13 @@ This section shows you how to perform specific actions in Micetro associated wit
 
 This page describes the process for adding new DHCP servers, and generic DHCP management information. For detailed information about the different DHCP platforms, refer to:
 
-* :ref:`dhcp-windows`
+* :ref:`console-dhcp-windows`
 
-* :ref:`dhcp-kea`
+* :ref:`console-dhcp-kea`
 
-* :ref:`dhcp-isc`
+* :ref:`console-dhcp-isc`
 
-* :ref:`dhcp-cisco`
+* :ref:`console-dhcp-cisco`
 
 
 Inherited Access (Management Console)
