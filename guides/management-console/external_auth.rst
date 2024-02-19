@@ -1,16 +1,13 @@
 .. meta::
-   :description: User authentication methods available with Micetro by Men&Mice
+   :description: User authentication methods available with Micetro
    :keywords: Active directory, Windows active directory
    
 Jump to: :ref:`Multi-factor-Authentication`
 
 .. _external-auth:
 
-External Authentication
-=======================
-
-.. note::
-  Unless indicated otherwise, instructions here are to be performed in the Management Console.
+External Authentication - Management Console (obsolete)
+=======================================================
 
 Overview
 --------

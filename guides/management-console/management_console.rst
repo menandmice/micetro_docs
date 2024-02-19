@@ -13,6 +13,7 @@ Management Console (obsolete)
 
    install_console
    first_use_wizard
+   external_auth
    console_updates
 
 .. toctree::

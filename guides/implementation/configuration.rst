@@ -15,7 +15,7 @@ Configuration
   central_logging
   controller_logging
   user_management
-  external_auth
+  webapp_external_auth
   adding_dns
   adding_dhcp
   adding_ip_ranges
