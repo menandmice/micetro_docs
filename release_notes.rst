@@ -71,6 +71,7 @@ There are number of features and functionality that are being deprecated in vers
 * Microsoft SQL Server 2012 has been deprecated as this database went to end of support at 12 July 2022. The same applies for older versions of Microsoft SQL Server. For more information on Microsoft SQL Server roadmap see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_
 * OpenStack has been deprecated as well as the versions that are currently supported in Micetro are already end of life so it was decided to drop this support instead of adding support for newer versions
 * PostgreSQL 11 is also deprecated as this database was out of support November 9 2023. For more information on the PostgreSQL roadmap see `here <https://www.postgresql.org/support/versioning/>`_
+* Ubuntu 14.04 LTS support has been deprecated because this version is out of support in Q1 2024 according to the `Ubuntu release cycle <https://ubuntu.com/about/release-cycle>`_
 * Windows Server 2012 and 2012 R2 are being deprecated because Microsoft announced end of support at 10 October 2023. Needless to say older versions of Windows Server are not supported either. This deprecation applies both for hosting the Micetro solution itself and as a DNS/DHCP server that Micetro can overlay
 
 .. _10.5.6-release:
