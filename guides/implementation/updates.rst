@@ -7,7 +7,7 @@
 Update Guide
 ============
 .. note::
-   These instructions apply to the Micetro web interface. For information about update management in the M&M Management Console, see :ref:`console-updates`.
+   These instructions apply to the Micetro web application. For information about update management in the M&M Management Console, see :ref:`console-updates`.
 
 **Permissions:**
 
@@ -18,7 +18,7 @@ Micetro Version
 ---------------
 Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Men&Mice Central and the Micetro Server Controllers. 
 
-* Minor versions often only contain an update for a single component, such as the Micetro Appliances.
+* Minor versions often only contain an update for a single component, such as the Micetro web application.
 
 * Major version upgrades normally contain an update for every component.
 
@@ -44,13 +44,13 @@ Before updating Micetro, we strongly recommend reading the Release Notes first, 
 
 Preparing the Update
 ^^^^^^^^^^^^^^^^^^^^^
-To streamline the updating process, the update is prepared by making sure that update packages are uploaded to the various components before the update is actually deployed.
+To streamline the updating process, the update is prepared by ensuring that update packages are uploaded to the various components before it is deployed.
 
 **To prepare an update**:
 
 1. Select :guilabel:`Prepare Update` to start the update process.
 
-2. A package for the new version is downloaded and prepared for deployment. This includes uploading a package to each DNS and DHCP server, as well as each appliance if the new update package includes an update for them. 
+2. A package for the new version is downloaded and prepared for deployment. This includes uploading a package to each DNS and DHCP server. 
 
 Deploying the Update
 ^^^^^^^^^^^^^^^^^^^^^
@@ -74,7 +74,7 @@ If you're updating Micetro from an older version, refer to the following table:
   "7.x", "10.x", "10.x [1]_"
   "6.x", "10.x", "9.3"
 
-.. [1] Kea DHCP servers must be updated to 1.6.0 or 1.8.0 *before* updating Micetro to 10.x. See `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
+.. [1] Kea DHCP servers must be updated to 1.6.0 or 1.8.0 *before* updating Micetro to 10.0 or newer. See `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
 
 Checking the Status of Micetro Components and Appliances
 --------------------------------------------------------
@@ -94,8 +94,8 @@ Updating Appliances
 --------------------
 :guilabel:`Appliance updates` shows if any Appliances have updates pending. There are three types of updates:
 
-* **Full**: Full updates are the most extensive and involve replacing the entire appliance, typically with the release of a new major version. These updates are versioned and around 700MB in size.
-* **Minor**: Minor updates consist of version upgrades, such as 9.4.1, and typically include minor improvements or enhancements. They are executed in the same way as full upgrades, using partition swap. For example, the 9.4.2 update includes all changes made in 9.4.1, so it's okay to go directly from 9.4.0 to 9.4.2. However, for customers with older appliance versions before 9.4, it's necessary to first install the 9.4.0 full upgrade before deploying 9.4.1 or 9.4.2. These updates are around 2-300MB in size. 
+* **Full**: Full updates are the most extensive and involve replacing the entire appliance, typically with the release of a new major version. These updates are versioned and are around 700MB in size.
+* **Minor**: Minor updates consist of version upgrades, such as 9.4.1, and typically include minor improvements or enhancements. You can always update directly to the latest minor version within a major version. For example, the 9.4.2 update includes all changes made in 9.4.1, so it's okay to go directly from 9.4.0 to 9.4.2. However, for customers with older appliance versions before 9.4, it's necessary to first install the 9.4.0 full upgrade before deploying 9.4.1 or 9.4.2. These updates are around 2-300MB in size. 
 * **Patch**: Patch updates are minor adjustments to individual components, such as BIND or ISC DHCP. They address specific issues or vulnerabilities.
 
 Update Status
@@ -117,16 +117,7 @@ The update process involves downloading and deploying updates reflected in the :
 2. Select :guilabel:`Appliance updates` under :guilabel:`Micetro Version` in the left sidebar. 
 3. On the Row menu :guilabel:`...` for the relevant update, select :guilabel:`Download`.
 
-   .. image:: ../../images/appliances-download-10.6.png
-      :width: 65%
+   .. image:: ../../images/appliances-download-11.0.png
+      :width: 50%
 
 4. Once the download is complete, the update status becomes :guilabel:`Pending`. Initiate the update process by selecting :guilabel:`Deploy` on the Row menu.
-
-Update Management in the Management Console
--------------------------------------------------
-For information about how to update in the M&M Management Console, see:
-
-.. toctree::
-  :maxdepth: 1
-
-  console_updates

@@ -1,12 +1,13 @@
 .. meta::
-   :description: How to configure LDAP authentication in Micetro by Men&Mice
-   :keywords: Men&Mice central service,
+   :description: How to enable ldap authentication in Micetro
+   :keywords: ldap, external authentication
+   
 
-.. _configure-ldap:
+.. _ldap-user-auth:
 
-Configure LDAP authentication
-=============================
-This document describes how to configure LDAP authentication in Micetro.
+Lightweight Directory Access Protocol (LDAP) User Authentication
+================================================================
+LDAP user authentication allows you to configure user authentication against an LDAP server, providing a streamlined method for managing user access across systems and services. To implement LDAP authentication, you'll first need to set up an authentication server that hosts the LDAP directory containing user credentials. Once the authentication server is established, you can enable LDAP authentication within Micetro, allowing users to authenticate using their LDAP credentials.
 
 Installation on Centos Linux
 ----------------------------
@@ -17,17 +18,17 @@ Installation on Centos Linux
 
 .. code-block:: bash
 
-  sudo yum install python-ldap
-  sudo mkdir /var/mmsuite/mmcentral/extensions
-  sudo cp mm_ldap.py /var/mmsuite/mmcentral/extensions
-  sudo chown -R root:root /var/mmsuite/mmcentral/extensions
-  sudo chmod 440 /var/mmsuite/mmcentral/extensions/mm_ldap.py
+    sudo yum install python-ldap
+    sudo mkdir /var/mmsuite/mmcentral/extensions
+    sudo cp mm_ldap.py /var/mmsuite/mmcentral/extensions
+    sudo chown -R root:root /var/mmsuite/mmcentral/extensions
+    sudo chmod 440 /var/mmsuite/mmcentral/extensions/mm_ldap.py
 
 A signature file for the python extension will also have to be installed and placed in the extension directory:
 
 .. code-block:: bash
 
-  sudo cp mm_ldap.signature /var/mmsuite/mmcentral/extensions
+     sudo cp mm_ldap.signature /var/mmsuite/mmcentral/extensions
 
 .. note::
   For security reasons, the Central service will not execute ``mm_ldap.py`` unless the signature ``inmm_ldap.signature`` matches the signature calculated for ``mm_ldap.py``.
@@ -117,10 +118,16 @@ Example configuration for connecting to an AD LDAP service:
         }
     }
 
-Configuring the Men&Mice Central service to authenticate users using an LDAP service.
----------------------------------------------------------------------------------------
 
-To configure the Men&Mice Central service, login as the superuser ``administrator`` through the Men&Mice Management Console. In the top left-hand corner select :menuselection:`Tools --> System Settings --> Advanced` and check the :guilabel:`Enable LDAP integration` checkbox.
+Enabling LDAP in micetro
+------------------------
+After completing the setup of the server, you need to enable the LDAP authentication method in Micetro.
+
+**To enable LDAP integration**:
+
+1. On the :guilabel:`Admin` page, selec the :guilabel:`Configuration` tab.
+2. Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
+3. Select the :guilabel:`Enable LDAP integration`.
 
 Using LDAP with Central running on Windows
 ------------------------------------------

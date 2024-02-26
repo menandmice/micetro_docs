@@ -8,7 +8,7 @@ Integrating and Managing Appliances
 ===================================
 Micetro seamlessly integrates with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. By integrating Micetro with appliances, you gain the power to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface.
 
-Once you have configured your appliance and added it to your :ref:`webapp-server-management`, you can interact with the services just as you would with other DNS and DHCP services within Micetro.
+Once you have configured the initial network settings for your appliance and added it to your :ref:`webapp-server-management`, you can interact with the services just as you would with other DNS and DHCP services within Micetro.
 
 Appliances are accessed and managed in :guilabel:`Service Management` on the :guilabel:`Admin` page. 
 
@@ -151,7 +151,7 @@ Using the network settings, you can configure the routing information for the ap
 
 Managing Application Interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Network Settings let you set up the interfaces on the appliance. You can create sub-interfaces, allowing you to logically divide a physical interface into multiple virtual interfaces, each with distinct IP addresses. This segmentation is crucial for efficiently managing network traffic and facilitating communication between different VLANs. You can also modify the loopback address.
+The Network Settings let you set up the interfaces on the appliance. You can create sub-interfaces, allowing you to logically divide a physical interface into multiple virtual interfaces, each with distinct IP addresses. This segmentation can be crucial for efficiently managing network traffic and facilitating communication between different VLANs. You can also modify the loopback address.
 
 **To manage application interfaces:**
 

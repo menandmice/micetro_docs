@@ -215,35 +215,6 @@ Editing Zone Properties
 
 You can click :guilabel:`Edit Properties` on the toolbar to edit custom properties that have been configured for the selected zones.
 
-Editing Zone Options (BIND)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For BIND servers you can configure individual settings for a specific zone on each server.
-
-**To edit zone options for a BIND server**:
-
-1. Select the zone(s) for which you want to edit the options.
-
-2. Select :guilabel:`Edit zone options` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
-
-3. Select the specific option you wish to modify from the dropdown list.
-
-   .. image:: ../../images/zone-options-bind.png
-      :width: 65%   
-
-4. In the configuration interface that appears, adjust the settings according to your requirements. To add another entry, click :guilabel:`Add`.
-
-   * **Show inherited options**: This option allows you to display any inherited options that are applied to the selected zone. Inherited options are settings that are propagated from higher-level configurations, such as global settings or settings inherited from parent zones.
-   * **Query restrictions**: Specifies which hosts or IP addresses are allowed to query the DNS zone.
-   * **Transfer restrictions**: Transfer restrictions can specify which IP addresses or hosts are permitted to request zone transfers.
-   * **Update restrictions**:  Control who is allowed to dynamically update the DNS records within the zone. 
-   * **Update notifications**: Specify which servers should receive notifications when changes are made to the zone's DNS records. When dynamic updates occur, servers listed in the update notifications receive notifications to ensure they can synchronize their records accordingly.
-   * **Response policy**: Specify whether the zone is a response policy zone.
-
-5. Click :guilabel:`Save` when you're done.
-
-Raw Configuration of Zone Options (BIND)
-""""""""""""""""""""""""""""""""""""""""
-The :guilabel:`Raw Configuration` option is intended for experienced users who have a good understanding of DNS configurations. There you can access and modify raw configuration files directly, granting you control over zone options not available through the GUI.
 
 Promoting Secondary Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -270,5 +241,37 @@ When a secondary zone is promoted, the following actions are performed:
 
 View History
 ^^^^^^^^^^^^^
-
 The :guilabel:`View history` option on the :guilabel:`Action` menu opens the History window that shows a log of all changes that have been made to the zone, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. See :ref:`view-change-history`.
+
+
+Editing Zone Options on BIND
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For BIND servers you can configure individual settings for a specific zone on each server.
+
+**To edit zone options for a BIND zone**:
+
+1. Select the zone(s) for which you want to edit the options.
+
+2. Select :guilabel:`Edit zone options` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+
+3. By default, the **Show inherited options** checkbox is selected. When selected, any inherited options that are applied to the selected zone are displayed. Inherited options are settings that are propagated from higher-level configurations, either the server or view. You can edit the inherited options by selecting :guilabel:`Override` or select the specific option you wish to modify from the dropdown list.
+
+   .. image:: ../../images/zone-options-bind.png
+      :width: 65%   
+
+4. In the configuration interface that appears, adjust the settings according to your requirements. To add another entry, click :guilabel:`Add`.
+
+   * **Query restrictions** (primary, secondary, stub, static-stub): Specifies which hosts or IP addresses are allowed to query the DNS zone.
+   * **Transfer restrictions** (primary, secondary): Transfer restrictions can specify which IP addresses or hosts are permitted to request zone transfers.
+   * **Update restrictions** (primary):  Control who is allowed to dynamically update the DNS records within the zone. 
+   * **Update notifications** (primary, secondary): Specify which servers should receive notifications when changes are made to the zone's DNS records. When dynamic updates occur, servers listed in the update notifications receive notifications to ensure they can synchronize their records accordingly.
+   * **Response policy** (primary, secondary): Specify whether the zone is a response policy zone.
+   * **Query forwarding** (forward): Determines how BIND behaves when forwarding queries for the forward zone. The **First - resolve if forwarding fails** option provides a fallback to local resolution if forwarding fails, while the **Only - fail if forwarding fails** option strictly relies on forwarding and does not attempt local resolution if forwarding fails.
+
+5. Click :guilabel:`Save` when you're done.
+
+   
+
+Raw Configuration of Zone Options (BIND)
+""""""""""""""""""""""""""""""""""""""""
+The :guilabel:`Raw Configuration` option is intended for experienced users who have a good understanding of DNS configurations. There you can access and modify raw configuration files directly, granting you control over zone options not available through the GUI.
