@@ -140,7 +140,7 @@ Configuring Users and Access Privileges
 You do not have to create users in Micetro when the Group Level AD authentication is used. Instead, user access is controlled by the group membership of the user in the AD.
 
 RADIUS User Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (expiry, minimum password length, etc.) applied within the organization automatically apply to Micetro.
 
@@ -218,14 +218,8 @@ Micetro has integrated with both Azure Active Directory and Okta to allow integr
 
 Once configured the front page of Micetro will present buttons to redirect the user to the provider’s URL for authentication.  
 
-.. toctree::
-  :maxdepth: 1
 
-  configure_ldap
-  api_auth
-  
 .. _Multi-factor-Authentication:
-
 
 Single Sign-On (SSO) and Multi-Factor Authentication (MFA)
 ----------------------------------------------------------
@@ -566,3 +560,10 @@ if Micetro Central is on a different host from the Web Service then you can add 
       
       * Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg 
       * Linux - /var/mmsuite/mmcentral/preferences.cfg
+
+
+.. toctree::
+  :maxdepth: 1
+
+  configure_ldap
+  api_auth
