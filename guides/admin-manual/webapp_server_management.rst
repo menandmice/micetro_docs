@@ -194,6 +194,7 @@ Use the following table for more information on the indicators:
     "Detached", "Server", "The DNS/DHCP server has been detached without removing it from Micetro."
     "Service Down", "Server", "The DNS/DHCP server is down and not responding to queries."
     "Service Impaired", "Server", "The DNS/DHCP server is running but impaired. [1]_ "
+    "Service Shut Down", "Server", "The DNS/DHCP server has been shut down manually through Micetro."
 
 .. [1] In Kea HA configurations. See :ref:`dhcp-kea-ha`.
 
