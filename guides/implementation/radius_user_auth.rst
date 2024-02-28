@@ -75,3 +75,4 @@ To enable user login in Micetro, users must exist in the Micetro user database. 
 
 .. image:: ../../images/ad_sso_radius.png
   :width: 60%
+  

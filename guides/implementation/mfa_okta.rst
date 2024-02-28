@@ -5,9 +5,9 @@
 
 .. _mfa-okta:
 
-Multifactor Authentication (MFA) AND Single Sign-On with Okta
-=============================================================
-Streamline your authentication process by integrating with Azure Active Directory (Azure AD) for MFA and SSO functionalities. After configuration, Micetro’s login page will feature a button directing users to Azure’s authentication URL.
+Integrating with Okta
+=====================
+Streamline your authentication process by integrating with Okta for MFA and SSO functionalities. After configuration, Micetro's login page will feature a button directing users to Okta's authentication URL.
     
 Dependency Checklist
 ---------------------
@@ -35,7 +35,7 @@ Dependency Checklist
   
 Installation/Setup
 -------------------
-To begin the configuration process, you'll need to set up an application within Okta. This step will provide you with the necessary properties required for configuration
+To begin the configuration process, you'll need to set up an application within Okta. This step will provide you with the necessary properties required for configuration.
 
 .. list-table:: Okta Application
    :widths: 50 50
@@ -72,15 +72,15 @@ To begin the configuration process, you'll need to set up an application within 
 
 
 Okta Authorization Server
-    An Okta config with server_id set to default means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been setup at Okta or be skipped (or empty) if the Org Authorization Server should be used. 
+    An Okta config with server_id set to default means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been set up at Okta or be skipped (or empty) if the Org Authorization Server should be used. 
 
 Group authorization
     Both new identity solutions can be used in conjunction with group authorization models in Micetro.
 
-    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by the Okta, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by Azure AD. If the provider does not list any groups, the user’s group membership remains unchanged.
+    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by the Okta, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by Okta. If Okta does not list any groups, the user's group membership remains unchanged.
 
 .. note::
-  Okta offers options to filter and transform the provided groups during application setup process.
+  Okta offers options to filter and transform the provided groups during the application setup process.
   
 Mapping groups from Okta
     To enable the mapping of group memberships from Okta, an *ID Token Claim* has been created with the name "groups". Add an *OpenID Connect ID Token* to the application of the type “Filter“ with the name “groups“. 
@@ -88,44 +88,8 @@ Mapping groups from Okta
     .. image:: ../../images/oicd-token-claim.png
         :width: 60%
   
-
-Configuring Okta Authentication in Micetro
-------------------------------------------
-After completing the setup in Okta, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process in Okta. Once you have entered the information, save the configuration. Micetro will then test the integration with Azure to ensure it is working properly.
-
-**To configure and test the authentication**:
-
-1.	On the :guilabel:`Admin` page, select the :guilabel:`Configuration` tab.
-2.	Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
-3.	Make sure the :guilabel:`Enable external login` providers checkbox is selected.
-4.	Click :guilabel:`Configure` and select Okta in the dropdown list.
-5.	Fill out the configuration form with the information collected during the Okta setup process.
-
-    .. image:: ../../images/authentication-configure-okta.png
-        :width: 60%
- 
-    * **Domain**: The domain of your Okta organization. 
-    * **Server ID**: The unique identifier for your Okta authorization server.
-    * **Client ID**:  A public identifier for your application, generated when you register your application with Okta.
-    * **Client secret**: A confidential string known only to the application and the authorization server. It's used to authenticate the identity of the application to Okta when requesting tokens. The Client Secret should be kept secure and not shared publicly.
-    * **Redirect URI**: This should match the redirect UI configured in Okta.
-    * **Scope** (optional): Scopes define the level of access that the client application is requesting from the user during the authentication process. 
-    * **Audience URI**: Specifies the intended recipient of the access token.  
-
-6.	When you’re finished, click :guilabel:`Save and Test`. Micetro will attempt to authenticate via the service and display a success message or a log explaining any failures encountered during the process.
-
-Specifying the Login Options for the Login Page
------------------------------------------------
-By default, the Micetro login page displays options for both internal and external login methods. You can change these login options.
-
-To determine the login options on the Micetro login page, select the desired option in the Authentication view within the system settings:
-
-    * **Enable both built-in and external login providers**: his option allows users to log in using both Micetro's internal login method and external authentication providers.
-    * **Hide Micetro user accounts**: Selecting this option will remove the display of Micetro user accounts on the login page, presenting only external login providers.
-    * **Disable internal login method**: If you prefer to exclusively offer users Single Sign-On (SSO) or Multi-Factor Authentication (MFA) login options, you can disable the default web app login form. This action removes local or on-premises login options from the web application. However, you still have the option to bypass this at login.
-
 Configure Central Server
-^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
    1. Install Python and dependent libraries and packages on the Central server.
    
    When installing Python please ensure the following:
@@ -158,9 +122,9 @@ Configure Central Server
 
          * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
          
-         For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder. 
+         For security reasons the script is signed and will not be run if there is not a matching signature file `mm_auth_cb.signature` found in the same folder. 
          
-   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
+   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named“ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
 
    The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
@@ -239,22 +203,57 @@ This will enable the SSO login in the web.
 .. Note::
 The form will not be hidden if there is no external provider configured. The login form can be found be clicking the “Log in with Micetro“ down in the left corner of the login page.
 
-Login and Grant User/Group Access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At first login, when using Okta, **a new user account is created in Micetro**.  This user account will appear with the type “External”. External changes to user’s email, full name and group membership are synced at subsequent logins by matching the external ID.
+User Authentication and Access Management
+-----------------------------------------
 
-A single user profile is thus not shared between an external user authenticated by Okta and AD-integrated SSO, instead they are treated as separate users in Micetro.
+Upon first login using Okta, a new user account is created in Micetro, categorized as “External”. Subsequent logins synchronize external changes to the user's email, full name, and group memberships by matching the external ID.
 
-By default, all external users are added automatically to the “All users (built-in)” group. If group memberships are among the properties being returned by the identity service, then Micetro will add the user to groups with a matching name inside Micetro.
+It's important to note that external user accounts authenticated via Entra ID and those integrated with AD-integrated SSO are treated as distinct entities within Micetro, each with its distinct user profile.
 
-A few properties are synchronized by Micetro; such as user’s email, full name, and group memberships. Any external changes to these properties are updated in Micetro on the next login.
+By default, all external users are automatically added to the “All users (built-in)” group. If group memberships are included in the properties returned by Okta, Micetro will add users to groups with matching names.
+
+Micetro ensures synchronization of several key properties including email, full name, and group memberships. Any external changes to these properties are updated in Micetro upon subsequent logins.
 
 .. Note::
-   After the new External accounts are added (automatically, when user first logs in), administrators will still need to grant access to the DNS/DHCP/IPAM roles. 
-   
-   If privileges have not yet been granted for the new external accounts, the user will get the below error:
-   
+    
+   Despite the automatic addition of new External accounts during initial login, administrators must manually grant access to the DNS/DHCP/IPAM roles.   
+    
+   Failure to grant privileges for these new external accounts will result in an error for the user.   
+
    .. image:: ../../images/mfa-error.png
+      :width: 45%
+      :align: center
+
+Configuring Okta Authentication in Micetro
+------------------------------------------
+After completing the setup in Okta, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Okta to ensure it is working properly.
+
+**To configure and test the authentication**:
+
+1.	On the :guilabel:`Admin` page, select the :guilabel:`Configuration` tab.
+2.	Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
+3.	Make sure the :guilabel:`Enable external login` providers checkbox is selected.
+4.	Click :guilabel:`Configure` and select :guilabel:`Okta` in the dropdown list.
+5.	Fill out the configuration form with the information collected during the Okta setup process.
+
+    .. image:: ../../images/authentication-configure-okta.png
+        :width: 60%
+ 
+    * **Domain**: The domain of your Okta organization. 
+    * **Server ID**: The unique identifier for your Okta authorization server.
+    * **Client ID**:  A public identifier for your application, generated when you register your application with Okta.
+    * **Client secret**: A confidential string known only to the application and the authorization server. It's used to authenticate the identity of the application to Okta when requesting tokens. The Client Secret should be kept secure and not shared publicly.
+    * **Redirect URI**: This should match the redirect UI configured in Okta.
+    * **Scope** (optional): Scopes define the level of access that the client application is requesting from the user during the authentication process. 
+    * **Audience URI**: Specifies the intended recipient of the access token.  
+
+6.	When you're finished, click :guilabel:`Save and Test`. Micetro will attempt to authenticate via the service and display a success message or a log explaining any failures encountered during the process.
+7. Optional. If you want to provide only SSO/MFA login, you can disable the internal login method. This will remove the local login from the Micetro login page. However, you can still bypass this restriction at login. The internal login method can be found by clicking **Log in with Micetro** in the bottom left corner of the login page.
+
+   .. image:: ../../images/sso-login-external.png  
       :width: 60%
-      :align: centerActive Directory User Authentication
+
+   For more information about login options in Micetro, see :ref:`admin-authentication`.
+
+

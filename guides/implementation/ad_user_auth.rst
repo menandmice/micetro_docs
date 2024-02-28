@@ -42,9 +42,9 @@ To enable user login in Micetro, users must exist in the Micetro user database. 
     :width: 60%
 
 
-Active Directory Single Sign-on
+Active Directory Single Sign-On
 -------------------------------
-You can enable the single sign-on so that Active Directory users do not have to authenticate when logging in through Micetro.
+You can enable a single sign-on so that Active Directory users do not have to authenticate when logging in through Micetro.
 
 **To enable Active Directory Single Sign-on**:
 
@@ -68,7 +68,7 @@ When utilizing AD user authentication without enabling single sign-on, the login
 
 Group Level Active Directory User Authentication
 ------------------------------------------------
-The Group Level AD user authentication mechanism enbales you to define user access privileges based on group membership within the AD structure. 
+The Group Level AD user authentication mechanism enables you to define user access privileges based on group membership within the AD structure. 
 To grant a user access to Micetro, you need to create a group in the AD with a matching name to a group in Micetro and assign the AD user to that group. Multiple groups can be created in the AD to match group names in Micetro.
 
 Login process for users with Group Level AD authentication:

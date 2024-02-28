@@ -119,17 +119,17 @@ Example configuration for connecting to an AD LDAP service:
     }
 
 
-Enabling LDAP in micetro
+Enabling LDAP in Micetro
 ------------------------
 After completing the setup of the server, you need to enable the LDAP authentication method in Micetro.
 
 **To enable LDAP integration**:
 
-1. On the :guilabel:`Admin` page, selec the :guilabel:`Configuration` tab.
+1. On the :guilabel:`Admin` page, select the :guilabel:`Configuration` tab.
 2. Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
 3. Select the :guilabel:`Enable LDAP integration`.
 
-Using LDAP with Central running on Windows
+Using LDAP with Central Running on Windows
 ------------------------------------------
 
 To use LDAP with a Men&Mice Central server running on Windows, Python must be installed for all users. See :ref:`central-python-ldap`.

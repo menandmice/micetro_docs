@@ -13,16 +13,14 @@ The xDNS (Cross-Domain Name System) redundancy feature helps ensure the availabi
 * **Identical Zone Content**: Once you've set up an xDNS redundancy group, the system assists you in generating identical copies of the DNS zone content across multiple primary zones. This replication ensures that all zones within the group are the same in every aspect.
 * **Flexibility**: As your needs evelove, you can add or romeve zones from the xDNS profile.
 
-To access xDNS Profiles:
+**To access xDNS profiles**:
 
 1. Go to the **Admin** page.
 2. Select :guilabel:`Configuration` in the upper-left corner.
 3. Select :guilabel:`xDNS Profiles` in the filtering sidebar on the left-hand side.
 
-
    .. image:: ../../images/xdns-profiles.png
-     :width: 60%
-     :align: center
+     :width: 80%
 |
 xDNS Profiles 
 -------------
@@ -51,7 +49,8 @@ Each profile has the following properties:
 .. image:: ../../images/create-xdns-profile.png
   :width: 60%
   :align: center
-  
+  |
+
 .. note::
    The list of servers **cannot** be changed after the profile has been created 
 
@@ -78,7 +77,7 @@ Adding Zones to xDNS Profiles
 To add a DNS zone to an xDNS profile, you must have "create zone access" on all DNS services included in the xDNS profile. 
 xDNS profiles initially do not include any zones. 
 
-To add zones to xDNS profiles>
+**To add zones to xDNS profiles**:
 
 1. Go to the **DNS** page.
 2. In the filtering sidebar, select :guilabel:`Primary Zones`, if not already selected. xDNS only supports primary zones. 
@@ -86,22 +85,20 @@ To add zones to xDNS profiles>
 
    .. image:: ../../images/add-to-xdns-profile.png
      :width: 60%
-     :align: center
   
    * When a profile is selected on the :guilabel:`Profile` menu, Micetro runs preflight checks and displays any warnings or potential errors that are detected. 
 
-      .. image:: ../../images/xdns-preflight-errors.png
-        :width: 60%
-        :align: center
+     .. image:: ../../images/xdns-preflight-errors.png
+      :width: 80%
 |
 Adding a zone to xDNS will, if necessary, create zone instances on other DNS services included in the selected profile and add delegation records. Afterward, other record data from the source zone will be replicated to the newly created zone instances.
 
 The overview grid for DNS zones will display only one instance, with the authority column showing the name of the profile to which the zone has been added.
 
 .. image:: ../../images/xdns-zone-authority.png
-  :width: 60%
+  :width: 80%
   :align: center
-
+|
 
 xDNS Status on Zones
 --------------------

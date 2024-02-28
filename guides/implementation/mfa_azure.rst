@@ -5,8 +5,8 @@
 
 .. _mfa-azure:
 
-Multifactor Authentication (MFA) and Single Sign-On (SSO) with Microsoft Entra ID 
-==================================================================================
+Integrating with Microsoft Entra ID 
+====================================
 Streamline your authentication process by integrating with Microsoft Entra ID (formerly Azure AD) for MFA and SSO functionalities.
 After configuration, Micetro's login page will feature a button directing users to Entra's authentication URL.
 
@@ -32,12 +32,11 @@ Dependency Checklist
 .. Note::
    If running Central in High Availability (HA) mode, it is recommended to disable the service on one of the partners. This will help ensure that the installation is successful on each server and prevent the servers from failing over during the installation process.
 
-   Installation and configuration must be performed on ALL Central servers in your environment. 
-      
+   Installation and configuration must be performed on ALL Central servers in your environment.  
   
 Installation/Setup
 ------------------
-Setting up the Application (Identity Provider)
+Setting up the Application (Microsoft Entra ID)
     To begin the configuration process, you'll need to set up an application within Entra ID. This step will provide you with the necessary properties required for configuration.
 
 Microsoft Entra ID
@@ -79,60 +78,21 @@ Register the Application
 
    5. Navigate to **Certificates and Secrets** to generate a new secret for the app's use. 
 
-.. note::
-   You will need this information for the Central configuration file.
-   
-   .. image:: ../../images/external-authentication-console.png
-
 Group authorization
     Both new identity solutions can be used in conjunction with group authorization models in Micetro.
     
-    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by the provider, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by the provider. If the provider does not list any groups, the user's group membership remains unchanged. 
+    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by Entra ID, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by the Entra ID. If Entra ID does not list any groups, the user's group membership remains unchanged. 
 
     .. note::
-        The provider offers options to filter and transform the provided groups during the application setup process.
+        Entra ID offers options to filter and transform the provided groups during the application setup process.
   
 Mapping groups from Microsoft Entra ID
     As Entra ID only returns group ID with the token, the script makes an extra call to Microsoft Graph API to fetch the group names. The Graph URI used can be changed in the config (groups_uri), but it should generally not be needed. As there is a limit of about 200 group IDs that can be returned within the JSON Web Token, filtering should be used to supply only the necessary groups. 
 
     `Configure group claims for applications by using Microsoft Entra ID <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims>`_
 
-Configuring Entra ID Authentication in Micetro
---------------------------------------------------
-After completing the setup in Entra ID, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Entra ID to ensure it is working properly. 
-
-**To configure and test the authentication**:
-
-1.	On the :guilabel:`Admin` page, select the :guilabel:`Configuration` tab.
-2.	Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
-3.	Make sure the :guilabel:`Enable external login providers` checkbox is selected.
-4.	Click :guilabel:`Configure` and select :guilabel:`Entra ID` in the dropdown list.
-5.	Fill out the configuration form with the information collected during the Entra ID setup process.
-
-    .. image:: ../../images/mfa-configure-azure.png
-        :width: 60%
- 
-    * **Client ID**: A unique identifier for your application within Entra ID. 
-    * **Client credential**: Enter the appropriate credential.
-    * **Redirect URI**: This should match the redirect UI configured in Entra ID.
-    * **Scope** (optional): 
-    * **Use Azure US Government endpoints** (optional): Select the Microsoft Graph endpoint you prefer to use. 
-
-6.	When you're finished, click :guilabel:`Save and Test` Micetro will attempt to authenticate via the service and display a success message or a log explaining any failures encountered during the process.
-
-Specifying the Login Options for the Login Page
------------------------------------------------
-By default, the Micetro login page displays options for both internal and external login methods. You can change these login options.
-
-To determine the login options on the Micetro login page, select the desired option in the Authentication view within the system settings:
-
-* **Enable both built-in and external login providers**: his option allows users to log in using both Micetro's internal login method and external authentication providers.
-* **Hide Micetro user accounts**: Selecting this option will remove the display of Micetro user accounts on the login page, presenting only external login providers.
-* **Disable internal login method**: If you prefer to exclusively offer users Single Sign-On (SSO) or Multi-Factor Authentication (MFA) login options, you can disable the default web app login form. This action removes local or on-premises login options from the web application. However, you still have the option to bypass this at login.
-
-
-Configure Central Server
-------------------------
+Configuring Central Server
+---------------------------
 
    1. Install Python and dependent libraries and packages on the Central server.
    
@@ -150,7 +110,7 @@ Configure Central Server
 
       * Path for Preferences.cfg:
 
-         * Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg 
+         * Windows - C:\\ProgramData\\Men and Mice\\Central\\preferences.cfg 
          
          * Linux - /var/mmsuite/mmcentral/preferences.cfg 
          
@@ -208,7 +168,7 @@ This will cache the credentials in the DB (no need to restart Central).  Once Au
 
 *About the credential caching*
 
-The contents of the configuration file ext_auth_conf.json are cached in the database, therefore the file can be deleted after external authentication is up and running.  The cached version is updated automatically based on the file timestamp.  
+The contents of the configuration file `ext_auth_conf.json` are cached in the database, therefore the file can be deleted after external authentication is up and running. The cached version is updated automatically based on the file timestamp.  
 
 *Clear the cached configuration*
 
@@ -251,23 +211,52 @@ This will enable the SSO login in the web.
 
     The form will not be hidden if there is no external provider configured. The login form can be found be clicking the “Log in with Micetro“ down in the left corner of the login page.
 
-Login and Grant User/Group Access
----------------------------------
+User Authentication and Access Management
+-----------------------------------------
 
-At first login using Entra ID, a new user account is created in Micetro. This account is categorized as “External”. External changes to user’s email, full name, and group membership are synchronized during subsequent logins by matching the external ID.
+Upon first login using Entra ID, a new user account is created in Micetro, categorized as “External”. Subsequent logins synchronize external changes to the user's email, full name, and group memberships by matching the external ID.
 
-It's important to note that external user accounts authenticated via Entra ID and those integrated with AD-integrated SSO are treated as distinct entities within Micetro. As such, they do not share a unified user profile.
+It's important to note that external user accounts authenticated via Entra ID and those integrated with AD-integrated SSO are treated as distinct entities within Micetro, each with its distinct user profile.
 
-By default, all external users are automatically added to the “All users (built-in)” group. If group memberships are included in the properties returned by the Entra ID, Micetro will add users to groups with matching names within Micetro.
+By default, all external users are automatically added to the “All users (built-in)” group. If group memberships are included in the properties returned by Entra ID, Micetro will add users to groups with matching names.
 
-Micetro synchronizes several key properties including email, full name, and group memberships. Any external changes to these properties are updated in Micetro upon the next login.
+Micetro ensures synchronization of several key properties including email, full name, and group memberships. Any external changes to these properties are updated in Micetro upon subsequent logins.
 
 .. Note::
     
-   Following the automatic addition of new External accounts upon initial login, administrators will still need to grant access to the DNS/DHCP/IPAM roles.   
+   Despite the automatic addition of new External accounts during initial login, administrators must manually grant access to the DNS/DHCP/IPAM roles.   
     
    Failure to grant privileges for these new external accounts will result in an error for the user.   
 
    .. image:: ../../images/mfa-error.png
+      :width: 45%
+      :align: center
+      
+Configuring Entra ID (Azure AD) Authentication in Micetro
+---------------------------------------------------------
+After completing the setup in Entra ID, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Entra ID to ensure it is working properly. 
+
+**To configure and test the authentication**:
+
+1.	On the :guilabel:`Admin` page, select the :guilabel:`Configuration` tab.
+2.	Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
+3.	Make sure the :guilabel:`Enable external login providers` checkbox is selected.
+4.	Click :guilabel:`Configure` and select :guilabel:`Azure AD` in the dropdown list.
+5.	Fill out the configuration form with the information collected during the Entra ID setup process.
+
+    .. image:: ../../images/mfa-configure-azure.png
+        :width: 60%
+ 
+    * **Client ID**: A unique identifier for your application within Entra ID. 
+    * **Client credential**: Enter the appropriate credential.
+    * **Redirect URI**: This should match the redirect UI configured in Entra ID.
+    * **Scope** (optional): 
+    * **Use Azure US Government endpoints** (optional): Select the Microsoft Graph endpoint you prefer to use. 
+
+6.	When you're finished, click :guilabel:`Save and Test` Micetro will attempt to authenticate via the service and display a success message or a log explaining any failures encountered during the process.
+7. Optional. If you want to provide only SSO/MFA login, you can disable the internal login method. This will remove the local login from the Micetro login page. However, you can still bypass this restriction at login. The internal login method can be found by clicking **Log in with Micetro** in the bottom left corner of the login page.
+
+   .. image:: ../../images/sso-login-external.png  
       :width: 60%
-      :align: centerActive Directory User Authentication
+
+   For more information about login options in Micetro, see :ref:`admin-authentication`.
