@@ -40,8 +40,8 @@ Data storage
 Server Controller(s)
   Minimal-footprint service handling communication between Men&Mice Central and the connected services. *Some services can be connected natively to Central and don't need a Server Controller.*
 
-User interface(s)
-  Users can manage connected services through a browser-based UI (primary) and a Windows application (transitional, will be deprecated in favor of the web application).
+User interface
+  Users manage connected services through a browser-based UI.
 
 .. image:: ../../images/micetro-mockup-2.png
   :width: 100%
@@ -201,20 +201,6 @@ The Micetro Web Application can be installed on any server on the network runnin
 .. tip::
   It is common practice to install the Web Application on the same server that Micetro's Central component is installed on.
 
-.. _about-console:
-
-Management Console
-^^^^^^^^^^^^^^^^^^
-
-Micetro's Management Console is a Windows-only rich client that can be installed on as many client computers as required and is typically installed on each administrator's workstation.
-
-.. image:: ../../images/console-Micetro.png
-  :width: 80%
-  :align: center
-|
-.. important::
-  The Management Console is being deprecated in favor of the web application. No new features will be added to the Management Console.
-
 ..
   Middle Layer
   ------------
@@ -225,5 +211,4 @@ Micetro's Management Console is a Windows-only rich client that can be installed
 Virtual Appliances (Optional)
 ------------------------------
 
-The MDDS DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the appliance has been configured, you work with the DNS and DHCP servers just as you would work with the BIND and ISC DHCP servers. See :ref:`webapp-appliance-management` for more information.
-
+The BDDS DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the appliance has been configured, you work with the DNS and DHCP servers just as you would work with the BIND and ISC DHCP servers. See :ref:`webapp-appliance-management` for more information.

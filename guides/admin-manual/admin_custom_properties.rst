@@ -96,7 +96,7 @@ Editing Custom Properties
 --------------------------
 1.	Hover over the custom property to change.
 
-3.	Click the Row menu (...) and select :guilabel:`Edit property`.
+2.	Click the Row menu (...) and select :guilabel:`Edit property`.
 
 Deleting Custom Properties
 ---------------------------

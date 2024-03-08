@@ -4,8 +4,8 @@
 
 .. _console-dhcp:
 
-DHCP
-****
+DHCP - (Management Console)
+***************************
 
 .. toctree::
   :maxdepth: 2

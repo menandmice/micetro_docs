@@ -7,6 +7,11 @@
 Management Console (obsolete)
 =================================
 
+.. Note::
+   The Men&Mice Management Console is in maintenance mode. While it continues to be supported, note that no new features are beining implemented. 
+   For any inquiries or assistance, please reach out support@bluecatnetworks.com.
+
+
 .. toctree::
    :caption: Console Management Install Guide
    :maxdepth: 1

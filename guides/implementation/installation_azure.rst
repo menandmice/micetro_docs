@@ -1,5 +1,5 @@
 .. meta::
-   :description: Installing Micetro by Men&Mice on the Microsoft Azure cloud platform
+   :description: Installing Micetro on the Microsoft Azure cloud platform
    :keywords: Micetro, installation, Azure, cloud, Azure Marketplace 
 
 .. _installation-azure:
@@ -10,7 +10,7 @@ Installing Micetro in Azure
 Overview
 ========
 
-The Micetro offering in the Azure Marketplace offers a simple wizard for deployment of the necessary components to get started. The diagram below depicts the steps needed to perform the deployment. See :ref:`azure-marketplace-wizard` for details on each step.
+The Micetro offering in the `Azure Marketplace <https://azuremarketplace.microsoft.com/en-en/marketplace/apps/men-and-mice.men-and-mice-suite?tab=overview>`_ provides a simple wizard for deployment of the necessary components to get started. The diagram below depicts the steps needed to perform the deployment. See :ref:`azure-marketplace-wizard` for details on each step.
 
 .. image:: ../../images/deploy-azure-marketplace.png
   :width: 80%

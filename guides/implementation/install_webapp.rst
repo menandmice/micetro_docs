@@ -11,15 +11,16 @@ Install the Web Application on Linux
 ------------------------------------
 
 .. important::
-  Before you install the the Micetro Web Application, make sure you must have a functioning and accessible Apache Web Server running. The Web Application will configure its virtual host.
+  Before you install the the Micetro Web Application, make sure you have a functioning and accessible Apache Web Server running. The Web Application will configure its virtual host.
 
 1. Extract and install the Micetro Web Application install package (as root):
 
 .. code-block:: bash
 
-  tar -xzvf micetro-web-application-10.3.5.linux.x64.tgz
-  cd micetro-web-application-10.3.5.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
+    tar -xzvf micetro-web-application-10.3.5.linux.x64.tgz
+    cd micetro-web-application-10.3.5.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
 
+   
 Where ``web-application.domain.tld`` is the domain on which the Web Application will be accessed.
 
 2. Restart the Apache web server:
