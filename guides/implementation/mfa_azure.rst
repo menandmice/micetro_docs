@@ -1,14 +1,13 @@
 .. meta::
    :description: How to configure multifactor authentication with Microsoft Entra ID
-   :keywords: Azure, Entra, external authentication, multifactor authentication, mfa
+   :keywords: Azure, Entra ID, external authentication, multifactor authentication, mfa
    
 
 .. _mfa-azure:
 
 Integrating with Microsoft Entra ID 
 ====================================
-Streamline your authentication process by integrating with Microsoft Entra ID (formerly Azure AD) for MFA and SSO functionalities.
-After configuration, Micetro's login page will feature a button directing users to Entra's authentication URL.
+Integrating Micetro with Microsoft Entra ID (formerly Azure AD) can simplify the authentication process by providing multifactor authentication (MFA) and single sign-on (SSO) functionalities. After configuration, Micetro's login page will include a button that, when clicked, directs users to Microsoft Entra's authentication URL, where they can complete the authentication process using their Entra credentials and gain access to Micetro without the need to enter their login credentials repeatedly. 
 
 Dependency Checklist
 --------------------
@@ -100,7 +99,7 @@ Configuring Central Server
       
       * Python is available to "all user" (Windows).
       
-      * Use a BlueCat tested version of Python (see the dependency checklist).
+      * Use a Men&Mice tested version of Python (see the dependency checklist).
       
       * Python is installed in the "Default" environment
       
@@ -176,7 +175,7 @@ If for some reason you want to clear the cached configuration file in the databa
 
 1. Empty the .json configuration file.
 
-2. Go to Console Advanced System Settings and ensure that you have the “Default web form” enabled (Tools->System Settings->Advanced).
+2. Go to :menuselection:`Tools->System Settings->Advanced` and ensure that you have the “Default web form” enabled..
 
 3. Test with your browser to ensure you can login locally.
 
@@ -192,46 +191,7 @@ If for some reason you want to clear the cached configuration file in the databa
 It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and value of 1. 
 
 This will enable the SSO login in the web. 
-
-6. Turn off default login form (optional)
-   
-   If you only want to offer users SSO/MFA login, you can disable the default web app login form.  
-   
-   .. image:: ../../images/hide-login-fields.png
-      :width: 60%
-      :align: center
-   
-   This will remove local/onprem login in the Web.  However, you still have the option to bypass this at login.  
-
-   .. image:: ../../images/sso-login-external.png
-      :width: 60%
-      :align: center
-      
-.. Note::
-
-    The form will not be hidden if there is no external provider configured. The login form can be found be clicking the “Log in with Micetro“ down in the left corner of the login page.
-
-User Authentication and Access Management
------------------------------------------
-
-Upon first login using Entra ID, a new user account is created in Micetro, categorized as “External”. Subsequent logins synchronize external changes to the user's email, full name, and group memberships by matching the external ID.
-
-It's important to note that external user accounts authenticated via Entra ID and those integrated with AD-integrated SSO are treated as distinct entities within Micetro, each with its distinct user profile.
-
-By default, all external users are automatically added to the “All users (built-in)” group. If group memberships are included in the properties returned by Entra ID, Micetro will add users to groups with matching names.
-
-Micetro ensures synchronization of several key properties including email, full name, and group memberships. Any external changes to these properties are updated in Micetro upon subsequent logins.
-
-.. Note::
     
-   Despite the automatic addition of new External accounts during initial login, administrators must manually grant access to the DNS/DHCP/IPAM roles.   
-    
-   Failure to grant privileges for these new external accounts will result in an error for the user.   
-
-   .. image:: ../../images/mfa-error.png
-      :width: 45%
-      :align: center
-      
 Configuring Entra ID (Azure AD) Authentication in Micetro
 ---------------------------------------------------------
 After completing the setup in Entra ID, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Entra ID to ensure it is working properly. 
@@ -260,3 +220,24 @@ After completing the setup in Entra ID, the next step is to configure authentica
       :width: 60%
 
    For more information about login options in Micetro, see :ref:`admin-authentication`.
+
+User Authentication and Access Management
+-----------------------------------------
+
+Upon first login using Entra ID, a new user account is created in Micetro, categorized as “External”. Subsequent logins synchronize external changes to the user's email, full name, and group memberships by matching the external ID.
+
+It's important to note that external user accounts authenticated via Entra ID and those integrated with AD-integrated SSO are treated as distinct entities within Micetro, each with its distinct user profile.
+
+By default, all external users are automatically added to the “All users (built-in)” group. If group memberships are included in the properties returned by Entra ID, Micetro will add users to groups with matching names.
+
+Micetro ensures synchronization of several key properties including email, full name, and group memberships. Any external changes to these properties are updated in Micetro upon subsequent logins.
+
+.. Note::
+    
+   Despite the automatic addition of new External accounts during initial login, administrators must manually grant access to the DNS/DHCP/IPAM roles.   
+    
+   Failure to grant privileges for these new external accounts will result in an error for the user.   
+
+   .. image:: ../../images/mfa-error.png
+      :width: 45%
+      :align: center
