@@ -38,30 +38,14 @@ Installation/Setup
 Setting up the Application (Microsoft Entra ID)
     To begin the configuration process, you'll need to set up an application within Microsoft Entra ID. This step will provide you with the necessary properties required for configuration.
 
-    If you're running Central in High Availability (HA) mode, it's recommended to disable the service on one of the services. During this configuration, ensure you capture the credentials from Entra ID.  
+    During this configuration, ensure you capture the credentials from Entra ID.  
 
 Permissions
     To fetch the user's profile information and group memberships, the application requires the following permissions: 
 
-.. list-table:: Microsoft Graph API
-   :widths: 20 20 20 20 20
-   :header-rows: 1
+    .. image:: ../../images/mfa-entra-permissions.png
+        :width: 100%
 
-   * - API/Permission Name
-     - Type
-     - Description
-     - Admin consent request
-     - Status
-   * - GroupMember.Read.All
-     - Delegated
-     - Read group memberships
-     - Yes
-     - Granted for [name]
-   * - User.Read
-     - Delegated
-     - Sign in and read user profile
-     - No
-     - Granted for [name]
 
 .. Note::
    While the application requests ``User.Read`` from the user, an administrator needs to grant ``GroupMember.Read.All`` permission. Without this permission, group membership syncing may not occur as expected.
@@ -86,7 +70,7 @@ Group authorization
         Entra ID offers options to filter and transform the provided groups during the application setup process.
   
 Mapping groups from Microsoft Entra ID
-    As Entra ID only returns group ID with the token, the script makes an extra call to Microsoft Graph API to fetch the group names. The Graph URI used can be changed in the config (groups_uri), but it should generally not be needed. As there is a limit of about 200 group IDs that can be returned within the JSON Web Token, filtering should be used to supply only the necessary groups. 
+    As Entra ID only returns group ID with the token, the script makes an extra call to Microsoft Graph API to fetch the group names. As there is a limit of about 200 group IDs that can be returned within the JSON Web Token, filtering should be used to supply only the necessary groups. 
 
     For more information, see `Configure group claims for applications by using Microsoft Entra ID <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims>`_
 
@@ -105,8 +89,8 @@ Configuring Central Server
    
    2. **Confirm that there is a directory called "extensions"** in the Central data directory, and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created by the Central installer.
 
-Configuring Entra ID (Azure AD) Authentication in Micetro
----------------------------------------------------------
+Configuring Entra ID (Azure AD) Authentication in the Micetro Web Interface
+----------------------------------------------------------------------------
 After completing the setup in Entra ID, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Entra ID to ensure it is working properly. 
 
 **To configure and test the authentication**:
@@ -123,8 +107,8 @@ After completing the setup in Entra ID, the next step is to configure authentica
     * **Client ID**: A unique identifier for your application within Entra ID. 
     * **Client credential**: Enter the appropriate credential.
     * **Redirect URI**: This should match the redirect UI configured in Entra ID.
-    * **Scope** (optional): 
-    * **Use Azure US Government endpoints** (optional): Select the Microsoft Graph endpoint you prefer to use. 
+    * **Scope** (optional): Scopes define the level of access that the client application is requesting from the user during the authentication process.
+    * **Use Azure US Government endpoints** (optional): Select the Microsoft Graph endpoint you are required to use. 
 
 6.	When you're finished, click :guilabel:`Save and Test` Micetro will attempt to authenticate via the service and display a success message or a log explaining any failures encountered during the process.
 7. Optional. If you want to provide only SSO/MFA login, you can disable the internal login method. This will remove the local login from the Micetro login page. However, you can still bypass this restriction at login. The internal login method can be found by clicking **Log in with Micetro** in the bottom left corner of the login page.
@@ -160,27 +144,5 @@ Micetro ensures synchronization of several key properties including email, full 
  Instead of using the Micetro Web Interface (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Micetro Central's data directory. At start up the Micetro Central program will search the data directory for a file named `ext_auth_conf.json`.
 
  The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
-
- Add the contents below with credentials obtained from your Identity Provider.
-   
- Sample config:
-     
-.. code-block::
-         
-         { 
-
-            "microsoft": { 
-
-               "tenant_id": "Company_tenant_id (must match Azure)", 
-
-               "client_id": "xxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxx", 
-
-               "client_credential": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
-
-               "redirect_uri": "http://localhost/mmws/auth_cb/microsoft (must match what is configured in Azure)" 
-
-            } 
-
-         }	 
 
 
