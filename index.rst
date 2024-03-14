@@ -1,41 +1,28 @@
 .. meta::
-   :description: Product documentation for Micetro by Men&Mice
-   :keywords: Micetro, Micetro by Men&Mice, Men&Mice, documentation, user guide, admin guide
+   :description: Product documentation for Micetro
+   :keywords: Micetro, Micetro, Men&Mice, documentation, user guide, admin guide
 
-Micetro by Men&Mice 10.5
-########################
+Micetro 11.0
+#############
 
-Welcome to Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
+Welcome to Micetro, a backend-agnostic DDI orchestration software for complex enterprise network environments.
 
 .. image:: images/micetro.png
   :width: 70%
-  :alt: Men&Mice
+  :alt: Micetro
   :align: center
-
+|
 Deployed in any on-premises, hybrid, or multicloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.
 
 This documentation is divided into four parts:
 
-1. :ref:`implementation`
-2. :ref:`webapp-user-guide`
-3. :ref:`webapp-admin`
-4. :ref:`reference`
-
-Use the **Install Guide** to familiarize yourself with Micetro's architecture and installation procedures for components on different platforms. The **User Guide** covers all of Micetro's functionality. The **Admin Guide** is aimed at system administrators managing Micetro.
+1. **Installation Guide**: Get acquainted with Micetro's architecture and follow step-by-step installation procedures tailored for various platforms.
+2. **User Guide**: Explore the comprehensive coverage of Micetro's functionalities to maximize your user experience.
+3. **Admin Guide**: Tailored for system administrators, this guide equips you with the knowledge needed to effectively manage Micetro.
+4. **Reference Guide**: Find detailed how-to articles and troubleshooting tips to address any challenges that may arise. 
 
 .. tip::
-  Use the search function for quickly locating the information required.
-
-.. note::
-  For how-to articles and troubleshooting, see :ref:`reference` or visit the `Knowledge Base <https://kb.menandmice.com/display/MM/Knowledge+base>`_.
-
-.. image:: images/menandmice.png
-  :width: 60%
-  :alt: Micetro by Men&Mice
-  :align: center
-|
-.. note::
-  If you’re using version **9.2 or older** of the Men&Mice Suite, refer to the documentation on https://cdocs.menandmice.com/display/MM/Documentation+Home.
+  Use the search function to quickly locate the information required.
 
 The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
 
@@ -43,16 +30,15 @@ Table of Contents
 -----------------
 
 .. toctree::
-    :caption: Micetro by Men&Mice
+    :caption: Micetro
     :maxdepth: 1
 
     release_notes
-    security_announcements
     support
     opensource
 
 .. toctree::
-     :caption: Micetro Install Guide
+     :caption: Micetro Installation Guide
      :maxdepth: 1
 
      guides/implementation/implementation
@@ -72,7 +58,6 @@ Table of Contents
      guides/user-manual/webapp_reporting
      guides/user-manual/webapp_workflows
      guides/user-manual/view_change_history
-     guides/user-manual/console
      guides/user-manual/automation
      
 
@@ -91,13 +76,20 @@ Table of Contents
     guides/admin-manual/admin_system_settings
     guides/admin-manual/admin_object_history
     guides/admin-manual/webapp_sso
-    guides/admin-manual/admin_updates   
-    guides/admin-manual/admin_maintenance
-    guides/admin-manual/appliance_management
-    guides/admin-manual/caching_appliance
+    guides/admin-manual/webapp_appliance_management
+    guides/implementation/updates
 
 .. toctree::
     :caption: Reference
     :maxdepth: 1
 
     guides/reference/reference
+
+.. toctree::
+    :caption: Management Console
+    :maxdepth: 1
+
+    guides/management-console/management_console
+    guides/user-manual/console
+    guides/implementation/first_login
+    guides/implementation/central_logging
