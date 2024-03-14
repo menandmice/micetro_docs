@@ -1,5 +1,5 @@
 .. meta::
-   :description: Minimum system requirements for Micetro by Men&Mice
+   :description: Minimum system requirements for Micetro
    :keywords: system requirements, Micetro
 
 .. _system-requirements:
@@ -7,7 +7,7 @@
 System Requirements
 ===================
 
-The minimum system requirements and supported platforms for Micetro by Men&Mice are as follows:
+The minimum system requirements and supported platforms for Micetro are as follows:
 
 Hardware
 --------
@@ -23,8 +23,6 @@ Operating Systems
   :widths: 20, 20, 20, 10, 10, 10, 10
 
   "**Microsoft Windows**",,,,,,
-  "Windows Server 2012", "Y", "Y", "Y", "Y", "N/A", "Y"
-  "Windows Server 2012 R2", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2022", "Y", "Y", "Y", "Y", "N/A", "Y"
@@ -45,11 +43,11 @@ Operating Systems
 
 .. [1] The management console also works on non-server Windows that have not reached their EOL.
 
-[[2] The REST and SOAP APIs are bundled into the Web Application for Windows and Linux.
+.. [2] The REST and SOAP APIs are bundled into the Web Application for Windows and Linux.
 
 .. note::
-   On January 14, 2020, Microsoft ended support for Windows Server 2008 and 2008 R2, and therefore support for those server types is deprecated in versions 10.2 and above of Micetro.
-   
+   * As of October 10, 2023, Microsoft has officially discontinued support for Windows Server 2012 and 2012 R2. Micetro software may continue to function; however, its performance and reliability cannot be guaranteed, as the underlying operating system is no longer officially supported by Microsoft.
+
 .. note::
    Starting from version 10.2, support for 32-bit Linux Operating Systems will be discontinued due to the lack of support from common Linux distributions.
 
@@ -60,39 +58,41 @@ Databases
   :header: "Database", "Supported version(s)", "Operating System of Men&Mice Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 11, "Windows, Linux"
+  "PostgreSQL", 12, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
-  "Microsoft SQL Server", "2014, 2016, 2017, 2019 and 2022", "Windows"
+  "Microsoft SQL Server", "2012, 2014, 2016, 2019", "Windows"
 
 .. [3] The SQLite database is embedded into the Men&Mice Central application.
 
 .. note::
-   In Micetro versions 11.0 and later, support for Microsoft SQL Server 2012 will be discontinued, aligning with Microsoft's decision to end support for these operating systems.
+   In Micetro versions 10.2 and later, support for Microsoft SQL Server 2008 R2 will be discontinued, aligning with Microsoft’s decision to end support for these operating systems.
+
 
 DNS/DHCP Server Software
 ------------------------
 
-.. csv-table:: DNS & DHCP server software
+.. csv-table:: DNS & DHCP Server Software
   :header: "Server", "Version(s)"
   :widths: 40, 60
 
   "**DNS**"
-  "Microsoft DNS", "2016, 2019, 2022"
-  "ISC BIND", "9.6 - 9.18"
+  "Microsoft DNS", "2012, 2012 R2, 2016, 2019, 2022"
+  "ISC BIND", "9.16 - 9.18"
+  "Unbound", "1.4.22 - 1.7.3"
   "PowerDNS Authoritative Server", "3.4 - 4.3"
   "**DHCP**"
-  "Microsoft DHCP", "2016, 2019, 2022"
-  "ISC DHCP", "4.4.1 and higher"
-  "ISC Kea", "2.2, 2.4"
+  "Microsoft DHCP", "2012, 2012 R2, 2016, 2019, 2022"
+  "ISC DHCP", "3.0.6 - 4.4.1"
+  "ISC Kea", "1.6, 1.8"
   "Cisco IOS with DHCP support", "12.3 - 16.09"
 
-.. danger::
-  ISC Kea versions 2.0 and older are no longer supported. See :ref:`kea-update` for more details.
+.. warning::
+  ISC Kea versions older than 1.6 are no longer supported. See :ref:`kea-update` for more details.
 
 Other
 -----
 
-Men&Mice Web Application
+Micetro Web Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft IIS [4]_
