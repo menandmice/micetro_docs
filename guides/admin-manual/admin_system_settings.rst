@@ -1,23 +1,25 @@
 .. meta::
-   :description: Micetro´s system settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use and other advanced settings.   
-   :keywords: DNS, DHCP, Micetro´s system settings
+   :description: Micetro's system settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use, and other advanced settings.   
+   :keywords: DNS, DHCP, Micetro's system settings
 
 .. _admin-system-settings:
 
 System Settings
 ===============
 
-To access the System Settings:
+**To access the System Settings**:
 
 #. On the **Admin** page, select :guilabel:`Configuration` in the upper-left corner.
 #. Browse the categories under :guilabel:`System settings` in the filtering sidebar to find what you're looking for.
 
-   .. image:: ../../images/admin-system-settings.png
-
+   .. image:: ../../images/admin-system-settings-11.png
+      :width: 80%
 
 The System Settings include the following categories:
 
   * :ref:`admin-general`
+
+  * :ref:`admin-authentication`
 
   * :ref:`admin-logging`
 
@@ -38,29 +40,21 @@ General
 -------
 Use the General settings to specify the following:
 
-  * Authentication methods
-  
-  * Save Comments for Micetro 
+  * Save Comments for Micetro.
 
-  * Settings for AD Sites and Subnets integration
+  * Settings for AD Sites and Subnets integration.
 
-  * Rules to determine when an IP address is considered as being in use
+  * Rules to determine when an IP address is considered as being in use.
 
-Authentication
-^^^^^^^^^^^^^^^
-Configure authentication methods, including single sign-on, LDAP integration, and external login providers. 
-
-When **single sign-on** is activated, users do not have to authenticate when logging in through the Management Console or the Command Line Interface. For more information about Single sign-on, see :ref:`external-auth`.
-
-Save comments
-^^^^^^^^^^^^^^^
+Save Comments
+^^^^^^^^^^^^^^
 By default, users can save changes in the system without writing a comment. Here you have the option to set the comment requirements for Micetro tasks, including options to turn off the save comment dialog box, make it optional, or require it. 
 
    * When **off** is selected, the save comment dialog box will not appear when users save changes. 
    * If you choose to make comments **optional**, users can choose whether or not to include a comment when saving changes.
    * If you choose to make comments **required**, users will need to include a comment whenever they save changes.
 
-AD sites and subnets
+AD Sites and Subnets
 ^^^^^^^^^^^^^^^^^^^^^^
 Enable AD sites and subnets integration
   When selected, all AD sites and their corresponding subnets will be displayed in Micetro, and you can add and remove subnets from sites and move subnets between different sites as needed. AD sites and subnets will be listed on the **AD Sites** menu on the IPAM page.
@@ -68,12 +62,28 @@ Enable AD sites and subnets integration
   If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory with custom properties in Micetro, choose the desired custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will automatically update the corresponding fields in Micetro, and vice versa. See :ref:`active-directory`.
 
 Enforce AD site inheritance.
-     Select this checkbox if you want to enforce site inheritance in AD. When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet. See :ref:`active-directory`.
+  Select this checkbox if you want to enforce site inheritance in AD. When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet. See :ref:`active-directory`.
 
-Determine address usage
+Determine Address Usage
 ^^^^^^^^^^^^^^^^^^^^^^^
 Control how IP addresses are identified as being in use. By default, these settings are all selected. To specify which rules should be applied to IP addresses and get a more granular picture of where the usage is coming from, select/clear the appropriate checkboxes.
 
+.. _admin-authentication:
+
+Authentication
+--------------
+Configure authentication methods, including single sign-on, LDAP integration, and external login providers. 
+
+When **single sign-on** is activated, users do not have to authenticate when logging in to Micetro. For more information about Single sign-on, see :ref:`webapp-external-auth`.
+
+External Authentication
+^^^^^^^^^^^^^^^^^^^^^^^
+Allow users to log in to Micetro using credentials from Okta or Azure AD. The :guilabel:`Configure` button opens a form where you can set enter the necessary information needed for Okta or Azure AD authentication. 
+
+Decide how login options appear on the Micetro login page.
+
+Validate signature of external authentication script before running
+  This feature only has an effect when single sign-on is enabled. It ensures the security of the authentication process by confirming the authenticity of external authentication scripts before executing them.
 
 .. _admin-logging:
 
@@ -81,7 +91,7 @@ Logging
 -------
 The Logging settings allow you to specify when log messages should be deleted and whether lease history for DHCP servers should be collected.
 
-Micetro log
+Micetro Log
 ^^^^^^^^^^^^
 Logging level for Micetro Central (1-6)
    Determines the level of detail to log when logging the output of Micetro Central to a file.
@@ -95,7 +105,7 @@ Purge log message after (# of days)
 Log extra information when address collection is triggered
   When selected, information about the start and duration of the address collection is written in the Micetro log file.
 
-Lease history
+Lease History
 ^^^^^^^^^^^^^^
 Here you can select to start collecting lease history for DHCP servers. By viewing the DHCP lease history, you can quickly identify any potential issues or conflicts.
   
@@ -103,7 +113,7 @@ You can specify the number of days to keep the history before it is deleted, and
 
 .. _admin-error-checking:
 
-Error checking
+Error Checking
 --------------
 In this section you can specify how the system reports certain errors related to DNS.
 
@@ -119,11 +129,11 @@ DNS
 ---
 Use these settings to specify various DNS related settings. 
 
-Delegation records
+Delegation Records
 ^^^^^^^^^^^^^^^^^^^
 When activated, Micetro will automatically create delegation records (NS records) in the corresponding parent zones whenever subzones are created. This ensures that the delegation chain between parent and subzones is maintained correctly.
 
-Adjust zone transfer
+Adjust Zone Transfer
 ^^^^^^^^^^^^^^^^^^^^
 Allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.
 
@@ -176,13 +186,12 @@ Always show discovery info
 
 Monitoring
 ----------
+Specify various monitoring related settings.
 
-Use the *Monitoring settings* dialog box to specify various monitoring related settings.
-
-Subnet monitoring
+Subnet Monitoring
 ^^^^^^^^^^^^^^^^^
 Enable subnet monitoring
-  When enabled, the system monitors the free addresses in DHCP address pools and subnets and performs an action if the number of free addresses goes below a user-definable threshold. For further configuration, see :ref:`admin-subnet-monitoring-events`.
+  When enabled, the system monitors the free addresses in DHCP address pools and subnets and performs an action if the number of free addresses goes below a user-definable threshold. For further configuration, see :ref:`admin-subnet-monitoring-events`.
 
   .. note::
     The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. Refer to  IP Address Management—Subnet Monitoring and Utilization History  for information on how to change monitoring settings for individual subnets.
@@ -212,7 +221,7 @@ Enable sending SNMP traps.
    * Community
       Enter the community string (password) to use for the SNMP traps.
 
-Service monitoring
+Service Monitoring
 ^^^^^^^^^^^^^^^^^^^
 When selected, the monitoring tool monitors the DNS and DHCP services on their respective servers. Decide on an appropriate interval for monitoring.
 

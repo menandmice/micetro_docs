@@ -4,7 +4,7 @@
 
 .. _opensource:
 
-Open-source licenses
+Open-Source Licenses
 ====================
 
 .. csv-table::

@@ -9,6 +9,4 @@ IP Address Ranges and Devices
 
 Once DHCP services have been added to Micetro, all the scopes from the DHCP servers will be visible in the interface on the **IPAM** page. The organization might also have a spreadsheet or a database with other IP address range (subnet) allocations and details on individual devices (IP addresses). This data can be manually entered in Micetro or more efficiently, imported in bulk.
 
-You can import IPAM data to Micetro using the Web Application. See :ref:`webapp-import-ipam-data`
-
-For importing IPAM data using the Management Console (not recommended), see :ref:`import-ipam-old`.
+You can import IPAM data to Micetro using the Web Interface. See :ref:`webapp-import-ipam-data`

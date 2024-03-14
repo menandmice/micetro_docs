@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to configure the single sign-on in the Micetro by Men&Mice Web Application 
+   :description: How to configure the single sign-on in Micetro 
    :keywords: Active directory
 
 .. _webapp-sso:
@@ -7,13 +7,13 @@
 Configure Single Sign-On
 ========================
 
-The single sign-on feature in the Men&Mice Web Application allows users to sign in to the web using their active directory credentials.
+The single sign-on feature in Micetro allows users to sign in to the web using their active directory credentials.
 
 .. note::
   This article assumes that both an Active Directory group has already been added to Micetro **and** Kerberos/NTLM has been added to the preferences file for Men&Mice Web Services.
 
 .. note::
-  For help adding active directory groups to Micetro, see :ref:`external-auth`.
+  For help adding active directory groups to Micetro, see :ref:`webapp-external-auth`.
 
 .. note::
   For help adding Kerberos/NTLM to preferences for Men&Mice Web Services, see :ref:`api-auth`.
@@ -38,7 +38,7 @@ Configuration
 
 7. Make sure that under :menuselection:`User Authentication --> Logon` the :guilabel:`Automatic logon with current username and password` is selected.
 
-8. Open a web browser [1]_ that supports Single Sign-On (SSO) and navigate to the Men&Mice Web Application.
+8. Open a web browser [1]_ that supports Single Sign-On (SSO) and navigate to Micetro.
 
 9. Enter the FQDN/IP Address of the Men&Mice Central server.
 

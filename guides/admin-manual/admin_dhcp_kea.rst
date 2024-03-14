@@ -55,7 +55,7 @@ Kea High Availability
 
 Kea DHCP servers need to be configured for high availability **before** the primary server is added to Micetro. If the high availability is set up properly, once added to the system, Micetro will recognize the failover nodes and the method (load balancing, hot standby, etc.) and configure the server objects accordingly.
 
-For more information, see :ref:`dhcp-kea-ha`.
+For more information, see :ref:`failover-management-kea`.
 
 Defining Options on Kea DHCP Servers
 -------------------------------------
@@ -81,7 +81,7 @@ Defining Custom DHCP Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the :guilabel:`Custom Options` tab.
 
-2. Select the appropriate :guilabel:`Vendor class` in the drop-down list.
+2. Select the appropriate:guilabel:`Vendor class` in the drop-down list.
 
 Adding a New Custom Option
 """"""""""""""""""""""""""
@@ -113,7 +113,7 @@ Removing an Existing Custom Option
 
 2. On the **Row menu (...)**, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
 
-.. _kea-dhcp-poperties:
+.. _kea-dhcp-properties:
 
 Kea DHCP Server Properties
 --------------------------

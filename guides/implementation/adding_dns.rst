@@ -12,14 +12,11 @@ After installation, Micetro contains no data about DNS servers. These need to be
 DNS servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
 
 .. note::
-  Servers in Microsoft Active Directory environments can be added without installing a server controller. See :ref:`agent-free-dns-dhcp`.
+  Servers in Microsoft Active Directory environments can be added without installing an agent. See :ref:`agent-free-dns-dhcp`.
 
 Services are managed on the **Admin** page in the :guilabel:`Service Management` section. There you select :guilabel:`Add Service` to add a new server.
 
 For further details, see :ref:`adding-service` in the Admin Guide.
-
-.. note::
-  To add a new DNS server in the Management Console, select :menuselection:`File --> New --> DNS Server`.
 
 DNS Servers in Active Directory Integrated Zones
 ------------------------------------------------
@@ -32,5 +29,3 @@ The DNS agent will use two different methods to retrieve information from Micros
 
 The DNS agent on the DNS server must be able to transfer AD integrated zones from the local DNS server.
 
-.. note::
-  There is a global setting in the Management Console that allows Micetro to adjust the zone transfer settings for dynamic or AD integrated zones. It is enabled by default but the administrator can change this setting. See :ref:`disable-auto-zone-transfer` for details.

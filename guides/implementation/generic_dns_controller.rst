@@ -1,5 +1,5 @@
 .. meta::
-   :description: Using the Men&Mice Generic DNS Server Controller in Micetro by Men&Mice
+   :description: Using the Micetro Generic DNS Server Controller in Micetro
    :keywords: DNS, DNS Server Controller, Micetro
 
 .. _generic-dns-controller:
@@ -7,7 +7,7 @@
 Generic DNS Server Controller
 =============================
 
-Micetro by Men&Mice manages DNS servers. Native ISC BIND DNS and Windows DNS is supported. As a result of an increase in other DNS servers showing up in production environments, as well as DNS offered as a service by Cloud providers, from Version 6.7 of Micetro, new functions have been added to the DNS Server Controller. This makes the Controller much more flexible and enables Micetro to communicate with such new DNS server types.
+Micetro manages DNS servers. Native ISC BIND DNS and Windows DNS is supported. As a result of an increase in other DNS servers showing up in production environments, as well as DNS offered as a service by Cloud providers, from Version 6.7 of Micetro, new functions have been added to the DNS Server Controller. This makes the Controller much more flexible and enables Micetro to communicate with such new DNS server types.
 
 How to install and configure the Generic DNS Server Controller:
 

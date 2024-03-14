@@ -1,5 +1,5 @@
 .. meta::
-   :description: Overview, analysis, viewing and deleting of DNS zones in Micetro by Men&Mice
+   :description: Overview, analysis, viewing, and deleting of DNS zones in Micetro
    :keywords: DNS zones, DNS servers
 
 .. _dns-zones:
@@ -70,7 +70,7 @@ SOA
 """"
 The Start of Authority, or SOA record, is displayed as a collection of fields in the Inspector pane.
 
-.. csv-table:: SOA Information
+.. csv-table:: 
   :header: "Field", "Description"
   :widths: 15, 75
 
@@ -87,11 +87,11 @@ Managing Zones
 
 Opening DNS Zones
 ^^^^^^^^^^^^^^^^^^
-To view the DNS resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu (**...**). A list of the zone's resource records is displayed. For more information about DNS Resource Records, see :ref:`dns-records`.
+To view the DNS resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu :guilabel:`...`. A list of the zone's resource records is displayed. For more information about DNS Resource Records, see :ref:`dns-records`.
 
 Creating Zones
 ^^^^^^^^^^^^^^^
-To create a new DNS zone:
+**To create a new DNS zone**:
 
 1. Click :guilabel:`Create` on the DNS page toolbar.
 
@@ -111,7 +111,7 @@ Primary Zone
 
 2. Optional. You can select server(s) to host an identical copy of the zone. The zone files from the primary DNS are synced to the secondary DNS through a zone transfer.
 
-    .. image:: ../../images/zone-flow-redundancy.png
+   .. image:: ../../images/zone-flow-redundancy.png
       :width: 65%
 
 3. If **custom properties** have been defined for zones, they can be edited in a separate step. Custom properties provide additional attributes that enhance the ability to understand, search, and sort zone data in Micetro. 
@@ -157,11 +157,11 @@ The template zone option is available only if an AuthServe DNS server is connect
 Deleting Zones
 ^^^^^^^^^^^^^^^
 
-To delete a zone from one or more servers:
+**To delete a zone from one or more servers**:
 
 1. Select the zone(s) you want to delete.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Delete zone`. You can also select this option on the **Row menu (...)**.    
+2. Select :guilabel:`Delete zone` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.    
       
 3. The Delete Zone dialog box opens, showing each zone you selected and a list of servers that currently serve that zone. The zone(s) you selected will be deleted from every server that is selected on this list. To keep the zone on a particular server, clear the checkbox for that server.
 
@@ -173,11 +173,11 @@ Migrating Zones
 
 You can migrate one or more zones from one server to another, including all data in the zone.
 
-To migrate a zone:
+**To migrate a zone**:
 
 1. Select the zone you want to migrate.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Migrate zone`. You can also select this option on the **Row menu (...)**.  
+2. Select :guilabel:`Migrate zone` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.  
    
 3. The Migrate Zone(s) dialog box opens.
 
@@ -200,7 +200,7 @@ DNS administrators can specify the server to use when opening an AD-integrated z
 
 2. Select the zone(s) you'd like to set preferred servers for.
 
-3. On the :guilabel:`Action` menu, select :guilabel:`Edit preferred servers`. You can also select this option on the **Row menu (...)**.  :
+3. Select :guilabel:`Edit preferred servers` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
    
 4. Arrange the order of your servers into the preferred order. The server on the top of the list is tried first, then, if that server is unavailable, the second, and so on.
 
@@ -230,16 +230,48 @@ When a secondary zone is promoted, the following actions are performed:
 
 * The configurations of other instances of the secondary zone are modified so that they will get the updates from the new primary zone.
 
-To promote a secondary zone to a primary zone:
+**To promote a secondary zone to a primary zone**:
 
 1. Select the secondary zone.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Promote to primary`. You can also select this option on the **Row menu (...)**.  
+2. Select :guilabel:`Promote to primary` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.  
    
 3. Click :guilabel:`Save` to continue, or :guilabel:`Cancel` to discontinue the process.
 
 
 View History
 ^^^^^^^^^^^^^
-
 The :guilabel:`View history` option on the :guilabel:`Action` menu opens the History window that shows a log of all changes that have been made to the zone, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. See :ref:`view-change-history`.
+
+
+Editing Zone Options on BIND
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For BIND servers you can configure individual settings for a specific zone on each server.
+
+**To edit zone options for a BIND zone**:
+
+1. Select the zone(s) for which you want to edit the options.
+
+2. Select :guilabel:`Edit zone options` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+
+3. By default, the **Show inherited options** checkbox is selected. When selected, any inherited options that are applied to the selected zone are displayed. Inherited options are settings that are propagated from higher-level configurations, either the server or view. You can edit the inherited options by selecting :guilabel:`Override` or select the specific option you wish to modify from the dropdown list.
+
+   .. image:: ../../images/zone-options-bind.png
+      :width: 65%   
+
+4. In the configuration interface that appears, adjust the settings according to your requirements. To add another entry, click :guilabel:`Add`.
+
+   * **Query restrictions** (primary, secondary, stub, static-stub): Specifies which hosts or IP addresses are allowed to query the DNS zone.
+   * **Transfer restrictions** (primary, secondary): Transfer restrictions can specify which IP addresses or hosts are permitted to request zone transfers.
+   * **Update restrictions** (primary):  Control who is allowed to dynamically update the DNS records within the zone. 
+   * **Update notifications** (primary, secondary): Specify which servers should receive notifications when changes are made to the zone's DNS records. When dynamic updates occur, servers listed in the update notifications receive notifications to ensure they can synchronize their records accordingly.
+   * **Response policy** (primary, secondary): Specify whether the zone is a response policy zone.
+   * **Query forwarding** (forward): Determines how BIND behaves when forwarding queries for the forward zone. The **First - resolve if forwarding fails** option provides a fallback to local resolution if forwarding fails, while the **Only - fail if forwarding fails** option strictly relies on forwarding and does not attempt local resolution if forwarding fails.
+
+5. Click :guilabel:`Save` when you're done.
+
+   
+
+Raw Configuration of Zone Options (BIND)
+""""""""""""""""""""""""""""""""""""""""
+The :guilabel:`Raw Configuration` option is intended for experienced users who have a good understanding of DNS configurations. There you can access and modify raw configuration files directly, granting you control over zone options not available through the GUI.

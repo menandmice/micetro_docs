@@ -16,7 +16,7 @@ Each zone in the Domain Name System (DNS) contains a set of resource records tha
   :width: 90%
   :align: center
 |
-Selecting a DNS record in the list, will display the following details and actions for the record in the :guilabel:`Inspector` pane on the right.
+Selecting a DNS record in the list will display the following details and actions for the record in the :guilabel:`Inspector` pane on the right.
 
 .. csv-table::
   :header: "Item", "Description"
@@ -106,7 +106,7 @@ To create a new DNS record:
     
 3. Fill in the required information and custom fields, if there are any.
 
-   * For A records, an autocomplete behavior helps finding a free IP address in a network.
+   * For A records, an autocomplete behavior helps find a free IP address in a network.
 
    * When you enter the first digits of a network, you'll see a list of networks to choose from.
 
@@ -122,7 +122,7 @@ To create a new DNS record:
 
 IP Address Insights
 ^^^^^^^^^^^^^^^^^^^^
-Once you have entered/selected the IP address in the **Address** field, you'll be able to see some insights about the address and related objects. These insights give you more information about the IP address and can help you understand its state better.
+Once you have entered/selected the IP address in the **Address** field, you can see some insights about the address and related objects. These insights give you more information about the IP address and can help you understand its state better.
 
 .. image:: ../../images/create-DNS-record-ipam-insights-Micetro.png
      :width: 75%
@@ -184,6 +184,23 @@ Deleting Records
 
 Deleting a record removes both the data and the physical record from the grid. 
 
-1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making you selections.
+1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making your selections.
 
 2. Click :guilabel:`Delete` on the task bar. The record is immediately deleted from the zone.
+
+
+Undoing Changes to Records
+--------------------------
+If you need to revert or undo changes made to DNS records, Micetro provides a straightforward process through its history feature. It's essential to use this feature carefully, especially when dealing with critical DNS configurations.
+
+**To undo changes**:
+
+1.	Locate the zone where the changes were made, and click on the row menu (...) associated with it.
+
+2. Select :guilabel:`View history`.
+
+3.	Locate the specific action you want to undo within the history.
+
+4.	Select :guilabel:`Undo` option on the Row menu (…). This action will roll back the selected change, restoring the DNS record to its previous state.
+
+For more information about viewing object change history, see :ref:`view-change-history`.

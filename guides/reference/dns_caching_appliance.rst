@@ -7,6 +7,9 @@
 Virtual Caching Appliance Setup Guide
 =====================================
 
+.. note::
+  In version 11.0, Men&Mice Virtual Appliances have been replaced with Micetro DDS appliances. You can continue using Men&Mice appliances for the time being, but we strongly recommend transitioning to Micetro DDS appliances for ongoing support and enhanced features. For assistance with the migration process or any related inquiries, please reach out to our support team at support@bluecatnetworks.com.
+
 Introduction
 ------------
 

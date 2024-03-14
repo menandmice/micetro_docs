@@ -1,5 +1,5 @@
 .. meta::
-   :description: Configuring Micetro by Men&Mice
+   :description: Configuring Micetro
    :keywords: Micetro, configuration
 
 .. _configuration:
@@ -11,12 +11,11 @@ Configuration
   :maxdepth: 1
 
   running_micetro
-  first_login
   first_use_wizard
   central_logging
   controller_logging
   user_management
-  external_auth
+  webapp_external_auth
   adding_dns
   adding_dhcp
   adding_ip_ranges

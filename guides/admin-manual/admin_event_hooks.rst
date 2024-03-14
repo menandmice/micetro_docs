@@ -1,5 +1,5 @@
 .. meta::
-   :description: Micetro´s event hooks to configure events.   
+   :description: Micetro's event hooks to configure events.
    :keywords: Micetro's event hooks, Micetro scheduled scripts, Micetro administrator, Micetro external scripts
 
 .. _admin-event-hooks:
