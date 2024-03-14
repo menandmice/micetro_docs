@@ -7,7 +7,7 @@
 
 Integrating with Microsoft Entra ID 
 ====================================
-Integrating Micetro with Microsoft Entra ID (formerly Azure AD) can simplify the authentication process by providing multifactor authentication (MFA) and single sign-on (SSO) functionalities. After configuration, Micetro's login page will include a button that, when clicked, directs users to Microsoft Entra's authentication URL, where they can complete the authentication process using their Entra credentials and gain access to Micetro without the need to enter their login credentials repeatedly. 
+Integrating Micetro with Microsoft Entra ID (formerly Azure AD) can simplify the authentication process by providing multifactor authentication (MFA) and single sign-on (SSO) functionalities. After configuration, Micetro's login page will include a button that, when clicked, directs users to Microsoft Entra ID's authentication URL, where they can complete the authentication process using their Entra ID credentials and gain access to Micetro without the need to enter their login credentials repeatedly. 
 
 Dependency Checklist
 --------------------
@@ -21,7 +21,7 @@ Dependency Checklist
 
     * graph.microsoft.com
      
-* Python with dependent libraries and requests package is installed on the Central server.
+* Python with dependent libraries are installed on the Central server.
     
     * msal >=1.17 - The Microsoft Authentication Library that enables Micetro to access the Cloud for AAD - https://pypi.org/project/msal/1.17.0/ 
       
@@ -36,15 +36,14 @@ Dependency Checklist
 Installation/Setup
 ------------------
 Setting up the Application (Microsoft Entra ID)
-    To begin the configuration process, you'll need to set up an application within Entra ID. This step will provide you with the necessary properties required for configuration.
+    To begin the configuration process, you'll need to set up an application within Microsoft Entra ID. This step will provide you with the necessary properties required for configuration.
 
-Microsoft Entra ID
     If you're running Central in High Availability (HA) mode, it's recommended to disable the service on one of the services. During this configuration, ensure you capture the credentials from Entra ID.  
 
 Permissions
-    To be able to fetch the user's profile information and group memberships, the application requires the following permissions: 
+    To fetch the user's profile information and group memberships, the application requires the following permissions: 
 
-.. list-table:: Microsoft Graph
+.. list-table:: Microsoft Graph API
    :widths: 20 20 20 20 20
    :header-rows: 1
 
@@ -64,23 +63,24 @@ Permissions
      - No
      - Granted for [name]
 
-While the application requests ``User.Read`` from the user, an administrator needs to grant ``GroupMember.Read.All`` permission. Without this permission, group membership syncing may not occur as expected.
+.. Note::
+   While the application requests ``User.Read`` from the user, an administrator needs to grant ``GroupMember.Read.All`` permission. Without this permission, group membership syncing may not occur as expected.
 
 Register the Application
    1. Go to the Azure Portal and access Azure Active Directory (AAD).
    
-   2. On the left pane, select :guilabel:`App registration` and then click :guilabel:`New Registration` within the newly opened “blade”.
+   2. On the left pane, select :guilabel:`App registrations` and then click :guilabel:`New Registration` within the newly opened “blade”.
 
-   3. Enter the name and select the appropriate authentication types. For the Redirect URI, select web and input https://micetro.central.fqdn/mmws/auth_cb/microsoft 
+   3. Enter the name and select the appropriate authentication types. For the Redirect URI, select **web** and enter https://micetro.central.fqdn/mmws/auth_cb/microsoft 
 
    4. After registering the app, locate the client ID in the essentials panel.
 
    5. Navigate to **Certificates and Secrets** to generate a new secret for the app's use. 
 
 Group authorization
-    Both new identity solutions can be used in conjunction with group authorization models in Micetro.
+    The identity solution can be used in conjunction with group authorization models in Micetro.
     
-    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by Entra ID, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by the Entra ID. If Entra ID does not list any groups, the user's group membership remains unchanged. 
+    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by Entra ID, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by the Entra ID. If Entra ID does not provide any groups, the user's group membership remains unchanged. 
 
     .. note::
         Entra ID offers options to filter and transform the provided groups during the application setup process.
@@ -88,7 +88,7 @@ Group authorization
 Mapping groups from Microsoft Entra ID
     As Entra ID only returns group ID with the token, the script makes an extra call to Microsoft Graph API to fetch the group names. The Graph URI used can be changed in the config (groups_uri), but it should generally not be needed. As there is a limit of about 200 group IDs that can be returned within the JSON Web Token, filtering should be used to supply only the necessary groups. 
 
-    `Configure group claims for applications by using Microsoft Entra ID <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims>`_
+    For more information, see `Configure group claims for applications by using Microsoft Entra ID <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims>`_
 
 Configuring Central Server
 ---------------------------
@@ -99,99 +99,12 @@ Configuring Central Server
       
       * Python is available to "all user" (Windows).
       
-      * Use a Men&Mice tested version of Python (see the dependency checklist).
+      * Use Python version 3.7 or newer.
       
-      * Python is installed in the "Default" environment
-      
-      * Add the following XML-tag to the Preferences.cfg file to set the path::
-      
-         <PythonExecutablePath value="C:\\Python39\\python.exe" /> 
-
-      * Path for Preferences.cfg:
-
-         * Windows - C:\\ProgramData\\Men and Mice\\Central\\preferences.cfg 
-         
-         * Linux - /var/mmsuite/mmcentral/preferences.cfg 
-         
-        .. Note::
-            A Central restart is required after this statement is added to the Preferences.cfg file.
+      * Python is installed in the "Default" environment.
    
-   2. **Create a new directory called "extensions"** in the Central data directory.
-   
-         * Windows - C:\\ProgramData\\Men and Mice\\Central\\extensions
+   2. **Confirm that there is a directory called "extensions"** in the Central data directory, and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created by the Central installer.
 
-         * Linux -  /var/mmsuite/mmcentral/extensions
-      
-   3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
-
-         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
-
-         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
-         
-         For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature in the same folder. 
-         
-   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
-
-   The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
-
-   Micetro data directory: 
-
-      Windows:  C:\\ProgramData\\Menandmice\\Central\\ext_auth_conf.json 
-
-      Linux:  /var/mmsuite/mmcentral/ext_auth_conf.json 
-
-   Add the contents below with credentials obtained from your Identity Provider.
-   
-   Sample config:
-     
-.. code-block::
-         
-         { 
-
-            "microsoft": { 
-
-               "tenant_id": "Company_tenant_id (must match Azure)", 
-
-               "client_id": "xxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxx", 
-
-               "client_credential": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
-
-               "redirect_uri": "http://localhost/mmws/auth_cb/microsoft (must match what is configured in Azure)" 
-
-            } 
-
-         }	 
-
-
-This will cache the credentials in the DB (no need to restart Central).  Once Authentication through the Service Providers is established, the json configuration file can be deleted. 
-
-*About the credential caching*
-
-The contents of the configuration file `ext_auth_conf.json` are cached in the database, therefore the file can be deleted after external authentication is up and running. The cached version is updated automatically based on the file timestamp.  
-
-*Clear the cached configuration*
-
-If for some reason you want to clear the cached configuration file in the database. 
-
-1. Empty the .json configuration file.
-
-2. Go to :menuselection:`Tools->System Settings->Advanced` and ensure that you have the “Default web form” enabled..
-
-3. Test with your browser to ensure you can login locally.
-
-4. Disable the external authentication in System Settings.
-      
-5. **Enable external authentication in the Micetro system settings**
-   In the Management Console, go to :menuselection:`Tools --> System Settings --> Advanced` and search for “external auth”. 
-      
-      .. image:: ../../images/external-authentication-console.png
-          :width: 60%
-          :align: center
-          
-It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and value of 1. 
-
-This will enable the SSO login in the web. 
-    
 Configuring Entra ID (Azure AD) Authentication in Micetro
 ---------------------------------------------------------
 After completing the setup in Entra ID, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Entra ID to ensure it is working properly. 
@@ -241,3 +154,33 @@ Micetro ensures synchronization of several key properties including email, full 
    .. image:: ../../images/mfa-error.png
       :width: 45%
       :align: center
+
+ Manual Configuration
+ ---------------------
+ Instead of using the Micetro Web Interface (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Micetro Central's data directory. At start up the Micetro Central program will search the data directory for a file named `ext_auth_conf.json`.
+
+ The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
+
+ Add the contents below with credentials obtained from your Identity Provider.
+   
+ Sample config:
+     
+.. code-block::
+         
+         { 
+
+            "microsoft": { 
+
+               "tenant_id": "Company_tenant_id (must match Azure)", 
+
+               "client_id": "xxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxx", 
+
+               "client_credential": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
+
+               "redirect_uri": "http://localhost/mmws/auth_cb/microsoft (must match what is configured in Azure)" 
+
+            } 
+
+         }	 
+
+

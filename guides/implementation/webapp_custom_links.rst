@@ -1,7 +1,7 @@
 .. _webapp-custom-links:
 
-Custom links in the web application 
------------------------------------
+Custom Links in the Micetro Web Interface 
+-----------------------------------------
 
 You can add up to three custom links that show up on the Micetro login page.
 
@@ -11,7 +11,7 @@ You can add up to three custom links that show up on the Micetro login page.
 
 To add your custom links (for example internal support channel):
 
-1. Open the ``preferences.cfg`` file for Men&Mice Web Services.
+1. Open the ``preferences.cfg`` file for Micetro Web Services.
 
     * Default location on Windows: ``C:\ProgramData\Men and Mice\Web Services\preferences.cfg``
 
@@ -23,7 +23,7 @@ To add your custom links (for example internal support channel):
 
     <LoginFootnote value="Link Text 1[https://www.example.com/link1],Link Text 2[https://www.example.com/link2],Link Text 3[https://www.example.com/link3]" />
 
-3. Restart the MMWS service to pick up the changes:
+3. Restart the Micetro Web Service to pick up the changes:
 
     * On Windows: ``mmws.exe`` 
 
@@ -34,4 +34,4 @@ To add your custom links (for example internal support channel):
       systemctl restart mmws
 
 .. note::
-    The MMWS service always needs to be restarted after changes to its preferences file.
+    The Micetro Web Service always needs to be restarted after changes to its preferences file.

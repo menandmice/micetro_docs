@@ -65,24 +65,5 @@ The First Use Wizard opens when you connect the Management Console to a newly in
 |
 2. Follow the instructions to complete each page, and then click :guilabel:`Finish`.
 
-Console Features and Tasks
----------------------------
-
-.. toctree::
-  :maxdepth: 1
-
-  console_gui
-  console_menus
-  console_toolbars
-  console/console_quickfilter
-  console_actions
-  console_health_bar
-  console_dns_servers
-  console/console_dns_zones
-  console_dns_records
-  windows_dns_policies
-  console_dhcp
-  console_dhcp_scopes
-  devices
  
 

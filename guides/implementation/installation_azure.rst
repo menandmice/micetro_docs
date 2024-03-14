@@ -22,10 +22,10 @@ Below is a list of the components that are installed and a description of their 
   :widths: 20, 80
 
   "Men&Mice Central",	"The main Men&Mice component. It also serves as the meta-data storage engine, containing things such as zone history logs, user accounts and permissions, etc. You must have one copy on some server somewhere. It does not need to be installed on a DNS server."
-  "Men&Mice DNS Server Controller",	"The DNS server agent. It usually sits on each DNS server machine and manages the DNS service on your behalf. In the case of cloud DNS services providers there should be a DNS server controller installed on the same machine as the central service."
-  "Men&Mice DHCP Server Controller", "The DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP Server Controller, on any machine in the network) and manages the DHCP service on your behalf."
-  "Men&Mice Web Application",	"In version 9.1 of Micetro, a new Web Application for Micetro was introduced. The Web Application includes most day-to-day actions needed for DDI management. For detailed information regarding the Men&Mice Web Application see :ref:`web-application`."
-  "Men&Mice Management Console", "A thick client and one of the main user interfaces of Micetro. You can install multiple copies, wherever it’s needed. For detailed information regarding the Men&Mice Management Console see the documentation for the Management Console."
+  "Men&Mice DNS Agent",	"The DNS server agent. It usually sits on each DNS server machine and manages the DNS service on your behalf. In the case of cloud DNS services providers there should be a DNS agent installed on the same machine as the central service."
+  "Men&Mice DHCP Agent", "The DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP agent, on any machine in the network) and manages the DHCP service on your behalf."
+  "Micetro Web Interface", "The Micetro Web Interface includes most day-to-day actions needed for DDI management."
+  "Men&Mice Management Console", "A thick client. You can install multiple copies, wherever it's needed. For detailed information about the Men&Mice Management Console, see the documentation for the Management Console."
   "Azure SQL Server", "The database backend for the Men&Mice Central. Micetro will preform all the necessary setup for the database to be ready for use."
 
 .. important::
@@ -39,13 +39,13 @@ Finding the product in the Marketplace
 
 Open up your Azure Portal and in the search bar in at the top of the screen enter "Marketplace".
 
-Click the Marketplace option which should appear under services
+Click the Marketplace option which should appear under services.
 
 .. image:: ../../images/micetro-azure-1.png
   :width: 80%
   :align: center
 
-Enter the search term "Men&Mice Suite" click on the offering and there should open a sidebar to the right with a "Create" button.
+Enter the search term "Micetro", click on the offering and there should open a sidebar to the right with a "Create" button.
 
 .. image:: ../../images/micetro-azure-2.png
   :width: 80%
@@ -56,9 +56,9 @@ Enter the search term "Men&Mice Suite" click on the offering and there should op
 Azure Marketplace Wizard
 ------------------------
 
-After pressing the create button you should be created by the Azure Marketplace Wizard for the Micetro offering.
+After pressing the create button, you should be created by the Azure Marketplace Wizard for the Micetro offering.
 
-On the left hand side you can see the 7 steps required to be stepped through before the deployment can be started.
+On the left hand side you can see the 7 steps required to go through before the deployment can be started.
 
 Step 1: Basics
 """"""""""""""
@@ -75,7 +75,7 @@ Step 1: Basics
 * Please select a region.
 
 .. warning::
-  Latency will vary depending on the location of the deployment and the location of the endpoints that are intended to be managed within the Men&Mice
+  Latency will vary depending on the location of the deployment and the location of the endpoints that are intended to be managed within Micetro.
 
 .. image:: ../../images/micetro-azure-3.png
   :width: 60%
@@ -86,7 +86,7 @@ Step 2: Virtual Machine Settings
 
 **User credentials, system specifications and storage accounts.**
 
-* When selecting **Virtual Machine Size** please consider the size of the environment you intend to manage.
+* When selecting **Virtual Machine Size**, please consider the size of the environment you intend to manage.
 
   The following describes our recommendations regarding virtual machine size.
 
@@ -127,7 +127,7 @@ Virtual network, subnets, ports and DNS
 
 **Network Security Group**
 
-* By allowing HTTP access to the machine, the Men&Mice Web Application is accessible from the public internet.
+* By allowing HTTP access to the machine, the Micetro Web Interface is accessible from the public internet.
 * By allowing MMMC access to the machine, the Men&Mice Management Console is accessible from the public internet.
 
 **Public DNS and IP**
@@ -146,11 +146,11 @@ Step 4: Database Configuration
   :width: 60%
   :align: center
 
-Input a username which will be used as the SQL server administrator account for the Azure SQL server which will be created.
+Enter a username that will be used as the SQL server administrator account for the Azure SQL server which will be created.
 
 * There are some reserved words which cannot be used for the account name: "admin", "administrator", "user" for example.
 
-Input a password which will be used as the password for the above mentioned SQL administrator account.
+Enter a password that will be used as the password for the above mentioned SQL administrator account.
 
 * Password must be at least 12 characters long and have 3 out of the following: one number, one lower case, one upper case, or one special character
 
@@ -170,7 +170,7 @@ The credentials here require membership in Administrators, or equivalent, on the
 
 **Service Account**
 
-To automatically detect the DNS/DHCP servers on your network the Men&Mice DNS/DHCP server controllers are required to be run under managed service accounts. For more information see :ref:`setup-msa`.
+To automatically detect the DNS/DHCP servers on your network the Micetro DNS/DHCP agents are required to be run under managed service accounts. For more information see :ref:`setup-msa`.
 
 After deployment
 ----------------

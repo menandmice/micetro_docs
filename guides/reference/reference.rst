@@ -12,10 +12,8 @@ Micetro Reference Articles
 
   permissions
   ip_count
-  acl_convert
-  appliance_guide
-  send_license_info
-  health_bar_information
+  free_trial_best_practices
+  free_trial_checklist
   dynamic_zones
   aws_route53
   powerdns
@@ -30,11 +28,13 @@ Micetro Reference Articles
   dns_controller_generate
   central_python_ldap
   snmp_oid
-  acl_console
-  access_control_example
-  acl_convert
   ie_eol
   psql_ha
   mssql_ha
-  free_trial_best_practices
-  free_trial_checklist
+  appliance_guide
+  access_control_example
+  acl_console
+  acl_convert
+  acl_convert
+  send_license_info
+  health_bar_information

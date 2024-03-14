@@ -1,6 +1,6 @@
 .. meta::
-   :description: Managing Appliances in the Micetreo Web Application
-   :keywords: appliances, DNS management, DNS/DHCP appliance, BDDS appliances, MDDS appliances
+   :description: Managing Appliances in Micetro
+   :keywords: appliances, DNS management, DNS/DHCP appliance, BDDS appliances
 
 .. _webapp-appliance-management:
 
@@ -47,6 +47,15 @@ You can change the name or IP address used to connect to your appliance. This is
        Changing the name or IP address here only affects how you connect to the appliance. It does not alter the actual IP address of the appliance itself.
 
 5. Select :guilabel:`Save` when you are done.
+
+Viewing Zones, Scopes, and Servers
+----------------------------------
+You can easily navigate to zones, scopes, and DNS/DHCP servers associated with the appliance with just one click.
+
+Locate the specific application, and select the relevant view option on either the :guilabel:`Action` or the Row :guilabel:`...` menu. This will direct you to the appropriate view for your selected application.
+
+.. image:: ../../images/appliances-view-options.png
+      :width: 80%
 
 Setting Appliance Services
 --------------------------

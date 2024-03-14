@@ -11,25 +11,25 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`11.0.0-release`
+Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`11.0.0-release`
 
 .. _11.0.0-release:
 
 11.0.0
 ------
-February 29, 2024
+March 14, 2024
 
 New Features
 ^^^^^^^^^^^^
 
-* **BDDS Support**: Micetro now supports BDDS appliances from BlueCat. This feature is intended for customers seeking to seamlessly incorporate BDDS appliances into their existing network infrastructure and manage them within Micetro alongside their other DNS/DHCP servers. With this enhancement, users can manage various functionalities on BDDS appliances within Micetro, including:
+* **MDDS Support**: Micetro now supports MDDS appliances from BlueCat. This feature is intended for customers seeking to seamlessly incorporate MDDS appliances into their existing network infrastructure and manage them within Micetro alongside their other DNS/DHCP servers. With this enhancement, users can manage various functionalities on MDDS appliances within Micetro, including:
 
    * BIND options that allow viewing and editing DNS options on BIND for both for DNS servers and zones.
    * Dynamic DNS updates.
    * Network interfaces.
    * Network services such as DNS, DHCP, NTP, resolv.conf, and SNMP.
    * Syslog redirection offering the flexibility to define multiple remote logging servers, meeting a variety of logging needs.
-   * BDDS appliance updates from within Micetro.
+   * MDDS appliance updates from within Micetro.
 * **ISC DHCP Failover**: Micetro now enables the management of ISC DHCP server-to-server failover relationships.
 * **Kea 2.4 Integration**: Micetro now supports the management of Kea 2.4 DHCP servers.
 * **Kea Failover Management**: Users can now manage Kea DHCP server-to-server failover relationships within Micetro.
@@ -45,35 +45,54 @@ Improvements
 ^^^^^^^^^^^^
 * **High Availability (HA) Support for mmWS**: Session handling has been moved from mmWS to the Central server. This allows customers to configure multiple mmWS instances for redundancy, region, or load balancing purposes.
 * **Multifactor Authentication**: Setup and configuration of multifactor authentication is now much simpler than before. Users can navigate to :menuselection:`Admin --> Configuration --> Authentication` to configure integration with Okta by specifying parameters such as client ID, redirect URI, and scope). Additionally, a built-in test feature allows users to test if that configuration is correct.
-* **New Remote for BIND**: A new remote implemented for BIND has been implemented, offering all the functionalities of the previous remote while also allowing management of Response Policy Zones (RPZ) and dynamic zones.
+* **New Remote for BIND**: Users can now manage Response Policy Zones (RPZ) and dynamic zones.
 * **Enhanced License Key Handling**: Handling of license keys has been changed to include subscription keys and allow for longer expiration times.
 
 Bug Fixes
 ^^^^^^^^^
-* Added support for Microsoft ODBC Driver 18 for SQL Server.
 * Fixed an issue where existing records disappeared and reappeared again. Now all existing records are shown correctly when changing the state of DNS zone from static to dynamic. 
 * Excessive timeouts when trying to establish initial connections to agents have been significantly reduced.
 * Senstive SNMP information is no longer logged in the object history.
 * Object history entries are now created for the NS record within DNS zones.
-* Users can now edit the TTL (Time To Live) for Akamai Edge record sets in the web UI.
+* Fixed an issue where users were unable to edit the TTL (Time To Live) for Akamai Edge record sets in the Web Interface.
 * Server grids in the web UI are now reloaded after synchronization.
 * Switching address spaces now reloads the Service Management view.
 
-Deprecated Features
-^^^^^^^^^^^^^^^^^^^
-Several features and functionality are being deprecated in version 11.0. To clarify, this version will be the last one where these feature are guaranteed to work and if necessary there will be patches of 11.0 provided for these features. A feature might continue to work in future major/minor releases as long as the relevant code is present in the Micetro solution but there are no guarantees for that as the code is not officially maintained. Following is a list of the deprcated features:
+Deprecation Announcements
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* We've launched the new Micetro DNS/DHCP server (MDDS) appliance, marking a transition from the old Men&Mice virtual appliance platform. If you're using the Men&Mice virtual appliance and considering an upgrade to Micetro 11.0, please reach out to our support team at support@bluecatnetworks.com for assistance with migrating smoothly to the new platform. It's important to note that all customers will need to transition to the new appliance platform eventually, so we highly recommend making this change in the upgrade to version 11.0.
+* OpenStack support is deprecated as the versions currently supported in Micetro have reached end of life status.
+* Dyn support is deprecated as it is no longer supported by Oracle, with the target retirement date being May 31, 2023. For more information see `here <https://www.oracle.com/corporate/acquisitions/dyn/technologies/enterprise-customer-faq.html>`_.
+----
 
 * Support for BIND versions 9.16 and earlier is deprecated, as these versions have been declared as end of life by ISC in Q1 2024. The same applies to the subscriber edition.
-* Dyn support is deprecated as it is no longer supported by Oracle, with the target retirement date being May 31, 2023. For more information see `here <https://www.oracle.com/corporate/acquisitions/dyn/technologies/enterprise-customer-faq.html>`_.
 * Support for ISC DHCP versions 4.4.0 and earlier is deprecated. However, versions 4.4.1 and later will continue to be supported by Micetro, despite ISC dropping support for ISC DHCP as a whole in December 2022. This is because ISC DHCP is still widely used by Micetro customers and will likely continue to be so for some time.
 * Support for Kea version 2.0 as a service that Micetro can overlay is deprecated due to reaching end-of-life status and no longer being supported by ISC. See the roadmap for ISC Kea `here <https://kb.isc.org/docs/aa-00896>`_. It should be noted that support for older versions of Kea is deprecated as well.
-* Men&Mice appliances support is deprecated as a result of adding support for BDDS appliances. It is recommended that customers using either physical or virtual Men&Mice appliances migrate to BDDS appliances as soon as possible. Consequently, support for Unbound is also deprecated as the Men&Mice appliances were the main reason for that support in Micetro
+----
+
+* Support for Windows Server 2012 and 2012 R2 is deprecated because Microsoft announced end of support on October 10, 2023. This applies both to hosting the Micetro solution itself and as a DNS/DHCP server that Micetro can overlay.
 * Support for Microsoft SQL Server 2012 and older versions is deprecated as these databases reached end of support on July 12, 2022. For more information on Microsoft SQL Server roadmap see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
-* Python 3.7 has been depreated in Micetro due to its end of life since June 2023, according to the `python release cycle <https://devguide.python.org/versions/>`_. All Python scripts, including those used in scheduled scripts or MFA (multifactor authentication), will need to be updated accordingly.
-* OpenStack support is deprecated as the versions currently supported in Micetro have reached end of life status.
-* PostgreSQL 11 is also deprecated as this database was out of support November 9 2023. For more information on the PostgreSQL roadmap see `here <https://www.postgresql.org/support/versioning/>`_
 * Support for Ubuntu 14.04 LTS is deprecated as this version reached end of support in Q1 2024 according to the `Ubuntu release cycle <https://ubuntu.com/about/release-cycle>`_.
-* Support for Windows Server 2012 and 2012 R2 is deprecated because Microsoft announced end of support on October 10, 2023. This applies both to hosting the Micetro solution itself and as a DNS/DHCP server that Micetro can overlay. Needless to say older versions of Windows Server are also not supported.
+* PostgreSQL 11 is also deprecated as this database was out of support November 9 2023. For more information on the PostgreSQL roadmap see `here <https://www.postgresql.org/support/versioning/>`_
+* Python 3.7 has been depreated in Micetro due to its end of life since June 2023, according to the `python release cycle <https://devguide.python.org/versions/>`_. All Python scripts, including those used in scheduled scripts or MFA (multifactor authentication), will need to be updated accordingly.
+
+.. _10.5.7-release:
+
+10.5.7
+------
+February 13, 2024
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16.47 on the Micetro appliance to address the following security vulnerabilities:
+
+   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load.
+   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled.
+   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution.
+   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition.
+   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator.
+   * CVE-2023-50868: High CPU consumption in DNSSEC validator.
 
 .. _10.5.6-release:
 
@@ -278,9 +297,9 @@ Improvements
 ^^^^^^^^^^^^
 * Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
-.. _10.5-release:
+.. _10.5.0-release:
 
-10.5
+10.5.0
 ------
 April 18, 2023
 
@@ -375,6 +394,23 @@ Bug Fixes
 * An issue was fixed where scope name was not updated to reflect the name of the network.
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
+
+.. _10.3.11-release:
+
+10.3.11
+------
+February 13, 2024
+
+Improvements
+^^^^^^^^^^^^
+* BIND has been upgraded to v9.16.47 on the Micetro appliance to address the following security vulnerabilities:
+
+   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load.
+   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled.
+   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution.
+   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition.
+   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator.
+   * CVE-2023-50868: High CPU consumption in DNSSEC validator.
 
 .. _10.3.10-release:
 

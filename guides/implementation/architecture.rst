@@ -37,11 +37,11 @@ Men&Mice Central
 Data storage
   Accumulating and organizing data from connected services. *Can be configured for high availability on certain platforms.*
 
-Server Controller(s)
-  Minimal-footprint service handling communication between Men&Mice Central and the connected services. *Some services can be connected natively to Central and don't need a Server Controller.*
+Micetro Agent(s)
+  Minimal-footprint service handling communication between Men&Mice Central and the connected services. *Some services can be connected natively to Central and don't need an agent.*
 
 User interface
-  Users manage connected services through a browser-based UI.
+  Users manage connected services through a browser-based user interface.
 
 .. image:: ../../images/micetro-mockup-2.png
   :width: 100%
@@ -113,56 +113,56 @@ Information on how to use MS SQL or PostgreSQL as the database for Men&Mice Cent
 
 ----
 
-Server controllers
-------------------
+Micetro Agents
+---------------
 
-The Micetro Server Controllers are minimal-footprint services running on the DNS/DHCP server or alongside Men&Mice Central, and facilitate the communication between the connected service and Central.
+The Micetro agents are minimal-footprint services running on the DNS/DHCP server or alongside Men&Mice Central, and facilitate the communication between the connected service and Central.
 
 .. _about-dns-controller:
 
-DNS Server Controllers
-^^^^^^^^^^^^^^^^^^^^^^
+DNS Agents
+^^^^^^^^^^^
 
-The Micetro DNS Server Controller is used to control the DNS server and must be installed on each DNS server machine you want to control. The Micetro DNS Server Controller reads and writes zone data and option files, and sends commands to the DNS server. The Micetro DNS Server Controller listens on TCP port 1337.
+The Micetro DNS agent is used to control the DNS server and must be installed on each DNS server machine you want to control. The Micetro DNS agent reads and writes zone data and option files, and sends commands to the DNS server. The Micetro DNS agent listens on TCP port 1337.
 
 (Unix) BIND DNS environment
-  Micetro's DNS Server Controller (i.e., DNS agent) is installed on each DNS server that is to be managed.
+  Micetro's DNS agent is installed on each DNS server that is to be managed.
 
 (Microsoft) AD environment
-  The DNS agent can be installed on some of the DNS servers or they can all be managed agent free. If they are to be managed agent-free, then the DNS Server Controller is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is chosen. (See :ref:`agent-free-dns-dhcp`.)
+  The DNS agent can be installed on some of the DNS servers or they can all be managed agent-free. If they are to be managed agent-free, then the DNS agent is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is selected. (See :ref:`agent-free-dns-dhcp`.)
 
-  The DNS Server Controller must be running as a user that has the necessary privileges.
+  The DNS agent must be running as a user that has the necessary privileges.
 
   If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (meaning that *all* zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Micetro will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
 
   For more information see :ref:`ad-preferred-servers`.
 
 Other environments
-  The Micetro Server Controller service can also communicate with other DNS platforms, such as PowerDNS. See :ref:`generic-dns-controller` for more information.
+  The Micetro agent service can also communicate with other DNS platforms, such as PowerDNS. See :ref:`generic-dns-controller` for more information.
 
 .. note::
-  The Micetro DNS Server Controller communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
+  The Micetro DNS agent communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
 
 .. _about-dhcp-controller:
 
-DHCP Server Controllers
-^^^^^^^^^^^^^^^^^^^^^^^
+DHCP Agents
+^^^^^^^^^^^^
 
-The Micetro DHCP Server Controller is used to control the DHCP server.
+The Micetro DHCP agent is used to control the DHCP server.
 
 ISC DHCP
   A copy should be installed on each DHCP server machine.
 
 MS DHCP
-  A copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connected to the DHCP service over the network. For this remote DHCP management to work, the DHCP Server Controller must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP Server Controller can manage several different DHCP servers.
+  A copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connected to the DHCP service over the network. For this remote DHCP management to work, the DHCP agent must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP agent can manage several different DHCP servers.
 
 Cisco DHCP
-  The DHCP Server Controller can be installed on any machine.
+  The DHCP agent can be installed on any machine.
 
-The DHCP Server Controller listens for connections from Men&Mice Central on TCP port 4151.
+The DHCP agent listens for connections from Men&Mice Central on TCP port 4151.
 
 .. tip::
-  There are a few strategies to install the Micetro DHCP Server Controller (i.e., DHCP agent).
+  There are a few strategies to install the Micetro DHCP agent.
 
   * In a Unix ISC DHCP environment, the DHCP agent is installed on all DHCP servers that are to be managed.
 
@@ -175,7 +175,7 @@ The DHCP Server Controller listens for connections from Men&Mice Central on TCP 
 
   * The DHCP agents can be installed on each managed DHCP server. In that scenario, the DHCP agent can be run as the Local System account, which means that no additional configuration is needed after the installation is complete.
 
-Cisco IOS DHCP servers can be managed using Micetro. A Micetro DHCP Server Controller has to be installed on a machine in the environment, which will then act as a proxy to manage the Cisco IOS DHCP servers and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
+Cisco IOS DHCP servers can be managed using Micetro. A Micetro DHCP agent has to be installed on a machine in the environment, which will then act as a proxy to manage the Cisco IOS DHCP servers and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
 
 ----
 
@@ -189,17 +189,14 @@ User Interface
 
 .. _about-webapp:
 
-Web Application
-^^^^^^^^^^^^^^^
-
-The Micetro Web Application can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Application talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central through TCP port 1231.
+The Micetro Web Interface can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Interface talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central through TCP port 1231.
 
 .. image:: ../../images/IPAM1.png
   :width: 80%
   :align: center
 |
 .. tip::
-  It is common practice to install the Web Application on the same server that Micetro's Central component is installed on.
+  It is common practice to install the Web Interface on the same server that Micetro's Central component is installed on.
 
 ..
   Middle Layer

@@ -156,26 +156,6 @@ Depending on the service, you can change the name and/or custom properties for t
 
 3. Make the necessary changes. Click :guilabel:`Confirm` to save the changes.
 
-Editing the Raw Configuration on BIND Servers
------------------------------------------------
-For BIND servers, DNS Administrators can access and modify raw configuration files directly. This is useful for making changes to the server and zone options that are not available through the GUI.
-
-To edit BIND configuration files:
-
-1. Locate the BIND server that you want to configure.
-
-2. Select :guilabel:`Edit configuration` on the :guilabel:`Action` menu. You can also access this option on the Row menu :guilabel:`...`. 
-
-    .. image:: ../../images/bind-raw-config.png
-            :width: 65%
-|
-   
-   * The various configuration files associated with the BIND server are available on the :guilabel:`File` drop-down list. From this list, select the specific configuration file that you want to modify. Configuration files may represent different aspects of the BIND server.
-
-   * If you're looking to make changes to specific settings within the selected configuration file, you can use the search box. Enter keywords or terms related to the settings you wish to modify.
-
-3. Make your edits, and click :guilabel:`Save` when you are done.
-
 Other Service Actions
 ----------------------
 Depending on the service, you can modify both the service name and its custom properties.

@@ -13,15 +13,13 @@ Dependency Checklist
 ---------------------
 * Configure and enable SSO and MFA in Okta.
 
-* Micetro web servers must be configured for HTTPS and have a valid certificate.
-
 * Central must have internet access to Okta's endpoints:
   
    * *.okta.com 
 
-* Python with dependent libraries and requests package is installed on the Central server.
+* Python with dependent libraries are installed on the Central server.
   
-    * Python 3 required.
+    * Python 3.7 or newer required.
       
     * okta_jwt_verifier >=0.2.3 - Verifies Okta access and ID tokens - okta-jwt-verifier · PyPI  
       
@@ -49,18 +47,18 @@ To begin the configuration process, you'll need to set up an application within 
 
    5. Set Grant type to **Authorization Code** (default). 
 
-   6. For Sign-in redirect URIs, enter: **https://micetro-central-fqdn/mmws/auth_cb/okta** 
+   6. For Sign-in redirect URIs, enter: **http://micetro-central-fqdn/mmws/auth_cb/okta** 
 
-   7. For Sign-out redirect URIs, use: **https://micetro-central-fqdn/** 
+   7. For Sign-out redirect URIs, use: **http://micetro-central-fqdn/** 
 
 
 Okta Authorization Server
-    When configuring Okta, setting the `server_id` to **default** means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been set up at Okta. If the Org Authorization Server is preferred, the `server_id` can be skipped or left empty. 
+    When configuring Okta, setting the `server_id` to **default** means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been set up at Okta. If the Org Authorization Server is preferred, the `server_id` needs to be skipped or left empty. 
 
 Group authorization
     Both new identity solutions can be used in conjunction with group authorization models in Micetro.
 
-    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by Okta, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by Okta. If Okta does not list any groups, the user's group membership remains unchanged.
+    Group membership synchronization operates by matching group names. Users are automatically added to groups within Micetro that correspond to groups listed by Okta, including both Active Directory (AD) and internal groups (excluding Built-in groups). Conversely, users are removed from groups within Micetro if their names do not match those listed by Okta. If Okta does not provide any groups, the user's group membership remains unchanged.
 
 .. note::
   Okta offers options to filter and transform the provided groups during the application setup process.
@@ -76,100 +74,14 @@ Configure Central Server
    1. Install Python and dependent libraries and packages on the Central server.
    
    When installing Python please ensure the following:
-      * Python is available to "all user" (Windows)
+      * Python is available to "all user" (Windows).
       
       * That you are using a ratified (tested by Men&Mice) version of Python (see dependency checklist)
       
-      * Python is installed in the "Default" environment
-      
-      * Add the below XML-tag to the Preferences.cfg to set the path::
-      
-         <PythonExecutablePath value="C:\\Python39\\python.exe" /> 
-
-          * Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg 
-         
-          * Linux - /var/mmsuite/mmcentral/preferences.cfg 
-         
-   .. Note::
-         A Central restart is required after this statement is added to the Preferences.cfg file.
+      * Use Python version 3.7 or newer is installed in the "Default" environment.
    
-   2. **Create a new directory called "extensions"** in the Central data directory.
-   
-         * Windows - C:\\ProgramData\\Men and Mice\\Central\\extensions
-
-         * Linux -  /var/mmsuite/mmcentral/extensions
+   2. **Confirm that there is a directory called "extensions"** in the Central data directory and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created by the Central installer.
       
-   3. **Download and unzip the Micetro authentication script and signature file** from Github into the newly created extensions directory.  
-
-         * `mm_auth_cb.py.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip.zip>`_  - This Python script handles the authentication callback from the external provider. The same script serves both providers. 
-
-         * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
-         
-         For security reasons the script is signed and will not be run if there is not a matching signature file `mm_auth_cb.signature` found in the same folder. 
-         
-   4. **Manually create a json configuration file int he Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
-
-   The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
-
-   Micetro data directory: 
-
-      Windows:  C:\\ProgramData\\Menandmice\\Central\\ext_auth_conf.json 
-
-      Linux:  /var/mmsuite/mmcentral/ext_auth_conf.json 
-
-   Add the contents below with credentials obtained from your Identity Provider.
-   
-   Sample config: 
-
-.. code-block::
-
-         { 
-
-            "okta": { 
-
-               "domain": "Company_domain.okta.com", 
-
-               "server_id": "xxxxxxxxxxx|'default'", (can be skipped/empty)
-
-               "client_id": "xxxxxxxxxxx", 
-
-               "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
-
-               "redirect_uri": "http://localhost/mmws/auth_cb/okta (must match what is configured in Okta)" 
-
-            } 
-
-         }	 
-
-This will cache the credentials in the DB (no need to restart Central). Once Authentication through the Service Providers is established, the json configuration file can be deleted. 
-
-*About the credential caching*
-
-The contents of the configuration file ext_auth_conf.json are cached in the database, therefore the file can be deleted after external authentication is up and running. The cached version is updated automatically based on the file timestamp.  
-
-*Clear the cached configuration*
-
-If for some reason you want to clear the cached configuration file in the database. 
-
-1. Empty the .json configuration file.
-
-2. Go to :menuselection:`Tools->System Settings->Advanced` and ensure that you have the “Default web form” enabled.
-
-3. Test with your browser to ensure you can log in locally.
-
-4. Disable the external authentication in System Settings.
-      
-5. **Enable external authentication in the Micetro system settings**
-   In the Management Console, go to :menuselection:`Tools --> System Settings --> Advanced` and search for “external auth”. 
-      
-      .. image:: ../../images/external-authentication-console.png
-          :width: 60%
-          :align: center
-          
-It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and value of 1. 
-
-This will enable the SSO login in the web. 
-
 Configuring Okta Authentication in Micetro
 ------------------------------------------
 After completing the setup in Okta, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Okta to ensure it is working properly.
@@ -221,3 +133,34 @@ Micetro ensures synchronization of several key properties including email, full 
    .. image:: ../../images/mfa-error.png
       :width: 45%
       :align: center
+
+Manual Configuration
+--------------------
+Instead of using the Micetro Web Interface (see above), it is possible the configure external authentication manually by creating a JSON configuration file in  Central’s data directory. The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured.
+
+Add the contents below with credentials obtained from your Identity Provider.
+   
+   Sample config: 
+
+.. code-block::
+
+         { 
+
+            "okta": { 
+
+               "domain": "Company_domain.okta.com", 
+
+               "server_id": "xxxxxxxxxxx|'default'", (can be skipped/empty)
+
+               "client_id": "xxxxxxxxxxx", 
+
+               "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
+
+               "redirect_uri": "http://localhost/mmws/auth_cb/okta (must match what is configured in Okta)" 
+
+            } 
+
+         }	 
+
+
+

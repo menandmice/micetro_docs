@@ -1,5 +1,5 @@
 .. meta::
-   :description: Configuring and managing xDNS profiles in Micetro by Men&Mice
+   :description: Configuring and managing xDNS profiles in Micetro
    :keywords: xDNS Redundancy, DNS, Micetro 
 
 .. _xdns-redundancy:
@@ -24,14 +24,14 @@ The xDNS (Cross-Domain Name System) redundancy feature helps ensure the availabi
 |
 xDNS Profiles 
 -------------
-xDNS Profiles group together two or more DNS services that share the the authority of a list of zones. Any changes made to these zones, within or outside of Micetro, are automatically synchronized across all DNS services within the profile.  In case of conflicts, Micetro has a built-in conflict resolution strategy to handle them.
+xDNS Profiles group together two or more DNS services that share the the authority of a list of zones. Any changes made to these zones, within or outside of Micetro, are automatically synchronized across all DNS services within the profile. In case of conflicts, Micetro has a built-in conflict resolution strategy to handle them.
 
 Creating/Modifying xDNS Profiles 
 ---------------------------------
 To create or edit an xDNS profile, you must have administrative access within Micetro to the DNS Services you want to include. 
 
 * To **create** a new profile, click :guilabel:`Create Profile` in the lower-rigt corner of the xDNS Profiles list.
-* To **edit** a profile, select the relevant profile, and then select :guilabel:`Edit profile` on the **Row menu (...)**. You can also double-click the profile.
+* To **edit** a profile, select the relevant profile, and then select :guilabel:`Edit profile` on the Row :guilabel:`...` menu. You can also double-click the profile.
 
 Each profile has the following properties: 
 
@@ -70,7 +70,7 @@ To delete an xDNS profile, you must have administrative access within Micetro to
 
 When an xDNS profile is deleted, each service retains a copy of the zones from the profile, but replication between them will stop. 
 
-* To delete a profile, select the relevant profile, and then select :guilabel:`Delete profile` on the **Row menu (...)**. You can also double-click the profile.
+* To delete a profile, select the relevant profile, and then select :guilabel:`Delete profile` on the Row :guilabel:`...` menu. You can also double-click the profile.
 
 Adding Zones to xDNS Profiles
 ------------------------------
@@ -81,15 +81,15 @@ xDNS profiles initially do not include any zones.
 
 1. Go to the **DNS** page.
 2. In the filtering sidebar, select :guilabel:`Primary Zones`, if not already selected. xDNS only supports primary zones. 
-3. On the :guilabel:`Actions` menu, select :guilabel:`Add to xDNS profile`. You can also select this option on the **Row menu (...)**.
+3. On the :guilabel:`Actions` menu, select :guilabel:`Add to xDNS profile`. You can also select this option on the Row :guilabel:`...` menu.
 
    .. image:: ../../images/add-to-xdns-profile.png
      :width: 60%
   
    * When a profile is selected on the :guilabel:`Profile` menu, Micetro runs preflight checks and displays any warnings or potential errors that are detected. 
 
-     .. image:: ../../images/xdns-preflight-errors.png
-      :width: 80%
+    .. image:: ../../images/xdns-preflight-errors.png
+     :width: 80%
 |
 Adding a zone to xDNS will, if necessary, create zone instances on other DNS services included in the selected profile and add delegation records. Afterward, other record data from the source zone will be replicated to the newly created zone instances.
 

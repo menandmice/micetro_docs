@@ -4,16 +4,16 @@
 
 .. _install-webapp:
 
-Web Application
-===============
+Installing the Micetro Web Interface
+====================================
 
-Install the Web Application on Linux
-------------------------------------
+Installing the Web Interface on Linux
+-------------------------------------
 
 .. important::
-  Before you install the the Micetro Web Application, make sure you have a functioning and accessible Apache Web Server running. The Web Application will configure its virtual host.
+  Before you install the the Micetro Web Interface, make sure you have a functioning and accessible Apache Web Server running. The Web Interface will configure its virtual host.
 
-1. Extract and install the Micetro Web Application install package (as root):
+1. Extract and install the Micetro Web Interface install package (as root):
 
 .. code-block:: bash
 
@@ -37,18 +37,18 @@ Where ``web-application.domain.tld`` is the domain on which the Web Application 
 
 ----
 
-Install the Web Application on Windows
---------------------------------------
+Installing the Web Interface on Windows
+---------------------------------------
 
 .. note::
-  On Windows, the Web Application requires IIS to be installed. The installer will check if all required components are available.
+  On Windows, the Micetro Web Interface requires IIS to be installed. The installer will check if all required components are available.
 
-Install Micetro Web Application by double clicking the Microsoft installer file and follow the instructions there.
+Install Micetro Web Interface by double clicking the Microsoft installer file and follow the instructions there.
 
 .. warning::
-  If the Web Application is not installed on the same server as Men&Mice Central, you need to  set the **Web app server host** value to the webserver's hostname through :menuselection:`System settings --> Advanced` in the Management Console for the auto-update feature to work for the Web Application.
+  If the Micetro Web Interface is not installed on the same server as Men&Mice Central, you need to  set the **Web app server host** value to the webserver's hostname through :menuselection:`System settings --> Advanced` in the Management Console for the auto-update feature to work for the Web Interface.
 
-Further configuration
+Further Configuration
 """""""""""""""""""""
 
 .. toctree::
