@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro by Men&Mice 10.5.x versions
+   :description: Release notes for Micetro 10.3.x versions
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
@@ -11,7 +11,71 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`
+Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`11.0.0-release`
+
+.. _11.0.0-release:
+
+11.0.0
+------
+March 14, 2024
+
+New Features
+^^^^^^^^^^^^
+
+* **MDDS Support**: Micetro now supports MDDS appliances from BlueCat. This feature is intended for customers seeking to seamlessly incorporate MDDS appliances into their existing network infrastructure and manage them within Micetro alongside their other DNS/DHCP servers. With this enhancement, users can manage various functionalities on MDDS appliances within Micetro, including:
+
+   * BIND options that allow viewing and editing DNS options on BIND for both for DNS servers and zones.
+   * Dynamic DNS updates.
+   * Network interfaces.
+   * Network services such as DNS, DHCP, NTP, resolv.conf, and SNMP.
+   * Syslog redirection offering the flexibility to define multiple remote logging servers, meeting a variety of logging needs.
+   * MDDS appliance updates from within Micetro.
+* **ISC DHCP Failover**: Micetro now enables the management of ISC DHCP server-to-server failover relationships.
+* **Kea 2.4 Integration**: Micetro now supports the management of Kea 2.4 DHCP servers.
+* **Kea Failover Management**: Users can now manage Kea DHCP server-to-server failover relationships within Micetro.
+* **Kea Premium Hooks**: Micetro can now use Kea premium hooks to increase performance when working with Kea.
+* **Enhanced Micetro Log**: Micetro logs can now be viewed from :menuselection:`Admin --> Logging --> Micetro Logs`. The logging output is improved with better structure and colorization, greatly improving usability for not only customers, but also Micetro developers and support teams.
+* **Undo Functionality**: Users can now undo certain events while viewing event change history, effectively reverting the change. These events are:
+
+   * Creation, deletion, or modification of DNS records.
+   * Edits to custom properties.
+   * All create history events.
+
+Improvements
+^^^^^^^^^^^^
+* **High Availability (HA) Support for mmWS**: Session handling has been moved from mmWS to the Central server. This allows customers to configure multiple mmWS instances for redundancy, region, or load balancing purposes.
+* **Multifactor Authentication**: Setup and configuration of multifactor authentication is now much simpler than before. Users can navigate to :menuselection:`Admin --> Configuration --> Authentication` to configure integration with Okta by specifying parameters such as client ID, redirect URI, and scope). Additionally, a built-in test feature allows users to test if that configuration is correct.
+* **New Remote for BIND**: Users can now manage Response Policy Zones (RPZ) and dynamic zones.
+* **Enhanced License Key Handling**: Handling of license keys has been changed to include subscription keys and allow for longer expiration times.
+
+Bug Fixes
+^^^^^^^^^
+* Fixed an issue where existing records disappeared and reappeared again. Now all existing records are shown correctly when changing the state of DNS zone from static to dynamic. 
+* Excessive timeouts when trying to establish initial connections to agents have been significantly reduced.
+* Senstive SNMP information is no longer logged in the object history.
+* Object history entries are now created for the NS record within DNS zones.
+* Fixed an issue where users were unable to edit the TTL (Time To Live) for Akamai Edge record sets in the Web Interface.
+* Server grids in the web UI are now reloaded after synchronization.
+* Switching address spaces now reloads the Service Management view.
+
+Deprecation Announcements
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* We've launched the new Micetro DNS/DHCP server (MDDS) appliance, marking a transition from the old Men&Mice virtual appliance platform. If you're using the Men&Mice virtual appliance and considering an upgrade to Micetro 11.0, please reach out to our support team at support@bluecatnetworks.com for assistance with migrating smoothly to the new platform. It's important to note that all customers will need to transition to the new appliance platform eventually, so we highly recommend making this change in the upgrade to version 11.0.
+* OpenStack support is deprecated as the versions currently supported in Micetro have reached end of life status.
+* Dyn support is deprecated as it is no longer supported by Oracle, with the target retirement date being May 31, 2023. For more information see `here <https://www.oracle.com/corporate/acquisitions/dyn/technologies/enterprise-customer-faq.html>`_.
+----
+
+* Support for BIND versions 9.16 and earlier is deprecated, as these versions have been declared as end of life by ISC in Q1 2024. The same applies to the subscriber edition.
+* Support for ISC DHCP versions 4.4.0 and earlier is deprecated. However, versions 4.4.1 and later will continue to be supported by Micetro, despite ISC dropping support for ISC DHCP as a whole in December 2022. This is because ISC DHCP is still widely used by Micetro customers and will likely continue to be so for some time.
+* Support for Kea version 2.0 as a service that Micetro can overlay is deprecated due to reaching end-of-life status and no longer being supported by ISC. See the roadmap for ISC Kea `here <https://kb.isc.org/docs/aa-00896>`_. It should be noted that support for older versions of Kea is deprecated as well.
+----
+
+* Support for Windows Server 2012 and 2012 R2 is deprecated because Microsoft announced end of support on October 10, 2023. This applies both to hosting the Micetro solution itself and as a DNS/DHCP server that Micetro can overlay.
+* Support for Microsoft SQL Server 2012 and older versions is deprecated as these databases reached end of support on July 12, 2022. For more information on Microsoft SQL Server roadmap see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
+* Support for Ubuntu 14.04 LTS is deprecated as this version reached end of support in Q1 2024 according to the `Ubuntu release cycle <https://ubuntu.com/about/release-cycle>`_.
+* PostgreSQL 11 is also deprecated as this database was out of support November 9 2023. For more information on the PostgreSQL roadmap see `here <https://www.postgresql.org/support/versioning/>`_
+* Python 3.7 has been depreated in Micetro due to its end of life since June 2023, according to the `python release cycle <https://devguide.python.org/versions/>`_. All Python scripts, including those used in scheduled scripts or MFA (multifactor authentication), will need to be updated accordingly.
 
 .. _10.5.7-release:
 
@@ -23,12 +87,12 @@ Improvements
 ^^^^^^^^^^^^
 * BIND has been upgraded to v9.16.47 on the Micetro appliance to address the following security vulnerabilities:
 
-   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load
-   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled
-   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution
-   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition
-   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator
-   * CVE-2023-50868: High CPU consumption in DNSSEC validator
+   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load.
+   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled.
+   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution.
+   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition.
+   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator.
+   * CVE-2023-50868: High CPU consumption in DNSSEC validator.
 
 .. _10.5.6-release:
 
@@ -134,7 +198,7 @@ Bug Fixes
 
 * Resolved an issue where the association between DNS records and IP addresses was not being cleaned up correctly upon zone deletion.
 
-* Fixed a bug where Micetro would not functioning as expected when managing BIND servers with Catalog zones.
+* Fixed a bug where Micetro would not function as expected when managing BIND servers with Catalog zones.
 
 * Fixed a bug that previously prevented the successful creation of a DHCP scope on all relevant DHCP servers when converting a range. 
 
@@ -161,7 +225,7 @@ Improvements
 
 * Administrators can now specify default TTL values in system settings using BIND shorthand notation
 
-* The ISC configuration file can now be mofified through the Web Application.
+* The ISC configuration file can now be modified through the Web Application.
 
 * When creating ISC Failover scopes, the scope and pool are now created on both servers.
 
@@ -200,7 +264,7 @@ Bug Fixes
 
 * When attempting to create a zone with an unknown zone type, a more descriptive error message is now returned.
 
-* We now exclude interfaces configuration from replication between ISC Kea peers.
+* We now exclude interface configuration from replication between ISC Kea peers.
 
 * Fixed a bug that previously prevented updating AuthServe Options Templates in certain situations.
 
@@ -208,9 +272,9 @@ Bug Fixes
 
 * Deleting an Authserve zone that no longer exists will no longer return an error.
 
-* Fixed an issue that occurred when sending an empty HTTP body with utf-8 specified as content-type.
+* Fixed an issue that occurred when sending an empty HTTP body with utf-8 specified as content type.
 
-* Fixed multiple time zone related issues in the Web Application.
+* Fixed multiple time zone-related issues in the Web Application.
 
 * Fixed an issue where adding a zone to a new folder wasn't possible
 
@@ -233,9 +297,9 @@ Improvements
 ^^^^^^^^^^^^
 * Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
 
-.. _10.5-release:
+.. _10.5.0-release:
 
-10.5
+10.5.0
 ------
 April 18, 2023
 
@@ -249,9 +313,9 @@ New Features
 
 * **Support for Kea Client Classes**: We have added support for Client Classifications on Kea DHCP servers (both v4 and v6).
 
-* **Global Object History**: In the Web Application you can now view global object history in one place, which was previously limitied to specific objects only. We have also made some minor improvements to the data available. This helps you to quickly and easily trace system activities in the event of an incident or problem. Additionally, all users can view their own object change history.
+* **Global Object History**: In the Web Application you can now view global object history in one place, which was previously limited to specific objects only. We have also made some minor improvements to the data available. This helps you to quickly and easily trace system activities in the event of an incident or problem. Additionally, all users can view their own object change history.
 
-* **Event Hooks**: Scheduled Scripts are now called Scheduled Events, while External Scripts has been renamed to Change Events. You can manage these events, along with Subnet Monitoring Events on the Admin page of the Web Application.
+* **Event Hooks**: Scheduled Scripts are now called Scheduled Events, while External Scripts have been renamed to Change Events. You can manage these events, along with Subnet Monitoring Events on the Admin page of the Web Application.
 
 * **System Settings**: Administrators can now manage the System Settings for Micetro in the Web Application.
 
@@ -313,9 +377,9 @@ Bug Fixes
 
 * Performance has been improved when opening scopes on Kea.
 
-* Fixed an issue where it was not possible to add change requests for ranges with invalid set of custom properties.
+* Fixed an issue where it was not possible to add change requests for ranges with an invalid set of custom properties.
 
-* Fixed a bug where license keys with expiry date were reported as inactive.
+* Fixed a bug where license keys with expiry dates were reported as inactive.
 
 * Fixed an issue where promoting a zone would use data from a different primary zone with the same name.
 
@@ -323,7 +387,7 @@ Bug Fixes
 
 * An issue with setting custom properties with the AddDNSRecords API command was fixed.
 
-* Fixed an issue where submit buttons for change requests in Workflow would render off screen on certain screen resolutions.
+* Fixed an issue where submit buttons for change requests in Workflow would render off-screen on certain screen resolutions.
 
 * An issue was fixed where it was not possible to add an IPv6 address of a primary server to a secondary zone.
 
@@ -341,12 +405,12 @@ Improvements
 ^^^^^^^^^^^^
 * BIND has been upgraded to v9.16.47 on the Micetro appliance to address the following security vulnerabilities:
 
-   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load
-   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled
-   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution
-   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition
-   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator
-   * CVE-2023-50868: High CPU consumption in DNSSEC validator
+   * CVE-2023-4408: Parsing large DNS messages may cause excessive CPU load.
+   * CVE-2023-5517: Querying RFC 1918 reverse zones may cause an assertion failure when "nxdomain-redirect" is enabled.
+   * CVE-2023-5679: Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution.
+   * CVE-2023-6516: Specific recursive query patterns may lead to an out-of-memory condition.
+   * CVE-2023-50387: KeyTrap: Extreme CPU consumption in DNSSEC validator.
+   * CVE-2023-50868: High CPU consumption in DNSSEC validator.
 
 .. _10.3.10-release:
 
@@ -705,525 +769,3 @@ Bug Fixes
 * New API commands to create and get reservations from ranges
 
 * Various improvements and fixes
-
-.. _10.2.9-release:
-
-10.2.9
-------
-December 5, 2023
-
-Improvements
-^^^^^^^^^^^^
-
-* **Enhanced Session ID Algorithm**: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability. This improvement addresses the security vulnerability outlined in CVE-2023-4080.
-
-Bug Fixes
-^^^^^^^^^
-
-* **Accessibility Improvements**: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.
-
-* Various bug fixes and improvements.
-
-.. _10.2.8-release:
-
-10.2.8
-------
-September 20, 2023
-
-Improvements
-^^^^^^^^^^^^
-
-* BIND has been upgraded to v9.16.44 on the Micetro appliance.
-
-Bug Fixes
-^^^^^^^^^
-
-* Various accessibility improvements were made to the Web Application.
-
-.. _10.2.7-release:
-
-10.2.7
-------
-June 28, 2023
-
-Improvements
-^^^^^^^^^^^^
-
-* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
-
-.. _10.2.5-release:
-
-10.2.5
-------
-*November 29, 2022*
-
-Bug Fixes
-^^^^^^^^^
-
-* Fixed a bug where CNAME and TXT records would sometimes be removed when they shouldn't while clearing IP addresses.
-
-* Fixed an issue where some auto suggestion fields would auto select the first suggestion.	
-
-* Fixed a bug where the quickfilter showed the value [object Object] when searching for a partial string of the word "object"
-
-* Fixed a problem with BIND possibly getting stuck when doing a logrotate if the appliance was configured to send the system log messages to a remote server.
-
-* Accessibility improvements in the UI
-
-
-.. _10.2.4-release:
-
-10.2.4
-------
-
-Improvements
-^^^^^^^^^^^^
-* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
-
-.. _10.2.3-release:
-
-10.2.3
-------
-
-*July 5, 2022*
-
-Improvements
-^^^^^^^^^^^^
-
-* Micetro now detects, and reports, if Microsoft Server 2022 is the installed operating system.
-
-.. Note::
-  Microsoft Server 2022 is now supported in versions 10.2.3 and up
-
-Bug Fixes
-^^^^^^^^^
-
-* Fixed a bug where all DHCPv4 client identifiers were forced to MAC on Kea
-
-* Fixed a bug regarding the $GENERATE directive in BIND configs
-
-* Fixed a performance regression when viewing object history in large Micetro databases
-
-* Fixed disappearing values in scope options while hostnames are being resolved
-
-* Logging was improved to not include sensitive information when editing AD Forests, Users, and Cloud Services
-
-* New API commands to create and get reservations from ranges.
-
-* Various accessibility improvements were made to the Web Application
-
-.. _10.2.2-release:
-
-10.2.2
-------
-
-*March 16, 2022.*
-
-Bug Fixes
-^^^^^^^^^
-Fixed BIND v9.11 and v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2021-25220 and CVE-2022-0396 from ISC
-
-.. _10.2.1-release:
-
-10.2.1
-------
-
-*March 8, 2022.*
-
-New Feature
-^^^^^^^^^^^
-* Users with manage access permissions can view and manage access for multiple objects at the same time.
-
-Improvements
-^^^^^^^^^^^^
-* User can select to inherit parent access when managing access for multiple networks
-
-* Failed login attempts are now throttled to prevent brute force attacks
-
-* Admin users can now change custom property types when editing custom properties (except for Yes/No properties)
-
-Bug Fixes
-^^^^^^^^^
-* Cisco DHCP remote reservation issues fixed when MAC addresses are missing
-
-* Users are able to more easily reorder property columns in the grid of the Web UI
-
-* Editing reservations for split scopes now appropriately modifies the reservation for all servers
-
-* Deleting reservations for split scopes now appropriately deletes reservations for all servers
-
-* Custom properties modified with change requests from DNS Workflow are now properly logged in audit history
-
-* Requiring definition of custom properties which are children of optional properties is no longer possible
-
-* Setting DHCP boot-file-name option is now supported on Kea
-
-* An issue with editing large Kea configuration files is now fixed
-
-* Fixed a problem where users were unable to bulk import DNS data when there are required custom fields on DNS record level
-
-* Resolved a problem where RPZ zone records can't be edited in the web UI
-
-* Web UI no longer shows error in server page when system does not have an active IPAM license
-
-* An issue was fixed where an incorrect error message was displayed when login failed 
-
-* Multiple minor improvements and fixes to enhance user experience
-
-
-.. _10.2-release:
-
-10.2
-----
-
-*February 3, 2022.*
-
-New Features
-^^^^^^^^^^^^
-
-* DHCPv6 Management: Enjoy the same level of management and visibility for dynamically allocated IPv6 addresses as you have with IPv4 and DHCP in your Windows environments. Toggle DHCPv6 management on or off by server or enable it on multiple servers at once. 
-
-* Custom Property Management: Custom Properties can now be managed through the Micetro web interface. Create searchable fields to track information about your DNS zones, DNS records, DHCP scopes, networks, IP ranges and other objects in Micetro. There are two Default Custom Properties built in to the Range object type that come with Micetro which are Title and Description.
-
-* HA Management: Administrators can now manage High Availability for Micetro Central by adding servers, defining priority, and executing failovers via the Web UI. 
-
-* Reconcile DHCP Scopes: Manage DHCP scope reconciliation for Microsoft DHCP server from the Micetro Web UI to ensure consistency between the DHCP database and DHCP registry.
-
-Updates
-^^^^^^^
-
-* Microsoft has deprecated support for Windows Server 2008 R2 and therefore Micetro will no longer support this Operating System
-
-* Microsoft has deprecated support for SQL Server 2008 R2 and therefore it will no longer be supported by Micetro
-
-* Micetro will no longer support the 32-bit Linux Operating Systems
-
-Improvements
-^^^^^^^^^^^^
-* Users are now able to create DHCP split scopes in the Web UI for both DHCPv4 and DHCPv6
-
-* When hovering over the folder icon next to a network or DNS zone, the tooltip now shows the full folder path when an object is in a subfolder
-
-* NAPTR records are now supported in AWS Route53
-
-* Colons are now supported when entering hex values in the UI. For example “f1:04:0a:03:e0:0a” is now accepted as an appropriate entry for a field which requires hex.
-
-* Admins may now manually specify a BIND user or BIND group when deploying Micetro to work with BIND
-
-* Folders are now sorted alphabetically in the left sidebar
-
-* The email support address shown under licensing support and error messages is now consistently the same address
-
-* When deleting a folder the folder name is now shown in the popup message confirming deletion
-
-* Improved the order of permissions to be consistent among multiple dialog boxes
-
-* When performing an action on multiple objects, task names are now displayed in plural form
-
-* Read-only Active Directory sites are not shown any longer in the dropdown for setting AD Sites for DHCP scopes or IP ranges
-
-* When there are no DHCP or DNS servers present, the information shown reflects the empty state with helpful information
-
-* For a zone or network that is contained within a folder, users can now click on the folder icon next to that object to view a list of all other objects contained within that folder. Hovering over that folder icon still shows the name of the folder.
-
-* When editing DHCP options to enter a subnet mask value, the IP insight information is no longer displayed as it is when entering IP address information
-
-* Users are no longer given the option to manage read-only forests under AD Sites
-
-* Users with correct permissions may now perform a bulk action of unblocking multiple roles at the same time.
-
-* When running reports users may now specify which DNS servers to include in the filter so as to avoid duplicate information within the report from redundant or testing servers for example.
-
-* By default, when there are no additional address spaces to the default address space, permissions will automatically be assigned to the default address space. When there are additional address spaces, then permissions will need to be managed specifically for each address space.
-
-* When editing a user under the Admin>>Configuration tab the user name will now be displayed in the dialog box.
-
-* Users may be authenticated with read-only domain controllers by setting the ReadOnlyDC preference value.
-
-* Reserved and Leased IP address states are now filterable/sortable in the IPAM grid for a network
-
-* The API call GetAvailableAddressBlocks will now claim subnets for a short amount of time so they can’t be used by others
-
-Bug Fixes
-^^^^^^^^^
-
-* Editing a record in an AD integrated zone will no longer create duplicate records by leaving the old record in the zone
-
-* DHCP Option 43 is now stored as Hex value instead of ASCII making it possible to configure option 43 for ISC DHCP users.
-
-* If the BGPD service is enabled on DDI appliances it will now start automatically after a restart of the appliance
-
-* Increased the size of the externalID column in the mm_users db table to fix an issue where users with longer usernames couldn’t login
-
-* In the “Delete Zone” dialog box, when master zones are selected, other unrelated zones are no longer selected as well.
-
-* Double clicking on the meatballs menu of a row in the IPAM or DNS grid only opens menu options instead of following the behavior of double clicking on the row itself to open the properties
-
-* Hovering over an action button in the inspector on the right side of the Web UI no longer displays two tooltips.
-
-* Improved error message is now shown when a user tries to rename an SNMP profile with a name that already exists.
-
-* Labels in the Change Request dialog box under Workflow have been enlarged with legible text
-
-* It’s now possible to create multi-string TXT records
-
-* Filtering scopes by server no longer shows scopes from unrelated servers
-
-* Next button will now appear so users may move forward when editing reports to adjust the utilization percentage in the Reports Wizard 
-
-* The admin page in the Web UI is no longer visible to those without privileges
-
-* Improved indicator display of subranges inside range folders
-
-* Improved error message shown when a user tried to rename an SNMP profile with a name that already exists
-
-* When using a REST call to add a DHCP reservation the reservation will now be added to the active and failover scope in the case that failover has been configured
-
-* Long DHCP reservation names no longer cause errors when sending requests to the servers
-
-* Renaming Azure accounts without re-entering the client secret management account credentials is now allowed
-
-* Multiple minor improvements and fixes to enhance user experience
-
-.. _10.1.7-release:
-
-10.1.7
-------
-September 20, 2023
-
-Improvements
-^^^^^^^^^^^^
-
-* BIND has been upgraded to v9.16.44 on the Micetro appliance
-
-.. _10.1.6-release:
-
-10.1.6
-------
-June 28, 2023
-
-Improvements
-^^^^^^^^^^^^
-
-* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.
-
-.. _10.1.4-release:
-
-10.1.4
--------
-
-Improvements
-^^^^^^^^^^^^
-* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
-
-.. _10.1.2-release:
-
-10.1.2
-------
-
-*December 15, 2021.*
-
-Improvements
-^^^^^^^^^^^^
-* Messages when no folders are present under DNS or IPAM are now more human readable and informational.
-
-* Links within the Micetro Management Console and Web UI now direct readers to updated documentation.
-
-* Consistent format shown for read-only Active Directory Sites in all dropdown menus.
-
-* Error message that appears when trying to change an SNMP profile name to an existing name has been improved to be more informational.
-
-Bug fixes
-^^^^^^^^^
-* There’s no longer a syntax error that pops up when modifying text records that contain data fields over 255 characters.
-
-* Admins will be able to add AD groups in the Web UI when AD Sites and Services feature has been disabled.
-
-* Selecting A or PTR records no longer intermittently causes unnecessary data fetching from server.
-
-* “PTR Status” column will now always show correct status for IP addresses.
-
-* NAPTR records are now correctly formatted before being sent to AWS Route 53.
-
-* Filtering scopes by server no longer shows scopes on unrelated servers with similar names. Your bulk clean-up operations are safe again!
-
-* Accurate informational error message pops up when trying to create a folder that already exists.
-
-* Fixed alignment issue under Access column when creating/editing permissions list for new Roles.
-
-* Correct SNMP profiles will appear when switching between Micetro Central platforms without having to refresh.
-
-* Find Next Free Address command in the web UI glitched at times but is now guaranteed to work correctly.
-
-* Expand/contract function when viewing nested CIDR boundaries, or “Tree View,” under the IPAM tab will work as expected.
-
-* Text for task in Groups under Access Control has been changed from “Remove User” to “Remove Group.” 
-
-* Create Network Wizard is now more intelligent when checking whether a range can be created.
-
-* Fixed rendering issue in filtering sidebar where two items might appear to be selected at the same time.
-
-* Column alignment in Import DNS Records” list has been corrected.
-
-* TXT records that include quotation marks can now be created on Akamai and Dyn DNS.
-
-* Fixed minor issues when adding, removing, and editing Active Directory Forests.
-
-* Extra comma(s) in the IN operator in the API no longer returns “No Results.”
-
-* Multiple minor improvements and fixes to make user experience better.
-
-* Improved string validation in a number of API commands.
-
-
-.. _10.1.1-release:
-
-10.1.1
-------
-
-*October 27th, 2021.*
-
-* Fixed BIND vulnerability `CVE-2021-25219 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219>`_ on the Men&Mice Virtual Appliances. See :ref:`security-announcements` for details.
-
-* Fixed an issue with upgrading to Micetro 10.1 with a Microsoft SQL 2008R2 or earlier database.
-
-.. _10.1-release:
-
-10.1
-----
-
-*October 19th, 2021*
-
-.. important::
-   Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.
-
-Known issues
-^^^^^^^^^^^^
-
-  .. important::
-    There is a known issue when updating to Micetro 10.1 using **Microsoft SQL Server 2008R2 (or earlier)**. The database upgrade process contains the string CONCAT command that was implemented in SQL Server 2012.
-    Until we've published the fix for this issue, use the following workaround:
-
-    1. In the SQL Server Management Studio run the following on the database (default: ``mmsuite``):
-
-       .. code-block::
-
-            ALTER TABLE mmCentral.mm_preferences ALTER COLUMN [value] VARCHAR(MAX);
-            insert into mmCentral.mm_preferences SELECT ('_mm_shared_config_'+LOWER("key")),value from mmCentral.mm_configuration where identityid=4294967295;
-            DELETE FROM mmCentral.mm_configuration WHERE identityid = 4294967295;
-            insert into mmCentral.mm_databaseupgrades values (17383);
-
-    2. Restart Central.
-
-    We'll publish a maintenance release containing the fix for this issue soon.
-
-New features
-^^^^^^^^^^^^
-
-* New Access Control management: access controls in Micetro have been redesigned from the ground-up, and provide a fully role-based, flexible management. Existing configurations will be converted into the new model while preserving backward compatibility. Read :ref:`access-control` and :ref:`access-control-example` for details.
-
-* Folder management is now available in the Web Application. Users can organize DNS and IPAM objects using traditional folders and customizable smart folders (saved filters) to quicken their workflows. "Smart people use folders. Even smarter people use smart folders."
-
-* AD Sites and Subnets management has been streamlined and integrated into the IPAM context of the Web Application.
-
-Improvements
-^^^^^^^^^^^^
-
-* DNS administrators can manage preferred servers for DNS zones in the Web Application.
-
-* SNMP profile management is available in the Web Application.
-
-* A new slide-in help is available for many functions, offering further details on functionality and syntax for their respective operations. Not a water slide in a theme park, but it is still weirdly satisfying.
-
-* Micetro components will no longer display errors if they're reporting different minor versions. We're all one family here.
-
-* Users can import DHCP reservations to Micetro using the Web Application, including bulk import. Get yer CSV goodness on!
-
-* Lease names are searchable in the Quick Command. So you can have a better leash on them. (We'll see ourselves out.)
-
-* Custom links can be added to the Micetro login screen.
-
-* Improved subnet management, including splitting and merging subnets. Alchemy, almost; although no turning iron into gold with Micetro. Yet.
-
-Bug fixes
-^^^^^^^^^
-
-* Wildcard policies on AWS will display a descriptive error message (as they're not currently supported in Micetro).
-
-* Users can use relative time (i.e. >=-7d) in the Reporting module. Because time is relative, and E equals m times c squared. Except in quantum, but let's not sweat the small stuff.
-
-* BIND installer will no longer get stuck during installation. Sticks and stones may break our bones, but stuck things are just weird.
-
-* DNS and IPAM data is properly updated when changing address spaces. Multiverse mixup, we've had words with the Sorcerer Supreme.
-
-* Using the Quick Filter properly highlights the query in the name column. As this is how it's supposed to work, this fix is a highlight to share.
-
-* Using the 'View scopes' action on a DHCP server will properly show the scopes on the DHCP server. Because it. Has. One. Job.
-
-* Creating a scope on a Cisco DHCP server no longer fails randomly.
-
-* No longer possible for the logged-in user to remove themselves. Word came down that it created a bunch of variants that bottlenecked the TVA, and who needs that?
-
-* Updating refresh times on SOA records will no longer fail with a cryptic error.
-
-* Tooltips no longer appear erroneously on top of the screen after closing their window. They understand now that they have to respect the boundaries of others, just like all polite UI elements do.
-
-* Editing a DHCP pool will no longer result in a locked up dialog window due to illegal from/to address input.
-
-* Converting a network to a DHCP scope will no longer have a missing field. It's returned safe and sound, we can take it off the milk cartons finally.
-
-* Using the 'View history' action will no longer return an error message when a filter is applied.
-
-* The 'Reserve' button will no longer disappear from the Action menu. This type of hide-and-seek is not appropriate in the workplace.
-
-* Streamlined the Men&Mice Central binary to reduce size. Took a lot of pilates, but now it's in much better shape.
-
-* The 'Import records' task is no longer available in Quick Command. We don't know why it was there in the first place. It's not like we put it there. <whistles innocently>
-
-* Login no longer fails if no DNS license key is activated. Some like IPAM with no pulp, and we don't judge.
-
-* Users can use the 'subType' field as a query parameters within data from cloud providers. Suber!
-
-* Adding a cloud provider to Micetro properly runs synchronization for DNS data.
-
-* Men&Mice Web Services will no longer report unhandled exceptions on a Windows Server. While Micetro is exceptional, we're plenty able to handle it.
-
-* The 'Edit reservation' button once again works as expected. Good button, have a cookie.
-
-* Resizing the Inspector panel will no longer cause sections to lock up. No DataTables left behind.
-
-* You can use 'Add to favorites' on IPAM objects as well. We don't like to play favorites, so we're giving favorites to all.
-
-* Removing a cloud account will properly remove all related data from Micetro. Having your ex's stuff around is never a good idea.
-
-* Men&Mice Central will no longer run out of memory when scanning a large number of SNMP profiles. To paraphrase Lady Liberty: give Micetro your huddled SNMP masses yearning to breathe free.
-
-* Pool indicators are refreshed when editing exclusions for a scope.
-
-* Deleting TXT records containing & in the data field no longer fails in AWS. & all rejoiced & the world was at peace again.
-
-* Using the Quick Filter for Networks will no longer cause loading skeletons to appear.
-
-* Exceeding the retry limit in Azure will properly throw an exception.
-
-* Fixed an issue where DNS administrators would not have access to a DNS record's history. Obviously they should. And now they do.
-
-* The 'Edit configuration' task is no longer enabled for unreachable servers.
-
-* The 'Add DNS Zone' task from Quick Command properly fills out the name for the zone. Otherwise it's not magic, now is it?
-
-* Clicking 'Save' on dialogs with no changes made closes the dialog. Clicking save on dialogs that have been modified validates the input. Save the cheerleader, save the world.
-
-Other
-^^^^^
-
-* Various performance improvements and UX tweaks. Micetro does things faster and nicer.
-
-.. _10.0.8-release:
-
-10.0.8
-------
-
-Improvements
-^^^^^^^^^^^^
-* Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178
