@@ -139,10 +139,11 @@ Micetro ensures synchronization of several key properties including email, full 
       :width: 45%
       :align: center
 
- Manual Configuration
- ---------------------
- Instead of using the Micetro Web Interface (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Micetro Central's data directory. At start up the Micetro Central program will search the data directory for a file named `ext_auth_conf.json`.
 
- The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
+Manual Configuration
+---------------------
+Instead of using the Micetro Web Interface (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Micetro Central's data directory. At start up the Micetro Central program will search the data directory for a file named `ext_auth_conf.json`.
+
+The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
 
