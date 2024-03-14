@@ -8,82 +8,72 @@ Microsoft SQL Server
 --------------------
 
 .. important::
-  We recommend that the network latency between the SQL server and M&M Central is **no more than 5 ms**. Otherwise, the performance of M&M in conjunction with SQL Server can't be guaranteed to be acceptable.
-  We recommend that the SQL Server database is managed and maintained by a database administrator (DBA).
+  We recommend that the network latency between the SQL Server and Men&Mice Central remains **below 5 milliseconds**. Exceeding this threshold might lead to performance issues.
+
+  We recommend to have a dedicated database administrator (DBA) in charge of managing and maintaining the SQL Server database.
 
 Setting up the Database
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Micetro requires that a blank database is created on the database server, with the collation SQL_Latin1_General_CP1_CS_AS, and a login (Windows or SQL server authenticated) that has db_owner access to that database and an effective default schema of mmCentral.
+Micetro requires that you create a new database on the database server. The database should use the ``SQL_Latin1_General_CP1_CS_AS`` collation. Also, make sure to have a login (either Windows or SQL server authenticated) with db_owner access to this database and an effective default schema of mmCentral.
 
-The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ script is a suggestion for the database and database server setup. Please note that this script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only run appropriate parts of it.
-
-Before you run the script please go through the script and change the necessary entries accordingly. This includes path strings (default C:/Data) and very important also the password, which is set by default to "1234" in the script!
+`CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ is a suggested script for the database and database server setup. This script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your database administrator and only execute the necessary parts. Be sure to adjust path strings (default C:/Data) and, very importantly, the default password, which is set to "1234" in the script.
 
 .. warning::
-  The script is preconfigured for an 8 core processor machine, i.e. as a best practice we recommend to create for each processor core one temp file. If you have only a two core machine please comment out the last 6 temp file creation commands in the script.
+  The script is preconfigured for an 8-core processor machine. As a best practice, it's recommended to create one temp file for each processor core. If you have a 2-core machine, comment out the last 6 temp file creation commands in the script.
 
 .. danger::
-  The script will, without confirmation, drop the existing database using the name "mmsuite"! Make a manual backup to avoid possible data loss.
+  Running the script will drop the existing database using the name "mmsuite" without confirmation, so consider making a manual backup to prevent data loss.
 
-Subsequently the script will create:
+After running the script, it will create:
 
-* a user "mmSuiteDBUser" with the password that you have inserted in the script.
-* an empty database with the name "mmsuite" and the following collation:
-  ``COLLATE SQL_Latin1_General_CP1_CS_AS``
+* a user "mmSuiteDBUser" with the specified password.
+* an empty database named "mmsuite" with the ``COLLATE SQL_Latin1_General_CP1_CS_AS`` collation.
 
-.. note::
-  For further details take a look at the ``CreateDatabase.sql`` script.
 
-Configuring the connection parameters
-
-.. warning::
-  If you're configuring MS SQL on a dedicated server, make sure to `enable the TCP/IP protocol with the SQL Configuration Manager <https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol?redirectedfrom=MSDN&view=sql-server-ver15>`_.
-
+Configuring Connection Parameters
+"""""""""""""""""""""""""""""""""
 .. _central-mssql-windows:
 
-.. warning::
-  An ODBC driver will need to be `installed on the Central server to be able to use Microsoft SQL Server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
-  
-Men&Mice Central running on Windows
-"""""""""""""""""""""""""""""""""""
-
 .. note::
-  To use Windows Authentication with Micetro and Microsoft SQL Server, make sure Men&Mice Central is running under an Active Directory service account that is a member of the local administrators group.
+   To improve your compatibility with Microsoft SQL Server, you need to `install ODBC driver version 17 on the Central server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_. Please note that ODBC driver version 18 is not currently supported.
 
-The ``preferences.cfg`` file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
+For Men&Mice Central on Windows
+********************************
 
-The ``preferences.cfg`` file for normal user/password authentication should look like:
+For Men&Mice Central on Windows, you have two authentication methods to choose from:
 
-.. code-block::
+1. **Windows Authentication**:
+   
+   Ensure that Men&Mice Central runs under an Active Directory service account that is a member of the local administrators group.
 
-  <password value="plaintext:PASSWORD"/>
-  <database value="MSSQL"/>
-  <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g. SQLEXPRESS>@,<name of database, e.g. micetro"/>
-  <databaseusername value="mmSuiteDBUser"/>
-  <databasepassword value="plaintext:DBPASSWORD"/>
+   Here's an example of how the ``preferences.cfg`` file should look like for the Windows Authentication method. Note that the "databaseusername" tag must be present and the "value" attribute must be set to an empty string.
 
-The ``plaintext:`` directive in the password inputs allows you to enter the passwords in plaintext, which Central will automatically encrypt and replace with the hash during first startup.
+   .. code-block::
 
-An example ``preferences.cfg`` file for the Windows Authentication method should look like (``databaseusername`` tag must be present and the value attribute must be set to empty string):
+     <password value="the fingerprint hash"/>
+     <database value="MSSQL"/>
+     <databaseserver value="<name or ip of the SQL server>\<instance name, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite"/>
+     <databaseusername value=""/>
 
-.. code-block::
+2. **Normal User/Password Authentication**:
 
-  <password value="the fingerprint hash"/>
-  <database value="MSSQL"/>
-  <databaseserver value="<name or ip of the SQL server>\<name of instance, e.g. SQLEXPRESS>@,<name of database, e.g. mmsuite"/>
-  <databaseusername value=""/>
+   For this method, you'll need to configure the ``preferences.cfg`` file as follows:
 
-Restart Central and verify it’s running. If the database connection fails, the service will fail to start with the appropriate error message.
+   .. code-block::
 
-Men&Mice Central running on Linux
-"""""""""""""""""""""""""""""""""""
+     <password value="the fingerprint hash"/>
+     <database value="MSSQL"/>
+     <databaseserver value="<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro"/>
+     <databaseusername value="mmSuiteDBUser"/>
+     <databasepassword value="plaintext:DBPASSWORD"/>
+
+   With this approach, you can use a dedicated SQL Server user for authentication. The ``plaintext:`` prefix in the database password input allows you to enter the password in plaintext. Men&Mice Central will automatically encrypt and replace them with the hash during the initial startup.
 
 
-
-Navigate to the data directory of the Men&Mice Central, usually located in ``/var/mmsuite/mmcentral``.
-
-Edit the ``preferences.cfg`` file with in that directory with the following:
+For Men&Mice Central on Linux
+******************************
+To configure Men&Mice Central on Linux, navigate to the data directory (usually located at ``/var/mmsuite/mmcentral``) and edit the ``preferences.cfg`` file with in that directory as follows:
 
 .. code-block::
 
@@ -93,20 +83,18 @@ Edit the ``preferences.cfg`` file with in that directory with the following:
   <DatabasePassword value="plaintext:<your password here>" />
 
 .. note::
-  If the ``DatabasePassword`` value is prefixed by ``plaintext:``, it will be replaced by Men&Mice Central for a password hash during start up.
+  If the ``DatabasePassword`` value is prefixed by ``plaintext:``, Men&Mice Central will replace it with a password hash during startup.
 
-Connecting to the MS SQL database
+Connecting to the MS SQL Database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Restarting the Men&Mice Central service with the new preferences file should connect the Men&Mice Central to your freshly created database. The Men&Mice Central creates the database schema (tables...) during the first connection.
+After configuring your preferences, restart the Men&Mice Central service. This should connect the Men&Mice Central to your freshly created database. The database schema (tables, etc.) will be created during the first connection.
 
-Since the database was freshly created you can now follow the normal installation procedure.
-
-Restart Central and verify it’s running:
+Once your database is set up, you can proceed with the normal installation procedure. Be sure to restart Men&Mice Central and verify it’s running smoothly:
 
 .. code-block:: bash
 
   systemctl restart mmcentral
   systemctl status mmcentral
 
-If the database connection fails, the service will fail to start with the appropriate error message.
+In the event of any database connection problems, the service will fail to start. These issues will be logged in the Central stratup log, located within the Central data directory at either /var/mmsuite/mmcentral/logs or C:\ProgramData\Men and Mice\Central\logs.

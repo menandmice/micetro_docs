@@ -11,6 +11,9 @@ Micetro Reference Articles
   :maxdepth: 1
 
   permissions
+  cloud_minimum_permissions
+  aws_multi_account
+  configure_azure_dns
   ip_count
   free_trial_best_practices
   free_trial_checklist

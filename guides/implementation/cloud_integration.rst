@@ -1,53 +1,127 @@
 .. meta::
-   :description: Micetro native integration with cloud based DNS services, IP address related data management for Azure and AWS
+   :description: Micetro native integration with cloud-based DNS services, IP address-related data management for Azure and AWS
    :keywords: Micetro by Men&Mice, multicloud, multicloud integration
 
 .. _cloud-integration:
 
-Overview
-========
+Setting UP Cloud Integrations
+==============================
 
-Micetro now can integrate natively with cloud based DNS services as well as manage IP address related data for Azure and AWS, including virtual networks and subnets that exist in cloud accounts.
+Prerequisites
+-------------
+For IP Address Management (IPAM), Micetro connects with the cloud service through Men&Mice Central, and for DNS management, the Men&Mice DNS controller is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
 
-In previous versions to version 8.2, only Azure DNS was natively supported and Amazon Route 53 was supported through the Men&Mice Generic DNS Controller, but as of 8.2 all cloud services are natively supported and all are easily added to Micetro as cloud instances. In version 8.3 partial support for Akamai Fast DNS was added. In version 9.2 support for managing multiple AWS cloud accounts using the same credentials was added.
+1. **DNS Controller Installation and Setup**:
 
-Supported Cloud Services
-------------------------
+   * Ensure that the DNS controller is installed on the machine where Men&Mice Central is running.
+   * For instructions on installing DNS controllers, see :ref:`install-controllers`.
 
-.. important::
-  To be able to connect and use cloud services, the DNS Server Controller must be installed on the same machine that is running Men&Mice Central. See :ref:`install-dns-controllers`.
+2. **Network Connectivity**:
 
-.. csv-table::
-  :header: "Cloud service", "DNS", "IPAM"
-  :widths: 10, 30, 30
+   * Verify that the machine running Men&Mice Central can establish a connection to the specific cloud instance.
+   * The connection should be established on port 443/TCP. This is a specific network port used for secure communication.
+   * For detailed networking requirements, see :ref:`firewall-ports`.
 
-  "Akamai",	"Yes (Akamai Fast DNS)", "N/A"
-  "Azure", "Yes (Azure DNS [1]_)", "Yes"
-  "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
-  "OpenStack", "No", "Yes"
-  "NS1", "Yes", "N/A"
-  "Dyn", "Yes",	"N/A"
 
-.. [1] see :ref:`configure-azure-dns`
+If you intend to add multiple AWS cloud accounts using a single set of credentials, see:ref:`aws-multi-account`.
 
-DNS
----
+Adding Cloud Services
+----------------------
 
-The use of a cloud DNS service in Micetro is transparent to the user. Adding DNS zones, DNS records, or modifying the two is done in the same way as with other DNS servers in Micetro.  Currently only primary zones can be created on cloud DNS services.
+You must have permission to administer DNS to add a new service to Micetro.
 
-IPAM
-----
+**To add a cloud service**:
 
-Configure Cloud Integration
----------------------------
+1.	On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
+2.	Select :guilabel:`Add Service`.
+3.	Select the cloud provider you want to use, fill in the required information, and select :guilabel:`Add`.
 
-To start using the available cloud services, they need to be added and configured through the Men&Mice Management Console.
+   .. image:: ../../images/add-servive-dialog.png
+     :width: 50%
 
-For detailed instructions on how to configure Men&Mice Cloud integration, see :ref:`configuring-cloud`.
+4. The DNS service and any subnets defined will be displayed under DNS Services and IP Ranges, respectively.
 
-Using Cloud Integration
+Akamai Fast DNS
+^^^^^^^^^^^^^^^
+
+Fill in the fields required to connect to Akamai Fast DNS:
+
+.. image:: ../../images/add-edge-dns.png
+   :width: 50%
+
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for Micetro, see https://developer.akamai.com/introduction/Prov_Creds.html
+
+.. warning:: 
+  Akamai OPEN APIs are time sensitive! Ensure that the system your client runs on is synchronized to a Stratum 2 or better time source.
+
+.. danger::
+  If the time on the server running the DNS Remote differs significantly from Coordinated Universal Time, authentication will fail preventing access/updating of zones through Micetro.
+
+.. _connect-azure:
+
+Azure DNS
+^^^^^^^^^
+Fill in the  fields required to connect to Azure:
+
+.. image:: ../../images/add-azure-dns.png
+   :width: 50%
+
+* For information about how to configure Azure DNS, see :ref:`configure-azure-dns`.
+
+.. _connect-aws:
+
+Amazon Web Services
+^^^^^^^^^^^^^^^^^^^
+Fill in the fields required to connect to AWS:
+
+.. image:: ../../images/add-aws.png
+   :width: 50%
+
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see: https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
+
+* For information about how to add multiple AWS cloud accounts using single credentials, see: :ref:`aws-multi-account`.
+* For information about the minimum permissions required for adding AWS accounts, see :ref:`cloud-minimum-permissions`.
+
+
+.. _connect-ns1:
+
+NS1
+^^^
+
+Fill in the fields required to connect to NS1:
+
+.. image:: ../../images/add-ns1.png
+   :width: 50%
+
+*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see https://ns1.com/knowledgebase/creating-and-managing-api-keys.
+
+.. _connect-dyn:
+
+
+Editing Cloud Services
 -----------------------
 
-Using the available cloud services in Micetro is as easy as using DNS Zones, records, or subnets as before.
+**To edit the properties of a cloud service**:
 
-For detailed instructions on how to use Men&Mice Cloud integration, see :ref:`using-cloud`.
+1.	In the **Service Management** area, locate the service you want to edit.
+2.	Double-click the service or select it, and then select :guilabel:`Edit service` on the :guilabel:`Action` menu.
+3.	Make the necessary changes and select :guilabel:`Confirm`.
+
+Removing Cloud Services
+------------------------
+.. warning::
+  By removing the cloud service, the associated DNS service and the corresponding zones will be removed. Additionally, any subnets and cloud networks will also be removed.
+
+**To remove a cloud service**:
+
+1.	In the **Service Management** area, select the service you want to remove.
+2.	On the :guilabel:`Action` menu, select :guilabel:`Remove DNS service`.
+
+
+Removing Cloud Networks
+------------------------
+
+**To remove a cloud network**:
+
+1. On the **IPAM** page, select the specific cloud network.
+2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`.

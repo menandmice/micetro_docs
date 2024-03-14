@@ -1,7 +1,7 @@
 /*
 
 This section is the Men and Mice recommended setup of the database instance. If your organization has different
-policies then we recommend having your DBA setup the instance according to your polices and skipping to
+policies, we recommend having your DBA set the instance according to your policies and skipping to
 the create database part below.
 
 */
@@ -113,14 +113,14 @@ Here starts the database creation and configuration for the Men and Mice databas
 -- check instance default collation settings
 select convert(sysname, serverproperty('collation'))
 /*
-MM requires case sensitive and accent sensitive collation - We recomend case sensitive and accent sensitive wersion of default collation.
+MM requires case-sensitive and accent-sensitive collation - We recommend case-sensitive and accent-sensitive versions of default collation.
 select the correct collation name :select replace( replace(convert(sysname, serverproperty('collation')), '_CI_', '_CS_'), '_AI', '_AS')
 The collation can be set at database level later in this script (Se CREATE DATABASE command)
 */
 
 /*
 Create the database instance
-	If you have preference to where the data files should be then you can change this script
+	If you have a preference for where the data files should be, you can change this script
 	(you will have to make sure that the path entered exists)
 */
 
@@ -136,8 +136,8 @@ end
 GO
 
 /*
-	This create statement is intended for small scale database. For larger database setups (> tens of GBs) then you must
-	consult with your database administrators, and have them contact Men and Mice support team for additional information.
+	This create statement is intended for small-scale databases. For larger database setups (> tens of GBs) you must
+	consult with your database administrators, and have them contact Men&Mice support team for additional information.
 */
 CREATE DATABASE [mmsuite] ON  PRIMARY
 (
@@ -146,7 +146,7 @@ NAME = N'mmsuite', FILENAME = N'C:\Data\mmDatabase\mmsuite.mdf' , SIZE = 20480KB
 	( NAME = N'mmsuite_data', FILENAME = N'C:\Data\mmDatabase\mmsuite_data.ndf' , SIZE = 20480KB , MAXSIZE = 200GB, FILEGROWTH = 1024KB )
  LOG ON
 	( NAME = N'mmsuite_log', FILENAME = N'C:\Data\mmDatabase\mmsuiteLog.ldf' , SIZE = 20480KB , MAXSIZE = 20GB , FILEGROWTH = 1024KB)
- COLLATE SQL_Latin1_General_CP1_CS_AS	-- CI is required so chosing the default with CS_AS ending (case sensitive and Accent sensitive)
+ COLLATE SQL_Latin1_General_CP1_CS_AS	-- CI is required so choosing the default with CS_AS ending (case sensitive and Accent sensitive)
 GO
 EXEC dbo.sp_dbcmptlevel @dbname=N'mmsuite', @new_cmptlevel=100 /*ms*/
 GO
@@ -158,7 +158,7 @@ end
 GO
 
 /*
-	Database setings
+	Database settings
 */
 ALTER DATABASE [mmsuite] SET ANSI_NULL_DEFAULT OFF
 GO
@@ -228,10 +228,10 @@ ALTER DATABASE [mmsuite] SET PAGE_VERIFY CHECKSUM
 GO
 
 /*
-	Creates the login for the mmCentral service - this is a MSSQL authenticated login so the server needs
+	Creates the login for the mmCentral service - this is an MSSQL authenticated login so the server needs
 	to be set to allow such. You can either change the password in this segment or change the password for
-	this user in the database later. DO NOT use the default password given in this file. Experation
-	policy is set to off as this is a service not a user account.
+	this user in the database later. DO NOT use the default password given in this file. Expiration
+	policy is set to off as this is a service, not a user account.
 
 	If you are using Windows integrated authentication then you need to accociate the DBUser (on the mmsuite
 	(defined later))with the Windows user running mmCentral instead of the mmSuiteDBUser login.
@@ -274,11 +274,11 @@ EXEC sp_addrolemember db_datareader, mmSuiteRole
 
 /*
 Authorization, the mmCentral service handles updates of the database when a new version of the system is started for the first time
-To make that possible the following needs to be granted. If youre database administration policy does not agree with granting these
+To make that possible the following needs to be granted. If your database administration policy does not agree with granting these
 rights permanently, then please contact Men and Mice support for alternatives.
 
-The mmCentral service runs upgrade scripts on start up, - if needed. This only occurs when starting new version, so ddladmin only
-needs to be given to the role when the system is being run for the first time or is being upgrated. ddladmin can therfore be revoked
+The mmCentral service runs upgrade scripts on start-up, - if needed. This only occurs when starting a new version, so ddladmin only
+needs to be given to the role when the system is being run for the first time or is being upgraded. ddladmin can therefore be revoked
 when the system has been started and then given to the role only on upgrades.
 Another alternative is to remove ddladmin rights and get an upgrade script from Men and Mice that has to be run by the DBA.
 The same considerations apply to Grant Create Table.
@@ -299,7 +299,7 @@ EXEC sp_addrolemember mmSuiteRole, mmSuiteUser
 GO
 
 /*
-Create the default schema for the new user. It is important that the user runing mmCentral has the schema as default schema.
+Create the default schema for the new user. It is important that the user running mmCentral has the schema as the default schema.
 */
 CREATE SCHEMA mmCentral AUTHORIZATION mmSuiteUser
 GO
