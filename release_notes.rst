@@ -39,12 +39,11 @@ New Features
 
    * Creation, deletion, or modification of DNS records.
    * Edits to custom properties.
-   * All create history events.
 
 Improvements
 ^^^^^^^^^^^^
 * **High Availability (HA) Support for mmWS**: Session handling has been moved from mmWS to the Central server. This allows customers to configure multiple mmWS instances for redundancy, region, or load balancing purposes.
-* **Multifactor Authentication**: Setup and configuration of multifactor authentication is now much simpler than before. Users can navigate to :menuselection:`Admin --> Configuration --> Authentication` to configure integration with Okta by specifying parameters such as client ID, redirect URI, and scope). Additionally, a built-in test feature allows users to test if that configuration is correct.
+* **Multifactor Authentication**: Setup and configuration of multifactor authentication is now much simpler than before. Users can navigate to :menuselection:`Admin --> Configuration --> Authentication` to configure integration with Okta and Microsoft Entra ID (formerly Azure AD). Additionally, a built-in test feature allows users to test if that configuration is correct.
 * **New Remote for BIND**: Users can now manage Response Policy Zones (RPZ) and dynamic zones.
 * **Enhanced License Key Handling**: Handling of license keys has been changed to include subscription keys and allow for longer expiration times.
 
