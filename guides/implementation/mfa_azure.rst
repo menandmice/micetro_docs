@@ -87,7 +87,7 @@ Configuring Central Server
       
       * Python is installed in the "Default" environment.
    
-   2. **Confirm that there is a directory called "extensions"** in the Central data directory, and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created by the Central installer.
+   2. **Confirm that there is a directory called "extensions"** in the Central data directory, and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created during the installation of Micetro Central.
 
 Configuring Entra ID (Azure AD) Authentication in the Micetro Web Interface
 ----------------------------------------------------------------------------
@@ -140,10 +140,12 @@ Micetro ensures synchronization of several key properties including email, full 
       :align: center
 
 
-Manual Configuration
----------------------
+Manual Configuration via a Config File
+--------------------------------------
 Instead of using the Micetro Web Interface (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Micetro Central's data directory. At start up the Micetro Central program will search the data directory for a file named `ext_auth_conf.json`.
 
 The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
+
+For more information on configuring external authentication manually, see the documentation for version 10.3. You can find detailed instructions in the section titled: :ref:`Multi-factor-Authentication`.
 
 
