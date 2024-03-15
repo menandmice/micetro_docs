@@ -30,7 +30,7 @@ You can view the history of a specific object or all objects.
 
 1. Select the object you want to view.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`View history`. You can also select this option on the **Row menu (...)**.
+2. On the :guilabel:`Action` menu, select :guilabel:`View history`. You can also select this option on the Row :guilabel:`...` menu.
 
 **To filter data in the Change History window:**
 
@@ -50,7 +50,7 @@ You have the option to revert changes to DNS records and custom properties for a
 
 **To undo changes**:
 
-1. Locate the specific action in the object history window that you want to undo, and click on the row menu (...) associated with it.
+1. Locate the specific action in the object history window that you want to undo, and click on the Row :guilabel:`...` menu associated with it.
 
 2. Select :guilabel:`Undo`.
 
