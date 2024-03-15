@@ -12,9 +12,9 @@ LDAP user authentication allows you to configure user authentication against an 
 Installation on Centos Linux
 ----------------------------
 
-1. Download the `Python script <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_ldap.py>`_ and `signature file <https://github.com/menandmice/micetro_docs/blob/latest/scripts/inmm_ldap.signature>`_ from GitHub.
+1. Confirm that here is directory called “extensions” in the Central data directory, and that it contains a Python script named mm_auth_cb.py and an accompanying signature file. This Python script handles the authentication callback from the external provider. The directory and files are created during installation of Micetro Central.
 
-2. To use LDAP authentication and authorization, start by installing ``mm_ldap.py`` on the machine where the Men&Mice Central service is run and install the Python extension used by Central when connecting to an LDAP directory:
+2. To use LDAP authentication and authorization, start by installing ``mm_ldap.py`` on the machine where the Micetro Central service is run and install the Python extension used by Central when connecting to an LDAP directory:
 
 .. code-block:: bash
 
@@ -36,7 +36,7 @@ A signature file for the python extension will also have to be installed and pla
 Configuring LDAP
 ----------------
 
-LDAP configurations are stored in a JSON config file that should be stored in the Men&Mice Central service root directory:
+LDAP configurations are stored in a JSON config file that should be stored in the Micetro Central service root directory:
 
 .. code-block:: bash
 
@@ -77,9 +77,9 @@ The configuration file has the following schema:
   :widths: 10, 70, 10, 5, 5
 
   "uri","URI for LDAP service.", "ldaps://example.com:636", "Yes", "None"
-  "reader_dn","DN or login name for a user that has permissions to search in the directory. Not needed when all users have permissions to search (for example AD LDAP service).",	"user@example.com",	"No", "None"
+  "reader_dn","DN or login name for a user that has permission to search in the directory. Not needed when all users have permissions to search (for example AD LDAP service).",	"user@example.com",	"No", "None"
   "reader_password", "Password for reader_dn user.",, "No", "None"
-  "skip_cert_verification", "If true, then certificates will not be verified. Set to true when using self signed certificates.",, "No", "false"
+  "skip_cert_verification", "If true, then certificates will not be verified. Set to true when using self-signed certificates.",, "No", "false"
   "ca_cert_file",	"Path of file containing all trusted CA certificates.",, "No", "None"
   "disable_referrals", "Skip referrals when doing LDAP queries. Should be set to true for AD LDAP services.", "No", "true"
   "user_start_tls", "Use TLS when connecting to LDAP service. This is still experimental. Please use LDAPS instead.",, "No", "false"

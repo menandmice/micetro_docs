@@ -36,12 +36,12 @@ You have the option to revert changes to DNS records and custom properties for a
 
 **To undo changes**:
 
-1. Locate the specific action in the object history log that you want to undo and click on the row menu (...) associated with it.
+1. Locate the specific action in the object history log that you want to undo and click on the Row :guilabel:`...` menu associated with it.
 
 2. Select :guilabel:`Undo`.
 
      .. image:: ../../images/global-object-history-undo.png
       :width: 70%
 
-3. Enter a comment for the action, and select :gulabel:`Save` to confirm the undo action and revert the selected change.
+3. Enter a comment for the action, and select :guilabel:`Save` to confirm the undo action and revert the selected change.
 

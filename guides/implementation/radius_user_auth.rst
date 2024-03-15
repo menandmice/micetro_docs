@@ -8,22 +8,20 @@
 
 RADIUS User Authentication
 ==========================
-Micetro has the ability to authenticate using an external RADIUS server. This is especially useful in large installations, as it eliminates the need for users to maintain their passwords in multiple locations. Any password rules (such as password expiry and minimum password length) that have been applied within the organization will automatically apply to Micetro.
+Micetro can authenticate using an external RADIUS server. This is especially useful in large installations, as it eliminates the need for users to maintain their passwords in multiple locations. Any password rules (such as password expiry and minimum password length) that have been applied within the organization will automatically apply to Micetro.
 
 RADIUS User Authentication vs. Local User Authentication
 --------------------------------------------------------
 Even with RADIUS user authentication enabled, users must still be created and assigned privileges within Micetro. The only difference between RADIUS and local user authentication lies in the authentication process: when RADIUS user authentication is enabled, users are authenticated via the RADIUS user authentication system before accessing Micetro. With RADIUS user authentication, user passwords are not stored within Micetro.
 
 .. note::
-  Only one authentication method can be assigned per user, but different users can use different authentication methods. This allows some users to log in using RADIUS user authentication while others utilize local user authentication..
+  Only one authentication method can be assigned per user, but different users can use different authentication methods. This allows some users to log in using RADIUS user authentication while others utilize local user authentication.
 
 Enabling RADIUS User Authentication
 -----------------------------------
-To enable RADIUS authentication, you need to configure specific properties in the Men&Mice Central configuration file ``preferences.cfg``. Locate this file in the data folder in the Men&Mice Central data directory:
+To enable RADIUS authentication, you need to configure specific properties in the Micetro Central configuration file ``preferences.cfg``. Locate this file in the data folder in the Men&Mice Central data directory:
 
 * Windows: C:\\Program Files\\Men&Mice\\Central\\data
-
-* Mac OS X: ``/var/mmsuite/mmcentral``
 
 * Others: Set during installation, typically ``/var/mmsuite/mmcentral`` or ``/chroot/var/mmsuite/mmcentral``, where ``/chroot`` is the chroot jail location for named.
 
@@ -46,15 +44,9 @@ Example configuration:
   <RADIUSSharedSecret value="MyBigSecret"/>
   <RADIUSAuthentication value="1"/>
 
-After editing the file, restart Men&Mice Central.
+After editing the file, restart Micetro Central.
 
-* Windows: Use :menuselection:`Administration Tools --> Services` to restart Men&Mice Central.
-
-* Mac OS X: Execute the following shell command in Terminal (/Applications/Utilities/Terminal):
-
-  .. code-block:: bash
-
-    sudo /Library/StartupItems/mmSuite/mmcentral restart
+* Windows: Use :menuselection:`Administration Tools --> Services` to restart Micetro Central.
 
 * Others: Execute the ``mmcentral`` init script with the 'restart' argument.
 

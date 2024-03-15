@@ -69,7 +69,7 @@ Mapping groups from Okta
     .. image:: ../../images/oicd-token-claim.png
         :width: 60%
   
-Configure Central Server
+Configuring Central Server
 --------------------------
    1. Install Python and dependent libraries and packages on the Central server.
    
@@ -80,10 +80,10 @@ Configure Central Server
       
       * Use Python version 3.7 or newer is installed in the "Default" environment.
    
-   2. **Confirm that there is a directory called "extensions"** in the Central data directory and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created by the Central installer.
+   2. **Confirm that there is a directory called "extensions"** in the Central data directory and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created during the installation of Micetro Central.
       
-Configuring Okta Authentication in Micetro
-------------------------------------------
+Configuring Okta Authentication in the Micetro Web Interface
+-------------------------------------------------------------
 After completing the setup in Okta, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Okta to ensure it is working properly.
 
 **To configure and test the authentication**:
@@ -99,7 +99,7 @@ After completing the setup in Okta, the next step is to configure authentication
  
     * **Domain**: The domain of your Okta organization. 
     * **Server ID**: The unique identifier for your Okta authorization server.
-    * **Client ID**:  A public identifier for your application, generated when you register your application with Okta.
+    * **Client ID**: A public identifier for your application, generated when you register your application with Okta.
     * **Client secret**: A confidential string known only to the application and the authorization server. It's used to authenticate the identity of the application to Okta when requesting tokens. The Client Secret should be kept secure and not shared publicly.
     * **Redirect URI**: This should match the redirect UI configured in Okta.
     * **Scope** (optional): Scopes define the level of access that the client application is requesting from the user during the authentication process. 
@@ -134,6 +134,9 @@ Micetro ensures synchronization of several key properties including email, full 
       :width: 45%
       :align: center
 
-Manual Configuration
---------------------
-Instead of using the Micetro Web Interface (see above), it is possible the configure external authentication manually by creating a JSON configuration file in  Central’s data directory. The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured.
+Manual Configuration via a Config File
+--------------------------------------
+Instead of using the Micetro Web Interface (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Central's data directory. 
+The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured.
+
+For more information on configuring external authentication manually, see the documentation for version 10.3. You can find detailed instructions in the section titled: :ref:`Multi-factor-Authentication`.
