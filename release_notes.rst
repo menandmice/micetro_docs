@@ -74,7 +74,7 @@ Deprecation Announcements
 * Support for Microsoft SQL Server 2012 and older versions is deprecated as these databases reached end of support on July 12, 2022. For more information on Microsoft SQL Server roadmap see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
 * Support for Ubuntu 14.04 LTS is deprecated as this version reached end of support in Q1 2024 according to the `Ubuntu release cycle <https://ubuntu.com/about/release-cycle>`_.
 * PostgreSQL 11 is also deprecated as this database was out of support November 9 2023. For more information on the PostgreSQL roadmap see `here <https://www.postgresql.org/support/versioning/>`_
-* Python 3.7 has been depreated in Micetro due to its end of life since June 2023, according to the `python release cycle <https://devguide.python.org/versions/>`_. All Python scripts, including those used in scheduled scripts or MFA (multifactor authentication), will need to be updated accordingly.
+* Python 3.7 has been deprecated in Micetro due to its end of life since June 2023, according to the `python release cycle <https://devguide.python.org/versions/>`_. All Python scripts, including those used in scheduled scripts or MFA (multifactor authentication), will need to be updated accordingly.
 
 .. _10.5.7-release:
 
