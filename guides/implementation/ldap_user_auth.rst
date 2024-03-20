@@ -12,7 +12,7 @@ LDAP user authentication allows you to configure user authentication against an 
 Installation on Centos Linux
 ----------------------------
 
-1. Confirm that here is directory called “extensions” in the Central data directory, and that it contains a Python script named mm_auth_cb.py and an accompanying signature file. This Python script handles the authentication callback from the external provider. The directory and files are created during installation of Micetro Central.
+1. Confirm that here is directory called “extensions” in the Central data directory, and that it contains a Python script named mm_auth_cb.py and an accompanying signature file. This Python script handles the authentication callback from the external provider. The directory and files are created during the installation of Micetro Central.
 
 2. To use LDAP authentication and authorization, start by installing ``mm_ldap.py`` on the machine where the Micetro Central service is run and install the Python extension used by Central when connecting to an LDAP directory:
 
@@ -132,4 +132,4 @@ After completing the setup of the server, you need to enable the LDAP authentica
 Using LDAP with Central Running on Windows
 ------------------------------------------
 
-To use LDAP with a Men&Mice Central server running on Windows, Python must be installed for all users. See :ref:`central-python-ldap`.
+To use LDAP with a Micetro Central server running on Windows, Python must be installed for all users. See :ref:`central-python-ldap`.

@@ -6,8 +6,8 @@ Jump to: :ref:`Multi-factor-Authentication`
 
 .. _external-auth:
 
-External Authentication
-=======================
+External Authentication - Management Console (obsolete)
+=======================================================
 
 .. note::
   Unless indicated otherwise, instructions here are to be performed in the Management Console.
@@ -140,8 +140,7 @@ Configuring Users and Access Privileges
 You do not have to create users in Micetro when the Group Level AD authentication is used. Instead, user access is controlled by the group membership of the user in the AD.
 
 RADIUS User Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+---------------------------
 Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (expiry, minimum password length, etc.) applied within the organization automatically apply to Micetro.
 
 RADIUS User Authentication vs. Local User Authentication
@@ -211,9 +210,14 @@ To configure a user to use AD user authentication, do the following:
   :width: 60%
   :align: center
 
-Logging into Micetro
-^^^^^^^^^^^^^^^^^^^^^
+Logging into Micetro Using RADIUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Logging in to Micetro will not change when RADIUS user authentication is used. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro.
 
+.. _Multi-factor-Authentication:
+
+Single Sign-On (SSO) and Multi-Factor Authentication (MFA)
+----------------------------------------------------------
 Micetro has integrated with both Azure Active Directory and Okta to allow integration with multi-factor authentication and SSO.  
 
 Once configured the front page of Micetro will present buttons to redirect the user to the provider’s URL for authentication.  
@@ -224,12 +228,6 @@ Once configured the front page of Micetro will present buttons to redirect the u
   configure_ldap
   api_auth
   
-.. _Multi-factor-Authentication:
-
-
-Single Sign-On (SSO) and Multi-Factor Authentication (MFA)
-----------------------------------------------------------
-
 Integrating with Identity Provider's SSO/MFA
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

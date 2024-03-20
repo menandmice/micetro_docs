@@ -1,6 +1,6 @@
 .. meta::
    :description: Product documentation for Micetro
-   :keywords: Micetro, Micetro, Men&Mice, documentation, user guide, admin guide
+   :keywords: Micetro, documentation, user guide, admin guide, installation guide
 
 Micetro 11.0
 #############

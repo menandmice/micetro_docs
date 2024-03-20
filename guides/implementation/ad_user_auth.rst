@@ -30,7 +30,7 @@ To enable user login in Micetro, users must exist in the Micetro user database. 
 
 1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Users` in the filtering sidebar.
 
-2. To add a new user, click :guilabel:`Create`. Fill in the details, selecting :guilabel:`Active Directory` from the **Authentication type** drop-down list. For more information about how to create users, see :ref:`acl-users`.(If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method will be available.)
+2. To add a new user, click :guilabel:`Create`. Fill in the details, selecting :guilabel:`Active Directory` from the **Authentication type** drop-down list. For more information about how to create users, see :ref:`acl-users`.(If Micetro Central is not running on a Windows machine, only the Micetro authentication method will be available.)
 
 3. To modify an existing user, double-click the user's name to display the **Edit Properties** dialog box and select :guilabel:`Active Directory` from the **Authentication type** drop-down list 
 
@@ -97,7 +97,7 @@ When using AD Group level authentication, you need to specify the Micetro groups
 4. Click :guilabel:`Save`.
 
 .. note::
-  Group Level Active Directory user authentication is only supported when Men&Mice Central is running on a Windows machine that is a member of an Active Directory domain or forest.
+  Group Level Active Directory user authentication is only supported when Micetro Central is running on a Windows machine that is a member of an Active Directory domain or forest.
 
 Configuring Users and Access Privileges
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
