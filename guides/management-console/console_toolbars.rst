@@ -4,8 +4,8 @@
 
 .. _console-toolbars:
 
-Toolbars
---------
+Toolbars (Management Console, obsolete)
+---------------------------------------
 
 .. |create| image:: ../../images/console-create.png
 .. |delete| image:: ../../images/console-delete.png

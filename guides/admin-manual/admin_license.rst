@@ -41,7 +41,8 @@ By selecting :guilabel:`License Details` in the upper right-hand corner of the p
    :width: 65%
    :align: center
    
-   
+You can use the email link to contact our support team for any inquiries regarding your licenses. When you click the email link, it will automatically gather all active keys and usage information, compiling them into a text block that you can easily send to support for assistance.
+
 Expired Keys
 ------------
 
@@ -61,12 +62,12 @@ When logging into a system without active licenses, the system will prompt users
 3. Paste the license information into the textbox.
 
   .. image:: ../../images/import-license.png
-     :width: 90%
+    :width: 90%
 
  .. tip::
     You can directly paste the email you received from BlueCat. Micetro will automatically extract the keys from the surrounding text.
 
-3. Click :guilabel:`+Import`. All new and valid license keys will instantly activate their respective modules.
+4. Click :guilabel:`+Import`. All new and valid license keys will instantly activate their respective modules.
 
 Removing a License Key
 ----------------------

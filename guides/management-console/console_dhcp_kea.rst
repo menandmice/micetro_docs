@@ -17,7 +17,7 @@ For the preferred method of managing Kea in Micetro see :ref:`dhcp-kea`.
 Kea DHCP Server Properties
 --------------------------
 
-.. image:: ../../../images/console-kea-properties-new.png
+.. image:: ../../images/console-kea-properties-new.png
   :width: 80%
   :align: center
 

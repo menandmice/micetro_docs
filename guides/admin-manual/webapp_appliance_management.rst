@@ -1,6 +1,6 @@
 .. meta::
    :description: Managing Appliances in Micetro
-   :keywords: appliances, DNS management, DNS/DHCP appliance, BDDS appliances
+   :keywords: appliances, DNS management, DNS/DHCP appliance, MDDS appliances
 
 .. _webapp-appliance-management:
 
@@ -253,7 +253,7 @@ This command is only available for the Administrator role.
 
 Viewing Appliance History
 ---------------------------
-The :guilabel:`View history` option on the :guilabel:`Action` or the Row menu :guilabel:`...` opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see :ref:`view-change-history`.
+The :guilabel:`View history` option on the :guilabel:`Action` or the Row :guilabel:`...` menu opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see :ref:`view-change-history`.
 
 Backup and Restore
 ------------------
@@ -261,7 +261,7 @@ Micetro automatically takes a backup of your appliance's configuration every 15 
 
 When an appliance experiences a crash and becomes unusable, you can use these backups to set up a new appliance as a replacement, while maintaining the same IP address. 
 
-Micetro automatically detects the new server as uninitialized. To begin using the new server, you need to initialize it. uninitialized
+Micetro automatically detects the new server as uninitialized. To begin using the new server, you need to initialize it. 
 
 **To initialize a server**:
 
@@ -269,11 +269,10 @@ Micetro automatically detects the new server as uninitialized. To begin using th
 2. Select :guilabel:`Initialize appliance` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
    .. image:: ../../images/appliance-backup-restore-11.png
-      :width: 65%
+      :width: 75%
 
    * **Use data from Micetro**: This option allows you to initialize the server using the data saved in Micetro.
    * **Use data from the new appliance**: Use this option if you want to initialize the server with the data from the new appliance itself.
-
 |
 **See also**:
 

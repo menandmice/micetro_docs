@@ -4,8 +4,8 @@
 
 .. _console-health-bar:
 
-Health Monitoring Bar
----------------------
+Health Monitoring Bar (Management Console, obsolete)
+----------------------------------------------------
 
 Overview
 ^^^^^^^^

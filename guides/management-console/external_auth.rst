@@ -6,8 +6,8 @@ Jump to: :ref:`Multi-factor-Authentication`
 
 .. _external-auth:
 
-External Authentication
-=======================
+External Authentication (Management Console, obsolete)
+=======================================================
 
 .. note::
   Unless indicated otherwise, instructions here are to be performed in the Management Console.

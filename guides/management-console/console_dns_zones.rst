@@ -4,8 +4,8 @@
 
 .. _console-dns-zones:
 
-DNS Zones - (Management Console)
-=================================
+DNS Zones (Management Console, obsolete)
+=========================================
 
 .. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
 .. |analyze| image:: ../../images/console-analyze.png
