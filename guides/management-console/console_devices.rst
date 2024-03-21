@@ -4,8 +4,8 @@
 
 .. _devices:
 
-Devices (Management Console)
-=============================
+Devices (Management Console, obsolete)
+=======================================
 
 Overview
 --------

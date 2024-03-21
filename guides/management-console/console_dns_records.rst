@@ -4,8 +4,8 @@
 
 .. _console-dns-records:
 
-DNS resource records (Management Console)
-====================
+DNS resource records (Management Console, obsolete)
+===================================================
 
 Overview
 --------

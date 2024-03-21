@@ -4,7 +4,7 @@
 
 .. _console-dhcp-scopes:
 
-DHCP Scopes - Management Console (obsolete)
+DHCP Scopes (Management Console, obsolete)
 ============================================
 
 Overview
@@ -299,7 +299,7 @@ To create a new scope on the MS DHCP server, do the following:
 
 2. The *Scope Creation Wizard* dialog appears.
 
-.. image:: ../../../images/console-dhcp-scope-creation-wizard.png
+.. image:: ../../images/console-dhcp-scope-creation-wizard.png
   :width: 60%
   :align: center
 
@@ -598,7 +598,7 @@ Superscopes
 
 All MS Superscopes are listed in the object section under the heading :guilabel:`Superscopes`.
 
-.. image:: ../../../images/console-dhcp-superscopes.png
+.. image:: ../../images/console-dhcp-superscopes.png
   :width: 70%
   :align: center
 
@@ -906,7 +906,7 @@ Managing Split Scopes
 
 When a scope is hosted on multiple servers, the scope view lists all the servers that contain a copy of the scope. For scopes on MS servers, the line says 'Split Scope' and then lists the servers. For the ISC DHCP server, the line says 'Multiple Instances' and then lists the servers:
 
-.. image:: ../../../images/console-dhcp-split-scopes.png
+.. image:: ../../images/console-dhcp-split-scopes.png
   :width: 50%
   :align: center
 
