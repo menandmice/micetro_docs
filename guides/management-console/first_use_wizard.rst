@@ -4,8 +4,8 @@
 
 .. _first-use-wizard:
 
-First use wizard
-----------------
+First use wizard (Management Console, obsolete)
+------------------------------------------------
 
 When connecting the Management Console to a newly installed instance of Men&Mice Central, or if this is the first time logging in, you are presented with the First Use Wizard.
 

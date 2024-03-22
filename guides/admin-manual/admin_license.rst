@@ -1,90 +1,86 @@
 .. meta::
    :description: Micetro license management - adding, removing, and managing license keys
-   :keywords: DNS, IPAM, DHCP Modules, IPAM module, DNS module, Workflow module, Reporting modules, Virtual Appliances
+   :keywords: DNS, IPAM, DHCP Modules, IPAM module, DNS module, Workflow module, Reporting modules, Appliances
 
 .. _admin-license:
 
 License Management
 ==================
 
-The different functionalities of Micetro can be activated by specific license keys.
+The various functionalities of Micetro can be activated using specific license keys. There are five different keys, each corresponding to:
 
-There are five different keys, one each for:
+* DNS module
 
-* DNS
-
-* IPAM
+* IPAM module
 
   .. note::
-    The IPAM license key unlocks **both** the DHCP and IPAM functionality of Micetro.
+    The IPAM license key unlocks **both** the DHCP and IPAM functionalities of Micetro.
 
-* Men&Mice Virtual Appliances
+* Appliance module
 
 * Workflow module
 
 * Reporting module
 
-Viewing license keys
+Viewing License Keys
 --------------------
 
-Go to :menuselection:`Admin --> Configuration --> Licenses` to see information about the licenses that are currently active on your system.  Each active module has a card that shows its associated license keys. These license keys can be either active or expired.
+To view information about the licenses currently active on your system, navigate to :menuselection:`Admin --> Configuration --> Licenses`. Each active module is displayed in a card showing its associated license keys. These keys can be either active or expired.
 
 The card also displays how much of the license you have used, for example, the number of DNS zones you have used compared to the limit of the license. This information is shown in a usage bar that is located in the upper right-hand corner of the card.
 
-In addition to this, the card also shows the expiry date for the currently active license key. This information is located in the bottom right-hand corner of the card.
+Additionally, the card shows the expiry date of the active license key in the bottom right-hand corner.
 
-.. image:: ../../images/license-management.png
+.. image:: ../../images/license-management-11.png
   :width: 80%
   :align: center
+|
+By selecting :guilabel:`License Details` in the upper right-hand corner of the page, you can easily monitor license usage and any related issues. 
 
-By selecting :guilabel:`License Details`, you can quickly and easily see how much of your licenses are currently being used, as well as any issues related to your licenses. 
-
-.. image:: ../../images/license-management-summary.png
+.. image:: ../../images/license-management-summary-11.png
    :width: 65%
    :align: center
    
-   
-Expired keys
+You can use the email link to contact our support team for any inquiries regarding your licenses. When you click the email link, it will automatically gather all active keys and usage information, compiling them into a text block that you can easily send to support for assistance.
+
+Expired Keys
 ------------
 
-A notification will be shown when a license key is expired and when a license key is about to expire. This will only be shown to members in the administrators group.
+Notifications will alert administrators when a license key is expired or about to expire. Micetro provides a grace period of four months for license renewal. During this grace period, the product module will continue to function normally after the expiration date. However, after the grace period elapses, the module will cease to operate until the license is renewed.
 
 Adding a License Key
 --------------------
 
-Adding license keys for the first time
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When logging into a system without active licenses, the system will prompt users to enter new license keys via the License Management page. Additional keys can be added by pasting text containing valid license keys into the textbox at the bottom of the page.
 
-When logging into a system that has no active licenses, the system will prompt the user and indicate that not active license keys are in the system and offer the user to enter new license keys through the license management page. Additional keys can be added by pasting text containing valid license keys to the textbox at the bottom of the license management page.
+**To add new keys**:
 
 1. Navigate to :menuselection:`Admin --> Configuration --> Licenses`.
 
-2. To add new key(s), scroll down to the "Import license keys" section and paste in the license key(s).
+2. Scroll down to the **Import license keys** section.
 
-.. tip::
-  You can paste in the email you received from Men&Mice, Micetro will parse the keys from the surrounding text automatically.
+3. Paste the license information into the textbox.
 
-.. image:: ../../images/import-license.png
-  :width: 80%
-  :align: center
+  .. image:: ../../images/import-license.png
+    :width: 90%
 
-3. Click :guilabel:`+Import`.
+ .. tip::
+    You can directly paste the email you received from BlueCat. Micetro will automatically extract the keys from the surrounding text.
+
+4. Click :guilabel:`+Import`. All new and valid license keys will instantly activate their respective modules.
 
 Removing a License Key
 ----------------------
 
-A license key can be removed by clicking on the trashcan icon on the the right.
+**To remove a license key**:
 
-A confirmation dialog will display, click :guilabel:`Yes` to confirm.
+1. Click the trashcan icon next to the key.
 
-Removing expired license keys
+2. Confirm the action by clicking :guilabel:`Yes`.
+
+Removing Expired License Keys
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Old, expired license keys can be cleaned up and removed using the :guilabel:`Remove expired keys` action.
+You can clean up licenses and remove expired keys by using the :guilabel:`Remove expired keys` action in the upper right-hand corner.
 
 .. _export-license:
-
-Export license data
--------------------
-
-Active license keys and usage data can be exported from Micetro using the :guilabel:`Export license data` action. This will compile the active keys and usage information into a single text block that can be copied.

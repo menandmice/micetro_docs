@@ -4,8 +4,8 @@
 
 .. _console-menus:
 
-Menu Bars
----------
+Menu Bars (Management Console, obsolete)
+----------------------------------------
 
 The *Menu Bar* in the Men&Mice Management Console provides access to nearly all of the program's functionality.
 
