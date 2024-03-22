@@ -12,7 +12,7 @@ Once you have configured the initial network settings for your appliance and add
 
 Appliances are accessed and managed in :guilabel:`Service Management` on the :guilabel:`Admin` page. 
 
-.. image:: ../../images/appliances-10.6.png
+.. image:: ../../images/appliances-11.0.png
    :width: 80%
 
 Adding a New Appliance to Micetro
