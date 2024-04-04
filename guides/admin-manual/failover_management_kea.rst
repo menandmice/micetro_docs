@@ -31,7 +31,7 @@ The High Availability hooks library must be present on the file system **before*
 .. tip::
   * For RedHat-like systems (such as RHEL, CentOS, SUSE, Fedora), the hook library is typically located at ``/usr/lib/x86_64-linux-gnu/kea/hooks/libdhcp_ha.so``. 
   * For Debian-based systems (such as Ubuntu, Linux Mint, Raspbian), the hook library is usually located at ``/usr/lib64/kea/hooks/libdhcp_ha.so``.
-  * You can customize the library's location by specifying the path using the ``keaHooksLocation`` in the preference file for the DHCP Service Controller.
+  * You can customize the library's location by specifying the path using the ``keaHooksLocation`` in the preference file for the DHCP agent.
 
 Two modes of failover operation are supported:
 
@@ -120,7 +120,7 @@ Adding a High Availability-enabled Kea DHCP Server to Micetro
 If the Kea high availability environment is set up correctly, you can add the primary Kea DHCP server to Micetro, much like any other DHCP server.
 
 .. important::
-  If the DHCP Server Controller is running on a machine **other** than the primary Kea DHCP server, a proxy must be defined in the *Add DHCP server* window in Micetro. In the window, enter the IP address or FQDN of the machine running the DHCP Server Controller.
+  If the DHCP agent is running on a machine **other** than the primary Kea DHCP server, a proxy must be defined in the **Add DHCP server** window in Micetro. In the window, enter the IP address or FQDN of the machine running the DHCP agent.
 
 
 Fallback Behavior and Indicators
@@ -144,13 +144,13 @@ Both Primary and Secondary/Standby Server Offline
 """""""""""""""""""""""""""""""""""""""""""""""""
 If both primary and secondary/standby servers go offline, Micetro reports the Kea DHCP service as :guilabel:`Service down`. All operations result in errors, and replication is stopped until either the primary or the secondary/standby servers become active. The first active server becomes the single source of truth, with the primary overwriting any secondary/backup when it becomes active.
 
-DHCP Server Controller Offline 
-""""""""""""""""""""""""""""""
-In the unlikely event of the DHCP Server Controller going offline, Kea High Availability information is momentarily lost. Upon the Controller's reconnection, Central attempts to reconnect to the preconfigured primary Kea DHCP server. After reconnecting, the configuration is parsed, the High Availability setup is detected, and replication between servers resumes.
+DHCP Agent Offline 
+""""""""""""""""""
+In the unlikely event of the DHCP agent going offline, Kea High Availability information is momentarily lost. Upon the agent's reconnection, Central attempts to reconnect to the preconfigured primary Kea DHCP server. After reconnecting, the configuration is parsed, the High Availability setup is detected, and replication between servers resumes.
 
 .. note::
-  * If the DHCP Server Controller goes down while using the secondary/backup Kea server (due to primary downtime), the system will **not** be able to reconnect successfully. The primary Kea server must be reestablished to a working state before the system can reconnect.
-  * If the DHCP Server Controller goes offline while the primary Kea server is down, reconnection is only possible when the primary Kea server becomes active again.
+  * If the DHCP agent goes down while using the secondary/backup Kea server (due to primary downtime), the system will **not** be able to reconnect successfully. The primary Kea server must be reestablished to a working state before the system can reconnect.
+  * If the DHCP agent goes offline while the primary Kea server is down, reconnection is only possible when the primary Kea server becomes active again.
 
 Making External Changes to Kea Servers in High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -177,7 +177,7 @@ You can retrieve failover relationships through the API using the ``GetDHCPFailo
 
 2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Kea`.
 
-3. Select the server you want to view, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu``.
+3. Select the server you want to view, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 4.	The Failover Management window will show all relationships associated with the selected server.
 
@@ -251,6 +251,6 @@ Removing Failover Relationships
 2.	Select the relevant relationship, and then select :guilabel:`Remove` on the Row :guilabel:`...` menu.
 3.	Decide whether to delete or disable the secondary scopes.
 
--OR-
+   -OR-
 
-* The API offers ``RemoveDHCPFailoverRelationships``. Just specify a reference to the Kea DHCP service, the name of the failover relationship, and the proper deconfigure action.
+   * The API offers ``RemoveDHCPFailoverRelationships``. Just specify a reference to the Kea DHCP service, the name of the failover relationship, and the proper deconfigure action.
