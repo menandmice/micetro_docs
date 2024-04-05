@@ -102,10 +102,10 @@ Below is a snippet from the ``hook-libraries`` section, showing how Micetro can 
     Configuring ``max-response-delay`` incorrectly may result in servers being unable to consistently and efficiently detect downtime between each other. This can compromise Micetro's ability to ensure accurate replication and proper operation of the servers.
 
 
-Configuring the DHCP Server Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring the DHCP Agent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``preferences.cfg`` file can be used to fine-tune the Kea High Availability setup within the DHCP Server Controller.
+The ``preferences.cfg`` file can be used to fine-tune the Kea High Availability setup within the DHCP agent.
 
 * ``keaReplicateConfig``: If set to 0, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is **1**. Example: ``<keaReplicateConfig value=”0”/>``
 
@@ -236,7 +236,7 @@ The following parameters are used for the ``AddDHCPFailoverRelationship`` comman
 
 .. note::
    * Enable failover by having two hook libraries exist on the filesystem: libdhcp_lease_cmds.so and libdhcp_ha.so. The latter implements the HA feature, and the former enables control commands necessary for HA to manage leases on remote servers. 
-   * Micetro searches for hooks in the default location (/usr/local/lib/kea/hooks/). If the hooks are elsewhere, you must specify the correct location using the keaHooksLocation preference value for the DHCP Remote Controller.
+   * Micetro searches for hooks in the default location (/usr/local/lib/kea/hooks/). If the hooks are elsewhere, you must specify the correct location using the keaHooksLocation preference value for the DHCP agent.
 
 Modifying Failover Relationships
 --------------------------------
