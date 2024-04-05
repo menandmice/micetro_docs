@@ -46,12 +46,12 @@ After adding the library, restart Kea and the Kea Control Agent.
 
 Enabling Premium Hooks
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you have access to Kea Premium Hooks, you can enhance your DHCP server's capabilities with added support for ``subnet_cmds`` and ``class_cmds``. These hooks allow for comprehensive Create, Read, Update, and Delete (CRUD) functions via the API, facilitating advanced management of scopes, pools, and client classes.
+If you have access to Kea Premium Hooks from ISC, you can enable support for the ``subnet_cmds`` and ``class_cmds`` hooks. These two hooks allow for Create, Read, Update, and Delete (CRUD) functions via the API, facilitating management of scopes, pools, and client classes.
 
-To enable these hooks, you must add a preference attribute to your DHCP server's remote configuration file:
+To enable these hooks, you must add a preference attribute to your DHCP agent's preference file:
 
-1. Locate the ``kea-dhcp4.conf`` or ``kea-dhcp6.conf`` file, which contains your DHCP server's configuration.
-2. Insert the following preference attribute within the configuration file: ``<UseKeaPremiumHooks value="1" />``. Ensure this line is placed in the appropriate context within the file, typically near other global parameters.
+1. Locate the ``preferences.cfg`` file, which contains your DHCP agent's preferences.
+2. Add the following preference attribute to the file: ``<UseKeaPremiumHooks value="1" />``. 
 3. If your Kea server operates in a failover relationship, ensure to enable the hooks on both the primary and secondary servers for synchronized functionality.
 
 Remember to restart your Kea services after making changes to the configuration for them to take effect.
