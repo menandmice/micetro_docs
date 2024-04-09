@@ -97,6 +97,8 @@ Before installing the Micetro DNS Controller on a Linux system, ensure that you 
 
     * Consider potential problems that might occur when the installer rearranges the data directory listed in ``named.conf`` (relevant for SUSE Linux).
 
+    * When installing agents in a chrooted environment, note that the only way to accomplish this is by using the ``deprecated_installer.pl`` script.
+
   * **User Account for Named:** Identify the user account that owns the named process. Typically, the Micetro DNS Controller should run under the same user account. However, it is occasionally possible to use group membership instead.
 
 Installation Steps
@@ -341,7 +343,7 @@ Save the file, and then restart Micetro DNS Server Controller using :menuselecti
   For Active Directory-integrated zones, other domain controllers running Microsoft DNS do not need to get zone transfers. This is because the zone data is replicated through LDAP, rather than through zone transfers. Thus, for an AD-integrated zone, the zone transfer restriction list might need only the server's own address.
 
 Running Micetro DNS Server Controller under a privileged user account / Server type: "Microsoft Server Controller-Free"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Normally, the Micetro DNS Server Controller is installed on only *one* host in an Active Directory forest, or one copy per site. That installation can then manage all MS DNS servers in the forest, or in the site, using Microsoft's own DNS management API. In order for this to work, the service needs to run as a user that has DNS management privileges (i.e. the AD service account must be a member of the DNSAdmins group of the domain).
 
