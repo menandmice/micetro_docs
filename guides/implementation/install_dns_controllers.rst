@@ -98,8 +98,6 @@ Before installing the Micetro DNS agent on a Linux system, ensure that you have 
 
     * Consider potential problems that might occur when the installer rearranges the data directory listed in ``named.conf`` (relevant for SUSE Linux).
 
-    * When installing agents in a chrooted environment, note that the only way to accomplish this is by using the ``deprecated_installer.pl`` script.
-
   * **User Account for Named:** Identify the user account that owns the named process. Typically, the Micetro DNS agent should run under the same user account. However, it is occasionally possible to use group membership instead.
 
 Installation Steps
