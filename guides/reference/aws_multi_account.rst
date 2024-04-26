@@ -111,7 +111,7 @@ This can be done through the AWS Management Console or by using the AWS CLI comm
 
 2. Create custom policy:
 
-   * In the :guilabel:`Permissions` tab, select :guilabel:`Add permissions` and :guilabel:`Create new inline policy`.
+   * On the :guilabel:`Permissions` tab, select :guilabel:`Add permissions` and :guilabel:`Create new inline policy`.
 
    * In the Policy editor select :guilabel:`JSON` and paste the provided policy document, replacing `123456789012` with the account ID of the role's location and `RoleName` with the role's name.
 
