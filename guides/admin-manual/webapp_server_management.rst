@@ -130,7 +130,7 @@ Adding a new service is either a two or three step process, depending on the typ
          :width: 65%
    |
    * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process.  
-   * For **AuthServe git** you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
+   * For **AuthServe** you can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
    
     .. image:: ../../images/add-authserve.png
          :width: 65%
