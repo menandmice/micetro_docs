@@ -4,7 +4,7 @@
 
 .. _webapp-appliance-management:
 
-Integrating and Managing Appliances
+Integrating and Managing Appliances - testing
 ====================================
 Micetro seamlessly integrates with DNS/DHCP server (MDDS) appliances, available in both hardware and virtual machine configuration. By integrating Micetro with appliances, you gain the power to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface.
 
