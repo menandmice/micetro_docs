@@ -113,7 +113,10 @@ This can be done through the AWS Management Console or by using the AWS CLI comm
 
    * On the :guilabel:`Permissions` tab, select :guilabel:`Add permissions` and :guilabel:`Create new inline policy`.
 
-   * In the Policy editor select :guilabel:`JSON` and paste the provided policy document, replacing `123456789012` with the account ID of the role's location and `RoleName` with the role's name.
+   * In the Policy editor select :guilabel:`JSON` and paste the provided policy document below, replacing `123456789012` with the account ID of the role's location and `RoleName` with the role's name.
+
+   * In the last step, enter a policy name and select :guilabel:`Create policy`
+
 
 .. code-block::
 
@@ -129,7 +132,6 @@ This can be done through the AWS Management Console or by using the AWS CLI comm
     ]
   }
 
-   * In the last step, enter a policy name and select :guilabel:`Create policy`
 
 After Configuring the Accounts
 ------------------------------
