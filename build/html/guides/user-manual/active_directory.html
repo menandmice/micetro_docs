@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Integrating Active Directory (AD) sites in Micetro, view subnets within these sites and add, remove and move subnets between the sites." name="description" />
+<meta content="Micetro Active Directory, Micetro, Micetro subnets" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AD Sites and Subnets &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Automation" href="automation.html" />
+    <link rel="prev" title="Devices" href="devices.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AD Sites and Subnets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ad-forests">AD Forests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-an-ad-forest">Adding an AD Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-ad-forest">Edit AD Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-an-ad-forest">Removing an AD Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reloading-the-sites-in-an-ad-forest">Reloading the Sites in an AD Forest</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ad-subnets">AD Subnets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#view-subnets-in-a-site">View subnets in a site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-subnets-between-ad-sites">Moving subnets between AD sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-subnet-from-ad-site">Remove subnet from AD site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subnets-outside-of-sites">Subnets outside of sites</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">AD Sites and Subnets</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/active_directory.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ad-sites-and-subnets">
+<span id="active-directory"></span><h1>AD Sites and Subnets<a class="headerlink" href="#ad-sites-and-subnets" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Micetro allows administrators to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites and add, remove, and move subnets between the sites.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>AD sites and subnets integration is only available when Men&amp;Mice Central is running on a Windows server, and it is enabled by default. See <a class="reference internal" href="../admin-manual/admin_system_settings.html#admin-general"><span class="std std-ref">General</span></a>.</p>
+<p>AD sites are only assigned to and visible in the <code class="docutils literal notranslate"><span class="pre">Default</span></code> address space.</p>
+<p>To add/remove a subnet to/from a site, the user must be assigned to a role with the <em>Edit range properties</em> permission set and the role applied to the object. See <a class="reference internal" href="../admin-manual/access_control.html#access-control"><span class="std std-ref">Access control</span></a> for more details.</p>
+</div>
+<p>AD sites and subnets are displayed in the <span class="guilabel">IPAM</span> context:</p>
+<ul class="simple">
+<li><p>subnets in the main <span class="menuselection">IPAM ‣ Networks</span> grid, along with all other subnets in Micetro (if any). The <em>AD Site</em> column displays the site the subnet belongs to.</p></li>
+<li><p>sites in a separate <span class="menuselection">IPAM ‣ AD sites</span> grid, grouped by Forests. The Inspector box on the right displays the subnets (if any) belonging to the selected AD site.</p></li>
+</ul>
+</section>
+<section id="ad-forests">
+<h2>AD Forests<a class="headerlink" href="#ad-forests" title="Link to this heading"></a></h2>
+<p>To manage sites and subnets, Micetro needs to be configured with AD Forest(s).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can manage sites and subnets from multiple forests.</p>
+</div>
+<section id="adding-an-ad-forest">
+<h3>Adding an AD Forest<a class="headerlink" href="#adding-an-ad-forest" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In the web application, navigate to <span class="menuselection">IPAM ‣ AD sites</span>.</p></li>
+<li><p>Use the <span class="guilabel">Add Forest</span> action from the top bar. A dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/add-ad-forest.png"><img alt="../../_images/add-ad-forest.png" class="align-center" src="../../_images/add-ad-forest.png" style="width: 60%;" /></a>
+<dl class="simple">
+<dt>Use same Global Catalog as the Men&amp;Mice Central server</dt><dd><p>If checked, Micetro will use the same Global Catalog server as the Men&amp;Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server’s FQDN or IP address in the <strong>Global Catalog Server</strong> field.</p>
+</dd>
+<dt>Global Catalog Server</dt><dd><p>If you want to specify a Global Catalog server, enter the server’s FQDN or IP address in this field. (To unlock this field, the <span class="guilabel">Use same Global Catalog as the Men<span class="accelerator">M</span>ice Central server</span> checkbox needs to be unchecked.)</p>
+</dd>
+<dt>Use the same credentials as the Men&amp;Mice Central server</dt><dd><p>If checked, Micetro uses the same credentials as the Men&amp;Mice Central server when accessing the site information.</p>
+</dd>
+<dt>User and Password</dt><dd><p>If you don’t want to use the default credentials for the machine running Men&amp;Mice Central, enter the desired user name and password in these fields. (To unlock these fields, the <span class="guilabel">Use the same credentials as the Men<span class="accelerator">M</span>ice Central server</span> checkbox needs to be unchecked.)</p>
+</dd>
+<dt>Set as read only</dt><dd><p>If checked, users will be able to display data from Active Directory, but unable to make any modifications.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>Click <span class="guilabel">OK</span> to save the changes. The forest is added and the sites belonging to the forest are displayed.</p></li>
+</ol>
+</section>
+<section id="edit-ad-forest">
+<h3>Edit AD Forest<a class="headerlink" href="#edit-ad-forest" title="Link to this heading"></a></h3>
+<p>To edit an existing AD Forest (to, for example, change the read-only status):</p>
+<ol class="arabic simple">
+<li><p>In the web application, navigate to <span class="menuselection">IPAM ‣ AD sites</span>.</p></li>
+<li><p>Use the <span class="guilabel">Edit AD Forest</span> action from the top bar or the ellipsis menu.</p></li>
+<li><p>Update the settings in the dialog box.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to save your changes.</p></li>
+</ol>
+</section>
+<section id="removing-an-ad-forest">
+<h3>Removing an AD Forest<a class="headerlink" href="#removing-an-ad-forest" title="Link to this heading"></a></h3>
+<p>To remove an AD Forest from Micetro:</p>
+<ol class="arabic simple">
+<li><p>In the web application, navigate to <span class="menuselection">IPAM ‣ AD sites</span>.</p></li>
+<li><p>Select the AD Forest(s) you want to remove.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Use the <span class="guilabel">Remove AD Forest</span> action from the top bar or the ellipsis menu.</p></li>
+<li><p>Click <span class="guilabel">OK</span> in the confirmation box to remove the Forest(s).</p></li>
+</ol>
+</section>
+<section id="reloading-the-sites-in-an-ad-forest">
+<h3>Reloading the Sites in an AD Forest<a class="headerlink" href="#reloading-the-sites-in-an-ad-forest" title="Link to this heading"></a></h3>
+<p>Data from AD Forests is synchronized by Men&amp;Mice Central regularly. To manually synchronize forests and reload the data for sites and subnets:</p>
+<ol class="arabic simple">
+<li><p>In the web application, navigate to <span class="menuselection">IPAM ‣ AD sites</span>.</p></li>
+<li><p>Select the AD Forest(s) you want to synchronize.</p></li>
+<li><p>Use the <span class="guilabel">Synchronize</span> action from the top bar.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Click <span class="guilabel">OK</span> in the confirmation box to synchronize the Forests.</p></li>
+</ol>
+</section>
+</section>
+<section id="ad-subnets">
+<h2>AD Subnets<a class="headerlink" href="#ad-subnets" title="Link to this heading"></a></h2>
+<section id="view-subnets-in-a-site">
+<h3>View subnets in a site<a class="headerlink" href="#view-subnets-in-a-site" title="Link to this heading"></a></h3>
+<p>To view subnets within a specific site:</p>
+<ol class="arabic simple">
+<li><p>In the web application, navigate to <span class="menuselection">IPAM ‣ AD sites</span>.</p></li>
+<li><p>Select the AD Forest the site is in, or use the <a class="reference internal" href="webapp_quick_filter.html#webapp-quick-filter"><span class="std std-ref">Quickfilter</span></a> to find it by name.</p></li>
+<li><p>Use the <span class="guilabel">View networks</span> action with the site selected from the top bar or the ellipsis menu.</p></li>
+</ol>
+<p>This will open the <span class="menuselection">IPAM ‣ Networks</span> context with a filter applied to show all subnets that belong to the site.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also use the <span class="guilabel">-&gt; View</span> button in the Inspector of the selected AD site to open the subnet view.</p>
+</div>
+</section>
+<section id="moving-subnets-between-ad-sites">
+<h3>Moving subnets between AD sites<a class="headerlink" href="#moving-subnets-between-ad-sites" title="Link to this heading"></a></h3>
+<p>To add subnet(s) to a site, or move between sites:</p>
+<ol class="arabic simple">
+<li><p>Select the subnet(s) in the <span class="menuselection">IPAM ‣ Networks</span> grid.</p></li>
+<li><p>Use the <span class="guilabel">Set AD Site</span> action from the top bar or the ellipsis menu.</p></li>
+<li><p>Set the (new) AD Site in the dropdown and click <span class="guilabel">Save</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Child subnets cannot be moved to a different site than the parent subnet unless the <code class="docutils literal notranslate"><span class="pre">Enforce</span> <span class="pre">site</span> <span class="pre">inheritance</span></code> checkbox is unchecked in the System Settings dialog box.</p>
+<p>Subnets whose AD site settings are inherited from a parent range will have a <code class="docutils literal notranslate"><span class="pre">&lt;AD</span> <span class="pre">Site</span> <span class="pre">Name&gt;</span> <span class="pre">(inherited)</span></code> notation added.</p>
+<p>See <a class="reference internal" href="../admin-manual/admin_system_settings.html#admin-general"><span class="std std-ref">General</span></a>.</p>
+</div>
+</section>
+<section id="remove-subnet-from-ad-site">
+<h3>Remove subnet from AD site<a class="headerlink" href="#remove-subnet-from-ad-site" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Select the subnet(s) in the <span class="menuselection">IPAM ‣ Networks</span> grid.</p></li>
+<li><p>Use the <span class="guilabel">Remove from AD Site</span> action from the top bar or the ellipsis menu.</p></li>
+<li><p>Click <span class="guilabel">Yes</span> to confirm the removal.</p></li>
+</ol>
+</section>
+<section id="subnets-outside-of-sites">
+<h3>Subnets outside of sites<a class="headerlink" href="#subnets-outside-of-sites" title="Link to this heading"></a></h3>
+<p>To view subnets that don’t belong to any AD site:</p>
+<ol class="arabic simple">
+<li><p>In the web application, navigate to <span class="menuselection">IPAM ‣ AD sites</span>.</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Flat</span> <span class="pre">view</span></code> button (see <a class="reference internal" href="webapp_quick_filter.html#webapp-quick-filter"><span class="std std-ref">Quickfilter</span></a>) next to the Quick Filter to change the view.</p></li>
+<li><p>Sort the IP address ranges by the <strong>AD Site</strong> column in <em>ascending</em> order:</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/subnets-outside-sites.png"><img alt="../../_images/subnets-outside-sites.png" class="align-center" src="../../_images/subnets-outside-sites.png" style="width: 90%;" /></a>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="devices.html" class="btn btn-neutral float-left" title="Devices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="automation.html" class="btn btn-neutral float-right" title="Automation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

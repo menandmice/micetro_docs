@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Managing Appliances in Micetro" name="description" />
+<meta content="appliances, DNS management, DNS/DHCP appliance, MDDS appliances" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrating and Managing Appliances &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Micetro Reference Articles" href="../reference/reference.html" />
+    <link rel="prev" title="Configure Single Sign-On" href="webapp_sso.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Integrating and Managing Appliances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-new-appliance-to-micetro">Adding a New Appliance to Micetro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-appliance-name">Editing Appliance Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-zones-scopes-and-servers">Viewing Zones, Scopes, and Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-appliance-services">Setting Appliance Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-dns-resolvers">Configuring DNS Resolvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-ntp-on-appliances">Configuring NTP on Appliances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-snmp-monitoring">Configuring SNMP Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-remote-logging-servers-syslog">Configuring Remote Logging Servers (Syslog)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-network-settings">Configuring Network Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#managing-application-interfaces">Managing Application Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-static-routes">Configuring Static Routes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-appliances-to-a-different-address-space">Moving Appliances to a Different Address Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-support-information-for-appliances">Downloading Support Information for Appliances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shutting-down-or-restarting-appliances">Shutting Down or Restarting Appliances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#removing-appliances">Removing Appliances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-appliance-history">Viewing Appliance History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#backup-and-restore">Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Integrating and Managing Appliances</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/webapp_appliance_management.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="integrating-and-managing-appliances">
+<span id="webapp-appliance-management"></span><h1>Integrating and Managing Appliances<a class="headerlink" href="#integrating-and-managing-appliances" title="Link to this heading"></a></h1>
+<p>Micetro seamlessly integrates with DNS/DHCP server (MDDS) appliances, available in both hardware and virtual machine configuration. By integrating Micetro with appliances, you gain the power to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface.</p>
+<p>Once you have configured the initial network settings for your appliance and added it to your <a class="reference internal" href="webapp_server_management.html#webapp-server-management"><span class="std std-ref">Service Management</span></a>, you can interact with the services just as you would with other DNS and DHCP services within Micetro.</p>
+<p>Appliances are accessed and managed in <span class="guilabel">Service Management</span> on the <span class="guilabel">Admin</span> page.</p>
+<a class="reference internal image-reference" href="../../_images/appliances-11.0.png"><img alt="../../_images/appliances-11.0.png" src="../../_images/appliances-11.0.png" style="width: 80%;" /></a>
+<section id="adding-a-new-appliance-to-micetro">
+<h2>Adding a New Appliance to Micetro<a class="headerlink" href="#adding-a-new-appliance-to-micetro" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before adding a MDDS appliance to Micetro, ensure that the appliance is configured in Micetro-mode and that interfaces are appropriately configured.</p>
+<ul class="simple">
+<li><p>To configure the appliance to be in Micetro-mode, follow the instructions for <a class="reference external" href="https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Configuring-DNS/DHCP-Servers-for-Micetro/9.6.0">Configuring DNS/DHCP Servers for Micetro</a>.</p></li>
+<li><p>To configure interfaces on the appliance, follow the instructions for <a class="reference external" href="https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv4-address/9.6.0">Setting an IPv4 address</a> and <a class="reference external" href="https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv6-address/9.6.0">Setting an IPv6 address</a>.</p></li>
+</ul>
+</div>
+<p>To add an appliance to Micetro, you must have the Administrator role.</p>
+<p><strong>To add an appliance</strong>:</p>
+<ol class="arabic">
+<li><p>Go to the <span class="guilabel">Service Management</span> tab on the <span class="guilabel">Admin</span> page, and select <span class="guilabel">Add Service</span>. The Add Service wizard opens.</p>
+<a class="reference internal image-reference" href="../../_images/add-servive-dialog.png"><img alt="../../_images/add-servive-dialog.png" src="../../_images/add-servive-dialog.png" style="width: 65%;" /></a>
+</li>
+<li><p>Select <span class="guilabel">Appliance</span>.</p></li>
+<li><p>Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.</p></li>
+<li><p>Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.</p></li>
+<li><p>Enable or disable appliance services. By default, <strong>DNS</strong> and <strong>DHCP</strong> services are activated.  If you require remote access to your appliance for specific purposes, you can enable the <strong>SSH</strong> (Secure Shell) client.</p></li>
+<li><p>Select <span class="guilabel">Add</span>. The appliance is added to the <strong>Appliances</strong> section, and its associated services are listed under <strong>DNS Services</strong> and <strong>DHCP Services</strong>.</p></li>
+</ol>
+</section>
+<section id="editing-appliance-name">
+<h2>Editing Appliance Name<a class="headerlink" href="#editing-appliance-name" title="Link to this heading"></a></h2>
+<p>You can change the name or IP address used to connect to your appliance. This is useful if you need to refer to the appliance by another name or if you are connecting to the appliance by an IP address and the IP address has changed.</p>
+<p><strong>To change the appliance name</strong>:</p>
+<ol class="arabic">
+<li><p>Go to the <span class="guilabel">Service Management</span> tab on the <span class="guilabel">Admin</span> page.</p></li>
+<li><p>In the filtering sidebar, select <span class="guilabel">Appliances</span>, then select the specific appliance you wish to edit.</p></li>
+<li><p>Select <span class="guilabel">Edit appliance</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Modify the appliance’s name, and/or IP address (optional).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changing the name or IP address here only affects how you connect to the appliance. It does not alter the actual IP address of the appliance itself.</p>
+</div>
+</li>
+<li><p>Select <span class="guilabel">Save</span> when you are done.</p></li>
+</ol>
+</section>
+<section id="viewing-zones-scopes-and-servers">
+<h2>Viewing Zones, Scopes, and Servers<a class="headerlink" href="#viewing-zones-scopes-and-servers" title="Link to this heading"></a></h2>
+<p>You can easily navigate to zones, scopes, and DNS/DHCP servers associated with the appliance with just one click.</p>
+<p>Locate the specific application, and select the relevant view option on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu. This will direct you to the appropriate view for your selected application.</p>
+<a class="reference internal image-reference" href="../../_images/appliances-view-options.png"><img alt="../../_images/appliances-view-options.png" src="../../_images/appliances-view-options.png" style="width: 80%;" /></a>
+</section>
+<section id="setting-appliance-services">
+<h2>Setting Appliance Services<a class="headerlink" href="#setting-appliance-services" title="Link to this heading"></a></h2>
+<p>You can enable or disable various appliance services to configure your appliance.</p>
+<p><strong>To enable/disable appliance services</strong>:</p>
+<ol class="arabic simple">
+<li><p>Locate the specific appliance for which you want to set services.</p></li>
+<li><p>Select <span class="guilabel">Set appliance services</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Enable or disable the desired services:</p>
+<ul class="simple">
+<li><p><strong>DNS</strong>: Enable this service to allow your appliance to participate in domain name resolution on the network.</p></li>
+<li><p><strong>DHCP</strong>: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.</p></li>
+<li><p><strong>SSH (Secure Shell)</strong>: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting.</p></li>
+<li><p><strong>Firewall</strong>: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.</p></li>
+</ul>
+</li>
+<li><p>Select <span class="guilabel">Save</span> when you are done.</p></li>
+</ol>
+</section>
+<section id="configuring-dns-resolvers">
+<h2>Configuring DNS Resolvers<a class="headerlink" href="#configuring-dns-resolvers" title="Link to this heading"></a></h2>
+<p>To ensure optimal performance of your appliance, you can add the IP addresses of DNS resolver servers. This step helps your appliance efficiently resolve domain names and provide accurate network services.</p>
+<p><strong>To set DNS resolvers</strong>:</p>
+<ol class="arabic simple">
+<li><p>Locate the specific appliance for which you want to configure DNS resolvers. Ensure you select the correct appliance to avoid any disruptions in network services.</p></li>
+<li><p>Select <span class="guilabel">Configure DNS resolvers</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>In the Configure DNS resolvers dialog box, enter the IP addresses of the DNS resolver servers you want to set. It’s important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by listing their IP addresses on separate lines. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.</p></li>
+<li><p>Select <span class="guilabel">Save</span> when you are done.</p></li>
+</ol>
+</section>
+<section id="configuring-ntp-on-appliances">
+<h2>Configuring NTP on Appliances<a class="headerlink" href="#configuring-ntp-on-appliances" title="Link to this heading"></a></h2>
+<p>Use the Network Time Protocol (NTP) service to maintain precise time synchronization across your network infrastructure. Accurate timekeeping ensures proper coordination of network events, security protocols, and compliance with reporting requirements.</p>
+<p><strong>To configure NTP</strong>:</p>
+<ol class="arabic">
+<li><p>Locate the specific appliance for which you wish to configure NTP.</p></li>
+<li><p>Select <span class="guilabel">Configure NTP</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select the <span class="guilabel">Enable NTP service</span> checkbox to activate the NTP service on your appliance.</p></li>
+<li><p>In the text box, enter the hostnames or IP addresses of the NTP servers from which you want to synchronize your appliance’s clock.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Consider using multiple NTP servers for redundancy and increased reliability, ensuring continued time synchronization even if one server becomes inaccessible.</p>
+</div>
+</li>
+<li><p>Select <span class="guilabel">Save</span> when you are done.</p></li>
+</ol>
+</section>
+<section id="configuring-snmp-monitoring">
+<h2>Configuring SNMP Monitoring<a class="headerlink" href="#configuring-snmp-monitoring" title="Link to this heading"></a></h2>
+<p>You can use Simple Network Management Protocol (SNMP) monitoring to gather comprehensive information about the appliance. SNMP is enabled by default on appliances, allowing you to access monitoring information without any additional configuration.</p>
+<p>Micetro supports SNMP versions v2c and v3. Version v2c is a Community-Based SNMP, which means that it relies on a community string (similar to a password) for authentication, making it relatively simple to set up. Version v3, on the other hand, is a User-Based SNMP and provides enhanced security and authentication mechanisms. It introduces the concept of SNMP users and offers features like user authentication and data encryption.</p>
+<p><strong>To configure SNMP Monitoring on appliances</strong>:</p>
+<ol class="arabic">
+<li><p>Locate the specific appliance for which you want to configure SNMP monitoring.</p></li>
+<li><p>Select <span class="guilabel">Configure SNMP</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>The Configure SNMP dialog box opens with several options:</p>
+<a class="reference internal image-reference" href="../../_images/appliances-snmp-10.6.png"><img alt="../../_images/appliances-snmp-10.6.png" src="../../_images/appliances-snmp-10.6.png" style="width: 60%;" /></a>
+<ul class="simple">
+<li><p><strong>Name</strong>: You can enter the name that will be reported through SNMP. By default, this is set as Bluecat.</p></li>
+<li><p><strong>Location</strong>: Enter a description of the system’s physical location. By default, this is set as Toronto.</p></li>
+<li><p><strong>Contact</strong>: Enter the email address of the contact person responsible for the system. By default, this is set as the email address for BlueCat’s support.</p></li>
+<li><p><strong>Description</strong>: Enter a brief description of the system.</p></li>
+<li><p><strong>Enable SNMP v2c</strong>: Select this option to enable the SNMP v2c protocol.</p></li>
+<li><p><strong>Community</strong>: Enter the community string, which serves as a password for the SNMP v2c protocol.</p></li>
+<li><p><strong>Enable SNMP v3</strong>: Select this option to enable the SNMP v3 protocol.</p></li>
+<li><p><strong>Username</strong>: Enter the SNMP username for the SNMP user.</p></li>
+<li><p><strong>Authentication</strong>: Select either <strong>MD5</strong> or <strong>SHA</strong> authentication and enter the user password for the SNMP user. If you select <strong>None</strong>, the SNMP service doesn’t require user authentication and doesn’t encrypt the data it returns.</p></li>
+<li><p><strong>Encryption</strong>: Select either <strong>DES</strong> or <strong>AES 128</strong> encryption types, and provide the password used to encrypt the data. If you select <strong>None</strong>, the SNNMP service doesn’t encrypt the data it returns.</p></li>
+</ul>
+</li>
+<li><p>Select <span class="guilabel">Save</span> to save your settings and close the dialog box.</p></li>
+</ol>
+</section>
+<section id="configuring-remote-logging-servers-syslog">
+<h2>Configuring Remote Logging Servers (Syslog)<a class="headerlink" href="#configuring-remote-logging-servers-syslog" title="Link to this heading"></a></h2>
+<p>You can define multiple remote logging servers on your appliance to meet diverse logging needs. Centralizing syslog management across a network offers a multitude of advantages. This approach involves storing logs in a central location, providing IT professionals with streamlined troubleshooting processes, enhanced security monitoring capabilities, and simplified compliance and auditing procedures. By consolidating logs, resource optimization is achieved, particularly beneficial for devices with limited storage capacity. Additionally, centralized syslog management facilitates proactive alerting and notification systems, allowing administrators to address potential issues before they escalate. Configuring a remote logging server involves specifying several key properties, allowing you to customize server addresses, communication ports, protocols, log levels, service types, timestamp formats, and more.</p>
+<p><strong>To configure Syslog</strong>:</p>
+<ol class="arabic">
+<li><p>Locate the specific appliance for which you want to configure Syslog.</p></li>
+<li><p>Select <span class="guilabel">Configure Syslog</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>In the Configure Syslog dialog box, select <span class="guilabel">Add Server</span> to add a new logging server. Alternatively, modify the configuration of an existing server by selecting it and then <span class="guilabel">Edit</span> on the Row <span class="guilabel">…</span> menu.</p>
+<a class="reference internal image-reference" href="../../_images/appliance-edit-syslog.png"><img alt="../../_images/appliance-edit-syslog.png" src="../../_images/appliance-edit-syslog.png" style="width: 65%;" /></a>
+<ul class="simple">
+<li><p><strong>Server Address</strong>: Assign an IP address to each remote logging server.</p></li>
+<li><p><strong>Port Number</strong>: Specify the communication port.</p></li>
+<li><p><strong>Protocol</strong>: Select the transport protocol that aligns with the requirements (TCP or UDP).</p></li>
+<li><p><strong>Log Level</strong>: Select the desired log level.</p></li>
+<li><p><strong>Service Types</strong>: Define service types to filter by.</p></li>
+<li><p><strong>With ISO Timestamp</strong>: Decide whether to use the ISO format for timestamps, with customization available for each remote server and locally on the appliance itself.</p></li>
+<li><p><strong>RFC-5424</strong>: Choose between using RFC-5424 (Syslog protocol) or defaulting to RFC-3164 (BDS syslog protocol) if not explicitly selected.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>To remove a remote syslog server</strong>:</p>
+<ol class="arabic simple">
+<li><p>In the Configure Syslog dialog box, select the server you wish to remove.</p></li>
+<li><p>On the Row <span class="guilabel">…</span> menu, select <span class="guilabel">Remove</span>.</p></li>
+</ol>
+</section>
+<section id="configuring-network-settings">
+<h2>Configuring Network Settings<a class="headerlink" href="#configuring-network-settings" title="Link to this heading"></a></h2>
+<p>Using the network settings, you can configure the routing information for the appliance. You can also enable and configure sub-interfaces and edit loopback addresses.</p>
+<section id="managing-application-interfaces">
+<h3>Managing Application Interfaces<a class="headerlink" href="#managing-application-interfaces" title="Link to this heading"></a></h3>
+<p>The Network Settings let you set up the interfaces on the appliance. You can create sub-interfaces, allowing you to logically divide a physical interface into multiple virtual interfaces, each with distinct IP addresses. This segmentation can be crucial for efficiently managing network traffic and facilitating communication between different VLANs. You can also modify the loopback address.</p>
+<p><strong>To manage application interfaces:</strong></p>
+<ol class="arabic">
+<li><p>Locate the specific appliance for which you want to manage interfaces.</p></li>
+<li><p>Select <span class="guilabel">Network settings</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Click the Row <span class="guilabel">…</span> menu for the relevant interface and select to add, edit, or remove a sub-interface.</p>
+<a class="reference internal image-reference" href="../../_images/appliance-add-subinterface.png"><img alt="../../_images/appliance-add-subinterface.png" src="../../_images/appliance-add-subinterface.png" style="width: 60%;" /></a>
+<ul>
+<li><p><strong>Add a sub-interface</strong>: Select <span class="guilabel">Add sub-interface</span>. In the Add Sub-Interface dialog box, provide the following details:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Active</strong>: By default, the interface is active. Clear the <span class="guilabel">Active</span> checkbox if you want to deactivate the sub-interface temporarily.</p></li>
+<li><p><strong>VLAN ID</strong>: Enter the appropriate VLAN ID.</p></li>
+<li><p><strong>Description</strong>: Optionally, enter a description for the sub-interface.</p></li>
+<li><p><strong>Addresses</strong>: Enter the IP addresses you want to assign with the sub-interface.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Edit an interface</strong>: Select <span class="guilabel">Edit</span> on the interface’s Row <span class="guilabel">…</span> menu. Deactivate the interface by clearing the <span class="guilabel">Active</span> checkbox if needed. Make any other necessary changes. Refer to the “Add a sub-interface” section for descriptions of the fields.</p></li>
+<li><p><strong>Remove a sub-interface</strong>: Click the Row <span class="guilabel">…</span> menu for the sub-interface to delete, and then select <span class="guilabel">Remove</span>.</p></li>
+<li><p><strong>Modify the loopback address</strong>: On the interface’s Row <span class="guilabel">…</span> menu, select <span class="guilabel">Edit</span>, and then make the desired changes.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="configuring-static-routes">
+<h3>Configuring Static Routes<a class="headerlink" href="#configuring-static-routes" title="Link to this heading"></a></h3>
+<p>Tailor your appliance’s network connectivity by managing and customizing routes to reach specific networks. It’s crucial to enter valid route information, as invalid routes can render the server inaccessible.</p>
+<p>It is not possible to edit the default route.</p>
+<p><strong>To add a route</strong>:</p>
+<ol class="arabic">
+<li><p>Locate the specific appliance for which you need to configure a route.</p></li>
+<li><p>Select <span class="guilabel">Network settings</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>In the Network Settings dialog box, select the <span class="guilabel">Routes</span> tab.</p>
+<a class="reference internal image-reference" href="../../_images/appliance-network-routes.png"><img alt="../../_images/appliance-network-routes.png" src="../../_images/appliance-network-routes.png" style="width: 50%;" /></a>
+</li>
+<li><p>Select the <span class="guilabel">Add</span> button, and enter the required information:</p>
+<ul class="simple">
+<li><p><strong>Destination</strong>: The network IP address of a destination network.</p></li>
+<li><p><strong>Gateway</strong>: The IP address leading to the remote network</p></li>
+</ul>
+</li>
+<li><p>Click <span class="guilabel">Set</span> to apply the configured route.</p></li>
+</ol>
+<p>For route modifications, select <span class="guilabel">Edit</span> or <span class="guilabel">Remove</span> on the Row <span class="guilabel">…</span> menu for the desired route.</p>
+</section>
+</section>
+<section id="moving-appliances-to-a-different-address-space">
+<h2>Moving Appliances to a Different Address Space<a class="headerlink" href="#moving-appliances-to-a-different-address-space" title="Link to this heading"></a></h2>
+<p>DNS servers, DHCP servers, IP Address ranges, and individual IP Address entries can be moved between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects to a different address space.</p>
+</section>
+<section id="downloading-support-information-for-appliances">
+<h2>Downloading Support Information for Appliances<a class="headerlink" href="#downloading-support-information-for-appliances" title="Link to this heading"></a></h2>
+<p>To help in troubleshooting, you may be asked to download support information for your appliance. This support information file holds crucial details about your appliance setup, aiding our support team in diagnosing and resolving any issues you may encounter.</p>
+<p><strong>To download support information</strong>:</p>
+<ol class="arabic simple">
+<li><p>Locate the specific appliance you are troubleshooting.</p></li>
+<li><p>Select <span class="guilabel">Get support info</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select <span class="guilabel">Download</span>.</p></li>
+<li><p>Once the download is complete, forward the downloaded file to <a class="reference external" href="mailto:support&#37;&#52;&#48;bluecatnetworks&#46;com">support<span>&#64;</span>bluecatnetworks<span>&#46;</span>com</a>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The support information file is packaged as a .tgz archive and contains various text files. If you wish to view the contents of the support information file, you can use any tool capable of extracting data from .tgz archives to access and review the enclosed text files.</p>
+</div>
+</section>
+<section id="shutting-down-or-restarting-appliances">
+<h2>Shutting Down or Restarting Appliances<a class="headerlink" href="#shutting-down-or-restarting-appliances" title="Link to this heading"></a></h2>
+<p>You can shut down or restart the appliances.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For appliances equipped with an Integrated Dell Remote Access Controller (iDRAC), the iDRAC continues running when the appliance is shut down. This means that it can be accessed via the local network to power on the appliance without requiring physical access.
+If you shut down an appliance that is not equipped with iDRAC, it will be turned off and you will need physical access to the appliance to turn it on again.
+Consult the specifications for your appliance for more information on its remote access capabilities.</p>
+</div>
+<p><strong>To shut down or restart appliances</strong>:</p>
+<ol class="arabic simple">
+<li><p>Select the appliance you want to restart or shut down.</p></li>
+<li><p>On the <span class="guilabel">Action</span> menu, select <span class="guilabel">Shut down appliance</span> or <span class="guilabel">Restart appliance</span> and select <span class="guilabel">Yes</span> in the confirmation dialog box. The appliance shuts down or restarts, depending on your selection.</p></li>
+</ol>
+</section>
+<section id="removing-appliances">
+<h2>Removing Appliances<a class="headerlink" href="#removing-appliances" title="Link to this heading"></a></h2>
+<p>This command is only available for the Administrator role.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are removed from Micetro as well.</p>
+</div>
+<p><strong>To remove an appliance from Micetro</strong>:</p>
+<ol class="arabic simple">
+<li><p>Select the appliance(s) you want to remove. To select multiple appliances, hold down the <strong>Ctrl</strong> key while making your selection.</p></li>
+<li><p>On the <span class="guilabel">Action</span> menu, select <span class="guilabel">Remove appliance</span>. Select <span class="guilabel">Yes</span> to confirm.</p></li>
+</ol>
+</section>
+<section id="viewing-appliance-history">
+<h2>Viewing Appliance History<a class="headerlink" href="#viewing-appliance-history" title="Link to this heading"></a></h2>
+<p>The <span class="guilabel">View history</span> option on the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu opens the History window that shows a log of all changes that have been made to the appliance, including the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user when saving changes to objects. For more information about how to view change history, see <a class="reference internal" href="../user-manual/view_change_history.html#view-change-history"><span class="std std-ref">Viewing Object Change History</span></a>.</p>
+</section>
+<section id="backup-and-restore">
+<h2>Backup and Restore<a class="headerlink" href="#backup-and-restore" title="Link to this heading"></a></h2>
+<p>Micetro automatically takes a backup of your appliance’s configuration every 15 minutes, capturing any changes made since the last backup. Additionally, a full backup is taken once every 24 hours, and all the incremental backups are managed and cleaned up for you.</p>
+<p>When an appliance experiences a crash and becomes unusable, you can use these backups to set up a new appliance as a replacement, while maintaining the same IP address.</p>
+<p>Micetro automatically detects the new server as uninitialized. To begin using the new server, you need to initialize it.</p>
+<p><strong>To initialize a server</strong>:</p>
+<ol class="arabic">
+<li><p>Locate the uninitialized server.</p></li>
+<li><p>Select <span class="guilabel">Initialize appliance</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p>
+<a class="reference internal image-reference" href="../../_images/appliance-backup-restore-11.png"><img alt="../../_images/appliance-backup-restore-11.png" src="../../_images/appliance-backup-restore-11.png" style="width: 75%;" /></a>
+<ul class="simple">
+<li><p><strong>Use data from Micetro</strong>: This option allows you to initialize the server using the data saved in Micetro.</p></li>
+<li><p><strong>Use data from the new appliance</strong>: Use this option if you want to initialize the server with the data from the new appliance itself.</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>See also</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../implementation/updates.html#updates"><span class="std std-ref">Update Guide</span></a></p></li>
+<li><p><a class="reference internal" href="webapp_server_management.html#webapp-server-management"><span class="std std-ref">Service Management</span></a></p></li>
+<li><p><a class="reference internal" href="../management-console/appliance_management.html#appliance-management"><span class="std std-ref">Appliance management (Management Console, obsolete)</span></a></p></li>
+<li><p><a class="reference internal" href="../management-console/caching_appliance.html#caching-appliance"><span class="std std-ref">Caching DNS Servers (Management Console, obsolete)</span></a></p></li>
+<li><p><a class="reference external" href="https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Feature-support-and-limitations/9.6.0">Setting up Micetro DNS/DHCP Servers</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="webapp_sso.html" class="btn btn-neutral float-left" title="Configure Single Sign-On" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../reference/reference.html" class="btn btn-neutral float-right" title="Micetro Reference Articles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

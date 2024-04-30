@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Converting existing configurations to the new access control model in Micetro 10.1" name="description" />
+<meta content="access control, access control management, role-based access, security, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Converting existing access control configurations in Micetro 10.1 &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Virtual Appliance Guide" href="appliance_guide.html" />
+    <link rel="prev" title="Permissions reference" href="permissions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Converting existing access control configurations in Micetro 10.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upgrading-to-micetro-10-1">Upgrading to Micetro 10.1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#automatically-created-acl-legacy-roles">Automatically created <span class="xref std std-ref">acl-legacy-roles</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#converting-acl-legacy-roles">Converting <span class="xref std std-ref">acl-legacy-roles</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#converting-legacy-roles-into-acl-general-roles">Converting legacy roles into <span class="xref std std-ref">acl-general-roles</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#converting-to-acl-specific-roles">Converting to <span class="xref std std-ref">acl-specific-roles</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Converting existing access control configurations in Micetro 10.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upgrading-to-micetro-10-1">Upgrading to Micetro 10.1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#automatically-created-acl-legacy-roles">Automatically created <span class="xref std std-ref">acl-legacy-roles</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#converting-acl-legacy-roles">Converting <span class="xref std std-ref">acl-legacy-roles</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#converting-legacy-roles-into-acl-general-roles">Converting legacy roles into <span class="xref std std-ref">acl-general-roles</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#converting-to-acl-specific-roles">Converting to <span class="xref std std-ref">acl-specific-roles</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">Converting existing access control configurations in Micetro 10.1</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/acl_convert.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="converting-existing-access-control-configurations-in-micetro-10-1">
+<span id="acl-convert"></span><h1>Converting existing access control configurations in Micetro 10.1<a class="headerlink" href="#converting-existing-access-control-configurations-in-micetro-10-1" title="Link to this heading"></a></h1>
+<p>Micetro 10.1 updated access control management from an object-based to a role-based model. This page is intended to provide a recommendation for handling access controls in existing environments.</p>
+<section id="upgrading-to-micetro-10-1">
+<h2>Upgrading to Micetro 10.1<a class="headerlink" href="#upgrading-to-micetro-10-1" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Men&amp;Mice recommends performing a database backup before updating to 10.1.</p>
+</div>
+<p>Environments using a version of Micetro prior to 10.1 will be converted to the new model when you upgrade your Micetro components (see <a class="reference internal" href="../implementation/updates.html#updates"><span class="std std-ref">Update Guide</span></a>). The database is migrated automatically. <em>All existing</em> access control configuration is preserved, but will use the new model:</p>
+<ul class="simple">
+<li><p>built-in roles are converted into their new <a class="reference internal" href="../admin-manual/acl_general_roles.html#acl-general-roles"><span class="std std-ref">General roles</span></a> equivalents</p></li>
+<li><p>custom roles previously used for access control are converted into <a class="reference internal" href="../admin-manual/acl_legacy_roles.html#acl-legacy-roles"><span class="std std-ref">Legacy roles</span></a></p></li>
+<li><p>access settings for legacy roles on objects are preserved, using the <a class="reference internal" href="../admin-manual/acl_specific_roles.html#acl-specific-roles"><span class="std std-ref">Specific roles</span></a> mechanism (i.e. configured on existing objects, and not applied automatically to new objects)</p></li>
+</ul>
+<section id="automatically-created-acl-legacy-roles">
+<h3>Automatically created <a class="reference internal" href="../admin-manual/acl_legacy_roles.html#acl-legacy-roles"><span class="std std-ref">Legacy roles</span></a><a class="headerlink" href="#automatically-created-acl-legacy-roles" title="Link to this heading"></a></h3>
+<p>Legacy roles are a transitional role type to help migration and preserve backward compatibility.</p>
+<p><a class="reference internal" href="../admin-manual/acl_legacy_roles.html#acl-legacy-roles"><span class="std std-ref">Legacy roles</span></a> are generated for any user or group previously configured with <em>Initial access</em> that had general access for an object type. The legacy roles have the same permissions as their initial access.</p>
+<p>The generated legacy roles are named after their original name. E.g. the user <em>Viola</em> will become the legacy role <code class="docutils literal notranslate"><span class="pre">Viola</span> <span class="pre">(converted</span> <span class="pre">user)</span></code> while the group <em>Illyria</em> will become the legacy role <code class="docutils literal notranslate"><span class="pre">Illyria</span> <span class="pre">(converted</span> <span class="pre">group)</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Creating legacy roles based on users and groups will leave the existing user and group intact, and automatically assigned to their respective legacy roles.</p>
+</div>
+</section>
+</section>
+<section id="converting-acl-legacy-roles">
+<h2>Converting <a class="reference internal" href="../admin-manual/acl_legacy_roles.html#acl-legacy-roles"><span class="std std-ref">Legacy roles</span></a><a class="headerlink" href="#converting-acl-legacy-roles" title="Link to this heading"></a></h2>
+<p>If needed, legacy roles can be converted into a general or specific role, using the dropdown in the <span class="guilabel">Edit role properties</span> action.</p>
+<a class="reference internal image-reference" href="../../_images/convert-legacy-role.png"><img alt="../../_images/convert-legacy-role.png" class="align-center" src="../../_images/convert-legacy-role.png" style="width: 50%;" /></a>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Changing the type of a legacy role <strong>cannot</strong> be reverted.</p>
+</div>
+<section id="converting-legacy-roles-into-acl-general-roles">
+<h3>Converting legacy roles into <a class="reference internal" href="../admin-manual/acl_general_roles.html#acl-general-roles"><span class="std std-ref">General roles</span></a><a class="headerlink" href="#converting-legacy-roles-into-acl-general-roles" title="Link to this heading"></a></h3>
+<p>Converting a legacy role into a general role <em>removes all object-specific access</em> and makes the legacy role’s configured permissions <em>applicable to all objects</em> in the system. If the legacy role had general access exclusions on specific objects, these exclusions are also removed.</p>
+<a class="reference internal image-reference" href="../../_images/convert-legacy-to-general.png"><img alt="../../_images/convert-legacy-to-general.png" class="align-center" src="../../_images/convert-legacy-to-general.png" style="width: 50%;" /></a>
+</section>
+<section id="converting-to-acl-specific-roles">
+<h3>Converting to <a class="reference internal" href="../admin-manual/acl_specific_roles.html#acl-specific-roles"><span class="std std-ref">Specific roles</span></a><a class="headerlink" href="#converting-to-acl-specific-roles" title="Link to this heading"></a></h3>
+<p>If the legacy role was general for some object types it <em>will not</em> have access to <strong>any</strong> of the objects of that type after converting to specific.</p>
+<p>Any object-specific overrides will inherit the access from the role.</p>
+<a class="reference internal image-reference" href="../../_images/convert-legacy-to-specific.png"><img alt="../../_images/convert-legacy-to-specific.png" class="align-center" src="../../_images/convert-legacy-to-specific.png" style="width: 50%;" /></a>
+<section id="example-of-converting-legacy-role-into-specific">
+<h4>Example of converting legacy role into specific<a class="headerlink" href="#example-of-converting-legacy-role-into-specific" title="Link to this heading"></a></h4>
+<p>A legacy role had initial access on DNS servers previously (e.g. <em>list/view</em>) but not on zones, but was granted the role access to select zones.</p>
+<p>After conversion:</p>
+<ul class="simple">
+<li><p>the role <em>will not have</em> access to any servers (even if some servers had overridden/different permissions or were excluded)</p></li>
+<li><p>the role <em>will have</em> access to the same zones as before, with consistent permissions across these zones</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because of the complicated nature of matching access controls between the old and new models, Men&amp;Mice recommends re-creating the configuration of legacy roles as specific roles, instead of changing the type.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="permissions.html" class="btn btn-neutral float-left" title="Permissions reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="appliance_guide.html" class="btn btn-neutral float-right" title="Virtual Appliance Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

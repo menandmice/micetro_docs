@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Configuring a PostgreSQL High Availability cluster to use with Micetro by Men&amp;Mice" name="description" />
+<meta content="high availability, database, failover, PostgreSQL, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting up the PostgreSQL High Availability environment &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Connect Central to the PostgreSQL high availability cluster" href="central_psql_ha.html" />
+    <link rel="prev" title="Discontinuation of support for Internet Explorer" href="ie_eol.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up the PostgreSQL High Availability environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-pg-auto-failover">Install pg_auto-failover</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-requirements">Install requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-the-mmsuite-database-and-edit-config-files">Set up the mmsuite database and edit config files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#further-information">Further information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">Setting up the PostgreSQL High Availability environment</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/psql_ha.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="setting-up-the-postgresql-high-availability-environment">
+<span id="psql-ha"></span><h1>Setting up the PostgreSQL High Availability environment<a class="headerlink" href="#setting-up-the-postgresql-high-availability-environment" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Configuring high availability for the database is the responsibility of your database team. The following information illustrates a possible setup using <code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code> to create a high availability database cluster.</p>
+<p>While all possible steps were taken to verify its accuracy, Men&amp;Mice assumes no responsibility for the setup herein.</p>
+</div>
+<section id="install-pg-auto-failover">
+<h2>Install pg_auto-failover<a class="headerlink" href="#install-pg-auto-failover" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The setup presented here will establish resilience against losing any one of the configured three nodes. Refer to <a class="reference external" href="https://pg-auto-failover.readthedocs.io/en/latest/">the pg_auto_failover documentation</a> for more details about different configurations.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/postgres_ha.png"><img alt="../../_images/postgres_ha.png" class="align-center" src="../../_images/postgres_ha.png" style="width: 80%;" /></a>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[port]</span></code></p></td>
+<td><p>The port number that will be used for communication between database nodes</p></td>
+<td><p>5000</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[monitor]</span></code></p></td>
+<td><p>The monitor node’s machine hostname</p></td>
+<td><p>postgresql-node-0</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[node-1]</span></code></p></td>
+<td><p>The primary node’s machine hostname</p></td>
+<td><p>postgresql-node-1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[node-2]</span></code></p></td>
+<td><p>The secondary node’s machine hostname</p></td>
+<td><p>postgresql-node-2</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[ip-address-monitor-machine]</span></code></p></td>
+<td><p>The monitor node’s machine IP address</p></td>
+<td><p>172.17.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[ip-address-node-1]</span></code></p></td>
+<td><p>The machine’s IP address of node-1</p></td>
+<td><p>172.17.0.3</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[ip-address-node-2]</span></code></p></td>
+<td><p>The machine’s IP address of node-2</p></td>
+<td><p>172.17.0.4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[monitor_node_password]</span></code></p></td>
+<td><p>The monitor node’s password to its database. <strong>This password cannot contain the *&#64;* character.</strong></p></td>
+<td><p>test123</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[replication-password]</span></code></p></td>
+<td><p>The password used for replication between nodes</p></td>
+<td><p><a class="reference external" href="mailto:vg8&#37;&#52;&#48;urenHfhk">vg8<span>&#64;</span>urenHfhk</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[postgres-password]</span></code></p></td>
+<td><p>The password used to access the mmsuite database</p></td>
+<td><p>postgres</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[ip-address-of-central-primary]</span></code></p></td>
+<td><p>The IP address of the <em>primary</em> machine running Central</p></td>
+<td><p>172.17.0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[ip-address-of-central-secondary]</span></code></p></td>
+<td><p>The IP address of the machine running the <em>secondary</em> Central</p></td>
+<td><p>172.17.0.6</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[pre-existing-database-port]</span></code></p></td>
+<td><p>The port of the pre-existing database (if any)</p></td>
+<td><p>5432</p></td>
+</tr>
+</tbody>
+</table>
+<p>Make sure that the hostnames are resolvable between all three machines along with the machine running Central (and the second instance if Central is running in HA mode).
+If that is not possible, using the ip-addresses instead of hostnames is allowed.</p>
+<section id="install-requirements">
+<h3>Install requirements<a class="headerlink" href="#install-requirements" title="Link to this heading"></a></h3>
+<p>Install <code class="docutils literal notranslate"><span class="pre">sudo</span></code> and <code class="docutils literal notranslate"><span class="pre">which</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum<span class="w"> </span>install<span class="w"> </span>sudo
+yum<span class="w"> </span>install<span class="w"> </span>which
+</pre></div>
+</div>
+<p>Enable the package repository that distributes <code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>https://install.citusdata.com/community/rpm.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</pre></div>
+</div>
+<p>Install <code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code> for PostgreSQL 12:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pg-auto-failover10_12
+</pre></div>
+</div>
+<p>If you will be using hostnames, edit <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[ip-address-monitor-machine] [monitor]&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/hosts
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[ip-address-node-1] [node-1]&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/hosts
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[ip-address-node-2] [node-2]&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/hosts
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use the commands <code class="docutils literal notranslate"><span class="pre">pg_autoctl</span> <span class="pre">stop</span></code> and <code class="docutils literal notranslate"><span class="pre">pg_autoctl</span> <span class="pre">drop</span> <span class="pre">node</span> <span class="pre">--destroy</span></code> to start with a clean slate and get rid of everything that might have been set up previously.</p>
+</div>
+<section id="machine-monitor">
+<h4>Machine: monitor<a class="headerlink" href="#machine-monitor" title="Link to this heading"></a></h4>
+<p>Switch to user <em>postgres</em> and export <em>pgsql path</em>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">postgres</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;$PATH:/usr/pgsql-12/bin&quot;</span></code></p>
+<p>Set up a monitor node:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pg_autoctl</span> <span class="pre">create</span> <span class="pre">monitor</span> <span class="pre">--pgdata</span> <span class="pre">./[monitor]</span> <span class="pre">--pgport</span> <span class="pre">[port]</span> <span class="pre">--nodename</span> <span class="pre">[monitor]</span> <span class="pre">--auth</span> <span class="pre">scram-sha-256</span></code></p>
+<p>Next, the <code class="docutils literal notranslate"><span class="pre">pg_hba.conf</span></code> file needs to be edited to allow connection in from the two nodes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;host</span> <span class="pre">pg_auto_failover</span> <span class="pre">autoctl_node</span> <span class="pre">[ip-address-node-1]/32</span> <span class="pre">scram-sha-256&quot;</span> <span class="pre">&gt;&gt;</span> <span class="pre">./[monitor]/pg_hba.conf</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;host</span> <span class="pre">pg_auto_failover</span> <span class="pre">autoctl_node</span> <span class="pre">[ip-address-node-2]/32</span> <span class="pre">scram-sha-256&quot;</span> <span class="pre">&gt;&gt;</span> <span class="pre">./[monitor]/pg_hba.conf</span></code></p>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">postgresql.conf</span></code> file to allow <em>scram-sha-256</em> authentication:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">./</span><span class="p">[</span><span class="n">monitor</span><span class="p">]</span><span class="o">/</span><span class="n">postgresql</span><span class="o">.</span><span class="n">conf</span>
+<span class="c1"># uncomment the line and set</span>
+<span class="c1"># password_encryption = &#39;scram-sha-256&#39;</span>
+<span class="c1"># uncomment the line and set</span>
+<span class="c1"># listen_addresses = &#39;*&#39;</span>
+<span class="c1"># save the file and restart</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pg_ctl</span> <span class="pre">restart</span> <span class="pre">-D</span> <span class="pre">./[monitor]</span></code></p>
+<p>Still running as user <em>postgres</em>, set the database user password in the monitor database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">port</span><span class="p">]</span> <span class="o">-</span><span class="n">d</span> <span class="n">pg_auto_failover</span>
+<span class="n">ALTER</span> <span class="n">USER</span> <span class="n">autoctl_node</span> <span class="n">PASSWORD</span> <span class="s1">&#39;[monitor_node_password]&#39;</span><span class="p">;</span>
+\<span class="n">q</span>
+</pre></div>
+</div>
+</section>
+<section id="machine-node-1">
+<h4>Machine: node-1<a class="headerlink" href="#machine-node-1" title="Link to this heading"></a></h4>
+<p>Switch to user <em>postgres</em> and export <em>pgsql path</em>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">postgres</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;$PATH:/usr/pgsql-12/bin&quot;</span></code></p>
+<p>Set up a primary node:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pg_autoctl</span> <span class="pre">create</span> <span class="pre">postgres</span> <span class="pre">--pgdata</span> <span class="pre">./[node-1]</span> <span class="pre">--pgport</span> <span class="pre">[port]</span> <span class="pre">--pgctl</span> <span class="pre">`which</span> <span class="pre">pg_ctl`</span> <span class="pre">--nodename</span> <span class="pre">[node-1]</span> <span class="pre">--monitor</span> <span class="pre">postgres://autoctl_node:[monitor_node_password]&#64;[monitor]:[port]/pg_auto_failover</span> <span class="pre">--auth</span> <span class="pre">scram-sha-256</span></code></p>
+<p>Set up a replication password</p>
+<p><code class="docutils literal notranslate"><span class="pre">pg_autoctl</span> <span class="pre">config</span> <span class="pre">set</span> <span class="pre">replication.password</span> <span class="pre">[replication-password]</span> <span class="pre">--pgdata</span> <span class="pre">./[node-1]</span></code></p>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">postgresql.conf</span></code> file to allow <em>scram-sha-256</em> authentication:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">./</span><span class="p">[</span><span class="n">node</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">postgresql</span><span class="o">.</span><span class="n">conf</span>
+<span class="c1"># uncomment the line and set</span>
+<span class="c1"># password_encryption = &#39;scram-sha-256&#39;</span>
+<span class="c1"># uncomment the line and set</span>
+<span class="c1"># listen_addresses = &#39;*&#39;</span>
+<span class="c1"># save the file and restart</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pg_ctl</span> <span class="pre">restart</span> <span class="pre">-D</span> <span class="pre">./[node-1]</span></code></p>
+<p>Still running as user <em>postgres</em>, set the database user password in the database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">port</span><span class="p">]</span>
+<span class="n">ALTER</span> <span class="n">USER</span> <span class="n">pgautofailover_replicator</span> <span class="n">PASSWORD</span> <span class="p">[</span><span class="n">replication</span><span class="o">-</span><span class="n">password</span><span class="p">];</span>
+<span class="n">ALTER</span> <span class="n">USER</span> <span class="n">postgres</span> <span class="n">PASSWORD</span> <span class="p">[</span><span class="n">postgres</span><span class="o">-</span><span class="n">password</span><span class="p">];</span>
+\<span class="n">q</span>
+</pre></div>
+</div>
+<p>Run the primary node in the background:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pg_autoctl</span> <span class="pre">run</span> <span class="pre">--pgdata</span> <span class="pre">./[node-1]/</span> <span class="pre">&amp;</span></code></p>
+</section>
+<section id="machine-node-2">
+<h4>Machine: node-2<a class="headerlink" href="#machine-node-2" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo su - postgres
+export PATH=&quot;$PATH:/usr/pgsql-12/bin&quot;
+pg_autoctl create postgres --pgdata ./[node-2] --pgport [port] --pgctl `which pg_ctl` --nodename [node-2] --monitor postgres://autoctl_node:[monitor_node_password]@[monitor]:[port]/pg_auto_failover --auth scram-sha-256
+pg_autoctl config set replication.password [replication-password] --pgdata ./[node-2]
+pg_autoctl run --pgdata ./[node-2]/ &amp;
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h4>Machine: monitor<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>Show state to verify the setup:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pg_autoctl</span> <span class="pre">show</span> <span class="pre">state</span> <span class="pre">--pgdata</span> <span class="pre">./[monitor]</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>                       <span class="o">|</span>   <span class="n">Port</span>    <span class="o">|</span> <span class="n">Group</span> <span class="o">|</span>  <span class="n">Node</span> <span class="o">|</span>     <span class="n">Current</span> <span class="n">State</span> <span class="o">|</span>    <span class="n">Assigned</span> <span class="n">State</span>
+<span class="o">---------------------------+-----------+-------+-------+-------------------+------------------</span>
+<span class="p">[</span><span class="n">node</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                   <span class="o">|</span>   <span class="p">[</span><span class="n">port</span><span class="p">]</span> <span class="o">|</span>     <span class="mi">0</span> <span class="o">|</span>     <span class="mi">1</span> <span class="o">|</span>            <span class="n">primary</span> <span class="o">|</span>           <span class="n">primary</span>
+<span class="p">[</span><span class="n">node</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>                   <span class="o">|</span>   <span class="p">[</span><span class="n">port</span><span class="p">]</span> <span class="o">|</span>     <span class="mi">0</span> <span class="o">|</span>     <span class="mi">1</span> <span class="o">|</span>          <span class="n">secondary</span> <span class="o">|</span>         <span class="n">secondary</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="set-up-the-mmsuite-database-and-edit-config-files">
+<h3>Set up the mmsuite database and edit config files<a class="headerlink" href="#set-up-the-mmsuite-database-and-edit-config-files" title="Link to this heading"></a></h3>
+<section id="id2">
+<h4>Machine: node-1<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<p>Enter the <code class="docutils literal notranslate"><span class="pre">postgresql</span></code> database as user <em>postgres</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">port</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">mmsuite</span> <span class="n">ENCODING</span> <span class="o">=</span> <span class="s1">&#39;LATIN1&#39;</span> <span class="n">LC_CTYPE</span> <span class="o">=</span> <span class="s1">&#39;POSIX&#39;</span> <span class="n">LC_COLLATE</span><span class="o">=</span><span class="s1">&#39;POSIX&#39;</span> <span class="n">TEMPLATE</span> <span class="n">template0</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="n">GRANT</span> <span class="n">ALL</span> <span class="n">PRIVILEGES</span> <span class="n">ON</span> <span class="n">DATABASE</span> <span class="n">mmsuite</span> <span class="n">TO</span> <span class="n">postgres</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">pg_hba.conf</span></code> to allow access to the database from the outside:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;host mmsuite postgres [ip-address-of-central-primary]/32 scram-sha-256&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">./</span><span class="p">[</span><span class="n">node</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">pg_hba</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">echo</span> <span class="s2">&quot;host mmsuite postgres [ip-address-of-central-secondary]/32 scram-sha-256&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">./</span><span class="p">[</span><span class="n">node</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">pg_hba</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">port</span><span class="p">]</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;SELECT pg_reload_conf();&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h4>Machine: node-2<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">pg_hba.conf</span></code> to allow access to the database from the outside:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;host mmsuite postgres [ip-address-of-central-primary]/32 scram-sha-256&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">./</span><span class="p">[</span><span class="n">node</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">pg_hba</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">echo</span> <span class="s2">&quot;host mmsuite postgres [ip-address-of-central-secondary]/32 scram-sha-256&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">./</span><span class="p">[</span><span class="n">node</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">pg_hba</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">port</span><span class="p">]</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;SELECT pg_reload_conf();&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="further-information">
+<h3>Further information<a class="headerlink" href="#further-information" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="central_psql_ha.html">Connect Central to the PostgreSQL high availability cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="db_migrate.html">Migrate data from another database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ha_tweaks_psql.html">PostgreSQL HA tweaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql_ha_maintenance.html">PostgreSQL HA operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql_disaster_recovery.html">Possible disaster scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql_disaster_recovery.html#recovery">Recovery</a></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ie_eol.html" class="btn btn-neutral float-left" title="Discontinuation of support for Internet Explorer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="central_psql_ha.html" class="btn btn-neutral float-right" title="Connect Central to the PostgreSQL high availability cluster" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

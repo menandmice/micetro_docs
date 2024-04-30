@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="When the Management Console is started up, the Manager Window displays in the center. This window is the heart of the Men&amp;Mice Management Console, providing a single interface with nearly every feature in Micetro." name="description" />
+<meta content="Men&amp;Mice, Micetro by Men&amp;Mice" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Management Console Interface &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Menu Bars" href="console_menus.html" />
+    <link rel="prev" title="Management Console" href="console.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ui.html">Micetro user interface(s)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="web_application.html">Web Application</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="console.html">Management Console</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="console.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html#launching-the-management-console">Launching the Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html#first-use-wizard">First Use Wizard</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="console.html#console-functions">Console functions</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Management Console Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_menus.html">Menu Bars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_toolbars.html">Toolbars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console/console_quickfilter.html">Quick Filter (Management Console, deprecated)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ui.html">Micetro user interface(s)</a></li>
+          <li class="breadcrumb-item"><a href="console.html">Management Console</a></li>
+      <li class="breadcrumb-item active">Management Console Interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/console_gui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="management-console-interface">
+<span id="console-gui"></span><h1>Management Console Interface<a class="headerlink" href="#management-console-interface" title="Link to this heading"></a></h1>
+<p>When the Management Console is started up, the <em>Manager Window</em> displays in the center. This window is the heart of the Men&amp;Mice Management Console, providing a single interface with nearly every feature in Micetro.</p>
+<a class="reference internal image-reference" href="../../_images/management-console-1.png"><img alt="../../_images/management-console-1.png" class="align-center" src="../../_images/management-console-1.png" style="width: 90%;" /></a>
+<p>This window consists of two main areas: the <a class="reference internal" href="#console-object-browser"><span class="std std-ref">Object Browser</span></a> and the <a class="reference internal" href="#console-detail-view"><span class="std std-ref">Detail View</span></a>.</p>
+<section id="object-browser">
+<span id="console-object-browser"></span><h2>Object Browser<a class="headerlink" href="#object-browser" title="Link to this heading"></a></h2>
+<p>The <em>Object Browser</em> displays on the left side of the Manager window and contains categories of objects that can be created, modified, and deleted.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A new feature in version 8.2 is the ability to filter by the type of object in the Object Browser. By clicking on the respective icon at the top of the Object Browser, the Object Browser will show only that type of object. Clicking on the “M” icon to the left will show all types of objects. Note that this applies only to Clouds, DNS, IPAM (Subnets and DHCP), AD Forests and Appliances.</p>
+</div>
+<dl class="simple">
+<dt>DNS Zones</dt><dd><p>Selecting the DNS Zones object will cause the Detail View to display all DNS zones configured in the system and accessible to the current user. This category is accessible with a valid DNS Module License Key.</p>
+</dd>
+<dt>DNS Servers</dt><dd><p>Selecting the DNS Servers category will cause the Detail View to display all DNS servers managed by the system and accessible to the current user. If a DNS server is not reachable, its icon is shown with an exclamation mark. If the DNS Servers category is expanded, the same list of servers will show as sub-categories to the DNS Servers category. Selecting a server subcategory will cause the Detail View to display the zones managed by that server and accessible to the current user. This category is accessible with a valid DNS Module License Key.</p>
+</dd>
+<dt>DNS Views</dt><dd><p>The DNS Views category allows you to see zones on DNS servers that are configured with multiple views. If no views are configured on any server, this category will not appear. The Views feature of the BIND name server allows one server to return different data to different clients; each view has its own separate list of zones, often with the same names. This category behaves similarly to the DNS Servers category.</p>
+</dd>
+<dt>IP Address Ranges</dt><dd><p>Selecting the IP Address Ranges category will cause the Detail View to display all IP Address Ranges configured in the system and accessible to the current user. This category is accessible with a valid IP Address Management Module License Key.</p>
+</dd>
+<dt>DHCP Scopes</dt><dd><p>Selecting the DHCP Scopes category will cause the Detail View to display all DHCP scopes configured in the system and accessible to the current user. This category is accessible with a valid DHCP Module License Key.</p>
+</dd>
+<dt>DHCP Servers</dt><dd><p>Selecting the DHCP Servers category causes the Detail View to display all DHCP servers managed by the system and accessible to the current user. If a DHCP server is not reachable, its icon is shown with an exclamation mark. If the DHCP Servers category is expanded, the same list of servers will show as sub-categories to the DHCP Servers category. Selecting a server subcategory causes the Detail View to display the scopes managed by that server and accessible to the current user. This category is accessible with a valid DHCP Module License Key.</p>
+</dd>
+<dt>AD Sites</dt><dd><p>This category is only displayed if you have enabled <a class="reference internal" href="active_directory.html#active-directory"><span class="std std-ref">AD Sites and Subnets</span></a> integration. Selecting this category will show all AD sites that have been selected for integration in Micetro.</p>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="../../_images/object-browser-filter.png"><img alt="../../_images/object-browser-filter.png" class="align-center" src="../../_images/object-browser-filter.png" style="width: 40%;" /></a>
+</section>
+<section id="detail-view">
+<span id="console-detail-view"></span><h2>Detail View<a class="headerlink" href="#detail-view" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A new feature in version 7.2 is that the windows are now ‘docked’ and therefore they open up in a tab instead of a window.</p>
+</div>
+<p>The <em>Detail View</em> displays on the right side of the Manager window and displays the contents of the selected category in the Object Browser. While in this view, you can do the following:</p>
+<dl class="simple">
+<dt>Sort and filter</dt><dd><p>to allow a more concise view of the contents. Refer to <span class="xref std std-ref">quickfilter</span>.</p>
+</dd>
+<dt>Display a shortcut or “context” menu</dt><dd><p>that gives access to other options. Right-click to view this shortcut menu.</p>
+</dd>
+<dt>Open an object by simply double-clicking</dt><dd><p>This opens either a property window (such as in the case of DNS/DHCP Servers), or brings you to a new view of the data contained within the object (such as in the case of DNS Zones, DHCP Zones, and IP Address Ranges).</p>
+</dd>
+<dt>Reorder the columns</dt><dd><p>Click on the column you want to move and, while holding down the mouse key, drag the column to the new position.</p>
+</dd>
+<dt>Display or hide columns</dt><dd><p>Right-click on a column header. All the column names shown with a checkmark are currently displayed. To hide a column, click on the name to remove the checkmark. To display a hidden column, repeat the process. Reset all makes all columns display without having to unhide them individually.</p>
+</dd>
+</dl>
+</section>
+<section id="sorting-records">
+<h2>Sorting Records<a class="headerlink" href="#sorting-records" title="Link to this heading"></a></h2>
+<p>When viewing information in the Object List – be it DNS zones, Servers, Views, IP Address Ranges, or Scopes – you can instantly sort the displayed information by clicking on the header of any column shown in that view. For instance, click on the <span class="guilabel">Name</span> header once to sort the displayed objects alphabetically (A-Z) by name. Clicking on the <em>Name</em> header again will resort the list in reverse alphabetic order (Z-A). This can be done with any column of data, including Servers, Addresses, Utilization percentages, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When sorting zone names alphabetically, reverse zones will appear at the bottom of the list (after Z), or at the top of the list when sorted in reverse alphabetic order.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console.html" class="btn btn-neutral float-left" title="Management Console" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_menus.html" class="btn btn-neutral float-right" title="Menu Bars" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

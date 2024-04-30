@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Role-based access example &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Discontinuation of support for Internet Explorer" href="ie_eol.html" />
+    <link rel="prev" title="Managing access control in the Management Console" href="acl_console.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Role-based access example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-roles">Built-in roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined-roles">User defined roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-role-configuration-dns-zone-read-write">Example role configuration: DNS zone read-write</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-role-configuration-dhcp-read-only">Example role configuration: DHCP read-only</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">Role-based access example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/access_control_example.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="role-based-access-example">
+<span id="access-control-example"></span><h1>Role-based access example<a class="headerlink" href="#role-based-access-example" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Access management has changed in Micetro 10.1. To view the access management example used in previous versions, switch to the appropriate version number using the version selector.</p>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This article aims to provide practical information on <a class="reference internal" href="../admin-manual/acl_roles.html#acl-roles"><span class="std std-ref">Roles</span></a> and detailed, step-by-step breakdowns for two scenarios: creating a new, read-only role for DHCP scopes, and using the built-in <em>DNS viewers</em> role to set up a DNS read-write role.</p>
+<p>The information on this page, and the how-tos presented, will provide a blueprint to customize Micetro to your requirements.</p>
+</section>
+<section id="built-in-roles">
+<h2>Built-in roles<a class="headerlink" href="#built-in-roles" title="Link to this heading"></a></h2>
+<p>The seven <span class="xref std std-ref">built-in-roles</span> have been designed to cover most use cases for access control in Micetro. The access settings for the built-in roles can’t be modified.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Built-in roles are all <a class="reference internal" href="../admin-manual/acl_general_roles.html#acl-general-roles"><span class="std std-ref">General roles</span></a> and applied to all objects in Micetro, existing or future.</p>
+</div>
+<p><strong>Example:</strong> adding a user or group to the <em>Administrators (built-in)</em> role, the user (or group members) automatically gain administrative access to all objects in Micetro.</p>
+</section>
+<section id="user-defined-roles">
+<h2>User defined roles<a class="headerlink" href="#user-defined-roles" title="Link to this heading"></a></h2>
+<p>As all DDI environments are different, Micetro allows creating flexible user-defined roles.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Creating new roles requires the <em>Administer users/groups</em> permission.</p>
+</div>
+<p>There are two ways of creating new roles in Micetro:</p>
+<ol class="arabic simple">
+<li><p>(Preferred) Duplicate an existing role and edit the permissions. See <a class="reference internal" href="../admin-manual/acl_roles.html#duplicate-role"><span class="std std-ref">Duplicating a role</span></a>.</p></li>
+<li><p>Create a completely new role. See <a class="reference internal" href="../admin-manual/acl_roles.html#new-role"><span class="std std-ref">Adding a new role</span></a>.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Men&amp;Mice recommends using the built-in roles as templates and modifying the permission set for the duplicate roles.</p>
+</div>
+<hr class="docutils" />
+<section id="example-role-configuration-dns-zone-read-write">
+<span id="duplicate-role-example"></span><h3>Example role configuration: DNS zone read-write<a class="headerlink" href="#example-role-configuration-dns-zone-read-write" title="Link to this heading"></a></h3>
+<p>The following steps illustrate how to create a read-write role in Micetro for DNS zones, using a built-in role as a template.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using existing roles as templates makes refining access controls easier, as you can both copy over permissions and users / groups.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Log in to the Web Application.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-1.png"><img alt="../../_images/acl-example-1-step-1.png" class="align-center" src="../../_images/acl-example-1-step-1.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration ‣ Access Management</span> and select <span class="guilabel">Roles</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-2.png"><img alt="../../_images/acl-example-1-step-2.png" class="align-center" src="../../_images/acl-example-1-step-2.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Press the <span class="guilabel">Create</span> button and select <span class="guilabel">From existing role</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-3.png"><img alt="../../_images/acl-example-1-step-3.png" class="align-center" src="../../_images/acl-example-1-step-3.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>From the dropdown <strong>Select an existing role</strong>, click on <code class="docutils literal notranslate"><span class="pre">DNS</span> <span class="pre">Viewers</span> <span class="pre">(built-in)</span></code>.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have the role selected in the grid, <em>From existing role</em> will automatically fill in the value for convenience.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-4.png"><img alt="../../_images/acl-example-1-step-4.png" class="align-center" src="../../_images/acl-example-1-step-4.png" style="width: 65%;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Edit the <strong>Role name</strong>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-5.png"><img alt="../../_images/acl-example-1-step-5.png" class="align-center" src="../../_images/acl-example-1-step-5.png" style="width: 50%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When duplicating a role, editing the <strong>Description</strong> is not available until the new role is created.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Select what to copy from the existing role: <strong>Permissions</strong> (default), <em>Groups</em>, and/or <em>Users</em>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-6.png"><img alt="../../_images/acl-example-1-step-6.png" class="align-center" src="../../_images/acl-example-1-step-6.png" style="width: 50%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Duplicating roles will automatically set the role type to <em>General</em>.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Click <span class="guilabel">Create</span> to save the new role.</p></li>
+</ol>
+<p>After saving the new role, Micetro will automatically display the <em>Edit role properties</em> dialog for it.</p>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-7.png"><img alt="../../_images/acl-example-1-step-7.png" class="align-center" src="../../_images/acl-example-1-step-7.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="8">
+<li><p>Switch over to the <span class="guilabel">Access</span> tab and enable the following permission:</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DNS servers</p></td>
+<td><p><strong>Add master zones</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS servers</p></td>
+<td><p><strong>Add non-master zones</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DNS zones</p></td>
+<td><p><strong>Edit zone access</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS zones</p></td>
+<td><p><strong>List (or view) zone</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DNS zones</p></td>
+<td><p><strong>View zone history</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS zones</p></td>
+<td><p><strong>Enable/disable zone</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DNS zones</p></td>
+<td><p><strong>Edit zone options</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS zones</p></td>
+<td><p><strong>Delete zone</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DNS zones</p></td>
+<td><p><strong>Enable/disable apex records</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS zones</p></td>
+<td><p><strong>Edit apex records</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DNS zones</p></td>
+<td><p><strong>Enable/disable wildcard records</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS zones</p></td>
+<td><p><strong>Edit wildcard records</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DNS zones</p></td>
+<td><p><strong>Enable/disable other records</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS zones</p></td>
+<td><p><strong>Edit other records</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DNS zones</p></td>
+<td><p><strong>Edit zone properties</strong></p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-8.png"><img alt="../../_images/acl-example-1-step-8.png" class="align-center" src="../../_images/acl-example-1-step-8.png" style="width: 65%;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Clicking the checkbox next to the <strong>DNS zones</strong> group will automatically select all permissions within the group.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For a handy reference for available permissions, see <a class="reference internal" href="permissions.html#permissions-reference"><span class="std std-ref">Permissions reference</span></a>.</p>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>(Optional) Switch to the <span class="guilabel">Groups</span> tab and select the group(s) you’d like to assign to the role.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-9.png"><img alt="../../_images/acl-example-1-step-9.png" class="align-center" src="../../_images/acl-example-1-step-9.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="10">
+<li><p>(Optional) Switch to the <span class="guilabel">Users</span> tab and select the user(s) you’d like to assign to the role.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-10.png"><img alt="../../_images/acl-example-1-step-10.png" class="align-center" src="../../_images/acl-example-1-step-10.png" style="width: 70%;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Users and groups can be assigned to and removed from roles at any time.</p>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>Click <span class="guilabel">Save</span> to update the role settings.</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="example-role-configuration-dhcp-read-only">
+<span id="new-role-example"></span><h3>Example role configuration: DHCP read-only<a class="headerlink" href="#example-role-configuration-dhcp-read-only" title="Link to this heading"></a></h3>
+<p>This</p>
+<p>The following steps illustrate how to create a new, read-only role in Micetro for DHCP scopes only, without using the built-in role templates.</p>
+<ol class="arabic simple">
+<li><p>Log in to the Web Application.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-1.png"><img alt="../../_images/acl-example-1-step-1.png" class="align-center" src="../../_images/acl-example-1-step-1.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration ‣ Access Management</span> and select <span class="guilabel">Roles</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-1-step-2.png"><img alt="../../_images/acl-example-1-step-2.png" class="align-center" src="../../_images/acl-example-1-step-2.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Press the <span class="guilabel">Create</span> button and select <span class="guilabel">New role</span></p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-2-step-3.png"><img alt="../../_images/acl-example-2-step-3.png" class="align-center" src="../../_images/acl-example-2-step-3.png" style="width: 65%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Specify the <strong>Role name</strong>, e.g. <code class="docutils literal notranslate"><span class="pre">DHCP</span> <span class="pre">Read-Only</span></code> and add a <strong>Description</strong>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-2-step-4.png"><img alt="../../_images/acl-example-2-step-4.png" class="align-center" src="../../_images/acl-example-2-step-4.png" style="width: 90%;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using descriptive names and clear text for the description makes access management easier.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Choose between the <em>General</em> or <em>Specific</em> role types.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-2-step-5.png"><img alt="../../_images/acl-example-2-step-5.png" class="align-center" src="../../_images/acl-example-2-step-5.png" style="width: 50%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The preferred role type in Micetro is the <a class="reference internal" href="../admin-manual/acl_general_roles.html#acl-general-roles"><span class="std std-ref">General roles</span></a>. Specific roles exist to preserve backwards compatibility and added flexibility to edge use cases.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Switch over to the <span class="guilabel">Access</span> tab and enable the following permission:</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ranges and DHCP scopes</p></td>
+<td><p><strong>Read scope options</strong></p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/acl-example-2-step-6.png"><img alt="../../_images/acl-example-2-step-6.png" class="align-center" src="../../_images/acl-example-2-step-6.png" style="width: 65%;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Notice that a blue <span class="guilabel">(i)</span> indicator appears on the top right. Hovering over will show that in order for the selected permissions to take effect, additional permissions will be set:</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Micetro</p></td>
+<td><p>Access to the web interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>Micetro</p></td>
+<td><p>Access IPAM module</p></td>
+</tr>
+<tr class="row-even"><td><p>Micetro</p></td>
+<td><p>Access to IPAM view in web interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>DHCP servers</p></td>
+<td><p>List (or view) DHCP server</p></td>
+</tr>
+<tr class="row-even"><td><p>Ranges and DHCP scopes</p></td>
+<td><p>List (or view) range</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address spaces</p></td>
+<td><p>List (or view) address space</p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/acl-example-2-step-7.png"><img alt="../../_images/acl-example-2-step-7.png" class="align-center" src="../../_images/acl-example-2-step-7.png" style="width: 90%;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Micetro will automatically enable these permissions upon saving the new role. You can check the permissions granted to the role by switching to <span class="guilabel">View defined</span> using the radio button.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For a handy reference for available permissions, see <a class="reference internal" href="permissions.html#permissions-reference"><span class="std std-ref">Permissions reference</span></a>.</p>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>(Optional) Switch to the <span class="guilabel">Groups</span> tab and select the group(s) you’d like to assign to the role.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-2-step-8.png"><img alt="../../_images/acl-example-2-step-8.png" class="align-center" src="../../_images/acl-example-2-step-8.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="9">
+<li><p>(Optional) Switch to the <span class="guilabel">Users</span> tab and select the user(s) you’d like to assign to the role.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-example-2-step-9.png"><img alt="../../_images/acl-example-2-step-9.png" class="align-center" src="../../_images/acl-example-2-step-9.png" style="width: 50%;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Users and groups can be assigned to and removed from roles any time.</p>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Click <span class="guilabel">Create</span> to create the role.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="acl_console.html" class="btn btn-neutral float-left" title="Managing access control in the Management Console" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ie_eol.html" class="btn btn-neutral float-right" title="Discontinuation of support for Internet Explorer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

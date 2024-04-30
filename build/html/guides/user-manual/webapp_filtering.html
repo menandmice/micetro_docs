@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The filtering sidebar in Micetro acts as a selector in each context, and allows users to quickly find the zones or networks." name="description" />
+<meta content="network zones, networks" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filtering sidebar &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Inspector" href="webapp_inspector.html" />
+    <link rel="prev" title="General" href="webapp_general.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ui.html">Micetro user interface(s)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="web_application.html">Web Application</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="web_application.html#user-guide">User Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="webapp_introduction.html">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_user_guide.html">Using the Web Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_general.html">General</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Filtering sidebar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_inspector.html">The Inspector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_dns.html">DNS management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_import_dns_records.html">Import DNS Records</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_network_management.html">Network management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_import_ipam_data.html">Import IPAM data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_quick_command.html">Quick command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_quick_filter.html">Quickfilter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_workflows.html">Workflow Management</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="web_application.html#admin-guide">Admin Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ui.html">Micetro user interface(s)</a></li>
+          <li class="breadcrumb-item"><a href="web_application.html">Web Application</a></li>
+      <li class="breadcrumb-item active">Filtering sidebar</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/webapp_filtering.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="filtering-sidebar">
+<span id="webapp-filtering"></span><h1>Filtering sidebar<a class="headerlink" href="#filtering-sidebar" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The filtering sidebar acts as a selector in each context, and allows users to quickly find the zones or networks. Users can select pre-defined “filters” or selectors (shown in the image on the right, and described in tables below for other contexts in the system).</p>
+<p>The sidebar is open (displaying icon and text) by default, but can be collapsed to an icon-only mode. In case where a list of clickable items is needed the sidebar is automatically unfolded.</p>
+<p>Selecting an item in the filtering sidebar applies the filter for the main work grid. Users can further narrow down results with quickfilters from the top menu. (See <a class="reference internal" href="webapp_quick_filter.html#webapp-quick-filter"><span class="std std-ref">Quickfilter</span></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you select a filter in the filtering sidebar, and then use the <span class="guilabel">Create</span> operation in the grid, the type of object will be automatically selected based on the active filter.</p>
+</div>
+</section>
+<section id="common-filters">
+<h2>Common filters<a class="headerlink" href="#common-filters" title="Link to this heading"></a></h2>
+<p>These are a set of common filters available in all sections for the Web Application.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>All &lt;zones, records, networks, IP addresses&gt;</p></td>
+<td><p>When selected, all objects (DNS zones, DNS records, networks and IP addresses) are shown</p></td>
+</tr>
+<tr class="row-odd"><td><p>Favorites</p></td>
+<td><p>All items that have been flagged as favorite in the system are shown here in each context</p></td>
+</tr>
+<tr class="row-even"><td><p>Folders</p></td>
+<td><p>All items that have been added to folders in the system are shown here in each context</p></td>
+</tr>
+<tr class="row-odd"><td><p>Recently viewed</p></td>
+<td><p>All items that have been viewed in the last 24 hours</p></td>
+</tr>
+<tr class="row-even"><td><p>Recently created</p></td>
+<td><p>The last 15 items that were created</p></td>
+</tr>
+<tr class="row-odd"><td><p>Recently modified</p></td>
+<td><p>The last 15 items that were modified</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="filters-for-dns-zones">
+<h2>Filters for DNS zones<a class="headerlink" href="#filters-for-dns-zones" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Zone types</p></td>
+<td><p>Allows users to select between master, slave or other (for example stub, forward or AD integrated) zones</p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS views</p></td>
+<td><p>Shows all existing views that are configured in the system as a list</p></td>
+</tr>
+<tr class="row-even"><td><p>DNS services</p></td>
+<td><p>Shows all DNS servers configured in the system</p></td>
+</tr>
+<tr class="row-odd"><td><p>DNSSEC signed</p></td>
+<td><p>Shows all DNSSEC signed DNS zones</p></td>
+</tr>
+<tr class="row-even"><td><p>Reverse zones</p></td>
+<td><p>Shows all reverse zones configured in the system</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="filters-for-dns-records">
+<h2>Filters for DNS records<a class="headerlink" href="#filters-for-dns-records" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Record types</p></td>
+<td><p>Allows users to select between the following record types: <strong>A / AAAA</strong>, <strong>CNAME</strong>, <strong>NS</strong>, <strong>MX</strong>, <strong>Other</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DNSSEC records</p></td>
+<td><p>Shows all DNSSEC records in the DNS zone</p></td>
+</tr>
+<tr class="row-even"><td><p>Dynamic records</p></td>
+<td><p>Shows all dynamic DNS records in the DNS zone</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="filters-for-network-list">
+<h2>Filters for Network list<a class="headerlink" href="#filters-for-network-list" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IP ranges</p></td>
+<td><p>Shows all IP ranges configured in the system</p></td>
+</tr>
+<tr class="row-odd"><td><p>DHCP scopes</p></td>
+<td><p>Shows all DHCP scopes configured in the system</p></td>
+</tr>
+<tr class="row-even"><td><p>Containers</p></td>
+<td><p>Shows all containers configured in the system and allows users to show the contents from the container that is selected</p></td>
+</tr>
+<tr class="row-odd"><td><p>Highly utilized</p></td>
+<td><p>Show all networks that have a utilization higher than or equal to 90%</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="filters-for-network-contents">
+<h2>Filters for Network contents<a class="headerlink" href="#filters-for-network-contents" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Recently seen</p></td>
+<td><p>Show all IP addresses that have been recently discovered by a router or a firewall</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status</p></td>
+<td><p>Allows users to show all IP addresses based on the following statuses: <em>Free</em>, <em>Assigned</em>, <em>Claimed</em>, <em>Leased</em>, <em>Reserved</em></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="webapp_general.html" class="btn btn-neutral float-left" title="General" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="webapp_inspector.html" class="btn btn-neutral float-right" title="The Inspector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

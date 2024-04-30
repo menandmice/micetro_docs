@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Configuring High Availability for Micetro's server component" name="description" />
+<meta content="high availability, failover, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configure High Availability for Micetro Central &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Men&amp;Mice Central HA tweaks" href="ha_tweaks_central.html" />
+    <link rel="prev" title="Advanced System Settings" href="console_advanced_settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced_config.html">Advanced configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="console_advanced_settings.html">Advanced System Settings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configure High Availability for Micetro Central</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-ha-member-options">Editing HA member options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-central-in-high-availability-setup">Updating Central in High Availability setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ha_tweaks_central.html">Men&amp;Mice Central HA tweaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xdns_redundancy_groups.html">xDNS Zone Redundancy Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_custom_links.html">Custom links in the web application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="advanced_config.html">Advanced configuration</a></li>
+      <li class="breadcrumb-item active">Configure High Availability for Micetro Central</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/central_ha.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configure-high-availability-for-micetro-central">
+<span id="central-ha"></span><h1>Configure High Availability for Micetro Central<a class="headerlink" href="#configure-high-availability-for-micetro-central" title="Link to this heading"></a></h1>
+<p>Failover instances of Men&amp;Mice Central can be configured to build a high availability cluster.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To run Micetro in High Availability mode you must be using the MSSQL or PostgreSQL database backend for Micetro. High Availability mode is not available for other database types.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When there are no HA members defined or if Micetro Central has not been configured for HA, a message will appear indicating further configuration is necessary. This documentation shows how to configure HA in the web UI for versions 10.2 and above. If you need to use the management console (thick client), please follow the documentation in [10.1](<a class="reference external" href="https://menandmice.com/docs/10.1/guides/implementation/central_ha">https://menandmice.com/docs/10.1/guides/implementation/central_ha</a>)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For fine-tuning the settings for the Central High Availability cluster, see <a class="reference internal" href="ha_tweaks_central.html#ha-tweaks-central"><span class="std std-ref">Men&amp;Mice Central HA tweaks</span></a>.</p>
+</div>
+<section id="linux">
+<span id="central-ha-unix"></span><h2>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>On the existing (or designated as <em>primary</em>) server running Central, edit the preferences file in <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral/preferences.cfg</span></code>, adding</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ClusterMemberName</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;somename&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>to the end of the file. <code class="docutils literal notranslate"><span class="pre">somename</span></code> is the unique name that will identify the Central instance in the high availability cluster. (E.g. “1”, “primary”, or “central1”)</p>
+<ol class="arabic simple" start="2">
+<li><p>Restart the primary Central application:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>restart<span class="w"> </span>mmcentral
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Login to the web UI as “administrator” and go to <span class="guilabel">Admin</span> then <span class="guilabel">Configuration</span></p></li>
+<li><p>Select <span class="guilabel">High Availability</span></p></li>
+<li><p>Type in the name of the first member server to match the name given earlier and set the priority to <strong>10</strong></p></li>
+<li><p>Click <span class="guilabel">Add Member</span></p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/ha-add-member.jpg"><img alt="../../_images/ha-add-member.jpg" class="align-center" src="../../_images/ha-add-member.jpg" style="width: 100%;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Restart Central:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>restart<span class="w"> </span>mmcentral
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Login to the web UI and verify that the current server is running with state “Active”</p></li>
+<li><p>Repeat steps 3-6 to add another member to the HA configuration, but now use a priority of <strong>20</strong> or higher</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/ha-cluster.png"><img alt="../../_images/ha-cluster.png" class="align-center" src="../../_images/ha-cluster.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="10">
+<li><p>On the just added secondary server, install the Micetro Central application. If it’s already installed, make sure it’s stopped by using (as root):</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>stop<span class="w"> </span>mmcentral
+systemctl<span class="w"> </span>status<span class="w"> </span>mmcentral
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral/preferences.cfg</span></code> file from the first server to the second, and change the <code class="docutils literal notranslate"><span class="pre">ClusterMemberName</span></code> value to match the one set up previously. Save the file and exit.</p></li>
+<li><p>Start Central on the secondary server:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>start<span class="w"> </span>mmcentral
+</pre></div>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Verify that you now have 2 servers, one primary, one secondary in the HA cluster</p></li>
+<li><p>Create a round robin DNS name for the high availability setup, i.e. two A records with the same name, but each with the IP address of the primary and secondary server respectively.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Repeat these steps for each high availability failover you’d like to add. The priority for each failover member should be unique and higher than the primary.</p>
+</div>
+<p>Proceed to <a class="reference internal" href="install_controllers.html#install-controllers"><span class="std std-ref">Server controllers</span></a>.</p>
+<hr class="docutils" />
+</section>
+<section id="windows">
+<span id="central-ha-windows"></span><h2>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>In the existing (or designated as <em>primary</em>) server running Central, edit the preferences file <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code>, adding</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ClusterMemberName</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;somename&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>to the end of the file. <code class="docutils literal notranslate"><span class="pre">somename</span></code> is the unique name that will identify the Central instance in the high availability cluster. (E.g. “1”, “primary”, or “central1”)</p>
+<ol class="arabic simple" start="2">
+<li><p>Restart the primary Central application from the command line:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mmcentral<span class="w"> </span>–stop
+mmcentral<span class="w"> </span>–start
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Login to the web UI as “administrator” and go to <span class="guilabel">Admin</span> then <span class="guilabel">Configuration</span></p></li>
+<li><p>Select <span class="guilabel">High Availability</span></p></li>
+<li><p>Type in the name of the first member server to match the name given earlier and set the priority to <strong>10</strong></p></li>
+<li><p>Click <span class="guilabel">Add Member</span></p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/ha-add-member.jpg"><img alt="../../_images/ha-add-member.jpg" class="align-center" src="../../_images/ha-add-member.jpg" style="width: 100%;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Restart the Central application from the command line:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mmcentral<span class="w"> </span>–stop
+mmcentral<span class="w"> </span>–start
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Login to the web UI and verify that the current server is running with state “Active”</p></li>
+<li><p>Repeat steps 3-6 to add another member to the HA configuration, but now use a priority of <strong>20</strong> or higher</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/ha-cluster.png"><img alt="../../_images/ha-cluster.png" class="align-center" src="../../_images/ha-cluster.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="10">
+<li><p>On the just added secondary server, install the Micetro Central application. If it’s already installed, make sure it’s stopped:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mmcentral<span class="w"> </span>–stop
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral/preferences.cfg</span></code> file from the first server to the second, and change the <code class="docutils literal notranslate"><span class="pre">ClusterMemberName</span></code> value to match the one set up previously. Save the file and exit.</p></li>
+<li><p>Start Central on the secondary server:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mmcentral<span class="w"> </span>–start
+</pre></div>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Verify that you now have 2 servers, one primary, one secondary in <span class="menuselection">Tools ‣ Manage High availability</span>.</p></li>
+<li><p>Create a round robin DNS name for the high availability setup, i.e. two A records with the same name, but each with the IP address of the primary and secondary server respectively.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Repeat these steps for each high availability failover you’d like to add. The priority for each failover member should be unique and higher than the primary.</p>
+</div>
+</section>
+<section id="editing-ha-member-options">
+<h2>Editing HA member options<a class="headerlink" href="#editing-ha-member-options" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Log in to the web UI and go to <span class="guilabel">Admin</span> then <span class="guilabel">Configuration</span></p></li>
+<li><p>Click on <span class="guilabel">High Availability</span></p></li>
+<li><p>Hover over the server member and click on the ellipsis (or meatball) menu</p></li>
+<li><p>There are three options:</p></li>
+</ol>
+<dl class="simple">
+<dt>Edit Member</dt><dd><p>Change the name or priority of the server member in the HA cluster</p>
+</dd>
+<dt>Set Active</dt><dd><p>Set the server to be the Active member of the HA cluster manually</p>
+</dd>
+<dt>Remove Member</dt><dd><p>Remove the server member from the HA cluster</p>
+</dd>
+</dl>
+<p>Proceed to <a class="reference internal" href="install_controllers.html#install-controllers"><span class="std std-ref">Server controllers</span></a>.</p>
+</section>
+<section id="updating-central-in-high-availability-setup">
+<span id="update-central-ha"></span><h2>Updating Central in High Availability setup<a class="headerlink" href="#updating-central-in-high-availability-setup" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Automatic Update feature cannot be used when the Central service is in High Availability setup</p>
+</div>
+<p>The procedure for updating the Central servers in High Availability is as follows:</p>
+<ol class="arabic simple">
+<li><p>Turn off the Central service on each secondary server</p></li>
+<li><p>Upgrade the primary server manually using an installer. An installer can be downloaded from <a class="reference external" href="https://download.menandmice.com/">https://download.menandmice.com/</a></p></li>
+<li><p>Upgrade each secondary server manually using an installer. After the upgrade finished successfully, the service will be started again.</p></li>
+<li><p>Now, both servers should be upgraded and again in High Availability mode.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_advanced_settings.html" class="btn btn-neutral float-left" title="Advanced System Settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ha_tweaks_central.html" class="btn btn-neutral float-right" title="Men&amp;Mice Central HA tweaks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

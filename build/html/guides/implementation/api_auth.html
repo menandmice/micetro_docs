@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="API authentication methods including the login command in Micetro by Men&amp;Mice" name="description" />
+<meta content="Micetro´s API, Micetro authentication" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Authentication methods &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Adding DNS servers" href="adding_dns.html" />
+    <link rel="prev" title="Configure LDAP authentication" href="configure_ldap.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="configuration.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="running_micetro.html">Running the Men&amp;Mice components (Central, Controllers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_login.html">First login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_logging.html">Enable logging for Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller_logging.html">Configuring logging for the Men&amp;Mice Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">Micetro User Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="external_auth.html">External Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="external_auth.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_auth.html#active-directory-user-authentication">Active Directory User Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_auth.html#active-directory-single-sign-on">Active Directory Single Sign-on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_auth.html#application-log-in">Application Log In</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="external_auth.html#group-level-active-directory-user-authentication">Group Level Active Directory User Authentication</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="external_auth.html#configuring-groups-for-ad-group-level-authentication">Configuring Groups for AD Group Level Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="external_auth.html#configuring-users-and-access-privileges">Configuring Users and Access Privileges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="external_auth.html#radius-user-authentication">RADIUS User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="external_auth.html#radius-user-authentication-vs-local-user-authentication">RADIUS User Authentication vs. Local User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="external_auth.html#enabling-radius-user-authentication">Enabling RADIUS User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="external_auth.html#configuring-users">Configuring Users</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="external_auth.html#logging-into-micetro">Logging into Micetro</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dns.html">Adding DNS servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dhcp.html">Add DHCP Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_ip_ranges.html">IP Address Ranges and devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="configuration.html">Configuration</a></li>
+          <li class="breadcrumb-item"><a href="external_auth.html">External Authentication</a></li>
+      <li class="breadcrumb-item active">API Authentication methods</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/api_auth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-authentication-methods">
+<span id="api-auth"></span><h1>API Authentication methods<a class="headerlink" href="#api-authentication-methods" title="Link to this heading"></a></h1>
+<p>There a few options for authenticating against the M&amp;M API:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#api-login-command"><span class="std std-ref">Login command</span></a></p></li>
+<li><p><a class="reference internal" href="#api-login-headers"><span class="std std-ref">Authorization Headers</span></a></p></li>
+<li><p><a class="reference internal" href="#api-login-sso"><span class="std std-ref">Single Sign-On</span></a></p></li>
+</ul>
+<section id="login-command">
+<span id="api-login-command"></span><h2>Login command<a class="headerlink" href="#login-command" title="Link to this heading"></a></h2>
+<p>This method is available in all versions of M&amp;M, and all the different flavors of the M&amp;M API (SOAP/JSON-RPC/REST). In the REST API, this command is available via the URL commands/Login</p>
+<p>The Login command takes in server (for the M&amp;M Central server), user name, and password, and returns a session ID, which should then be used for all other API calls via their session parameter.</p>
+<p>The Login command and its parameters is fully documented in the normal SOAP API documentation</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember to configure HTTPS for the mmws and/or _mmwebext sites for this authentication method, since the username and password can easily be extracted for anyone listening in on the communication.</p>
+</div>
+</section>
+<section id="authorization-headers">
+<span id="api-login-headers"></span><h2>Authorization Headers<a class="headerlink" href="#authorization-headers" title="Link to this heading"></a></h2>
+<p>With the introduction of Men&amp;Mice Web Services and the REST API in version 7.3, it’s now also possible to authenticate via HTTP headers, by adding a Basic Authorization header, or with a Negotiate Authorization header, if the client supports it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If AuthorizationMethods is not defined in the preference file mmWS will only accept basic authorization.</p>
+</div>
+<p>By using authorization headers for authentication, the Login command becomes unnecessary, and the session ID is not used. The “session” parameter for all the commands must be omitted, and not left blank.</p>
+<p>With this authentication method, multiple M&amp;M Web Service instances can be deployed and used simultaneously behind a load balancer to provide a redundancy that is transparent to the API client.</p>
+<p>The session IDs, on the other hand, are only valid on the API endpoint (web service) they were created with. So when an API client that uses a session id gets redirected to another Web Service/API Endpoint, the client will get an error that the session id is invalid or expired, and then needs to login again to get a new session id before proceeding.</p>
+<section id="basic-authentication">
+<h3>Basic Authentication<a class="headerlink" href="#basic-authentication" title="Link to this heading"></a></h3>
+<p>For Basic Authentication, simply include a HTTP header like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Authorization</span><span class="p">:</span> <span class="n">Basic</span> <span class="n">QWxhZGRpbjpPcGVuU2VzYW1l</span>
+</pre></div>
+</div>
+<p>where the last part is <code class="docutils literal notranslate"><span class="pre">&lt;user</span> <span class="pre">name&gt;:&lt;password&gt;</span></code>, base64 encoded</p>
+<p>For more information on Basic Authorization headers on the client side, see for example here: <a class="reference external" href="https://en.wikipedia.org/wiki/Basic_access_authentication">https://en.wikipedia.org/wiki/Basic_access_authentication</a></p>
+<p>The authorization header authentication method is only available for JSON-RPC and REST APIs, and only if using M&amp;M Web Services as an endpoint (i.e. the URL is &lt;server&gt;/mmws/api or &lt;server&gt;/mmws/json)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember to configure HTTPS for the mmws site for this authentication method since the username and password can easily be extracted for anyone listening in on the communication.</p>
+</div>
+</section>
+<section id="negotiate-authentication">
+<h3>Negotiate Authentication<a class="headerlink" href="#negotiate-authentication" title="Link to this heading"></a></h3>
+<p>Negotiate header Authorization (<a class="reference external" href="https://en.wikipedia.org/wiki/SPNEGO)">SPNEGO</a>-based Kerberos and NTLM HTTP Authentication) is also supported when the client supports it, and when it has been enabled for the Men&amp;Mice Web Services.</p>
+<p>This way, the user name and password are not provided in the header, and the API call is executed in the security context of the user that invokes it. In other words, this is the single sign-on authentication option that the Men&amp;Mice Web Services provides.</p>
+<p>To enable the Negotiate header Authorization in M&amp;M Web Services, add the following line to the <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code>, and restart the <code class="docutils literal notranslate"><span class="pre">mmws</span></code> service.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">AuthorizationMethods</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Kerberos,NTLM&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>The order of the methods can be changed, e.g. if NTLM is preferred over Kerberos but in general if you don’t want to allow NTLM (which is less secure) as a fallback only specify Kerberos as
+a value.</p>
+</section>
+</section>
+<section id="single-sign-on">
+<span id="api-login-sso"></span><h2>Single Sign-On<a class="headerlink" href="#single-sign-on" title="Link to this heading"></a></h2>
+<p>To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro. See <a class="reference internal" href="external_auth.html#external-auth"><span class="std std-ref">External Authentication</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="configure_ldap.html" class="btn btn-neutral float-left" title="Configure LDAP authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adding_dns.html" class="btn btn-neutral float-right" title="Adding DNS servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

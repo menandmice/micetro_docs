@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to view object history and Micetro logs and undo changes" name="description" />
+<meta content="change history, object history, Micetro logs, logging, undo changes" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viewing Global Object History &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configure Single Sign-On" href="webapp_sso.html" />
+    <link rel="prev" title="System Settings" href="admin_system_settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Viewing Global Object History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#undoing-changes">Undoing Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Viewing Global Object History</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/admin_object_history.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="viewing-global-object-history">
+<span id="admin-object-history"></span><h1>Viewing Global Object History<a class="headerlink" href="#viewing-global-object-history" title="Link to this heading"></a></h1>
+<p>The <strong>Logging</strong> tab of the <strong>Admin</strong> page shows the global object history and log messages generated by Micetro. The global object history allows you to track changes made to various objects, providing valuable insights into the date, time, user, client, actions taken, and any comments associated with each modification.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This information applies to the web interface. For information about change history in the M&amp;M Management Console, see <a class="reference internal" href="../management-console/console_actions.html#console-object-change-history"><span class="std std-ref">Object Change History</span></a>.</p>
+</div>
+<p><strong>Permission:</strong></p>
+<ul class="simple">
+<li><p>Permission: <code class="docutils literal notranslate"><span class="pre">Access</span> <span class="pre">to</span> <span class="pre">view</span> <span class="pre">history</span></code> on Micetro</p></li>
+<li><p>Role: <code class="docutils literal notranslate"><span class="pre">Administrators</span> <span class="pre">(built-in)</span></code></p></li>
+</ul>
+<p><strong>To view global object history</strong>:</p>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select the <span class="guilabel">Logging</span> tab.</p></li>
+<li><p>Select <span class="guilabel">Object History</span> in the filtering sidebar.</p></li>
+<li><p>Use the search options to filter the results.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/logging-object-history.png"><img alt="../../_images/logging-object-history.png" src="../../_images/logging-object-history.png" style="width: 90%;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>When searching for a change log, narrow down your search by selecting the desired <span class="guilabel">Object type</span> for more focused results.</p></li>
+<li><p>Use  <span class="guilabel">Made by user</span> to view changes made by a specific user.</p></li>
+</ul>
+</div></blockquote>
+<section id="undoing-changes">
+<h2>Undoing Changes<a class="headerlink" href="#undoing-changes" title="Link to this heading"></a></h2>
+<p>You have the option to revert changes to DNS records and custom properties for all objects.</p>
+<p><strong>To undo changes</strong>:</p>
+<ol class="arabic">
+<li><p>Locate the specific action in the object history log that you want to undo and click on the Row <span class="guilabel">…</span> menu associated with it.</p></li>
+<li><p>Select <span class="guilabel">Undo</span>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/global-object-history-undo.png"><img alt="../../_images/global-object-history-undo.png" src="../../_images/global-object-history-undo.png" style="width: 70%;" /></a>
+</div></blockquote>
+</li>
+<li><p>Enter a comment for the action, and select <span class="guilabel">Save</span> to confirm the undo action and revert the selected change.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin_system_settings.html" class="btn btn-neutral float-left" title="System Settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="webapp_sso.html" class="btn btn-neutral float-right" title="Configure Single Sign-On" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

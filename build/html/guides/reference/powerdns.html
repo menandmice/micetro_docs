@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The PowerDNS connector script connects directly to the MySQL backend and allows management of zones in PowerDNS. Native mode and Master/Slave mode in the authoritative PowerDNS are currently supported." name="description" />
+<meta content="PowerDNS, DNS" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring PowerDNS &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="External scripts" href="external_scripts.html" />
+    <link rel="prev" title="Configuring Amazon Route53" href="aws_route53.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">Configuring PowerDNS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/powerdns.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuring-powerdns">
+<span id="powerdns"></span><h1>Configuring PowerDNS<a class="headerlink" href="#configuring-powerdns" title="Link to this heading"></a></h1>
+<p>The PowerDNS connector script connects directly to the MySQL backend and allows management of zones in PowerDNS. Native mode and Master/Slave mode in the authoritative PowerDNS are currently supported.</p>
+<p>The installation works as described above. On Linux use the <code class="docutils literal notranslate"><span class="pre">--generic-dns-controller</span></code> parameter when executing the installer.</p>
+<p>It will then install the base Generic DNS Server Controller, but there are two things you want to tweak:</p>
+<ol class="arabic simple">
+<li><p>Create working directory and connector script config:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>/var/mmsuite/dns_server_controller
+</pre></div>
+</div>
+<p>and set the correct ownership.</p>
+<ol class="arabic simple" start="2">
+<li><p>Create a file <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code> in the <code class="docutils literal notranslate"><span class="pre">mmsuite</span></code> directory and configure the connector script with a XML-tag as described in Generic DNS Server Controller.</p></li>
+</ol>
+<p>E.g. on Linux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">GenericDNSScript</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;python /your/script/directory/genericDNSPowerDNS.py&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Download the script <a class="reference external" href="https://github.com/menandmice/micetro_docs/blob/latest/scripts/genericDNSPowerDNS.py">from GitHub</a>.</p>
+<ol class="arabic simple" start="4">
+<li><p>Edit the <code class="docutils literal notranslate"><span class="pre">systemd/init</span></code> script of the controller. Open with an editor, e.g. vi the <code class="docutils literal notranslate"><span class="pre">mmremote</span></code> init script, which should be <code class="docutils literal notranslate"><span class="pre">/etc/init.d/mmremote</span></code>.</p></li>
+<li><p>Search for the line <code class="docutils literal notranslate"><span class="pre">PARAMS=&quot;....&quot;</span></code>.</p></li>
+<li><p>Add to the begin of the parameter list your created controller working directory with the <code class="docutils literal notranslate"><span class="pre">-d</span></code> parameter, .i.e.:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PARAMS</span><span class="o">=</span><span class="s2">&quot;-d /var/mmsuite/dns_server_controller  ...rest of the params&quot;</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="aws_route53.html" class="btn btn-neutral float-left" title="Configuring Amazon Route53" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="external_scripts.html" class="btn btn-neutral float-right" title="External scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

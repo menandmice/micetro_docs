@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to import DNS records in the Micetro by Men&amp;Mice Web Application" name="description" />
+<meta content="DNS records, DNS import" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import DNS Records &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Network management" href="webapp_network_management.html" />
+    <link rel="prev" title="DNS management" href="webapp_dns.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ui.html">Micetro user interface(s)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="web_application.html">Web Application</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="web_application.html#user-guide">User Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="webapp_introduction.html">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_user_guide.html">Using the Web Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_general.html">General</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_filtering.html">Filtering sidebar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_inspector.html">The Inspector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_dns.html">DNS management</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Import DNS Records</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_network_management.html">Network management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_import_ipam_data.html">Import IPAM data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_quick_command.html">Quick command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_quick_filter.html">Quickfilter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_workflows.html">Workflow Management</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="web_application.html#admin-guide">Admin Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ui.html">Micetro user interface(s)</a></li>
+          <li class="breadcrumb-item"><a href="web_application.html">Web Application</a></li>
+      <li class="breadcrumb-item active">Import DNS Records</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/webapp_import_dns_records.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="import-dns-records">
+<span id="webapp-import-dns-records"></span><h1>Import DNS Records<a class="headerlink" href="#import-dns-records" title="Link to this heading"></a></h1>
+<p>DNS Records can be imported in the Micetro Web Application.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>The user importing must have access to edit records in the zones used in the import.</p>
+<p>See <a class="reference internal" href="../admin-manual/access_control.html#access-control"><span class="std std-ref">Access control</span></a> for further information on access controls.</p>
+</section>
+<section id="import-task">
+<h2>Import task<a class="headerlink" href="#import-task" title="Link to this heading"></a></h2>
+<p>The action to import DNS Records is available from the <span class="menuselection">Actions</span> menu in the DNS zones list, that allows importing records to different zones at the same time.</p>
+<p><span class="menuselection">Actions ‣ Import DNS Records</span> is also available from within a specific zone, which allows importing records to that zone only.</p>
+<a class="reference internal image-reference" href="../../_images/bulk-import-dns.png"><img alt="../../_images/bulk-import-dns.png" class="align-center" src="../../_images/bulk-import-dns.png" style="width: 90%;" /></a>
+<section id="dns-bulk-import-format">
+<h3>DNS bulk import format<a class="headerlink" href="#dns-bulk-import-format" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When choosing files, only plaintext CSV/TSV/TXT files are accepted. Excel spreadsheets need to be exported to one of these formats prior to importing.</p>
+</div>
+<section id="header-line">
+<h4>Header line<a class="headerlink" href="#header-line" title="Link to this heading"></a></h4>
+<p>The first line of the data must be the header line, containing the name of the fields in the corresponding columns of the lines after it. Some of the fields refer to built-in system fields, while the rest of the fields are matching the custom properties that are defined for the object type in question.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It’s only necessary to include the fields that need to be imported/updated, except for properties that are defined as mandatory, or required to be able to identify the object to import.</p>
+</div>
+<p>The field names in the header line are not case sensitive. For example, “title” will be correlated to the custom property “Title”.</p>
+</section>
+<section id="built-in-fields">
+<h4>Built-in fields<a class="headerlink" href="#built-in-fields" title="Link to this heading"></a></h4>
+<dl>
+<dt>action</dt><dd><p>(Default: <strong>Add</strong>) Add, Modify, or Remove.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The following aliases can be also used:</p>
+<ul class="simple">
+<li><p>Insert/Create = Add</p></li>
+<li><p>Update/Change = Modify</p></li>
+<li><p>Delete/Del = Remove</p></li>
+</ul>
+</div>
+</dd>
+<dt>name</dt><dd><p>(required) Hostname of the record.</p>
+</dd>
+<dt>zone</dt><dd><p>The zone containing the record.</p>
+</dd>
+<dt>authority</dt><dd><p>If multi-master, the authority of the zone.</p>
+</dd>
+<dt>view</dt><dd><p>If multi-master, the view containing the zone.</p>
+</dd>
+<dt>forest</dt><dd><p>If multi-master, the forest of the zone.</p>
+</dd>
+<dt>type</dt><dd><p>(required) The type (A, CNAME, MX, etc.) of the record.</p>
+</dd>
+<dt>data</dt><dd><p>(required) The data (IP for A/AAAA, the target A/AAAA record for CNAME, etc.) for the record.</p>
+</dd>
+<dt>TTL</dt><dd><p>The Time-to-Live value of the record. Time value defaults to seconds, but hour (i.e. 1H), day (i.e. 2D), week (i.e. 3W), or month (i.e. 4M), or year (i.e. 5Y) can be used.</p>
+</dd>
+<dt>comment</dt><dd><p>Optional save comment.</p>
+</dd>
+<dt>newdata</dt><dd><p>If modifying an existing record, the new data to replace the old value.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h3>
+<section id="add-records">
+<h4>Add records<a class="headerlink" href="#add-records" title="Link to this heading"></a></h4>
+<p>Import A record ‘viola’ to the zone ‘illyria.coast’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span>
+<span class="n">viola</span><span class="o">.</span><span class="n">illyria</span><span class="o">.</span><span class="n">coast</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span>
+</pre></div>
+</div>
+<p>Import A record ‘viola’ to ‘illyria’ providing a view name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">view</span>
+<span class="n">viola</span><span class="o">.</span><span class="n">illyria</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span><span class="p">,</span><span class="n">first</span><span class="o">-</span><span class="n">folio</span>
+</pre></div>
+</div>
+<p>Import A record ‘viola’ to ‘illyria.palace’ to the authority of ‘orsino’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">authority</span>
+<span class="n">viola</span><span class="o">.</span><span class="n">illyria</span><span class="o">.</span><span class="n">palace</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span><span class="p">,</span><span class="n">orsino</span>
+</pre></div>
+</div>
+<p>Import A record ‘cesario’ to ‘olivia.palace’, when zone and authority are specified:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">authority</span><span class="p">,</span><span class="n">zone</span>
+<span class="n">cesario</span><span class="o">.</span><span class="n">olivia</span><span class="o">.</span><span class="n">palace</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span><span class="p">,</span><span class="n">illyria</span><span class="p">,</span><span class="n">orsino</span><span class="o">.</span><span class="n">palace</span>
+</pre></div>
+</div>
+</section>
+<section id="modify-records">
+<h4>Modify records<a class="headerlink" href="#modify-records" title="Link to this heading"></a></h4>
+<p>Modify IP address for the A record ‘viola’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">newdata</span>
+<span class="n">modify</span><span class="p">,</span><span class="n">viola</span><span class="o">.</span><span class="n">illyria</span><span class="o">.</span><span class="n">coast</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span><span class="p">,</span> <span class="mf">20.21.9.6</span>
+</pre></div>
+</div>
+<p>Modify IP address for the A record ‘viola’ but leave the TTL as it was:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">newdata</span><span class="p">,</span><span class="n">ttl</span>
+<span class="n">modify</span><span class="p">,</span><span class="n">viola</span><span class="o">.</span><span class="n">illyria</span><span class="o">.</span><span class="n">coast</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span><span class="p">,</span> <span class="mf">20.21.9.6</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>Modify IP address <em>and</em> TTL for the A record ‘viola’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">newdata</span><span class="p">,</span><span class="n">ttl</span>
+<span class="n">modify</span><span class="p">,</span><span class="n">viola</span><span class="o">.</span><span class="n">illyria</span><span class="o">.</span><span class="n">coast</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span><span class="p">,</span> <span class="mf">20.21.9.6</span><span class="p">,</span> <span class="mi">2</span><span class="n">H</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-records">
+<h4>Remove records<a class="headerlink" href="#remove-records" title="Link to this heading"></a></h4>
+<p>Remove A record ‘malvolio’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">data</span>
+<span class="n">remove</span><span class="p">,</span><span class="n">malvolio</span><span class="o">.</span><span class="n">olivia</span><span class="o">.</span><span class="n">palace</span><span class="o">.</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mf">16.0.2.2</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="webapp_dns.html" class="btn btn-neutral float-left" title="DNS management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="webapp_network_management.html" class="btn btn-neutral float-right" title="Network management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to configure RADIUS user authentication" name="description" />
+<meta content="RADIUS, external user authentication, user authentication" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RADIUS User Authentication &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Adding DNS Service" href="adding_dns.html" />
+    <link rel="prev" title="Lightweight Directory Access Protocol (LDAP) User Authentication" href="ldap_user_auth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="configuration.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="running_micetro.html">Running the Micetro Components (Central, Agents)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller_logging.html">Configuring Logging for the Micetro Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">Micetro User Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="webapp_external_auth.html">External Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfa_azure.html">Integrating with Microsoft Entra ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfa_okta.html">Integrating with Okta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_user_auth.html">Active Directory User Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_user_auth.html">Lightweight Directory Access Protocol (LDAP) User Authentication</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RADIUS User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radius-user-authentication-vs-local-user-authentication">RADIUS User Authentication vs. Local User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-radius-user-authentication">Enabling RADIUS User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-users-for-radius-authentication">Configuring Users for RADIUS Authentication</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dns.html">Adding DNS Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dhcp.html">Adding DHCP Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_ip_ranges.html">IP Address Ranges and Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="configuration.html">Configuration</a></li>
+          <li class="breadcrumb-item"><a href="webapp_external_auth.html">External Authentication</a></li>
+      <li class="breadcrumb-item active">RADIUS User Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/radius_user_auth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="radius-user-authentication">
+<span id="radius-user-auth"></span><h1>RADIUS User Authentication<a class="headerlink" href="#radius-user-authentication" title="Link to this heading"></a></h1>
+<p>Micetro can authenticate using an external RADIUS server. This is especially useful in large installations, as it eliminates the need for users to maintain their passwords in multiple locations. Any password rules (such as password expiry and minimum password length) that have been applied within the organization will automatically apply to Micetro.</p>
+<section id="radius-user-authentication-vs-local-user-authentication">
+<h2>RADIUS User Authentication vs. Local User Authentication<a class="headerlink" href="#radius-user-authentication-vs-local-user-authentication" title="Link to this heading"></a></h2>
+<p>Even with RADIUS user authentication enabled, users must still be created and assigned privileges within Micetro. The only difference between RADIUS and local user authentication lies in the authentication process: when RADIUS user authentication is enabled, users are authenticated via the RADIUS user authentication system before accessing Micetro. With RADIUS user authentication, user passwords are not stored within Micetro.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one authentication method can be assigned per user, but different users can use different authentication methods. This allows some users to log in using RADIUS user authentication while others utilize local user authentication.</p>
+</div>
+</section>
+<section id="enabling-radius-user-authentication">
+<h2>Enabling RADIUS User Authentication<a class="headerlink" href="#enabling-radius-user-authentication" title="Link to this heading"></a></h2>
+<p>To enable RADIUS authentication, you need to configure specific properties in the Micetro Central configuration file <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code>. Locate this file in the data folder in the Men&amp;Mice Central data directory:</p>
+<ul class="simple">
+<li><p>Windows: C:\Program Files\Men&amp;Mice\Central\data</p></li>
+<li><p>Others: Set during installation, typically <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral</span></code> or <code class="docutils literal notranslate"><span class="pre">/chroot/var/mmsuite/mmcentral</span></code>, where <code class="docutils literal notranslate"><span class="pre">/chroot</span></code> is the chroot jail location for named.</p></li>
+</ul>
+<p>Add the following properties to the configuration file:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>RADIUSServer</p></td>
+<td><p>Defines the address of the RADIUS server for authentication.</p></td>
+</tr>
+<tr class="row-even"><td><p>RADIUSPort</p></td>
+<td><p>Defines the port used by the RADIUS server (default is 1812).</p></td>
+</tr>
+<tr class="row-odd"><td><p>RADIUSSharedSecret</p></td>
+<td><p>Secret shared between the RADIUS server and Micetro.</p></td>
+</tr>
+<tr class="row-even"><td><p>RADIUSAuthentication</p></td>
+<td><p>Type of authentication used (0 for PAP, 1 for CHAP).</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">RADIUSServer</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;192.168.1.3&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">RADIUSPort</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1515&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">RADIUSSharedSecret</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;MyBigSecret&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">RADIUSAuthentication</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>After editing the file, restart Micetro Central.</p>
+<ul class="simple">
+<li><p>Windows: Use <span class="menuselection">Administration Tools ‣ Services</span> to restart Micetro Central.</p></li>
+<li><p>Others: Execute the <code class="docutils literal notranslate"><span class="pre">mmcentral</span></code> init script with the ‘restart’ argument.</p></li>
+</ul>
+</section>
+<section id="configuring-users-for-radius-authentication">
+<h2>Configuring Users for RADIUS Authentication<a class="headerlink" href="#configuring-users-for-radius-authentication" title="Link to this heading"></a></h2>
+<p>To enable user login in Micetro, users must exist in the Micetro user database. Without existing records in this database, users cannot log in, even with valid credentials in the RADIUS login system.</p>
+<p><strong>To configure a user for RADIUS authentication</strong>:</p>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration</span> and select <span class="guilabel">Users</span> in the filtering sidebar.</p></li>
+<li><p>To add a new user, click <span class="guilabel">Create</span>. Fill in the details, selecting <span class="guilabel">RADIUS</span> from the <strong>Authentication type</strong> drop-down list. For more information about how to create users, see <a class="reference internal" href="../admin-manual/acl_users.html#acl-users"><span class="std std-ref">Users</span></a>.</p></li>
+<li><p>To modify an existing user, double-click the user’s name to display the <strong>Edit Properties</strong> dialog box and select <span class="guilabel">RADIUS`</span> from the <strong>Authentication type</strong> drop-down list.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When RADIUS authentication is selected, the <strong>Password</strong> and <strong>Email address</strong> fields are disabled, since passwords are not stored in Micetro.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/ad_sso_radius.png"><img alt="../../_images/ad_sso_radius.png" src="../../_images/ad_sso_radius.png" style="width: 60%;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ldap_user_auth.html" class="btn btn-neutral float-left" title="Lightweight Directory Access Protocol (LDAP) User Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adding_dns.html" class="btn btn-neutral float-right" title="Adding DNS Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

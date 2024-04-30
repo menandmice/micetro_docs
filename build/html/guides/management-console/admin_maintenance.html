@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Find Orphaned PTR Records, Concurrent Leases, Show Round Robin Records, Show Multiply Defined PTR Records as part of network maintenance in Micetro." name="description" />
+<meta content="network space, Micetro, network maintenance, PTR records" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appliance management (Management Console, obsolete)" href="appliance_management.html" />
+    <link rel="prev" title="Cisco DHCP (Management Console, obsolete)" href="console_dhcp_cisco.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Maintenance  (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#find-orphaned-ptr-records">Find Orphaned PTR Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#find-concurrent-leases">Find Concurrent Leases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-round-robin-records">Show Round Robin Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-multiply-defined-ptr-records">Show Multiply Defined PTR Records</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">Maintenance  (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/admin_maintenance.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="maintenance-management-console-obsolete">
+<span id="admin-maintenance"></span><h1>Maintenance  (Management Console, obsolete)<a class="headerlink" href="#maintenance-management-console-obsolete" title="Link to this heading"></a></h1>
+<p>Micetro contains several options for cleaning up the network space. To access the network maintenance functions, select <span class="menuselection">Tools ‣ Maintenance</span> and then the maintenance operation you want to perform.</p>
+<section id="find-orphaned-ptr-records">
+<h2>Find Orphaned PTR Records<a class="headerlink" href="#find-orphaned-ptr-records" title="Link to this heading"></a></h2>
+<p>The <em>Find Orphaned PTR Records</em> maintenance operation allows you to see and remove orphaned PTR records in reverse zones. PTR records that have no corresponding address (A) records in the system are considered orphaned.</p>
+<p>To find and remove orphaned PTR records, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select <span class="menuselection">Tools ‣ Maintenance ‣ Find Orphaned PTR Records</span>. A dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">Start</span> to start looking for orphaned PTR records.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to the fact that the result could be a large number of records, there is now a limit of 1000 records being shown.</p>
+</div>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/admin-orphaned-ptr-records.png"><img alt="../../_images/admin-orphaned-ptr-records.png" class="align-center" src="../../_images/admin-orphaned-ptr-records.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the PTR records you want to remove, and click the <span class="guilabel">Delete</span> button. The selected PTR records are removed.</p></li>
+</ol>
+</section>
+<section id="find-concurrent-leases">
+<h2>Find Concurrent Leases<a class="headerlink" href="#find-concurrent-leases" title="Link to this heading"></a></h2>
+<p>The <em>Find Concurrent Leases</em> maintenance operation allows you to see and release concurrent DHCP leases. Concurrent DHCP leases are multiple active leases that are assigned to the same MAC address.</p>
+<p>To see and remove concurrent DHCP leases, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select <span class="menuselection">Tools ‣ Maintenance ‣ Find Concurrent Leases</span>. A dialog box opens.</p></li>
+<li><p>Click <span class="guilabel">Start</span> to start looking for concurrent DHCP leases.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Finding all concurrent leases might take a while in large environments.</p>
+</div>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/admin-concurrent-records.png"><img alt="../../_images/admin-concurrent-records.png" class="align-center" src="../../_images/admin-concurrent-records.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the leases you want to release, and click the <span class="guilabel">Release</span> button. The selected leases are released.</p></li>
+</ol>
+</section>
+<section id="show-round-robin-records">
+<h2>Show Round Robin Records<a class="headerlink" href="#show-round-robin-records" title="Link to this heading"></a></h2>
+<p>The <em>Show Round Robin Records</em> maintenance operation allows you to see and delete round robin DNS records. Round robin records are multiple address (A / AAAA) records with the same name.</p>
+<p>To see and remove round robin records, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select <span class="menuselection">Tools ‣ Maintenance ‣ Show Round Robin Records</span>. A dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">Start</span> to start looking for round robin records.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Finding all round robin records might take a while in large environments.</p>
+</div>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/admin-round-robin-records.png"><img alt="../../_images/admin-round-robin-records.png" class="align-center" src="../../_images/admin-round-robin-records.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the records you want to delete and click the <span class="guilabel">Delete</span> button. The selected records are deleted.</p></li>
+</ol>
+</section>
+<section id="show-multiply-defined-ptr-records">
+<h2>Show Multiply Defined PTR Records<a class="headerlink" href="#show-multiply-defined-ptr-records" title="Link to this heading"></a></h2>
+<p>The <em>Show Multiply Defined Records</em> maintenance operation allows you to see and delete multiply defined PTR records. Multiply defined PTR records are multiple PTR records with the same name.</p>
+<p>To see and remove multiply defined PTR records, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select <span class="menuselection">Tools ‣ Maintenance ‣ Show Multiply Defined PTR Records</span>. A dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">Start</span> to start looking for multiply defined PTR records.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Finding all multiply defined PTR records might take a while in large environments.</p>
+</div>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/admin-multiply-defined-ptr-records.png"><img alt="../../_images/admin-multiply-defined-ptr-records.png" class="align-center" src="../../_images/admin-multiply-defined-ptr-records.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the records you want to delete, and click the <span class="guilabel">Delete</span> button. The selected records are deleted.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_dhcp_cisco.html" class="btn btn-neutral float-left" title="Cisco DHCP (Management Console, obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="appliance_management.html" class="btn btn-neutral float-right" title="Appliance management (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

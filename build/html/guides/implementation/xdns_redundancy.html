@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Configuring and managing xDNS profiles in Micetro" name="description" />
+<meta content="xDNS Redundancy, DNS, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>xDNS Redundancy &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Custom Links in the Micetro Web Interface" href="webapp_custom_links.html" />
+    <link rel="prev" title="Men&amp;Mice Central HA tweaks" href="ha_tweaks_central.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced_config.html">Advanced configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="central_ha.html">Configure High Availability for Micetro Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ha_tweaks_central.html">Men&amp;Mice Central HA tweaks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">xDNS Redundancy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#xdns-profiles">xDNS Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-modifying-xdns-profiles">Creating/Modifying xDNS Profiles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-ttl-for-dns-records-in-xdns-profiles">Configuring TTL for DNS Records in xDNS Profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-xdns-profiles">Deleting xDNS Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-zones-to-xdns-profiles">Adding Zones to xDNS Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xdns-status-on-zones">xDNS Status on Zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-zones-from-xdns-profiles">Removing Zones from xDNS Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xdns-zones-and-the-api">xDNS zones and the API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_custom_links.html">Custom Links in the Micetro Web Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="advanced_config.html">Advanced configuration</a></li>
+      <li class="breadcrumb-item active">xDNS Redundancy</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/xdns_redundancy.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xdns-redundancy">
+<span id="id1"></span><h1>xDNS Redundancy<a class="headerlink" href="#xdns-redundancy" title="Link to this heading"></a></h1>
+<p>The xDNS (Cross-Domain Name System) redundancy feature helps ensure the availability and reliability of your DNS infrastructure. It allows you to create backup DNS configurations, so if one DNS server or service fails, another can seamlessly take over, ensuring uninterrupted access to your websites or services.</p>
+<ul class="simple">
+<li><p><strong>Creating Redundancy Groups</strong>: With xDNS profiles, you can create groups that consist of multiple DNS servers and services. These groups are designed to manage the authority of a specific list of DNS zones.</p></li>
+<li><p><strong>Identical Zone Content</strong>: Once you’ve set up an xDNS redundancy group, the system assists you in generating identical copies of the DNS zone content across multiple primary zones. This replication ensures that all zones within the group are the same in every aspect.</p></li>
+<li><p><strong>Flexibility</strong>: As your needs evelove, you can add or romeve zones from the xDNS profile.</p></li>
+</ul>
+<p><strong>To access xDNS profiles</strong>:</p>
+<ol class="arabic">
+<li><p>Go to the <strong>Admin</strong> page.</p></li>
+<li><p>Select <span class="guilabel">Configuration</span> in the upper-left corner.</p></li>
+<li><p>Select <span class="guilabel">xDNS Profiles</span> in the filtering sidebar on the left-hand side.</p>
+<a class="reference internal image-reference" href="../../_images/xdns-profiles.png"><img alt="../../_images/xdns-profiles.png" src="../../_images/xdns-profiles.png" style="width: 80%;" /></a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="xdns-profiles">
+<h2>xDNS Profiles<a class="headerlink" href="#xdns-profiles" title="Link to this heading"></a></h2>
+<p>xDNS Profiles group together two or more DNS services that share the the authority of a list of zones. Any changes made to these zones, within or outside of Micetro, are automatically synchronized across all DNS services within the profile. In case of conflicts, Micetro has a built-in conflict resolution strategy to handle them.</p>
+</section>
+<section id="creating-modifying-xdns-profiles">
+<h2>Creating/Modifying xDNS Profiles<a class="headerlink" href="#creating-modifying-xdns-profiles" title="Link to this heading"></a></h2>
+<p>To create or edit an xDNS profile, you must have administrative access within Micetro to the DNS Services you want to include.</p>
+<ul class="simple">
+<li><p>To <strong>create</strong> a new profile, click <span class="guilabel">Create Profile</span> in the lower-rigt corner of the xDNS Profiles list.</p></li>
+<li><p>To <strong>edit</strong> a profile, select the relevant profile, and then select <span class="guilabel">Edit profile</span> on the Row <span class="guilabel">…</span> menu. You can also double-click the profile.</p></li>
+</ul>
+<p>Each profile has the following properties:</p>
+<ul>
+<li><p><strong>Name</strong>: A unique identifier for the profile.</p></li>
+<li><p><strong>Description</strong>: An optional field to describe the purpose of the xDNS profile.</p></li>
+<li><p><strong>Conflict Strategy</strong>: Determines whether Micetro overwrites or merges record conflicts that may arise during synchronization. This also serves as the default when adding new zones to the profile.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Overwrite existing zones</strong>: If a zone with the same name exists on any other DNS service included in the xDNS profile, its records will be overwritten with the record data from the zone instance being added to the xDNS profile.</p></li>
+<li><p><strong>Merge records</strong>: If a zone with the same name exists on any secondary service, its contents will be merged with the contents of the zone on the primary service.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Servers</strong>: At least two DNS services must be added to the profile. Each service can also be configured to reject external changes. This means changes to record data made on one service outside of Micetro will not be replicated by xDNS to other services.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The list of servers <strong>cannot</strong> be changed after the profile has been created</p>
+</div>
+<section id="configuring-ttl-for-dns-records-in-xdns-profiles">
+<h3>Configuring TTL for DNS Records in xDNS Profiles<a class="headerlink" href="#configuring-ttl-for-dns-records-in-xdns-profiles" title="Link to this heading"></a></h3>
+<p>You can specify the default Time-to-Live (TTL) for DNS records created within zones for all xDNS profiles. This setting determines how long DNS information remains cached by DNS resolvers before requesting updated data.</p>
+<ol class="arabic simple">
+<li><p>Go to the <strong>Admin</strong> page.</p></li>
+<li><p>Select <span class="guilabel">Configuration</span> in the upper left corner.</p></li>
+<li><p>Under <strong>System Settings</strong> in the filtering sidebar, select <span class="guilabel">Advanced</span>.</p></li>
+<li><p>Enter your desired TTL value in the appropriate text box.</p></li>
+</ol>
+</section>
+</section>
+<section id="deleting-xdns-profiles">
+<h2>Deleting xDNS Profiles<a class="headerlink" href="#deleting-xdns-profiles" title="Link to this heading"></a></h2>
+<p>To delete an xDNS profile, you must have administrative access within Micetro to all DNS services within the profile.</p>
+<p>When an xDNS profile is deleted, each service retains a copy of the zones from the profile, but replication between them will stop.</p>
+<ul class="simple">
+<li><p>To delete a profile, select the relevant profile, and then select <span class="guilabel">Delete profile</span> on the Row <span class="guilabel">…</span> menu. You can also double-click the profile.</p></li>
+</ul>
+</section>
+<section id="adding-zones-to-xdns-profiles">
+<h2>Adding Zones to xDNS Profiles<a class="headerlink" href="#adding-zones-to-xdns-profiles" title="Link to this heading"></a></h2>
+<p>To add a DNS zone to an xDNS profile, you must have “create zone access” on all DNS services included in the xDNS profile.
+xDNS profiles initially do not include any zones.</p>
+<p><strong>To add zones to xDNS profiles</strong>:</p>
+<ol class="arabic">
+<li><p>Go to the <strong>DNS</strong> page.</p></li>
+<li><p>In the filtering sidebar, select <span class="guilabel">Primary Zones</span>, if not already selected. xDNS only supports primary zones.</p></li>
+<li><p>On the <span class="guilabel">Actions</span> menu, select <span class="guilabel">Add to xDNS profile</span>. You can also select this option on the Row <span class="guilabel">…</span> menu.</p>
+<a class="reference internal image-reference" href="../../_images/add-to-xdns-profile.png"><img alt="../../_images/add-to-xdns-profile.png" src="../../_images/add-to-xdns-profile.png" style="width: 60%;" /></a>
+<ul class="simple">
+<li><p>When a profile is selected on the <span class="guilabel">Profile</span> menu, Micetro runs preflight checks and displays any warnings or potential errors that are detected.</p></li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/xdns-preflight-errors.png"><img alt="../../_images/xdns-preflight-errors.png" src="../../_images/xdns-preflight-errors.png" style="width: 80%;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Adding a zone to xDNS will, if necessary, create zone instances on other DNS services included in the selected profile and add delegation records. Afterward, other record data from the source zone will be replicated to the newly created zone instances.</p>
+<p>The overview grid for DNS zones will display only one instance, with the authority column showing the name of the profile to which the zone has been added.</p>
+<a class="reference internal image-reference" href="../../_images/xdns-zone-authority.png"><img alt="../../_images/xdns-zone-authority.png" class="align-center" src="../../_images/xdns-zone-authority.png" style="width: 80%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="xdns-status-on-zones">
+<h2>xDNS Status on Zones<a class="headerlink" href="#xdns-status-on-zones" title="Link to this heading"></a></h2>
+<p>You can monitor the status of xDNS zones in the inspector. Each underlying zone instance is represented by the name of the DNS service and a traffic light indicator.</p>
+<a class="reference internal image-reference" href="../../_images/xdns-status.png"><img alt="../../_images/xdns-status.png" class="align-center" src="../../_images/xdns-status.png" style="width: 60%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Multiselecting is supported if all xDNS zones belong to the same profile, with each entry showing the aggregate state of the zone instances on each DNS service. If zones from multiple profiles are selected, the xDNS status section will be hidden.</p>
+</section>
+<section id="removing-zones-from-xdns-profiles">
+<h2>Removing Zones from xDNS Profiles<a class="headerlink" href="#removing-zones-from-xdns-profiles" title="Link to this heading"></a></h2>
+<p>Removing a zone stops all replication between zone instances on each DNS service. Delegation remains unchanged, and no zone instances are deleted.</p>
+</section>
+<section id="xdns-zones-and-the-api">
+<h2>xDNS zones and the API<a class="headerlink" href="#xdns-zones-and-the-api" title="Link to this heading"></a></h2>
+<p>xDNS zones are represented as single instances in the API, with the Authority value denoting the profile they belong to. Individual zone instances remain accessible, for example by calling GetDNSZones and filtering for each DNS service via the dnsServerRef parameter.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ha_tweaks_central.html" class="btn btn-neutral float-left" title="Men&amp;Mice Central HA tweaks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="webapp_custom_links.html" class="btn btn-neutral float-right" title="Custom Links in the Micetro Web Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

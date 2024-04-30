@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Quick Filter functionality in the Micetro by Men&amp;Mice Management Console" name="description" />
+<meta content="dns data records" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Filter (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Other actions in the Management Console" href="console_actions.html" />
+    <link rel="prev" title="Toolbars (Management Console, obsolete)" href="console_toolbars.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quick Filter (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-keywords">Using Keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-wildcards-and-regular-expressions-in-filters">Using Wildcards and Regular Expressions in Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clearing-an-entry">Clearing an Entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-a-filter">Saving a Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-a-filter">Editing a Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-a-filter">Deleting a Filter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">Quick Filter (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_quickfilter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-filter-management-console-obsolete">
+<span id="console-quickfilter"></span><h1>Quick Filter (Management Console, obsolete)<a class="headerlink" href="#quick-filter-management-console-obsolete" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Quick Filter functionality is also available in the Web Application.</p>
+</div>
+<p>Quick Filters provide a simple way to filter out data records you do not want to see. They can be found in most windows that contain a number of objects. A Quick Filter works in real time and searches all items in a list by default. It is also possible to narrow the search by using keywords to specify in which field to search.</p>
+<section id="using-keywords">
+<h2>Using Keywords<a class="headerlink" href="#using-keywords" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>Column Headers</dt><dd><p>It is possible to use column headers as keywords in the Quick Filter and to specify in which field to search. For example, if you enter the following filtering criterion when filtering zones - <code class="docutils literal notranslate"><span class="pre">name:myzone</span></code> - the filter only searches in the <strong>Name</strong> field and displays only those results that contain the text <code class="docutils literal notranslate"><span class="pre">myzone</span></code>. When a column header’s name contains a space, such as <code class="docutils literal notranslate"><span class="pre">Lease</span> <span class="pre">MAC</span> <span class="pre">Address</span></code>, you can enclose the name in quotes –e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Lease</span> <span class="pre">MAC</span> <span class="pre">Address&quot;:11</span></code>. See Colons, below.</p>
+</dd>
+<dt>Colons</dt><dd><p>Colons are used to separate a column name from a filter. If the filter contains colons, you can either enclose the filter in quotes or escape the colons with a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>. For example, both <code class="docutils literal notranslate"><span class="pre">&quot;Lease</span> <span class="pre">MAC</span> <span class="pre">Address&quot;:&quot;11:22&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Lease</span> <span class="pre">MAC</span> <span class="pre">Address&quot;:11\:22</span></code> search for a MAC address containing <code class="docutils literal notranslate"><span class="pre">11:22</span></code> in a column with a name containing with the name <code class="docutils literal notranslate"><span class="pre">Lease</span> <span class="pre">MAC</span> <span class="pre">Address</span></code>.</p>
+</dd>
+<dt>Simultaneous Keywords</dt><dd><p>You can use several keywords simultaneously simply by leaving a space between each consecutive filtering criterion. An <code class="docutils literal notranslate"><span class="pre">AND</span></code> condition is used when finding records. For example: <code class="docutils literal notranslate"><span class="pre">name:myzone</span> <span class="pre">type:slave</span></code>.</p>
+</dd>
+<dt>Custom Properties</dt><dd><p>When custom properties are used, you can use the name of the custom property as a keyword.</p>
+</dd>
+</dl>
+</section>
+<section id="using-wildcards-and-regular-expressions-in-filters">
+<h2>Using Wildcards and Regular Expressions in Filters<a class="headerlink" href="#using-wildcards-and-regular-expressions-in-filters" title="Link to this heading"></a></h2>
+<p>When using the Quick Filters, it is possible to use the wildcard characters <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code> to narrow the search results.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <strong>caret symbol</strong> <code class="docutils literal notranslate"><span class="pre">^</span></code> means <strong>starts with</strong>. For example, the search string ^server finds server1.zone.com and server-north.anotherzone.com, but not myserver.myzone.com.</p></li>
+<li><p>The <strong>dollar symbol</strong> <code class="docutils literal notranslate"><span class="pre">$</span></code> means <strong>ends with</strong>. For example, the search string ‘server$’ finds the.best.server and good.nameserver, but not slow.servers.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator means <strong>NOT{*}</strong>.</p></li>
+</ul>
+</div></blockquote>
+<p>For example, the search string <code class="docutils literal notranslate"><span class="pre">!^a</span></code> finds entries that don’t start with ‘a’. The exclamation mark can be used with the other wildcards to find non-empty fields. Entering <code class="docutils literal notranslate"><span class="pre">Description:</span> <span class="pre">!^$</span></code> finds all entries where the Description field is not empty.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> operators only work for the SOAP interface and Web Application, but <em>not</em> currently for the Management Console. It is a known issue that will be fixed in an upcoming version.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> operators. The <strong>ampersand</strong> is interpreted as an <strong>AND</strong> operator while the <strong>vertical bar</strong> is used as an <strong>OR</strong> operator. Using these operators, you can combine searches for added control. You can use parenthesis in conjunction with these operators. Examples:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">|</span> <span class="pre">B</span></code> Finds entries with the text A or the text B</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&amp;</span> <span class="pre">B</span></code> Find entries containing both A and B</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&amp;</span> <span class="pre">(B</span> <span class="pre">|</span> <span class="pre">C)</span></code> Finds entries containing A and either B or C</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(A</span> <span class="pre">&amp;</span> <span class="pre">B)</span> <span class="pre">|</span> <span class="pre">C</span></code> Finds entries containing both A and B or entries containing C</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>For even more control, you can use regular expressions in filters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The character <code class="docutils literal notranslate"><span class="pre">.</span></code> must be escaped if it is to be used as a wildcard character. Otherwise, it will be interpreted literally. The same applies to following characters: <code class="docutils literal notranslate"><span class="pre">(</span></code>, <code class="docutils literal notranslate"><span class="pre">)</span></code>, <code class="docutils literal notranslate"><span class="pre">{</span></code>, <code class="docutils literal notranslate"><span class="pre">}</span></code>.</p>
+</div>
+</section>
+<section id="clearing-an-entry">
+<h2>Clearing an Entry<a class="headerlink" href="#clearing-an-entry" title="Link to this heading"></a></h2>
+<p>At any time, you can clear the text you have in the Quick Filter field by click the <span class="guilabel">X</span> shown at the end of the field.</p>
+<a class="reference internal image-reference" href="../images/console-clear-quickfilter.png"><img alt="../images/console-clear-quickfilter.png" class="align-center" src="../images/console-clear-quickfilter.png" style="width: 90%;" /></a>
+</section>
+<section id="saving-a-filter">
+<span id="console-saved-filter"></span><h2>Saving a Filter<a class="headerlink" href="#saving-a-filter" title="Link to this heading"></a></h2>
+<p>It is possible to save filters for various object types. Saved filters appear in the list on the left hand side of the Manager Window and in the Create Zone dialog box. Filters can be local or global in scope. Filters created by the Administrator are global and visible to all users. Filters created by any other user are visible only to that user.</p>
+<p>To save a filter, do the following:</p>
+<ol class="arabic simple">
+<li><p>Type the entry you want to filter by in the Quick Filter field.</p></li>
+<li><p>Move to the menu bar, and select <span class="menuselection">Edit ‣ Save Filter</span>.</p></li>
+<li><p>In the dialog box, type the desired name for the filter. Then click <span class="guilabel">OK</span>.</p></li>
+<li><p>The saved filter shows at the bottom of the Object list for the corresponding object type.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/console-custom-filter.png"><img alt="../images/console-custom-filter.png" class="align-center" src="../images/console-custom-filter.png" style="width: 60%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also create filters that reside in object folders. To create a filter in a folder, start by selecting the folder before creating the filter. A filter that resides in a folders perform the search within the context of the folder.</p>
+</div>
+</section>
+<section id="editing-a-filter">
+<h2>Editing a Filter<a class="headerlink" href="#editing-a-filter" title="Link to this heading"></a></h2>
+<p>To edit a filter, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the filter name in the Object list.</p></li>
+<li><p>Right-click the filter and select <span class="guilabel">Edit Filter</span>.</p></li>
+<li><p>Make the desired changes to the filter and click <span class="guilabel">OK</span> to save the changes.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/console-edit-filter.png"><img alt="../images/console-edit-filter.png" class="align-center" src="../images/console-edit-filter.png" style="width: 60%;" /></a>
+</section>
+<section id="deleting-a-filter">
+<h2>Deleting a Filter<a class="headerlink" href="#deleting-a-filter" title="Link to this heading"></a></h2>
+<p>To delete a filter, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the filter name in the Object list.</p></li>
+<li><p>Right-click the filter and select <span class="guilabel">Delete Filter</span>.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_toolbars.html" class="btn btn-neutral float-left" title="Toolbars (Management Console, obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_actions.html" class="btn btn-neutral float-right" title="Other actions in the Management Console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

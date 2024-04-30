@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="DNS resource records in the Micetro by Men&amp;Mice Management Console" name="description" />
+<meta content="DNS records, DNS management, DNS" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNS resource records (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DHCP - (Management Console, obsolete)" href="console_dhcp.html" />
+    <link rel="prev" title="DNS Zones (Management Console, obsolete)" href="console_dns_zones.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DNS resource records (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#types-of-resource-records">Types of Resource Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resource-records">Resource Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-records">New Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-records">Deleting Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clearing-records">Clearing Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disable-enable-records">Disable/Enable Records</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-disable-a-record">How to Disable a Record</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cut-copy-and-paste">Cut, Copy, and Paste</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#undo-redo-commands-management-console">Undo/Redo Commands (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">DNS resource records (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_dns_records.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dns-resource-records-management-console-obsolete">
+<span id="console-dns-records"></span><h1>DNS resource records (Management Console, obsolete)<a class="headerlink" href="#dns-resource-records-management-console-obsolete" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Each zone contains DNS resource records that define how requests are processed or delegated by the zone.</p>
+</section>
+<section id="types-of-resource-records">
+<h2>Types of Resource Records<a class="headerlink" href="#types-of-resource-records" title="Link to this heading"></a></h2>
+<p>There are varieties of resources records that actively affect zones, as well as several informational records that can be used to provide supporting data about a zone. The primary record types are described below.</p>
+<dl>
+<dt>NS</dt><dd><p>The Name Server record is used to list a name server for this zone. NS records state the domain name of the zone’s name servers. The name of an NS record is the fully qualified domain name of a zone. Every zone must have at least one NS record with the same name as the zone itself.</p>
+<p>Example:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>example.com.</p></td>
+<td><p>NS</p></td>
+<td><p>ns1.example.com.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>A</dt><dd><p>Also known as an Address record, an A record declares the IP Address of a domain name. Defines a Hostname-to-IP Address mapping, or a forward mapping.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>example.com.</p></td>
+<td><p>A</p></td>
+<td><p>192.168.0.1</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>PTR</dt><dd><p>Also known as Pointer records, PTR records define an IP Address-to-Hostname mapping, known as a reverse mapping. A properly configured reverse zone has one PTR record providing the reverse lookup for each IP Address. All reverse zones are traditionally part of the <code class="docutils literal notranslate"><span class="pre">.in-addr.arpa.</span></code> zone. The proper formatting for a PTR record is the 4 octets of the IP Address in reverse order, followed by <code class="docutils literal notranslate"><span class="pre">.in-addr.arpa.</span></code> A properly formatted PTR record for the A record (above) is shown in the following example.</p>
+<p>In the event that you have multiple A records concerning the same IP Address, choose one for the PTR record. If one of the host names is used for a mail server, give that hostname preference because a common use of reverse lookup is to check the source of e-mail.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1.0.168.192.in-addr.arpa.</p></td>
+<td><p>PTR</p></td>
+<td><p>example.com.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>CNAME</dt><dd><p>Canonical Name records are used to define an alias. The canonical or primary DNS domain name used in the data is required and must resolve to a valid DNS domain name in the namespace. The name of the record is the name of the alias. Thus, if you want www.example.com to bring visitors to example.com, you’d need to add the line shown in following example:</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>www.example.com.</p></td>
+<td><p>CNAME</p></td>
+<td><p>example.com.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>MX</dt><dd><p>Also known as Mail Exchange records, MX records create mail routes. Each exchanger host must have a corresponding host (A) address resource record in a valid zone. The first field in the record data is the preference number; this is the order in which mail hosts will be used by an outside mail server trying to send mail to a domain. Mail hosts will be contacted from the lowest preference number and work up to higher preference number. If two MX records have the same preference number, they will be used in random order. Mail servers with the same preference number will not forward to each other, nor will they forward to a mail server with a higher preference number.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>example.com.</p></td>
+<td><p>MX</p></td>
+<td><p>10 mail.example.com.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>AAAA</dt><dd><p>Maps a DNS domain name to an Internet Protocol (IP) version 6 128-bit address.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>host.example.com.</p></td>
+<td><p>AAAA</p></td>
+<td><p>4321:0:1:2:3:4:567:89ab</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>WKS</dt><dd><p>Similar in function to MX records, Well-Known Service (WKS) records describe the well-known IP services supported by a particular protocol on a specific IP Address. They provide TCP and UDP availability information for IP servers. Multiple WKS records should be used for servers that support both TCP and UDP for a well-known service or that have multiple IP Addresses that support a service.</p>
+<p>Three fields of data are required: IP Address, protocol, and a service list.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>host.example.com.</p></td>
+<td><p>WKS</p></td>
+<td><p>10.0.0.1 TCP (ftp smtp telnet)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that the record type WKS was deprecated by RFC1123 - please don’t use this record type.</p>
+</div>
+</dd>
+<dt>RP</dt><dd><p>The Responsible Person record specifies the domain mailbox name for the person responsible for that domain. This name is then mapped to a domain name in for which (TXT) resource records exist in the same zone. When RP records are used in DNS queries, subsequent queries are used to retrieve associated text (TXT) resource record information. Two fields of data are required: the domain name you are searching, the domain where TXT resource records exist.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>my.example.com.</p></td>
+<td><p>RP</p></td>
+<td><p>who.example.com txtrec.example.com</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>AFSDB</dt><dd><p>The Andrew File System Database resource record maps a DNS domain name to the host name for a server computer of a server subtype. Two fields of data are required:</p>
+<p>The first is a subtype, which can have one of two supported numeric values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A 1 indicates that the server is an AFS version 3.0 volume location server for the named AFS cell.</p></li>
+<li><p>A 2 indicates that the server is an authenticated name server holding the cell-root directory node for the server that uses either Open Software Foundation’s (OSF) DCE authenticated cell-naming system or HP/Apollo’s Network Computing Architecture (NCA).</p></li>
+</ul>
+</div></blockquote>
+<p>The second field is the server’s host name.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>abc.example.com.</p></td>
+<td><p>AFSDB</p></td>
+<td><p>1 afs-server.example.com.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>SRV</dt><dd><p>Service records are intended to provide information on available services. They allow multiple servers providing a similar TCP/IP-based service to be located using a single DNS query operation.</p>
+<p>An SRV record has four fields and a special system for naming. The naming system is an underscore followed by the name of the service, followed by a period, an underscore, and then the protocol (generally TCP or UDP), another dot, and then the name of the domain. The four fields are:</p>
+<dl class="simple">
+<dt>Priority</dt><dd><p>Used the same way as the preference number in MX records.</p>
+</dd>
+<dt>Weight</dt><dd><p>This determines the relative capacity between SRV fields with the same priority. Hits will be assigned proportionately by weight, allowing a powerful and a weak server to share appropriate loads.</p>
+</dd>
+<dt>Port</dt><dd><p>The port of the service offered.</p>
+</dd>
+<dt>Hostname</dt><dd><p>The name of the domain.</p>
+</dd>
+</dl>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_http._tcp.example.com.</p></td>
+<td><p>SRV</p></td>
+<td><p>10 5 80 www.example.com.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>HINFO</dt><dd><p>The Host information resource record specifies the type of CPU and operating system, respectively, for the host DNS domain name. This information is used by some application protocols, such as FTP, which use special procedures when communicating with computers of a known CPU and operating system type. Hardware information belongs in the first data field and OS information in the second field, as shown in the example below.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>compname.example.com.</p></td>
+<td><p>HINFO</p></td>
+<td><p>Intel-PIII WIN2K</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>TXT</dt><dd><p>A Text Record allows you to include up to 255 characters of free-form descriptive text in your zone file. The order of resource records in zone files is not preserved, so it is best to keep messages confined to one record.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>random.example.com.</p></td>
+<td><p>TXT</p></td>
+<td><p>The quick brown fox jumped over the lazy dog.”</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>LOC</dt><dd><p>Geographic Location Records provide exact altitude, latitude, and longitude information. There is not much in the way of a practical application for this record, though some industries may find it to be of limited value. The LOC record can accept as few as three or as many as six fields of data:</p>
+<ul class="simple">
+<li><p>Degrees latitude in degrees, minutes, seconds, N or S</p></li>
+<li><p>Degrees longitude in degrees, minutes, seconds, E or W</p></li>
+<li><p>Altitude in meters. This is single value, you may add an M.</p></li>
+<li><p>Size of machine in terms of an enclosing sphere in meters radius. Expressed as a number, or a number immediately followed by an M. (Optional.)</p></li>
+<li><p>Horizontal precision of the data in meters, with or without an M. (Optional, not available if 4 is blank.)</p></li>
+<li><p>Vertical precision of data in meters, with or without an M. (Optional, not available if 5 is blank.)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Microsoft DNS server does not support LOC records.</p>
+</div>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>geo.example.com.</p></td>
+<td><p>LOC</p></td>
+<td><p>42 21 43.528 N 71 05 06.284 W 12m</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>NAPTR</dt><dd><p>NAPTR stands for Naming Authority Pointer and is a resource record type that supports regular expression based rewriting. The NAPTR record accepts six fields of data:</p>
+<dl class="simple">
+<dt>Preference</dt><dd><p>When there are multiple NAPTR records with the same name, the record with the lowest preference number is picked first.</p>
+</dd>
+<dt>Weight (Order)</dt><dd><p>This field specifies the order in which the NAPTR records MUST be processed to accurately represent the ordered list of Rules. This field is only used when there is more than one record with the same preference</p>
+</dd>
+<dt>Flags</dt><dd><p>This field contains flags to control aspects of the rewriting and interpretation of the fields in the record. Flags are single characters from the set A-Z and 0-9.</p>
+</dd>
+<dt>Service</dt><dd><p>This field contains a character-string that specifies the Service Parameters applicable to this delegation path.</p>
+</dd>
+<dt>Regexp</dt><dd><p>This field contains a character-string that contains a substitution expression that is applied to the original string held by the client in order to construct the next domain name to lookup.</p>
+</dd>
+<dt>Replacement</dt><dd><p>This field contains a domain name, which is the next domain name to query for, depending on the potential values found in the flags field.</p>
+</dd>
+</dl>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>104</p></td>
+<td><p>NAPTR</p></td>
+<td><p>100 10 u sip+E2U !^.*$!sip:<a class="reference external" href="mailto:info&#37;&#52;&#48;info&#46;example&#46;test!i">info<span>&#64;</span>info<span>&#46;</span>example<span>&#46;</span>test!i</a> .</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>SSHFP</dt><dd><p>SSHFP stands for SSH Public Key Fingerprint. This resource record type is used for publishing SSH public host key fingerprints in the DNS System, in order to aid in verifying the authenticity of the host. The SSHFP record accepts 3 fields of data:</p>
+<dl class="simple">
+<dt>Algorithm</dt><dd><p>Specifies the algorithm number to use.</p>
+</dd>
+<dt>Fingerprint type</dt><dd><p>Specifies the fingerprint type to use.</p>
+</dd>
+<dt>Fingerprint</dt><dd><p>The fingerprint for the record.</p>
+</dd>
+</dl>
+<p>For further information on this record type, see RFC 4255.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>random.example.com</p></td>
+<td><p>SSHFP</p></td>
+<td><p>1 1 23D3C516AAF4C8E867D0A2968B2EB999B3168216</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>SPF</dt><dd><p>SPF stands for Sender Policy Framework. This record type is used in an e-mail validation system designed to prevent e-mail spam. The SPF record accepts a text string that contains the configuration info that should be used.</p>
+<p>For further information on this record type, see RFC 4408.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>example.com</p></td>
+<td><p>SPF</p></td>
+<td><p>v=spf1 a mx -all</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>TLSA</dt><dd><p>The TLSA DNS record is used to associate a TLS server certificate with the domain name where the record resides.</p>
+<p>For further information on this record type, see RFC 6698</p>
+<p>A TLSA record has four fields, which are:</p>
+<dl class="simple">
+<dt>Certificate usage</dt><dd><p>Specifies the association that will be used to match the certificate.</p>
+</dd>
+<dt>Selector</dt><dd><p>Specifies which part of the TLS certificate will be matched against the certificate association data</p>
+</dd>
+<dt>Matching type</dt><dd><p>Specifies how the certificate association is presented</p>
+</dd>
+<dt>Certificate associate data</dt><dd><p>Specifies the certificate association data to be matched</p>
+</dd>
+</dl>
+<p>Example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 9.1%" />
+<col style="width: 63.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>example.com</p></td>
+<td><p>TLSA</p></td>
+<td><p>3 1 1 d2abde240d7cd3ee6b4b28c54df034b9 7983a1d16e8a410e4561cb106618e971</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>CAA</dt><dd><p>The CAA (Certification Authority Authorization) DNS record is used to specify which Certification Authorities (CA) can issue certificates for the domain.</p>
+<p>Example</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>example.com</p></td>
+<td><p>CAA</p></td>
+<td><p>0 issue “letsencrypt.org”</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>In addition to the supported record types in the table, Micetro supports the following DNSSEC resource record types:</p>
+<ul class="simple">
+<li><p>DNSKEY (read-only)</p></li>
+<li><p>NSEC (read-only)</p></li>
+<li><p>NSEC3 (read-only)</p></li>
+<li><p>NSEC3PARAM</p></li>
+<li><p>RRSIG (read-only)</p></li>
+<li><p>DS</p></li>
+<li><p>DLV (read only)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All DNSSEC specific record types, with the exception of the DS and NSEC3PARAM record types, are read only.</p>
+</div>
+<p>It is beyond the scope of this documentation to discuss DNSSEC management so these record types are not explained in detail. For further information on these resource record types and DNSSEC in general, we recommend the DNS Extensions section on the IETF web site.</p>
+</section>
+<section id="resource-records">
+<h2>Resource Records<a class="headerlink" href="#resource-records" title="Link to this heading"></a></h2>
+<p>To select a <em>single resource record</em>, do the following:</p>
+<ul class="simple">
+<li><p>Click on the gray square to the left of the record. This highlights the entire record.</p></li>
+</ul>
+<p>Once a record is selected, you can perform various editing actions on it, such as deleting, cutting, or copying. These are discussed in more detail later in this section. Many editing action can be performed on multiple records simultaneously. Simply select the records you want to operate on and perform the editing action as usual.</p>
+<p>To select non-consecutive records, do the following:</p>
+<ul class="simple">
+<li><p>Hold down the Ctrl key and select each record as usual.</p></li>
+<li><p>When you are done selecting records, release the Ctrl key.</p></li>
+<li><p>To select a contiguous series of records, select the first record in the series as usual, then hold down the [Shift] key and select the last record in the series. All records in between will automatically be selected.</p></li>
+</ul>
+</section>
+<section id="new-records">
+<h2>New Records<a class="headerlink" href="#new-records" title="Link to this heading"></a></h2>
+<p>If you are comfortable editing the record table directly, you can use this procedure to insert a new record directly in the zone tab.</p>
+<ol class="arabic simple">
+<li><p>Open the zone to display the resource records in the zone you want to edit.</p></li>
+<li><p>In the grid, select the record that is directly <em>above</em> where you want to insert the new record.</p></li>
+<li><p>Right-click anywhere in the selected record and, from the shortcut menu, select <span class="guilabel">Insert Record</span>. A new, blank record is added.</p></li>
+<li><p>Starting with the Name field, enter the domain name.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you enter a domain name that is not fully qualified (i.e., does not end in a trailing dot <code class="docutils literal notranslate"><span class="pre">.</span></code>), Micetro will assume that you are using a local name and will automatically append the name of the zone onto the end of the name, making it a fully qualified domain name. That means when adding the name server <code class="docutils literal notranslate"><span class="pre">ns1</span></code> to the zone <code class="docutils literal notranslate"><span class="pre">example.com</span></code>, you should enter either just <code class="docutils literal notranslate"><span class="pre">ns1</span></code> or <code class="docutils literal notranslate"><span class="pre">ns1.example.com</span></code>. If you leave off the trailing dot Micetro will interpret your intention as <code class="docutils literal notranslate"><span class="pre">ns1.example.com.example.com</span></code>. The information automatically filled in by the Web Application appears greyed out.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>In the <strong>Type</strong> field select the appropriate type from the dropdown. The following types of resource records can be created: NS, A, PTR, CNAME, MX, AAAA, WKS, RP, SRV, TXT, and SPF. The appropriate number of fields is automatically created in the Data field based on the type you entered. If you enter the wrong record type, you will be unable to change it. You must delete the record, insert a new one, and re-enter the record information.</p></li>
+<li><p>Enter the appropriate data for your record type.</p></li>
+<li><p>Click the <span class="guilabel">Save</span> button to save the new record to the zone.</p></li>
+</ol>
+</section>
+<section id="deleting-records">
+<h2>Deleting Records<a class="headerlink" href="#deleting-records" title="Link to this heading"></a></h2>
+<p>Deleting a record removes both the data and the physical record from the grid. Records beneath the deleted one are instantly moved up to fill in the space.</p>
+<ol class="arabic simple">
+<li><p>Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making you selections.</p></li>
+<li><p>Right-click anywhere in the zone window, and select Delete Record from the context menu. The record is immediately deleted from the zone.</p></li>
+</ol>
+</section>
+<section id="clearing-records">
+<h2>Clearing Records<a class="headerlink" href="#clearing-records" title="Link to this heading"></a></h2>
+<p>When the whole record is selected, the <span class="guilabel">Clear</span> command works the same as the <span class="guilabel">Delete Record</span> command. The Clear command is really intended for deleting the contents of an individual field of data, leaving the rest of the record’s data intact.</p>
+<ol class="arabic simple">
+<li><p>In the <em>Zone</em> window, select the field (cell) whose contents you want to delete.</p></li>
+<li><p>Right-click anywhere in the zone window and select <span class="guilabel">Clear</span> from the context menu. The data is removed from the field. (The cell is not removed, and the rest of the record is unaffected.)</p></li>
+</ol>
+</section>
+<section id="disable-enable-records">
+<h2>Disable/Enable Records<a class="headerlink" href="#disable-enable-records" title="Link to this heading"></a></h2>
+<p>You can disable a record without deleting it. The disabled record performs no function; however, it can be instantly enabled when its services are needed, without having to re-type the record.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot disable and enable records in dynamic zones.</p>
+</div>
+<section id="how-to-disable-a-record">
+<h3>How to Disable a Record<a class="headerlink" href="#how-to-disable-a-record" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Select the record(s) that you want to disable. To select more than one record, hold down the Ctrl (Cmd on Mac) key while making your selections.</p></li>
+<li><p>From the ellipsis menu select <span class="guilabel">Disable DNS record</span> or use <span class="menuselection">Actions ‣ Disable DNS record</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Disabled records are grayed out in the grid, and will show an <em>Enable DNS record</em> action instead.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>In the confirmation dialog, click <span class="guilabel">Save now</span> to save the changes, or <span class="guilabel">Add to request</span> to add it to the request queue. (See <a class="reference internal" href="../user-manual/webapp_workflows.html#webapp-workflows"><span class="std std-ref">Workflow Management</span></a> for details on the request queue.)</p></li>
+</ol>
+</section>
+</section>
+<section id="cut-copy-and-paste">
+<h2>Cut, Copy, and Paste<a class="headerlink" href="#cut-copy-and-paste" title="Link to this heading"></a></h2>
+<p>When working with records in the Management Console, there is no need to enter the same records in different zones. All records can be copied (or moved) to other zones simply by copying and pasting them between different zone windows.</p>
+<p>To facilitate this, the Copy and Paste functions do not use fully qualified host names, so it is easy to work with records between zones.</p>
+<p>This means that if you copy a record from the domain example.com, such as: <code class="docutils literal notranslate"><span class="pre">www.example.com.</span> <span class="pre">CNAME</span> <span class="pre">example.com.</span></code> and paste the record to sample.com, it displays as: www.sample.com. CNAME sample.com.</p>
+<p>To cut, copy, and paste records, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the record(s) that you want to move or copy. To select multiple records, hold down the Ctrl key while making your selections.</p></li>
+<li><p>Right-click anywhere in the Zone window and choose either <span class="guilabel">Cut</span> (to move the record) or <span class="guilabel">Copy</span> (to duplicate the record elsewhere) from the context menu.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Cut, Copy, Paste, and Clear commands can also be selected from the Edit menu in the main window.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Open the destination zone in which you want to insert the record(s).</p></li>
+<li><p>In the destination zone, insert a new blank record in the location where you want to paste the records. To do this, right-click on the record immediately above where you want to paste the new one(s), then select <span class="guilabel">Insert Record</span> from the popup menu.</p></li>
+<li><p>Select the blank record.</p></li>
+<li><p>Right-click anywhere in the Zone window and choose <span class="guilabel">Paste</span> from the context menu. The new record(s) are pasted in the destination zone.The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.</p></li>
+<li><p>When you perform an editing action, the <span class="menuselection">Edit</span> menu’s <span class="guilabel">Undo</span> command is modified to include that action. For example, if you disable a record, the Undo command changes to <span class="guilabel">Undo Disable</span>. Selecting this command will reverse the action and restore the previously deleted record. When you perform an Undo action, the Redo command becomes active. Selecting this command reverses the previous Undo action. If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.</p></li>
+</ol>
+</section>
+<section id="undo-redo-commands-management-console">
+<h2>Undo/Redo Commands (Management Console)<a class="headerlink" href="#undo-redo-commands-management-console" title="Link to this heading"></a></h2>
+<p>The Management Console allows you to undo most editing actions, such as deleting, clearing, cutting, and pasting.</p>
+<p>When you perform an editing action, the Edit menu’s Undo command is modified to include that action. For example, if you disable a record, the Undo command changes to Undo Disable. Selecting this command will reverse the action and restore the previously deleted record.</p>
+<p>When you perform an Undo action, the <span class="guilabel">Redo</span> command becomes active. Selecting this command reverses the previous Undo action.</p>
+<p>If you perform multiple editing actions in a row, the Undo command can be used repeatedly to restore each prior action.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_dns_zones.html" class="btn btn-neutral float-left" title="DNS Zones (Management Console, obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_dhcp.html" class="btn btn-neutral float-right" title="DHCP - (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

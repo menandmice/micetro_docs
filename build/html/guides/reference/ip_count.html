@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How Micetro counts the IP Addresses. Calculating IP Usage + Cleanup Tips" name="description" />
+<meta content="IPAM, IP address, Micetro, IP usage" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculating IP Usage &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Free Trial Best Practices" href="free_trial_best_practices.html" />
+    <link rel="prev" title="Configure Azure DNS" href="configure_azure_dns.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro Reference Articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud_minimum_permissions.html">Integrating Cloud Services with Micetro: Permissions Guide for AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_multi_account.html">Configuring AWS Multi-Account Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure_azure_dns.html">Configure Azure DNS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Calculating IP Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-micetro-calculates-ip-address-usage">How Micetro Calculates IP Address Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-reasons-for-excessive-ip-usage">Common Reasons for Excessive IP Usage:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seeing-ip-usage-in-micetro">Seeing IP Usage in Micetro</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#network-utilization">Network Utilization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-and-reclaiming-ips-at-the-ip-level">Viewing and Reclaiming IPs at the IP Level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cleaning-up-stale-dns-records">Cleaning up Stale DNS Records</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="free_trial_best_practices.html">Free Trial Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="free_trial_checklist.html">Free Trial Best Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Micetro DNS Agent and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro Reference Articles</a></li>
+      <li class="breadcrumb-item active">Calculating IP Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/ip_count.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="calculating-ip-usage">
+<span id="ip-count"></span><h1>Calculating IP Usage<a class="headerlink" href="#calculating-ip-usage" title="Link to this heading"></a></h1>
+<p>As you connect to the services and enable discovery, Micetro reads incoming data to calculate IP address usage. It then compares the usage with the keys provided at the time of purchase to display the number of IP addresses in use, based on the encoded information in the keys.  If you are unsure about your IP count, the number can be negotiated with the sales team (best effort).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>M&amp;M does not lock the system in any way if the license count is exceeded. Sustaining services is our top priority.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/license-management-ip-usage.png"><img alt="../../_images/license-management-ip-usage.png" src="../../_images/license-management-ip-usage.png" style="width: 85%;" /></a>
+<section id="how-micetro-calculates-ip-address-usage">
+<h2>How Micetro Calculates IP Address Usage<a class="headerlink" href="#how-micetro-calculates-ip-address-usage" title="Link to this heading"></a></h2>
+<p>Micetro considers an IP address to be “in use” when:</p>
+<ol class="arabic simple">
+<li><p>There is a DNS record assigned to the IP address (data from the DNS server).</p></li>
+<li><p>There is an active lease in a DHCP pool. This will cause usage to fluctuate in the license count.</p></li>
+<li><p>There is a DHCP reservation configured for the IP address.</p></li>
+<li><p>A custom property is configured for the IP address and it is populated.</p></li>
+<li><p>The IP address has been explicitly claimed using the “Claim IP” feature.</p></li>
+<li><p>Discovery is enabled and there is an active client on the IP address. This feature is configurable by the number of days.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Micetro will only count dual-stacked clients as one IP (IPV4/IPV6).</p>
+</div>
+<p>In the <strong>System Settings</strong>, there is a section called <strong>Determine address usage</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/system-settings-address-usage.png"><img alt="../../_images/system-settings-address-usage.png" src="../../_images/system-settings-address-usage.png" style="width: 85%;" /></a>
+<p>By deault, all these settings are selected upon installation.</p>
+<p>Administrators can toggle the license count configuration on and off to get a more granular picture of where the usage is coming from, which will then allow them to focus on clean-up.</p>
+</section>
+<section id="common-reasons-for-excessive-ip-usage">
+<h2>Common Reasons for Excessive IP Usage:<a class="headerlink" href="#common-reasons-for-excessive-ip-usage" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Stale DNS records (static or missed by AD scavenging).</p></li>
+<li><p>Old automation tools that were using the Custom Properties on the IPs, but were not cleaned up.</p></li>
+<li><p>Old claims that were not cleaned up.</p></li>
+<li><p>DHCP reservations that are not in use.</p></li>
+<li><p>DHCP lease times need to be adjusted.</p></li>
+</ul>
+</section>
+<section id="seeing-ip-usage-in-micetro">
+<h2>Seeing IP Usage in Micetro<a class="headerlink" href="#seeing-ip-usage-in-micetro" title="Link to this heading"></a></h2>
+<p>Micetro provides a comprehensive view of your network, allowing you to quickly assess its status and understand what is happening in real-time. As you use Micetro, you will naturally become more knowledgeable about the environment and start to recognize patterns of usage, as well as identifying issues in configurations.</p>
+<section id="network-utilization">
+<h3>Network Utilization<a class="headerlink" href="#network-utilization" title="Link to this heading"></a></h3>
+<p>Network Utilization is shown in the IPAM (IP address management) module. For more information about utilization history, see <a class="reference internal" href="../management-console/console_ipam.html#console-ipam-utilization-history"><span class="std std-ref">View Utilization History</span></a>.</p>
+<a class="reference internal image-reference" href="../../_images/ipam-utilization.png"><img alt="../../_images/ipam-utilization.png" src="../../_images/ipam-utilization.png" style="width: 85%;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can switch the view to “flat view”, and then click the <strong>Utilization</strong> header to sort by most highly utilized networks.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use a quick filter (uses reg-ex) to find all subnets above a certain capacity (utilization &lt; 80). Additional filtering can be added for any of the ranges or scopes (type = Scope and (utilization &gt; 0).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Micetro also gives you the total number of Ranges in the filter.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/ipam-utilization-filter.png"><img alt="../../_images/ipam-utilization-filter.png" src="../../_images/ipam-utilization-filter.png" style="width: 85%;" /></a>
+</section>
+</section>
+<section id="viewing-and-reclaiming-ips-at-the-ip-level">
+<h2>Viewing and Reclaiming IPs at the IP Level<a class="headerlink" href="#viewing-and-reclaiming-ips-at-the-ip-level" title="Link to this heading"></a></h2>
+<p>When you open a static Range or a DHCP scope, you can also see the DNS data on the IP.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you know a DHCP scope or network is not in use, you can safely select all and delete all of the DNS data out of it by selecting <span class="guilabel">Clear IP address</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deleting a range does not delete the DNS data out of the zone. If a new range is created and the DNS data is still in the zone, it will re-populate in the tool.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/ipam-clear-addresses.png"><img alt="../../_images/ipam-clear-addresses.png" src="../../_images/ipam-clear-addresses.png" style="width: 90%;" /></a>
+</section>
+<section id="cleaning-up-stale-dns-records">
+<h2>Cleaning up Stale DNS Records<a class="headerlink" href="#cleaning-up-stale-dns-records" title="Link to this heading"></a></h2>
+<p>It is not uncommon for AD records to be missed in Scavenging. Micetro gives you the ability to clean stale records up from within the DNS zone. A quick cleanup is to open the AD zone.</p>
+<a class="reference internal image-reference" href="../../_images/dns-ad-records.png"><img alt="../../_images/dns-ad-records.png" src="../../_images/dns-ad-records.png" style="width: 65%;" /></a>
+<p>Then sort by <strong>TIMESTAMP</strong>. You can choose to delete records in bulk here (shift or ctrl, then select) based on the age of the record. This is a good indicator that the AD Scavenging should also be adjusted.</p>
+<a class="reference internal image-reference" href="../../_images/dns-ad-records-timestamp.png"><img alt="../../_images/dns-ad-records-timestamp.png" src="../../_images/dns-ad-records-timestamp.png" style="width: 90%;" /></a>
+<p>These are just a few ways that Micetro can be used to assist you in reclaiming IP space. Micetro is designed to help administrators gain a better understanding of their networks and users.</p>
+<p>Other useful tools to assist are the Reporting tool (to run simple reports) and the API (if you have an internal Dev/ops team) to automate the cleanup processes once they are identified.</p>
+<p>We also offer Professional Services to assist for cleanup or automation projects <a class="reference external" href="https://www.menandmice.com/professional-services">https://www.menandmice.com/professional-services</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="configure_azure_dns.html" class="btn btn-neutral float-left" title="Configure Azure DNS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="free_trial_best_practices.html" class="btn btn-neutral float-right" title="Free Trial Best Practices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

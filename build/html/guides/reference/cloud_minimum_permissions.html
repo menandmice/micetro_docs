@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Minimum permissions for adding AWS and Azure accounts to Micetro" name="description" />
+<meta content="Micetro credentials, AWS management console, Micetro by Men&amp;Mice, Azure" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrating Cloud Services with Micetro: Permissions Guide for AWS &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuring AWS Multi-Account Setup" href="aws_multi_account.html" />
+    <link rel="prev" title="Permissions reference" href="permissions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro Reference Articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Integrating Cloud Services with Micetro: Permissions Guide for AWS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#minimum-permissions-for-adding-aws-account">Minimum Permissions for Adding AWS Account</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dns-management-permissions">DNS Management Permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cloud-network-management-permissions">Cloud Network Management Permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#permissions-in-a-multi-account-setup">Permissions in a Multi-Account Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_multi_account.html">Configuring AWS Multi-Account Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure_azure_dns.html">Configure Azure DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ip_count.html">Calculating IP Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="free_trial_best_practices.html">Free Trial Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="free_trial_checklist.html">Free Trial Best Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Micetro DNS Agent and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro Reference Articles</a></li>
+      <li class="breadcrumb-item active">Integrating Cloud Services with Micetro: Permissions Guide for AWS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/cloud_minimum_permissions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="integrating-cloud-services-with-micetro-permissions-guide-for-aws">
+<span id="cloud-minimum-permissions"></span><h1>Integrating Cloud Services with Micetro: Permissions Guide for AWS<a class="headerlink" href="#integrating-cloud-services-with-micetro-permissions-guide-for-aws" title="Link to this heading"></a></h1>
+<p>This page provides the minimum and recommended permissions necessary for successfully adding AWS services to Micetro. Whether you’re dealing with DNS, IPAM, or cloud network management, ensuring the correct permissions is essential for a seamless integration experience.</p>
+<section id="minimum-permissions-for-adding-aws-account">
+<h2>Minimum Permissions for Adding AWS Account<a class="headerlink" href="#minimum-permissions-for-adding-aws-account" title="Link to this heading"></a></h2>
+<p>When adding an AWS account to Micetro, ensure the credentials used have the following permissions:</p>
+<p><strong>Required permissions</strong>:</p>
+<ul class="simple">
+<li><p>iam:GetUser</p></li>
+<li><p>iam:ListGroupsForUser</p></li>
+<li><p>sts:GetCallerIdentity</p></li>
+</ul>
+<p>For Multi-account setups, add these additional permissions:</p>
+<ul class="simple">
+<li><p>iam:GetGroup</p></li>
+<li><p>iam:ListGroupPolicies</p></li>
+<li><p>iam:GetGroupPolicy</p></li>
+</ul>
+<p>Restrict IAM permissions to the user associated with the credentials provided to Micetro.</p>
+<section id="dns-management-permissions">
+<h3>DNS Management Permissions<a class="headerlink" href="#dns-management-permissions" title="Link to this heading"></a></h3>
+<p><strong>Required permissions</strong>:</p>
+<ul class="simple">
+<li><p>route53:ListHostedZones</p></li>
+<li><p>route53:GetHostedZoneCount</p></li>
+<li><p>route53:ListHealthChecks</p></li>
+</ul>
+<p><strong>Recommended permissions</strong>:</p>
+<p>To maximize the capabilities of Cloud network management in Micetro, it is highly recommended to grant the following permissions. It’s important to note that you have the flexibility to omit certain permissions or restrict the resources they can access based on your preferences. However, be mindful that such limitations may impact Micetro’s functionality. For instance, omitting the <strong>ec2:DeleteVpc</strong> permission will result in Micetro being unable to remove Virtual Private Clouds (VPCs).</p>
+<ul class="simple">
+<li><p>route53:GetHostedZone</p></li>
+<li><p>route53:ListHostedZonesByName</p></li>
+<li><p>route53:CreateHostedZone</p></li>
+<li><p>route53:DeleteHostedZone</p></li>
+<li><p>route53:ListResourceRecordSets</p></li>
+<li><p>route53:ChangeResourceRecordSets</p></li>
+</ul>
+</section>
+<section id="cloud-network-management-permissions">
+<h3>Cloud Network Management Permissions<a class="headerlink" href="#cloud-network-management-permissions" title="Link to this heading"></a></h3>
+<p><strong>Required permissions</strong>:</p>
+<ul class="simple">
+<li><p>ec2:DescribeRegions</p></li>
+<li><p>ec2:DescribeSubnets</p></li>
+<li><p>ec2:DescribeVPCs</p></li>
+</ul>
+<p><strong>Recommended permissions</strong>:</p>
+<p>For optimal Cloud network management within Micetro, it is strongly advised to grant the following permissions. Keep in mind that you have the flexibility to omit certain permissions or restrict resource access according to your needs. However, be aware that such exclusions may result in limited functionality within Micetro. As an illustration, if you skip the <strong>ec2:DeleteVpc</strong> permission, Micetro will be unable to remove Virtual Private Clouds (VPCs).</p>
+<ul class="simple">
+<li><p>ec2:CreateVpc</p></li>
+<li><p>ec2:DeleteVpc</p></li>
+<li><p>ec2:CreateSubnet</p></li>
+<li><p>ec2:DeleteSubnet</p></li>
+<li><p>ec2:DescribeInstances</p></li>
+<li><p>ec2:CreateTags</p></li>
+<li><p>ec2:DeleteTags</p></li>
+</ul>
+</section>
+<section id="permissions-in-a-multi-account-setup">
+<h3>Permissions in a Multi-Account Setup<a class="headerlink" href="#permissions-in-a-multi-account-setup" title="Link to this heading"></a></h3>
+<p>In an AWS multi-account setup, additional permissions are necessary. For more information about multi-account setup, see <a class="reference internal" href="aws_multi_account.html#aws-multi-account"><span class="std std-ref">Configuring AWS Multi-Account Setup</span></a>.</p>
+<ul class="simple">
+<li><p>The user integrated into Micetro must possess inline group policies enabling the user to execute <strong>sts:AssumeRole</strong> on the designated accounts it needs to connect to.</p></li>
+<li><p>In the accounts where roles are assumed from the Micetro user, roles must already be configured, with the account containing the Micetro user designated as a trusted entity.</p></li>
+<li><p>Furthermore, the roles assumed in these accounts should be assigned the DNS and/or cloud network permissions outlined in the required/recommended permission list above.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="permissions.html" class="btn btn-neutral float-left" title="Permissions reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aws_multi_account.html" class="btn btn-neutral float-right" title="Configuring AWS Multi-Account Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

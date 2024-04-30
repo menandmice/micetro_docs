@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to add a Cisco DHCP server in Micetro by Men&amp;Mice" name="description" />
+<meta content="Cisco DHCP server, DHCP server, DHCP" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cisco DHCP (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maintenance (Management Console, obsolete)" href="admin_maintenance.html" />
+    <link rel="prev" title="ISC DHCP (Management Console, obsolete)" href="console_dhcp_isc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cisco DHCP (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-cisco-dhcp-server">Adding a Cisco DHCP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cisco-server-properties">Cisco Server Properties</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-user-name-and-password">Set User Name and Password</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">Cisco DHCP (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_dhcp_cisco.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cisco-dhcp-management-console-obsolete">
+<span id="console-dhcp-cisco"></span><h1>Cisco DHCP (Management Console, obsolete)<a class="headerlink" href="#cisco-dhcp-management-console-obsolete" title="Link to this heading"></a></h1>
+<section id="adding-a-cisco-dhcp-server">
+<span id="console-cisco-dhcp-add"></span><h2>Adding a Cisco DHCP server<a class="headerlink" href="#adding-a-cisco-dhcp-server" title="Link to this heading"></a></h2>
+<p>When adding a Cisco DHCP server, the following dialog box displays:</p>
+<a class="reference internal image-reference" href="../../_images/console-add-cisco.png"><img alt="../../_images/console-add-cisco.png" class="align-center" src="../../_images/console-add-cisco.png" style="width: 60%;" /></a>
+<p>Type the <strong>User name</strong> and <strong>Password</strong> that should be used to access the server. This is the user name and password that is used when normally accessing the Cisco device from the command line prompt. If the server requires a separate password to enter privilege level 15, enter the required password in the <strong>Enable Password</strong> field. If you select the <span class="guilabel">Connect using Secure Shell (SSHv2)</span> checkbox, a secure connection will be used to access the server. If this checkbox is unchecked, the server will be accessed through a telnet connection.</p>
+</section>
+<section id="cisco-server-properties">
+<span id="console-cisco-dhcp-properties"></span><h2>Cisco Server Properties<a class="headerlink" href="#cisco-server-properties" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>Hostname</dt><dd><p>Specifies the name of the Cisco router. Refer to Cisco IOS IP Addressing Command Reference document for more information.</p>
+</dd>
+<dt>Domain Name</dt><dd><p>Specifies the default domain name that the Cisco IOS software uses to complete unqualified host names. Refer to <em>Cisco IOS IP Addressing Command Reference document</em> for more information.</p>
+</dd>
+<dt>Name Server</dt><dd><p>Specifies the address of a name server to use for name and address resolution. Refer to <em>Cisco IOS IP Addressing Command Reference document</em> for more information.</p>
+</dd>
+</dl>
+<section id="set-user-name-and-password">
+<h3>Set User Name and Password<a class="headerlink" href="#set-user-name-and-password" title="Link to this heading"></a></h3>
+<p>This menu item is only displayed when a user with DHCP administration privileges is logged in. This command updates the user name and password that should be used to access the Cisco DHCP server. Use this command if the user name or password on the Cisco DHCP server has changed.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_dhcp_isc.html" class="btn btn-neutral float-left" title="ISC DHCP (Management Console, obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin_maintenance.html" class="btn btn-neutral float-right" title="Maintenance (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

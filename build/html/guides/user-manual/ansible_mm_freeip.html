@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This Men&amp;Mice FreeIP lookup plugin finds one or more free IP addresses in a certain network, defined in Micetro." name="description" />
+<meta content="Men&amp;Mice, Micetro by Men&amp;Mice, Men&amp;Mice FreeIP lookup plugin" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mm_freeip plugin &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="mm_inventory plugin" href="ansible_mm_inventory.html" />
+    <link rel="prev" title="mm_dnsrecord" href="ansible_mm_dnsrecord.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="automation.html">Automation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rest_api.html">REST API for Micetro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soap_api.html">SOAP API for Micetro</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ansible.html">Ansible</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html#api-user">API user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html#ansible-configuration-example">Ansible configuration example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_credentials.html">Credential matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_modules.html">Ansible modules</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mm_freeip plugin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_inventory.html">mm_inventory plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_ipinfo.html">mm_ipinfo plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbooks.html">Example playbooks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="terraform.html">Terraform</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="automation.html">Automation</a></li>
+          <li class="breadcrumb-item"><a href="ansible.html">Ansible</a></li>
+      <li class="breadcrumb-item active">mm_freeip plugin</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/ansible_mm_freeip.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mm-freeip-plugin">
+<span id="ansible-mm-freeip"></span><h1>mm_freeip plugin<a class="headerlink" href="#mm-freeip-plugin" title="Link to this heading"></a></h1>
+<p>This Men&amp;Mice FreeIP lookup plugin finds one or more free IP addresses in a certain network, defined in Micetro.</p>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>claim:</dt><dd><p>Claim the IP address(es) for the specified amount of time in seconds</p>
+</dd>
+<dt>excludedhcp:</dt><dd><p>exclude DHCP reserved ranges from result</p>
+</dd>
+<dt>filter:</dt><dd><p>Micetro filter statement. Filter validation is done by Micetro, not in the plugin. More filter info: <span class="xref std std-ref">quickfilter</span></p>
+</dd>
+<dt>multi:</dt><dd><p>Get a list of x number of free IP addresses from the requested zones.</p>
+</dd>
+<dt>network:</dt><dd><p>(required) Network zone(s) from which the first free IP address is to be found. This is either a single network or a list of networks</p>
+</dd>
+<dt>ping:</dt><dd><p>ping the address found before returning.</p>
+</dd>
+<dt>provider:</dt><dd><p>(required) Definition of the Micetro API provider.</p>
+</dd>
+</dl>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<p>When using the Men&amp;Mice FreeIP plugin something needs to be taken into account. When running an Ansible lookup plugin, this lookup action takes place every time the variable is referenced. So it will not be possible to claim an IP address for further reference, this way. This has to do with the way Ansible works. A solution for this is to assign all collected IP addresses to an Ansible fact, but here you need to make sure the factname is not used over multiple hosts.</p>
+</section>
+<section id="example-usage">
+<h2>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
+<p>Claim IP addresses in one or more ranges</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice FreeIP test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">provider</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">mmurl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://micetro.example.net</span>
+<span class="w">      </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apiuser</span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apipassword</span>
+<span class="w">    </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examplenet</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set free IP addresses as a fact</span>
+<span class="w">      </span><span class="nt">set_fact</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeips</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_freeip&#39;,</span>
+<span class="w">                           </span><span class="s">provider,</span>
+<span class="w">                           </span><span class="s">network,</span>
+<span class="w">                           </span><span class="s">multi=15,</span>
+<span class="w">                           </span><span class="s">claim=60,</span>
+<span class="w">                           </span><span class="s">startaddress=&#39;192.168.63.100&#39;,</span>
+<span class="w">                           </span><span class="s">excludedhcp=True,</span>
+<span class="w">                           </span><span class="s">ping=True)</span>
+<span class="w">                 </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get the free IP address and show info</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Free</span><span class="nv"> </span><span class="s">IPs</span><span class="nv">          </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Queried</span><span class="nv"> </span><span class="s">network</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">network</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loop over IP addresses</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Next</span><span class="nv"> </span><span class="s">free</span><span class="nv"> </span><span class="s">IP</span><span class="nv">      </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ansible-playbook mmtest.yml</span>
+
+<span class="n">PLAY</span> <span class="p">[</span><span class="n">Men</span><span class="o">&amp;</span><span class="n">Mice</span> <span class="n">FreeIP</span> <span class="n">test</span> <span class="n">play</span><span class="p">]</span> <span class="o">*************************************</span>
+
+<span class="n">TASK</span> <span class="p">[</span><span class="n">Gathering</span> <span class="n">Facts</span><span class="p">]</span> <span class="o">***********************************************</span>
+<span class="n">ok</span><span class="p">:</span> <span class="p">[</span><span class="n">localhost</span><span class="p">]</span>
+
+<span class="n">TASK</span> <span class="p">[</span><span class="n">Set</span> <span class="n">free</span> <span class="n">IP</span> <span class="n">addresses</span> <span class="k">as</span> <span class="n">a</span> <span class="n">fact</span><span class="p">]</span> <span class="o">*******************************</span>
+<span class="n">ok</span><span class="p">:</span> <span class="p">[</span><span class="n">localhost</span><span class="p">]</span>
+
+<span class="n">TASK</span> <span class="p">[</span><span class="n">Get</span> <span class="n">the</span> <span class="n">free</span> <span class="n">IP</span> <span class="n">address</span> <span class="ow">and</span> <span class="n">show</span> <span class="n">info</span><span class="p">]</span> <span class="o">*************************</span>
+<span class="n">ok</span><span class="p">:</span> <span class="p">[</span><span class="n">localhost</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Free IPs          : [&#39;192.168.63.203&#39;, &#39;192.168.63.204&#39;]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Queried network   : nononet&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Ansible version   : 2.9.7&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Python version    : 3.6.8&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Python executable : /usr/libexec/platform-python&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">TASK</span> <span class="p">[</span><span class="n">Loop</span> <span class="n">over</span> <span class="n">IP</span> <span class="n">addresses</span><span class="p">]</span> <span class="o">****************************************</span>
+<span class="n">ok</span><span class="p">:</span> <span class="p">[</span><span class="n">localhost</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="mf">192.168.63.203</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Next free IP      : 192.168.63.203&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">ok</span><span class="p">:</span> <span class="p">[</span><span class="n">localhost</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="mf">192.168.63.204</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Next free IP      : 192.168.63.204&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">PLAY</span> <span class="n">RECAP</span> <span class="o">***********************************************************</span>
+<span class="n">localhost</span> <span class="p">:</span> <span class="n">ok</span><span class="o">=</span><span class="mi">4</span>  <span class="n">changed</span><span class="o">=</span><span class="mi">0</span>  <span class="n">unreachable</span><span class="o">=</span><span class="mi">0</span>  <span class="n">failed</span><span class="o">=</span><span class="mi">0</span>  <span class="n">skipped</span><span class="o">=</span><span class="mi">0</span>  <span class="n">rescued</span><span class="o">=</span><span class="mi">0</span>  <span class="n">ignored</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ansible_mm_dnsrecord.html" class="btn btn-neutral float-left" title="mm_dnsrecord" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ansible_mm_inventory.html" class="btn btn-neutral float-right" title="mm_inventory plugin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

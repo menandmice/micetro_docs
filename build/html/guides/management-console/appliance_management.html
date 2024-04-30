@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Managing two types Men&amp;Mice Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance" name="description" />
+<meta content="Men&amp;Mice appliances, DNS management, DNS/DHCP appliance, DNS caching appliance, Men&amp;Mice" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appliance management (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Caching DNS Servers (Management Console, obsolete)" href="caching_appliance.html" />
+    <link rel="prev" title="Maintenance (Management Console, obsolete)" href="admin_maintenance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Appliance management (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-appliance">New Appliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#appliance-properties">Appliance Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-disabling-dns-dhcp-service-dns-dhcp-appliance-only">Enabling/Disabling DNS/DHCP Service (DNS/DHCP Appliance only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-remote-logging-dns-dhcp-appliance-only">Enabling Remote Logging (DNS/DHCP Appliance only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-time-server">Using a Time Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-remote-access">Enabling Remote Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-snmp-monitoring">Configuring SNMP Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-anycast">Configuring Anycast</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-anycast-using-bgp">Configuring Anycast using BGP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-anycast-using-ospf">Configuring Anycast using OSPF</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-network-settings">Configuring Network Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-disabling-the-secondary-network-interface-eth1">Enabling/disabling the secondary network interface (eth1)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-disabling-ipv6-addresses-on-the-primary-secondary-network-interface">Enabling/disabling IPv6 addresses on the primary/secondary network interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-ipv4-addresses-on-the-primary-secondary-network-interface">Configuring IPv4 addresses on the primary/secondary network interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-ipv6-addresses-on-the-primary-secondary-network-interface">Configuring IPv6 addresses on the primary/secondary network interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-network-mode-on-the-primary-secondary-network-interface">Configuring the Network Mode on the primary/secondary network interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-ipv4-routing-information">Configuring IPv4 routing information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-ipv6-routing-information">Configuring IPv6 routing information</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#shutting-down-or-restarting-the-men-mice-appliance">Shutting down or Restarting the Men&amp;Mice Appliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-information">Support Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-appliance-name">Edit Appliance Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-appliance">Delete Appliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-and-restore">Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">Appliance management (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/appliance_management.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="appliance-management-management-console-obsolete">
+<span id="appliance-management"></span><h1>Appliance management (Management Console, obsolete)<a class="headerlink" href="#appliance-management-management-console-obsolete" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>There are two types of Men&amp;Mice Appliances: a DNS/DHCP Appliance and a DNS Caching Appliance.</p>
+<dl class="simple">
+<dt>DNS/DHCP Appliance</dt><dd><p>Can be used as a DNS and a DHCP server. Once the DNS/DHCP appliance has been configured and added to in <a class="reference internal" href="../admin-manual/webapp_server_management.html#webapp-server-management"><span class="std std-ref">Service Management</span></a>, you work with the DNS and DHCP server just as you would work with the BIND and ISC DHCP servers.</p>
+</dd>
+<dt>DNS Caching Appliance</dt><dd><p>Contains a high-performance Caching-only DNS server. See <a class="reference internal" href="caching_appliance.html#caching-appliance"><span class="std std-ref">Caching DNS Servers (Management Console, obsolete)</span></a> for information on managing the DNS server on the DNS Caching appliance.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Separate activation keys are required to add and manage a Men&amp;Mice Appliance. The DNS/DHCP Appliance and the DNS Caching Appliance use different activation keys.</p>
+<p>Unless otherwise stated, the information in this chapter applies to both the DNS/DHCP Appliance and the DNS Caching Appliance.</p>
+</div>
+</section>
+<section id="new-appliance">
+<h2>New Appliance<a class="headerlink" href="#new-appliance" title="Link to this heading"></a></h2>
+<p>You must be logged in as a user with administrator privileges to add a new Men&amp;Mice Appliance.</p>
+<p>To add a new Men&amp;Mice Appliance, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">File ‣ New ‣ Appliance</span>. The <em>Add Appliance</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-add-appliance.png"><img alt="../../_images/admin-add-appliance.png" class="align-center" src="../../_images/admin-add-appliance.png" style="width: 60%;" /></a>
+<dl class="simple">
+<dt><em>Appliance Name</em></dt><dd><p>Type the name (host name) of the Men&amp;Mice Appliance. Note that this name is also used for the DNS and DHCP servers hosted on the Appliance.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to use the FQDN (Fully Qualified Domain Name) as the Appliance Name and then leave the Add</p>
+</div>
+<p><em>Appliance address (optional)</em></p>
+<blockquote>
+<div><p>If desired, type the IPv4 address for the Appliance. This is not required, but doing so allows the Management Console to connect to the Appliance by IP Address instead of by name. The Appliance name will still be used when displaying Appliance information.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Click <span class="guilabel">OK</span>. The Men&amp;Mice Appliance is added and the Appliance Properties dialog box opens. Once added, the name of the newly added Appliance displays under Appliances in the Object Section. (You may need to click the <span class="guilabel">+</span> sign next to <em>Appliances</em> to see it.)</p></li>
+</ol>
+</section>
+<section id="appliance-properties">
+<span id="id1"></span><h2>Appliance Properties<a class="headerlink" href="#appliance-properties" title="Link to this heading"></a></h2>
+<p>You can use the <em>Appliance Properties</em> dialog box to configure various settings for the Men&amp;Mice Appliance.</p>
+<p>To open the <em>Appliance Properties</em> dialog box, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the applicable Appliance.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Properties</span>. The <em>Men&amp;Mice Appliance Properties</em> dialog box displays.</p></li>
+</ol>
+<p>The settings in the following sections are all available from within the <em>Appliance Properties</em> dialog box.</p>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-properties.png"><img alt="../../_images/admin-appliance-properties.png" class="align-center" src="../../_images/admin-appliance-properties.png" style="width: 70%;" /></a>
+</section>
+<section id="enabling-disabling-dns-dhcp-service-dns-dhcp-appliance-only">
+<h2>Enabling/Disabling DNS/DHCP Service (DNS/DHCP Appliance only)<a class="headerlink" href="#enabling-disabling-dns-dhcp-service-dns-dhcp-appliance-only" title="Link to this heading"></a></h2>
+<p>You can choose whether you use the Men&amp;Mice Appliance as a DNS server, DHCP server or both.</p>
+<p>To enable or disable DNS and DHCP service on the Appliance:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">General</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Server Status</em> section. The <em>Service Status</em> dialog box displays.</p></li>
+<li><p>Select the services you want to run on the Appliance and click <span class="guilabel">Save</span>. If you enable a service, a server that has the same name as the appliance is displayed in the appropriate section in the object list in the Manager window. To disable a service, unselect the corresponding checkbox in the dialog box.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-enable.png"><img alt="../../_images/admin-appliance-enable.png" class="align-center" src="../../_images/admin-appliance-enable.png" style="width: 50%;" /></a>
+</section>
+<section id="enabling-remote-logging-dns-dhcp-appliance-only">
+<h2>Enabling Remote Logging (DNS/DHCP Appliance only)<a class="headerlink" href="#enabling-remote-logging-dns-dhcp-appliance-only" title="Link to this heading"></a></h2>
+<p>The DNS/DHCP appliance can be configured such that specific logging channel can be logged to a remote syslog server.</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">General</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Remote Logging</em> section and you will be presented with the following dialog:</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-remote-logging.png"><img alt="../../_images/admin-appliance-remote-logging.png" class="align-center" src="../../_images/admin-appliance-remote-logging.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>To enable remote logging</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>check the <span class="guilabel">Enable Remote Logging</span> checkbox.</p></li>
+<li><p>Specify the remote <strong>Syslog Server</strong> that will receive the logs.</p></li>
+<li><p>Optionally specify a <strong>Port Number</strong> and protocol that the remote syslog listens on. Default is 514/UDP.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>To finalize the configuration, configure in the DNS server options/logging a logging channel and a logging facility that will be logged to this remote server. For more information see the BIND logging section in Authoritative DNS Servers.</p></li>
+</ol>
+</section>
+<section id="using-a-time-server">
+<h2>Using a Time Server<a class="headerlink" href="#using-a-time-server" title="Link to this heading"></a></h2>
+<p>You can configure the Appliance to synchronize its time with a time server. This ensures that the time on the Appliance is always correct. By default, the appliance synchronizes its time using servers in the NTP pool.</p>
+<p>To configure the Appliance to use a Time Server:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Services</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure button</span> in the <em>Network Time Protocol</em> section. The <em>Time Server configuration</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-ntp.png"><img alt="../../_images/admin-appliance-ntp.png" class="align-center" src="../../_images/admin-appliance-ntp.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Use the dialog box to add, modify or delete the time servers to use. If no time server is configured, the Appliance will not synchronize its time.</p></li>
+</ol>
+</section>
+<section id="enabling-remote-access">
+<h2>Enabling Remote Access<a class="headerlink" href="#enabling-remote-access" title="Link to this heading"></a></h2>
+<p>For troubleshooting purposes, it is possible to enable Remote Access for the Men&amp;Mice Appliance. When Remote Access is enabled, SSH access is granted on the Men&amp;Mice Appliance for the user name <code class="docutils literal notranslate"><span class="pre">mmadmin</span></code>.</p>
+<p>To enable Remote Access on the Men&amp;Mice Appliance:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Services</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure button</span> in the <em>Remote Access</em> section. The <em>Remote Access configuration</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-remote-access.png"><img alt="../../_images/admin-appliance-remote-access.png" class="align-center" src="../../_images/admin-appliance-remote-access.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the <span class="guilabel">Enable access</span> checkbox to enable Remote Access.</p></li>
+<li><p>Enter a login password. Note that the password must be entered twice.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to save the changes and close the dialog box.</p></li>
+</ol>
+</section>
+<section id="configuring-snmp-monitoring">
+<h2>Configuring SNMP Monitoring<a class="headerlink" href="#configuring-snmp-monitoring" title="Link to this heading"></a></h2>
+<p>You can use SNMP monitoring to get various information about the Men&amp;Mice Appliance and receive SNMP traps if certain events occur on the Appliance.</p>
+<p>To configure SNMP Monitoring on the Men&amp;Mice Appliance:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Services</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the SNMP section. The <em>SNMP configuration</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-snmp.png"><img alt="../../_images/admin-appliance-snmp.png" class="align-center" src="../../_images/admin-appliance-snmp.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Check the <span class="guilabel">SNMP Agent Enabled</span> checkbox to enable the SNMP agent. When the SNMP agent is enabled, you can retrieve information about the system using SNMP.</p></li>
+<li><p>In the <strong>Community</strong> field, enter The community string (password) to use for the SNMP agent.</p></li>
+<li><p>In the <strong>System Contact</strong> field, enter the email address of a contact person for the system.</p></li>
+<li><p>Check the <span class="guilabel">SNMP Traps Enabled</span> checkbox to enable sending of SNMP traps. When sending SNMP traps is enabled, the appliances will send SNMP traps when certain events occur.</p></li>
+<li><p>In the <strong>Trap Manager</strong> field, enter the host name of the computer that should receive the SNMP traps.</p></li>
+<li><p>In the <strong>Trap Manager Port</strong> field, enter the port number the Manager uses for the SNMP traps.</p></li>
+<li><p>In the <strong>Trap Community</strong> field, enter the community string (password) to use for the SNMP traps.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save your settings and close the dialog box.</p></li>
+</ol>
+</section>
+<section id="configuring-anycast">
+<h2>Configuring Anycast<a class="headerlink" href="#configuring-anycast" title="Link to this heading"></a></h2>
+<p>The Men&amp;Mice Appliance supports Anycast network configuration through two routing protocols, BGP (Border Gateway Protocol) and OSPF (Open Shortest Path First).</p>
+<section id="configuring-anycast-using-bgp">
+<h3>Configuring Anycast using BGP<a class="headerlink" href="#configuring-anycast-using-bgp" title="Link to this heading"></a></h3>
+<p>To configure Anycast using BGP on the Men&amp;Mice Appliance:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Services</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Anycast</em> section. The <em>Anycast configuration</em> dialog box is displayed with the <em>BGP</em> tab selected.</p></li>
+<li><p>Check the <span class="guilabel">Enable BGP Anycast</span> checkbox to enable BGP.</p></li>
+<li><p>In the <strong>Local AS</strong> field enter the local Autonomous System number for the Men&amp;Mice Appliance.</p></li>
+<li><p>In the <strong>Router ID</strong> field enter a unique ID for the Men&amp;Mice Appliance in dotted-decimal form (A.B.C.D). It can be any (unique) value, but it is recommended to use a number that represents the Appliance, such as its eth0 IP address.</p></li>
+<li><p>In the <strong>Anycast Addresses</strong> list add the IP addresses that the Men&amp;Mice Appliance shall advertise through the routing protocol. The Appliance will also automatically configure a loopback adapter with this address and provide DNS service. To add an anycast address, click the <span class="guilabel">Add</span> button and enter the required information. To modify an existing anycast address entry, select the address and click the <span class="guilabel">Edit</span> button. To delete an anycast address, select the address in the list and click the <span class="guilabel">Delete</span> button.</p></li>
+<li><p>In the <strong>Neighbor Configuration</strong> list, add the IP addresses of the routers that the Appliance shall form a neighbor relationship with. These routers must be capable of using the BGP protocol and they must also be configured to form a relationship with the Appliance. To add a neighbor address, click the <span class="guilabel">Add</span> button and enter the required information. To modify an existing neighbor address entry, select the address and click the <span class="guilabel">Edit</span> button. To delete a neighbor address, select the address in the list and click the <span class="guilabel">Delete</span> button.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to save the changes.</p></li>
+</ol>
+</section>
+<section id="configuring-anycast-using-ospf">
+<h3>Configuring Anycast using OSPF<a class="headerlink" href="#configuring-anycast-using-ospf" title="Link to this heading"></a></h3>
+<p>To configure Anycast using OSPF on the Men&amp;Mice Appliance:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Services</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Anycast</em> section. The <em>Anycast configuration</em> dialog box is displayed with the <em>BGP</em> tab selected.</p></li>
+<li><p>Click the <span class="guilabel">OSPF</span> tab to activate it.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-anycast.png"><img alt="../../_images/admin-appliance-anycast.png" class="align-center" src="../../_images/admin-appliance-anycast.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Check the <span class="guilabel">Enable OSPF Anycast</span> checkbox to enable OSPF.</p></li>
+<li><p>In the <strong>OSPF Area</strong> field enter the OSPF Area that the Men&amp;Mice Appliance will participate in in dotted-decimal form (A.B.C.D). Each OSPF network must contain at least a backbone area (area 0 or 0.0.0.0), but can also contain other areas by through Area Border Routers (ABRs). The Area ID is only configured once for all networks since the Appliance never acts as an ABR and uses the same Area ID on all adapters.</p></li>
+<li><p>In the <strong>Router ID</strong> field enter a unique ID for the Men&amp;Mice Appliance in dotted-decimal form (A.B.C.D). It can be any (unique) value, but it is recommended to use a number that represents the Appliance, such as its eth0 IP address.</p></li>
+<li><p>In the <strong>Anycast Addresses</strong> list add the IP addresses that the Men&amp;Mice Appliance shall advertise through the routing protocol. The Appliance will also automatically configure a loopback adapter with this address and provide DNS service. To add an anycast address, click the <span class="guilabel">Add</span> button and enter the required information. To modify an existing anycast address entry, select the address and click the <span class="guilabel">Edit</span> button. To delete an anycast address, select the address in the list and click the <span class="guilabel">Delete</span> button.</p></li>
+<li><p>In the <strong>Neighbor Configuration</strong> list, add the networks that should participate in the OSPF routing protocol. Normally this will be the networks that are configured on the eth0 or eth1 network interfaces. To successfully form neighbor relationships in OSPF, the Men&amp;Mice Appliance and the routers must be located on the same network prefix and be configured with the same area ID. To add a neighbor network, click the <span class="guilabel">Add</span> button and enter the required information. To modify an existing neighbor network entry, select the address and click the <span class="guilabel">Edit</span> button. To delete a neighbor network, select the entry in the list and click the <span class="guilabel">Delete</span> button.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to save the changes.</p></li>
+</ol>
+</section>
+</section>
+<section id="configuring-network-settings">
+<h2>Configuring Network Settings<a class="headerlink" href="#configuring-network-settings" title="Link to this heading"></a></h2>
+<p>Using the network settings, you can enable or disable IPv6 and change the IP address, network mask and routing information for the Appliance. You can also enable and configure the secondary network interface (eth1) on the Appliance.</p>
+<section id="enabling-disabling-the-secondary-network-interface-eth1">
+<h3>Enabling/disabling the secondary network interface (eth1)<a class="headerlink" href="#enabling-disabling-the-secondary-network-interface-eth1" title="Link to this heading"></a></h3>
+<p>The Men&amp;Mice Appliance has two network interfaces. The primary network interface (eth0) is enabled by default.</p>
+<p>To enable or disable the secondary network interface (eth1):</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Network</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Interface eth1</em> section. The interface configuration dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-secondary-network-interface.png"><img alt="../../_images/admin-appliance-secondary-network-interface.png" class="align-center" src="../../_images/admin-appliance-secondary-network-interface.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Check the <span class="guilabel">Enabled</span> checkbox to enable the eth1 interface. To disable the interface, uncheck the checkbox.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save your settings.</p></li>
+</ol>
+</section>
+<section id="enabling-disabling-ipv6-addresses-on-the-primary-secondary-network-interface">
+<h3>Enabling/disabling IPv6 addresses on the primary/secondary network interface<a class="headerlink" href="#enabling-disabling-ipv6-addresses-on-the-primary-secondary-network-interface" title="Link to this heading"></a></h3>
+<p>IPv6 can be enabled on either or both of the network interfaces on the Men&amp;Mice Appliance.</p>
+<p>To enable or disable IPv6 on the Men&amp;Mice Appliance do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Network</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Interface</em> section for the interface you want to configure. The <em>interface configuration</em> dialog box displays.</p></li>
+<li><p>Click the <span class="guilabel">IPv6</span> tab in the <em>interface configuration</em> dialog box.</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Check the <span class="guilabel">IPv6 Enabled</span> checkbox to enable IPv6 on the selected interface. To disable IPv6 on the interface interface, uncheck the checkbox.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save your settings.</p></li>
+</ol>
+<p>When IPv6 is enabled, the Link-local address and any dynamically assigned addresses for the interface are displayed in the dialog box.</p>
+</section>
+<section id="configuring-ipv4-addresses-on-the-primary-secondary-network-interface">
+<h3>Configuring IPv4 addresses on the primary/secondary network interface<a class="headerlink" href="#configuring-ipv4-addresses-on-the-primary-secondary-network-interface" title="Link to this heading"></a></h3>
+<p>Each interface on the Men&amp;Mice Appliance can have one or more IPv4 addresses assigned to it.</p>
+<p>To configure IPv4 addresses on the Appliance, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Network</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Interface</em> section for the interface you want to configure. The <em>interface configuration</em> dialog box is displayed with the <em>IPv4</em> tab selected.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-ipv4.png"><img alt="../../_images/admin-appliance-ipv4.png" class="align-center" src="../../_images/admin-appliance-ipv4.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>In the <strong>IPv4 Address</strong> field enter the IPv4 IP address for the Men&amp;Mice Appliance. NOTE: The main IPv4 address on the primary network interface (eth0) is used by Micetro to communicate with the Appliance. If you change the main IPv4 address of the primary network interface, you will lose the connection to the Appliance once the changes are saved, and you must update the connection information for the Appliance. Refer to <a class="reference internal" href="#edit-appliance-name"><span class="std std-ref">Edit Appliance Name</span></a> for details on how to change the connection information.</p></li>
+<li><p>In the <strong>Subnet Mask</strong> field, enter the subnet mask to use.</p></li>
+<li><p>In the <strong>Default Route</strong> field, enter the default IPv4 route.</p></li>
+<li><p>If you want to add more IPv4 IP addresses for the Men&amp;Mice Appliance, click the <span class="guilabel">Add</span> button next to the IPv4 Aliases list and enter the relevant IP address information.</p></li>
+</ol>
+<p>To edit or delete additional IPv4 addresses, use the <span class="guilabel">Edit</span> and <span class="guilabel">Delete</span> buttons next to the IPv4 Aliases list.</p>
+</section>
+<section id="configuring-ipv6-addresses-on-the-primary-secondary-network-interface">
+<h3>Configuring IPv6 addresses on the primary/secondary network interface<a class="headerlink" href="#configuring-ipv6-addresses-on-the-primary-secondary-network-interface" title="Link to this heading"></a></h3>
+<p>Each interface on the Men&amp;Mice Appliance can have one or more addresses assigned to it.</p>
+<p>To configure IPv6 addresses on the Appliance, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Network</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Interface</em> section for the interface you want to configure. The <em>interface configuration</em> dialog box is displayed with the <em>IPv4</em> tab selected.</p></li>
+<li><p>Click the <span class="guilabel">IPv6</span> tab in the <em>interface configuration</em> dialog box</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-configure-ipv6.png"><img alt="../../_images/admin-appliance-configure-ipv6.png" class="align-center" src="../../_images/admin-appliance-configure-ipv6.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Select the <span class="guilabel">IPv6 Enabled</span> checkbox to enable IPv6</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button to add a new IPv6 address.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-add-ipv6.png"><img alt="../../_images/admin-appliance-add-ipv6.png" class="align-center" src="../../_images/admin-appliance-add-ipv6.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Enter the <strong>IPv6 address</strong> and the <strong>Prefix length</strong>.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to add the IPv6 address.</p></li>
+</ol>
+<p>To edit or delete IPv6 addresses, use the <span class="guilabel">Edit</span> and <span class="guilabel">Delete</span> buttons next to the IPv4 Addresses list.</p>
+</section>
+<section id="configuring-the-network-mode-on-the-primary-secondary-network-interface">
+<h3>Configuring the Network Mode on the primary/secondary network interface<a class="headerlink" href="#configuring-the-network-mode-on-the-primary-secondary-network-interface" title="Link to this heading"></a></h3>
+<p>It is possible to change the network speed and duplex mode for the network interfaces on the Men&amp;Mice Appliance.</p>
+<p>To change the Network Mode on the Men&amp;Mice Appliance do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Network</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Interface</em> section for the interface you want to configure. The <em>interface configuration</em> dialog box displays.</p></li>
+<li><p>Click the <span class="guilabel">Hardware</span> tab in the <em>interface configuration</em> dialog box. The MAC address of the interface is shown and a drop-down box with the available network modes displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-network-mode.png"><img alt="../../_images/admin-appliance-network-mode.png" class="align-center" src="../../_images/admin-appliance-network-mode.png" style="width: 50%;" /></a>
+</section>
+<section id="configuring-ipv4-routing-information">
+<h3>Configuring IPv4 routing information<a class="headerlink" href="#configuring-ipv4-routing-information" title="Link to this heading"></a></h3>
+<p>To configure IPv4 routing on the Appliance, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Network</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Routing</em> section. The <em>routing configuration</em> dialog box is displayed with the <em>IPv4</em> tab selected.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-ipv4-routing.png"><img alt="../../_images/admin-appliance-ipv4-routing.png" class="align-center" src="../../_images/admin-appliance-ipv4-routing.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Enter the <strong>default route</strong> to use for IPv4.</p></li>
+<li><p>If needed, click the <span class="guilabel">Add</span> button to add a new IPv4 route.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-add-ipv4-route.png"><img alt="../../_images/admin-appliance-add-ipv4-route.png" class="align-center" src="../../_images/admin-appliance-add-ipv4-route.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Enter the <strong>destination</strong>, <strong>prefix</strong>, and <strong>gateway</strong>.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to add the route.</p></li>
+</ol>
+<p>To edit or delete routes, use the <span class="guilabel">Edit</span> and <span class="guilabel">Delete</span> buttons next to the IPv4 Routes list.</p>
+</section>
+<section id="configuring-ipv6-routing-information">
+<h3>Configuring IPv6 routing information<a class="headerlink" href="#configuring-ipv6-routing-information" title="Link to this heading"></a></h3>
+<p>To configure IPv6 routing on the Appliance, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Network</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Configure</span> button in the <em>Routing</em> section. The <em>routing configuration</em> dialog box is displayed with the <em>IPv4</em> tab selected.</p></li>
+<li><p>Click the <span class="guilabel">IPv6</span> tab in the <em>routing configuration</em> dialog box.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-ipv6-routing.png"><img alt="../../_images/admin-appliance-ipv6-routing.png" class="align-center" src="../../_images/admin-appliance-ipv6-routing.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Enter the <strong>default route</strong> to use for IPv6 and choose the interface for the route. You can choose the enabled interfaces or Auto.</p></li>
+<li><p>If needed, click the <span class="guilabel">Add</span> button to add a new IPv6 route.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-add-ipv6-route.png"><img alt="../../_images/admin-appliance-add-ipv6-route.png" class="align-center" src="../../_images/admin-appliance-add-ipv6-route.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Enter the <strong>destination</strong>, <strong>prefix</strong> and <strong>gateway</strong> and choose the <strong>interface</strong> for the route. Click <span class="guilabel">OK</span> to add the route.</p></li>
+</ol>
+<p>To edit or delete routes, use the <span class="guilabel">Edit</span> and <span class="guilabel">Delete</span> buttons next to the <em>IPv6 Routes</em> list.</p>
+</section>
+</section>
+<section id="shutting-down-or-restarting-the-men-mice-appliance">
+<h2>Shutting down or Restarting the Men&amp;Mice Appliance<a class="headerlink" href="#shutting-down-or-restarting-the-men-mice-appliance" title="Link to this heading"></a></h2>
+<p>You can shut down or restart the Men&amp;Mice Appliance from the Maintenance tab in the Appliance Properties dialog box.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>If you shutdown the Men&amp;Mice Appliance, it will be turned off and you will need physical access to the Men&amp;Mice Appliance to turn it on again.</p>
+</div>
+<p>To shut down or restart the Men&amp;Mice Appliance:</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Maintenance</span> tab in the <em>Appliance Properties</em> dialog box.</p></li>
+<li><p>Click the <span class="guilabel">Shutdown</span> or <span class="guilabel">Restart</span> button and click <span class="guilabel">OK</span> in the confirmation dialog box. The Men&amp;Mice Appliance shuts down or restarts, depending on your selection.</p></li>
+</ol>
+</section>
+<section id="support-information">
+<h2>Support Information<a class="headerlink" href="#support-information" title="Link to this heading"></a></h2>
+<p>To help in troubleshooting, it is possible to generate and save support information for a Men&amp;Mice Appliance. The support information file contains various information on the Men&amp;Mice Appliance setup and helps the Men&amp;Mice Support team diagnose problems you might have with the Appliance.</p>
+<p>To generate a support information file:</p>
+<ol class="arabic simple">
+<li><p>Locate the applicable Appliance.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Support Info</span>. A <em>Save File</em> dialog box displays. A default name for the support information file is <code class="docutils literal notranslate"><span class="pre">mmSupportInfo.tgz</span></code>. Click <span class="guilabel">Save</span> to save the support information file.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The support information file contains various text files in a .tgz archive. If you are interested in seeing the contents of the support information file, you can use any tool that can extract data from .tgz archives and look at the text files.</p>
+</div>
+</section>
+<section id="edit-appliance-name">
+<span id="id2"></span><h2>Edit Appliance Name<a class="headerlink" href="#edit-appliance-name" title="Link to this heading"></a></h2>
+<p>This feature allows you to change the name or IP Address used to connect to a Men&amp;Mice Appliance. This is useful if you need to refer to the Appliance by another name or if you are connecting to the Appliance by an IP Address and the IP Address has changed.</p>
+<p>To access this feature, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the applicable Appliance.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Edit Appliance Name</span>. The <em>Edit Appliance name</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-edit-name.png"><img alt="../../_images/admin-appliance-edit-name.png" class="align-center" src="../../_images/admin-appliance-edit-name.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Change the <strong>Appliance name</strong>, and/or <strong>Appliance address (optional)</strong>.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will only change the name or IP address used to connect to the Men&amp;Mice Appliance. The actual IP address on the Appliance is not changed. For information on changing the IP address on the Men&amp;Mice Appliance itself, refer to <a class="reference internal" href="#appliance-properties"><span class="std std-ref">Appliance Properties</span></a>.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="delete-appliance">
+<h2>Delete Appliance<a class="headerlink" href="#delete-appliance" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This command is only available with the Administrator account.</p>
+</div>
+<p>Use this command to remove a Men&amp;Mice Appliance from Micetro.</p>
+<ol class="arabic simple">
+<li><p>In the <em>Object browser</em> of the Management Console, click on <span class="guilabel">Appliances</span>.</p></li>
+<li><p>In the <em>Object List</em>, select the Appliance(s) you want to remove. To select multiple Appliances, hold down the Ctrl key while making your selection</p></li>
+<li><p>On the toolbar, click the <span class="guilabel">Remove</span> button. A dialog box prompts you to confirm your decision. To remove the Appliance, click <span class="guilabel">Yes</span>. Otherwise, click <span class="guilabel">No</span> to keep the Appliance.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you remove an Appliance from Micetro, the DNS and DHCP servers hosted on the Appliance are removed from Micetro as well.</p>
+</div>
+</section>
+<section id="backup-and-restore">
+<h2>Backup and Restore<a class="headerlink" href="#backup-and-restore" title="Link to this heading"></a></h2>
+<p>Micetro will automatically backup configuration for all appliances it manages. The backup can then be used to restore the appliance to the backed-up copy of the configuration. The backup is fully automatic and there is no configuration needed.</p>
+<p>If an appliance crashes and has to be replaced with another appliance with the same IP Address, Micetro will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:</p>
+<a class="reference internal image-reference" href="../../_images/admin-appliance-backup-restore.png"><img alt="../../_images/admin-appliance-backup-restore.png" class="align-center" src="../../_images/admin-appliance-backup-restore.png" style="width: 60%;" /></a>
+<ul class="simple">
+<li><p>If <strong>Restore Backup</strong> is selected, all configurations on the appliance will be overwritten with the backed-up data.</p></li>
+<li><p>If <strong>Use appliance without backup</strong> is selected, all data kept in Men&amp;Mice Central will be ignored and overwritten with current data on the appliance.</p></li>
+</ul>
+<p>Basically, the restore scenario is as follows:</p>
+<ol class="arabic simple">
+<li><p>The appliance crashes and becomes unusable.</p></li>
+<li><p>A new appliance is configured to replace the broken appliance, using the same IP Address as the old appliance.</p></li>
+<li><p>When the new appliance is up and running, in the Management Console, right-click the appliance and choose <span class="guilabel">Reconnect</span>.</p></li>
+</ol>
+<p>When a connection has been established, Micetro detects that this is a new, uninitialized appliance. See above for a description on what happens next.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin_maintenance.html" class="btn btn-neutral float-left" title="Maintenance (Management Console, obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="caching_appliance.html" class="btn btn-neutral float-right" title="Caching DNS Servers (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

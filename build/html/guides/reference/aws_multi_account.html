@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to connect Micetro by Men&amp;Mice to multiple AWS accounts using single credentials" name="description" />
+<meta content="Micetro credentials, AWS, Micetro by Men&amp;Mice," name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring AWS Multi-Account Setup &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configure Azure DNS" href="configure_azure_dns.html" />
+    <link rel="prev" title="Integrating Cloud Services with Micetro: Permissions Guide for AWS" href="cloud_minimum_permissions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro Reference Articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud_minimum_permissions.html">Integrating Cloud Services with Micetro: Permissions Guide for AWS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuring AWS Multi-Account Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-and-configuration">Set Up and Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-creating-a-group-with-user-access-to-roles-on-other-accounts">I.  Creating a Group with User Access to Roles on Other Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii-creating-and-configuring-roles-for-each-account">II.  Creating and Configuring Roles for Each Account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii-adding-inline-group-policies-for-roles">III. Adding Inline Group Policies for Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#after-configuring-the-accounts">After Configuring the Accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configure_azure_dns.html">Configure Azure DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ip_count.html">Calculating IP Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="free_trial_best_practices.html">Free Trial Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="free_trial_checklist.html">Free Trial Best Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Micetro DNS Agent and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro Reference Articles</a></li>
+      <li class="breadcrumb-item active">Configuring AWS Multi-Account Setup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/aws_multi_account.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuring-aws-multi-account-setup">
+<span id="aws-multi-account"></span><h1>Configuring AWS Multi-Account Setup<a class="headerlink" href="#configuring-aws-multi-account-setup" title="Link to this heading"></a></h1>
+<p>You can connect Micetro to multiple AWS accounts using a single set of credentials. This is achieved by configuring a cloud account to assume roles in other accounts. The credentials you add to Micetro when setting up multiple AWS cloud accounts should belong to a user who is a member of a group. This group needs to be configured to allow members to assume AWS roles on other accounts with access to cloud networks (via EC2) or DNS services (via Route53).</p>
+<section id="set-up-and-configuration">
+<h2>Set Up and Configuration<a class="headerlink" href="#set-up-and-configuration" title="Link to this heading"></a></h2>
+<section id="i-creating-a-group-with-user-access-to-roles-on-other-accounts">
+<h3>I.  Creating a Group with User Access to Roles on Other Accounts<a class="headerlink" href="#i-creating-a-group-with-user-access-to-roles-on-other-accounts" title="Link to this heading"></a></h3>
+<p>You can either select an existing user or create a new one. This can be done through the AWS Management Console or by using the AWS CLI command <code class="docutils literal notranslate"><span class="pre">[iam|create-user]</span></code>.</p>
+<ol class="arabic">
+<li><p>Open <span class="guilabel">IAM service</span> in the management console.</p></li>
+<li><p>Select <span class="guilabel">Users</span> on the left-hand menu or under IAM resources.</p></li>
+<li><p>Either select an existing user to use, or create a new user by clicking <span class="guilabel">Add user</span> and following the wizard’s steps.</p>
+<ul class="simple">
+<li><p>If creating a new user, ensure you allow programmatic access to generate an access key ID and secret access key pair for adding the account to Micetro.</p></li>
+<li><p>Attach the <em>IAMReadOnlyAccess</em> policy to the user.</p></li>
+<li><p>If you want to manage Route53 and VPCs on this account, also attach the <em>AmazonRoute53FullAccess</em> and <em>AmazonEC2FullAccess</em> policies.</p></li>
+</ul>
+</li>
+<li><p>Create a group. This can be done through the AWS Management Console or by using the AWS CLI command <code class="docutils literal notranslate"><span class="pre">[iam|create-group]</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure this is done under the account where the user is located.</p>
+</div>
+<ul class="simple">
+<li><p>Under <span class="guilabel">IAM service</span>, select <span class="guilabel">Groups</span>, then select <span class="guilabel">Create New Group</span>.</p></li>
+<li><p>You’ll be prompted to attach policies to the group - select <span class="guilabel">Next Step</span>.</p></li>
+<li><p>Review the settings and select <span class="guilabel">Create Group</span> to finish.</p></li>
+</ul>
+</li>
+<li><p>Add the user to the group. This can be done through the AWS Management Console or by using the AWS CLI command <code class="docutils literal notranslate"><span class="pre">[iam|add-user-to-group]</span></code>.</p>
+<ul class="simple">
+<li><p>On the <span class="guilabel">Groups</span> menu, access the group you created in the previous step.</p></li>
+<li><p>On the <span class="guilabel">Users</span> tab, select <span class="guilabel">Add Users to Group</span>.</p></li>
+<li><p>Select user you want to add, then select <span class="guilabel">Add Users</span>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ii-creating-and-configuring-roles-for-each-account">
+<h3>II.  Creating and Configuring Roles for Each Account<a class="headerlink" href="#ii-creating-and-configuring-roles-for-each-account" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Create a role:</p>
+<ul class="simple">
+<li><p>Log in to the account that the user should have access to using the AWS Management Console.</p></li>
+<li><p>Open the <strong>IAM</strong> service.</p></li>
+<li><p>Select <span class="guilabel">Roles</span> on the left menu or under the IAM resource.</p></li>
+<li><p>Select <span class="guilabel">Create role</span>.</p></li>
+</ul>
+</li>
+<li><p>Choose trusted entity:</p>
+<ul class="simple">
+<li><p>Select <span class="guilabel">Another AWS account</span> as the trusted entity type.</p></li>
+<li><p>Enter the Account ID of the account containing the user who needs access.</p></li>
+<li><p>Select <span class="guilabel">Next: Permissions</span>.</p></li>
+</ul>
+</li>
+<li><p>Attach necessary policies:</p>
+<ul>
+<li><p>Attach the necessary policies for Micetro by searching for them by name and selecting them.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>AmazonRoute53FullAccess</em> to manage hosted DNS zones.</p></li>
+<li><p><em>AmazonEC2FullAccess</em> to manage Cloud Networks and ranges.</p></li>
+<li><p><em>IAMReadOnlyAccess</em> so that Micetro can access the account alias. This does not need to be attached if you do not want AWS account aliases to be displayed in Micetro.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Select <span class="guilabel">Next: Tags</span>.</p></li>
+</ul>
+<p>This can also be done using the AWS CLI command <code class="docutils literal notranslate"><span class="pre">[iam|attach-role-policy]</span></code></p>
+</li>
+<li><p>Add tags (optional):</p>
+<ul class="simple">
+<li><p>Add tags to the role for organization (optional).</p></li>
+<li><p>Select <span class="guilabel">Next: Review</span>.</p></li>
+</ul>
+</li>
+<li><p>Name and create role:</p>
+<ul class="simple">
+<li><p>Choose a name for the role and provide a short description.</p></li>
+<li><p>Select <span class="guilabel">Create role</span>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="iii-adding-inline-group-policies-for-roles">
+<h3>III. Adding Inline Group Policies for Roles<a class="headerlink" href="#iii-adding-inline-group-policies-for-roles" title="Link to this heading"></a></h3>
+<p>The following steps need to be performed for each account that the user should have access to.</p>
+<p>Locate the account where the user is located. Then, find the group created in the first step of this tutorial that contains the user. Next, create a group policy in the group for each account the user needs access to, enabling them to assume the role that was created on that account.</p>
+<p>This can be done through the AWS Management Console or by using the AWS CLI command <code class="docutils literal notranslate"><span class="pre">[iam|put-group</span> <span class="pre">policy]</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Add inline group policies:</p>
+<ul class="simple">
+<li><p>Log in to the account containing the group with the user.</p></li>
+<li><p>Open the <strong>IAM</strong> service.</p></li>
+<li><p>Go to <span class="guilabel">Groups</span>.</p></li>
+<li><p>Locate the group created in the first step and click to open it.</p></li>
+</ul>
+</li>
+<li><p>Create custom policy:</p>
+<ul class="simple">
+<li><p>On the <span class="guilabel">Permissions</span> tab, select <span class="guilabel">Add permissions</span> and <span class="guilabel">Create new inline policy</span>.</p></li>
+<li><p>In the Policy editor select <span class="guilabel">JSON</span> and paste the provided policy document, replacing <cite>123456789012</cite> with the account ID of the role’s location and <cite>RoleName</cite> with the role’s name.</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+      {
+          &quot;Sid&quot;: &quot;&quot;,
+          &quot;Effect&quot;: &quot;Allow&quot;,
+          &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+          &quot;Resource&quot;: &quot;arn:aws:iam::123456789012:role/RoleName&quot;
+      }
+  ]
+}
+
+ * In the last step, enter a policy name and select :guilabel:`Create policy`
+</pre></div>
+</div>
+</section>
+</section>
+<section id="after-configuring-the-accounts">
+<h2>After Configuring the Accounts<a class="headerlink" href="#after-configuring-the-accounts" title="Link to this heading"></a></h2>
+<p>Once you have added policies to the group for all roles, you can add the accounts to Micetro using the API credentials of the user in the group. Please note that it may take a few minutes for the AWS backend to propagate the changes. For detailed instructions on adding AWS accounts to Micetro, refer to the provided documentation.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cloud_minimum_permissions.html" class="btn btn-neutral float-left" title="Integrating Cloud Services with Micetro: Permissions Guide for AWS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configure_azure_dns.html" class="btn btn-neutral float-right" title="Configure Azure DNS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Devices feature in the Micetro by Men&amp;Mice Management Console - definition and usage" name="description" />
+<meta content="IP address device, IP address, device scan" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devices (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuring Host Discovery by Querying Routers (Management Console, obsolete)" href="console_snmp_profiles.html" />
+    <link rel="prev" title="DHCP Scopes (Management Console, obsolete)" href="console_dhcp_scopes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Devices (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-device">What is a Device?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-device">Adding a Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-a-device">Deleting a Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linking-unlinking-ip-addresses">Linking/Unlinking IP Addresses</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#linking-an-ip-address">Linking an IP Address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unlinking-an-ip-address">Unlinking an IP Address</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#searching-for-devices">Searching for Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-list-tab">Device List tab</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">Devices (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_devices.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="devices-management-console-obsolete">
+<span id="devices"></span><h1>Devices (Management Console, obsolete)<a class="headerlink" href="#devices-management-console-obsolete" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Using the Devices feature, you can create devices, assign interfaces to each device and attach IP addresses to the interfaces.</p>
+</section>
+<section id="what-is-a-device">
+<h2>What is a Device?<a class="headerlink" href="#what-is-a-device" title="Link to this heading"></a></h2>
+<p>A Device is any item that can have an IP address linked to it. A device can, for example, be a computer, a router, a firewall, a phone or a virtual machine. A device has one or more interfaces and each device can have any number of IP addresses linked to it.</p>
+<p>It is common to assign multiple properties to devices. As a default, a device in Micetro only has one property - the device name. However, you can create any number of properties for the devices. To create a property for a device, use the Define Custom Properties feature. For more information on this feature, refer to <a class="reference internal" href="../admin-manual/admin_custom_properties.html#admin-custom-properties"><span class="std std-ref">Custom Properties</span></a>.</p>
+</section>
+<section id="adding-a-device">
+<h2>Adding a Device<a class="headerlink" href="#adding-a-device" title="Link to this heading"></a></h2>
+<p>When you add a Device, you start by entering the basic Device information and then you create the relevant interface(s) and optionally link one or more IP Addresses to each interface.</p>
+<p>To add a new device:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Device ‣ New Device</span>. A dialog box is displayed where you enter the name of the device. The information you enter is based on the properties that have been defined for the device.</p></li>
+<li><p>Enter the name and click <span class="guilabel">Add</span> to create the device.</p></li>
+<li><p>Once the device has been created, the <em>Device Properties</em> tab displays. Use this tab to manage interfaces for the device and link IP addresses to the device.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-devices-properties.png"><img alt="../../_images/console-devices-properties.png" class="align-center" src="../../_images/console-devices-properties.png" style="width: 80%;" /></a>
+<p>To <strong>Add</strong> an interface click the Add button in the Interfaces section and enter the required information for the interface. The <strong>Name</strong> field is mandatory.</p>
+<p>The <strong>Hardware Address</strong> field contains the MAC address for the interface. This field is not required. However, if you enter a Hardware Address it must be a valid MAC address and it must be unique – no other device can have an interface with the same Hardware Address.</p>
+<p>To add an IP Address to the device, you must first create an interface as the IP Address is attached to an interface on the device. Once an interface has been created, click the Add button in the IP Address section and enter the required information for the IP Address.</p>
+</section>
+<section id="deleting-a-device">
+<h2>Deleting a Device<a class="headerlink" href="#deleting-a-device" title="Link to this heading"></a></h2>
+<p>When you delete a Device, all information about the device is deleted, including the interfaces defined for the device, and all IP addresses linked to the device are unlinked from the device.</p>
+<p>To remove a Device:</p>
+<ol class="arabic simple">
+<li><p>Locate the device you want to remove and open the <em>Device Properties</em> window.</p></li>
+<li><p>Click the <span class="guilabel">Delete</span> button in the <em>Device Details</em> section.</p></li>
+<li><p>Click <span class="guilabel">OK</span> in the confirmation box that appears. The device and its associated data is removed.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="linking-unlinking-ip-addresses">
+<h2>Linking/Unlinking IP Addresses<a class="headerlink" href="#linking-unlinking-ip-addresses" title="Link to this heading"></a></h2>
+<section id="linking-an-ip-address">
+<h3>Linking an IP Address<a class="headerlink" href="#linking-an-ip-address" title="Link to this heading"></a></h3>
+<p>You can link an IP Address to a device using two different methods.</p>
+<section id="linking-an-ip-address-using-the-device-properties-window">
+<h4>Linking an IP Address using the Device Properties window:<a class="headerlink" href="#linking-an-ip-address-using-the-device-properties-window" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Locate the device you want to link the address to and open the <em>Device Properties</em> window.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button in the <em>IP Address</em> section. Note that before you can link and IP Address to a device, you must first create an interface for the device.</p></li>
+<li><p>Enter the required information and click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="linking-an-ip-address-using-the-ip-address-list-window">
+<h4>Linking an IP address using the IP Address List window<a class="headerlink" href="#linking-an-ip-address-using-the-ip-address-list-window" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Locate the IP Address Range containing the IP Address you want to link.</p></li>
+<li><p>Double-click on it to display the list window.</p></li>
+<li><p>Find the applicable IP Address.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Link to Device</span>. The <em>Device Linking Wizard</em> displays.</p></li>
+<li><p>For each of the resulting screens, make a selection/entry and move through the wizard.</p></li>
+</ol>
+</section>
+</section>
+<section id="unlinking-an-ip-address">
+<h3>Unlinking an IP Address<a class="headerlink" href="#unlinking-an-ip-address" title="Link to this heading"></a></h3>
+<p>You can unlink an IP Address from a device using two different methods.</p>
+<section id="unlinking-an-ip-address-using-the-device-properties-window">
+<h4>Unlinking an IP Address using the Device Properties window:<a class="headerlink" href="#unlinking-an-ip-address-using-the-device-properties-window" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Locate the device you want to unlink the address from and open the <em>Device Properties</em> window.</p></li>
+<li><p>Select the IP Address you want to unlink and click <span class="guilabel">Delete</span> in the <em>IP Address</em> section. The <em>Unlink IP Address confirmation</em> dialog box displays.</p></li>
+<li><p>Select whether you want to only unlink the IP Address or whether you want to delete all data associated with the IP Address.</p></li>
+</ol>
+</section>
+<section id="unlinking-an-ip-address-using-the-ip-address-list-window">
+<h4>Unlinking an IP address using the IP Address List window<a class="headerlink" href="#unlinking-an-ip-address-using-the-ip-address-list-window" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Locate the IP Address Range containing the IP Address you wan to unlink.</p></li>
+<li><p>Double-click on it to display the list window.</p></li>
+<li><p>Find the applicable IP Address.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Unlink from Device</span>.</p></li>
+<li><p>Click <span class="guilabel">OK</span> in the confirmation dialog box.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="searching-for-devices">
+<h2>Searching for Devices<a class="headerlink" href="#searching-for-devices" title="Link to this heading"></a></h2>
+<p>You can quickly find the device you want to work with using the Find Device command.</p>
+<p>To search for a device:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Device ‣ Find Device</span>. The <em>Device Search</em> dialog box displays.</p></li>
+<li><p>Enter the search criteria for the device you want to find.</p></li>
+<li><p>To add a new search criterion, click the button with the <span class="guilabel">+</span> sign next to the search entry field</p></li>
+<li><p>To remove a search criterion, click the button with the <span class="guilabel">-</span> sign next to the criterion you want to remove</p></li>
+<li><p>Click <span class="guilabel">OK</span> to start the search. If the search result only contains one device, the <em>Device Properties</em> window displays. If multiple devices are found, the search result is displayed in the <em>Device List</em> window.</p></li>
+</ol>
+</section>
+<section id="device-list-tab">
+<h2>Device List tab<a class="headerlink" href="#device-list-tab" title="Link to this heading"></a></h2>
+<p>The Device List tab is displayed when you choose <span class="menuselection">Device ‣ Show All Devices</span> from the menu bar. The tab is also used to display search results when there is more than one device that matches the search criteria.</p>
+<p>The <em>Device List</em> tab shows all relevant info for the Devices found.</p>
+<p>The tab contains a Quick Filter entry field that allows you to refine the search results. As you type in the field, results that are not applicable are removed. The Quick Filter searches within the entries that are displayed in the <em>Device List</em> tab.</p>
+<p>Clicking the button with the <span class="guilabel">+</span> sign in the top left of the tab will expand the search panel. Using the search panel, you can search for devices based on multiple criteria. A search performed using the search panel will search the entire device list.</p>
+<ul class="simple">
+<li><p>To add a new search criterion, click the button with the <span class="guilabel">+</span> sign next to the search entry field.</p></li>
+<li><p>To remove a search criterion, click the button with the <span class="guilabel">-</span> sign next to the criterion you want to remove.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/console-devices-list-by-ip.png"><img alt="../../_images/console-devices-list-by-ip.png" class="align-center" src="../../_images/console-devices-list-by-ip.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/console-devices-list-by-mac.png"><img alt="../../_images/console-devices-list-by-mac.png" class="align-center" src="../../_images/console-devices-list-by-mac.png" style="width: 80%;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_dhcp_scopes.html" class="btn btn-neutral float-left" title="DHCP Scopes (Management Console, obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_snmp_profiles.html" class="btn btn-neutral float-right" title="Configuring Host Discovery by Querying Routers (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

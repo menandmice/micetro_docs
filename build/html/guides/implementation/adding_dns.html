@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Adding DNS servers (Microsoft DNS, BIND, Azure DNS, AWS Route 53, NS1, Akamai Fast DNS, PowerDNS, etc.) to Micetro" name="description" />
+<meta content="DNS, Micetro, DNS management, Active Directory DNS" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding DNS servers &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Add DHCP Servers" href="adding_dhcp.html" />
+    <link rel="prev" title="API Authentication methods" href="api_auth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="configuration.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="running_micetro.html">Running the Men&amp;Mice components (Central, Controllers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_login.html">First login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_logging.html">Enable logging for Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller_logging.html">Configuring logging for the Men&amp;Mice Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">Micetro User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Adding DNS servers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dns-servers-in-active-directory-integrated-zones">DNS servers in Active Directory integrated zones</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dhcp.html">Add DHCP Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_ip_ranges.html">IP Address Ranges and devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="configuration.html">Configuration</a></li>
+      <li class="breadcrumb-item active">Adding DNS servers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/adding_dns.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adding-dns-servers">
+<span id="adding-dns"></span><h1>Adding DNS servers<a class="headerlink" href="#adding-dns-servers" title="Link to this heading"></a></h1>
+<p>After installation, Micetro contains no data about DNS servers. These need to be added through the Management Console.</p>
+<p>DNS servers require <a class="reference internal" href="install_controllers.html#install-controllers"><span class="std std-ref">Server controllers</span></a> and need to be added using their fully qualified names (such as <code class="docutils literal notranslate"><span class="pre">dns1.europe.ad.mmdemo.local</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Servers in Microsoft Active Directory environments can be added without installing a server controller. See <a class="reference internal" href="agent_free_dns-dhcp.html#agent-free-dns-dhcp"><span class="std std-ref">Agent-free management of DNS/DHCP servers</span></a>.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Log in to the Web Application.</p></li>
+<li><p>Navigate to <span class="menuselection">Admin ‣ Server Management</span>.</p></li>
+<li><p>Click <span class="guilabel">Add DNS server</span> in the interface.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/Admin-Micetro.png"><img alt="../../_images/Admin-Micetro.png" class="align-center" src="../../_images/Admin-Micetro.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>The <em>Add DNS server</em> modal will display.</p></li>
+<li><p>Fill in the server’s FQDN. Optionally, you can specify its IP address (IPv4 or IPv6).</p></li>
+<li><p>Select the server type from the dropdown.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/add-dns-server.png"><img alt="../../_images/add-dns-server.png" class="align-center" src="../../_images/add-dns-server.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Click <span class="guilabel">Confirm</span>.</p></li>
+</ol>
+<p>If the entered details are correct and the server is accessible, it will show up in the server management and DNS lists.</p>
+<p>For further details, refer to <a class="reference internal" href="../user-manual/dns.html#dns"><span class="std std-ref">DNS</span></a> in the User Guide.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To add a new DNS server in the Management Console, the administrator will select <span class="menuselection">File ‣ New ‣ DNS Server</span>.</p>
+</div>
+<section id="dns-servers-in-active-directory-integrated-zones">
+<h2>DNS servers in Active Directory integrated zones<a class="headerlink" href="#dns-servers-in-active-directory-integrated-zones" title="Link to this heading"></a></h2>
+<p>The DNS agent will use two different methods to retrieve information from Microsoft AD integrated zones.  First it will do a zone transfer (both full and incremental) to get the latest records for the zone and then it will use Microsoft APIs to get detailed information for individual records.  Due to this it is important that the DNS agent is allowed to do a zone transfer from the local server.</p>
+<a class="reference internal image-reference" href="../../_images/add-dns-arch-old.png"><img alt="../../_images/add-dns-arch-old.png" class="align-center" src="../../_images/add-dns-arch-old.png" style="width: 55%;" /></a>
+<p>The DNS agent on the DNS server must be able to transfer AD integrated zones from the local DNS server.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a global setting in the Management Console that allows Micetro to adjust the zone transfer settings for dynamic or AD integrated zones. It is enabled by default but the administrator can change this setting. See <a class="reference internal" href="../reference/disable_auto_zone-transfer.html#disable-auto-zone-transfer"><span class="std std-ref">Disable “Automatic adjustment of Zone Transfer”</span></a> for details.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api_auth.html" class="btn btn-neutral float-left" title="API Authentication methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adding_dhcp.html" class="btn btn-neutral float-right" title="Add DHCP Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

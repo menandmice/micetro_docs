@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Using the Micetro Ansible Integration to create Ansible playbooks that utilize the functionality of Micetro with examples" name="description" />
+<meta content="Micetro, Ansible integration, IP address" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example playbooks &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Terraform" href="terraform.html" />
+    <link rel="prev" title="mm_ipinfo plugin" href="ansible_mm_ipinfo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="automation.html">Automation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rest_api.html">REST API for Micetro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soap_api.html">SOAP API for Micetro</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ansible.html">Ansible</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html#api-user">API user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html#ansible-configuration-example">Ansible configuration example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_credentials.html">Credential matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_modules.html">Ansible modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_freeip.html">mm_freeip plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_inventory.html">mm_inventory plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_ipinfo.html">mm_ipinfo plugin</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Example playbooks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#play-user">play-user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-group">play-group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-role">play-role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-props">play-props</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-claimip">play-claimip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-dhcp">play-dhcp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-zone">play-zone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-dnsrecord">play-dnsrecord</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-freeip">play-freeip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-ipinfo">play-ipinfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-it-all">play_it_all</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="terraform.html">Terraform</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="automation.html">Automation</a></li>
+          <li class="breadcrumb-item"><a href="ansible.html">Ansible</a></li>
+      <li class="breadcrumb-item active">Example playbooks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/ansible_playbooks.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-playbooks">
+<span id="ansible-playbooks"></span><h1><a class="toc-backref" href="#id1" role="doc-backlink">Example playbooks</a><a class="headerlink" href="#example-playbooks" title="Link to this heading"></a></h1>
+<p>To use the Micetro Ansible Integration you need to create Ansible playbooks that utilize the functionality of Micetro.</p>
+<p>Following are a couple of example playbooks for inspiration. These playbooks have been tested extensively with different operating systems, versions of Ansible and Python.</p>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#example-playbooks" id="id1">Example playbooks</a></p>
+<ul>
+<li><p><a class="reference internal" href="#play-user" id="id2">play-user</a></p></li>
+<li><p><a class="reference internal" href="#play-group" id="id3">play-group</a></p></li>
+<li><p><a class="reference internal" href="#play-role" id="id4">play-role</a></p></li>
+<li><p><a class="reference internal" href="#play-props" id="id5">play-props</a></p></li>
+<li><p><a class="reference internal" href="#play-claimip" id="id6">play-claimip</a></p></li>
+<li><p><a class="reference internal" href="#play-dhcp" id="id7">play-dhcp</a></p></li>
+<li><p><a class="reference internal" href="#play-zone" id="id8">play-zone</a></p></li>
+<li><p><a class="reference internal" href="#play-dnsrecord" id="id9">play-dnsrecord</a></p></li>
+<li><p><a class="reference internal" href="#play-freeip" id="id10">play-freeip</a></p></li>
+<li><p><a class="reference internal" href="#play-ipinfo" id="id11">play-ipinfo</a></p></li>
+<li><p><a class="reference internal" href="#play-it-all" id="id12">play_it_all</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="play-user">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">play-user</a><a class="headerlink" href="#play-user" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Add, delete and change users in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice users test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get the free IP address and show info</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">     </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv">  </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add the user &#39;mauricem&#39; as an admin</span>
+<span class="w">      </span><span class="nt">mm_user</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricem</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">        </span><span class="nt">full_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maurice Moss</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">authentication_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal</span>
+<span class="w">        </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DNS Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DHCP Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IPAM Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">User Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Approvers (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Requesters (built-in)</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check idempotency</span>
+<span class="w">      </span><span class="nt">mm_user</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricem</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">        </span><span class="nt">full_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maurice Moss</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">authentication_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal</span>
+<span class="w">        </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DNS Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DHCP Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IPAM Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">User Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Approvers (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Requesters (built-in)</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Change the groups</span>
+<span class="w">      </span><span class="nt">mm_user</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricem</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">        </span><span class="nt">full_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maurice Moss</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">authentication_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal</span>
+<span class="w">        </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">User Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Approvers (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Requesters (built-in)</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check idempotency again</span>
+<span class="w">      </span><span class="nt">mm_user</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricem</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">        </span><span class="nt">full_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maurice Moss</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">authentication_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal</span>
+<span class="w">        </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">User Administrators (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Approvers (built-in)</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Requesters (built-in)</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove the user again</span>
+<span class="w">      </span><span class="nt">mm_user</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricem</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="play-group">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">play-group</a><a class="headerlink" href="#play-group" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Add, delete and change groups in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice users test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get the free IP address and show info</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">     </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv">  </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add the &#39;local&#39; group</span>
+<span class="w">      </span><span class="nt">mm_group</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A local rgroup</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricemoss</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenbarber</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check idempotency</span>
+<span class="w">      </span><span class="nt">mm_group</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A local group</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricemoss</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenbarber</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add nonexisting user to group</span>
+<span class="w">      </span><span class="nt">mm_group</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A local group</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">roy</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">ignore_errors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove the &#39;local&#39; group</span>
+<span class="w">      </span><span class="nt">mm_group</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="play-role">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">play-role</a><a class="headerlink" href="#play-role" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Add, delete and change roles in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice users test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get the free IP address and show info</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">     </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv">  </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add the &#39;local&#39; role</span>
+<span class="w">      </span><span class="nt">mm_role</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A local role</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricemoss</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenbarber</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check idempotency</span>
+<span class="w">      </span><span class="nt">mm_role</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A local role</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mauricemoss</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenbarber</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add nonexisting user to role</span>
+<span class="w">      </span><span class="nt">mm_role</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A local role</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">roy</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">ignore_errors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove the &#39;local&#39; role</span>
+<span class="w">      </span><span class="nt">mm_role</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="play-props">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">play-props</a><a class="headerlink" href="#play-props" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Set, delete and change custom properties in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice Custom Properties test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ansible information</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set text property</span>
+<span class="w">      </span><span class="nt">mm_props</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyProperty</span>
+<span class="w">        </span><span class="nt">proptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dnsserver</span>
+<span class="w">        </span><span class="nt">listitems</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paul</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Daniel</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">April</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nolan</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check idempotentie</span>
+<span class="w">      </span><span class="nt">mm_props</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyProperty</span>
+<span class="w">        </span><span class="nt">proptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dnsserver</span>
+<span class="w">        </span><span class="nt">listitems</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paul</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Daniel</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">April</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nolan</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Change type - not allowed</span>
+<span class="w">      </span><span class="nt">mm_props</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyProperty</span>
+<span class="w">        </span><span class="nt">proptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yesno</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dnsserver</span>
+<span class="w">        </span><span class="nt">listitems</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paul</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Daniel</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">April</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nolan</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Change list around</span>
+<span class="w">      </span><span class="nt">mm_props</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyProperty</span>
+<span class="w">        </span><span class="nt">proptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dnsserver</span>
+<span class="w">        </span><span class="nt">listitems</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paul</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Daniel</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">April</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nolan</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove property</span>
+<span class="w">      </span><span class="nt">mm_props</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyProperty</span>
+<span class="w">        </span><span class="nt">proptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dnsserver</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove property - again</span>
+<span class="w">      </span><span class="nt">mm_props</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyProperty</span>
+<span class="w">        </span><span class="nt">proptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yesno</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dnsserver</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</pre></div>
+</div>
+</section>
+<section id="play-claimip">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">play-claimip</a><a class="headerlink" href="#play-claimip" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Claim and release an IP address in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice ClaimIP test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ansible information</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Claim IP address</span>
+<span class="w">      </span><span class="nt">mm_claimip</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.12.14</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check idempotentie</span>
+<span class="w">      </span><span class="nt">mm_claimip</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.12.14</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unclaim IP address</span>
+<span class="w">      </span><span class="nt">mm_claimip</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.12.14</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="c1"># This task claims an IP address that cannot exit</span>
+<span class="w">    </span><span class="c1"># and returns a warning because of that</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Claim erroneous IP address</span>
+<span class="w">      </span><span class="nt">mm_claimip</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">456.978.12.14</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="play-dhcp">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">play-dhcp</a><a class="headerlink" href="#play-dhcp" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Make a DHCP reservation and release it in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice DHCP test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ansible information</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add a reservation for an IP address</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myreservation</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.8</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:00</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check idempotentie</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myreservation</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.8</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:00</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="c1"># Changing the MAC address of a reservation is not allowed, as this</span>
+<span class="w">    </span><span class="c1"># would alter the reservation. To achieve this, release the reservation</span>
+<span class="w">    </span><span class="c1"># and reclaim it.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change mac</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myreservation</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.8</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:99</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change ip</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myreservation</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.9</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:99</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change name</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">movemyreservation</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.9</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:99</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delete reservation (wrong one)</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">movemyreservation</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.9</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:99</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delete reservation (correct one)</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myreservation</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.8</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:99</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create reservation in invalid range</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reservationnonet</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.17.58</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">44:55:66:77:88:99</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</pre></div>
+</div>
+</section>
+<section id="play-zone">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">play-zone</a><a class="headerlink" href="#play-zone" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice DHCP test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ansible information</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure the zone</span>
+<span class="w">      </span><span class="nt">mm_zone</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span>
+<span class="w">        </span><span class="nt">nameserver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.com</span>
+<span class="w">        </span><span class="nt">authority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.net</span>
+<span class="w">        </span><span class="nt">masters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.net</span>
+<span class="w">        </span><span class="nt">servtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="w">        </span><span class="nt">customproperties</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reynholm Industries</span>
+<span class="w">          </span><span class="nt">place</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">London</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove the zone</span>
+<span class="w">      </span><span class="nt">mm_zone</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</pre></div>
+</div>
+</section>
+<section id="play-dnsrecord">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">play-dnsrecord</a><a class="headerlink" href="#play-dnsrecord" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Set and change a DNS record in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice DNSRecord test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ansible information</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set DNS record</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.10.12</span>
+<span class="w">        </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">From The API side</span>
+<span class="w">        </span><span class="nt">ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">86400</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check idempotentie</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.10.12</span>
+<span class="w">        </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">From The API side</span>
+<span class="w">        </span><span class="nt">ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">86400</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set DNS record with erroneous values</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AAAA</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.10.127</span>
+<span class="w">        </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">From The API side</span>
+<span class="w">        </span><span class="nt">ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apple</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">      </span><span class="nt">ignore_errors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Change record</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.10.14</span>
+<span class="w">        </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">From The API side</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Do something stupid</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">notthetestzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.90.14</span>
+<span class="w">        </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Welcome to the error</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">      </span><span class="nt">ignore_errors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Do more something stupid things</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.390.14</span>
+<span class="w">        </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Welcome to the error</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">      </span><span class="nt">ignore_errors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove record</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">notthetestzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.90.14</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove record - again</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reynholm</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">notthetestzone</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.90.14</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</pre></div>
+</div>
+</section>
+<section id="play-freeip">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">play-freeip</a><a class="headerlink" href="#play-freeip" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Find a set of free IP addresses in a range in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice FreeIP test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">network</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examplenet</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set free IP addresses as a fact</span>
+<span class="w">      </span><span class="nt">set_fact</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeips</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_freeip&#39;,</span>
+<span class="w">                         </span><span class="s">provider,</span>
+<span class="w">                         </span><span class="s">network,</span>
+<span class="w">                         </span><span class="s">multi=25,</span>
+<span class="w">                         </span><span class="s">claim=60,</span>
+<span class="w">                         </span><span class="s">excludedhcp=True,</span>
+<span class="w">                         </span><span class="s">ping=True)</span>
+<span class="w">               </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get the free IP address and show info</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Free</span><span class="nv"> </span><span class="s">IPs</span><span class="nv">           </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Queried</span><span class="nv"> </span><span class="s">network(s)</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">network</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">     </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv">  </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loop over IP addresses</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Next</span><span class="nv"> </span><span class="s">free</span><span class="nv"> </span><span class="s">IP</span><span class="nv">       </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="play-ipinfo">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">play-ipinfo</a><a class="headerlink" href="#play-ipinfo" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1">#</span>
+<span class="c1"># Get all info for an IP address in Micetro example</span>
+<span class="c1">#</span>
+<span class="c1"># The file &lt;ansible_topdir&gt;/group_vars/all contains:</span>
+<span class="c1">#</span>
+<span class="c1">#    ---</span>
+<span class="c1">#    provider:</span>
+<span class="c1">#      mmurl: http://micetro.example.net</span>
+<span class="c1">#      user: apiuser</span>
+<span class="c1">#      password: apipasswd</span>
+<span class="c1">#</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice IP Info test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get get IP info</span>
+<span class="w">      </span><span class="nt">set_fact</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ipinfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_ipinfo&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">&#39;172.16.17.2&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">to_nice_json</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Show Ansible and Python information</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">     </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv">  </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Show all infor for this IP address</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipinfo</span>
+
+<span class="w">    </span><span class="c1"># This task tries to get the information for a non-existing IP address</span>
+<span class="w">    </span><span class="c1"># which results in a fatal `Object not found for reference` error</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get get IP info for a non existing IP address</span>
+<span class="w">      </span><span class="nt">set_fact</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ipinfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_ipinfo&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">&#39;390.916.17.2&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">to_nice_json</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">ignore_errors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</section>
+<section id="play-it-all">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">play_it_all</a><a class="headerlink" href="#play-it-all" title="Link to this heading"></a></h2>
+<p>Example of a playbook that combines functionality</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Men&amp;Mice test play</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examplenet</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Some extra information about Ansible and the used</span>
+<span class="w">    </span><span class="c1"># Python version</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ansible information</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Ansible</span><span class="nv"> </span><span class="s">version</span><span class="nv">   </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_version.full</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">version</span><span class="nv">    </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python_version&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">executable</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;python&#39;][&#39;executable&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="c1"># The `ipaddr` filter needs the Python `netaddr` module, so make sure</span>
+<span class="w">    </span><span class="c1"># this is installed</span>
+<span class="w">    </span><span class="c1"># The `ipaddr` is used to determine the reverse IP address</span>
+<span class="w">    </span><span class="c1">#</span>
+<span class="w">    </span><span class="c1"># For example:</span>
+<span class="w">    </span><span class="c1">#   vars:</span>
+<span class="w">    </span><span class="c1">#     ipa4: &quot;172.16.17.2&quot;</span>
+<span class="w">    </span><span class="c1">#     ipa6: &quot;2001:785:beef:1:f2c4:8f9d:b554:e614&quot;</span>
+<span class="w">    </span><span class="c1">#</span>
+<span class="w">    </span><span class="c1">#   - &quot;Forward IPv4 address : {{ ipa4 }}&quot;</span>
+<span class="w">    </span><span class="c1">#   - &quot;Forward IPv4 address : {{ ipa4 }}&quot;</span>
+<span class="w">    </span><span class="c1">#   - &quot;Reverse IPv4 address : {{ ipa4 | ipaddr(&#39;revdns&#39;) }}&quot;</span>
+<span class="w">    </span><span class="c1">#   - &quot;Reverse IPv6 address : {{ ipa6 | ipaddr(&#39;revdns&#39;) }}&quot;</span>
+<span class="w">    </span><span class="c1">#   - &quot;Reverse IPv4 zone    : {{ (ipa4 | ipaddr(&#39;revdns&#39;)).split(&#39;.&#39;)[1:]  | join(&#39;.&#39;) }}&quot;</span>
+<span class="w">    </span><span class="c1">#   - &quot;Reverse IPv6 zone    : {{ (ipa6 | ipaddr(&#39;revdns&#39;)).split(&#39;.&#39;)[16:] | join(&#39;.&#39;) }}&quot;</span>
+<span class="w">    </span><span class="c1">#</span>
+<span class="w">    </span><span class="c1"># The reverse zones are split on &#39;.&#39; and only the last part is</span>
+<span class="w">    </span><span class="c1"># used (in this example). The reverse for IPv4 assumes a &#39;/24&#39; network</span>
+<span class="w">    </span><span class="c1"># and the &#39;16&#39; in the IPv6 zone conversion is for a &#39;/64&#39; network. Adapt these to your</span>
+<span class="w">    </span><span class="c1"># own needs (e.g. &#39;2&#39; for a &#39;/16&#39; network on IPv4 or &#39;20&#39; for an IPv6 &#39;/48&#39; net.</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure the netaddr module is installed for Python 2</span>
+<span class="w">      </span><span class="nt">pip</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">netaddr</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_facts[&#39;python_version&#39;] is version(&#39;3&#39;, &#39;&lt;&#39;)</span>
+<span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure the netaddr module is installed for Python 3</span>
+<span class="w">      </span><span class="nt">pip</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">netaddr</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">executable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3</span>
+<span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_facts[&#39;python_version&#39;] is version(&#39;3&#39;, &#39;&gt;=&#39;)</span>
+<span class="w">      </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">define custom properties for IP addresses</span>
+<span class="w">      </span><span class="nt">mm_props</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">location</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">proptype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipaddress</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="c1"># The above example defines just a single property.</span>
+<span class="w">    </span><span class="c1"># Defining multiple properties can be achieved by using</span>
+<span class="w">    </span><span class="c1"># the Ansible loop functionality.</span>
+<span class="w">    </span><span class="c1">#</span>
+<span class="w">    </span><span class="c1"># - name: Example of multiple properties</span>
+<span class="w">    </span><span class="c1">#   mm_props:</span>
+<span class="w">    </span><span class="c1">#      name: &quot;{{ item.name }}&quot;</span>
+<span class="w">    </span><span class="c1">#      state: &quot;{{ item.state }}&quot;</span>
+<span class="w">    </span><span class="c1">#      proptype: &quot;{{ item.proptype }}&quot;</span>
+<span class="w">    </span><span class="c1">#      dest: &quot;{{ item.dest }}&quot;</span>
+<span class="w">    </span><span class="c1">#  loop:</span>
+<span class="w">    </span><span class="c1">#    - name: location</span>
+<span class="w">    </span><span class="c1">#      state: present</span>
+<span class="w">    </span><span class="c1">#      proptype: text</span>
+<span class="w">    </span><span class="c1">#      dest: ipaddress</span>
+<span class="w">    </span><span class="c1">#    - name: owner</span>
+<span class="w">    </span><span class="c1">#      state: present</span>
+<span class="w">    </span><span class="c1">#      proptype: text</span>
+<span class="w">    </span><span class="c1">#      dest: ipaddress</span>
+
+<span class="w">    </span><span class="c1"># When running an Ansible lookup plugin, this lookup action takes</span>
+<span class="w">    </span><span class="c1"># place every time the variable is referenced. So it will not be</span>
+<span class="w">    </span><span class="c1"># possible to claim an IP address for further reference, this way.</span>
+<span class="w">    </span><span class="c1"># This has to do with the way Ansible works.  A solution for this</span>
+<span class="w">    </span><span class="c1"># is to assign all collected free IP addresses to an Ansible fact,</span>
+<span class="w">    </span><span class="c1"># but here you need to make sure the factname is not used over</span>
+<span class="w">    </span><span class="c1"># multiple hosts.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">get free IP addresses and set it as a fact</span>
+<span class="w">      </span><span class="nt">set_fact</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeips</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_freeip&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">network,</span><span class="nv"> </span><span class="s">claim=60,</span><span class="nv"> </span><span class="s">excludedhcp=True)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get the free IP address and show info</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">msg</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Free</span><span class="nv"> </span><span class="s">IPs</span><span class="nv">           </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Queried</span><span class="nv"> </span><span class="s">network(s)</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">network</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="c1"># Make a DHCP reservation for this address</span>
+<span class="w">    </span><span class="c1"># So claim it after DNS setting.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reservation on IP address</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testhost</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;de:ad:be:ef:16:10&quot;</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set properties on IP</span>
+<span class="w">      </span><span class="nt">mm_ipprops</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">claimed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">          </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">London</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure the zone</span>
+<span class="w">      </span><span class="nt">mm_zone</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thetestzone.com</span>
+<span class="w">        </span><span class="nt">nameserver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.com</span>
+<span class="w">        </span><span class="nt">authority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.net</span>
+<span class="w">        </span><span class="nt">masters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.net</span>
+<span class="w">        </span><span class="nt">servtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="c1"># The `mm_freeip` plugin always returns a list, but the request was for just 1</span>
+<span class="w">    </span><span class="c1"># IP address. The `mm_dnsrecord` only needs a single IP address. That&#39;s why the</span>
+<span class="w">    </span><span class="c1"># list-slice `[0]` is used.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set a DNS record for the claimed IP</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testzone</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testhost</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips[0]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set a PTR DNS record for the claimed IP</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(freeips[0]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;revdns&#39;)).split(&#39;.&#39;)[1:]</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">join(&#39;.&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips[0]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;revdns&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;testhost.testzone.&quot;</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PTR</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="c1"># The `mm_ipinfo` returns all known information of an IP</span>
+<span class="w">    </span><span class="c1"># address. This can be used to query certain properties, or</span>
+<span class="w">    </span><span class="c1"># for debugging.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all info for this IP address</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">freeipinfo</span>
+<span class="w">      </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeipinfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_ipinfo&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">freeips[0])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">to_nice_json</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Renew properties on IP</span>
+<span class="w">      </span><span class="nt">mm_ipprops</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">claimed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">          </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Madrid</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all info for this IP address</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">freeipinfo</span>
+<span class="w">      </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeipinfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_ipinfo&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">freeips[0])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">to_nice_json</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove properties of IP</span>
+<span class="w">      </span><span class="nt">mm_ipprops</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">deleteunspecified</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">claimed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all info for this IP address</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">freeipinfo</span>
+<span class="w">      </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeipinfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_ipinfo&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">freeips[0])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">to_nice_json</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove reservation on IP address</span>
+<span class="w">      </span><span class="nt">mm_dhcp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testhost</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">macaddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;de:ad:be:ef:16:10&quot;</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all info for this IP address</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">freeipinfo</span>
+<span class="w">      </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeipinfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_ipinfo&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">freeips[0])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">to_nice_json</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove DNS record for the claimed IP</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testzone</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testhost</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips[0]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove the PTR DNS record for the claimed IP</span>
+<span class="w">      </span><span class="nt">mm_dnsrecord</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">dnszone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(freeips[0]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;revdns&#39;)).split(&#39;.&#39;)[1:]</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">join(&#39;.&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">freeips[0]</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ipaddr(&#39;revdns&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;testhost.testzone.&quot;</span>
+<span class="w">        </span><span class="nt">rrtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PTR</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all info for this IP address</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">freeipinfo</span>
+<span class="w">      </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">freeipinfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;mm_ipinfo&#39;,</span><span class="nv"> </span><span class="s">provider,</span><span class="nv"> </span><span class="s">freeips[0])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">to_nice_json</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure the zone absent</span>
+<span class="w">      </span><span class="nt">mm_zone</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thetestzone.com</span>
+<span class="w">        </span><span class="nt">nameserver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.com</span>
+<span class="w">        </span><span class="nt">authority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.net</span>
+<span class="w">        </span><span class="nt">masters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mandm.example.net</span>
+<span class="w">        </span><span class="nt">servtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ansible_mm_ipinfo.html" class="btn btn-neutral float-left" title="mm_ipinfo plugin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="terraform.html" class="btn btn-neutral float-right" title="Terraform" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

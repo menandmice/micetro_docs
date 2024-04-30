@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Micetro license management - adding, removing, and managing license keys" name="description" />
+<meta content="DNS, IPAM, DHCP Modules, IPAM module, DNS module, Workflow module, Reporting modules, Virtual Appliances" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>License Management &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="admin_updates.html" />
+    <link rel="prev" title="Object access" href="acl_object_access.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access control</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">License Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-license-keys">Viewing license keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expired-keys">Expired keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-license-key">Adding a License Key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-license-keys-for-the-first-time">Adding license keys for the first time</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#removing-a-license-key">Removing a License Key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#removing-expired-license-keys">Removing expired license keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#export-license-data">Export license data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">License Management</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/admin_license.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="license-management">
+<span id="admin-license"></span><h1>License Management<a class="headerlink" href="#license-management" title="Link to this heading"></a></h1>
+<p>The different functionalities of Micetro can be activated by specific license keys.</p>
+<p>There are five different keys, one each for:</p>
+<ul>
+<li><p>DNS</p></li>
+<li><p>IPAM</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The IPAM license key unlocks <strong>both</strong> the DHCP and IPAM functionality of Micetro.</p>
+</div>
+</li>
+<li><p>Men&amp;Mice Virtual Appliances</p></li>
+<li><p>Workflow module</p></li>
+<li><p>Reporting module</p></li>
+</ul>
+<section id="viewing-license-keys">
+<h2>Viewing license keys<a class="headerlink" href="#viewing-license-keys" title="Link to this heading"></a></h2>
+<p>The <span class="guilabel">Admin –&gt; Configuration –&gt; Licenses</span> page shows detailed information about every key configured in Micetro, including utilization by showing the number of DNS zones and IP Addresses in use.</p>
+<p>The License Management page displays cards for active modules with a list of associated license keys, either active or expired. The usage of the license (for example the number of DNS zones used, compared to the license limit) is shown in a usage bar in the upper right of the license card. The bottom right of the card shows the expiry date for the currently active license key.</p>
+<a class="reference internal image-reference" href="../../_images/license-management.png"><img alt="../../_images/license-management.png" class="align-center" src="../../_images/license-management.png" style="width: 80%;" /></a>
+</section>
+<section id="expired-keys">
+<h2>Expired keys<a class="headerlink" href="#expired-keys" title="Link to this heading"></a></h2>
+<p>A notification will be shown when a license key is expired and when a license key is about to expire. This will only be shown to members in the administrators group.</p>
+</section>
+<section id="adding-a-license-key">
+<h2>Adding a License Key<a class="headerlink" href="#adding-a-license-key" title="Link to this heading"></a></h2>
+<section id="adding-license-keys-for-the-first-time">
+<h3>Adding license keys for the first time<a class="headerlink" href="#adding-license-keys-for-the-first-time" title="Link to this heading"></a></h3>
+<p>When logging into a system that has no active licenses, the system will prompt the user and indicate that not active license keys are in the system and offer the user to enter new license keys through the license management page. Additional keys can be added by pasting text containing valid license keys to the textbox at the bottom of the license management page.</p>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration ‣ Licenses</span>.</p></li>
+<li><p>To add new key(s), scroll down to the “Import license keys” section and paste in the license key(s).</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can paste in the email you received from Men&amp;Mice, Micetro will parse the keys from the surrounding text automatically.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/import-license.png"><img alt="../../_images/import-license.png" class="align-center" src="../../_images/import-license.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Click <span class="guilabel">+Import</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="removing-a-license-key">
+<h2>Removing a License Key<a class="headerlink" href="#removing-a-license-key" title="Link to this heading"></a></h2>
+<p>A license key can be removed by clicking on the trashcan icon on the the right.</p>
+<p>A confirmation dialog will display, click <span class="guilabel">Yes</span> to confirm.</p>
+<section id="removing-expired-license-keys">
+<h3>Removing expired license keys<a class="headerlink" href="#removing-expired-license-keys" title="Link to this heading"></a></h3>
+<p>Old, expired license keys can be cleaned up and removed using the <span class="guilabel">Remove expired keys</span> action.</p>
+</section>
+</section>
+<section id="export-license-data">
+<span id="export-license"></span><h2>Export license data<a class="headerlink" href="#export-license-data" title="Link to this heading"></a></h2>
+<p>Active license keys and usage data can be exported from Micetro using the <span class="guilabel">Export license data</span> action. This will compile the active keys and usage information into a single text block that can be copied.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="acl_object_access.html" class="btn btn-neutral float-left" title="Object access" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin_updates.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

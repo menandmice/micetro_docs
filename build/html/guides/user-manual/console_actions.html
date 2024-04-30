@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="A list of actions in the Men&amp;Mice Management Console includes DNS zone, DNS record, IP address range" name="description" />
+<meta content="DNS zone, DNS record, DNS management" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Other actions in the Management Console &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Health Monitoring Bar" href="console_health_bar.html" />
+    <link rel="prev" title="Quick Filter (Management Console, deprecated)" href="console/console_quickfilter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ui.html">Micetro user interface(s)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="web_application.html">Web Application</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="console.html">Management Console</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="console.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html#launching-the-management-console">Launching the Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html#first-use-wizard">First Use Wizard</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="console.html#console-functions">Console functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_menus.html">Menu Bars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_toolbars.html">Toolbars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console/console_quickfilter.html">Quick Filter (Management Console, deprecated)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Other actions in the Management Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ui.html">Micetro user interface(s)</a></li>
+          <li class="breadcrumb-item"><a href="console.html">Management Console</a></li>
+      <li class="breadcrumb-item active">Other actions in the Management Console</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/console_actions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="other-actions-in-the-management-console">
+<span id="console-actions"></span><h1>Other actions in the Management Console<a class="headerlink" href="#other-actions-in-the-management-console" title="Link to this heading"></a></h1>
+<section id="jump-to-box">
+<h2>Jump to Box<a class="headerlink" href="#jump-to-box" title="Link to this heading"></a></h2>
+<p>The <strong>Jump to Box</strong> is a field that can be used to quickly open a single object in Micetro by entering the object name. Using the ‘Jump to Box’ you can open the following object types:</p>
+<ul class="simple">
+<li><p>DNS Zone</p></li>
+<li><p>DNS Record</p></li>
+<li><p>IP Address Range</p></li>
+<li><p>DHCP Scope</p></li>
+<li><p>IP Address in an IP Address Range or a DHCP Scope</p></li>
+</ul>
+<p>The ‘Jump to Box’ is located at the bottom of the sidebar on the left. Additionally the shortcut <em>Shift-J</em> can be used to move the focus to the ‘Jump to Box’.</p>
+<p>To use the ‘Jump to Box’, do the following:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the <strong>Jump to Box</strong> or press <em>Ctrl+J</em>.</p></li>
+<li><p>Enter the name of the object you want to open and click the <span class="guilabel">Jump to</span> icon to the right of the field (or press <em>Enter</em>). If more than one matching object is found, a dialog box displays in which you can select the object instance you want to open.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must enter the exact name of the object you want to open. For example, if you want to open a zone by the name myzone.local, it is not sufficient to enter just ‘myzone’ or ‘myzone.lo’ – you must enter ‘myzone.local’. The same applies for DNS records, IP Address Ranges, DHCP Scopes and IP Addresses.</p>
+</div>
+</section>
+<section id="program-preferences">
+<h2>Program Preferences<a class="headerlink" href="#program-preferences" title="Link to this heading"></a></h2>
+<p>You can set some default behaviors for the Men&amp;Mice Management Console using the <em>Options</em> dialog box.</p>
+<p>On the menu bar, select <span class="menuselection">Edit ‣ Preferences</span>. The <em>Options</em> dialog box displays.</p>
+<a class="reference internal image-reference" href="../../_images/console-app-preferences.png"><img alt="../../_images/console-app-preferences.png" class="align-center" src="../../_images/console-app-preferences.png" style="width: 60%;" /></a>
+<section id="log-window">
+<h3>Log Window<a class="headerlink" href="#log-window" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>Initial log size</dt><dd><p>The server logs are kept by the servers. When the Management Console connects to a server and the log window is opened, the Manager downloads the most recent portions of the server’s log. The amount downloaded (in kilobytes) will be equal to the value set in the Initial log size field.</p>
+</dd>
+<dt>Max log size</dt><dd><p>The maximum log size determines how much of a server’s log can be retained by the Management Console at any one time. Once the maximum size is reached, the Manager will discard old log entries as necessary to make room for the new ones. Log entries discarded by the Manager Console are retained on the log that the server maintains. The Max log size field can be set to any value between 1 and 1024 KBs. The default value is 100 KB.</p>
+</dd>
+<dt>Log interval</dt><dd><p>Whenever the log window is open, it will continually update itself (the log) from the server. The interval between sequential updates can be set to any value between one and thirty seconds. The default value is every five seconds.</p>
+</dd>
+</dl>
+</section>
+<section id="new-zone-window">
+<h3>New Zone Window<a class="headerlink" href="#new-zone-window" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>Show TTL</dt><dd><p>This checkbox is enabled by default. If you clear this checkbox, the TTL column will not be included in any new zones that you create.</p>
+</dd>
+<dt>Show comment</dt><dd><p>This checkbox is enabled by default. If you clear this checkbox, the Comment column will not be included in any new zones that you create.</p>
+</dd>
+</dl>
+</section>
+<section id="console">
+<h3>Console<a class="headerlink" href="#console" title="Link to this heading"></a></h3>
+<p>You can configure how the Console Window behaves when new entries are added to the window.</p>
+<dl class="simple">
+<dt>Do nothing</dt><dd><p>If this option is selected, entries are added ‘silently’ to the console window. If the window is hidden, it is not displayed when new entries are added.</p>
+</dd>
+<dt>Display Console if hidden</dt><dd><p>If this option is selected, the console window will be displayed when new entries are added.</p>
+</dd>
+<dt>Bring Console to front</dt><dd><p>If this option is selected, the console window will be displayed as the front-most window when new entries are added.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="search-update-wizard">
+<h2>Search/Update Wizard<a class="headerlink" href="#search-update-wizard" title="Link to this heading"></a></h2>
+<p>This utility allows you to find, create, modify, or delete records in multiple zones and DHCP Scopes using a single action.</p>
+<p>There are three search options available:</p>
+<dl class="simple">
+<dt>DNS Resource Records</dt><dd><p>Refer to <a class="reference internal" href="dns_records.html#dns-records"><span class="std std-ref">DNS resource records</span></a> for further information.</p>
+</dd>
+<dt>DCHP Scope Options</dt><dd><p>Through this function, you replace, delete or search for option values.</p>
+</dd>
+<dt>IP Addresses</dt><dd><p>Through this function, you can find an IP Address in any IP Address range and display the results in the IP Address range window.</p>
+</dd>
+</dl>
+<p>To launch the <em>Search and Update Wizard</em>, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Query ‣ Search and Update Wizard</span>. The <em>Search and Update Wizard</em> dialog box displays.</p></li>
+<li><p>Select the type of search you want to perform.</p></li>
+<li><p>Complete each screen as you move through the wizard.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-search-and-update.png"><img alt="../../_images/console-search-and-update.png" class="align-center" src="../../_images/console-search-and-update.png" style="width: 60%;" /></a>
+</section>
+<section id="lease-history">
+<h2>Lease History<a class="headerlink" href="#lease-history" title="Link to this heading"></a></h2>
+<p>Through this function, you view the lease history for your MS and ISC DHCP servers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must be a member of the DHCP Administrator group to view the DHCP lease history. Lease history collection must be enabled for this function to work.</p>
+</div>
+<p>To view the DHCP lease history:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Query ‣ Lease History</span>. The <em>Lease History Query</em> tab displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-lease-history.png"><img alt="../../_images/console-lease-history.png" class="align-center" src="../../_images/console-lease-history.png" style="width: 90%;" /></a>
+<dl class="simple">
+<dt>Find DHCP leases where</dt><dd><p>Select if you want to query by <em>IP Address</em>, <em>MAC Address</em>, <em>Server Address</em>, <em>Hostname</em> or <em>Description</em>.</p>
+</dd>
+<dt>Starting on/Ending on</dt><dd><p>To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Click <span class="guilabel">Search</span>. Any matching results are displayed in the lower portion of the window.</p></li>
+</ol>
+<section id="exporting-search-results">
+<h3>Exporting Search Results<a class="headerlink" href="#exporting-search-results" title="Link to this heading"></a></h3>
+<p>To export the results as a CSV file, do the following:</p>
+<ol class="arabic simple">
+<li><p>Display the lease history.</p></li>
+<li><p>Search for the desired history.</p></li>
+<li><p>When the applicable change history is shown, click the <span class="guilabel">Export</span> button. The <em>Export records to CSV file</em> dialog box displays.</p></li>
+<li><p>Select the drive, directory, subdirectory, etc. into which you want to save the CSV file.</p></li>
+<li><p>Click <span class="guilabel">Save</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="object-change-history">
+<span id="console-object-change-history"></span><h2>Object Change History<a class="headerlink" href="#object-change-history" title="Link to this heading"></a></h2>
+<p>Through this function, you can display a log of all changes that have been made to any object such as the date and time of the change, the name of the user who made it, the actions performed, and any comments entered by the user.</p>
+<p>There are two ways to search/view the object change history:</p>
+<ul class="simple">
+<li><p>From the <em>Menu Bar</em>. With this option, you select the type of object to search change history for.</p></li>
+<li><p>Through the <em>Object Browser</em>. With this option, you select the object first, and then search for the change history.</p></li>
+</ul>
+<section id="accessing-via-the-menu-bar">
+<span id="history-menu"></span><h3>Accessing via the Menu Bar<a class="headerlink" href="#accessing-via-the-menu-bar" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Query ‣ Object History</span>. The <em>History Query</em> tab displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-history-query.png"><img alt="../../_images/console-history-query.png" class="align-center" src="../../_images/console-history-query.png" style="width: 90%;" /></a>
+<dl class="simple">
+<dt>Where text contains</dt><dd><p>Type any words that the text contains.</p>
+</dd>
+<dt>Made by</dt><dd><p>Type the user login name.</p>
+</dd>
+<dt>Starting on/Ending on</dt><dd><p>To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.</p>
+</dd>
+<dt>Only show objects of type</dt><dd><p>Click the drop-down list arrow, and select the type of object for which you want to find change history.</p>
+</dd>
+<dt>Limit to ____ Results</dt><dd><p>Enter the maximum number of results to display.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Click <span class="guilabel">Search</span>. Any matching results are displayed in the lower portion of the tab.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-history-query-results.png"><img alt="../../_images/console-history-query-results.png" class="align-center" src="../../_images/console-history-query-results.png" style="width: 90%;" /></a>
+</section>
+<section id="accessing-via-the-object-browser">
+<h3>Accessing via the Object Browser<a class="headerlink" href="#accessing-via-the-object-browser" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In the <em>Object Browser</em>, open the desired object category (e.g., DNS Zones, DNS Servers, etc.).</p></li>
+<li><p>Locate the object for which you want to view the history.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">View History</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-view-history.png"><img alt="../../_images/console-view-history.png" class="align-center" src="../../_images/console-view-history.png" style="width: 90%;" /></a>
+<p>The <em>History</em> window displays showing all the history for the selected object.</p>
+<a class="reference internal image-reference" href="../../_images/console-view-history-results.png"><img alt="../../_images/console-view-history-results.png" class="align-center" src="../../_images/console-view-history-results.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>If you wish to query the results, click the <span class="guilabel">+</span> in the upper left corner of the dialog box.</p></li>
+<li><p>Following the directions under <a class="reference internal" href="#history-menu"><span class="std std-ref">Accessing via the Menu Bar</span></a> to enter the query information.</p></li>
+</ol>
+</section>
+<section id="id1">
+<h3>Exporting Search Results<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>To export the results as a CSV file, do the following:</p>
+<ol class="arabic simple">
+<li><p>Display the object change history.</p></li>
+<li><p>Display the <em>Query Change History</em> search criteria fields.</p></li>
+<li><p>Search for the desired change history.</p></li>
+<li><p>When the applicable change history is shown, click the <span class="guilabel">Export</span> button. The <em>Export records to CSV file</em> dialog box displays.</p></li>
+<li><p>Select the drive, directory, subdirectory, etc. into which you want to save the CSV file.</p></li>
+<li><p>Click <span class="guilabel">Save</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="micetro-log">
+<h2>Micetro Log<a class="headerlink" href="#micetro-log" title="Link to this heading"></a></h2>
+<p>Through this function, you can display log messages generated by Micetro.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must be a member of an Administrator group to view the log messages.</p>
+</div>
+<p>To view the log messages, do the following:</p>
+<ol class="arabic simple">
+<li><p>In the main Men&amp;Mice window, move to the menu bar and select <span class="menuselection">Query ‣ Men<span class="accelerator">M</span>ice Suite Log</span>. The <em>Men&amp;Mice Suite Log</em> tab displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-log.png"><img alt="../../_images/console-log.png" class="align-center" src="../../_images/console-log.png" style="width: 70%;" /></a>
+<dl class="simple">
+<dt>Search For</dt><dd><p>Type the information to query.</p>
+</dd>
+<dt>Starting on/Ending on</dt><dd><p>To query based upon a date range, type the starting and ending range dates. For example, to find all changes made in 2007, in the Starting on field type 1/1/2007 and in the Ending on field, type 12/31/07.</p>
+</dd>
+<dt>Log level</dt><dd><p>Click the drop-down list, and select the desired level – e.g., Error, Notice or Warning.</p>
+</dd>
+</dl>
+<ol class="arabic" start="2">
+<li><p>When all selections/entries are made, click <span class="guilabel">Search</span>. Any matching results are displayed in the lower portion of the window.</p></li>
+<li><p>The Quick Filter allows you to further refine the search results. As you type in the field, results that are not applicable are removed. To export the results as a CSV file, do the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click the <span class="guilabel">Export</span> button. The <em>Export records to CSV file</em> dialog box displays.</p></li>
+<li><p>Select the drive, directory, subdirectory, etc. into which you want to save the CSV file.</p></li>
+<li><p>Click <em>Save</em>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console/console_quickfilter.html" class="btn btn-neutral float-left" title="Quick Filter (Management Console, deprecated)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_health_bar.html" class="btn btn-neutral float-right" title="Health Monitoring Bar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

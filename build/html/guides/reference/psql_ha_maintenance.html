@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Maintenance operations for the PostgreSQL High Availability cluster with Micetro by Men&amp;Mice" name="description" />
+<meta content="high availability, database maintenance, failover, PostgreSQL, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostgreSQL HA operations &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Possible disaster scenarios" href="psql_disaster_recovery.html" />
+    <link rel="prev" title="PostgreSQL HA tweaks" href="ha_tweaks_psql.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="psql_ha.html#install-pg-auto-failover">Install pg_auto-failover</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="psql_ha.html#install-requirements">Install requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="psql_ha.html#set-up-the-mmsuite-database-and-edit-config-files">Set up the mmsuite database and edit config files</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="psql_ha.html#further-information">Further information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+          <li class="breadcrumb-item"><a href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+      <li class="breadcrumb-item active">PostgreSQL HA operations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/psql_ha_maintenance.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="postgresql-ha-operations">
+<span id="psql-ha-maintenance"></span><h1>PostgreSQL HA operations<a class="headerlink" href="#postgresql-ha-operations" title="Link to this heading"></a></h1>
+<section id="triggering-a-failover">
+<h2>Triggering a failover<a class="headerlink" href="#triggering-a-failover" title="Link to this heading"></a></h2>
+<p>To call the function successfully, you need to figure out the formation and group of the group where the failover happens.
+The following commands when run on a <code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code> keeper node provide for the necessary information:</p>
+<section id="machine-node-1">
+<h3>Machine: node-1<a class="headerlink" href="#machine-node-1" title="Link to this heading"></a></h3>
+<p>Get the variables [formation] and [group] from these commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>su<span class="w"> </span>-<span class="w"> </span>postgres
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:/usr/pgsql-12/bin&quot;</span>
+<span class="c1"># [formation] -&gt; the default value is &#39;default&#39;</span>
+pg_autoctl<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>pg_autoctl.formation<span class="w"> </span>--pgdata<span class="w"> </span>./<span class="o">[</span>node-1<span class="o">]</span>
+<span class="c1"># [group] -&gt; the default value is &#39;0&#39;</span>
+pg_autoctl<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>pg_autoctl.group<span class="w"> </span>--pgdata<span class="w"> </span>./<span class="o">[</span>node-1<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="machine-monitor">
+<h3>Machine: monitor<a class="headerlink" href="#machine-monitor" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>-<span class="w"> </span>postgres
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:/usr/pgsql-12/bin&quot;</span>
+psql<span class="w"> </span>-p<span class="w"> </span><span class="o">[</span>port<span class="o">]</span><span class="w"> </span>-d<span class="w"> </span>pg_auto_failover
+&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>pgautofailover.perform_failover<span class="o">(</span><span class="nv">formation_id</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s1">&#39;[formation]&#39;</span>,<span class="w"> </span><span class="nv">group_id</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span>group<span class="o">])</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="implementing-a-controlled-switchover">
+<h2>Implementing a controlled switchover<a class="headerlink" href="#implementing-a-controlled-switchover" title="Link to this heading"></a></h2>
+<p>It is generally useful to distinguish a controlled switchover from a failover. In a controlled switchover situation it is possible to organize the sequence of events in a way to avoid data loss and lower downtime to a minimum.
+In the case of <code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code>, because we use synchronous replication, we don’t face data loss risks when triggering a manual failover. Moreover, our monitor knows the current primary health at the time when the failover is triggered and drives the failover accordingly.
+So to trigger a controlled switchover with <code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code> you can use the same API as for a manual failover above.</p>
+</section>
+<section id="maintenance-of-a-secondary-node">
+<h2>Maintenance of a secondary node<a class="headerlink" href="#maintenance-of-a-secondary-node" title="Link to this heading"></a></h2>
+<p>It is possible to put a secondary node in any group in a MAINTENANCE state so that the Postgres server is not doing synchronous replication anymore and can be taken down for maintenance purposes, such as security kernel upgrades or the like.</p>
+<section id="machine-node-1-node-2">
+<h3>Machine: node-1 | node-2<a class="headerlink" href="#machine-node-1-node-2" title="Link to this heading"></a></h3>
+<p>To enable maintenance we use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pg_autoctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>maintenance<span class="w"> </span>--pgdata<span class="w"> </span>./<span class="o">[</span>node-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>node-2<span class="o">]</span>
+</pre></div>
+</div>
+<p>When a standby node is in maintenance, the monitor sets the primary node replication to WAIT_PRIMARY: in this role, the PostgreSQL streaming replication is now asynchronous and the standby PostgreSQL server may be stopped, rebooted, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code> does not provide support for primary server maintenance.</p>
+</div>
+<p>To disable maintenance we use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pg_autoctl<span class="w"> </span>disable<span class="w"> </span>maintenance<span class="w"> </span>--pgdata<span class="w"> </span>./<span class="o">[</span>node-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>node-2<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="show-current-state-and-events">
+<h3>Show current state and events<a class="headerlink" href="#show-current-state-and-events" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pg_autoctl<span class="w"> </span>show<span class="w"> </span>state<span class="w"> </span>--pgdata<span class="w"> </span><span class="o">[</span>monitor<span class="w"> </span><span class="p">|</span><span class="w"> </span>node-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>node-2<span class="o">]</span>
+$<span class="w"> </span>pg_autoctl<span class="w"> </span>show<span class="w"> </span>events<span class="w"> </span>--pgdata<span class="w"> </span><span class="o">[</span>monitor<span class="w"> </span><span class="p">|</span><span class="w"> </span>node-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>node-2<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="monitoring-pg-auto-failover-in-production">
+<h2>Monitoring <code class="docutils literal notranslate"><span class="pre">pg_auto_failover</span></code> in production<a class="headerlink" href="#monitoring-pg-auto-failover-in-production" title="Link to this heading"></a></h2>
+<p>The monitor reports every state change decision to a LISTEN/NOTIFY channel named state. PostgreSQL logs on the monitor are also stored in a table, <code class="docutils literal notranslate"><span class="pre">pgautofailover.event</span></code>, and broadcast by NOTIFY in the channel log.</p>
+<section id="id1">
+<h3>Machine: monitor<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>-<span class="w"> </span>postgres
+tail<span class="w"> </span>-f<span class="w"> </span>./<span class="o">[</span>monitor<span class="o">]</span>/pg_log/postgresql-<span class="o">[</span>WeekDay<span class="o">]</span>.log
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ha_tweaks_psql.html" class="btn btn-neutral float-left" title="PostgreSQL HA tweaks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="psql_disaster_recovery.html" class="btn btn-neutral float-right" title="Possible disaster scenarios" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

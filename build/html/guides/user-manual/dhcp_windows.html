@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Defining options on Microsoft DHCP servers in Micetro by Men&amp;Mice" name="description" />
+<meta content="DHCP, DHCP servers, DHCP Windows," name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft DHCP &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ISC Kea DHCP" href="dhcp_kea.html" />
+    <link rel="prev" title="DHCP servers" href="dhcp_servers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dhcp.html">DHCP</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dhcp_servers.html">DHCP servers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#new-dhcp-server">New DHCP Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#edit-dhcp-server-name">Edit DHCP Server Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#toggle-dhcpv6-management-on-or-off">Toggle DHCPv6 Management on or off</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#inherited-access-management-console">Inherited Access (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#remove">Remove</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#options">Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#properties-management-console">Properties (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dhcp_servers.html#advanced-isc-kea-server-properties">Advanced ISC Kea Server Properties</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="dhcp_servers.html#reload-scope-list-management-console">Reload Scope List (Management Console)</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Microsoft DHCP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reconcile-scopes">Reconcile Scopes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dhcp_kea.html">ISC Kea DHCP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dhcp_isc.html">ISC DHCP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dhcp_isc.html#restart">Restart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dhcp_cisco.html">Cisco DHCP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp_scopes.html">DHCP scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_edit_dhcp.html">Edit DHCP Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="dhcp.html">DHCP</a></li>
+          <li class="breadcrumb-item"><a href="dhcp_servers.html">DHCP servers</a></li>
+      <li class="breadcrumb-item active">Microsoft DHCP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/dhcp_windows.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="microsoft-dhcp">
+<span id="dhcp-windows"></span><h1>Microsoft DHCP<a class="headerlink" href="#microsoft-dhcp" title="Link to this heading"></a></h1>
+<section id="defining-options-on-ms-dhcp-servers">
+<span id="dhcp-windows-define-options"></span><h2>Defining Options on MS DHCP Servers<a class="headerlink" href="#defining-options-on-ms-dhcp-servers" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>In <span class="menuselection">Admin ‣ Server Management</span> select the applicable DHCP Server and select <span class="guilabel">Edit DHCP options</span> from the ellipsis menu or use <span class="menuselection">Actions ‣ Edit DHCP options</span>. The <em>Edit DHCP options</em> box displays. The dialog box shows all options defined on the DHCP server.</p></li>
+<li><p>Use the drop-down menu to select the option you want to define.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/windows-dhcp-options-Micetro.png"><img alt="../../_images/windows-dhcp-options-Micetro.png" class="align-center" src="../../_images/windows-dhcp-options-Micetro.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>To add an option, select the option from the list. The option filed is added to the dialog box.</p></li>
+<li><p>To delete an option, hover over its field and click the trash button next to it.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save the updated options.</p></li>
+</ol>
+</section>
+<section id="ms-dhcp-options-dns-tab">
+<span id="ms-dhcp-dns-options"></span><h2>MS DHCP options (DNS tab)<a class="headerlink" href="#ms-dhcp-options-dns-tab" title="Link to this heading"></a></h2>
+<dl>
+<dt>Enable DNS dynamic updates according to the settings below.</dt><dd><p>Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.</p>
+<dl class="simple">
+<dt>Dynamically update DNS A and PTR records.</dt><dd><p>Specifies that the DHCP server update forward and reverse lookups are based on the type of request made by the client during the lease process.</p>
+</dd>
+<dt>Always dynamically update DNS A and PTR records.</dt><dd><p>Specifies that the DHCP server update forward and reverse DNS lookups when a client acquires a lease, regardless of the type of request used to acquire it.</p>
+</dd>
+</dl>
+</dd>
+<dt>Discard A and PTR records when lease is deleted.</dt><dd><p>Specifies whether the DHCP server discards forward DNS lookups for clients when a lease expires.</p>
+</dd>
+<dt>Dynamically update DNS A and PTR records for DHCP clients.</dt><dd><p>Specifies whether the DHCP server sends dynamic updates to the DNS server for DHCP clients that do not support performing these updates. If selected, clients running earlier versions of Windows are updated by the DHCP server for both their host (A) and pointer (PTR) resource records.</p>
+</dd>
+<dt>Disable dynamic updates for DNS PTR records</dt><dd><p>Turns off dynamic updates for PTR records.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="reconcile-scopes">
+<h1>Reconcile Scopes<a class="headerlink" href="#reconcile-scopes" title="Link to this heading"></a></h1>
+<p>See <a class="reference internal" href="console_dhcp_windows.html#console-dhcp-windows-reconcile"><span class="std std-ref">Reconcile Scopes in the Management Console</span></a>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dhcp_servers.html" class="btn btn-neutral float-left" title="DHCP servers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dhcp_kea.html" class="btn btn-neutral float-right" title="ISC Kea DHCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

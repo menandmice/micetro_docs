@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Virtual DNS/DHCP Appliance System is an integrated DNS and DHCP server focusing on performance and reliability." name="description" />
+<meta content="DNS appliance, DHCP appliance, DNS, DHCP" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual DNS - DHCP Appliance Setup Guide &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Virtual Caching Appliance Setup Guide" href="dns_caching_appliance.html" />
+    <link rel="prev" title="Virtual Appliance Guide" href="appliance_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Virtual DNS - DHCP Appliance Setup Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dns_caching_appliance.html">Virtual Caching Appliance Setup Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+          <li class="breadcrumb-item"><a href="appliance_guide.html">Virtual Appliance Guide</a></li>
+      <li class="breadcrumb-item active">Virtual DNS - DHCP Appliance Setup Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/dns_dhcp_appliance.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="virtual-dns-dhcp-appliance-setup-guide">
+<span id="dns-dhcp-appliance"></span><h1>Virtual DNS - DHCP Appliance Setup Guide<a class="headerlink" href="#virtual-dns-dhcp-appliance-setup-guide" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<p>The Virtual DNS/DHCP Appliance System is an integrated DNS and DHCP server focusing on performance and reliability.</p>
+<p>This document contains information about installation and initial configuration of the Virtual DNS/DHCP Appliance.</p>
+</section>
+<section id="software-requirements">
+<h3>Software Requirements<a class="headerlink" href="#software-requirements" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>VMWare Workstation 6.5 or higher</p></li>
+<li><p>VMWare ESX/ESXi 4 or higher</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>VMWare Fusion 2 or higher</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>VirtualBox 4.2.18 or higher</p></li>
+</ul>
+</section>
+<section id="hardware-requirements">
+<h3>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading"></a></h3>
+<p>Minimal requirements:</p>
+<ul class="simple">
+<li><p>20 GB of disk space</p></li>
+<li><p>4 GB RAM.</p></li>
+<li><p>1 Processor Core</p></li>
+</ul>
+<p>Recommended:</p>
+<ul class="simple">
+<li><p>8 GB RAM.</p></li>
+<li><p>4 Processor Cores</p></li>
+</ul>
+</section>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<section id="setting-up-the-virtual-machine">
+<h3>Setting Up the Virtual Machine<a class="headerlink" href="#setting-up-the-virtual-machine" title="Link to this heading"></a></h3>
+<section id="importing-the-virtual-appliance">
+<h4>Importing the Virtual Appliance<a class="headerlink" href="#importing-the-virtual-appliance" title="Link to this heading"></a></h4>
+</section>
+<section id="vmware-fusion-workstation">
+<h4>VMWare Fusion/Workstation<a class="headerlink" href="#vmware-fusion-workstation" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>First, download the OVA file (<a class="reference external" href="http://appliance.is/ddi.ova">http://appliance.is/ddi.ova</a>) or use <a class="reference external" href="http://download.menandmice.com/Appliance/">http://download.menandmice.com/Appliance/</a> for a specific version</p></li>
+<li><p>To setup the Virtual Appliance in VMWare Fusion, either double click the OVA file, or navigate to <span class="menuselection">File ‣ Import</span>.</p></li>
+<li><p>A dialog box appears that will allow you to specify the location of the OVA file. Confirm by clicking the <span class="guilabel">Open</span> button.</p></li>
+<li><p>After specifying the name of the new virtual appliance, clicking <span class="guilabel">Import</span> will finalize the importing of the virtual appliance.</p></li>
+<li><p>The Virtual Appliance is now ready to be started up.</p></li>
+</ol>
+</section>
+<section id="vmware-esx-esxi">
+<h4>VMWare ESX/ESXi<a class="headerlink" href="#vmware-esx-esxi" title="Link to this heading"></a></h4>
+<p>The Virtual Appliance can be imported through a template on the ESX server. As seen in figure 1, the <span class="guilabel">Deploy OVF template</span> is selected, and in figure 2, the deployment URL is pasted in. The next steps in the importing wizard should be self-explanatory.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/menandmice-appliance-1.png"><img alt="../../_images/menandmice-appliance-1.png" src="../../_images/menandmice-appliance-1.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Select ‘Deploy OVF template from the File menu.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/menandmice-appliance-2.png"><img alt="../../_images/menandmice-appliance-2.png" src="../../_images/menandmice-appliance-2.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-text">Paste in the deployment URL (<a class="reference external" href="http://appliance.is/caching.ova">http://appliance.is/caching.ova</a>) as shown and press <span class="guilabel">Next</span>.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="virtualbox">
+<h4>VirtualBox<a class="headerlink" href="#virtualbox" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>First, download the OVA file use <a class="reference external" href="http://download.menandmice.com/Appliance/">http://download.menandmice.com/Appliance/</a> for a specific version</p></li>
+<li><p>In the VirtualBox Manager open the <span class="guilabel">File</span> menu and select <span class="guilabel">Import Appliance</span>.</p></li>
+<li><p>Click on the <span class="guilabel">Open appliance</span> button and select the Men&amp;Mice Virtual appliance OVA file and click on the <span class="guilabel">Continue</span> button.</p></li>
+<li><p>The next dialog page shows an overview of the settings. It’s recommended to select the option to re-initialize the MAC addresses of the two virtual interfaces eth0 (Management Interface) and eth1 (Service Interface) as shown in figure 3.</p></li>
+</ol>
+<p>Finally press the <span class="guilabel">File –&gt; Import Virtual Appliance button</span> to load the Men&amp;Mice virtual machine into your the VirtualBox environment.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/menandmice-appliance-3.png"><img alt="../../_images/menandmice-appliance-3.png" src="../../_images/menandmice-appliance-3.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Importing the Men&amp;Mice Virtual DNS OVA image.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>Change the Guest OS Type to Other Linux (64-bit)</dt><dd><p>It’s important to change the Guest OS Type to “Other Linux(64-bit). Otherwise the VM might get stuck during startup.</p>
+</dd>
+</dl>
+</div>
+<p>The Virtual Appliance only contains two virtual ethernet interfaces, eth0 and eth1. The eth0 interface serves as a management interface, while the eth1 interface serves as an external interface.</p>
+</section>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<section id="entering-appliance-network-information">
+<h3>Entering Appliance Network Information<a class="headerlink" href="#entering-appliance-network-information" title="Link to this heading"></a></h3>
+<p>This section contains instructions on how to configure the network on the appliance. That is performed through the console on the virtual host.</p>
+<p>Once the network information has been entered, you can add the appliance to Micetro. For further information refer to <a class="reference internal" href="../admin-manual/appliance_management.html#appliance-management"><span class="std std-ref">Appliance management</span></a> in the Micetro User’s Guide.</p>
+<p>Follow these instructions to configure the network settings:</p>
+<ol class="arabic simple">
+<li><p>Access the <em>Appliance</em> menu by pressing the Escape button and then press the Enter button on the keyboard.</p></li>
+<li><p>From the main menu, select <span class="guilabel">1. Network</span>.</p></li>
+<li><p>From the menu, select <span class="guilabel">1.1IP Address</span>.</p></li>
+<li><p>Enter the IPv4 address for the Appliance.</p></li>
+<li><p>From the menu, select <span class="guilabel">1.2 Netmask</span>.</p></li>
+<li><p>Enter the network mask using a CIDR notation.</p></li>
+<li><p>From the menu, select <span class="guilabel">1.3 Gateway</span>.</p></li>
+<li><p>Enter the IP Address of the gateway for the network.</p></li>
+</ol>
+</section>
+<section id="adding-the-appliance-to-micetro">
+<h3>Adding the Appliance to Micetro<a class="headerlink" href="#adding-the-appliance-to-micetro" title="Link to this heading"></a></h3>
+<p>Please refer to the <a class="reference internal" href="../admin-manual/appliance_management.html#appliance-management"><span class="std std-ref">Appliance management</span></a> chapter in the <span class="xref std std-ref">manual</span> for instructions on how to add the appliance to Micetro.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="appliance_guide.html" class="btn btn-neutral float-left" title="Virtual Appliance Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dns_caching_appliance.html" class="btn btn-neutral float-right" title="Virtual Caching Appliance Setup Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

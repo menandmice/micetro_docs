@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Release notes for Micetro by Men&amp;Mice 10.2.x versions" name="description" />
+<meta content="Micetro, release notes, releases, update notes" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release notes &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Security announcements" href="security_announcements.html" />
+    <link rel="prev" title="Micetro by Men&amp;Mice 10.2" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#release">10.2.10</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#improvements">Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">10.2.9</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">10.2.8</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">10.2.7</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">10.2.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">10.2.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id19">10.2.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id23">10.2.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id26">10.2.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-feature">New Feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id30">10.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updates">Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id34">10.1.6</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id36">Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id37">10.1.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id39">Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id40">10.1.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id42">Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id43">10.1.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id45">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">Bug fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id47">10.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id49">10.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#known-issues">Known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id52">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id54">10.0.8</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id56">Improvements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Release notes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/release_notes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="release-notes">
+<span id="id1"></span><h1>Release notes<a class="headerlink" href="#release-notes" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Major releases are supported for 2 years.</p>
+</div>
+<p>Jump to: <a class="reference internal" href="#id54"><span class="std std-ref">10.0.8</span></a>, <a class="reference internal" href="#id49"><span class="std std-ref">10.1</span></a>, <a class="reference internal" href="#id47"><span class="std std-ref">10.1.1</span></a>, <a class="reference internal" href="#id43"><span class="std std-ref">10.1.2</span></a>, <a class="reference internal" href="#id40"><span class="std std-ref">10.1.4</span></a>, <a class="reference internal" href="#id37"><span class="std std-ref">10.1.5</span></a>, <a class="reference internal" href="#id34"><span class="std std-ref">10.1.6</span></a>, <a class="reference internal" href="#id30"><span class="std std-ref">10.2</span></a>, <a class="reference internal" href="#id26"><span class="std std-ref">10.2.1</span></a>, <a class="reference internal" href="#id23"><span class="std std-ref">10.2.2</span></a>, <a class="reference internal" href="#id19"><span class="std std-ref">10.2.3</span></a>, <a class="reference internal" href="#id16"><span class="std std-ref">10.2.4</span></a>, <a class="reference internal" href="#id13"><span class="std std-ref">10.2.5</span></a>, <a class="reference internal" href="#id10"><span class="std std-ref">10.2.7</span></a>, <a class="reference internal" href="#id6"><span class="std std-ref">10.2.8</span></a>, <a class="reference internal" href="#id3"><span class="std std-ref">10.2.9</span></a></p>
+<section id="release">
+<span id="id2"></span><h2>10.2.10<a class="headerlink" href="#release" title="Link to this heading"></a></h2>
+<p>April 30, 2024</p>
+<section id="improvements">
+<h3>Improvements<a class="headerlink" href="#improvements" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Collapse functionality</strong>:  The right-hand inspector now features a collapse function, providing more space for table viewing.</p></li>
+<li><p><strong>Enhanced Resolution Support</strong>: The user interface now supports the minimum resolution as 1290 x 1024 with a zoom level of 200%. To achieve this, significant changes were implemented:
+* Dialog boxes now occupy the entire screen, ensuring optimal use of available space.
+* The header now has a scrollbar to take less space.
+* Long names in the footer are now truncated with ellipses, maintaining clarity and readability.</p></li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<span id="id4"></span><h2>10.2.9<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>December 5, 2023</p>
+<section id="id5">
+<h3>Improvements<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Enhanced Session ID Algorithm</strong>: We’ve updated the algorithm for generating session IDs. It now uses non-deterministic random values that are automatically seeded from the underlying OS, improving security and unpredictability. This improvement addresses the security vulnerability outlined in CVE-2023-4080.</p></li>
+</ul>
+<p>addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911</p>
+</section>
+<section id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Accessibility Improvements</strong>: Several accessibility improvements have been made to the user interface to ensure a more inclusive and user-friendly experience.</p></li>
+<li><p>Various bug fixes and improvements.</p></li>
+</ul>
+</section>
+</section>
+<section id="id6">
+<span id="id7"></span><h2>10.2.8<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>September 20, 2023</p>
+<section id="id8">
+<h3>Improvements<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>BIND has been upgraded to v9.16.44 on the Micetro appliance.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>Bug Fixes<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Various accessibility improvements were made to the Web Application.</p></li>
+</ul>
+</section>
+</section>
+<section id="id10">
+<span id="id11"></span><h2>10.2.7<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>June 28, 2023</p>
+<section id="id12">
+<h3>Improvements<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.</p></li>
+</ul>
+</section>
+</section>
+<section id="id13">
+<span id="id14"></span><h2>10.2.5<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<p><em>November 29, 2022</em></p>
+<section id="id15">
+<h3>Bug Fixes<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed a bug where CNAME and TXT records would sometimes be removed when they shouldn’t while clearing IP addresses.</p></li>
+<li><p>Fixed an issue where some auto suggestion fields would auto select the first suggestion.</p></li>
+<li><p>Fixed a bug where the quickfilter showed the value [object Object] when searching for a partial string of the word “object”</p></li>
+<li><p>Fixed a problem with BIND possibly getting stuck when doing a logrotate if the appliance was configured to send the system log messages to a remote server.</p></li>
+<li><p>Accessibility improvements in the UI</p></li>
+</ul>
+</section>
+</section>
+<section id="id16">
+<span id="id17"></span><h2>10.2.4<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<section id="id18">
+<h3>Improvements<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178</p></li>
+</ul>
+</section>
+</section>
+<section id="id19">
+<span id="id20"></span><h2>10.2.3<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<p><em>July 5, 2022</em></p>
+<section id="id21">
+<h3>Improvements<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Micetro now detects, and reports, if Microsoft Server 2022 is the installed operating system.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Microsoft Server 2022 is now supported in versions 10.2.3 and up</p>
+</div>
+</section>
+<section id="id22">
+<h3>Bug Fixes<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed a bug where all DHCPv4 client identifiers were forced to MAC on Kea</p></li>
+<li><p>Fixed a bug regarding the $GENERATE directive in BIND configs</p></li>
+<li><p>Fixed a performance regression when viewing object history in large Micetro databases</p></li>
+<li><p>Fixed disappearing values in scope options while hostnames are being resolved</p></li>
+<li><p>Logging was improved to not include sensitive information when editing AD Forests, Users, and Cloud Services</p></li>
+<li><p>New API commands to create and get reservations from ranges.</p></li>
+<li><p>Various accessibility improvements were made to the Web Application</p></li>
+</ul>
+</section>
+</section>
+<section id="id23">
+<span id="id24"></span><h2>10.2.2<a class="headerlink" href="#id23" title="Link to this heading"></a></h2>
+<p><em>March 16, 2022.</em></p>
+<section id="id25">
+<h3>Bug Fixes<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<p>Fixed BIND v9.11 and v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2021-25220 and CVE-2022-0396 from ISC</p>
+</section>
+</section>
+<section id="id26">
+<span id="id27"></span><h2>10.2.1<a class="headerlink" href="#id26" title="Link to this heading"></a></h2>
+<p><em>March 8, 2022.</em></p>
+<section id="new-feature">
+<h3>New Feature<a class="headerlink" href="#new-feature" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Users with manage access permissions can view and manage access for multiple objects at the same time.</p></li>
+</ul>
+</section>
+<section id="id28">
+<h3>Improvements<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>User can select to inherit parent access when managing access for multiple networks</p></li>
+<li><p>Failed login attempts are now throttled to prevent brute force attacks</p></li>
+<li><p>Admin users can now change custom property types when editing custom properties (except for Yes/No properties)</p></li>
+</ul>
+</section>
+<section id="id29">
+<h3>Bug Fixes<a class="headerlink" href="#id29" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Cisco DHCP remote reservation issues fixed when MAC addresses are missing</p></li>
+<li><p>Users are able to more easily reorder property columns in the grid of the Web UI</p></li>
+<li><p>Editing reservations for split scopes now appropriately modifies the reservation for all servers</p></li>
+<li><p>Deleting reservations for split scopes now appropriately deletes reservations for all servers</p></li>
+<li><p>Custom properties modified with change requests from DNS Workflow are now properly logged in audit history</p></li>
+<li><p>Requiring definition of custom properties which are children of optional properties is no longer possible</p></li>
+<li><p>Setting DHCP boot-file-name option is now supported on Kea</p></li>
+<li><p>An issue with editing large Kea configuration files is now fixed</p></li>
+<li><p>Fixed a problem where users were unable to bulk import DNS data when there are required custom fields on DNS record level</p></li>
+<li><p>Resolved a problem where RPZ zone records can’t be edited in the web UI</p></li>
+<li><p>Web UI no longer shows error in server page when system does not have an active IPAM license</p></li>
+<li><p>An issue was fixed where an incorrect error message was displayed when login failed</p></li>
+<li><p>Multiple minor improvements and fixes to enhance user experience</p></li>
+</ul>
+</section>
+</section>
+<section id="id30">
+<span id="id31"></span><h2>10.2<a class="headerlink" href="#id30" title="Link to this heading"></a></h2>
+<p><em>February 3, 2022.</em></p>
+<section id="new-features">
+<h3>New Features<a class="headerlink" href="#new-features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>DHCPv6 Management: Enjoy the same level of management and visibility for dynamically allocated IPv6 addresses as you have with IPv4 and DHCP in your Windows environments. Toggle DHCPv6 management on or off by server or enable it on multiple servers at once.</p></li>
+<li><p>Custom Property Management: Custom Properties can now be managed through the Micetro web interface. Create searchable fields to track information about your DNS zones, DNS records, DHCP scopes, networks, IP ranges and other objects in Micetro. There are two Default Custom Properties built in to the Range object type that come with Micetro which are Title and Description.</p></li>
+<li><p>HA Management: Administrators can now manage High Availability for Micetro Central by adding servers, defining priority, and executing failovers via the Web UI.</p></li>
+<li><p>Reconcile DHCP Scopes: Manage DHCP scope reconciliation for Microsoft DHCP server from the Micetro Web UI to ensure consistency between the DHCP database and DHCP registry.</p></li>
+</ul>
+</section>
+<section id="updates">
+<h3>Updates<a class="headerlink" href="#updates" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Microsoft has deprecated support for Windows Server 2008 R2 and therefore Micetro will no longer support this Operating System</p></li>
+<li><p>Microsoft has deprecated support for SQL Server 2008 R2 and therefore it will no longer be supported by Micetro</p></li>
+<li><p>Micetro will no longer support the 32-bit Linux Operating Systems</p></li>
+</ul>
+</section>
+<section id="id32">
+<h3>Improvements<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Users are now able to create DHCP split scopes in the Web UI for both DHCPv4 and DHCPv6</p></li>
+<li><p>When hovering over the folder icon next to a network or DNS zone, the tooltip now shows the full folder path when an object is in a subfolder</p></li>
+<li><p>NAPTR records are now supported in AWS Route53</p></li>
+<li><p>Colons are now supported when entering hex values in the UI. For example “f1:04:0a:03:e0:0a” is now accepted as an appropriate entry for a field which requires hex.</p></li>
+<li><p>Admins may now manually specify a BIND user or BIND group when deploying Micetro to work with BIND</p></li>
+<li><p>Folders are now sorted alphabetically in the left sidebar</p></li>
+<li><p>The email support address shown under licensing support and error messages is now consistently the same address</p></li>
+<li><p>When deleting a folder the folder name is now shown in the popup message confirming deletion</p></li>
+<li><p>Improved the order of permissions to be consistent among multiple dialog boxes</p></li>
+<li><p>When performing an action on multiple objects, task names are now displayed in plural form</p></li>
+<li><p>Read-only Active Directory sites are not shown any longer in the dropdown for setting AD Sites for DHCP scopes or IP ranges</p></li>
+<li><p>When there are no DHCP or DNS servers present, the information shown reflects the empty state with helpful information</p></li>
+<li><p>For a zone or network that is contained within a folder, users can now click on the folder icon next to that object to view a list of all other objects contained within that folder. Hovering over that folder icon still shows the name of the folder.</p></li>
+<li><p>When editing DHCP options to enter a subnet mask value, the IP insight information is no longer displayed as it is when entering IP address information</p></li>
+<li><p>Users are no longer given the option to manage read-only forests under AD Sites</p></li>
+<li><p>Users with correct permissions may now perform a bulk action of unblocking multiple roles at the same time.</p></li>
+<li><p>When running reports users may now specify which DNS servers to include in the filter so as to avoid duplicate information within the report from redundant or testing servers for example.</p></li>
+<li><p>By default, when there are no additional address spaces to the default address space, permissions will automatically be assigned to the default address space. When there are additional address spaces, then permissions will need to be managed specifically for each address space.</p></li>
+<li><p>When editing a user under the Admin&gt;&gt;Configuration tab the user name will now be displayed in the dialog box.</p></li>
+<li><p>Users may be authenticated with read-only domain controllers by setting the ReadOnlyDC preference value.</p></li>
+<li><p>Reserved and Leased IP address states are now filterable/sortable in the IPAM grid for a network</p></li>
+<li><p>The API call GetAvailableAddressBlocks will now claim subnets for a short amount of time so they can’t be used by others</p></li>
+</ul>
+</section>
+<section id="id33">
+<h3>Bug Fixes<a class="headerlink" href="#id33" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Editing a record in an AD integrated zone will no longer create duplicate records by leaving the old record in the zone</p></li>
+<li><p>DHCP Option 43 is now stored as Hex value instead of ASCII making it possible to configure option 43 for ISC DHCP users.</p></li>
+<li><p>If the BGPD service is enabled on DDI appliances it will now start automatically after a restart of the appliance</p></li>
+<li><p>Increased the size of the externalID column in the mm_users db table to fix an issue where users with longer usernames couldn’t login</p></li>
+<li><p>In the “Delete Zone” dialog box, when master zones are selected, other unrelated zones are no longer selected as well.</p></li>
+<li><p>Double clicking on the meatballs menu of a row in the IPAM or DNS grid only opens menu options instead of following the behavior of double clicking on the row itself to open the properties</p></li>
+<li><p>Hovering over an action button in the inspector on the right side of the Web UI no longer displays two tooltips.</p></li>
+<li><p>Improved error message is now shown when a user tries to rename an SNMP profile with a name that already exists.</p></li>
+<li><p>Labels in the Change Request dialog box under Workflow have been enlarged with legible text</p></li>
+<li><p>It’s now possible to create multi-string TXT records</p></li>
+<li><p>Filtering scopes by server no longer shows scopes from unrelated servers</p></li>
+<li><p>Next button will now appear so users may move forward when editing reports to adjust the utilization percentage in the Reports Wizard</p></li>
+<li><p>The admin page in the Web UI is no longer visible to those without privileges</p></li>
+<li><p>Improved indicator display of subranges inside range folders</p></li>
+<li><p>Improved error message shown when a user tried to rename an SNMP profile with a name that already exists</p></li>
+<li><p>When using a REST call to add a DHCP reservation the reservation will now be added to the active and failover scope in the case that failover has been configured</p></li>
+<li><p>Long DHCP reservation names no longer cause errors when sending requests to the servers</p></li>
+<li><p>Renaming Azure accounts without re-entering the client secret management account credentials is now allowed</p></li>
+<li><p>Multiple minor improvements and fixes to enhance user experience</p></li>
+</ul>
+</section>
+</section>
+<section id="id34">
+<span id="id35"></span><h2>10.1.6<a class="headerlink" href="#id34" title="Link to this heading"></a></h2>
+<p><em>June 28, 2023</em></p>
+<section id="id36">
+<h3>Improvements<a class="headerlink" href="#id36" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2023-2828, CVE-2023-2829, CVE-2023-2911.</p></li>
+</ul>
+</section>
+</section>
+<section id="id37">
+<span id="id38"></span><h2>10.1.5<a class="headerlink" href="#id37" title="Link to this heading"></a></h2>
+<p><em>January 25, 2023</em></p>
+<section id="id39">
+<h3>Improvements<a class="headerlink" href="#id39" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed BIND v9.16, v9.18, v9.19 vulnerabilities on the Micetro appliance addressed in CVE-2022-3094, CVE-2022-3736, CVE-2022-3924, CVE-2022-3488.</p></li>
+</ul>
+</section>
+</section>
+<section id="id40">
+<span id="id41"></span><h2>10.1.4<a class="headerlink" href="#id40" title="Link to this heading"></a></h2>
+<section id="id42">
+<h3>Improvements<a class="headerlink" href="#id42" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178</p></li>
+</ul>
+</section>
+</section>
+<section id="id43">
+<span id="id44"></span><h2>10.1.2<a class="headerlink" href="#id43" title="Link to this heading"></a></h2>
+<p><em>December 15, 2021</em></p>
+<section id="id45">
+<h3>Improvements<a class="headerlink" href="#id45" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Messages when no folders are present under DNS or IPAM are now more human readable and informational.</p></li>
+<li><p>Links within the Micetro Management Console and Web UI now direct readers to updated documentation.</p></li>
+<li><p>Consistent format shown for read-only Active Directory Sites in all dropdown menus.</p></li>
+<li><p>Error message that appears when trying to change an SNMP profile name to an existing name has been improved to be more informational.</p></li>
+</ul>
+</section>
+<section id="id46">
+<h3>Bug fixes<a class="headerlink" href="#id46" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>There’s no longer a syntax error that pops up when modifying text records that contain data fields over 255 characters.</p></li>
+<li><p>Admins will be able to add AD groups in the Web UI when AD Sites and Services feature has been disabled.</p></li>
+<li><p>Selecting A or PTR records no longer intermittently causes unnecessary data fetching from server.</p></li>
+<li><p>“PTR Status” column will now always show correct status for IP addresses.</p></li>
+<li><p>NAPTR records are now correctly formatted before being sent to AWS Route 53.</p></li>
+<li><p>Filtering scopes by server no longer shows scopes on unrelated servers with similar names. Your bulk clean-up operations are safe again!</p></li>
+<li><p>Accurate informational error message pops up when trying to create a folder that already exists.</p></li>
+<li><p>Fixed alignment issue under Access column when creating/editing permissions list for new Roles.</p></li>
+<li><p>Correct SNMP profiles will appear when switching between Micetro Central platforms without having to refresh.</p></li>
+<li><p>Find Next Free Address command in the web UI glitched at times but is now guaranteed to work correctly.</p></li>
+<li><p>Expand/contract function when viewing nested CIDR boundaries, or “Tree View,” under the IPAM tab will work as expected.</p></li>
+<li><p>Text for task in Groups under Access Control has been changed from “Remove User” to “Remove Group.”</p></li>
+<li><p>Create Network Wizard is now more intelligent when checking whether a range can be created.</p></li>
+<li><p>Fixed rendering issue in filtering sidebar where two items might appear to be selected at the same time.</p></li>
+<li><p>Column alignment in Import DNS Records” list has been corrected.</p></li>
+<li><p>TXT records that include quotation marks can now be created on Akamai and Dyn DNS.</p></li>
+<li><p>Fixed minor issues when adding, removing, and editing Active Directory Forests.</p></li>
+<li><p>Extra comma(s) in the IN operator in the API no longer returns “No Results.”</p></li>
+<li><p>Multiple minor improvements and fixes to make user experience better.</p></li>
+<li><p>Improved string validation in a number of API commands.</p></li>
+</ul>
+</section>
+</section>
+<section id="id47">
+<span id="id48"></span><h2>10.1.1<a class="headerlink" href="#id47" title="Link to this heading"></a></h2>
+<p><em>October 27th, 2021.</em></p>
+<ul class="simple">
+<li><p>Fixed BIND vulnerability <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219">CVE-2021-25219</a> on the Men&amp;Mice Virtual Appliances. See <a class="reference internal" href="security_announcements.html#security-announcements"><span class="std std-ref">Security announcements</span></a> for details.</p></li>
+<li><p>Fixed an issue with upgrading to Micetro 10.1 with a Microsoft SQL 2008R2 or earlier database.</p></li>
+</ul>
+</section>
+<section id="id49">
+<span id="id50"></span><h2>10.1<a class="headerlink" href="#id49" title="Link to this heading"></a></h2>
+<p><em>October 19th, 2021.</em></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Version 9.2 will no longer receive bug fixes and feature updates. Please update your Micetro to at least version 9.3.</p>
+</div>
+<section id="known-issues">
+<h3>Known issues<a class="headerlink" href="#known-issues" title="Link to this heading"></a></h3>
+</section>
+<section id="id51">
+<h3>New features<a class="headerlink" href="#id51" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>New Access Control management: access controls in Micetro have been redesigned from the ground-up, and provide a fully role-based, flexible management. Existing configurations will be converted into the new model while preserving backward compatibility. Read <a class="reference internal" href="guides/admin-manual/access_control.html#access-control"><span class="std std-ref">Access control</span></a> and <a class="reference internal" href="guides/reference/access_control_example.html#access-control-example"><span class="std std-ref">Role-based access example</span></a> for details.</p></li>
+<li><p>Folder management is now available in the Web Application. Users can organize DNS and IPAM objects using traditional folders and customizable smart folders (saved filters) to quicken their workflows. “Smart people use folders. Even smarter people use smart folders.”</p></li>
+<li><p>AD Sites and Subnets management has been streamlined and integrated into the IPAM context of the Web Application.</p></li>
+</ul>
+</section>
+<section id="id52">
+<h3>Improvements<a class="headerlink" href="#id52" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>DNS administrators can manage preferred servers for DNS zones in the Web Application.</p></li>
+<li><p>SNMP profile management is available in the Web Application.</p></li>
+<li><p>A new slide-in help is available for many functions, offering further details on functionality and syntax for their respective operations. Not a water slide in a theme park, but it is still weirdly satisfying.</p></li>
+<li><p>Micetro components will no longer display errors if they’re reporting different minor versions. We’re all one family here.</p></li>
+<li><p>Users can import DHCP reservations to Micetro using the Web Application, including bulk import. Get yer CSV goodness on!</p></li>
+<li><p>Lease names are searchable in the Quick Command. So you can have a better leash on them. (We’ll see ourselves out.)</p></li>
+<li><p>Custom links can be added to the Micetro login screen.</p></li>
+<li><p>Improved subnet management, including splitting and merging subnets. Alchemy, almost; although no turning iron into gold with Micetro. Yet.</p></li>
+</ul>
+</section>
+<section id="id53">
+<h3>Bug fixes<a class="headerlink" href="#id53" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Wildcard policies on AWS will display a descriptive error message (as they’re not currently supported in Micetro).</p></li>
+<li><p>Users can use relative time (i.e. &gt;=-7d) in the Reporting module. Because time is relative, and E equals m times c squared. Except in quantum, but let’s not sweat the small stuff.</p></li>
+<li><p>BIND installer will no longer get stuck during installation. Sticks and stones may break our bones, but stuck things are just weird.</p></li>
+<li><p>DNS and IPAM data is properly updated when changing address spaces. Multiverse mixup, we’ve had words with the Sorcerer Supreme.</p></li>
+<li><p>Using the Quick Filter properly highlights the query in the name column. As this is how it’s supposed to work, this fix is a highlight to share.</p></li>
+<li><p>Using the ‘View scopes’ action on a DHCP server will properly show the scopes on the DHCP server. Because it. Has. One. Job.</p></li>
+<li><p>Creating a scope on a Cisco DHCP server no longer fails randomly.</p></li>
+<li><p>No longer possible for the logged-in user to remove themselves. Word came down that it created a bunch of variants that bottlenecked the TVA, and who needs that?</p></li>
+<li><p>Updating refresh times on SOA records will no longer fail with a cryptic error.</p></li>
+<li><p>Tooltips no longer appear erroneously on top of the screen after closing their window. They understand now that they have to respect the boundaries of others, just like all polite UI elements do.</p></li>
+<li><p>Editing a DHCP pool will no longer result in a locked up dialog window due to illegal from/to address input.</p></li>
+<li><p>Converting a network to a DHCP scope will no longer have a missing field. It’s returned safe and sound, we can take it off the milk cartons finally.</p></li>
+<li><p>Using the ‘View history’ action will no longer return an error message when a filter is applied.</p></li>
+<li><p>The ‘Reserve’ button will no longer disappear from the Action menu. This type of hide-and-seek is not appropriate in the workplace.</p></li>
+<li><p>Streamlined the Men&amp;Mice Central binary to reduce size. Took a lot of pilates, but now it’s in much better shape.</p></li>
+<li><p>The ‘Import records’ task is no longer available in Quick Command. We don’t know why it was there in the first place. It’s not like we put it there. &lt;whistles innocently&gt;</p></li>
+<li><p>Login no longer fails if no DNS license key is activated. Some like IPAM with no pulp, and we don’t judge.</p></li>
+<li><p>Users can use the ‘subType’ field as a query parameters within data from cloud providers. Suber!</p></li>
+<li><p>Adding a cloud provider to Micetro properly runs synchronization for DNS data.</p></li>
+<li><p>Men&amp;Mice Web Services will no longer report unhandled exceptions on a Windows Server. While Micetro is exceptional, we’re plenty able to handle it.</p></li>
+<li><p>The ‘Edit reservation’ button once again works as expected. Good button, have a cookie.</p></li>
+<li><p>Resizing the Inspector panel will no longer cause sections to lock up. No DataTables left behind.</p></li>
+<li><p>You can use ‘Add to favorites’ on IPAM objects as well. We don’t like to play favorites, so we’re giving favorites to all.</p></li>
+<li><p>Removing a cloud account will properly remove all related data from Micetro. Having your ex’s stuff around is never a good idea.</p></li>
+<li><p>Men&amp;Mice Central will no longer run out of memory when scanning a large number of SNMP profiles. To paraphrase Lady Liberty: give Micetro your huddled SNMP masses yearning to breathe free.</p></li>
+<li><p>Pool indicators are refreshed when editing exclusions for a scope.</p></li>
+<li><p>Deleting TXT records containing &amp; in the data field no longer fails in AWS. &amp; all rejoiced &amp; the world was at peace again.</p></li>
+<li><p>Using the Quick Filter for Networks will no longer cause loading skeletons to appear.</p></li>
+<li><p>Exceeding the retry limit in Azure will properly throw an exception.</p></li>
+<li><p>Fixed an issue where DNS administrators would not have access to a DNS record’s history. Obviously they should. And now they do.</p></li>
+<li><p>The ‘Edit configuration’ task is no longer enabled for unreachable servers.</p></li>
+<li><p>The ‘Add DNS Zone’ task from Quick Command properly fills out the name for the zone. Otherwise it’s not magic, now is it?</p></li>
+<li><p>Clicking ‘Save’ on dialogs with no changes made closes the dialog. Clicking save on dialogs that have been modified validates the input. Save the cheerleader, save the world.</p></li>
+</ul>
+</section>
+<section id="other">
+<h3>Other<a class="headerlink" href="#other" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Various performance improvements and UX tweaks. Micetro does things faster and nicer.</p></li>
+</ul>
+</section>
+</section>
+<section id="id54">
+<span id="id55"></span><h2>10.0.8<a class="headerlink" href="#id54" title="Link to this heading"></a></h2>
+<section id="id56">
+<h3>Improvements<a class="headerlink" href="#id56" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed BIND v9.16 vulnerabilities on the Micetro appliance addressed in CVE-2022-2795, CVE-2022-2881, CVE-2022-2906, CVE-2022-3080, CVE-2022-38177 and CVE-2022-38178</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Micetro by Men&amp;Mice 10.2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="security_announcements.html" class="btn btn-neutral float-right" title="Security announcements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

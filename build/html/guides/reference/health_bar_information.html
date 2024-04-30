@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The user is able to click a link from the Management Console to get more details about each error / warning that is shown there." name="description" />
+<meta content="Micetro, Management console" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Bar information (Management Console) &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dynamic Zones" href="dynamic_zones.html" />
+    <link rel="prev" title="How to export and send license information" href="send_license_info.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Health Bar information (Management Console)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#component-out-of-date">Component out of date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#component-unreachable">Component unreachable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database-has-multiple-schemas">Database has multiple schemas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database-size-exceeded-the-recommended-value">Database size exceeded the recommended value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dhcp-failover-partner-server-unreachable">DHCP failover partner server unreachable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-loading-zone">Error loading zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#failed-to-do-a-soa-request-for-zone">Failed to do a SOA request for zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#failed-to-load-odbc-driver-for-sql-server">Failed to load ODBC Driver for SQL Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#failover-partner-down">Failover partner Down</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#high-availability-failure-state">High availability failure state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license-exceeded">License exceeded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-ptr-records-in-zone">Multiple PTR records in zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orphaned-ptr-records-in-zone">Orphaned PTR records in zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outdated-database-server-version">Outdated database server version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-contains-inconsistencies-that-need-reconciling">Scope contains inconsistencies that need reconciling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-is-not-part-of-a-failover-relationship-on-partner-server">Scope is not part of a failover relationship on partner server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-pool-collision">Scope pool collision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-subnet-collision">Cloud Subnet Collision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-reservation-mismatch">Scope reservation mismatch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slave-zone-not-updated-from-master-or-is-about-to-expire">Slave zone not updated from master or is about to expire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#superscope-subnet-static-or-dynamic-part-of-scope-over-utilized">Superscope, subnet, static or dynamic part of scope over utilized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unable-to-check-whether-scope-contains-inconsistencies">Unable to check whether scope contains inconsistencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unable-to-check-whether-scope-is-part-of-a-failover-relationship-on-partner-server">Unable to check whether scope is part of a failover relationship on partner server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unable-to-fetch-scope-info-from-partner-server">Unable to fetch scope info from partner server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unable-to-get-status-for-dns-or-dhcp-server">Unable to get status for DNS or DHCP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unable-to-get-status-for-scope">Unable to get status for scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unable-to-get-status-for-zones">Unable to get status for zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-available">Update available</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-server-unreachable">Update server unreachable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zone-replication-group-out-of-sync">Zone replication group out of sync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zone-serial-out-of-date">Zone serial out of date</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">Health Bar information (Management Console)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/health_bar_information.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="health-bar-information-management-console">
+<span id="health-bar-information"></span><h1>Health Bar information (Management Console)<a class="headerlink" href="#health-bar-information-management-console" title="Link to this heading"></a></h1>
+<p>On this page, the errors / warnings from the <a class="reference internal" href="../user-manual/console_health_bar.html#console-health-bar"><span class="std std-ref">Health Monitoring Bar</span></a> in the Management Console are made available.</p>
+<p>The user is able to click a link from the Management Console to get more details about each error / warning that is shown there.</p>
+<section id="component-out-of-date">
+<h2>Component out of date<a class="headerlink" href="#component-out-of-date" title="Link to this heading"></a></h2>
+<p>This warning is shown when a Men&amp;Mice component is out of date in the system. This can be confirmed by going to <span class="menuselection">Tools ‣ Update Status</span>. It will show all components that are out of date in the system. From this window, they can also be updated.</p>
+</section>
+<section id="component-unreachable">
+<h2>Component unreachable<a class="headerlink" href="#component-unreachable" title="Link to this heading"></a></h2>
+<p>This error is shown when the Men&amp;Mice Central cannot communicate with the specified component. It can be due to one of the following reasons:</p>
+<ul class="simple">
+<li><p>The network connection is not functional between the component and the central server. That can be due to firewall issues. See <a class="reference internal" href="../implementation/firewall_ports.html#firewall-ports"><span class="std std-ref">Networking requirements</span></a>.</p></li>
+<li><p>The component is not turned on or has been shut down</p></li>
+</ul>
+</section>
+<section id="database-has-multiple-schemas">
+<h2>Database has multiple schemas<a class="headerlink" href="#database-has-multiple-schemas" title="Link to this heading"></a></h2>
+<p>This error is displayed when it has been detected that the database has multiple schemas. This can happen if the database has been migrated and not configured properly. Contact Men&amp;Mice Support for further assistance. (See <a class="reference internal" href="../../support.html#support"><span class="std std-ref">Contacting Support</span></a>.)</p>
+</section>
+<section id="database-size-exceeded-the-recommended-value">
+<h2>Database size exceeded the recommended value<a class="headerlink" href="#database-size-exceeded-the-recommended-value" title="Link to this heading"></a></h2>
+<p>When the database is the default one (SQLite) and the size of the database is higher than the threshold of 1 GB, then this warning is shown. Collecting lease history for DHCP is one of the factors that can increase the size of the database. In cases of that and also when the network environment is considered to be large, it is recommended to use SQL Server or PostgreSQL as a database backend for Micetro. See <a class="reference internal" href="../implementation/central_mssql.html#central-mssql"><span class="std std-ref">Microsoft SQL Server</span></a> and <a class="reference internal" href="../implementation/central_postgresql.html#central-postgresql"><span class="std std-ref">PostgreSQL</span></a> for more details.</p>
+</section>
+<section id="dhcp-failover-partner-server-unreachable">
+<h2>DHCP failover partner server unreachable<a class="headerlink" href="#dhcp-failover-partner-server-unreachable" title="Link to this heading"></a></h2>
+<p>This error is displayed when the defined failover partner server for a DHCP server is not reachable. The reason could be a networking issue or that the DHCP service on the server is down.</p>
+</section>
+<section id="error-loading-zone">
+<h2>Error loading zone<a class="headerlink" href="#error-loading-zone" title="Link to this heading"></a></h2>
+<p>This warning is shown when DNS server (e.g. BIND) is unable to load its zones. This warning is also posted if the server has not successfully finished checking all zones for errors.</p>
+</section>
+<section id="failed-to-do-a-soa-request-for-zone">
+<h2>Failed to do a SOA request for zone<a class="headerlink" href="#failed-to-do-a-soa-request-for-zone" title="Link to this heading"></a></h2>
+<p>This error is shown when the Men&amp;Mice DNS Server Controller is able to query the server, but SOA request for the zone failed.</p>
+</section>
+<section id="failed-to-load-odbc-driver-for-sql-server">
+<h2>Failed to load ODBC Driver for SQL Server<a class="headerlink" href="#failed-to-load-odbc-driver-for-sql-server" title="Link to this heading"></a></h2>
+<p>The preferred version of the Microsoft ODBD Driver for SQL Server failed to load. The latest version can be downloaded from <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=53339">https://www.microsoft.com/en-us/download/details.aspx?id=53339</a>.</p>
+</section>
+<section id="failover-partner-down">
+<h2>Failover partner Down<a class="headerlink" href="#failover-partner-down" title="Link to this heading"></a></h2>
+</section>
+<section id="high-availability-failure-state">
+<h2>High availability failure state<a class="headerlink" href="#high-availability-failure-state" title="Link to this heading"></a></h2>
+<p>This warning is shown when the active Central server went down and a standby Central server took over the service. For some reasons active server didn’t report and therefore the standby server was activated. The Standby server is updated and becomes the active server and vice versa. The former active server will be in failed state until it is fixed or restarted.</p>
+</section>
+<section id="license-exceeded">
+<h2>License exceeded<a class="headerlink" href="#license-exceeded" title="Link to this heading"></a></h2>
+<p>This warning is shown when the current license for Men&amp;Mice component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;menandmice&#46;com">sales<span>&#64;</span>menandmice<span>&#46;</span>com</a> to resolve the matter.</p>
+</section>
+<section id="multiple-ptr-records-in-zone">
+<h2>Multiple PTR records in zone<a class="headerlink" href="#multiple-ptr-records-in-zone" title="Link to this heading"></a></h2>
+</section>
+<section id="orphaned-ptr-records-in-zone">
+<h2>Orphaned PTR records in zone<a class="headerlink" href="#orphaned-ptr-records-in-zone" title="Link to this heading"></a></h2>
+</section>
+<section id="outdated-database-server-version">
+<h2>Outdated database server version<a class="headerlink" href="#outdated-database-server-version" title="Link to this heading"></a></h2>
+<p>For Men&amp;Mice Suite version 8.1 and higher we recommend to use only SQL Server 2014 or higher. Support for older versions will be dropped in version 8.2 of the Men&amp;Mice Suite.</p>
+</section>
+<section id="scope-contains-inconsistencies-that-need-reconciling">
+<h2>Scope contains inconsistencies that need reconciling<a class="headerlink" href="#scope-contains-inconsistencies-that-need-reconciling" title="Link to this heading"></a></h2>
+<p>This warning is shown when scope contains inconsistencies and it needs reconciling. See <a class="reference internal" href="../user-manual/console_dhcp_windows.html#console-dhcp-windows-reconcile"><span class="std std-ref">Reconcile Scopes in the Management Console</span></a> and <a class="reference external" href="https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx">https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx</a> about reconciling a DHCP scope.</p>
+</section>
+<section id="scope-is-not-part-of-a-failover-relationship-on-partner-server">
+<h2>Scope is not part of a failover relationship on partner server<a class="headerlink" href="#scope-is-not-part-of-a-failover-relationship-on-partner-server" title="Link to this heading"></a></h2>
+<p>This warning is shown when scope is not a part of a failover relationship on partner server, but should be.</p>
+</section>
+<section id="scope-pool-collision">
+<h2>Scope pool collision<a class="headerlink" href="#scope-pool-collision" title="Link to this heading"></a></h2>
+<p>This warning is shown when one of the following situations occur:</p>
+<ul class="simple">
+<li><p>Scopes in a failover relationship have mismatching address pools or exclusions. Failover scopes should be identical.</p></li>
+<li><p>An address pool conflict was detected. Addresses exist in multiple pools without exclusions.</p></li>
+<li><p>An address pool conflict was detected. The address pool is not identical across the split scope.</p></li>
+<li><p>An address pool conflict was detected.</p></li>
+</ul>
+</section>
+<section id="cloud-subnet-collision">
+<h2>Cloud Subnet Collision<a class="headerlink" href="#cloud-subnet-collision" title="Link to this heading"></a></h2>
+</section>
+<section id="scope-reservation-mismatch">
+<h2>Scope reservation mismatch<a class="headerlink" href="#scope-reservation-mismatch" title="Link to this heading"></a></h2>
+<p>This warning is shown when DHCP reservations do not match, that is name, MAC address and description are not identical.</p>
+</section>
+<section id="slave-zone-not-updated-from-master-or-is-about-to-expire">
+<h2>Slave zone not updated from master or is about to expire<a class="headerlink" href="#slave-zone-not-updated-from-master-or-is-about-to-expire" title="Link to this heading"></a></h2>
+<p>This warning is shown when a slave zone is not receiving an update from its master. This warning could also be shown when a slave zone is not receiving update from its master and is about to expire.</p>
+</section>
+<section id="superscope-subnet-static-or-dynamic-part-of-scope-over-utilized">
+<h2>Superscope, subnet, static or dynamic part of scope over utilized<a class="headerlink" href="#superscope-subnet-static-or-dynamic-part-of-scope-over-utilized" title="Link to this heading"></a></h2>
+<p>This warning is shown when a specific threshold is reached, that is, not enough IP addresses is available in this range. To fix this issue remove the scope and create a larger one instead or create a super scope which will join together two or more scopes for larger one.</p>
+</section>
+<section id="unable-to-check-whether-scope-contains-inconsistencies">
+<h2>Unable to check whether scope contains inconsistencies<a class="headerlink" href="#unable-to-check-whether-scope-contains-inconsistencies" title="Link to this heading"></a></h2>
+<p>This warning is shown when Men&amp;Mice Central can’t connect to the DHCP Server Controller service to check whether scope contains inconsistencies. The reason could be if the DHCP Server Controller is offline or not turned on.</p>
+</section>
+<section id="unable-to-check-whether-scope-is-part-of-a-failover-relationship-on-partner-server">
+<h2>Unable to check whether scope is part of a failover relationship on partner server<a class="headerlink" href="#unable-to-check-whether-scope-is-part-of-a-failover-relationship-on-partner-server" title="Link to this heading"></a></h2>
+<p>This warning is shown when Men&amp;Mice Central can’t connect to the DHCP Server Controller service to see if a scope is a part of a failover relationship on partner server. The reason could be if the DHCP Server Controller is offline or not turned on.</p>
+</section>
+<section id="unable-to-fetch-scope-info-from-partner-server">
+<h2>Unable to fetch scope info from partner server<a class="headerlink" href="#unable-to-fetch-scope-info-from-partner-server" title="Link to this heading"></a></h2>
+<p>This warning is shown when Men&amp;Mice Central can’t connect to the DHCP Server Controller service to gather scope info from partner server. The reason could be if the DHCP Server Controller is offline or not turned on.</p>
+</section>
+<section id="unable-to-get-status-for-dns-or-dhcp-server">
+<h2>Unable to get status for DNS or DHCP server<a class="headerlink" href="#unable-to-get-status-for-dns-or-dhcp-server" title="Link to this heading"></a></h2>
+<p>This warning is shown when Men&amp;Mice Central is unable to connect to DNS or DHCP Server Controller to do a status check for the server. This occurs if the Server Controller is offline, not turned on or has been shut down (in some case not installed). To fix this issue get the server online again and turn on the remote or (re)install.</p>
+</section>
+<section id="unable-to-get-status-for-scope">
+<h2>Unable to get status for scope<a class="headerlink" href="#unable-to-get-status-for-scope" title="Link to this heading"></a></h2>
+<p>This error is shown when Men&amp;Mice Central can’t connect to the DHCP Server Controller service to get scope status from DHCP server. The reason could be if the DHCP Server Controller is offline or not turned on.</p>
+</section>
+<section id="unable-to-get-status-for-zones">
+<h2>Unable to get status for zones<a class="headerlink" href="#unable-to-get-status-for-zones" title="Link to this heading"></a></h2>
+<p>This warning is shown when Men&amp;Mice Central can’t connect to the DNS Server Controller service to get status on the zones. The reason could be if the DNS Server Controller service is turned off or is offline.</p>
+</section>
+<section id="update-available">
+<h2>Update available<a class="headerlink" href="#update-available" title="Link to this heading"></a></h2>
+<p>This warning is shown when new version of Micetro is available. To get this new version go to <span class="menuselection">Tools ‣ Check for updates</span> in the menu bar and run the update wizard.</p>
+</section>
+<section id="update-server-unreachable">
+<h2>Update server unreachable<a class="headerlink" href="#update-server-unreachable" title="Link to this heading"></a></h2>
+<p>This warning is shown when Men&amp;Mice Central has lost its connection to Men&amp;Mice update server. It is not mandatory to have this connection and it can be turned off. To fix this issue make sure that machine running the Men&amp;Mice Update service and the machine running the Men&amp;Mice Central are listening to the same TCP port. TCP port <code class="docutils literal notranslate"><span class="pre">4603</span></code> is reserved for the update service but it can be changed if there is another software using that TCP port. See <a class="reference internal" href="change_updater_port.html#change-updater-port"><span class="std std-ref">Changing the TCP port for the Men&amp;Mice Update Service</span></a> about changing the TCP port.</p>
+</section>
+<section id="zone-replication-group-out-of-sync">
+<h2>Zone replication group out of sync<a class="headerlink" href="#zone-replication-group-out-of-sync" title="Link to this heading"></a></h2>
+<p>This error is shown when a member of a zone replication group is out of sync.</p>
+</section>
+<section id="zone-serial-out-of-date">
+<h2>Zone serial out of date<a class="headerlink" href="#zone-serial-out-of-date" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="send_license_info.html" class="btn btn-neutral float-left" title="How to export and send license information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dynamic_zones.html" class="btn btn-neutral float-right" title="Dynamic Zones" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

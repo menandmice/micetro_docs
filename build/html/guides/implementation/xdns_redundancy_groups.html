@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Configuring and managing xDNS Redundancy groups in Micetro by Men&amp;Mice" name="description" />
+<meta content="xDNS Redundancy, DNS, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>xDNS Zone Redundancy Groups &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Custom links in the web application" href="webapp_custom_links.html" />
+    <link rel="prev" title="Men&amp;Mice Central HA tweaks" href="ha_tweaks_central.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced_config.html">Advanced configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="console_advanced_settings.html">Advanced System Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_ha.html">Configure High Availability for Micetro Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ha_tweaks_central.html">Men&amp;Mice Central HA tweaks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">xDNS Zone Redundancy Groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manage-xdns-zone-redundancy-groups">Manage xDNS Zone Redundancy Groups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-zone-redundancy-group">Adding a zone redundancy group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-a-zone-redundancy-group">Edit a zone redundancy group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-a-redundancy-group">Removing a redundancy group</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#re-syncing-zone-redundancy-groups-when-all-members-are-out-of-sync">Re-syncing zone redundancy groups when all members are out-of-sync</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_custom_links.html">Custom links in the web application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="advanced_config.html">Advanced configuration</a></li>
+      <li class="breadcrumb-item active">xDNS Zone Redundancy Groups</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/xdns_redundancy_groups.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xdns-zone-redundancy-groups">
+<span id="xdns-redundancy-groups"></span><h1>xDNS Zone Redundancy Groups<a class="headerlink" href="#xdns-zone-redundancy-groups" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Zone redundancy groups can be used to keep different zones in sync. If a DNS record is added, modified or deleted in a zone that is a member of a zone redundancy group, then the changes will be replicated to other zones in the group.</p>
+<p>Any unsigned non-AD integrated master zone can be added to a redundancy group, as long as it is not already a member of a different group.</p>
+</section>
+<section id="manage-xdns-zone-redundancy-groups">
+<h2>Manage xDNS Zone Redundancy Groups<a class="headerlink" href="#manage-xdns-zone-redundancy-groups" title="Link to this heading"></a></h2>
+<p>To manage xDNS Redundancy Groups select <span class="menuselection">Zone ‣ Manage xDNS Zone Redundancy Groups</span> in the Management Console.</p>
+<p>This will open the <strong>xDNS Zone Redundancy Groups</strong> Dialog. The dialog can be used to add, edit or remove a redundancy group.</p>
+<section id="adding-a-zone-redundancy-group">
+<h3>Adding a zone redundancy group<a class="headerlink" href="#adding-a-zone-redundancy-group" title="Link to this heading"></a></h3>
+<p>To add a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the <span class="guilabel">Add</span> button to open the <em>xDNS Zone Redundancy Group Wizard</em>:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-1.png"><img alt="../../_images/xdns-add-1.png" class="align-center" src="../../_images/xdns-add-1.png" style="width: 60%;" /></a>
+<p>Select a unique name for the redundancy group and then click <span class="guilabel">Add</span> to select the zones to use in the group.</p>
+<p>The following dialog is displayed:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-2.png"><img alt="../../_images/xdns-add-2.png" class="align-center" src="../../_images/xdns-add-2.png" style="width: 60%;" /></a>
+<p>Select zones to use in the redundancy group. Note that you can use the quick filter to reduce the number of zones displayed in the list. It is also possible to right click on the list to check or uncheck all zones.</p>
+<p>Click the <span class="guilabel">Ok</span> button to close the zone selection dialog once the zones to use in the group have been selected:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-3.png"><img alt="../../_images/xdns-add-3.png" class="align-center" src="../../_images/xdns-add-3.png" style="width: 60%;" /></a>
+<p>Click <span class="guilabel">Next</span> to select an initial zone to use when syncing the redundancy group:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-4.png"><img alt="../../_images/xdns-add-4.png" class="align-center" src="../../_images/xdns-add-4.png" style="width: 60%;" /></a>
+<p>The initial sync zone is used as a base for determining how to sync the zones. The initial sync zone will only be used for the first sync, when the group is created. After the zones have been synced for the first time, they will all be checked for changes that are replicated to other group members.</p>
+<p>Note that you will be given a chance to decide how to deal with records that conflict between zones before the redundancy group is created.</p>
+<p>Click <span class="guilabel">Next</span> to configure the sync policy for the zones in the redundancy group.</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-5.png"><img alt="../../_images/xdns-add-5.png" class="align-center" src="../../_images/xdns-add-5.png" style="width: 60%;" /></a>
+<p>The sync policy specifies how each zone handles external changes from other zones in the group. The zones selected here will replicate the changes when other zones in the group are modified externally, outside of Micetro. The zones not selected will act as “readonly” and only receive updates done through Micetro or when the zone itself is modified externally, for example through it’s corresponding cloud portal.</p>
+<p>Click <span class="guilabel">Next</span> to write a save comment that will saved when the group is created:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-6.png"><img alt="../../_images/xdns-add-6.png" class="align-center" src="../../_images/xdns-add-6.png" style="width: 60%;" /></a>
+<p>Click <span class="guilabel">Next</span> to see a summary of how the group will be configured:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-7.png"><img alt="../../_images/xdns-add-7.png" class="align-center" src="../../_images/xdns-add-7.png" style="width: 60%;" /></a>
+<p>When the <span class="guilabel">Finish</span> button is clicked, a check is made to see if a zone contains any DNS records that are not in the zone that was selected as the initial sync zone. If there are no conflicts, then the redundancy group will be created and the wizard will close.</p>
+<p>If there are however any conflicts, then they will have to be resolved before the group is created:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-8.png"><img alt="../../_images/xdns-add-8.png" class="align-center" src="../../_images/xdns-add-8.png" style="width: 60%;" /></a>
+<p>The conflict can either be resolved by replicating the DNS record to other zones in the group or by deleting the record.</p>
+<p>Click <span class="guilabel">Next</span> to see a summary of the changes and then click “Finish” to create the zone redundancy group.</p>
+<p>It is also possible to create a redundancy group by right clicking selected zones and then click <span class="guilabel">Create xDNS Redundancy Group</span>:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-9.png"><img alt="../../_images/xdns-add-9.png" class="align-center" src="../../_images/xdns-add-9.png" style="width: 80%;" /></a>
+<p>The <em>xDNS Zone Redundancy Group Wizard</em> will then open with the selected zones.</p>
+</section>
+<section id="edit-a-zone-redundancy-group">
+<h3>Edit a zone redundancy group<a class="headerlink" href="#edit-a-zone-redundancy-group" title="Link to this heading"></a></h3>
+<p>To edit a redundancy group from within the xDNS Zone Redundancy Groups Dialog, click the <span class="guilabel">Edit</span> button (or double click the group name) to open the xDNS Zone Redundancy Group Wizard.</p>
+<p>It is not possible to change the group name, but zones can be added and removed from the redundancy group.</p>
+<p>Here the master zone residing on the Azure Cloud service has been removed and the zone example.menandmice.is on the DNS server ext1.menandmice.is has been added to the group.</p>
+<a class="reference internal image-reference" href="../../_images/xdns-edit.png"><img alt="../../_images/xdns-edit.png" class="align-center" src="../../_images/xdns-edit.png" style="width: 60%;" /></a>
+<p>Click <span class="guilabel">Next</span> to add a save comment.</p>
+<p>Click <span class="guilabel">Next</span> to see a summary for the changes that will be made:</p>
+<p>When the <span class="guilabel">Finish</span> button is clicked, a check is made to see if a zone being added contains any DNS records that are not in already in the group. If there are no conflicts, then the redundancy group will be modified and the wizard will close.</p>
+<p>If there are however any conflicts, then they will have to be resolved before the changes are applied:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-edit-2.png"><img alt="../../_images/xdns-edit-2.png" class="align-center" src="../../_images/xdns-edit-2.png" style="width: 60%;" /></a>
+<p>The conflict can either be resolved by replicating the DNS record to other zones in the group or by deleting the record.</p>
+<p>Click <span class="guilabel">Next</span> to see a summary of the changes and then click <span class="guilabel">Finish</span> to modify the zone redundancy group.</p>
+<p>It is also possible to add and remove a zone from a redundancy group by right clicking on a zone in a zone list:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-add-to-group.png"><img alt="../../_images/xdns-add-to-group.png" class="align-center" src="../../_images/xdns-add-to-group.png" style="width: 80%;" /></a>
+<p>The <em>xDNS Zone Redundancy Group Wizard</em> will then open with the selected zones.</p>
+</section>
+<section id="removing-a-redundancy-group">
+<h3>Removing a redundancy group<a class="headerlink" href="#removing-a-redundancy-group" title="Link to this heading"></a></h3>
+<p>A redundancy group can be removed from within the xDNS Zone Redundancy Groups Dialog.</p>
+<p>Select one or more redundancy groups that you want to remove and click <span class="guilabel">Remove</span>.</p>
+<p>Confirm the removal, enter a save comment and click <span class="guilabel">Ok</span> to remove the selected zone redundancy groups.</p>
+</section>
+</section>
+<section id="re-syncing-zone-redundancy-groups-when-all-members-are-out-of-sync">
+<h2>Re-syncing zone redundancy groups when all members are out-of-sync<a class="headerlink" href="#re-syncing-zone-redundancy-groups-when-all-members-are-out-of-sync" title="Link to this heading"></a></h2>
+<p>When a zone in a redundancy group can not be kept in sync with other zones in the group (e.g. if a DNS server is offline), then its status will be set to “Out Of Sync”. Once the zone comes back online it will automatically be synced with a different zone in the group that is in sync. The zone state will then be set to “In Sync”. However, if all group members are out of sync, then the group has to be manually synced again.</p>
+<p>If a zone that is out of sync changes, then the changes will not be replicated to other zones in the group, until it is back in sync. Note that it is still possible to make changes to the zone and manage it in Micetro.  The changes will however not be replicated to other group members.</p>
+<p>To re-sync a redundancy group from within the xDNS Zone Redundancy Dialog, click the <span class="guilabel">Edit</span> button (or double click the group name) to open the xDNS Zone Redundancy Group Wizard:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-sync-1.png"><img alt="../../_images/xdns-sync-1.png" class="align-center" src="../../_images/xdns-sync-1.png" style="width: 60%;" /></a>
+<p>Click <span class="guilabel">Next</span> to select an initial sync zone to use:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-sync-2.png"><img alt="../../_images/xdns-sync-2.png" class="align-center" src="../../_images/xdns-sync-2.png" style="width: 60%;" /></a>
+<p>The initial zone will be used as a base when the group is re-synced. If there are any DNS record in other zones in the group that are not in the initial zone, then an option will be given on how to resolve the conflicts before the group is re-synced.</p>
+<p>Click <span class="guilabel">Next</span> to add a save comment.</p>
+<p>Click <span class="guilabel">Next</span> to see a summary of the changes that will be made:</p>
+<a class="reference internal image-reference" href="../../_images/xdns-sync-3.png"><img alt="../../_images/xdns-sync-3.png" class="align-center" src="../../_images/xdns-sync-3.png" style="width: 60%;" /></a>
+<p>When the <span class="guilabel">Finish</span> button is clicked, a check is made to see if a zone in the redundancy group contains a DNS record that is not in the zone selected as the initial sync zone.</p>
+<p>If there are no conflicts, then the redundancy group will be re-synced and the wizard will close. If there are however any conflicts, then they will have to be resolved before the group can be re-synced.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ha_tweaks_central.html" class="btn btn-neutral float-left" title="Men&amp;Mice Central HA tweaks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="webapp_custom_links.html" class="btn btn-neutral float-right" title="Custom links in the web application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

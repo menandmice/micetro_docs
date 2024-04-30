@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Installing Micetro through the Ansible integration modules and plugins" name="description" />
+<meta content="Ansible control node in Micetro, Micetro installation, Micetro requirements, Men&amp;Mice" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Credential matrix" href="ansible_credentials.html" />
+    <link rel="prev" title="Ansible" href="ansible.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="automation.html">Automation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rest_api.html">REST API for Micetro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soap_api.html">SOAP API for Micetro</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ansible.html">Ansible</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ansible-modules">Ansible modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-user">API user</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#api-user-for-micetro">API user for Micetro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api-provider-in-ansible">API Provider in Ansible</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ansible-configuration-example">Ansible configuration example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_credentials.html">Credential matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_modules.html">Ansible modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_freeip.html">mm_freeip plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_inventory.html">mm_inventory plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_ipinfo.html">mm_ipinfo plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbooks.html">Example playbooks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="terraform.html">Terraform</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="automation.html">Automation</a></li>
+          <li class="breadcrumb-item"><a href="ansible.html">Ansible</a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/ansible_install.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<span id="ansible-install"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>The modules and plugins need to be installed on the Ansible control node, often called the Ansible controller and Ansible needs to be configured so that the modules and plugins can be found by Ansible.</p>
+<p>Installing the Ansible modules and plugins is a straight forward process. Copy the Ansible modules and plugins to a directory on the Ansible control node, let us assume <code class="docutils literal notranslate"><span class="pre">/tmp/mandm</span></code>. Later on these files are copied to the destination directories on the control node.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<p>The Ansible integration modules and plugins do not need anything beyond a standard Ansible installation. The minimum Ansible version is 2.7 and up and the required Python version is 2.7+ or 3.5+.</p>
+</section>
+<section id="ansible-modules">
+<h2>Ansible modules<a class="headerlink" href="#ansible-modules" title="Link to this heading"></a></h2>
+<p>The Ansible modules can than be placed in a number of directories, depending on your installation and requirements.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/usr/share/ansible/plugins/modules/</span></code></p></td>
+<td><p>System wide installation, modules available to all users</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">~/.ansible/plugins/modules/</span></code></p></td>
+<td><p>Modules available only to the current user, as the modules are installed in the users home-directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/etc/ansible/library/</span></code></p></td>
+<td><p>Local installation. As most Ansible installations use the <code class="docutils literal notranslate"><span class="pre">/etc/ansible</span></code> directory as the Ansible top-directory (as this is the default in an Ansible installation), this is probably the best installation option. When installing the modules in this directory, the Ansible library path needs to be set in the <code class="docutils literal notranslate"><span class="pre">/etc/ansible/ansible.cfg</span></code> file, pointing to the module directory.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">library</span> <span class="o">=</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ansible</span><span class="o">/</span><span class="n">library</span>
+</pre></div>
+</div>
+<p>After installing the Ansible modules a check can be made to determine if the modules are installed correctly. Run the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-doc<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;^mm_&#39;</span>
+</pre></div>
+</div>
+<p>This should produce a list with all the Micetro Ansible modules.</p>
+<section id="ansible-lookup-plugins">
+<h3>Ansible lookup plugins<a class="headerlink" href="#ansible-lookup-plugins" title="Link to this heading"></a></h3>
+<p>The set of Ansible Integration modules consists of multiple sets (lookup and inventory) and these should be installed in their own directories.</p>
+<p>The lookup plugins can be installed in:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/usr/share/ansible/plugins/lookup</span></code></p></td>
+<td><p>System wide installation, modules available to all users</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">~/.ansible/plugins/lookup</span></code></p></td>
+<td><p>Plugins available only to the current user, as the plugins are installed in the users home-directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/etc/ansible/plugins/lookup</span></code></p></td>
+<td><p>Local installation. As most Ansible installations use the <code class="docutils literal notranslate"><span class="pre">/etc/ansible</span></code> directory as the Ansible top-directory (as this is the default in an Ansible installation) this is probably the best installation option. When installing the lookup plugins in this directory, the Ansible lookup path needs to be set in the <code class="docutils literal notranslate"><span class="pre">/etc/ansible/ansible.cfg</span></code> file, pointing to the lookup plugin directory.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lookup_plugins</span> <span class="o">=</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ansible</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">lookup</span><span class="p">:</span>\
+                 <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ansible</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">lookup</span>
+</pre></div>
+</div>
+<p>To check if the modules are installed correctly and are available to Ansible, issue the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-doc<span class="w"> </span>-t<span class="w"> </span>lookup<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;^mm_&#39;</span>
+</pre></div>
+</div>
+<p>Which should produce a list with all the Micetro Ansible lookup plugins.</p>
+</section>
+<section id="ansible-inventory-plugins">
+<h3>Ansible inventory plugins<a class="headerlink" href="#ansible-inventory-plugins" title="Link to this heading"></a></h3>
+<p>The inventory plugins can be installed in:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/usr/share/ansible/plugins/inventory</span></code></p></td>
+<td><p>System wide installation, modules available to all users</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">~/.ansible/plugins/inventory</span></code></p></td>
+<td><p>Plugins available only to the current user, as the plugins are installed in the users home-directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/etc/ansible/plugins/inventory</span></code></p></td>
+<td><p>Local installation. As most Ansible installations use the <code class="docutils literal notranslate"><span class="pre">/etc/ansible</span></code> directory as the Ansible top-directory (as this is the default in an Ansible installation) this is probably the best installation option. When installing the inventory plugins in this directory, the Ansible lookup path needs to be set in the <code class="docutils literal notranslate"><span class="pre">/etc/ansible/ansible.cfg</span></code> file, pointing to the lookup plugin directory.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inventory_plugins</span> <span class="o">=</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ansible</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">inventory</span><span class="p">:</span>\
+                    <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ansible</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">inventory</span>
+</pre></div>
+</div>
+<p>To check if the modules are installed correctly and are available to Ansible, issue the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-doc<span class="w"> </span>-t<span class="w"> </span>inventory<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;^mm_&#39;</span>
+</pre></div>
+</div>
+<p>Which should produce a list with all the Micetro Ansible inventory plugins.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mm_inventory</span></code> plugin also needs some extra configuration, see <a class="reference internal" href="ansible_mm_inventory.html#ansible-mm-inventory"><span class="std std-ref">mm_inventory plugin</span></a> for more information.</p>
+</section>
+</section>
+</section>
+<section id="api-user">
+<span id="ansible-api-user"></span><h1>API user<a class="headerlink" href="#api-user" title="Link to this heading"></a></h1>
+<p>As the Ansible modules and plugins connect to a Micetro installation, a connection between Ansible and Micetro needs to be made.</p>
+<section id="api-user-for-micetro">
+<h2>API user for Micetro<a class="headerlink" href="#api-user-for-micetro" title="Link to this heading"></a></h2>
+<p>In Micetro a user needs to be defined that has all rights in Micetro (administrator) so it is able to perform all needed tasks. It is also possible to delegate only certain tasks to certain API users. <a class="reference internal" href="ansible_credentials.html#ansible-credentials"><span class="std std-ref">Credential matrix</span></a> gives an overview which rights a required for every module.</p>
+</section>
+<section id="api-provider-in-ansible">
+<h2>API Provider in Ansible<a class="headerlink" href="#api-provider-in-ansible" title="Link to this heading"></a></h2>
+<p>For the Ansible modules and plugins to function correctly a provider has to be defined. This provider consist of a user, password and connection url (<code class="docutils literal notranslate"><span class="pre">mmurl</span></code>) and this provider needs to be defined in the Ansible setup, either through Ansible Tower/AWX or in the Ansible directory.</p>
+<p>As the modules and plugins can be used by all systems under Ansible control, it is advised to define the API provider for the all group. Create a file all in the <code class="docutils literal notranslate"><span class="pre">/etc/ansible/group_vars</span></code> directory, or the <code class="docutils literal notranslate"><span class="pre">/etc/ansible/inventory/group_vars</span></code> directory (if your inventory is a directory instead of a file) which contains something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">provider</span><span class="p">:</span>
+  <span class="n">mmurl</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">micetro</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">net</span>
+  <span class="n">user</span><span class="p">:</span> <span class="n">apiuser</span>
+  <span class="n">password</span><span class="p">:</span> <span class="n">apipasswd</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Encrypt the <code class="docutils literal notranslate"><span class="pre">apipasswd</span></code> with <code class="docutils literal notranslate"><span class="pre">ansible-vault</span></code> to prevent plaintext passwords in the Ansible tree.</p>
+</div>
+<p>An example to achieve this is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;apipasswd&quot;</span><span class="w">             </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>ansible-vault<span class="w">              </span><span class="se">\</span>
+<span class="w">        </span>encrypt_string<span class="w">         </span><span class="se">\</span>
+<span class="w">        </span>--stdin-name<span class="o">=</span><span class="s2">&quot;password&quot;</span>
+</pre></div>
+</div>
+<p>Which results in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>password: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  3464653838326533616266653.....643434316266666430
+  6139656636383537336365313.....336161393439666431
+  3539313065656531313838356.....613861623135656634
+  6332393063643531390a34366.....323631613034356565
+  6138
+</pre></div>
+</div>
+<p>If an Ansible vault with multiple vault ID’s is needed, please have a look at <a class="reference external" href="http://www.tonkersten.com/2019/07/151-ansible-with-multiple-vault-ids/">http://www.tonkersten.com/2019/07/151-ansible-with-multiple-vault-ids/</a> for more information.</p>
+<p>The defined provider can be used in Ansible playbooks like:</p>
+<p>Run ansible playbook for another host and delegate to the control node</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Claim IP address</span>
+<span class="w">  </span><span class="nt">mm_claimip</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">    </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.12.14</span>
+<span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</pre></div>
+</div>
+<p>The reason for the <code class="docutils literal notranslate"><span class="pre">delegate_to:</span> <span class="pre">localhost</span></code> option, is that all commands can be performed on the Ansible control node. So, it is possible to protect the Micetro API to only accept commands from the Ansible control node and not from everywhere. This can also be achieved by creating a playbook that has localhost as the hosts-setting and is specific for the interaction with Micetro.</p>
+<p>Run ansible playbook on the Ansible Control node</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host connection example</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Claim IP address</span>
+<span class="w">      </span><span class="nt">mm_claimip</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<span class="w">        </span><span class="nt">ipaddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.12.14</span>
+<span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">provider</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ansible-configuration-example">
+<span id="ansible-config-example"></span><h1>Ansible configuration example<a class="headerlink" href="#ansible-configuration-example" title="Link to this heading"></a></h1>
+<p>Beneath is an example Ansible configuration file (<code class="docutils literal notranslate"><span class="pre">ansible.cfg</span></code>) with the assumption that all Micetro plugins and modules are installed in the <code class="docutils literal notranslate"><span class="pre">/etc/ansible</span></code> directory. Some lines end with a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>, which indicates that the following should be appended, but these are split for code clarity.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># ==============================================
+[defaults]
+remote_tmp              = $HOME/.ansible/tmp
+inventory               = inventory
+pattern                 = *
+forks                   = 5
+poll_interval           = 15
+ask_pass                = False
+remote_port             = 22
+remote_user             = ansible
+gathering               = implicit
+host_key_checking       = False
+interpreter_python      = auto_silent
+force_valid_group_names = true
+retry_files_enabled     = False
+callback_whitelist      = minimal, dense, oneline
+stdout_callback         = default
+nocows                  = 0
+library                 = /etc/ansible/library
+action_plugins          = /usr/share/ansible_plugins/action_plugins
+callback_plugins        = /etc/ansible/plugins/callback_plugins
+connection_plugins      = /usr/share/ansible_plugins/connection_plugins
+filter_plugins          = /usr/share/ansible_plugins/filter_plugins
+vars_plugins            = /usr/share/ansible_plugins/vars_plugins
+inventory_plugins       = /usr/share/ansible_plugins/inventory_plugins:\
+                          /etc/ansible/plugins/inventory
+lookup_plugins          = /usr/share/ansible_plugins/lookup_plugins:\
+                          /etc/ansible/plugins/lookup
+
+[inventory]
+enable_plugins   = mm_inventory, host_list, auto
+cache            = no
+cache_plugin     = pickle
+cache_prefix     = mm_inv
+cache_timeout    = 60
+cache_connection = /tmp/mm_inventory_cache
+
+[privilege_escalation]
+become          = False
+become_method   = sudo
+become_user     = root
+become_ask_pass = False
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ansible.html" class="btn btn-neutral float-left" title="Ansible" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ansible_credentials.html" class="btn btn-neutral float-right" title="Credential matrix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

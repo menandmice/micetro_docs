@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Roles in Micetro by Men&amp;Mice 10.1" name="description" />
+<meta content="Micetro access model" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roles &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="General roles" href="acl_general_roles.html" />
+    <link rel="prev" title="Permissions" href="acl_permissions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="access_control.html">Access control</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#groups-users-and-roles">Groups, users, and roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#the-administrator-user">The <code class="docutils literal notranslate"><span class="pre">administrator</span></code> user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#new-objects">New objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="access_control.html#access-control-management">Access control management</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="acl_permissions.html">Permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_permissions.html#block-permission">Block permission</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-new-role">Adding a new role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-a-role">Editing a role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deleting-a-role">Deleting a role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicating-a-role">Duplicating a role</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="acl_effective_access.html">Effective access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_groups.html">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_object_access.html">Object access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="access_control.html">Access control</a></li>
+      <li class="breadcrumb-item active">Roles</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/acl_roles.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="roles">
+<span id="acl-roles"></span><h1>Roles<a class="headerlink" href="#roles" title="Link to this heading"></a></h1>
+<p>Through roles you can manage access control in Micetro.</p>
+<p>Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed through <a class="reference internal" href="#acl-roles"><span class="std std-ref">Roles</span></a> configured with <a class="reference internal" href="acl_permissions.html#acl-permissions"><span class="std std-ref">Permissions</span></a>. <a class="reference internal" href="acl_users.html#acl-users"><span class="std std-ref">Users</span></a> and <a class="reference internal" href="acl_groups.html#acl-groups"><span class="std std-ref">Groups</span></a> do not have direct access to objects, only if they’re <strong>assigned to roles</strong>. Administrators can control a user or group’s access by assigning or removing them from roles.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page is for generic management of roles. See <a class="reference internal" href="acl_general_roles.html#acl-general-roles"><span class="std std-ref">General roles</span></a>, <a class="reference internal" href="acl_specific_roles.html#acl-specific-roles"><span class="std std-ref">Specific roles</span></a>, and <a class="reference internal" href="acl_legacy_roles.html#acl-legacy-roles"><span class="std std-ref">Legacy roles</span></a> for the particularities of the different role types.</p>
+</div>
+<section id="adding-a-new-role">
+<span id="new-role"></span><h2>Adding a new role<a class="headerlink" href="#adding-a-new-role" title="Link to this heading"></a></h2>
+<p>Through this function, you add new roles to Micetro.</p>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration</span> and select <span class="guilabel">Roles</span> in the filtering sidebar. The built-in roles are displayed here, as well as all other roles that have been added to Micetro already.</p></li>
+<li><p>Click the <span class="guilabel">Create</span> button. The <em>Create role</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-new-role.png"><img alt="../../_images/admin-new-role.png" class="align-center" src="../../_images/admin-new-role.png" style="width: 60%;" /></a>
+<dl>
+<dt>Role name</dt><dd><p>Give the new role a name.</p>
+</dd>
+<dt>Description</dt><dd><p>Brief description for the role.</p>
+<blockquote>
+<div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using clear and descriptive names and descriptions makes access management easier.</p>
+</div>
+</div></blockquote>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>Switch over to the <span class="guilabel">Access</span> tab and set the permissions. (See <a class="reference internal" href="acl_permissions.html#acl-permissions"><span class="std std-ref">Permissions</span></a>.)</p></li>
+<li><p>When all necessary information and permissions are configured, click <span class="guilabel">Save</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default for new roles is <a class="reference internal" href="acl_general_roles.html#acl-general-roles"><span class="std std-ref">General roles</span></a>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See <a class="reference internal" href="../reference/access_control_example.html#new-role-example"><span class="std std-ref">Example role configuration: DHCP read-only</span></a> for an example process for creating a role anew.</p>
+</div>
+</section>
+<section id="editing-a-role">
+<h2>Editing a role<a class="headerlink" href="#editing-a-role" title="Link to this heading"></a></h2>
+<p>Through this function, you can edit the role’s name, description, permissions, and attached users/groups.</p>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration</span> and select <span class="guilabel">Roles</span> in the filtering sidebar.</p></li>
+<li><p>To select a single role, click on the role’s name. To select multiple roles, press/hold the Ctrl (Cmd on Mac) key and then click on each role’s name.</p></li>
+<li><p>From the ellipsis menu, select <span class="guilabel">Edit role properties</span> or use <span class="menuselection">Actions ‣ Edit role properties</span>.</p></li>
+<li><p>Make the desired changes to the role’s information. In the <span class="guilabel">Users</span> and <span class="guilabel">Groups</span> tabs you can remove users/groups from the role.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save the changes.</p></li>
+</ol>
+</section>
+<section id="deleting-a-role">
+<h2>Deleting a role<a class="headerlink" href="#deleting-a-role" title="Link to this heading"></a></h2>
+<p>Through this function, you remove a role from Micetro.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Built-in roles cannot be removed.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration</span> and select <span class="guilabel">Roles</span> in the filtering sidebar.</p></li>
+<li><p>To remove a single role, click on the role’s name. To remove multiple roles, press/hold the Ctrl (Cmd on Mac) key and then click on each role’s name.</p></li>
+<li><p>From the ellipsis menu, select <span class="guilabel">Remove role</span> or use <span class="menuselection">Actions ‣ Remove role</span>.</p></li>
+<li><p>To remove the role, click the <span class="guilabel">Yes</span> button. The role is removed.</p></li>
+</ol>
+</section>
+<section id="duplicating-a-role">
+<span id="duplicate-role"></span><h2>Duplicating a role<a class="headerlink" href="#duplicating-a-role" title="Link to this heading"></a></h2>
+<p>It is possible to duplicate roles and copy the original’s configured permissions, users, and groups to a new role.</p>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration ‣ Roles</span> in the web application.</p></li>
+<li><p>Use the <span class="guilabel">+ Create –&gt; From existing role</span> action from the top bar.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/duplicate-role.png"><img alt="../../_images/duplicate-role.png" class="align-center" src="../../_images/duplicate-role.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the role to duplicate, and name the new role.</p></li>
+<li><p>Select which properties (permissions, groups, roles) to copy.</p></li>
+<li><p>Click <span class="xref std std-ref">Create</span>.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See <a class="reference internal" href="../reference/access_control_example.html#duplicate-role-example"><span class="std std-ref">Example role configuration: DNS zone read-write</span></a> for an example process for creating a role from an existing template.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acl_general_roles.html">General roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acl_specific_roles.html">Specific roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acl_legacy_roles.html">Legacy roles</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="acl_permissions.html" class="btn btn-neutral float-left" title="Permissions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acl_general_roles.html" class="btn btn-neutral float-right" title="General roles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

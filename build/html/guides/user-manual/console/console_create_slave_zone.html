@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to create a Slave Zone in the Men&amp;Mice management console" name="description" />
+<meta content="DNS zones, DNS management, DNS console, Men&amp;Mice" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slave Zone (Management Console, deprecated) &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Slave Zone (Management Console, deprecated)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/guides/user-manual/console/console_create_slave_zone.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="slave-zone-management-console-deprecated">
+<span id="console-create-slave-zone"></span><h1>Slave Zone (Management Console, deprecated)<a class="headerlink" href="#slave-zone-management-console-deprecated" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="../../../_images/console-dns-zones-create-slave.png"><img alt="../../../_images/console-dns-zones-create-slave.png" class="align-center" src="../../../_images/console-dns-zones-create-slave.png" style="width: 50%;" /></a>
+<p>Through this function, you create a slave zone.</p>
+<ol class="arabic simple">
+<li><p>In the Object List, right-click on <span class="guilabel">DNS Zones</span> and, from the shortcut menu, select <span class="guilabel">New Slave Zone</span>. The <em>Create slave zone</em> dialog box displays.</p></li>
+<li><p>In the <strong>Zone name</strong> field, type the name for this slave zone.</p></li>
+<li><p>In the <strong>Servers</strong> list, click all the servers to which this slave applies.</p></li>
+<li><p>In the <strong>IP Addresses of master servers</strong>, click in the field, and type the IP Address of any master servers for this zone.</p></li>
+<li><p>When all selections/entries are made, click <span class="guilabel">Create</span>. The new slave zone is created and displays in the Detail View of the main window.</p></li>
+</ol>
+<section id="slave-server-assignments">
+<h2>Slave Server Assignments<a class="headerlink" href="#slave-server-assignments" title="Link to this heading"></a></h2>
+<p>Use the following procedure to assign a slave server to a particular zone so it will always work from the context of the zone.</p>
+<ol class="arabic simple">
+<li><p>In the Object Section, under <span class="guilabel">DNS Servers</span>, select the name server containing the zone to which you want to assign a slave server.</p></li>
+<li><p>In the Object List, right-click on the zone to which you want to assign the slave server.</p></li>
+<li><p>From the shortcut menu, select <span class="guilabel">Add slave server</span>.</p></li>
+<li><p>Choose the desired slave server from the submenu that displays. That zone now displays as a slave on the server that was specified.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/console-dns-zones-slave-assignments.png"><img alt="../../../_images/console-dns-zones-slave-assignments.png" class="align-center" src="../../../_images/console-dns-zones-slave-assignments.png" style="width: 50%;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

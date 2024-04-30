@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="DHCP Kea and Micetro - adding, configuring, properties" name="description" />
+<meta content="DHCP Kea, DHCP, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISC Kea DHCP &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ISC DHCP" href="admin_dhcp_isc.html" />
+    <link rel="prev" title="Microsoft DHCP" href="admin_dhcp_windows.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="webapp_server_management.html">Service Management</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#user-permissions-and-access-management">User Permissions and Access Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#supported-platforms">Supported Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#micetro-agents">Micetro Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#adding-a-service">Adding a Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#editing-services">Editing Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#other-service-actions">Other Service Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#service-states">Service States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#dns-services">DNS Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="webapp_server_management.html#dhcp-services">DHCP Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="admin_dhcp_windows.html">Microsoft DHCP</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ISC Kea DHCP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kea-control-agent">Kea Control Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-kea-to-micetro">Adding Kea to Micetro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-kea-high-availability">Enabling Kea High Availability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defining-options-on-kea-dhcp-servers">Defining Options on Kea DHCP Servers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-kea-dhcp-server-properties">Editing Kea DHCP Server Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#handling-external-changes-with-kea">Handling External Changes with Kea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolving-conflicts">Resolving Conflicts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#external-changes-and-kea-high-availability">External Changes and Kea High Availability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#managing-kea-client-classifications-with-micetro">Managing Kea Client Classifications with Micetro</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="admin_dhcp_isc.html">ISC DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="admin_dhcp_cisco.html">Cisco DHCP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="webapp_server_management.html">Service Management</a></li>
+      <li class="breadcrumb-item active">ISC Kea DHCP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/admin_dhcp_kea.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="isc-kea-dhcp">
+<span id="admin-dhcp-kea"></span><h1>ISC Kea DHCP<a class="headerlink" href="#isc-kea-dhcp" title="Link to this heading"></a></h1>
+<section id="kea-control-agent">
+<span id="id1"></span><h2>Kea Control Agent<a class="headerlink" href="#kea-control-agent" title="Link to this heading"></a></h2>
+<p>The Kea Control Agent serves as a crucial component, operating as a daemon that provides a RESTful control interface for seamless management of Kea servers. This agent can receive control commands via HTTP and can either forward them to the respective Kea servers or execute them on its own.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default port for the Kea Control Agent is <code class="docutils literal notranslate"><span class="pre">8000</span></code>.</p>
+</div>
+<p>The Kea Control Agent enables you to add Kea DHCP servers to Micetro without a DHCP agent running on every machine hosting Kea. A <strong>single</strong> DHCP agent, installed on a machine with access to the Kea service instances, is sufficient and will communicate with all Kea servers on behalf of Micetro.</p>
+</section>
+<section id="adding-kea-to-micetro">
+<span id="add-kea-hooks"></span><h2>Adding Kea to Micetro<a class="headerlink" href="#adding-kea-to-micetro" title="Link to this heading"></a></h2>
+<p>Because Micetro uses the Kea API to communicate with the DHCP server(s), it requires the Kea hook library <code class="docutils literal notranslate"><span class="pre">libdhcp_lease_cmds.so</span></code> in addition to the DHCP agent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On certain distributions such as RHEL, it’s essential to verify the installation of the kea-hooks package.</p>
+</div>
+<section id="configuring-the-kea-hook-library">
+<h3>Configuring the Kea Hook Library<a class="headerlink" href="#configuring-the-kea-hook-library" title="Link to this heading"></a></h3>
+<p>After installing the Kea hook library, open <code class="docutils literal notranslate"><span class="pre">kea-dhcp4.conf</span></code> and locate the <code class="docutils literal notranslate"><span class="pre">hooks-libraries</span></code> array. Add the hook to <code class="docutils literal notranslate"><span class="pre">libdhcp_lease_cmds.so</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;hooks-libraries&quot;</span><span class="p">:[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;library&quot;</span> <span class="p">:</span> <span class="s2">&quot;/lib64/kea/hooks/libdhcp_lease_cmds.so&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;parameters&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>The location of the <code class="docutils literal notranslate"><span class="pre">libdhcp_lease_cmds.so</span></code> library may vary depending on your distribution. To locate it, you can use the command <code class="docutils literal notranslate"><span class="pre">whereis</span> <span class="pre">libdhcp_lease_cmds.so</span></code>.</p>
+<p>After adding the library, restart Kea and the Kea Control Agent.</p>
+</section>
+<section id="enabling-premium-hooks">
+<h3>Enabling Premium Hooks<a class="headerlink" href="#enabling-premium-hooks" title="Link to this heading"></a></h3>
+<p>If you have access to Kea Premium Hooks from ISC, you can enable support for the <code class="docutils literal notranslate"><span class="pre">subnet_cmds</span></code> and <code class="docutils literal notranslate"><span class="pre">class_cmds</span></code> hooks. These two hooks allow for Create, Read, Update, and Delete (CRUD) functions via the API, facilitating management of scopes, pools, and client classes.</p>
+<p>To enable these hooks, you must add a preference attribute to your DHCP agent’s preference file:</p>
+<ol class="arabic simple">
+<li><p>Locate the <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code> file, which contains your DHCP agent’s preferences.</p></li>
+<li><p>Add the following preference attribute to the file: <code class="docutils literal notranslate"><span class="pre">&lt;UseKeaPremiumHooks</span> <span class="pre">value=&quot;1&quot;</span> <span class="pre">/&gt;</span></code>.</p></li>
+<li><p>If your Kea server operates in a failover relationship, ensure to enable the hooks on both the primary and secondary servers for synchronized functionality.</p></li>
+</ol>
+<p>Remember to restart your Kea services after making changes to the configuration for them to take effect.</p>
+</section>
+</section>
+<section id="enabling-kea-high-availability">
+<h2>Enabling Kea High Availability<a class="headerlink" href="#enabling-kea-high-availability" title="Link to this heading"></a></h2>
+<p>Kea DHCP servers need to be configured for high availability <strong>before</strong> the primary server is added to Micetro. If the high availability is set up properly, once added to the system, Micetro will recognize the failover nodes and the method (load balancing, hot standby, etc.) and configure the server objects accordingly.</p>
+<p>For more information, see <a class="reference internal" href="failover_management_kea.html#failover-management-kea"><span class="std std-ref">Managing Failover Relationships for Kea DHCP Services</span></a>.</p>
+</section>
+<section id="defining-options-on-kea-dhcp-servers">
+<h2>Defining Options on Kea DHCP Servers<a class="headerlink" href="#defining-options-on-kea-dhcp-servers" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Service Management</span> in the upper-left corner.</p></li>
+<li><p>Under <strong>DHCP Services</strong> in the filtering sidebar, select the applicable Kea DHCP server.</p></li>
+<li><p>Select <span class="guilabel">Manage DHCPv4 options</span> or <span class="guilabel">Manage DHCPv6 options</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>In the Manage DHCP Options dialog box, use the dropdown menu to select the option you want to define.</p>
+<a class="reference internal image-reference" href="../../_images/kea-dhcp-options.png"><img alt="../../_images/kea-dhcp-options.png" src="../../_images/kea-dhcp-options.png" style="width: 65%;" /></a>
+</li>
+<li><p>To delete an option, hover over its field, and then click the trash can icon next to it.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save the updated options.</p></li>
+</ol>
+<section id="defining-custom-dhcp-options">
+<h3>Defining Custom DHCP Options<a class="headerlink" href="#defining-custom-dhcp-options" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In the Manage DCHP Options dialog box, click the <span class="guilabel">Custom Options</span> tab.</p></li>
+<li><p>Select the appropriate <span class="guilabel">Vendor class</span> in the dropdown list.</p></li>
+<li><p>To add a new custom option, select <span class="guilabel">Add Custom Option</span>.</p></li>
+<li><p>Enter the desired ID. An error will show if that ID is not available or invalid.</p></li>
+<li><p>Enter a name.</p></li>
+<li><p>Select a type in the dropdown list. Select the <span class="guilabel">Array</span> checkbox if the option is an Array.</p></li>
+<li><p>Click <span class="guilabel">Add</span>, and then <span class="guilabel">Save</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once an option has been defined, you can set its value on the <span class="guilabel">Edit Options</span> tab.</p>
+</div>
+<section id="editing-an-existing-custom-option">
+<h4>Editing an Existing Custom Option<a class="headerlink" href="#editing-an-existing-custom-option" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>On the <span class="guilabel">Custom Options</span> tab in the Manage DHCP Options dialog box, select the relevant custom option.</p></li>
+<li><p>On the Row <span class="guilabel">…</span> menu, select <span class="guilabel">Edit</span>.</p></li>
+<li><p>Edit the ID, and then click <span class="guilabel">Save</span>.</p></li>
+</ol>
+</section>
+<section id="removing-an-existing-custom-option">
+<h4>Removing an Existing Custom Option<a class="headerlink" href="#removing-an-existing-custom-option" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>On the <span class="guilabel">Custom Options</span> tab in the Manage DHCP Options dialog box, select the relevant custom option.</p></li>
+<li><p>On the Row <span class="guilabel">…</span> menu, select <span class="guilabel">Remove</span>, and then <span class="guilabel">Yes</span> to confirm.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="editing-kea-dhcp-server-properties">
+<span id="kea-dhcp-properties"></span><h2>Editing Kea DHCP Server Properties<a class="headerlink" href="#editing-kea-dhcp-server-properties" title="Link to this heading"></a></h2>
+<p>You can edit the configuration of Kea DHCP servers.</p>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select the relevant Kea server.</p></li>
+<li><p>Select <span class="guilabel">Edit configuration</span> on either the <span class="guilabel">Action</span> or Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>In the Edit Configuration dialog box, make the desired changes, and then click <span class="guilabel">Save</span>.</p>
+<a class="reference internal image-reference" href="../../_images/kea-dhcp-config.png"><img alt="../../_images/kea-dhcp-config.png" src="../../_images/kea-dhcp-config.png" style="width: 75%;" /></a>
+<ul class="simple">
+<li><p><strong>Default/Maximum/Minimum Valid Lifetime</strong>: Specifies the time after which a lease will expire if not renewed.</p></li>
+<li><p><strong>Renew Timer</strong>: Specifies the time when a client will begin a renewal procedure.</p></li>
+<li><p><strong>Rebind Timer</strong>: Specifies the time when a client will begin a rebind procedure.</p></li>
+<li><p><strong>Next Server</strong>: Specifies the server address to use when clients want to obtain configuration from a TFTP server.</p></li>
+<li><p><strong>Echo Client ID</strong>: Specifies if the server should send back client-id options when responding to clients.</p></li>
+<li><p><strong>Match Client ID</strong>: Specifies if the server should ignore the client identifier during lease lookups and allocations for a particular subnet.</p></li>
+<li><p><strong>Decline Probation Period</strong>: Specifies a probation time that will be set on addresses that are in use by some unknown entity.</p></li>
+<li><p><strong>Control Socket Name</strong>: The path to the UNIX socket. Cannot be empty.</p></li>
+<li><p><strong>Server tag</strong>: An arbitrary string used to associate configuration elements with specific Kea server instances in a configuration database, allowing for shared or unique configurations among multiple servers.</p></li>
+</ul>
+</li>
+</ol>
+<section id="raw-configuration">
+<h3>Raw Configuration<a class="headerlink" href="#raw-configuration" title="Link to this heading"></a></h3>
+<p>The <strong>v4</strong> and <strong>v6</strong> properties tabs are the most commonly used properties for configuring Kea DHCP services.</p>
+<p>For more specialized configurations, you can define additional properties on the <strong>Raw Configuration</strong> tab. This allows you to edit configuration files directly on the server for both DHCPv4 and DHCPv6. Please note that when editing these files, there is minimal error handling, so caution should be taken when making changes and saving them.</p>
+</section>
+</section>
+<section id="handling-external-changes-with-kea">
+<h2>Handling External Changes with Kea<a class="headerlink" href="#handling-external-changes-with-kea" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should always edit the Kea DHCP server’s configuration file through Micetro to ensure instant the synchronization between Micetro and the Kea DHCP server is instant, where any modifications made are immediately updated in the database and reflected in the user interface.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All changes made to the configuration file through Micetro will automatically and instantly be propagated to the secondary/backup servers in a <a class="reference internal" href="dhcp_kea_ha.html#dhcp-kea-ha"><span class="std std-ref">Kea DHCP High Availability</span></a> setup.</p>
+</div>
+<p>Micetro uses the in-memory configuration of the Kea server. If external changes must be made to a Kea DHCP server’s configuration file, the changes to the configuration file aren’t processed by the server until forced to parse the file to its <em>in-memory</em> structure, so Micetro can be made aware of these changes.</p>
+<p>To make the Kea DHCP server process changes to its configuration file a call has to be made to either the <a class="reference internal" href="#kea-control-agent"><span class="std std-ref">Kea Control Agent</span></a> or the socket that Kea uses.</p>
+<p>An example of the call to the control-agent:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{ &quot;command&quot;: &quot;config-reload&quot;, &quot;service&quot;: [ &quot;dhcp4&quot; ] }&#39;</span><span class="w"> </span>localhost:8000
+</pre></div>
+</div>
+<p>If successful, the result looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">{</span> <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Configuration successful.&quot;</span> <span class="p">}</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>After the changes to the configuration file have been accepted and parsed into the Kea DHCP servers memory structure, you can display them in Micetro through the <span class="guilabel">Edit Configuration</span> action for the server.</p>
+</section>
+<section id="resolving-conflicts">
+<h2>Resolving Conflicts<a class="headerlink" href="#resolving-conflicts" title="Link to this heading"></a></h2>
+<p>Micetro synchronizes all data between the Kea DHCP servers and its database regularly. Setting the <code class="docutils literal notranslate"><span class="pre">DHCPSyncInterval</span></code> variable in Central’s <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code> overwrites the default value of 15 minutes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The values set for <code class="docutils literal notranslate"><span class="pre">DHCPSyncInterval</span></code> are in seconds.</p>
+</div>
+<p>Synchronization occurs based on the configuration to update the database and the user interface, but to prevent overwriting external changes before synchronization is complete, Micetro will check for conflicts with the Kea server’s in-memory configuration before writing the changes to the server.</p>
+<p>For example, if a scope with subnet 1.3.3.0/29 is manually added to the Kea DHCP servers configuration file, and <code class="docutils literal notranslate"><span class="pre">config-reload</span></code> is successfully called, the Kea server will have parsed the change and added the scope to its in-memory data structure. Synchronization with Micetro may not have been executed yet, and the externally added scope is not yet visible in the user interface. However, if another user would try to  add the same or otherwise conflicting scope through Micetro, they will receive a message stating “<em>A scope with address “1.3.3.0” already exists on the server</em>” as the configuration file is validated against the Kea DHCP servers in-memory config before each change is applied.</p>
+</section>
+<section id="external-changes-and-kea-high-availability">
+<h2>External Changes and Kea High Availability<a class="headerlink" href="#external-changes-and-kea-high-availability" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="dhcp_kea_ha.html#dhcp-kea-ha-external-changes"><span class="std std-ref">Making external changes to Kea servers in high availability</span></a>.</p>
+</section>
+<section id="managing-kea-client-classifications-with-micetro">
+<h2>Managing Kea Client Classifications with Micetro<a class="headerlink" href="#managing-kea-client-classifications-with-micetro" title="Link to this heading"></a></h2>
+<p>You can manage Kea Client Classifications through Micetro.</p>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Kea</span> under <span class="guilabel">DHCP Services</span> in the left sidebar.</p></li>
+<li><p>Select the relevant service, and then select <span class="guilabel">Manage client classes</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p>
+<a class="reference internal image-reference" href="../../_images/kea-client-classifications.png"><img alt="../../_images/kea-client-classifications.png" src="../../_images/kea-client-classifications.png" style="width: 70%;" /></a>
+<ul class="simple">
+<li><p>If you have any client classes already defined on your server, you can find them listed on the respective service type tab (DHCPv4/DHCPv6).</p></li>
+<li><p>From here you can create, edit existing, or remove client classes. Any of these actions will add an entry to the audit trail inside of Micetro which can be viewed by selecting the history action of a client class.</p></li>
+</ul>
+</li>
+</ol>
+<section id="creating-client-classes">
+<h3>Creating Client Classes<a class="headerlink" href="#creating-client-classes" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Click <span class="guilabel">Create</span>.</p></li>
+<li><p>In the Create Client Classification dialog box, enter the necessary information.</p>
+<a class="reference internal image-reference" href="../../_images/kea-client-classifications-create.png"><img alt="../../_images/kea-client-classifications-create.png" src="../../_images/kea-client-classifications-create.png" style="width: 70%;" /></a>
+<ul class="simple">
+<li><p>Enter a name and create an expression. Each DHCP packet will be evaluated against the expression to determine if it should belong to that client class. For information about how to create expressions, see the <a class="reference external" href="https://kea.readthedocs.io/en/kea-2.2.0/arm/classify.html#using-expressions-in-classification">Kea documentation</a>.</p></li>
+<li><p>Optionally you can add a description. The description is not added to the Kea config, only saved in Micetro. Defining a client class as global is a Micetro-specific feature and is explained in detail below.</p></li>
+<li><p>Select the <span class="guilabel">Global</span> checkbox if you want to create the client clss on all active Kea servers. Any modification or removal action on that client class will be replicated on all the active Kea servers.</p></li>
+</ul>
+</li>
+<li><p>Go to the <span class="guilabel">Options</span> tab to set DHCP options on the client classes.</p></li>
+<li><p>For DHCPv4 client classes, you can specify BOOTP parameters.</p></li>
+<li><p>When you are finished, click <span class="guilabel">Create</span>.</p></li>
+</ol>
+</section>
+<section id="assigning-client-classes">
+<h3>Assigning Client Classes<a class="headerlink" href="#assigning-client-classes" title="Link to this heading"></a></h3>
+<p>You can limit the access to specific scopes and address pools by assigning a client class to them. Then only packets that belong to the assigned client class will have access.</p>
+<p><strong>To assign a client class to a scope:</strong></p>
+<ol class="arabic">
+<li><p>Go to the <strong>IPAM</strong> page, and select a Kea scope.</p></li>
+<li><p>Select <span class="guilabel">Assign client classification</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>In the Manage DHCP Pools dialog box, select the pool.</p></li>
+<li><p>On the Row <span class="guilabel">…</span> menu, select <span class="guilabel">Assign client classification</span>.</p>
+<a class="reference internal image-reference" href="../../_images/kea-client-classifications-assign.png"><img alt="../../_images/kea-client-classifications-assign.png" src="../../_images/kea-client-classifications-assign.png" style="width: 70%;" /></a>
+</li>
+</ol>
+<p><strong>To assign a client class to a pool:</strong></p>
+<ol class="arabic simple">
+<li><p>Open a Kea scope.</p></li>
+<li><p>Select <span class="guilabel">Manage DHCP pools</span> on either the <span class="guilabel">Action</span> menu or the Row <span class="guilabel">…</span>.</p></li>
+<li><p>In the dropdown list, select the client class to assign to the scope. To unassign a client class, select <span class="guilabel">Unassigned</span>.</p></li>
+</ol>
+<p>Assigning client classes to scopes/pools shows up in the history of the respective ranges. You can filter ranges based on their assigned client classes with the property <cite>clientClass</cite>.</p>
+<a class="reference internal image-reference" href="../../_images/kea-client-classifications-filter.png"><img alt="../../_images/kea-client-classifications-filter.png" src="../../_images/kea-client-classifications-filter.png" style="width: 70%;" /></a>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin_dhcp_windows.html" class="btn btn-neutral float-left" title="Microsoft DHCP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin_dhcp_isc.html" class="btn btn-neutral float-right" title="ISC DHCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

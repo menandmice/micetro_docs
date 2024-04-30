@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Access control for users in Micetro by Men&amp;Mice 10.1" name="description" />
+<meta content="Micetro access model" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Users &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Groups" href="acl_groups.html" />
+    <link rel="prev" title="Effective access" href="acl_effective_access.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="access_control.html">Access control</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#groups-users-and-roles">Groups, users, and roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#the-administrator-user">The <code class="docutils literal notranslate"><span class="pre">administrator</span></code> user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#new-objects">New objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="access_control.html#access-control-management">Access control management</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="acl_permissions.html">Permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_permissions.html#block-permission">Block permission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_roles.html">Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_effective_access.html">Effective access</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Users</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-user-accounts">Adding User Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-user-accounts">Editing User Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-user-accounts">Removing User Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-inspector">User Inspector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="acl_groups.html">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_object_access.html">Object access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="access_control.html">Access control</a></li>
+      <li class="breadcrumb-item active">Users</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/acl_users.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="users">
+<span id="acl-users"></span><h1>Users<a class="headerlink" href="#users" title="Link to this heading"></a></h1>
+<p>Users represent the individual people working with Micetro.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to manage users, you have to be logged in as a user who has user management privileges. (Is attached to a role with the <code class="docutils literal notranslate"><span class="pre">access_adminUser</span></code>/”<em>Administer users/groups/roles</em>” permission enabled.)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At least one user, the <code class="docutils literal notranslate"><span class="pre">administrator</span></code>, is always configured for Micetro. See <a class="reference internal" href="access_control.html#administrator"><span class="std std-ref">The administrator user</span></a>.</p>
+</div>
+<section id="adding-user-accounts">
+<h2>Adding User Accounts<a class="headerlink" href="#adding-user-accounts" title="Link to this heading"></a></h2>
+<p>Through this function, you add new users who can then be assigned to groups.</p>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration</span> and select <span class="guilabel">Users</span> in the filtering sidebar. The default administrator account displays here, as well as any other users you have already added.</p></li>
+<li><p>Click the <span class="guilabel">Create</span> button. The <em>Create user</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-add-user.png"><img alt="../../_images/admin-add-user.png" class="align-center" src="../../_images/admin-add-user.png" style="width: 70%;" /></a>
+<dl>
+<dt>Name</dt><dd><p>Type the <strong>username</strong> that you want to as assign to this person.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Once you have created the user name, it is not possible to change it.</p>
+</div>
+</dd>
+<dt>Full Name and Description</dt><dd><p>(Optional) Type the user’s first and last name and a description of their duties (i.e., job title, department, etc.), respectively.</p>
+</dd>
+<dt>Authentication type</dt><dd><p>Click the drop-down list and specify whether the user’s login will be authenticated by Micetro or by an external authentication service (such as existing Active Directory account on the network). See <a class="reference internal" href="../implementation/external_auth.html#external-auth"><span class="std std-ref">External Authentication</span></a>.</p>
+</dd>
+<dt>Email address</dt><dd><p>The user’s email address. Used for sending notifications such as scheduled reports, subnet monitoring updates, etc. Disabled with external authentication.</p>
+</dd>
+<dt>Password/Confirm Password</dt><dd><p>If the <strong>Authentication type</strong> selected is <em>Men&amp;Mice internal</em>, you need to provide a password for the user in the Password field. Passwords must be at least four characters in length and no longer than 20 characters. Passwords can contain any combination of letters and numbers, but cannot include spaces or special characters. In the Confirm Password field, re-enter the password exactly as you did in the Password field above. Disabled with external authentication.</p>
+</dd>
+</dl>
+<p>In the <span class="guilabel">Groups</span> and <span class="guilabel">Roles</span> tabs, select the user group(s) and role(s) to which you want to assign this user. Each user can be assigned to none or to multiple groups and roles.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not created your groups, you can always come back and edit the user accounts anytime and change the group assignments.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>When all selections/entries are made, click <span class="guilabel">Create</span>. The new user is added to the <em>Users</em> list and can now use Micetro.</p></li>
+</ol>
+</section>
+<section id="editing-user-accounts">
+<h2>Editing User Accounts<a class="headerlink" href="#editing-user-accounts" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration</span> and select <span class="guilabel">Users</span> in the filtering sidebar.</p></li>
+<li><p>To select a single user, click on the user’s name. To select multiple users, press/hold the Ctrl (Cmd on Mac) key and then click on each user name.</p></li>
+<li><p>From the ellipsis menu, select <span class="guilabel">Edit user properties</span> or use <span class="menuselection">Actions ‣ Edit user properties</span>.</p></li>
+<li><p>Make the desired changes to the user’s information.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save the changes.</p></li>
+</ol>
+</section>
+<section id="removing-user-accounts">
+<h2>Removing User Accounts<a class="headerlink" href="#removing-user-accounts" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Navigate to <span class="menuselection">Admin ‣ Configuration</span> and select <span class="guilabel">Users</span> in the filtering sidebar.</p></li>
+<li><p>To remove a single user, click on the user’s name. To remove multiple users, press/hold the Ctrl (Cmd on Mac) key and then click on each user name.</p></li>
+<li><p>From the ellipsis menu, select <span class="guilabel">Remove user</span> or use <span class="menuselection">Actions ‣ Remove user</span>.</p></li>
+<li><p>To remove the user, click the <span class="guilabel">Yes</span> button. The user is removed.</p></li>
+</ol>
+</section>
+<section id="user-inspector">
+<h2>User Inspector<a class="headerlink" href="#user-inspector" title="Link to this heading"></a></h2>
+<p>Selecting an user displays a list of information in the Inspector, including the user name, authentication type, roles, etc. Only users with user administrative privileges can see this information.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="acl_effective_access.html" class="btn btn-neutral float-left" title="Effective access" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acl_groups.html" class="btn btn-neutral float-right" title="Groups" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

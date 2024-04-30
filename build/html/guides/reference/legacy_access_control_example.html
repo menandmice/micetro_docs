@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[LEGACY] Role based access example (pre-10.1) &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">[LEGACY] Role based access example (pre-10.1)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/legacy_access_control_example.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="legacy-role-based-access-example-pre-10-1">
+<span id="legacy-access-control-example"></span><h1>[LEGACY] Role based access example (pre-10.1)<a class="headerlink" href="#legacy-role-based-access-example-pre-10-1" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Micetro allows granular access control to objects. Starting with version 6.7 of Micetro/Men&amp;Mice Suite beside <em>Users</em> and <em>Groups</em> also <strong>Roles</strong> can be configured.</p>
+<p>An advantage of Roles is the ability to add groups to roles, which makes the user/group/role concept more flexible. This article will provide some info on roles and a step by step list on how to setup a read only role for DNS/DHCP and IP address ranges.</p>
+</section>
+<section id="built-in-roles">
+<h2>Built-in roles<a class="headerlink" href="#built-in-roles" title="Link to this heading"></a></h2>
+<p>By default Micetro has 5 roles built-in:</p>
+<ul class="simple">
+<li><p>Administrators (built-in)</p></li>
+<li><p>DNS Administrators (built-in)</p></li>
+<li><p>DHCP Administrators (built-in)</p></li>
+<li><p>IPAM Administrators (built-in)</p></li>
+<li><p>User Administrators (built-in)</p></li>
+</ul>
+<p>All roles are Administrator roles (full access) and all objects like DNS server, DNS zone, IP address range/scope have these roles assigned by default.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The access settings for the built-in roles can’t be modified.</p>
+</div>
+<p>If you would add a user or group for instance to the Administrators (built-in) role, the user or group members would get automatically administrative access to the objects in Micetro. Excluded is the “License Management”, which can only be accessed by the account with the name “administrator”.</p>
+<p>For details on the built-in roles please see <a class="reference internal" href="../admin-manual/access_control.html#access-control"><span class="std std-ref">Access control</span></a>.</p>
+</section>
+<section id="user-defined-roles">
+<h2>User defined roles<a class="headerlink" href="#user-defined-roles" title="Link to this heading"></a></h2>
+<p>Beside the built-in roles Micetro administrators have the option to create new roles. These user defined roles can then be used to specify granular access on the objects in Micetro. By adding group members to the role (e.g. Micetro users or AD groups) -  the members get the role defined access granted.</p>
+<section id="example-read-only-role-setup-and-access-configuration">
+<h3>Example read/only role setup and access configuration<a class="headerlink" href="#example-read-only-role-setup-and-access-configuration" title="Link to this heading"></a></h3>
+<p>As an example the following steps aim to illustrate how easy it is to setup a r/o role in Micetro</p>
+<ol class="arabic simple">
+<li><p>Login as “administrator” to the Management Console.</p></li>
+<li><p>Navigate to <span class="menuselection">Tools ‣ User Management</span> and select the <strong>Roles</strong> tab.</p></li>
+<li><p>Press the <span class="guilabel">Add</span> button and specify the role name, e.g. <code class="docutils literal notranslate"><span class="pre">ReadOnlyRole</span></code> and confirm with <span class="guilabel">OK</span>.</p></li>
+</ol>
+<p><strong>Add a user account or an AD group to the *ReadOnlyRole*:</strong></p>
+<p>In the same dialog (<span class="menuselection">Tools ‣ User Management</span>) you can configure Users or Groups that can then be assigned as role members.</p>
+<p><strong>Example 1:</strong> <em>Add an AD Group to the role</em></p>
+<ol class="arabic simple">
+<li><p>If you want to add an AD group just click on the <span class="guilabel">Groups</span> tab.</p></li>
+<li><p>Press the <span class="guilabel">Add</span> button and specify the AD group (which must already exist in AD). The group name must be in the style: <code class="docutils literal notranslate"><span class="pre">domain\groupname</span></code>.</p></li>
+<li><p>Then tick the checkbox <strong>ReadOnlyRole</strong> in the <em>Roles</em> section and mark also the checkbox <strong>Active Diretory Integrated</strong> which is located underneath the Roles section box.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t mark the checkbox for Active Directory integration the group would be created as Micetro group (members of an AD group are automatically added to Micetro when the AD group members login the first time).</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Confirm with <span class="guilabel">OK</span>. As mentioned it’s not necessary to add single AD user accounts.</p></li>
+</ol>
+<p><strong>Example 2:</strong> <em>Add a Micetro user account to the role</em></p>
+<ol class="arabic simple">
+<li><p>In the <strong>User Management</strong> dialog click on the <span class="guilabel">Users</span> tab.</p></li>
+<li><p>Press the <span class="guilabel">Add</span> button and specify the user name, e.g. <code class="docutils literal notranslate"><span class="pre">readonlyuser</span></code> and select for the <em>Authentication</em> “Men&amp;Mice Internal”.</p></li>
+<li><p>Specify a password for the account.</p></li>
+<li><p>In the <strong>Roles</strong> section box tick the checkbox for the <strong>ReadOnlyRole</strong> and confirm with <span class="guilabel">OK</span>.</p></li>
+</ol>
+<p>Next, define <strong>how members of the role can access Micetro</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After step 4 the users still can not view or access objects in Micetro (e.g. zones or ranges).</p>
+</div>
+<ol class="arabic simple">
+<li><p>Open the <span class="menuselection">Tools ‣ Global Access</span> dialog.</p></li>
+<li><p>Press the <span class="guilabel">Add</span> button and add the <code class="docutils literal notranslate"><span class="pre">ReadOnlyRole</span></code></p></li>
+<li><p>Specify the access bits (i.e. set the Allow checkbox) for the following entries:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Access</span> <span class="n">IPAM</span> <span class="n">module</span>
+<span class="n">Access</span> <span class="n">DNS</span> <span class="n">module</span>
+<span class="n">Access</span> <span class="n">DHCP</span> <span class="n">module</span>
+<span class="n">Access</span> <span class="n">to</span> <span class="n">Management</span> <span class="n">Console</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Confirm with <span class="guilabel">OK</span>.</p></li>
+</ol>
+<p>This means that members of the group can access the three modules and they are allowed to log in to Micetro only by the Management Console.</p>
+<p>In the next steps the access to the objects, like servers, zones and subnets are configured.</p>
+<dl>
+<dt>DNS server access config</dt><dd><ol class="arabic simple">
+<li><p>Right-click on the DNS server that hosts the zone you want to configure to be r/o accessible by the role members.</p></li>
+<li><p>Select <strong>Access</strong> and press the <span class="guilabel">Add</span> button and add the ReadOnlyRole to the list.</p></li>
+<li><p>Allow only the <code class="docutils literal notranslate"><span class="pre">List</span> <span class="pre">(or</span> <span class="pre">view)</span> <span class="pre">DNS</span> <span class="pre">server</span></code> access bit and confirm with <span class="guilabel">OK</span>.</p></li>
+</ol>
+</dd>
+<dt>DNS zone access config</dt><dd><ol class="arabic simple">
+<li><p>Click on the DNS zone (or mark multiple) and select <strong>Access</strong> and add the ReadOnlyRole.</p></li>
+<li><p>Give again only <code class="docutils literal notranslate"><span class="pre">List</span> <span class="pre">(or</span> <span class="pre">view)</span> <span class="pre">zone</span></code> rights and confirm with <span class="guilabel">OK</span>.</p></li>
+</ol>
+</dd>
+<dt>IP address range access config</dt><dd><ol class="arabic simple">
+<li><p>Click on <strong>IP Address Ranges</strong> and then click on the subnet/scope you want to allow to be visible to the members of the ReadOnlyRole. If you want to allow all subnets then you could click on the 0.0.0.0/0 or ::/0 base net and select Access.</p></li>
+<li><p>As before press the <span class="guilabel">Add</span> button and add the ReadOnlyRole to the object.</p></li>
+<li><p>Allow the <code class="docutils literal notranslate"><span class="pre">List</span> <span class="pre">(or</span> <span class="pre">view)</span> <span class="pre">range</span></code> access bit for the role and confirm the dialog with <span class="guilabel">OK</span>. If you clicked on the 0.0.0.0/0 or ::/0 you might want to configure inheritance by pressing the button <span class="guilabel">Apply access inheritance in child ranges`</span> in the <em>Access</em> dialog. This would then configure all subnets of 0.0.0.0/0 or ::/0 to inherit the settings of the base network.</p></li>
+</ol>
+<p>If scopes were in the list of selected subnets you want also to configure the access to the DHCP servers (otherwise the scopes would not show up for the role members).</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Please right-click on the DHCP server(s) and select <strong>Access</strong> and add the ReadOnlyRole and give the <code class="docutils literal notranslate"><span class="pre">List</span> <span class="pre">(or</span> <span class="pre">view)</span> <span class="pre">DHCP</span> <span class="pre">server</span></code> access bit and confirm with <span class="guilabel">OK</span>.</p></li>
+</ol>
+</div></blockquote>
+</dd>
+</dl>
+<p>After these steps the members of the group or the user are allowed to login by the Men&amp;Mice Management console.</p>
+<p>To grant read/write rights just create a new specific role and specify additional access bit on the objects, e.g. additionally to the List (or view) access bit also give on zones “Edit other records” and on an IP address range “Use IP addresses in DNS”. This would then allow the role members to edit records in the zone which are not in the zones apex (have not the same name as the zone itself, like the SOA record or NS records) and
+it would restrict A/AAAA records to the allowed subnets where the Use IP addresses in DNS is specified.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

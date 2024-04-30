@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Installing the Men&amp;Mice DHCP Server Controller for Micetro by Men&amp;Mice" name="description" />
+<meta content="DHCP, DHCP Server Controller, ISC DHCP, Kea, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men&amp;Mice DHCP Server Controllers &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Agent-free management of DNS/DHCP servers" href="agent_free_dns-dhcp.html" />
+    <link rel="prev" title="Generic DNS Server Controller" href="generic_dns_controller.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_console.html">Management Console</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="install_controllers.html">Server controllers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="install_dns_controllers.html">Micetro DNS Server Controllers</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Men&amp;Mice DHCP Server Controllers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent_free_dns-dhcp.html">Agent-free management of DNS/DHCP servers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Web Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="install_controllers.html">Server controllers</a></li>
+      <li class="breadcrumb-item active">Men&amp;Mice DHCP Server Controllers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/install_dhcp_controllers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="men-mice-dhcp-server-controllers">
+<span id="install-dhcp-controllers"></span><h1>Men&amp;Mice DHCP Server Controllers<a class="headerlink" href="#men-mice-dhcp-server-controllers" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a list of compatible DHCP servers, see <a class="reference internal" href="adding_dhcp.html#adding-dhcp"><span class="std std-ref">Add DHCP Servers</span></a>.</p>
+</div>
+<p>Men&amp;Mice DHCP Server Controller is the DHCP server agent. It sits on each DHCP server machine (or in case of environments using MS DHCP or ISC Kea servers, on any machine in the network) and manages the DHCP service on your behalf.</p>
+<p>Installing Men&amp;Mice DHCP Server Controller is typically quite straightforward, with far fewer considerations than Men&amp;Mice DNS Server Controller.</p>
+<p>By default, when executed the controller installer tries to figure out the installed service (e.g. BIND) automatically and will try to install it without further user input.</p>
+<p>In case it can’t install the service it will print out hints and further information.</p>
+<p>If the machine has multiple services installed, like ISC DHCP and ISC BIND DNS you want to specify explicitly the Men&amp;Mice Controllers that should be installed.</p>
+<p>To get the list of available controllers/parameters just run the installer script with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> parameter:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>archive-name
+./install<span class="w"> </span>--help
+Men<span class="p">&amp;</span>Mice<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span>installer.
+--help:<span class="w">  </span>Print<span class="w"> </span>help.
+--quiet:<span class="w">  </span>Suppress<span class="w"> </span>output<span class="w"> </span>during<span class="w"> </span>install.
+--auto:<span class="w">  </span>Automatically<span class="w"> </span>determine<span class="w"> </span>what<span class="w"> </span>controllers<span class="w"> </span>to<span class="w"> </span>install.<span class="w"> </span>Default<span class="w"> </span><span class="k">if</span><span class="w"> </span>no<span class="w"> </span>other<span class="w"> </span>option<span class="w"> </span>is<span class="w"> </span>given.
+--bind-dns-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DNS<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>BIND.
+--unbound-dns-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DNS<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>Unbound.
+--generic-dns-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>Generic<span class="w"> </span>DNS<span class="w"> </span>server<span class="w"> </span>controller.
+--isc-dhcp-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DHCP<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>ISC<span class="w"> </span>dhcpd.
+--kea-dhcp-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DHCP<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>Kea<span class="w"> </span>dhcp4.
+--update-controller:<span class="w">  </span>Install<span class="w"> </span>update<span class="w"> </span>controller.<span class="w"> </span>Always<span class="w"> </span>installed,<span class="w"> </span><span class="k">if</span><span class="w"> </span>another<span class="w"> </span>Men<span class="p">&amp;</span>Mice<span class="w"> </span>service<span class="w"> </span>is<span class="w"> </span>installed.
+</pre></div>
+</div>
+</div></blockquote>
+<p>Multiple controllers can be specified. If you have for instance both ISC Kea and ISC DHCP runnning on the machine just run the installer as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./install<span class="w"> </span>--kea-dhcp-controller<span class="w"> </span>--isc-dhcp-controller
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have only a single service like BIND or Unbound installed we recommend to run the installer without parameter. It will then use the –auto parameter and figure out the service automatically.</p>
+</div>
+<p>Quiet/unattended installation is possible with the <code class="docutils literal notranslate"><span class="pre">--quiet</span></code> parameter (no output at all):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./install<span class="w"> </span>--isc-dhcp-controller<span class="w"> </span>--quiet
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Men&amp;Mice Update Controller always gets automatically added to the list when another M&amp;M service is installed, e.g. in the above listed example the –update-controller gets added automatically.</p>
+</div>
+<p>If you run into issues with the new installer, the old interactive Perl based installer is still present in the same archive as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deprecated_installer</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
+<p>To execute the deprecated installer for the Men&amp;Mice Controllers please run it as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>archive-name
+./deprecated_installer
+</pre></div>
+</div>
+<p>The installer will ask a series of questions. Be prepared to answer them, as indicated below for each component.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Kea DHCP4 Controller can not be installed by the deprecated installer.</p>
+</div>
+<section id="men-mice-central-running-on-linux">
+<h2>Men&amp;Mice Central running on Linux<a class="headerlink" href="#men-mice-central-running-on-linux" title="Link to this heading"></a></h2>
+<p>Here are the questions asked by the installer that pertain to Men&amp;Mice DHCP Server Controller:</p>
+<ul class="simple">
+<li><p>Do you want to install the Men&amp;Mice DHCP Server Controller?</p></li>
+<li><p>Where is the DHCP server configuration file?</p></li>
+<li><p>Where is the DHCP server lease file?</p></li>
+<li><p>Where do you want the Men&amp;Mice DHCP Server Controller to keep its configuration files?</p></li>
+<li><p>Enter the user and group names under which you want to run the Men&amp;Mice DHCP Server Controller. This must be the user which is running dhcpd.</p></li>
+<li><p>Where do you want to install the Men&amp;Mice Server Controller binaries?</p></li>
+</ul>
+<section id="managing-cisco-ios-with-dhcp-support">
+<h3>Managing Cisco IOS with DHCP support<a class="headerlink" href="#managing-cisco-ios-with-dhcp-support" title="Link to this heading"></a></h3>
+<p>Men&amp;Mice DHCP Server Controller can also manage Cisco IOS servers with DHCP support. There is no need to install any software on the Cisco device, but it is necessary to create a user account on the device that has the ability to telnet or SSH in. You will be asked for the username and password when adding the server.</p>
+<p>When adding a Cisco IOS server to Men&amp;Mice Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Men&amp;Mice Central will look for a copy of the DHCP Server Controller on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Server Controller that is on the same network segment as the Cisco IOS server.</p>
+<p>Extract the Men&amp;Mice Controller install package (as root):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>-xzvf<span class="w"> </span>mmsuite-controllers-10.0.linux.x64.tgz
+</pre></div>
+</div>
+<p>In the newly created <code class="docutils literal notranslate"><span class="pre">mmsuite-controllers-10.0.linux.x64</span></code> directory run the installer script to install the Men&amp;Mice Controller (as root):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>mmsuite-controllers-10.1.linux.x64<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./install
+</pre></div>
+</div>
+<p>Ensure the <code class="docutils literal notranslate"><span class="pre">named-checkconf</span></code> file is readable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>a+s<span class="w"> </span>/usr/sbin/named-checkconf
+</pre></div>
+</div>
+<p>Verify the Controller application is running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>status<span class="w"> </span>mmremote
+</pre></div>
+</div>
+</section>
+</section>
+<section id="men-mice-central-running-on-windows">
+<h2>Men&amp;Mice Central running on Windows<a class="headerlink" href="#men-mice-central-running-on-windows" title="Link to this heading"></a></h2>
+<section id="running-men-mice-dhcp-server-controller-under-a-privileged-user-account-server-type-microsoft-agent-free">
+<h3>Running Men&amp;Mice DHCP Server Controller under a privileged user account / Server type: Microsoft Agent-Free<a class="headerlink" href="#running-men-mice-dhcp-server-controller-under-a-privileged-user-account-server-type-microsoft-agent-free" title="Link to this heading"></a></h3>
+<p>Normally, Men&amp;Mice DHCP Server Controller is installed on one host in an Active Directory forest, or one copy per site. That installation can then manage all MS DHCP servers in the forest, or in the site, using Microsoft’s own DHCP management API. In order for this to work, the service needs to run as a user that is a member of the Active Directory DHCP Administrators group.</p>
+<p>Please note that for the management of the DHCP failover in Windows Server 2012 R2 the service account must also be a member of the local Administrators group of the DHCP servers in order to be able to fetch/manage the failover configuration.</p>
+<p>To configure Men&amp;Mice DHCP Server Controller to access DHCP servers on remote computers, do the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Start the Windows “Services” program and open the properties dialog box for Men&amp;Mice DHCP Server Controller.</p></li>
+<li><p>Click the Log On tab. The Local System account radio button is most likely selected.</p></li>
+<li><p>Click the This account radio button and enter the name and password of a Windows user that is a member of either the Administrators group or the DHCP Administrators group.</p></li>
+<li><p>Close the dialog box and restart the Men&amp;Mice DHCP Server Controller service.</p></li>
+</ol>
+</div></blockquote>
+<p>If Men&amp;Mice DHCP Server Controller is run as a local system service (the default), then it will only be able to manage the MS DHCP service on the same host.</p>
+</section>
+<section id="where-to-install-men-mice-dhcp-server-controller">
+<h3>Where to install Men&amp;Mice DHCP Server Controller<a class="headerlink" href="#where-to-install-men-mice-dhcp-server-controller" title="Link to this heading"></a></h3>
+<p>If Men&amp;Mice Central is installed on a Windows host, then one option is to install Men&amp;Mice DHCP Server Controller on the same host. If this is not done, then the system will need to be told where to find the DHCP Server Controller when adding a new DHCP server to the system. This will be presented as connecting via proxy.</p>
+<p>However, there are other considerations when deciding where to install Men&amp;Mice DHCP Server Controller.</p>
+<ul class="simple">
+<li><p>The Micetro communication protocol used to control a DHCP server is more efficient than the Microsoft protocol. This means that if a DHCP server is separated from Men&amp;Mice Central by a slow network link, it is more efficient to install a copy of the Men&amp;Mice DHCP Server Controller in the same local network (the same site, typically) as the DHCP server.</p></li>
+<li><p>Starting in Men&amp;Mice Suite 6.0, Men&amp;Mice DHCP Server Controller can be used to gather lease history data for a DHCP server. However, this requires that the Men&amp;Mice DHCP Server Controller be installed on the DHCP server machine itself. If this is done for all DHCP servers, then there is never any need to run the DHCP Server Controller as a privileged user - the DHCP Server Controller that is only used to control the DHCP service on the same machine as itself can run as a local system service.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Managing Cisco IOS with DHCP Support<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Men&amp;Mice DHCP Server Controller can also manage Cisco IOS servers with DHCP support. There is no need to install any software on the Cisco device, but it is necessary to create a user account on the device that has the ability to telnet or SSH in. You will be asked for the username and password when adding the server.</p>
+<p>When adding a Cisco IOS server to Men&amp;Mice Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Men&amp;Mice Central will look for a copy of the DHCP Server Controller on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Server Controller that is on the same network segment as the Cisco IOS server.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="generic_dns_controller.html" class="btn btn-neutral float-left" title="Generic DNS Server Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="agent_free_dns-dhcp.html" class="btn btn-neutral float-right" title="Agent-free management of DNS/DHCP servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

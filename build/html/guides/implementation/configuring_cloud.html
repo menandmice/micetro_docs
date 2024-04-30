@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to set up and configure cloud integration in Micetro by Men&amp;Mice" name="description" />
+<meta content="multicloud, AWS cloud integration, DNS controller" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configure Cloud Integration &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Cloud Integration" href="using_cloud.html" />
+    <link rel="prev" title="Overview" href="cloud_integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_console.html">Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_controllers.html">Server controllers</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cloud.html">Cloud integration</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cloud_integration.html">Overview</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Configure Cloud Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="using_cloud.html">Using Cloud Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Web Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="cloud.html">Cloud integration</a></li>
+      <li class="breadcrumb-item active">Configure Cloud Integration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/configuring_cloud.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configure-cloud-integration">
+<span id="configuring-cloud"></span><h1>Configure Cloud Integration<a class="headerlink" href="#configure-cloud-integration" title="Link to this heading"></a></h1>
+<section id="set-up-and-configuration">
+<h2>Set up and configuration<a class="headerlink" href="#set-up-and-configuration" title="Link to this heading"></a></h2>
+<section id="before-adding-a-cloud-service-instance">
+<h3>Before adding a cloud service instance<a class="headerlink" href="#before-adding-a-cloud-service-instance" title="Link to this heading"></a></h3>
+<p>Micetro communicates with the cloud services through Men&amp;Mice Central (IPAM) and the Men&amp;Mice DNS controller (DNS).</p>
+<p>Before continuing, make sure:</p>
+<ul class="simple">
+<li><p>The DNS controller is installed and set up on the machine running Men&amp;Mice Central. See <a class="reference internal" href="install_controllers.html#install-controllers"><span class="std std-ref">Server controllers</span></a>.</p></li>
+<li><p>The machine running central can connect to the specific cloud instance on port 443/TCP. See <a class="reference internal" href="firewall_ports.html#firewall-ports"><span class="std std-ref">Networking requirements</span></a>.</p></li>
+</ul>
+<p>If you want to add multiple AWS cloud accounts using single credentials refer to <a class="reference internal" href="../admin-manual/aws_multi_account.html#aws-multi-account"><span class="std std-ref">Configuring an AWS multi-account setup</span></a>.</p>
+</section>
+</section>
+<section id="adding-a-cloud-service">
+<h2>Adding a cloud service<a class="headerlink" href="#adding-a-cloud-service" title="Link to this heading"></a></h2>
+<p>The following are the steps that are needed to start using a cloud service in Micetro.</p>
+<ol class="arabic simple">
+<li><p><span class="menuselection">File ‣ New ‣ Cloud Service</span>. Access the Cloud service wizard by right clicking <span class="guilabel">Cloud Services</span> in the <em>Object Browser</em> of the Management Console and selecting <span class="guilabel">New Cloud Service</span> or highlight <span class="guilabel">Cloud Services</span> in the <em>Object Browser</em> and clicking <span class="guilabel">+</span> sign in the manager window.</p></li>
+<li><p>The following dialog is shown:</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/configure-cloud-service.png"><img alt="../../_images/configure-cloud-service.png" class="align-center" src="../../_images/configure-cloud-service.png" style="width: 50%;" /></a>
+<p>Proceed with one of the Cloud providers shown below and click <span class="guilabel">Next</span>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#connect-akamai"><span class="std std-ref">Akamai Fast DNS</span></a></p></li>
+<li><p><a class="reference internal" href="#connect-azure"><span class="std std-ref">Azure DNS</span></a></p></li>
+<li><p><a class="reference internal" href="#connect-aws"><span class="std std-ref">Amazon Web Services</span></a></p></li>
+<li><p><a class="reference internal" href="#connect-openstack"><span class="std std-ref">Openstack</span></a></p></li>
+<li><p><a class="reference internal" href="#connect-ns1"><span class="std std-ref">NS1</span></a></p></li>
+<li><p><a class="reference internal" href="#connect-dyn"><span class="std std-ref">Dyn DNS</span></a></p></li>
+</ul>
+<section id="akamai-fast-dns">
+<span id="connect-akamai"></span><h3>Akamai Fast DNS<a class="headerlink" href="#akamai-fast-dns" title="Link to this heading"></a></h3>
+<p>Fill in the following fields required to connect to Akamai Fast DNS</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>The name of the cloud service in Micetro</p></td>
+</tr>
+<tr class="row-even"><td><p>Client Secret</p></td>
+<td rowspan="4"><p>The credentials needed for Micetro to connect to</p>
+<p>the cloud instance</p>
+<p><strong>Obtaining Access Credentials</strong>
+Please refer to the following on how to create
+API Access Credentials for use by Micetro:
+<a class="reference external" href="https://developer.akamai.com/introduction/Prov_Creds.html">https://developer.akamai.com/introduction/Prov_Creds.html</a></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Host</p></td>
+</tr>
+<tr class="row-even"><td><p>Access token</p></td>
+</tr>
+<tr class="row-odd"><td><p>Client token</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Server time setting constrictions
+Akamai OPEN APIs are time sensitive! Ensure that the system your client runs on is synchronized with a Stratum 2 or better time source. (source: <a class="reference external" href="https://developer.akamai.com/introduction/Client_Auth.html">https://developer.akamai.com/introduction/Client_Auth.html</a>)</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>If the time on the server that the DNS Remote is running on deviates enough from Coordinated Universal Time the authentication will fail and it will not be possible to access/update zone through Micetro.</p>
+</div>
+<p>Go to <a class="reference internal" href="#finish-cloud-config"><span class="std std-ref">Finishing the configuration</span></a>.</p>
+</section>
+<section id="azure-dns">
+<span id="connect-azure"></span><h3>Azure DNS<a class="headerlink" href="#azure-dns" title="Link to this heading"></a></h3>
+<p>Fill in the following fields required to connect to Azure:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>The name of the cloud service in Micetro</p></td>
+</tr>
+<tr class="row-even"><td><p>Subscription ID</p></td>
+<td rowspan="4"><p>The credentials needed for Micetro to connect to
+the cloud instance</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tenant ID</p></td>
+</tr>
+<tr class="row-even"><td><p>Client ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>Client secret</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="reference internal" href="configure_azure_dns.html#configure-azure-dns"><span class="std std-ref">Configure Azure DNS</span></a>.</p>
+</div>
+<p>Go to <a class="reference internal" href="#finish-cloud-config"><span class="std std-ref">Finishing the configuration</span></a>.</p>
+</section>
+<section id="amazon-web-services">
+<span id="connect-aws"></span><h3>Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Link to this heading"></a></h3>
+<p>Fill in the following fields required to connect to AWS:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>The name of the cloud service in Micetro</p></td>
+</tr>
+<tr class="row-even"><td><p>Access Key ID</p></td>
+<td rowspan="2"><p>The credentials needed for Micetro to connect to
+the cloud instance</p>
+<p><strong>Obtaining Access Credentials</strong>
+Please refer to the following on how to create API Access
+Credentials for use by Micetro:
+<a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html">https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html</a></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Secret Access Key</p></td>
+</tr>
+</tbody>
+</table>
+<p>Read more: <a class="reference internal" href="../admin-manual/aws_multi_account.html#aws-multi-account"><span class="std std-ref">Configuring an AWS multi-account setup</span></a>.</p>
+<p>Go to <a class="reference internal" href="#finish-cloud-config"><span class="std std-ref">Finishing the configuration</span></a>.</p>
+</section>
+<section id="openstack">
+<span id="connect-openstack"></span><h3>Openstack<a class="headerlink" href="#openstack" title="Link to this heading"></a></h3>
+<p>Fill in the following fields required to connect to OpenStack:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>The name of the cloud service in Micetro</p></td>
+</tr>
+<tr class="row-even"><td><p>Server Node</p></td>
+<td rowspan="4"><p>The credentials needed for Micetro to connect to
+the cloud instance</p></td>
+</tr>
+<tr class="row-odd"><td><p>User Name</p></td>
+</tr>
+<tr class="row-even"><td><p>Password</p></td>
+</tr>
+<tr class="row-odd"><td><p>Require HTTPS</p></td>
+</tr>
+</tbody>
+</table>
+<p>Go to <a class="reference internal" href="#finish-cloud-config"><span class="std std-ref">Finishing the configuration</span></a>.</p>
+</section>
+<section id="ns1">
+<span id="connect-ns1"></span><h3>NS1<a class="headerlink" href="#ns1" title="Link to this heading"></a></h3>
+<p>Fill in the following fields required to connect to NS1:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>The name of the cloud service in Micetro</p></td>
+</tr>
+<tr class="row-even"><td><p>API Key</p></td>
+<td><p>The credentials needed for Micetro to connect to
+the cloud instance</p>
+<p><strong>Obtaining Access Credentials</strong>
+Please refer to the following on how to create API Access
+Credentials for use by Micetro:
+<a class="reference external" href="https://ns1.com/knowledgebase/creating-and-managing-api-keys">https://ns1.com/knowledgebase/creating-and-managing-api-keys</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Go to <a class="reference internal" href="#finish-cloud-config"><span class="std std-ref">Finishing the configuration</span></a>.</p>
+</section>
+<section id="dyn-dns">
+<span id="connect-dyn"></span><h3>Dyn DNS<a class="headerlink" href="#dyn-dns" title="Link to this heading"></a></h3>
+<p>Fill in the following fields required to connect to Dyn:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>The name of the cloud service in Micetro</p></td>
+</tr>
+<tr class="row-even"><td><p>Customer Name</p></td>
+<td rowspan="3"><p>The credentials needed for Micetro to connect to
+the cloud instance</p></td>
+</tr>
+<tr class="row-odd"><td><p>User Name</p></td>
+</tr>
+<tr class="row-even"><td><p>Password</p></td>
+</tr>
+</tbody>
+</table>
+<p>Go to <a class="reference internal" href="#finish-cloud-config"><span class="std std-ref">Finishing the configuration</span></a>.</p>
+</section>
+<section id="finishing-the-configuration">
+<span id="finish-cloud-config"></span><h3>Finishing the configuration<a class="headerlink" href="#finishing-the-configuration" title="Link to this heading"></a></h3>
+<p>After finishing going through the wizard, the DNS service (if applicable) and any subnets defined (if applicable) will be shown in the DNS servers and IP Address Ranges, respectively.</p>
+</section>
+</section>
+<section id="editing-a-cloud-service-instance">
+<h2>Editing a cloud service instance<a class="headerlink" href="#editing-a-cloud-service-instance" title="Link to this heading"></a></h2>
+<p>To edit the properties for a cloud instance, right click on a cloud instance in the <em>Object Browser</em> and select <span class="guilabel">Properties</span>.</p>
+</section>
+<section id="removing-a-cloud-service">
+<h2>Removing a cloud service<a class="headerlink" href="#removing-a-cloud-service" title="Link to this heading"></a></h2>
+<p>To remove a cloud service, right click on the specific cloud service in the <em>Object Browser</em> and select <span class="guilabel">Delete</span>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By removing the cloud service, the associated DNS service and the corresponding zones will be removed. Additionally, any subnets and cloud networks will also be removed.</p>
+</div>
+<p>Click <span class="guilabel">Yes</span> to remove the cloud service.</p>
+</section>
+<section id="removing-a-cloud-network">
+<h2>Removing a cloud network<a class="headerlink" href="#removing-a-cloud-network" title="Link to this heading"></a></h2>
+<p>To remove a cloud network, right click on the specific cloud network in the object browser or in the manager window and select <span class="guilabel">Delete</span>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cloud_integration.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="using_cloud.html" class="btn btn-neutral float-right" title="Using Cloud Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

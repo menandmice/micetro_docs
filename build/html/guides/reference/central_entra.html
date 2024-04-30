@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to configure Central for multifactor authentication" name="description" />
+<meta content="central service, microsoft entra id, okta, multifactor authentication" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring Central Server for Multifactor Authentication &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuring Central Server for Multifactor Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/central_entra.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuring-central-server-for-multifactor-authentication">
+<span id="central-entra"></span><h1>Configuring Central Server for Multifactor Authentication<a class="headerlink" href="#configuring-central-server-for-multifactor-authentication" title="Link to this heading"></a></h1>
+<p>This topic describes how to configure the Central server for multifactor authentication with Microsoft Entra ID and Okta.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Install Python and dependent libraries and packages on the Central server.</p>
+<p>When installing Python, ensure the following:</p>
+<ul>
+<li><p>Python is available to “all user” (Windows).</p></li>
+<li><p>Use a Men&amp;Mice tested version of Python (see the dependency checklist).</p></li>
+<li><p>Python is installed in the “Default” environment</p></li>
+<li><p>Add the following XML-tag to the Preferences.cfg file to set the path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PythonExecutablePath</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Python39</span><span class="se">\\</span><span class="s2">python.exe&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Path for Preferences.cfg:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg</p></li>
+<li><p>Linux - /var/mmsuite/mmcentral/preferences.cfg</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A Central restart is required after this statement is added to the Preferences.cfg file.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Create a new directory called “extensions”</strong> in the Central data directory.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows - C:\ProgramData\Men and Mice\Central\extensions</p></li>
+<li><p>Linux -  /var/mmsuite/mmcentral/extensions</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Download and unzip the Micetro authentication script and signature file</strong> from Github into the newly created extensions directory.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip.zip">mm_auth_cb.py.zip</a>  - This Python script handles the authentication callback from the external provider. The same script serves both providers.</p></li>
+<li><p><a class="reference external" href="https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip">mm_auth_cb.signature.zip</a></p></li>
+</ul>
+<p>For security reasons the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature in the same folder.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Manually create a json configuration file int he Micetro data directory</strong>.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp.</p></li>
+</ol>
+<p>The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured.</p>
+<p>Micetro data directory:</p>
+<blockquote>
+<div><p>Windows:  C:\ProgramData\Menandmice\Central\ext_auth_conf.json</p>
+<p>Linux:  /var/mmsuite/mmcentral/ext_auth_conf.json</p>
+</div></blockquote>
+<p>Add the contents below with credentials obtained from your Identity Provider.</p>
+<p>Sample config:</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Microsoft</span> <span class="n">Entra</span> <span class="n">ID</span><span class="p">:</span>
+
+     <span class="p">{</span>
+
+        <span class="s2">&quot;microsoft&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+           <span class="s2">&quot;tenant_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Company_tenant_id (must match Azure)&quot;</span><span class="p">,</span>
+
+           <span class="s2">&quot;client_id&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+           <span class="s2">&quot;client_credential&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+           <span class="s2">&quot;redirect_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/mmws/auth_cb/microsoft (must match what is configured in Azure)&quot;</span>
+
+        <span class="p">}</span>
+
+     <span class="p">}</span>
+
+
+<span class="n">Okta</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+
+   <span class="s2">&quot;okta&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+      <span class="s2">&quot;domain&quot;</span><span class="p">:</span> <span class="s2">&quot;Company_domain.okta.com&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;server_id&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxx|&#39;default&#39;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">can</span> <span class="n">be</span> <span class="n">skipped</span><span class="o">/</span><span class="n">empty</span><span class="p">)</span>
+
+      <span class="s2">&quot;client_id&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;client_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;redirect_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/mmws/auth_cb/okta (must match what is configured in Okta)&quot;</span>
+
+   <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will cache the credentials in the DB (no need to restart Central).  Once Authentication through the Service Providers is established, the json configuration file can be deleted.</p>
+<p><em>About the credential caching</em></p>
+<p>The contents of the configuration file <cite>ext_auth_conf.json</cite> are cached in the database, therefore the file can be deleted after external authentication is up and running. The cached version is updated automatically based on the file timestamp.</p>
+<p><em>Clear the cached configuration</em></p>
+<p>If for some reason you want to clear the cached configuration file in the database.</p>
+<ol class="arabic">
+<li><p>Empty the .json configuration file.</p></li>
+<li><p>Go to <span class="menuselection">Tools-&gt;System Settings-&gt;Advanced</span> and ensure that you have the “Default web form” enabled..</p></li>
+<li><p>Test with your browser to ensure you can login locally.</p></li>
+<li><p>Disable the external authentication in System Settings.</p></li>
+<li><p><strong>Enable external authentication in the Micetro system settings</strong>
+In the Management Console, go to <span class="menuselection">Tools ‣ System Settings ‣ Advanced</span> and search for “external auth”.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/external-authentication-console.png"><img alt="../../_images/external-authentication-console.png" class="align-center" src="../../_images/external-authentication-console.png" style="width: 60%;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<p>It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and value of 1.</p>
+<p>This will enable the SSO login in the web.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="With the Ansible setup for Micetro by Men&amp;Mice you can manage a Micetro installation through Ansible. The Ansible modules and plugins connect to the Micetro API and perform all needed actions." name="description" />
+<meta content="Ansible setup, Micetro, Micetro installation, Men&amp;Mice" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ansible &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Installation" href="ansible_install.html" />
+    <link rel="prev" title="SOAP API for Micetro" href="soap_api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="automation.html">Automation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rest_api.html">REST API for Micetro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soap_api.html">SOAP API for Micetro</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ansible</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html#api-user">API user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_install.html#ansible-configuration-example">Ansible configuration example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_credentials.html">Credential matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_modules.html">Ansible modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_freeip.html">mm_freeip plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_inventory.html">mm_inventory plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_mm_ipinfo.html">mm_ipinfo plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbooks.html">Example playbooks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="terraform.html">Terraform</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="automation.html">Automation</a></li>
+      <li class="breadcrumb-item active">Ansible</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/ansible.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ansible">
+<span id="id1"></span><h1>Ansible<a class="headerlink" href="#ansible" title="Link to this heading"></a></h1>
+<p>With the Ansible setup for Micetro by Men&amp;Mice you can manage a Micetro installation through Ansible. The Ansible modules and plugins connect to the Micetro API and perform all needed actions.</p>
+<p>See <a class="reference internal" href="ansible_install.html#ansible-config-example"><span class="std std-ref">Ansible configuration example</span></a> for an example configuration that you can use with the Ansible modules and plugins for Micetro.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ansible_install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_install.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_install.html#ansible-modules">Ansible modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_install.html#api-user">API user</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_install.html#api-user-for-micetro">API user for Micetro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_install.html#api-provider-in-ansible">API Provider in Ansible</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_install.html#ansible-configuration-example">Ansible configuration example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_credentials.html">Credential matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_modules.html">Ansible modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_user.html">mm_user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_group.html">mm_group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_role.html">mm_role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_props.html">mm_props</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_claimip.html">mm_claimip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_ipprops.html">mm_ipprops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_dhcp.html">mm_dhcp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_zone.html">mm_zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_dnsrecord.html">mm_dnsrecord</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_mm_freeip.html">mm_freeip plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_freeip.html#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_freeip.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_freeip.html#example-usage">Example usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_mm_inventory.html">mm_inventory plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_inventory.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_mm_ipinfo.html">mm_ipinfo plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_ipinfo.html#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_ipinfo.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_mm_ipinfo.html#example-usage">Example usage:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_playbooks.html">Example playbooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-user">play-user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-group">play-group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-role">play-role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-props">play-props</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-claimip">play-claimip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-dhcp">play-dhcp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-zone">play-zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-dnsrecord">play-dnsrecord</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-freeip">play-freeip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-ipinfo">play-ipinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_playbooks.html#play-it-all">play_it_all</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="soap_api.html" class="btn btn-neutral float-left" title="SOAP API for Micetro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ansible_install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

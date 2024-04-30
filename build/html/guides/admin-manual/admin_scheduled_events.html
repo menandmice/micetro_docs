@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="In Micetro scheduled scripts allow the administrator to configure the system to run on schedule" name="description" />
+<meta content="Micetro scheduled scripts, Micetro administrator, event hooks, scheduled events" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scheduled Events &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Script Name Validation Policy" href="admin_script_name_validation_policy.html" />
+    <link rel="prev" title="Change Events" href="admin_change_events.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="admin_subnet_monitoring_events.html">Subnet Monitoring Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_change_events.html">Change Events</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Scheduled Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_script_name_validation_policy.html">Script Name Validation Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="admin_event_hooks.html">Event Hooks</a></li>
+      <li class="breadcrumb-item active">Scheduled Events</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/admin_scheduled_events.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scheduled-events">
+<span id="admin-scheduled-events"></span><h1>Scheduled Events<a class="headerlink" href="#scheduled-events" title="Link to this heading"></a></h1>
+<p>The administrator can configure the system to run scripts in a schedule, such as collecting a list of all users that performed at least one operation that day at midnight, etc.</p>
+<p>To configure scheduled events:</p>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Configuration</span> in the upper-left corner.</p></li>
+<li><p>Select <span class="guilabel">Event Hooks</span> in the filtering sidebar. In the <strong>Scheduled events</strong> section you can see any already defined events.</p></li>
+<li><p>You can click the Actions (<strong>…</strong>) button to edit or delete an event. There is also an option to run the script immediately.</p></li>
+<li><p>To add a new script, click <span class="guilabel">Add</span>. The Add Schedule Event dialog box opens.</p></li>
+<li><p>Enter/select the necessary information, and then click <span class="guilabel">Add</span>.</p>
+<ul class="simple">
+<li><p><strong>Enabled</strong>: Select the checkbox to enable the scheduling process for the script. Likewise, at any time if you wish to disable the script, return to this dialog box and clear this option.</p></li>
+<li><p><strong>Script name</strong>: Select the script to use. It is assumed that the script is located in the scripts folder under Central’s data folder.</p></li>
+</ul>
+<blockquote>
+<div><p><em>Example 1</em>: Running a script named mytest.py.</p>
+<blockquote>
+<div><p>To run a script named mytest.py that is located in the script folder, select <code class="docutils literal notranslate"><span class="pre">mytest.py</span></code> from the dropdown.</p>
+</div></blockquote>
+<p><em>Example 2</em>: Running an executable named checkdata.exe.</p>
+<blockquote>
+<div><p>To run an executable named checkdata.exe that is located in scripts folder, select <code class="docutils literal notranslate"><span class="pre">checkdata.exe</span></code> from the dropdown.</p>
+<p>It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access Micetro without having to include a username and password in the script itself.</p>
+<p>To enable this feature, create a user named ScriptRunner. This user must use the Men&amp;Mice Internal authentication method. When this user has been created, you only have to check the checkbox below the script dropdown field.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method only works if the script scheduler invokes the script. When running the script, Micetro uses a temporary password that changes every time the script runs. For example, you could start a Python script and pass in the username and password through the first and second arguments with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script.py</span> <span class="pre">ScriptRunner</span> <span class="pre">xxx</span></code></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Run on</strong>: Either enter the date and time the script should run, or use the datetime picker to select the date and time.</p></li>
+<li><p><strong>Repeat every</strong>: If this script should repeat at a desired frequency, select the checkbox. Then, in the next two fields, select the interval, for example, 1 week, 1 month, etc.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin_change_events.html" class="btn btn-neutral float-left" title="Change Events" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin_script_name_validation_policy.html" class="btn btn-neutral float-right" title="Script Name Validation Policy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

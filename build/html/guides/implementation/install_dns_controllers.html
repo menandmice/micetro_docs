@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Installing the Men&amp;Mice DNS Server Controller for Micetro by Men&amp;Mice" name="description" />
+<meta content="DNS, DNS Server Controller, Micetro, BIND, Unbound" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micetro DNS Server Controllers &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Generic DNS Server Controller" href="generic_dns_controller.html" />
+    <link rel="prev" title="Server controllers" href="install_controllers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_console.html">Management Console</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="install_controllers.html">Server controllers</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Micetro DNS Server Controllers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install_dhcp_controllers.html">Men&amp;Mice DHCP Server Controllers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent_free_dns-dhcp.html">Agent-free management of DNS/DHCP servers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Web Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="install_controllers.html">Server controllers</a></li>
+      <li class="breadcrumb-item active">Micetro DNS Server Controllers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/install_dns_controllers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="micetro-dns-server-controllers">
+<span id="install-dns-controllers"></span><h1>Micetro DNS Server Controllers<a class="headerlink" href="#micetro-dns-server-controllers" title="Link to this heading"></a></h1>
+<p>Men&amp;Mice DNS Server Controller is the DNS server agent. It sits on each DNS server machine and manages the DNS service on your behalf.</p>
+<p>By default, when executed the controller installer tries to figure out the installed service (e.g. BIND) automatically and will try to install it without further user input.</p>
+<p>In case it can’t install the service it will print out hints and further information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For DNS servers running BIND, the DNS Server Controllers need to be ran as the same user as BIND. (By default: <code class="docutils literal notranslate"><span class="pre">named</span></code>.)</p>
+<p>If BIND is running as a different user, or files are updated, make sure that the <code class="docutils literal notranslate"><span class="pre">mmremote</span></code> service is ran as the same user and has sufficient access to files and directories.</p>
+</div>
+<p>If the machine has multiple services installed, like ISC DHCP and ISC BIND DNS you want to specify explicitly the Men&amp;Mice Controllers that should be installed.</p>
+<p>To get the list of available controllers/parameters just run the installer script with the –help parameter:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>archive-name
+./install<span class="w"> </span>--help
+
+Men<span class="p">&amp;</span>Mice<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span>installer.
+--help:<span class="w">  </span>Print<span class="w"> </span>help.
+--quiet:<span class="w">  </span>Suppress<span class="w"> </span>output<span class="w"> </span>during<span class="w"> </span>install.
+--auto:<span class="w">  </span>Automatically<span class="w"> </span>determine<span class="w"> </span>what<span class="w"> </span>controllers<span class="w"> </span>to<span class="w"> </span>install.<span class="w"> </span>Default<span class="w"> </span><span class="k">if</span><span class="w"> </span>no<span class="w"> </span>other<span class="w"> </span>option<span class="w"> </span>is<span class="w"> </span>given.
+--bind-dns-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DNS<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>BIND.
+--unbound-dns-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DNS<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>Unbound.
+--generic-dns-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>Generic<span class="w"> </span>DNS<span class="w"> </span>server<span class="w"> </span>controller.
+--isc-dhcp-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DHCP<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>ISC<span class="w"> </span>dhcpd.
+--kea-dhcp-controller:<span class="w">  </span>Install<span class="w"> </span>a<span class="w"> </span>DHCP<span class="w"> </span>server<span class="w"> </span>controller<span class="w"> </span><span class="k">for</span><span class="w"> </span>Kea<span class="w"> </span>dhcp4.
+--update-controller:<span class="w">  </span>Install<span class="w"> </span>update<span class="w"> </span>controller.<span class="w"> </span>Always<span class="w"> </span>installed,<span class="w"> </span><span class="k">if</span><span class="w"> </span>another<span class="w"> </span>Men<span class="p">&amp;</span>Mice<span class="w"> </span>service<span class="w"> </span>is<span class="w"> </span>installed.
+</pre></div>
+</div>
+</div></blockquote>
+<p>Multiple controllers can be specified. If you want to, for example, have both ISC BIND and the generic DNS controller running on the machine just run the installer as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./install<span class="w"> </span>--generic-dns-controller<span class="w"> </span>--bind-dns-controller<span class="w"> </span>--isc-dhcp-controller
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have only a single service like BIND or Unbound installed we recommend to run the installer without parameter. It will then use the <code class="docutils literal notranslate"><span class="pre">--auto</span></code> parameter and figure out the service automatically.</p>
+</div>
+<p>Quiet/unattended installation is possible with the <code class="docutils literal notranslate"><span class="pre">--quiet</span></code> parameter (no output at all):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./install<span class="w"> </span>--generic-dns-controller<span class="w"> </span>--bind-dns-controller<span class="w"> </span>--quiet
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Men&amp;Mice Update Controller always gets automatically added to the list when another Men&amp;Mice service is installed, e.g. in the above listed example the <code class="docutils literal notranslate"><span class="pre">--update-controller</span></code> gets added automatically.</p>
+</div>
+<p>If you plan to use the Generic DNS Controller, please see <a class="reference internal" href="generic_dns_controller.html#generic-dns-controller"><span class="std std-ref">Generic DNS Server Controller</span></a>.</p>
+<p>If you run into issues with the new installer, the old interactive Perl based installer is still present in the same archive as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deprecated_installer</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
+<p>To execute the deprecated installer for the Men&amp;Mice Server Controllers please run it as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>archive-name
+./deprecated_installer
+</pre></div>
+</div>
+<p>The installer will ask a series of questions. Be prepared to answer them, as described for each component.</p>
+<section id="micetro-controllers-running-on-linux">
+<h2>Micetro Controllers running on Linux<a class="headerlink" href="#micetro-controllers-running-on-linux" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before installing Micetro DNS Server Controller, examine your named data and operating environment, plus the init script and/or settings file used to start named. Be aware that the installer will rearrange named.conf and your named data directory. Know how to answer the following questions:</p>
+<ul class="simple">
+<li><p>Is there a starting configuration file, such as /etc/named.conf?
+* If not, you will need to create one.
+* If there is, is it valid? It must load without errors.</p></li>
+<li><p>Does named.conf contain the necessary statements? See the notes below.</p></li>
+<li><p>Does the named init script change the ownership of the named data directory? If so, this will cause problems and should be fixed. (This is aimed at users of some Red Hat Linux versions, and derivatives. Look for the <code class="docutils literal notranslate"><span class="pre">ENABLE_ZONE_WRITE</span></code> setting.)</p></li>
+<li><p>Does named run in a chroot environment? If so, look for the following problems, and fix or work around any encountered. (Check the installation walkthroughs in the knowledge base for solutions.)
+* Does the named init script copy anything into the chroot jail when starting the service? (This is aimed at users of SUSE Linux.)
+* When the installer rearranges the data directory listed in named.conf, will that cause problems? (This again is aimed at users of SUSE Linux.)</p></li>
+<li><p>What user account owns the named process? Men&amp;Mice DNS Server Controller must typically run as the same user. However, it is sometimes possible to use group membership instead.</p></li>
+</ul>
+</div>
+<p>Extract the Men&amp;Mice Controller install package (as root):</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>-xzvf<span class="w"> </span>mmsuite-controllers-10.0.linux.x64.tgz
+</pre></div>
+</div>
+</div></blockquote>
+<p>In the newly created <code class="docutils literal notranslate"><span class="pre">mmsuite-controllers-10.0.linux.x64</span></code> directory run the installer script to install the Men&amp;Mice Controller (as root):</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>mmsuite-controllers-10.1.linux.x64<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./install
+</pre></div>
+</div>
+</div></blockquote>
+<section id="installer-questions">
+<h3>Installer Questions<a class="headerlink" href="#installer-questions" title="Link to this heading"></a></h3>
+<p>Here are the questions asked by the installer that pertain to Men&amp;Mice DNS Server Controller:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Do you want to install the Men&amp;Mice DNS Server Controller?</p></li>
+<li><p>Are you running named in a chroot() environment?</p></li>
+<li><p>What is the chroot() directory?</p></li>
+<li><p>Where is the BIND configuration file?</p></li>
+<li><p>Would you like the DNS Server Controller to run name-checkconf to verify changes when editing advanced server and zone options?</p></li>
+<li><p>Where is named-checkconf?</p></li>
+<li><p>The installer needs to rearrange the files in &lt;directory&gt; and restart the name server. A backup will be created. Is this OK?</p></li>
+<li><p>Enter the user and group names under which you want to run the Men&amp;Mice DNS Server Controller. This must be the user which is running named.</p></li>
+<li><p>Where would you like to install the Men&amp;Mice external static zone handling utilities?</p></li>
+<li><p>Where do you want to install the Men&amp;Mice Server Controller binaries?</p></li>
+<li><p>BIND needs to be restarted. Would you like to restart it now?</p></li>
+</ul>
+</div></blockquote>
+<p>Ensure the <code class="docutils literal notranslate"><span class="pre">named-checkconf</span></code> file is readable:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>a+s<span class="w"> </span>/usr/sbin/named-checkconf
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="required-named-conf-statements">
+<h3>Required named.conf Statements<a class="headerlink" href="#required-named-conf-statements" title="Link to this heading"></a></h3>
+<p>Men&amp;Mice DNS Server Controller requires that named.conf (including any files listed in include statements in named.conf) have certain settings. The following are required:</p>
+<dl>
+<dt>directory</dt><dd><p>The directory substatement of the options statement must be present and must point to a directory that the installer can replace. Specifically, it may not refer to <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">/etc</span></code>, the root of a chroot jail, or any partition mount point. If you need to change or add the directory statement, you may then have to move files around or change the paths used elsewhere in your <code class="docutils literal notranslate"><span class="pre">named.conf</span></code> (or its included files).</p>
+</dd>
+<dt>key</dt><dd><p>For BIND, there must be a key defined, so that Men&amp;Mice DNS Server Controller can control named using <code class="docutils literal notranslate"><span class="pre">rndc</span></code> commands. It is common for there to be a key in a default file such as <code class="docutils literal notranslate"><span class="pre">rndc.key</span></code>, which is almost always found in the same location as <code class="docutils literal notranslate"><span class="pre">named.conf</span></code>; however, Men&amp;Mice DNS Server Controller requires that this key be defined <em>explicitly</em> in <code class="docutils literal notranslate"><span class="pre">named.conf</span></code>. If there is a file named <code class="docutils literal notranslate"><span class="pre">rndc.key</span></code>, its contents can simply be copied directly into <code class="docutils literal notranslate"><span class="pre">named.conf</span></code>.</p>
+<p>To generate a key, the following command usually works, though you may have to specify a path to the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rndc-confgen<span class="w"> </span>&gt;<span class="w"> </span>/etc/rndc.conf
+</pre></div>
+</div>
+<p>This creates the file <code class="docutils literal notranslate"><span class="pre">rndc.conf</span></code> in the default directory (usually <code class="docutils literal notranslate"><span class="pre">/etc</span></code>, which may or may not be where you want it). This file contains a <em>complete</em> <code class="docutils literal notranslate"><span class="pre">rndc</span></code> configuration for local use, as well as key and controls statements, in comments, that can be copied into <code class="docutils literal notranslate"><span class="pre">named.conf</span></code> (after removing the comment marks).</p>
+</dd>
+<dt>controls</dt><dd><p>Men&amp;Mice DNS Server Controller uses a controls statement for BIND. There must be a controls statement with an <code class="docutils literal notranslate"><span class="pre">inet</span></code> substatement that references an explicitly defined key (see above); the <code class="docutils literal notranslate"><span class="pre">inet</span></code> statement must allow connections from the loopback address, 127.0.0.1. If there is no controls statement defined, the installer will remind you to create one manually.</p>
+</dd>
+</dl>
+</section>
+<section id="changes-in-named-conf">
+<h3>Changes in named.conf<a class="headerlink" href="#changes-in-named-conf" title="Link to this heading"></a></h3>
+<p>Installing Men&amp;Mice DNS Server Controller rearranges your named configuration data, including rewriting <code class="docutils literal notranslate"><span class="pre">named.conf</span></code> and rearranging the data directory. The new configuration is functionally equivalent to the old, except the logging statement is either added or changed to add some new channels.</p>
+<section id="common-files">
+<h4>Common Files<a class="headerlink" href="#common-files" title="Link to this heading"></a></h4>
+<p>The file layout is a little different with or without BIND views. Here are the parts in common:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>File(s) or directory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Men&amp;Mice DNS Server Controller daemon</p></td>
+<td><p>mmremoted, usually in /usr/sbin or /usr/local/sbin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Men&amp;Mice external static zone handling utilities</p></td>
+<td><p>mmedit and mmlock, usually in /usr/bin or /usr/local/bin</p></td>
+</tr>
+<tr class="row-even"><td><p>Data directory for Men&amp;Mice DNS Server Controller</p></td>
+<td><p>Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Server Controller was installed</p></td>
+</tr>
+<tr class="row-odd"><td><p>Backup of original data directory</p></td>
+<td><p>Same as above, with ‘.bak’ appended to the path</p></td>
+</tr>
+<tr class="row-even"><td><p>New starting configuration file</p></td>
+<td><p>Usually either /etc/named.conf or /etc/namedb/named.conf; possibly located within a chroot jail</p></td>
+</tr>
+<tr class="row-odd"><td><p>Backup of original starting configuration file</p></td>
+<td><p>Same as above, with ‘.bak’ appended to the path</p></td>
+</tr>
+<tr class="row-even"><td><p>logging statement from named.conf</p></td>
+<td><p>conf/logging, relative to the data directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>key and acl statements from named.conf</p></td>
+<td><p>conf/user_before, relative to the data directory</p></td>
+</tr>
+<tr class="row-even"><td><p>options statement from named.conf</p></td>
+<td><p>conf/options, relative to the data directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>controls, server, and trusted-keys statements from named.conf; also, if present and if not using views, the root hints zone statement</p></td>
+<td><p>conf/user_after, relative to the data directory</p></td>
+</tr>
+<tr class="row-even"><td><p>Preferences file</p></td>
+<td><p>mmsuite/preferences.cfg, located in the data directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>init script, the shell script that can be used to control the service; used by init during system startup</p></td>
+<td><p>/etc/init.d/mmremote</p></td>
+</tr>
+<tr class="row-even"><td><p>settings file used by the init script (Ubuntu Linux only)</p></td>
+<td><p>/etc/default/mmremote</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Without Views</strong></p>
+<p>If views are not defined, the following files are created inside the data directory:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Without BIND views</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>File(s) or directory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>List of include statements, one for each zone statement file</p></td>
+<td><p>conf/zones</p></td>
+</tr>
+<tr class="row-odd"><td><p>Directory of zone statement files</p></td>
+<td><p>conf/zoneopt</p></td>
+</tr>
+<tr class="row-even"><td><p>A sample zone statement file, for the zone ‘localhost’.</p></td>
+<td><p>conf/zoneopt/localhost.opt</p></td>
+</tr>
+<tr class="row-odd"><td><p>Directory of primary master zone files</p></td>
+<td><p>hosts/masters</p></td>
+</tr>
+<tr class="row-even"><td><p>Directory of slave zone files</p></td>
+<td><p>hosts/slaves</p></td>
+</tr>
+<tr class="row-odd"><td><p>A sample zone file, for the primary master zone ‘localhost.’</p></td>
+<td><p>hosts/masters/localhost-hosts</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>With views</strong></p>
+<p>If views are defined, the following files are created inside the data directory:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">With BIND views</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>File(s) or directory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>View statements, not including zone statements within each view</p></td>
+<td><p>conf/zones</p></td>
+</tr>
+<tr class="row-odd"><td><p>List of include statements for a particular view, one for each zone statement file</p></td>
+<td><p>conf/zones_viewname</p></td>
+</tr>
+<tr class="row-even"><td><p>Directory of zone statement files for a particular view</p></td>
+<td><p>conf/zo_viewname</p></td>
+</tr>
+<tr class="row-odd"><td><p>A sample zone statement file, for the zone ‘localhost’. in the view ‘internal’</p></td>
+<td><p>conf/zo_internal/localhost.opt</p></td>
+</tr>
+<tr class="row-even"><td><p>Directory of primary master zone files for a particular view</p></td>
+<td><p>hosts/view_viewname/masters</p></td>
+</tr>
+<tr class="row-odd"><td><p>Directory of slave zone files for a particular view</p></td>
+<td><p>hosts/view_viewname/slaves</p></td>
+</tr>
+<tr class="row-even"><td><p>A sample zone file, for the primary master zone ‘localhost.’ in the view ‘internal’</p></td>
+<td><p>hosts/view_internal/masters/localhost-hosts</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="removing-the-dns-server-controller-and-reverting-to-original-data">
+<h3>Removing the DNS Server Controller and Reverting to Original Data<a class="headerlink" href="#removing-the-dns-server-controller-and-reverting-to-original-data" title="Link to this heading"></a></h3>
+<p>To remove the DNS Server Controller, first use the init script to stop the service (give it the <em>stop</em> argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. To revert to your original data, stop named with its init script. Then delete the initial configuration file and the data directory and rename the originals, removing the “.bak” from their names.</p>
+</section>
+<section id="selinux">
+<h3>SELinux<a class="headerlink" href="#selinux" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following commands apply to Linux distributions based on RedHat EL 8 or higher. Your distribution may differ.</p>
+</div>
+<p>After installing the DNS Server Controller, run the following commands as root:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>semanage<span class="w"> </span>fcontext<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>named_cache_t<span class="w"> </span>--ftype<span class="w"> </span>f<span class="w"> </span><span class="s2">&quot;/var/named(/.*)?&quot;</span>
+semanage<span class="w"> </span>fcontext<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>named_cache_t<span class="w"> </span>--ftype<span class="w"> </span>d<span class="w"> </span><span class="s2">&quot;/var/named(/.*)?&quot;</span>
+semanage<span class="w"> </span>fcontext<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>named_conf_t<span class="w"> </span>--ftype<span class="w"> </span>f<span class="w"> </span><span class="s2">&quot;/var/named/conf(/.*)?&quot;</span>
+semanage<span class="w"> </span>fcontext<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>named_conf_t<span class="w"> </span>--ftype<span class="w"> </span>d<span class="w"> </span><span class="s2">&quot;/var/named/conf(/.*)?&quot;</span>
+semanage<span class="w"> </span>fcontext<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>named_zone_t<span class="w"> </span>--ftype<span class="w"> </span>f<span class="w"> </span><span class="s2">&quot;/var/named/hosts(/.*)?&quot;</span>
+semanage<span class="w"> </span>fcontext<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>named_zone_t<span class="w"> </span>--ftype<span class="w"> </span>d<span class="w"> </span><span class="s2">&quot;/var/named/hosts(/.*)?&quot;</span>
+restorecon<span class="w"> </span>-rv<span class="w"> </span>/var/named
+</pre></div>
+</div>
+<p>These will adjust the SELinux security label for the BIND 9 configuration and zone files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to the complexity of and variation between SELinux configuration files, we are unable to officially support SELinux configuration at this time, as SELinux settings can interfere with the normal operation of named after its configuration has been rewritten by the installer for Men&amp;Mice DNS Server Controller. It is possible to make <code class="docutils literal notranslate"><span class="pre">named</span></code>, Micetro, and SELinux all work together, but we cannot currently offer official support for this.</p>
+</div>
+</section>
+<section id="the-include-and-generate-directives">
+<h3>The $INCLUDE and $GENERATE Directives<a class="headerlink" href="#the-include-and-generate-directives" title="Link to this heading"></a></h3>
+<p>Please refer to the following articles for information about how these directives are handled in Men&amp;Mice Suite.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../reference/dns_controller_include.html#dns-controller-include"><span class="std std-ref">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</span></a></p></li>
+<li><p><a class="reference internal" href="../reference/dns_controller_generate.html#dns-controller-generate"><span class="std std-ref">Expanding $GENERATE directives into records</span></a></p></li>
+</ul>
+</section>
+<section id="installation-with-dynamic-zones">
+<h3>Installation with Dynamic Zones<a class="headerlink" href="#installation-with-dynamic-zones" title="Link to this heading"></a></h3>
+<p>Men&amp;Mice Suite expects dynamic zones to be made dynamic by allowing signed updates. Any dynamic zone must have an allow-update statement whose ACL contains a key. If you do not otherwise have a need for signed updates, add the rndc key (or any other key) to the list.</p>
+<p>Furthermore, after installation, be sure that your server allows zone transfers of dynamic zones to the loopback address, 127.0.0.1, or users will be unable to open dynamic zones from this server. Zone transfer restrictions can be set or changed in the server’s and in each zone’s <strong>Options</strong> window in the Men&amp;Mice Management Console.</p>
+</section>
+<section id="verify-the-dns-server-controller-is-running">
+<h3>Verify the DNS Server Controller is running<a class="headerlink" href="#verify-the-dns-server-controller-is-running" title="Link to this heading"></a></h3>
+<p>Verify the Controller application is running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>status<span class="w"> </span>mmremote
+</pre></div>
+</div>
+</section>
+</section>
+<section id="micetrol-controller-running-on-windows">
+<h2>Micetrol controller running on Windows<a class="headerlink" href="#micetrol-controller-running-on-windows" title="Link to this heading"></a></h2>
+<section id="active-directory-integrated-zones-and-other-dynamic-zones">
+<h3>Active Directory Integrated Zones and Other Dynamic Zones<a class="headerlink" href="#active-directory-integrated-zones-and-other-dynamic-zones" title="Link to this heading"></a></h3>
+<p>In order to open a dynamic zone, Micetro must read it from the DNS service rather than from a file. The way this is done is via <em>zone transfer</em>. On Windows Server 2003 and later, the zone transfer restriction setting in the zone’s options window must be set to allow transfers to an explicit list of IP addresses that includes the server’s own address. The default setting of allowing zone transfers to any server listed in the zone’s NS records will not suffice.</p>
+<p>In some cases, Micetro DNS Server Controller will also need to be told specifically which interface to use when requesting zone transfers. If you have trouble opening a dynamic zone after setting the zone’s transfer restrictions appropriately, check the Event Log / Application Log for messages from Men&amp;Mice DNS Server Controller. If there is a message indicating that it was unable to get a zone transfer, note the address it tried to use; you can either add that IP address to the transfer restrictions list, or else edit a configuration file for Men&amp;Mice DNS Server Controller.</p>
+<p>To configure the DNS Server Controller to use a different address, edit the service’s preferences.cfg file on the DNS server computer. The file is located in one of the following two locations, where {Windows} is probably C:\Windows:</p>
+<ul class="simple">
+<li><p>{Windows}\System32\dns\mmsuite\preferences.cfg</p></li>
+<li><p>C:\Documents and Settings\All Users\Application Data\Men and Mice\DNS Server Controller\preferences.cfg</p></li>
+<li><p>C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg</p></li>
+</ul>
+<p>If the file does not exist, create it. The file is a text file in a simple XML-based format. Add the following element, replacing the dummy address here with the server’s correct network address:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DNSServerAddress</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;192.0.2.1&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Save the file, and then restart Men&amp;Mice DNS Server Controller using <span class="menuselection">Administrative Tools ‣ Services</span> in Windows. Then also restart Men&amp;Mice Central, so that it can cache the zone’s contents.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For Active Directory-integrated zones, other domain controllers running Microsoft DNS do not need to get zone transfers. This is because the zone data is replicated through LDAP, rather than through zone transfers. Thus, for an AD-integrated zone, the zone transfer restriction list might need only the server’s own address.</p>
+</div>
+</section>
+<section id="running-micetro-dns-server-controller-under-a-privileged-user-account-server-type-microsoft-agent-free">
+<h3>Running Micetro DNS Server Controller under a privileged user account / Server type: “Microsoft Agent-Free”<a class="headerlink" href="#running-micetro-dns-server-controller-under-a-privileged-user-account-server-type-microsoft-agent-free" title="Link to this heading"></a></h3>
+<p>Normally, the Men&amp;Mice DNS Server Controller is installed on only <em>one</em> host in an Active Directory forest, or one copy per site. That installation can then manage all MS DNS servers in the forest, or in the site, using Microsoft’s own DNS management API. In order for this to work, the service needs to run as a user that has DNS management privileges (i.e. the AD service account must be a member of the DNSAdmins group of the domain).</p>
+<p>To configure Men&amp;Mice DNS Server Controller to access DNS servers on remote computers, do the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Start the Windows ‘Services’ program and open the properties dialog box for Men&amp;Mice DNS Server Controller.</p></li>
+<li><p>Click the <span class="guilabel">Log On</span> tab. The <span class="guilabel">Local System account</span> radio button is most likely selected.</p></li>
+<li><p>Click the <span class="guilabel">This account</span> radio button and enter the name and password of a Windows user that is a member of the Administrators group.</p></li>
+<li><p>Close the dialog box and restart the Men&amp;Mice DNS Server Controller service.</p></li>
+</ol>
+</div></blockquote>
+<p>If Men&amp;Mice DNS Server Controller is run as a local system service (the default), then it will only be able to manage the MS DNS service on the same host.</p>
+</section>
+<section id="enable-the-generic-dns-server-controller-functionality">
+<h3>Enable the Generic DNS Server Controller functionality<a class="headerlink" href="#enable-the-generic-dns-server-controller-functionality" title="Link to this heading"></a></h3>
+<p>If the Controller should be configured to run a connector script in order to interface with other DNS servers than the natively supported Windows DNS/Unix BIND DNS, the script interpreter and the connector script must be configured in the controllers <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code> file.</p>
+<p>The file is a text file in a simple XML-based format. Add the following element, replacing the dummy script interpreter and script:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;GenericDNSScript</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;python /scripts/genericDNS.py&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="configure-the-dns-server-controller-to-work-with-microsoft-azure-dns">
+<h3>Configure the DNS Server Controller to work with Microsoft Azure DNS<a class="headerlink" href="#configure-the-dns-server-controller-to-work-with-microsoft-azure-dns" title="Link to this heading"></a></h3>
+<p>For information on configuring Microsoft Azure DNS, see <a class="reference internal" href="configure_azure_dns.html#configure-azure-dns"><span class="std std-ref">Configure Azure DNS</span></a>.</p>
+</section>
+<section id="where-to-install-men-mice-dns-server-controller">
+<h3>Where to install Men&amp;Mice DNS Server Controller<a class="headerlink" href="#where-to-install-men-mice-dns-server-controller" title="Link to this heading"></a></h3>
+<p>If Men&amp;Mice Central is installed on a Windows host, then one option is to install Men&amp;Mice DNS Server Controller on the same host. If this is not done, then the system will need to be told where to find the DNS Server Controller when adding a new DNS server to the system. This will be presented as connecting via proxy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Men&amp;Mice communication protocol used to control a DNS server is more efficient than the Microsoft protocol. This means that if a DNS server is separated from Men&amp;Mice Central by a slow network link, it is more efficient to install a copy of the Men&amp;Mice DNS Server Controller in the same local network (the same site, typically) as the DNS server.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generic_dns_controller.html">Generic DNS Server Controller</a></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install_controllers.html" class="btn btn-neutral float-left" title="Server controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="generic_dns_controller.html" class="btn btn-neutral float-right" title="Generic DNS Server Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

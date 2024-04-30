@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="IP address management (IPAM) in the Micetro by Men&amp;Mice Management Console" name="description" />
+<meta content="IPAM, IP address management" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IP address management &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Devices" href="devices.html" />
+    <link rel="prev" title="Edit DHCP Options" href="webapp_edit_dhcp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IP address management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-address-spaces">Multiple Address Spaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#address-space-management">Address Space Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switching-to-a-different-address-space">Switching to a Different Address Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-objects-to-a-different-address-space-management-console">Moving Objects to a Different Address Space (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#address-a-records-in-dns-zone-windows">Address (A) Records in DNS Zone Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#range-access-management-console">Range Access (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#containers">Containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-container">New container</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-ip-address-ranges">Viewing IP Address Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#new-networks">New Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#network-configuration">Network Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-modifications">Network Modifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-deletions">Network Deletions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ip-address-list">IP Address List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ip-address-inspector">IP Address Inspector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-dns-host">Adding a DNS Host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-a-dns-host">Editing a DNS Host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-a-dns-host">Removing a DNS Host</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-ip-address-information-management-console">Moving IP Address Information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#split-allocate-range-wizard">Split/Allocate Range Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-reverse-records-wizard-management-console">Update Reverse Records Wizard (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#join-ranges">Join Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select-parent-management-console">Select Parent (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#host-discovery">Host Discovery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-host-discovery-using-ping">Configuring Host Discovery Using Ping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-host-discovery-by-querying-routers">Configuring Host Discovery by Querying Routers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#subnet-discovery">Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-to-remove-from-folder">Add to/remove from Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subnet-monitoring-and-utilization-history-management-console">Subnet Monitoring and Utilization History (Management Console)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-subnet-monitoring">Set Subnet Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-subnet-monitoring">Removing Subnet Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#view-utilization-history-management-console">View Utilization History (Management Console)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#export-utilization-history">Export Utilization History</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">IP address management</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/ipam.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toctree-wrapper compound" id="ipam">
+</div>
+<section id="ip-address-management">
+<h1>IP address management<a class="headerlink" href="#ip-address-management" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To manage IP addresses in the Management Console, see <span class="xref std std-ref">console-ipam</span>.</p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Managing IP Addresses entails being able to create assignable ranges within the available address space and determining which users and groups have usage rights to that space. The IP ranges can be created with specific properties that also determine the properties of the IP Addresses contained within them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to use the IP Address Management features in Micetro, you must have entered the license key for the IPAM module.</p>
+</div>
+</section>
+<section id="multiple-address-spaces">
+<h2>Multiple Address Spaces<a class="headerlink" href="#multiple-address-spaces" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For managing address spaces through the Management Console, see <a class="reference internal" href="console/console_address_spaces.html#console-address-spaces"><span class="std std-ref">Address Space Management (Management Console, deprecated)</span></a>.</p>
+</div>
+<p>Micetro supports multiple address spaces.</p>
+<p>Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP address entries, and folders.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changes to data in one address space do not affect data in any other address space.</p>
+</div>
+<p>Items <strong>shared</strong> between address spaces are:</p>
+<ul class="simple">
+<li><p>users, groups, and roles</p></li>
+<li><p>custom property definitions (see <a class="reference internal" href="../admin-manual/admin_custom_properties.html#admin-custom-properties"><span class="std std-ref">Custom Properties</span></a>)</p></li>
+</ul>
+<section id="address-space-management">
+<h3>Address Space Management<a class="headerlink" href="#address-space-management" title="Link to this heading"></a></h3>
+<p>Users with sufficient permissions are allowed to create, modify or delete address spaces as well as set access privileges for existing address spaces.</p>
+<p>Navigate to <span class="menuselection">Admin ‣ Configuration ‣ Address Spaces</span></p>
+<a class="reference internal image-reference" href="../../_images/address-spaces.png"><img alt="../../_images/address-spaces.png" class="align-center" src="../../_images/address-spaces.png" style="width: 90%;" /></a>
+<p>To <strong>create</strong> a new address space, click the <span class="guilabel">Add</span> button in the top bar and enter the name and description for the address space.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first address space is always named <code class="docutils literal notranslate"><span class="pre">&lt;default&gt;</span></code>. It is not possible to rename or delete the <em>&lt;default&gt;</em> address space.</p>
+<p>The <em>&lt;default&gt;</em> address space is the only address space that shows AD sites if <em>AD Site and Subnet</em> integration is enabled.</p>
+</div>
+<p>To <strong>edit</strong> the name or description for an address space, select the address space and click the <span class="guilabel">Action –&gt; Edit address space</span> button in the top bar or ellipsis menu.</p>
+<p>To <strong>delete</strong> an address space, select the address space and click the <span class="guilabel">Action –&gt; Remove address space</span> button in the top bar or ellipsis menu.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>When you delete an address space, all objects contained within the address space are removed (DNS servers, DHCP servers, IP address ranges, IP address entries, and folders). This action cannot be undone.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot delete the <em>&lt;default&gt;</em> address space or the address space you are currently working in.</p>
+</div>
+<p>To see and edit the <strong>access controls</strong> for an address space, select the address space and click the <span class="guilabel">Action –&gt; Access</span> button in the top bar or ellipsis menu.</p>
+</section>
+<section id="switching-to-a-different-address-space">
+<h3>Switching to a Different Address Space<a class="headerlink" href="#switching-to-a-different-address-space" title="Link to this heading"></a></h3>
+<p>You can only work in one address space at a time. You can see the current address space in the Manager window, above the object list.</p>
+<p>To switch to a different address space:</p>
+<ol class="arabic simple">
+<li><p>Click the <strong>User</strong> icon in the top right corner of the Web Application.</p></li>
+<li><p>Select <span class="guilabel">Address Space</span> and select the address space you want to use.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/address-space-Micetro.png"><img alt="../../_images/address-space-Micetro.png" class="align-center" src="../../_images/address-space-Micetro.png" style="width: 50%;" /></a>
+</section>
+<section id="moving-objects-to-a-different-address-space-management-console">
+<h3>Moving Objects to a Different Address Space (Management Console)<a class="headerlink" href="#moving-objects-to-a-different-address-space-management-console" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="console/console_address_spaces.html#console-address-spaces"><span class="std std-ref">Address Space Management (Management Console, deprecated)</span></a>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="address-a-records-in-dns-zone-windows">
+<h2>Address (A) Records in DNS Zone Windows<a class="headerlink" href="#address-a-records-in-dns-zone-windows" title="Link to this heading"></a></h2>
+<p>When the IP Address management component is enabled, you may notice some differences when working with Address (A) records in DNS zone windows, such as:</p>
+<dl class="simple">
+<dt>Restriction on allowed IP Addresses</dt><dd><p>When IPAM is enabled, the system administrator may restrict which IP Addresses you are allowed to use. The system administrator can determine an IP Address range that you are allowed to work with. In addition, he/she can choose whether you can use an IP Address that has already been assigned in DNS.</p>
+</dd>
+<dt>Automatic assignment of IP Addresses</dt><dd><p>The system administrator can configure Micetro so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.</p>
+</dd>
+</dl>
+<section id="range-access-management-console">
+<h3>Range Access (Management Console)<a class="headerlink" href="#range-access-management-console" title="Link to this heading"></a></h3>
+<p>You can manage access to scopes just as you can for other object types in Micetro, but there is one important distinction: you can set <em>Inherited Access</em> for scopes. When you open the <em>Access</em> dialog box for a scope, the dialog box has an extra section for inherited access.</p>
+<p>Checking the <span class="guilabel">Inherit Access</span> checkbox will have the selected scope inherit all access bits from its parent range. This means that whenever the access privileges for the parent range are changed, they will be applied to the scope as well.</p>
+<p>Clicking the <span class="guilabel">Apply access inheritance in child ranges</span> button will enable access inheritance for all descendants of the scope. This means that whenever the access privileges in the scope are changed, the changes will be applied of all descendants of the scope.</p>
+<p>Regarding other access settings, refer to <a class="reference internal" href="../admin-manual/access_control.html#access-control"><span class="std std-ref">Access control</span></a>.</p>
+</section>
+</section>
+<section id="containers">
+<span id="ipam-containers"></span><h2>Containers<a class="headerlink" href="#containers" title="Link to this heading"></a></h2>
+<p>A Container is a section of the address space that has been reserved but not yet allocated. Containers can contain address ranges and scopes and you can set address privileges for containers that can be applied to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled that functionality in System Settings.</p>
+<section id="new-container">
+<span id="id1"></span><h3>New container<a class="headerlink" href="#new-container" title="Link to this heading"></a></h3>
+<p>A range that exists on network boundaries (a subnet) can be converted to a Container. Likewise, a Container can be converted to a range.</p>
+<ol class="arabic simple">
+<li><p>In the <strong>Networks</strong> context select the range(s).</p></li>
+<li><p>From the ellipsis menu select <span class="guilabel">Convert to container</span> or use <span class="menuselection">Actions ‣ Convert to container</span>.</p></li>
+<li><p>Confirm that you want to convert the selected range(s) and add a save comment.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the Management Console, you can set Inherited Access for Containers.</p>
+<p>When you open the Access dialog box for a Container, the dialog box has an extra section for inherited access.</p>
+<ul class="simple">
+<li><p>Checking the <span class="guilabel">Inherit Access</span> checkbox will have the selected Container inherit all access bits from its parent. This means that whenever the access privileges for the parent are changed, they will be applied to the Container as well.</p></li>
+<li><p>Clicking the <span class="guilabel">Apply access inheritance in child ranges</span> button will enable access inheritance for all descendants of the Container. This means that whenever the access privileges in the Container are changed, the changes will be applied of all descendants of the Container.</p></li>
+</ul>
+<p>Regarding other access settings, refer to <a class="reference internal" href="../admin-manual/access_control.html#access-control"><span class="std std-ref">Access control</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="viewing-ip-address-ranges">
+<h2>Viewing IP Address Ranges<a class="headerlink" href="#viewing-ip-address-ranges" title="Link to this heading"></a></h2>
+<p>The <strong>Networks</strong> context shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.</p>
+<a class="reference internal image-reference" href="../../_images/Networks-Micetro.png"><img alt="../../_images/Networks-Micetro.png" class="align-center" src="../../_images/Networks-Micetro.png" style="width: 90%;" /></a>
+<p>In the filtering sidebar, click on <span class="guilabel">IP Ranges</span>.</p>
+<p>You can choose between a flat and a hierarchical view for the Address Ranges scopes by selecting an appropriate button on the top right of the grid.</p>
+<p>If an Address range has no subranges, the utilization for the range is shown in the range list.</p>
+<p>While viewing the IP ranges, the <span class="xref std std-ref">webapp-quickfilter</span> is available. When using the tree view while a filter is active, any parent ranges that don’t fulfill the search criteria are faded out and the matches highlighted. For example, in the image below, we searched for the string <code class="docutils literal notranslate"><span class="pre">1.4</span></code>.</p>
+<a class="reference internal image-reference" href="../../_images/networks-tree-filter-Micetro.png"><img alt="../../_images/networks-tree-filter-Micetro.png" class="align-center" src="../../_images/networks-tree-filter-Micetro.png" style="width: 90%;" /></a>
+</section>
+<section id="new-networks">
+<h2>New Networks<a class="headerlink" href="#new-networks" title="Link to this heading"></a></h2>
+<p>To create a new network, do the following:</p>
+<ol class="arabic simple">
+<li><p>Open the <span class="menuselection">Networks</span> context.</p></li>
+<li><p>Click the <span class="guilabel">Create</span> button.</p></li>
+<li><p>Select what type of network (new network, <a class="reference internal" href="dhcp_scopes.html#new-dhcp-scope"><span class="std std-ref">New DHCP scope</span></a>, <a class="reference internal" href="#new-container"><span class="std std-ref">New container</span></a>) you’d like to create.</p></li>
+<li><p>Enter the appropriate values, grouped on pages depending on the type.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>Create</em> dialog is different depending on the type selected through the dropdown:</p>
+<ul class="simple">
+<li><p>For a <em>network</em>, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See <a class="reference internal" href="active_directory.html#active-directory"><span class="std std-ref">AD Sites and Subnets</span></a>)</p></li>
+<li><p>A <em>DHCP scope</em> can be created with the network and broadcast address automatically configured. See <a class="reference internal" href="dhcp_scopes.html#new-dhcp-scope"><span class="std std-ref">New DHCP scope</span></a>.</p></li>
+<li><p>A <em>container</em> has no network or broadcast address. See <a class="reference internal" href="#ipam-containers"><span class="std std-ref">Containers</span></a>.</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Click <span class="guilabel">Finish</span>.</p></li>
+</ol>
+<p>Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the Networks component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.</p>
+<p>It is possible to create subranges of existing ranges and DHCP scopes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you create a new IP Address range, Micetro checks to see if the new range can be logically grouped with other address ranges, and adds the new range in the appropriate address range group.</p>
+</div>
+<section id="network-configuration">
+<span id="ipam-range-config"></span><h3>Network Configuration<a class="headerlink" href="#network-configuration" title="Link to this heading"></a></h3>
+<p>When creating a new network, DHCP scope, or container, you must complete the Properties dialog box in the final step.</p>
+<p>These properties are defined in <a class="reference internal" href="../admin-manual/admin_custom_properties.html#admin-custom-properties"><span class="std std-ref">Custom Properties</span></a>.</p>
+</section>
+<section id="network-modifications">
+<h3>Network Modifications<a class="headerlink" href="#network-modifications" title="Link to this heading"></a></h3>
+<p>Once you have created a network, it is easy to make changes.</p>
+<ol class="arabic simple">
+<li><p>Select the range in the grid.</p></li>
+<li><p>From the ellipsis menu select <span class="guilabel">Edit network properties</span> or use <span class="menuselection">Actions ‣ Edit network properties</span>.</p></li>
+<li><p>Make the desired changes.</p></li>
+<li><p>Click <span class="guilabel">Save</span>.</p></li>
+</ol>
+</section>
+<section id="network-deletions">
+<h3>Network Deletions<a class="headerlink" href="#network-deletions" title="Link to this heading"></a></h3>
+<p>You can always delete a network definition. If you delete a network, the IP addresses that belonged to it will get the attributes of the parent network. If the network you are deleting has subranges, they will become children of the unassigned networks’ parent.</p>
+<p>Use the following procedure to delete a network definition:</p>
+<ol class="arabic simple">
+<li><p>Select network(s) you want to remove.</p></li>
+<li><p>From the ellipsis menu select <span class="guilabel">Delete network</span> or use <span class="menuselection">Actions ‣ Delete network</span>. A dialog prompts you to confirm your decision to delete the(se) network(s).</p></li>
+<li><p>Click <span class="guilabel">Yes</span> to delete the range, or <span class="guilabel">No</span> to leave it.</p></li>
+</ol>
+</section>
+</section>
+<section id="ip-address-list">
+<h2>IP Address List<a class="headerlink" href="#ip-address-list" title="Link to this heading"></a></h2>
+<p>To view a list of host entries in a particular network, double-click on the network. This opens the grid where you can view and edit the properties of individual IP address entries.</p>
+<a class="reference internal image-reference" href="../../_images/view-Networks-Micetro.png"><img alt="../../_images/view-Networks-Micetro.png" class="align-center" src="../../_images/view-Networks-Micetro.png" style="width: 80%;" /></a>
+<p>The filtering sidebar’s <span class="guilabel">State</span> section can be used to show only <strong>Free</strong>, <strong>Assigned</strong>, <strong>Claimed</strong>.</p>
+<p>The <span class="guilabel">PTR Status</span> column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:</p>
+<blockquote>
+<div><dl>
+<dt>Empty</dt><dd><p>The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.</p>
+</dd>
+<dt>OK</dt><dd><p>If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.</p>
+</dd>
+<dt>Verify</dt><dd><p>If there is not a match between the A and the PTR records for the host, the status is listed as Verify. The most common reasons are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>There is an A record but the PTR record is missing.</p></li>
+<li><p>There is a PTR record but the A record is missing.</p></li>
+<li><p>The data section in the PTR record does not correspond to the name of the A record.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>When the PTR Status for a host entry shows Verify, you can open the IP Address dialog box for the host to see more detailed information on which DNS host entry is generating this status message.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When working with large IP Address ranges (ranges that contain more than 4096 IP Addresses) the <span class="guilabel">Show unassigned addresses</span> will no longer be available and the IP Address List window will only display assigned IP Addresses.</p>
+</div>
+</section>
+<section id="ip-address-inspector">
+<span id="ip-address-dialog"></span><h2>IP Address Inspector<a class="headerlink" href="#ip-address-inspector" title="Link to this heading"></a></h2>
+<p>When you add or modify an existing IP address entry, the IP Address dialog box displays. The entries in Inspector can vary, depending on the custom properties defined in Micetro (e.g., “Owner” is a custom property in the example shown below), if DNS or DHCP related data exists, etc.</p>
+<a class="reference internal image-reference" href="../../_images/ip-inspector-Micetro.png"><img alt="../../_images/ip-inspector-Micetro.png" class="align-center" src="../../_images/ip-inspector-Micetro.png" style="width: 30%;" /></a>
+<section id="adding-a-dns-host">
+<span id="ipam-add-dns-host"></span><h3>Adding a DNS Host<a class="headerlink" href="#adding-a-dns-host" title="Link to this heading"></a></h3>
+<p>While viewing the IP Address Inspector, click the <span class="guilabel">+</span> button in the <span class="guilabel">Related DNS data</span>.</p>
+<a class="reference internal image-reference" href="../../_images/ip-create-dns-Micetro.png"><img alt="../../_images/ip-create-dns-Micetro.png" class="align-center" src="../../_images/ip-create-dns-Micetro.png" style="width: 50%;" /></a>
+<p>The <strong>Address</strong> field is automatically filled with the selected IP address. Fill in the other information and click <span class="guilabel">Create now</span> or <span class="guilabel">Add to request</span>. (See <a class="reference internal" href="webapp_workflows.html#webapp-workflows"><span class="std std-ref">Workflow Management</span></a>.)</p>
+</section>
+<section id="editing-a-dns-host">
+<h3>Editing a DNS Host<a class="headerlink" href="#editing-a-dns-host" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In the Inspector, in the ellipsis menu in the <span class="guilabel">Related DNS data</span> section click <span class="guilabel">Edit</span>.</p></li>
+<li><p>Make the desired changes and click <span class="guilabel">Save</span>. The dialog box closes and the details are updated.</p></li>
+</ol>
+</section>
+<section id="removing-a-dns-host">
+<h3>Removing a DNS Host<a class="headerlink" href="#removing-a-dns-host" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In the Inspector, in the ellipsis menu in the <span class="guilabel">Related DNS data</span> section click <span class="guilabel">Delete</span>. The host details are deleted and removed from the Inspector.</p></li>
+</ol>
+</section>
+</section>
+<section id="moving-ip-address-information-management-console">
+<h2>Moving IP Address Information (Management Console)<a class="headerlink" href="#moving-ip-address-information-management-console" title="Link to this heading"></a></h2>
+<p>IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained and the associated DNS records are updated.</p>
+<p>To move a IP Address information, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the IP Address Range containing the IP Address.</p></li>
+<li><p>Double-click on it to display the list window.</p></li>
+<li><p>Find the applicable IP Address.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Move</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-ipam-move.png"><img alt="../../_images/console-ipam-move.png" class="align-center" src="../../_images/console-ipam-move.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>In the <em>Move IP Address Information</em> dialog box, type the new IP Address.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. The IP Address information is moved to the new IP Address.</p></li>
+</ol>
+</section>
+<section id="split-allocate-range-wizard">
+<span id="split-range-wizard"></span><h2>Split/Allocate Range Wizard<a class="headerlink" href="#split-allocate-range-wizard" title="Link to this heading"></a></h2>
+<p>This wizard allows you to create multiple subranges from an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.</p>
+<ol class="arabic simple">
+<li><p>Open the <span class="menuselection">IPAM</span> context and select the range you’d like to split.</p></li>
+<li><p>Use the <span class="guilabel">Action –&gt; Allocate Subranges</span> action from the top bar or the ellipsis menu.</p></li>
+<li><p>Configure the new subranges. If you choose fewer subnets that fit in the parent, you can also set the offset from where you want to start allocating. Click <span class="guilabel">Next</span> when finished configuring.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/subranges-wizard.png"><img alt="../../_images/subranges-wizard.png" class="align-center" src="../../_images/subranges-wizard.png" style="width: 65%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Define the title and custom properties for the new subranges. Click <span class="guilabel">Next</span> when done.</p></li>
+<li><p>On the summary page verify the new subranges and click <span class="guilabel">Finish</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the web application, the Split Range and Allocate Range wizards are merged together. For information on these wizards in the Management Console, see <a class="reference internal" href="console/console_split_range.html#console-split-range"><span class="std std-ref">Split Range Wizard (Management Console, deprecated)</span></a> and <a class="reference internal" href="console/console_ipam.html#console-allocate-ranges"><span class="std std-ref">Allocate Ranges Wizard</span></a>.</p>
+</div>
+</section>
+<section id="update-reverse-records-wizard-management-console">
+<h2>Update Reverse Records Wizard (Management Console)<a class="headerlink" href="#update-reverse-records-wizard-management-console" title="Link to this heading"></a></h2>
+<p>This wizard allows you to create reverse DNS zones for selected ranges.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The wizard can only be used on ranges that exist on subnet boundaries and contain 254 or more IP Addresses (/24 or larger)</p>
+</div>
+<ol class="arabic simple">
+<li><p>From the object list, click on <span class="guilabel">IP Address Ranges</span>.</p></li>
+<li><p>From the list of ranges displayed, select the ranges, right-click and, from the shortcut menu, select <span class="guilabel">Update Reverse Records</span>. The <em>Reverse zone generation wizard</em> displays.</p></li>
+<li><p>For each of the resulting screens, make a selection/entry and move through the wizard.</p></li>
+</ol>
+</section>
+<section id="join-ranges">
+<h2>Join Ranges<a class="headerlink" href="#join-ranges" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>In the <span class="menuselection">IPAM</span> context, select the ranges that you want to join.</p></li>
+<li><p>Use the <span class="guilabel">Action –&gt; Join Ranges</span> action from the top bar or ellipsis menu.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/join-ranges.png"><img alt="../../_images/join-ranges.png" class="align-center" src="../../_images/join-ranges.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Set the properties for the joined range:</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Use Access from</dt><dd><p>Click the drop-down list and specify from which range you will gain access.</p>
+</dd>
+<dt>Use Properties from</dt><dd><p>Click the drop-down list and specify from which range you will use the properties.</p>
+</dd>
+<dt>Title</dt><dd><p>Enter a title for the new range.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Description</dt><dd><p>Type a description.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">Join</span>.</p></li>
+</ol>
+</section>
+<section id="select-parent-management-console">
+<h2>Select Parent (Management Console)<a class="headerlink" href="#select-parent-management-console" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../_images/console-ipam-select-parent.png"><img alt="../../_images/console-ipam-select-parent.png" class="align-center" src="../../_images/console-ipam-select-parent.png" style="width: 70%;" /></a>
+<p>This function allows you to view the hierarchy for subnets when filtering is active.</p>
+<ol class="arabic simple">
+<li><p>Locate the subrange for which you want to view the hierarchy.</p></li>
+<li><p>Right-click on the subrange and, from the shortcut menu, selects <span class="guilabel">Parent</span>. All available parent(s) are shown.</p></li>
+<li><p>Click on the parent and the system automatically moves you to that parent range.</p></li>
+</ol>
+</section>
+<section id="host-discovery">
+<h2>Host Discovery<a class="headerlink" href="#host-discovery" title="Link to this heading"></a></h2>
+<p>With this feature, you can see when hosts were last seen on your network. There are two methods you can use for host discovery – using ping or querying routers for host information.</p>
+<section id="configuring-host-discovery-using-ping">
+<h3>Configuring Host Discovery Using Ping<a class="headerlink" href="#configuring-host-discovery-using-ping" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Select one or more IP ranges.</p></li>
+<li><p>From the ellipsis menu select <span class="guilabel">Set discovery schedule</span> or use <span class="menuselection">Actions ‣ Set discovery schedule</span>.</p></li>
+<li><p>Check the <span class="guilabel">Enable</span> option.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Frequency</dt><dd><p>Click the drop-down list and select the frequency (e.g., 1, 2, etc.).</p>
+</dd>
+<dt>Every</dt><dd><p>Enter the frequency unit for discovery (e.g. days, weeks, etc.).</p>
+</dd>
+<dt>Next run</dt><dd><p>Select the start date and time.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">Save</span>.</p></li>
+</ol>
+<p>Once the schedule options have been set and saved, two columns - Last Seen and Last Known MAC Address - are added to the range grid. The Last Seen column identifies when a host was last seen on the network.</p>
+<dl class="simple">
+<dt>Green</dt><dd><p>Host responded to the last PING request. The date and time are shown.</p>
+</dd>
+<dt>Orange</dt><dd><p>Host has responded in the past, but did not respond to the last PING request. The date and time of last response is shown.</p>
+</dd>
+<dt>Red</dt><dd><p>Host has never responded to a PING request. The text Never is shown.</p>
+</dd>
+</dl>
+<p>At any time if you wish to disable host discovery, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the object(s) for which you want to disable discovery.</p></li>
+<li><p>From the ellipsis menu, select <span class="guilabel">Set discovery schedule</span>.</p></li>
+<li><p>Uncheck the <span class="guilabel">Enable</span> option.</p></li>
+<li><p>Click <span class="guilabel">Save</span>.</p></li>
+</ol>
+</section>
+<section id="configuring-host-discovery-by-querying-routers">
+<h3>Configuring Host Discovery by Querying Routers<a class="headerlink" href="#configuring-host-discovery-by-querying-routers" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="../admin-manual/snmp_profiles.html#snmp-profiles"><span class="std std-ref">SNMP profiles</span></a>.</p>
+</section>
+</section>
+<section id="subnet-discovery">
+<h2>Subnet Discovery<a class="headerlink" href="#subnet-discovery" title="Link to this heading"></a></h2>
+<p>The subnet discovery features enables Micetro to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in configuring host discovery, but to enable this feature, make sure the <span class="guilabel">Synchronize subnets …</span> is checked in the SNMP profile. See <a class="reference internal" href="../admin-manual/snmp_profiles.html#snmp-profiles"><span class="std std-ref">SNMP profiles</span></a>.</p>
+</section>
+<section id="add-to-remove-from-folder">
+<h2>Add to/remove from Folder<a class="headerlink" href="#add-to-remove-from-folder" title="Link to this heading"></a></h2>
+<p>Adds or removes the currently selected IP Address Range from folders.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Once you remove a range from a folder, there is no “undo” option available.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Highlight the range you want to remove.</p></li>
+<li><p>From the ellipsis menu, select <span class="guilabel">Set folder</span> and add or remove the range from folders.</p></li>
+</ol>
+</section>
+<section id="subnet-monitoring-and-utilization-history-management-console">
+<h2>Subnet Monitoring and Utilization History (Management Console)<a class="headerlink" href="#subnet-monitoring-and-utilization-history-management-console" title="Link to this heading"></a></h2>
+<p>The Subnet Monitoring is used to monitor the free addresses in subnets and DHCP address pools and perform an action if the number of free addresses goes below a user-definable threshold. In addition, the utilization history for the monitored subnets and scopes is collected and you can view and export the historical utilization data.</p>
+<p>When Subnet Monitoring is enabled a global monitoring setting is applied to all subnets in the system. You can change the subnet monitoring settings for individual subnets and scopes, for example if you want to disable monitoring for a certain subnet or if you want to use a different threshold for the free addresses in a DHCP scope.  NOTE:  Only DHCP scopes that are enabled are monitored. Disabled scopes are ignored.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Subnet Monitoring needs to be enabled in the System Settings before continuing. See <a class="reference internal" href="../admin-manual/admin_system_settings.html#admin-monitoring"><span class="std std-ref">Monitoring</span></a>.</p>
+</div>
+<section id="set-subnet-monitoring">
+<h3>Set Subnet Monitoring<a class="headerlink" href="#set-subnet-monitoring" title="Link to this heading"></a></h3>
+<p>To change the monitoring settings for a subnet:</p>
+<ol class="arabic simple">
+<li><p>Select the subnet(s) for which you want to change the monitoring setting.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-ipam-subnet-monitoring.png"><img alt="../../_images/console-ipam-subnet-monitoring.png" class="align-center" src="../../_images/console-ipam-subnet-monitoring.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Set Subnet Monitoring</span>. The <em>Subnet Monitoring</em> dialog box displays.</p></li>
+</ol>
+<dl class="simple">
+<dt>Enabled</dt><dd><p>When checked, the subnet will be monitored.</p>
+</dd>
+<dt>Script to invoke</dt><dd><p>Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.</p>
+</dd>
+<dt>E-mail addresses</dt><dd><p>Enter one or more e-mail addresses (separated by comma, e.g. <a class="reference external" href="mailto:email&#37;&#52;&#48;example&#46;com">email<span>&#64;</span>example<span>&#46;</span>com</a>,email&#64;example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.</p>
+</dd>
+<dt>Dynamic Threshold</dt><dd><p>Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.</p>
+</dd>
+<dt>Static Threshold</dt><dd><p>Enter the threshold for the free addresses in a subnet.</p>
+</dd>
+<dt>Only perform action once (until fixed)</dt><dd><p>When checked, the action is performed only once when the number of free addresses goes below the threshold.</p>
+</dd>
+<dt>Perform action when fixed</dt><dd><p>When checked, the action is performed when the number of free addresses is no longer below the threshold.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>Click <span class="guilabel">OK</span> to confirm your settings.</p></li>
+</ol>
+</section>
+<section id="removing-subnet-monitoring">
+<h3>Removing Subnet Monitoring<a class="headerlink" href="#removing-subnet-monitoring" title="Link to this heading"></a></h3>
+<p>You can clear the monitor setting for individual subnets if you want to use the global subnet monitoring setting. To clear a monitoring setting for a subnet:</p>
+<ol class="arabic simple">
+<li><p>Select the subnet(s) for which you want to clear the monitoring setting.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Remove Subnet Monitoring</span>. The custom subnet monitoring setting is removed and the global monitoring setting is used instead.</p></li>
+</ol>
+</section>
+</section>
+<section id="view-utilization-history-management-console">
+<h2>View Utilization History (Management Console)<a class="headerlink" href="#view-utilization-history-management-console" title="Link to this heading"></a></h2>
+<p>You can view the utilization history for a subnet or scope that is being monitored.</p>
+<p>To view the utilization history:</p>
+<ol class="arabic simple">
+<li><p>Select the subnet for which you want to view the utilization history.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">View Address Utilization</span>. The <em>Address Utilization</em> window displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-ipam-utilization-history.png"><img alt="../../_images/console-ipam-utilization-history.png" class="align-center" src="../../_images/console-ipam-utilization-history.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>The left drop-down box allows you to choose the time period to view. You can choose between 30 days, 7 days or 24 hours.</p></li>
+<li><p>Use the middle drop-down box to choose whether you want to view utilization by the actual address count or by percentage.</p></li>
+<li><p>If you are viewing the utilization of a scope, a dropdown box is displayed where you can choose whether you want to view the dynamic part of the scope (the address pool(s)) or the static part of the scope.</p></li>
+<li><p>The blue Addresses line shows the number of used addresses in the subnet.</p></li>
+<li><p>The red Threshold line shows the utilization threshold that is currently in effect for the subnet.</p></li>
+<li><p>If the 30 day or 24 hour view is active, a gray ‘envelope’ is shown around the Addresses line. This shows the maximum and minimum utilization of addresses during the time period.</p></li>
+<li><p>Moving the mouse cursor over the graph shows the actual data points, and if the 30 day or 24 hour view is active, the minimum, average and maximum values are shown for each data point.</p></li>
+<li><p>You can view the address utilization for a superscope. When viewing the address utilization for a superscope, the total number of addresses in all of the scopes in the superscope are used for the utilization calculation.</p></li>
+</ul>
+<section id="export-utilization-history">
+<h3>Export Utilization History<a class="headerlink" href="#export-utilization-history" title="Link to this heading"></a></h3>
+<p>You can export the utilization history for one or more subnets to the Clipboard or into a CSV file.</p>
+<ul class="simple">
+<li><p>To export the utilization history for a single subnet from the <span class="guilabel">Address Utilization Window</span>, right-click the graph and select the time period you want to export. The data is copied to the Clipboard.</p></li>
+<li><p>To export the utilization for multiple subnets, select the subnets, right-click and from the shortcut menu select <span class="guilabel">Export Address Utilization</span>. The data is saved in a CSV file.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="webapp_edit_dhcp.html" class="btn btn-neutral float-left" title="Edit DHCP Options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="devices.html" class="btn btn-neutral float-right" title="Devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

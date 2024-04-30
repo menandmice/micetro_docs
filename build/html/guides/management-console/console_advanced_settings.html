@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Advanced system settings in Micetro by Men&amp;Mice" name="description" />
+<meta content="advanced configuration, Micetro, system settings" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced System Settings &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Advanced System Settings</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_advanced_settings.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-system-settings">
+<span id="console-advanced-settings"></span><h1>Advanced System Settings<a class="headerlink" href="#advanced-system-settings" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <span class="guilabel">Advanced System Settings</span> are only available for the built-in “administrator” user.</p>
+</div>
+<p>To access the System Settings:</p>
+<ol class="arabic simple">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Configuration</span> in the upper-left corner.</p></li>
+<li><p>Select <span class="guilabel">Advanced</span> under <span class="guilabel">System Settings</span> in the filtering sidebar.</p></li>
+</ol>
+<p>The following table shows a description of the currently available settings.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>System Setting</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>SSL</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SSL Certificate policy</p></td>
+<td><p>Determines the SSL Certificate policy applied to the Cloud Integration feature and update checks.</p></td>
+</tr>
+<tr class="row-even"><td><p>Path to SSL Certificate Authority file or directory</p></td>
+<td><p>Specifies the path to the SSL Root certificate used by the SSL Certificate policy.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SOA record defaults in new zones</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTL of SOA record</p></td>
+<td><p>Specifies the default TTL (Time to Live) value to use for the SOA record of new zones.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hostmaster</p></td>
+<td><p>Specifies the default value to use for the Hostmaster field in the SOA record of new zones.</p></td>
+</tr>
+<tr class="row-even"><td><p>Refresch</p></td>
+<td><p>Specifies the default value to use for the Refresh field in the SOA record of new zones.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Retry</p></td>
+<td><p>Specifies the default value to use for the Retry field in the SOA record of new zones.</p></td>
+</tr>
+<tr class="row-even"><td><p>Expire</p></td>
+<td><p>Specifies the default value to use for the Expiry field in the SOA record of new zones.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Negative caching (BIND)</p></td>
+<td><p>Specifies the default value to use for the Negative Caching field in the SOA record of new zones. Only applicable for zones on BIND DNS servers.</p></td>
+</tr>
+<tr class="row-even"><td><p>Minimum TTL (MS)</p></td>
+<td><p>Specifies the default TTL (Time to Live) value to use for the TTL field in the SOA record of new zones. Only applicable for zones on Microsoft DNS servers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Web proxy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Web proxy to use</p></td>
+<td><p>Specifies a proxy server to be used for outgoing connections for checking for updates and additionally for AWS cloud services.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Web proxy port (defaults to port 80)</p></td>
+<td><p>Specifies the port of the proxy server to be used for outgoing connections for checking for updates and additionally for AWS cloud services.</p></td>
+</tr>
+<tr class="row-even"><td><p>Password for web proxy authentication</p></td>
+<td><p>Specifies a cleartext password for proxy sign in.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use web proxy settings when connecting to AWS</p></td>
+<td><p>If selected, the proxy settings configured will be used for connections to AWS.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Directory for scripts that can be run from the API</p></td>
+<td><p>Specifies the directory that contains scripts that may be run from the API.</p></td>
+</tr>
+<tr class="row-even"><td><p>Log performance of API calls</p></td>
+<td><p>Determines whether execution time of API calls should be logged. Mainly used for diagnostic purposes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Time in minutes between write-outs of API call performance log</p></td>
+<td><p>If logging of API query performance is enabled, this setting specifies how frequently the log should be written to disk.</p></td>
+</tr>
+<tr class="row-even"><td><p>Automatically adjust local zone transfer settings for BIND</p></td>
+<td><p>When enabled, BIND can automatically optimize the settings related to local (within your network) zone transfers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Automatically create reverse (PTR) records</p></td>
+<td><p>When selected, Micetro automatically creates reverse (PTR) records. PTR records are used for reverse DNS lookups, which are used to resolve an IP address to a domain name.</p></td>
+</tr>
+<tr class="row-even"><td><p>Perform backup of MS and ISC DHCP servers</p></td>
+<td><p>Determines whether to perform a backup of Microsoft (MS) and Internet Systems Consortioum (ISC) Dynamic Host Configuration Protocol (DHCP) servers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default TTL to use for DNS records created in zones for all xDNS profiles</p></td>
+<td><p>Specifies the default TTL (Time to Live) value to use for DNS records created in zones for all xDNS profiles.</p></td>
+</tr>
+<tr class="row-even"><td><p>Disable all health checks</p></td>
+<td><p>If selected, all health checks will be disabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Disable collection of statistical information</p></td>
+<td><p>Select to stop the collection of statistical information.</p></td>
+</tr>
+<tr class="row-even"><td><p>Use Azure activity log to optimize DNS synchronization</p></td>
+<td><p>When enabled, the Azure activity log is monitored for events related to DNS changes, and those changes are synchronized with the DNS server in real-time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use AWS CloudTrail events to optimize DNS synchronization</p></td>
+<td><p>Determines whether AWS CloudTrail events should be used to optimize DNS synchronization.</p></td>
+</tr>
+<tr class="row-even"><td><p>IP ranges/scopes inherit access by default</p></td>
+<td><p>When you create a new IP range or scope, it will ineherit all access bits form its parent by default. If you want to change this behavior, clear this checkbox.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum number of blocks that can be temporarily claimed</p></td>
+<td><p>Limits the number of blocks that can be temporarily reserved or allocated for use by a specific user.</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable collection of IP information from routers</p></td>
+<td><p>Determines whether the system can collect IP information from the ARP cache of routers. If selected, the system can collect this information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Timeout in seconds for named-checkconf</p></td>
+<td><p>Specifies the timeout value in seconds for named-checkonf files.</p></td>
+</tr>
+<tr class="row-even"><td><p>Synchronize DNSSEC signed zones immediately after editing</p></td>
+<td><p>Determines whether DNSSEC signed zones should be synchronized immediately after they are changed. If selected, the zones are synchronized immediately. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Use case sensitive comparison when updating custom properties from scripts</p></td>
+<td><p>Specifies whether to take case sensitivity into account when comparing custom properties from scripts.</p></td>
+</tr>
+<tr class="row-even"><td><p>Include A/AAAA records when checking for <em>Edit apex records</em> access</p></td>
+<td><p>Determines whether A and AAAA records are considered when verifying access to edit apex (root) records.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Web app landing page</p></td>
+<td><p>By default, the Micetro frontpage is the landing page for the system. Clicking the Micetro logo will take you to the landing page.</p></td>
+</tr>
+<tr class="row-even"><td><p>Web app server host</p></td>
+<td><p>Used to specify which host the web application is running on in order for auto update to work for the web application. Default is localhost (same server as Men&amp;Mice Central)</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Enabling this feature can affect the performance of the system.</p>
+</aside>
+</aside>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to enable ldap authentication in Micetro" name="description" />
+<meta content="ldap, external authentication" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lightweight Directory Access Protocol (LDAP) User Authentication &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="RADIUS User Authentication" href="radius_user_auth.html" />
+    <link rel="prev" title="Active Directory User Authentication" href="ad_user_auth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="configuration.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="running_micetro.html">Running the Micetro Components (Central, Agents)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller_logging.html">Configuring Logging for the Micetro Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">Micetro User Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="webapp_external_auth.html">External Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mfa_azure.html">Integrating with Microsoft Entra ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mfa_okta.html">Integrating with Okta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad_user_auth.html">Active Directory User Authentication</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lightweight Directory Access Protocol (LDAP) User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-on-centos-linux">Installation on Centos Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-ldap">Configuring LDAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-ldap-in-micetro">Enabling LDAP in Micetro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-ldap-with-central-running-on-windows">Using LDAP with Central Running on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="radius_user_auth.html">RADIUS User Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dns.html">Adding DNS Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dhcp.html">Adding DHCP Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_ip_ranges.html">IP Address Ranges and Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="configuration.html">Configuration</a></li>
+          <li class="breadcrumb-item"><a href="webapp_external_auth.html">External Authentication</a></li>
+      <li class="breadcrumb-item active">Lightweight Directory Access Protocol (LDAP) User Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/ldap_user_auth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lightweight-directory-access-protocol-ldap-user-authentication">
+<span id="ldap-user-auth"></span><h1>Lightweight Directory Access Protocol (LDAP) User Authentication<a class="headerlink" href="#lightweight-directory-access-protocol-ldap-user-authentication" title="Link to this heading"></a></h1>
+<p>LDAP user authentication allows you to configure user authentication against an LDAP server, providing a streamlined method for managing user access across systems and services. To implement LDAP authentication, you’ll first need to set up an authentication server that hosts the LDAP directory containing user credentials. Once the authentication server is established, you can enable LDAP authentication within Micetro, allowing users to authenticate using their LDAP credentials.</p>
+<section id="installation-on-centos-linux">
+<h2>Installation on Centos Linux<a class="headerlink" href="#installation-on-centos-linux" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Confirm that here is directory called “extensions” in the Central data directory, and that it contains a Python script named mm_auth_cb.py and an accompanying signature file. This Python script handles the authentication callback from the external provider. The directory and files are created during the installation of Micetro Central.</p></li>
+<li><p>To use LDAP authentication and authorization, start by installing <code class="docutils literal notranslate"><span class="pre">mm_ldap.py</span></code> on the machine where the Micetro Central service is run and install the Python extension used by Central when connecting to an LDAP directory:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>python-ldap
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/mmsuite/mmcentral/extensions
+sudo<span class="w"> </span>cp<span class="w"> </span>mm_ldap.py<span class="w"> </span>/var/mmsuite/mmcentral/extensions
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>root:root<span class="w"> </span>/var/mmsuite/mmcentral/extensions
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">440</span><span class="w"> </span>/var/mmsuite/mmcentral/extensions/mm_ldap.py
+</pre></div>
+</div>
+<p>A signature file for the python extension will also have to be installed and placed in the extension directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cp<span class="w"> </span>mm_ldap.signature<span class="w"> </span>/var/mmsuite/mmcentral/extensions
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For security reasons, the Central service will not execute <code class="docutils literal notranslate"><span class="pre">mm_ldap.py</span></code> unless the signature <code class="docutils literal notranslate"><span class="pre">inmm_ldap.signature</span></code> matches the signature calculated for <code class="docutils literal notranslate"><span class="pre">mm_ldap.py</span></code>.</p>
+</div>
+</section>
+<section id="configuring-ldap">
+<h2>Configuring LDAP<a class="headerlink" href="#configuring-ldap" title="Link to this heading"></a></h2>
+<p>LDAP configurations are stored in a JSON config file that should be stored in the Micetro Central service root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cp<span class="w"> </span>ldapconf.json<span class="w"> </span>/var/mmsuite/mmcentral
+sudo<span class="w"> </span>chown<span class="w"> </span>root:root<span class="w"> </span>/var/mmsuite/mmcentral/ldapconf.json
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">440</span><span class="w"> </span>/var/mmsuite/mmcentral/ldapconf.json
+</pre></div>
+</div>
+<p>The configuration file has the following schema:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">//</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">ldaps</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">636</span>
+      <span class="s2">&quot;reader_dn&quot;</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;reader_password&quot;</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;skip_cert_verification&quot;</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="n">null</span><span class="p">,</span> <span class="o">//</span> <span class="n">Default</span><span class="p">:</span> <span class="n">false</span><span class="o">.</span>
+      <span class="s2">&quot;ca_cert_file&quot;</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;disable_referrals&quot;</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="n">null</span><span class="p">,</span> <span class="o">//</span> <span class="n">Default</span><span class="p">:</span> <span class="n">true</span><span class="o">.</span>
+      <span class="s2">&quot;use_start_tls&quot;</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="n">null</span><span class="p">,</span> <span class="o">//</span> <span class="n">Default</span><span class="p">:</span> <span class="n">false</span><span class="o">.</span>
+      <span class="p">},</span>
+  <span class="s2">&quot;user_search_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;base_dn&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+      <span class="s2">&quot;search_filter&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;subtree&quot;</span> <span class="o">|</span> <span class="s2">&quot;onelevel&quot;</span><span class="p">,</span> <span class="o">//</span> <span class="n">Default</span><span class="p">:</span> <span class="s1">&#39;subtree&#39;</span>
+      <span class="s2">&quot;email_attribute&quot;</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;group_search_config&quot;</span><span class="p">:</span> <span class="n">null</span> <span class="o">|</span> <span class="p">{</span>
+          <span class="s2">&quot;base_dn&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;subtree&quot;</span> <span class="o">|</span> <span class="s2">&quot;onelevel&quot;</span><span class="p">,</span> <span class="o">//</span> <span class="n">Default</span><span class="p">:</span> <span class="s1">&#39;subtree&#39;</span>
+          <span class="s2">&quot;search_filter&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="s2">&quot;name_attribute&quot;</span><span class="p">:</span> <span class="nb">str</span> <span class="o">//</span> <span class="n">Default</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 70.0%" />
+<col style="width: 10.0%" />
+<col style="width: 5.0%" />
+<col style="width: 5.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>uri</p></td>
+<td><p>URI for LDAP service.</p></td>
+<td><p>ldaps://example.com:636</p></td>
+<td><p>Yes</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>reader_dn</p></td>
+<td><p>DN or login name for a user that has permission to search in the directory. Not needed when all users have permissions to search (for example AD LDAP service).</p></td>
+<td><p><a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;com">user<span>&#64;</span>example<span>&#46;</span>com</a></p></td>
+<td><p>No</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>reader_password</p></td>
+<td><p>Password for reader_dn user.</p></td>
+<td></td>
+<td><p>No</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>skip_cert_verification</p></td>
+<td><p>If true, then certificates will not be verified. Set to true when using self-signed certificates.</p></td>
+<td></td>
+<td><p>No</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>ca_cert_file</p></td>
+<td><p>Path of file containing all trusted CA certificates.</p></td>
+<td></td>
+<td><p>No</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>disable_referrals</p></td>
+<td><p>Skip referrals when doing LDAP queries. Should be set to true for AD LDAP services.</p></td>
+<td><p>No</p></td>
+<td><p>true</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>user_start_tls</p></td>
+<td><p>Use TLS when connecting to LDAP service. This is still experimental. Please use LDAPS instead.</p></td>
+<td></td>
+<td><p>No</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>user_search_config.base_dn</p></td>
+<td><p>DN from where to start searching for a user in the directory.</p></td>
+<td><p>‘dc=corp, dc=example, dc=com’</p></td>
+<td><p>Yes</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>user_search_config.search_filter</p></td>
+<td><p>Filter to use for searching for a user. Username will be inserted into placeholder ‘{username}’ if specified.</p></td>
+<td><p>(&amp;(objectClass=user)(userPrincipalName={username}))</p></td>
+<td><p>Yes</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>scope</p></td>
+<td><p>Scope to use when searching. Should be either ‘subtree’ or ‘onelevel’. Defaults to ‘subtree’.</p></td>
+<td><p>subtree</p></td>
+<td><p>No</p></td>
+<td><p>subtree</p></td>
+</tr>
+<tr class="row-even"><td><p>email_attribute</p></td>
+<td><p>LDAP attribute used to store users email address.</p></td>
+<td><p>userPrincipalName</p></td>
+<td><p>No</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>group_search_config.base_dn</p></td>
+<td><p>DN from where to start searching for groups in the directory.</p></td>
+<td><p>‘dc=corp, dc=example, dc=com’</p></td>
+<td><p>If group authentication is used.</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>group_search_config.scope</p></td>
+<td><p>Scope to use when searching. Should be either ‘subtree’ or ‘onelevel’. Defaults to ‘subtree’.</p></td>
+<td><p>subtree</p></td>
+<td><p>No</p></td>
+<td><p>subtree</p></td>
+</tr>
+<tr class="row-odd"><td><p>group_search_config.search_filter</p></td>
+<td><p>Search filter to use when searching for groups. Users DN will be inserted into placeholder ‘{dn}’ if specified. Username will be inserted into placeholder ‘{username}’ if specified.</p></td>
+<td><p>(&amp;(objectClass=group)(member:={dn}))</p></td>
+<td><p>If group authentication is used.</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>group_search_config.name_attribute</p></td>
+<td><p>Attribute used to store name of group.</p></td>
+<td><p>name</p></td>
+<td><p>If group authentication is used.</p></td>
+<td><p>name</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example configuration for connecting to an AD LDAP service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;ldaps://ldap.example.com:636&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;skip_cert_verification&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;disable_referrals&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;use_start_tls&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+
+  <span class="s2">&quot;user_search_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;base_dn&quot;</span><span class="p">:</span>  <span class="s2">&quot;dc=corp, dc=example, dc=com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;search_filter&quot;</span><span class="p">:</span> <span class="s2">&quot;(&amp;(objectClass=user)(userPrincipalName=</span><span class="si">{username}</span><span class="s2">))&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;subtree&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;email_attribute&quot;</span><span class="p">:</span> <span class="s2">&quot;userPrincipalName&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;group_search_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;base_dn&quot;</span><span class="p">:</span> <span class="s2">&quot;dc=corp, dc=example, dc=com&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;subtree&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;search_filter&quot;</span><span class="p">:</span> <span class="s2">&quot;(&amp;(objectClass=group)(member:=</span><span class="si">{dn}</span><span class="s2">))&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name_attribute&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="enabling-ldap-in-micetro">
+<h2>Enabling LDAP in Micetro<a class="headerlink" href="#enabling-ldap-in-micetro" title="Link to this heading"></a></h2>
+<p>After completing the setup of the server, you need to enable the LDAP authentication method in Micetro.</p>
+<p><strong>To enable LDAP integration</strong>:</p>
+<ol class="arabic simple">
+<li><p>On the <span class="guilabel">Admin</span> page, select the <span class="guilabel">Configuration</span> tab.</p></li>
+<li><p>Select <span class="guilabel">Authentication</span> under <span class="guilabel">System Settings</span> in the left pane.</p></li>
+<li><p>Select the <span class="guilabel">Enable LDAP integration</span>.</p></li>
+</ol>
+</section>
+<section id="using-ldap-with-central-running-on-windows">
+<h2>Using LDAP with Central Running on Windows<a class="headerlink" href="#using-ldap-with-central-running-on-windows" title="Link to this heading"></a></h2>
+<p>To use LDAP with a Micetro Central server running on Windows, Python must be installed for all users. See <a class="reference internal" href="../reference/central_python_ldap.html#central-python-ldap"><span class="std std-ref">Installing Python for Men&amp;Mice Central on Windows</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ad_user_auth.html" class="btn btn-neutral float-left" title="Active Directory User Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="radius_user_auth.html" class="btn btn-neutral float-right" title="RADIUS User Authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

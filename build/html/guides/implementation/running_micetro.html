@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Running and restarting Micetro components" name="description" />
+<meta content="Micetro, maintenance" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Running the Men&amp;Mice components (Central, Controllers) &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="First login" href="first_login.html" />
+    <link rel="prev" title="Configuration" href="configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="configuration.html">Configuration</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Running the Men&amp;Mice components (Central, Controllers)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#men-mice-central">Men&amp;Mice Central</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#men-mice-controllers">Men&amp;Mice Controllers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="first_login.html">First login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_logging.html">Enable logging for Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller_logging.html">Configuring logging for the Men&amp;Mice Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">Micetro User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dns.html">Adding DNS servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dhcp.html">Add DHCP Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_ip_ranges.html">IP Address Ranges and devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="configuration.html">Configuration</a></li>
+      <li class="breadcrumb-item active">Running the Men&amp;Mice components (Central, Controllers)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/running_micetro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="running-the-men-mice-components-central-controllers">
+<span id="running-micetro"></span><h1>Running the Men&amp;Mice components (Central, Controllers)<a class="headerlink" href="#running-the-men-mice-components-central-controllers" title="Link to this heading"></a></h1>
+<section id="linux">
+<span id="running-micetro-unix"></span><h2>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h2>
+<p>After installation, all Men&amp;Mice components are configured as system processes available through <code class="docutils literal notranslate"><span class="pre">systemctl</span></code>. Only use <code class="docutils literal notranslate"><span class="pre">systemctl</span></code> to stop, (re)start, and query the status of the components, i.e.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>status<span class="p">|</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="w"> </span>mmcentral
+systemctl<span class="w"> </span>status<span class="p">|</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="w"> </span>mmremote
+</pre></div>
+</div>
+<p>You can set several options when starting Men&amp;Mice Central (by default <code class="docutils literal notranslate"><span class="pre">/usr/sbin/mmcentral</span></code>):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>-ll &lt;level&gt;</p></td>
+<td><p>Men&amp;Mice Central sends event messages to the system log. You can change the log level for Men&amp;Mice Central by using the –ll command-line option when starting the daemon. Possible levels are 0 - 5 (the default value is 3)</p></td>
+</tr>
+<tr class="row-even"><td><p>-p &lt;port&gt;</p></td>
+<td><p>Set port number to listen to (default 1231)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-u &lt;user&gt;</p></td>
+<td><p>Specifies the user name or user id that the program should run as</p></td>
+</tr>
+<tr class="row-even"><td><p>-g &lt;group&gt;</p></td>
+<td><p>Specifies the group name or group id that the program should run as</p></td>
+</tr>
+<tr class="row-odd"><td><p>-d &lt;path&gt;</p></td>
+<td><p>Sets the path where the data files should be located (the default path is /var/mmsuite/mmcentral)</p></td>
+</tr>
+<tr class="row-even"><td><p>-v</p></td>
+<td><p>Displays version information</p></td>
+</tr>
+<tr class="row-odd"><td><p>–h</p></td>
+<td><p>Displays available command line options for Men&amp;Mice Central</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mmcentrald<span class="w"> </span>-p<span class="w"> </span><span class="m">9876</span><span class="w"> </span>-ll<span class="w"> </span><span class="m">5</span><span class="w"> </span>-d<span class="w"> </span>/temp/data
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="windows">
+<span id="running-micetro-windows"></span><h2>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h2>
+<section id="men-mice-central">
+<h3>Men&amp;Mice Central<a class="headerlink" href="#men-mice-central" title="Link to this heading"></a></h3>
+<p>Men&amp;Mice Central runs as a service and you can start and stop Men&amp;Mice Central using the Services application. You can also control Men&amp;Mice Central using these command line options:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>mmcentral –i</p></td>
+<td><p>Installs Men&amp;Mice Central as a service</p></td>
+</tr>
+<tr class="row-even"><td><p>mmcentral –u</p></td>
+<td><p>Uninstalls Men&amp;Mice Central</p></td>
+</tr>
+<tr class="row-odd"><td><p>mmcentral –start</p></td>
+<td><p>Starts the Men&amp;Mice Central service</p></td>
+</tr>
+<tr class="row-even"><td><p>mmcentral –stop</p></td>
+<td><p>Stops the Men&amp;Mice Central service</p></td>
+</tr>
+<tr class="row-odd"><td><p>mmcentral –v</p></td>
+<td><p>Displays version information</p></td>
+</tr>
+<tr class="row-even"><td><p>mmcentral –h</p></td>
+<td><p>Displays available command line options for Men&amp;Mice Central</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="men-mice-controllers">
+<h3>Men&amp;Mice Controllers<a class="headerlink" href="#men-mice-controllers" title="Link to this heading"></a></h3>
+<p>The Men&amp;Mice DNS Server Controller runs as a service and you can start and stop the Server Controller using the Services application. You can also control the Men&amp;Mice DNS Server Controller using these command line options:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">widths: 30, 70</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td><p>mmremote –i</p></td>
+<td><p>Installs the Men&amp;Mice DNS Server Controller as a service</p></td>
+</tr>
+<tr class="row-even"><td><p>mmremote –u</p></td>
+<td><p>Uninstalls the Men&amp;Mice DNS Server Controller</p></td>
+</tr>
+<tr class="row-odd"><td><p>mmremote –start</p></td>
+<td><p>Starts the Men&amp;Mice DNS Server Controller service</p></td>
+</tr>
+<tr class="row-even"><td><p>mmremote –stop</p></td>
+<td><p>Stops the Men&amp;Mice DNS Server Controller service</p></td>
+</tr>
+<tr class="row-odd"><td><p>mmremote –v</p></td>
+<td><p>Displays version information</p></td>
+</tr>
+<tr class="row-even"><td><p>mmremote –h</p></td>
+<td><p>Displays available command line options for the Men&amp;Mice DNS Server Controller</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="configuration.html" class="btn btn-neutral float-left" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="first_login.html" class="btn btn-neutral float-right" title="First login" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

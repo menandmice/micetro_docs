@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="User authentication methods available with Micetro by Men&amp;Mice" name="description" />
+<meta content="Active directory, Windows active directory" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>External Authentication (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Update Guide (Management Console, obsolete)" href="console_updates.html" />
+    <link rel="prev" title="First use wizard (Management Console, obsolete)" href="first_use_wizard.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">External Authentication (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#active-directory-user-authentication">Active Directory User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#active-directory-user-authentication-vs-local-user-authentication">Active Directory User Authentication vs. Local User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-ad-user-authentication-using-active-directory">Enabling AD User Authentication Using Active Directory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#active-directory-single-sign-on">Active Directory Single Sign-on</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#web-interface">Web Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#application-log-in">Application Log In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#group-level-active-directory-user-authentication">Group Level Active Directory User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-groups-for-ad-group-level-authentication">Configuring Groups for AD Group Level Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-users-and-access-privileges">Configuring Users and Access Privileges</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#radius-user-authentication">RADIUS User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radius-user-authentication-vs-local-user-authentication">RADIUS User Authentication vs. Local User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-radius-user-authentication">Enabling RADIUS User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-users">Configuring Users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logging-into-micetro-using-radius">Logging into Micetro Using RADIUS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#single-sign-on-sso-and-multi-factor-authentication-mfa">Single Sign-On (SSO) and Multi-Factor Authentication (MFA)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#integrating-with-identity-provider-s-sso-mfa">Integrating with Identity Provider’s SSO/MFA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dependency-checklist">Dependency Checklist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-setup">Installation/Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#okta">Okta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-central-server">Configure Central Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#login-and-grant-user-group-access">Login and Grant User/Group Access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#addendum">Addendum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">External Authentication (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/external_auth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>Jump to: <a class="reference internal" href="#multi-factor-authentication"><span class="std std-ref">Single Sign-On (SSO) and Multi-Factor Authentication (MFA)</span></a></p>
+<section id="external-authentication-management-console-obsolete">
+<span id="external-auth"></span><h1>External Authentication (Management Console, obsolete)<a class="headerlink" href="#external-authentication-management-console-obsolete" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unless indicated otherwise, instructions here are to be performed in the Management Console.</p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This section discusses the available user authentication methods available with Micetro.</p>
+<p>In addition to Local User Authentication, Micetro currently supports two methods of AD user authentication using the Windows Active Directory user database and authentication through a RADIUS server.</p>
+<p>Micetro also supports multi-factor authentication (MFA) through two methods, Azure and Okta.</p>
+</section>
+<section id="active-directory-user-authentication">
+<h2>Active Directory User Authentication<a class="headerlink" href="#active-directory-user-authentication" title="Link to this heading"></a></h2>
+<p>The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to log in to Micetro. In large installations, this system has obvious benefits as users do not have to maintain their passwords in multiple locations. The password rules (expiry, minimum password length, etc.) applied within the organization automatically apply to Micetro.</p>
+<section id="active-directory-user-authentication-vs-local-user-authentication">
+<h3>Active Directory User Authentication vs. Local User Authentication<a class="headerlink" href="#active-directory-user-authentication-vs-local-user-authentication" title="Link to this heading"></a></h3>
+<p>Even when using AD User Authentication, you must create users in the Management Console and assign privileges to them using the Men&amp;Mice access system. The only difference between AD vs. local user authentication is that when AD user authentication is used, users are authenticated using the AD User Authentication system before they can access the Management Console. When AD User Authentication is used, the user password is not stored in the Men&amp;Mice software.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using AD user authentication, while other users log in using local user authentication.</p>
+</div>
+</section>
+<section id="enabling-ad-user-authentication-using-active-directory">
+<h3>Enabling AD User Authentication Using Active Directory<a class="headerlink" href="#enabling-ad-user-authentication-using-active-directory" title="Link to this heading"></a></h3>
+<p>AD user authentication using Active Directory is only possible when you run Micetro Central on a Windows machine. The machine running Micetro Central must be a member in an Active Directory domain or forest.
+No specific configuration is needed for Men&amp;Mice Central for user authentication using Active Directory.</p>
+<section id="configuring-users-for-ad-authentication">
+<h4>Configuring Users for AD Authentication<a class="headerlink" href="#configuring-users-for-ad-authentication" title="Link to this heading"></a></h4>
+<p>To configure a user to use AD user authentication, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu, select <span class="menuselection">Tools ‣ User management</span>.</p></li>
+<li><p>Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. For more information, see <a class="reference internal" href="../admin-manual/acl_users.html#acl-users"><span class="std std-ref">Users</span></a>.</p></li>
+<li><p>When the <em>Properties</em> dialog box displays, move to the <strong>Authentication</strong> field, click the drop-down list, and select the applicable authentication method. (If Men&amp;Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the AD authentication method is selected, the <strong>Password</strong> field is disabled, since the password is not stored in Micetro.</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="active-directory-single-sign-on">
+<h2>Active Directory Single Sign-on<a class="headerlink" href="#active-directory-single-sign-on" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../_images/console_ad_sso.png"><img alt="../../_images/console_ad_sso.png" class="align-center" src="../../_images/console_ad_sso.png" style="width: 60%;" /></a>
+<p>You can enable the Single Sign-on so that Active Directory users do not have to authenticate when logging in through the Management Console.</p>
+<p>To enable Active Directory Single Sign-on, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+<li><p>In the <em>System Settings</em> dialog box, click the <span class="guilabel">General Settings</span> tab.</p></li>
+<li><p>Select the <span class="guilabel">Allow Single Sign-on</span> option.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<section id="web-interface">
+<h3>Web Interface<a class="headerlink" href="#web-interface" title="Link to this heading"></a></h3>
+<p>When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on a Microsoft Windows Server.</p>
+<p>To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web are enabled in Micetro.</p>
+</section>
+</section>
+<section id="application-log-in">
+<h2>Application Log In<a class="headerlink" href="#application-log-in" title="Link to this heading"></a></h2>
+<p>Logging in to Micetro will not change when AD user authentication is used and Single Sign-on is disabled. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro. If a distinguished user name is used, it must be entered in the same way when logging in.</p>
+</section>
+<section id="group-level-active-directory-user-authentication">
+<h2>Group Level Active Directory User Authentication<a class="headerlink" href="#group-level-active-directory-user-authentication" title="Link to this heading"></a></h2>
+<p>The Group Level Active Directory (AD) User Authentication mechanism allows you to set user access privileges by group membership in the AD. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.</p>
+<p>The login sequence is as follows for users with Group Level AD authentication:</p>
+<ol class="arabic simple">
+<li><p>The user enters his/her username and password in Micetro</p></li>
+<li><p>Micetro uses the AD authentication mechanism to validate the user name and password. If the user name and password is correct, Micetro retrieves the group membership of the user from the AD.</p></li>
+<li><p>The AD group list of the user is compared (by group name) to the local group list in Micetro. If a match is found, the user is logged in with the privileges specified in the local group list. If no match is found, the login fails.</p></li>
+</ol>
+<p>To allow a user to log in to Micetro, you must create a group in the AD that has the same name as a group in Micetro and place the AD user in that group. You may create multiple groups in the AD that match group names in Micetro.</p>
+<section id="configuring-groups-for-ad-group-level-authentication">
+<h3>Configuring Groups for AD Group Level Authentication<a class="headerlink" href="#configuring-groups-for-ad-group-level-authentication" title="Link to this heading"></a></h3>
+<p>When using AD Group level authentication, you must specify which groups in Micetro should be used to verify group membership.</p>
+<ol class="arabic simple">
+<li><p>From the menu, select <span class="menuselection">Tools ‣ User Management</span>. The <em>Users and groups management</em> dialog box displays.</p></li>
+<li><p>Click the <span class="guilabel">Groups</span> tab.</p></li>
+<li><p>Select the group to which you want to configure AD, and then click <span class="guilabel">Edit</span>. If the desired group is not shown, you will need to add the group. See <a class="reference internal" href="../admin-manual/acl_groups.html#acl-groups"><span class="std std-ref">Groups</span></a>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console_ad_groups_auth.png"><img alt="../../_images/console_ad_groups_auth.png" class="align-center" src="../../_images/console_ad_groups_auth.png" style="width: 60%;" /></a>
+<dl class="simple">
+<dt>Group Name</dt><dd><p>Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain “MYDOMAIN” contains the group “MM-ReadOnly”. The group name must then be “MYDOMAIN\MM-ReadOnly”.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="4">
+<li><p>Click the checkbox for <span class="guilabel">Active Directory Integrated</span>.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Group Level Active Directory user authentication is only possible when you run Men&amp;Mice Central on a Windows machine. The machine running Men&amp;Mice Central must be a member of an Active Directory domain or forest.</p>
+</div>
+</section>
+<section id="configuring-users-and-access-privileges">
+<h3>Configuring Users and Access Privileges<a class="headerlink" href="#configuring-users-and-access-privileges" title="Link to this heading"></a></h3>
+<p>You do not have to create users in Micetro when the Group Level AD authentication is used. Instead, user access is controlled by the group membership of the user in the AD.</p>
+</section>
+</section>
+<section id="radius-user-authentication">
+<h2>RADIUS User Authentication<a class="headerlink" href="#radius-user-authentication" title="Link to this heading"></a></h2>
+<p>Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (expiry, minimum password length, etc.) applied within the organization automatically apply to Micetro.</p>
+<section id="radius-user-authentication-vs-local-user-authentication">
+<h3>RADIUS User Authentication vs. Local User Authentication<a class="headerlink" href="#radius-user-authentication-vs-local-user-authentication" title="Link to this heading"></a></h3>
+<p>Even when using RADIUS User Authentication, you must create users in the Management Console and assign privileges to them using the Men&amp;Mice access system. The only difference between RADIUS vs. local user authentication is that when RADIUS user authentication is used, users are authenticated using the RADIUS User Authentication system before they can access the Management Console. When RADIUS User Authentication is used, the user password is not stored in the Men&amp;Mice software.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using RADIUS user authentication, while other users log in using local user authentication.</p>
+</div>
+</section>
+<section id="enabling-radius-user-authentication">
+<h3>Enabling RADIUS User Authentication<a class="headerlink" href="#enabling-radius-user-authentication" title="Link to this heading"></a></h3>
+<p>To enable RADIUS authentication, you must add several properties to the Men&amp;Mice Central configuration file preferences.cfg. This file is located in the data folder inside the Men&amp;Mice Central data directory:</p>
+<ul class="simple">
+<li><p>Windows: C:\Program Files\Men&amp;Mice\Central\data</p></li>
+<li><p>Mac OS X: <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral</span></code></p></li>
+<li><p>All others: set during installation. Usually <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral</span></code> or <code class="docutils literal notranslate"><span class="pre">/chroot/var/mmsuite/mmcentral</span></code>, where <code class="docutils literal notranslate"><span class="pre">/chroot</span></code> is the location used as a chroot jail for named.</p></li>
+</ul>
+<p>The properties to be added are:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>RADIUSServer</p></td>
+<td><p>Defines the address of the RADIUS server that will do RADIUS authentication.</p></td>
+</tr>
+<tr class="row-even"><td><p>RADIUSPort</p></td>
+<td><p>Defines the port that the RADIUS server is listening on. The default value is 1812, which is the port normally used by RADIUS.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RADIUSSharedSecret</p></td>
+<td><p>The shared secret between the RADIUS server and Micetro.</p></td>
+</tr>
+<tr class="row-even"><td><p>RADIUSAuthentication</p></td>
+<td><p>The type of authentication used. 0 = PAP, 1 = CHAP.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">RADIUSServer</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;192.168.1.3&quot;</span><span class="o">/&gt;&lt;</span><span class="n">RADIUSPort</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1515&quot;</span><span class="o">/&gt;&lt;</span><span class="n">RADIUSSharedSecret</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;MyBigSecret&quot;</span><span class="o">/&gt;&lt;</span><span class="n">RADIUSAuthentication</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>After editing the file, restart Men&amp;Mice Central.</p>
+<ul>
+<li><p>Windows: use <span class="menuselection">Administration Tools ‣ Services</span> to restart Men&amp;Mice Central.</p></li>
+<li><p>Mac OS X: Execute the following shell command in a Terminal window (/Applications/Utilities/Terminal):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>/Library/StartupItems/mmSuite/mmcentral<span class="w"> </span>restart
+</pre></div>
+</div>
+</li>
+<li><p>All others: Execute the <code class="docutils literal notranslate"><span class="pre">mmcentral</span></code> init script with the ‘restart’ argument.</p></li>
+</ul>
+</section>
+<section id="configuring-users">
+<h3>Configuring Users<a class="headerlink" href="#configuring-users" title="Link to this heading"></a></h3>
+<p>To allow a user to log in to the Men&amp;Mice system, the user must exist in the Men&amp;Mice user database. If the user does not exist in the Men&amp;Mice user database, they are not allowed to log in, even if they provide a valid username and password in the RADIUS login system.</p>
+<p>To configure a user to use AD user authentication, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ User Management</span>. The <em>User and group management</em> dialog box displays.</p></li>
+<li><p>To add a new user, click the <span class="guilabel">Add</span> button. Refer to <a class="reference internal" href="../admin-manual/acl_users.html#acl-users"><span class="std std-ref">Users</span></a>. Follow the instructions with one exception: select RADIUS on the <strong>Authentication</strong> drop-down list.</p></li>
+<li><p>To modify an existing user, double-click on the user’s name to display the user <em>Properties</em> dialog box, and select RADIUS on the <strong>Authentication</strong> drop-down list.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the RADIUS authentication method is selected, the <strong>Password</strong> field is disabled, since the password is not stored in Micetro.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/console_ad_sso_radius.png"><img alt="../../_images/console_ad_sso_radius.png" class="align-center" src="../../_images/console_ad_sso_radius.png" style="width: 60%;" /></a>
+</section>
+<section id="logging-into-micetro-using-radius">
+<h3>Logging into Micetro Using RADIUS<a class="headerlink" href="#logging-into-micetro-using-radius" title="Link to this heading"></a></h3>
+<p>Logging in to Micetro will not change when RADIUS user authentication is used. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro.</p>
+</section>
+</section>
+<section id="single-sign-on-sso-and-multi-factor-authentication-mfa">
+<span id="multi-factor-authentication"></span><h2>Single Sign-On (SSO) and Multi-Factor Authentication (MFA)<a class="headerlink" href="#single-sign-on-sso-and-multi-factor-authentication-mfa" title="Link to this heading"></a></h2>
+<p>Micetro has integrated with both Azure Active Directory and Okta to allow integration with multi-factor authentication and SSO.</p>
+<p>Once configured the front page of Micetro will present buttons to redirect the user to the provider’s URL for authentication.</p>
+<div class="toctree-wrapper compound">
+</div>
+<section id="integrating-with-identity-provider-s-sso-mfa">
+<h3>Integrating with Identity Provider’s SSO/MFA<a class="headerlink" href="#integrating-with-identity-provider-s-sso-mfa" title="Link to this heading"></a></h3>
+<p>Micetro is adding support for multifactor authentication via two identity solutions, Azure Active Directory and Okta.</p>
+<a class="reference internal image-reference" href="../../_images/mfa-login.png"><img alt="../../_images/mfa-login.png" class="align-center" src="../../_images/mfa-login.png" style="width: 60%;" /></a>
+</section>
+<section id="dependency-checklist">
+<h3>Dependency Checklist<a class="headerlink" href="#dependency-checklist" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Configure and enable SSO and MFA in your identity provider</p></li>
+<li><p>Micetro web servers must be configured for HTTPS and have a valid certificate</p></li>
+<li><p>Central must have internet access to identity provider’s endpoints</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Azure</dt><dd><ul>
+<li><p>login.microsoftonline.com</p></li>
+<li><p>graph.microsoft.com</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Okta</dt><dd><ul>
+<li><p><a href="#id1"><span class="problematic" id="id2">*</span></a>.okta.com</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Python with dependent libraries and requests package is installed on the Central server</p>
+<blockquote>
+<div><ul>
+<li><p>Azure</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>msal &gt;=1.17 – The Microsoft Authentication Library that enables Micetro to access the Cloud for AAD - <a class="reference external" href="https://pypi.org/project/msal/1.17.0/">https://pypi.org/project/msal/1.17.0/</a></p></li>
+<li><p>requests - <a class="reference external" href="https://pypi.org/project/requests/">https://pypi.org/project/requests/</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Okta</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3 required.</p></li>
+<li><p>okta_jwt_verifier &gt;=0.2.3 – Verifies Okta access and ID tokens - okta-jwt-verifier · PyPI</p></li>
+<li><p>requests - <a class="reference external" href="https://pypi.org/project/requests/">https://pypi.org/project/requests/</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If running Central in HA mode, it is advised to disable the service on one of the partners to ensure installation is successful on each server, and to prevent the servers from failing over during the installation.</p>
+<p>Installation and configuration must be done on ALL Central servers in your environment.</p>
+</div>
+</section>
+<section id="installation-setup">
+<h3>Installation/Setup<a class="headerlink" href="#installation-setup" title="Link to this heading"></a></h3>
+<p><strong>Setting up the Application (Identity Provider)</strong>
+To get the needed properties for the configuration an application first needs to be set up at the provider.</p>
+<p><strong>Azure Active Directory</strong>
+If running Central in HA mode, it is advised to disable the service on one of the During this configuration, you will need to capture your Identity Provider’s credentials.</p>
+<p><strong>Permissions</strong>
+To be able to fetch the user’s profile info and group membership, the application needs to be given permission to do that:</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Microsoft Graph</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>API/Permission Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Admin consent request</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GroupMember.Read.All</p></td>
+<td><p>Delegated</p></td>
+<td><p>Read group memberships</p></td>
+<td><p>Yes</p></td>
+<td><p>Granted for [name]</p></td>
+</tr>
+<tr class="row-odd"><td><p>User.Read</p></td>
+<td><p>Delegated</p></td>
+<td><p>Sign in and read user profile</p></td>
+<td><p>No</p></td>
+<td><p>Granted for [name]</p></td>
+</tr>
+</tbody>
+</table>
+<p>The app asks for <code class="docutils literal notranslate"><span class="pre">User.Read</span></code> from the user, but an administrator needs to grant <code class="docutils literal notranslate"><span class="pre">GroupMember.Read.All</span></code>. Group membership will not be synced if <code class="docutils literal notranslate"><span class="pre">GroupMember.Read.All</span></code> (or some wider groups permission) is not granted to the application by an administrator.</p>
+<p><strong>Register the Application</strong></p>
+<p>The setup requires navigation to the Azure Portal, and opening AAD.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>On the left pane, select “App registration” and inside the newly opened “blade” (what Azure calls their subpages) click “New Registration”</p></li>
+<li><p>Type the name, select the proper radio button value for supported authentication types and for the Redirect URI the platform should be web and the field should      be <a class="reference external" href="https://micetro.central.fqdn/mmws/auth_cb/microsoft">https://micetro.central.fqdn/mmws/auth_cb/microsoft</a></p></li>
+<li><p>Once the app has been registered, the client ID should be viewable in the essentials panel for the app.</p></li>
+<li><p>Navigate to Certificates and Secrets to generate a new secret for the App to use.</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need this information for the Central configuration file.</p>
+<img alt="../../_images/external-authentication-console.png" src="../../_images/external-authentication-console.png" />
+</div>
+</section>
+<section id="okta">
+<h3>Okta<a class="headerlink" href="#okta" title="Link to this heading"></a></h3>
+<p>To get the needed properties for other configurations an application first needs to be set up at the provider.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Okta Application</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sign-in method</p></td>
+<td><p>OIDC - OpenID Connect</p></td>
+</tr>
+<tr class="row-even"><td><p>Application type</p></td>
+<td><p>Web Application</p></td>
+</tr>
+<tr class="row-odd"><td><p>Grant type</p></td>
+<td><p>Authorization Code (default)</p></td>
+</tr>
+<tr class="row-even"><td><p>Sign-in redirect URIs</p></td>
+<td><p>[Micetro URL]/mmws/auth_cb/okta</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sign-out redirect URIs (optional)</p></td>
+<td><p>[Micetro URL]</p></td>
+</tr>
+</tbody>
+</table>
+<p>The setup requires opening the Okta Administrator page.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>On the left pane, expand “Application” and click “Applications”.</p></li>
+<li><p>On the Applications page, click “Create App Integration”.</p></li>
+<li><p>Select OIDC as Sign-in method.</p></li>
+<li><p>Select Web Application as Application type.</p></li>
+<li><p>Grant type: Authorization Code (default)</p></li>
+<li><p>Sign-in redirect URIs: <strong>https://micetro-central-fqdn/mmws/auth_cb/okta</strong></p></li>
+<li><p>Sign-out redirect URIs: <strong>https://micetro-central-fqdn/</strong></p></li>
+</ol>
+</div></blockquote>
+<p><strong>Okta Authorization Server</strong></p>
+<p>An Okta config with server_id set to default means that the Default Custom Authorization Server provided by Okta is used. Otherwise, the value should be the name of the Custom Authorization server that has been set up at Okta or be skipped (or empty) if the Org Authorization Server should be used.</p>
+<p><strong>Group authorization</strong></p>
+<p>Both new identity solutions can be used in conjunction with group authorization models in Micetro</p>
+<p>Group membership is mirrored by matching group names, i.e., the user is added to groups (both AD and Internal, but not Built-in) in Micetro whose names match group names listed by the provider and removed from groups that do not match. If the provider does not list groups, the user’s group membership is not altered.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are options to filter and transform the provided groups in the setup of the applications at the provider’s end.</p>
+</div>
+<p><strong>Mapping groups from Microsoft Azure AD</strong></p>
+<p>As Azure only returns group ID with the token the script makes an extra call to Microsoft Graph API to fetch the group names. The Graph URI used can be changed in the config (groups_uri), but it should generally not be needed. As there is a limit of about 200 group IDs that can be returned within the JSON Web Token filtering should be used to supply only the necessary groups.</p>
+<p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims">Configure group claims for applications by using Azure Active Directory</a></p>
+<p><strong>Mapping groups from Okta</strong></p>
+<p>To map group memberships from Okta an <em>ID Token Claim</em> has been created with the name “groups”. Add an <em>OpenID Connect ID Token</em> to the application of the type “Filter“ with the name “groups“.</p>
+<a class="reference internal image-reference" href="../../_images/oicd-token-claim.png"><img alt="../../_images/oicd-token-claim.png" class="align-center" src="../../_images/oicd-token-claim.png" style="width: 60%;" /></a>
+</section>
+<section id="configure-central-server">
+<h3>Configure Central Server<a class="headerlink" href="#configure-central-server" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install Python and dependent libraries and packages on the Central server.</p></li>
+</ol>
+<p>For information about how to install Python on Windows, see <a class="reference internal" href="../reference/central_python_ldap.html#central-python-ldap"><span class="std std-ref">Installing Python for Men&amp;Mice Central on Windows</span></a>.</p>
+<dl class="simple">
+<dt>When installing Python please ensure the following:</dt><dd><ul class="simple">
+<li><p>Python is added to <code class="docutils literal notranslate"><span class="pre">PATH</span></code> and available to the user running Central</p></li>
+<li><p>That you are using a ratified (tested by Men&amp;Mice) version of Python (see dependency checklist)</p></li>
+<li><p>Python is installed in the “Default” environment</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic" start="2">
+<li><p><strong>Create a new directory called “extensions”</strong> in the Central data directory.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows - C:\ProgramData\Men and Mice\Central\extensions</p></li>
+<li><p>Linux -  /var/mmsuite/mmcentral/extensions</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Download and unzip the Micetro authentication script and signature file</strong> from Github into the newly created extensions directory.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.py.zip">mm_auth_cb.py.zip</a>  - This Python script handles the authentication callback from the external provider. The same script serves both providers.</p></li>
+<li><p><a class="reference external" href="https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip">mm_auth_cb.signature.zip</a></p></li>
+</ul>
+<p>For security reasons, the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature found in the same folder.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Manually create a json configuration file in the Micetro data directory</strong>.  At startup, the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp.</p></li>
+</ol>
+<p>The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured.</p>
+<p>Micetro data directory:</p>
+<blockquote>
+<div><p>Windows:  C:\ProgramData\Menandmice\Central\ext_auth_conf.json</p>
+<p>Linux:  /var/mmsuite/mmcentral/ext_auth_conf.json</p>
+</div></blockquote>
+<p>Add the contents below with credentials obtained from your Identity Provider.</p>
+<p>Sample config:</p>
+</div></blockquote>
+<p>Azure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+
+   <span class="s2">&quot;microsoft&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+      <span class="s2">&quot;tenant_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Company_tenant_id (must match Azure)&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;client_id&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;client_credential&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;redirect_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/mmws/auth_cb/microsoft (must match what is configured in Azure)&quot;</span>
+
+   <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Okta:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+
+   <span class="s2">&quot;okta&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+      <span class="s2">&quot;domain&quot;</span><span class="p">:</span> <span class="s2">&quot;Company_domain.okta.com&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;server_id&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxx|&#39;default&#39;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">can</span> <span class="n">be</span> <span class="n">skipped</span><span class="o">/</span><span class="n">empty</span><span class="p">)</span>
+
+      <span class="s2">&quot;client_id&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;client_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">,</span>
+
+      <span class="s2">&quot;redirect_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/mmws/auth_cb/okta (must match what is configured in Okta)&quot;</span>
+
+   <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will cache the credentials in the DB (no need to restart Central).  Once Authentication through the Service Providers is established, the json configuration file can be deleted.</p>
+<p><em>About the credential caching</em></p>
+<p>The contents of the configuration file ext_auth_conf.json are cached in the database, therefore the file can be deleted after external authentication is up and running.  The cached version is updated automatically based on the file timestamp.</p>
+<p><em>Clear the cached configuration</em></p>
+<p>If for some reason you want to clear the cached configuration file in the database.</p>
+<ol class="arabic">
+<li><p>Empty the .json configuration file.</p></li>
+<li><p>Go to Console Advanced System Settings and ensure that you have the “Default web form” enabled (Tools-&gt;System Settings-&gt;Advanced).</p></li>
+<li><p>Test with your browser to ensure you can log in locally.</p></li>
+<li><p>Disable the external authentication in System Settings.</p></li>
+<li><p><strong>Enable external authentication in the Micetro system settings</strong>
+In the Management Console, go to <span class="menuselection">Tools ‣ System Settings ‣ Advanced</span> and search for “external auth”.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/external-authentication-console.png"><img alt="../../_images/external-authentication-console.png" class="align-center" src="../../_images/external-authentication-console.png" style="width: 60%;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<p>It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and a value of 1.</p>
+<p>This will enable the SSO login on the web.</p>
+<ol class="arabic" start="6">
+<li><p>Turn off the default login form (optional)</p>
+<p>If you only want to offer users SSO/MFA login, you can disable the default web app login form.</p>
+<a class="reference internal image-reference" href="../../_images/hide-login-fields.png"><img alt="../../_images/hide-login-fields.png" class="align-center" src="../../_images/hide-login-fields.png" style="width: 60%;" /></a>
+<p>This will remove local/onprem login in the Web.  However, you still have the option to bypass this at login.</p>
+<a class="reference internal image-reference" href="../../_images/sso-login-external.png"><img alt="../../_images/sso-login-external.png" class="align-center" src="../../_images/sso-login-external.png" style="width: 60%;" /></a>
+</li>
+</ol>
+<p>The form will not be hidden if there is no external provider configured. The login form can be found by clicking the “Log in with Micetro“ down in the left corner of the login page.</p>
+</section>
+<section id="login-and-grant-user-group-access">
+<h3>Login and Grant User/Group Access<a class="headerlink" href="#login-and-grant-user-group-access" title="Link to this heading"></a></h3>
+<p>At first login, when using either Azure Active Directory (AAD) or Okta, <strong>a new user account is created in Micetro</strong>.  This user account will appear with the type “External”. External changes to the user’s email, full name, and group membership are synced at subsequent logins by matching the external ID.</p>
+<p>A single user profile is thus not shared between an external user authenticated by Azure AD (or Okta) and AD-integrated SSO, instead they are treated as separate users in Micetro.</p>
+<p>By default, all external users are added automatically to the “All users (built-in)” group. If group memberships are among the properties being returned by the identity service, then Micetro will add the user to groups with a matching name inside Micetro.</p>
+<p>A few properties are synchronized by Micetro; such as user’s email, full name, and group memberships. Any external changes to these properties are updated in Micetro on the next login.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After the new External accounts are added (automatically, when the user first logs in), administrators will still need to grant access to the DNS/DHCP/IPAM roles.</p>
+<p>If privileges have not yet been granted for the new external accounts, the user will get the below error:</p>
+<a class="reference internal image-reference" href="../../_images/mfa-error.png"><img alt="../../_images/mfa-error.png" class="align-center" src="../../_images/mfa-error.png" style="width: 60%;" /></a>
+</div>
+</section>
+<section id="addendum">
+<h3>Addendum<a class="headerlink" href="#addendum" title="Link to this heading"></a></h3>
+<p><strong>Troubleshooting</strong></p>
+<p>Logging for External Authentication can be enabled by putting your Central log in ll6.</p>
+<p><strong>External changes to user profiles</strong></p>
+<p>External changes to the user’s email, full name, and group membership are automatically replicated in Micetro on the next login.</p>
+<p><strong>Separate hosts for Micetro Central and Micetro Web Application</strong></p>
+<p>The Web Application/Web service is traditionally on the same host as the Micetro Central and by default, the tool will send queries to “localhost”.</p>
+<p>if Micetro Central is on a different host from the Web Service then you can add the following XML-tag to the preference value to auto-populate the “Server” field at login:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DefaultCentralServer</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;IP or DNS name of the Men &amp; Mice Central server&quot;</span> <span class="o">/&gt;</span>
+
+<span class="o">*</span> <span class="n">Windows</span> <span class="o">-</span> <span class="n">C</span><span class="p">:</span>\<span class="n">ProgramData</span>\<span class="n">Men</span> <span class="ow">and</span> <span class="n">Mice</span>\<span class="n">Central</span>\<span class="n">preferences</span><span class="o">.</span><span class="n">cfg</span>
+<span class="o">*</span> <span class="n">Linux</span> <span class="o">-</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mmsuite</span><span class="o">/</span><span class="n">mmcentral</span><span class="o">/</span><span class="n">preferences</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="first_use_wizard.html" class="btn btn-neutral float-left" title="First use wizard (Management Console, obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_updates.html" class="btn btn-neutral float-right" title="Update Guide (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

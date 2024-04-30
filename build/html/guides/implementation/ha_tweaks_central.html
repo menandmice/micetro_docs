@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Tweaking the High Availability settings for Men&amp;Mice Central" name="description" />
+<meta content="high availability, failover, Men&amp;Mice Central, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men&amp;Mice Central HA tweaks &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="xDNS Zone Redundancy Groups" href="xdns_redundancy_groups.html" />
+    <link rel="prev" title="Configure High Availability for Micetro Central" href="central_ha.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced_config.html">Advanced configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="console_advanced_settings.html">Advanced System Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_ha.html">Configure High Availability for Micetro Central</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Men&amp;Mice Central HA tweaks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#changing-the-default-heartbeat-timestamp-value-in-central-ha">Changing the default heartbeat timestamp value in Central HA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="xdns_redundancy_groups.html">xDNS Zone Redundancy Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_custom_links.html">Custom links in the web application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="advanced_config.html">Advanced configuration</a></li>
+      <li class="breadcrumb-item active">Men&amp;Mice Central HA tweaks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/ha_tweaks_central.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="men-mice-central-ha-tweaks">
+<span id="ha-tweaks-central"></span><h1>Men&amp;Mice Central HA tweaks<a class="headerlink" href="#men-mice-central-ha-tweaks" title="Link to this heading"></a></h1>
+<section id="changing-the-default-heartbeat-timestamp-value-in-central-ha">
+<h2>Changing the default heartbeat timestamp value in Central HA<a class="headerlink" href="#changing-the-default-heartbeat-timestamp-value-in-central-ha" title="Link to this heading"></a></h2>
+<p>The local time of the cluster member machines are used to update the heartbeat timestamp in the database. It’s crucial that the cluster member machines have a synchronized time.</p>
+<p>By default the Central instances update the heartbeat timestamp in the database every 10 seconds, as set in the <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral/preferences.cfg</span> <span class="pre">file</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;HeartbeatInterval value=“10” /&gt;
+</pre></div>
+</div>
+<p>This can be tweaked between values of <strong>5</strong> and <strong>15</strong>.</p>
+<p>When a Central instance stops to write the heartbeat timestamp to the DB the <em>HeartbeatMaxAllowedDowntime</em> value is used to determine if a failover is done to the next valid Central in the list.
+(Valid meaning, in this case, that the next Central application is a HA cluster member and is writing its heartbeat timestamp to the database.)</p>
+<p>The default maximum downtime is set for 30 seconds. When the current time [UTC – heartbeat timestamp UTC]  &gt;  [HeartbeatMaxAllowedDowntime] an automatic failover is triggered.</p>
+<p>The default maximum downtime can be overwritten in the <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral/preferences.cfg</span></code> for each Central instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;HeartbeatMaxAllowedDowntime value=“30” /&gt;
+</pre></div>
+</div>
+<p>Values between <strong>20</strong> and <strong>120</strong> are allowed, setting the maximum downtime to 20-120 seconds.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="central_ha.html" class="btn btn-neutral float-left" title="Configure High Availability for Micetro Central" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xdns_redundancy_groups.html" class="btn btn-neutral float-right" title="xDNS Zone Redundancy Groups" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

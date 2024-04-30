@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="User authentication methods available with Micetro by Men&amp;Mice" name="description" />
+<meta content="Active directory, Windows active directory" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>External Authentication &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configure LDAP authentication" href="configure_ldap.html" />
+    <link rel="prev" title="Micetro User Management" href="user_management.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="configuration.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="running_micetro.html">Running the Men&amp;Mice components (Central, Controllers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_login.html">First login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_logging.html">Enable logging for Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller_logging.html">Configuring logging for the Men&amp;Mice Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">Micetro User Management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">External Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#active-directory-user-authentication">Active Directory User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#active-directory-user-authentication-vs-local-user-authentication">Active Directory User Authentication vs. Local User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-ad-user-authentication-using-active-directory">Enabling AD User Authentication Using Active Directory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#active-directory-single-sign-on">Active Directory Single Sign-on</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#web-interface">Web Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#application-log-in">Application Log In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#group-level-active-directory-user-authentication">Group Level Active Directory User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-groups-for-ad-group-level-authentication">Configuring Groups for AD Group Level Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-users-and-access-privileges">Configuring Users and Access Privileges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radius-user-authentication">RADIUS User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radius-user-authentication-vs-local-user-authentication">RADIUS User Authentication vs. Local User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-radius-user-authentication">Enabling RADIUS User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-users">Configuring Users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logging-into-micetro">Logging into Micetro</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dns.html">Adding DNS servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_dhcp.html">Add DHCP Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_ip_ranges.html">IP Address Ranges and devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="configuration.html">Configuration</a></li>
+      <li class="breadcrumb-item active">External Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/external_auth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="external-authentication">
+<span id="external-auth"></span><h1>External Authentication<a class="headerlink" href="#external-authentication" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unless indicated otherwise, instructions here are to be performed in the Management Console.</p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This section discusses the available user authentication methods available with Micetro.</p>
+<p>In addition to Local User Authentication, Micetro currently supports two methods of AD user authentication using the Windows Active Directory user database and authentication through a RADIUS server.</p>
+</section>
+<section id="active-directory-user-authentication">
+<h2>Active Directory User Authentication<a class="headerlink" href="#active-directory-user-authentication" title="Link to this heading"></a></h2>
+<p>The Active Directory (AD) User Authentication mechanism allows you to have users authenticate themselves in the AD login system before allowing them to login to Micetro. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.</p>
+<section id="active-directory-user-authentication-vs-local-user-authentication">
+<h3>Active Directory User Authentication vs. Local User Authentication<a class="headerlink" href="#active-directory-user-authentication-vs-local-user-authentication" title="Link to this heading"></a></h3>
+<p>Even when you are using AD User Authentication, you must create users in the Management Console and assign privileges to them using the Men&amp;Mice access system. The only difference between AD vs. local user authentication is that when AD user authentication is used, users are authenticated using the AD User Authentication system before they can access the Management Console. When AD User Authentication is used, the user password is not stored in the Men&amp;Mice software.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using AD user authentication, while other users log in using local user authentication.</p>
+</div>
+</section>
+<section id="enabling-ad-user-authentication-using-active-directory">
+<h3>Enabling AD User Authentication Using Active Directory<a class="headerlink" href="#enabling-ad-user-authentication-using-active-directory" title="Link to this heading"></a></h3>
+<p>AD user authentication using Active Directory is only possible when you run Men&amp;Mice Central on a Windows machine. The machine running Men&amp;Mice Central must be a member in an Active Directory domain or forest.
+No specific configuration is needed for Men&amp;Mice Central for user authentication using Active Directory.</p>
+<section id="configuring-users-for-ad-authentication">
+<h4>Configuring Users for AD Authentication<a class="headerlink" href="#configuring-users-for-ad-authentication" title="Link to this heading"></a></h4>
+<p>To configure a user to use AD user authentication, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu, select <span class="menuselection">Tools ‣ User management</span>.</p></li>
+<li><p>Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. Refer to <a class="reference internal" href="../admin-manual/acl_users.html#acl-users"><span class="std std-ref">Users</span></a>.</p></li>
+<li><p>When the <em>Properties</em> dialog box display, move to the <strong>Authentication</strong> field, click the drop-down list, and select the applicable authentication method. (If Men&amp;Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the AD authentication method is selected, the <strong>Password</strong> field is disabled, since the password is not stored in Micetro.</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="active-directory-single-sign-on">
+<h2>Active Directory Single Sign-on<a class="headerlink" href="#active-directory-single-sign-on" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../_images/console_ad_sso.png"><img alt="../../_images/console_ad_sso.png" class="align-center" src="../../_images/console_ad_sso.png" style="width: 60%;" /></a>
+<p>You can enable the Single Sign-on so that Active Directory users do not have to authenticate when logging in through the Management Console.</p>
+<p>To enable Active Directory Single Sign-on, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+<li><p>In the <em>System Settings</em> dialog box, click the <span class="guilabel">General Settings</span> tab.</p></li>
+<li><p>Select the <span class="guilabel">Allow Single Sign-on</span> option.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<section id="web-interface">
+<h3>Web Interface<a class="headerlink" href="#web-interface" title="Link to this heading"></a></h3>
+<p>When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on a Microsoft Windows Server.</p>
+<p>To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro.</p>
+</section>
+</section>
+<section id="application-log-in">
+<h2>Application Log In<a class="headerlink" href="#application-log-in" title="Link to this heading"></a></h2>
+<p>Logging into Micetro will not change when AD user authentication is used and Single Sign-on is disabled. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro. If a distinguished user name is used, it must be entered in the same way when logging in.</p>
+</section>
+<section id="group-level-active-directory-user-authentication">
+<h2>Group Level Active Directory User Authentication<a class="headerlink" href="#group-level-active-directory-user-authentication" title="Link to this heading"></a></h2>
+<p>The Group Level Active Directory (AD) User Authentication mechanism allows you to set user access privileges by group membership in the AD. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.</p>
+<p>The login sequence is as follows for users with Group Level AD authentication:</p>
+<ol class="arabic simple">
+<li><p>The user enters his/her user name and password in Micetro</p></li>
+<li><p>Micetro uses the AD authentication mechanism to validate the user name and password. If the user name and password is correct, Micetro retrieves the group membership of the user from the AD.</p></li>
+<li><p>The AD group list of the user is compared (by group name) to the local group list in Micetro. If a match is found, the user is logged in with the privileges specified in the local group list. If no match is found, the login fails.</p></li>
+</ol>
+<p>To allow a user to log in to Micetro, you must create a group in the AD that has the same name as a group in Micetro and place the AD user in that group. You may create multiple groups in the AD that match group names in Micetro.</p>
+<section id="configuring-groups-for-ad-group-level-authentication">
+<h3>Configuring Groups for AD Group Level Authentication<a class="headerlink" href="#configuring-groups-for-ad-group-level-authentication" title="Link to this heading"></a></h3>
+<p>When using AD Group level authentication, you must specify which groups in Micetro should be used to verify group membership.</p>
+<ol class="arabic simple">
+<li><p>From the menu, select <span class="menuselection">Tools ‣ User Management</span>. The <em>Users and groups management</em> dialog box displays.</p></li>
+<li><p>Click the <span class="guilabel">Groups</span> tab.</p></li>
+<li><p>Select the group to which you want to configure AD and click the Edit button. If the desired group is not shown, you will need to add the group. See <a class="reference internal" href="../admin-manual/acl_groups.html#acl-groups"><span class="std std-ref">Groups</span></a>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console_ad_groups_auth.png"><img alt="../../_images/console_ad_groups_auth.png" class="align-center" src="../../_images/console_ad_groups_auth.png" style="width: 60%;" /></a>
+<dl class="simple">
+<dt>Group Name</dt><dd><p>Ensure that the group name is prefixed with the name of the owning domain name. Example: The Active Directory domain “MYDOMAIN” contains the group “MM-ReadOnly”. The group name must then be “MYDOMAIN\MM-ReadOnly”.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="5">
+<li><p>Click the checkbox for <span class="guilabel">Active Directory Integrated</span>.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Group Level Active Directory user authentication is only possible when you run Men&amp;Mice Central on a Windows machine. The machine running Men&amp;Mice Central must be a member in an Active Directory domain or forest.</p>
+</div>
+</section>
+<section id="configuring-users-and-access-privileges">
+<h3>Configuring Users and Access Privileges<a class="headerlink" href="#configuring-users-and-access-privileges" title="Link to this heading"></a></h3>
+<p>You do not have to create users in Micetro when the Group Level AD authentication is used. Instead, user access is controlled by the group membership of the user in the AD.</p>
+</section>
+<section id="radius-user-authentication">
+<h3>RADIUS User Authentication<a class="headerlink" href="#radius-user-authentication" title="Link to this heading"></a></h3>
+<p>Micetro can authenticate using an external RADIUS server. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.</p>
+</section>
+<section id="radius-user-authentication-vs-local-user-authentication">
+<h3>RADIUS User Authentication vs. Local User Authentication<a class="headerlink" href="#radius-user-authentication-vs-local-user-authentication" title="Link to this heading"></a></h3>
+<p>Even when you are using RADIUS User Authentication, you must create users in the Management Console and assign privileges to them using the Men&amp;Mice access system. The only difference between RADIUS vs. local user authentication is that when RADIUS user authentication is used, users are authenticated using the RADIUS User Authentication system before they can access the Management Console. When RADIUS User Authentication is used, the user password is not stored in the Men&amp;Mice software.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using RADIUS user authentication, while other users log in using local user authentication.</p>
+</div>
+</section>
+<section id="enabling-radius-user-authentication">
+<h3>Enabling RADIUS User Authentication<a class="headerlink" href="#enabling-radius-user-authentication" title="Link to this heading"></a></h3>
+<p>To enable RADIUS authentication, you must add several properties to the Men&amp;Mice Central configuration file preferences.cfg. This file is located in the data folder inside the Men&amp;Mice Central data directory:</p>
+<ul class="simple">
+<li><p>Windows: C:\Program Files\Men&amp;Mice\Central\data</p></li>
+<li><p>Mac OS X: <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral</span></code></p></li>
+<li><p>All others: set during installation. Usually <code class="docutils literal notranslate"><span class="pre">/var/mmsuite/mmcentral</span></code> or <code class="docutils literal notranslate"><span class="pre">/chroot/var/mmsuite/mmcentral</span></code>, where <code class="docutils literal notranslate"><span class="pre">/chroot</span></code> is the location used as a chroot jail for named.</p></li>
+</ul>
+<p>The properties to be added are:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>RADIUSServer</p></td>
+<td><p>Defines the address of the RADIUS server that will do RADIUS authentication.</p></td>
+</tr>
+<tr class="row-even"><td><p>RADIUSPort</p></td>
+<td><p>Defines the port that the RADIUS server is listening on. The default value is 1812, which is the port normally used by RADIUS.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RADIUSSharedSecret</p></td>
+<td><p>The shared secret between the RADIUS server and Micetro.</p></td>
+</tr>
+<tr class="row-even"><td><p>RADIUSAuthentication</p></td>
+<td><p>The type of authentication used. 0 = PAP, 1 = CHAP.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">RADIUSServer</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;192.168.1.3&quot;</span><span class="o">/&gt;&lt;</span><span class="n">RADIUSPort</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1515&quot;</span><span class="o">/&gt;&lt;</span><span class="n">RADIUSSharedSecret</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;MyBigSecret&quot;</span><span class="o">/&gt;&lt;</span><span class="n">RADIUSAuthentication</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>After editing the file, restart Men&amp;Mice Central.</p>
+<ul>
+<li><p>Windows: use <span class="menuselection">Administration Tools ‣ Services</span> to restart Men&amp;Mice Central.</p></li>
+<li><p>Mac OS X: Execute the following shell command in a Terminal window (/Applications/Utilities/Terminal):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>/Library/StartupItems/mmSuite/mmcentral<span class="w"> </span>restart
+</pre></div>
+</div>
+</li>
+<li><p>All others: Execute the <code class="docutils literal notranslate"><span class="pre">mmcentral</span></code> init script with the ‘restart’ argument.</p></li>
+</ul>
+</section>
+<section id="configuring-users">
+<h3>Configuring Users<a class="headerlink" href="#configuring-users" title="Link to this heading"></a></h3>
+<p>To allow a user to log in to the Men&amp;Mice system, the user must exist in the Men&amp;Mice user database. If the user does not exist in the Men&amp;Mice user database, they are not allowed to log in, even if they provide a valid user name and password in the RADIUS login system.</p>
+<p>To configure a user to use AD user authentication, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ User Management</span>. The <em>User and group management</em> dialog box displays.</p></li>
+<li><p>To add a new user, click the <span class="guilabel">Add</span> button. Refer to <a class="reference internal" href="../admin-manual/acl_users.html#acl-users"><span class="std std-ref">Users</span></a>. Follow the instructions with one exception: in the <strong>Authentication</strong> field, click the drop-down list and select RADIUS.</p></li>
+<li><p>To modify an existing user, double-click on the user’s name to display the user <em>Properties</em> dialog box, and in the <strong>Authentication</strong> field, click the drop-down list and select RADIUS.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the RADIUS authentication method is selected, the <strong>Password</strong> field is disabled, since the password is not stored in Micetro.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/console_ad_sso_radius.png"><img alt="../../_images/console_ad_sso_radius.png" class="align-center" src="../../_images/console_ad_sso_radius.png" style="width: 60%;" /></a>
+</section>
+<section id="logging-into-micetro">
+<h3>Logging into Micetro<a class="headerlink" href="#logging-into-micetro" title="Link to this heading"></a></h3>
+<p>Logging in to Micetro will not change when RADIUS user authentication is used. The only thing to keep in mind is that the user name that is entered must match the user name stored in Micetro.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="configure_ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_auth.html">API Authentication methods</a></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="user_management.html" class="btn btn-neutral float-left" title="Micetro User Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configure_ldap.html" class="btn btn-neutral float-right" title="Configure LDAP authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

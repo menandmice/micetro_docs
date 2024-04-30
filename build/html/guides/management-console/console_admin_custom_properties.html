@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Defining and adding custom properties used for entry of relevant data" name="description" />
+<meta content="Micetro custom properties, Management Console" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding a Custom Property (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Adding a Custom Property (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_admin_custom_properties.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adding-a-custom-property-management-console-obsolete">
+<span id="console-admin-custom-properties"></span><h1>Adding a Custom Property (Management Console, obsolete)<a class="headerlink" href="#adding-a-custom-property-management-console-obsolete" title="Link to this heading"></a></h1>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ Define Custom Properties</span>. The <em>Define Custom Properties</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-custom-properties.png"><img alt="../../_images/admin-custom-properties.png" class="align-center" src="../../_images/admin-custom-properties.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Select the object type to which you want to add a custom property.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button. The <em>Custom Property</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-define-custom-property.png"><img alt="../../_images/admin-define-custom-property.png" class="align-center" src="../../_images/admin-define-custom-property.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Fill in the details:</p></li>
+</ol>
+<blockquote>
+<div><dl>
+<dt>Name.</dt><dd><p>Type a name for this custom property.</p>
+</dd>
+<dt>Type.</dt><dd><p>Set the type for the property. By default, “Text” is selected. Click the drop-down list and select the desired property type - e.g., Text, Yes/No, IP Address, or Number.</p>
+</dd>
+<dt>Mandatory.</dt><dd><p>When selected, a user must enter a value in this field. If you select this option, you cannot select “Read only.”</p>
+</dd>
+<dt>Read only.</dt><dd><p>When selected, the field is locked for editing. If you select this option, you cannot select “Mandatory.”</p>
+</dd>
+<dt>Multiline.</dt><dd><p>When selected, the edit field contains multiple lines for entry. If you select this option, you cannot select “List.”</p>
+</dd>
+<dt>Predefined Values.</dt><dd><p>When selected, the field displays as a drop-down list. Click the checkbox for List. Then click the Edit List button. The Custom Property List Items dialog box through which you can add, edit, and remove custom properties displays.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you select this option, you cannot select “Multiline”.</p>
+</div>
+<ul class="simple">
+<li><p>To ADD an item for this property, click Add. The Custom Property List Items dialog box displays.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/admin-custom-property-list.png"><img alt="../../_images/admin-custom-property-list.png" class="align-center" src="../../_images/admin-custom-property-list.png" style="width: 60%;" /></a>
+<ul class="simple">
+<li><p>Type the item in the field provided.</p></li>
+<li><p>Add any additional items. You can move items Up and/or Down in the list, as desired. This designates the order in which they appear in the list.</p></li>
+<li><p>Then click <span class="guilabel">OK</span>. When you return to the <em>Custom Property List Items</em> dialog box, the items entered are shown.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/admin-custom-property-2.png"><img alt="../../_images/admin-custom-property-2.png" class="align-center" src="../../_images/admin-custom-property-2.png" style="width: 60%;" /></a>
+<ul class="simple">
+<li><p>To edit/remove any values, click Edit List and make the necessary changes.</p></li>
+<li><p>When all selections are made, click <span class="guilabel">OK</span>.</p></li>
+</ul>
+</dd>
+<dt>Default value.</dt><dd><p>Specifies the default field value to use when an object is created. This field is only a drop-down list if the ‘List’ checkbox is selected; otherwise, it is an edit field.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>When all selections/entries are made, click <span class="guilabel">OK</span>. When you return to the <em>Define Custom Properties</em> dialog box, the new field is shown.</p></li>
+<li><p>If there are multiple custom properties for an object, use the Move Up/Move Down arrows to change the order in which this display in the object window.</p></li>
+<li><p>When all fields are added, click the <span class="guilabel">Save</span> button.</p></li>
+</ol>
+</section>
+<section id="editing-a-custom-property-management-console">
+<h1>Editing a Custom Property (Management Console)<a class="headerlink" href="#editing-a-custom-property-management-console" title="Link to this heading"></a></h1>
+<p>To edit a custom property, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu, select <span class="menuselection">Tools ‣ Define Custom Properties</span>.</p></li>
+<li><p>Locate and highlight the property to be edited.</p></li>
+<li><p>Click the <span class="guilabel">Edit</span> button.</p></li>
+<li><p>Make the necessary changes.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="deleting-a-custom-property-management-console">
+<h1>Deleting a Custom Property (Management Console)<a class="headerlink" href="#deleting-a-custom-property-management-console" title="Link to this heading"></a></h1>
+<p>To delete a custom property, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu, select <span class="menuselection">Tools ‣ Define Custom Properties</span>.</p></li>
+<li><p>Locate and highlight the property to be deleted.</p></li>
+<li><p>Click the <span class="guilabel">Delete</span> button.</p></li>
+<li><p>When the confirmation message displays, click <span class="guilabel">Yes</span>.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="displaying-a-custom-property-management-console">
+<h1>Displaying a Custom Property (Management Console)<a class="headerlink" href="#displaying-a-custom-property-management-console" title="Link to this heading"></a></h1>
+<p>Once a custom property has been defined, it is possible to view and edit its contents by opening the Properties dialog for any object of the type for which the custom property has been defined.</p>
+</section>
+<section id="opening-a-custom-property-url-management-console">
+<h1>Opening a Custom Property URL (Management Console)<a class="headerlink" href="#opening-a-custom-property-url-management-console" title="Link to this heading"></a></h1>
+<p>Anytime you have specified a URL within a custom property, you can use this option to open the URL.</p>
+<ol class="arabic simple">
+<li><p>Locate the item containing the URL.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Properties</span>.</p></li>
+<li><p>In the <em>Properties</em> dialog box, move to the field containing the URL.</p></li>
+<li><p>Place the cursor anywhere in the field and right-click.</p></li>
+<li><p>From the shortcut menu, select <span class="guilabel">Open URL</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-custom-property-url.png"><img alt="../../_images/admin-custom-property-url.png" class="align-center" src="../../_images/admin-custom-property-url.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Your browser will open and the web site for the URL displays.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

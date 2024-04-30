@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="An introduction to the Workflow module that allows the user to submit 'change requests' for creating, modifying or deleting DNS records" name="description" />
+<meta content="Workflow, Management" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workflow Management &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Management Console" href="console.html" />
+    <link rel="prev" title="Quickfilter" href="webapp_quick_filter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ui.html">Micetro user interface(s)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="web_application.html">Web Application</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="web_application.html#user-guide">User Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="webapp_introduction.html">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_user_guide.html">Using the Web Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_general.html">General</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_filtering.html">Filtering sidebar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_inspector.html">The Inspector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_dns.html">DNS management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_import_dns_records.html">Import DNS Records</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_network_management.html">Network management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_import_ipam_data.html">Import IPAM data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_quick_command.html">Quick command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="webapp_quick_filter.html">Quickfilter</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Workflow Management</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="web_application.html#admin-guide">Admin Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ui.html">Micetro user interface(s)</a></li>
+          <li class="breadcrumb-item"><a href="web_application.html">Web Application</a></li>
+      <li class="breadcrumb-item active">Workflow Management</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/webapp_workflows.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="workflow-management">
+<span id="webapp-workflows"></span><h1>Workflow Management<a class="headerlink" href="#workflow-management" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This current version of the Workflow module is focused on DNS changes, so a company can have better control over what changes are done in their DNS infrastructure by approving or rejecting changes. It also helps preventing unintentional changes resulting from human error.</p>
+<p>Organizations can give users access within the organization and the ability to request DNS changes, in some or all of the DNS zones available in the organization.</p>
+<p>The Workflow module allows the user to submit ‘change requests’ for creating, modifying or deleting DNS records:</p>
+<ol class="arabic simple">
+<li><p>The user makes a change in DNS. This can be adding a new DNS record or modifying or deleting an existing DNS record. Instead of saving the changes or creating the DNS record immediately, users with limited access have an option of creating a request to approve the change.</p></li>
+<li><p>The request is created and can, be submitted for approval by users with necessary access.</p></li>
+<li><p>User with permission of approving DNS requests can view a list of requests.</p></li>
+<li><p>The request can be either approved or rejected. If the request is approved, the DNS change is made and the DNS zone is updated automatically with the new data, either immediately or at a time specified in the request. If the DNS request is rejected, the request is deleted and the DNS request history will indicate a reason for the rejection.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/workflow-diagram.png"><img alt="../../_images/workflow-diagram.png" class="align-center" src="../../_images/workflow-diagram.png" style="width: 90%;" /></a>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>In order to use the DNS requests in the Web application, the Workflow module needs to be purchased and enabled. The license key is added through the License Management dialog (see Administration Functions) in the Men&amp;Mice Management Console.</p>
+<p>In order to use the Workflow module, there are two new workflow specific roles in Access Management, “Requesters” and “Approvers” needed to be set. Users have to be added to the “Requesters” role to be able to submit requests. Administrative users have to be added to the “Approvers” role to be able to see requests made by others and approve them.</p>
+<p>In addition, Approvers are only able to approve requests that involve DNS Zones in which they have access to edit records.</p>
+<p>Requesters also need basic read-only access to the DNS Zones (and the containing DNS server) to be able to request changes, as well as the IP address ranges (to find available IP addresses).</p>
+</section>
+<section id="overview-of-dns-requests-in-the-system">
+<h2>Overview of DNS Requests in the system<a class="headerlink" href="#overview-of-dns-requests-in-the-system" title="Link to this heading"></a></h2>
+<p>When the Workflow module license key has been added and enabled, a new top menu item is visible.</p>
+<p>Open Requests shows an overview of the change requests in the system. (An icon is shown in the top menu to the right to indicate how many pending changes are in the queue. Clicking on the icon displays a dialog for submitting those changes as a request.)</p>
+<a class="reference internal image-reference" href="../../_images/blackstar-workflows.png"><img alt="../../_images/blackstar-workflows.png" class="align-center" src="../../_images/blackstar-workflows.png" style="width: 90%;" /></a>
+</section>
+<section id="filtering-sidebar">
+<h2>Filtering sidebar<a class="headerlink" href="#filtering-sidebar" title="Link to this heading"></a></h2>
+<p>The filtering sidebar has the following options for open DNS requests:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Pending</p></td>
+<td><p>Lists all DNS requests that are pending approval or rejection</p></td>
+</tr>
+<tr class="row-even"><td><p>Failed</p></td>
+<td><p>Lists all DNS requests that encountered an error while being applied to the DNS servers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Closed</p></td>
+<td><p>Lists all requests that are closed and have been either <strong>Scheduled</strong>, <strong>Fulfilled</strong>, or <strong>Rejected</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>My requests</p></td>
+<td><p>Lists all requests for the current logged in users that are either <strong>Open</strong> or <strong>Closed</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="actions">
+<h2>Actions<a class="headerlink" href="#actions" title="Link to this heading"></a></h2>
+<p>The following actions can be performed for a selected request in the list.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Open request</p></td>
+<td><p>Opens the request in a dialog where changes in it can be viewed and either approved or rejected</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit request properties</p></td>
+<td><p>Opens up a dialog where the properties for the request can be edited, if custom properties for Change Requests have been defined</p></td>
+</tr>
+<tr class="row-odd"><td><p>Delete request</p></td>
+<td><p>Allows for cancelling the selected request</p></td>
+</tr>
+<tr class="row-even"><td><p>View history</p></td>
+<td><p>Allows for viewing the history of the selected request</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inspector">
+<h2>Inspector<a class="headerlink" href="#inspector" title="Link to this heading"></a></h2>
+<p>The following items are listed in the Inspector’s Properties section for a selected request in the list.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Request ID</p></td>
+<td><p>The ID of the selected request</p></td>
+</tr>
+<tr class="row-even"><td><p>Type of changes</p></td>
+<td><p>Currently only DNS Records</p></td>
+</tr>
+<tr class="row-odd"><td><p>Requested by</p></td>
+<td><p>Username of user that submitted the selected request</p></td>
+</tr>
+<tr class="row-even"><td><p>State</p></td>
+<td><p>The current state of the request. Either Pending, Approved (i.e. awaiting scheduling), Rejected, Failed or Applied</p></td>
+</tr>
+<tr class="row-odd"><td><p>Submitted on</p></td>
+<td><p>Date the request was submitted</p></td>
+</tr>
+<tr class="row-even"><td><p>Schedule for</p></td>
+<td><p>Date the request should be fulfilled on</p></td>
+</tr>
+<tr class="row-odd"><td><p>Processed on</p></td>
+<td><p>Date the request was fully approved and applied</p></td>
+</tr>
+<tr class="row-even"><td><p>Comment</p></td>
+<td><p>An optional comment the user provided when submitting the request</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="creating-a-dns-request">
+<h2>Creating a DNS request<a class="headerlink" href="#creating-a-dns-request" title="Link to this heading"></a></h2>
+<p>In order to create a DNS request, one of the following can be done:</p>
+<ul class="simple">
+<li><p>Create a DNS record</p></li>
+<li><p>Edit a DNS record</p></li>
+<li><p>Delete a DNS record</p></li>
+</ul>
+<p>Additional options are available when creating, editing or removing a DNS record.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Access restrictions will affect which users have these options available.</p>
+</div>
+<p>Authorized users and approvers can also submit change requests, even if they have full access, in order to make scheduled changes.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 90.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Add to request</p></td>
+<td><p>Adds the changes to a DNS request. Number in badge on request queue icon in top right corner will increase accordingly</p></td>
+</tr>
+<tr class="row-even"><td><p>Save now / Delete now</p></td>
+<td><p>DNS changes are applied immediately to DNS server(s)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After a DNS request for a DNS change has been created, the corresponding IP address will be set in to a pending state and will not be available, for example when requesting the next Free IP address in the subnet.</p>
+</div>
+</section>
+<section id="submitting-a-change-request">
+<h2>Submitting a change request<a class="headerlink" href="#submitting-a-change-request" title="Link to this heading"></a></h2>
+<section id="step-1-open-the-pending-request">
+<h3>Step 1: Open the pending request.<a class="headerlink" href="#step-1-open-the-pending-request" title="Link to this heading"></a></h3>
+<p>Open the pending request by clicking on the request queue icon in the top menu.</p>
+<a class="reference internal image-reference" href="../../_images/blackstar-workflows-pending.png"><img alt="../../_images/blackstar-workflows-pending.png" class="align-center" src="../../_images/blackstar-workflows-pending.png" style="width: 50%;" /></a>
+<p>The following dialog is displayed, where the user can review the DNS changes to submit or remove a DNS change from the queue.</p>
+<a class="reference internal image-reference" href="../../_images/blackstar-workflows-submit.png"><img alt="../../_images/blackstar-workflows-submit.png" class="align-center" src="../../_images/blackstar-workflows-submit.png" style="width: 70%;" /></a>
+</section>
+<section id="step-2-scheduling">
+<h3>Step 2: Scheduling<a class="headerlink" href="#step-2-scheduling" title="Link to this heading"></a></h3>
+<p>If the user want to make a scheduled change (i.e. the records are applied to the DNS server at a specific date and time) they need to check “Schedule request” and provide the date and time.</p>
+<p>Additionally, if custom properties have been defined for Change Requests, the user will be asked to enter those here, along with the optional Comment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All dates and times are according to the time zone setting on the Men&amp;Mice Central server.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/blackstar-workflows-schedule-request.png"><img alt="../../_images/blackstar-workflows-schedule-request.png" class="align-center" src="../../_images/blackstar-workflows-schedule-request.png" style="width: 70%;" /></a>
+</section>
+<section id="step-3-submit-the-request">
+<h3>Step 3: Submit the request<a class="headerlink" href="#step-3-submit-the-request" title="Link to this heading"></a></h3>
+<p>Clicking on Submit will submit the request which is followed by an indication of a successful submission, along with the ID (request number) for the request.</p>
+</section>
+</section>
+<section id="approving-or-rejecting-a-change-request">
+<h2>Approving or rejecting a change request<a class="headerlink" href="#approving-or-rejecting-a-change-request" title="Link to this heading"></a></h2>
+<p>Pending requests are indicated in the top menu.</p>
+<a class="reference internal image-reference" href="../../_images/blackstar-workflows-pending-requests.png"><img alt="../../_images/blackstar-workflows-pending-requests.png" class="align-center" src="../../_images/blackstar-workflows-pending-requests.png" style="width: 50%;" /></a>
+<p>Clicking on the Workflow item in the top menu displays the Workflow page with an overview of all requests that the user has access to view.</p>
+<p>Double clicking on a pending request opens up the approval dialog:</p>
+<a class="reference internal image-reference" href="../../_images/blackstar-workflows-approve.png"><img alt="../../_images/blackstar-workflows-approve.png" class="align-center" src="../../_images/blackstar-workflows-approve.png" style="width: 70%;" /></a>
+<p>The approval dialog shows the request to be approved or rejected, as well the following details:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 90.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Action</p></td>
+<td><p>Indicates what action is being performed: Add, Modify or Remove</p></td>
+</tr>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>The fully qualified DNS record name</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type</p></td>
+<td><p>The DNS record type</p></td>
+</tr>
+<tr class="row-even"><td><p>TTL</p></td>
+<td><p>The Time To Live of the DNS record</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data</p></td>
+<td><p>The data being added. Hovering over the field shows the previous value, if being modified</p></td>
+</tr>
+<tr class="row-even"><td><p>State</p></td>
+<td><p>The state of the change request</p></td>
+</tr>
+</tbody>
+</table>
+<p>After clicking on the Approve button, the request is approved, and the data propagated accordingly.</p>
+<p>If the user clicks on the Reject button, they are prompted for a comment and then the request and all changes within the request is rejected.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="webapp_quick_filter.html" class="btn btn-neutral float-left" title="Quickfilter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console.html" class="btn btn-neutral float-right" title="Management Console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

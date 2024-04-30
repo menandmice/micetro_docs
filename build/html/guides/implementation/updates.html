@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to update Micetro by Men&amp;Mice" name="description" />
+<meta content="update, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Guide &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="User Manual" href="../user-manual/introduction.html" />
+    <link rel="prev" title="Custom links in the web application" href="webapp_custom_links.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Update Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#update-paths">Update paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-and-downloading-an-update">Checking and Downloading an Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-an-update">Installing an Update</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#updating-an-appliance">Updating an Appliance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-update-status">Viewing Update Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verifying-the-updates">Verifying the updates</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Update Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/updates.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="update-guide">
+<span id="updates"></span><h1>Update Guide<a class="headerlink" href="#update-guide" title="Link to this heading"></a></h1>
+<p>The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&amp;Mice Central, the Men&amp;Mice Server Controllers and the Men&amp;Mice Appliances with minimal downtime.</p>
+<section id="update-paths">
+<h2>Update paths<a class="headerlink" href="#update-paths" title="Link to this heading"></a></h2>
+<p>If you’re updating Micetro from an older version, refer to the following table:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Origin version</p></th>
+<th class="head"><p>Target version</p></th>
+<th class="head"><p>Update to</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9.x</p></td>
+<td><p>10.x</p></td>
+<td><p>10.x <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>8.x</p></td>
+<td><p>10.x</p></td>
+<td><p>10.x <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>7.x</p></td>
+<td><p>10.x</p></td>
+<td><p>10.x <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>6.x</p></td>
+<td><p>10.x</p></td>
+<td><p>9.3</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>)</span>
+<p>Kea DHCP servers need to be updated to 1.6.0 or 1.8.0 <em>before</em> updating Micetro to 10.x. See <a class="reference external" href="https://menandmice.com/docs/10.0/release_notes/10.0.0#release">Kea update notice</a>.</p>
+</aside>
+</aside>
+</section>
+<section id="checking-and-downloading-an-update">
+<h2>Checking and Downloading an Update<a class="headerlink" href="#checking-and-downloading-an-update" title="Link to this heading"></a></h2>
+<p>When you log into the system using the Management Console, an update notification is displayed when a new version of Micetro is available.</p>
+<a class="reference internal image-reference" href="../../_images/admin-new-update.png"><img alt="../../_images/admin-new-update.png" class="align-center" src="../../_images/admin-new-update.png" style="width: 50%;" /></a>
+<p>You can also check if an update is available by selecting <span class="menuselection">Tools ‣ Check for Updates</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To receive update notifications and check for updates, you must be in a group with administration privileges. Only the Administrator user can perform the actual update.</p>
+</div>
+<p>If you are not interested in receiving notifications for the update, select the <span class="guilabel">Don’t show again for this version</span> checkbox. When the checkbox is checked, a notification for the specific update is no longer displayed, however, if a later update becomes available, the dialog box is displayed again.</p>
+<p>Click the Details button to get more information on the update. This displays a dialog box that shows all available updates.</p>
+<a class="reference internal image-reference" href="../../_images/admin-available-updates.png"><img alt="../../_images/admin-available-updates.png" class="align-center" src="../../_images/admin-available-updates.png" style="width: 70%;" /></a>
+<p>To view the release notes for an update, select the corresponding update and then click the <span class="guilabel">View Release Notes</span> button. This will show the release notes in a web browser.</p>
+<p>To download the new version, select the version and click the <span class="guilabel">Download</span> button. The new version is downloaded and stored on the Men&amp;Mice Central server. Once the download has completed, you can start the update.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To download and perform the actual update you must be logged in as Administrator. If you are not logged in as Administrator, the Download button is disabled.</p>
+</div>
+</section>
+<section id="installing-an-update">
+<h2>Installing an Update<a class="headerlink" href="#installing-an-update" title="Link to this heading"></a></h2>
+<p>Once the update has been downloaded, you can start the actual update process. The Update Manager can update Men&amp;Mice Central, connected Server Controllers and Men&amp;Mice Virtual Appliances. The Men&amp;Mice Web Application must be updated manually.</p>
+<p>If you want to perform the update at a later time, you can close the dialog box. To display the dialog box again, select <span class="menuselection">Tools ‣ Check for Updates</span>.</p>
+<p>The following instructions contain information on how to update Micetro after the update has been downloaded using the Update Manager.</p>
+<ol class="arabic simple">
+<li><p>To start the update process, click the <span class="guilabel">Start Update</span> button in the update details dialog box. When you click <span class="guilabel">Start Update</span> the following happens:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Men&amp;Mice Central and the DNS and DHCP server controllers are updated. (See <a class="reference internal" href="central_ha.html#update-central-ha"><span class="std std-ref">Updating Central in High Availability setup</span></a> for updating Central in HA configuration.)</p></li>
+<li><p>If the update contains a new version of the Men&amp;Mice Web Application, a dialog box is displayed where you can find instructions on manually updating the Men&amp;Mice Web Application.</p></li>
+<li><p>If your environment contains a Men&amp;Mice Appliance, the latest version of the Men&amp;Mice Appliance software is uploaded to the Appliance, but isn’t applied automatically.</p></li>
+</ul>
+</div></blockquote>
+<section id="updating-an-appliance">
+<h3>Updating an Appliance<a class="headerlink" href="#updating-an-appliance" title="Link to this heading"></a></h3>
+<p>As an update to the Men&amp;Mice Appliance sometimes requires that the Appliance is restarted, the update is not applied automatically.</p>
+<p>To complete an Appliance update, you must manually initiate the update. To minimize service disruption you might want to update your Appliances in several batches.</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ Update Status</span>. The <em>Update Status</em> dialog box displays. The dialog box shows the update status for all DNS and DHCP server controllers as well as all Men&amp;Mice Appliances. If an update is pending for an Appliance, the status is listed as <em>Update pending</em> and a checkbox is displayed in the Update column.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-update-appliance.png"><img alt="../../_images/admin-update-appliance.png" class="align-center" src="../../_images/admin-update-appliance.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Click the checkbox to select the Appliance(s) you want to update.</p></li>
+<li><p>Click the <span class="guilabel">Update Appliances</span> button. This will update the selected appliance(s).</p></li>
+</ol>
+</section>
+</section>
+<section id="viewing-update-status">
+<h2>Viewing Update Status<a class="headerlink" href="#viewing-update-status" title="Link to this heading"></a></h2>
+<p>Through the <em>Update Status</em> dialog box, you can always view the update status for Micetro components. To display the Update Status dialog box, select <span class="menuselection">Tools ‣ Update Status</span>.</p>
+<a class="reference internal image-reference" href="../../_images/admin-update-status.png"><img alt="../../_images/admin-update-status.png" class="align-center" src="../../_images/admin-update-status.png" style="width: 80%;" /></a>
+<p>The dialog box shows the update status for all DNS and DHCP server controllers as well as all Men&amp;Mice Appliances. If an update is pending for an Appliance, the status is listed as Update pending and a checkbox is displayed in the Update column.</p>
+<p>Uncheck the <span class="guilabel">Show servers that are up-to-date</span> checkbox to only show servers that need to be updated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Auto Updater will update <em>all</em> connected server controllers along with Central.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If some Controllers can’t be updated automatically please check if the M&amp;M Updater daemon or Windows service is running on the server and if the port 4603/tcp is accessible from the machine that runs Central. See <a class="reference internal" href="firewall_ports.html#firewall-ports"><span class="std std-ref">Networking requirements</span></a> for more information.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When Central is in a high availability configuration, the Auto Updater cannot be used. See <a class="reference internal" href="central_ha.html#update-central-ha"><span class="std std-ref">Updating Central in High Availability setup</span></a> for instructions.</p>
+</div>
+</section>
+<section id="verifying-the-updates">
+<h2>Verifying the updates<a class="headerlink" href="#verifying-the-updates" title="Link to this heading"></a></h2>
+<p>In order to verify that the update has propagated to all servers:</p>
+<ol class="arabic simple">
+<li><p>Log in to the Management Console</p></li>
+<li><p>Navigate to <span class="menuselection">Tools ‣ Update Status</span></p></li>
+<li><p>Review the version reported for each of the listed components. The listed version number for Micetro is listed near the top, and should match the version of each component in the list.</p></li>
+<li><p>Log in to the Web Application, click on the <span class="guilabel">User</span> icon in the top menu. Verify that the version listed there matches the version of the Men&amp;Mice Central that was installed.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there’s a version mismatch between components, the Management Console and Web Application will report an error when trying to log in.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="webapp_custom_links.html" class="btn btn-neutral float-left" title="Custom links in the web application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../user-manual/introduction.html" class="btn btn-neutral float-right" title="User Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

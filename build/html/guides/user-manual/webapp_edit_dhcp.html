@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Viewing, adding, removing DHCP options in the Micetro by Men&amp;Mice Web Application" name="description" />
+<meta content="DHCP options, DDI" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit DHCP Options &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IP address management" href="ipam.html" />
+    <link rel="prev" title="DHCP scopes" href="dhcp_scopes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dhcp.html">DHCP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dhcp_servers.html">DHCP servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp_scopes.html">DHCP scopes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Edit DHCP Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#view-the-configured-dhcp-options-for-a-dhcp-scope">View the configured DHCP options for a DHCP scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-new-dhcp-option">Add a new DHCP option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-dhcpv6-and-ddns-options-microsoft-only">Configuring DHCPv6 and DDNS Options (Microsoft Only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-a-dhcp-option">Removing a DHCP option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hex-and-ascii-representation">HEX and ASCII representation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="dhcp.html">DHCP</a></li>
+      <li class="breadcrumb-item active">Edit DHCP Options</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/webapp_edit_dhcp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DHCPv4 and DHCPv6 scopes inherit DHCP and DDNS Options from the parent DHCP server. DHCPv4 and DHCPv6 reservation inherit DHCP and DDNS options from the DHCP scope. However these options may be changed by editing the options for the specific scope or reservation.</p>
+</div>
+<section id="edit-dhcp-options">
+<span id="webapp-edit-dhcp"></span><h1>Edit DHCP Options<a class="headerlink" href="#edit-dhcp-options" title="Link to this heading"></a></h1>
+<section id="view-the-configured-dhcp-options-for-a-dhcp-scope">
+<h2>View the configured DHCP options for a DHCP scope<a class="headerlink" href="#view-the-configured-dhcp-options-for-a-dhcp-scope" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Select the DHCP scope in the network list</p></li>
+<li><p>Click on the <span class="guilabel">Edit DHCP options</span> task.</p></li>
+<li><p>A dialog is displayed. Note that in order to see the options that have inherited values, the <span class="guilabel">Show inherited options</span> checkbox needs to be checked.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/blackstar-edit-dhcp.png"><img alt="../../_images/blackstar-edit-dhcp.png" class="align-center" src="../../_images/blackstar-edit-dhcp.png" style="width: 70%;" /></a>
+</section>
+<section id="add-a-new-dhcp-option">
+<h2>Add a new DHCP option<a class="headerlink" href="#add-a-new-dhcp-option" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Start typing into the <span class="guilabel">Add an option</span> field. Either type in the name of the option or the option number.</p></li>
+<li><p>A list of available options will be displayed as you type.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/blackstar-edit-dhcp-autocomplete.png"><img alt="../../_images/blackstar-edit-dhcp-autocomplete.png" class="align-center" src="../../_images/blackstar-edit-dhcp-autocomplete.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the option you want to add.</p></li>
+<li><p>The option is now shown in the list and you can add values to the option.</p></li>
+</ol>
+</section>
+<section id="configuring-dhcpv6-and-ddns-options-microsoft-only">
+<h2>Configuring DHCPv6 and DDNS Options (Microsoft Only)<a class="headerlink" href="#configuring-dhcpv6-and-ddns-options-microsoft-only" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Go to <a href="#id1"><span class="problematic" id="id2">:guilable:`Admin`</span></a> in the web UI and click on <a href="#id3"><span class="problematic" id="id4">:gulabel:`Server Management`</span></a></p></li>
+<li><p>Expand <span class="guilabel">DHCP Servers</span> and select <span class="guilabel">Microsoft DHCP</span></p></li>
+<li><p>Select one or multiple servers, hover over the selected server(s) and click on the ellipsis (or meatball) menu</p></li>
+<li><p>Click on the <span class="guilabel">Edit DHCPv6 Options</span> task</p></li>
+<li><p>Under the Options tab, select the appropriate options</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/dhcpv6-options.png"><img alt="../../_images/dhcpv6-options.png" class="align-center" src="../../_images/dhcpv6-options.png" style="width: 70%;" /></a>
+<ol class="arabic" start="6">
+<li><p>Click on the DNS tab and select whether you’d like to
+Enable DNS dynamic updates according to the settings below</p>
+<blockquote>
+<div><ol class="lowerroman simple">
+<li><p>Always dynamically update DNS records</p></li>
+<li><p>Discard AAAA and PTR records when lease is deleted</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/ddns-dhcpv6-options.jpg"><img alt="../../_images/ddns-dhcpv6-options.jpg" class="align-center" src="../../_images/ddns-dhcpv6-options.jpg" style="width: 70%;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Click <span class="guilabel">Save</span> to save your settings</p></li>
+</ol>
+</section>
+<section id="removing-a-dhcp-option">
+<h2>Removing a DHCP option<a class="headerlink" href="#removing-a-dhcp-option" title="Link to this heading"></a></h2>
+<p>Hovering over an option will display a trashcan icon to the right of the option.</p>
+<p>Clicking on the trashcan will remove the option.</p>
+</section>
+<section id="hex-and-ascii-representation">
+<h2>HEX and ASCII representation<a class="headerlink" href="#hex-and-ascii-representation" title="Link to this heading"></a></h2>
+<p>Some DHCP options, such as DHCP option 43 (Vendor specific info) require the value to be in HEX format. In this case the UI offers the value to be viewed both as HEX and ASCII by selecting each option in tabs above the field, as seen in the figure below.</p>
+<a class="reference internal image-reference" href="../../_images/blackstar-edit-dhcp-ascii-hex.png"><img alt="../../_images/blackstar-edit-dhcp-ascii-hex.png" class="align-center" src="../../_images/blackstar-edit-dhcp-ascii-hex.png" style="width: 70%;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dhcp_scopes.html" class="btn btn-neutral float-left" title="DHCP scopes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ipam.html" class="btn btn-neutral float-right" title="IP address management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

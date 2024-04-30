@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Microsoft DHCP server properties in Micetro by men&amp;mice" name="description" />
+<meta content="Microsoft DHCP, DHCP server" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft DHCP - Management Console (obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Microsoft DHCP - Management Console (obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_dhcp_windows.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="microsoft-dhcp-management-console-obsolete">
+<span id="console-dhcp-windows"></span><h1>Microsoft DHCP - Management Console (obsolete)<a class="headerlink" href="#microsoft-dhcp-management-console-obsolete" title="Link to this heading"></a></h1>
+<section id="ms-server-properties">
+<span id="console-ms-dhcp-properties"></span><h2>MS Server Properties<a class="headerlink" href="#ms-server-properties" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Complete the <span class="guilabel">General</span> tab using the guidelines below.</p></li>
+</ol>
+<dl class="simple">
+<dt>Conflict detection attempts</dt><dd><p>Specifies the number of conflict detection attempts you want the DHCP server to make before it leases an address to a client.</p>
+</dd>
+<dt>Audit log file path</dt><dd><p>Specifies the location of the DHCP server audit log files.</p>
+</dd>
+<dt>Database path</dt><dd><p>Specifies the location of the DHCP server database.</p>
+</dd>
+<dt>Backup path</dt><dd><p>Specifies the location for the database backup.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Click the <span class="guilabel">DNS</span> tab, and complete the fields according to the guidelines below:</p></li>
+</ol>
+<dl class="simple">
+<dt>Enable DNS dynamic updates according to the settings below.</dt><dd><p>Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.</p>
+</dd>
+<dt>Dynamically update DNS A and PTR records.</dt><dd><p>Specifies that the DHCP server update forward and reverse lookups are based on the type of request made by the client during the lease process.</p>
+</dd>
+<dt>Always dynamically update DNS A and PTR records.</dt><dd><p>Specifies that the DHCP server update forward and reverse DNS lookups when a client acquires a lease, regardless of the type of request used to acquire it.</p>
+</dd>
+<dt>Discard A and PTR records when lease is deleted.</dt><dd><p>Specifies whether the DHCP server discards forward DNS lookups for clients when a lease expires.</p>
+</dd>
+<dt>Dynamically update DNS A and PTR records for DHCP clients.</dt><dd><p>Specifies whether the DHCP server sends dynamic updates to the DNS server for DHCP clients that do not support performing these updates. If selected, clients running earlier versions of Windows are updated by the DHCP server for both their host (A) and pointer (PTR) resource records.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>When all selections/entries are made, click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="defining-options-on-ms-dhcp-servers">
+<span id="console-dhcp-windows-define-options"></span><h2>Defining Options on MS DHCP Servers<a class="headerlink" href="#defining-options-on-ms-dhcp-servers" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>In the <em>Object List</em>, right-click on the applicable DHCP Server and, from the shortcut menu, select <span class="guilabel">Define Options</span>. The <em>DHCP Server Option definition</em> dialog box displays. The dialog box shows all options defined on the DHCP server.</p></li>
+<li><p>Use the <strong>Vendor class</strong> drop-down list to select the vendor class for which you want to define options.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-dhcp-server-options-microsoft.png"><img alt="../../_images/console-dhcp-server-options-microsoft.png" class="align-center" src="../../_images/console-dhcp-server-options-microsoft.png" style="width: 40%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>To add an option, click the <span class="guilabel">+</span> button at the end of the option list. Enter the ID, name and type of data to use for the option. The IP Address and Integer data types can be specified as arrays. To specify an array, click the <span class="guilabel">Array</span> checkbox.</p></li>
+<li><p>To delete an option, click the <span class="guilabel">-</span> button next to the option you want to delete.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to save the option definition.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only add or delete option definitions. You cannot change the properties of an existing option definition.</p>
+</div>
+</section>
+<section id="reconcile-scopes-in-the-management-console">
+<span id="console-dhcp-windows-reconcile"></span><h2>Reconcile Scopes in the Management Console<a class="headerlink" href="#reconcile-scopes-in-the-management-console" title="Link to this heading"></a></h2>
+<p>Use this function to fix inconsistencies between information in the registry and the DHCP database.</p>
+<ol class="arabic simple">
+<li><p>In the Object List, select DHCP Servers and then select an MS DHCP server.</p></li>
+<li><p>Right-click the server, and select <span class="guilabel">Reconcile Scopes</span>.</p></li>
+<li><p>Choose the action to perform: <strong>Verify</strong> (only) or <strong>Fix</strong> (any inconsistencies).</p></li>
+<li><p>Click <span class="guilabel">OK</span> to complete the action.</p></li>
+</ol>
+<p>For more information see <a class="reference external" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN">the Microsoft documentation</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

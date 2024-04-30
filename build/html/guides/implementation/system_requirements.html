@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Minimum system requirements for Micetro" name="description" />
+<meta content="system requirements, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Requirements &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Networking Requirements" href="firewall_ports.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">System Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hardware">Hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operating-systems">Operating Systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#databases">Databases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dns-dhcp-server-software">DNS/DHCP Server Software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of Important Config and Log Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_controllers.html">Micetro Agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Installing the Micetro Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation_azure.html">Installing Micetro in Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+      <li class="breadcrumb-item active">System Requirements</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/system_requirements.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="system-requirements">
+<span id="id1"></span><h1>System Requirements<a class="headerlink" href="#system-requirements" title="Link to this heading"></a></h1>
+<p>The minimum system requirements and supported platforms for Micetro are as follows:</p>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to <a class="reference internal" href="architecture.html#architecture-overview"><span class="std std-ref">Architecture Overview</span></a> for details.</p>
+</div>
+</section>
+<section id="operating-systems">
+<h2>Operating Systems<a class="headerlink" href="#operating-systems" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Operating Systems</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operating system</p></th>
+<th class="head"><p>Management Console <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>Server Controllers</p></th>
+<th class="head"><p>Men&amp;Mice Central</p></th>
+<th class="head"><p>Web Application</p></th>
+<th class="head"><p>API <a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>Command Line Interface</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Microsoft Windows</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Windows Server 2016</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Windows Server 2019</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows Server 2022</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Linux</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Redhat Enterprise Linux 6</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Redhat Enterprise Linux 7</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Redhat Enterprise Linux 8</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Redhat Enterprise Linux 9</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>CentOS 6</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>CentOS 7</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>CentOS 8</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Suse Enterprise Linux 11/12/13 x86</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu 14.04 LTS</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Ubuntu 16.04 LTS</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu 18.04 LTS</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Ubuntu 20.04 LTS</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu 22.04 LTS</p></td>
+<td><p>N</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>N/A</p></td>
+<td><p>Y</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>The management console also works on non-server Windows that have not reached their EOL.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>The REST and SOAP APIs are bundled into the Web Application for Windows and Linux.</p>
+</aside>
+</aside>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>As of October 10, 2023, Microsoft has officially discontinued support for Windows Server 2012 and 2012 R2. Micetro software may continue to function; however, its performance and reliability cannot be guaranteed, as the underlying operating system is no longer officially supported by Microsoft.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Starting from version 10.2, support for 32-bit Linux Operating Systems will be discontinued due to the lack of support from common Linux distributions.</p>
+</div>
+</section>
+<section id="databases">
+<h2>Databases<a class="headerlink" href="#databases" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Databases</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Database</p></th>
+<th class="head"><p>Supported version(s)</p></th>
+<th class="head"><p>Operating System of Men&amp;Mice Central</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PostgreSQL</p></td>
+<td><p>12</p></td>
+<td><p>Windows, Linux</p></td>
+</tr>
+<tr class="row-odd"><td><p>SQLite</p></td>
+<td><p>N/A <a class="footnote-reference brackets" href="#id7" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+<td><p>Windows, Linux</p></td>
+</tr>
+<tr class="row-even"><td><p>Microsoft SQL Server</p></td>
+<td><p>2012, 2014, 2016, 2019</p></td>
+<td><p>Windows</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
+<p>The SQLite database is embedded into the Men&amp;Mice Central application.</p>
+</aside>
+</aside>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Micetro versions 10.2 and later, support for Microsoft SQL Server 2008 R2 will be discontinued, aligning with Microsoft’s decision to end support for these operating systems.</p>
+</div>
+</section>
+<section id="dns-dhcp-server-software">
+<h2>DNS/DHCP Server Software<a class="headerlink" href="#dns-dhcp-server-software" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-text">DNS &amp; DHCP Server Software</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Server</p></th>
+<th class="head"><p>Version(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>DNS</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Microsoft DNS</p></td>
+<td><p>2012, 2012 R2, 2016, 2019, 2022</p></td>
+</tr>
+<tr class="row-even"><td><p>ISC BIND</p></td>
+<td><p>9.16 - 9.18</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unbound</p></td>
+<td><p>1.4.22 - 1.7.3</p></td>
+</tr>
+<tr class="row-even"><td><p>PowerDNS Authoritative Server</p></td>
+<td><p>3.4 - 4.3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DHCP</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Microsoft DHCP</p></td>
+<td><p>2012, 2012 R2, 2016, 2019, 2022</p></td>
+</tr>
+<tr class="row-odd"><td><p>ISC DHCP</p></td>
+<td><p>3.0.6 - 4.4.1</p></td>
+</tr>
+<tr class="row-even"><td><p>ISC Kea</p></td>
+<td><p>1.6, 1.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cisco IOS with DHCP support</p></td>
+<td><p>12.3 - 16.09</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ISC Kea versions older than 1.6 are no longer supported. See <a class="reference internal" href="../../opensource/kea_update.html#kea-update"><span class="std std-ref">Updating ISC Kea with Micetro 10.0</span></a> for more details.</p>
+</div>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading"></a></h2>
+<section id="micetro-web-application">
+<h3>Micetro Web Application<a class="headerlink" href="#micetro-web-application" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Microsoft IIS <a class="footnote-reference brackets" href="#id10" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
+<li><p>Apache 2 Web server 2.2/2.4 <a class="footnote-reference brackets" href="#id11" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
+</ul>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">4</a><span class="fn-bracket">]</span></span>
+<p>When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.</p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">5</a><span class="fn-bracket">]</span></span>
+<p>The Apache web server is supported on all platforms except Windows.</p>
+</aside>
+</aside>
+</section>
+<section id="supported-cloud-services">
+<h3>Supported Cloud Services<a class="headerlink" href="#supported-cloud-services" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Azure <a class="footnote-reference brackets" href="#id13" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></li>
+<li><p>Amazon Web Services (AWS)</p></li>
+<li><p>Dyn DNS</p></li>
+<li><p>NS1 DNS</p></li>
+<li><p>OpenStack</p></li>
+<li><p>Akamai</p></li>
+</ul>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">6</a><span class="fn-bracket">]</span></span>
+<p>Micetro can be installed directly from the Azure Marketplace. See <a class="reference internal" href="installation_azure.html#installation-azure"><span class="std std-ref">Installing Micetro in Azure</span></a>.</p>
+</aside>
+</aside>
+</section>
+<section id="supported-browsers-web-application">
+<h3>Supported Browsers (Web Application)<a class="headerlink" href="#supported-browsers-web-application" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Microsoft Edge</p></li>
+<li><p>Google Chrome</p></li>
+<li><p>Mozilla Firefox</p></li>
+<li><p>Apple Safari</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="firewall_ports.html" class="btn btn-neutral float-right" title="Networking Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

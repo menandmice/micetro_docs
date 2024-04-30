@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to run external scripts and the types of script interfaces in Micetro by Men&amp;Mice" name="description" />
+<meta content="DNS records, DNS" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>External scripts &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="named.conf validation" href="named-conf_location.html" />
+    <link rel="prev" title="Configuring PowerDNS" href="powerdns.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">External scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script-interfaces">Script Interfaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#property-change-script-interface">Property Change Script Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zone-content-change-script-interface">Zone Content Change Script Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subnet-monitoring-script-interface">Subnet Monitoring Script Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-visual-basic-script">Example Visual Basic Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-powershell-script">Example PowerShell Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">External scripts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/external_scripts.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="external-scripts">
+<span id="id1"></span><h1>External scripts<a class="headerlink" href="#external-scripts" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The system can be configured to run external scripts under several conditions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When object properties are modified.</p></li>
+<li><p>When zone contents are changed.</p></li>
+<li><p>When the number of free addresses in subnets go below a set threshold.</p></li>
+</ul>
+</div></blockquote>
+<p>Scripts associated with object types are often used to perform lookups in external data sources and return data from these sources. To configure the system to run a script when properties for an object are modified or when zone contents are changed, do the following:</p>
+<ol class="arabic simple">
+<li><p>Log in as Administrator.</p></li>
+<li><p>From the menu, select Tools, System Settings.</p></li>
+<li><p>In the System settings dialog box, click the External Commands tab.</p></li>
+<li><p>In the applicable field (e.g., Range script, IP Address script, etc.), type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as Men&amp;Mice Central; however, if the script is stored in a different location, the path for the script must be entered.</p></li>
+</ol>
+<dl class="simple">
+<dt>Example 1:</dt><dd><p>Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&amp;Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb</p>
+</dd>
+<dt>Example 2:</dt><dd><p>Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&amp;Mice Central directory the following would be placed in the appropriate field: checkdata.exe.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="5">
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<p>To configure the system to run a script when the number of free addresses in a subnet goes below a user-definable threshold, refer to  IP Address Management—Subnet Monitoring and Utilization History.</p>
+<a class="reference internal image-reference" href="../../_images/admin-external-scripts.png"><img alt="../../_images/admin-external-scripts.png" class="align-center" src="../../_images/admin-external-scripts.png" style="width: 60%;" /></a>
+</section>
+<section id="script-interfaces">
+<h2>Script Interfaces<a class="headerlink" href="#script-interfaces" title="Link to this heading"></a></h2>
+<p>When Men&amp;Mice Central runs an external script, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.</p>
+<p>The XML structures differs a little depending on the type of script (property change, zone contents change, scope monitoring).</p>
+<section id="property-change-script-interface">
+<h3>Property Change Script Interface<a class="headerlink" href="#property-change-script-interface" title="Link to this heading"></a></h3>
+<p>The XML schema for a property change script is as follows:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:mstns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;externalScriptParameters&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;customFields&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;userName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customFields&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;customField&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customField&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customFieldID&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customFieldName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;objectID&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;objectType&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p>An example XML structure with three custom properties named Location, Country and Region might look as follows:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;externalScriptParameters</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;administrator&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;customFields&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;24&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Location&quot;</span>
+<span class="na">objectID=</span><span class="s">&quot;27&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;location1&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Country&quot;</span>
+<span class="na">objectID=</span><span class="s">&quot;27&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;26&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Region&quot;</span>
+<span class="na">objectID=</span><span class="s">&quot;27&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;/customFields&gt;</span>
+<span class="nt">&lt;/externalScriptParameters&gt;</span>
+</pre></div>
+</div>
+<p>Upon completion, the script must create a new XML structure and return it to Men&amp;Mice Central. The schema for the XML structure that is returned is as follows:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span>
+<span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://tempuri.org/</span>
+<span class="s">XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:mstns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span>
+<span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;result&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:choice</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;customFields&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;error&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:choice&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;success&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customFields&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;customField&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customField&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customFieldID&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;customFieldName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;objectID&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;objectType&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;error&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;code&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;message&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p>An example XML structure with three custom properties named Location, Country and region might look as follows:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;result</span><span class="w"> </span><span class="na">success=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;customFields&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;24&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;loc&quot;</span><span class="w"> </span><span class="na">objectID=</span><span class="s">&quot;27&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;location1&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;25&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Country&quot;</span><span class="w"> </span><span class="na">objectID=</span><span class="s">&quot;27&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;USA&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;26&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Region&quot;</span><span class="w"> </span><span class="na">objectID=</span><span class="s">&quot;27&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Texas&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;/customFields&gt;</span>
+<span class="nt">&lt;/result&gt;</span>
+</pre></div>
+</div>
+<p>Men&amp;Mice Central uses the information in the XML structure to update other custom properties or to display an error message if the success attribute on the result element is set to 0. The following XML example shows how an error message can be returned by the external script.</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span><span class="nt">&lt;result</span><span class="w"> </span><span class="na">success=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;error</span><span class="w"> </span><span class="na">code=</span><span class="s">&quot;1&quot;</span><span class="na">message=</span><span class="s">&quot;The error message.&quot;</span><span class="nt">&gt;&lt;/error&gt;&lt;/result&gt;</span>
+</pre></div>
+</div>
+<p>The XML structure is not required to return information about all custom properties, only fields that the script has changed. Unknown property fields are ignored by Men&amp;Mice Central.</p>
+</section>
+<section id="zone-content-change-script-interface">
+<h3>Zone Content Change Script Interface<a class="headerlink" href="#zone-content-change-script-interface" title="Link to this heading"></a></h3>
+<p>The XML schema for a zone content change script is as follows:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:mstns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;externalScriptParameters&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;object&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;userName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;server&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;view&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;zone&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fqName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p>An example XML structure for a zone change script might look as follows for a zone that exists in a view:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;externalScriptParameters</span><span class="w"> </span><span class="na">userName=</span><span class="s">&quot;administrator&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;object&gt;</span>
+<span class="nt">&lt;id&gt;</span>2534<span class="nt">&lt;/id&gt;</span>
+<span class="nt">&lt;type&gt;</span>13<span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;server&gt;</span>bind1.corp.net.<span class="nt">&lt;/server&gt;</span>
+<span class="nt">&lt;view&gt;</span>internal<span class="nt">&lt;/view&gt;</span>
+<span class="nt">&lt;zone&gt;</span>zone.com.<span class="nt">&lt;/zone&gt;</span>
+<span class="nt">&lt;fqName&gt;</span>bind1.corp.net.:internal:zone.com.<span class="nt">&lt;/fqName&gt;</span>
+<span class="nt">&lt;/object&gt;</span>
+<span class="nt">&lt;/externalScriptParameters&gt;</span>
+</pre></div>
+</div>
+<p>An example XML structure for a zone change script might look as follows for a zone that is not in a view:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;externalScriptParameters</span><span class="w"> </span><span class="na">userName=</span><span class="s">&quot;administrator&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;object&gt;</span>
+<span class="nt">&lt;id&gt;</span>2635<span class="nt">&lt;/id&gt;</span>
+<span class="nt">&lt;type&gt;</span>13<span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;server&gt;</span>dns1.corp.net.<span class="nt">&lt;/server&gt;</span>
+<span class="nt">&lt;view</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;zone&gt;</span>my.zone.com.<span class="nt">&lt;/zone&gt;</span>
+<span class="nt">&lt;fqName&gt;</span>dns1.corp.net.::my.zone.com.<span class="nt">&lt;/fqName&gt;</span>
+<span class="nt">&lt;/object&gt;</span>
+<span class="nt">&lt;/externalScriptParameters&gt;</span>
+</pre></div>
+</div>
+<p>A zone content change script does not have any return value.</p>
+</section>
+<section id="subnet-monitoring-script-interface">
+<h3>Subnet Monitoring Script Interface<a class="headerlink" href="#subnet-monitoring-script-interface" title="Link to this heading"></a></h3>
+<p>The XML schema for a subnet monitoring script is as follows:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:mstns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scopeMonitor&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;server&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;superscope&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;threshold&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;available&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fixed&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:boolean&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;thresholdType&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p>The value of the thresholdType element will be either static or dynamic depending on whether the threshold being crossed is one of dynamically allocatable addresses (i.e., available addresses in address pools) or if it is a threshold set for static addresses (i.e., available addresses outside of address pools).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The global subnet monitor, set through the system settings dialog, is the only one that takes superscopes into account. When the global subnet monitor actions are performed, due to the conditions being met for a superscope, the XML generated will contain a &lt;server&gt; tag and a &lt;superscope&gt; tag.</p>
+</div>
+<p>An example XML structure for a subnet monitoring script might look as follows for scope:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;scopeMonitor&gt;</span>
+<span class="nt">&lt;scope&gt;</span>123.45.67.0/24<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;threshold&gt;</span>20<span class="nt">&lt;/threshold&gt;</span>
+<span class="nt">&lt;available&gt;</span>8<span class="nt">&lt;/available&gt;</span>
+<span class="nt">&lt;fixed&gt;</span>0<span class="nt">&lt;/fixed&gt;</span>
+<span class="nt">&lt;thresholdType&gt;</span>dynamic<span class="nt">&lt;/thresholdType&gt;</span>
+<span class="nt">&lt;customFields&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Title&quot;</span><span class="w"> </span><span class="na">objectID=</span><span class="s">&quot;526&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Your subnet title&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Description&quot;</span><span class="w"> </span><span class="na">objectID=</span><span class="s">&quot;526&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;You subnet description&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customFields&gt;</span>
+<span class="nt">&lt;/scopeMonitor&gt;</span>
+</pre></div>
+</div>
+<p>The XML structure is slightly different if a superscope (MS DHCP) or a shared-network (ISC DHCP) configuration is used. An example XML structure for a scope monitoring script might look as follows for a superscope / shared-network configuration:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;scopeMonitor&gt;</span>
+<span class="nt">&lt;server&gt;</span>dhcp1.corp.net.<span class="nt">&lt;/server&gt;</span>
+<span class="nt">&lt;superscope&gt;</span>office<span class="nt">&lt;/superscope&gt;</span>
+<span class="nt">&lt;threshold&gt;</span>20<span class="nt">&lt;/threshold&gt;</span>
+<span class="nt">&lt;available&gt;</span>22<span class="nt">&lt;/available&gt;</span>
+<span class="nt">&lt;fixed&gt;</span>1<span class="nt">&lt;/fixed&gt;</span>
+<span class="nt">&lt;thresholdType&gt;</span>dynamic<span class="nt">&lt;/thresholdType&gt;</span>
+<span class="nt">&lt;/scopeMonitor&gt;</span>
+</pre></div>
+</div>
+<p>A subnet monitoring script does not have any return value.</p>
+</section>
+<section id="example-visual-basic-script">
+<h3>Example Visual Basic Script<a class="headerlink" href="#example-visual-basic-script" title="Link to this heading"></a></h3>
+<p>The following example script, written in Visual Basic, shows how a script could return different values depending on the user that is running the script. The script is called when an object property changes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dim</span> <span class="n">fso</span><span class="p">,</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">xmlDoc</span>
+
+<span class="s1">&#39;The next four lines connect the script and the &quot;Men&amp;Mice Suite&quot;</span>
+<span class="n">Set</span> <span class="n">fso</span> <span class="o">=</span> <span class="n">CreateObject</span> <span class="p">(</span><span class="s2">&quot;Scripting.FileSystemObject&quot;</span><span class="p">)</span>
+<span class="n">Set</span> <span class="n">stdin</span> <span class="o">=</span> <span class="n">fso</span><span class="o">.</span><span class="n">GetStandardStream</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Set</span> <span class="n">stdout</span> <span class="o">=</span> <span class="n">fso</span><span class="o">.</span><span class="n">GetStandardStream</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Set</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">fso</span><span class="o">.</span><span class="n">GetStandardStream</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Set</span> <span class="n">xmlDoc</span><span class="o">=</span><span class="n">CreateObject</span><span class="p">(</span><span class="s2">&quot;Microsoft.XMLDOM&quot;</span><span class="p">)</span> <span class="n">xmlDoc</span><span class="o">.</span><span class="k">async</span><span class="o">=</span><span class="s2">&quot;false&quot;</span> <span class="s1">&#39;read xml</span>
+<span class="kn">from</span> <span class="nn">MMSuite</span> <span class="n">xmlDoc</span><span class="o">.</span><span class="n">loadXml</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">)</span>
+
+<span class="n">Dim</span> <span class="n">xElLocationCodeField</span><span class="p">,</span> <span class="n">theCode</span><span class="p">,</span> <span class="n">xElCustomFields</span><span class="p">,</span> <span class="n">theUser</span>
+<span class="s1">&#39;Get the username</span>
+<span class="n">theUser</span> <span class="o">=</span> <span class="n">xmlDoc</span><span class="o">.</span><span class="n">selectSingleNode</span><span class="p">(</span><span class="s2">&quot;/externalScriptParameters&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;userName&quot;</span><span class="p">)</span>
+
+<span class="s1">&#39;Select all the customfields</span>
+<span class="n">Set</span> <span class="n">xElCustomFields</span> <span class="o">=</span> <span class="n">xmlDoc</span><span class="o">.</span><span class="n">selectSingleNode</span><span class="p">(</span><span class="s2">&quot;/externalScriptParameters/customFields&quot;</span><span class="p">)</span>
+
+<span class="s1">&#39;Get the current value of the location code field</span>
+<span class="n">Set</span> <span class="n">xElLocationCodeField</span> <span class="o">=</span> <span class="n">xElCustomFields</span><span class="o">.</span><span class="n">selectSingleNode</span><span class="p">(</span><span class="s2">&quot;customField[@customFieldName=&#39;Location&#39;]&quot;</span><span class="p">)</span>
+<span class="n">theCode</span> <span class="o">=</span> <span class="n">xElLocationCodeField</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+<span class="n">Dim</span> <span class="n">success</span><span class="p">,</span> <span class="n">retVal1</span><span class="p">,</span> <span class="n">retVal2</span> <span class="n">success</span> <span class="o">=</span> <span class="n">false</span>
+
+<span class="s1">&#39; Very simple logic, here a DB query could be performed or some other lookup</span>
+  <span class="k">if</span> <span class="n">theCode</span> <span class="o">=</span> <span class="s2">&quot;l1&quot;</span> <span class="n">then</span>
+  <span class="n">retVal1</span><span class="o">=</span><span class="s2">&quot;USA&quot;</span>
+  <span class="n">retVal2</span><span class="o">=</span><span class="s2">&quot;Washington&quot;</span>
+  <span class="n">success</span> <span class="o">=</span> <span class="n">true</span>
+    <span class="n">elseif</span> <span class="n">theCode</span> <span class="o">=</span> <span class="s2">&quot;l2&quot;</span> <span class="n">then</span>
+  <span class="n">retVal1</span><span class="o">=</span><span class="s2">&quot;UK&quot;</span>
+  <span class="n">retVal2</span><span class="o">=</span><span class="s2">&quot;London&quot;</span>
+  <span class="n">success</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">end</span> <span class="k">if</span>
+<span class="s1">&#39; logic ends</span>
+
+<span class="n">Dim</span> <span class="n">xReturnDoc</span><span class="p">,</span> <span class="n">xElResult</span>
+
+<span class="s1">&#39;create return document</span>
+<span class="n">Set</span> <span class="n">xReturnDoc</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s2">&quot;Microsoft.XMLDOM&quot;</span><span class="p">)</span>
+<span class="n">Set</span> <span class="n">xElResult</span> <span class="o">=</span> <span class="n">xReturnDoc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">success</span> <span class="n">then</span>
+  <span class="n">xElResult</span><span class="o">.</span><span class="n">setAttribute</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span>
+ <span class="s1">&#39;set the value of xml that we return. It is OK to omit fields that are not changed by script</span>
+ <span class="n">xElResult</span><span class="o">.</span><span class="n">appendChild</span> <span class="n">xElCustomFields</span><span class="o">.</span><span class="n">cloneNode</span><span class="p">(</span><span class="n">true</span><span class="p">)</span>
+ <span class="n">Dim</span> <span class="n">xElChange</span>
+ <span class="n">Set</span> <span class="n">xElChange</span> <span class="o">=</span> <span class="n">xElResult</span><span class="o">.</span><span class="n">selectSingleNode</span><span class="p">(</span><span class="s2">&quot;/customFields/customField[@customFieldName=&#39;Country&#39;]&quot;</span><span class="p">)</span>
+ <span class="n">xElChange</span><span class="o">.</span><span class="n">setAttribute</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">retVal1</span>
+ <span class="n">Set</span> <span class="n">xElChange</span> <span class="o">=</span> <span class="n">xElResult</span><span class="o">.</span><span class="n">selectSingleNode</span><span class="p">(</span><span class="s2">&quot;/customFields/customField[@customFieldName=&#39;City&#39;]&quot;</span><span class="p">)</span>
+ <span class="n">xElChange</span><span class="o">.</span><span class="n">setAttribute</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">retVal2</span>
+<span class="k">else</span>
+ <span class="n">xElResult</span><span class="o">.</span><span class="n">setAttribute</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span>
+
+<span class="s1">&#39;add error element</span>
+ <span class="n">Dim</span> <span class="n">xElError</span>
+ <span class="n">Set</span> <span class="n">xElError</span> <span class="o">=</span> <span class="n">xReturnDoc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+ <span class="n">xElError</span><span class="o">.</span><span class="n">setAttribute</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span>
+ <span class="n">xElError</span><span class="o">.</span><span class="n">setAttribute</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="s2">&quot;Unknown location.&quot;</span>
+ <span class="n">xElResult</span><span class="o">.</span><span class="n">appendChild</span> <span class="n">xElError</span>
+<span class="n">end</span> <span class="k">if</span>
+
+<span class="n">xReturnDoc</span><span class="o">.</span><span class="n">appendChild</span> <span class="n">xElResult</span>
+
+<span class="s1">&#39;finally return the xml</span>
+<span class="n">stdout</span><span class="o">.</span><span class="n">WriteLine</span> <span class="n">xReturnDoc</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</section>
+<section id="example-powershell-script">
+<h3>Example PowerShell Script<a class="headerlink" href="#example-powershell-script" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Powershell scripts can be run natively by Men&amp;Mice by starting the command with “powershell”, “powershell.exe” or simply with the path to the .ps1 file. Powershell can then read the stdin with [Console]::In.ReadToEnd()</p>
+</div>
+<section id="instructions">
+<h4>Instructions<a class="headerlink" href="#instructions" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Copy the psExec.vbs and the ScopeMonScript.ps1 to the c:ProgramDataMen and MiceCentral directory.</p></li>
+<li><p>In Tools-&gt;System Settings-&gt;Monitoring, add it in the Default scope monitoring settings as follows:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cscript</span> <span class="o">/</span><span class="n">B</span> <span class="o">/</span><span class="n">T</span><span class="p">:</span><span class="mi">120</span> <span class="o">./</span><span class="n">psExec</span><span class="o">.</span><span class="n">vbs</span> <span class="n">ScopeMonScript</span><span class="o">.</span><span class="n">ps1</span> <span class="n">ignore</span> <span class="n">ignore</span>
+</pre></div>
+</div>
+<p>And then configure a dynamic threshold. The monitor will be executed every 10 minutes during the DHCP synchronization interval.</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="k">param</span><span class="p">([</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$false</span><span class="p">,</span><span class="k">ValueFromPipeLine</span><span class="p">=</span><span class="nv">$false</span><span class="p">)]</span><span class="nv">$UserName</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$false</span><span class="p">,</span><span class="k">ValueFromPipeLine</span><span class="p">=</span><span class="nv">$false</span><span class="p">)]</span><span class="nv">$Password</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$false</span><span class="p">,</span><span class="k">ValueFromPipeLine</span><span class="p">=</span><span class="nv">$false</span><span class="p">)]</span><span class="nv">$xmlFileName</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$strInput</span> <span class="p">=</span> <span class="nb">get-content</span> <span class="nv">$xmlFileName</span>
+<span class="c">#$strInput = $args</span>
+<span class="c"># write output for troubleshooting in file:</span>
+<span class="c">#Add-Content -Path .\monitoroutput.xml $strInput</span>
+
+<span class="nv">$strXML</span> <span class="p">=</span> <span class="no">[string]</span><span class="p">::</span><span class="n">Join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="nv">$strInput</span><span class="p">)</span>
+<span class="nv">$objXML</span> <span class="p">=</span> <span class="no">[xml]</span><span class="nv">$strXML</span>
+<span class="nv">$subnetMonitor</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Select-Xml</span> <span class="n">-XML</span> <span class="nv">$objXML</span> <span class="n">-XPath</span> <span class="s2">&quot;/subnetMonitor&quot;</span><span class="p">).</span><span class="n">Node</span>
+
+<span class="c"># Check if it&#39;s an alert or fixed message</span>
+<span class="c"># The script only cares about alerts</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">fixed</span> <span class="o">-eq</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$strAlert</span> <span class="p">=</span> <span class="s2">&quot;Alert:  The following scope or subnet has fewer IPs available than the configured threshold.&quot;</span>
+
+    <span class="c"># We could send here an email or generate a trap or...</span>
+    <span class="c">#Send-MailMessage -SmtpServer &quot;smpt.example.com&quot; -From &quot;subnetmonitor@example.com&quot; -To &quot;alert1@example.com;alert2@example.net&quot; -Subject &quot;Subnet Monitor Message&quot; -Body $strOutput</span>
+
+    <span class="c"># First handle the superscopes</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">superscope</span> <span class="o">-ne</span> <span class="nv">$null</span> <span class="o">-and</span> <span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">superscope</span> <span class="o">-ne</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="nv">$strOutput</span> <span class="p">=</span> <span class="sh">@&quot;</span>
+
+<span class="sh">    $strAlert</span>
+<span class="sh">    Superscope: </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">superscope</span><span class="p">)</span>
+<span class="sh">    Alert Date:    </span><span class="p">$(</span><span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="n">G</span><span class="p">)</span>
+<span class="sh">    Server:        </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">server</span><span class="p">)</span>
+<span class="sh">    Threshold:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">threshold</span><span class="p">)</span>
+<span class="sh">    IPs Available:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">available</span><span class="p">)</span>
+<span class="sh">    Subnet Type:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">thresholdType</span><span class="p">)</span>
+<span class="sh">    &quot;@</span>
+<span class="sh">        New-EventLog -Source SubnetMonitor -LogName Application</span>
+<span class="sh">        Write-EventLog -LogName Application -Source SubnetMonitor -EventID 1063 -EntryType Warning -message &quot;$strOutput&quot;</span>
+<span class="sh">        #Add-Content -Path .\superscopemonitor_msg.txt $strOutput</span>
+<span class="sh">        }</span>
+<span class="sh">    else</span>
+<span class="sh">    {</span>
+<span class="sh">    # then in the else clause the normal scopes</span>
+
+<span class="sh">    $strOutput = @&quot;</span>
+
+<span class="sh">    $strAlert</span>
+<span class="sh">      Alert Date:    </span><span class="p">$(</span><span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="n">G</span><span class="p">)</span>
+<span class="sh">      Scope:        </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">subnet</span><span class="p">)</span>
+<span class="sh">      Threshold:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">threshold</span><span class="p">)</span>
+<span class="sh">      IPs Available:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">available</span><span class="p">)</span>
+<span class="sh">      Subnet Type:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">thresholdType</span><span class="p">)</span>
+<span class="sh">      &quot;@</span>
+<span class="sh">        New-EventLog -Source SubnetMonitor -LogName Application</span>
+<span class="sh">        Write-EventLog -LogName Application -Source SubnetMonitor -EventID 1064 -EntryType Warning -message &quot;$strOutput&quot;</span>
+<span class="sh">        #Add-Content -Path .\scopemonitor_msg.txt $strOutput</span>
+<span class="sh">    }</span>
+<span class="sh">  }</span>
+<span class="sh">  else</span>
+<span class="sh">  {</span>
+<span class="sh">  # possible issue fixed message</span>
+<span class="sh">  }</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powerdns.html" class="btn btn-neutral float-left" title="Configuring PowerDNS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="named-conf_location.html" class="btn btn-neutral float-right" title="named.conf validation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

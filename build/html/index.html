@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Product documentation for Micetro by Men&amp;Mice" name="description" />
+<meta content="Micetro, Micetro by Men&amp;Mice, Men&amp;Mice, documentation, user guide, admin guide" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micetro by Men&amp;Mice 10.2 &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Release notes" href="release_notes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Micetro by Men&amp;Mice 10.2</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="micetro-by-men-mice-10-2">
+<h1>Micetro by Men&amp;Mice 10.2<a class="headerlink" href="#micetro-by-men-mice-10-2" title="Link to this heading"></a></h1>
+<p>Welcome to Micetro by Men&amp;Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.</p>
+<a class="reference internal image-reference" href="_images/micetro.png"><img alt="Men&amp;Mice" class="align-center" src="_images/micetro.png" style="width: 70%;" /></a>
+<p>Deployed in any on-premises, hybrid, or multi-cloud network environment, Micetro acts as a non-disruptive overlay that unifies server management under a single GUI and API. Micetro is a modular, software-defined DDI solution built around a number of components, and accessed through a unified user interface and API.</p>
+<p>This documentation is divided into four parts:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="guides/implementation/implementation.html#implementation"><span class="std std-ref">Implementation Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/user-manual/introduction.html#manual-introduction"><span class="std std-ref">User Manual</span></a></p></li>
+<li><p><a class="reference internal" href="guides/admin-manual/administration.html#admin-overview"><span class="std std-ref">Admin Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/reference/reference.html#reference"><span class="std std-ref">Micetro reference articles</span></a></p></li>
+</ol>
+<p>Use the <a class="reference internal" href="guides/implementation/implementation.html#implementation"><span class="std std-ref">Implementation Guide</span></a> to familiarize yourself with Micetro’s architecture and installation procedures for components on different platforms. The <a class="reference internal" href="guides/user-manual/introduction.html#manual-introduction"><span class="std std-ref">User Manual</span></a> covers all of Micetro’s functionality. <a class="reference internal" href="guides/admin-manual/administration.html#admin-overview"><span class="std std-ref">Admin Guide</span></a> is aimed at system administrators managing Micetro.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the search function for quickly locating the information required.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For how-to articles and troubleshooting, see <a class="reference internal" href="guides/reference/reference.html#reference"><span class="std std-ref">Micetro reference articles</span></a> or visit the <a class="reference external" href="https://kb.menandmice.com/display/MM/Knowledge+base">Knowledge Base</a>.</p>
+</div>
+<a class="reference internal image-reference" href="_images/menandmice.png"><img alt="Micetro by Men&amp;Mice" class="align-center" src="_images/menandmice.png" style="width: 60%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re using version <strong>9.2 or older</strong> of the Men&amp;Mice Suite, refer to the documentation on <a class="reference external" href="https://cdocs.menandmice.com/display/MM/Documentation+Home">https://cdocs.menandmice.com/display/MM/Documentation+Home</a>.</p>
+</div>
+<p>The documentation is open-source, under a modified MIT license (see <a class="reference internal" href="license.html#docs-license"><span class="std std-ref">Micetro by Men&amp;Mice Documentation license</span></a>), and you’re welcome to file issues and improvements <a class="reference external" href="https://github.com/menandmice/micetro_docs">on GitHub</a>.</p>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opensource.html">Open-source licenses</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/implementation.html">Implementation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/architecture.html">Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/architecture.html#architecture-overview">Architecture overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/architecture.html#components">Components</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/install_console.html">Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/install_controllers.html">Server controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/cloud.html">Cloud integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/install_webapp.html">Web Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/running_micetro.html">Running the Men&amp;Mice components (Central, Controllers)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/running_micetro.html#linux">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/running_micetro.html#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/first_login.html">First login</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/first_login.html#license-keys">License keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/first_use_wizard.html">First use wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/central_logging.html">Enable logging for Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/controller_logging.html">Configuring logging for the Men&amp;Mice Server Controllers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/controller_logging.html#dns-server-controller">DNS Server Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/controller_logging.html#dhcp-server-controller">DHCP Server Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/user_management.html">Micetro User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/external_auth.html">External Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/external_auth.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/external_auth.html#active-directory-user-authentication">Active Directory User Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/external_auth.html#active-directory-single-sign-on">Active Directory Single Sign-on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/external_auth.html#application-log-in">Application Log In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/external_auth.html#group-level-active-directory-user-authentication">Group Level Active Directory User Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/adding_dns.html">Adding DNS servers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/adding_dns.html#dns-servers-in-active-directory-integrated-zones">DNS servers in Active Directory integrated zones</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/adding_dhcp.html">Add DHCP Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/adding_ip_ranges.html">IP Address Ranges and devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/advanced_config.html">Advanced configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/console_advanced_settings.html">Advanced System Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/central_ha.html">Configure High Availability for Micetro Central</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/central_ha.html#linux">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/central_ha.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/central_ha.html#editing-ha-member-options">Editing HA member options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/central_ha.html#updating-central-in-high-availability-setup">Updating Central in High Availability setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/ha_tweaks_central.html">Men&amp;Mice Central HA tweaks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/ha_tweaks_central.html#changing-the-default-heartbeat-timestamp-value-in-central-ha">Changing the default heartbeat timestamp value in Central HA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/xdns_redundancy_groups.html">xDNS Zone Redundancy Groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/xdns_redundancy_groups.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/xdns_redundancy_groups.html#manage-xdns-zone-redundancy-groups">Manage xDNS Zone Redundancy Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/xdns_redundancy_groups.html#re-syncing-zone-redundancy-groups-when-all-members-are-out-of-sync">Re-syncing zone redundancy groups when all members are out-of-sync</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/webapp_custom_links.html">Custom links in the web application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/implementation/updates.html">Update Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/updates.html#update-paths">Update paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/updates.html#checking-and-downloading-an-update">Checking and Downloading an Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/updates.html#installing-an-update">Installing an Update</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/implementation/updates.html#updating-an-appliance">Updating an Appliance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/updates.html#viewing-update-status">Viewing Update Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/implementation/updates.html#verifying-the-updates">Verifying the updates</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/ui.html">Micetro user interface(s)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/web_application.html">Web Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/web_application.html#user-guide">User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/web_application.html#admin-guide">Admin Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/console.html">Management Console</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/console.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/console.html#launching-the-management-console">Launching the Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/console.html#first-use-wizard">First Use Wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/console.html#console-functions">Console functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/folder_management.html">Folder management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/folder_management.html#folders-and-contexts">Folders and contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/folder_management.html#access-to-folders">Access to folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/folder_management.html#creating-folders">Creating folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/folder_management.html#editing-folders">Editing folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/folder_management.html#deleting-folders">Deleting folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/folder_management.html#folder-types">Folder types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/object_folders.html">Object folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/smart_folders.html">Smart folders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/dns.html">DNS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/dns_servers.html">Authoritative DNS Servers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#new-dns-server">New DNS Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#edit-dns-server-name">Edit DNS Server Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#access">Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#define-work-set">Define Work Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#detach">Detach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#attach">Attach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#remove">Remove</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#options-management-console">Options (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#server-info">Server Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#server-log">Server Log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#reload-reload-zone-list-management-console">Reload/Reload Zone List (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#edit-dns-policies">Edit DNS Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#clear-cache-management-console">Clear Cache (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#view-cache-entries-management-console">View Cache Entries (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_servers.html#backup-and-restore-bind-only-management-console">Backup and Restore (BIND Only) (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/dns_zones.html">DNS zones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#zone-viewing">Zone Viewing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#zone-analysis-management-console">Zone Analysis (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#access-access-for-non-master-for-zone-s">Access/Access for Non-Master for Zone(s)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#delete-zone">Delete zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#disable-enable-management-console">Disable/Enable (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#zone-migration-wizard">Zone Migration Wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#view-related-servers-management-console">View Related Servers (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#edit-preferred-servers">Edit Preferred Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#export-management-console">Export (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#folders">Folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#forward-zone">Forward Zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#import-management-console">Import (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#master-zone">Master Zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#dns-response-policy-zones-bind-only-management-console">DNS Response Policy Zones (BIND only) (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#dnssec-zones-management-console">DNSSEC Zones (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#options-management-console">Options (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#options-for-a-zone-management-console">Options for a zone (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#promote-slave-to-master">Promote Slave to Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#zone-controls-bind-only-management-console">Zone Controls (BIND only) (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#reload-management-console">Reload (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#set-folder">Set Folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#search">Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#slave-zone">Slave Zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#stub-zone">Stub Zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_zones.html#view-history">View History</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/dns_records.html">DNS resource records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#types-of-resource-records">Types of Resource Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#resource-records">Resource Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#new-records">New Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#deleting-records">Deleting Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#clearing-records-management-console">Clearing Records (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#disable-enable-records">Disable/Enable Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#cut-copy-and-paste-management-console">Cut, Copy, and Paste (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dns_records.html#undo-redo-commands-management-console">Undo/Redo Commands (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html">DNS policies (Windows)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#dns-policies-and-dns-scopes">DNS Policies and DNS Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#edit-dns-policies">Edit DNS Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#define-client-subnets">Define Client Subnets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#add-dns-zone-scopes">Add DNS Zone scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#edit-dns-server-scopes">Edit DNS Server Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#set-response-rate-limiting">Set Response Rate Limiting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#dns-policies">DNS Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/windows_dns_policies.html#apply-dns-policy-from">Apply DNS Policy from</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/dhcp.html">DHCP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/dhcp_servers.html">DHCP servers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#new-dhcp-server">New DHCP Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#edit-dhcp-server-name">Edit DHCP Server Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#toggle-dhcpv6-management-on-or-off">Toggle DHCPv6 Management on or off</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#inherited-access-management-console">Inherited Access (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#remove">Remove</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#options">Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#properties-management-console">Properties (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#advanced-isc-kea-server-properties">Advanced ISC Kea Server Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_servers.html#reload-scope-list-management-console">Reload Scope List (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html">DHCP scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#viewing-scopes">Viewing Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#viewing-dhcpv6-scopes">Viewing DHCPv6 Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#new-dhcp-scope">New DHCP scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#new-dhcpv6-scope">New DHCPv6 Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#manage-dhcpv6-exclusions">Manage DHCPv6 Exclusions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#access">Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#scope-migration-wizard-management-console">Scope Migration Wizard (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#duplication-wizard-management-console">Duplication Wizard (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#folders">Folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#reconcile-scopes">Reconcile Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#scope-policies-windows-server-2012-or-newer-management-console">Scope Policies (Windows Server 2012 or newer) (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#other-functions">Other Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#moving-ip-address-information-management-console">Moving IP Address Information (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#host-discovery">Host Discovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#failover-configurations-and-split-scopes-management-console">Failover Configurations and Split Scopes (Management Console)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/dhcp_scopes.html#managing-split-scopes-for-dhcpv6">Managing Split Scopes for DHCPv6</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/webapp_edit_dhcp.html">Edit DHCP Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/webapp_edit_dhcp.html#view-the-configured-dhcp-options-for-a-dhcp-scope">View the configured DHCP options for a DHCP scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/webapp_edit_dhcp.html#add-a-new-dhcp-option">Add a new DHCP option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/webapp_edit_dhcp.html#configuring-dhcpv6-and-ddns-options-microsoft-only">Configuring DHCPv6 and DDNS Options (Microsoft Only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/webapp_edit_dhcp.html#removing-a-dhcp-option">Removing a DHCP option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/webapp_edit_dhcp.html#hex-and-ascii-representation">HEX and ASCII representation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/ipam.html">IP address management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#multiple-address-spaces">Multiple Address Spaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#address-space-management">Address Space Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#switching-to-a-different-address-space">Switching to a Different Address Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#moving-objects-to-a-different-address-space-management-console">Moving Objects to a Different Address Space (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#address-a-records-in-dns-zone-windows">Address (A) Records in DNS Zone Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#range-access-management-console">Range Access (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#containers">Containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#new-container">New container</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#viewing-ip-address-ranges">Viewing IP Address Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#new-networks">New Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#network-configuration">Network Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#network-modifications">Network Modifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#network-deletions">Network Deletions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#ip-address-list">IP Address List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#ip-address-inspector">IP Address Inspector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#adding-a-dns-host">Adding a DNS Host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#editing-a-dns-host">Editing a DNS Host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#removing-a-dns-host">Removing a DNS Host</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#moving-ip-address-information-management-console">Moving IP Address Information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#split-allocate-range-wizard">Split/Allocate Range Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#update-reverse-records-wizard-management-console">Update Reverse Records Wizard (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#join-ranges">Join Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#select-parent-management-console">Select Parent (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#host-discovery">Host Discovery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#configuring-host-discovery-using-ping">Configuring Host Discovery Using Ping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#configuring-host-discovery-by-querying-routers">Configuring Host Discovery by Querying Routers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#subnet-discovery">Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#add-to-remove-from-folder">Add to/remove from Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#subnet-monitoring-and-utilization-history-management-console">Subnet Monitoring and Utilization History (Management Console)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#set-subnet-monitoring">Set Subnet Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#removing-subnet-monitoring">Removing Subnet Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ipam.html#view-utilization-history-management-console">View Utilization History (Management Console)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ipam.html#export-utilization-history">Export Utilization History</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/devices.html">Devices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/devices.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/devices.html#what-is-a-device">What is a Device?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/devices.html#adding-a-device">Adding a Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/devices.html#deleting-a-device">Deleting a Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/devices.html#linking-unlinking-ip-addresses">Linking/Unlinking IP Addresses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/devices.html#linking-an-ip-address">Linking an IP Address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/devices.html#unlinking-an-ip-address">Unlinking an IP Address</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/devices.html#searching-for-devices">Searching for Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/devices.html#device-list-tab">Device List tab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/active_directory.html">AD Sites and Subnets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/active_directory.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/active_directory.html#ad-forests">AD Forests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#adding-an-ad-forest">Adding an AD Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#edit-ad-forest">Edit AD Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#removing-an-ad-forest">Removing an AD Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#reloading-the-sites-in-an-ad-forest">Reloading the Sites in an AD Forest</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/active_directory.html#ad-subnets">AD Subnets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#view-subnets-in-a-site">View subnets in a site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#moving-subnets-between-ad-sites">Moving subnets between AD sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#remove-subnet-from-ad-site">Remove subnet from AD site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/active_directory.html#subnets-outside-of-sites">Subnets outside of sites</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/user-manual/automation.html">Automation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/rest_api.html">REST API for Micetro</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/rest_api.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/rest_api.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/rest_api.html#rest-api-documentation">REST API documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/soap_api.html">SOAP API for Micetro</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/soap_api.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/soap_api.html#soap-api-documentation">SOAP API documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/ansible.html">Ansible</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_install.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_install.html#api-user">API user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_install.html#ansible-configuration-example">Ansible configuration example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_credentials.html">Credential matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_modules.html">Ansible modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_mm_freeip.html">mm_freeip plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_mm_inventory.html">mm_inventory plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_mm_ipinfo.html">mm_ipinfo plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/ansible_playbooks.html">Example playbooks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/user-manual/terraform.html">Terraform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/terraform_install.html">Installing the Micetro provider for Terraform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/user-manual/terraform_usage.html">Using the Micetro provider with Terraform</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html">System Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#error-checking">Error Checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#save-comments">Save Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#external-commands">External Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#dns">DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#ipam">IPAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_system_settings.html#monitoring">Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/access_control.html">Access control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/access_control.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/access_control.html#groups-users-and-roles">Groups, users, and roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/access_control.html#the-administrator-user">The <code class="docutils literal notranslate"><span class="pre">administrator</span></code> user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/access_control.html#new-objects">New objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/access_control.html#access-control-management">Access control management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/acl_permissions.html">Permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/acl_permissions.html#block-permission">Block permission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/acl_roles.html">Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/acl_effective_access.html">Effective access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/acl_users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/acl_groups.html">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/acl_object_access.html">Object access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_license.html">License Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_license.html#viewing-license-keys">Viewing license keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_license.html#expired-keys">Expired keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_license.html#adding-a-license-key">Adding a License Key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/admin_license.html#adding-license-keys-for-the-first-time">Adding license keys for the first time</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_license.html#removing-a-license-key">Removing a License Key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/admin_license.html#removing-expired-license-keys">Removing expired license keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_license.html#export-license-data">Export license data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/webapp_admin.html">Admin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/webapp_server_management.html">Server management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/webapp_server_management.html#server-management-actions">Server Management actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/webapp_server_management.html#server-states">Server states</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/webapp_access_management.html">Access Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/webapp_sso.html">Configure Single Sign-On</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/webapp_sso.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/snmp_profiles.html">SNMP profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/snmp_profiles.html#create-a-new-snmp-profile">Create a new SNMP profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/snmp_profiles.html#edit-existing-snmp-profile">Edit existing SNMP profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/snmp_profiles.html#scanning-profiles">Scanning profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html">Custom Properties</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#adding-a-custom-property">Adding a Custom Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#adding-a-cascading-list-to-an-existing-list">Adding a Cascading List to an Existing List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#reordering-custom-properties">Reordering Custom Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#editing-a-custom-property">Editing a Custom Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#deleting-a-custom-property">Deleting a Custom Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#adding-a-custom-property-management-console">Adding a Custom Property (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#editing-a-custom-property-management-console">Editing a Custom Property (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#deleting-a-custom-property-management-console">Deleting a Custom Property (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#displaying-a-custom-property-management-console">Displaying a Custom Property (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_custom_properties.html#opening-a-custom-property-url-management-console">Opening a Custom Property URL (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/admin_maintenance.html">Maintenance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_maintenance.html#find-orphaned-ptr-records">Find Orphaned PTR Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_maintenance.html#find-concurrent-leases">Find Concurrent Leases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_maintenance.html#show-round-robin-records">Show Round Robin Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/admin_maintenance.html#show-multiply-defined-ptr-records">Show Multiply Defined PTR Records</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/appliance_management.html">Appliance management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#new-appliance">New Appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#appliance-properties">Appliance Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#enabling-disabling-dns-dhcp-service-dns-dhcp-appliance-only">Enabling/Disabling DNS/DHCP Service (DNS/DHCP Appliance only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#enabling-remote-logging-dns-dhcp-appliance-only">Enabling Remote Logging (DNS/DHCP Appliance only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#using-a-time-server">Using a Time Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#enabling-remote-access">Enabling Remote Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-snmp-monitoring">Configuring SNMP Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-anycast">Configuring Anycast</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-anycast-using-bgp">Configuring Anycast using BGP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-anycast-using-ospf">Configuring Anycast using OSPF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-network-settings">Configuring Network Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#enabling-disabling-the-secondary-network-interface-eth1">Enabling/disabling the secondary network interface (eth1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#enabling-disabling-ipv6-addresses-on-the-primary-secondary-network-interface">Enabling/disabling IPv6 addresses on the primary/secondary network interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-ipv4-addresses-on-the-primary-secondary-network-interface">Configuring IPv4 addresses on the primary/secondary network interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-ipv6-addresses-on-the-primary-secondary-network-interface">Configuring IPv6 addresses on the primary/secondary network interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-the-network-mode-on-the-primary-secondary-network-interface">Configuring the Network Mode on the primary/secondary network interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-ipv4-routing-information">Configuring IPv4 routing information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/appliance_management.html#configuring-ipv6-routing-information">Configuring IPv6 routing information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#shutting-down-or-restarting-the-men-mice-appliance">Shutting down or Restarting the Men&amp;Mice Appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#support-information">Support Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#edit-appliance-name">Edit Appliance Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#delete-appliance">Delete Appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/appliance_management.html#backup-and-restore">Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/admin-manual/caching_appliance.html">Caching DNS Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#options">Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#setting-network-and-transfer-protocols">Setting Network and Transfer Protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#setting-access-control-for-the-caching-dns-server">Setting Access Control for the Caching DNS Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#setting-private-addresses-and-private-domains">Setting Private Addresses and Private Domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#specifying-addresses-not-to-query">Specifying Addresses not to Query</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#configuring-dnssec-settings">Configuring DNSSEC Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#configuring-advanced-settings">Configuring Advanced Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#server-log-and-query-logging">Server Log and Query Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#stopping-the-dns-server">Stopping the DNS Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#stub-and-forward-zones">Stub and Forward Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#managing-local-zones">Managing Local Zones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#adding-a-local-zone">Adding a Local Zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#editing-deleting-a-local-zone">Editing/Deleting a Local Zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#adding-a-record">Adding a Record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/admin-manual/caching_appliance.html#editing-deleting-a-record">Editing/Deleting a Record</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/reference/reference.html">Micetro reference articles</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="release_notes.html" class="btn btn-neutral float-right" title="Release notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

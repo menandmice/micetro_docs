@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Men&amp;Mice DNS Server Controller and $INCLUDE Directives" name="description" />
+<meta content="DNS Server, Men&amp;Mice" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men&amp;Mice DNS Server Controller and $INCLUDE Directives &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Expanding $GENERATE directives into records" href="dns_controller_generate.html" />
+    <link rel="prev" title="Disable “Automatic adjustment of Zone Transfer”" href="disable_auto_zone-transfer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-include-directive">The $INCLUDE directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-include-directive-with-micetro">Using the $INCLUDE directive with Micetro</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/dns_controller_include.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="men-mice-dns-server-controller-and-include-directives">
+<span id="dns-controller-include"></span><h1>Men&amp;Mice DNS Server Controller and $INCLUDE Directives<a class="headerlink" href="#men-mice-dns-server-controller-and-include-directives" title="Link to this heading"></a></h1>
+<p>BIND supports several extensions to the standard zone file format, known as directives or control statements; all directives start with <code class="docutils literal notranslate"><span class="pre">$</span></code>. With one exception, the <code class="docutils literal notranslate"><span class="pre">$TTL</span></code> directive, Micetro doesn’t display these directives in the zone window.</p>
+<p>Instead, when directives other than <code class="docutils literal notranslate"><span class="pre">$TTL</span></code> are present, the Management Console zone window displays an extra button in the button bar, on the right end. This button, labeled <span class="guilabel">Zone control statements</span>, brings up a window showing all of these statements in raw form. The Management Console does not allow these statements to be edited; instead, all editing of such statements must be done by editing the zone file directly, on the server.</p>
+<section id="the-include-directive">
+<h2>The $INCLUDE directive<a class="headerlink" href="#the-include-directive" title="Link to this heading"></a></h2>
+<p>This directive tells named to load the contents of another file as part of the zone, using the current origin and default TTL. Unfortunately, they often cause problems with Men&amp;Mice Suite.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$INCLUDE</span></code> statements are usually present only if they were present before the DNS Server Controller was installed, since Men&amp;Mice Management Console doesn’t provide a way to create them. The Men&amp;Mice DNS Server Controller installer doesn’t parse all of the zone files during installation, so it’s not aware of <code class="docutils literal notranslate"><span class="pre">$INCLUDE</span></code> directives; therefore, they usually get left behind in the old copy of the data directory (which is renamed to add “.bak” to the end of its name). Furthermore, while most affected users realize this, the common mistake is to copy or move the included file into the same location as the zone file. This is not correct.</p>
+<p>Instead, since an included file is usually only specified by name, it must be placed into the root of the data directory tree. For example, if the zone file is in <code class="docutils literal notranslate"><span class="pre">/var/named/hosts/masters</span></code>, the included file must be placed in <code class="docutils literal notranslate"><span class="pre">/var/named</span></code>.</p>
+<p>Lastly, it’s possible to use an include file in a way that, while perfectly valid as far as <code class="docutils literal notranslate"><span class="pre">named</span></code> is concerned, makes the zone look invalid to Men&amp;Mice Management Console’s syntax check. If the zone’s authority NS records and/or SOA record are located in an include file, the Management Console will not allow you to save the file. This can be solved by configuring the DNS Server Controller to (permanently) expand control statements.</p>
+</section>
+<section id="using-the-include-directive-with-micetro">
+<h2>Using the $INCLUDE directive with Micetro<a class="headerlink" href="#using-the-include-directive-with-micetro" title="Link to this heading"></a></h2>
+<p>The Men&amp;Mice DNS Server Controller can be configured to expand <code class="docutils literal notranslate"><span class="pre">$INCLUDE</span></code> statements, so that you see the entire contents of the zone in the zone window.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you configure Men&amp;Mice DNS Server Controller to expand <code class="docutils literal notranslate"><span class="pre">$INCLUDE</span></code> statements, it will do so globally, for all zones. It will also expand all other control statements (not counting the $TTL directive at the top of each zone). The expansion is permanent, meaning the zone file is actually changed to reflect the effect of the control statement, and the control statement is removed.</p>
+</div>
+<p>To follow these instructions, you’ll need to figure out where your named data directory is, which we’ll refer to as <code class="docutils literal notranslate"><span class="pre">$NAMED</span></code>. This can be done by examining <code class="docutils literal notranslate"><span class="pre">named.conf</span></code>. If you’re not sure where <code class="docutils literal notranslate"><span class="pre">named.conf</span></code> is, examine your DNS Server Controller (<code class="docutils literal notranslate"><span class="pre">mmremoted</span></code>) command line (in the output of the appropriate <code class="docutils literal notranslate"><span class="pre">ps</span></code> command) - it should show the location of <code class="docutils literal notranslate"><span class="pre">named.conf</span></code> after <code class="docutils literal notranslate"><span class="pre">-c</span></code>; if there’s a <code class="docutils literal notranslate"><span class="pre">-t</span></code> option as well, the <code class="docutils literal notranslate"><span class="pre">named.conf</span></code> location will be relative to this chroot jail path. If you don’t see either of these options, the location is <code class="docutils literal notranslate"><span class="pre">/etc/named.conf</span></code>. (And if this sounds like gibberish to you, please contact us for help.)</p>
+<p><code class="docutils literal notranslate"><span class="pre">named.conf</span></code> contains a set of 5 <code class="docutils literal notranslate"><span class="pre">include</span></code> statements, referring to the absolute path of files in <code class="docutils literal notranslate"><span class="pre">$NAMED/conf/</span></code>. So if your $NAMED directory is <code class="docutils literal notranslate"><span class="pre">/var/named</span></code>, the include statements will look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="s2">&quot;/var/named/conf/logging&quot;</span><span class="p">;</span>
+<span class="n">include</span> <span class="s2">&quot;/var/named/conf/user_before&quot;</span><span class="p">;</span>
+<span class="n">include</span> <span class="s2">&quot;/var/named/conf/options&quot;</span><span class="p">;</span>
+<span class="n">include</span> <span class="s2">&quot;/var/named/conf/user_after&quot;</span><span class="p">;</span>
+<span class="n">include</span> <span class="s2">&quot;/var/named/conf/zones&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Edit the file <code class="docutils literal notranslate"><span class="pre">$NAMED/mmsuite/preferences.cfg</span></code>. Add the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ExpandControlStatements</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Save the file and restart the DNS Server Controller, using its init script (a file named <em>mmremoted</em>, such as <code class="docutils literal notranslate"><span class="pre">/etc/init.d/mmremoted</span></code>, or <code class="docutils literal notranslate"><span class="pre">/Library/StartupItems/mmServerController/mmServerController</span></code> - the location is platform-specific). You can then log in with the Management Console to see the effects of this process.</p>
+<p>On Mac OS X, use the following shell commands to complete these instructions:</p>
+<p>To edit the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/var/named/mmsuite/preferences.cfg
+</pre></div>
+</div>
+<p>Within nano, use the keyboard arrow keys to move around, since there’s no mouse support. When you’re done editing, type control-o to save, followed by the return or enter key to confirm the filename. Then type control-x to exit.</p>
+<p>To restart DNS Server Controller:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>/Library/StartupItems/mmServerController/mmServerController<span class="w"> </span>start
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="disable_auto_zone-transfer.html" class="btn btn-neutral float-left" title="Disable “Automatic adjustment of Zone Transfer”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dns_controller_generate.html" class="btn btn-neutral float-right" title="Expanding $GENERATE directives into records" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

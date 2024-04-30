@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to install Men&amp;Mice Central, the server component for Micetro by Men&amp;Mice" name="description" />
+<meta content="Micetro, Men&amp;Mice Central, server, installation, how to" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men&amp;Mice Central &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Database backend" href="central_database.html" />
+    <link rel="prev" title="Location of important config and log files" href="config_files.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Men&amp;Mice Central</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#men-mice-central-on-linux">Men&amp;Mice Central on Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#men-mice-central-on-windows">Men&amp;Mice Central on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_console.html">Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_controllers.html">Server controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Web Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+      <li class="breadcrumb-item active">Men&amp;Mice Central</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/install_central.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="men-mice-central">
+<span id="install-central"></span><h1>Men&amp;Mice Central<a class="headerlink" href="#men-mice-central" title="Link to this heading"></a></h1>
+<p>Men&amp;Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing data such as zone history logs, user accounts and permissions, etc. You must have at least one copy of Central installed in the environment. Central does not need to be installed on a DNS server.</p>
+<div class="admonition important" id="central-non-standard-install">
+<p class="admonition-title">Important</p>
+<p>The installer was designed to be quick and straightforward. Pay attention to the steps, if you’d like to customize your installation. (Such as installing Central to a different path.)</p>
+</div>
+<section id="men-mice-central-on-linux">
+<span id="install-central-linux"></span><h2>Men&amp;Mice Central on Linux<a class="headerlink" href="#men-mice-central-on-linux" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before installing Men&amp;Mice Central, decide the following:</p>
+<ul class="simple">
+<li><p>What user account will own the Men&amp;Mice Central process?</p></li>
+<li><p>Where do you want everything stored? There are defaults provided.</p></li>
+</ul>
+</div>
+<p>Extract and run the Men&amp;Mice Central install package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">xzvf</span> <span class="n">mmsuite</span><span class="o">-</span><span class="n">central</span><span class="o">-</span><span class="mf">10.0</span><span class="o">.</span><span class="n">linux</span><span class="o">.</span><span class="n">x64</span><span class="o">.</span><span class="n">tgz</span>
+<span class="n">cd</span> <span class="n">mmsuite</span><span class="o">-</span><span class="n">central</span><span class="o">-</span><span class="mf">10.0</span><span class="o">.</span><span class="n">linux</span><span class="o">.</span><span class="n">x64</span>
+<span class="o">./</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>Installer Questions</p>
+<p>Here are the questions asked by the installer that pertain to Men&amp;Mice Central:</p>
+<ul class="simple">
+<li><p>Do you want to install Men&amp;Mice Central?</p></li>
+<li><p>Where do you want Men&amp;Mice Central to keep its configuration files?</p></li>
+<li><p>Enter the user and group names under which you want to run Men&amp;Mice Central.</p></li>
+<li><p>Where do you want to install the Men&amp;Mice Central binary?</p></li>
+</ul>
+<section id="removing-men-mice-central">
+<h3>Removing Men&amp;Mice Central<a class="headerlink" href="#removing-men-mice-central" title="Link to this heading"></a></h3>
+<p>Installing Men&amp;Mice Central puts the following files on your system:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>File(s) or directory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Men&amp;Mice Central daemon</p></td>
+<td><p>mmcentrald, usually in /usr/sbin or /usr/local/sbin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data directory for Men&amp;Mice Central</p></td>
+<td><p>Usually /var/mmsuite/mmcentral</p></td>
+</tr>
+<tr class="row-even"><td><p>Update directory</p></td>
+<td><p>update, located in the data directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>Preferences file</p></td>
+<td><p>preferences.cfg, located in the data directory</p></td>
+</tr>
+<tr class="row-even"><td><p>init script, the shell script that can be used to control the service; used by init during system startup</p></td>
+<td><p>/etc/init.d/mmcentral</p></td>
+</tr>
+<tr class="row-odd"><td><p>settings file used by the init script (Ubuntu Linux only)</p></td>
+<td><p>/etc/default/mmcentral</p></td>
+</tr>
+</tbody>
+</table>
+<p>To remove Men&amp;Mice Central, first use the init script to stop the service (give it the “stop” argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. Also delete the data directory if desired.</p>
+</section>
+<section id="men-mice-central-configuration-files-on-linux">
+<h3>Men&amp;Mice Central configuration files on Linux<a class="headerlink" href="#men-mice-central-configuration-files-on-linux" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="config_files.html#config-linux"><span class="std std-ref">Linux</span></a>.</p>
+</section>
+</section>
+<section id="men-mice-central-on-windows">
+<span id="install-central-windows"></span><h2>Men&amp;Mice Central on Windows<a class="headerlink" href="#men-mice-central-on-windows" title="Link to this heading"></a></h2>
+<p>Run the downloaded binary and follow the instructions on-screen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing Men&amp;Mice Central does not require special privileges. The service will be started automatically after installation.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/install-windows-service.png"><img alt="../../_images/install-windows-service.png" class="align-center" src="../../_images/install-windows-service.png" style="width: 60%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running Men&amp;Mice Central under a privileged user account
+Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.</p>
+<p>When creating a service account for Central, make sure the user is in the local “administrators” group on the Central machine. Otherwise it will not be able to utilize the ping functionality.</p>
+<p>The service account running Central needs to be added to the DNS Admins and/or DHCP Admins group to manage data.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The installer creates the data directories for Men&amp;Mice Central at the default location (C:\Program Files\Men and Mice\Central) even if the installation target is on a different drive or path. See <span class="xref std std-ref">config-files-windows</span>.</p>
+</div>
+<section id="men-mice-central-configuration-files-on-windows">
+<h3>Men&amp;Mice Central configuration files on Windows<a class="headerlink" href="#men-mice-central-configuration-files-on-windows" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="config_files.html#config-windows"><span class="std std-ref">Windows</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="config_files.html" class="btn btn-neutral float-left" title="Location of important config and log files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="central_database.html" class="btn btn-neutral float-right" title="Database backend" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

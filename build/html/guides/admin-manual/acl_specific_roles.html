@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Specific roles in Micetro by Men&amp;Mice 10.1" name="description" />
+<meta content="Micetro access model" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specific roles &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Legacy roles" href="acl_legacy_roles.html" />
+    <link rel="prev" title="General roles" href="acl_general_roles.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="access_control.html">Access control</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#groups-users-and-roles">Groups, users, and roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#the-administrator-user">The <code class="docutils literal notranslate"><span class="pre">administrator</span></code> user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control.html#new-objects">New objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="access_control.html#access-control-management">Access control management</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="acl_permissions.html">Permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_permissions.html#block-permission">Block permission</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="acl_roles.html">Roles</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="acl_roles.html#adding-a-new-role">Adding a new role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="acl_roles.html#editing-a-role">Editing a role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="acl_roles.html#deleting-a-role">Deleting a role</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="acl_roles.html#duplicating-a-role">Duplicating a role</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="acl_effective_access.html">Effective access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_users.html">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_groups.html">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="acl_object_access.html">Object access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="access_control.html">Access control</a></li>
+          <li class="breadcrumb-item"><a href="acl_roles.html">Roles</a></li>
+      <li class="breadcrumb-item active">Specific roles</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/acl_specific_roles.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="specific-roles">
+<span id="acl-specific-roles"></span><h1>Specific roles<a class="headerlink" href="#specific-roles" title="Link to this heading"></a></h1>
+<p><em>Specific roles</em> are a role type whose permissions are <strong>not</strong> automatically applied to objects in Micetro. They’re intended to allow managing access on a per-object basis.</p>
+<p>To create a <em>Specific role</em>, follow the instructions on <a class="reference internal" href="acl_roles.html#acl-roles"><span class="std std-ref">Roles</span></a>, and <strong>uncheck</strong> the <span class="guilabel">General</span> checkbox in the role creation dialog. (The default value is checked.)</p>
+<p><em>Example:</em> The specific role <em>example.com editor</em> has the <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">zone</span> <span class="pre">options</span></code> permission enabled. No ‘DNS zone’ type object in Micetro, whether already existing or added in the future, will be accessible to users/groups attached to this role <strong>unless specifically added</strong> to the object.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Specific roles are only intended for edge use cases, and should not be regarded as the preferred method of access control in Micetro.</p>
+</div>
+<section id="using-specific-roles">
+<h2>Using specific roles<a class="headerlink" href="#using-specific-roles" title="Link to this heading"></a></h2>
+<p>Access defined through specific roles isn’t applied until explicitly configured on objects.</p>
+<p>To use a <em>Specific role</em> and control access to an object:</p>
+<ol class="arabic simple">
+<li><p>Open the context (DNS or IPAM) and select the object to which you’d like to restrict access.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using specific roles on an object is only possible individually, per object.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Use the <span class="guilabel">Access</span> action from the top bar or the ellipsis menu.</p></li>
+<li><p>On the top of the dialog, remove all unneeded <em>General roles</em> and/or users (legacy only) configured.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>On the bottom of the dialog, search for the <em>Specific role</em> and click <span class="guilabel">+ Add</span>.</p></li>
+<li><p>Click <span class="guilabel">Save</span>.</p></li>
+</ol>
+<p>This will restrict access to that particular object to the selected users/groups assigned to the <em>Specific role</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Situations may arise that adding a specific role to an object would not take effect because of missing permissions on parent objects. Micetro will calculate the necessary permissions needed, and can automatically add them to the relevant objects.</p>
+<p>A notification will display on the <em>Save comment</em> dialog, detailing the additional changes. If the user doesn’t have the necessary access to set permissions of these objects, an advisory will display.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>General roles can be restricted from accessing single objects. See <a class="reference internal" href="acl_object_access.html#acl-object-access"><span class="std std-ref">Object access</span></a>.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="acl_general_roles.html" class="btn btn-neutral float-left" title="General roles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acl_legacy_roles.html" class="btn btn-neutral float-right" title="Legacy roles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Using the Men&amp;Mice Generic DNS Server Controller in Micetro by Men&amp;Mice" name="description" />
+<meta content="DNS, DNS Server Controller, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generic DNS Server Controller &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Men&amp;Mice DHCP Server Controllers" href="install_dhcp_controllers.html" />
+    <link rel="prev" title="Micetro DNS Server Controllers" href="install_dns_controllers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_console.html">Management Console</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="install_controllers.html">Server controllers</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="install_dns_controllers.html">Micetro DNS Server Controllers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install_dhcp_controllers.html">Men&amp;Mice DHCP Server Controllers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent_free_dns-dhcp.html">Agent-free management of DNS/DHCP servers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Web Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="install_controllers.html">Server controllers</a></li>
+          <li class="breadcrumb-item"><a href="install_dns_controllers.html">Micetro DNS Server Controllers</a></li>
+      <li class="breadcrumb-item active">Generic DNS Server Controller</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/generic_dns_controller.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="generic-dns-server-controller">
+<span id="generic-dns-controller"></span><h1>Generic DNS Server Controller<a class="headerlink" href="#generic-dns-server-controller" title="Link to this heading"></a></h1>
+<p>Micetro by Men&amp;Mice manages DNS servers. Native ISC BIND DNS and Windows DNS is supported. As a result of an increase in other DNS servers showing up in production environments, as well as DNS offered as a service by Cloud providers, from Version 6.7 of Micetro, new functions have been added to the DNS Server Controller. This makes the Controller much more flexible and enables Micetro to communicate with such new DNS server types.</p>
+<p>How to install and configure the Generic DNS Server Controller:</p>
+<ol class="arabic simple">
+<li><p>Install:</p></li>
+</ol>
+<ul class="simple">
+<li><p>On Windows, run the Controller installer (x32 or x64 - depending on the OS version). There is no special Generic Controller installer - just use the normal Controller installer.</p></li>
+<li><p>On Unix run the Controller installer with the parameter <code class="docutils literal notranslate"><span class="pre">--generic-dns-controller</span></code>.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Install a script interpreter. We recommend using Python as we provide example connector scripts for Python (2.7.x).</p></li>
+<li><p>Add the GenericDNSScript XML tag to the preferences.cfg file. If the preferences.cfg file is not present, please create it.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows 2008/2012 R2 the preferences.cfg file is located under the hidden directory C:ProgramDataMen and MiceDNS Server Controller</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Following an example config for the python interpreter and a connector script located on the C drive in the scripts sub-directory:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">GenericDNSScript</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;c:\python27\python.exe c:\scripts\genericDNS.py&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://github.com/menandmice/micetro_docs/blob/10.1/guides/implementation/genericDNS.py">genericDNS.py</a> script implements the generic API and interfaces with the DNS server itself.</p>
+<ol class="arabic simple" start="4">
+<li><p>Login to the M&amp;M Management Console and add the new generic DNS server. Select as Server Type “<em>Generic</em>”. The name and optional IP address must point to the machine that runs the Generic DNS Server Controller.</p></li>
+</ol>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading"></a></h2>
+<p>Reading, modifying zone/server options, reading logs, clearing cache, controlling the server itself is not possible by the API yet. Depending on the connector script, only master zones are currently supported. That means no slave zones or special zones like forward or stub zones are supported for Amazon Route53, but slave zones are supported for <a class="reference internal" href="../reference/powerdns.html#powerdns"><span class="std std-ref">Configuring PowerDNS</span></a>.</p>
+<p>Of course, the connector script could interface with a slave zone and return an error when Central tries to update the zone. However, the zone will show up as zone of the type “Master” in the M&amp;M Suite. In other words, everything else than reading/writing/updating master zones and their zone data is currently not supported.</p>
+</section>
+<section id="available-connector-scripts">
+<h2>Available Connector Scripts<a class="headerlink" href="#available-connector-scripts" title="Link to this heading"></a></h2>
+<p>Amazon Route53: see <a class="reference internal" href="../reference/aws_route53.html#aws-route53"><span class="std std-ref">Configuring Amazon Route53</span></a>.</p>
+<p>PowerDNS with MySQL database backend: see <a class="reference internal" href="../reference/powerdns.html#powerdns"><span class="std std-ref">Configuring PowerDNS</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install_dns_controllers.html" class="btn btn-neutral float-left" title="Micetro DNS Server Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install_dhcp_controllers.html" class="btn btn-neutral float-right" title="Men&amp;Mice DHCP Server Controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

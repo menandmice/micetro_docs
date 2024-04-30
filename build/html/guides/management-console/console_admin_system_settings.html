@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Micetro´s system Settings to configure sign-ons, enabling AD sites and subnets integration, determining IP addresses in use and other advanced settings." name="description" />
+<meta content="DNS, DHCP, Micetro´s system settings" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Settings (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">System Settings (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_admin_system_settings.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="system-settings-management-console-obsolete">
+<span id="console-admin-system-settings"></span><h1>System Settings (Management Console, obsolete)<a class="headerlink" href="#system-settings-management-console-obsolete" title="Link to this heading"></a></h1>
+<p>From the menu bar, select Tools, System Settings.</p>
+<p>The System Settings dialog box displays and includes these tabs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#admin-general-console"><span class="std std-ref">General</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-logging-console"><span class="std std-ref">Logging</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-error-checking-console"><span class="std std-ref">Error Checking</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-comments-console"><span class="std std-ref">Save Comments</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-external-commands-console"><span class="std std-ref">External Commands</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-dns-console"><span class="std std-ref">DNS</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-ipam-console"><span class="std std-ref">IPAM</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-monitoring-console"><span class="std std-ref">Monitoring</span></a></p></li>
+</ul>
+</div></blockquote>
+<section id="general">
+<span id="admin-general-console"></span><h2>General<a class="headerlink" href="#general" title="Link to this heading"></a></h2>
+<p>Through this function, you can specify the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Whether to allow single sign-on</p></li>
+<li><p>Settings for AD Sites and Subnets integration</p></li>
+<li><p>Rules to determine when an IP address is considered as being in use</p></li>
+<li><p>Advanced system settings</p></li>
+</ul>
+</div></blockquote>
+<p>To display the General Settings dialog box, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/console-system-settings.png"><img alt="../images/console-system-settings.png" class="align-center" src="../images/console-system-settings.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <em>System settings</em> dialog box, click the <span class="guilabel">General</span> tab.</p></li>
+</ol>
+<dl class="simple">
+<dt>Allow Single Sign-on.</dt><dd><p>When selected, Active Directory users do not have to authenticate when logging in through the Management Console or the Command Line Interface. See <a class="reference internal" href="external_auth.html#external-auth"><span class="std std-ref">External Authentication (Management Console, obsolete)</span></a>.</p>
+</dd>
+<dt>Allow single sign-on through web interface on IIS.</dt><dd><p>To enable single sign-on in the web interface, the web server needs to be configured. Refer to <a class="reference internal" href="external_auth.html#external-auth"><span class="std std-ref">External Authentication (Management Console, obsolete)</span></a>.</p>
+</dd>
+<dt>Enable AD sites and subnets integration.</dt><dd><p>Check this checkbox to enable the integration feature. When the integration is active, all sites and their corresponding subnets in Active Directory displays in Micetro and you can add and remove subnets in sites and move subnets to different sites. Once Sites and Subnets integration has been enabled, an  AD Sites  object displays in the object list on the left hand side of the Manager window and a new column, AD Site  displays in the range list in the Manager window. If you want to synchronize the  Location  and  Description  fields of the subnets in Active Directory against custom properties in Micetro, choose the custom properties to synchronize against. When synchronization is active, any changes made to the fields in Active Directory will update the corresponding fields in Micetro and vice versa. See <a class="reference internal" href="../user-manual/ipam.html#active-directory"><span class="std std-ref">AD Sites and Subnets</span></a>.</p>
+</dd>
+<dt>Enforce AD site inheritance.</dt><dd><p>Select this checkbox if you want to enforce site inheritance in AD. When site inheritance is enforced, child subnets must reside in the same site as the parent subnet. If site inheritance is not enforced, child subnets can be placed in different sites than the parent subnet. See <a class="reference internal" href="../user-manual/ipam.html#active-directory"><span class="std std-ref">AD Sites and Subnets</span></a>.</p>
+</dd>
+<dt>Determine Address in use.</dt><dd><p>This section contains several checkboxes that determine whether an IP Address should be considered as being in use. Check the appropriate checkboxes to specify which rules should be applied to the IP Addresses.</p>
+</dd>
+<dt>Advanced system settings.</dt><dd><p>Click this button to display the dialog box for entering advanced system settings. For more information about the contents of this dialog box, see the Men&amp;Mice Knowledge Base.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>When the desired selections/entries are made, click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="logging">
+<span id="admin-logging-console"></span><h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
+<p>Through this function, you specify when log messages should be purged and whether lease history for DHCP servers should be collected.</p>
+<ol class="arabic simple">
+<li><p>From the menu, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/admin-logging.png"><img alt="../images/admin-logging.png" class="align-center" src="../images/admin-logging.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <em>System Settings</em> dialog box, click the <span class="guilabel">Logging</span> tab.</p></li>
+</ol>
+<dl>
+<dt>Purge log message after ____  days.</dt><dd><p>When selected a number is typed in the field indicating the number of days the logs should be kept.</p>
+</dd>
+<dt>Log extra information when address collection is triggered.</dt><dd><p>When selected, information about the start and duration of the address collection is written in the Micetro log file.</p>
+</dd>
+<dt>Lease History.</dt><dd><p>Through this function, you configure the setting that allows for viewing the history of DHCP leases.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Collect lease history for DHCP servers. Click the checkbox to begin history collection for DHCP servers.</p></li>
+<li><p>Purge lease history after ___ days. Click the checkbox to select this option. Then, in the field, type the number of days to retain the history.</p></li>
+<li><p>Flush lease history to file before purging. To save the lease history to a comma separated text file before it is purged, click the checkbox, and then type the name of the file.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>When all selections/entries are made, click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="error-checking">
+<span id="admin-error-checking-console"></span><h2>Error Checking<a class="headerlink" href="#error-checking" title="Link to this heading"></a></h2>
+<p>The <em>Error Checking</em> tab allows you to specify how the system reports certain errors related to DHCP and DNS. This tab is also used to enable or disable DHCP scope monitoring.</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/admin-error-checking.png"><img alt="../images/admin-error-checking.png" class="align-center" src="../images/admin-error-checking.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <em>System Settings</em> dialog box, click the <span class="guilabel">Error Checking</span> tab.</p></li>
+</ol>
+<dl class="simple">
+<dt>Ignore missing reverse zones.</dt><dd><p>An error message displays when Micetro is unable to update a reverse record for a changed address record. It is possible to suppress this error message if no reverse zone exists for the given address record by selecting the Ignore missing reverse zones checkbox.</p>
+</dd>
+<dt>Warn when creating A/AAAA records with name that already exists.</dt><dd><p>When enabled, a warning message displays if a user creates an address (A or AAAA) record using the name of an existing record of the same type.</p>
+</dd>
+<dt>Inconsistencies in DHCP lease names and DNS names.</dt><dd><p>When enabled, an icon displays for each DHCP lease for which the DNS name does not match the lease name. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it.</p>
+</dd>
+<dt>Address pool collisions.</dt><dd><p>When enabled, an icon displays in split scope entries if the address pool in the scope collides with the address pool of another split scope instance. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it.</p>
+</dd>
+<dt>Inconsistencies between reservation names in split scopes.</dt><dd><p>When enabled, an icon displays in split scope entries if a reservation name in a split scope differs from the reservation name in another split scope instance. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it.</p>
+</dd>
+<dt>Inconsistencies between reservation descriptions in split scopes.</dt><dd><p>When enabled, an icon displays in split scope entries if a reservation description in a split scope differs from the reservation description in another split scope instance. The user can click on the icon and display a dialog box showing details about the error and (if applicable) how to fix it.</p>
+</dd>
+</dl>
+<p>When all selections/entries are made, click <span class="guilabel">OK</span>.</p>
+</section>
+<section id="save-comments">
+<span id="admin-comments-console"></span><h2>Save Comments<a class="headerlink" href="#save-comments" title="Link to this heading"></a></h2>
+<p>When saving changes to various objects, the Save Comment window may display. When this window displays is determined by the selections you make on this tab. The user simply types comments into the dialog box, explaining a reason for any actions taken (e.g., delete object as it was a duplicate). Then the user clicks OK.</p>
+<p>To define when comments can be entered (and this can only be when logged on as a System Administrator), do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/admin-comments.png"><img alt="../images/admin-comments.png" class="align-center" src="../images/admin-comments.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <em>System settings</em> dialog box, click the <span class="guilabel">Save Comments</span> tab.</p></li>
+<li><p>Click in the checkbox next to all the instances in which you want the <em>Save Comment</em> dialog box to display.</p></li>
+<li><p>When all selections are made, click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="external-commands">
+<span id="admin-external-commands-console"></span><h2>External Commands<a class="headerlink" href="#external-commands" title="Link to this heading"></a></h2>
+<p>Refer to <span class="xref std std-ref">external-scripts</span>.</p>
+</section>
+<section id="dns">
+<span id="admin-dns-console"></span><h2>DNS<a class="headerlink" href="#dns" title="Link to this heading"></a></h2>
+<p>Use the <em>DNS settings</em> dialog box to specify various DNS related settings. To display the DNS Settings dialog box, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="guilabel">Tools –&gt; System Settings</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/admin-dns.png"><img alt="../images/admin-dns.png" class="align-center" src="../images/admin-dns.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <em>System Settings</em> dialog box, click the <span class="guilabel">DNS</span> tab.</p></li>
+</ol>
+<dl class="simple">
+<dt>Delegation records.</dt><dd><p>When automatically create delegation records when creating new zones is selected, delegation records (NS records) are automatically created in the corresponding parent zones when subzones are created, maintaining a correct delegation chain between parent and subzones.</p>
+</dd>
+<dt>Adjust Zone Transfer.</dt><dd><p>Select the checkbox to allow Micetro to automatically adjust zone transfer settings on Microsoft DNS servers to enable management of dynamic and Active Directory integrated zones.</p>
+</dd>
+<dt>DNSSEC.</dt><dd><p>Select the checkbox to include derived DNSSEC records when viewing DNSSEC signed zones in Micetro. Note that this will increase the size of the Micetro database significantly and may affect overall system performance.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>When the desired selections/entries are made, click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="ipam">
+<span id="admin-ipam-console"></span><h2>IPAM<a class="headerlink" href="#ipam" title="Link to this heading"></a></h2>
+<p>The <em>IPAM</em> tab allows you to specify various IPAM related settings:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>How the system should handle new subranges if the parent range is in a folder.</p></li>
+<li><p>How the system should behave if DHCP scopes are removed outside Micetro.</p></li>
+<li><p>How the system should behave when naming conflicts between existing IP Address ranges and DHCP scopes occur.</p></li>
+<li><p>Whether the system should allow reservations inside address pools on ISC DHCP servers.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/admin-ipam.png"><img alt="../images/admin-ipam.png" class="align-center" src="../images/admin-ipam.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <em>System Settings</em> dialog box, click the <span class="guilabel">IPAM</span> tab.</p></li>
+</ol>
+<dl>
+<dt>Subranges.</dt><dd><p>The selection made here determines what happens when a user creates a subrange of a range in a folder. Click the desired action.</p>
+</dd>
+<dt>DHCP Scope Deletion.</dt><dd><p>If a scope is removed directly from a DHCP server (instead of using Micetro), you can select whether to convert it to an IP Address range or remove it completely.</p>
+</dd>
+<dt>Name conflicts between ranges and scopes.</dt><dd><p>The selection made her determines what happens if the name of an MS DHCP scope does not match the name of an existing IP Address range.</p>
+</dd>
+<dt>Apply same rule for scope description as for scope name above.</dt><dd><p>When selected, the system will use the same rules to update scope description as it does for updating scope names.</p>
+</dd>
+<dt>Allow reservations inside pools on ISC DHCP servers.</dt><dd><p>When selected, the system allows users to create reservations inside pools on ISC DHCP servers. When a reservation is created inside a pool, the pool is split to make space for the reservation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If a reservation that has been created inside a pool is deleted, the address is not made a part of the pool again.</p>
+</div>
+</dd>
+<dt>Show DHCP data in subranges of scopes.</dt><dd><p>When selected, the system will display contents of subranges of scopes in the same view that is used for scopes and users with the required privileges will be able to work with reservations in these subranges. If the checkbox is not selected, contents of subranges of scopes will be displayed in the regular range view.</p>
+</dd>
+<dt>Allow allocation of IP Addresses from IP Address Containers.</dt><dd><p>When selected, the system will allow allocation of IP Addresses that reside in IP Address Containers. For more information on IP Address Containers,  refer to  IPAM Settings.</p>
+</dd>
+<dt>Enable Cloud integration.</dt><dd><p>Check this checkbox to enable the Cloud integration feature. When Cloud integration is active you can add OpenStack clouds to Micetro. You can manage cloud networks and and you can add and remove subnets from cloud networks and move subnets to cloud networks. Cloud integration has been enabled, a <span class="guilabel">Cloud</span> object displays in the object list on the left hand side of the Manager window and a new column, <em>Cloud Network</em> displays in the range list in the Manager window.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>When all selections/entries are made, click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="monitoring">
+<span id="admin-monitoring-console"></span><h2>Monitoring<a class="headerlink" href="#monitoring" title="Link to this heading"></a></h2>
+<p>Use the <em>Monitoring settings</em> dialog box to specify various monitoring related settings.</p>
+<p>To display the Monitoring Settings dialog box, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ System Settings</span>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/admin-monitoring.png"><img alt="../images/admin-monitoring.png" class="align-center" src="../images/admin-monitoring.png" style="width: 80%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <em>System Settings</em> dialog box, click the <span class="guilabel">Monitoring</span> tab.</p></li>
+</ol>
+<dl>
+<dt>Ping before automatic assignment.</dt><dd><p>When selected, when an IP Address is being auto-assigned, the system checks as to whether the IP Address is responding to a ping request before it is allocated to a new host. If the IP Address responds to the ping request, it is not used for auto-assignment.</p>
+</dd>
+<dt>Automatic assignment ping timeout _____ ms.</dt><dd><p>Specifies how long the system should wait (in milliseconds) for a response to the ping request. If a response is not received within the specified time, the system considers this to be a non-responding IP Address.</p>
+</dd>
+<dt>Enable subnet monitoring.</dt><dd><p>When enabled, the system monitors the free addresses in DHCP address pools and subnets, and performs an action if the number of free addresses goes below a user-definable threshold. When subnet monitoring has been enabled, it is possible to configure the global settings for this feature by clicking the Details button.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. Refer to  IP Address Management—Subnet Monitoring and Utilization History for information on how to change monitoring settings for individual subnets.</p>
+</div>
+<p>To change the subnet monitoring settings, do the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Click the Defaults… button. The Subnet Monitoring dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../images/admin-subnet-monitoring.png"><img alt="../images/admin-subnet-monitoring.png" class="align-center" src="../images/admin-subnet-monitoring.png" style="width: 40%;" /></a>
+<dl>
+<dt>Enabled.</dt><dd><p>When checked, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, leave this checkbox unchecked and enable monitoring for the individual subnets instead by selecting the subnet and then selecting Set Subnet Monitoring from the Range menu.</p>
+</dd>
+<dt>Script to invoke.</dt><dd><p>Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts for information on the script interface and the format for calling the script.</p>
+</dd>
+<dt>Dynamic Threshold.</dt><dd><p>Enter the threshold for the free addresses in a DHCP scope address pool.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.</p>
+</div>
+</dd>
+<dt>Static Threshold.</dt><dd><p>Enter the threshold for the free addresses in a subnet.</p>
+</dd>
+<dt>Only perform action once (until fixed).</dt><dd><p>When checked, the action is performed only once when the number of free addresses goes below the threshold.</p>
+</dd>
+<dt>Perform action when fixed.</dt><dd><p>When checked, the action is performed when the number of free addresses is no longer below the threshold.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>When subnet monitoring is enabled, a new column, Monitoring, displays when viewing the subnet list. To quickly see all subnets that are monitored, you can use the Quick Filter and filter by this column by entering “Monitor: Yes” in the Quick Filter search field.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only DHCP scopes that are enabled are monitored. Disabled scopes are ignored.</p>
+</div>
+<p>When subnet monitoring is enabled, you must specify the mail server and the sender e-mail address to use if you want the subnet monitor to send an e-mail. Place the appropriate information in the SMTP Server and Mail from fields.</p>
+</dd>
+<dt>Enable sending SNMP traps.</dt><dd><p>When enabled, the system will send SNMP traps when certain events occur:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When the number of free IP Addresses in monitored subnets goes below a user-definable threshold.</p></li>
+<li><p>When a log event of type Error or Notice occurs. Refer to <a class="reference internal" href="../admin-manual/admin_system_settings.html#admin-logging"><span class="std std-ref">Logging</span></a> for more information on log events.</p></li>
+</ul>
+</div></blockquote>
+<p>When enabling sending of SNMP traps, you must provide additional information:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Manager name.</dt><dd><p>Enter the host name of the computer that should receive the SNMP traps.</p>
+</dd>
+<dt>Manager port.</dt><dd><p>Enter the port number the Manager uses for the SNMP traps.</p>
+</dd>
+<dt>Community.</dt><dd><p>Enter the community string (password) to use for the SNMP traps.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>Enable collection of IP information from routers.</dt><dd><p>When enabled, the system will query hosts that have been specified as routers for IP information. This feature is used along with the host discovery Ping feature to find active IP Addresses on the network. Refer to IP Address Management—Host Discovery for more information on how to specify hosts as routers.</p>
+<p>When this feature is enabled, some additional information must be provided:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>SNMP query interval.</dt><dd><p>Determines how frequently the routers are queried for IP information.</p>
+</dd>
+<dt>Router SNMP community.</dt><dd><p>Enter the SNMP community string (password) to use when querying the routers for IP information.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

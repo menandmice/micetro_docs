@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Configuring SSL for the Men&amp;Mice Web Application" name="description" />
+<meta content="Apache, Microsoft IIS, SSL, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup SSL for the Web Application &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Enable content compression for Apache" href="webapp_compression.html" />
+    <link rel="prev" title="Web Application" href="install_webapp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_console.html">Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_controllers.html">Server controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud integration</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="install_webapp.html">Web Application</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="install_webapp.html#install-the-web-application-on-linux">Install the Web Application on Linux</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="install_webapp.html#install-the-web-application-on-windows">Install the Web Application on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="install_webapp.html">Web Application</a></li>
+      <li class="breadcrumb-item active">Setup SSL for the Web Application</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/webapp_ssl.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="setup-ssl-for-the-web-application">
+<span id="webapp-ssl"></span><h1>Setup SSL for the Web Application<a class="headerlink" href="#setup-ssl-for-the-web-application" title="Link to this heading"></a></h1>
+<section id="ssl-on-linux-apache">
+<h2>SSL on Linux (Apache)<a class="headerlink" href="#ssl-on-linux-apache" title="Link to this heading"></a></h2>
+<p>By default, the Web Application uses unencrypted http connection on port 80. To use it with https on port 443, follow these steps.</p>
+<p>Check that mod_ssl for Apache is installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum<span class="w"> </span>install<span class="w"> </span>mod_ssl
+</pre></div>
+</div>
+<p>If you have existing SSL key files: place the .key file in /etc/pki/tls/private/ and the .crt and .csr files in /etc/pki/tls/certs/.</p>
+<p>If you need new SSL keys, generate a keypair:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl<span class="w"> </span>req<span class="w"> </span>-new<span class="w"> </span>-nodes<span class="w"> </span>-keyout<span class="w"> </span>mmweb.key<span class="w"> </span>-out<span class="w"> </span>mmweb.csr<span class="w"> </span>-newkey<span class="w"> </span>rsa:4096
+</pre></div>
+</div>
+<p>Create self-signed certificate:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl<span class="w"> </span>x509<span class="w"> </span>-req<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-in<span class="w"> </span>mmweb.csr<span class="w"> </span>-signkey<span class="w"> </span>mmweb.key<span class="w"> </span>-out<span class="w"> </span>externaldns3.crt
+</pre></div>
+</div>
+<p>Place the files in the appropriate directories:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>mmweb.key<span class="w"> </span>/etc/pki/tls/private/
+cp<span class="w"> </span>mmweb.c*<span class="w"> </span>/etc/pki/tls/certs/
+</pre></div>
+</div>
+<p>Once the keyfiles are placed in their respective directories, edit the mmweb.conf file in the Apache configuration directory (default /etc/httpd/conf, or use find /etc/ -name “mmweb.conf” to locate the file) with the following changes:</p>
+<ul class="simple">
+<li><p>change <code class="docutils literal notranslate"><span class="pre">&lt;VirtualHost</span> <span class="pre">*:80&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">&lt;VirtualHost</span> <span class="pre">*:443&gt;</span></code></p></li>
+<li><p>add in the references to the key files (amend the path as necessary):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SSLCertificateFile</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">certs</span><span class="o">/</span><span class="n">mmweb</span><span class="o">.</span><span class="n">crt</span>
+<span class="n">SSLCertificateKeyFile</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">tls</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">mmweb</span><span class="o">.</span><span class="n">key</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>enable SSL:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SSLEngine on
+SSLProtocol all -SSLv2 -SSLv3
+SSLCipherSuite HIGH:3DES:!aNULL:!MD5:!SEED:!IDEA
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default Apache installation may already have a <code class="docutils literal notranslate"><span class="pre">&lt;VirtualHost</span> <span class="pre">_default_:443&gt;</span></code> directive, which can conflict with the <code class="docutils literal notranslate"><span class="pre">mmweb.conf</span></code> file.
+Comment out this existing VirtualHost block to prevent any errors.</p>
+</div>
+<p>To verify the Web Application is accessible, navigate to <code class="docutils literal notranslate"><span class="pre">https://web-application.domain.tld</span></code>. The Men&amp;Mice Web Application’s login panel should appear.</p>
+</section>
+<section id="ssl-on-windows-iis">
+<h2>SSL on Windows (IIS)<a class="headerlink" href="#ssl-on-windows-iis" title="Link to this heading"></a></h2>
+<section id="configuring-ssl-certificate">
+<h3>Configuring SSL Certificate<a class="headerlink" href="#configuring-ssl-certificate" title="Link to this heading"></a></h3>
+<p>Open the IIS (Internet Information Services) Manager</p>
+<p>Select the <span class="guilabel">Web Server node</span> in the left sidebar, under “Start Page”, and double click on <span class="guilabel">Server Certificates</span> in the middle pane</p>
+<a class="reference internal image-reference" href="../../_images/iis-ssl-step1.png"><img alt="../../_images/iis-ssl-step1.png" class="align-center" src="../../_images/iis-ssl-step1.png" style="width: 90%;" /></a>
+<p>Choose one of the actions in the actions sidebar on the left to import an existing .pfx SSL certificate, or create a self-signed certificate. If your certificate is in a different format than .pfx, please refer to documentation and/or tools that certificate authorities typically provide to convert their certificates to Microsoft’s .pfx format</p>
+<p>Select your website under <em>Sites</em> in the left sidebar (usually Default Web Site) , and click <span class="guilabel">Bindings…</span> in the <strong>Actions</strong> sidebar on the right.</p>
+<a class="reference internal image-reference" href="../../_images/iis-ssl-step2.png"><img alt="../../_images/iis-ssl-step2.png" class="align-center" src="../../_images/iis-ssl-step2.png" style="width: 90%;" /></a>
+<p>In the <em>Site Bindings</em> dialog that opened, click <span class="guilabel">Add</span>, select <strong>https</strong> from the <em>Type</em> menu, and then select the certificate added in step 3 in the SSL certificate picklist. Then click <span class="guilabel">OK</span>.</p>
+<a class="reference internal image-reference" href="../../_images/iis-ssl-step3.png"><img alt="../../_images/iis-ssl-step3.png" class="align-center" src="../../_images/iis-ssl-step3.png" style="width: 90%;" /></a>
+<p>The “Host Name” and “Require Server Name Indication” can be left blank if this the first certificate installed on the server.</p>
+</section>
+<section id="redirect-http-traffic-to-https">
+<h3>Redirect HTTP traffic to HTTPS<a class="headerlink" href="#redirect-http-traffic-to-https" title="Link to this heading"></a></h3>
+<section id="editing-web-config">
+<h4>Editing web.config<a class="headerlink" href="#editing-web-config" title="Link to this heading"></a></h4>
+<p>Locate and open the web.config file for your Default Website in notepad. This is typically at C:inetpubwwwrootweb.config</p>
+<p>Add the following rule xml to the rewrite &gt; rules section of the xml, at the top below &lt;clear /&gt;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">rule</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HTTP to HTTPS redirect&quot;</span> <span class="n">enabled</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="n">stopProcessing</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">match</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;(.*)&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">conditions</span> <span class="n">logicalGrouping</span><span class="o">=</span><span class="s2">&quot;MatchAll&quot;</span> <span class="n">trackAllCaptures</span><span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">add</span> <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{HTTPS}</span><span class="s2">&quot;</span> <span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;^OFF$&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">conditions</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">action</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Redirect&quot;</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://</span><span class="si">{HTTP_HOST}</span><span class="s2">/</span><span class="si">{R:1}</span><span class="s2">&quot;</span> <span class="n">appendQueryString</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="n">redirectType</span><span class="o">=</span><span class="s2">&quot;Permanent&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">rule</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>In the IIS manager, select the <span class="guilabel">Default Web site</span>, right click, and select <span class="menuselection">Manage Website ‣ Restart</span> to make the changes to the web.config take effect.</p>
+<a class="reference internal image-reference" href="../../_images/iis-ssl-step4.png"><img alt="../../_images/iis-ssl-step4.png" class="align-center" src="../../_images/iis-ssl-step4.png" style="width: 60%;" /></a>
+<p>With <em>Default Web Site</em> selected in the left sidebar, double click on <span class="guilabel">URL Rewrite</span> in the middle pane. Verify the rule <em>HTTP to HTTPS redirect</em> is at the top of the rewrite rules</p>
+</section>
+<section id="using-the-iis-manager">
+<h4>Using the IIS manager<a class="headerlink" href="#using-the-iis-manager" title="Link to this heading"></a></h4>
+<p>With <strong>Default Web Site</strong> selected in the left sidebar, double click on <span class="guilabel">URL Rewrite</span> in the middle pane</p>
+<p>If there’s a <em>HTTP to HTTPS redirect</em> rule already in place at the top of the list of URL rewrite rules, nothing needs to be done.</p>
+<p>Click <span class="guilabel">Add Rules</span> in the <strong>Actions</strong> pane on the right, and click OK to create a blank inbound rule.</p>
+<p>In the name field enter <em>HTTP to HTTPS redirect</em>.</p>
+<p>In Pattern field enter <code class="docutils literal notranslate"><span class="pre">(.*)</span></code></p>
+<p>Under conditions click <span class="guilabel">Add</span> and enter the following condition:</p>
+<a class="reference internal image-reference" href="../../_images/iis-ssl-step5.png"><img alt="../../_images/iis-ssl-step5.png" class="align-center" src="../../_images/iis-ssl-step5.png" style="width: 60%;" /></a>
+<p>In the <strong>Action</strong> pane on the bottom, choose <em>Redirect</em> from the <span class="guilabel">Action type</span> dropdown, and set redirect URL to <code class="docutils literal notranslate"><span class="pre">https://{HTTP_HOST}/{R:1}</span></code> and the redirect type to <em>Permanent (301)</em>.</p>
+<a class="reference internal image-reference" href="../../_images/iis-ssl-step6.png"><img alt="../../_images/iis-ssl-step6.png" class="align-center" src="../../_images/iis-ssl-step6.png" style="width: 70%;" /></a>
+<p>Click <span class="guilabel">Apply</span> in the <strong>Actions</strong> pane on the left. And click <span class="guilabel">Back to rules</span>.</p>
+<p>Move the new <em>HTTP to HTTPS redirect</em> rule to the top of the rules using the <span class="guilabel">Move Up</span> button in the action pane on the right.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install_webapp.html" class="btn btn-neutral float-left" title="Web Application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="webapp_compression.html" class="btn btn-neutral float-right" title="Enable content compression for Apache" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

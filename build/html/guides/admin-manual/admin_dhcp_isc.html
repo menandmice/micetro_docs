@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ISC DHCP servers in the Micetro" name="description" />
+<meta content="ISC DHCP servers, Server management" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISC DHCP &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cisco DHCP" href="admin_dhcp_cisco.html" />
+    <link rel="prev" title="ISC Kea DHCP" href="admin_dhcp_kea.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="webapp_server_management.html">Service Management</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#user-permissions-and-access-management">User Permissions and Access Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#supported-platforms">Supported Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#micetro-agents">Micetro Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#adding-a-service">Adding a Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#editing-services">Editing Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#other-service-actions">Other Service Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#service-states">Service States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webapp_server_management.html#dns-services">DNS Services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="webapp_server_management.html#dhcp-services">DHCP Services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="admin_dhcp_windows.html">Microsoft DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="admin_dhcp_kea.html">ISC Kea DHCP</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ISC DHCP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-options-on-isc-dhcp-servers">Defining Options on ISC DHCP Servers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defining-custom-dhcp-options">Defining Custom DHCP Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#isc-server-properties">ISC Server Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="admin_dhcp_cisco.html">Cisco DHCP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="webapp_server_management.html">Service Management</a></li>
+      <li class="breadcrumb-item active">ISC DHCP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/admin_dhcp_isc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="isc-dhcp">
+<span id="admin-dhcp-isc"></span><h1>ISC DHCP<a class="headerlink" href="#isc-dhcp" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To manage ISC DHCP servers in the Management console, see <a class="reference internal" href="../management-console/console_dhcp_isc.html#console-dhcp-isc"><span class="std std-ref">ISC DHCP (Management Console, obsolete)</span></a>.</p>
+</div>
+<section id="defining-options-on-isc-dhcp-servers">
+<span id="dhcp-isc-define-options"></span><h2>Defining Options on ISC DHCP Servers<a class="headerlink" href="#defining-options-on-isc-dhcp-servers" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Service Management</span> in the upper-left corner.</p></li>
+<li><p>Under <span class="guilabel">DHCP Services</span> in the filtering sidebar, select <span class="guilabel">ISC DHCP</span>, and then the applicable DHCP server.</p></li>
+<li><p>On the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu, select either <span class="guilabel">Manage DHCPv4 options</span> or <span class="guilabel">Managem DHCPv6 options</span>.</p></li>
+<li><p>The Manage DHCP Options dialog box opens, showing all custom options defined on the DHCP server.</p></li>
+<li><p>Use the :guilabel:<a href="#id1"><span class="problematic" id="id2">`</span></a>Add an option dropdown menu to select the ISC DHCP option you want to define.</p></li>
+<li><p>To delete an option, hover over its field, and theb click the trash can icon next to it.</p></li>
+<li><p>Click <span class="guilabel">Save</span> to save the changed option definitions.</p></li>
+</ol>
+</section>
+<section id="defining-custom-dhcp-options">
+<h2>Defining Custom DHCP Options<a class="headerlink" href="#defining-custom-dhcp-options" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Go to the <span class="guilabel">Custom Options</span> tab.</p></li>
+<li><p>Select the appropriate <span class="guilabel">Vendor class</span> in the drop-down list.</p></li>
+</ol>
+<section id="adding-a-new-custom-option">
+<h3>Adding a New Custom Option<a class="headerlink" href="#adding-a-new-custom-option" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Select <span class="guilabel">Add Custom Option</span>.</p></li>
+<li><p>Enter the desired ID. An error will show if that ID is not available or invalid.</p></li>
+<li><p>Enter a name.</p></li>
+<li><p>Select a Type in the dropdown list. Select the <span class="guilabel">Array</span> checkbox if the option is an Array.</p></li>
+<li><p>Click <span class="guilabel">Add</span>, and then <span class="guilabel">Save</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once an option has been defined, you can set its value on the <span class="guilabel">Edit Options</span> tab.</p>
+</div>
+</section>
+<section id="editing-an-existing-cusotom-option">
+<h3>Editing an Existing Cusotom Option<a class="headerlink" href="#editing-an-existing-cusotom-option" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>On the <span class="guilabel">Custom Options</span> tab in the Manage DHCP Options dialog box, select the relevant custom option.</p></li>
+<li><p>On the Row <span class="guilabel">…</span> menu, select <span class="guilabel">Edit</span>.</p></li>
+<li><p>Edit the ID, and then click <span class="guilabel">Save</span>.</p></li>
+</ol>
+</section>
+<section id="removing-an-existing-custom-option">
+<h3>Removing an Existing Custom Option<a class="headerlink" href="#removing-an-existing-custom-option" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>On the <span class="guilabel">Custom Options</span> tab in the Manage DHCP Options dialog box, select the relevant custom option.</p></li>
+<li><p>On the Row <span class="guilabel">…</span> menu, select <span class="guilabel">Remove</span>, and then <span class="guilabel">Yes</span> to confirm.</p></li>
+</ol>
+</section>
+</section>
+<section id="isc-server-properties">
+<span id="isc-dhcp-properties"></span><h2>ISC Server Properties<a class="headerlink" href="#isc-server-properties" title="Link to this heading"></a></h2>
+<p>You can edit the configuration of ISC DHCP servers to suit your requirements.</p>
+<ol class="arabic simple">
+<li><p>Select the relevant server.</p></li>
+<li><p>Select <span class="guilabel">Edit configuration</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>In the <strong>Edit Configuration</strong> dialog box, make the desired changes, and then click <span class="guilabel">Save</span>.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/dhcp-isc-config-11.png"><img alt="../../_images/dhcp-isc-config-11.png" src="../../_images/dhcp-isc-config-11.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p><strong>Authoritative</strong>: Determines whether the server has the authority to validate DHCP requests from clients.</p></li>
+<li><p><strong>DDNS Domain Name</strong>: Specifies the DNS domain name used to store the A record for DHCP clients.</p></li>
+<li><p><strong>DDNS Reverse Domain Name</strong>: Specifies the DNS reverse domain name for storing the PTR record of DHCP clients.</p></li>
+<li><p><strong>DDNS Update Style</strong>: Determines the method used by the DHCP server to perform DNS updates. Options include:</p>
+<ul>
+<li><p><strong>None</strong>: No dynamic DNS updates are performed.</p></li>
+<li><p><strong>Ad-hoc</strong> (deprecated): This update scheme is outdated.</p></li>
+<li><p><strong>Interim</strong>: Recommended method for dynamic DNS updates.</p></li>
+</ul>
+</li>
+<li><p><strong>DDNS Updates</strong>: Enables or disables DNS updates. This setting is only effective if DNS updates are globally enabled with the DDNS Update Style setting.</p></li>
+<li><p><strong>DDNS TTL</strong>: Sets the Time To Live (TTL) value, in seconds, for DNS updates.</p></li>
+<li><p><strong>Default Lease Time</strong>: Specifies the default lease duration, in seconds, for DHCP leases.</p></li>
+<li><p><strong>Log Facility</strong>: Selects the syslog facility for logging DHCP server messages. Note that not all facilities may be available on all systems.</p></li>
+<li><p><strong>Max/Min Lease Time</strong>: Sets the maximum and minimum lease durations, in seconds, for DHCP leases.</p></li>
+<li><p><strong>Get Lease Hostnames</strong>: Specifies whether the DHCP server should perform a reverse DNS lookup for each address assigned to a client and send the result to the client as the hostname option.</p></li>
+<li><p><strong>One Lease per Client</strong>: Controls whether existing leases held by a client should be released when requesting a new lease.</p></li>
+<li><p><strong>Ping Check</strong>: Specifies whether the DHCP server should send an ICMP echo message to probe an IP Address before offering it to a DHCP client.</p></li>
+<li><p><strong>Ping Timeout</strong>: Specifies for how many seconds the DHCP server should wait for an ICMP echo response when Ping Check is active.</p></li>
+<li><p><strong>Filename</strong>: Specifies the name of the initial boot file to be used by a client.</p></li>
+<li><p><strong>Server Name</strong>: Specifies the name of the server from which the client should load its boot file.</p></li>
+<li><p><strong>Next Server</strong>: Specifies the host address of the server from which the initial boot file (specified by Filename) is to be loaded.</p></li>
+</ul>
+</div></blockquote>
+<section id="configuring-dynamic-updates-for-isc-dhcp-server">
+<h3>Configuring Dynamic Updates for ISC DHCP Server<a class="headerlink" href="#configuring-dynamic-updates-for-isc-dhcp-server" title="Link to this heading"></a></h3>
+<p>You can configure the ISC DHCP Server to update zones on Micetro appliances or BIND servers with dynamic updates using raw config editing.</p>
+<p><strong>To configure a ISC DHCP server to update zones dynamically</strong>:</p>
+<ol class="arabic simple">
+<li><p>Go to the <span class="guilabel">Raw Configuration</span> tab in the <strong>Edit Configuration</strong> dialog box.</p></li>
+<li><p>In the raw configuration editor, add the following statements:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="n">update</span><span class="o">-</span><span class="n">key</span>
+<span class="p">{</span>
+  <span class="n">algorithm</span> <span class="n">hmac</span><span class="o">-</span><span class="n">sha512</span><span class="p">;</span>
+  <span class="n">secret</span> <span class="s2">&quot;5B1...&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">zone</span> <span class="n">micetro</span><span class="o">.</span><span class="n">com</span>
+<span class="p">{</span>
+  <span class="n">primary</span> <span class="mf">1.2.3.4</span><span class="p">;</span>
+  <span class="n">key</span> <span class="n">update</span><span class="o">-</span><span class="n">key</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Ensure that:</dt><dd><ul class="simple">
+<li><p>The key is not surronded by double quotes.</p></li>
+<li><p>Each line contains only one declaration.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s crucial to maintain the format of the zone and key statements as documented. Failure to adhere to this format may lead to issues with dynamic updates.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin_dhcp_kea.html" class="btn btn-neutral float-left" title="ISC Kea DHCP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin_dhcp_cisco.html" class="btn btn-neutral float-right" title="Cisco DHCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

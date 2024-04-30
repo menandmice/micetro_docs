@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="In Micetro scheduled scripts allow the administrator to configure the system to run on schedule" name="description" />
+<meta content="Micetro scheduled scripts, Micetro administrator" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scheduled Scripts &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maintenance" href="admin_maintenance.html" />
+    <link rel="prev" title="Custom Properties" href="admin_custom_properties.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Scheduled Scripts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/admin_schedule_scripts.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scheduled-scripts">
+<span id="admin-schedule-scripts"></span><h1>Scheduled Scripts<a class="headerlink" href="#scheduled-scripts" title="Link to this heading"></a></h1>
+<p>The administrator can configure the system to run scripts in a schedule – e.g., to back up the database every night at 3:00 AM, perform changes early in the morning, etc.</p>
+<p>To configure this option, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ Scheduled Scripts</span>. The <em>Scheduled Scripts</em> dialog box displays. Any already defined scripts are displayed.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-scheduled-script-list.png"><img alt="../../_images/admin-scheduled-script-list.png" class="align-center" src="../../_images/admin-scheduled-script-list.png" style="width: 75%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>To add a new script, click the <span class="guilabel">Add</span> button. The <em>Schedule Script</em> dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-add-scheduled-script.png"><img alt="../../_images/admin-add-scheduled-script.png" class="align-center" src="../../_images/admin-add-scheduled-script.png" style="width: 60%;" /></a>
+<dl class="simple">
+<dt>Script name.</dt><dd><p>In the applicable Script name field, type the script name and necessary startup parameters. You must enter all information for the script as you would when invoking the script from the command line. It is assumed that the script is located in the same directory as the Men&amp;Mice Central database file (mmsuite.db); however, if the script is stored in a different location, the path for the script must be entered.</p>
+</dd>
+</dl>
+<p>Example 1: Running a script named mytest.vb. To run a script named mytest.vb that is located in the Men&amp;Mice Central directory using the scripting host cscript, the following would be placed in the appropriate field: cscript /B mytest.vb.</p>
+<p>Example 2: Running an executable named checkdata.exe. To run an executable named checkdata.exe that is located in the Men&amp;Mice Central directory the following would be placed in the appropriate field: checkdata.exe.</p>
+<p>It is possible to create a special user that has permissions to run scripts. When this user exists, it is possible to execute scripts that access Micetro without having to enter a user name and password in the script itself.</p>
+<p>To enable this feature, create a user named ScriptRunner. This user must use the Men&amp;Mice Internal authentication method. When this user has been created, you only have to enter $u as a user name and $p as a password when logging in to Micetro through the script.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method only works if the script scheduler invokes the script. When running the script, Micetro uses a temporary password that changes every time the script runs.</p>
+</div>
+<p>Example 1: The following example shows how the command line interface can be invoked by the scheduler to execute a backup. This statement can be entered directly into the Script name field:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mmcmd -s 127.0.0.1 -u $u -p $p backup;exit
+</pre></div>
+</div>
+<p>Example 2: The following Visual Basic script checks which users are logged in and writes the list of logged in users to the file logger.txt. To invoke the script you would enter the following statement into the Script name field:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cscript /B scripts\test.vbs $u $p
+
+&#39; Script starts here
+Option Explicit
+Dim objArgs, objFSO, objShell, objFile, objTextFile
+Dim strFile, strUser, strPassword, i
+
+strFile = &quot;logger.txt&quot;
+strUser = &quot;&quot;strPassword = &quot;&quot;
+
+&#39; We should get username and password as arguments
+Set objArgs = WScript.Arguments
+If objArgs.Count &gt; 0 Then str
+    User = objArgs(0)
+  End If
+If objArgs.Count &gt; 1 Then
+  strPassword = objArgs(1)
+End If
+
+&#39; First we move into the right directory
+set objShell = createobject(&quot;wscript.shell&quot;)
+Set objFSO = CreateObject(&quot;Scripting.FileSystemObject&quot;)
+objShell.CurrentDirectory = objShell.CurrentDirectory &amp; &quot;\scripts&quot;
+
+&#39; write extra info into the log file
+If Not objFSO.FileExists(strFile) Then
+  Set objFile = objFSO.CreateTextFile(strFile)
+End If
+set objFile = nothing
+Set objTextFile = objFSO.OpenTextFile(strFile, 8, True)
+objTextFile.WriteLine(&quot;*****&quot;)
+objTextFile.WriteLine(&quot;Date/Time: &quot; &amp; Now())
+objTextFile.Close
+
+objShell.Run &quot;cmd /c mmcmd.exe -s 127.0.0.1 -u &quot; &amp; strUser &amp; &quot; -p &quot; &amp; strPassword &amp; &quot; who; exit &gt;&gt; &quot; &amp; strFile, 0, true
+set objShell = nothing
+WScript.Quit
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Enabled.</dt><dd><p>Click the checkbox to enable the scheduling process for the script. Likewise, at any time if you wish to disable the script, return to this dialog box and uncheck this option.</p>
+</dd>
+<dt>Run on.</dt><dd><p>Either type the date the script should run, or click the drop-down list field and select the date from the calendar.</p>
+</dd>
+<dt>At.</dt><dd><p>Type or use the up/down arrows to select the time.</p>
+</dd>
+<dt>Repeat every.</dt><dd><p>If this script should repeat at a designed frequency, click in the checkbox. Then, in the next two fields, select the interval – e.g., 1 week, 1 month, etc.</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>When all selections/entries are made, click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin_custom_properties.html" class="btn btn-neutral float-left" title="Custom Properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin_maintenance.html" class="btn btn-neutral float-right" title="Maintenance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

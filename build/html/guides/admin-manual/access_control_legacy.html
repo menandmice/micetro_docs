@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access control (Legacy, pre-10.1) &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Access control (Legacy, pre-10.1)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/access_control_legacy.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="access-control-legacy-pre-10-1">
+<span id="access-control-legacy"></span><h1>Access control (Legacy, pre-10.1)<a class="headerlink" href="#access-control-legacy-pre-10-1" title="Link to this heading"></a></h1>
+<p>The Micetro access model is object-based. This is similar to mainstream operating system access models such as the Windows Security model, where you choose an object and set access restrictions for particular Users, Groups or Roles for the chosen object. We define a set of object types, and a set of Access Flags for each object type. These flags can then be set to Allow or Deny for each User, Group or Role.</p>
+<p>The relationship between Groups, Users and Roles is as follows:</p>
+<ul class="simple">
+<li><p>Groups can contain Users</p></li>
+<li><p>Groups cannot contain Groups</p></li>
+<li><p>Users can be a member of any number of Groups</p></li>
+<li><p>Users and Groups can be assigned to Roles.</p></li>
+</ul>
+<section id="built-in-roles">
+<h2>Built-in Roles<a class="headerlink" href="#built-in-roles" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that in previous versions (&lt; 6.7) roles did not exist and the built-in roles described below were previously built-in groups. All of the users that were members in specific built-in groups are now assigned to the corresponding built-in roles.</p>
+</div>
+<p>Five Roles are built-in to Micetro. These roles are special in that they get full access for their respective domains for all Access Flags.</p>
+<p>When new objects are created, the Built-in Role that presides over that object, as well as the user or group that created the object, receives full access to it.</p>
+<p>Each administrator role also receives default access to its corresponding module (including an Access Flag set on Micetro object allowing them administrator privileges for their domain). The Administrators role receives default access to all the Access Flags on Micetro object. Default access for each Built-in role is as follows:</p>
+<ul class="simple">
+<li><p>Administrators. Full access to all objects</p></li>
+<li><p>DNS Administrators. Full access to DNS objects, including zones, DNS servers, etc.</p></li>
+<li><p>DHCP Administrators. Full access to DHCP objects, including scopes, DHCP servers, etc.</p></li>
+<li><p>IPAM Administrators. Full access to IPAM objects, including IPAM ranges, etc.</p></li>
+<li><p>User Administrators. Full access to User and Group objects.</p></li>
+</ul>
+<p>It is recommended that our clients use these Roles. These roles are the only roles that can receive default access to new items. User-defined Roles do not receive any access information for new objects and are considered to have “denied” access. To allow a User or a Group to receive default full access to a new object, include the User or Group as a member in the corresponding Built-in Role. If you need to reduce this particular User’s access, refer to <span class="xref std std-ref">access-overrde</span> section below.</p>
+<p>When it’s mentioned that a User or Group has Full access to an object we mean that the User or Group has all known Access Flags for the object set to Allow.</p>
+</section>
+<section id="the-administrator-user">
+<h2>The Administrator User<a class="headerlink" href="#the-administrator-user" title="Link to this heading"></a></h2>
+<p>A single user is Built-in to Micetro. The Administrator User exists completely outside of the access model. This User can do everything, and it is not possible to deny any action to this User.</p>
+<p>Examples:</p>
+<p>The Micetro object will have the following access bits set to Allow for the DNS Administrators Role:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Access Flags</p></th>
+<th class="head"><p>Allow</p></th>
+<th class="head"><p>Deny</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Administer DNS servers</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access DNS Module</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>For every DNS server created, the server will have the following flags set to Allow for the DNS Administrators Role:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Access Flags</p></th>
+<th class="head"><p>Allow</p></th>
+<th class="head"><p>Deny</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit DNS Server access</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) DNS Server</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit DNS Server options</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add Master Zones</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Add non-Master Zones</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>View DNS Server Log</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Clear DNS Server Log</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit DNS server properties</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>For every DNS Zone created, the zone will have these flags set to Allow for the DNS Administrators Role:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Access Flags</p></th>
+<th class="head"><p>Allow</p></th>
+<th class="head"><p>Deny</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit Zone access</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) Zone</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable/disable Zone</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit Zone options</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Delete Zone</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable apex records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit apex records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable wildcard records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit wildcard records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable other records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit other records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit zone properties</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="overriding-access-settings">
+<span id="access-override"></span><h2>Overriding Access Settings<a class="headerlink" href="#overriding-access-settings" title="Link to this heading"></a></h2>
+<p>The Deny setting for an Access Flag allows you to override access settings inherited from Roles. A User’s Access Footprint is calculated from the aggregate access settings of all Roles in which he is a member. In this calculation, the Deny flag overrides the Allow flag. This means that if a User is in several Roles where a specific Access Flag is set to Allow, and only a single Role where the same Access Flag is set to Deny, the result of the calculation for that Access Flag is Deny.</p>
+<p>Let us take an example. Assume you want to add a new user that has DNS Administrator privileges to all servers and zones, but on a particular zone, this user should not be able to view or clear the history, nor should he be able to edit custom properties. To accomplish this, you would first include the new user in the Built-in Role named DNS Administrators.</p>
+<p>To restrict the user for a particular zone you would locate the zone and set access for your new user to the following:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Access Flags</p></th>
+<th class="head"><p>Allow</p></th>
+<th class="head"><p>Deny</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit Zone access</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) Zone</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable/disable Zone</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit Zone options</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Delete Zone</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable apex records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit apex records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable wildcard records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit wildcard records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable other records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit other records</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit zone properties</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you wanted to give similar access to other users, you could instead create a new Role, add the Users to the Role, and apply the aforementioned access to the zone in question for the new Role.</p>
+<p>This system allows for a great deal of flexibility when designing your security. Any Role can be extended or overridden for a set of Users by simply adding the Users to another Role with a different access setup, or by directly overriding certain Access Flags on the Users themselves.</p>
+<p>If no access is defined for a User or Role on a particular object, the access model assumes that all the Flags are set to Deny.</p>
+</section>
+<section id="new-objects">
+<h2>New Objects<a class="headerlink" href="#new-objects" title="Link to this heading"></a></h2>
+<p>When a User creates a new object in Micetro, the object is afforded a certain default access based on the initial access settings for the object type. To define initial access settings for different object types, do the following:</p>
+<ol class="arabic simple">
+<li><p>From the menu bar, select <span class="menuselection">Tools ‣ Initial Access For</span>.</p></li>
+<li><p>Select the object type for which you want to set the initial access. The Access Control dialog box displays.</p></li>
+<li><p>Set the desired access for new objects and click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="edit-access-flag">
+<h2>Edit Access Flag<a class="headerlink" href="#edit-access-flag" title="Link to this heading"></a></h2>
+<p>Each object type has an Access Flag named <em>Edit Access</em>. This flag is special in that it directs a User, Group’s or Role’s access to the object’s access information. In other words, if a User has this flag set on an object, he may edit the Access Flags for the object. This means that the User could remove a different User or Group from the object completely. He could even remove the User that created the object. In light of this, the Edit Access flag should be treated with care.</p>
+<p>Access for Built-in groups is impossible to change. However, it would be possible to shut out all Users in Micetro from a certain object by simply editing access for each User directly. You could even shut yourself out. The Administrator User will always have full access to every object, so if such situations arise, the Administrator User should be used to set things straight.</p>
+</section>
+<section id="access-flags-defined">
+<h2>Access Flags Defined<a class="headerlink" href="#access-flags-defined" title="Link to this heading"></a></h2>
+<p>Each object type in Micetro has a set of Access Flags defined.</p>
+<section id="global-access">
+<span id="id1"></span><h3>Global Access<a class="headerlink" href="#global-access" title="Link to this heading"></a></h3>
+<p>This is an object referring to Micetro as a whole. It contains flags that define access to the different clients and modules available in Micetro, as well as Administration tasks.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Administer users/groups</p></td>
+<td><p>Access to create, edit, and delete users and groups</p></td>
+</tr>
+<tr class="row-odd"><td><p>Administer IP Address Ranges</p></td>
+<td><p>Access to admin IPAM ranges</p></td>
+</tr>
+<tr class="row-even"><td><p>Administer DNS servers</p></td>
+<td><p>Access to create, edit, and delete DNS servers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Administer DHCP servers</p></td>
+<td><p>Access to create, edit, and delete DHCP servers</p></td>
+</tr>
+<tr class="row-even"><td><p>Access IPAM Module</p></td>
+<td><p>Access to the IPAM Module</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access DNS Module</p></td>
+<td><p>Access to the DNS Module</p></td>
+</tr>
+<tr class="row-even"><td><p>Access DHCP Module</p></td>
+<td><p>Access to the DHCP Module</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access Management Console</p></td>
+<td><p>Access to the Management Console</p></td>
+</tr>
+<tr class="row-even"><td><p>Access CLI</p></td>
+<td><p>Access to the CLI</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access to Web Interface</p></td>
+<td><p>Access to the Men&amp;Mice Web Interface</p></td>
+</tr>
+<tr class="row-even"><td><p>Access to basic zone view in Web Interface</p></td>
+<td><p>Access to the basic zone view in the Men&amp;Mice Web Interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access to advanced zone view in Web Interface</p></td>
+<td><p>Access to the advanced zone view in the Men&amp;Mice Web Interface</p></td>
+</tr>
+<tr class="row-even"><td><p>Access to IPAM view in Web Interface</p></td>
+<td><p>Access to the IPAM view in the Men&amp;Mice Web Interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access to report view in Web interface</p></td>
+<td><p>Access to the report view in the Men&amp;Mice Web Interface</p></td>
+</tr>
+<tr class="row-even"><td><p>Access to task list view in Web interface</p></td>
+<td><p>Access to the task list view in the Men&amp;Mice Web Interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access to view history</p></td>
+<td><p>Access to history window in the Management Console. Also provides access to the history for all objects.</p></td>
+</tr>
+<tr class="row-even"><td><p>Access to Host editor</p></td>
+<td><p>Access to the host editor view in the Men&amp;Mice Web interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access to manage AD Sites and Site Links</p></td>
+<td><p>Access to work with AD Sites and Site Links.</p></td>
+</tr>
+<tr class="row-even"><td><p>Access to manage clouds</p></td>
+<td><p>Access to add/remove cloud providers into Men&amp;Mice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access Workflow module</p></td>
+<td><p>If customer has workflow license, grants user access to submit DNS record requests, and approvers to view and approve submitted requests</p></td>
+</tr>
+<tr class="row-even"><td><p>Access to advanced reporting</p></td>
+<td><p>If customer has reporting license, grants access to advanced reporting features</p></td>
+</tr>
+<tr class="row-odd"><td><p>Access to ‘Import Data’ web task</p></td>
+<td><p>Access the Import Data task in Web Interface as well as to Import data into the newer Men&amp;Mice Web Application</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dns-zone">
+<h3>DNS Zone<a class="headerlink" href="#dns-zone" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit Zone access</p></td>
+<td><p>Access to edit an object’s access</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) Zone</p></td>
+<td><p>Access to list (view) a zone</p></td>
+</tr>
+<tr class="row-even"><td><p>View zone history</p></td>
+<td><p>Access to viewing the history for the zone</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable Zone</p></td>
+<td><p>Access to enable/disable the zone</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit Zone options</p></td>
+<td><p>Access to edit zone options</p></td>
+</tr>
+<tr class="row-odd"><td><p>Delete Zone</p></td>
+<td><p>Access to delete zone</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable/disable apex records</p></td>
+<td><p>Access to enable/disable zone’s APEX records</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit apex records</p></td>
+<td><p>Access to edit zone’s APEX records</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable/disable wildcard records</p></td>
+<td><p>Access to enable/disable zone’s wildcard records</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit wildcard records</p></td>
+<td><p>Access to edit zone’s wildcard records</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable/disable other records</p></td>
+<td><p>Access to enable/disable zone records other than APEX</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit other records</p></td>
+<td><p>Access to edit zone records other than APEX records</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit zone properties</p></td>
+<td><p>Access to edit properties for the zone</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dhcp-scopes-and-ip-address-ranges">
+<h3>DHCP Scopes and IP Address Ranges<a class="headerlink" href="#dhcp-scopes-and-ip-address-ranges" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit range Access</p></td>
+<td><p>Access to edit an object’s access</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) a range</p></td>
+<td><p>Access to list (view) a range/scope</p></td>
+</tr>
+<tr class="row-even"><td><p>View range history</p></td>
+<td><p>Access to viewing the history for the range/scope</p></td>
+</tr>
+<tr class="row-odd"><td><p>Delete range</p></td>
+<td><p>Access to delete a range/scope</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit range properties</p></td>
+<td><p>Access to edit range/scope properties</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit IP Address properties</p></td>
+<td><p>Access to edit the properties for an IP Address in the range/scope</p></td>
+</tr>
+<tr class="row-even"><td><p>Use IP Address in DNS</p></td>
+<td><p>Access to create a DNS entry for the selected IP Address</p></td>
+</tr>
+<tr class="row-odd"><td><p>Create a subrange</p></td>
+<td><p>Access to create a new subrange of the range/scope</p></td>
+</tr>
+<tr class="row-even"><td><p>Create multiple hosts per IP Address</p></td>
+<td><p>Access to create multiple address records with the same IP Address</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ping IP Address</p></td>
+<td><p>Access to perform a ping request for hosts in the range/scope</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit AD site association</p></td>
+<td><p>Allows editing of associations for AD sites</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable/disable scope</p></td>
+<td><p>Access to enable/disable scope</p></td>
+</tr>
+<tr class="row-even"><td><p>Read scope options</p></td>
+<td><p>Access to read scope options</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/write Scope options</p></td>
+<td><p>Access to read and write scope options</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit Reservations</p></td>
+<td><p>Access to edit reservations”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit address pools</p></td>
+<td><p>Access to edit address pools</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit exclusions</p></td>
+<td><p>Access to edit exclusions</p></td>
+</tr>
+<tr class="row-odd"><td><p>Release Leases</p></td>
+<td><p>Access to release leases</p></td>
+</tr>
+<tr class="row-even"><td><p>Add a group</p></td>
+<td><p>Access to add a DHCP group (ISC DHCP only)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dns-server">
+<h3>DNS Server<a class="headerlink" href="#dns-server" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit DNS Server access</p></td>
+<td><p>Access to edit an object’s access</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) DNS Server</p></td>
+<td><p>Access to list (or view) server</p></td>
+</tr>
+<tr class="row-even"><td><p>View DNS server history</p></td>
+<td><p>Access to viewing the history for the DNS server</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit DNS Server options</p></td>
+<td><p>Access to server options</p></td>
+</tr>
+<tr class="row-even"><td><p>Add Master Zones</p></td>
+<td><p>Access to add a master zone</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add non-Master Zones</p></td>
+<td><p>Access to add a non-master zone</p></td>
+</tr>
+<tr class="row-even"><td><p>View DNS Server Log</p></td>
+<td><p>Access to view the server log</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clear DNS Server Log</p></td>
+<td><p>Access to clear the server log</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit DNS server properties</p></td>
+<td><p>Access to edit properties for the DNS Server</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dhcp-server">
+<h3>DHCP Server<a class="headerlink" href="#dhcp-server" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit DHCP Server Access</p></td>
+<td><p>Access to edit an object’s access</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) DHCP Server</p></td>
+<td><p>Access to list (or view) server</p></td>
+</tr>
+<tr class="row-even"><td><p>View DHCP server history</p></td>
+<td><p>Access to viewing the history for the DHCP server</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read DHCP Server options</p></td>
+<td><p>Access to view server options</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/write DHCP Server options</p></td>
+<td><p>Access to read and write server options</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add a scope</p></td>
+<td><p>Access to add a DHCP scope</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit DHCP server properties</p></td>
+<td><p>Access to edit properties for the DHCP Server</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit reservations</p></td>
+<td><p>Access to edit reservations in DHCP scopes</p></td>
+</tr>
+<tr class="row-even"><td><p>Add a group</p></td>
+<td><p>Access to add DHCP groups (ISC DHCP only)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read DHCP class data</p></td>
+<td><p>Access to view DHCP class data on an (ISC DHCP only)</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/write DHCP class data</p></td>
+<td><p>Access to read and write DHCP class data (ISC DHCP only)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dhcp-groups">
+<h3>DHCP Groups<a class="headerlink" href="#dhcp-groups" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit DHCP group</p></td>
+<td><p>Access to edit an object’s access</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) DHCP group</p></td>
+<td><p>Access to list (or view) DHCP group</p></td>
+</tr>
+<tr class="row-even"><td><p>View DHCP group history</p></td>
+<td><p>Access to viewing the history for the DHCP group</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit Reservations</p></td>
+<td><p>Access to edit reservations</p></td>
+</tr>
+<tr class="row-even"><td><p>Read DHCP group options</p></td>
+<td><p>Access to view group options</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/write DHCP group options</p></td>
+<td><p>Access to read and write group options</p></td>
+</tr>
+<tr class="row-even"><td><p>Delete DHCP group</p></td>
+<td><p>Access to delete a DHCP group</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="address-spaces">
+<h3>Address Spaces<a class="headerlink" href="#address-spaces" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit address space access</p></td>
+<td><p>Access to edit an object’s access</p></td>
+</tr>
+<tr class="row-odd"><td><p>List (or view) address space</p></td>
+<td><p>Access to list (or view) address space</p></td>
+</tr>
+<tr class="row-even"><td><p>View address space history</p></td>
+<td><p>Access to viewing the history for the address space</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="access-control-dialog-box">
+<h2>Access Control Dialog Box<a class="headerlink" href="#access-control-dialog-box" title="Link to this heading"></a></h2>
+<p>Through the Access Control module, you select groups/users for which you want to manage permissions.</p>
+<p>The Access Control dialog box is used to define access to individual objects in the system. To define access for an object, right-click the object and choose <span class="guilabel">Access</span> from the popup menu.</p>
+<p>To define access for individual components of Micetro, select <span class="menuselection">Tools ‣ Global Access</span>. The Access Control for Micetro dialog box displays. The default groups/user names are shown. The permissions for any selected group/user are also shown.</p>
+<section id="edit-access-controls">
+<h3>Edit access controls<a class="headerlink" href="#edit-access-controls" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>While viewing the Access Control dialog box, click the Add button. The Select user, group or role dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-permissions-select-user.png"><img alt="../../_images/admin-permissions-select-user.png" class="align-center" src="../../_images/admin-permissions-select-user.png" style="width: 50%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Highlight the user, group and/or role for which you want to assign permissions.</p></li>
+<li><p>Click the <span class="guilabel">Select</span> button.</p></li>
+<li><p>When you return to the main dialog box, the user/group is highlighted in the list of users and groups.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/admin-access-controls-console.png"><img alt="../../_images/admin-access-controls-console.png" class="align-center" src="../../_images/admin-access-controls-console.png" style="width: 70%;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>To specify the permissions for this selected group/user/role, do the following:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Move to the Permission for [group/user/role selected] list.</p></li>
+<li><p>Click in the checkbox for each permission you want to Allow or Deny.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is not necessary to select Deny unless you want to ensure that a user/group/role does not have permission to a specific object. However, if you do not specify the permission for an individual user, but the group(s) or role(s) to which the user belong does Allow access to that object, the user (by default) also has access.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>When all selections are made, click <span class="guilabel">OK</span>. The dialog box closes.</p></li>
+<li><p>Repeat the above for any additional groups/users.</p></li>
+</ol>
+</section>
+</section>
+<section id="initial-access-for">
+<h2>Initial Access For<a class="headerlink" href="#initial-access-for" title="Link to this heading"></a></h2>
+<p>Through this function, you specify access privileges that should be set for objects when they are created. This function is identical to the Access Model and Permissions function except that a new user type – “Creator” (Meta user) - is used to specify the access privileges that should be set for the object creator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The access control dialog box for IP Address Ranges and Scopes contains a checkbox, ‘IP Address Ranges/Scopes inherit access by default’. If this checkbox is checked, a new range or scope will inherit all access bits from its parent. For more information on inherited access, refer to  IP Address Management—Range Access.</p>
+</div>
+<p>From the menu bar, select <span class="menuselection">Tools ‣ Initial Access For</span>, and then the object type for which you want to set the initial access. The Access Control dialog box displays. Refer to <a class="reference internal" href="#global-access"><span class="std std-ref">Global Access</span></a> for details on working with this dialog box.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

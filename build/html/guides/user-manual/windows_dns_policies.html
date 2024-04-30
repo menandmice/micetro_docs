@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="DNS policies and scopes for Microsoft DNS servers" name="description" />
+<meta content="Windows DNS" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNS policies (Windows) &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DHCP" href="dhcp.html" />
+    <link rel="prev" title="DNS resource records" href="dns_records.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dns.html">DNS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html">Authoritative DNS Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html">DNS zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html">DNS resource records</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DNS policies (Windows)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dns-policies-and-dns-scopes">DNS Policies and DNS Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-dns-policies">Edit DNS Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-client-subnets">Define Client Subnets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-dns-zone-scopes">Add DNS Zone scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-dns-server-scopes">Edit DNS Server Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-response-rate-limiting">Set Response Rate Limiting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-rate-limiting">Configuring rate limiting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-an-exception">Adding an exception</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dns-policies">DNS Policies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-dns-policies">Adding DNS policies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-dns-policy-target-scope">Adding DNS policy target scope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-dns-policy-criteria">Adding DNS policy criteria</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#apply-dns-policy-from">Apply DNS Policy from</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="dns.html">DNS</a></li>
+      <li class="breadcrumb-item active">DNS policies (Windows)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/windows_dns_policies.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dns-policies-windows">
+<span id="windows-dns-policies"></span><h1>DNS policies (Windows)<a class="headerlink" href="#dns-policies-windows" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Managing DNS policies for Microsoft DNS servers is only available in the Management Console.</p>
+</div>
+<section id="dns-policies-and-dns-scopes">
+<h2>DNS Policies and DNS Scopes<a class="headerlink" href="#dns-policies-and-dns-scopes" title="Link to this heading"></a></h2>
+<p>DNS policies are processing rules that control DNS operations on the DNS server. Creating a DNS policy enables user control over the details of these DNS operations: query processing, zone transfer, recursion and dynamic update. A DNS policy is always specific to one DNS operation and apply either on the server level or the zone level. This control of DNS operations can, for example, be used to implement the following scenarios:</p>
+<ul class="simple">
+<li><p>High availability of DNS services</p></li>
+<li><p>Traffic management</p></li>
+<li><p>Split-brain DNS</p></li>
+<li><p>Filtering</p></li>
+<li><p>Forensics</p></li>
+<li><p>Redirection based on date/time</p></li>
+</ul>
+<p>Specific types of policies are:</p>
+<dl class="simple">
+<dt>Zone transfer policies</dt><dd><p>Controls how zone transfers are processed, either for the DNS server or a specific DNS zone.</p>
+</dd>
+<dt>Recursion policies</dt><dd><p>Control how recursive DNS queries are processed by the DNS server.</p>
+</dd>
+<dt>Query resolution policies</dt><dd><p>Controls how queries are processed for the DNS server or a specific zone.</p>
+</dd>
+<dt>Dynamic update</dt><dd><p>Controls how dynamic updates are processed</p>
+</dd>
+<dt>Rate limiting exception list</dt><dd><p>Controls how rate limiting is configured</p>
+</dd>
+</dl>
+<p>DNS policies are used in conjunction with zone scopes and server scopes which are a new concept introduced in Windows Server 2016. A zone scope represents a specific version of an existing zone while a server scope is a collection of DNS server settings that is associated with a unique name.</p>
+</section>
+<section id="edit-dns-policies">
+<h2>Edit DNS Policies<a class="headerlink" href="#edit-dns-policies" title="Link to this heading"></a></h2>
+<p>Editing or adding DNS policies on Windows Server 2016 is done by</p>
+<ol class="arabic simple">
+<li><p>Right click on the server in the sidebar as shown in the figure.</p></li>
+<li><p>Select <span class="guilabel">Edit DNS Policies</span>.</p></li>
+<li><p>A menu is displayed that offers to do add or edit various types of policies and configure related properties.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-edit-dns-policies.png"><img alt="../../_images/console-edit-dns-policies.png" class="align-center" src="../../_images/console-edit-dns-policies.png" style="width: 40%;" /></a>
+</section>
+<section id="define-client-subnets">
+<h2>Define Client Subnets<a class="headerlink" href="#define-client-subnets" title="Link to this heading"></a></h2>
+<p>This allows the user to specify those subnets that will be used by the DNS policies to identify where a DNS client is located.</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Define Client Subnets</span> in the submenu of <span class="guilabel">Edit DNS Policies</span>.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button to add a new client subnet.</p></li>
+<li><p>Specify the name of the subnet and a list of subnets in CIDR notation, that will be used in the exclusion rules.</p></li>
+</ol>
+</section>
+<section id="add-dns-zone-scopes">
+<h2>Add DNS Zone scopes<a class="headerlink" href="#add-dns-zone-scopes" title="Link to this heading"></a></h2>
+<p>To add a new zone scope:</p>
+<ol class="arabic simple">
+<li><p>Right click on a DNS zone.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-dns-policies-add-dons-zone-scope.png"><img alt="../../_images/console-dns-policies-add-dons-zone-scope.png" class="align-center" src="../../_images/console-dns-policies-add-dons-zone-scope.png" style="width: 30%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Select <span class="guilabel">Add zone Scope</span> after right clicking the zone.</p></li>
+<li><p>A new dialog appears where you can enter the name of the new zone zone.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button to add the new zone scope.</p></li>
+</ol>
+<p>The newly added zone scope is now shown in the zone list. The name of each zone scope is shown in a separate column.</p>
+</section>
+<section id="edit-dns-server-scopes">
+<h2>Edit DNS Server Scopes<a class="headerlink" href="#edit-dns-server-scopes" title="Link to this heading"></a></h2>
+<p>This allows the user to add or remove server scopes as well as specifying options for each scope.</p>
+<ol class="arabic simple">
+<li><p>Select the <span class="guilabel">Edit DNS Server Scopes</span> in the submenu of the <span class="guilabel">Edit DNS Server policies</span>.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button to add a new server scope. A new dialog is displayed that allows the user to specify a name of the new server scope.</p></li>
+<li><p>Click the <span class="guilabel">OK</span> button to add the new server scope.</p></li>
+<li><p>For an existing server scope, select the corresponding server scope and then click the <span class="guilabel">Remove</span> button to remove the server scope.</p></li>
+<li><p>To edit the options for a server scope, highlight the corresponding server scope and click the <span class="guilabel">Options</span> button. A new dialog window is displayed that allows the user to specify forwarders and select if recursion should be allowed. To disable the use of forwarders for the server scope leave the forwarders list empty.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The forwarders list for the default server scope can still be edited in the Server Options</p>
+</div>
+</section>
+<section id="set-response-rate-limiting">
+<h2>Set Response Rate Limiting<a class="headerlink" href="#set-response-rate-limiting" title="Link to this heading"></a></h2>
+<p>The Response Rate Limiting feature of the Microsoft 2016 DNS server can be used to control the rate in which the server responds to similar requests it will send to clients on the same subnet.</p>
+<section id="configuring-rate-limiting">
+<h3>Configuring rate limiting<a class="headerlink" href="#configuring-rate-limiting" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Select the ‘Set Response Rate Limiting’ in the submenu of the ‘Edit DNS Server policies’</p></li>
+<li><p>To enable response rate limiting, make sure the checkbox in ‘Enable reponse rate limiting is checked.</p></li>
+</ol>
+<p>For an overview of the configuration and the related fields, see below.</p>
+<dl class="simple">
+<dt>Enable Response Rate Limiting</dt><dd><p>To enable the Response Rate Limiting</p>
+</dd>
+<dt>Log only</dt><dd><p>RRL calculations are performed, but potential actions are logged as if RRL is enabled.</p>
+</dd>
+<dt>Responses / second</dt><dd><p>Maximum number of times the servers sends a client the same response within a one second interval.</p>
+</dd>
+<dt>Errors / seconds</dt><dd><p>Maximum number of times the servers sends an error response to a client within a one second interval.</p>
+</dd>
+<dt>Detection window</dt><dd><p>Specifies the period (in seconds) over which rates are measured and averaged for RRL.</p>
+</dd>
+<dt>IPv4 prefix length</dt><dd><p>Specifies the IPv4 prefix length, which indicates the size of the subnet in which the incoming queries are grouped.</p>
+</dd>
+<dt>IPv6 prefix length</dt><dd><p>Specifies the IPv6 prefix length, which indicates the size of the IPv6 subnet in which the incoming queries are grouped</p>
+</dd>
+<dt>Leak rate</dt><dd><p>Specifies the rate at which the server responds to dropped queries</p>
+</dd>
+<dt>Truncate rate</dt><dd><p>Specifies the rate at which the server responds with truncated responses</p>
+</dd>
+<dt>Max responses / window</dt><dd><p>Specifies the maximum number of responses that the server sends to a subnet-domain address in a RRL time window.</p>
+</dd>
+<dt>Exception list</dt><dd><p>Allows for creating policies that control RRL exceptions.</p>
+</dd>
+</dl>
+</section>
+<section id="adding-an-exception">
+<h3>Adding an exception<a class="headerlink" href="#adding-an-exception" title="Link to this heading"></a></h3>
+<p>In the Response Rate Limiting window, click on the <span class="guilabel">Add</span> button.</p>
+</section>
+</section>
+<section id="dns-policies">
+<h2>DNS Policies<a class="headerlink" href="#dns-policies" title="Link to this heading"></a></h2>
+<p>To add a DNS policy:</p>
+<ol class="arabic simple">
+<li><p>Select the type of DNS policy in the submenu of the <span class="guilabel">Edit DNS Server policies</span>.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button to add the new policy</p></li>
+<li><p>A new dialog window is displayed. It is a generic window for adding a DNS policy. Refer to <a class="reference internal" href="#adding-dns-policies"><span class="std std-ref">Adding DNS policies</span></a> for more details.</p></li>
+</ol>
+<section id="adding-dns-policies">
+<span id="id1"></span><h3>Adding DNS policies<a class="headerlink" href="#adding-dns-policies" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Each DNS policy must have a name that conforms to the rules of filenames. The name should be chosen to be unique for the zone or among DNS policies on the server level.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case the name of the DNS policy does conflict with a DNS policy of a different type it is automatically renamed.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>A DNS policy can be created enabled or disabled. Policies that are disabled are ignored by the server except for statistics and logging.</p></li>
+<li><p>Each query that matches the policy can result in three actions:</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Allow:</dt><dd><p>The query is processed and answered from the server or zone scope referred to.</p>
+</dd>
+<dt>Deny:</dt><dd><p>The DNS server refuses the query.</p>
+</dd>
+<dt>Ignore:</dt><dd><p>The DNS server drops the query without informing the client.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Server level policies other than recursion policies can only have “Deny” and “Ignore” as the action. Recursion policies and all zone level policies can have “Allow”, “Deny” and “Ignore” as the action. For the “Allow” action one or more DNS scope must be selected, for a recursion policy these must be sever scopes and for any policy on a DNS zone these must be DNS scopes created on the zone.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>If the action is ‘Allow’ select the ‘Edit’ button. This opens a dialog where you can select the target DNS scopes used for matched queries and the weight for load balancing.</p></li>
+<li><p>Condition decides the condition for matching the Criteria list. Selecting ‘And’ indicates that all of the criteria should match for the policy to apply and ‘Or’ indicates that one or more of the criteria is sufficient for the policy to apply.</p></li>
+<li><p>Criteria is a list of rules that the incoming DNS query is compared to. If the query matches the rules the server takes action in accordance. For more details refer to Add DNS policy criteria section.</p></li>
+</ol>
+</section>
+<section id="adding-dns-policy-target-scope">
+<h3>Adding DNS policy target scope<a class="headerlink" href="#adding-dns-policy-target-scope" title="Link to this heading"></a></h3>
+<p>When the action for a DNS Policy is ‘Allow’ one or more target DNS scopes must be chosen. Each DNS scope has a name and a weight for load balancing.</p>
+<ol class="arabic simple">
+<li><p>To add an DNS scope to the list press <span class="guilabel">Add</span> button.</p></li>
+<li><p>In the Add Target Scope dialog you can select a scope which you want to be used to answer queries that match the DNS policy criteria list. DNS scopes for the DNS server or the zone will be listed, to create a new DNS scope, refer to Add server scope and Add zone scope, respectively.</p></li>
+</ol>
+<blockquote>
+<div><dl>
+<dt>Target scope:</dt><dd><p>The DNS scope used to answer the query.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The DNS server will always have default scope, the name of the default scope is ‘.’, DNS zones also have a default scope with the same name as the zone. In some cases the empty string can be used to referred to the default scope.</p>
+</div>
+</dd>
+<dt>Weight:</dt><dd><p>Is an integer value used for load balancing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DNS policies can be used to for DNS based load balancing. For zones this can be achieved by adding the DNS records that you want to load balance (typically A/AAAA records) to different DNS scopes and then creating a Query Processing policy that will match the incoming queries and has ‘Allowed’ as the action, then add the DNS scopes as the target scopes for the DNS policy.</p>
+<p>The queries will be answered from the the target scopes in a round-robin fashion based on the weight. If the target scopes are ‘example.com’ with weight 4 and ‘offload’ with weight ‘2’, then the first 4 queries that match this policy will be answered from the ‘example.com’ scope and the next 2 from the ‘offload’ scope. Similar load balancing can also be achieved with other types of DNS policies.</p>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="adding-dns-policy-criteria">
+<h3>Adding DNS policy criteria<a class="headerlink" href="#adding-dns-policy-criteria" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../../_images/console-dns-policies-copy.png"><img alt="../../_images/console-dns-policies-copy.png" class="align-center" src="../../_images/console-dns-policies-copy.png" style="width: 60%;" /></a>
+<p>Each DNS policy has a list of criteria that with the policy condition define how the DNS policy is matched. Depending on the policy type different criteria are allowed.</p>
+<p>The DNS policy criteria and their descriptions are:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Dsecription</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Client Subnet</p></td>
+<td><p>A list of subnet names as they are defined on the server. See Define client subnets for details.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transport Protocol</p></td>
+<td><p>A list of transport protocols used by the incoming query. The possible transport protocols are UDP and TCP.</p></td>
+</tr>
+<tr class="row-even"><td><p>Network Protocol</p></td>
+<td><p>A list of network protocol used by the query. The possible network protocols are IPv4 and IPv6.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Server interface</p></td>
+<td><p>A list of the IP address that the DNS server is listening on.</p></td>
+</tr>
+<tr class="row-even"><td><p>Domain Name</p></td>
+<td><p>A list of domain names with strict wildcards allowed. For example ‘*.example.com’</p></td>
+</tr>
+<tr class="row-odd"><td><p>Query Type</p></td>
+<td><p>A list of DNS record types. For example A, NS, SRV, CNAME</p></td>
+</tr>
+<tr class="row-even"><td><p>Time of Day</p></td>
+<td><p>A list of time periods in a 24h format. For example 18:00-23:15. The time of day is rounded to the next 15 minutes by MS-DNS. Maybe we should put this in a note and absolutely avoid examples that will be rounded.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="simple">
+<dt>Operator:</dt><dd><p>Supported values are ‘is’ or ‘is not’, where is not negates ALL the values supplied in the ‘Values’ input box.</p>
+</dd>
+<dt>Values:</dt><dd><p>The list of values used to match the DNS policy criteria with each item in the list on a newline.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Two criteria of the same type are allowed only if they have a different operator but you can work around this limitation by using a list of values for each operator. If you want the criteria to match on two domain names you can select the type as ‘Domain Name’, the operator ‘is’ and enter the two domain name on different lines in the ‘Values’ field.</p>
+</div>
+</section>
+</section>
+<section id="apply-dns-policy-from">
+<h2>Apply DNS Policy from<a class="headerlink" href="#apply-dns-policy-from" title="Link to this heading"></a></h2>
+<p>It is possible to copy DNS policies between DNS servers and DNS zones. One or more type of DNS policy list can be copied at a time to one or more DNS server or DNS zone. DNS policies can not be copied if they refer to any Client Subnet Lists, DNS scopes or server interfaces that do not exist the targets of the copy operation. The copy operation results in the DNS policy lists for the chosen types of DNS policy to be overwritten with the copied DNS policy lists.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DNS policies will be renamed if necessary when created or copied. You can avoid this by choosing unique names.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Right click on a DNS Server or DNS zone.</p></li>
+<li><p>Select <span class="guilabel">Apply DNS Policy From…`</span> in the <span class="guilabel">Edit DNS Policy</span> submenu.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-dns-policies-copy.png"><img alt="../../_images/console-dns-policies-copy.png" class="align-center" src="../../_images/console-dns-policies-copy.png" style="width: 40%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the DNS policy type to copy.</p></li>
+<li><p>Select the DNS server or DNS zone to copy DNS policies from</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dns_records.html" class="btn btn-neutral float-left" title="DNS resource records" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dhcp.html" class="btn btn-neutral float-right" title="DHCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

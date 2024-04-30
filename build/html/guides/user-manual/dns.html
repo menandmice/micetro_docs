@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="DNS servers, zones, records, policies" name="description" />
+<meta content="DNS servers" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNS &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Authoritative DNS Servers" href="dns_servers.html" />
+    <link rel="prev" title="Smart folders" href="smart_folders.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DNS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html">Authoritative DNS Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html">DNS zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html">DNS resource records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html">DNS policies (Windows)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DNS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/dns.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dns">
+<span id="id1"></span><h1>DNS<a class="headerlink" href="#dns" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dns_servers.html">Authoritative DNS Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#new-dns-server">New DNS Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#edit-dns-server-name">Edit DNS Server Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#access">Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#define-work-set">Define Work Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#detach">Detach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#attach">Attach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#remove">Remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#options-management-console">Options (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#properties">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#server-info">Server Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#server-log">Server Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#reload-reload-zone-list-management-console">Reload/Reload Zone List (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#edit-dns-policies">Edit DNS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#clear-cache-management-console">Clear Cache (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#view-cache-entries-management-console">View Cache Entries (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_servers.html#backup-and-restore-bind-only-management-console">Backup and Restore (BIND Only) (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dns_zones.html">DNS zones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#zone-viewing">Zone Viewing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#zone-analysis-management-console">Zone Analysis (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#access-access-for-non-master-for-zone-s">Access/Access for Non-Master for Zone(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#delete-zone">Delete zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#disable-enable-management-console">Disable/Enable (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#zone-migration-wizard">Zone Migration Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#view-related-servers-management-console">View Related Servers (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#edit-preferred-servers">Edit Preferred Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#export-management-console">Export (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#folders">Folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#forward-zone">Forward Zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#import-management-console">Import (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#master-zone">Master Zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#dns-response-policy-zones-bind-only-management-console">DNS Response Policy Zones (BIND only) (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#dnssec-zones-management-console">DNSSEC Zones (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#options-management-console">Options (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#options-for-a-zone-management-console">Options for a zone (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#promote-slave-to-master">Promote Slave to Master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#zone-controls-bind-only-management-console">Zone Controls (BIND only) (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#reload-management-console">Reload (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#set-folder">Set Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#search">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#slave-zone">Slave Zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#stub-zone">Stub Zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_zones.html#view-history">View History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dns_records.html">DNS resource records</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#types-of-resource-records">Types of Resource Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#resource-records">Resource Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#new-records">New Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#deleting-records">Deleting Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#clearing-records-management-console">Clearing Records (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#disable-enable-records">Disable/Enable Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#cut-copy-and-paste-management-console">Cut, Copy, and Paste (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_records.html#undo-redo-commands-management-console">Undo/Redo Commands (Management Console)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_dns_policies.html">DNS policies (Windows)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#dns-policies-and-dns-scopes">DNS Policies and DNS Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#edit-dns-policies">Edit DNS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#define-client-subnets">Define Client Subnets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#add-dns-zone-scopes">Add DNS Zone scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#edit-dns-server-scopes">Edit DNS Server Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#set-response-rate-limiting">Set Response Rate Limiting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#dns-policies">DNS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_dns_policies.html#apply-dns-policy-from">Apply DNS Policy from</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="smart_folders.html" class="btn btn-neutral float-left" title="Smart folders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dns_servers.html" class="btn btn-neutral float-right" title="Authoritative DNS Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

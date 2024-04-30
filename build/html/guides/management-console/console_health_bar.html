@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Men&amp;Mice Health Monitoring provides an overview of the general health of Micetro and other systems and services" name="description" />
+<meta content="DNS health monitoring" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Monitoring Bar (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Authoritative DNS Servers (Management Console, obsolete)" href="console_dns_servers.html" />
+    <link rel="prev" title="Other actions in the Management Console" href="console_actions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Health Monitoring Bar (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#categories">Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indicator-details">Indicator details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ignoring-indicators">Ignoring indicators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-error-warning-indicators">Viewing error / warning indicators</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#disabling-health-monitoring">Disabling health monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_scopes.html">DHCP Scopes (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">Health Monitoring Bar (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_health_bar.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="health-monitoring-bar-management-console-obsolete">
+<span id="console-health-bar"></span><h1>Health Monitoring Bar (Management Console, obsolete)<a class="headerlink" href="#health-monitoring-bar-management-console-obsolete" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The Men&amp;Mice Health Monitoring provides the administrator with valuable information they need to maintain their systems and services. First, a good overview of the general health of Micetro and related services. More importantly, it will give the administrator an indication if there is a problem that needs to be acted on and corrected, for example if there is a secondary zone that is expiring or if there is a zone that has not been loaded on a server due to an error. Both cases can cause outages for users and therefore be a serious impact for the business.</p>
+</section>
+<section id="categories">
+<h2>Categories<a class="headerlink" href="#categories" title="Link to this heading"></a></h2>
+<p>The health status is displayed on the health bar which is positioned at the bottom of the management console window. The status indicators are split into five categories</p>
+<ul class="simple">
+<li><p>Micetro</p></li>
+<li><p>DNS</p></li>
+<li><p>DHCP</p></li>
+<li><p>IPAM</p></li>
+<li><p>Appliance</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/health_bar_small.png"><img alt="../../_images/health_bar_small.png" class="align-center" src="../../_images/health_bar_small.png" style="width: 90%;" /></a>
+<p>A color code is used to represent the severity of the error. If an indicator in any of those categories has a warning or error, it is shown as yellow or red, respectively; otherwise as green. The health bar can be expanded and then the indicator subcategories are shown and more details can be obtained about the health indicators. More importantly, details about each error are given in a separate window where a detailed description about the error is given and also the administrator is given the opportunity to navigate to the object that is affected and from there, fix the error.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/health_bar_overview.png"><img alt="../../_images/health_bar_overview.png" src="../../_images/health_bar_overview.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">The health bar has been expanded by clicking the up arrow in the upper right corner of the health bar. There, it can be seen the there are errors in ‘DNS Zones’ and ‘Server Controllers’ and a warning in ‘Version’.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="indicator-details">
+<h2>Indicator details<a class="headerlink" href="#indicator-details" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Subcategory</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="4"><p>Micetro</p></td>
+<td><p>Licensing</p></td>
+<td><p>An indication is given if there is a problem with the license, for example if a module license has been exceeded.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Database</p></td>
+<td><p>An indication is given if the database size exceeds a default threshold of 1GB for SQLite.</p></td>
+</tr>
+<tr class="row-even"><td><p>Server Controllers</p></td>
+<td><p>An indication is given if
+* the server controllers have a problem communicating with Men&amp;Mice central
+* there is a problem communicating with the update agents running beside the server controllers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Version</p></td>
+<td><p>An indication is given if there is a new version available, if there are pending upgrades or if any components are out of date.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>DNS</p></td>
+<td><p>DNS Servers</p></td>
+<td><p>An indication is given if there is a problem communicating with the servers or if the DNS server is down.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS Zones</p></td>
+<td><p>An indication is given if
+* the system is unable to get the zone status
+* the slave zone will expire in the next 24 hours
+* the zone can not load on the server</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>DHCP</p></td>
+<td><p>DHCP Servers</p></td>
+<td><p>An indication is given if there is a problem communicating with the servers or if the DHCP server is down.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DHCP Scopes</p></td>
+<td><p>An indication is given if
+* the system is unable to get the scope status
+* the static part of scope is over utilized
+* the dynamic part of scope is over utilized
+* a superscope is over utilized
+* there is a scope pool collision
+* there is a scope reservation mismatch
+* scope contains inconsistencies that need reconciling
+* the system is unable to check whether scope contains inconsistencies
+* the system is unable to check whether scope is part of a failover relationship on partner server
+* the DHCP failover partner server is unreachable
+* the system is unable to fetch scope info from the partner server
+* if a scope is not part of a failover relationship on the partner server</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>IPAM</p></td>
+<td><p>Static</p></td>
+<td><p>An indication is given if a subnet is over utilized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Discovery</p></td>
+<td><p>An indication is given if there are problems with communicating with routers.</p></td>
+</tr>
+<tr class="row-even"><td><p>Appliance</p></td>
+<td><p>Appliance health</p></td>
+<td><p>An indication is given if an appliance is unreachable.</p></td>
+</tr>
+</tbody>
+</table>
+<p>In any case of an warning or error above, there will be a detailed description of the error or warning, and a way to navigate to the proper place to fix an error/warning.</p>
+<section id="ignoring-indicators">
+<h3>Ignoring indicators<a class="headerlink" href="#ignoring-indicators" title="Link to this heading"></a></h3>
+<p>By right clicking a status indicator in the health bar and selecting <strong>ignore</strong>, that status indicator can be ignored.</p>
+</section>
+<section id="viewing-error-warning-indicators">
+<h3>Viewing error / warning indicators<a class="headerlink" href="#viewing-error-warning-indicators" title="Link to this heading"></a></h3>
+<p>In this window you can see more details about the status indicator. Following are descriptions about what each column shows.</p>
+<dl class="simple">
+<dt>Message</dt><dd><p>Details about the error / warning for this indicator</p>
+</dd>
+<dt>Object</dt><dd><p>Name of the object that the error / warning is related to</p>
+</dd>
+<dt>First seen</dt><dd><p>The date of which the error / warning was first seen</p>
+</dd>
+</dl>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/health_bar-treeview.png"><img alt="../../_images/health_bar-treeview.png" src="../../_images/health_bar-treeview.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">In the figure above, we have clicked on the ‘Discovery’ indicator to get more details about the error.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Right clicking an indicator will show a context menu with the following items (where applicable):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Show in manager window: Show the specific item in the manager window</p></li>
+<li><p>Open: Opens a specific object, for example a scope</p></li>
+<li><p>Reconnect: Reconnects to an already disconnected server</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="disabling-health-monitoring">
+<h2>Disabling health monitoring<a class="headerlink" href="#disabling-health-monitoring" title="Link to this heading"></a></h2>
+<p>The system health monitoring can be disabled completely by setting an advanced system option. See <a class="reference internal" href="console_advanced_settings.html#console-advanced-settings"><span class="std std-ref">Advanced System Settings</span></a> for more details.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_actions.html" class="btn btn-neutral float-left" title="Other actions in the Management Console" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_dns_servers.html" class="btn btn-neutral float-right" title="Authoritative DNS Servers (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

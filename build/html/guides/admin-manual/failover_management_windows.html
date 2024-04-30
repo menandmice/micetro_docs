@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Managing failover configurations for Microsoft Services in Micetro" name="description" />
+<meta content="failover management, Microsoft, DHCP, Windows" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing Failover Relationships for Microsoft DHCP Services &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SNMP Profiles" href="snmp_profiles.html" />
+    <link rel="prev" title="Managing Failover Relationships for Kea DHCP Services" href="failover_management_kea.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="failover_management.html">Failover Management</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="failover_management_isc.html">Managing Failover Relationships for ISC DHCP Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="failover_management_kea.html">Managing Failover Relationships for Kea DHCP Services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Managing Failover Relationships for Microsoft DHCP Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-existing-microsoft-dhcp-failover-relationships">Viewing Existing Microsoft DHCP Failover Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-failover-relationships-for-microsoft-dhcp">Creating Failover Relationships for Microsoft DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-scopes-to-microsoft-dhcp-failover-relationships">Adding Scopes to Microsoft DHCP Failover Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-scopes-from-failover-relationships">Removing Scopes from Failover Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-failover-relationships">Modifying Failover Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-failover-relationships">Removing Failover Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#replicating-failover-scopes">Replicating Failover Scopes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#replicating-individual-scopes">Replicating Individual Scopes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replicating-all-scopes-in-a-failover-relationship">Replicating All Scopes in a Failover Relationship</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replicating-all-failover-scopes-on-a-dhcp-server">Replicating All Failover Scopes on a DHCP Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="failover_management.html">Failover Management</a></li>
+      <li class="breadcrumb-item active">Managing Failover Relationships for Microsoft DHCP Services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/failover_management_windows.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="managing-failover-relationships-for-microsoft-dhcp-services">
+<span id="failover-management-windows"></span><h1>Managing Failover Relationships for Microsoft DHCP Services<a class="headerlink" href="#managing-failover-relationships-for-microsoft-dhcp-services" title="Link to this heading"></a></h1>
+<p>Failover relationships for Microsoft DHCP services involve configuring two DHCP servers to work together, providing redundancy for DHCP servers. This is important for ensuring that IP addresses are continuously available even if one server goes down. The failover process involves two key modes:</p>
+<ol class="arabic simple">
+<li><p><strong>Hot Standby</strong>: In this mode, one DHCP server acts as the primary (active) server, while the other acts as the standby (passive) server. The standby server takes over if the primary server fails.</p></li>
+<li><p><strong>Load Balancing</strong>: Both DHCP servers actively serve IP addresses, distributing the load between them. This mode is designed to optimize resource utilization and provide fault tolerance.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To manage failover between two Microsoft Servers, the DHCP Server Controller must be running as a service account with enough privileges to manage the DHCP service. For more information, see <a class="reference internal" href="../implementation/install_dhcp_controllers.html#install-dhcp-controllers"><span class="std std-ref">Micetro DHCP Agents</span></a>.</p>
+</div>
+<section id="viewing-existing-microsoft-dhcp-failover-relationships">
+<h2>Viewing Existing Microsoft DHCP Failover Relationships<a class="headerlink" href="#viewing-existing-microsoft-dhcp-failover-relationships" title="Link to this heading"></a></h2>
+<p>You can view existing Microsoft DHCP failover relationships at the server level. Micetro automatically detects and syncs all existing failover relationships.</p>
+<p>You can retrieve failover relationships through the API using GetDHCPFailoverRelationship(s).</p>
+<p><strong>To view failover relationships in Micetro</strong>:</p>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Service Management</span> in the upper-left corner.</p></li>
+<li><p>In the left sidebar, under <span class="guilabel">DHCP Services</span>, select <span class="guilabel">Microsoft DHCP</span>.</p></li>
+<li><p>Select the server you want to view, and then select <span class="guilabel">Failover management</span> either on the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>The Failover Management window will show all relationships associated with the selected server.</p>
+<a class="reference internal image-reference" href="../../_images/failover-microsoft-view.png"><img alt="../../_images/failover-microsoft-view.png" src="../../_images/failover-microsoft-view.png" style="width: 65%;" /></a>
+</li>
+</ol>
+</section>
+<section id="creating-failover-relationships-for-microsoft-dhcp">
+<h2>Creating Failover Relationships for Microsoft DHCP<a class="headerlink" href="#creating-failover-relationships-for-microsoft-dhcp" title="Link to this heading"></a></h2>
+<p>Micetro manages failover relationships at both the scope and server levels. Scopes group IP addresses logically and help to manage failover efficiently. DHCP configurations can be customized per scope to suit the specific requirements of different network segments.</p>
+<p>When creating failover relationships for Microsoft DHCP servers, scopes are not added to the relationship at the time of creation. Instead, the scopes are added later by using the <span class="guilabel">Add scope to failover</span> action.</p>
+<p><strong>To create a failover relationship through the API</strong></p>
+<p>API supports creation using <code class="docutils literal notranslate"><span class="pre">AddDHCPFailoverRelationship</span></code>.</p>
+<p>The following parameters are used for the <code class="docutils literal notranslate"><span class="pre">AddDHCPFailoverRelationship</span></code> command:</p>
+<ul class="simple">
+<li><p><strong>Name</strong>: The name of the DHCP failover relationship to be created.</p></li>
+<li><p><strong>PrimaryServer</strong>: The name of the primary DHCP server as it appears in Micetro.</p></li>
+<li><p><strong>SecondaryServer</strong>: The name of the secondary DHCP server as it appears in Micetro.</p></li>
+<li><p><strong>FailoverMode</strong>: The DHCP failover mode to use.</p></li>
+<li><p><strong>Mclt</strong>: Specify the number of seconds for which either server can renew a lease without contacting the other.</p></li>
+<li><p><strong>SafePeriod</strong>: Safe period time in seconds, that the DHCPv4 server will wait before transitioning the server from the COMMUNICATION-INT state to PARTNER-DOWN.</p></li>
+<li><p><strong>Percentage</strong>: Indicates the percentage of the DHCPv4 client load that will be shared between the primary and secondary servers in the failover relationship.</p></li>
+<li><p><strong>SharedSecret</strong>: The shared secret key associated with this failover relationship.</p></li>
+</ul>
+<p><strong>To create a failover relationship in Micetro</strong>:</p>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Service Management</span> in the upper-left corner.</p></li>
+<li><p>In the left sidebar, under <span class="guilabel">DHCP Services</span>, select <span class="guilabel">Microsoft DHCP</span>.</p></li>
+<li><p>Select the server that you want as the primary server in the relationship, and then select <span class="guilabel">Failover management</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select <span class="guilabel">Add Relationship</span> in the lower left corner, and complete the <strong>Add Relationship</strong> wizard:</p>
+<a class="reference internal image-reference" href="../../_images/failover-add-microsoft.png"><img alt="../../_images/failover-add-microsoft.png" src="../../_images/failover-add-microsoft.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p><strong>Failover Name</strong>: The name for the relationship.</p></li>
+<li><p><strong>Failover Mode</strong>: Select the failover mode you want to use. You can choose between <strong>Hot standby</strong> and <strong>Load balance</strong>.</p></li>
+<li><p><strong>Partner Server</strong>: Select the partner server for the failover configuration.</p></li>
+<li><p><strong>Addresses reserved for standby server</strong>: If you chose the Hot standby mode, you must set the percentage of addresses reserved for the standby server.</p></li>
+<li><p><strong>Local Server Load Balance Percentage</strong>: If you selected the Load balance mode, you must specify the load balance percentage for the local server. The remaining percentage will be used on the partner server.</p></li>
+<li><p><strong>Maximum Client Lead Time</strong>: Enter values in seconds if different from the default.</p></li>
+<li><p><strong>State Switchover Interval</strong>: Specify an interval in seconds for Automatic State Switchover; zero means it’s disabled.</p></li>
+<li><p><strong>Shared Secret for Message Authentication</strong>: If you want to use message authentication between the DHCP servers, you must provide a shared secret for the message authentication.</p></li>
+</ul>
+</li>
+<li><p>After confirming the details on the Summary tab, click <span class="guilabel">Add</span>.</p></li>
+</ol>
+</section>
+<section id="adding-scopes-to-microsoft-dhcp-failover-relationships">
+<h2>Adding Scopes to Microsoft DHCP Failover Relationships<a class="headerlink" href="#adding-scopes-to-microsoft-dhcp-failover-relationships" title="Link to this heading"></a></h2>
+<p>Failover relationships will initially appear as “Empty” and must be activated by adding a scope on the IPAM page. You can either create a new scope or select an existing one.
+If the failover relationship was previously empty, it will be created on the Microsoft DHCP server.</p>
+<p><strong>To add scopes to the relationship, do one of the following</strong>:</p>
+<ul class="simple">
+<li><p>On the <strong>IPAM</strong> page, locate the scope, then select <span class="guilabel">Add scope to failover</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu:</p></li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/failover-add-scope.png"><img alt="../../_images/failover-add-scope.png" src="../../_images/failover-add-scope.png" style="width: 80%;" /></a>
+</div></blockquote>
+<p>-OR-</p>
+<ul>
+<li><p>Create a new scope, and select the failover relationship during creation:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/failover-create-scope.png"><img alt="../../_images/failover-create-scope.png" src="../../_images/failover-create-scope.png" style="width: 80%;" /></a>
+</div></blockquote>
+</li>
+</ul>
+<p>-OR-</p>
+<ul class="simple">
+<li><p>API offers <code class="docutils literal notranslate"><span class="pre">AdsdDHCPScopesFromDHCPFailoverRelationship</span></code> which adds scopes to failover relationships. Specify a reference to the DHCP Scope and the failover relationship name.</p></li>
+</ul>
+<p>If the failover relationship was empty before the scope was added to it, the status will change from “Empty” to “Normal”.</p>
+<a class="reference internal image-reference" href="../../_images/failover-state-microsoft.png"><img alt="../../_images/failover-state-microsoft.png" src="../../_images/failover-state-microsoft.png" style="width: 80%;" /></a>
+</section>
+<section id="removing-scopes-from-failover-relationships">
+<h2>Removing Scopes from Failover Relationships<a class="headerlink" href="#removing-scopes-from-failover-relationships" title="Link to this heading"></a></h2>
+<p>Microsoft DHCP scopes participating in failover relationships are grouped and labeled as such in the <strong>Authority</strong> column on the <strong>IPAM</strong> page. The <strong>Failover relationship</strong> column displays the name of the failover relationship to which the scope belongs.</p>
+<p><strong>To remove a scope from a failover relationship, do one of the following</strong>:</p>
+<ul>
+<li><p>Locate the specific scope on the <strong>IPAM</strong> page, then select <span class="guilabel">Remove from failover</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/failover-microsoft-remove-scope.png"><img alt="../../_images/failover-microsoft-remove-scope.png" src="../../_images/failover-microsoft-remove-scope.png" style="width: 80%;" /></a>
+</div></blockquote>
+</li>
+</ul>
+<div class="line-block">
+<div class="line">*    Decide whether to delete or disable the secondary scope.</div>
+</div>
+<p>-OR-</p>
+<ul>
+<li><p>Locate the specific scope on the <strong>IPAM</strong> page, then select <span class="guilabel">Manage scope instances</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu. Select <span class="guilabel">Remove scope instance</span> for the relevant server.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/failover-microsoft-remove-scope-instance.png"><img alt="../../_images/failover-microsoft-remove-scope-instance.png" src="../../_images/failover-microsoft-remove-scope-instance.png" style="width: 805%;" /></a>
+</div></blockquote>
+</li>
+</ul>
+<p>-OR-</p>
+<ul class="simple">
+<li><p>The API offers <code class="docutils literal notranslate"><span class="pre">RemoveDHCPScopesFromDHCPFailoverRelationship</span></code> which removes scopes to failover relationships. Specify a reference to the DHCP Scope, the failover relationship name, and the proper deconfigure action.</p></li>
+</ul>
+</section>
+<section id="modifying-failover-relationships">
+<h2>Modifying Failover Relationships<a class="headerlink" href="#modifying-failover-relationships" title="Link to this heading"></a></h2>
+<p>You can modify ISC failover relationship options on a per-relationship basis.</p>
+<p><strong>To modify a failover relationship, do one of the following</strong>:</p>
+<ol class="arabic simple">
+<li><p>Go to the <span class="guilabel">Service Management</span> tab on the <strong>Admin</strong> page, select the server containing the relationship you want to modify, and then select <span class="guilabel">Failover management</span> either on the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select the relevant relationship, and then select <span class="guilabel">Edit</span> on the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Make the desired changes and select <span class="guilabel">Save</span>.</p></li>
+</ol>
+<p>-OR-</p>
+<ul>
+<li><p>The API offers <code class="docutils literal notranslate"><span class="pre">ModifyDHCPFailoverRelationship</span></code>. The following parameters are used for the <code class="docutils literal notranslate"><span class="pre">ModifyDHCPFailoverRelationship</span></code> command:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Name</strong>: The name of the DHCP failover relationship to be created.</p></li>
+<li><p><strong>PrimaryServer</strong>: The name of the primary DHCP server as it appears in Micetro.</p></li>
+<li><p><strong>SecondaryServer</strong>: The name of the secondary DHCP server as it appears in Micetro.</p></li>
+<li><p><strong>FailoverMode</strong>: The DHCP failover mode to use.</p></li>
+<li><p><strong>Mclt</strong>: Specify the number of seconds for which either server can renew a lease without contacting the other.</p></li>
+<li><p><strong>SafePeriod</strong>: Safe period time in seconds, that the DHCPv4 server will wait before transitioning the server from the COMMUNICATION-INT state to PARTNER-DOWN.</p></li>
+<li><p><strong>Percentage</strong>: Indicates the percentage of the DHCPv4 client load that will be shared between the primary and secondary servers in the failover relationship.</p></li>
+<li><p><strong>SharedSecret</strong>: The shared secret key associated with this failover relationship.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="removing-failover-relationships">
+<h2>Removing Failover Relationships<a class="headerlink" href="#removing-failover-relationships" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>On the <strong>Admin</strong> page, select the Windows server containing the relationship you want to remove, then select <span class="guilabel">Failover management</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select the relevant relationship, and then select <span class="guilabel">Remove</span> on the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>If associated relationships exist, you will be prompted to select the server where the scopes should persist and decide whether to delete or disable scopes on the other server.</p></li>
+</ol>
+</section>
+<section id="replicating-failover-scopes">
+<h2>Replicating Failover Scopes<a class="headerlink" href="#replicating-failover-scopes" title="Link to this heading"></a></h2>
+<p>When configuring a failover relationship, you can replicate scope information between servers. This is possible for individual scopes, all scopes that share a failover relationship, or all scopes on a particular DHCP server.</p>
+<p>During the scope replication process, the scopes on the selected DHCP are considered the source scopes, and the entire content of these scopes is subsequently replaced on the destination server.</p>
+<section id="replicating-individual-scopes">
+<h3>Replicating Individual Scopes<a class="headerlink" href="#replicating-individual-scopes" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>On the <strong>IPAM</strong> page, select a scope in a failover relationship.</p></li>
+<li><p>Select <span class="guilabel">Recplicate failover relationships</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select the destination server, and then click <span class="guilabel">Confirm</span>.</p></li>
+</ol>
+</section>
+<section id="replicating-all-scopes-in-a-failover-relationship">
+<h3>Replicating All Scopes in a Failover Relationship<a class="headerlink" href="#replicating-all-scopes-in-a-failover-relationship" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>On the <strong>Admin</strong> page, select on of the Microsoft DHCP servers that you want in the relationship.</p></li>
+<li><p>Select <span class="guilabel">Recplicate failover relationships</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select the failover relationship, and then select <span class="guilabel">Replicate failover relationship</span> on the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Click <span class="guilabel">Confirm</span>.</p></li>
+</ol>
+</section>
+<section id="replicating-all-failover-scopes-on-a-dhcp-server">
+<h3>Replicating All Failover Scopes on a DHCP Server<a class="headerlink" href="#replicating-all-failover-scopes-on-a-dhcp-server" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During the replication process, the scopes designated on the chosen DHCP server serve as the source scopes. Subsequently, the entire contents of each scope are substituted on the partner server, ensuring a comprehensive and synchronized replication of scope information between the two servers.</p>
+</div>
+<ol class="arabic simple">
+<li><p>On the <strong>Admin</strong> page, select one of the Microsoft DHCP servers that you want in the relationship.</p></li>
+<li><p>Select <span class="guilabel">Recplicate failover relationships</span> on either the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Click <span class="guilabel">Confirm</span>.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="failover_management_kea.html" class="btn btn-neutral float-left" title="Managing Failover Relationships for Kea DHCP Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="snmp_profiles.html" class="btn btn-neutral float-right" title="SNMP Profiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Agent-free management of DNS (Microsoft DNS) and DHCP (Microsoft DHCP, ISC Kea) servers in Micetro" name="description" />
+<meta content="DNS management, DHCP management, DNS, DHCP, agent-free, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent-free management of DNS/DHCP servers &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cloud integration" href="cloud.html" />
+    <link rel="prev" title="Men&amp;Mice DHCP Server Controllers" href="install_dhcp_controllers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro by Men&amp;Mice components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of important config and log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="central_database.html">Database backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_console.html">Management Console</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="install_controllers.html">Server controllers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="install_dns_controllers.html">Micetro DNS Server Controllers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install_dhcp_controllers.html">Men&amp;Mice DHCP Server Controllers</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Agent-free management of DNS/DHCP servers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Web Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#deploying-micetro-on-azure">Deploying Micetro on Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="install_controllers.html">Server controllers</a></li>
+      <li class="breadcrumb-item active">Agent-free management of DNS/DHCP servers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/agent_free_dns-dhcp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agent-free-management-of-dns-dhcp-servers">
+<span id="agent-free-dns-dhcp"></span><h1>Agent-free management of DNS/DHCP servers<a class="headerlink" href="#agent-free-management-of-dns-dhcp-servers" title="Link to this heading"></a></h1>
+<section id="kea">
+<span id="kea-agent-free"></span><h2>Kea<a class="headerlink" href="#kea" title="Link to this heading"></a></h2>
+<p>Kea DHCP servers can be configured agent-free, without a DHCP Server Controller running on every Kea machine. The <a class="reference internal" href="../user-manual/dhcp_kea.html#kea-control-agent"><span class="std std-ref">Kea Control Agent</span></a> needs to be installed, and available for communication through its defined port (default: 8000). A single DHCP Server Controller is sufficient to communicate with and handle all Kea servers on the network.</p>
+</section>
+<section id="microsoft">
+<span id="ms-agent-free"></span><h2>Microsoft<a class="headerlink" href="#microsoft" title="Link to this heading"></a></h2>
+<p>Microsoft DNS and DHCP servers in Active Directory environments can be managed agent free, i.e. without running a Men&amp;Mice server controller locally on the DNS/DHCP server.</p>
+<p>While agent free management of DHCP servers is possible with any 6.x version of Micetro, version 6.3 or newer is required for agent free management of DNS servers.</p>
+<p>Although it is not required to install an agent on the DNS/DHCP server itself, an agent must be installed somewhere in the same domain as the server resides. This agent will be used as a proxy that will handle all communications to the remote DNS/DHCP server(s). Usually, this proxy agent is installed on the same server as Men&amp;Mice Central, assuming the Men&amp;Mice Central server is a member in the domain. If the DNS/DHCP servers are widely distributed geographically, it can also be of performance benefit to install one agent in each geographic location. For instance, if there are datacenters in Iceland, India, and the United States, it is probably best to install one proxy agent in each datacenter that each handles communications with the DNS/DHCP servers in its datacenter. The proxy agent then in turn feeds all the information back to Men&amp;Mice Central, eventually reaching the end-user in one of the Micetro user interfaces.</p>
+<p>Naturally, the Micetro proxy agent must adhere to the security imposed by the Active Directory. Therefore, the proxy agent service must be running with a service account that has sufficient privileges for DNS and/or DHCP management in the domain. If the privileges are restricted, that will translate to the same restriction in Micetro. For instance, if the service account only has privileges to view DNS zones and records but not do any changes what so ever, the zones and records will show up in Micetro, but all changes to those zones will be denied by Micetro. The same applies to the DHCP server management, if the service account has read-only privileges to the scopes, the scopes will show up in Micetro but the end-user will not be able to do any changes.</p>
+<section id="limitations">
+<h3>Limitations:<a class="headerlink" href="#limitations" title="Link to this heading"></a></h3>
+<section id="dns">
+<h4>DNS:<a class="headerlink" href="#dns" title="Link to this heading"></a></h4>
+<p>With agent-free management of MS DNS servers, as opposed to using a locally installed agent, you will lose the following ability in static zones only:</p>
+<ul class="simple">
+<li><p>Disable resource record</p></li>
+<li><p>Enable resource record</p></li>
+<li><p>View and edit resource record comments</p></li>
+<li><p>Disable zone</p></li>
+</ul>
+</section>
+<section id="dhcp">
+<h4>DHCP:<a class="headerlink" href="#dhcp" title="Link to this heading"></a></h4>
+<p>Collection of lease history is only possible when the agent is installed locally. No lease history will be collected from servers that are managed agent-free.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">netsh</span></code> with full dhcp functionality is not installed properly, no scopes will show up in Micetro regardless of the privileges of the service account running the proxy DHCP agent. The proxy DHCP agent must be installed on a machine that has <code class="docutils literal notranslate"><span class="pre">netsh</span></code> with full dhcp capability. This is always the case if the DHCP role service is installed. If not, it can be installed (on Win2008R2) by <span class="menuselection">Server Manager ‣ Features ‣ Remote Server Administration ‣ Role Administration Tools – &gt;DHCP Server Tools</span>.</p>
+<p>It’s recommended (but not required) that Windows 2003 DHCP servers are managed by proxy DHCP agents installed on Windows 2003 servers, and Windows 2008/R2 DHCP servers are managed by proxy DHCP agents installed on Windows 2008/R2 servers, due to some minor differences in the <code class="docutils literal notranslate"><span class="pre">netsh</span></code> between these two operating systems.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install_dhcp_controllers.html" class="btn btn-neutral float-left" title="Men&amp;Mice DHCP Server Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cloud.html" class="btn btn-neutral float-right" title="Cloud integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

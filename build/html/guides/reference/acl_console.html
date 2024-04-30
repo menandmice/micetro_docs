@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Access control management with the Management Console in Micetro by Men&amp;Mice" name="description" />
+<meta content="access control, access control management, role-based access, security, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing access control in the Management Console &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Role-based access example" href="access_control_example.html" />
+    <link rel="prev" title="Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery" href="snmp_oid.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Managing access control in the Management Console</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-differences-between-the-web-application-and-the-management-console">Key differences between the Web Application and the Management Console</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#effective-access">Effective access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#users-and-groups">Users and groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roles">Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-access-in-the-management-console">Configuring access in the Management Console</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-new-role">Adding a new role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-access-for-a-role">Configuring access for a role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-a-role">Removing a role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-users-and-groups-to-a-role">Adding users and groups to a role</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+      <li class="breadcrumb-item active">Managing access control in the Management Console</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/acl_console.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>For detailed information on the preferred method of access management, see <a class="reference internal" href="../admin-manual/access_control.html#access-control"><span class="std std-ref">Access control</span></a>.</p>
+<section id="managing-access-control-in-the-management-console">
+<span id="acl-console"></span><h1>Managing access control in the Management Console<a class="headerlink" href="#managing-access-control-in-the-management-console" title="Link to this heading"></a></h1>
+<p>Access control management in the Management Console uses the new access control model, but its features are slightly different than those available in the Web Application.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Men&amp;Mice recommends configuring and managing access through the Web Application, as the preferred method. Functionality in the Management Console is mostly implemented in a transitional capacity.</p>
+</div>
+<section id="key-differences-between-the-web-application-and-the-management-console">
+<h2>Key differences between the Web Application and the Management Console<a class="headerlink" href="#key-differences-between-the-web-application-and-the-management-console" title="Link to this heading"></a></h2>
+<section id="effective-access">
+<h3>Effective access<a class="headerlink" href="#effective-access" title="Link to this heading"></a></h3>
+<p>In the Management Console’s <span class="menuselection">Tools ‣ User Management</span>, the functionality for <a class="reference internal" href="../admin-manual/acl_effective_access.html#acl-effective-access"><span class="std std-ref">Effective access</span></a> is not available.</p>
+</section>
+<section id="users-and-groups">
+<h3>Users and groups<a class="headerlink" href="#users-and-groups" title="Link to this heading"></a></h3>
+<p>In the Management Console’s <span class="menuselection">Tools ‣ User Management</span>, users and groups cannot be edited to assign roles. Instead, roles need to be configured with users and groups.</p>
+</section>
+<section id="roles">
+<h3>Roles<a class="headerlink" href="#roles" title="Link to this heading"></a></h3>
+<p>In the Management Console’s <span class="menuselection">Tools ‣ User Management</span>, adding a new role doesn’t allow configuring access for it.</p>
+</section>
+</section>
+<section id="configuring-access-in-the-management-console">
+<h2>Configuring access in the Management Console<a class="headerlink" href="#configuring-access-in-the-management-console" title="Link to this heading"></a></h2>
+<section id="adding-a-new-role">
+<h3>Adding a new role<a class="headerlink" href="#adding-a-new-role" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Open <span class="menuselection">Tools ‣ User Management</span> and switch to the <strong>Roles</strong> tab.</p></li>
+<li><p>Click <span class="guilabel">Add</span>.</p></li>
+<li><p>Fill in the name and description for the role. Optionally, you can add users and groups to the role.</p></li>
+<li><p>Click <span class="guilabel">Ok</span>.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The function for <em>creating</em> the role doesn’t contain options to set access for it in the Management Console. For configuring access, follow the steps in <a class="reference internal" href="#console-role-perms"><span class="std std-ref">Configuring access for a role</span></a>.</p>
+</div>
+</section>
+<section id="configuring-access-for-a-role">
+<span id="console-role-perms"></span><h3>Configuring access for a role<a class="headerlink" href="#configuring-access-for-a-role" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike the in Web Application, configuring access for roles is sectioned by object type (i.e. DNS servers, zones, clouds, etc.).</p>
+</div>
+<ol class="arabic simple">
+<li><p>Open <span class="menuselection">Tools ‣ Role access for</span> and select the object type from the menu.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To manage access for Micetro (module access, setting user admins, etc.) use <span class="menuselection">Tools ‣ Micetro access</span>.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/acl-console-access-for.png"><img alt="../../_images/acl-console-access-for.png" class="align-center" src="../../_images/acl-console-access-for.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the <strong>Access control</strong> dialog, you’ll see all roles that have relevant access configured on them.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-console-access-control-dialog.png"><img alt="../../_images/acl-console-access-control-dialog.png" class="align-center" src="../../_images/acl-console-access-control-dialog.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>To configure access for the selected object type to a role:</p></li>
+</ol>
+<blockquote>
+<div><p>3/1. Select the role in the top window, or click <span class="xref std std-ref">Add…</span> to add a role that doesn’t have access configured for the object type yet.</p>
+<p>3/2. In the bottom panel, select all checkboxes for the access permissions you’d like to enable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Selecting <strong>Deny</strong> is the equivalent of <strong>Block</strong> in the Web Application. See <a class="reference internal" href="../admin-manual/acl_permissions.html#block-permission"><span class="std std-ref">Block permission</span></a> for more details. Setting ‘deny’ on a permission will block any other role to overwrite this setting.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">OK</span> when all the desired access permissions are set.</p></li>
+</ol>
+</section>
+<section id="removing-a-role">
+<h3>Removing a role<a class="headerlink" href="#removing-a-role" title="Link to this heading"></a></h3>
+<p>To <em>remove a role’s access permissions from an object type</em> use the <span class="menuselection">Tools ‣ Role access for</span> menu. Select the role in the top panel and click on <span class="guilabel">Remove</span>. This will remove all configured access permissions from the role, but <strong>not the role itself</strong>.</p>
+<p>To <em>remove a role from Micetro</em> use <span class="menuselection">Tools ‣ User Management</span> and click on the <strong>Roles</strong> tab. Select the role(s) to remove, and click <span class="guilabel">Remove</span>. This will remove <strong>the role and all its configured access permissions</strong> from Micetro completely.</p>
+</section>
+<section id="adding-users-and-groups-to-a-role">
+<h3>Adding users and groups to a role<a class="headerlink" href="#adding-users-and-groups-to-a-role" title="Link to this heading"></a></h3>
+<p>To add users or groups to a role:</p>
+<ol class="arabic simple">
+<li><p>Open <span class="menuselection">Tools ‣ User Management</span>.</p></li>
+<li><p>Select the user(s) and/or group(s), click <span class="guilabel">Edit</span> and in the bottom panel select the roles to attach the user(s)/group(s) to.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/acl-console-user-role.png"><img alt="../../_images/acl-console-user-role.png" class="align-center" src="../../_images/acl-console-user-role.png" style="width: 90%;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Click <span class="guilabel">OK</span> to save the new membership settings.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using the <strong>Roles</strong> tab of <span class="menuselection">Tools ‣ User Management</span>, examining a role will display the users and groups attached to the role, but cannot be used for adding users/groups to it.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="snmp_oid.html" class="btn btn-neutral float-left" title="Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="access_control_example.html" class="btn btn-neutral float-right" title="Role-based access example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

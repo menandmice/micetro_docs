@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Object folders in the Micetro Management Console" name="description" />
+<meta content="folder management, organization, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Folders (Management Console, deprecated) &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Object Folders (Management Console, deprecated)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/guides/user-manual/console/console_object_folders.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="object-folders-management-console-deprecated">
+<span id="console-object-folders"></span><h1>Object Folders (Management Console, deprecated)<a class="headerlink" href="#object-folders-management-console-deprecated" title="Link to this heading"></a></h1>
+<p>To help in organizing your IP Address ranges, DNS Zones, and DHCP scopes, you can create folders and subfolders into which you can place one or more objects. You can also rename and delete folders, as well as specify access to ranges within the folder (once objects have been moved into it).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../object_folders.html#object-folders"><span class="std std-ref">Object folders</span></a> also appear in the Web Application, and objects can be added to and removed from them.</p>
+</div>
+<section id="creating-a-new-folder">
+<h2>Creating a New Folder<a class="headerlink" href="#creating-a-new-folder" title="Link to this heading"></a></h2>
+<p>When you create a new folder, you can move objects from the “master” list into this new folder. However, the objects always remain in the master list as well.</p>
+<p>To create a folder, do the following:</p>
+<ol class="arabic simple">
+<li><p>In the <em>Object List</em>, right-click on either <span class="guilabel">IP Address ranges</span>, <span class="guilabel">DNS Zones</span>, or <span class="guilabel">DHCP scopes</span>.</p></li>
+<li><p>From the shortcut menu, select <span class="guilabel">New folder</span>. The <em>Create Folder</em> dialog box displays.</p></li>
+<li><p>Type a name for the folder.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. The new folder now displays in the Object List.</p></li>
+<li><p>To move an object into this new folder, simply highlight it and drag and drop it into this folder.</p></li>
+</ol>
+</section>
+<section id="creating-a-subfolder">
+<h2>Creating a Subfolder<a class="headerlink" href="#creating-a-subfolder" title="Link to this heading"></a></h2>
+<p>If desired, you can add a subfolder underneath any existing folder.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you move an object from another folder into a subfolder, the object no longer appears in the original folder. This is not the case, however, when you move an object from the master list. The object always remains in the master list, regardless of what folder/subfolder a copy is moved to.</p>
+</div>
+<p>In the <em>Object List</em>, click <span class="guilabel">+</span> next to the object type where you want to create the subfolder. The object expands to show any currently defined folders.</p>
+<ol class="arabic simple">
+<li><p>Right-click on the folder to which you want to add a subfolder.</p></li>
+<li><p>From the shortcut menu, select <span class="guilabel">New Folder</span>.</p></li>
+<li><p>In the <em>Create Folder</em> dialog box, type a name for the new subfolder.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. You can now move objects into this subfolder by dragging/dropping them from the list on the right.</p></li>
+</ol>
+</section>
+<section id="renaming-a-folder">
+<h2>Renaming a Folder<a class="headerlink" href="#renaming-a-folder" title="Link to this heading"></a></h2>
+<p>You can rename any folder by doing the following:</p>
+<ol class="arabic simple">
+<li><p>Select the folder you want to rename.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Rename</span>.</p></li>
+<li><p>In the <em>Rename folder</em> dialog box, type the new name for the folder.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. The object list refreshes and the new folder name displays.</p></li>
+</ol>
+</section>
+<section id="specifying-access-for-folder-items">
+<h2>Specifying Access for Folder Items<a class="headerlink" href="#specifying-access-for-folder-items" title="Link to this heading"></a></h2>
+<p>Once you have created a folder and moved objects into the folder, you can assign permissions to the ranges in the folder to control who can work with those objects. Choosing access for a folder does not set the access for the folder, but merely selects all objects in the folder and applies the access settings to these objects.</p>
+<p>To specify access for item/items in a folder, do the following:</p>
+<ol class="arabic simple">
+<li><p>Right-click on the folder and, from the shortcut menu, select <span class="guilabel">Access</span>.</p></li>
+<li><p>In the <em>Access Control</em> dialog box, select the group/user (or add a new group/user). Then, specify the permissions for the user.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+<li><p>If desired, enter a <em>Save Comment</em> when prompted.</p></li>
+</ol>
+</section>
+<section id="deleting-a-folder">
+<h2>Deleting a Folder<a class="headerlink" href="#deleting-a-folder" title="Link to this heading"></a></h2>
+<p>When deleting a folder, the objects within the folder are not deleted and remain intact.</p>
+<p>To delete a folder/subfolder, do the following:</p>
+<ol class="arabic simple">
+<li><p>Right-click on the folder and, from the shortcut menu, select <span class="guilabel">Delete</span>.</p></li>
+<li><p>When the confirmation message displays, click <span class="guilabel">Yes</span>.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

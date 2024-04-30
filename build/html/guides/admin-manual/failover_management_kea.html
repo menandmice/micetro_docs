@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Managing failover configurations for Kea in Micetro" name="description" />
+<meta content="failover management, Kea, dhcp" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing Failover Relationships for Kea DHCP Services &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Managing Failover Relationships for Microsoft DHCP Services" href="failover_management_windows.html" />
+    <link rel="prev" title="Managing Failover Relationships for ISC DHCP Services" href="failover_management_isc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="failover_management.html">Failover Management</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="failover_management_isc.html">Managing Failover Relationships for ISC DHCP Services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Managing Failover Relationships for Kea DHCP Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kea-dhcp-high-availability">Kea DHCP High Availability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#high-availability-hooks-library">High Availability Hooks Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ports-and-networking">Ports and Networking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-dhcp-agent">Configuring the DHCP Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-high-availability-enabled-kea-dhcp-server-to-micetro">Adding a High Availability-enabled Kea DHCP Server to Micetro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fallback-behavior-and-indicators">Fallback Behavior and Indicators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#making-external-changes-to-kea-servers-in-high-availability">Making External Changes to Kea Servers in High Availability</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-kea-dhcp-failover-relationships">Viewing Kea DHCP Failover Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-failover-relationships-for-kea-dhcp">Creating Failover Relationships for Kea DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-failover-relationships">Modifying Failover Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-failover-relationships">Removing Failover Relationships</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="failover_management_windows.html">Managing Failover Relationships for Microsoft DHCP Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="failover_management.html">Failover Management</a></li>
+      <li class="breadcrumb-item active">Managing Failover Relationships for Kea DHCP Services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/failover_management_kea.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="managing-failover-relationships-for-kea-dhcp-services">
+<span id="failover-management-kea"></span><h1>Managing Failover Relationships for Kea DHCP Services<a class="headerlink" href="#managing-failover-relationships-for-kea-dhcp-services" title="Link to this heading"></a></h1>
+<p>Kea DHCP Failover maintains redundancy between two DHCP servers, enabling seamless service takeover in case of unavailability, and minimizing downtime and disruption to network operations.
+Failover relationships for Kea DHCP servers in Micetro are exclusively managed at the server level. When two Kea DHCP servers are in a failover relationship, Micetro ensures the identical replication of DHCP-related data from the primary to the secondary server. The synchronization process continues, copying changes from the primary to the secondary server until the failover relationship is deleted. This means that all scopes, pools, reservations, etc., are meticulously mirrored between the two servers, all under the exclusive management of Micetro.</p>
+<p>Key aspects include:</p>
+<ul class="simple">
+<li><p><strong>Failover Relationships</strong>: Establish, create, and remove failover relationships - one per service type - forming a redundant and synchronized configuration. These relationships are crucial for maintaining a synchronized state between DHCP servers. This feature is particularly beneficial in ensuring high availability and fault tolerance for DHCP services.</p></li>
+<li><p><strong>Server-Level Management</strong>: Failover relationships are managed at the server level, seamlessly integrating with Micetro. The Micetro failover management is built on top of the High Availability feature of Kea DHCP Servers.</p></li>
+<li><p><strong>Integration with Micetro</strong>: Streamlined DHCP service management across the network, offering a comprehensive approach to failover relationships and scopes.</p></li>
+</ul>
+<section id="kea-dhcp-high-availability">
+<h2>Kea DHCP High Availability<a class="headerlink" href="#kea-dhcp-high-availability" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Synchronized clocks are <strong>essential</strong> for the reliable operation of the High Availability setup. If a clock skew is not corrected and exceeds <em>60 seconds</em>, the High Availability service on each server will be terminated.</p>
+</div>
+<section id="high-availability-hooks-library">
+<h3>High Availability Hooks Library<a class="headerlink" href="#high-availability-hooks-library" title="Link to this heading"></a></h3>
+<p>The High Availability hooks library must be present on the file system <strong>before</strong> the Kea DHCP servers can be managed in High Availability mode.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>For RedHat-like systems (such as RHEL, CentOS, SUSE, Fedora), the hook library is typically located at <code class="docutils literal notranslate"><span class="pre">/usr/lib/x86_64-linux-gnu/kea/hooks/libdhcp_ha.so</span></code>.</p></li>
+<li><p>For Debian-based systems (such as Ubuntu, Linux Mint, Raspbian), the hook library is usually located at <code class="docutils literal notranslate"><span class="pre">/usr/lib64/kea/hooks/libdhcp_ha.so</span></code>.</p></li>
+<li><p>You can customize the library’s location by specifying the path using the <code class="docutils literal notranslate"><span class="pre">keaHooksLocation</span></code> in the preference file for the DHCP agent.</p></li>
+</ul>
+</div>
+<p>Two modes of failover operation are supported:</p>
+<dl class="simple">
+<dt>Load Balancing</dt><dd><ul class="simple">
+<li><p>Designate one server as primary and another as secondary.</p></li>
+<li><p>During normal operation, they are identical.</p></li>
+<li><p>Upon simultaneous startup and lease database synchronization, the primary server always synchronizes first. The secondary waits for the primary to complete before starting its own synchronization.</p></li>
+</ul>
+</dd>
+<dt>Hot Standby</dt><dd><ul class="simple">
+<li><p>Designate one server as primary and another as secondary.</p></li>
+<li><p>Only the primary server responds to DHCP requests during normal operation.</p></li>
+<li><p>The secondary (or standby) receives lease updates from the primary over the control channel.</p></li>
+<li><p>When the secondary server perceives the primary as offline, it begins responding to DHCP queries.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="ports-and-networking">
+<h3>Ports and Networking<a class="headerlink" href="#ports-and-networking" title="Link to this heading"></a></h3>
+<p>To ensure a seamless Kea High Availability setup, Micetro requires effective communication with each Kea DHCP server through specific ports. This communication is vital for both Micetro’s interaction with the servers and cross-communication between Kea DHCP servers via the <a class="reference internal" href="admin_dhcp_kea.html#kea-control-agent"><span class="std std-ref">Kea Control Agent</span></a>.</p>
+<p>The Kea Control Agent defaults to port <code class="docutils literal notranslate"><span class="pre">8000</span></code>. You can manually define this port in the configuration file, typically located at <code class="docutils literal notranslate"><span class="pre">/etc/kea/kea-ctrl-agent.conf</span></code>. It is imperative to keep this port open and accessible on every server hosting a Kea DHCP service and a Kea Control Agent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the <em>Configuration Backend</em> section is set and configured, Micetro assumes a shared configuration among all members and will not replicate changes between servers.</p>
+</div>
+<p>Below is a snippet from the <code class="docutils literal notranslate"><span class="pre">hook-libraries</span></code> section, showing how Micetro can successfully detect a failover relationship:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;hooks-libraries&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s2">&quot;library&quot;</span><span class="p">:</span> <span class="s2">&quot;/usr/lib/kea/hooks/libdhcp_ha.so&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;high-availability&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="s2">&quot;this-server-name&quot;</span><span class="p">:</span> <span class="s2">&quot;server1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;load-balancing&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;heartbeat-delay&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="s2">&quot;max-response-delay&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+            <span class="s2">&quot;max-ack-delay&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>
+            <span class="s2">&quot;max-unacked-clients&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;peers&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;server1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://192.168.56.33:8000/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;primary&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;auto-failover&quot;</span><span class="p">:</span> <span class="n">true</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;server2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://192.168.56.66:8000/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;secondary&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;auto-failover&quot;</span><span class="p">:</span> <span class="n">true</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;server3&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://192.168.56.99:8000/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;backup&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;auto-failover&quot;</span><span class="p">:</span> <span class="n">false</span>
+            <span class="p">}]</span>
+        <span class="p">}]</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">this-server-name</span></code> (Server Tag): This field must reflect the Kea DHCP server where the configuration file resides.</p>
+<p>This setting is also available via <span class="menuselection">Admin ‣ Service Management ‣ (Server) ‣ Action ‣ Edit Configuration</span> under the name <strong>Server tag</strong>. See <span class="xref std std-ref">kea-dhcp-server-properties</span>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max-response-delay</span></code>: This value should be greater than the <code class="docutils literal notranslate"><span class="pre">heartbeat-delay</span></code> duration and is typically set higher than the combined duration of multiple <code class="docutils literal notranslate"><span class="pre">heartbeat-delay</span></code> values.</p>
+<p>In the event of communication interruption, the server may transition to the <code class="docutils literal notranslate"><span class="pre">partner-down</span></code> state (when <code class="docutils literal notranslate"><span class="pre">max-unacked-clients</span></code> is 0) or initiate the failure-detection procedure. Setting <code class="docutils literal notranslate"><span class="pre">max-unacked-clients</span></code> to 0 ensures vigilant Kea servers that promptly change states upon connection loss. To allow some flexibility, consider setting <code class="docutils literal notranslate"><span class="pre">max-unacked-clients</span></code> to a positive number, for example, <em>5</em>.</p>
+<p>The default value for <code class="docutils literal notranslate"><span class="pre">max-response-delay</span></code> is <strong>60000 ms</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Configuring <code class="docutils literal notranslate"><span class="pre">max-response-delay</span></code> incorrectly may result in servers being unable to consistently and efficiently detect downtime between each other. This can compromise Micetro’s ability to ensure accurate replication and proper operation of the servers.</p>
+</div>
+</li>
+</ul>
+</section>
+<section id="configuring-the-dhcp-agent">
+<h3>Configuring the DHCP Agent<a class="headerlink" href="#configuring-the-dhcp-agent" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">preferences.cfg</span></code> file can be used to fine-tune the Kea High Availability setup within the DHCP agent.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">keaReplicateConfig</span></code>: If set to 0, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is <strong>1</strong>. Example: <code class="docutils literal notranslate"><span class="pre">&lt;keaReplicateConfig</span> <span class="pre">value=”0”/&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keaControlAgentHost</span></code>: Specifies the host to use when connecting to a control agent. The default value is <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> if the Kea Control Agent is running on the same machine, or it is the IP address of the server added to Micetro.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keaControlAgentPort</span></code>: Defines the port to use when connecting to the Kea Control Agent. The default value is <code class="docutils literal notranslate"><span class="pre">8000</span></code>.</p></li>
+</ul>
+</section>
+<section id="adding-a-high-availability-enabled-kea-dhcp-server-to-micetro">
+<h3>Adding a High Availability-enabled Kea DHCP Server to Micetro<a class="headerlink" href="#adding-a-high-availability-enabled-kea-dhcp-server-to-micetro" title="Link to this heading"></a></h3>
+<p>If the Kea high availability environment is set up correctly, you can add the primary Kea DHCP server to Micetro, much like any other DHCP server.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the DHCP agent is running on a machine <strong>other</strong> than the primary Kea DHCP server, a proxy must be defined in the <strong>Add DHCP server</strong> window in Micetro. In the window, enter the IP address or FQDN of the machine running the DHCP agent.</p>
+</div>
+</section>
+<section id="fallback-behavior-and-indicators">
+<h3>Fallback Behavior and Indicators<a class="headerlink" href="#fallback-behavior-and-indicators" title="Link to this heading"></a></h3>
+<p>After the primary Kea server has been added to Micetro, it assumes the primary role in communication with the High Availability cluster. All changes are written to this server, serving as the single source of truth for the configuration, with replication handled accordingly.</p>
+<section id="normal-operation">
+<h4>Normal Operation<a class="headerlink" href="#normal-operation" title="Link to this heading"></a></h4>
+<p>When both the primary Kea server and its secondary/backup partners are running and accessible, Micetro reports the Kea DHCP server status as <span class="guilabel">OK</span>.</p>
+</section>
+<section id="primary-server-offline">
+<h4>Primary Server Offline<a class="headerlink" href="#primary-server-offline" title="Link to this heading"></a></h4>
+<p>If the primary server is offline or unreachable from Micetro, the secondary/standby server takes over. Micetro reports the Kea DHCP service as <span class="guilabel">Impaired</span> during this period. The single source of truth becomes the in-memory config on the secondary/standby server until reconnection to the primary server is established.</p>
+</section>
+<section id="secondary-standby-backup-server-offline">
+<h4>Secondary/Standby/Backup Server Offline<a class="headerlink" href="#secondary-standby-backup-server-offline" title="Link to this heading"></a></h4>
+<p>If any of the secondary/standby/backup servers are offline, replication continues, but Micetro reports the Kea DHCP service as <span class="guilabel">Impaired</span>. When the affected server reactivates, automatic synchronization with the single source of truth occurs. (The in-memory config of the primary Kea server.)</p>
+</section>
+<section id="both-primary-and-secondary-standby-server-offline">
+<h4>Both Primary and Secondary/Standby Server Offline<a class="headerlink" href="#both-primary-and-secondary-standby-server-offline" title="Link to this heading"></a></h4>
+<p>If both primary and secondary/standby servers go offline, Micetro reports the Kea DHCP service as <span class="guilabel">Service down</span>. All operations result in errors, and replication is stopped until either the primary or the secondary/standby servers become active. The first active server becomes the single source of truth, with the primary overwriting any secondary/backup when it becomes active.</p>
+</section>
+<section id="dhcp-agent-offline">
+<h4>DHCP Agent Offline<a class="headerlink" href="#dhcp-agent-offline" title="Link to this heading"></a></h4>
+<p>In the unlikely event of the DHCP agent going offline, Kea High Availability information is momentarily lost. Upon the agent’s reconnection, Central attempts to reconnect to the preconfigured primary Kea DHCP server. After reconnecting, the configuration is parsed, the High Availability setup is detected, and replication between servers resumes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If the DHCP agent goes down while using the secondary/backup Kea server (due to primary downtime), the system will <strong>not</strong> be able to reconnect successfully. The primary Kea server must be reestablished to a working state before the system can reconnect.</p></li>
+<li><p>If the DHCP agent goes offline while the primary Kea server is down, reconnection is only possible when the primary Kea server becomes active again.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="making-external-changes-to-kea-servers-in-high-availability">
+<h3>Making External Changes to Kea Servers in High Availability<a class="headerlink" href="#making-external-changes-to-kea-servers-in-high-availability" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any modifications made to the configuration file through Micetro are instantly and automatically propagated to secondary/backup servers in a Kea DHCP High Availability setup. For immediate synchronization between Micetro and Kea DHCP servers, it is highly recommended to exclusively edit the configuration file through Micetro.</p>
+</div>
+<dl class="simple">
+<dt>Primary Server</dt><dd><p>Similar to the stand-alone server, Micetro synchronizes external changes on the primary Kea server according to a predefined schedule. Automatic propagation of changes to secondary/backup servers occurs only when the servers transition out of an active state and then become active again. To manually propagate the changes, you must make a change (any change) to the configuration through a Micetro feature, triggering a synchronization process.</p>
+</dd>
+<dt>Secondary Server(s)</dt><dd><p>The same rules apply to managing changes in the configuration and the <code class="docutils literal notranslate"><span class="pre">config-reload</span></code> command on secondary servers. However, Micetro will prioritize the current in-memory configuration of the primary Kea DHCP server in the high availability setup, overwriting any external changes.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="viewing-kea-dhcp-failover-relationships">
+<h2>Viewing Kea DHCP Failover Relationships<a class="headerlink" href="#viewing-kea-dhcp-failover-relationships" title="Link to this heading"></a></h2>
+<p>You can view existing Kea DHCP failover relationships at the server level. Micetro automatically detects and syncs all existing failover relationships.</p>
+<p>You can retrieve failover relationships through the API using the <code class="docutils literal notranslate"><span class="pre">GetDHCPFailoverRelationship</span></code>.</p>
+<p><strong>To view failover relationships in Micetro</strong>:</p>
+<ol class="arabic simple">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Service Management</span> in the upper-left corner.</p></li>
+<li><p>In the left sidebar, under <span class="guilabel">DHCP Services</span>, select <span class="guilabel">Kea</span>.</p></li>
+<li><p>Select the server you want to view, and then select <span class="guilabel">Failover management</span> either on the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>The Failover Management window will show all relationships associated with the selected server.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/failover-view-kea.png"><img alt="../../_images/failover-view-kea.png" src="../../_images/failover-view-kea.png" style="width: 80%;" /></a>
+</div></blockquote>
+<p>The right pane shows failover information for the selected Kea DHCP server.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/failover-view-kea-pane.png"><img alt="../../_images/failover-view-kea-pane.png" src="../../_images/failover-view-kea-pane.png" style="width: 80%;" /></a>
+</div></blockquote>
+</section>
+<section id="creating-failover-relationships-for-kea-dhcp">
+<h2>Creating Failover Relationships for Kea DHCP<a class="headerlink" href="#creating-failover-relationships-for-kea-dhcp" title="Link to this heading"></a></h2>
+<p>Each Kea DHCP server supports the creation of one Kea DHCPv4 and one Kea DHCPv6 failover relationship.</p>
+<p>If a Kea DHCP server functions as a secondary server in a failover relationship, creating additional relationships with it as a primary server is not possible.</p>
+<p>Micetro currently supports two failover server types in a relationship: one primary and one secondary. Therefore, creating failover relationships with backup servers is not supported.</p>
+<p><strong>To create a failover relationship through the API</strong>:</p>
+<p>API supports creation using <code class="docutils literal notranslate"><span class="pre">AddDHCPFailoverRelationship</span></code>.</p>
+<p>The following parameters are used for the <code class="docutils literal notranslate"><span class="pre">AddDHCPFailoverRelationship</span></code> command:</p>
+<ul class="simple">
+<li><p><strong>Name</strong>: The name of the DHCP failover relationship to be created.</p></li>
+<li><p><strong>PrimaryServer</strong>: The name of the primary DHCP server as it appears in Micetro.</p></li>
+<li><p><strong>SecondaryServer</strong>: The name of the secondary DHCP server as it appears in Micetro.</p></li>
+<li><p><strong>FailoverMode</strong>: The DHCP failover mode to use.</p></li>
+<li><p><strong>ServiceType</strong>: DHCPv4 or DHCPv6, defaults to DHCPv4.</p></li>
+</ul>
+<p><strong>To create a failover relationship in Micetro</strong>:</p>
+<ol class="arabic">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Service Management</span> in the upper-left corner.</p></li>
+<li><p>In the left sidebar, under <span class="guilabel">DHCP Services</span>, select <span class="guilabel">Kea</span>.</p></li>
+<li><p>Select the Kea DHCP server housing the scope for which you want to establish failover configuration, and then select <span class="guilabel">Failover management</span> either on the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select <span class="guilabel">Add Relationship</span> in the lower left corner, and complete the <strong>Add Relationship</strong> dialog box:</p>
+<a class="reference internal image-reference" href="../../_images/failover-add-kea.png"><img alt="../../_images/failover-add-kea.png" src="../../_images/failover-add-kea.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p><strong>Failover name</strong>: Specify the name of the failover peer.</p></li>
+<li><p><strong>Failover mode</strong>: Select the DHCP failover mode to use.</p></li>
+<li><p><strong>Partner server</strong>: Select the partner server for the failover configuration.</p></li>
+<li><p>Specify the DHCP version by choosing between DHCPv4 and DHCPv6; the default setting is DHCPv4.</p></li>
+</ul>
+</li>
+<li><p>After confirming the details on the <strong>Summary</strong> tab, click <span class="guilabel">Add</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Enable failover by having two hook libraries exist on the filesystem: libdhcp_lease_cmds.so and libdhcp_ha.so. The latter implements the HA feature, and the former enables control commands necessary for HA to manage leases on remote servers.</p></li>
+<li><p>Micetro searches for hooks in the default location (/usr/local/lib/kea/hooks/). If the hooks are elsewhere, you must specify the correct location using the keaHooksLocation preference value for the DHCP agent.</p></li>
+</ul>
+</div>
+</section>
+<section id="modifying-failover-relationships">
+<h2>Modifying Failover Relationships<a class="headerlink" href="#modifying-failover-relationships" title="Link to this heading"></a></h2>
+<p>It is not possible to modify Kea failover relationships. They must be removed and re-added if any changes are to be made.</p>
+</section>
+<section id="removing-failover-relationships">
+<h2>Removing Failover Relationships<a class="headerlink" href="#removing-failover-relationships" title="Link to this heading"></a></h2>
+<p><strong>To remove failover relationships, do one of the following</strong>:</p>
+<ol class="arabic simple">
+<li><p>Go to the <span class="guilabel">Service Management</span> tab on the <strong>Admin</strong> page, select the server containing the relationship you want to modify, and then select <span class="guilabel">Failover management</span> either on the <span class="guilabel">Action</span> or the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Select the relevant relationship, and then select <span class="guilabel">Remove</span> on the Row <span class="guilabel">…</span> menu.</p></li>
+<li><p>Decide whether to delete or disable the secondary scopes.</p></li>
+</ol>
+<blockquote>
+<div><p>-OR-</p>
+<ul class="simple">
+<li><p>The API offers <code class="docutils literal notranslate"><span class="pre">RemoveDHCPFailoverRelationships</span></code>. Just specify a reference to the Kea DHCP service, the name of the failover relationship, and the proper deconfigure action.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="failover_management_isc.html" class="btn btn-neutral float-left" title="Managing Failover Relationships for ISC DHCP Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="failover_management_windows.html" class="btn btn-neutral float-right" title="Managing Failover Relationships for Microsoft DHCP Services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

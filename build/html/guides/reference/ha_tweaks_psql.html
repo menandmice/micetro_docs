@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Tweaking the High Availability settings for PostgreSQL in Micetro by Men&amp;Mice" name="description" />
+<meta content="high availability, failover, PostgreSQL, Micetro" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostgreSQL HA tweaks &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PostgreSQL HA operations" href="psql_ha_maintenance.html" />
+    <link rel="prev" title="Migrate data from another database" href="db_migrate.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/introduction.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ui.html">Micetro user interface(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Micetro reference articles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Permissions reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_guide.html">Virtual Appliance Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="send_license_info.html">How to export and send license information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health_bar_information.html">Health Bar information (Management Console)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_zones.html">Dynamic Zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_route53.html">Configuring Amazon Route53</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerdns.html">Configuring PowerDNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_scripts.html">External scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-conf_location.html">named.conf validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="named-checkconf_timeout.html">Updating timeout value for named-checkconf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_updater_port.html">Changing the TCP port for the Men&amp;Mice Update Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_msa.html">Setting up a Managed Service Account to run M&amp;M DNS/DHCP Server Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bind_file_structure.html">BIND DNS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disable_auto_zone-transfer.html">Disable “Automatic adjustment of Zone Transfer”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_include.html">Men&amp;Mice DNS Server Controller and $INCLUDE Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_controller_generate.html">Expanding $GENERATE directives into records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_python_ldap.html">Installing Python for Men&amp;Mice Central on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snmp_oid.html">Which SNMP OIDs are used by Micetro in IP address and Subnet Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_console.html">Managing access control in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_control_example.html">Role-based access example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl_convert.html">Converting existing access control configurations in Micetro 10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ie_eol.html">Discontinuation of support for Internet Explorer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="psql_ha.html#install-pg-auto-failover">Install pg_auto-failover</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="psql_ha.html#install-requirements">Install requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="psql_ha.html#set-up-the-mmsuite-database-and-edit-config-files">Set up the mmsuite database and edit config files</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="psql_ha.html#further-information">Further information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mssql_ha.html">Always On Availability Groups</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Micetro reference articles</a></li>
+          <li class="breadcrumb-item"><a href="psql_ha.html">Setting up the PostgreSQL High Availability environment</a></li>
+      <li class="breadcrumb-item active">PostgreSQL HA tweaks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/reference/ha_tweaks_psql.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="postgresql-ha-tweaks">
+<span id="ha-tweaks-psql"></span><h1>PostgreSQL HA tweaks<a class="headerlink" href="#postgresql-ha-tweaks" title="Link to this heading"></a></h1>
+<section id="lower-timeout-threshold">
+<h2>Lower timeout threshold<a class="headerlink" href="#lower-timeout-threshold" title="Link to this heading"></a></h2>
+<section id="machine-monitor">
+<h3>Machine: monitor<a class="headerlink" href="#machine-monitor" title="Link to this heading"></a></h3>
+<p>We want to lower the database timeout value, i.e. when the failover should be performed if the primary database is unreachable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-p<span class="w"> </span><span class="o">[</span>port<span class="o">]</span><span class="w"> </span>-d<span class="w"> </span>pg_auto_failover
+<span class="c1"># List the health_check variables</span>
+SELECT<span class="w"> </span>name,<span class="w"> </span>setting<span class="w"> </span>FROM<span class="w"> </span>pg_settings<span class="w"> </span>WHERE<span class="w"> </span>name<span class="w"> </span>~<span class="w"> </span><span class="s1">&#39;pgautofailover\.health&#39;</span><span class="p">;</span>
+<span class="c1"># Check status of database every 5s, setthe timeout to 2s and set the node unhealthy timeout to 5s</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span>pgautofailover.health_check_period<span class="w"> </span>TO<span class="w"> </span><span class="m">5000</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span>pgautofailover.health_check_timeout<span class="w"> </span>TO<span class="w"> </span><span class="m">2000</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span>pgautofailover.node_considered_unhealthy_timeout<span class="w"> </span>TO<span class="w"> </span><span class="m">5000</span><span class="p">;</span>
+<span class="c1"># Reload config:</span>
+<span class="k">select</span><span class="w"> </span>pg_reload_conf<span class="o">()</span><span class="p">;</span>
+<span class="c1"># Verify changes</span>
+SELECT<span class="w"> </span>name,<span class="w"> </span>setting<span class="w"> </span>FROM<span class="w"> </span>pg_settings<span class="w"> </span>WHERE<span class="w"> </span>name<span class="w"> </span>~<span class="w"> </span><span class="s1">&#39;pgautofailover\.health&#39;</span><span class="p">;</span>
+SELECT<span class="w"> </span>name,<span class="w"> </span>setting<span class="w"> </span>FROM<span class="w"> </span>pg_settings<span class="w"> </span>WHERE<span class="w"> </span>name<span class="w"> </span>~<span class="w"> </span><span class="s1">&#39;pgautofailover\.node&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="create-a-startup-service">
+<h2>Create a startup service<a class="headerlink" href="#create-a-startup-service" title="Link to this heading"></a></h2>
+<p>For each machine create a startup service that runs the <code class="docutils literal notranslate"><span class="pre">pg_autoctl</span></code> process:</p>
+<section id="id1">
+<h3>Machine: monitor<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pg_autoctl<span class="w"> </span>-q<span class="w"> </span>show<span class="w"> </span>systemd<span class="w"> </span>--pgdata<span class="w"> </span>/var/lib/pgsql/<span class="o">[</span>monitor<span class="o">]</span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/pgautofailover.service
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pgautofailover.service
+</pre></div>
+</div>
+</section>
+<section id="machine-node-1">
+<h3>Machine: node-1<a class="headerlink" href="#machine-node-1" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pg_autoctl<span class="w"> </span>-q<span class="w"> </span>show<span class="w"> </span>systemd<span class="w"> </span>--pgdata<span class="w"> </span>/var/lib/pgsql/<span class="o">[</span>node-1<span class="o">]</span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/pgautofailover.service
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pgautofailover.service
+</pre></div>
+</div>
+</section>
+<section id="machine-node-2">
+<h3>Machine: node-2<a class="headerlink" href="#machine-node-2" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pg_autoctl<span class="w"> </span>-q<span class="w"> </span>show<span class="w"> </span>systemd<span class="w"> </span>--pgdata<span class="w"> </span>/var/lib/pgsql/<span class="o">[</span>node-2<span class="o">]</span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/pgautofailover.service
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pgautofailover.service
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuring-postgresql-logging">
+<h2>Configuring PostgreSQL logging<a class="headerlink" href="#configuring-postgresql-logging" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>Machine: monitor<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>-<span class="w"> </span>postgres
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:/usr/pgsql-12/bin&quot;</span>
+psql<span class="w"> </span>-p<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_truncate_on_rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;postgresql-%a.log&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_rotation_age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1440&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_line_prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;%m - %l - %p - %h - %u@%d - %x&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pg_log&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;WARNING&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_error_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;NOTICE&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_duration_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10s&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_checkpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_lock_waits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_temp_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_connections</span><span class="o">=</span>on<span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_disconnections</span><span class="o">=</span>on<span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_duration</span><span class="o">=</span>on<span class="p">;</span>
+SELECT<span class="w"> </span>pg_reload_conf<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Machine: node-1<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>-<span class="w"> </span>postgres
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:/usr/pgsql-12/bin&quot;</span>
+psql<span class="w"> </span>-p<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_truncate_on_rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;postgresql-%a.log&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_rotation_age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1440&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_line_prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;%m - %l - %p - %h - %u@%d - %x&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pg_log&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;WARNING&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_error_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;NOTICE&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_duration_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10s&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_checkpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_lock_waits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_temp_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_connections</span><span class="o">=</span>on<span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_disconnections</span><span class="o">=</span>on<span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_duration</span><span class="o">=</span>on<span class="p">;</span>
+SELECT<span class="w"> </span>pg_reload_conf<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Machine: node-2<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>-<span class="w"> </span>postgres
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:/usr/pgsql-12/bin&quot;</span>
+psql<span class="w"> </span>-p<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_truncate_on_rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;postgresql-%a.log&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_rotation_age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1440&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_line_prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;%m - %l - %p - %h - %u@%d - %x&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pg_log&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;WARNING&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_error_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;NOTICE&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_min_duration_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10s&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_checkpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_lock_waits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;on&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_temp_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_connections</span><span class="o">=</span>on<span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_disconnections</span><span class="o">=</span>on<span class="p">;</span>
+ALTER<span class="w"> </span>SYSTEM<span class="w"> </span>SET<span class="w"> </span><span class="nv">log_duration</span><span class="o">=</span>on<span class="p">;</span>
+SELECT<span class="w"> </span>pg_reload_conf<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="db_migrate.html" class="btn btn-neutral float-left" title="Migrate data from another database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="psql_ha_maintenance.html" class="btn btn-neutral float-right" title="PostgreSQL HA operations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

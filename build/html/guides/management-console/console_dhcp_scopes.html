@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to perform specific actions in Micetro by Men&amp;Mice associated with maintaining DHCP scopes" name="description" />
+<meta content="DHCP scopes, DHCP servers" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHCP Scopes (Management Console, obsolete) &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Devices (Management Console, obsolete)" href="console_devices.html" />
+    <link rel="prev" title="DHCP servers - Management Console (obsolete)" href="console_dhcp_servers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="management_console.html">Management Console (obsolete)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_console.html">Installing the Management Console (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_use_wizard.html">First use wizard (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_auth.html">External Authentication (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_updates.html">Update Guide (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_menus.html">Menu Bars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_toolbars.html">Toolbars (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_quickfilter.html">Quick Filter (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_servers.html">Authoritative DNS Servers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_zones.html">DNS Zones (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dns_records.html">DNS resource records (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp.html">DHCP - (Management Console, obsolete)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DHCP Scopes (Management Console, obsolete)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-scopes">Viewing Scopes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scopes-on-a-specific-dhcp-server">Scopes on a Specific DHCP Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selected-scope-menus">Selected Scope Menus</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-creation-wizard">Scope Creation Wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access">Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disable-enable">Disable/Enable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-migration-wizard">Scope Migration Wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duplication-wizard">Duplication Wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#folders">Folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reconcile-scope">Reconcile Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#converting-a-scope-to-a-range">Converting a Scope to a Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#converting-a-range-to-a-scope">Converting a Range to a Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scope-policies-windows-server-2012-or-newer">Scope Policies (Windows Server 2012 or newer)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#activate-deactivate-a-scope-policy">Activate/Deactivate a Scope Policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-new-scope-policy">Add a New Scope Policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#change-an-existing-scope-policy">Change an Existing Scope Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-functions">Other Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deleting-a-lease">Deleting a Lease</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ip-address-details">IP Address Details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subranges-of-scopes">Subranges of Scopes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renaming-a-scope">Renaming a Scope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#superscopes">Superscopes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-ip-address-information">Moving IP Address Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#host-discovery">Host Discovery</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-host-discovery-using-ping">Configuring Host Discovery Using Ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-host-discovery-by-querying-routers">Configuring Host Discovery by Querying Routers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#failover-configurations-and-split-scopes">Failover Configurations and Split Scopes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#managing-failover-configurations-isc-dhcp">Managing Failover Configurations (ISC DHCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#managing-failover-configurations-windows-server-2012">Managing Failover Configurations (Windows Server 2012)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#managing-split-scopes">Managing Split Scopes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console_devices.html">Devices (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_snmp_profiles.html">Configuring Host Discovery by Querying Routers (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_address_spaces.html">Address Space Management - (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_add_dns_server.html">New DNS Server (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_isc.html">ISC DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console_dhcp_cisco.html">Cisco DHCP (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_maintenance.html">Maintenance  (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_management.html">Appliance management (Management Console, obsolete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_appliance.html">Caching DNS Servers (Management Console, obsolete)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="management_console.html">Management Console (obsolete)</a></li>
+      <li class="breadcrumb-item active">DHCP Scopes (Management Console, obsolete)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/management-console/console_dhcp_scopes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dhcp-scopes-management-console-obsolete">
+<span id="console-dhcp-scopes"></span><h1>DHCP Scopes (Management Console, obsolete)<a class="headerlink" href="#dhcp-scopes-management-console-obsolete" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This section shows you how to perform specific actions in Micetro associated with maintaining your DHCP scopes, such as creating and modifying reservations, setting scope options and working with split scopes.</p>
+</section>
+<section id="viewing-scopes">
+<h2>Viewing Scopes<a class="headerlink" href="#viewing-scopes" title="Link to this heading"></a></h2>
+<section id="scopes-on-a-specific-dhcp-server">
+<h3>Scopes on a Specific DHCP Server<a class="headerlink" href="#scopes-on-a-specific-dhcp-server" title="Link to this heading"></a></h3>
+<p>It is easy to view the DHCP scopes that reside on individual DHCP Servers that are being managed by the Management Console. Simply click on the plus <span class="guilabel">+</span> sign next to the DHCP Servers object in the <em>Object Section</em>, and select the DHCP server containing the scopes you want to view.</p>
+</section>
+<section id="selected-scope-menus">
+<h3>Selected Scope Menus<a class="headerlink" href="#selected-scope-menus" title="Link to this heading"></a></h3>
+<p>When working with scopes, a right-click, shortcut menu is offered. The menu options change, based upon the type of DHCP server the scope is hosted on: MS, ISC or Cisco.</p>
+<section id="ms-shortcut-menu">
+<h4>MS Shortcut Menu<a class="headerlink" href="#ms-shortcut-menu" title="Link to this heading"></a></h4>
+<dl>
+<dt>Open</dt><dd><p>Opens the currently selected IP Address.</p>
+</dd>
+<dt>Delete</dt><dd><p>This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.</p>
+</dd>
+<dt>History</dt><dd><p>Shows any changes made to the selected item. These changes are displayed in a new window.</p>
+</dd>
+<dt>Ping</dt><dd><p>Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.</p>
+</dd>
+<dt>Claim</dt><dd><p>Allows you to “claim” an address to prevent accidental assignment but without creating a DNS entry for it.</p>
+</dd>
+<dt>Create Address Pool</dt><dd><p>Creates an address pool for the selected scope. Complete the From and To fields in the DHCP Address Pool dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.</p>
+</dd>
+<dt>Edit Address Pool</dt><dd><p>To edit an existing pool, click anywhere in the applicable address pool, right-click, select <span class="guilabel">Edit Address Pool</span> and, in the dialog box, make the desired edits.</p>
+</dd>
+<dt>Options for Pool</dt><dd><p><em>ISC DHCP only.</em> To set options for a pool, click anywhere in the applicable address pool, right-click, select Options for Pool and, in the Options dialog box, make the desired changes.</p>
+</dd>
+<dt>Permits for Pool</dt><dd><p><em>ISC DHCP only.</em> Allows you to specify permits for an address pool. To set access pool permits, do the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Click anywhere in the applicable address pool, right-click and select <span class="guilabel">Permits for Pool</span>. The <em>Pool Permits</em> dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">Add</span> to create a new access pool permit.</p></li>
+<li><p>Enter the permit settings and click <span class="guilabel">OK</span> to save the changes and close the dialog box.</p></li>
+<li><p>Use the <span class="guilabel">Edit</span> and <span class="guilabel">Delete</span> buttons to modify or delete existing permits.</p></li>
+</ol>
+</div></blockquote>
+</dd>
+<dt>Delete Address Pool(s)</dt><dd><p>To delete an existing pool, click anywhere in the applicable assigned range, right-click and select <span class="guilabel">Delete Address Pool(s)</span>.</p>
+</dd>
+<dt>Create Excluded Range</dt><dd><p><em>MS DHCP only</em>. Allows you to exclude a single IP Address or an entire range of addresses from being used. You can only exclude addresses that are already part of an address pool. To create an excluded range, specify the From and To IP Addresses. All the addresses between and including the ones entered will be excluded.</p>
+</dd>
+<dt>Edit Excluded Range</dt><dd><p><em>MS DHCP only.</em> To edit an existing range, click anywhere in the applicable excluded range, right-click, select <span class="guilabel">Edit Excluded Range</span> and, in the dialog box, make the desired edits.</p>
+</dd>
+<dt>Delete Excluded Range(s)</dt><dd><p><em>MS DHCP only.</em> To delete an existing range, click anywhere in the applicable excluded range, right-click and select <span class="guilabel">Delete Excluded Range(s)</span>. The entire excluded range is removed.</p>
+</dd>
+<dt>Create Reservation</dt><dd><p>Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create a reservation, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the IP Address you want to reserve, right-click on it, and select <span class="guilabel">Create Reservation</span> from the pop-up menu. The <em>DHCP Reservation</em> dialog box displays.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Name</dt><dd><p>Assign a name to identify the reserved address.</p>
+</dd>
+<dt>MAC Address</dt><dd><p>Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.</p>
+</dd>
+<dt>Description</dt><dd><p>(Optional) User defined description.</p>
+</dd>
+<dt>Supported Types</dt><dd><p>Select whether this reservation should support DHCP, BOOTP (i.e., Bootstrap Protocol), or Both (default).</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>To specify whether the DHCP server automatically updates record in the DNS server or not, click the <span class="guilabel">DNS</span> tab.</p></li>
+<li><p>Enable DNS dynamic updates according to the settings below. Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Dynamically update DNS A and PTR records</dt><dd><p>Specifies that the DHCP server update forward and reverse lookups be based on the type of request made by the client during the lease process.</p>
+</dd>
+<dt>Always dynamically update DNS A and PTR records</dt><dd><p>Specifies that the DHCP server update forward and reverse DNS lookups when a client acquires a lease, regardless of the type of request used to acquire it.</p>
+</dd>
+<dt>Discard A and PTR records when lease is deleted</dt><dd><p>Specifies whether the DHCP server discards forward DNS lookups for clients when a lease expires.</p>
+</dd>
+<dt>Dynamically update DNS A and PTR records for DHCP clients that do not request updates</dt><dd><p>Specifies whether the DHCP server sends dynamic updates to the DNS server for DHCP clients that do not support performing these updates. If selected, clients running earlier versions of Windows are updated by the DHCP server for both their host (A) and pointer (PTR) resource records.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">OK</span>. The address is now listed as reserved in the DHCP Scope dialog box.</p></li>
+</ol>
+</dd>
+<dt>Edit a Reservation</dt><dd><p>To edit an existing reservation, right-click on the reservation you want to change and select <span class="guilabel">Edit a Reservation</span>. Then, make the necessary edits.</p>
+</dd>
+<dt>Options for a Reservation</dt><dd><p>To select options for a reservation, right-click on the reservation and select <span class="guilabel">Options for a Reservation</span>. The DHCP Reservations dialog box displays. Refer to <a class="reference internal" href="../user-manual/dhcp_options.html#dhcp-options"><span class="std std-ref">Options (Management Console)</span></a> for details on this dialog box.</p>
+</dd>
+<dt>Delete Reservation(s)</dt><dd><p>To delete an existing reservation, right-click on the reservation you want to remove and select <span class="guilabel">Delete Reservation(s)</span>.</p>
+</dd>
+</dl>
+</section>
+<section id="isc-shortcut-menu">
+<h4>ISC Shortcut Menu<a class="headerlink" href="#isc-shortcut-menu" title="Link to this heading"></a></h4>
+<dl>
+<dt>Open</dt><dd><p>Opens the currently selected IP Address.</p>
+</dd>
+<dt>Delete</dt><dd><p>This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.</p>
+</dd>
+<dt>History</dt><dd><p>Shows any changes made to the selected item. These changes are displayed in a new window.</p>
+</dd>
+<dt>Ping</dt><dd><p>Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.</p>
+</dd>
+<dt>Claim</dt><dd><p>Allows you to “claim” an address to prevent accidental assignment but without creating a DNS entry for it.</p>
+</dd>
+<dt>Create Address Pool</dt><dd><p>Creates an address pool for the selected scope. Complete the From and To fields in the DHCP Address Pool dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.</p>
+</dd>
+<dt>Edit Address Pool</dt><dd><p>To edit an existing pool, click anywhere in the applicable assigned range, right-click, select <span class="guilabel">Edit Address Pool</span> and, in the dialog box, make the desired edits.</p>
+</dd>
+<dt>Options for Pool</dt><dd><p>When selected, the <em>DHCP Options</em> dialog box displays. Refer to <a class="reference internal" href="../user-manual/dhcp_options.html#dhcp-options"><span class="std std-ref">Options (Management Console)</span></a> for details on this dialog box.</p>
+</dd>
+<dt>Delete Address Pool(s)</dt><dd><p>To delete an existing pool, click anywhere in the applicable assigned range, right-click and select <span class="guilabel">Delete Address Pool(s)</span>.</p>
+</dd>
+<dt>Create Reservation</dt><dd><p>Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create an address, do the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Locate the IP Address you want to reserve, right-click on it, and select <span class="guilabel">Create Reservation</span>. The <em>DHCP Reservation</em> dialog box displays.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Name</dt><dd><p>Assign a name to identify the reserved address.</p>
+</dd>
+<dt>MAC Address</dt><dd><p>Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.</p>
+</dd>
+<dt>DDNS hostname</dt><dd><p>Specifies the DNS domain name to use to store the A record for a DHCP client.</p>
+</dd>
+<dt>IP Address</dt><dd><p>Enter an IP Address for the reservation. You can add additional IP Addresses by clicking the plus sign and enter an IP Address in the field that displays.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</div></blockquote>
+</dd>
+<dt>Edit a Reservation</dt><dd><p>To edit an existing reservation, right-click on the reservation you want to change and select <span class="guilabel">Edit a Reservation</span>. Then, make the necessary edits.</p>
+</dd>
+<dt>Options for a Reservation</dt><dd><p>To select options for a reservation, right-click on the reservation and select <span class="guilabel">Options for a Reservation</span>. The <em>DHCP Reservations Options</em> dialog box displays. Refer to <a class="reference internal" href="../user-manual/dhcp_options.html#dhcp-options"><span class="std std-ref">Options (Management Console)</span></a> for details on this dialog box.</p>
+</dd>
+<dt>Delete Reservation(s)</dt><dd><p>To delete an existing reservation, right-click on the reservation you want to remove and select <span class="guilabel">Delete Reservation(s)</span>.</p>
+</dd>
+</dl>
+</section>
+<section id="isc-kea-shortcut-menu">
+<h4>ISC Kea Shortcut Menu<a class="headerlink" href="#isc-kea-shortcut-menu" title="Link to this heading"></a></h4>
+<dl>
+<dt>Open</dt><dd><p>Opens the currently selected IP Address.</p>
+</dd>
+<dt>Delete</dt><dd><p>This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.</p>
+</dd>
+<dt>History</dt><dd><p>Shows any changes made to the selected item. These changes are displayed in a new window.</p>
+</dd>
+<dt>Ping</dt><dd><p>Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.</p>
+</dd>
+<dt>Claim</dt><dd><p>Allows you to “claim” an address to prevent accidental assignment but without creating a DNS entry for it.</p>
+</dd>
+<dt>Create Address Pool</dt><dd><p>Creates an address pool for the selected scope. Complete the From and To fields in the DHCP Address Pool dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.</p>
+</dd>
+<dt>Edit Address Pool</dt><dd><p>To edit an existing pool, click anywhere in the applicable assigned range, right-click, select <span class="guilabel">Edit Address Pool</span> and, in the dialog box, make the desired edits.</p>
+</dd>
+<dt>Options for Pool</dt><dd><p>When selected, the DHCP Options dialog box displays. Refer to <a class="reference internal" href="../user-manual/dhcp_options.html#dhcp-options"><span class="std std-ref">Options (Management Console)</span></a> for details on this dialog box.</p>
+</dd>
+<dt>Delete Address Pool(s)</dt><dd><p>To delete an existing pool, click anywhere in the applicable assigned range, right-click and select <span class="guilabel">Delete Address Pool(s)</span>.</p>
+</dd>
+<dt>Create Reservation</dt><dd><p>Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create an address, do the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Locate the IP Address you want to reserve, right-click on it, and select <span class="guilabel">Create Reservation</span>. The <em>DHCP Reservation</em> dialog box displays.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>MAC Address</dt><dd><p>Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.</p>
+</dd>
+<dt>DDNS hostname</dt><dd><p>Specifies the DNS domain name to use to store the A record for a DHCP client.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</div></blockquote>
+</dd>
+<dt>Edit a Reservation</dt><dd><p>To edit an existing reservation, right-click on the reservation you want to change and select <span class="guilabel">Edit a Reservation</span>. Then, make the necessary edits.</p>
+</dd>
+<dt>Options for a Reservation</dt><dd><p>To select options for a reservation, right-click on the reservation and select <span class="guilabel">Options for a Reservation</span>. The <em>DHCP Reservations Options</em> dialog box displays. Refer to <a class="reference internal" href="../user-manual/dhcp_options.html#dhcp-options"><span class="std std-ref">Options (Management Console)</span></a> for details on this dialog box.</p>
+</dd>
+<dt>Delete Reservation(s)</dt><dd><p>To delete an existing reservation, right-click on the reservation you want to remove and select <span class="guilabel">Delete Reservation(s)</span>.</p>
+</dd>
+</dl>
+</section>
+<section id="cisco-shortcut-menu">
+<h4>Cisco Shortcut Menu<a class="headerlink" href="#cisco-shortcut-menu" title="Link to this heading"></a></h4>
+<dl>
+<dt>Open</dt><dd><p>Opens the currently selected IP Address.</p>
+</dd>
+<dt>Delete</dt><dd><p>This option is enabled when there is an existing DNS entry for the IP Address or there is custom property data for the IP Address. When Delete is selected, the additional data is removed; however, the IP Address itself remains intact.</p>
+</dd>
+<dt>History</dt><dd><p>Shows any changes made to the selected item. These changes are displayed in a new window.</p>
+</dd>
+<dt>Ping</dt><dd><p>Allows you to ping the selected server. If the ping is successful, a green dot displays; if unsuccessful, a red dot displays.</p>
+</dd>
+<dt>Claim</dt><dd><p>Allows you to “claim” an address to prevent accidental assignment but without creating a DNS entry for it.</p>
+</dd>
+<dt>Create Excluded Range</dt><dd><p>Allows you to exclude a single IP Address or an entire range of addresses from being used. You can only exclude addresses that are already part of an address pool. To create an excluded range, specify the From and To IP Addresses. All the addresses between and including the ones entered will be excluded.</p>
+</dd>
+<dt>Edit Excluded Range</dt><dd><p>To edit an existing range, click anywhere in the applicable excluded range, right-click, select <span class="guilabel">Edit Excluded Range</span> and, in the dialog box, make the desired edits.</p>
+</dd>
+<dt>Delete Excluded Range(s)</dt><dd><p>To delete an existing range, click anywhere in the applicable excluded range, right-click and select <span class="guilabel">Delete Excluded Range(s)</span>. The entire excluded range is removed.</p>
+</dd>
+<dt>Create Reservation</dt><dd><p>Reservations can be created in address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create an address, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the IP Address you want to reserve, right-click on it, and select <span class="guilabel">Create Reservation</span>. The <em>DHCP Reservation</em> dialog box displays.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Name</dt><dd><p>Assign a name to identify the reserved address.</p>
+</dd>
+<dt>Reservation Method</dt><dd><p>Choose the reservation method for this reservation. You can choose either Client Identifier or Hardware Address.</p>
+</dd>
+<dt>Client Identifier / MAC Address</dt><dd><p>Depending on your choice for Reservation Method, enter the Client Identifier or MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.</p>
+</dd>
+<dt>DDNS hostname</dt><dd><p>Specifies the DNS domain name to use to store the A record for a DHCP client.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</dd>
+<dt>Edit a Reservation</dt><dd><p>To edit an existing reservation, right-click on the reservation you want to change and select <span class="guilabel">Edit a Reservation</span>. Then, make the necessary edits.</p>
+</dd>
+<dt>Options for a Reservation</dt><dd><p>To select options for a reservation, right-click on the reservation and select <span class="guilabel">Options for a Reservation</span>. The <em>DHCP Reservations</em> dialog box displays. Refer to <a class="reference internal" href="../user-manual/dhcp_options.html#dhcp-options"><span class="std std-ref">Options (Management Console)</span></a> for details on this dialog box.</p>
+</dd>
+<dt>Delete Reservation(s)</dt><dd><p>To delete an existing reservation, right-click on the reservation you want to remove and select <span class="guilabel">Delete Reservation(s)</span>.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+<section id="scope-creation-wizard">
+<h2>Scope Creation Wizard<a class="headerlink" href="#scope-creation-wizard" title="Link to this heading"></a></h2>
+<p>This section describes how to create and edit DHCP scopes with the new <em>DHCP Scope Creation Wizard</em>.</p>
+<p>Whenever you create a new scope, Micetro automatically checks whether the new scope conflicts with an existing scope or an IPAM range.</p>
+<p>The Wizard has additional steps, or skips over some steps, depending on the type of DHCP server the scope is being created on, and whether the <a class="reference internal" href="../user-manual/ipam.html#active-directory"><span class="std std-ref">AD Sites and Subnets</span></a> integration has been enabled.</p>
+<p>To create a new scope on the MS DHCP server, do the following:</p>
+<ol class="arabic simple">
+<li><p>In the object list, right-click on <span class="guilabel">DHCP Scopes</span> and, from the shortcut menu, select <span class="guilabel">New Scope</span>. Alternatively, right click on an existing IP address range, and select <span class="guilabel">Convert To DHCP Scope</span>.</p></li>
+<li><p>The <em>Scope Creation Wizard</em> dialog appears.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console-dhcp-scope-creation-wizard.png"><img alt="../../_images/console-dhcp-scope-creation-wizard.png" class="align-center" src="../../_images/console-dhcp-scope-creation-wizard.png" style="width: 60%;" /></a>
+<dl>
+<dt>Subnet</dt><dd><p>Enter the subnet in CIDR notation, e.g. 5.5.5.0/24, and click <span class="guilabel">Next</span>.</p>
+</dd>
+<dt>Server and scope type</dt><dd><p>Select the type, either Single scope, Split scope, or Failover scope (only on Windows 2012 and newer DHCP servers) and the DHCP server to create the scope on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you change the type to Failover scope, only Windows 2012 and newer servers are shown.</p>
+</div>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>Select second server (Split scope) or Failover Relationship (Failover Scope).</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is skipped if Single scope was selected, or if Failover Scope is selected and there is only one Failover Relationship on the selected DHCP server.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Address pool. Enter the address range for the address pool. By default, it is set to cover the entire scope.</p></li>
+<li><p>Range properties. Enter the custom properties for the IP address range.</p></li>
+<li><p>Enabled or Disabled.</p></li>
+<li><p>Active Directory Site selection. If you have enabled <a class="reference internal" href="../user-manual/ipam.html#active-directory"><span class="std std-ref">AD Sites and Subnets</span></a>, the Wizard will ask you which AD site the new DHCP Scope should be associated to.</p></li>
+<li><p>Scope properties.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Microsoft DHCP servers, if the scope is a part of a MS DHCP Superscope, enter the name of the Superscope here, or leave empty.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Cisco DHCP Servers the only configurable scope property is “Import All”. When checked, it imports Dynamic Host Configuration Protocol (DHCP) option parameters into the DHCP server database. Refer to the Cisco IOS IP Addressing Command Reference document for more information.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>DNS Update Settings (only Microsoft DHCP servers)</p></li>
+<li><p>Save Comment</p></li>
+<li><p>Summary: The changes the Wizard will perform are summarized here and applied once the user clicks “Finish”.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Once the scope has been created, you must set access privileges for the scope if you want to allow users to make any changes to it, assuming the initial access for Ranges/Scopes has not been set appropriately.</p>
+</div>
+</section>
+<section id="access">
+<h2>Access<a class="headerlink" href="#access" title="Link to this heading"></a></h2>
+<p>For complete details on this function, refer to <a class="reference internal" href="../admin-manual/access_control_legacy.html#global-access"><span class="std std-ref">Global Access</span></a>.</p>
+</section>
+<section id="delete">
+<h2>Delete<a class="headerlink" href="#delete" title="Link to this heading"></a></h2>
+<p>Use the following procedure to remove a scope definition from the Management Console.</p>
+<ol class="arabic simple">
+<li><p>Locate the DHCP Scope you want to remove and right-click on it.</p></li>
+<li><p>From the pop-up menu, select <span class="guilabel">Delete</span>. A dialog prompts you to confirm your decision to delete this scope.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to delete the scope, or <span class="guilabel">Cancel</span> to leave it.</p></li>
+</ol>
+</section>
+<section id="disable-enable">
+<h2>Disable/Enable<a class="headerlink" href="#disable-enable" title="Link to this heading"></a></h2>
+<p>If you are no longer using a particular scope, but do not want to delete it completely because you may need it in the future, you can disable the scope instead. A scope that is disabled will be ignored by the DHCP server until it is re-enabled. Use the following procedure to disable/enable a scope.</p>
+<ol class="arabic simple">
+<li><p>Locate the DHCP Scope you want to disable/enable and right-click on it. Scopes that are currently disabled have faded icons next to them.</p></li>
+<li><p>From the pop-up menu, select <span class="guilabel">Disable</span> to disable this scope, or if the scope is already disabled, select <span class="guilabel">Enable</span> to reactivate it.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>New scopes are always disabled by default so you can configure the properties before the DHCP server begins using it.</p>
+</div>
+</section>
+<section id="scope-migration-wizard">
+<h2>Scope Migration Wizard<a class="headerlink" href="#scope-migration-wizard" title="Link to this heading"></a></h2>
+<p>The <em>Scope Migration Wizard</em> allows users to migrate one or more scopes from one server to another, including all data in the scope.</p>
+<p>To migrate a scope, do the following:</p>
+<ol class="arabic simple">
+<li><p>In the Manager window, select one or more scopes.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Migrate Scope</span>. The <em>Migrate Scope(s) Wizard</em> dialog box displays.</p></li>
+</ol>
+<dl class="simple">
+<dt>Server</dt><dd><p>Click the drop-down list and select onto which you want to migrate this scope(s).</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">Next</span>. The <em>Migration Options</em> dialog box displays.</p></li>
+<li><p>For each of the resulting screens, make a selection/entry and move through the wizard.</p></li>
+</ol>
+</section>
+<section id="duplication-wizard">
+<h2>Duplication Wizard<a class="headerlink" href="#duplication-wizard" title="Link to this heading"></a></h2>
+<p>To duplicate a DHCP scope you should use the Duplicate Scope wizard. The duplicate will initially have the exact same properties as the original, but you will have the option to assign the duplicate to a different DHCP server and modify the duplicated values.</p>
+<p>Within this wizard, you can do the following:</p>
+<ul class="simple">
+<li><p>Create a new scope</p></li>
+<li><p>Create a split scope interface</p></li>
+</ul>
+<p>To launch the wizard, do the following:</p>
+<ol class="arabic simple">
+<li><p>In the <em>Object Section</em>, click on <span class="guilabel">DHCP Scopes</span>.</p></li>
+<li><p>In the <em>Object List</em>, right-click on the DHCP Scope you want to duplicate and, from the shortcut menu, select <span class="guilabel">Duplicate</span>. The <em>Duplicate scope wizard</em> launches.</p></li>
+<li><p>For each of the resulting screens, make a selection/entry and move through the wizard.</p></li>
+</ol>
+</section>
+<section id="folders">
+<h2>Folders<a class="headerlink" href="#folders" title="Link to this heading"></a></h2>
+<p>Refer to <a class="reference internal" href="../user-manual/object_folders.html#object-folders"><span class="std std-ref">Object folders</span></a> for details on this function.</p>
+</section>
+<section id="reconcile-scope">
+<h2>Reconcile Scope<a class="headerlink" href="#reconcile-scope" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Applies to MS DHCP Servers only.</p>
+</div>
+<p>Use this function to fix inconsistencies between information in the registry and the DHCP database.</p>
+<ol class="arabic simple">
+<li><p>In the <em>Object List</em>, select <span class="guilabel">DHCP Scopes</span> and then select a scope.</p></li>
+<li><p>Right-click the scope and select <span class="guilabel">Reconcile Scopes</span>.</p></li>
+<li><p>Choose whether you want to verify only or fix any inconsistencies and click <span class="guilabel">OK</span> to complete the action.</p></li>
+</ol>
+<p>For more information see <a class="reference external" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN">the Microsoft documentation</a>.</p>
+</section>
+<section id="converting-a-scope-to-a-range">
+<h2>Converting a Scope to a Range<a class="headerlink" href="#converting-a-scope-to-a-range" title="Link to this heading"></a></h2>
+<p>Use this function to convert an existing scope to an IP Address range, while keeping all the settings intact.</p>
+<ol class="arabic simple">
+<li><p>In the <em>Object List</em>, select <span class="guilabel">DHCP Scopes</span> and then select a scope.</p></li>
+<li><p>From the menu bar, select <span class="menuselection">Range ‣ Convert to IP Address Range</span>.</p></li>
+<li><p>When the Men&amp;Mice Management Console confirmation dialog box appears, click <span class="guilabel">Yes</span> to convert the range.</p></li>
+</ol>
+</section>
+<section id="converting-a-range-to-a-scope">
+<h2>Converting a Range to a Scope<a class="headerlink" href="#converting-a-range-to-a-scope" title="Link to this heading"></a></h2>
+<p>Use this function to convert an existing IP Address range to a scope, while keeping all the settings intact.</p>
+<ol class="arabic simple">
+<li><p>In the <em>Object List</em>, select <span class="guilabel">IP Address Ranges</span> and then select a range.</p></li>
+<li><p>From the menu bar, select <span class="menuselection">Range ‣ Convert to DHCP Scope</span>, or right click and select <span class="guilabel">Convert to DHCP Scope</span>. The <em>Scope Creation Wizard</em> will appear, with the subnet field pre-populated for the selected range.</p></li>
+<li><p>Clicking <span class="guilabel">Next</span> will continue with the <em>Scope Creation Wizard</em> as normal.</p></li>
+</ol>
+</section>
+<section id="scope-policies-windows-server-2012-or-newer">
+<h2>Scope Policies (Windows Server 2012 or newer)<a class="headerlink" href="#scope-policies-windows-server-2012-or-newer" title="Link to this heading"></a></h2>
+<p>If you are managing DHCP servers on Windows Server 2012 or newer, you can use Micetro to set scope policies for individual scopes.</p>
+<section id="activate-deactivate-a-scope-policy">
+<h3>Activate/Deactivate a Scope Policy<a class="headerlink" href="#activate-deactivate-a-scope-policy" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In the <em>Scope List</em>, right-click a scope that is stored on a Windows 2012 DHCP server.</p></li>
+<li><p>From the shortcut menu, select <span class="guilabel">Manage Policies</span>. The <em>DHCP Scope Policy Management</em> dialog box displays.</p></li>
+<li><p>The dialog box shows the current status of DHCP scope policies for the selected scope.</p></li>
+<li><p>To activate DHCP scope polices, click the <span class="guilabel">Activate</span> button. If DHCP scope polices are active, the button text shows <em>Deactivate</em>. To deactivate the DHCP scope policies, click the <span class="guilabel">Deactivate</span> button.</p></li>
+<li><p>Click <span class="guilabel">Close</span>.</p></li>
+</ol>
+</section>
+<section id="add-a-new-scope-policy">
+<h3>Add a New Scope Policy<a class="headerlink" href="#add-a-new-scope-policy" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In the <em>Scope List</em>, right-click a scope that is stored on a Windows 2012 DHCP server and, from the shortcut menu, select <span class="guilabel">Manage Policies</span>. The <em>DHCP Scope Policy Management</em> dialog box displays.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button. The <em>DHCP Policy</em> dialog box displays.</p></li>
+<li><p>Enter a name and description for the DHCP policy in the corresponding fields.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button in the <em>Conditions</em> section to add a new condition for the DHCP policy. The <em>DHCP Policy Condition</em> dialog box displays.</p></li>
+<li><p>Specify the condition you want to use and click <span class="guilabel">OK</span> to save the condition and close the dialog box. Note that you can enter multiple conditions for a DHCP policy by clicking the <span class="guilabel">Add</span> button in the <em>DHCP Policy</em> dialog box.</p></li>
+<li><p>To edit or delete an existing DHCP Policy condition, select the condition from the list of DHCP Policy conditions, and click the corresponding button.</p></li>
+<li><p>If there is more than one condition, you need to specify whether to use the OR or AND operator when evaluating the conditions. Select the corresponding radio button in the DHCP Policy dialog box.</p></li>
+</ol>
+<section id="ranges">
+<h4>Ranges<a class="headerlink" href="#ranges" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Click the <span class="guilabel">Add</span> button in the ranges section to specify an IP Address range that should be affected by the policy. The <em>Range specification</em> dialog box displays.</p></li>
+<li><p>Enter the range using the from and to addresses separated by a hyphen (for example, 192.168.1.10-192.168.1.20).</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button to add the range and close the dialog box. NOTE: You can enter multiple ranges by using the <em>Add Range</em> dialog box for each range you want to add.</p></li>
+<li><p>To edit or delete an existing range, select the range from the list of ranges, and click the corresponding button.</p></li>
+<li><p>When you have added all conditions and ranges, click the <span class="guilabel">OK</span> button to save the DHCP policy.</p></li>
+</ol>
+</section>
+<section id="dns-dynamic-updates">
+<h4>DNS Dynamic Updates<a class="headerlink" href="#dns-dynamic-updates" title="Link to this heading"></a></h4>
+<p>Options specific to dynamic updates are in the field named <strong>DNS Dynamic Updates</strong>. It can be configured accordingly for the policy.</p>
+</section>
+<section id="lease-duration">
+<h4>Lease duration<a class="headerlink" href="#lease-duration" title="Link to this heading"></a></h4>
+<p>The lease duration can be specified per policy in those fields.</p>
+</section>
+<section id="dhcp-options">
+<h4>DHCP Options<a class="headerlink" href="#dhcp-options" title="Link to this heading"></a></h4>
+<p>To specify DHCP options for this policy, click the <span class="guilabel">Options</span> button. That will open a dialog which will allow the user to specify the options.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If this is unconfigured, the options will be inherited from the scope or server.</p>
+</div>
+</section>
+</section>
+<section id="change-an-existing-scope-policy">
+<h3>Change an Existing Scope Policy<a class="headerlink" href="#change-an-existing-scope-policy" title="Link to this heading"></a></h3>
+<p>You can edit, delete or disable existing DHCP Scope Policies. You can also change the order of DHCP scope policies.</p>
+<ol class="arabic simple">
+<li><p>In the <em>Scope List</em>, right-click a scope that is stored on a Windows 2012 DHCP server and, from the shortcut menu, select <span class="guilabel">Manage Policies</span>. The <em>DHCP Scope Policy Management</em> dialog box displays.</p></li>
+<li><p>Select the DHCP Policy you want to work with by clicking it in the list of DHCP Policies.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>To edit the policy, click the <span class="guilabel">Edit</span> button.</p></li>
+<li><p>To delete the policy, click the <span class="guilabel">Delete</span> button.</p></li>
+<li><p>To disable the policy, click the <span class="guilabel">Disable</span> button. If the policy is already disabled, the button text shows Enable. To enable the policy, click the button.</p></li>
+<li><p>To move the policy up or down in the list of DHCP Policies, click the <span class="guilabel">Move Up</span> or <span class="guilabel">Move Down</span> button.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>When you have completed your changes, click the <span class="guilabel">Close</span> button.</p></li>
+</ol>
+</section>
+</section>
+<section id="other-functions">
+<h2>Other Functions<a class="headerlink" href="#other-functions" title="Link to this heading"></a></h2>
+<p>At any time, you can modify the properties for a scope. Simply locate the item, right-click and from the shortcut menu select <span class="guilabel">Properties</span>. When a scope is opened, the system displays one tab for each server on which the scope is defined. For split scopes, the scope contents can be examined individually on each server.</p>
+<p>In addition to the tabs displaying individual scope contents on each server, the DHCP scope dialog contains an <em>Overview</em> and <em>Statistics</em> tab, with a graphical overview of the scope contents, as well as statistics on pool utilization on all servers.</p>
+<p>For each DHCP server containing the scope, there is a bar depicting the placement of reservations, pools, and exclude ranges in different colors.</p>
+<ul class="simple">
+<li><p>The top of the bar represents the IP Address at the start of the scope.</p></li>
+<li><p>The bottom of the bar represents the IP Address at the end of the scope.</p></li>
+</ul>
+<p>This overview is useful in verifying that split scope configurations do not contain conflicts, such as overlapping pools or inconsistent reservations.</p>
+<p>The table in the lower part of the window contains aggregate statistics for the scope, i.e., effective pool size, the number of pool clients, and the pool utilization, summed up over all servers containing the scope.</p>
+<section id="deleting-a-lease">
+<h3>Deleting a Lease<a class="headerlink" href="#deleting-a-lease" title="Link to this heading"></a></h3>
+<p>To delete a lease in a DHCP scope, do the following:</p>
+<ol class="arabic simple">
+<li><p>Open the scope containing the lease you want to delete.</p></li>
+<li><p>Right-click on the lease and, from the shortcut menu, select <span class="guilabel">Release Lease</span>.</p></li>
+</ol>
+</section>
+<section id="ip-address-details">
+<h3>IP Address Details<a class="headerlink" href="#ip-address-details" title="Link to this heading"></a></h3>
+<p>The IP Address details window contains all information pertaining to an IP Address in the application, including DNS records, DHCP reservations, and custom properties. To access the <em>IP Address details</em> window from the DHCP scope dialog you need to double click on an IP Address in the DHCP scope dialog, or right-click on an IP Address and select the Open menu item.</p>
+<p>The IP Address details window is documented in <a class="reference internal" href="../user-manual/ipam.html#ip-address-dialog"><span class="std std-ref">IP Address Inspector</span></a>. However, when the IP Address details window is opened from the DHCP scope dialog, information on any DHCP reservation associated with the IP Address displays as well. A reservation can be created by clicking the Create button on the DHCP Panel. You can also create and edit a reservation directly from the DHCP scope dialog by selecting the appropriate menu item when right-clicking on an IP Address. The IP Address dialog box is not available if only a DHCP license key has been entered. In this case, the reservation dialog box will be displayed when double clicking an entry in the DHCP scope.</p>
+</section>
+<section id="subranges-of-scopes">
+<h3>Subranges of Scopes<a class="headerlink" href="#subranges-of-scopes" title="Link to this heading"></a></h3>
+<p>It is possible to choose whether the contents of ranges that are created under scopes are displayed in a range view or a scope view. Use the Show DHCP data in subranges of scopes checkbox in the <em>System Settings</em> dialog box to choose the preferred display mode.</p>
+<p>If the scope view is selected, a window similar to the scope window displays when you open a subrange of a scope. However, the only scope related action available in this window is reservation management. The access dialog box for these subranges will contain an additional access bit, Edit reservations.</p>
+<p>If the range view is selected, the subranges are opened in the range view and no scope related actions are available.</p>
+</section>
+<section id="renaming-a-scope">
+<h3>Renaming a Scope<a class="headerlink" href="#renaming-a-scope" title="Link to this heading"></a></h3>
+<p>It is very simple to change the name and/or description of a scope in the Management Console.</p>
+<ol class="arabic simple">
+<li><p>Locate the DHCP Scope you want to rename.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Properties</span>. The <em>DHCP Scope Properties</em> dialog box displays. NOTE: The dialog box may look different depending on the DHCP server type.</p></li>
+<li><p>Enter the <strong>Title</strong> and <strong>Description</strong>.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. The newly renamed scope now displays in the Object List.</p></li>
+</ol>
+</section>
+<section id="superscopes">
+<h3>Superscopes<a class="headerlink" href="#superscopes" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Superscopes are only supported on MS DHCP servers on Windows server.</p>
+</div>
+<p>All MS Superscopes are listed in the object section under the heading <span class="guilabel">Superscopes</span>.</p>
+<a class="reference internal image-reference" href="../../_images/console-dhcp-superscopes.png"><img alt="../../_images/console-dhcp-superscopes.png" class="align-center" src="../../_images/console-dhcp-superscopes.png" style="width: 70%;" /></a>
+<p>When you click on the Superscope, all scopes within that superscope display. In addition, a new column, Superscope, is shown in the scope list. It is possible to filter by this column.</p>
+<p>To assign an existing scope to a superscope, do the following:</p>
+<ol class="arabic simple">
+<li><p>In the <em>Object list</em>, select a DHCP Scope for which you want to set a Superscope.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Properties</span>. The scope dialog box displays.</p></li>
+<li><p>Enter the name of the superscope in the <strong>Superscope</strong> field.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. The scope is placed in the superscope. If the superscope did not exist, the new superscope is created and now displays as a new item in the object list.</p></li>
+</ol>
+</section>
+</section>
+<section id="moving-ip-address-information">
+<h2>Moving IP Address Information<a class="headerlink" href="#moving-ip-address-information" title="Link to this heading"></a></h2>
+<p>IP Address information can be moved to a new IP Address. When the IP Address information is moved, all information about the IP Address is retained, and the associated DNS records are updated. If a reservation is associated with the IP Address, the reservation information is moved with the IP Address if the destination address is in a DHCP scope that is hosted on a DHCP server of the same type. If the destination address is in a scope hosted on a different type of a DHCP server or the destination is in an IP Address range, the reservation information is discarded.</p>
+<p>To move IP Address information, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the IP scope containing the IP Address.</p></li>
+<li><p>Double-click on it to display the scope contents.</p></li>
+<li><p>Find the applicable IP Address.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Move</span>.</p></li>
+<li><p>In the <em>Move IP Address Information</em> dialog box, type the new IP Address.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. The IP Address information is moved to the new IP Address.</p></li>
+</ol>
+</section>
+<section id="host-discovery">
+<h2>Host Discovery<a class="headerlink" href="#host-discovery" title="Link to this heading"></a></h2>
+<p>With this feature, you can see when hosts were last seen on your network. There are two methods you can use for host discovery – using ping or querying routers for host information.</p>
+<p>When host discovery is enabled, two columns are added to the range or scope view.</p>
+<dl class="simple">
+<dt>Last Seen</dt><dd><p>This column identifies when a host was last seen on the network and which method was used to discover the host.</p>
+</dd>
+<dt>Last Known MAC Address</dt><dd><p>This column shows the MAC address used by the host the last time it was seen on the network. This column is only populated if the host was seen using a router query.</p>
+</dd>
+</dl>
+<section id="configuring-host-discovery-using-ping">
+<h3>Configuring Host Discovery Using Ping<a class="headerlink" href="#configuring-host-discovery-using-ping" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Select one or more scopes.</p></li>
+<li><p>Right-click and, from the shortcut menu, select Set <span class="guilabel">Discovery Schedule</span>. The <em>Schedule</em> dialog box displays.</p></li>
+<li><p>Select the <span class="guilabel">Enable discovery schedule</span> option.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Schedule ____ every ___ day(s)/week(s)/month(s).</dt><dd><p>Click the drop-down list and select the frequency (e.g., Daily, Weekly, etc.) and the occurrences (e.g., 1 day, 2 weeks, etc.).</p>
+</dd>
+<dt>At ____.</dt><dd><p>Enter the time at which discovery should take place.</p>
+</dd>
+<dt>Starting ____.</dt><dd><p>Click the drop-down list and select the start date.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<p>Once the schedule options have been set and saved, two columns - Last Seen and Last Known MAC Address - are added to the range or scope view. The Last Seen column identifies when a host was last seen on the network.</p>
+<dl class="simple">
+<dt>Green</dt><dd><p>Host responded to the last PING request. The date and time are shown.</p>
+</dd>
+<dt>Orange</dt><dd><p>Host has responded in the past, but did not respond to the last PING request. The date and time of last response is shown.</p>
+</dd>
+<dt>Red</dt><dd><p>Host has never responded to a PING request. The text Never is shown.</p>
+</dd>
+</dl>
+<p>The list of ranges contains a column that shows if a discovery schedule has been set for a range. The name of this column is Schedule. To quickly see all ranges that have a schedule set, you can use the Quick Filter and filter by this column by entering <code class="docutils literal notranslate"><span class="pre">Schedule:Yes</span></code> in the Quick Filter search field.</p>
+<p>At any time if you wish to disable host discovery, do the following:</p>
+<ol class="arabic simple">
+<li><p>Select the object(s) for which you want to disable discovery.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Set Discovery Schedule</span>. The <em>Schedule</em> dialog box displays.</p></li>
+<li><p>Uncheck the <span class="guilabel">Enable discovery schedule</span> option.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+<section id="configuring-host-discovery-by-querying-routers">
+<h3>Configuring Host Discovery by Querying Routers<a class="headerlink" href="#configuring-host-discovery-by-querying-routers" title="Link to this heading"></a></h3>
+<p>To collect information about hosts by querying routers, you must first enable collection of IP information from routers.</p>
+<p>To configure host discovery:</p>
+<ol class="arabic simple">
+<li><p>Select an IP Address Range.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Configure IP Address Collection</span>. The <em>IP Address Collection</em> dialog box displays</p></li>
+<li><p>Enter the IP Address of the router(s) that you want to use to collect information about hosts in the range.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="failover-configurations-and-split-scopes">
+<h2>Failover Configurations and Split Scopes<a class="headerlink" href="#failover-configurations-and-split-scopes" title="Link to this heading"></a></h2>
+<section id="managing-failover-configurations-isc-dhcp">
+<h3>Managing Failover Configurations (ISC DHCP)<a class="headerlink" href="#managing-failover-configurations-isc-dhcp" title="Link to this heading"></a></h3>
+<p>This function allows you to manage DHCP failover peers on ISC DHCP servers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When adding a server’s first failover peer, all other address pools on the server will be updated to refer to this failover peer.</p>
+</div>
+<ol class="arabic simple">
+<li><p>On the object menu, select the DHCP Server that contains the scope for which you want to setup failover configuration.</p></li>
+<li><p>From the list of scopes, double-click on the applicable one.</p></li>
+<li><p>From the list of IP Addresses, right-click on the applicable one, and select <span class="guilabel">Create Address Pool</span> from the shortcut menu. The <em>DHCP Address Pool</em> dialog box displays.</p></li>
+<li><p>Move to the <strong>Failover Peer</strong> field, and click the drop-down list arrow.</p></li>
+<li><p>Select <em>Add new failover peer</em>.</p></li>
+<li><p>Click <span class="guilabel">OK</span>. The <em>New Failover Peer</em> dialog box displays.</p></li>
+</ol>
+<blockquote>
+<div><dl class="simple">
+<dt>Name</dt><dd><p>Specifies the name of the failover peer.</p>
+</dd>
+<dt>Role</dt><dd><p>Specifies the role of the failover peer. The available roles are Primary and Secondary.</p>
+</dd>
+<dt>Address</dt><dd><p>Specifies the IP Address or DNS name on which the server should listen for connections from its failover peer.</p>
+</dd>
+<dt>Port</dt><dd><p>Specifies the port number on which the server should listen for connections from its failover peer.</p>
+</dd>
+<dt>Peer Address</dt><dd><p>Specifies the IP Address or DNS name to which the server should connect to reach its failover peer for failover messages.</p>
+</dd>
+<dt>Peer Port</dt><dd><p>Specifies the port number to which the server should connect to reach its failover peer for failover messages.</p>
+</dd>
+<dt>Max Response Delay</dt><dd><p>Specifies the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.</p>
+</dd>
+<dt>Max Unacked Updates</dt><dd><p>Specifies the number of messages the server can send before receiving an acknowledgement from its failover peer. According to ISC documentation, 10 seems to be a good value.</p>
+</dd>
+<dt>Max Client Lead Time</dt><dd><p>Specifies the number of seconds for which a lease can be renewed by either server without contacting the other. Only specified on the primary failover peer.</p>
+</dd>
+<dt>Split Index</dt><dd><p>Specifies the split between the primary and secondary failover peer for the purposes of load balancing. According to ISC documentation, 128 is really the only meaningful value. Only specified on the primary failover peer.</p>
+</dd>
+<dt>Load Balance Max Seconds</dt><dd><p>Specifies the cutoff in seconds after which load balancing is disabled. According to ISC documentation, a value of 3 or 5 is recommended.</p>
+</dd>
+</dl>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Click <span class="guilabel">OK</span>. The DHCP Address Pool dialog box displays and shows the updated information.</p></li>
+<li><p>Click <span class="guilabel">OK</span>.</p></li>
+</ol>
+<p>If you need to EDIT or DELETE an existing failover peer, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate the relevant ISC DHCP server.</p></li>
+<li><p>Right-click and, from the shortcut menu, select <span class="guilabel">Manage Failover Peers</span>. The <em>Failover Peers for …</em> dialog box displays. All failover peers are shown.</p></li>
+<li><p>To EDIT a failover peer, select it and click the <span class="guilabel">Edit</span> button. Then modify the <em>Failover Peers … properties</em> dialog box, as needed.</p></li>
+<li><p>To DELETE a failover peer, select it and click the <span class="guilabel">Delete</span> button.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to finalize the setup of the failover relationship, the scope needs to be migrated to the failover peer.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When deleting a failover peer through this dialog, if it is the last failover peer defined on the server, any references to it will be removed from existing address pools on the server. If there is one other failover peer left on the server, references to the failover peer being deleted will be changed to refer to the remaining failover peer. If, however, there are two or more other failover peers left on the server, the user will be prompted with a list of the remaining failover peers where he will have to choose which failover peer should be referenced by address pools currently referring to the failover peer being deleted.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When changing from one failover peer to another for some specific address pool, if the address pool is the last one referring to the (old) failover peer, the user will be warned that performing the action will result in the deletion of the failover peer.</p>
+</div>
+</section>
+<section id="managing-failover-configurations-windows-server-2012">
+<h3>Managing Failover Configurations (Windows Server 2012)<a class="headerlink" href="#managing-failover-configurations-windows-server-2012" title="Link to this heading"></a></h3>
+<p>DHCP failover on Windows Server 2012 enables high availability of DHCP services by synchronizing IP Address lease information between two DHCP servers. It is also possible to use DHCP failover to provide load balancing of DHCP requests.</p>
+<p>You can configure failover for a single scope or for multiple scopes on the same server.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To manage failover between two Windows 2012 Servers, the DHCP Server Controller must be running as a service account with enough privileges to manage the DHCP service. For more information, refer to the Men&amp;Mice DHCP Server Controller section in the Installation Guide.</p>
+</div>
+<section id="setting-up-a-scope-failover">
+<h4>Setting up a Scope Failover<a class="headerlink" href="#setting-up-a-scope-failover" title="Link to this heading"></a></h4>
+<p>To setup failover for a scope, do the following:</p>
+<ol class="arabic simple">
+<li><p>On the object menu, select the DHCP Server that contains the scope(s) for which you want to setup failover configuration.</p></li>
+<li><p>You have two ways to choose the scopes you want to configure.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>From the list of scopes, select one or more scopes, right-click and select <span class="guilabel">Configure Failover</span>.</p></li>
+<li><p>Right-click the DHCP server and select <span class="guilabel">Configure Failover</span>. A dialog box listing all configurable scopes displays. Select the scopes you want to configure and click <span class="guilabel">Next</span>. The failover configuration dialog box displays.</p></li>
+</ul>
+<dl class="simple">
+<dt>Relationship Name</dt><dd><p>Select the relationship you want to use for the failover configuration or enter a name if you want to create a new relationship. If you choose an existing relationship, you will not be able to change any of the relationship properties and you can simply click OK to complete the failover configuration for the scope.</p>
+</dd>
+<dt>Partner Server</dt><dd><p>Enter the name or IP Address of the partner DHCP server with which failover should be configured. You can select from the list of Windows Server 2012 machines or you can type the host name or IP Address of the partner server.</p>
+</dd>
+<dt>Mode</dt><dd><p>Select the failover mode you want to use. You can choose between Hot standby and Load balance.</p>
+</dd>
+<dt>Role of Partner Server</dt><dd><p>If you chose the Hot standby mode, you must choose the role of the partner server. You can choose between Standby and Active. If you choose Standby the current server will be Active and vice versa.</p>
+</dd>
+<dt>Maximum Client Lead Time</dt><dd><p>If you don’t want to use the default values, enter the new values in the hours and minutes edit fields.</p>
+</dd>
+<dt>Addresses reserved for standby server</dt><dd><p>If you chose the Hot standby mode, you must enter the percentage of addresses that should be reserved to the standby server.</p>
+</dd>
+<dt>Local server load balance percentage</dt><dd><p>If you chose the Load balance mode, you need to specify the load balance percentage to use on the local server. The remaining percentage will be used on the partner server.</p>
+</dd>
+<dt>State Switchover Interval</dt><dd><p>Select this checkbox if you want to use Automatic State Switchover and specify the interval to use.</p>
+</dd>
+<dt>Enable Message Authentication</dt><dd><p>Select this checkbox if you want to use message authentication between the DHCP servers. If the message authentication is enabled, you must provide a shared secret for the message authentication.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="removing-a-failover-configuration">
+<h4>Removing a Failover Configuration<a class="headerlink" href="#removing-a-failover-configuration" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>On the object menu, select the DHCP Server that contains the scope(s) for which you want to remove the failover configuration.</p></li>
+<li><p>Select one or more scopes, right-click the selection and select <span class="guilabel">Deconfigure Failover</span>. A confirmation dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">Yes</span> to confirm the action. The failover configuration for the selected scope(s) is removed.</p></li>
+</ol>
+</section>
+<section id="replicating-failover-scopes">
+<h4>Replicating Failover Scopes<a class="headerlink" href="#replicating-failover-scopes" title="Link to this heading"></a></h4>
+<p>When using a failover configuration, it is possible to replicate scope information between servers. This is possible for individual scopes, all scopes that share a failover relationship or all scopes on a particular DHCP server. When a scope replication takes place, the scopes on the selected DHCP are considered the source scopes and the entire scope contents are replaced on the destination server.</p>
+<p><strong>To replicate individual scopes:</strong></p>
+<ol class="arabic simple">
+<li><p>On the object menu, select the DHCP Server that contains the scope(s) you want to replicate.</p></li>
+<li><p>Select one or more scopes, right-click the selection and select <span class="guilabel">Replicate Scope</span>. A confirmation dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to confirm the action. The selected scope is replicated.</p></li>
+</ol>
+<p><strong>To replicate all scopes that share a failover relationship:</strong></p>
+<ol class="arabic simple">
+<li><p>On the object menu, select the DHCP Server that contains the scopes you want to replicate.</p></li>
+<li><p>Right-click a scope using the desired relationship, and select <span class="guilabel">Replicate Relationship</span>. A confirmation dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to confirm the action. The scopes that use the same relationship as the selected scope are replicated. Note that this action may take some time if multiple scopes use the relationship.</p></li>
+</ol>
+<p><strong>To replicate all failover scopes on a DHCP server:</strong></p>
+<ol class="arabic simple">
+<li><p>On the object menu, right-click the DHCP Server that contains the scopes you want to replicate and select <span class="guilabel">Replicate Failover Scopes</span> from the menu. A confirmation dialog box displays.</p></li>
+<li><p>Click <span class="guilabel">OK</span> to confirm the action. All failover scopes on the selected server are replicated. Note that this action may take some time if the server contains multiple failover scopes.</p></li>
+</ol>
+</section>
+<section id="managing-failover-relationships">
+<h4>Managing Failover Relationships<a class="headerlink" href="#managing-failover-relationships" title="Link to this heading"></a></h4>
+<p>You can view, create, edit and delete existing failover relationships.</p>
+<p><strong>Adding a Failover Relationship</strong></p>
+<ol class="arabic simple">
+<li><p>On the object menu, right-click the DHCP Server and select <span class="guilabel">Manage Failover Relationships</span> from the menu. A dialog box listing the current failover relationships displays.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button. A dialog box displays, listing all scopes that are available to be configured for high availability.</p></li>
+<li><p>Select the scope(s) you want to configure. To select all scopes, click the <span class="guilabel">Select all</span> checkbox. Click <span class="guilabel">Next</span>. The failover configuration dialog box displays.</p></li>
+<li><p>Setup the failover configuration for the selected scopes.</p></li>
+</ol>
+<p><strong>Editing an Existing Failover Relationship</strong></p>
+<ol class="arabic simple">
+<li><p>On the object menu, right-click the DHCP Server and select <span class="guilabel">Manage Failover Relationships</span> from the menu. A dialog box listing the current failover relationships displays.</p></li>
+<li><p>Click the <span class="guilabel">Edit</span> button. The failover configuration dialog box displays. Note that some properties are disabled and cannot be changed.</p></li>
+<li><p>Edit the failover configuration and click <span class="guilabel">OK</span> to save the settings.</p></li>
+</ol>
+<p>You can delete existing failover relationships. When a failover relationship is deleted, the scopes are not removed from the DHCP server, but they are no longer in a failover configuration. After removing the failover relationship Micetro will handle the affected scopes as split scopes.</p>
+<p><strong>Deleting a Failover Relationship</strong></p>
+<ol class="arabic simple">
+<li><p>On the object menu, right-click on the DHCP Server, and select <span class="guilabel">Manage Failover Relationships</span> from the menu. A dialog box listing the current failover relationships displays.</p></li>
+<li><p>Click the <span class="guilabel">Delete</span> button and click <span class="guilabel">Yes</span> in the confirmation dialog box.</p></li>
+</ol>
+</section>
+</section>
+<section id="managing-split-scopes">
+<h3>Managing Split Scopes<a class="headerlink" href="#managing-split-scopes" title="Link to this heading"></a></h3>
+<p>When a scope is hosted on multiple servers, the scope view lists all the servers that contain a copy of the scope. For scopes on MS servers, the line says ‘Split Scope’ and then lists the servers. For the ISC DHCP server, the line says ‘Multiple Instances’ and then lists the servers:</p>
+<a class="reference internal image-reference" href="../../_images/console-dhcp-split-scopes.png"><img alt="../../_images/console-dhcp-split-scopes.png" class="align-center" src="../../_images/console-dhcp-split-scopes.png" style="width: 50%;" /></a>
+<p>Micetro detects when a split scope configuration is in place. Split scopes are handled as follows:</p>
+<ul class="simple">
+<li><p>In the scope list, split scopes are shown with a different icon and in the server column, the text “split scope” displays</p></li>
+<li><p>When performing various actions on scopes (for example enable/disable, scope option changes, scope deletion), a dialog box displays where the user is asked to specify to which instances of the split scope the action should be applied.</p></li>
+<li><p>The DHCP scope window will show every instance of the split scope in a separate tab, making it possible to work with all instances of the split scope in a single window.</p></li>
+<li><p>The Overview and Statistics tab in the DHCP scope window will show a graphical overview for all of the split scope instances.</p></li>
+<li><p>Reservations are managed automatically. All changes to reservations (creation, modification, and deletion) are applied to all instances of the split scope.</p></li>
+</ul>
+<p>The servers listed in this dialog box all contain the scope to which the user was applying the change. By pressing the Enable button, all instances of the scope would be enabled.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Split scopes are only supported on MS DHCP servers.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="console_dhcp_servers.html" class="btn btn-neutral float-left" title="DHCP servers - Management Console (obsolete)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_devices.html" class="btn btn-neutral float-right" title="Devices (Management Console, obsolete)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

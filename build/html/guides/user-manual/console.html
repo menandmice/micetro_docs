@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to launch the Men&amp;Mice Management Console" name="description" />
+<meta content="DNS management, DDI, Men&amp;Mice Management Console" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Management Console &mdash; Micetro by Men&amp;Mice - 10.2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Management Console Interface" href="console_gui.html" />
+    <link rel="prev" title="Workflow Management" href="webapp_workflows.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 10.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro by Men&amp;Mice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_announcements.html">Security announcements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-source licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Install Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">User Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ui.html">Micetro user interface(s)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="web_application.html">Web Application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Management Console</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launching-the-management-console">Launching the Management Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-use-wizard">First Use Wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#console-functions">Console functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_menus.html">Menu Bars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_toolbars.html">Toolbars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console/console_quickfilter.html">Quick Filter (Management Console, deprecated)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipam.html">IP address management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory.html">AD Sites and Subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_schedule_scripts.html">Scheduled Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/appliance_management.html">Appliance management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/caching_appliance.html">Caching DNS Servers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro reference articles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 10.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ui.html">Micetro user interface(s)</a></li>
+      <li class="breadcrumb-item active">Management Console</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/user-manual/console.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="management-console">
+<span id="console"></span><h1>Management Console<a class="headerlink" href="#management-console" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Prior to starting the Men&amp;Mice Management Console, make sure that you have installed and started the other Micetro components as applicable. Refer to the <a class="reference internal" href="../implementation/implementation.html#implementation"><span class="std std-ref">Implementation Guide</span></a> for other components.</p>
+<p>The Men&amp;Mice Management Console is a rich, Windows-only application that boasts a very intuitive interface. It is a central organizational tool of Micetro and provides all the tools you need to oversee the management of your DNS and DHCP servers and IP Addresses.</p>
+<p>From the Management Console, you can simultaneously manage DHCP/DNS servers on any supported platform.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be aware that you will only be able to view the servers to which you have access. The administrator user has access to all servers.</p>
+</div>
+</section>
+<section id="launching-the-management-console">
+<h2>Launching the Management Console<a class="headerlink" href="#launching-the-management-console" title="Link to this heading"></a></h2>
+<p>When logging into the Men&amp;Mice Management Console, you have the option to choose “Single Sign-on.” This allows those users working on a Microsoft Network with Active Directory to sign on one time only to access all your resources.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are the system administrator, you can choose whether to enable this option. In the Management Console, move to the menu bar and select <span class="menuselection">Tools ‣ System Settings</span>. In the <strong>System settings</strong> dialog box, click the <em>General</em> tab. Check in the checkbox next to <span class="guilabel">Allow Single Sign-on</span> to enable this option. Then click <span class="guilabel">OK</span>.</p>
+</div>
+<p>To start the Management Console, do the following:</p>
+<ol class="arabic simple">
+<li><p>Locate and launch the Men&amp;Mice Management Console. The Men&amp;Mice Management Console login dialog box displays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/console.png"><img alt="../../_images/console.png" class="align-center" src="../../_images/console.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>In the Server name field, type the name or IP Address (IPv4 or IPv6) of the workstation on which Men&amp;Mice Central is running. This is only required the first time you log in. After a successful connection, this field will be pre-filled with the server name you enter.</p></li>
+<li><p>In the <strong>User</strong> and <strong>Password</strong> fields, type the applicable information. The default value for both fields is <code class="docutils literal notranslate"><span class="pre">administrator</span></code>.</p></li>
+<li><p>If you want to enable Single Sign-on, click in the checkbox.</p></li>
+<li><p>Click the <span class="guilabel">Connect</span> button. If this is the first time any user logs into this particular Men&amp;Mice Central, the <a class="reference internal" href="../implementation/first_use_wizard.html#first-use-wizard"><span class="std std-ref">First use wizard</span></a> launches. Otherwise, within a few moments, the Men&amp;Mice Management Console will start, and the Manager window will display.</p></li>
+</ol>
+</section>
+<section id="first-use-wizard">
+<h2>First Use Wizard<a class="headerlink" href="#first-use-wizard" title="Link to this heading"></a></h2>
+<p>The First Use Wizard has been improved greatly in version 6.8. It is able to discover</p>
+<ul class="simple">
+<li><p>DNS Servers</p></li>
+<li><p>DHCP Server</p></li>
+<li><p>AD Subnets</p></li>
+</ul>
+<p>When connecting the Management Console to a newly installed instance of Men&amp;Mice Central or if this is the first time logging in, you will be presented by the First Use Wizard.</p>
+<ol class="arabic simple">
+<li><p>Log in using the default credentials (administrator:administrator). You will be presented by the figure below. Click ‘Next’ after having specified a new password for administrator user.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/first_login.png"><img alt="../../_images/first_login.png" class="align-center" src="../../_images/first_login.png" style="width: 60%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Complete each screen as you move through the wizard.</p></li>
+<li><p>The wizard will finish after the user clicks the ‘Finish’ button and afterwords the changes will be applied.</p></li>
+</ol>
+</section>
+<section id="console-functions">
+<h2>Console functions<a class="headerlink" href="#console-functions" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="console_gui.html">Management Console Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console_menus.html">Menu Bars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console_toolbars.html">Toolbars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console/console_quickfilter.html">Quick Filter (Management Console, deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console_actions.html">Other actions in the Management Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console_health_bar.html">Health Monitoring Bar</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="webapp_workflows.html" class="btn btn-neutral float-left" title="Workflow Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="console_gui.html" class="btn btn-neutral float-right" title="Management Console Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

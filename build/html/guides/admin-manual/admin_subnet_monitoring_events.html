@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to run external scripts and the types of script interfaces in Micetro by Men&amp;Mice" name="description" />
+<meta content="DNS records, DNS" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subnet Monitoring Events &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Change Events" href="admin_change_events.html" />
+    <link rel="prev" title="Event Hooks" href="admin_event_hooks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="admin_event_hooks.html">Event Hooks</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Subnet Monitoring Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-subnet-monitoring">Enabling Subnet Monitoring</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#smtp-server">SMTP Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mail-from">Mail from</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#subnet-monitoring-defaults">Subnet Monitoring Defaults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subnet-monitoring-script-interface">Subnet Monitoring Script Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-powershell-script">Example PowerShell Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instructions">Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example-python-script">Example Python Script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="admin_change_events.html">Change Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_scheduled_events.html">Scheduled Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin_script_name_validation_policy.html">Script Name Validation Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="admin_event_hooks.html">Event Hooks</a></li>
+      <li class="breadcrumb-item active">Subnet Monitoring Events</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/admin-manual/admin_subnet_monitoring_events.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="subnet-monitoring-events">
+<span id="admin-subnet-monitoring-events"></span><h1>Subnet Monitoring Events<a class="headerlink" href="#subnet-monitoring-events" title="Link to this heading"></a></h1>
+<p>To access subnet monitoring events:</p>
+<ol class="arabic simple">
+<li><p>On the <strong>Admin</strong> page, select <span class="guilabel">Configuration</span> in the upper-left corner.</p></li>
+<li><p>Select <span class="guilabel">Event Hooks</span> in the filtering sidebar.</p></li>
+</ol>
+<section id="enabling-subnet-monitoring">
+<h2>Enabling Subnet Monitoring<a class="headerlink" href="#enabling-subnet-monitoring" title="Link to this heading"></a></h2>
+<p>Subnet monitoring is enabled in the <a class="reference internal" href="admin_system_settings.html#admin-system-settings"><span class="std std-ref">System Settings</span></a>. Click the <strong>Settings</strong> button in the upper-right corner to go to the System Settings where you can enable subnet monitoring in the system and configure email notifications.</p>
+<p>When enabled, the system monitors the free addresses in DHCP address pools and subnets and acts if the number of free addresses goes below a user-definable threshold.</p>
+<p>When subnet monitoring is enabled, a new column, <strong>Monitoring</strong>, is added when viewing the subnet list. To filter the view by this column and quickly see all subnets that are monitored, you can enter “Monitor: Yes” in the Quick Filter search box.</p>
+<section id="smtp-server">
+<h3>SMTP Server<a class="headerlink" href="#smtp-server" title="Link to this heading"></a></h3>
+<p>The mail server from which notification emails will be sent when the number of addresses goes below a certain threshold.</p>
+</section>
+<section id="mail-from">
+<h3>Mail from<a class="headerlink" href="#mail-from" title="Link to this heading"></a></h3>
+<p>The email address from which notification emails will be sent when the number of addresses goes below a certain threshold.</p>
+</section>
+</section>
+<section id="subnet-monitoring-defaults">
+<h2>Subnet Monitoring Defaults<a class="headerlink" href="#subnet-monitoring-defaults" title="Link to this heading"></a></h2>
+<p>The Subnet monitoring events section lists the current defaults. To change the default values, click <strong>Set Defaults</strong> and make the desired changes in the dialog box.</p>
+<dl class="simple">
+<dt>Enabled</dt><dd><p>When selected, all subnets are monitored by default. If you only want to monitor a subset of the subnets in the system, clear the checkbox and enable monitoring for the individual subnets instead by selecting the subnet on the <strong>IPAM</strong> page, and then selecting <span class="guilabel">Set subnet monitoring</span> on the <span class="guilabel">Action</span> menu.</p>
+</dd>
+<dt>Script to invoke</dt><dd><p>Select the script to run when the number of free addresses goes below the set threshold.</p>
+</dd>
+<dt>Email address</dt><dd><p>The email address that should be the recipient of notification when the number of free addresses goes below the set threshold.</p>
+</dd>
+<dt>Dynamic threshold</dt><dd><p>Enter the threshold for the free addresses in a DHCP scope address pool.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.</p>
+</div>
+<dl class="simple">
+<dt>Static threshold</dt><dd><p>Enter the threshold for the free addresses in a subnet.</p>
+</dd>
+<dt>Only perform action once (until resolved)</dt><dd><p>When selected, the action is performed only once when the number of free addresses goes below the threshold.</p>
+</dd>
+<dt>Perform action when resolved</dt><dd><p>When selected, the action is performed when the number of free addresses is no longer below the threshold.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. For information on how to change monitoring settings for individual subnets, see <a class="reference internal" href="../user-manual/ipam.html#ipam"><span class="std std-ref">IPAM</span></a>, Set Subnet Monitoring.</p>
+</div>
+</section>
+<section id="subnet-monitoring-script-interface">
+<h2>Subnet Monitoring Script Interface<a class="headerlink" href="#subnet-monitoring-script-interface" title="Link to this heading"></a></h2>
+<p>The XML schema for a subnet monitoring script is as follows:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:mstns=</span><span class="s">&quot;http://tempuri.org/XMLSchema.xsd&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scopeMonitor&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
+<span class="nt">&lt;xs:sequence&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;server&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;superscope&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;threshold&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;available&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fixed&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:boolean&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;thresholdType&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p>The value of the thresholdType element will be either static or dynamic depending on whether the threshold being crossed is one of the dynamically allocatable addresses (that is, available addresses in address pools) or if it is a threshold set for static addresses (that is, available addresses outside of address pools).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The global subnet monitor, set through the <a class="reference internal" href="admin_system_settings.html#admin-system-settings"><span class="std std-ref">System Settings</span></a>, is the only one that takes superscopes into account. When the global subnet monitor actions are performed, due to the conditions being met for a superscope, the XML generated will contain a &lt;server&gt; tag and a &lt;superscope&gt; tag.</p>
+</div>
+<p>An example XML structure for a subnet monitoring script might look as follows for scope:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;scopeMonitor&gt;</span>
+<span class="nt">&lt;scope&gt;</span>123.45.67.0/24<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;threshold&gt;</span>20<span class="nt">&lt;/threshold&gt;</span>
+<span class="nt">&lt;available&gt;</span>8<span class="nt">&lt;/available&gt;</span>
+<span class="nt">&lt;fixed&gt;</span>0<span class="nt">&lt;/fixed&gt;</span>
+<span class="nt">&lt;thresholdType&gt;</span>dynamic<span class="nt">&lt;/thresholdType&gt;</span>
+<span class="nt">&lt;customFields&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Title&quot;</span><span class="w"> </span><span class="na">objectID=</span><span class="s">&quot;526&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Your subnet title&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customField</span><span class="w"> </span><span class="na">customFieldID=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">customFieldName=</span><span class="s">&quot;Description&quot;</span><span class="w"> </span><span class="na">objectID=</span><span class="s">&quot;526&quot;</span><span class="w"> </span><span class="na">objectType=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;You subnet description&quot;</span><span class="nt">&gt;&lt;/customField&gt;</span>
+<span class="nt">&lt;customFields&gt;</span>
+<span class="nt">&lt;/scopeMonitor&gt;</span>
+</pre></div>
+</div>
+<p>The XML structure is slightly different if a superscope (MS DHCP) or a shared-network (ISC DHCP) configuration is used. An example XML structure for a scope monitoring script might look as follows for a superscope / shared-network configuration:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;scopeMonitor&gt;</span>
+<span class="nt">&lt;server&gt;</span>dhcp1.corp.net.<span class="nt">&lt;/server&gt;</span>
+<span class="nt">&lt;superscope&gt;</span>office<span class="nt">&lt;/superscope&gt;</span>
+<span class="nt">&lt;threshold&gt;</span>20<span class="nt">&lt;/threshold&gt;</span>
+<span class="nt">&lt;available&gt;</span>22<span class="nt">&lt;/available&gt;</span>
+<span class="nt">&lt;fixed&gt;</span>1<span class="nt">&lt;/fixed&gt;</span>
+<span class="nt">&lt;thresholdType&gt;</span>dynamic<span class="nt">&lt;/thresholdType&gt;</span>
+<span class="nt">&lt;/scopeMonitor&gt;</span>
+</pre></div>
+</div>
+<p>A subnet monitoring script does not have any return value.</p>
+</section>
+<section id="example-powershell-script">
+<h2>Example PowerShell Script<a class="headerlink" href="#example-powershell-script" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Powershell scripts (<code class="docutils literal notranslate"><span class="pre">.ps1</span></code> extension) are run natively by Men&amp;Mice on Windows  with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>. The script can then read the stdin with <code class="docutils literal notranslate"><span class="pre">[Console]::In.ReadToEnd()</span></code>.</p>
+</div>
+<section id="instructions">
+<h3>Instructions<a class="headerlink" href="#instructions" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">ScopeMonScript.ps1</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\\ProgramData\\Men</span> <span class="pre">and</span> <span class="pre">Mice\\Central\scripts</span></code> (the scripts folder).</p></li>
+<li><p>In Admin &gt; Configuration &gt; Event Hooks, under <strong>Subnet monitoring events</strong>, click <span class="guilabel">Set Defaults</span>.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">ScopeMonScript.ps1</span></code> in the <strong>Script to invoke</strong> field.</p></li>
+<li><p>Configure a dynamic threshold.</p></li>
+</ol>
+<p>The monitor will be executed every 10 minutes during the DHCP synchronization interval.</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="k">param</span><span class="p">([</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$false</span><span class="p">,</span><span class="k">ValueFromPipeLine</span><span class="p">=</span><span class="nv">$false</span><span class="p">)]</span><span class="nv">$UserName</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$false</span><span class="p">,</span><span class="k">ValueFromPipeLine</span><span class="p">=</span><span class="nv">$false</span><span class="p">)]</span><span class="nv">$Password</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$false</span><span class="p">,</span><span class="k">ValueFromPipeLine</span><span class="p">=</span><span class="nv">$false</span><span class="p">)]</span><span class="nv">$xmlFileName</span> <span class="p">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$strInput</span> <span class="p">=</span> <span class="nb">get-content</span> <span class="nv">$xmlFileName</span>
+<span class="c">#$strInput = $args</span>
+<span class="c"># write output for troubleshooting in file:</span>
+<span class="c">#Add-Content -Path .\monitoroutput.xml $strInput</span>
+
+<span class="nv">$strXML</span> <span class="p">=</span> <span class="no">[string]</span><span class="p">::</span><span class="n">Join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="nv">$strInput</span><span class="p">)</span>
+<span class="nv">$objXML</span> <span class="p">=</span> <span class="no">[xml]</span><span class="nv">$strXML</span>
+<span class="nv">$subnetMonitor</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Select-Xml</span> <span class="n">-XML</span> <span class="nv">$objXML</span> <span class="n">-XPath</span> <span class="s2">&quot;/subnetMonitor&quot;</span><span class="p">).</span><span class="n">Node</span>
+
+<span class="c"># Check if it&#39;s an alert or fixed message</span>
+<span class="c"># The script only cares about alerts</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">fixed</span> <span class="o">-eq</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$strAlert</span> <span class="p">=</span> <span class="s2">&quot;Alert:  The following scope or subnet has fewer IPs available than the configured threshold.&quot;</span>
+
+    <span class="c"># We could send here an email or generate a trap or...</span>
+    <span class="c">#Send-MailMessage -SmtpServer &quot;smpt.example.com&quot; -From &quot;subnetmonitor@example.com&quot; -To &quot;alert1@example.com;alert2@example.net&quot; -Subject &quot;Subnet Monitor Message&quot; -Body $strOutput</span>
+
+    <span class="c"># First handle the superscopes</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">superscope</span> <span class="o">-ne</span> <span class="nv">$null</span> <span class="o">-and</span> <span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">superscope</span> <span class="o">-ne</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="nv">$strOutput</span> <span class="p">=</span> <span class="sh">@&quot;</span>
+
+<span class="sh">    $strAlert</span>
+<span class="sh">    Superscope: </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">superscope</span><span class="p">)</span>
+<span class="sh">    Alert Date:    </span><span class="p">$(</span><span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="n">G</span><span class="p">)</span>
+<span class="sh">    Server:        </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">server</span><span class="p">)</span>
+<span class="sh">    Threshold:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">threshold</span><span class="p">)</span>
+<span class="sh">    IPs Available:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">available</span><span class="p">)</span>
+<span class="sh">    Subnet Type:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">thresholdType</span><span class="p">)</span>
+<span class="sh">    &quot;@</span>
+<span class="sh">        New-EventLog -Source SubnetMonitor -LogName Application</span>
+<span class="sh">        Write-EventLog -LogName Application -Source SubnetMonitor -EventID 1063 -EntryType Warning -message &quot;$strOutput&quot;</span>
+<span class="sh">        #Add-Content -Path .\superscopemonitor_msg.txt $strOutput</span>
+<span class="sh">        }</span>
+<span class="sh">    else</span>
+<span class="sh">    {</span>
+<span class="sh">    # then in the else clause the normal scopes</span>
+
+<span class="sh">    $strOutput = @&quot;</span>
+
+<span class="sh">    $strAlert</span>
+<span class="sh">      Alert Date:    </span><span class="p">$(</span><span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="n">G</span><span class="p">)</span>
+<span class="sh">      Scope:        </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">subnet</span><span class="p">)</span>
+<span class="sh">      Threshold:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">threshold</span><span class="p">)</span>
+<span class="sh">      IPs Available:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">available</span><span class="p">)</span>
+<span class="sh">      Subnet Type:    </span><span class="p">$(</span><span class="nv">$subnetMonitor</span><span class="p">.</span><span class="n">thresholdType</span><span class="p">)</span>
+<span class="sh">      &quot;@</span>
+<span class="sh">        New-EventLog -Source SubnetMonitor -LogName Application</span>
+<span class="sh">        Write-EventLog -LogName Application -Source SubnetMonitor -EventID 1064 -EntryType Warning -message &quot;$strOutput&quot;</span>
+<span class="sh">        #Add-Content -Path .\scopemonitor_msg.txt $strOutput</span>
+<span class="sh">    }</span>
+<span class="sh">  }</span>
+<span class="sh">  else</span>
+<span class="sh">  {</span>
+<span class="sh">  # possible issue fixed message</span>
+<span class="sh">  }</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="example-python-script">
+<h2>Example Python Script<a class="headerlink" href="#example-python-script" title="Link to this heading"></a></h2>
+<p>The following example script, written in Python, shows how a script could return different values depending on the input of custom fields. The script is called when an object property changes and it queries for country and city using a location code. The intended use here is to mark the locations of servers.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+
+<span class="k">def</span> <span class="nf">get_custom_field_element</span><span class="p">(</span><span class="n">custom_fields</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+ <span class="n">element</span> <span class="o">=</span> <span class="n">custom_fields</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./customField[@customFieldName=&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;]&quot;</span><span class="p">)</span>
+ <span class="k">if</span> <span class="n">element</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Custom property &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; was not found.&quot;</span><span class="p">)</span>
+ <span class="k">return</span> <span class="n">element</span>
+
+<span class="k">def</span> <span class="nf">get_result</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+ <span class="c1"># username variable is not used but this is how to get the username</span>
+ <span class="n">username</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;userName&#39;</span><span class="p">)</span>
+ <span class="n">custom_fields</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;./customFields&quot;</span><span class="p">)</span>
+
+ <span class="n">result</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">})</span>
+ <span class="k">try</span><span class="p">:</span>
+     <span class="n">location_element</span> <span class="o">=</span> <span class="n">get_custom_field_element</span><span class="p">(</span><span class="n">custom_fields</span><span class="p">,</span> <span class="s1">&#39;Location&#39;</span><span class="p">)</span>
+     <span class="n">country_element</span> <span class="o">=</span> <span class="n">get_custom_field_element</span><span class="p">(</span><span class="n">custom_fields</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+     <span class="n">city_element</span> <span class="o">=</span> <span class="n">get_custom_field_element</span><span class="p">(</span><span class="n">custom_fields</span><span class="p">,</span> <span class="s1">&#39;City&#39;</span><span class="p">)</span>
+ <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+     <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+     <span class="k">return</span> <span class="n">result</span>
+ <span class="n">location</span> <span class="o">=</span> <span class="n">location_element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+
+ <span class="c1"># A database could be queried instead here</span>
+ <span class="n">LOCATION_MAP</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">&#39;l1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="s1">&#39;Washington&#39;</span><span class="p">),</span>
+     <span class="s1">&#39;l2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span> <span class="s1">&#39;London&#39;</span><span class="p">)</span>
+ <span class="p">}</span>
+ <span class="k">if</span> <span class="n">location</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">LOCATION_MAP</span><span class="p">:</span>
+     <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Unknown location.&quot;</span><span class="p">})</span>
+     <span class="k">return</span> <span class="n">result</span>
+
+ <span class="n">result</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+ <span class="n">country</span><span class="p">,</span> <span class="n">city</span> <span class="o">=</span> <span class="n">LOCATION_MAP</span><span class="p">[</span><span class="n">location</span><span class="p">]</span>
+ <span class="n">country_element</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span>
+ <span class="n">city_element</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+ <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">custom_fields</span><span class="p">)</span>
+ <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Read all input and parse as XML</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">get_result</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;&#39;</span><span class="p">)</span>
+<span class="c1"># This will write the generated result xml to standard output</span>
+<span class="n">ET</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin_event_hooks.html" class="btn btn-neutral float-left" title="Event Hooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin_change_events.html" class="btn btn-neutral float-right" title="Change Events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

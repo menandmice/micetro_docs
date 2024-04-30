@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Migrating the Micetro database from SQLite to Microsoft SQL Server" name="description" />
+<meta content="database, migrate, SQLite, SQL" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Migrating the Micetro database from SQLite to Microsoft SQL Server &mdash; Micetro by Men&amp;Mice - 11.0  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Micetro Agents" href="install_controllers.html" />
+    <link rel="prev" title="PostgreSQL" href="central_postgresql.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Micetro by Men&Mice - 11.0
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Micetro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Contacting Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opensource.html">Open-Source Licenses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Installation Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implementation.html">Implementation Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="system_requirements.html">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="firewall_ports.html">Networking Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="binaries.html">Micetro Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config_files.html">Location of Important Config and Log Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_central.html">Men&amp;Mice Central</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="central_database.html">Database backend</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="central_sqlite.html">SQLite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="central_mssql.html">Microsoft SQL Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="central_postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Migrating the Micetro database from SQLite to Microsoft SQL Server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="install_controllers.html">Micetro Agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Cloud Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_webapp.html">Installing the Micetro Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation_azure.html">Installing Micetro in Azure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_config.html">Advanced configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_user_guide.html">Using Micetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dns.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/dhcp_scopes.html">DHCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/ipam.html">IPAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/folder_management.html">Folder management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_reporting.html">Reports Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/webapp_workflows.html">Workflow Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/view_change_history.html">Viewing Object Change History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-manual/automation.html">Automation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Micetro Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_license.html">License Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/access_control.html">Access Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_server_management.html">Service Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/failover_management.html">Failover Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/snmp_profiles.html">SNMP Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_event_hooks.html">Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/address_spaces.html">Address Space Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_custom_properties.html">Custom Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_system_settings.html">System Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/admin_object_history.html">Viewing Global Object History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_sso.html">Configure Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-manual/webapp_appliance_management.html">Integrating and Managing Appliances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Update Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Micetro Reference Articles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Management Console</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-console/management_console.html">Management Console (obsolete)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Micetro by Men&Mice - 11.0</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implementation.html">Implementation Guide</a></li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="central_database.html">Database backend</a></li>
+      <li class="breadcrumb-item active">Migrating the Micetro database from SQLite to Microsoft SQL Server</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/implementation/migrate-sqlite-sql-server.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="migrating-the-micetro-database-from-sqlite-to-microsoft-sql-server">
+<span id="migrate-sqlite-sql-server"></span><h1>Migrating the Micetro database from SQLite to Microsoft SQL Server<a class="headerlink" href="#migrating-the-micetro-database-from-sqlite-to-microsoft-sql-server" title="Link to this heading"></a></h1>
+<section id="create-the-database">
+<h2>Create the database<a class="headerlink" href="#create-the-database" title="Link to this heading"></a></h2>
+<p>The knowledge base contains an article that describes the process of creating the database and configuring it: <a class="reference external" href="https://cdocs.menandmice.com/pages/viewpage.action?pageId=6360964">Using Microsoft SQL Server as a database server for the Micetro Suite</a></p>
+<p>The remaining instructions below assume the creation of the Micetro database in MS SQL and that a preferences.cfg file with information on connecting to the MS SQL Server has been created. When Men&amp;Mice Central connects to the MS SQL server for the first time, it will create the necessary tables.</p>
+</section>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Create a directory on the Men&amp;Mice Central server, or if possible, directly on the SQL server (for better performance) and call it “Migrate”</p></li>
+<li><p>If SQL Server is not running on the Men&amp;Mice Central server, download and install the SQL Server Native Client from <a class="reference external" href="http://www.microsoft.com/en-us/download/details.aspx?id=16978">Microsoft</a></p></li>
+<li><p>Extract the attached <a class="reference external" href="https://cdocs.menandmice.com/download/attachments/6361086/ConvertDatabase2.10.zip?version=1&amp;modificationDate=1446546538346&amp;api=v2">ConvertDatabase2.10.zip</a> file and copy the extracted files to the “Migrate” directory. The “Migrate” directory should now contain a PowerShell script used to migrate the database from SQLite to MS SQL as well as two SQLite DLLs (redistributed from <a class="reference external" href="http://system.data.sqlite.org/">system.data.sqlite.org</a>) under the folders x32 and x64</p></li>
+<li><p>Stop the Central service on the server</p></li>
+<li><p>Copy the mmsuite.db file into the “Migrate” directory. Location of the mmsuite.db file depends on the version of Windows on the Central server (see this  <a class="reference external" href="https://cdocs.menandmice.com/display/MM/Location+of+Men+and+Mice+Central+data+directory/">Location of Central data directory</a>), but it is typically in either of these locations:</p>
+<blockquote>
+<div><p>Windows 2003 - C:Documents and SettingsAll UsersApplication DataMen and MiceCentral</p>
+<p>Windows 2008 and above - C:ProgramDataMen and MiceCentral</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="migrate-the-database-to-ms-sql">
+<h2>Migrate the database to MS SQL<a class="headerlink" href="#migrate-the-database-to-ms-sql" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>In the PowerShell window type the following command:</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a></dt><dd><p>&gt; cd C:Migrate
+&gt; .ConvertDatabase2.ps1 -sourceDbFile .mmsuite.db -database mmsuite -ServerInstance [DATABASE_SERVER] -username [USER NAME]</p>
+</dd>
+</dl>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p>or if your account has access to SQL server, you should use the -useWindowsAuthentication switch:</p>
+<dl class="simple">
+<dt><a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></dt><dd><p>&gt; .ConvertDatabase2.ps1 -sourceDbFile .mmsuite.db -database mmsuite -ServerInstance [DATABASE_SERVER] -useWindowsAuthentication</p>
+</dd>
+</dl>
+<p><a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">`</span></a></p>
+<p>If the script complains about not being able to connect to the database then try adding [Instance_Name] to the -ServerInstance variable like:</p>
+<dl class="simple">
+<dt><a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">`</span></a></dt><dd><p>&gt; .ConvertDatabase2.ps1 -sourceDbFile .mmsuite.db -database mmsuite -ServerInstance 192.168.2.12INSTANCENAME -useWindowsAuthentication</p>
+</dd>
+</dl>
+<p><a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
+<p>and/or a custom TCP port to connect to:</p>
+<dl class="simple">
+<dt><a href="#id25"><span class="problematic" id="id26">``</span></a><a href="#id27"><span class="problematic" id="id28">`</span></a></dt><dd><p>&gt; .ConvertDatabase2.ps1 -sourceDbFile .mmsuite.db -database mmsuite -ServerInstance 192.168.2.12INSTANCENAME,12345 -useWindowsAuthentication</p>
+</dd>
+</dl>
+<p><a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">`</span></a></p>
+<p>The script may take a few minutes to run, depending on the size of the database.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the script returns an error that it can’t load the SQLite DLL please check if the DLL is located in the x32 or x64 sub-directory is “Unblocked.” Right-click on     the DLL and select Properties and press the Unblock button. Please note that Windows might silently refuse the Unblock action. You can check this by re-openeing the   Properties and checking to see if it still shows the Unblock buton is blocked. In this case just make a copy of the DLL and delete the original DLL and Unblock the     copy.</p>
+</div>
+</section>
+<section id="start-men-mice-central-service">
+<h2>Start Men&amp;Mice Central Service<a class="headerlink" href="#start-men-mice-central-service" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Ensure the <strong>preferences.cfg</strong> file is using the MS SQL Server</p></li>
+<li><p>Go to “Services” and start Central</p></li>
+</ul>
+<p>Central should not connect to the SQL Server and use it as a data store.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="central_postgresql.html" class="btn btn-neutral float-left" title="PostgreSQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install_controllers.html" class="btn btn-neutral float-right" title="Micetro Agents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Men&amp;Mice.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
