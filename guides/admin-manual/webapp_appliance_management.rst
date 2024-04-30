@@ -5,8 +5,8 @@
 .. _webapp-appliance-management:
 
 Integrating and Managing Appliances
-===================================
-Micetro seamlessly integrates with compatible DNS/DHCP appliances, available in both hardware and virtual machine configuration. By integrating Micetro with appliances, you gain the power to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface.
+====================================
+Micetro seamlessly integrates with DNS/DHCP server (MDDS) appliances, available in both hardware and virtual machine configuration. By integrating Micetro with appliances, you gain the power to effectively manage services, optimize deployment processes, and oversee day-to-day server operations, all through the intuitive Micetro user interface.
 
 Once you have configured the initial network settings for your appliance and added it to your :ref:`webapp-server-management`, you can interact with the services just as you would with other DNS and DHCP services within Micetro.
 
@@ -15,8 +15,16 @@ Appliances are accessed and managed in :guilabel:`Service Management` on the :gu
 .. image:: ../../images/appliances-11.0.png
    :width: 80%
 
+
 Adding a New Appliance to Micetro
 ---------------------------------
+.. note::
+   Before adding a MDDS appliance to Micetro, ensure that the appliance is configured in Micetro-mode and that interfaces are appropriately configured.
+
+   * To configure the appliance to be in Micetro-mode, follow the instructions for `Configuring DNS/DHCP Servers for Micetro <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Configuring-DNS/DHCP-Servers-for-Micetro/9.6.0>`_.
+
+   * To configure interfaces on the appliance, follow the instructions for `Setting an IPv4 address <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv4-address/9.6.0>`_ and `Setting an IPv6 address <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv6-address/9.6.0>`_.
+
 To add an appliance to Micetro, you must have the Administrator role.
 
 **To add an appliance**:
@@ -29,7 +37,7 @@ To add an appliance to Micetro, you must have the Administrator role.
 2. Select :guilabel:`Appliance`. 
 3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
 4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
-5. Enable or disable appliance services. By default, **DNS** and **DHCP** services are activated.  If you require remote remote access to your appliance for specific purposes, you can enable the **SSH** (Secure Shell) client.
+5. Enable or disable appliance services. By default, **DNS** and **DHCP** services are activated.  If you require remote access to your appliance for specific purposes, you can enable the **SSH** (Secure Shell) client.
 6. Select :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
 
 Editing Appliance Name
@@ -283,3 +291,5 @@ Micetro automatically detects the new server as uninitialized. To begin using th
 * :ref:`appliance-management`
 
 * :ref:`caching-appliance`
+
+* `Setting up Micetro DNS/DHCP Servers <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Feature-support-and-limitations/9.6.0>`_
