@@ -58,9 +58,9 @@ Databases
   :header: "Database", "Supported version(s)", "Operating System of Men&Mice Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 12, "Windows, Linux"
+  "PostgreSQL", 11-15, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
-  "Microsoft SQL Server", "2012, 2014, 2016, 2019", "Windows"
+  "Microsoft SQL Server", "2012, 2014, 2016, 2019, 2022", "Windows"
 
 .. [3] The SQLite database is embedded into the Men&Mice Central application.
 
@@ -83,11 +83,11 @@ DNS/DHCP Server Software
   "**DHCP**"
   "Microsoft DHCP", "2012, 2012 R2, 2016, 2019, 2022"
   "ISC DHCP", "3.0.6 - 4.4.1"
-  "ISC Kea", "1.6, 1.8"
+  "ISC Kea", "2.0, 2.2, 2.4"
   "Cisco IOS with DHCP support", "12.3 - 16.09"
 
 .. warning::
-  ISC Kea versions older than 1.6 are no longer supported. See :ref:`kea-update` for more details.
+  ISC Kea versions older than 2.0 are no longer supported. See :ref:`kea-update` for more details.
 
 Other
 -----
@@ -97,7 +97,7 @@ Micetro Web Application
 
 * Microsoft IIS [4]_
 
-* Apache 2 Web server 2.2/2.4 [5]_
+* Apache 2 Web server version 2.4 [5]_
 
 .. [4] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
 
