@@ -28,6 +28,21 @@ Release notes
 
 Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.5-release`, :ref:`10.1.6-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.2.10-release`
 
+.. _10.2.10-release:
+
+10.2.10
+--------
+April 30, 2024
+
+Improvements
+^^^^^^^^^^^^
+
+* **Collapse functionality**:  The right-hand inspector now features a collapse function, providing more space for table viewing. 
+* **Enhanced Resolution Support**: The user interface now supports the minimum resolution as 1290 x 1024 with a zoom level of 200%. To achieve this, significant changes were implemented:
+  * Dialog boxes now occupy the entire screen, ensuring optimal use of available space.
+  * The header now has a scrollbar to take less space.
+  * Long names in the footer are now truncated with ellipses, maintaining clarity and readability.
+
 
 .. _10.2.9-release:
 
