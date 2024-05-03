@@ -32,7 +32,7 @@ Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref
 
 10.2.10
 --------
-April 30, 2024
+May 3, 2024
 
 Improvements
 ^^^^^^^^^^^^
