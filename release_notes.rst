@@ -39,9 +39,12 @@ Improvements
 
 * **Collapse functionality**:  The right-hand inspector now features a collapse function, providing more space for table viewing. 
 * **Enhanced Resolution Support**: The user interface now supports the minimum resolution as 1290 x 1024 with a zoom level of 200%. To achieve this, significant changes were implemented:
-  * Dialog boxes now occupy the entire screen, ensuring optimal use of available space.
-  * The header now has a scrollbar to take less space.
-  * Long names in the footer are now truncated with ellipses, maintaining clarity and readability.
+  
+   * Dialog boxes now occupy the entire screen, ensuring optimal use of available space.
+  
+   * The header now has a scrollbar to take less space.
+  
+   * Long names in the footer are now truncated with ellipses, maintaining clarity and readability.
 
 
 .. _10.2.9-release:
