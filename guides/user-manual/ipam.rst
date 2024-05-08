@@ -1,5 +1,5 @@
 .. meta::
-   :description: IP address management (IPAM) in Micetro by Men&Mice
+   :description: IP address management (IPAM) in Micetro
    :keywords: IPAM, IP address management
 
 .. _ipam:
@@ -8,15 +8,15 @@ IPAM
 ======
 
 .. note::
-  This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`.
+  This information applies to the Micetro Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`.
 
 Overview
 --------
 
-Managing IP Addresses entails being able to create assignable ranges within the available address space and determining which users and groups have usage rights to that space. The IP ranges can be created with specific properties that also determine the properties of the IP Addresses contained within them.
+Managing IP Addresses involves creating assignable ranges within the available address space and determining which users and groups are authorized to use that space. These ranges can be configured with specific properties that also determine the properties of the IP addresses inside them.
 
 .. note::
-  In order to use the IP Address Management features in Micetro, you must have entered the license key for the IPAM module.
+  To use the IP Address Management features in Micetro, you need to enter the license key for the IPAM module.
 
 Multiple Address Spaces
 -----------------------
@@ -25,194 +25,181 @@ Multiple Address Spaces
   For managing address spaces, see :ref:`address-spaces`.
   For managing address spaces through the Management Console, see :ref:`console-address-spaces`.
 
-Micetro supports multiple address spaces.
-
-Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP address entries, and folders.
+Micetro supports multiple address spaces, each containing its unique set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including IPv4 and IPv6 root ranges), IP address entries, and folders.
 
 .. note::
-  Changes to data in one address space do not affect data in any other address space.
+  Changes made to data in one address space won't affect data in any other address space.
 
 Items **shared** between address spaces are:
 
-* users, groups, and roles
+* users, groups, and roles.
 
-* custom property definitions (see :ref:`admin-custom-properties`)
+* custom property definitions (see :ref:`admin-custom-properties`).
 
 
 Switching to a Different Address Space
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can only work in one address space at a time. You can see the current address space at the bottom of the :guilabel:`Networks` section on the :guilabel:`IPAM` page..
+You can only work in one address space at a time. The current address space is displayed in the lower-right corner of the :guilabel:`Networks` table on the :guilabel:`IPAM` page.
 
 To switch to a different address space:
 
-1. Click the **User** icon in the top right corner.
+1. Click the **User** icon in the upper-right corner.
 
-2. Point to :guilabel:`Address Space`, and then select the address space you want to use.
+2. Hover over the current address space, then select your desired address space.
 
-.. image:: ../../images/address-space-Micetro.png
-  :width: 50%
-  :align: center
+   .. image:: ../../images/address-space-Micetro.png
+     :width: 50%
 
 |
 Address (A) Records in DNS Zone Windows
 ---------------------------------------
 
-When the IPAM component is enabled, you may notice some differences when working with Address (A) records in DNS zone windows, such as:
+When the IPAM module is enabled, you may notice some differences when working with Address (A) records in DNS zone windows, such as:
 
-Restriction on allowed IP Addresses
-  When IPAM is enabled, the system administrator may restrict which IP Addresses you are allowed to use. The system administrator can determine an IP Address range that you are allowed to work with. In addition, he/she can choose whether you can use an IP Address that has already been assigned in DNS.
+   * **Restriction on allowed IP Addresses**: When IPAM is enabled, the system administrator can control which IP Addresses users are permitted to use. The administrator can set a range of IP Addresses that users are allowed to work with. Additionally, administrators can decide whether users can use IP Addresses already assigned in DNS.
 
-Automatic assignment of IP Addresses
-  The system administrator can configure Micetro so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.
+   * **Automatic assignment of IP Addresses**: The system administrator can configure Micetro so that you can create address (A) records without entering IP Addresses. When the zone is saved, the system automatically assigns free IP Addresses from your IP Address range. If you want to enter an IP Address manually, you can type it in the designated field. If you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to multiple IP address ranges, you'll be prompted to select the preferred range for your new address records when saving.
 
 .. _ipam-containers:
 
 Containers
 ----------
 
-A Container is a section of the address space that has been reserved but not yet allocated. Containers can contain address ranges and scopes, and you can set address privileges for containers that can be applied to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled that functionality in System Settings.
+A Container is a section of the address space reserved but not yet allocated. Within a container, you can define address ranges and scopes, and you can set privileges that apply to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled this functionality in the **IPAM** section of the :ref:`admin-system-settings`. 
 
 .. _new-container:
 
-New Container
-^^^^^^^^^^^^^
+Creating a New Container
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A range that exists on network boundaries (a subnet) can be converted to a Container. Likewise, a Container can be converted to a range.
+You can convert a range existing on network boundaries (a subnet) into a Container, or vice versa.
 
 1. Select :guilabel:`IPAM` on the top navigation bar.
 
-2. Select the range(s) you want to convert.
+2. Select the range(s) you wish to convert.
 
-3. On the :guilabel:`Action` menu, select :guilabel:`Convert to container`. You can also select this option on the **Row menu (...)**.
+3. Select :guilabel:`Convert to container` on either the :guilabel:`Action`  or the row :guilabel:`...` menu.
 
-4. Confirm that you want to convert the selected range(s), and add a save comment.
+4. Confirm your selection to convert the chosen range(s) and provide a save comment if necessary.
 
 Viewing IP Address Ranges
 -------------------------
-The **IPAM** page shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
+The **IPAM** page provides a comprehensive view of the IP address space accessible to the current user within the system. Micetro allows administrators to manage the IP Address space by dividing it into named sub ranges, which can be allocated to specific groups for use by their members.
 
 In the filtering sidebar, select  :guilabel:`IP Ranges`.
 
 .. image:: ../../images/Networks-Micetro-10.5.png
   :width: 90%
-|
-* Use the buttons on the top right of the grid to choose between a flat and a hierarchical view for the Address Ranges scopes.
 
-* If an Address range has no subranges, the utilization for the range is shown in the range list.
+* Use the buttons located at the upper-right of the table to choose between a flat and a hierarchical view for the Address Ranges scopes.
 
-To narrow down the results shown when viewing IP ranges, you can use the :ref:`webapp-quick-filter`. When using the tree view with an active filter, any parent ranges that do not match the search criteria will be faded out while the matches highlighted. For example, in the image below, we searched for the string ``3.1``.
+* When an Address range contains no subranges, the utilization for the range is shown in the range list.
+
+To narrow down the results shown when viewing IP ranges, you can use the :ref:`webapp-quick-filter`. When using the tree view with an active filter, any parent ranges that do not match the search criteria will appear dimmed while the matching results are highlighted. For example, in the image below, we searched for the string ``3.1``.
 
 .. image:: ../../images/ipam-tree-filter-Micetro.png
   :width: 90%
   
 |
-New Networks
-------------
+Creating New Networks
+----------------------
 
-To create a new network, do the following:
+**To create a new network**:
 
-1. Go to the **IPAM** page.
+1. On the **IPAM** page, click the :guilabel:`Create` button.
 
-2. Click the :guilabel:`Create` button.
+2. Select the type of network you want to create (new network, :ref:`new-dhcp-scope`, :ref:`new-container`).
 
-3. Select what type of network (new network, :ref:`new-dhcp-scope`, :ref:`new-container`) you'd like to create.
+3. Fill in the necessary details. The *Create* wizard varies depending on the type you selected:
 
-4. Enter the appropriate values, grouped on pages depending on the type.
+   * For a **network**, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site, see :ref:`active-directory`.
 
-.. note::
-  The *Create* wizard is different depending on the type selected through the dropdown:
+   * A **DHCP scope** can be created with the network and broadcast addresses automatically configured, see :ref:`new-dhcp-scope`.
 
-* For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
+   * A **container** doesn't have a network or broadcast address, see :ref:`ipam-containers`.
 
-* A *DHCP scope* can be created with the network and broadcast address automatically configured. See :ref:`new-dhcp-scope`.
+4. Click :guilabel:`Finish`.
 
-* A *container* has no network or broadcast address. See :ref:`ipam-containers`.
+Once a non-reserved IP Address range is created, it becomes managed by the Networks component and users with appropriate privileges can work with addresses from the range.
 
-5. Click :guilabel:`Finish`.
-
-Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the Networks component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.
-
-It is possible to create subranges of existing ranges and DHCP scopes.
+You can also create subranges of existing ranges and DHCP scopes.
 
 .. note::
-  When you create a new IP Address range, Micetro checks to see if the new range can be logically grouped with other address ranges, and adds the new range in the appropriate address range group.
+  When you create a new IP Address range, Micetro checks to see if it can logically group the new range with other address ranges and adds the new range in the appropriate address range group.
 
 .. _ipam-range-config:
 
 Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^
 
-When creating a new network, DHCP scope, or container, you must complete the Properties page in the final step.
+When creating a new network, DHCP scope, or container, you must fill in the Properties page in the final step.
 
 These properties are defined in :ref:`admin-custom-properties`.
 
 Network Modifications
 ^^^^^^^^^^^^^^^^^^^^^
 
-Once you have created a network, it is easy to make changes.
+**To modify a network**:
 
 1. Select the range in the list.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Edit network properties`. You can also select this option on the **Row menu (..)**.
+2. Select :guilabel:`Edit network properties` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
 
-3. Make the desired changes.
+3. Make the desired changes to the network.
 
 4. Click :guilabel:`Save`.
 
-Network Deletions
-^^^^^^^^^^^^^^^^^
+Deleting Networks
+^^^^^^^^^^^^^^^^^^
 
-You can always delete a network definition. If you delete a network, the IP addresses that belonged to it will get the attributes of the parent network. If the network you are deleting has subranges, they will become children of the unassigned networks' parent.
+When a network is deleted, the IP addresses associated with it inherit the attributes of the parent network. If the network being deleted contains subranges, those subranges will become children of the parent etwork of the unassigned networks.
 
-To delete a network definition:
+**To delete a network definition**:
 
-1. Select network(s) you want to remove.
+1. Select network(s) you wish to remove.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`. You can also select this option on the **Row menu (..)**. 
+2. Select :guilabel:`Delete network` on either the :guilabel:`Action` or row :guilabel:`...` menu. 
 
-3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
+3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to cancel.
 
 IP Address List
 ---------------
 
-To view a list of host entries in a particular network, double-click the network. This opens a list where you can view and edit the properties of individual IP address entries.
+To view a list of host entries within a specific network, double-click the network. This opens a list where you can view and edit the properties of individual IP address entries.
 
 .. image:: ../../images/view-Networks-Micetro-10.5.png
-  :width: 80%
+  :width: 85%
   
-The :guilabel:`State` section in the filtering sidebar can be used to show only **Free**, **Assigned**, **Claimed**.
+* Use the :guilabel:`State` section in the filtering sidebar to filter the list by IP address state:
 
-The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
+   * **Free**: addresses that are not actively in use, neither being pinged, assigned, nor claimed.
 
- * **Empty**: The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
+   * **Assigned**: addresses with a corresponding DNS record, a set custom property, or undergoing discovery and ping tests.
 
- * **OK**: If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
+   * **Claimed**: addresses explicitly claimed using Micetro. Only the individual who claimed it or the administrator can remove the claim.
 
- * **Verify**: If there is not a match between the A and the PTR records for the host, the status is listed as Verify. The most common reasons are:
+   * **Reverved**: addresses with a DHCP reservation configured on them.
 
-      * There is an A record but the PTR record is missing.
+   * **Leased**: addresses currently leased through DHCP but not specifically assigned.
 
-      * There is a PTR record but the A record is missing.
+* The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
 
-      * The data section in the PTR record does not correspond to the name of the A record.
+    * **Empty**: The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
 
-When the PTR Status for a host entry shows Verify, you can open the IP Address dialog box for the host to see more detailed information on which DNS host entry is generating this status message.
+    * **OK**: If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
 
-.. note::
-  When working with large IP Address ranges (ranges that contain more than 4096 IP Addresses) the :guilabel:`Show unassigned addresses` will no longer be available and the IP Address List window will only display assigned IP Addresses.
+    * **Verify**: There isn't a match between the A and the PTR records for the host. Common reasons for this include:
 
-.. _ip-address-dialog:
+         * An A record exists, but the PTR record is missing.
 
-IP Address Inspector
---------------------
+         * A PTR record exists, but the A record is missing.
 
-When you add or modify an existing IP address entry, the IP Address dialog box displays. The entries in Inspector can vary, depending on the custom properties defined in Micetro (e.g., "Owner" is a custom property in the example shown below), if DNS or DHCP related data exists, etc.
+         * The data section in the PTR record does not correspond to the name of the A record.
 
-.. image:: ../../images/ip-inspector-Micetro.png
-  :width: 30%
-  :align: center
-|
+   When the PTR Status for a host entry shows as **Verify**, you can open the IP Address dialog box for the host to see more detailed information regarding which DNS host entry is generating this status message.
+
+
 .. _ipam-add-dns-host:
 
 Adding a DNS Host
@@ -533,4 +520,3 @@ To view subnets that don't belong to any AD site:
 .. image:: ../../images/subnets-outside-sites.png
   :width: 90%
   :align: center
-|
