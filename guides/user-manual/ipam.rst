@@ -42,7 +42,7 @@ Switching to a Different Address Space
 
 You can only work in one address space at a time. The current address space is displayed in the lower-right corner of the :guilabel:`Networks` table on the :guilabel:`IPAM` page.
 
-To switch to a different address space:
+**To switch to a different address space**:
 
 1. Click the **User** icon in the upper-right corner.
 
@@ -199,31 +199,51 @@ To view a list of host entries within a specific network, double-click the netwo
 
    When the PTR Status for a host entry shows as **Verify**, you can open the IP Address dialog box for the host to see more detailed information regarding which DNS host entry is generating this status message.
 
+.. _ip-address-dialog:
+
+Adding and Modifying Existing IP Address Entries
+------------------------------------------------
+
+The inspector located on the right side of the IP Address list displays the properties associated with the selected IP address. The information included in the inspector may vary, depending on the custom properties defined in Micetro, as well as the presence of DNS or DHCP related data. In the **Related DNS Data** section you can find all DNS records that are associated with the address. You have the option to create new records or edit/delete the existing ones.
+
+.. image:: ../../images/ip-inspector-Micetro.png
+  :width: 30%
+  :align: center
+|
 
 .. _ipam-add-dns-host:
 
 Adding a DNS Host
 ^^^^^^^^^^^^^^^^^
 
-While viewing the IP Address Inspector, click the :guilabel:`+` button in the :guilabel:`Related DNS data`.
+1. Select the desired IP address in the IP Address list.
 
-.. image:: ../../images/ip-create-dns-Micetro.png
-  :width: 50%
-  :align: center
+2. In the :guilabel:`Related DNS data` section of the inspector, click the create :guilabel:`+` button.
 
-The **Address** field is automatically filled with the selected IP address. Fill in the other information and click :guilabel:`Create now` or :guilabel:`Add to request`. (See :ref:`webapp-workflows`.)
+3. Fill in the **Create DNS Record** dialog box. :guilabel:`Address` is automatically filled with the selected IP address.
+
+   .. image:: ../../images/ip-create-dns-Micetro.png
+     :width: 50%
+     :align: center
+
+2. Click :guilabel:`Create now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
 
 Editing a DNS Host
 ^^^^^^^^^^^^^^^^^^
 
-1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Edit`.
+1. In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Edit` on the ellipsis menu for the relevant DNS record.
 
-2. Make the desired changes and click :guilabel:`Save`. The dialog box closes and the details are updated.
+2. Make the desired changes and click :guilabel:`Save now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
+ 
 
 Removing a DNS Host
 ^^^^^^^^^^^^^^^^^^^
 
-1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
+1.In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Delete` on the ellipsis menu for the relevant DNS record.
+
+2. Select :guilabel:`Create now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
+
+3. The host details are deleted and removed from the inspector.
 
 
 .. _split-range-wizard:
@@ -235,7 +255,7 @@ This wizard allows you to create multiple subranges from an existing range. The 
 
 1. On the **IPAM** page, select the range you'd like to split.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Allocate subranges`. You can also select this option on the **Row menu (...)**.
+2. Select :guilabel:`Allocate subranges` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
 3. Configure the new subranges. If you choose fewer subnets that fit in the parent, you can also set the offset from where you want to start allocating. Click :guilabel:`Next` when finished configuring.
 
@@ -248,24 +268,24 @@ This wizard allows you to create multiple subranges from an existing range. The 
 5. On the summary page verify the new subranges and click :guilabel:`Finish`.
 
 .. note::
-  In the web application, the Split Range and Allocate Range wizards are merged together. For information on these wizards in the Management Console, see :ref:`console-split-range` and :ref:`console-allocate-ranges`.
+  In the Micetro web interface, the Split Range and Allocate Range wizards are merged together. For information on these wizards in the Management Console, see :ref:`console-split-range` and :ref:`console-allocate-ranges`.
 
 
 Join Ranges
 -----------
 
-1. On the **IPAM** page, select the ranges that you want to join.
+1. On the **IPAM** page, select the ranges you want to join.
 
-2. On the :guilabel:`Action` menu, select :guilabel: `Join Ranges`. You can also select this option on the **Row menu (...)**.
+2. Select :guilabel:`Join Ranges` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
 
    .. image:: ../../images/join-ranges.png
       :width: 90%
    
 3. Set the properties for the joined range:
 
-   * **Use Access from**: Click the drop-down list and specify from which range you will gain access.
+   * **Use Access from**: Click the dropdown list and specify from which range you will gain access.
 
-   * **Use Properties from**: Click the drop-down list and specify from which range you will use the properties.
+   * **Use Properties from**: Click the dropdown list and specify from which range you will use the properties.
 
    * **Title**: Enter a title for the new range.
 
@@ -288,7 +308,7 @@ Configuring Host Discovery Using Ping
 3. Select the :guilabel:`Enable` option.
 
   * Frequency: 
-    Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
+    Click the dropdown list and select the frequency (e.g., 1, 2, etc.).
 
   * Every: 
     Enter the frequency unit for discovery (e.g. days, weeks, etc.).
@@ -347,19 +367,19 @@ To change the monitoring settings for a subnet:
 
 2. On the :guilabel:`Action` menu, select :guilabel:`Set subnet monitoring`. The Subnet Monitoring dialog box opens.
 
-  * **Enabled**: When selected, the subnet will be monitored.
+   * **Enabled**: When selected, the subnet will be monitored.
 
    * **Script to invoke**: Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
 
    * **Email addresses**: Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
 
-* **Dynamic Threshold**: Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
+   * **Dynamic Threshold**: Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
 
-* **Static Threshold**: Enter the threshold for the free addresses in a subnet.
+   * **Static Threshold**: Enter the threshold for the free addresses in a subnet.
 
-* **Only perform action once (until fixed)**: When selected, the action is performed only once when the number of free addresses goes below the threshold.
+   * **Only perform action once (until fixed)**: When selected, the action is performed only once when the number of free addresses goes below the threshold.
 
-* **Perform action when fixed**: When selected, the action is performed when the number of free addresses is no longer below the threshold.
+   * **Perform action when fixed**: When selected, the action is performed when the number of free addresses is no longer below the threshold.
 
 3. Click :guilabel:`OK` to confirm your settings.
 
@@ -373,7 +393,7 @@ Overview
 Micetro allows administrators to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites and add, remove, and move subnets between the sites.
 
 .. note::
-  AD sites and subnets integration is only available when Men&Mice Central is running on a Windows server, and it is enabled by default. See :ref:`admin-general`.
+  AD sites and subnets integration is only available when Micetro Central is running on a Windows server, and it is enabled by default. See :ref:`admin-general`.
 
   AD sites are only assigned to and visible in the ``Default`` address space.
 
@@ -404,20 +424,15 @@ Adding an AD Forest
      :width: 60%
   
 |
-Use same Global Catalog as the Men&Mice Central server
-  If checked, Micetro will use the same Global Catalog server as the Men&Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server's FQDN or IP address in the **Global Catalog Server** field.
+   * **Use same Global Catalog as the Micetro Central server**: If selected, Micetro will use the same Global Catalog server as the Micetro Central server is using. If you unselect this checkbox, you must specify the Global Catalog server's FQDN or IP address in the **Global Catalog Server** field.
 
-Global Catalog Server
-  If you want to specify a Global Catalog server, enter the server's FQDN or IP address in this field. (To unlock this field, the :guilabel:`Use same Global Catalog as the Men&Mice Central server` checkbox needs to be unchecked.)
+   * **Global Catalog Server**: If you want to specify a Global Catalog server, enter the server's FQDN or IP address in this field. (To unlock this field, the :guilabel:`Use same Global Catalog as the Micetro Central server` checkbox needs to be unchecked.)
 
-Use the same credentials as the Men&Mice Central server
-  If checked, Micetro uses the same credentials as the Men&Mice Central server when accessing the site information.
+   * **Use the same credentials as the Micetro Central server**: If checked, Micetro uses the same credentials as the Micetro Central server when accessing the site information.
 
-User and Password
-  If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. (To unlock these fields, the :guilabel:`Use the same credentials as the Men&Mice Central server` checkbox needs to be unchecked.)
+   * **User and Password**: If you don't want to use the default credentials for the machine running Micetro Central, enter the desired username and password in these fields. (To unlock these fields, the :guilabel:`Use the same credentials as the Micetro Central server` checkbox needs to be unchecked.)
 
-Set as read only
-  If checked, users will be able to display data from Active Directory, but unable to make any modifications.
+   * **Set as read-only**: If checked, users will be able to display data from Active Directory, but unable to make any modifications.
 
 3. Click :guilabel:`OK` to save the changes. The forest is added and the sites belonging to the forest are displayed.
 
@@ -428,7 +443,7 @@ To edit an existing AD Forest (to, for example, change the read-only status):
 
 1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
-2. Select the :guilabel:`Edit AD Forest` action from the top toolbar or the **Row menu (...)**.
+2. Select the :guilabel:`Edit AD Forest` action from the top toolbar or the row :guilabel:`...` menu.
 
 3. Update the settings in the dialog box.
 
@@ -443,14 +458,14 @@ To remove an AD Forest from Micetro:
 
 2. Select the AD Forest(s) you want to remove.
 
-3. Select the :guilabel:`Remove AD Forest` action on the top toolbar or the **Row menu (...)**.
+3. Select the :guilabel:`Remove AD Forest` action on the top toolbar or the row :guilabel:`...` menu.
 
 4. Click :guilabel:`OK` in the confirmation box to remove the Forest(s).
 
 Reloading the Sites in an AD Forest
 """""""""""""""""""""""""""""""""""""
 
-Data from AD Forests is synchronized by Men&Mice Central regularly. To manually synchronize forests and reload the data for sites and subnets:
+Data from AD Forests is synchronized by Micetro Central regularly. To manually synchronize forests and reload the data for sites and subnets:
 
 1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
@@ -472,7 +487,7 @@ To view subnets within a specific site:
 
 2. Select the AD Forest the site is in, or use the :ref:`webapp-quick-filter` to find it by name.
 
-3. On the :guilabel:`Action` menu, select :guilabel:`View networks`. You can also select this option on the **Row menu (...)**.
+3. Select :guilabel:`View networks` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
 This will open the :menuselection:`IPAM --> Networks` context with a filter applied to show all subnets that belong to the site.
 
@@ -482,11 +497,11 @@ This will open the :menuselection:`IPAM --> Networks` context with a filter appl
 Moving subnets between AD sites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add subnet(s) to a site, or move between sites:
+**To add subnet(s) to a site, or move between sites**:
 
 1. On the **IPAM** page, select the subnet(s) in the list.
 
-2. Select :guilabel:`Set AD Site` on the :guilabel:`Action` menu or the **Row menu (...)**.
+2. Select :guilabel:`Set AD Site` on either the :guilabel:`Action` menu or the row :guilabel:`...` menu.
 
 3. Set the (new) AD Site in the dropdown and click :guilabel:`Save`.
 
@@ -502,21 +517,21 @@ Remove subnet from AD site
 
 1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
 
-2. Select :guilabel:`Remove from AD Site` on the :guilabel:`Action` menu or the **Row menu (...)**.
+2. Select :guilabel:`Remove from AD Site` on either the :guilabel:`Action` menu or the row :guilabel:`...` menu.
 
 3. Click :guilabel:`Yes` to confirm the removal.
 
 Subnets outside of sites
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To view subnets that don't belong to any AD site:
+**To view subnets that don't belong to any AD site**:
 
-1.  On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
+1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
 2. Click the ``Flat view`` button (see :ref:`webapp-quick-filter`) next to the Quick Filter to change the view.
 
 3. Sort the IP address ranges by the **AD Site** column in *ascending* order:
 
-.. image:: ../../images/subnets-outside-sites.png
-  :width: 90%
-  :align: center
+   .. image:: ../../images/subnets-outside-sites.png
+     :width: 90%
+ 
