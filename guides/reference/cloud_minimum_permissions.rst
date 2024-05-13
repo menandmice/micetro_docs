@@ -1,6 +1,6 @@
 .. meta::
    :description: Minimum permissions for adding AWS and Azure accounts to Micetro
-   :keywords: Micetro credentials, AWS management console, Micetro by Men&Mice, Azure 
+   :keywords: Micetro credentials, AWS management console, Micetro, Azure 
 
 .. _cloud-minimum-permissions:
 
@@ -55,7 +55,7 @@ Cloud Network Management Permissions
 
 **Recommended permissions**:
 
-For optimal Cloud network management within Micetro, it is strongly advised to grant the following permissions. Keep in mind that you have the flexibility to omit certain permissions or restrict resource access according to your needs. However, be aware that such exclusions may result in limited functionality within Micetro. As an illustration, if you skip the **ec2:DeleteVpc** permission, Micetro will be unable to remove Virtual Private Clouds (VPCs).
+For optimal Cloud network management in Micetro, it is strongly recommended that you grant the following permissions. Keep in mind that you have the flexibility to omit certain permissions or restrict resource access according to your needs. However, be aware that such exclusions may result in limited functionality within Micetro. For instance, if you skip the **ec2:DeleteVpc** permission, Micetro won't be able to remove Virtual Private Clouds (VPCs).
 
 * ec2:CreateVpc
 * ec2:DeleteVpc
