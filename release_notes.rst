@@ -21,7 +21,7 @@ May 15, 2024
 
 Bug Fixes
 ^^^^^^^^^
-* Fixed an issue with Azure setups containing more than 1000 zones. Previously, Micetro was unable to load more than 1000 zones from Azure because of a hard-coded limit of 1000.
+* Fixed an issue with Azure setups containing more than 1000 zones. Previously, Micetro would fail reading in zones from Azure if the number of zones exceeded 1000.
 * Fixed an issue where explicit session removals could lead to a potential out-of-memory condition in the web service.
 * Fixed an issue where rolling back changes when adding zones to xDNS failed, resulting in the deletion of the zones.
 * Fixed an issue where adding a DNS server and simultaneously attempting to add a zone within the same session led to intermittent failures.
@@ -77,7 +77,7 @@ Deprecation Announcements
 
 * We've launched the new Micetro DNS/DHCP server (MDDS) appliance, marking a transition from the old Men&Mice virtual appliance platform. If you're using the Men&Mice virtual appliance and considering an upgrade to Micetro 11.0, please reach out to our support team at support@bluecatnetworks.com for assistance with migrating smoothly to the new platform. It's important to note that all customers will need to transition to the new appliance platform eventually, so we highly recommend making this change in the upgrade to version 11.0.
 * OpenStack support is deprecated as the versions currently supported in Micetro have reached end-of-life status.
-* Dyn support is deprecated as it is no longer supported by Oracle, with the target retirement date being May 31, 2023. For more information see `here <https://www.oracle.com/corporate/acquisitions/dyn/technologies/enterprise-customer-faq.html>`_.
+* Dyn support is deprecated as it is no longer supported by Oracle, with the target retirement date being May 31, 2023. For more information, see `here <https://www.oracle.com/corporate/acquisitions/dyn/technologies/enterprise-customer-faq.html>`_.
 ----
 
 * Support for BIND versions 9.16 and earlier is deprecated, as these versions have been declared as end-of-life by ISC in Q1 2024. The same applies to the subscriber edition.
@@ -86,10 +86,10 @@ Deprecation Announcements
 ----
 
 * Support for Windows Server 2012 and 2012 R2 is deprecated because Microsoft announced end of support on October 10, 2023. This applies both to hosting the Micetro solution itself and as a DNS/DHCP server that Micetro can overlay.
-* Support for Microsoft SQL Server 2012 and older versions is deprecated as these databases reached end of support on July 12, 2022. For more information on Microsoft SQL Server roadmap see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
+* Support for Microsoft SQL Server 2012 and older versions is deprecated as these databases reached end of support on July 12, 2022. For more information on Microsoft SQL Server roadmap, see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
 * Support for Ubuntu 14.04 LTS is deprecated as this version reached end of support in Q1 2024 according to the `Ubuntu release cycle <https://ubuntu.com/about/release-cycle>`_.
 * PostgreSQL 11 is also deprecated as this database was out of support November 9 2023. For more information on the PostgreSQL roadmap see `here <https://www.postgresql.org/support/versioning/>`_
-* Python 3.7 has been deprecated in Micetro due to its end of life since June 2023, according to the `python release cycle <https://devguide.python.org/versions/>`_. All Python scripts, including those used in scheduled scripts or MFA (multifactor authentication), will need to be updated accordingly.
+* Python 3.7 has been deprecated in Micetro due to its end of life in June 2023, according to the `python release cycle <https://devguide.python.org/versions/>`_. All Python scripts, including those used in scheduled scripts or MFA (multifactor authentication), will need to be updated accordingly.
 
 .. _10.5.7-release:
 
