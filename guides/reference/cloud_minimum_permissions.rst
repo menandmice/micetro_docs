@@ -26,6 +26,10 @@ For Multi-account setups, add these additional permissions:
 
 Restrict IAM permissions to the user associated with the credentials provided to Micetro.
 
+If you want Micetro to be able to read the alias of your account to use as an account name then the following permission is also needed:
+
+* iam:ListAccountAliases
+
 DNS Management Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 **Required permissions**:
@@ -33,13 +37,13 @@ DNS Management Permissions
 * route53:ListHostedZones
 * route53:GetHostedZoneCount
 * route53:ListHealthChecks
+* route53:ListHostedZonesByName
 
 **Recommended permissions**:
 
 To maximize the capabilities of Cloud network management in Micetro, it is highly recommended to grant the following permissions. It's important to note that you have the flexibility to omit certain permissions or restrict the resources they can access based on your preferences. However, be mindful that such limitations may impact Micetro's functionality. For instance, omitting the **ec2:DeleteVpc** permission will result in Micetro being unable to remove Virtual Private Clouds (VPCs).
 
 * route53:GetHostedZone
-* route53:ListHostedZonesByName
 * route53:CreateHostedZone
 * route53:DeleteHostedZone
 * route53:ListResourceRecordSets
@@ -52,6 +56,7 @@ Cloud Network Management Permissions
 * ec2:DescribeRegions
 * ec2:DescribeSubnets
 * ec2:DescribeVPCs
+* ec2:DescribeInstances
 
 **Recommended permissions**:
 
@@ -61,7 +66,6 @@ For optimal Cloud network management in Micetro, it is strongly recommended that
 * ec2:DeleteVpc
 * ec2:CreateSubnet
 * ec2:DeleteSubnet
-* ec2:DescribeInstances
 * ec2:CreateTags
 * ec2:DeleteTags
 
