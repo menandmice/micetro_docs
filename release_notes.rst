@@ -11,7 +11,22 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`11.0.0-release`
+Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`
+
+.. _11.0.1-release:
+
+11.0.1
+------
+May 15, 2024
+
+Bug Fixes
+^^^^^^^^^
+* Fixed an issue with Azure setups containing more than 1000 zones. Previously, Micetro was unable to load more than 1000 zones from Azure because of a hard-coded limit of 1000.
+* Fixed an issue where explicit session removals could lead to a potential out-of-memory condition in the web service.
+* Fixed an issue where rolling back changes when adding zones to xDNS failed, resulting in the deletion of the zones.
+* Fixed an issue where adding a DNS server and simultaneously attempting to add a zone within the same session led to intermittent failures.
+* Fixed an issue in ISC failover where the split between failover peers would change when adding a scope from the secondary server to a failover relationship.
+* Fixed a bug that affected the interpretation of Azure DNS records containing hostname data, leading to inaccuracies in record processing.
 
 .. _11.0.0-release:
 
@@ -24,7 +39,7 @@ New Features
 
 * **MDDS Support**: Micetro now supports MDDS appliances from BlueCat. This feature is intended for customers seeking to seamlessly incorporate MDDS appliances into their existing network infrastructure and manage them within Micetro alongside their other DNS/DHCP servers. With this enhancement, users can manage various functionalities on MDDS appliances within Micetro, including:
 
-   * BIND options that allow viewing and editing DNS options on BIND for both for DNS servers and zones.
+   * BIND options that allow viewing and editing DNS options on BIND for both DNS servers and zones.
    * Dynamic DNS updates.
    * Network interfaces.
    * Network services such as DNS, DHCP, NTP, resolv.conf, and SNMP.
@@ -51,7 +66,7 @@ Bug Fixes
 ^^^^^^^^^
 * Fixed an issue where existing records disappeared and reappeared again. Now all existing records are shown correctly when changing the state of DNS zone from static to dynamic. 
 * Excessive timeouts when trying to establish initial connections to agents have been significantly reduced.
-* Senstive SNMP information is no longer logged in the object history.
+* Sensitive SNMP information is no longer logged in the object history.
 * Object history entries are now created for the NS record within DNS zones.
 * Fixed an issue where users were unable to edit the TTL (Time To Live) for Akamai Edge record sets in the Web Interface.
 * Server grids in the web UI are now reloaded after synchronization.
@@ -61,11 +76,11 @@ Deprecation Announcements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * We've launched the new Micetro DNS/DHCP server (MDDS) appliance, marking a transition from the old Men&Mice virtual appliance platform. If you're using the Men&Mice virtual appliance and considering an upgrade to Micetro 11.0, please reach out to our support team at support@bluecatnetworks.com for assistance with migrating smoothly to the new platform. It's important to note that all customers will need to transition to the new appliance platform eventually, so we highly recommend making this change in the upgrade to version 11.0.
-* OpenStack support is deprecated as the versions currently supported in Micetro have reached end of life status.
+* OpenStack support is deprecated as the versions currently supported in Micetro have reached end-of-life status.
 * Dyn support is deprecated as it is no longer supported by Oracle, with the target retirement date being May 31, 2023. For more information see `here <https://www.oracle.com/corporate/acquisitions/dyn/technologies/enterprise-customer-faq.html>`_.
 ----
 
-* Support for BIND versions 9.16 and earlier is deprecated, as these versions have been declared as end of life by ISC in Q1 2024. The same applies to the subscriber edition.
+* Support for BIND versions 9.16 and earlier is deprecated, as these versions have been declared as end-of-life by ISC in Q1 2024. The same applies to the subscriber edition.
 * Support for ISC DHCP versions 4.4.0 and earlier is deprecated. However, versions 4.4.1 and later will continue to be supported by Micetro, despite ISC dropping support for ISC DHCP as a whole in December 2022. This is because ISC DHCP is still widely used by Micetro customers and will likely continue to be so for some time.
 * Support for Kea version 2.0 as a service that Micetro can overlay is deprecated due to reaching end-of-life status and no longer being supported by ISC. See the roadmap for ISC Kea `here <https://kb.isc.org/docs/aa-00896>`_. It should be noted that support for older versions of Kea is deprecated as well.
 ----
