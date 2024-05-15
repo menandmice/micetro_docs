@@ -120,7 +120,7 @@ Authorized users and approvers can also submit change requests, even if they hav
 .. note::
   After a DNS request for a DNS change has been created, the corresponding IP address will be set in to a pending state and will not be available, for example when requesting the next Free IP address in the subnet.
 
-Submitting a Cange Request
+Submitting a Change Request
 ---------------------------
 
 Step 1: Open the pending request.
@@ -144,7 +144,7 @@ If the user want to make a scheduled change (i.e. the records are applied to the
 Additionally, if custom properties have been defined for Change Requests, the user will be asked to enter those here, along with the optional Comment.
 
 .. note::
-  All dates and times are according to the time zone setting on the Men&Mice Central server.
+  All dates and times are according to the time zone setting on the Micetro Central server.
 
 .. image:: ../../images/workflow-schedule-request.png
   :width: 70%
