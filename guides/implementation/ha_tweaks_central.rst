@@ -1,10 +1,10 @@
 .. meta::
-   :description: Tweaking the High Availability settings for Men&Mice Central
-   :keywords: high availability, failover, Men&Mice Central, Micetro 
+   :description: Tweaking the High Availability settings for Micetro Central
+   :keywords: high availability, failover, Micetro Central, Micetro 
 
 .. _ha-tweaks-central:
 
-Men&Mice Central HA tweaks
+Micetro Central HA Tweaks
 ==========================
 
 Changing the default heartbeat timestamp value in Central HA
