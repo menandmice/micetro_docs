@@ -26,7 +26,7 @@ For Multi-account setups, add these additional permissions:
 
 Restrict IAM permissions to the user associated with the credentials provided to Micetro.
 
-If you want Micetro to be able to read the alias of your account to use as an account name then the following permission is also needed:
+If you want Micetro to be able to read the alias of your account in order to use as an account name, the following permission is also needed:
 
 * iam:ListAccountAliases
 
