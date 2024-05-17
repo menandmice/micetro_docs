@@ -11,7 +11,7 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`
+Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.3.12-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`
 
 .. _11.0.1-release:
 
@@ -409,10 +409,21 @@ Bug Fixes
 
 * An issue was fixed where it was possible to get information about a network through an error message, even though the user does not have access to the network.
 
+.. _10.3.12-release:
+
+10.3.12
+-------
+May 17, 2024
+
+Bug Fixes
+^^^^^^^^^^
+* Fixed issues with ``GetNextFreeAddress`` to improve concurrency safety when used with the ``temporaryClaimTime`` parameter.
+* Fixed reliability issues in the synchronization process of Microsoft DHCP Servers.
+
 .. _10.3.11-release:
 
 10.3.11
-------
+-------
 February 13, 2024
 
 Improvements
