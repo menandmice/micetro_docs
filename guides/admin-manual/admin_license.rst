@@ -13,40 +13,38 @@ The various functionalities of Micetro can be activated using specific license k
 
 * IPAM module
 
-  .. note::
-    The IPAM license key unlocks **both** the DHCP and IPAM functionalities of Micetro.
-
 * Appliance module
 
 * Workflow module
 
 * Reporting module
 
+.. note::
+    The IPAM license key unlocks **both** the DHCP and IPAM functionalities of Micetro.
+
 Viewing License Keys
 --------------------
 
-To view information about the licenses currently active on your system, navigate to :menuselection:`Admin --> Configuration --> Licenses`. Each active module is displayed in a card showing its associated license keys. These keys can be either active or expired.
+To view information about the licenses currently active on your system, navigate to :menuselection:`Admin --> Configuration --> Licenses`. Each active module has its own card displaying the licence keys. These keys can be either active or expired.
 
 The card also displays how much of the license you have used, for example, the number of DNS zones you have used compared to the limit of the license. This information is shown in a usage bar that is located in the upper right-hand corner of the card.
 
-Additionally, the card shows the expiry date of the active license key in the bottom right-hand corner.
+Additionally, the card shows the expiry date of the active license key at the bottom.
 
 .. image:: ../../images/license-management-11.png
   :width: 80%
-  :align: center
 |
-By selecting :guilabel:`License Details` in the upper right-hand corner of the page, you can easily monitor license usage and any related issues. 
+By selecting :guilabel:`License Details` in the upper right-hand corner of the page, you can monitor license usage and any related issues. 
 
 .. image:: ../../images/license-management-summary-11.png
    :width: 65%
-   :align: center
    
 You can use the email link to contact our support team for any inquiries regarding your licenses. When you click the email link, it will automatically gather all active keys and usage information, compiling them into a text block that you can easily send to support for assistance.
 
 Expired Keys
 ------------
 
-Notifications will alert administrators when a license key is expired or about to expire. Micetro provides a grace period of four months for license renewal. During this grace period, the product module will continue to function normally after the expiration date. However, after the grace period elapses, the module will cease to operate until the license is renewed.
+Notifications will alert you when a license key is expired or about to expire. Micetro provides a grace period of four months for license renewal. During this grace period, the product module will continue to function normally after the expiration date. However, after the grace period elapses, the module will cease to operate until the license is renewed.
 
 Adding a License Key
 --------------------
