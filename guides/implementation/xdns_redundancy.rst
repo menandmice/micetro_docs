@@ -11,7 +11,7 @@ The xDNS (Cross-Domain Name System) redundancy feature helps ensure the availabi
 
 * **Creating Redundancy Groups**: With xDNS profiles, you can create groups that consist of multiple DNS servers and services. These groups are designed to manage the authority of a specific list of DNS zones.
 * **Identical Zone Content**: Once you've set up an xDNS redundancy group, the system assists you in generating identical copies of the DNS zone content across multiple primary zones. This replication ensures that all zones within the group are the same in every aspect.
-* **Flexibility**: As your needs evelove, you can add or romeve zones from the xDNS profile.
+* **Flexibility**: You can add or remove zones from the xDNS profile as your needs evolve.
 
 **To access xDNS profiles**:
 
@@ -24,14 +24,14 @@ The xDNS (Cross-Domain Name System) redundancy feature helps ensure the availabi
 |
 xDNS Profiles 
 -------------
-xDNS Profiles group together two or more DNS services that share the the authority of a list of zones. Any changes made to these zones, within or outside of Micetro, are automatically synchronized across all DNS services within the profile. In case of conflicts, Micetro has a built-in conflict resolution strategy to handle them.
+xDNS Profiles group together two or more DNS services that share the authority of a list of zones. Any changes made to these zones, within or outside Micetro, are automatically synchronized across all DNS services within the profile. In case of conflicts, Micetro has a built-in conflict resolution strategy to handle them.
 
 Creating/Modifying xDNS Profiles 
 ---------------------------------
 To create or edit an xDNS profile, you must have administrative access within Micetro to the DNS Services you want to include. 
 
 * To **create** a new profile, click :guilabel:`Create Profile` in the lower-rigt corner of the xDNS Profiles list.
-* To **edit** a profile, select the relevant profile, and then select :guilabel:`Edit profile` on the Row :guilabel:`...` menu. You can also double-click the profile.
+* To **edit** a profile, select the relevant profile, and then select :guilabel:`Edit profile` on the row :guilabel:`...` menu. You can also double-click the profile.
 
 Each profile has the following properties: 
 
@@ -44,7 +44,7 @@ Each profile has the following properties:
       * **Overwrite existing zones**: If a zone with the same name exists on any other DNS service included in the xDNS profile, its records will be overwritten with the record data from the zone instance being added to the xDNS profile.
       * **Merge records**: If a zone with the same name exists on any secondary service, its contents will be merged with the contents of the zone on the primary service.
 
-* **Servers**: At least two DNS services must be added to the profile. Each service can also be configured to reject external changes. This means changes to record data made on one service outside of Micetro will not be replicated by xDNS to other services. 
+* **Servers**: At least two DNS services must be added to the profile. Each service can also be configured to reject external changes. This means changes to record data made on one service outside Micetro will not be replicated by xDNS to other services. 
 
 .. image:: ../../images/create-xdns-profile.png
   :width: 60%
@@ -52,14 +52,14 @@ Each profile has the following properties:
   |
 
 .. note::
-   The list of servers **cannot** be changed after the profile has been created 
+   The list of servers **cannot** be changed after the profile has been created.
 
 Configuring TTL for DNS Records in xDNS Profiles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can specify the default Time-to-Live (TTL) for DNS records created within zones for all xDNS profiles. This setting determines how long DNS information remains cached by DNS resolvers before requesting updated data.
 
 1. Go to the **Admin** page.
-2. Select :guilabel:`Configuration` in the upper left corner.
+2. Select :guilabel:`Configuration` in the upper-left corner.
 3. Under **System Settings** in the filtering sidebar, select :guilabel:`Advanced`.
 4. Enter your desired TTL value in the appropriate text box.
 
@@ -70,7 +70,7 @@ To delete an xDNS profile, you must have administrative access within Micetro to
 
 When an xDNS profile is deleted, each service retains a copy of the zones from the profile, but replication between them will stop. 
 
-* To delete a profile, select the relevant profile, and then select :guilabel:`Delete profile` on the Row :guilabel:`...` menu. You can also double-click the profile.
+* To delete a profile, select the relevant profile, and then select :guilabel:`Delete profile` on the row :guilabel:`...` menu. You can also double-click the profile.
 
 Adding Zones to xDNS Profiles
 ------------------------------
@@ -81,7 +81,7 @@ xDNS profiles initially do not include any zones.
 
 1. Go to the **DNS** page.
 2. In the filtering sidebar, select :guilabel:`Primary Zones`, if not already selected. xDNS only supports primary zones. 
-3. On the :guilabel:`Actions` menu, select :guilabel:`Add to xDNS profile`. You can also select this option on the Row :guilabel:`...` menu.
+3. On the :guilabel:`Actions` menu, select :guilabel:`Add to xDNS profile`. You can also select this option on the row :guilabel:`...` menu.
 
    .. image:: ../../images/add-to-xdns-profile.png
      :width: 60%
