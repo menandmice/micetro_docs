@@ -89,6 +89,21 @@ You can edit the properties of a network. Note, that if the network has :ref:`ad
   
 4. Click :guilabel:`Save`.
 
+Duplicating Networks
+^^^^^^^^^^^^^^^^^^^^
+When you need to set up similar environments or scale existing configurations, you can duplicate networks along with their subranges, DHCP scopes and configurations under a new network address. This process helps standardize network layout by replicating tthe structure of the original network. Any modifications or overrides applied during duplication will be reflected across all duplicated ranges and their subranges.
+
+**To duplicate a network**:
+
+1. Select the network you wish to duplicate.
+
+2. Select :guilabel:`Duplicate` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
+
+3. In the Duplicate Networks dialog box, enter a new network address and title for the network you are creating. 
+
+4. Click :guilabel:`Duplicate`. The new network is added to the networks list.
+
+
 Deleting Networks
 ^^^^^^^^^^^^^^^^^^
 
@@ -104,7 +119,7 @@ Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations,
 
 1. Select network(s) you wish to remove.
 
-2. Select :guilabel:`Delete network` on either the :guilabel:`Action` or row :guilabel:`...` menu. 
+2. Select :guilabel:`Delete network` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
 
 3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to cancel.
 
