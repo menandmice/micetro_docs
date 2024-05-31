@@ -1,331 +1,289 @@
 .. meta::
-   :description: IP address management (IPAM) in Micetro by Men&Mice
-   :keywords: IPAM, IP address management
+   :description: IP address management (IPAM) in Micetro
+   :keywords: IPAM, IP address management, network, container, dhcp scope
 
 .. _ipam:
 
 IPAM
-======
+=====
 
 .. note::
-  This information applies to the Web Interface. For information about how to manage IP addresses in the Management Console, see :ref:`console-ipam`.
 
-Overview
---------
+  * To access IP Address Management (IPAM) in Micetro, you must enter the license key for the IPAM module.
 
-Managing IP Addresses entails being able to create assignable ranges within the available address space and determining which users and groups have usage rights to that space. The IP ranges can be created with specific properties that also determine the properties of the IP Addresses contained within them.
+  * This information applies to the Micetro Web Interface. For information about IP address management in the Management Console, see :ref:`console-ipam`.
 
-.. note::
-  In order to use the IP Address Management features in Micetro, you must have entered the license key for the IPAM module.
+IP Address Management (IPAM) is where you manage all aspects of your network infrastructure. This section explains how to manage IP adresses within your address spaces, including how to configure networks, view, monitor, and edit the properties of individual IP addresses, as well as how to integrate with Active Directory (AD) sites.
 
-Multiple Address Spaces
------------------------
-
-.. note::
-  For managing address spaces, see :ref:`address-spaces`.
-  For managing address spaces through the Management Console, see :ref:`console-address-spaces`.
-
-Micetro supports multiple address spaces.
-
-Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP address entries, and folders.
-
-.. note::
-  Changes to data in one address space do not affect data in any other address space.
-
-Items **shared** between address spaces are:
-
-* users, groups, and roles
-
-* custom property definitions (see :ref:`admin-custom-properties`)
-
-
-Switching to a Different Address Space
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can only work in one address space at a time. You can see the current address space at the bottom of the :guilabel:`Networks` section on the :guilabel:`IPAM` page..
-
-To switch to a different address space:
-
-1. Click the **User** icon in the top right corner.
-
-2. Point to :guilabel:`Address Space`, and then select the address space you want to use.
-
-.. image:: ../../images/address-space-Micetro.png
-  :width: 50%
-  :align: center
-
-|
-Address (A) Records in DNS Zone Windows
----------------------------------------
-
-When the IPAM component is enabled, you may notice some differences when working with Address (A) records in DNS zone windows, such as:
-
-Restriction on allowed IP Addresses
-  When IPAM is enabled, the system administrator may restrict which IP Addresses you are allowed to use. The system administrator can determine an IP Address range that you are allowed to work with. In addition, he/she can choose whether you can use an IP Address that has already been assigned in DNS.
-
-Automatic assignment of IP Addresses
-  The system administrator can configure Micetro so that you can create address (A) records without entering IP Addresses. When the zone is saved, the IP Addresses are automatically assigned using free IP Addresses in your IP Address range. If you want to enter an IP Address manually, you can type it in the IP Address field, but if you leave the field unchanged, the IP Address will be automatically assigned when you save the zone. If you have access to more than one IP Address range, a dialog box will be displayed at save time where you can choose the IP Address range for your new address records.
-
-.. _ipam-containers:
-
-Containers
-----------
-
-A Container is a section of the address space that has been reserved but not yet allocated. Containers can contain address ranges and scopes, and you can set address privileges for containers that can be applied to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from within a container unless you have enabled that functionality in System Settings.
-
-.. _new-container:
-
-New Container
-^^^^^^^^^^^^^
-
-A range that exists on network boundaries (a subnet) can be converted to a Container. Likewise, a Container can be converted to a range.
-
-1. Select :guilabel:`IPAM` on the top navigation bar.
-
-2. Select the range(s) you want to convert.
-
-3. On the :guilabel:`Action` menu, select :guilabel:`Convert to container`. You can also select this option on the **Row menu (...)**.
-
-4. Confirm that you want to convert the selected range(s), and add a save comment.
-
-Viewing IP Address Ranges
--------------------------
-The **IPAM** page shows the section of the IP address space that is accessible to the current user of the system. Micetro allows administrators to manage the IP Address space by dividing it into any number of named sub ranges that can be assigned to specific groups for use by its members.
-
-In the filtering sidebar, select  :guilabel:`IP Ranges`.
+Viewing Networks
+----------------
+The **Networks** tab on the **IPAM** page provides a comprehensive overview of the IP address space accessible to you. By default, all networks are displayed, but you can use the filtering sidebar on the left to filter by IP ranges, DHCP scopes, and containers. The network list displays how the IP addresses are organized into named subnets and provides important details such as how much of the address space is used and backup plans for subnet failures. You can also view details for the selected network in the inspector on the right.
 
 .. image:: ../../images/Networks-Micetro-10.5.png
   :width: 90%
-|
-* Use the buttons on the top right of the grid to choose between a flat and a hierarchical view for the Address Ranges scopes.
 
-* If an Address range has no subranges, the utilization for the range is shown in the range list.
+* Use the buttons in the upper-right corner of the table to switch between a flat and a tree view.
 
-To narrow down the results shown when viewing IP ranges, you can use the :ref:`webapp-quick-filter`. When using the tree view with an active filter, any parent ranges that do not match the search criteria will be faded out while the matches highlighted. For example, in the image below, we searched for the string ``3.1``.
+* The star button adds the selected network to a list of favorites. You can access the favorites list on the filtering sidebar.
+
+* When a network has no subranges, its utilization is displayed in the network list.
+
+To narrow down the results shown when viewing networks, use the :ref:`webapp-quick-filter`. When using the tree view with an active filter, parent networks that do not match the search criteria will appear dimmed, while the matching results are highlighted. For example, in the image below, we searched for the string ``3.1``.
 
 .. image:: ../../images/ipam-tree-filter-Micetro.png
   :width: 90%
-  
-|
-New Networks
-------------
-
-To create a new network, do the following:
-
-1. Go to the **IPAM** page.
-
-2. Click the :guilabel:`Create` button.
-
-3. Select what type of network (new network, :ref:`new-dhcp-scope`, :ref:`new-container`) you'd like to create.
-
-4. Enter the appropriate values, grouped on pages depending on the type.
-
-.. note::
-  The *Create* wizard is different depending on the type selected through the dropdown:
-
-* For a *network*, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site. (See :ref:`active-directory`)
-
-* A *DHCP scope* can be created with the network and broadcast address automatically configured. See :ref:`new-dhcp-scope`.
-
-* A *container* has no network or broadcast address. See :ref:`ipam-containers`.
-
-5. Click :guilabel:`Finish`.
-
-Once a non-reserved IP Address range has been created, it is considered to be managed. A managed IP Address range is being managed by the Networks component of Micetro. When the range is managed, Micetro will allow users with appropriate privileges to work with IP Addresses from the range.
-
-It is possible to create subranges of existing ranges and DHCP scopes.
-
-.. note::
-  When you create a new IP Address range, Micetro checks to see if the new range can be logically grouped with other address ranges, and adds the new range in the appropriate address range group.
 
 .. _ipam-range-config:
 
-Network Configuration
-^^^^^^^^^^^^^^^^^^^^^
+Creating Networks
+------------------
+When creating a network, Micetro automatically places it in the proper location within the network tree. You can create three types of networks: 
 
-When creating a new network, DHCP scope, or container, you must complete the Properties page in the final step.
+* **Network (IP Ranges)**: A network is a block of IP addresses defined for partitioning the address space. Networks can include reserved addresses for network and broadcast functions, and they can be assigned to Active Directory (AD) sites for integration with directory services.
 
-These properties are defined in :ref:`admin-custom-properties`.
+* **DHCP Scope**: This type is a block of valid IP addresses available for lease or assignment to client computers on a subnet. DHCP scopes automatically configure network and broadcast addresses, managing the dynamic assignment of IP addresses within the specified range.
 
-Network Modifications
-^^^^^^^^^^^^^^^^^^^^^
+* **Container**: Unlike networks and DHCP scopes, containers do not have network or broadcast addresses. They are used to organize and group other networks and scopes, providing a hierarchical structure for easier management and visualization.
 
-Once you have created a network, it is easy to make changes.
+**To create a network**:
 
-1. Select the range in the list.
+1. On the **IPAM** page, click the :guilabel:`Create` button.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Edit network properties`. You can also select this option on the **Row menu (..)**.
+2. Select the type of network you want to create (network, :ref:`new-dhcp-scope`, container).
 
-3. Make the desired changes.
+3. Fill in the necessary details. The **Create** wizard varies depending on the type you selected:
 
+   * For a **network**, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site, see :ref:`active-directory`.
+
+   * A **DHCP scope** can be created with the network and broadcast addresses automatically configured, see :ref:`new-dhcp-scope`.
+
+   * A **container** doesn't have a network or broadcast address. Within a container, you can define address ranges and scopes, and you can set privileges that apply to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from a container unless you have enabled this functionality in the **IPAM** section of the :ref:`admin-system-settings`. 
+    
+     You can also create a container by converting a network existing on a subnet into a container, or vice versa. Select the range(s) you wish to convert and select :guilabel:`Convert to container` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
+
+4. Complete the Properties page in the final step, using the properties defined in :ref:`admin-custom-properties`.
+
+5. When you're done, click :guilabel:`Finish`.
+
+Editing Network Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can edit the properties of a network. Note, that if the network has :ref:`admin-event-hooks` configured, these hooks will be triggered when changes are made.You can edit the properties of a network. Note, that if the network has event hooks configured, these hooks will be triggered when changes are made.
+
+**To edit a network**:
+
+1. Select the network(s) in the list.
+
+2. Select :guilabel:`Properties` on the taskbar or :guilabel:`Edit network properties` on the row :guilabel:`...` menu. 
+
+3. Make the desired changes to the network.
+
+  .. image:: ../../images/ipam-network-properties.png
+    :width: 65%
+
+  * When multiple networks are selected, the fields will show combined values from all the networks: 
+   
+    * If all the selected networks have the same value for a property, that value will be displayed in the corresponding field. 
+    * If the networks have different values for a property, the fields will display "<multiple values>". 
+  
+  * You can replace a "<multiple values>" placeholder with a specific value if you want to apply that value to all selected networks.
+  
 4. Click :guilabel:`Save`.
 
-Network Deletions
-^^^^^^^^^^^^^^^^^
+Deleting Networks
+^^^^^^^^^^^^^^^^^^
 
-You can always delete a network definition. If you delete a network, the IP addresses that belonged to it will get the attributes of the parent network. If the network you are deleting has subranges, they will become children of the unassigned networks' parent.
+When a network is deleted, its IP addresses will not be deleted. Instead, they are assigned to the parent network and will be listed when that network is opened. If the network being deleted contains subranges, those subranges will become children of the parent network of the unassigned networks.
 
-To delete a network definition:
+When a DHCP scope is deleted, the IP addresses within that scope will no longer be managed dynamically. 
+Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations, and their options are automatically removed from the DHCP server. Devices that were assigned IP addresses from the deleted scope will keep their addresses until they are no longer needed, but no new IP addresses will be allocated from the deleted scope. Be sure to reconfigure any devices or services that relied on the deleted DHCP scope to ensure they continue to function properly.
 
-1. Select network(s) you want to remove.
+.. warning:: 
+  Deleting a DHCP scope is permanent and cannot be undone. Make sure to double-check your configuration and confirm that you want to proceed with the deletion.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`. You can also select this option on the **Row menu (..)**. 
+**To delete a network**:
 
-3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to leave it.
+1. Select network(s) you wish to remove.
 
-IP Address List
----------------
+2. Select :guilabel:`Delete network` on either the :guilabel:`Action` or row :guilabel:`...` menu. 
 
-To view a list of host entries in a particular network, double-click the network. This opens a list where you can view and edit the properties of individual IP address entries.
+3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to cancel.
+
+Viewing IP Addresses within Networks
+-------------------------------------
+
+To view a list of IP addresses within a specific network, double-click the network. This opens a list where you can view and edit the properties of individual IP addresses. You can filter the IP address list, so it displays only the IP addressees you need. 
 
 .. image:: ../../images/view-Networks-Micetro-10.5.png
-  :width: 80%
+  :width: 85%
   
-The :guilabel:`State` section in the filtering sidebar can be used to show only **Free**, **Assigned**, **Claimed**.
+* The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
 
-The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
+  * **Empty**: The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
 
- * **Empty**: The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
+  * **OK**: If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
 
- * **OK**: If there is a match between the A and the corresponding PTR record(s) the status is listed as OK.
+  * **Verify**: There isn't a match between the A and the PTR records for the host. Common reasons for this include:
 
- * **Verify**: If there is not a match between the A and the PTR records for the host, the status is listed as Verify. The most common reasons are:
+    * An A record exists, but the PTR record is missing.
 
-      * There is an A record but the PTR record is missing.
+    * A PTR record exists, but the A record is missing.
 
-      * There is a PTR record but the A record is missing.
+    * The data section in the PTR record does not correspond to the name of the A record.
+  
+  * On the :guilabel:`Action` menu you can use the :guilabel:`Find next free address` option to select the next available IP address within the range. Alternatively, selecting :guilabel:`Find random free address` will randomly select an available IP address.
 
-      * The data section in the PTR record does not correspond to the name of the A record.
+IP Address State
+^^^^^^^^^^^^^^^^^
+The **State** column in the IP Address list displays the current state of each address, allowing you to quickly see whether an address is free, assigned, or in another state. You can use the :guilabel:`State` section in the left-hand filtering sidebar to filter the list.
 
-When the PTR Status for a host entry shows Verify, you can open the IP Address dialog box for the host to see more detailed information on which DNS host entry is generating this status message.
+The following states indicate the IP address usage:
 
-.. note::
-  When working with large IP Address ranges (ranges that contain more than 4096 IP Addresses) the :guilabel:`Show unassigned addresses` will no longer be available and the IP Address List window will only display assigned IP Addresses.
+   * **Free**: IP addresses that are unassigned and available for use.
+
+   * **Assigned**: IP addresses with a DHCP reservation or lease. Additionally, addresses are also considered assigned if they have a corresponding DNS record, a set custom property, or are currently undergoing discovery and ping tests. These settings can be configured in the **General** section of the :ref:`admin-system-settings`. 
+    
+    It's important to note that the rules defined in system settings do not apply to DHCP pools. In these pools an IP address is considered free if it is neither leased and not reserved, meaning the DHCP server is authorized to allocate it to clients or reserve it as needed.
+
+   * **Claimed**: IP addresses that have been explicitly claimed using Micetro. 
+
+   * **Held**: a free IP address that has been temporarily reserved (for up to 10 minutes) for a user who requested it. During this period, the user can complete the necessary information, such as adding a DNS record. This reservation ensures that no other user can be assigned the same IP address within this timeframe, preventing duplicate allocations.
+
+   * **Reserved**: IP addresses with a DHCP reservation configured on them.
+
+   * **Leased**: IP addresses currently leased through DHCP but not specifically claimed.
+
+   * **Pending**: This is specific to the Workflow module. It indicates that there is a pending Change Request for an A record associated with this IP address. Although the address is otherwise available, it is marked as **Pending**  to avoid it from being assigned to another user while the change request awaits approval.
 
 .. _ip-address-dialog:
 
-IP Address Inspector
---------------------
+Adding and Modifying Related DNS Data
+--------------------------------------
 
-When you add or modify an existing IP address entry, the IP Address dialog box displays. The entries in Inspector can vary, depending on the custom properties defined in Micetro (e.g., "Owner" is a custom property in the example shown below), if DNS or DHCP related data exists, etc.
+The inspector located on the right side of the IP address list displays the properties associated with the selected IP address. The information included in the inspector may vary, depending on the custom properties defined in Micetro, as well as the presence of DNS or DHCP related data. 
+
+In the **Related DNS Data** section, you can find all DNS records associated with the address. You can create new records or edit/delete the existing ones.
 
 .. image:: ../../images/ip-inspector-Micetro.png
   :width: 30%
   :align: center
 |
+
 .. _ipam-add-dns-host:
 
-Adding a DNS Host
-^^^^^^^^^^^^^^^^^
-
-While viewing the IP Address Inspector, click the :guilabel:`+` button in the :guilabel:`Related DNS data`.
-
-.. image:: ../../images/ip-create-dns-Micetro.png
-  :width: 50%
-  :align: center
-
-The **Address** field is automatically filled with the selected IP address. Fill in the other information and click :guilabel:`Create now` or :guilabel:`Add to request`. (See :ref:`webapp-workflows`.)
-
-Editing a DNS Host
-^^^^^^^^^^^^^^^^^^
-
-1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Edit`.
-
-2. Make the desired changes and click :guilabel:`Save`. The dialog box closes and the details are updated.
-
-Removing a DNS Host
+Adding a DNS Record
 ^^^^^^^^^^^^^^^^^^^
 
-1. In the Inspector, in the ellipsis menu in the :guilabel:`Related DNS data` section click :guilabel:`Delete`. The host details are deleted and removed from the Inspector.
+1. Select the desired IP address in the IP address list.
 
+2. In the :guilabel:`Related DNS data` section of the inspector, click the create :guilabel:`+` button.
+
+3. Fill in the **Create DNS Record** dialog box. :guilabel:`Address` is automatically filled with the selected IP address.
+
+   .. image:: ../../images/ip-create-dns-Micetro.png
+     :width: 50%
+
+2. Click :guilabel:`Create now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
+
+Editing a DNS Record
+^^^^^^^^^^^^^^^^^^^^
+
+1. In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Edit` on the row :guilabel:`...` menu for the relevant DNS record.
+
+2. Make the desired changes and click :guilabel:`Save now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
+
+Removing a DNS Record
+^^^^^^^^^^^^^^^^^^^^^
+
+1. In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Delete` on the row :guilabel:`...` menu for the relevant DNS record.
+
+2. Select :guilabel:`Delete now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
+
+3. The host details are deleted and removed from the inspector.
 
 .. _split-range-wizard:
 
-Split/Allocate Range Wizard
----------------------------
+Allocating Subranges
+----------------------
 
-This wizard allows you to create multiple subranges from an existing range. The wizard can only be used on ranges that exist on subnet boundaries and have no subranges already in place.
+You can create multiple subnets from an existing network that resides on subnet boundaries and currently has no subnets configured.
 
-1. On the **IPAM** page, select the range you'd like to split.
+**To allocate subranges**:
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Allocate subranges`. You can also select this option on the **Row menu (...)**.
+1. On the **IPAM** page, select the network you want to allocate from.
 
-3. Configure the new subranges. If you choose fewer subnets that fit in the parent, you can also set the offset from where you want to start allocating. Click :guilabel:`Next` when finished configuring.
+2. Select :guilabel:`Allocate subranges` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
-.. image:: ../../images/subranges-wizard.png
-  :width: 65%
-  :align: center
+3. Configure the new subranges. If you select fewer subnets than fit within the network, you can set the offset from where to start the allocation. Click :guilabel:`Next` when you finish configuring.
 
-4. Define the title and custom properties for the new subranges. Click :guilabel:`Next` when done.
+   .. image:: ../../images/subranges-wizard.png
+     :width: 65%
 
-5. On the summary page verify the new subranges and click :guilabel:`Finish`.
+4. Define the title and custom properties for the new subranges. Click :guilabel:`Next` when you're done.
 
-.. note::
-  In the web application, the Split Range and Allocate Range wizards are merged together. For information on these wizards in the Management Console, see :ref:`console-split-range` and :ref:`console-allocate-ranges`.
+5. On the summary page, verify the new subranges and click :guilabel:`Finish`.
 
+Joining Networks (Ranges)
+-------------------------
+With this feature, you can select and merge multiple networks. The :guilabel:`Join ranges` command becomes available if the selected networks can be joined.
 
-Join Ranges
------------
+**To join networks**:
 
-1. On the **IPAM** page, select the ranges that you want to join.
+1. On the **IPAM** page, select the ranges you want to join.
 
-2. On the :guilabel:`Action` menu, select :guilabel: `Join Ranges`. You can also select this option on the **Row menu (...)**.
+2. Select :guilabel:`Join ranges` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
 
    .. image:: ../../images/join-ranges.png
       :width: 90%
    
-3. Set the properties for the joined range:
+3. Configure the properties for the joined range:
 
-   * **Use Access from**: Click the drop-down list and specify from which range you will gain access.
+   * **Use access from**: Select the range from which you want to inherit access permissions.
 
-   * **Use Properties from**: Click the drop-down list and specify from which range you will use the properties.
+   * **Use properties from**: Select the range from which you want to inherit properties.
 
    * **Title**: Enter a title for the new range.
 
-   * **Description**: Type a description.
+   * **Description**: Add a description if needed.
 
 4. Click :guilabel:`Join`.
 
 Host Discovery
---------------
+---------------
 
-With this feature, you can see when hosts were last seen on your network. There are two methods you can use for host discovery – using ping or querying routers for host information.
+With this feature, you can monitor the presence of hosts on your network and track when they were last detected. Host discovery can be accomplished through two methods: using ping or querying routers for host information.
 
 Configuring Host Discovery Using Ping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Select one or more IP ranges.
+1. On the **IPAM** page, select one or more networks.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Set discovery schedule`. You can also select this option on the **Row menu (...)**.
+2. Select :guilabel:`Set discovery schedule` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
-3. Select the :guilabel:`Enable` option.
+3. Select the :guilabel:`Enable` checkbox.
 
-  * Frequency: 
-    Click the drop-down list and select the frequency (e.g., 1, 2, etc.).
+4. Enter the :guilabel:`Frequency` and select the frequency unit on the :guilabel:`Every` dropdown list.
 
-  * Every: 
-    Enter the frequency unit for discovery (e.g. days, weeks, etc.).
+5. Set the date and time for the :guilabel:`Next run`.  
 
-  * Next run: 
-    Select the start date and time.
+6. Click :guilabel:`Save`.
 
-4. Click :guilabel:`Save`.
+Once the schedule options have been configured, two columns - **Last Seen** and **Last Known MAC Address** - are added to the IP address list. The **Last Seen** column identifies the timestamp of when a host was last detected on the network.
 
-Once the schedule options have been set and saved, two columns - Last Seen and Last Known MAC Address - are added to the range grid. The Last Seen column identifies when a host was last seen on the network.
+   * **Green**: Host responded to the last PING request, displaying the date and time.
 
-* **Green**: Host responded to the last PING request. The date and time are shown.
+   * **Orange**: Host has responded in the past but did not respond to the last PING request. The date and time of the last response is shown.
 
-* **Orange**: Host has responded in the past, but did not respond to the last PING request. The date and time of last response is shown.
+   * **Red**: Host has never responded to a PING request, and the text **Never** is displayed.
 
-* **Red**: Host has never responded to a PING request. The text Never is shown.
-
+Disabling Host Discovery
+""""""""""""""""""""""""
 At any time if you wish to disable host discovery, do the following:
 
-1. Select the object(s) for which you want to disable discovery.
+1. Select the network(s) for which you want to disable discovery.
 
-2. On the **Row menu (...)**, select :guilabel:`Set discovery schedule`.
+2. On the row :guilabel:`...` menu, select :guilabel:`Set discovery schedule`.
 
-3. Uncheck the :guilabel:`Enable` option.
+3. Clear the :guilabel:`Enable` checkbox.
 
 4. Click :guilabel:`Save`.
 
@@ -337,66 +295,56 @@ See :ref:`snmp-profiles`.
 Subnet Discovery
 ----------------
 
-The subnet discovery features enables Micetro to obtain information about the subnets on the network through SNMP on the routers. The process is the same as in configuring host discovery, but to enable this feature, make sure the :guilabel:`Synchronize subnets ...` is checked in the SNMP profile. See :ref:`snmp-profiles`.
+The subnet discovery feature enables Micetro to obtain information about the subnets on the network through routers using SNMP. To activate the subnet discovery feature, ensure that :guilabel:`Synchronize subnets ...` is selected in the SNMP profile. For more information about SNMP profiles, see :ref:`snmp-profiles`.
 
-Add to/Remove from Folder
+
+Setting Subnet Monitoring
 -------------------------
 
-Adds or removes the currently selected IP Address Range from folders.
-
-.. danger::
-  Once you remove a range from a folder, there is no "undo" option available.
-
-1. Highlight the range you want to remove.
-
-2. On the **Row menu (...)**, select :guilabel:`Set folder` and add or remove the range from folders.
-
-Set Subnet Monitoring
-^^^^^^^^^^^^^^^^^^^^^
-
-To change the monitoring settings for a subnet:
+**To adjust monitoring settings for a subnet**:
 
 1. Select the subnet(s) for which you want to change the monitoring setting.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Set subnet monitoring`. The Subnet Monitoring dialog box opens.
+2. Select :guilabel:`Set subnet monitoring` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
 
-  * **Enabled**: When selected, the subnet will be monitored.
+3. Complete the required details in the Subnet Monitoring dialog box.
 
-   * **Script to invoke**: Enter the path of the script to run when the number of free addresses goes below the set threshold. Refer to External Scripts , for information on the script interface and the format for calling the script.
+   * **Enabled**: When selected, the subnet will be monitored.
 
-   * **Email addresses**: Enter one or more e-mail addresses (separated by comma, e.g. email@example.com,email@example.net). An e-mail will be sent to the specified addresses when the number of free addresses goes below the set threshold.
+   * **Script to invoke**: Enter the path of the script to run when the number of free addresses falls below the defined threshold. For information on the script interface and formatting, see :ref:`admin-change-events`.
 
-* **Dynamic Threshold**: Enter the threshold for the free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
+   * **Email addresses**: Enter one or more email addresses separated by commas (for example, email@example.com,email@example.net) to receive notifications when the number of free addresses drops below the set threshold.
 
-* **Static Threshold**: Enter the threshold for the free addresses in a subnet.
+   * **Dynamic Threshold**: Define the threshold for the number of free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
 
-* **Only perform action once (until fixed)**: When selected, the action is performed only once when the number of free addresses goes below the threshold.
+   * **Static Threshold**: Enter the threshold for the number of free addresses in a subnet.
 
-* **Perform action when fixed**: When selected, the action is performed when the number of free addresses is no longer below the threshold.
+   * **Only perform action once (until fixed)**: Select this option to execute the action only once when the number of free addresses falls below the threshold.
 
-3. Click :guilabel:`OK` to confirm your settings.
+   * **Perform action when fixed**: Choose this option to execute the action when the number of free addresses is no longer below the threshold.
+
+4. Click :guilabel:`OK` to confirm your settings.
 
 .. _active-directory:
 
 AD Sites and Subnets
 --------------------
 
-Overview
-^^^^^^^^^
-Micetro allows administrators to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites and add, remove, and move subnets between the sites.
+Micetro offers administrators the capability to integrate Active Directory (AD) sites into the IPAM context, view subnets within these sites, and add, remove, and move subnets between the sites.
 
 .. note::
-  AD sites and subnets integration is only available when Men&Mice Central is running on a Windows server, and it is enabled by default. See :ref:`admin-general`.
+  Integration of AD sites and subnets is only available when Micetro Central is running on a Windows server. The integration is enabled by default. See :ref:`admin-general`.
 
   AD sites are only assigned to and visible in the ``Default`` address space.
 
-  To add/remove a subnet to/from a site, the user must be assigned to a role with the *Edit range properties* permission set and the role applied to the object. See :ref:`access-control` for more details.
+  To add/remove a subnet to/from a site, the user must be assigned to a role with the *Edit range properties* permission set, and the role must be applied to the object. For more information about roles, see :ref:`access-control`.
 
-AD sites and subnets are displayed in the :guilabel:`IPAM` context:
+AD sites and subnets are displayed on the :guilabel:`IPAM` page:
 
-* subnets in the main :menuselection:`IPAM --> Networks` grid, along with all other subnets in Micetro (if any). The *AD Site* column displays the site the subnet belongs to.
+* Subnets in the main :menuselection:`IPAM --> Networks` table, along with all other subnets in Micetro (if any). The **AD Site** column displays the site to which the the subnet belongs.
 
-* sites in a separate :menuselection:`IPAM --> AD sites` grid, grouped by Forests. The Inspector box on the right displays the subnets (if any) belonging to the selected AD site.
+* Sites in a separate :menuselection:`IPAM --> AD sites` table, grouped by Forests. The Inspector on the right-hand side displays the subnets (if any) belonging to the selected AD site.
+
 
 AD Forests
 ^^^^^^^^^^^^
@@ -411,126 +359,157 @@ Adding an AD Forest
 
 1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
-2. Use the :guilabel:`Add Forest` action from the top bar. A dialog box displays.
+2. Select :guilabel:`Add Forest`.
+
+3. Enter the necessary details in the Add Active Directory Forest dialog box.
 
    .. image:: ../../images/add-ad-forest.png
      :width: 60%
-  
-|
-Use same Global Catalog as the Men&Mice Central server
-  If checked, Micetro will use the same Global Catalog server as the Men&Mice Central server is using. If you unselect this checkbox, you must specify the Global Catalog server's FQDN or IP address in the **Global Catalog Server** field.
 
-Global Catalog Server
-  If you want to specify a Global Catalog server, enter the server's FQDN or IP address in this field. (To unlock this field, the :guilabel:`Use same Global Catalog as the Men&Mice Central server` checkbox needs to be unchecked.)
 
-Use the same credentials as the Men&Mice Central server
-  If checked, Micetro uses the same credentials as the Men&Mice Central server when accessing the site information.
+   * **Use same Global Catalog as the Micetro Central server**: If selected, Micetro will use the same Global Catalog server as the Micetro Central server is using. If you clear this checkbox, you must specify the Global Catalog server's FQDN or IP address in the **Global Catalog Server** field.
 
-User and Password
-  If you don't want to use the default credentials for the machine running Men&Mice Central, enter the desired user name and password in these fields. (To unlock these fields, the :guilabel:`Use the same credentials as the Men&Mice Central server` checkbox needs to be unchecked.)
+   * **Global Catalog Server**: If you want to specify a Global Catalog server, enter the server's FQDN or IP address in this field. (To unlock this field, the :guilabel:`Use same Global Catalog as the Micetro Central server` checkbox needs to be cleared.)
 
-Set as read only
-  If checked, users will be able to display data from Active Directory, but unable to make any modifications.
+   * **Use the same credentials as the Micetro Central server**: If selected, Micetro uses the same credentials as the Micetro Central server when accessing the site information.
 
-3. Click :guilabel:`OK` to save the changes. The forest is added and the sites belonging to the forest are displayed.
+   * **User and Password**: If you don't want to use the default credentials for the machine running Micetro Central, enter the desired username and password in these fields. (To unlock these fields, the :guilabel:`Use the same credentials as the Micetro Central server` checkbox needs to be cleared.)
 
-Edit AD Forest
-"""""""""""""""
+   * **Set as read-only**: If selected, users will be able to display data from Active Directory, but unable to make any modifications.
 
-To edit an existing AD Forest (to, for example, change the read-only status):
+4. Click :guilabel:`OK` to save the changes. The forest is added and the sites belonging to the forest are displayed.
+
+Editing AD Forests
+""""""""""""""""""
+
+**To edit an existing AD Forest (to, for example, change the read-only status)**:
 
 1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
-2. Select the :guilabel:`Edit AD Forest` action from the top toolbar or the **Row menu (...)**.
+2. Select the AD forest you want to edit.
 
-3. Update the settings in the dialog box.
+3. Select :guilabel:`Edit AD Forest` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
-4. Click :guilabel:`OK` to save your changes.
+4. Update the settings in the dialog box.
+
+5. Click :guilabel:`Save` to save your changes.
 
 Removing an AD Forest
 """"""""""""""""""""""""
 
-To remove an AD Forest from Micetro:
+**To remove an AD Forest**:
 
 1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
 2. Select the AD Forest(s) you want to remove.
 
-3. Select the :guilabel:`Remove AD Forest` action on the top toolbar or the **Row menu (...)**.
+3. Select :guilabel:`Remove AD Forest` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
 4. Click :guilabel:`OK` in the confirmation box to remove the Forest(s).
 
 Reloading the Sites in an AD Forest
 """""""""""""""""""""""""""""""""""""
 
-Data from AD Forests is synchronized by Men&Mice Central regularly. To manually synchronize forests and reload the data for sites and subnets:
+Micetro Central regularly synchronizes data from AD Forests.
 
-1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
+**To manually synchronize forests and reload the data for sites and subnets**:
+
+1. On the **IPAM** page, select :guilabel:`AD Sites` in the upper-left corner.
 
 2. Select the AD Forest(s) you want to synchronize.
 
-3. Use the :guilabel:`Synchronize` action from the top bar.
+3. Select :guilabel:`Synchronize` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
 4. Click :guilabel:`OK` in the confirmation box to synchronize the Forests.
 
+
 AD Subnets
-----------
+^^^^^^^^^^^
+Viewing Subnets in a Site
+""""""""""""""""""""""""""
 
-View subnets in a site
-^^^^^^^^^^^^^^^^^^^^^^
+**To view subnets within a specific site**:
 
-To view subnets within a specific site:
-
-1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
+1. On the **IPAM** page, select :guilabel:`AD Sites` in the upper-left corner.
 
 2. Select the AD Forest the site is in, or use the :ref:`webapp-quick-filter` to find it by name.
 
-3. On the :guilabel:`Action` menu, select :guilabel:`View networks`. You can also select this option on the **Row menu (...)**.
+3. Select :guilabel:`View networks` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 
-This will open the :menuselection:`IPAM --> Networks` context with a filter applied to show all subnets that belong to the site.
+This will open the :menuselection:`IPAM --> Networks` list with a filter applied to show all subnets that belong to the site.
 
 .. note::
   You can also use the :guilabel:`-> View` button in the Inspector of the selected AD site to open the subnet view.
 
-Moving subnets between AD sites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Moving Subnets Between AD Sites
+""""""""""""""""""""""""""""""""
 
-To add subnet(s) to a site, or move between sites:
+**To add subnet(s) to a site, or move between sites**:
 
 1. On the **IPAM** page, select the subnet(s) in the list.
 
-2. Select :guilabel:`Set AD Site` on the :guilabel:`Action` menu or the **Row menu (...)**.
+2. Select :guilabel:`Set AD Site` on either the :guilabel:`Action` menu or the row :guilabel:`...` menu.
 
 3. Set the (new) AD Site in the dropdown and click :guilabel:`Save`.
 
 .. note::
-  Child subnets cannot be moved to a different site than the parent subnet unless the ``Enforce site inheritance`` checkbox is unchecked in the System Settings dialog box.
+  Child subnets cannot be moved to a different site from their parent subnet unless the :guilabel:`Enforce site inheritance` checkbox is cleared in the System Settings.
 
   Subnets whose AD site settings are inherited from a parent range will have a ``<AD Site Name> (inherited)`` notation added.
 
-  See :ref:`admin-general`.
+  For more information, see System Settings, :ref:`admin-general`.
 
-Remove subnet from AD site
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Removing Subnet from AD Site
+"""""""""""""""""""""""""""""
 
-1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` grid.
+1. Select the subnet(s) in the :menuselection:`IPAM --> Networks` list.
 
-2. Select :guilabel:`Remove from AD Site` on the :guilabel:`Action` menu or the **Row menu (...)**.
+2. Select :guilabel:`Remove from AD Site` on either the :guilabel:`Action` menu or the row :guilabel:`...` menu.
 
 3. Click :guilabel:`Yes` to confirm the removal.
 
-Subnets outside of sites
-^^^^^^^^^^^^^^^^^^^^^^^^
+Subnets Outside of Sites
+"""""""""""""""""""""""""
 
-To view subnets that don't belong to any AD site:
+**To view subnets that don't belong to any AD site**:
 
-1.  On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
+1. On the **IPAM** page, select :guilabel:`AD sites` in the upper-left corner.
 
 2. Click the ``Flat view`` button (see :ref:`webapp-quick-filter`) next to the Quick Filter to change the view.
 
-3. Sort the IP address ranges by the **AD Site** column in *ascending* order:
+3. Sort the IP address ranges by the **AD Site** column in **ascending** order:
 
-.. image:: ../../images/subnets-outside-sites.png
-  :width: 90%
-  :align: center
-|
+   .. image:: ../../images/subnets-outside-sites.png
+     :width: 90%
+
+Switching Between Address Spaces
+---------------------------------
+
+.. note::
+  For information about managing address spaces, see :ref:`address-spaces`.
+
+Micetro supports multiple address spaces, each containing its unique set of network components, such DNS servers, DNS zones, DHCP servers, DHCP scopes, IP address ranges (including both IPv4 and IPv6 root ranges), IP address entries, and folders.
+
+Shared elements across all address spaces include:
+
+* Users, groups, and roles.
+
+* Custom property definitions (for more information about custom properties, see :ref:`admin-custom-properties`).
+
+You can only work in one address space at a time. The current address space is visibly indicated in the lower-right corner of the :guilabel:`Networks` table on the :guilabel:`IPAM` page. Any changes made to data in one address space will not affect data in any other address space.
+
+**To switch to a different address space**:
+
+1. Click the **User** icon in the upper-right corner.
+
+2. Hover over the current address space, then select your desired address space.
+
+   .. image:: ../../images/address-space-Micetro.png
+     :width: 50%
+     
+Working with Address (A) Records in DNS Zone Windows
+-----------------------------------------------------
+
+When the IPAM module is enabled, you may notice some differences when working with Address (A) records in DNS zones. One key change is the restriction on allowed IP addresses. 
+
+The system administrator can control which IP addresses users are permitted to use and set a range of IP addresses they are allowed to work with. Additionally, administrators can decide whether users are allowed to use IP addresses already assigned in DNS. This means that there could be a predefined range of IP addresses that you're permitted to work with, and the system may prevent you from using IP addresses outside of this range.
