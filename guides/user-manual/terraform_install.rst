@@ -1,69 +1,80 @@
 .. meta::
-   :description: How to install the Micetro by Men&Mice provider for Terraform 
-   :keywords: Micetro 
+   :description: How to install the Micetro provider for Terraform 
+   :keywords: Micetro provider, Terraform, binaries
 
 .. _terraform-install:
 
-Installing the Micetro provider for Terraform
+Installing the Micetro Provider for Terraform
 =============================================
 
-Download compiled binaries
+Download Compiled Binaries
 --------------------------
 
-Precompiled binaries for Windows and Linux are available on `the Men&Mice download server <https://download.menandmice.com/opensource/terraform/>`_.
+Precompiled binaries for Windows and Linux are available on `the Terraform Registry <https://registry.terraform.io/providers/menandmice/menandmice/latest/>`_.
 
 Manual Build and Install
 ------------------------
 
-Mac or Linux
-------------
+For Mac or Linux
+^^^^^^^^^^^^^^^^
+* Run the following command to build and install the provider:
 
-make install
+   .. code-block:: shell
 
-Windows
--------
+      make install
 
-1. Build and install the provider:
+For Windows
+^^^^^^^^^^^
 
-.. code-block:: shell
+1. Build the provider by running:
 
-  go build -o terraform-provider-menandmice.exe
+   .. code-block:: shell
 
-2. Copy the ``terraform-provider-menandmice.exe`` to:
+     go build -o terraform-provider-menandmice.exe
 
-  * for Terraform 0.12: ``%APPDATA%\terraform.d\plugins\windows_amd64\``
+2. Copy the ``terraform-provider-menandmice.exe`` file to the appropriate directory based on your Terraform version:
 
-  * for Terraform 0.14: ``%APPDATA%\terraform.d\plugins\registry.terraform.io\local\menandmice\0.2.0\windows_amd64\``
+  * For Terraform 0.12:
 
-3. Initialize:
+   ::
 
-.. code-block:: shell
+   ``%APPDATA%\terraform.d\plugins\windows_amd64\``
 
-  terraform.exe init 
+  * For Terraform 0.14:
 
-Run acceptation test
+   ::
+
+   ``%APPDATA%\terraform.d\plugins\registry.terraform.io\local\menandmice\0.2.0\windows_amd64\``
+
+3. Initialize Terraform:
+
+   .. code-block:: shell
+
+     terraform.exe init 
+
+Run Acceptance Test
 --------------------
 
-Define the Micetro server:
+1. Define the Micetro server settings in your configuration file:
 
-::
+   ::
 
-  dnsserver: micetro.example.net. micetro.example.com.
-  dhcpserver: micetro.example.net.
-  ipam-properties: location
+     dnsserver: micetro.example.net. micetro.example.com.
+     dhcpserver: micetro.example.net.
+     ipam-properties: location
 
-Set provider settings that are not set in ``main.tf``:
+2. Set the provider environment variables:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  export MENANDMICE_ENDPOINT=<api-endpoint>
-  export MENANDMICE_USERNAME=<your username>
-  export MENANDMICE_PASSWORD=<your password>
+     export MENANDMICE_ENDPOINT=<api-endpoint>
+     export MENANDMICE_USERNAME=<your username>
+     export MENANDMICE_PASSWORD=<your password>
 
-And make a test account:
+3. Create a test account by running:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-  make testacc
+     make testacc
 
-For using the Micetro provider, see :ref:`terraform-usage`.
+For more details on using the Micetro provider, see :ref:`terraform-usage`.
