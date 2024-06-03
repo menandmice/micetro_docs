@@ -19,7 +19,7 @@ For Mac or Linux
 ^^^^^^^^^^^^^^^^
 * Run the following command to build and install the provider:
 
-   .. code-block:: shell
+  .. code-block:: shell
 
     make install
 
