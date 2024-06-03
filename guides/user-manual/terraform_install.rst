@@ -21,7 +21,7 @@ For Mac or Linux
 
    .. code-block:: shell
 
-      make install
+     make install
 
 For Windows
 ^^^^^^^^^^^
