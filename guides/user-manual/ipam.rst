@@ -91,7 +91,7 @@ You can edit the properties of a network. Note, that if the network has :ref:`ad
 
 Duplicating Networks
 ^^^^^^^^^^^^^^^^^^^^
-When you need to set up similar environments or scale existing configurations, you can duplicate networks along with their subranges, DHCP scopes and configurations under a new network address. This process helps standardize network layout by replicating tthe structure of the original network. Any modifications or overrides applied during duplication will be reflected across all duplicated ranges and their subranges.
+When you need to set up similar environments or scale existing configurations, you can duplicate networks along with their subranges, DHCP scopes and configurations under a new network address. This process helps standardize network layout by replicating the structure of the original network. Any modifications or overrides applied during duplication will be reflected across all duplicated ranges and their subranges.
 
 **To duplicate a network**:
 
