@@ -13,7 +13,7 @@ IPAM
 
   * This information applies to the Micetro Web Interface. For information about IP address management in the Management Console, see :ref:`console-ipam`.
 
-IP Address Management (IPAM) is where you manage all aspects of your network infrastructure. This section explains how to manage IP adresses within your address spaces, including how to configure networks, view, monitor, and edit the properties of individual IP addresses, as well as how to integrate with Active Directory (AD) sites.
+IP Address Management (IPAM) is where you manage all aspects of your network infrastructure. This section explains how to manage IP addresses within your address spaces, including how to configure networks, view, monitor, and edit the properties of individual IP addresses, as well as how to integrate with Active Directory (AD) sites.
 
 Viewing Networks
 ----------------
