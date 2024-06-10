@@ -36,7 +36,7 @@ Configuring Connection Parameters
 .. _central-mssql-windows:
 
 .. note::
-   To improve your compatibility with Microsoft SQL Server, you need to `install ODBC driver version 17 on the Central server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
+   To improve your compatibility with Microsoft SQL Server, you need to `install ODBC driver on the Central server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
 
 For Micetro Central on Windows
 ********************************
