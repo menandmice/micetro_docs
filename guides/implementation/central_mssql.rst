@@ -90,8 +90,8 @@ Connecting to the MS SQL Database
 
 After configuring the preferences, restart the Micetro Central service. This will connect Micetro Central to your newly created database. The database schema will be created during the first connection.
 
-Restarting Mictro Central
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Restarting Micetro Central
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Verify the service is running smoothly:
 
 .. code-block:: bash
