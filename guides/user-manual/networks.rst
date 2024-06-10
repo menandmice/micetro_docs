@@ -1,11 +1,11 @@
 .. meta::
-   :description: IP address management (IPAM) in Micetro
+   :description: IP address management (IPAM) in Micetro - networks
    :keywords: IPAM, IP address management, networks, container, dhcp scope
 
 .. _networks:
 
-Managing Networks
-==================
+Networks
+=========
 
 Viewing Networks
 ----------------
@@ -520,3 +520,15 @@ Working with Address (A) Records in DNS Zone Windows
 When the IPAM module is enabled, you may notice some differences when working with Address (A) records in DNS zones. One key change is the restriction on allowed IP addresses. 
 
 The system administrator can control which IP addresses users are permitted to use and set a range of IP addresses they are allowed to work with. Additionally, administrators can decide whether users are allowed to use IP addresses already assigned in DNS. This means that there could be a predefined range of IP addresses that you're permitted to work with, and the system may prevent you from using IP addresses outside of this range.
+
+|
+**Related Topics**:
+
+* :ref:`ipam`
+* :ref:`devices`
+* :ref:`admin-custom-properties`
+* :ref:`admin-change-events`
+* :ref:`snmp-profiles`
+* :ref:`webapp-workflows`
+* :ref:`admin-system-settings`
+* :ref:`new-dhcp-scope`
