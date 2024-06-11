@@ -17,7 +17,7 @@ Furthermore, Micetro offers a plugin (via the menandmice provider) that allows y
 
   rest_api
   soap_api
-  json_rcp
+  json_rpc
   api_auth
   ansible
   terraform  
