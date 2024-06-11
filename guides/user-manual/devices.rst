@@ -96,14 +96,14 @@ You can also clear an address, which will remove the association and delete all 
 
 **To unlink an IP address**:
 
-1.	Select the IP address you want to unlink in either the inspector or the Edit interfaces dialog box.
+1.	Select the IP address you want to unlink in either the inspector or the Configure interfaces dialog box.
 2.	On the row :guilabel:`...` menu, select :guilabel:`Unlink` to remove the association but retain the metadata. Select :guilabel:`Clear` to unlink the address and delete all associated data, such as custom properties.
 
 Configuring Device Interfaces
 -----------------------------
-When dealing with multiple interfaces and IP addresses, the inspector can become crowded, making it difficult to locate the specific item you want to view or modify. To streamline this process, you use the Edit interfaces dialog box that allows for easier searching and configuration. In this dialog box, you can add new interfaces, link and unlink IP addresses, edit device properties, and delete interfaces.
+When dealing with multiple interfaces and IP addresses, the inspector can become crowded, making it difficult to locate the specific item you want to view or modify. To streamline this process, you use the Configure interfaces dialog box that allows for easier searching and configuration. In this dialog box, you can add new interfaces, link and unlink IP addresses, edit device properties, and delete interfaces.
 
-**To edit a device interface**:
+**To configure a device interface**:
 
 1.	Select the device.
 2.	Select :guilabel:`Configure interfaces` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
