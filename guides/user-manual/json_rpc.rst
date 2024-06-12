@@ -203,7 +203,7 @@ Examples:
             'lastModified': 'Jul 3, 2023 22:35:43', 
             'displayName': 'test.menandmice.com.'
          }
-      }
+     }
 
 2. Get all zones sorted by name in descending order:
 
@@ -232,7 +232,7 @@ Examples:
          ...
         ],
         'totalResults':6
-      }
+     }
 
 3. Get the first 50 zones in the system in ascending order:
 
