@@ -179,7 +179,7 @@ Micetro's API supports powerful arguments for filtering, sorting, and limiting r
 
 Examples:
 
-1. Get all zones with a name starting with ``test.menandmice.``:
+1. Get all zones with a name starting with ``test.menandmice``:
 
    .. code-block::
 
