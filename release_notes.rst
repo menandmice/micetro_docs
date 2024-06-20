@@ -11,7 +11,21 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`
+Jump to: :ref:`10.0.8-release`, :ref:`10.1-release`, :ref:`10.1.1-release`, :ref:`10.1.2-release`, :ref:`10.1.4-release`, :ref:`10.1.6-release`, :ref:`10.1.7-release`, :ref:`10.2-release`, :ref:`10.2.1-release`, :ref:`10.2.2-release`, :ref:`10.2.3-release`, :ref:`10.2.4-release`, :ref:`10.2.5-release`, :ref:`10.2.7-release`, :ref:`10.2.8-release`, :ref:`10.2.9-release`, :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.5-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`
+
+.. _10.5.8-release:
+
+10.5.8
+------
+June 20, 2024
+
+Improvements
+^^^^^^^^^^^^
+* Improved functionality to automatically detect if an AWS account in a multi-account setup has been granted DNS access in Micetro.
+
+Bug Fixes
+^^^^^^^^^
+* Fixed an issue where rolling back changes when adding zones to xDNS failed, resulting in the deletion of the zones.
 
 .. _10.5.7-release:
 
