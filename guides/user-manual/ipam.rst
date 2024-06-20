@@ -67,7 +67,10 @@ When creating a network, Micetro automatically places it in the proper location 
 
 Editing Network Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can edit the properties of a network. Note, that if the network has :ref:`admin-event-hooks` configured, these hooks will be triggered when changes are made.You can edit the properties of a network. Note, that if the network has event hooks configured, these hooks will be triggered when changes are made.
+You can edit the properties of a network. 
+
+.. note::
+   If the network has :ref:`admin-event-hooks` configured, these hooks will be triggered when changes are made.
 
 **To edit a network**:
 
@@ -197,7 +200,7 @@ Adding a DNS Record
    .. image:: ../../images/ip-create-dns-Micetro.png
      :width: 50%
 
-2. Click :guilabel:`Create now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
+4. Click :guilabel:`Create now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
 
 Editing a DNS Record
 ^^^^^^^^^^^^^^^^^^^^
