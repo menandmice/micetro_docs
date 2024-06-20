@@ -103,7 +103,7 @@ Improvements
 
 Bug Fixes
 ^^^^^^^^^
-* Fixed an issue where rolling back changes when adding zones to xDNS would revert to many instances, leading to the complete deletion of the zones.
+* Fixed an issue where rolling back changes when adding zones to xDNS failed, resulting in the deletion of the zones.
 
 .. _10.5.7-release:
 
