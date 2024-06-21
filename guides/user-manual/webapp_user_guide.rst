@@ -108,7 +108,6 @@ Access quick command by clicking either the lightning icon in the upper-right co
 
    .. image:: ../../images/blackstar-quick-command-autocomplete.png
      :width: 70%
-     :align: center
 
 2. Select the object to work with.
 
@@ -116,7 +115,6 @@ Access quick command by clicking either the lightning icon in the upper-right co
 
    .. image:: ../../images/blackstar-quick-command-actions.png
      :width: 70%
-     :align: center
 
 
 Quickfilter
@@ -171,3 +169,4 @@ On the **IPAM** page, one way of finding the network containing a specific IP ad
 .. image:: ../../images/blackstar-quickfilter-networks.png
   :width: 80%
   :align: center
+|

@@ -19,5 +19,6 @@ IP Address Management (IPAM) is where you manage all aspects of your network inf
   :maxdepth: 1                               
 
   networks
+  active_directory
   devices
-  
+  dhcp_superscopes
