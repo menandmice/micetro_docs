@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Micetro by Men&Mice - 11.0"
-copyright = "2024, Men&Mice"
+project = "Micetro - 11.0"
+copyright = "2024, BlueCat"
 author = "Men&Mice"
 
 
