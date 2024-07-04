@@ -7,21 +7,58 @@
 DHCP Superscopes
 ================
 
-The shared networks feature on ISC and Kea is called Superscopes in Micetro
+.. note:: 
+    
+  * For DHCPv4, superscopes are supported by Microsoft DHCP (MS), Internet Systems Consortium DHCP (ISC), and Kea.
+  * For DHCPv6, superscopes are only supported by the Kea service.
 
-For DHCPv6,  superscopes only work for a Kea service. for DHCPv4 it's then MS, ISC and Kea.
+A superscope groups individual DHCP scopes to facilitate network management tasks, making it easier to manage complex networks by logically organizing DHCP scopes. Superscopes support network segmentation, aid in migration and transition processes, allow for temporary IP address assignments, and enable redundancy and load balancing across DHCP servers. By using superscopes, network administrators can achieve more efficient and effective DHCP management.
+
+**To access superscopes**:
+
+* Go to the **IPAM** page and select the :guilabel:`DHCP superscopes` tab.
+
+.. image:: ../../images/devices.png
+  :width: 85%
 
 Creating Superscopes
 --------------------
 
-Superscopes can be created and scopes added to them as a way to group scopes together.
+To simplify scope management, you can group related scopes together in a superscope based criteria such as geographic location, department, or subnet range.
 
-Creating a new superscope can be done on the superscope subpage. When creating a superscope a name needs to be defined as well as choosing what server the superscope should exist on. 
+**To create a superscope**:
+
+1. On the **DHCP Superscopes** tab, click :guilabel:`Create superscope`.
+
+2. Enter a name for the superscope and select the DHCP server where it will be hosted. Optionally, add a description. 
+
+3. Click :guilabel:`Next` to proceed.
+
+4. You can add scopes to the superscope immediately or choose to add them later.
+
+  .. image:: ../../images/create-superscope.png
+    :width: 70%
+
+  * The list shows scopes that are not currently part of a superscope.
+   
+  * For Kea services, the scopes must be enabled to be displayed in the list.
+   
+  * Use the quick filter search box to find and select the desired scopes.
+
+5. On the Summary page, review the information you have enterd. Click :guilabel:`Add` go create the superscope.
+
+.. note::
+  If a superscope is created without any scopes assigned, it will not be activated on the server until at least one scope is added. Therefore, DHCP options cannot be configured for the superscope until it contains at least one scope.
+
+Addins Scopes to Existing Superscopes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
-Selected Scope Menus
-^^^^^^^^^^^^^^^^^^^^
+
+
+
+
 
 When working with scopes, selecting one or more scopes enables a row menu (...) and relevant actions from the :guilabel:`Actions` menu on the top toolbar. The available actions change based upon the type of the DHCP server the scope is hosted on.
 

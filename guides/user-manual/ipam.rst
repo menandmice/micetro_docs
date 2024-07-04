@@ -343,8 +343,6 @@ Setting Subnet Monitoring
 
 4. Click :guilabel:`OK` to confirm your settings.
 
-.. _active-directory:
-
 AD Sites and Subnets
 --------------------
 
