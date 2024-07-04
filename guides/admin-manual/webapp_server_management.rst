@@ -83,7 +83,7 @@ Micetro supports the following DNS and DHCP platforms:
   
 Micetro Agents
 --------------
-Micetro requires an agent to handle communication with external service. The installation location of the agent depends on the service type and whether it operates on-premises or in the cloud. Agents are installed on the respective machine, the machine running Men&Mice Central, or on any machine with the same domain as the DNS/DHCP servers. A single agent can manage communication with multiple servers. For more information on agents and how to install them, see :ref:`install-controllers`.
+Micetro requires an agent to handle communication with external services. The installation location of the agent depends on the service type and whether it operates on-premises or in the cloud. Agents are installed on the respective machine, the machine running Men&Mice Central, or on any machine with the same domain as the DNS/DHCP servers. A single agent can manage communication with multiple servers. For more information on agents and how to install them, see :ref:`install-controllers`.
 
 .. note::
    When managing Microsoft DNS servers on remote computers using the DNS Server Controller, some actions for static zones may not be available:
@@ -102,9 +102,9 @@ Micetro requires an agent to handle communication with external service. The ins
 
 Adding a Service
 ----------------
-You must have the permission to administer DNS to add a new service to Micetro.
+You must have permission to administer DNS to add a new service to Micetro.
 
-Adding a new service is either a two or three step process, depending on the type of service being added.
+Adding a new service is either a two or three-step process, depending on the type of service being added.
 
 **To add a service**:
 
@@ -124,7 +124,7 @@ Adding a new service is either a two or three step process, depending on the typ
 
    * For ISC BIND and ISC DHCP this step is skipped, as the agent must be installed on the service host.
 
-   * With the exception of the service types mentioned above, the agent can be installed on the Men&Mice Central host, on the Service host, or in the case of MS DNS/DHCP, ISC Kea, and Cisco IOS on a different host. If you have already added a service of this type before, you have the opportunity to either select from existing agents or create a new agent. A single agent can be used to manage multiple connections.
+   * With the exception of the above service types, the agent can be installed on the Micetro Central host, on the service host or, in the case of MS DNS/DHCP, ISC Kea, and Cisco IOS, on a different host. If you have already added a service of this type, you can either select from existing agents or create a new agent. A single agent can be used to manage multiple connections.
 
     .. image:: ../../images/add-kea-2.png
          :width: 65%
@@ -158,15 +158,15 @@ Depending on the service, you can change the name and/or custom properties for t
 
 Other Service Actions
 ----------------------
-Depending on the service, you can modify both the service name and its custom properties.
-Any actions applicable to a selected server can either be accessed on the :guilabel:`Actions` menu located above the list, or by clicking the Row menu :guilabel:`...` button that appears when you hover over the right hand side of a row.
+Depending on the service, you can modify the service name and its custom properties.
+All actions applicable to a selected server can be accessed either on the :guilabel:`Actions` menu above the list, or the row :guilabel:`...` menu that appears when you hover over the right-hand side of a row.
 
 .. csv-table::
   :header: "Action", "Description"
   :widths: 15, 85
 
   "Attach service", "Attaches a previously detached server/service." 
-  "Detach server", "Detaches or disables the server/service. When a server is detached, it is not synchronized with Micetro and excluded from various checks. When a server is detached, it is greyed out in the service view grid. The server can be attached again for it to be part of the server synchronization again."
+  "Detach server", "Detaches or disables the server/service. When a server is detached, it is not synchronized with Micetro and is excluded from various checks. When a server is detached, it is greyed out in the service view grid. The server can be attached again for it to be part of the server synchronization again."
   "Synchronize", "Triggers synchronization of zones and records or scopes."
   "Remove service", "Removes the selected server/service from Micetro. This option is only available with the Administrator account."
   "Access", "Shows which roles have access to the service and what actions they are authorized to perform. For more information about how to manage object access, see :ref:`acl-object-access`."
@@ -184,11 +184,11 @@ Use the following table for more information on the indicators:
     :header: "Indicator", "Component", "Explanation"
     :widths: 10, 10, 80
 
-    "Unknown", "Controller", "The status of the DNS/DHCP Server Controller is unknown."
-    "OK", "Server, Controller", "The DNS/DHCP Server Controller and service are both OK."
-    "Unreachable", "Controller", "The DNS/DHCP Server Controller is offline or otherwise unreachable."
-    "Out of date", "Controller", "The DNS/DHCP Server Controller has a different version than Central."
-    "Updating", "Controller", "The DNS/DHCP Server Controller is being updated."
+    "Unknown", "Agent", "The status of the DNS/DHCP agent is unknown."
+    "OK", "Server, Agent", "The DNS/DHCP agent and service are both OK."
+    "Unreachable", "Agent", "The DNS/DHCP agent is offline or otherwise unreachable."
+    "Out of date", "Agent", "The DNS/DHCP agent has a different version than Central."
+    "Updating", "Agent", "The DNS/DHCP agent is being updated."
     "Uninitialized", "Server", "The DNS/DHCP server is uninitialized and needs to be manually initialized."
     "Detached", "Server", "The DNS/DHCP server has been detached without removing it from Micetro."
     "Service Down", "Server", "The DNS/DHCP server is down and not responding to queries."
