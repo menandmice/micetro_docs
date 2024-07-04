@@ -52,6 +52,7 @@ Table of Contents
 
      guides/user-manual/webapp_user_guide
      guides/user-manual/dns
+     guides/user-manual/dhcp_scopes
      guides/user-manual/ipam
      guides/user-manual/folder_management     
      guides/user-manual/webapp_reporting

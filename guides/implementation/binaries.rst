@@ -11,13 +11,13 @@ Linux
 -----
 
 .. important::
-  All Micetro non-Windows components (Central, Server Controllers, and the Web Interface) require Python (version 3 or above) to be installed on the target server.
+  All Micetro non-Windows components (Central, Micetro Agents, and the Web Interface) require Python (version 3 or above) to be installed on the target server.
 
 `Download <https://download.menandmice.com>`_ the following installer packages:
 
-* Micetro Central: ``micetro-central-10.5.0.linux.x64.tgz``
-* Micetro Agent: ``micetro-controllers-10.5.0.linux.x64.tgz``
-* Micetro Web Interface: ``micetro-web-10.5.0.linux.x64.tgz``
+* Micetro Central: ``micetro-central.linux.x64.tgz``
+* Micetro Agent: ``micetro-controllers.linux.x64.tgz``
+* Micetro Web Interface: ``micetro-web.linux.x64.tgz``
 * Micetro AuthServe Agent: ``mm-authserve-agent.tar.gz``
 
 .. note::
@@ -28,10 +28,10 @@ Windows
 
 `Download <https://download.menandmice.com>`_ the following installer packages:
 
-* Micetro Central: ``Micetro_Central_x64_10.5.0.exe``
-* Micetro Agent: ``Micetro_Controllers_x64_10.5.0.exe``
-* Micetro Web Interface: ``Micetro_Web_Application_x64_10.5.0.exe``
-* Micetro Management Console: ``Micetro_Management_Console_10.5.0.exe``
+* Micetro Central: ``Micetro_Central_x64.exe``
+* Micetro Agent: ``Micetro_Controllers_x64.exe``
+* Micetro Web Interface: ``Micetro_Web_Application_x64.exe``
+* Micetro Management Console: ``Micetro_Management_Console.exe``
 
 .. note::
-  Unless noted, all applications are run as *Administrator*.
+  Unless noted, all applications are run as **Administrator**.
