@@ -1,5 +1,5 @@
 .. meta::
-   :description: address space management in the Micetro by Men&Mice 
+   :description: address space management in the Micetro
    :keywords: address space, configuration
 
 .. _address-spaces:
@@ -13,18 +13,30 @@ Multiple Address Spaces
 .. note::
   For managing address spaces through the Management Console, see :ref:`console-address-spaces`.
 
-Micetro supports multiple address spaces.
+Micetro supports multiple address spaces, each containing its unique set of network components, such DNS servers, DNS zones, DHCP servers, DHCP scopes, IP address ranges (including both IPv4 and IPv6 root ranges), IP address entries, and folders.
 
-Each address space instance contains its own set of DNS servers, DNS zones, DHCP servers, DHCP scopes, IP Address ranges (including the IPv4 and IPv6 root ranges), IP address entries, and folders.
+Shared elements across all address spaces include:
+
+* Users, groups, and roles.
+
+* Custom property definitions (for more information about custom properties, see :ref:`admin-custom-properties`).
 
 .. note::
-  Changes to data in one address space do not affect data in any other address space.
+  Any changes made to data in one address space will not affect data in any other address space.
 
-Items **shared** between address spaces are:
+Switching Between Address Spaces
+---------------------------------
 
-* users, groups, and roles
+You can only work in one address space at a time. The current address space is visibly indicated in the lower-right corner of the screen. 
 
-* custom property definitions (see :ref:`admin-custom-properties`)
+**To switch to a different address space**:
+
+1. Click the **User** icon in the upper-right corner.
+
+2. Hover over the current address space, then select your desired address space.
+
+   .. image:: ../../images/address-space-Micetro.png
+     :width: 50%
 
 Address Space Management
 -------------------------
@@ -55,7 +67,7 @@ Moving Objects to a Different Address Space
 -------------------------------------------
 You can move DNS servers, DHCP servers, and IP Address ranges between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects to a different address space.
 
-To move an object:
+**To move an object**:
 
 1. Select the object you want to move, and then select :guilabel:`Move to address space` on the :guilabel:`Action` menu. You can also select this option on the **Row menu (...)**.
 

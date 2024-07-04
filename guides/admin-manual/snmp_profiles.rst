@@ -1,5 +1,5 @@
 .. meta::
-   :description: SNMP profiles in Micetro by Men&Mice
+   :description: SNMP profiles in Micetro
    :keywords: SNMP profile, IPAM, routers
 
 .. _snmp-profiles:
@@ -24,15 +24,14 @@ Before a router can be queried, it must be placed in an SNMP profile containing 
 .. note::
   Multiple routers can share the same SNMP profile.
 
-To create an SNMP profile:
+**To create an SNMP profile**:
 
 1. Navigate to :guilabel:`Admin --> Configuration --> SNMP Profiles`.
 
 2. Select :guilabel:`Add Profile` on the top toolbar.
 
-.. image:: ../../images/add-snmp-profile.png
-  :width: 70%
-  :align: center
+  .. image:: ../../images/add-snmp-profile.png
+    :width: 70%
 
 3. Enter a profile name and choose the SNMP version to use. (Supported versions are SNMP v1, v2c, and v3.) You can also specify a non-standard port to use for SNMP.
 
