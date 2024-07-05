@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to manage DHCP scopes in the Micetro
+   :description: How to manage DHCP scopes in Micetro
    :keywords: DHCP management, DHCP scopes
 
 .. _dhcp-scopes:

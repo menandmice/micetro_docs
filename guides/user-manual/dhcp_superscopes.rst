@@ -30,11 +30,11 @@ To simplify scope management, you can group related scopes together in a supersc
 
 1. On the **DHCP Superscopes** tab, click :guilabel:`Create superscope`.
 
-2. Enter a name for the superscope and select the DHCP server where it will be hosted. Optionally, add a description. 
+2. Enter an identifying name for the superscope and select the DHCP server where it will be hosted. Optionally, add a description. 
 
 3. Click :guilabel:`Next` to proceed.
 
-4. You can add scopes to the superscope immediately or choose to add them later.
+4. From a list of server-defined scopes, select one or more to add to the superscope. If you want to add scopes later, click Next without selecting anything.
 
   .. image:: ../../images/create-superscope.png
     :width: 70%
@@ -45,17 +45,53 @@ To simplify scope management, you can group related scopes together in a supersc
    
   * Use the quick filter search box to find and select the desired scopes.
 
-5. On the Summary page, review the information you have enterd. Click :guilabel:`Add` go create the superscope.
+5. In the :guilabel:`Summary`, review the information you have enterd. Click :guilabel:`Add` go create the superscope.
 
 .. note::
   If a superscope is created without any scopes assigned, it will not be activated on the server until at least one scope is added. Therefore, DHCP options cannot be configured for the superscope until it contains at least one scope.
 
-Addins Scopes to Existing Superscopes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding Scopes to a Superscopes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can add scopes to a superscope when creating a new scope or editing an existing scope. You can also move scopes between superscopes.
 
+Adding an Existing Scope to a Superscope
+"""""""""""""""""""""""""""""""""""""""""
 
+1.	Go to the :guilabel:`Networks` tab and find the scope you want to add to the superscope.
+2.	Click :guilabel:`Properties` on the top toolbar or select :guilabel:`Edit network properties` on the row :guilabel:`...` menu.
+3.	Select the desired superscope.
 
+    .. image:: ../../images/edit-scope-prop-superscope.png
+      :width: 70%
+ 
+    * The list shows the superscopes that are on the same server as the scope.
+    *	To remove a scope from a superscope, leave the Superscopes field empty.
 
+4.	Click :guilabel:`Save` when you’re done.
+
+.. note::
+  When superscopes include scopes that exist on more than one server (split scope), they are displayed as **<multiple values>**.
+
+Adding a Scope to a Superscope During Scope Creation
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+1.	On the Networks tab, click Create  DHCP scope. Specify a network address, server, and address pool. For more details about creating scopes, see Creating Networks. 
+2.	Select the superscope to which you want to add the new scope.
+ 
+3.	Complete filling in the information and click Finish to create the scope.
+
+Removing Scopes from Superscopes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can remove one or more scopes from a superscope if necessary to reorganize the scopes on the server. This action will not delete or deactivate the scope. You can add it to another superscope on the server if necessary.
+
+**To remove a scope from a superscope**:
+
+1.	On the DHCP Superscopes tab, select the superscope containing the scope you want to remove.
+2.	In the inspector, locate the relevant scope and select Remove from superscope on the scope’s action … menu.
+ 
+-OR-
+1.	On the Networks tab, locate the scope you want to remove. You can use the Superscopes filters in the filtering sidebar to help you find it.
+2.	Click Properties on the top toolbar or select Edit network properties on the row … menu. Delete the scope from the Superscope field.
+ 
 
 
 

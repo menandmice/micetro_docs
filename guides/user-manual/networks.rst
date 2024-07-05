@@ -52,7 +52,7 @@ When creating a network, Micetro automatically places it in the proper location 
 
    * For a **network**, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site, see :ref:`active-directory`.
 
-   * A **DHCP scope** can be created with the network and broadcast addresses automatically configured. If the server is configured to use a failover relationship, you can add the scope to the failover. Also, if superscopes have been created on the server, you can add the scope to a :ref:`dhcp-superscopes`.
+   * A **DHCP scope** can be created with the network and broadcast addresses automatically configured. If the server is configured to use a failover relationship, you can add the scope to the failover. Also, if :ref:`dhcp-superscopes` have been created on the server, you can add the scope to a superscope.
 
     .. Note::
       
