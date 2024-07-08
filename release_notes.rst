@@ -25,7 +25,8 @@ Improvements
 
 Bug Fixes
 ^^^^^^^^^
-* Fixed a problem where a minor version of MDDS was not detected correctly.* Improved concurrency safety with GetNextFreeAddress when used in conjunction with the temporaryClaimTime parameter.
+* Fixed a problem where a minor version of MDDS was not detected correctly.
+* Improved concurrency safety with GetNextFreeAddress when used in conjunction with the temporaryClaimTime parameter.
 * Fixed a problem with the calculation of the usage and the display of the leases in the scopes on certain MS DHCP servers.
 * Fixed an issue where Swagger documentation did not allow selecting an HTTPS connection for REST calls. The default server in Open API no longer includes a protocol, ensuring that REST documentation works seamlessly for both HTTP and HTTPS connections.
 * Fixed an issue where DHCP Synchronization would fail because the DHCP scope change listener could not be found. The reliability of DHCP synchronization for Microsoft DHCP servers has been enhanced.
