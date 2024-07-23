@@ -11,7 +11,26 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.3.12-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`
+Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.3.12-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`
+
+.. _11.0.2-release:
+
+11.0.2
+------
+July 8, 2024
+
+Improvements
+^^^^^^^^^^^^
+* Improved concurrency safety with GetNextFreeAddress when used with the temporaryClaimTime parameter.
+
+Bug Fixes
+^^^^^^^^^
+* Fixed a problem where a minor version of MDDS was not detected correctly.
+* Improved concurrency safety with GetNextFreeAddress when used in conjunction with the temporaryClaimTime parameter.
+* Fixed a problem with the calculation of the usage and the display of the leases in the scopes on certain MS DHCP servers.
+* Fixed an issue where Swagger documentation did not allow selecting an HTTPS connection for REST calls. The default server in Open API no longer includes a protocol, ensuring that REST documentation works seamlessly for both HTTP and HTTPS connections.
+* Fixed an issue where DHCP Synchronization would fail because the DHCP scope change listener could not be found. The reliability of DHCP synchronization for Microsoft DHCP servers has been enhanced.
+* Fixed an issue where downloading updates through a proxy failed unless the CONNECT verb was allowed for regular HTTP traffic. We’ve also enabled checking for and downloading updates via HTTPS when a web proxy server is configured.
 
 .. _11.0.1-release:
 
