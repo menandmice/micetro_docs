@@ -17,7 +17,7 @@ Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref
 
 11.0.3
 ------
-July 17, 2024
+July 23, 2024
 
 Improvements
 ^^^^^^^^^^^^
@@ -27,7 +27,9 @@ Improvements
    * CVE-2024-1975: SIG(0) can be used to exhaust CPU resources
    * CVE-2024-4076: Assertion failure when serving both stale cache data and authoritative zone content
 
-MDDS appliances have also been updated to include a BIND version that contains those security fixes
+Please note that when updating the Micetro appliances it is necessary to restart them for the change to take full effect, this usually takes about 20-30 seconds.
+
+MDDS appliances have also been updated to include a BIND version that contains those security fixes, this will result in a restart of the BIND service which will only take few seconds
 
 .. _11.0.2-release:
 
