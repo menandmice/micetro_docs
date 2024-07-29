@@ -34,17 +34,12 @@ Additionally, the card shows the expiry date of the active license key at the bo
 .. image:: ../../images/license-management-11.png
   :width: 80%
 |
-By selecting :guilabel:`License Details` in the upper right-hand corner of the page, you can monitor license usage and any related issues. 
+You can monitor license usage and any related issues by selecting :guilabel:`License Details` in the upper right-hand corner of the page. 
 
 .. image:: ../../images/license-management-summary-11.png
    :width: 65%
    
-You can use the email link to contact our support team for any inquiries regarding your licenses. When you click the email link, it will automatically gather all active keys and usage information, compiling them into a text block that you can easily send to support for assistance.
-
-Expired Keys
-------------
-
-Notifications will alert you when a license key is expired or about to expire. Micetro provides a grace period of four months for license renewal. During this grace period, the product module will continue to function normally after the expiration date. However, after the grace period elapses, the module will cease to operate until the license is renewed.
+You can use the email link to contact our support team if you have any questions about your licenses. When you click the email link, it will automatically gather all active keys and usage information, and compile them into a text block that you can easily send to support for help.
 
 Adding a License Key
 --------------------
@@ -78,7 +73,4 @@ Removing a License Key
 
 Removing Expired License Keys
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can clean up licenses and remove expired keys by using the :guilabel:`Remove expired keys` action in the upper right-hand corner.
-
-.. _export-license:
+Notifications will alert you when a license key is expired or about to expire. You can clean up licenses and remove expired keys by using the :guilabel:`Remove expired keys` action in the upper right-hand corner.

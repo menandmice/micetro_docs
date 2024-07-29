@@ -13,33 +13,30 @@ DNS Zones
 .. note::
    This information applies to the web interface. For information about DNS zone management in the M&M Management Console, see :ref:`console-dns-zones`.
 
-Overview
---------
-
 By default, the DNS page displays all primary zones in the system regardless of authority. 
 
 .. image:: ../../images/DNS-Micetro.png
    :width: 90%
 |
-The left sidebar offers several options for filtering and organizing the zones. The sidebar has three tabs: **Menu**, **Folders**, and **DNS services**. 
+The left sidebar offers several options for filtering and organizing zones. At the bottom of the sidebar, you can select what to display: **Menu**, **Folders**, and **DNS services**. 
 
 
 .. image:: ../../images/sidebar-tabs.png
    :width: 65%
 
-* The **Menu** tab offers the most commonly used filtering options for zones, such as zone types, favorites, and reverse zones.
+* **Menu** provides the most commonly used filtering options for zones, such as zone types, favorites, and reverse zones.
 
-* The **Folders** tab allows you to organize zones and filter queries into folders. For more information about folder management, see :ref:`folder-management`.
+* **Folders** allow you to organize zones and filter queries into folders. For more information about folder management, see :ref:`folder-management`.
 
-* On the **DNS services** tab you can view zones by server/service. This can be useful if you have multiple DNS services and want to view the zones associated with each one separately.
+* **DNS services** allows you to view zones by server/service. This can be useful if you have multiple DNS services and want to view the zones associated with each one separately.
 
-Micetro will remember your current tab selection when you navigate away from the DNS page and return to it later.
+Micetro will remember your current view selection when you navigate away from the DNS page and return to it later.
 
 .. _dns-zone-types:
 
 Zone Types
 -----------
-Below are the zone types supported by Micetro.
+This table shows the zone types supported by Micetro.
 
 .. csv-table::
   :header: "Type", "Description"
@@ -59,7 +56,7 @@ Below are the zone types supported by Micetro.
 Zone Contents
 ^^^^^^^^^^^^^
 
-The Inspector pane on the right provides a look at the SOA record and properties of the selected zone. 
+The Inspector panel on the right provides a look at the SOA record and properties of the selected zone. 
 
 .. image:: ../../images/DNS-zone-contents-Micetro-10.5.png
    :width: 65%
@@ -87,7 +84,7 @@ Managing Zones
 
 Opening DNS Zones
 ^^^^^^^^^^^^^^^^^^
-To view the DNS resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu :guilabel:`...`. A list of the zone's resource records is displayed. For more information about DNS Resource Records, see :ref:`dns-records`.
+To view the DNS resource records for a particular zone, you can double-click the zone, or select it and then click :guilabel:`Open` on the page toolbar or the row menu :guilabel:`...`. A list of the zone's resource records is displayed. For more information about DNS resource records, see :ref:`dns-records`.
 
 Creating Zones
 ^^^^^^^^^^^^^^^
@@ -101,6 +98,9 @@ Creating Zones
       :width: 65%
       
 3. Follow the steps of the wizard. The number of steps varies depending on the zone type and how Micetro is configured.
+
+.. tip::
+   When creating a primary DNS zone, you can enter a CIDR notation (for example 192.168.1.0/24) as the network address. Micetro will automatically convert this CIDR notation into a reverse zone name. 
 
 Primary Zone
 """""""""""""
@@ -121,7 +121,7 @@ Primary Zone
 
    Custom properties are displayed as columns in the DNS grid for each zone.
 
-4. On the **Options** page you can specify which DNS servers should receive notifications when changes are made to the zone and to which servers it is allowed to perform zone transfers. 
+4. On the **Options** page, you can specify which DNS servers should receive notifications when changes are made to the zone and to which servers it is allowed to perform zone transfers. 
 
    .. image:: ../../images/zone-flow-options.png
       :width: 65%
@@ -269,8 +269,7 @@ For BIND servers you can configure individual settings for a specific zone on ea
    * **Query forwarding** (forward): Determines how BIND behaves when forwarding queries for the forward zone. The **First - resolve if forwarding fails** option provides a fallback to local resolution if forwarding fails, while the **Only - fail if forwarding fails** option strictly relies on forwarding and does not attempt local resolution if forwarding fails.
 
 5. Click :guilabel:`Save` when you're done.
-
-   
+  
 
 Raw Configuration of Zone Options (BIND)
 """"""""""""""""""""""""""""""""""""""""
