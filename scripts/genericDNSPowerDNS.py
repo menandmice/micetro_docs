@@ -164,6 +164,8 @@ def recToPDNS(zone, zoneFQ, record):
         if record['type'] == "CNAME" or record['type'] == "PTR" or record['type'] == "NS":
             record['data'] = deQualify(zoneFQ, record['data'])
         record['data'] = record['data'].replace("\t"," ")
+    elif record['type'] == "TXT":
+        record['data'] = record['data'].replace("\t", "") # remove tabs from TXT records
 
     if record['name'] == "":
         record['name'] = zone
