@@ -26,11 +26,11 @@ The generic DNS agent is compatible with other native DNS servers, providing inc
 
 4. Use the following example configuration for the Python interpreter and a connector script located on the C drive in the scripts sub-directory:
 
-.. code-block::
+  .. code-block::
 
-  <GenericDNSScript value="python c:\scripts\genericDNS.py" />
+    <GenericDNSScript value="python c:\scripts\genericDNS.py" />
 
-  The `genericDNS.py <https://github.com/menandmice/micetro_docs/blob/10.1/guides/implementation/genericDNS.py>`_ script implements the generic API and interfaces with the DNS server.
+  The `genericDNS.py <https://github.com/menandmice/micetro_docs/blob/latest/guides/implementation/genericDNS.py>`_ script implements the generic API and interfaces with the DNS server.
 
 5. Log in to Micetro and add a new generic DNS server. The name and optional IP address must point to the machine running the generic DNS agent.
 

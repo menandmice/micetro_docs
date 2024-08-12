@@ -7,35 +7,36 @@
 Configuring PowerDNS
 ====================
 
-The PowerDNS connector script connects directly to the MySQL backend and allows management of zones in PowerDNS. Native mode and Primary/Secondary mode in the authoritative PowerDNS are currently supported.
+The PowerDNS connector script connects directly to the MySQL backend, enabling zone management in PowerDNS. Native mode and Primary/Secondary mode are supported in the authoritative PowerDNS.
 
-The installation works as described above. On Linux use the ``--generic-dns-controller`` parameter when executing the installer.
+On Linux, include the ``--generic-dns-controller`` parameter when running the installer.
 
-It will then install the base Generic DNS Server Controller, but there are two things you want to tweak:
+This will install the :ref:`generic-dns-controller`, but you'll need to make a couple of adjustments:
 
-1. Create working directory and connector script config:
+1. Create a working directory and a configuration for the connector script:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  mkdir /var/mmsuite/dns_server_controller
+    mkdir /var/mmsuite/dns_server_controller
 
-and set the correct ownership.
+  Set the correct ownership for this directory.
 
-2. Create a file ``preferences.cfg`` in the ``mmsuite`` directory and configure the connector script with a XML-tag as described in Generic DNS Server Controller.
+2. In the ``mmsuite`` directory, create a ``preferences.cfg`` file and configure the connector script using an XML-tag as described in the instructions for :ref:`generic-dns-controller`.
 
-E.g. on Linux:
-
-.. code-block::
+ For example, on Linux add the following line to ``preferences.cfg``:
+ 
+ .. code-block:: bash
 
   <GenericDNSScript value="python /your/script/directory/genericDNSPowerDNS.py" />
 
-Download the script `from GitHub <https://github.com/menandmice/micetro_docs/blob/latest/scripts/genericDNSPowerDNS.py>`_.
 
-4. Edit the ``systemd/init`` script of the controller. Open with an editor, e.g. vi the ``mmremote`` init script, which should be ``/etc/init.d/mmremote``.
+ Download the script `from GitHub <https://github.com/menandmice/micetro_docs/blob/latest/scripts/genericDNSPowerDNS.py>`_.
 
-5. Search for the line ``PARAMS="...."``.
+3. Modify the ``systemd/init`` script for the agent. Using an editor, such as vi, open the ``mmremote`` init script located at ``/etc/init.d/mmremote``.
 
-6. Add to the begin of the parameter list your created controller working directory with the ``-d`` parameter, .i.e.:
+4. Search for the line containing ``PARAMS="...."``.
+
+5. At the beginning of the parameter list, add your created agent working directory with the ``-d`` parameter:
 
 .. code-block::
 
