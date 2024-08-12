@@ -374,6 +374,7 @@ A split scope divides the DHCP address range into two or more segments, with eac
 
 8.	Click :guilabel:`Save`.
 
+.. _edit-dhcp-options:
 
 Editing DHCP Options
 --------------------

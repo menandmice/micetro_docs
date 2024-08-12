@@ -8,7 +8,7 @@ DHCP
 =====
 
 .. note::
-  To manage DHCP scopes in the Management console, see :ref:`console-dhcp-scopes`.
+  To manage DHCP scopes in the Management Console, see :ref:`console-dhcp-scopes`.
 
 Overview
 --------
@@ -38,7 +38,7 @@ Adiministrators can view DHCP scopes that reside on individual DHCP Servers that
 Selected Scope Menus
 ^^^^^^^^^^^^^^^^^^^^
 
-When working with scopes, selecting one or more scopes enables a row menu (...) and relevant actions from the :guilabel:`Actions` menu on the top toolbar. The available actions change based upon the type of the DHCP server the scope is hosted on.
+When working with scopes, selecting one or more scopes enables a row menu (...) and relevant actions from the :guilabel:`Actions` menu on the top toolbar. The available actions change based on the type of the DHCP server the scope is hosted on.
 
 DHCP Scope Actions
 """"""""""""""""""
