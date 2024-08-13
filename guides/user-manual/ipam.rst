@@ -129,11 +129,13 @@ Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations,
 Viewing IP Addresses within Networks
 -------------------------------------
 
-To view a list of IP addresses within a specific network, double-click the network. This opens a list where you can view and edit the properties of individual IP addresses. You can filter the IP address list, so it displays only the IP addressees you need. 
+To view a list of IP addresses within a specific network, double-click the network or select it and click :guilabel:`Open` on the top toolbar. This opens a list where you can view and edit the properties of individual IP addresses. You can filter the IP address list, so it displays only the IP addressees you need. 
 
 .. image:: ../../images/view-Networks-Micetro-10.5.png
   :width: 85%
   
+* When you select an IP address, the inspector on the right will display all information related to the address, including DNS records, DHCP reservations, and custom properties. 
+
 * The :guilabel:`PTR Status` column shows the status of the Address (A) record and Pointer (PTR) record mappings. This column can have three values:
 
   * **Empty**: The status is empty if there are no DNS records for the host. It is also empty if a PTR record exists where the domain in the data section of the PTR record is not managed by the system.
@@ -148,7 +150,7 @@ To view a list of IP addresses within a specific network, double-click the netwo
 
     * The data section in the PTR record does not correspond to the name of the A record.
   
-  * On the :guilabel:`Action` menu you can use the :guilabel:`Find next free address` option to select the next available IP address within the range. Alternatively, selecting :guilabel:`Find random free address` will randomly select an available IP address.
+* On the :guilabel:`Action` menu you can use the :guilabel:`Find next free address` option to select the next available IP address within the range. Alternatively, selecting :guilabel:`Find random free address` will randomly select an available IP address.
 
 IP Address State
 ^^^^^^^^^^^^^^^^^
