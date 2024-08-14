@@ -93,7 +93,7 @@ The Micetro REST API offers a range of arguments that can be included in either 
 * ``session`` – the unique ID of a valid user session.
 * ``pretty`` – if set to 'true', the API returns  data in a more readable format.
 
-These arguments are all optional. By default, the API assumes that the Micetro Central instance is located on the same machine as the Web Services, which is usually the case. In addition to these arguments, the Micetro REST API also supports other authentication mechanisms, such as Basic Authentication, Windows NTLM, and Kerberos.
+These arguments are all optional. By default, the API assumes that the Micetro Central instance is located on the same machine as the Web Services, which is usually the case. In addition to these arguments, the Micetro REST API also supports other authentication mechanisms, such as Bearer Authentication, Windows NTLM, and Kerberos.
 
 Filtering and Sorting Arguments
 """""""""""""""""""""""""""""""
