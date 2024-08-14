@@ -53,9 +53,9 @@ Table of Contents
      guides/user-manual/webapp_user_guide
      guides/user-manual/dns
      guides/user-manual/ipam - Copy
-     guides/user-manual/folder_management     
      guides/user-manual/webapp_reporting
      guides/user-manual/webapp_workflows
+     guides/user-manual/folder_management     
      guides/user-manual/view_change_history
      guides/user-manual/automation
      
