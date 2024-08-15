@@ -16,11 +16,30 @@ DHCP Superscopes
   * For DHCPv4, superscopes are supported by Microsoft DHCP (MS), Internet Systems Consortium DHCP (ISC), and Kea.
   * For DHCPv6, superscopes are only supported by the Kea service.
 
-A superscope (also called shared network for ISC and Kea) groups individual DHCP scopes to facilitate network management tasks, making it easier to manage complex networks by logically organizing DHCP scopes. Superscopes support network segmentation, aid in migration and transition processes, allow for temporary IP address assignments, and enable redundancy and load balancing across DHCP servers. By using superscopes, you can achieve more efficient and effective DHCP management.
+A superscope, known as a shared network for ISC and Kea, groups individual DHCP scopes to streamline network management, simplifying the handling of complex networks through logical organization.
 
-**To access superscopes**:
+Superscopes support network segmentation, assist with migration and transition processes, provide temporary IP address assignments, and enable redundancy and load balancing across DHCP servers. The use of superscopes results in more streamlined and proficient DHCP management.
 
-* Go to the **IPAM** page and select the DHCP Superscopes` tab, or use the **Superscopes** filtering section of the **Networks** tab.
+Viewing Superscopes
+-------------------
+The **DHCP Superscopes** tab on the **IPAM** page provides an overview of all superscopes. It displays information about each superscope, including its associated DHCP server and the number of scopes it contains. The sidebar allows you to filter the view for **all superscopes**, **favorites**, or specific **DHCP servers**. Additionally, the quick filter search box helps you to quickly find a particular superscope.
+
+.. image:: ../../images/superscopes-view.png
+  :width: 90%
+
+* The inspector panel on the right-hand side displays the scopes assicuated with the selected superscope. To view the scopes, click :guilabel:`View` in the inspector or select :guilabel:`View scopes` on the :guilabel:`Action` or the row :guilabel:`...` menu. This will take you to the **Networks** tab, where the quick filter search box will is automatically populated with the selected superscope.
+
+The **Networks** list includes a column that indicates whether a scope belongs to a superscope. The filtering sidebar provides an option to filter by a superscope. You can also use the quick filter search box to find a specific superscope.
+
+.. image:: ../../images/superscopes-networks-view.png
+   :width: 90%
+
+* Superscopes that include scopes existing on multiple servers (split scopes) are indicated as <multiple values> if the superscope name is not the same on both servers. Although this configuration is valid, it is recommend to use the same superscope name across servers in a split scope setup.
+
+If you have administrative privileges, you can view the defined superscopes on a DHCP server. Go to the **Admin** page and select the desired DHCP server. Then select :guilabel:`View superscopes` on the :guilabel:`Action` or the row :guilabel:`...` menu.
+
+.. image:: ../../images/superscopes-dhcp-server.png
+   :width: 90%
 
 Creating Superscopes
 --------------------
@@ -104,24 +123,6 @@ You can remove one or more scopes from a superscope to reorganize the scopes on 
       :width: 65%
       
       
-Viewing Superscopes
--------------------
-On the **IPAM** page, the **DHCP Superscopes** tab displays an overview of all superscopes. It shows information about each superscope, including the DHCP server it belongs to and the number of scopes it contains. You can use the sidebar to filter the view by **all superscopes**, **favorites**, and **DHCP servers**. The quick filter search box can help you locate the superscope you're after.
-
-.. image:: ../../images/superscopes-view.png
-  :width: 90%
-
-The inspector panel on the right-hand side lists the scopes that belong to a selected superscope. To view the scopes, click :guilabel:`View` in the inspector or select :guilabel:`View scopes` on the :guilabel:`Action` or the row :guilabel:`...` menu. This will take you to the **Networks** tab, where the quick filter search box will be populated with the selected superscope.
-
-The **Networks** list includes a column that indicates whether a scope is a part of a superscope. The filtering sidebar provides an option to filter by superscopes. You can also use the quick filter search box to find a specific superscope.
-
-.. image:: ../../images/superscopes-networks-view.png
-   :width: 90%
-
-If you have administrative privileges, you can see the defined superscopes on a DHCP server. Go to the **Admin** page and select the desired DHCP server. Then select :guilabel:`View superscopes` on the :guilabel:`Action` or the row :guilabel:`...` menu.
-
-.. image:: ../../images/superscopes-dhcp-server.png
-   :width: 90%
 
 Configuring DHCP Supersope Options
 ----------------------------------
