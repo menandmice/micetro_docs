@@ -34,7 +34,7 @@ The **Networks** list includes a column that indicates whether a scope belongs t
 .. image:: ../../images/superscopes-networks-view.png
    :width: 90%
 
-* Superscopes that include scopes existing on multiple servers (split scopes) are indicated as <multiple values> if the superscope name is not the same on both servers. Although this configuration is valid, it is recommend to use the same superscope name across servers in a split scope setup.
+* Superscopes that include scopes existing on multiple servers (split scopes) are indicated as <multiple values> if the superscope name is not the same on both servers. Although this configuration is valid, it is recommended to use the same superscope name across servers in a split scope setup.
 
 If you have administrative privileges, you can view the defined superscopes on a DHCP server. Go to the **Admin** page and select the desired DHCP server. Then select :guilabel:`View superscopes` on the :guilabel:`Action` or the row :guilabel:`...` menu.
 
@@ -46,22 +46,22 @@ Creating Superscopes
 
 To simplify scope management, you can group related scopes together in a superscope based on criteria such as geographic location, department, or subnet range. Creating a superscope allows for the assignment of IP addresses from various scopes to clients on the same network.
 
-Each superscope is linked to a designated DHCP server and applied per server. There can only be one unique superscope per network (IP range). 
+Each superscope is associated with a specific DHCP server and is implemented on a per-server basis. There can only be one unique superscope per network (IP range). 
 
 **To create a superscope**:
 
 1. On the **DHCP Superscopes** tab, click :guilabel:`Create superscope`.
 
-2. Enter an identifying name for the superscope and select the DHCP server where it will be hosted. Optionally, add a description. 
+2. Enter an identifying name for the superscope and select the DHCP server where it will be hosted. The name cannot be changed once the superscope has been created. Optionally, add a description. 
 
 3. Click :guilabel:`Next` to proceed.
 
-4. From a list of server-defined scopes, select one or more to add to the superscope. If you want to add scopes later, click :guilabel:`Next`` without selecting anything.
+4. Select one or more scopes from the list. If you want to add scopes later, click :guilabel:`Next`` without selecting anything.
 
   .. image:: ../../images/create-superscope.png
     :width: 70%
 
-  * The list shows scopes that are not currently part of a superscope.
+  * The list only shows scopes on the selected server that are not included in a superscope.
    
   * Use the quick filter search box to find and select the desired scopes.
 
@@ -122,7 +122,6 @@ You can remove one or more scopes from a superscope to reorganize the scopes on 
    .. image:: ../../images/edit-network-properties-superscope.png
       :width: 65%
       
-      
 
 Configuring DHCP Supersope Options
 ----------------------------------
@@ -142,6 +141,9 @@ Superscope descriptions serve as a helpful tool for categorizing and easily loca
 
 1.	On the **DHCP Superscopes** tab, locate the superscope  and double-click it, or select :guilabel:`Edit superscope` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 2.	Make the desired changes to the description and click :guilabel:`Save`.
+
+.. note::
+  You cannot change the name of a superscope after it is created.
 
 Deleting Superscopes
 --------------------
