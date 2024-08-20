@@ -27,7 +27,7 @@ The **DHCP Superscopes** tab on the **IPAM** page provides an overview of all su
 .. image:: ../../images/superscopes-view.png
   :width: 90%
 
-* The inspector panel on the right-hand side displays the scopes assicuated with the selected superscope. To view the scopes, click :guilabel:`View` in the inspector or select :guilabel:`View scopes` on the :guilabel:`Action` or the row :guilabel:`...` menu. This will take you to the **Networks** tab, where the quick filter search box will is automatically populated with the selected superscope.
+* The inspector panel on the right-hand side displays the scopes assicuated with the selected superscope. To view the scopes, click :guilabel:`View` in the inspector or select :guilabel:`View scopes` on the :guilabel:`Action` or the Row :guilabel:`...` menu. This will take you to the **Networks** tab, where the quick filter search box will is automatically populated with the selected superscope.
 
 The **Networks** list includes a column that indicates whether a scope belongs to a superscope. The filtering sidebar provides an option to filter by a superscope. You can also use the quick filter search box to find a specific superscope.
 
@@ -36,7 +36,7 @@ The **Networks** list includes a column that indicates whether a scope belongs t
 
 * Superscopes that include scopes existing on multiple servers (split scopes) are indicated as <multiple values> if the superscope name is not the same on both servers. Although this configuration is valid, it is recommended to use the same superscope name across servers in a split scope setup.
 
-If you have administrative privileges, you can view the defined superscopes on a DHCP server. Go to the **Admin** page and select the desired DHCP server. Then select :guilabel:`View superscopes` on the :guilabel:`Action` or the row :guilabel:`...` menu.
+If you have administrative privileges, you can view the defined superscopes on a DHCP server. Go to the **Admin** page and select the desired DHCP server. Then select :guilabel:`View superscopes` on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 .. image:: ../../images/superscopes-dhcp-server.png
    :width: 90%
@@ -72,43 +72,44 @@ Each superscope is associated with a specific DHCP server and is implemented on 
 
 Adding Scopes to a Superscopes
 ------------------------------
-You can add scopes to a superscope when creating a new scope or editing an existing scope. You can also move scopes between superscopes.
+You can add scopes to a superscope while creating a new scope or editing an existing one. You can also move scopes from one superscope to another.
 
 Adding a Scope to a Superscope During Scope Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If there is an existing superscope on the DHCP server, you can include the new scope within it during the creation process.
+If a superscope exists on the DHCP server, you can add the new scope to it during the creation process.
 
-1.	On the **Networks** tab, click :menuselection:`Create --> DHCP Scope`. 
+1. On the **Networks** tab, click :menuselection:`Create --> DHCP Scope`. 
 2. Specify a network address, server, and address pool. For more details about creating scopes, see :ref:`ipam-create-network`. 
-3.	Select the superscope to which you want to add the new scope.
+3. Select the superscope to which you want to add the new scope.
 
    .. image:: ../../images/create-dhcp-scope-superscope.png
       :width: 75%
 
-3.	Complete filling in the information and click :guilabel:`Finish` to create the scope.
+3.	Complete filling in the details and click :guilabel:`Finish` to create the scope.
 
 Adding an Existing Scope to a Superscope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can add scopes to existing superscopes, and it is also possible to transfer scopes to a different superscope on the DHCP server.   
 
-1.	Go to the **Networks** tab and find the scope you want to add to the superscope.
-2.	Click :guilabel:`Properties` on the top toolbar or select :guilabel:`Edit network properties` on the row :guilabel:`...` menu.
+1.	Go to the **Networks** tab and find the scope(s) you want to add to the superscope.
+2.	Select :guilabel:`Assign superscope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 3.	Select the desired superscope.
 
-    .. image:: ../../images/edit-scope-prop-superscope.png
+    .. image:: ../../images/superscopes-assign.png
       :width: 70%
  
     * The list shows the superscopes that are on the same server as the scope.
     *	To remove a scope from a superscope, clear the :guilabel:`Superscope` field.
-    * When a split-scope range is selected, only superscopes present on both servers are displayed. Upon selection, both scopes are placed within their respective superscopes.
+    * When dealing with a split-scope range, only superscopes present on both servers are displayed. Upon selection, both scopes are placed within their respective superscopes.
 
 4.	Click :guilabel:`Save` when you're done.
 
 Removing Scopes from Superscopes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can remove one or more scopes from a superscope to reorganize the scopes on the server. This action will not delete or deactivate the scope. You can add it to another superscope on the server if necessary.
+You can remove one or more scopes from a superscope to reorganize the scopes on the server. This action does not delete or disable the scope, and it can be added to a different superscope on the server if required.
 
-**To remove a scope from a superscope, do one of the following**:
+**To remove a scope from a superscope**:
+Do one of the following:
 
 * On the **DHCP Superscopes** tab, select the superscope containing the scope you want to remove. In the inspector panel, find the relevant scope and select :guilabel:`Remove from superscope` on the scope's action :guilabel:`...` menu.
 
@@ -117,15 +118,15 @@ You can remove one or more scopes from a superscope to reorganize the scopes on 
 
  -OR-
 
-* On the **Networks** tab, locate the scope you want to remove. You can use the **Superscopes** filters in the filtering sidebar to help you find it. Click :guilabel:`Properties` on the top toolbar or select :guilabel:`Edit network properties` on the row :guilabel:`...` menu. Delete the scope from the **Superscope** field.
+* On the **Networks** tab, locate the scope you want to remove. You can use the **Superscopes** filters in the filtering sidebar to find it. Click :guilabel:`Assign superscope` on the :guilabel:`Action` or the Row :guilabel:`...` menu. Delete the scope from the **Superscope** field.
 
-   .. image:: ../../images/edit-network-properties-superscope.png
-      :width: 65%
+  .. image:: ../../images/superscopes-assign-remove.png
+     :width: 65%
       
 
 Configuring DHCP Supersope Options
 ----------------------------------
-You can configure DHCPv4 and DHCPv6 options for superscopes on Kea DHCP servers and DHCPv4 options on ISC DHCP servers. Scopes within a superscope inherit the options of the superscope, while the superscope inherits the options from the server.
+You can configure DHCP options for superscopes on ISC and Kea DHCP servers. Scopes within a superscope inherit the superscope's options, while the superscope inherits the server's options.
 
 When a superscope is created without a scope assigned, it will not be created on the server until a scope is added. Therefore, DHCP options cannot be configured until a scope has been added first.
 
@@ -133,13 +134,27 @@ For Kea, it is possible to remove scopes from the superscope and still add optio
 
 For more details on how to edit scope options, see :ref:`edit-dhcp-options`.
 
+Assigning Client Classes on Kea
+--------------------------------
+Kea allows you to group various clients into a client class to receive shared options. For example, you might create classes for different device types, such as smartphones, printers, and servers, or for particular user groups.
+These classes help you apply different configuration settings, such as lease times, options, and subnet selection, based on the client's classification.
+
+Client Classes can be assigned to a superscope on a connected Kea server.
+
+**To assign client classes**:
+
+1. On the **DHCP Superscopes** tab, select the superscope to which you want to apply client classes.
+2. Select :guilabel:`Assign client classification` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+
+For more information about Client Classes, see :ref:`kea-client-classes`.
+
 Editing Superscopes
 -------------------
 Superscope descriptions serve as a helpful tool for categorizing and easily locating scopes. You can edit this description.
 
 **To edit a superscope**:
 
-1.	On the **DHCP Superscopes** tab, locate the superscope  and double-click it, or select :guilabel:`Edit superscope` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
+1.	On the **DHCP Superscopes** tab, locate the superscope and double-click it, or select :guilabel:`Edit superscope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 2.	Make the desired changes to the description and click :guilabel:`Save`.
 
 .. note::
@@ -152,4 +167,4 @@ When a superscope is deleted from Micetro, it will be removed from the database 
 **To delete a superscope**:
 
 1.	On the **Superscopes** tab, select the superscope you want to delete.
-2.	On either the :guilabel:`Action` or row :guilabel:`...` menu, select :guilabel:`Delete superscope`. This will delete the superscope and remove all associated scopes from it.
+2.	On either the :guilabel:`Action` or Row :guilabel:`...` menu, select :guilabel:`Delete superscope`. This will delete the superscope and remove all associated scopes from it.

@@ -154,12 +154,12 @@ Depending on the service, you can change the name and/or custom properties for t
 
 2. Select :guilabel:`Edit service` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. You can also double click the service.
 
-3. Make the necessary changes. Click :guilabel:`Confirm` to save the changes.
+3. Make the necessary changes. Click :guilabel:`Save` to save the changes.
 
 Other Service Actions
 ----------------------
 Depending on the service, you can modify the service name and its custom properties.
-All actions applicable to a selected server can be accessed either on the :guilabel:`Actions` menu above the list, or the row :guilabel:`...` menu that appears when you hover over the right-hand side of a row.
+All actions applicable to a selected server can be accessed either on the :guilabel:`Actions` menu above the list, or the Row :guilabel:`...` menu that appears on the riht-hand side when you hover over a row.
 
 .. csv-table::
   :header: "Action", "Description"
@@ -176,7 +176,7 @@ Service States
 --------------
 The list of services shows an indicator of the state of the individual services configured in the system.
     
-The indicators can refer to either the Server Controller (see :ref:`install-controllers`) running on the DNS/DHCP server, or the DNS/DHCP server service itself. 
+The indicators can refer to either the :ref:`install-controllers` running on the DNS/DHCP server, or the DNS/DHCP service itself. 
 
 Use the following table for more information on the indicators:
 

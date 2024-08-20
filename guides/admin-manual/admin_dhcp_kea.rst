@@ -198,6 +198,8 @@ External Changes and Kea High Availability
 
 See :ref:`dhcp-kea-ha-external-changes`.
 
+.. _kea-client-classes:
+
 Managing Kea Client Classifications with Micetro
 ------------------------------------------------
 You can manage Kea Client Classifications through Micetro. 
