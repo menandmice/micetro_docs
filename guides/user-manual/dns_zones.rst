@@ -11,35 +11,32 @@ DNS Zones
 .. |analyze| image:: ../../images/console-analyze.png
 
 .. note::
-   This information applies to the web interface. For information about DNS zone management in the M&M Management Console, see :ref:`console-dns-zones`.
-
-Overview
---------
+   This information applies to the Micetro web interface. For information about DNS zone management in the M&M Management Console, see :ref:`console-dns-zones`.
 
 By default, the DNS page displays all primary zones in the system regardless of authority. 
 
 .. image:: ../../images/DNS-Micetro.png
    :width: 90%
 |
-The left sidebar offers several options for filtering and organizing the zones. The sidebar has three tabs: **Menu**, **Folders**, and **DNS services**. 
+The left sidebar offers several options for filtering and organizing zones. At the bottom of the sidebar, you can select what to display: **Menu**, **Folders**, and **DNS services**. 
 
 
 .. image:: ../../images/sidebar-tabs.png
    :width: 65%
 
-* The **Menu** tab offers the most commonly used filtering options for zones, such as zone types, favorites, and reverse zones.
+* **Menu** provides the most commonly used filtering options for zones, such as zone types, favorites, and reverse zones.
 
-* The **Folders** tab allows you to organize zones and filter queries into folders. For more information about folder management, see :ref:`folder-management`.
+* **Folders** allow you to organize zones and filter queries into folders. For more information about folder management, see :ref:`folder-management`.
 
-* On the **DNS services** tab you can view zones by server/service. This can be useful if you have multiple DNS services and want to view the zones associated with each one separately.
+* **DNS services** allows you to view zones by server/service. This can be useful if you have multiple DNS services and want to view the zones associated with each one separately.
 
-Micetro will remember your current tab selection when you navigate away from the DNS page and return to it later.
+Micetro will remember your current view selection when you navigate away from the DNS page and return to it later.
 
 .. _dns-zone-types:
 
 Zone Types
 -----------
-Below are the zone types supported by Micetro.
+This table shows the zone types supported by Micetro.
 
 .. csv-table::
   :header: "Type", "Description"
@@ -59,48 +56,52 @@ Below are the zone types supported by Micetro.
 Zone Contents
 ^^^^^^^^^^^^^
 
-The Inspector pane on the right provides a look at the SOA record and properties of the selected zone. 
+The Inspector panel on the right provides a look at the Start of Authority (SOA) record, and properties of the selected zone. 
 
 .. image:: ../../images/DNS-zone-contents-Micetro-10.5.png
    :width: 65%
       
-You can hide information in the Inspector pane. Simply click the header of the desired section (or :guilabel:`>` and :guilabel:`v`) to collapse or expand the section.
+Click the header of the desired section to collapse or expand the section.
 
 SOA 
 """"
-The Start of Authority, or SOA record, is displayed as a collection of fields in the Inspector pane.
+The SOA record contains the following data fields. To edit SOA information, click the pencil icon in the section header.
 
 .. csv-table:: 
   :header: "Field", "Description"
   :widths: 15, 75
 
-  "Primary", "The name of the server that acts as the primary server for the zone."
-  "Hostmaster", "This field is properly formatted by giving the email address of the person responsible for zone with the @ symbol replaced with a period (.). For example, instead of hostmaster@example.com enter hostmaster.example.com. The username part of the email address cannot contain a (verbatim) dot (.). See RFC 1912 'Common DNS Operational and Configuration Errors', Section 2.2 for additional information."
-  "Serial", "The serial number is a ten-digit number consisting of the year, the month, the day, and a two-digit daily revision number. (Actually, it is any integer between 0 and ~ 4 billion, but the preceding is the standard convention.)"
-  "Refresh", "This is the period (in seconds) that determines how often secondary servers will check with the primary server to determine if their zone files are up to date. This is done by checking the serial number. The default value for this field is 28800, which equates to once every 8 hours."
-  "Retry", "This determines the period that a secondary server will wait before trying to re-contact the primary zone (if an earlier contact attempt is unsuccessful). The default value is 7200 seconds, or once every 2 hours."
-  "Expire", "This value determines how long a secondary server will keep serving a zone after its last successful contact with the primary name server. Once the zone has expired, the secondary server stops giving information about the zone because it is deemed unreliable. The default expiration period is 604800 seconds, or 1 week."
-  "Neg. caching", "This field is only available when connected to a BIND server. This value specifies how long a server will retain (cache) the knowledge that something does not exist. The default value is 86400 seconds, 24 hours."
+  "Primary", "The name of the server that serves as the primary server for the zone."
+  "Hostmaster", "The email address of the individual responsible for the zone, formatted with a period (.) in place of the @ symbol. For example, hostmaster@example.com should be entered as hostmaster.example.com. The username must not contain a literal dot (.). See RFC 1912 'Common DNS Operational and Configuration Errors', Section 2.2 for additional information."
+  "Serial", "A ten-digit number representing the year, month, day, and a two-digit daily revision number. It is actually any integer between 0 and approximately 4 billion, but the aforementioned format is the standard convention."
+  "Refresh", "The interval in seconds at which secondary servers verify if their zone files are up to date by checking the serial number against the primary server. The standard setting for this field is 28800 seconds, or every 8 hours."
+  "Retry", "The time a secondary server will wait to attempt reconnection with the primary zone after a failed attempt. The standard setting is 7200 seconds, or every 2 hours."
+  "Expire", "The duration a secondary server will continue to serve a zone following the last successful contact with the primary name server. After expiration, the secondary server stops providing information about the zone, considering it unreliable. The standard expiration time is 604800 seconds, or 1 week."
+  "Neg. caching", "This field is only available when connected to a BIND server. It specifies how long a server will cache the knowledge negative reponses. The standard setting is 86400 seconds, 24 hours."
 
-Managing Zones
---------------
+Managing DNS Zones
+-------------------
 
-Opening DNS Zones
-^^^^^^^^^^^^^^^^^^
-To view the DNS resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu :guilabel:`...`. A list of the zone's resource records is displayed. For more information about DNS Resource Records, see :ref:`dns-records`.
+Opening Zones
+^^^^^^^^^^^^^^
+To view the DNS resource records for a particular zone, you can double-click the zone, or select it and then click :guilabel:`Open` on the page toolbar or the row menu :guilabel:`...`. A list of the zone's resource records is displayed. For more information about DNS resource records, see :ref:`dns-records`.
 
 Creating Zones
 ^^^^^^^^^^^^^^^
+
 **To create a new DNS zone**:
 
 1. Click :guilabel:`Create` on the DNS page toolbar.
 
-2. Select the zone type. For more information about zone types, see :ref:`dns-zone-types`.
+2. Select the zone type. For more information about zone types, see :ref:`dns-zone-types` above.
 
    .. image:: ../../images/dns-zone-create.png
       :width: 65%
       
-3. Follow the steps of the wizard. The number of steps varies depending on the zone type and how Micetro is configured.
+3. Follow the steps of the wizard. The number of steps will vary based on the zone type and the configuration of Micetro.
+
+.. tip::
+   You can specify the network address in CIDR format, such as 192.168.1.0/24. Micetro will automatically convert this CIDR format into a reverse zone name (0.168.192.in-addr.arpa.). 
 
 Primary Zone
 """""""""""""
@@ -119,19 +120,19 @@ Primary Zone
    .. image:: ../../images/zone-flow-custom-properties.png
       :width: 65%
 
-   Custom properties are displayed as columns in the DNS grid for each zone.
+   Custom properties appear as individual columns on the DNS page for each zone.
 
-4. On the **Options** page you can specify which DNS servers should receive notifications when changes are made to the zone and to which servers it is allowed to perform zone transfers. 
+4. On the **Zone Options** page, you can specify which DNS servers will be notified of changes to the zone and to which servers it is allowed to perform zone transfers. 
 
    .. image:: ../../images/zone-flow-options.png
       :width: 65%
 
-5. If **DNS folders** have been configured in Micetro, the new zone can be added directly to a folder. DNS folders are a neat way to organize zones in Micetro to have a better overview and manageability. For more information about folders, see :ref:`folder-management`.
+5. If DNS **Folders** have been configured in Micetro, the new zone can be added directly to a folder. DNS folders are a neat way to organize zones in Micetro to have a better overview and manageability. For more information about folders, see :ref:`folder-management`.
 
    .. image:: ../../images/zone-flow-folder.png
       :width: 65%   
       
-6. The **summary** step summarises the configuration for the new zone before it is created. To edit the configuration, go to the respective page of the wizard and make the desired changes.
+6. The **Summary** step summarises the configuration for the new zone before it is created. To edit the configuration, go to the respective page of the wizard and make the desired changes.
 
 Secondary Zone
 """""""""""""""
@@ -269,8 +270,7 @@ For BIND servers you can configure individual settings for a specific zone on ea
    * **Query forwarding** (forward): Determines how BIND behaves when forwarding queries for the forward zone. The **First - resolve if forwarding fails** option provides a fallback to local resolution if forwarding fails, while the **Only - fail if forwarding fails** option strictly relies on forwarding and does not attempt local resolution if forwarding fails.
 
 5. Click :guilabel:`Save` when you're done.
-
-   
+  
 
 Raw Configuration of Zone Options (BIND)
 """"""""""""""""""""""""""""""""""""""""
