@@ -29,7 +29,6 @@ This will install the :ref:`generic-dns-controller`, but you'll need to make a c
 
   <GenericDNSScript value="python /your/script/directory/genericDNSPowerDNS.py" />
 
-
  Download the script `from GitHub <https://github.com/menandmice/micetro_docs/blob/latest/scripts/genericDNSPowerDNS.py>`_.
 
 3. Modify the ``systemd/init`` script for the agent. Using an editor, such as vi, open the ``mmremote`` init script located at ``/etc/init.d/mmremote``.
