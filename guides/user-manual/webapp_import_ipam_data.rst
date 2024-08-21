@@ -1,18 +1,25 @@
 .. meta::
-   :description: How to import IP address ranges or IP addresses into Micetro by Men&Mice
+   :description: How to import IP address ranges or IP addresses into Micetro
    :keywords: IPAM, IPAM data, Micetro
 
 .. _webapp-import-ipam-data:
 
-Import IPAM data
-================
+Importing IPAM Data
+===================
 
-Overview
---------
+Prerequisites
+-------------
 
-To import IP address ranges or IP addresses into Micetro, the Import wizard in Networks can be used.
+You must have acess to the IPAM module import IPAM data:
 
-The Import wizard can be used to import:
+For more information about access controls, see :ref:`permissions-reference`.
+
+Importing Data
+--------------
+
+The Import wizard is accessed by selecting :guilabel:`Import` on the :guilabel:`Action` menu in the list of Networks.
+
+You can import the following IPAM data into Micetro:
 
 * Networks
 
@@ -22,156 +29,126 @@ The Import wizard can be used to import:
 
 * DHCP reservations
 
-The data can either be pasted directly into the wizard or by using a file that is uploaded.
+The data can either be pasted directly into the import wizard or by using a file that is uploaded.
 
 .. image:: ../../images/import.png
   :width: 90%
   :align: center
 
-Prerequisites
--------------
+The text lines for import, or the file contents selected, must contain lines with columns/fields separated by a comma ``,``, semicolon ``;``, pipe ``|``, or tab character.
 
-The user importing must have the following permissions:
-
-* Access to IPAM Module
-
-* Access to the Web Application
-
-* Access to IPAM view in Web Application
-
-* Access to "Import Data" web task
-
-(See :ref:`permissions-reference`.)
-
-Importing Data
---------------
-
-The lines in the import text, or the contents of the file chosen, must have lines whose columns/fields are separated by either comma ``,``, semicolon ``;``, pipe ``|`` or the tab character.
-
-For instance, when cells of a spreadsheet are highlighted and copied to the clipboard, they will be tab separated when pasted into the text area of the Import Data wizard. When importing a fair amount of lines stored in an excel spreadsheet, this is probably the easiest method of getting the data into the Import Data wizard.
+For example, if you select and copy spreadsheet cells, they will be tab-separated when you paste them into the text area of the Import Data wizard. This is probably the easiest way to tranfer a significant number of rows from an Excel spreadsheet into the Import Data wizard.
 
 .. note::
-  When choosing files, only plaintext CSV/TSV/TXT files are accepted. Excel spreadsheets need to be exported to one of these formats prior to importing.
+  Only plaintext CSV/TSV/TXT files are accepted when selecting files. Excel spreadsheets must be converted to one of these formats before importing.
 
-Clearing values
+Clearing Values
 ^^^^^^^^^^^^^^^
 
-When the value in a particular column is empty, it is by default not cleared. Instead it is not included in the import. This makes it possible to update certain fields and leave others as is, in the same import.
+By default, if the value in a particular column is empty, it is not automatically cleared. Instead, it is excluded from the import. This allows you to selectively update certain fields while leaving others unchanged within the same import process.
 
-To clear values for a custom property, e.g. Responsible Person, use one of these clearing tokens instead of a blank value: ``$null``, ``%clear``, ``<none>``, ``<blank>``, or ``<empty>``.
+To clear a value for a custom property, such as "Responsible Person", insert one of the following clearing tokens in plce of an empty value: ``$null``, ``%clear``, ``<none>``, ``<blank>``, or ``<empty>``.
 
-These tokens will only be interpreted to clear the field if field contains only the token and nothing else. For example if the field value is "This is <none>" in the import text, the field would not be cleared, but set to that value instead.
+These tokens will clear the field only if the field contains the token and nothing else. For example, if the field value is "This is <none>" in the import text, the field would not be cleared, but assigned that specific value.
 
 See :ref:`import-ipam-example-5`.
 
-Header line
+Header Line
 ^^^^^^^^^^^
 
-The first line of the data must be the header line, containing the name of the fields in the corresponding columns of the lines after it. Some of the fields refer to built-in system fields,  and are different depending on what is being imported. The rest of the fields are according to the custom properties that are defined for the object type in question. It's only necessary to include the fields that need to be imported/updated, except for properties that are defined as mandatory, or required to be able to identify the object to import.
+The first line of the data must be the header line, containing the name of the fields in the follwoing columns. Some fields refer to built-in system fields and vary depending on the contents of the import. The remaining fields should match the custom properties defined for the object type. Only fields that you want to import or update need to be included, except for those that are mandatory or required for object identification.
 
-The field names in the header line are not case sensitive. For example, "title" will be correlated to the custom property "Title".
+Field names in the header are not case-sensitive. For example, "title" matches the custom property "Title".
 
-Action field
+Action Field
 """"""""""""
 
-In addition, there's an optional column for "Action", which defines whether the object specified in the line should be added, removed or modified (defaults to "Add" when not specified)
+The Action field is an optional column that defines whether to add, remove, or modify the object specified in the line, with Add being the default action unless otherwise specified.
 
-The action column is identified by one of the following fieldnames: "Action", "Operation" or "ActionType". If one of the custom fields defined conflicts with these names, the custom field has precedence and the column is not identified as the action column. In that case use one of the provided alternatives for the action column that does not conflict with a custom property name.
+This column is identified by the fieldnames "Action", "Operation", or "ActionType". If a custom field name conflicts with one of these, it will take precedence and the column won't be recognized as the action column. In that case, use one of the provided alternatives for the action column that does'nt conflict with custom property names.
 
-The Action field has three possible values
+The Action field can have one of three values:
 
-Add
-  Default for Range Import. **Create**, **New**, and **Import** are equivalent alternatives.
+* **Add**: The default for Range Import. **Create**, **New**, and **Import** are equivalent alternatives.
 
-Update
-  Default for IP Address Import. **Modify** and **Mod** are equivalent alternatives.
+* **Update**: the default for IP Address Import. **Modify** and **Mod** are equivalent alternatives.
 
-Delete
-  **Remove** and **Del** are equivalent alternatives.
+* **Delete**: **Remove** and **Del** are equivalent alternatives.
 
 Ranges
 ^^^^^^
 
-Range column:
+Range Column:
 """""""""""""
 
-To identify the range to import, there are three options
+Ther are tree ways to identify the range to import. The first option is recommended. The other two options are offered for convenience when the date ranges span across two columns in the original spreadsheet.
 
-* Include a "Range" column (alternatives: "Name", "Network", "Network range", "IP range", "IP Address range" or "IPRange") and provide the range in CIDR format (e.g. 192.168.1.0/24) or from-to format (e.g. 192.168.1.0-192.168.1.255)
+* Include a "Range" column (alternatives: "Name", "Network", "Network range", "IP range", "IP Address range", or "IPRange") and provide the range in CIDR format (for example, 192.168.1.0/24) or from-to format (for example, 192.168.1.0-192.168.1.255)
 
-* Include a "Network_address" and "Network_mask" columns, with the network address (e.g. 192.168.1.0) and network mask (e.g. 255.255.255.0) as values. This will be converted automatically to the CIDR format, and displayed in a single Range column in the next step
+* Include a "Network_address" and "Network_mask" columns, with the network address (for example, 192.168.1.0) and network mask (for example, 255.255.255.0) as values. This will be converted automatically to the CIDR format, and displayed in a single Range column in the next step.
 
-* Include a "from" and "to" columns, with the from and to address of the range to import
+* Include a "from" and "to" columns, with the from and to address of the range to import.
 
-The first option should be preferred. The other two options are provided for convenience when the ranges are stored across two columns in the source spreadsheet.
-
-Built-in fields:
+Built-in Fields:
 """"""""""""""""
 
-Container?
-  Identified in header line by either "isContainer", "is_Container" or "is Container"
+* **Container?** Identified in header line by either "isContainer", "is_Container" or "is Container"
 
   If set to Yes, then the range will be marked as container, or as Range/Scope when set to "No" (or not updated if blank). See :ref:`ipam-containers` for more information on the Container property.
 
-Locked?
-  Identified in header line by: "Locked", "isLocked", "is_Locked" or "is Locked"
+* **Locked?**: Identified in header line by: "Locked", "isLocked", "is_Locked" or "is Locked"
 
   If set to Yes, locks the range. No unlocks it (blank does not update). See :ref:`ipam-range-config` for more information on Locked.
 
-Allow auto-assignment of IP Addresses?
-  Identified in the header line by: "AutoAssign", "Auto-Assign", "Auto_Assign" or "Auto Assign".
+* **Allow auto-assignment of IP Addresses?**: Identified in the header line by: "AutoAssign", "Auto-Assign", "Auto_Assign" or "Auto Assign".
 
   Set to Yes or No to set or unset the property. Leave blank to not update. See :ref:`ipam-range-config` for more information on Allow auto-assignment of IP Addresses.
 
-Reserve Network and Broadcast Address?
-  Identified in the header line by: "Subnet", "isSubnet", "is_Subnet" or "is Subnet"
+* **Reserve Network and Broadcast Address?**: Identified in the header line by: "Subnet", "isSubnet", "is_Subnet" or "is Subnet"
 
   Set to Yes or No to set or unset the property. Leave blank to not update. See :ref:`ipam-range-config` for more information on Reserve Network and Broadcast Address.
 
-AD site
-  Identified in the header line by: "ADSite", "AD Site" or "ADSiteRef"
+* **AD site**: Identified in the header line by: "ADSite", "AD Site" or "ADSiteRef"
 
   Associates the Range with the given AD Site, provided either as the name of the AD site (if unique) or the internal reference id of the AD Site (e.g. "{#12-#1009}"). See :ref:`active-directory` for more information on this property.
 
-Custom fields:
+Custom Fields:
 """"""""""""""
 
-In addition to the built-in fields for Ranges, all the custom fields that are defined for Ranges can be populated with values.
+In addition to the built-in fields for ranges, any custom fields defined for ranges can be populated with values.
 
-If there is a conflict between the custom fields and the built-in fields, the custom field name will have precedence, and one of the provided alternatives will need to be used for the built-in fields.
+If there is a conflict between the custom fields and the built-in fields, the custom field names take precedence. In such cases, an alternative must be selected for the built-in fields.
 
-IP addresses
+IP Addresses
 ^^^^^^^^^^^^
 
-IP addresses can be imported when the Import Data wizard is opened from within a particular Network, or from the Networks overview page where networks can also be imported in the same wizard.
+IP addresses can be imported when the Import Data wizard is opened from within a specific network, or from the networks overview page, where networks can be imported using the same wizard.
 
-IP Address column:
+IP Address Column:
 """"""""""""""""""
 
-To identify which IP address to import, provide a column where the header is one of: "IP Address", "IPAddress", "IP", "IP-Address" or "Name", and provide the IP address to import in that column
+To specify which IP addresses to import, include a column with the header labeled as "IP Address", "IPAddress", "IP", "IP-Address", or "Name", and provide the IP addresses to importdin this column
 
-Built-in fields:
+Built-in Fields:
 """"""""""""""""
 
-Claimed?
-  Identified in header line by "Claimed" and "is_Claimed"
+* **Claimed?**: Identified in header line by "Claimed" and "is_Claimed".
 
   If set to "Yes", the IP is claimed permanently. "No" waives the claim, if claimed.
 
-DNS Hosts
-  Identified in header line by: "DNS Hosts" or "DNS Records" (plural or singular, space can be removed or replaced with "_")
+* **DNS Hosts**: Identified in header line by: "DNS Hosts" or "DNS Records" (plural or singular, space can be removed or replaced with "_").
 
   The column should be a list of fully qualified hostnames that should be added to the IP, space or comma separated, or that need to be removed from the IP. To remove specific hostnames, prefix the hostname with a hyphen "-". To clear all DNS records from the IP, use the value "$null" or "%clear". Otherwise, the hostnames are added to the IP, if they don't exist already. This means these DNS records are created in the appropriate DNS Zones during the import.
 
-Custom fields:
+Custom Fields:
 """"""""""""""
 
-Same applies here as for Ranges; all the custom properties defined for IP addresses can be imported.
+Same applies here as for ranges; all the custom properties defined for IP addresses can be imported.
 
 DHCP Reservations
 ^^^^^^^^^^^^^^^^^
 
-   DHCP reservations can be imported when the Import Data wizard is opened from within a particular Network, or from the Networks overviwe page.
+DHCP reservations can be imported when the Import wizard is opened from within a particular network, or from the networks overviwe page.
    
 .. Note::
    DHCP reservations can only be imported within a DHCP scope.

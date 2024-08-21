@@ -1,56 +1,55 @@
 .. meta::
-   :description: How to import DNS records in the Micetro by Men&Mice Web Application
+   :description: How to import DNS records in the Micetro Web Interface
    :keywords: DNS records, DNS import
 
 .. _webapp-import-dns-records:
 
-Import DNS Records
-==================
+Importing DNS Records
+=====================
 
-DNS Records can be imported in the Micetro Web Application.
+DNS Records can be imported into Micetro.
 
 Prerequisites
 -------------
 
-The user importing must have access to edit records in the zones used in the import.
+You must have the necessary permissions to edit records in the zones used in the import.
 
-See :ref:`access-control` for further information on access controls.
+For more information about access controls, see :ref:`access-control`.
 
-Import task
+Import Task
 -----------
 
-The action to import DNS Records is available from the :menuselection:`Actions` menu in the DNS zones list, that allows importing records to different zones at the same time.
+The option to import DNS Records is found on the :menuselection:`Action` menu in the list of DNS zones, and allows you to import records into multiple zones simultanously.
 
-:menuselection:`Actions --> Import DNS Records` is also available from within a specific zone, which allows importing records to that zone only.
+The :menuselection:`Action --> Import DNS Records` function is also available within a specific zone for importing records into that zone only.
 
 .. image:: ../../images/bulk-import-dns.png
   :width: 90%
   :align: center
-
-DNS bulk import format
+|
+DNS Bulk Import Format
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  When choosing files, only plaintext CSV/TSV/TXT files are accepted. Excel spreadsheets need to be exported to one of these formats prior to importing.
+  Only plaintext CSV/TSV/TXT files are accepted for file selection. Excel spreadsheets must be converted to one of these formats before importinging.
 
-Header line
+Header Line
 """""""""""
 
-The first line of the data must be the header line, containing the name of the fields in the corresponding columns of the lines after it. Some of the fields refer to built-in system fields, while the rest of the fields are matching the custom properties that are defined for the object type in question.
+The first line of the data must be the header line, containing the names of the fields in the following columns. Some fields refer to built-in system fields, while others match the custom properties defined for the object type in question.
 
 .. tip::
-  It's only necessary to include the fields that need to be imported/updated, except for properties that are defined as mandatory, or required to be able to identify the object to import.
+  Include only the fields that need to be imported/updated, except for mandatory properties or those needed to identify the object for import.
 
-The field names in the header line are not case sensitive. For example, "title" will be correlated to the custom property "Title".
+Field names in the header line are not case-sensitive. For example, "title" corresponds to the custom property "Title".
 
-Built-in fields
+Built-in Fields
 """""""""""""""
 
-action
-  (Default: **Add**) Add, Modify, or Remove.
+* **action** (default: **Add**): Add, Modify, or Remove.
 
   .. tip::
-    The following aliases can be also used:
+    The following aliases can also be used:
 
     * Insert/Create = Add
 
@@ -58,40 +57,30 @@ action
 
     * Delete/Del = Remove
 
-name
-  (required) Hostname of the record.
+* **name** (required): The hostname of the record.
 
-zone
-  The zone containing the record.
+* **zone**: The zone containing the record.
 
-authority
-  If multi-primary, the authority of the zone.
+* **authority**: For multi-primary, the zone's authority.
 
-view
-  If multi-primary, the view containing the zone.
+* **view**: For multi-primary, the view containing the zone.
 
-forest
-  If multi-primary, the forest of the zone.
+* **forest**: For multi-primary, the forest of the zone.
 
-type
-  (required) The type (A, CNAME, MX, etc.) of the record.
+* **type** (required): The record's type (A, CNAME, MX, etc.).
 
-data
-  (required) The data (IP for A/AAAA, the target A/AAAA record for CNAME, etc.) for the record.
+* **data** (required): The record's data (IP for A/AAAA, the target A/AAAA record for CNAME, etc.).
 
-TTL
-  The Time-to-Live value of the record. Time value defaults to seconds, but hour (i.e. 1H), day (i.e. 2D), week (i.e. 3W), or month (i.e. 4M), or year (i.e. 5Y) can be used.
+* **TTL**: The record's time-to-Live value. Defaults to seconds, but can also be hours (1H), days (2D), weeks (3W), months (4M), or years (5Y).
 
-comment
-  Optional save comment.
+* **comment**: An optional save comment.
 
-newdata
-  If modifying an existing record, the new data to replace the old value.
+* **newdata**: For modifying an existing record, the new data to replace the old value.
 
 Examples
 ^^^^^^^^
 
-Add records
+Add Records
 """""""""""
 
 Import A record 'viola' to the zone 'illyria.coast':
@@ -122,7 +111,7 @@ Import A record 'cesario' to 'olivia.palace', when zone and authority are specif
   name,type,data,authority,zone
   cesario.olivia.palace.,A,16.0.2.2,illyria,orsino.palace
 
-Modify records
+Modify Records
 """"""""""""""
 
 Modify IP address for the A record 'viola':
@@ -146,7 +135,7 @@ Modify IP address *and* TTL for the A record 'viola':
   action,name,type,data,newdata,ttl
   modify,viola.illyria.coast.,A,16.0.2.2, 20.21.9.6, 2H
 
-Remove records
+Remove Records
 """"""""""""""
 
 Remove A record 'malvolio':
