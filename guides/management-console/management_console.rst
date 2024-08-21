@@ -33,6 +33,7 @@ Management Console (obsolete)
    console_actions
    console_health_bar
    console_dns_servers
+   console_windows_dns_policies
    console_dns_zones
    console_dns_records
    windows_dns_policies

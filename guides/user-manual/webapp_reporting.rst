@@ -7,17 +7,11 @@
 Reports
 =======
 
-Introduction
-------------
-
 Micetro manages vast amounts of DNS, DHCP, and IPAM data. Building reports is easy and can be tailor-made by correlating related data in a few steps, and scheduling the results to be generated daily, weekly or on a custom schedule. There are built-in report definitions that can be used as a reference to build reports. Using custom fields in Micetro further enhances reports by correlating custom fields with the built-in ones. The system then allows you to create reporting definitions that can be run either one time only, or scheduled to run later or at regular intervals.
 
 The reports can be viewed within the Web Application, or downloaded in various formats for further analysis.
 
 When the **Reports** page is opened, you are presented with a list of report definitions. Like every other part of the Web Application, this list can be filtered and searched.
-
-Reporting Module
-----------------
 
 You can:
 

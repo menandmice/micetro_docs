@@ -7,9 +7,6 @@
 Workflow
 =========
 
-Introduction
-------------
-
 This current version of the Workflow module is focused on DNS changes, so a company can have better control over what changes are done in their DNS infrastructure by approving or rejecting changes. It also helps preventing unintentional changes resulting from human error.
 
 Organizations can give users access within the organization and the ability to request DNS changes, in some or all of the DNS zones available in the organization.
