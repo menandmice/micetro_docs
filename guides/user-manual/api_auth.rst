@@ -45,8 +45,6 @@ API requests can be authenticated using the following Authorization HTTP headers
 
 Using authorization headers for authentication eliminates the need to include the session ID in the request body. The "session" parameter should be omitted entirely from all commands, not just left blank.
 
-The authorization header authentication method is only available for JSON-RPC and REST APIs, and only if using the Micetro Web Interface as an endpoint (URL is <server>/mmws/api or <server>/mmws/json).
-
 
 Bearer Authentication
 ^^^^^^^^^^^^^^^^^^^^^
