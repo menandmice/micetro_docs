@@ -613,7 +613,7 @@ The system administrator can control which IP addresses users are permitted to u
 * :ref:`ipam`
 * :ref:`active-directory`
 * :ref:`devices`
-* :ref:`dhcp-supersocpes`
+* :ref:`dhcp-superscopes`
 * :ref:`admin-custom-properties`
 * :ref:`admin-change-events`
 * :ref:`snmp-profiles`

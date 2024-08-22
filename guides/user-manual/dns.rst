@@ -1,6 +1,6 @@
 .. meta::
-   :description: DNS servers, zones, records, policies 
-   :keywords: DNS servers
+   :description: DNS managment in Micetro 
+   :keywords: DNS servers, zones, records, policies
 
 .. _dns:
 

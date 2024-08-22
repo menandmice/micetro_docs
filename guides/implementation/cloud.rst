@@ -117,8 +117,16 @@ Fill in the fields required to connect to NS1:
 
 *	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see https://ns1.com/knowledgebase/creating-and-managing-api-keys.
 
-.. _connect-dyn:
+.. _connect-meraki:
 
+Cisco Meraki
+""""""""""""
+Blah Blah
+
+.. image:: ../../images/add-meraki.png
+   :width: 50%
+
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see
 
 Editing Cloud Services
 -----------------------
@@ -148,7 +156,8 @@ Removing Cloud Networks
 1. On the **IPAM** page, select the specific cloud network.
 2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`.
 |
-**See also**:
+
+**Related topics**:
 
 * :ref:`aws-multi-account`
 

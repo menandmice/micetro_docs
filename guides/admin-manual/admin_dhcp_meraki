@@ -1,0 +1,21 @@
+.. meta::
+   :description: How to manage Cisco Meraki DHCP servers in Micetro
+   :keywords: Cisco Meraki DHCP server, Cisco DHCP   
+
+.. _admin_dhcp-meraki:
+
+Cisco Meraki 
+--------------
+
+You can...
+
+1. On the **Admin** page, select the relevant Cisco Meraki server.
+
+2. Select :guilabel:`???` on either the :guilabel:`Action` or Row :guilabel:`...` menu. 
+
+3. In ..., make the desired changes, and then click :guilabel:`Save`.
+
+
+
+
+

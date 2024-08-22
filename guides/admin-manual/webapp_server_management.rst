@@ -73,6 +73,8 @@ Micetro supports the following DNS and DHCP platforms:
 
   * Cisco IOS
 
+  * Cisco Meraki
+
   * ISC DHCP
 
   * Kea
