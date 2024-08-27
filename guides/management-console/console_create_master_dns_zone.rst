@@ -28,13 +28,13 @@ This procedure is the fastest way to add a new blank (i.e., empty) zone. If you 
 
 8. If the zone is Active Directory Integrated, the :guilabel:`AD Replication button` is enabled. Click this button to display a dialog box where you can set the AD Replication options for the zone.
 
-.. image:: ../../../images/console-dns-zones-create.png
+.. image:: ../../images/console-dns-zones-create.png
   :width: 50%
   :align: center
 
 9. To finish creating the zone, click the :guilabel:`Create` button. The new zone is created with the appropriate name server (NS) records, and the *Zone SOA Panel* displays.
 
-.. image:: ../../../images/console-dns-zones-soa-panel.png
+.. image:: ../../images/console-dns-zones-soa-panel.png
   :width: 90%
   :align: center
 

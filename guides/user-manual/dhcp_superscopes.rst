@@ -142,7 +142,6 @@ These classes help you apply different configuration settings, such as lease tim
 Client Classes can be assigned to a superscope on a connected Kea server.
 
 **To assign client classes**:
-
 1. On the **DHCP Superscopes** tab, select the superscope to which you want to apply client classes.
 2. Select :guilabel:`Assign client classification` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 

@@ -8,13 +8,13 @@ Cloud Integration
 *****************
 Micetro provides native integration with cloud-based DNS services and can manage IP address-related data for Azure and AWS, including virtual networks and subnets that exist in cloud accounts.
 
-Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  It's worth noting that, at present, cloud DNS services only support the creation of primary zones.
+Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro. It's worth noting that, at present, cloud DNS services only support the creation of primary zones.
 
 Supported Cloud Services
 ------------------------
 
 .. important::
-  To use cloud services, the DNS Server Controller must be installed on the same machine as Men&Mice Central. For information about how to install DNS controllers, see :ref:`install-dns-controllers`.
+  To use cloud services, the DNS agent must be installed on the same machine as Micetro Central. For information about how to install DNS agents, see :ref:`install-dns-controllers`.
 
 .. csv-table::
   :header: "Cloud service", "DNS", "IPAM"
@@ -24,6 +24,7 @@ Supported Cloud Services
   "Azure", "Yes (Azure DNS)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "NS1", "Yes", "N/A"
+  "Cisco Meraki", "No", "Yes"
 
 
 Setting Up Cloud Integrations
@@ -31,21 +32,22 @@ Setting Up Cloud Integrations
 
 Prerequisites
 ^^^^^^^^^^^^^^^
-For IP Address Management (IPAM), Micetro connects with the cloud service through Men&Mice Central, and for DNS management, the Men&Mice DNS controller is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
+For IP Address Management (IPAM), Micetro connects with the cloud service through Micetro Central, and for DNS management, the Micetro DNS agent is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
 
-1. **DNS Controller Installation and Setup**:
+1. **DNS Agent Installation and Setup**:
 
-   * Ensure that the DNS controller is installed on the machine where Men&Mice Central is running.
-   * For instructions on installing DNS controllers, see :ref:`install-controllers`.
+   * Ensure that the DNS agnet is installed on the machine where Micetro Central is running.
+   * For instructions on installing DNS agents, see :ref:`install-controllers`.
 
 2. **Network Connectivity**:
 
-   * Verify that the machine running Men&Mice Central can establish a connection to the specific cloud instance.
+   * Verify that the machine running Micetro Central can establish a connection to the specific cloud instance.
    * The connection should be established on port 443/TCP. This is a specific network port used for secure communication.
    * For detailed networking requirements, see :ref:`firewall-ports`.
 
 
 If you intend to add multiple AWS cloud accounts using a single set of credentials, see :ref:`aws-multi-account`.
+
 
 Adding Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -126,7 +128,7 @@ Blah Blah
 .. image:: ../../images/add-meraki.png
    :width: 50%
 
-* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see https://developer.cisco.com/meraki/api-v1/authorization/#obtaining-your-meraki-api-key.
 
 Editing Cloud Services
 -----------------------

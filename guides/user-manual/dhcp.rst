@@ -2,7 +2,7 @@
    :description: DHCP management in Micetro 
    :keywords: DHCP, scopes, reservations 
 
-.. _dns:
+.. _dhcp:
 
 DHCP
 ====
@@ -22,6 +22,7 @@ To grant other roles access to DHCP information, make sure that they include the
 .. toctree::
   :maxdepth: 1
 
+  dhcp_management
   meraki
   other
  
