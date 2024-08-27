@@ -31,7 +31,7 @@ DNS Bulk Import Format
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  Only plaintext CSV/TSV/TXT files are accepted for file selection. Excel spreadsheets must be converted to one of these formats before importinging.
+  Only plaintext CSV/TSV/TXT files are accepted for file selection. Excel spreadsheets must be converted to one of these formats before importing.
 
 Header Line
 """""""""""

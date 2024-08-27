@@ -107,10 +107,8 @@ When you need to set up similar environments or scale existing configurations, y
 
 4. Click :guilabel:`Duplicate`. The new network is added to the networks list.
 
-
 Deleting Networks
 ^^^^^^^^^^^^^^^^^^
-
 When a network is deleted, its IP addresses will not be deleted. Instead, they are assigned to the parent network and will be listed when that network is opened. If the network being deleted contains subranges, those subranges will become children of the parent network of the unassigned networks.
 
 When a DHCP scope is deleted, the IP addresses within that scope will no longer be managed dynamically. 
@@ -129,7 +127,6 @@ Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations,
 
 Viewing IP Addresses within Networks
 -------------------------------------
-
 To view a list of IP addresses within a specific network, double-click the network. This opens a list where you can view and edit the properties of individual IP addresses. You can filter the IP address list, so it displays only the IP addressees you need. 
 
 .. image:: ../../images/view-Networks-Micetro-10.5.png
@@ -278,7 +275,7 @@ When managing exclusions within a DHCPv6 pool, you have the option to specify a 
 **To add an exclusion**:
 
 1.	Select the desired DHCP scope.
-2.	On the :guilabel:`Action` or the row :guilabal:`...` menu, select :guilabel:`Manage DHCP Exclusions`.
+2.	On the :guilabel:`Action` or the row :guilabel:`...` menu, select :guilabel:`Manage DHCP Exclusions`.
 3.	Click :guilabel:`Add Exclusion`.
 4.	In the **Add exclusion** dialog box, choose to create the exclusion range by either :guilabel:`Percentage` or :guilabel:`Manual entry`:
 
@@ -472,8 +469,8 @@ If a scope is no longer needed but you want to keep it for potential future use,
 **To enable or disable a scope**:
 
 1.	Select the scope you want to enable or disable.
-2.	Select Disable scope or Enable scope on either the Action or the row … menu.
-3.	Click Yes to confirm.
+2.	Select :guilabel:`Disable scope` or :guilabel:`Enable scope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3.	Click :guilabel:`Yes` to confirm.
 
 
 Host Discovery
@@ -613,7 +610,7 @@ The system administrator can control which IP addresses users are permitted to u
 * :ref:`ipam`
 * :ref:`active-directory`
 * :ref:`devices`
-* :ref:`dhcp-supersocpes`
+* :ref:`dhcp-superscopes`
 * :ref:`admin-custom-properties`
 * :ref:`admin-change-events`
 * :ref:`snmp-profiles`
