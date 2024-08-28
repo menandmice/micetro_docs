@@ -28,5 +28,3 @@ To grant other roles access to DNS information, make sure that they include the 
   dns_zones
   dns_records
   webapp_import_dns_records
-  webapp_import_ipam_data
- 

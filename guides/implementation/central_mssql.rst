@@ -1,5 +1,5 @@
 .. meta::
-   :description: Configuring Microsoft SQL Server as the database backend for Micetro by Men&Mice
+   :description: Configuring Microsoft SQL Server as the database backend for Micetro
    :keywords: Microsoft SQL Server, Micetro, database, DDI database
 
 .. _central-mssql:
@@ -8,27 +8,27 @@ Microsoft SQL Server
 --------------------
 
 .. important::
-  We recommend that the network latency between the SQL Server and Micetro Central remains **below 5 milliseconds**. Exceeding this threshold may cause performance issues.
+  It is recommended to keep the network latency between the SQL Server and Micetro Central **below 5 milliseconds**. Latency above this level can lead to performance issues.
 
   It is recommended to have a dedicated database administrator (DBA) to manage and maintain the SQL Server database.
 
 Setting up the Database
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Micetro requires that you create a new database on the database server with the ``SQL_Latin1_General_CP1_CS_AS`` collation. Also, ensure a login (either Windows or SQL server authenticated) with ``db_owner`` access to this database and the default schema set to ``mmCentral``.
+Micetro requires the creation of a new database on your server with the ``SQL_Latin1_General_CP1_CS_AS`` collation. Make sure there is a login (either Windows or SQL server authenticated) with ``db_owner`` privileges for this database and set the default schema set to ``mmCentral``.
 
-`CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ is a suggested script for the database and database server setup. This script also configures the SQL server itself, which is unnecessary and undesirable in most cases. Therefore, review the script with your DBA and only execute the necessary parts. Adjust the path strings (default is ``C:/Data``) and change the default password, which is set to ``1234`` in the script.
+The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ is recommended for setting up the database and server. However, it also includes configurations for the SQL server that may not be needed for desired. Work with your DBA to review the script and execute only the necessary sections. Adjust the path strings (default is ``C:/Data``) and update the default password from ``1234``  as specified in the script.
 
 .. warning::
-  The script is configured for an 8-core processor machine. As a best practice, it's recommended to create one temp file for each processor core. If using a 2-core machine, comment out the last 6 temp file creation commands in the script.
+  The script is configured for an 8-core processor. It's advisable to have one temp file per processor core. For a 2-core processor, omit the commands to create the last 6 temp files.
 
 .. danger::
-  Running the script will drop the existing database named "mmsuite" without confirmation. Make a manual backup to avoid data loss.
+  Running the script will remove any existing "mmsuite" database without warning. T prevent data oss, perform a manual backup.
 
-Running the script will create:
+Running the script will result in:
 
-* A user ``mmSuiteDBUser`` with the specified password.
-* An empty database named ``mmsuite`` with the ``COLLATE SQL_Latin1_General_CP1_CS_AS`` collation.
+* The creation of a user named ``mmSuiteDBUser`` with a given password.
+* The establishment of an empty database named ``mmsuite`` with the ``COLLATE SQL_Latin1_General_CP1_CS_AS`` collation.
 
 
 Configuring Connection Parameters

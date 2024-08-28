@@ -34,8 +34,8 @@ Editing and Removing Address Pools
 1.	In the **Manage DHCP pools** dialog box, select the relevant pool.
 2.	On the pool's row :guilabel:`...` menu, select :guilabel:`Edit` to modify the pool or :guilabel:`Remove` to delete it.
 
-Adding Exclusions (MS DHCP only)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding Exclusions (Microsoft DHCP only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can exclude a single IP Address or an entire range of addresses from being used. Exclusions can only be made for addresses that are already part of an existing address pool.
 
@@ -50,8 +50,8 @@ You can exclude a single IP Address or an entire range of addresses from being u
 
 4.	In the **Add exclusion** dialog box, enter the range of addresses to be excluded in the :guilabel:`From` and :guilabel:`To` fields. All addresses within this range, including the start and end addresses, will be excluded.
 
-Editing and Removing Exclusions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Editing and Removing Exclusions (Microsoft DHCP only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **To edit or remove an existing exclusion**:
 
@@ -250,3 +250,13 @@ Some DHCP options, such as DHCP option 43 (Vendor specific info) require the val
  
 .. image:: ../../images/blackstar-edit-dhcp-ascii-hex.png
   :width: 65%
+
+Enabling or Disabling Scopes
+-----------------------------
+If a scope is no longer needed but you want to keep it for potential future use, you can disable it instead of deleting it. When a scope is disabled, it will be ignored by the DHCP server until it is re-enabled.
+
+**To enable or disable a scope**:
+
+1.	Select the scope you want to enable or disable.
+2.	Select :guilabel:`Disable scope` or :guilabel:`Enable scope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3.	Click :guilabel:`Yes` to confirm.

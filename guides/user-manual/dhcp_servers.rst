@@ -4,8 +4,8 @@
 
 .. _dhcp:
 
-DHCP
-====
+DHCP Servers
+=============
 
 Micetro's :ref:`access control` system provides granular control over who can access DHCP information. You need administrative privileges on the DHCP service (`DHCP Administrators`) to access DHCP objects. 
 
@@ -22,7 +22,7 @@ To grant other roles access to DHCP information, make sure that they include the
 .. toctree::
   :maxdepth: 1
 
-  dhcp_management
+  
   meraki
   other
  

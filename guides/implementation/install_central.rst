@@ -1,13 +1,13 @@
 .. meta::
-   :description: How to install Men&Mice Central, the server component for Micetro by Men&Mice
-   :keywords: Micetro, Men&Mice Central, server, installation, how to
+   :description: How to install Micetro Central, the server component for Micetro
+   :keywords: Micetro, Micetro Central, server, installation, how to
 
 .. _install-central:
 
-Men&Mice Central
+Micetro Central
 ================
 
-Men&Mice Central is the central authentication server. It also serves as the meta-data storage engine, containing data such as zone history logs, user accounts and permissions, etc. You must have at least one copy of Central installed in the environment. Central does not need to be installed on a DNS server.
+Micetro Central is the central authentication server. It also serves as the meta-data storage engine, containing data such as zone history logs, user accounts and permissions, etc. You must have at least one copy of Central installed in the environment. Central does not need to be installed on a DNS server.
 
 .. _central-non-standard-install:
 
@@ -16,7 +16,7 @@ Men&Mice Central is the central authentication server. It also serves as the met
 
 .. _install-central-linux:
 
-Men&Mice Central on Linux
+Micetro Central on Linux
 -------------------------
 
 .. note::
@@ -41,38 +41,38 @@ After installation has finished, check for running mmcentral:
   
 
 
-Removing Men&Mice Central
+Removing Micetro Central
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installing Men&Mice Central puts the following files on your system:
+Installing Micetro Central puts the following files on your system:
 
 .. csv-table::
   :header: "Description", "File(s) or directory"
   :widths: 30, 70
 
-  "Men&Mice Central daemon", "mmcentrald, usually in /usr/sbin or /usr/local/sbin"
-  "Data directory for Men&Mice Central", "Usually /var/mmsuite/mmcentral"
+  "Micetro Central daemon", "mmcentrald, usually in /usr/sbin or /usr/local/sbin"
+  "Data directory for Micetro Central", "Usually /var/mmsuite/mmcentral"
   "Update directory", "update, located in the data directory"
   "Preferences file", "preferences.cfg, located in the data directory"
   "init script, the shell script that can be used to control the service; used by init during system startup", "/etc/init.d/mmcentral"
   "settings file used by the init script (Ubuntu Linux only)", "/etc/default/mmcentral"
 
-To remove Men&Mice Central, first use the init script to stop the service (give it the "stop" argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. Also delete the data directory if desired.
+To remove Micetro Central, first use the init script to stop the service (give it the "stop" argument). Then simply delete the daemon and the init script, and remove any references to the init script in the rest of the boot system if necessary. Also delete the data directory if desired.
 
-Men&Mice Central configuration files on Linux
+Micetro Central configuration files on Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See :ref:`config-linux`.
 
 .. _install-central-windows:
 
-Men&Mice Central on Windows
+Micetro Central on Windows
 ---------------------------
 
 Run the downloaded binary and follow the instructions on-screen.
 
 .. note::
-  Installing Men&Mice Central does not require special privileges. The service will be started automatically after installation.
+  Installing Micetro Central does not require special privileges. The service will be started automatically after installation.
 
 .. image:: ../../images/install-windows-service.png
   :width: 60%
@@ -88,7 +88,7 @@ Run the downloaded binary and follow the instructions on-screen.
 .. important::
   The installer creates the data directories for Men&Mice Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.
 
-Men&Mice Central configuration files on Windows
+Micetro Central configuration files on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See :ref:`config-windows`.
