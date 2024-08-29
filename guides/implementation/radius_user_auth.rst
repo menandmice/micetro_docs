@@ -19,7 +19,7 @@ Even with RADIUS user authentication enabled, users must still be created and as
 
 Enabling RADIUS User Authentication
 -----------------------------------
-To enable RADIUS authentication, you need to configure specific properties in the Micetro Central configuration file ``preferences.cfg``. Locate this file in the data folder in the Men&Mice Central data directory:
+To enable RADIUS authentication, you need to configure specific properties in the Micetro Central configuration file ``preferences.cfg``. Locate this file in the data folder in the Micetro Central data directory:
 
 * Windows: C:\\Program Files\\Men&Mice\\Central\\data
 

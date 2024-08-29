@@ -7,7 +7,7 @@
 Micetro Agents
 ===============
 
-Micetro uses agents, also known as server controllers, to handle communication between Micetro and the external service. Depending on the type of service and whether it is located on-premises or cloud, the agent is installed on the respective machine, the machine running Men&Mice central or, in some cases, any machine within the same domain as the DNS/DHCP servers. A single agent can handle communication with multiple servers.
+Micetro uses agents, also known as server controllers, to handle communication between Micetro and the external service. Depending on the type of service and whether it is located on-premises or cloud, the agent is installed on the respective machine, the machine running Micetro central or, in some cases, any machine within the same domain as the DNS/DHCP servers. A single agent can handle communication with multiple servers.
 
 .. _controller-non-standard-install:
 

@@ -4,7 +4,7 @@
 
 .. _migrate-sqlite-sql-server:
 
-Migrating the Micetro database from SQLite to Microsoft SQL Server
+Migrating the Micetro Database from SQLite to Microsoft SQL Server
 ******************************************************************
 
 Create the database
@@ -12,14 +12,14 @@ Create the database
 
 The knowledge base contains an article that describes the process of creating the database and configuring it: `Using Microsoft SQL Server as a database server for the Micetro Suite <https://cdocs.menandmice.com/pages/viewpage.action?pageId=6360964>`_
 
-The remaining instructions below assume the creation of the Micetro database in MS SQL and that a preferences.cfg file with information on connecting to the MS SQL Server has been created. When Men&Mice Central connects to the MS SQL server for the first time, it will create the necessary tables.
+The remaining instructions below assume the creation of the Micetro database in MS SQL and that a preferences.cfg file with information on connecting to the MS SQL Server has been created. When Micetro Central connects to the MS SQL server for the first time, it will create the necessary tables.
 
 Preparation
 -----------
 
-* Create a directory on the Men&Mice Central server, or if possible, directly on the SQL server (for better performance) and call it "Migrate"
+* Create a directory on the Micetro Central server, or if possible, directly on the SQL server (for better performance) and call it "Migrate"
 
-* If SQL Server is not running on the Men&Mice Central server, download and install the SQL Server Native Client from `Microsoft <http://www.microsoft.com/en-us/download/details.aspx?id=16978>`_
+* If SQL Server is not running on the Micetro Central server, download and install the SQL Server Native Client from `Microsoft <http://www.microsoft.com/en-us/download/details.aspx?id=16978>`_
 
 * Extract the attached `ConvertDatabase2.10.zip <https://cdocs.menandmice.com/download/attachments/6361086/ConvertDatabase2.10.zip?version=1&modificationDate=1446546538346&api=v2>`_ file and copy the extracted files to the "Migrate" directory. The "Migrate" directory should now contain a PowerShell script used to migrate the database from SQLite to MS SQL as well as two SQLite DLLs (redistributed from `system.data.sqlite.org <http://system.data.sqlite.org/>`_) under the folders x32 and x64
 
@@ -64,7 +64,7 @@ The script may take a few minutes to run, depending on the size of the database.
 .. Note::
   If the script returns an error that it can't load the SQLite DLL please check if the DLL is located in the x32 or x64 sub-directory is "Unblocked." Right-click on     the DLL and select Properties and press the Unblock button. Please note that Windows might silently refuse the Unblock action. You can check this by re-openeing the   Properties and checking to see if it still shows the Unblock buton is blocked. In this case just make a copy of the DLL and delete the original DLL and Unblock the     copy.
   
-Start Men&Mice Central Service
+Start Micetro Central Service
 ------------------------------
 
 * Ensure the **preferences.cfg** file is using the MS SQL Server

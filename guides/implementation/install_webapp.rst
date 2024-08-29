@@ -46,7 +46,7 @@ Installing the Web Interface on Windows
 Install Micetro Web Interface by double clicking the Microsoft installer file and follow the instructions there.
 
 .. warning::
-  If the Micetro Web Interface is not installed on the same server as Men&Mice Central, you need to  set the **Web app server host** value to the webserver's hostname through :menuselection:`System settings --> Advanced` in the Management Console for the auto-update feature to work for the Web Interface.
+  If the Micetro Web Interface is not installed on the same server as Micetro Central, you need to  set the **Web app server host** value to the webserver's hostname through :menuselection:`System settings --> Advanced` in the Management Console for the auto-update feature to work for the Web Interface.
 
 Further Configuration
 """""""""""""""""""""

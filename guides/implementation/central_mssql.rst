@@ -15,7 +15,7 @@ Microsoft SQL Server
 Setting up the Database
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Micetro requires the creation of a new database on your server with the ``SQL_Latin1_General_CP1_CS_AS`` collation. Make sure there is a login (either Windows or SQL server authenticated) with ``db_owner`` privileges for this database and set the default schema set to ``mmCentral``.
+Micetro requires the creation of a new database on your server with the ``Latin1_General_100_CS_AS_KS_WS_SC_UTF8`` collation. Make sure there is a login (either Windows or SQL server authenticated) with ``db_owner`` privileges for this database and set the default schema set to ``mmCentral``.
 
 The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ is recommended for setting up the database and server. However, it also includes configurations for the SQL server that may not be needed for desired. Work with your DBA to review the script and execute only the necessary sections. Adjust the path strings (default is ``C:/Data``) and update the default password from ``1234``  as specified in the script.
 
@@ -23,7 +23,7 @@ The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/
   The script is configured for an 8-core processor. It's advisable to have one temp file per processor core. For a 2-core processor, omit the commands to create the last 6 temp files.
 
 .. danger::
-  Running the script will remove any existing "mmsuite" database without warning. T prevent data oss, perform a manual backup.
+  Running the script will remove any existing "mmsuite" database without warning. To prevent data loss, perform a manual backup.
 
 Running the script will result in:
 

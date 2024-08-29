@@ -246,7 +246,7 @@ Settings for Schedule.
 By selecting for example '2' and 'Weeks', a new report is generated at the selected start on date/time and then at every 2 weeks afterward.
 
 .. note::
-  All dates and times are according to the time zone setting on the Men&Mice Central server.
+  All dates and times are according to the time zone setting on the Micetro Central server.
 
 Settings for Scavenging
 """""""""""""""""""""""
@@ -298,7 +298,7 @@ Both the report definition properties, the filtering criteria for the report, an
 Scavenge Reports
 ^^^^^^^^^^^^^^^^
 
-Report results take up disk space on the Men&Mice Central server. The system allows for specifying the maximum number of reports (or the maximum number of days to keep each result) for each report definition. Oldest results are deleted when the limit is reached.
+Report results take up disk space on the MicetroCentral server. The system allows for specifying the maximum number of reports (or the maximum number of days to keep each result) for each report definition. Oldest results are deleted when the limit is reached.
 
 1. Select a report definition in the list, and then click :guilabel:`Scavenge reports`.
 

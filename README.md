@@ -1,6 +1,6 @@
-# Micetro by Men&Mice
+# Micetro
 
-Welcome to the documentation repository for Micetro by Men&Mice, a backend-agnostic DDI orchestration software for complex enterprise network environments.
+Welcome to the documentation repository for Micetro, a backend-agnostic DDI orchestration software for complex enterprise network environments.
 
 ![micetro](https://user-images.githubusercontent.com/7282347/137749200-e209daf1-f00b-4489-9b0e-419d9928259c.png)
 

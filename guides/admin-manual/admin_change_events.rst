@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to run external scripts and the types of script interfaces in Micetro by Men&Mice
+   :description: How to run external scripts and the types of script interfaces in Micetro
    :keywords: DNS records, DNS
 
 .. _admin-change-events:
@@ -46,7 +46,7 @@ Editing and Deleting Change Events
 Script Interfaces
 -----------------
 
-When Men&Mice Central runs an external script associated with a change event, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
+When Micetro Central runs an external script associated with a change event, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
 
 The XML structures differ a little depending on the type of script (property change, zone contents change, scope monitoring).
 
@@ -106,7 +106,7 @@ An example XML structure with three custom properties named Location, Country an
   </customFields>
   </externalScriptParameters>
 
-Upon completion, the script must create a new XML structure and return it to Men&Mice Central. The schema for the XML structure that is returned is as follows:
+Upon completion, the script must create a new XML structure and return it to Micetro Central. The schema for the XML structure that is returned is as follows:
 
 .. code-block:: XML
 
@@ -165,13 +165,13 @@ An example XML structure with three custom properties named Location, Country, a
   </customFields>
   </result>
 
-Men&Mice Central uses the information in the XML structure to update other custom properties or to display an error message if the success attribute on the result element is set to 0. The following XML example shows how an error message can be returned by the change event script.
+Micetro Central uses the information in the XML structure to update other custom properties or to display an error message if the success attribute on the result element is set to 0. The following XML example shows how an error message can be returned by the change event script.
 
 .. code-block:: XML
 
   <?xml version="1.0"?><result success="0"><error code="1"message="The error message."></error></result>
 
-The XML structure is not required to return information about all custom properties, only fields that the script has changed. Unknown property fields are ignored by Men&Mice Central.
+The XML structure is not required to return information about all custom properties, only fields that the script has changed. Unknown property fields are ignored by Micetro Central.
 
 .. _zone-content-change-script-interface:
 

@@ -73,7 +73,7 @@ The installer will ask a series of questions. Be prepared to answer them, as ind
 .. note::
   The Kea DHCP4 Controller can not be installed by the deprecated installer.
 
-Men&Mice Central running on Linux
+Micetro Central running on Linux
 ---------------------------------
 
 Here are the questions asked by the installer that pertain to Micetro DHCP Agent:
@@ -95,7 +95,7 @@ Managing Cisco IOS with DHCP support
 
 Micetro DHCP Agent can also manage Cisco IOS servers with DHCP support. There is no need to install any software on the Cisco device, but it is necessary to create a user account on the device that has the ability to telnet or SSH in. You will be asked for the username and password when adding the server.
 
-When adding a Cisco IOS server to Micetro Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Men&Mice Central will look for a copy of the DHCP Agent on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Agent that is on the same network segment as the Cisco IOS server.
+When adding a Cisco IOS server to Micetro Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Micetro Central will look for a copy of the DHCP Agent on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Agent that is on the same network segment as the Cisco IOS server.
 
 Extract the Micetro Agent install package (as root):
 
@@ -121,7 +121,7 @@ Verify the Controller application is running:
 
   systemctl status mmremote
 
-Men&Mice Central running on Windows
+Micetro Central running on Windows
 -----------------------------------
 
 Running Micetro DHCP Agent under a privileged user account / Server type: Microsoft Agent-Free
@@ -146,11 +146,11 @@ If Micetro DHCP Agent is run as a local system service (the default), then it wi
 Where to install Micetro DHCP Agent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If Men&Mice Central is installed on a Windows host, then one option is to install Micetro DHCP Agent on the same host. If this is not done, then the system will need to be told where to find the DHCP Agent when adding a new DHCP server to the system. This will be presented as connecting via proxy.
+If Micetro Central is installed on a Windows host, then one option is to install Micetro DHCP Agent on the same host. If this is not done, then the system will need to be told where to find the DHCP Agent when adding a new DHCP server to the system. This will be presented as connecting via proxy.
 
 However, there are other considerations when deciding where to install Micetro DHCP Agent.
 
-* The Micetro communication protocol used to control a DHCP server is more efficient than the Microsoft protocol. This means that if a DHCP server is separated from Men&Mice Central by a slow network link, it is more efficient to install a copy of the Micetro DHCP Agent in the same local network (the same site, typically) as the DHCP server.
+* The Micetro communication protocol used to control a DHCP server is more efficient than the Microsoft protocol. This means that if a DHCP server is separated from MMicetro Central by a slow network link, it is more efficient to install a copy of the Micetro DHCP Agent in the same local network (the same site, typically) as the DHCP server.
 
 * Starting in Micetro Suite 6.0, Micetro DHCP Agent can be used to gather lease history data for a DHCP server. However, this requires that the Micetro DHCP Agent be installed on the DHCP server machine itself. If this is done for all DHCP servers, then there is never any need to run the DHCP Agent as a privileged user - the DHCP Agent that is only used to control the DHCP service on the same machine as itself can run as a local system service.
 
@@ -159,4 +159,4 @@ Managing Cisco IOS with DHCP Support
 
 Micetro DHCP Agent can also manage Cisco IOS servers with DHCP support. There is no need to install any software on the Cisco device, but it is necessary to create a user account on the device that has the ability to telnet or SSH in. You will be asked for the username and password when adding the server.
 
-When adding a Cisco IOS server to Micetro Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Men&Mice Central will look for a copy of the DHCP Agent on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Agent that is on the same network segment as the Cisco IOS server.
+When adding a Cisco IOS server to Micetro Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Micetro Central will look for a copy of the DHCP Agent on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Agent that is on the same network segment as the Cisco IOS server.

@@ -20,13 +20,13 @@ Micetro Central on Linux
 -------------------------
 
 .. note::
-  Before installing Men&Mice Central, decide the following:
+  Before installing Micetro Central, decide the following:
 
-  * What user account will own the Men&Mice Central process?
+  * What user account will own the Micetro Central process?
 
   * Where do you want everything stored? There are defaults provided.
 
-Extract and run the Men&Mice Central install package:
+Extract and run the Micetro Central install package:
 
 .. code-block::
 
@@ -78,7 +78,7 @@ Run the downloaded binary and follow the instructions on-screen.
   :width: 60%
   :align: center
 |
-.. note:: Running Men&Mice Central under a privileged user account
+.. note:: Running Micetro Central under a privileged user account
   Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
 
   When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
@@ -86,7 +86,7 @@ Run the downloaded binary and follow the instructions on-screen.
   The service account running Central needs to be added to the DNS Admins and/or DHCP Admins group to manage data.
 
 .. important::
-  The installer creates the data directories for Men&Mice Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.
+  The installer creates the data directories for Micetro Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.
 
 Micetro Central configuration files on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

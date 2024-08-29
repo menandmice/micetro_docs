@@ -5,7 +5,7 @@
 .. _running-micetro:
 
 Running the Micetro Components (Central, Agents)
-======================================================
+================================================
 
 .. _running-micetro-unix:
 
@@ -19,18 +19,18 @@ After installation, all Micetro components are configured as system processes av
   systemctl status|start|stop|restart mmcentral
   systemctl status|start|stop|restart mmremote
 
-You can set several options when starting Men&Mice Central (by default ``/usr/sbin/mmcentral``):
+You can set several options when starting Micetro Central (by default ``/usr/sbin/mmcentral``):
 
 .. csv-table::
   :widths: 30, 70
 
-  "-ll <level>", "Men&Mice Central sends event messages to the system log. You can change the log level for Men&Mice Central by using the –ll command-line option when starting the daemon. Possible levels are 0 - 5 (the default value is 3)"
+  "-ll <level>", "Micetro Central sends event messages to the system log. You can change the log level for Micetro Central by using the –ll command-line option when starting the daemon. Possible levels are 0 - 5 (the default value is 3)"
   "-p <port>", "Set port number to listen to (default 1231)"
   "-u <user>", "Specifies the user name or user id that the program should run as"
   "-g <group>", "Specifies the group name or group id that the program should run as"
   "-d <path>", "Sets the path where the data files should be located (the default path is /var/mmsuite/mmcentral)"
   "-v", "Displays version information"
-  "–h", "Displays available command line options for Men&Mice Central"
+  "–h", "Displays available command line options for Micetro Central"
 
 For example:
 
@@ -45,20 +45,20 @@ For example:
 Windows
 -------
 
-Men&Mice Central
+Micetro Central
 ^^^^^^^^^^^^^^^^
 
-Men&Mice Central runs as a service and you can start and stop Men&Mice Central using the Services application. You can also control Men&Mice Central using these command line options:
+Micetro Central runs as a service and you can start and stop Micetro Central using the Services application. You can also control Micetro Central using these command line options:
 
 .. csv-table::
   :widths: 30, 70
 
-  "mmcentral –i", "Installs Men&Mice Central as a service"
-  "mmcentral –u", "Uninstalls Men&Mice Central"
-  "mmcentral –start", "Starts the Men&Mice Central service"
-  "mmcentral –stop", "Stops the Men&Mice Central service"
+  "mmcentral –i", "Installs Micetro Central as a service"
+  "mmcentral –u", "Uninstalls Micetro Central"
+  "mmcentral –start", "Starts the Micetro Central service"
+  "mmcentral –stop", "Stops the Micetro Central service"
   "mmcentral –v", "Displays version information"
-  "mmcentral –h", "Displays available command line options for Men&Mice Central"
+  "mmcentral –h", "Displays available command line options for Micetro Central"
 
 Micetro Agents
 ^^^^^^^^^^^^^^

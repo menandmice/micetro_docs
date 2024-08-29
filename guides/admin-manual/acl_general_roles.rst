@@ -1,15 +1,15 @@
 .. meta::
-   :description: General roles in Micetro by Men&Mice 10.1
+   :description: General roles in Micetro
    :keywords: Micetro access model
 
 .. _acl-general-roles:
 
-General roles
+General Roles
 -------------
 
-*General roles** are the default role type, whose permissions are automatically applied (if applicable) to all objects in Micetro, present and future.
+**General roles** are the default role type, whose permissions are automatically applied (if applicable) to all objects in Micetro, present and future.
 
-To create a *General role*, follow the instructions on :ref:`acl-roles`, and **select** the *General* type from the dropdown in the role creation dialog. (The default type is *General*.)
+To create a General role, follow the instructions on :ref:`acl-roles`, and **select** the *General* type from the dropdown in the role creation dialog. (The default type is *General*.)
 
 *Example:* The general role *DNS editor* has the ``Edit zone options`` permission enabled. Any 'DNS zone' type object in Micetro, whether already existing or added in the future, will be accessible to users/groups attached to this role.
 

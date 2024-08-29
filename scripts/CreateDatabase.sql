@@ -146,7 +146,7 @@ NAME = N'mmsuite', FILENAME = N'C:\Data\mmDatabase\mmsuite.mdf' , SIZE = 20480KB
 	( NAME = N'mmsuite_data', FILENAME = N'C:\Data\mmDatabase\mmsuite_data.ndf' , SIZE = 20480KB , MAXSIZE = 200GB, FILEGROWTH = 1024KB )
  LOG ON
 	( NAME = N'mmsuite_log', FILENAME = N'C:\Data\mmDatabase\mmsuiteLog.ldf' , SIZE = 20480KB , MAXSIZE = 20GB , FILEGROWTH = 1024KB)
- COLLATE SQL_Latin1_General_CP1_CS_AS	-- CI is required so choosing the default with CS_AS ending (case sensitive and Accent sensitive)
+ COLLATE Latin1_General_100_CS_AS_KS_WS_SC_UTF8	-- CI is required so choosing the default with CS_AS ending (case sensitive and Accent sensitive)
 GO
 EXEC dbo.sp_dbcmptlevel @dbname=N'mmsuite', @new_cmptlevel=100 /*ms*/
 GO

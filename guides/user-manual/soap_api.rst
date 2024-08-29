@@ -1,5 +1,5 @@
 .. meta::
-   :description: The introduction to the SOAP API in Micetro by Men&Mice
+   :description: The introduction to the SOAP API in Micetro
    :keywords: SOAP API, Micetro
 
 .. _soap-api:
@@ -37,4 +37,4 @@ The SOAP command reference can be viewed online on `api.menandmice.com <http://a
 .. tip::
   Documentation for the SOAP API is bundled with the Web Application, and can be viewed on ``http(s)://micetro.yourdomain.tld/mmws/wsdldoc`` where *micetro.yourdomain.tld* is the url for the Web Application.
 
-  If Men&Mice Central is running on a different server from the Web Application, the url to use is ``http(s)://micetro.yourdomain.tld/mmws/wsdldoc?server=your.central.server.com``.
+  If Micetro Central is running on a different server from the Web Application, the url to use is ``http(s)://micetro.yourdomain.tld/mmws/wsdldoc?server=your.central.server.com``.

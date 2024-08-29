@@ -1,10 +1,10 @@
 .. meta::
-   :description: Configuring database high availability with PostgreSQL for Micetro by Men&Mice
+   :description: Configuring database high availability with PostgreSQL for Micetro
    :keywords: PostgreSQL, high availability, failover, Micetro, database
 
 .. _central-psql-ha:
 
-Connect Central to the PostgreSQL high availability cluster
+Connect Central to the PostgreSQL High Availability Cluster
 -----------------------------------------------------------
 
 Machine: monitor
@@ -38,7 +38,7 @@ Update the /etc/hosts file:
   echo "[ip-address-node-1] [node-1]" >> /etc/hosts
   echo "[ip-address-node-2] [node-2]" >> /etc/hosts
 
-Add this to the Men&Mice Central ``preferences.cfg`` file:
+Add this to the Micetro Central ``preferences.cfg`` file:
 
 .. code-block::
 
@@ -58,7 +58,7 @@ Update the /etc/hosts file:
   echo "[ip-address-node-1] [node-1]" >> /etc/hosts
   echo "[ip-address-node-2] [node-2]" >> /etc/hosts
 
-Add this to the Men&Mice Central ``preferences.cfg`` file:
+Add this to the Micetro Central ``preferences.cfg`` file:
 
 .. code-block::
 

@@ -19,7 +19,7 @@ Operating Systems
 -----------------
 
 .. csv-table:: Operating Systems
-  :header: "Operating system", "Management Console [1]_", "Server Controllers", "Men&Mice Central", "Web Application", "API [2]_", "Command Line Interface"
+  :header: "Operating system", "Management Console [1]_", "Agents", "Micetro Central", "Web Application", "API [2]_", "Command Line Interface"
   :widths: 20, 20, 20, 10, 10, 10, 10
 
   "**Microsoft Windows**",,,,,,
@@ -55,17 +55,17 @@ Databases
 ---------
 
 .. csv-table:: Databases
-  :header: "Database", "Supported version(s)", "Operating System of Men&Mice Central"
+  :header: "Database", "Supported version(s)", "Operating System of Micetro Central"
   :widths: 20, 20, 60
 
   "PostgreSQL", 11-15, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
   "Microsoft SQL Server", "2012, 2014, 2016, 2019, 2022", "Windows"
 
-.. [3] The SQLite database is embedded into the Men&Mice Central application.
+.. [3] The SQLite database is embedded into the Micetro Central application.
 
 .. note::
-   In Micetro versions 10.2 and later, support for Microsoft SQL Server 2008 R2 will be discontinued, aligning with Microsoft’s decision to end support for these operating systems.
+   In Micetro versions 10.2 and later, support for Microsoft SQL Server 2008 R2 will be discontinued, aligning with Microsoft's decision to end support for these operating systems.
 
 
 DNS/DHCP Server Software

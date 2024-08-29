@@ -19,13 +19,13 @@ Linux
    :header: "Path", "Information"
    :widths: 40, 60
 
-   "``/var/mmsuite/mmcentral/preferences.cfg``", "Men&Mice Central configuration file."
+   "``/var/mmsuite/mmcentral/preferences.cfg``", "Micetro Central configuration file."
    "``/var/mmsuite/dns_server_controller/preferences.cfg``",	"Micetro DNS Agent configuration file."
    "``/etc/httpd/conf/mmweb.conf``",	"Micetro Web Interface configuration file."
    "``/etc/httpd/conf/mmws.conf``",	"Micetro Web Services proxy configuration file"
    "``./[monitor|nodeX]/postgresql.conf``",	"PostgreSQL HA cluster database configuration file."
    "``./[monitor|nodeX]/pg_hba.conf``",	"Stores client authentication information for the database cluster."
-   "``/var/mmsuite/mmcentral.log``",	"Men&Mice Central logfile."
+   "``/var/mmsuite/mmcentral.log``",	"Micetro Central logfile."
    "``/var/mmsuite/dns_server_controller/logs/``",	"Micetro DNS Agent logfile."
    "``./[monitor]/pg_log/postgresql-[WeekDay].log``",	"PostgreSQL HA cluster monitor logfile."
 
@@ -38,15 +38,15 @@ Windows
   :header: "Path", "Information"
   :widths: 40, 60
 
-  "``C:\Program Files\Men and Mice\Central``", "Men&Mice Central install directory."
+  "``C:\Program Files\Men and Mice\Central``", "Micetro Central install directory."
   "``C:\Program Files\Men and Mice\Console``", "Management Console install directory."
   "``C:\Program Files\Men and Mice\DNS Server Controller``", "DNS Agent install directory."
   "``C:\Program Files\Men and Mice\DHCP Server Controller``", "DHCP Agent install directory."
   "``C:\Program Files\Men and Mice\Web Services``", "Micetro Web Interface install directory."
-  "``C:\ProgramData\Men and Mice\Central\preferences.cfg``", "Men&Mice Central configuration file."
+  "``C:\ProgramData\Men and Mice\Central\preferences.cfg``", "Micetro Central configuration file."
   "``C:\ProgramData\Men and Mice\Central\mmsuite.db``", "Default, built-in database for Micetro."
-  "``C:\ProgramData\Men and Mice\Central\backups\``", "Server configuration backups for Men&Mice Central."
-  "``C:\ProgramData\Men and Mice\Central\logs\``", "Men&Mice Central logfiles. See :ref:`central-logging.`"
+  "``C:\ProgramData\Men and Mice\Central\backups\``", "Server configuration backups for Micetro Central."
+  "``C:\ProgramData\Men and Mice\Central\logs\``", "Micetro Central logfiles. See :ref:`central-logging.`"
   "``C:\ProgramData\Men and Mice\Central\updates\``", "Micetro Updater service install directory."
   "``C:\ProgramData\Men and Mice\DHCP Server Controller\preferences.cfg``", "Mietro DHCP Agent configuration file."
   "``C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg``", "Micetro DNS Agent configuration file."

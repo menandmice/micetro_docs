@@ -16,7 +16,7 @@ Update Guide
 
 Micetro Version
 ---------------
-Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Men&Mice Central and the Micetro Server Controllers. 
+Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Micetro Central and the Micetro Server Controllers. 
 
 * Minor versions often only contain an update for a single component, such as the Micetro web application.
 

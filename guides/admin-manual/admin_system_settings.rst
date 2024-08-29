@@ -272,7 +272,7 @@ Here you can configure advanced system settings, such as specifying a SSL Certif
   "Use case sensitive comparison when updating custom properties from scripts", "Specifies whether to take case sensitivity into account when comparing custom properties from scripts."
   "Include A/AAAA records when checking for *Edit apex records* access", "Determines whether A and AAAA records are considered when verifying access to edit apex (root) records."
   "Web app landing page", "By default, the Micetro frontpage is the landing page for the system. Clicking the Micetro logo will take you to the landing page."
-  "Web app server host", "Used to specify which host the web application is running on in order for auto update to work for the web application. Default is localhost (same server as Men&Mice Central)"
+  "Web app server host", "Used to specify which host the web application is running on in order for auto update to work for the web application. Default is localhost (same server as Micetro Central)"
   
 
 .. [1] Enabling this feature can affect the performance of the system.
