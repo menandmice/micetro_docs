@@ -19,16 +19,10 @@ Micetro requires the creation of a new database on your server with the ``Latin1
 
 The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ is recommended for setting up the database and server. However, it also includes configurations for the SQL server that may not be needed for desired. Work with your DBA to review the script and execute only the necessary sections. Adjust the path strings (default is ``C:/Data``) and update the default password from ``1234``  as specified in the script.
 
-.. warning::
-  The script is configured for an 8-core processor. It's advisable to have one temp file per processor core. For a 2-core processor, omit the commands to create the last 6 temp files.
-
-.. danger::
-  Running the script will remove any existing "mmsuite" database without warning. To prevent data loss, perform a manual backup.
-
 Running the script will result in:
 
-* The creation of a user named ``mmSuiteDBUser`` with a given password.
-* The establishment of an empty database named ``mmsuite`` with the ``COLLATE SQL_Latin1_General_CP1_CS_AS`` collation.
+* The creation of a user named ``micetroDBUser`` with a given password.
+* The establishment of an empty database named ``micetro`` with the ``Latin1_General_100_CS_AS_KS_WS_SC_UTF8`` collation.
 
 
 Configuring Connection Parameters
@@ -73,7 +67,7 @@ For Micetro Central on Windows, you have two authentication methods to choose fr
 
 For Micetro Central on Linux
 ******************************
-Navigate to the data directory (usually located at ``/var/mmsuite/mmcentral``) and edit the ``preferences.cfg`` file as follows:
+Navigate to the data directory (usually located at ``/var/micetro/mmcentral``) and edit the ``preferences.cfg`` file as follows:
 
 .. code-block::
 
@@ -99,4 +93,4 @@ Verify the service is running smoothly:
   systemctl restart mmcentral
   systemctl status mmcentral
 
-If there are any database connection issues, the service will fail to start. Check the Central startup log for errors, located in the Central data directory at either ``/var/mmsuite/mmcentral/logs`` or ``C:\ProgramData\Men and Mice\Central\logs``.
+If there are any database connection issues, the service will fail to start. Check the Central startup log for errors, located in the Central data directory at either ``/var/micetrosuite/mmcentral/logs`` or ``C:\ProgramData\Micetro\Central\logs``.

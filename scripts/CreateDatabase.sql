@@ -1,6 +1,6 @@
 /*
 
-This section is the Men and Mice recommended setup of the database instance. If your organization has different
+This section is the Micetro recommended setup of the database instance. If your organization has different
 policies, we recommend having your DBA set the instance according to your policies and skipping to
 the create database part below.
 
@@ -100,13 +100,13 @@ GO
 
 
 /*
-Here starts the database creation and configuration for the Men and Mice database.
+Here starts the database creation and configuration for the Micetro database.
 */
 
 /*
-	After creating the database we recommend that these minimum database settings are completed:
+	After creating the database, we recommend that these minimum database settings are completed:
 		-Configure the the backup settings according to your organizations backup policy.
-		-You create a sheduled job to reindex the database (e.g. every saturday at 4:00).
+		-You create a scheduled job to reindex the database (e.g. every saturday at 4:00).
 		-
 */
 
@@ -127,104 +127,104 @@ Create the database instance
 /*	This deletes the database - please make absolutely certain that this is a database that
 	can be deleted.
 */
-IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'mmsuite')
+IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'micetro')
 begin
 	USE [master]
-	ALTER DATABASE [mmsuite] SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
-	DROP DATABASE [mmsuite]
+	ALTER DATABASE [micetro] SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
+	DROP DATABASE [micetro]
 end
 GO
 
 /*
 	This create statement is intended for small-scale databases. For larger database setups (> tens of GBs) you must
-	consult with your database administrators, and have them contact Men&Mice support team for additional information.
+	consult with your database administrators, and have them contact BlueCat support team for additional information.
 */
-CREATE DATABASE [mmsuite] ON  PRIMARY
+CREATE DATABASE [micetro] ON  PRIMARY
 (
-NAME = N'mmsuite', FILENAME = N'C:\Data\mmDatabase\mmsuite.mdf' , SIZE = 20480KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB ),
- FILEGROUP [mmsuiteData]  DEFAULT
-	( NAME = N'mmsuite_data', FILENAME = N'C:\Data\mmDatabase\mmsuite_data.ndf' , SIZE = 20480KB , MAXSIZE = 200GB, FILEGROWTH = 1024KB )
+NAME = N'micetro', FILENAME = N'C:\Data\mmDatabase\micetro.mdf' , SIZE = 20480KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB ),
+ FILEGROUP [micetroData]  DEFAULT
+	( NAME = N'micetro_data', FILENAME = N'C:\Data\mmDatabase\micetro_data.ndf' , SIZE = 20480KB , MAXSIZE = 200GB, FILEGROWTH = 1024KB )
  LOG ON
-	( NAME = N'mmsuite_log', FILENAME = N'C:\Data\mmDatabase\mmsuiteLog.ldf' , SIZE = 20480KB , MAXSIZE = 20GB , FILEGROWTH = 1024KB)
+	( NAME = N'micetro_log', FILENAME = N'C:\Data\mmDatabase\micetroLog.ldf' , SIZE = 20480KB , MAXSIZE = 20GB , FILEGROWTH = 1024KB)
  COLLATE Latin1_General_100_CS_AS_KS_WS_SC_UTF8	-- CI is required so choosing the default with CS_AS ending (case sensitive and Accent sensitive)
 GO
-EXEC dbo.sp_dbcmptlevel @dbname=N'mmsuite', @new_cmptlevel=100 /*ms*/
+EXEC dbo.sp_dbcmptlevel @dbname=N'micetro', @new_cmptlevel=100 /*ms*/
 GO
 
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
-	EXEC [mmsuite].[dbo].[sp_fulltext_database] @action = 'disable'
+	EXEC [micetro].[dbo].[sp_fulltext_database] @action = 'disable'
 end
 GO
 
 /*
 	Database settings
 */
-ALTER DATABASE [mmsuite] SET ANSI_NULL_DEFAULT OFF
+ALTER DATABASE [micetro] SET ANSI_NULL_DEFAULT OFF
 GO
 
-ALTER DATABASE [mmsuite] SET ANSI_NULLS OFF
+ALTER DATABASE [micetro] SET ANSI_NULLS OFF
 GO
 
-ALTER DATABASE [mmsuite] SET ANSI_PADDING OFF
+ALTER DATABASE [micetro] SET ANSI_PADDING OFF
 GO
 
-ALTER DATABASE [mmsuite] SET ANSI_WARNINGS OFF
+ALTER DATABASE [micetro] SET ANSI_WARNINGS OFF
 GO
 
-ALTER DATABASE [mmsuite] SET ARITHABORT OFF
+ALTER DATABASE [micetro] SET ARITHABORT OFF
 GO
 
-ALTER DATABASE [mmsuite] SET AUTO_CLOSE OFF
+ALTER DATABASE [micetro] SET AUTO_CLOSE OFF
 GO
 
-ALTER DATABASE [mmsuite] SET AUTO_CREATE_STATISTICS ON
+ALTER DATABASE [micetro] SET AUTO_CREATE_STATISTICS ON
 GO
 
-ALTER DATABASE [mmsuite] SET AUTO_SHRINK OFF
+ALTER DATABASE [micetro] SET AUTO_SHRINK OFF
 GO
 
-ALTER DATABASE [mmsuite] SET AUTO_UPDATE_STATISTICS ON
+ALTER DATABASE [micetro] SET AUTO_UPDATE_STATISTICS ON
 GO
 
-ALTER DATABASE [mmsuite] SET CURSOR_CLOSE_ON_COMMIT OFF
+ALTER DATABASE [micetro] SET CURSOR_CLOSE_ON_COMMIT OFF
 GO
 
-ALTER DATABASE [mmsuite] SET CURSOR_DEFAULT  GLOBAL
+ALTER DATABASE [micetro] SET CURSOR_DEFAULT  GLOBAL
 GO
 
-ALTER DATABASE [mmsuite] SET CONCAT_NULL_YIELDS_NULL OFF
+ALTER DATABASE [micetro] SET CONCAT_NULL_YIELDS_NULL OFF
 GO
 
-ALTER DATABASE [mmsuite] SET NUMERIC_ROUNDABORT OFF
+ALTER DATABASE [micetro] SET NUMERIC_ROUNDABORT OFF
 GO
 
-ALTER DATABASE [mmsuite] SET QUOTED_IDENTIFIER OFF
+ALTER DATABASE [micetro] SET QUOTED_IDENTIFIER OFF
 GO
 
-ALTER DATABASE [mmsuite] SET RECURSIVE_TRIGGERS OFF
+ALTER DATABASE [micetro] SET RECURSIVE_TRIGGERS OFF
 GO
 
-ALTER DATABASE [mmsuite] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
+ALTER DATABASE [micetro] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
 GO
 
-ALTER DATABASE [mmsuite] SET DATE_CORRELATION_OPTIMIZATION OFF
+ALTER DATABASE [micetro] SET DATE_CORRELATION_OPTIMIZATION OFF
 GO
 
-ALTER DATABASE [mmsuite] SET PARAMETERIZATION SIMPLE
+ALTER DATABASE [micetro] SET PARAMETERIZATION SIMPLE
 GO
 
-ALTER DATABASE [mmsuite] SET  READ_WRITE
+ALTER DATABASE [micetro] SET  READ_WRITE
 GO
 
 /* Set the recovery mode - recommended FULL */
-ALTER DATABASE [mmsuite] SET RECOVERY FULL
+ALTER DATABASE [micetro] SET RECOVERY FULL
 GO
 
-ALTER DATABASE [mmsuite] SET  MULTI_USER
+ALTER DATABASE [micetro] SET  MULTI_USER
 GO
 
-ALTER DATABASE [mmsuite] SET PAGE_VERIFY CHECKSUM
+ALTER DATABASE [micetro] SET PAGE_VERIFY CHECKSUM
 GO
 
 /*
@@ -233,20 +233,20 @@ GO
 	this user in the database later. DO NOT use the default password given in this file. Expiration
 	policy is set to off as this is a service, not a user account.
 
-	If you are using Windows integrated authentication then you need to accociate the DBUser (on the mmsuite
-	(defined later))with the Windows user running mmCentral instead of the mmSuiteDBUser login.
+	If you are using Windows integrated authentication then you need to associate the DBUser (on micetro
+	(defined later))with the Windows user running mmCentral instead of the micetroDBUser login.
 */
 
-IF  EXISTS (SELECT * FROM sys.server_principals WHERE name = N'mmSuiteDBUser')
-DROP LOGIN [mmSuiteDBUser]
+IF  EXISTS (SELECT * FROM sys.server_principals WHERE name = N'micetroDBUser')
+DROP LOGIN [micetroDBUser]
 GO
 
-USE [mmsuite]
+USE [micetro]
 GO
 
 /* NOTE change the password according to your company policy */
-CREATE LOGIN [mmSuiteDBUser] WITH PASSWORD=N'1234',
- 	DEFAULT_DATABASE=[mmsuite],
+CREATE LOGIN [micetroDBUser] WITH PASSWORD=N'1234',
+ 	DEFAULT_DATABASE=[micetro],
  	CHECK_EXPIRATION=OFF,
 	CHECK_POLICY=OFF
  GO
@@ -256,21 +256,21 @@ Create a user on the new database. If you are using Windows login then the login
 running the mmCentral service.
 */
 
-USE [mmsuite]
+USE [micetro]
 GO
- CREATE USER [mmSuiteUser] FOR LOGIN [mmSuiteDBUser]
+ CREATE USER [micetroUser] FOR LOGIN [micetroDBUser]
  GO
 /*
 Create a role for mm user.
 */
-CREATE ROLE mmSuiteRole
+CREATE ROLE micetroRole
 
 /*
 Grant normal access
 */
-USE [mmsuite];
-EXEC sp_addrolemember db_datawriter, mmSuiteRole
-EXEC sp_addrolemember db_datareader, mmSuiteRole
+USE [micetro];
+EXEC sp_addrolemember db_datawriter, micetroRole
+EXEC sp_addrolemember db_datareader, micetroRole
 
 /*
 Authorization, the mmCentral service handles updates of the database when a new version of the system is started for the first time
@@ -284,26 +284,26 @@ Another alternative is to remove ddladmin rights and get an upgrade script from 
 The same considerations apply to Grant Create Table.
 */
 
-ALTER AUTHORIZATION ON SCHEMA::[db_ddladmin] TO mmSuiteRole
+ALTER AUTHORIZATION ON SCHEMA::[db_ddladmin] TO micetroRole
 GO
 
-USE [mmsuite]
+USE [micetro]
 GO
-GRANT CREATE TABLE TO mmSuiteRole
+GRANT CREATE TABLE TO micetroRole
 GO
 
 /*Add our user to the mmCentral role*/
-USE [mmsuite]
+USE [micetro]
 GO
-EXEC sp_addrolemember mmSuiteRole, mmSuiteUser
+EXEC sp_addrolemember micetroRole, micetroUser
 GO
 
 /*
 Create the default schema for the new user. It is important that the user running mmCentral has the schema as the default schema.
 */
-CREATE SCHEMA mmCentral AUTHORIZATION mmSuiteUser
+CREATE SCHEMA mmCentral AUTHORIZATION micetroUser
 GO
-ALTER user mmSuiteUser with default_schema = mmCentral
+ALTER user micetroUser with default_schema = mmCentral
 GO
 
 /**
