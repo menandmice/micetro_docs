@@ -11,7 +11,43 @@ Release Notes
   Major releases are only supported for 2 years.
 
 
-Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.3.12-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`
+Jump to: :ref:`10.3-release`, :ref:`10.3.1-release`, :ref:`10.3.2-release`, :ref:`10.3.3-release`, :ref:`10.3.4-release`, :ref:`10.3.5-release`, :ref:`10.3.6-release`, :ref:`10.3.8-release`, :ref:`10.3.9-release`, :ref:`10.3.10-release`, :ref:`10.3.11-release`, :ref:`10.3.12-release`, :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.1.0-release`
+
+.. _11.1.0-release:
+
+11.1.0
+------
+September 30, 2024
+
+New Features
+^^^^^^^^^^^^
+
+* **Cisco Meraki**: Micetro now supports managing DHCP in Cisco Meraki
+* **Microsoft Superscopes**: Micetro now enables the management of Superscopes in Microsoft servers
+* **Kea and ISC DHCP shared networks**: Micetro now supports management of shared networks in both Kea and ISC DHCP
+* **UTF-8**: Micetro now has full UTF-8 support, which means that any character can be used within the Micetro solution. For customers that are using Microsoft SQL Server and Postgres database then the collation needs to be able to store those characters, this does not apply to SQLite which does not use collations
+
+Improvements
+^^^^^^^^^^^^
+* **Devices and interfaces**: Micetro can manage devices and interfaces, this feature was already present in the Windows management console but has now been added to the web UI as well
+
+Bug Fixes
+^^^^^^^^^
+* Information about file paths have been removed from error messages for security reasons
+* Multiple accessibility improvements have been done e.g. auto-closing sidebars when a certain zoom level has been reached
+* Session tokens have been removed from URL's due to security reasons
+* Updated SQLAPI++ library which is used for communication with different database types. This solves multiple issues such as those related to handle MARS on database connections in Microsoft SQL Server
+
+Deprecation Announcements
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* CentOS cannot be used to host Micetro anymore as this operating system was deprecated by Red Hat on 30 June 2024, see more information `here <https://www.redhat.com/en/topics/linux/centos-linux-eol>`_.
+* RHEL 6 support has now been deprecated in Micetro because it was out of maintenance support by Red Hat on 30 November 2020 according to the `Red Hat Enterprise Linux support lifecycle page <https://access.redhat.com/support/policy/updates/errata/>`_. The same applies to RHEL 7 which was out of maintenance support on 30 June 2024.
+* Suse Enterprise Linux 11 has been deprecated in Micetro as this operating system is not supported by the vendor as of 31st of March 2019, see more information `here <https://www.suse.com/lifecycle>`_.
+* Ubuntu 16.04 was out of standard support in April 2021 so as a result then support for it has been deprecated in Micetro. Ubuntu 18.04 was also out of support in April 2023 so that support has been deprecated as well.
+* Unbound support has been deprecated. This support was added originally because Unbound was used in the Men & Mice caching appliances but those were deprecated as part of introducing MDDS support in version 11.0.0 (which does not use Unbound). Additionally, the Unbound version that was currently supported was heavily outdated and because of limited use of Unbound by customers it was decided to deprecate this support
+* Support for Kea version 2.2 as a service that Micetro can overlay is deprecated due to reaching end-of-life status and no longer being supported by ISC. See the roadmap for ISC Kea `here <https://kb.isc.org/docs/aa-00896>`_.
+* Support for Microsoft SQL Server 2014 is deprecated as this databases reached end of support on July 9, 2024. For more information on Microsoft SQL Server roadmap, see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
 
 .. _11.0.3-release:
 
