@@ -1,12 +1,12 @@
 /* 
-Micetro requires a case sensitive and accent sensitive collation, i.e. CS_AS. 
-A UTF8 collation (ends with _UTF8) is recommended for SQL Server 2019 and newer, which supports UTF8 collations
-for older SQL Server versions and  Micetro 11.0 and older, SQL_Latin1_General_CP1_CS_AS is the recommended collation
+Micetro requires a case-sensitive and accent-sensitive collation, i.e. CS_AS. 
+A UTF8 collation (ends with _UTF8) is recommended for SQL Server 2019 or later, which supports UTF8 collations
+for older SQL Server versions and  Micetro 11.0 and below, SQL_Latin1_General_CP1_CS_AS is the recommended collation
 */
 
 CREATE DATABASE [micetro]
 COLLATE Latin1_General_100_CS_AS_KS_WS_SC_UTF8	-- change Latin1_General to a more appropriate CS_AS UTF8 collation as needed
--- COLLATE SQL_Latin1_General_CP1_CS_AS -- recommended collation for SQL server 2017 and older without UTF8 support, or Micetro 11.0 and older
+-- COLLATE SQL_Latin1_General_CP1_CS_AS -- recommended collation for SQL server 2017 and older without UTF8 support, or Micetro 11.0 and below
 GO
 
 USE [micetro]

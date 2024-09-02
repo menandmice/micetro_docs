@@ -10,7 +10,7 @@ Microsoft SQL Server
 .. important::
   It is recommended to keep the network latency between the SQL Server and Micetro Central **below 5 milliseconds**. Latency above this level can lead to performance issues.
 
-  Micetro does not automatically perform index maintentance or database backups. It is recommended to have a database administrator set up a scheduled task to maintain indexes and regularly back up the database and transaction logs, (when using teh Full recovery model).
+  Micetro does not automatically perform index maintentance or database backups. It is recommended to have a database administrator set up a scheduled task to maintain indexes and regularly back up the database and transaction logs, (when using the Full recovery model).
 
 Setting up the Database
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,7 +70,7 @@ For Micetro Central on Windows, you have two authentication methods to choose fr
 
 For Micetro Central on Linux
 ******************************
-Navigate to the data directory (usually located at ``/var/micetro/mmcentral``) and edit the ``preferences.cfg`` file as follows:
+Navigate to the data directory (usually located at ``/var/mmsuite/mmcentral``) and edit the ``preferences.cfg`` file as follows:
 
 .. code-block::
 
