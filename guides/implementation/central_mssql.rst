@@ -10,25 +10,22 @@ Microsoft SQL Server
 .. important::
   It is recommended to keep the network latency between the SQL Server and Micetro Central **below 5 milliseconds**. Latency above this level can lead to performance issues.
 
-  It is recommended to have a dedicated database administrator (DBA) to manage and maintain the SQL Server database.
+  Micetro does not automatically perform index maintentance or database backups. It is recommended to have a database administrator set up a scheduled task to maintain indexes and regularly back up the database and transaction logs, (when using the Full recovery model).
 
 Setting up the Database
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Micetro requires the creation of a new database on your server with the ``Latin1_General_100_CS_AS_KS_WS_SC_UTF8`` collation. Make sure there is a login (either Windows or SQL server authenticated) with ``db_owner`` privileges for this database and set the default schema set to ``mmCentral``.
+Micetro requires the creation of a new database on your server with a case-sensitive and accent-sensitive collation. For SQL Server 2019 or later, it is recommended to use a UTF8 collation such as ``Latin1_General_100_CS_AS_KS_WS_SC_UTF8``. For earlier SQL Server versions or Micetro versions 11.0 and below, the recommended collation is ``SQL_Latin1_General_CP1_CS_AS``.
 
-The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ is recommended for setting up the database and server. However, it also includes configurations for the SQL server that may not be needed for desired. Work with your DBA to review the script and execute only the necessary sections. Adjust the path strings (default is ``C:/Data``) and update the default password from ``1234``  as specified in the script.
-
-.. warning::
-  The script is configured for an 8-core processor. It's advisable to have one temp file per processor core. For a 2-core processor, omit the commands to create the last 6 temp files.
-
-.. danger::
-  Running the script will remove any existing "mmsuite" database without warning. To prevent data loss, perform a manual backup.
+The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_  script can be used to create a blank database for Micetro with the recommended configurations. The script also creates a user account called ``micetroDBUser``, but you must change the password before running the script. 
 
 Running the script will result in:
 
-* The creation of a user named ``mmSuiteDBUser`` with a given password.
-* The establishment of an empty database named ``mmsuite`` with the ``COLLATE SQL_Latin1_General_CP1_CS_AS`` collation.
+* The creation of a user named ``micetroDBUser`` with a given password.
+* The establishment of an empty database named ``micetro`` with the ``Latin1_General_100_CS_AS_KS_WS_SC_UTF8`` collation.
+
+.. note::
+  The default recovery model for the created database is Simple. If you want to use a Full recovery model, it is necessary to set up a transaction log backup job.
 
 
 Configuring Connection Parameters
