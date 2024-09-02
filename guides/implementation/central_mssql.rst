@@ -93,4 +93,4 @@ Verify the service is running smoothly:
   systemctl restart mmcentral
   systemctl status mmcentral
 
-If there are any database connection issues, the service will fail to start. Check the Central startup log for errors, located in the Central data directory at either ``/var/micetrosuite/mmcentral/logs`` or ``C:\ProgramData\Micetro\Central\logs``.
+If there are any database connection issues, the service will fail to start. Check the Central startup log for errors, located in the Central data directory at either ``/var/mmsuite/mmcentral/logs`` or ``C:\ProgramData\Men and Mice\Central\logs``.
