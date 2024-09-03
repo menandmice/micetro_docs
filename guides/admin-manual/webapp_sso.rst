@@ -29,7 +29,7 @@ Configuration
 
 4. On the :guilabel:`Security` tab, select :guilabel:`Trusted Sites` and open up the :guilabel:`Sites` window.
 
-5. Enter the URL (https://micetro.example.com) of the Micetr Web Interface into the **Add this website to the zone** field, and then click :guilabel:`Add`.
+5. Enter the Micetro URL (https://micetro.example.com) into the **Add this website to the zone** field, and then click :guilabel:`Add`.
 
    .. note::
       It is necessary to clear the :guilabel:`Require server verification for all sides in this zone` checkbox if Micetro is not running on https.

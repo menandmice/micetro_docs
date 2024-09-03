@@ -1,12 +1,12 @@
 .. meta::
-  :description: Administrative functions in the Micetro Web Application
+  :description: Administrative functions in Micetro
   :keywords: admin, administration, server admin, access control, Micetro
 
 .. _webapp-admin:
 
 Admin Guide
 ============
-This guide will walk administrators through managing Micetro by Men&Mice, covering user, service, and system configurations.
+This guide will walk administrators through managing Micetro, covering user, service, and system configurations.
 
 You will learn how to effectively manage user accounts, covering tasks such as adding, modifying, and deleting users while also assigning them specific roles and permissions to align with your organization's requirements.
 

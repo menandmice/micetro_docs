@@ -16,17 +16,17 @@ Administrator with access to managing users/groups in Micetro can check the effe
 
 2. Select :guilabel:`Users` or :guilabel:`Groups`, depending on whose access you want to check.
 
-3. Select the user/group in the grid, and use the :guilabel:`Effective access` action from the top bar or the ellipsis menu.
+3. Select the user/group in the grid, and then select :guilabel:`View effective access` on either the :guilabel:`Action` or Row :guilabel:`...` menu.
 
-Micetro Access
-   Shows all **enabled** permissions for the user/group.
+   Micetro Access
+      Shows all **enabled** permissions for the user/group.
 
    .. image:: ../../images/effective-access-micetro.png
       :width: 80%
       :align: center
 
-Object Access
-   Here you can select an object type and search for a specific object to check the access the selected user/group has, as well as where the access comes from.
+   Object Access
+      Here you can select an object type and search for a specific object to check the access the selected user/group has, as well as where the access comes from.
 
    .. image:: ../../images/effective-access-object.png
       :width: 80%

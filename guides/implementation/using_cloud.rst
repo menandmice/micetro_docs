@@ -1,5 +1,5 @@
 .. meta::
-   :description: How to use cloud integration in Micetro by Men&Mice
+   :description: How to use cloud integration in Micetro
    :keywords: cloud integration, cloud network
 
 .. _using-cloud:

@@ -38,6 +38,5 @@ Micetro Reference Articles
   access_control_example
   acl_console
   acl_convert
-  acl_convert
   send_license_info
   health_bar_information

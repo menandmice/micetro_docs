@@ -1,5 +1,5 @@
 .. meta::
-   :description: Installing Micetro agents for Micetro by Men&Mice
+   :description: Installing Micetro agents for Micetro
    :keywords: Micetro, server controller, DNS, DHCP, Active Directory, agents
 
 .. _install-controllers:
