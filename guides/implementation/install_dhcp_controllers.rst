@@ -160,3 +160,10 @@ Managing Cisco IOS with DHCP Support
 Micetro DHCP Agent can also manage Cisco IOS servers with DHCP support. There is no need to install any software on the Cisco device, but it is necessary to create a user account on the device that has the ability to telnet or SSH in. You will be asked for the username and password when adding the server.
 
 When adding a Cisco IOS server to Micetro Suite, the options are very similar to those shown when adding an MS DHCP server; by default, if possible, Men&Mice Central will look for a copy of the DHCP Agent on the same server as itself, but you can also specify a particular installation to use as a proxy. It is recommended to use a copy of the DHCP Agent that is on the same network segment as the Cisco IOS server.
+
+Managing Cisco Meraki 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Micetro DHCP Agent is also used to create a connection between Micetro and the Meraki dashboard, allowing Micetro to manage Meraki. 
+The DHCP agent used for a Meraki connection can be running anywhere as long as it can communicate with the Dashboard API and Micetro Central can reach it. 
+All Meraki communication uses HTTPS and the DHCP Agent must therefore be installed on a system with up-to-date CA certificates. Note that each Micetro DHCP agent can be used connect to multiple Meraki organizations/environments.
