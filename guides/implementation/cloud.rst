@@ -14,7 +14,7 @@ Supported Cloud Services
 ------------------------
 
 .. important::
-  To use cloud services that support DNS, the DNS Server Controller must be installed on the same machine as Men&Mice Central. For information about how to install DNS controllers, see :ref:`install-dns-controllers`.
+  To use cloud services, the DNS agent must be installed on the same machine as Micetro Central. For information about how to install DNS agents, see :ref:`install-dns-controllers`.
 
 .. csv-table::
   :header: "Cloud service", "DNS", "IPAM"
@@ -32,16 +32,16 @@ Setting Up Cloud Integrations
 
 Prerequisites
 ^^^^^^^^^^^^^^^
-For IP Address Management (IPAM), Micetro connects with the cloud service through Men&Mice Central, and for DNS management, the Men&Mice DNS controller is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
+For IP Address Management (IPAM), Micetro connects with the cloud service through Micetro Central, and for DNS management, the Micetro DNS agent is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
 
-1. **DNS Controller Installation and Setup**:
+1. **DNS Agent Installation and Setup**:
 
-   * Ensure that the DNS controller is installed on the machine where Men&Mice Central is running.
-   * For instructions on installing DNS controllers, see :ref:`install-controllers`.
+   * Ensure that the DNS agent is installed on the machine where Micetro Central is running.
+   * For instructions on installing DNS agents, see :ref:`install-controllers`.
 
 2. **Network Connectivity**:
 
-   * Verify that the machine running Men&Mice Central can establish a connection to the specific cloud instance.
+   * Verify that the machine running Micetro Central can establish a connection to the specific cloud instance.
    * The connection should be established on port 443/TCP. This is a specific network port used for secure communication.
    * For detailed networking requirements, see :ref:`firewall-ports`.
 
