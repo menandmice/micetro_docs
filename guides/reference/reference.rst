@@ -41,3 +41,4 @@ Micetro Reference Articles
   acl_convert
   send_license_info
   health_bar_information
+  meraki_mapping
