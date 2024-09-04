@@ -89,7 +89,9 @@ If a superscope exists on the DHCP server, you can add the new scope to it durin
 
 Adding an Existing Scope to a Superscope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can add existing scopes to superscopes by setting a superscope for them. It is also possible to transfer scopes to a different superscope on the DHCP server.   
+You can add existing scopes to superscopes or transfer to a different superscope on the DHCP server.
+
+**To add an existing scope to a superscope or move it to a different superscope**:
 
 1.	Go to the **Networks** tab and locate the scope(s) you want to add to the superscope.
 2.	Select :guilabel:`Set superscope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
