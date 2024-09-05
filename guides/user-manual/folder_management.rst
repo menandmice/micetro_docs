@@ -1,10 +1,10 @@
 .. meta::
-   :description: Folder management in Micetro by Men&Mice
+   :description: Folder management in Micetro
    :keywords: folder management, organization, Micetro
 
 .. _folder-management:
 
-Folder management
+Folder Management
 =================
 
 Folder management is an important organizational tool for objects (through :ref:`object-folders`) and saved filters (through :ref:`smart-folders`).
@@ -14,7 +14,7 @@ The list of folders is located in the 'Folders' tab of the :ref:`webapp-filterin
 .. tip::
   To switch to the 'Folders' tab, click the folder icon on the bottom of the sidebar.
 
-Folders and contexts
+Folders and Contexts
 ^^^^^^^^^^^^^^^^^^^^
 
 Folders are exclusive to their respective contexts, DNS or IPAM. Users cannot place IPAM objects in DNS folders, or vica versa.
@@ -24,7 +24,7 @@ Folders are exclusive to their respective contexts, DNS or IPAM. Users cannot pl
 
 .. _folder-access:
 
-Access to folders
+Access to Folders
 ^^^^^^^^^^^^^^^^^
 
 *Folders* are created globally: only users/groups attached to an Administrator role can create object or smart folders. Folders are visible to all users in the system.
@@ -34,7 +34,7 @@ Access to folders
 
 Folders are **not shared** across address spaces and cannot be moved from one address space to another.
 
-Creating folders
+Creating Folders
 ^^^^^^^^^^^^^^^^
 
 1. Locate the parent folder under which you want to create the new folder. (Or the root folder,  .)
@@ -49,12 +49,12 @@ Creating folders
 .. note::
     Folder names don't need to be unique.
 
-Editing folders
+Editing Folders
 ^^^^^^^^^^^^^^^
 
 You can edit a folder's name or filter query (for smart folder) by clicking :guilabel:`Edit` from its ellipsis menu.
 
-Deleting folders
+Deleting Folders
 ^^^^^^^^^^^^^^^^
 
 You can delete a folder by clicking :guilabel:`Delete` from its ellipsis menu.
@@ -62,7 +62,7 @@ You can delete a folder by clicking :guilabel:`Delete` from its ellipsis menu.
 .. warning::
     Deleting a folder will delete **ALL** subfolders.
 
-Folder types
+Folder Types
 ^^^^^^^^^^^^
 
 .. toctree::

@@ -32,7 +32,7 @@ To manage sites and subnets, you must first add the AD forest.
 
 2. From the shortcut menu, select :guilabel:`Add AD Forest`. A dialog box displays.
 
-.. image:: ../../../images/console-ad-add-forest.png
+.. image:: ../../images/console-ad-add-forest.png
   :width: 60%
   :align: center
 

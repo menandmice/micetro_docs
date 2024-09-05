@@ -7,36 +7,35 @@
 .. Rename in toc to Cisco Meraki
 
 Cisco Meraki
-=====================================
+=============
 
-This page contains an overview of how to Manage your Meraki network infrastructure with Micetro.
+Micetro seamlessly integrates with Cisco Meraki to provide centralized and customizable DDI orchestration for remote office networks. It helps synchronize and manage key IP resources and network data on the Cisco Meraki platform, such as IP ranges, addresses, VLANs, and DHCP settings. This ensures efficient mapping and management of these elements within the Micetro system.
+
+This section provides an overview of managing your Meraki network infrastructure with Micetro.
+
 
 .. tip::
-    For information about how to set up a connection between Micetro and Meraki please refer to the instructions on :ref:`how to add a cloud service to Micetro<cloud>`.
+    For information about how to set up a connection between Micetro and Meraki, see the instructions for :ref:`how to add a cloud service to Micetro<cloud>`.
 
-Viewing your Meraki infrastructure
+Viewing Your Meraki Infrastructure
 ----------------------------------
 
-When you have added your Meraki environment to Micetro your networks will be visible under the IPAM page in the web interface. 
-Micetro will pull in DHCP data from all networks with an MX Appliance. 
+When you have added your Meraki environment to Micetro, your networks will appear on the IPAM page. Micetro retrieves DHCP data from all networks that have an MX appliance. 
 
 .. image:: ../../images/meraki/ipam-grid.png
-  :width: 90%
-  :align: center
-
-Your VLANs and SingleLANs will be displayed as scope instances in the IPAM view. In the bottom of the left filtering side bar there is a component that allows filtering on a DHCP service level.
+  :width: 100%
+  
+Your VLANs and SingleLANs are displayed as scope instances in the IPAM view. In the bottom of the left filtering side bar there is a component that allows filtering on a DHCP service level.
 Each of your Meraki networks will be displayed as a DHCP service so you can use that filter to limit the IPAM view to the VLANs/SingleLans for a single network.
 
 .. image:: ../../images/meraki/ipam-grid-filtered.png
-  :width: 90%
-  :align: center 
+  :width: 100%
 
 When you double click an a scope in the IPAM view, you will be taken to the IP address view for the scope. Here you can see the state of all the IP addresses in the scope. 
 Your network clients will be visible as leases in the view. The IP address view is described in further details here (TODO link to networks.html#viewing-networks)
 
 .. image:: ../../images/meraki/range-view.png
-  :width: 90%
-  :align: center 
+  :width: 100%
 
 For further information about how Meraki data gets displayed in Micetro, please refer to :ref:`Mapping of Meraki objects to Micetro<meraki-mapping>`.
 
@@ -61,7 +60,7 @@ When a different scope instance in the scope selector, the IP address view will 
 
 
 Updating Meraki DHCP configuration through Micetro
----------------------------------------------
+--------------------------------------------------
 
 Since Micetro's connection with Meraki is bidirectional, Meraki environment configuration can also be updated through Micetro.
 Users can perform some of the most common Meraki DHCP management tasks through. This includes the management of: 
