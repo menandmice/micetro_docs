@@ -76,7 +76,7 @@ To use ``mmJSONClient`` in an interactive Python session:
    * ``username``: Username for authentication.
    * ``password``: Password for authentication.
 
-These arguments are optional, as the API assumes the Micetro Central instance is located on the same machine as the Web Services by default. The API also supports other authentication mechanisms like Basic Authentication, Windows NTLM, and Kerberos.
+These arguments are optional, as the API assumes the Micetro Central instance is located on the same machine as the Web Services by default. The API also supports other authentication mechanisms like Bearer Authentication, Windows NTLM, and Kerberos.
 
 .. code-block::
 
@@ -111,7 +111,7 @@ To use ``mmWSClient`` in a PowerShell session:
 
       > .\mmWSClient.ps1 -mmWSUri http://central-web.demo/mmws -centralServer central.demo -username a.user -password secret
 
-These arguments are optional, as the API assumes the Micetro Central instance is located on the same machine as the Web Services by default. The API also supports other authentication mechanisms like Basic Authentication, Windows NTLM, and Kerberos.
+These arguments are optional, as the API assumes the Micetro Central instance is located on the same machine as the Web Services by default. 
 
 References
 ^^^^^^^^^^
