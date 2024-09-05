@@ -7,46 +7,46 @@
 Installing the Micetro Web Interface
 ====================================
 
-Installing the Web Interface on Linux
--------------------------------------
-
-.. important::
-  Before you install the the Micetro Web Interface, make sure you have a functioning and accessible Apache Web Server running. The Web Interface will configure its virtual host.
-
-1. Extract and install the Micetro Web Interface install package (as root):
-
-.. code-block:: bash
-
-    tar -xzvf micetro-web-application-10.3.5.linux.x64.tgz
-    cd micetro-web-application-10.3.5.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
-
-   
-Where ``web-application.domain.tld`` is the domain on which the Web Application will be accessed.
-
-2. Restart the Apache web server:
-
-.. code-block:: bash
-
-  systemctl restart httpd
-
-3. In distributions based on RHEL8 with SELinux enabled, make sure Apache can connect to the web interface service:
-
-.. code-block:: bash
-
-  setsebool httpd_can_network_connect 1 -P
-
-----
-
 Installing the Web Interface on Windows
 ---------------------------------------
 
 .. note::
-  On Windows, the Micetro Web Interface requires IIS to be installed. The installer will check if all required components are available.
+  On Windows, the Micetro Web Interface requires IIS to be installed. The installer will verify the presence of all required components.
 
-Install Micetro Web Interface by double clicking the Microsoft installer file and follow the instructions there.
+Install the Micetro Web Interface by double-clicking the Microsoft installer file and following the instructions on the screen.
 
 .. warning::
-  If the Micetro Web Interface is not installed on the same server as Men&Mice Central, you need to  set the **Web app server host** value to the webserver's hostname through :menuselection:`System settings --> Advanced` in the Management Console for the auto-update feature to work for the Web Interface.
+  If the Micetro Web Interface is installed on a different server than Micetro Central, you need to configure the **Web app server host** to the hostname of the webserver. This setting can be adjusted in the Management Console unser :menuselection:`System settings --> Advanced` to ensure that the auto-update feature for the Web Interface works correctly.
+
+----
+
+Installing the Web Interface on Linux
+-------------------------------------
+
+.. important::
+  Before installing the Micetro Web Interface, make sure you have an operational Apache Web Server running. The Web Interface will configure its own virtual host.
+
+1. Extract and install the Micetro Web Interface installation package with root privileges:
+
+  .. code-block:: bash
+
+      tar -xzvf micetro-web-application-10.3.5.linux.x64.tgz
+      cd micetro-web-application-10.3.5.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
+
+    
+  Where ``web-application.domain.tld`` is the domain where the Web Application will be accessed.
+
+2. Restart the Apache web server:
+
+  .. code-block:: bash
+
+    systemctl restart httpd
+
+3. For RHEL8-based distributions with SELinux enabled, make sure Apache is permitted to connect to the Web Interface service:
+
+  .. code-block:: bash
+
+    setsebool httpd_can_network_connect 1 -P
 
 Further Configuration
 """""""""""""""""""""
