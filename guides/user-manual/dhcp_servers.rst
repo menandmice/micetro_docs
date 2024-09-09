@@ -21,8 +21,7 @@ To grant other roles access to DHCP information, make sure that they include the
 
 .. toctree::
   :maxdepth: 1
-
   
-  meraki
-  other
+  cisco_meraki
+  
  

@@ -6,9 +6,12 @@
 
 Cloud Integration
 *****************
-Micetro provides native integration with cloud-based DNS services and can manage IP address-related data for Azure and AWS, including virtual networks and subnets that exist in cloud accounts.
+Micetro provides native integration with cloud-based DNS and DHCP services, managing IP address data for Azure and AWS, including virtual networks and subnets within cloud accounts.
 
-Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  It's worth noting that, at present, cloud DNS services only support the creation of primary zones.
+Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  
+
+.. note::
+   Currently, cloud DNS services only support the creation of primary zones.
 
 Supported Cloud Services
 ------------------------
@@ -72,7 +75,7 @@ Fill in the fields required to connect to Akamai Fast DNS:
 .. image:: ../../images/add-edge-dns.png
    :width: 50%
 
-* **Obtaining Access Credentials**: For information about how to create API Access Credentials for Micetro, see https://developer.akamai.com/introduction/Prov_Creds.html
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for Micetro, see `Create EdgeGrid authentication credentials <https://developer.akamai.com/introduction/Prov_Creds.html>`_.
 
 .. warning:: 
   Akamai OPEN APIs are time sensitive! Ensure that the system your client runs on is synchronized to a Stratum 2 or better time source.
@@ -100,7 +103,7 @@ Fill in the fields required to connect to AWS:
 .. image:: ../../images/add-aws.png
    :width: 50%
 
-* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see: https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see `AWS security credentials <https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html>`_. 
 
 * For information about how to add multiple AWS cloud accounts using single credentials, see: :ref:`aws-multi-account`.
 * For information about the minimum permissions required for adding AWS accounts, see :ref:`cloud-minimum-permissions`.
@@ -116,7 +119,7 @@ Fill in the fields required to connect to NS1:
 .. image:: ../../images/add-ns1.png
    :width: 50%
 
-*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see https://ns1.com/knowledgebase/creating-and-managing-api-keys.
+*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `IBM NS1 Connect <https://ns1.com/knowledgebase/creating-and-managing-api-keys>`_.
 
 .. _connect-meraki:
 
@@ -130,7 +133,7 @@ When connecting to Meraki, the user must first fill in where the DHCP agent that
 .. image:: ../../images/add-meraki.png
    :width: 50%
 
-* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API.
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `Cisco Meraki Dashboard API <https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API>`_.
 
 Editing Cloud Services
 -----------------------
@@ -159,8 +162,8 @@ Removing Cloud Networks
 
 1. On the **IPAM** page, select the specific cloud network.
 2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`.
-|
 
+|
 **Related topics**:
 
 * :ref:`aws-multi-account`

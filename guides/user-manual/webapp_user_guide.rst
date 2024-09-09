@@ -41,7 +41,7 @@ Micetro is centered around the grid listing objects in the system, such as DNS z
 
   "Refresh list",	"Refreshes the list containing a list of zones, ranges, records, or IP addresses"
   "Column configuration",	"Specifies which columns are visible in the list"
-  "Quickfilter", "Narrows down the results shown in the list after having selected an item in the filtering sidebar. :ref:`webapp-quick-filter`"
+  "Quickfilter", "Narrows down the results shown in the list after having selected an item in the filtering sidebar. See :ref:`quickfilter`"
   "Toggle list or tree view",	"Toggles the list between list and tree view"
   "Refresh list", "Refreshes the contents of the list"
   "Add to favorites", "Adds the selected item in the list to favorites. The corresponding favorites filter in the sidebar shows all favorited items"
@@ -50,13 +50,15 @@ Micetro is centered around the grid listing objects in the system, such as DNS z
   "Filtering sidebar", "Shows a list of possible filters to use for the list. See :ref:`webapp-filtering`."
   "Quick command", "Allows for quickly finding and performing actions. See :ref:`webapp-quick-command`."
   
+.. _webapp-filtering:
+
 Filtering Sidebar
 -----------------
 The left-hand filtering sidebar acts as a selector in each context, and helps you to quickly find the zones or networks. You can select pre-defined “filters” or selectors.
 
 By default, the sidebar is open, but you can collapse it to an icon-only mode. In case where a list of clickable items is needed, the sidebar is automatically unfolded.
 
-Selecting an item in the filtering sidebar applies the filter for the main work grid. You can further narrow down results with quickfilters from the top menu. (See Quickfilter.)
+Selecting an item in the filtering sidebar applies the filter for the main work grid. You can further narrow down results with quickfilters from the top menu. (See :ref:`quickfilter`.)
 
 .. tip::
    When you select a filter in the filtering sidebar, and then select the :guilabel:`Create` operation in the grid, the type of object will be automatically selected based on the active filter.
@@ -73,6 +75,8 @@ The available folders, along with the folder hierarchy, can be viewed in the fil
 |
 Selecting an item in the list, and then selecting :guilabel:`Add to folder` on the :guilabel:`Action` menu, opens a dialog box where you can move the item from one folder to another, or remove ir from a folder.
 
+.. _webapp-inspector:
+
 The Inspector
 -------------
 The inspector, located to the right of the grid in each context, serves as an infobox for the selected objects, such as the DNS zone list. In some cases it is possible to edit the information, such as DNS zone authority, or the SOA record for each zone.
@@ -81,6 +85,7 @@ All properties for the selected object are shown in the properties section. Thes
 
 For IP addresses, where available, the vendor for the specific MAC address is also shown.
 
+.. _webapp-quick-command:
 
 Searching by Using the Quick Command
 ------------------------------------
@@ -116,6 +121,7 @@ Access quick command by clicking either the lightning icon in the upper-right co
    .. image:: ../../images/blackstar-quick-command-actions.png
      :width: 70%
 
+.. _quickfilter:
 
 Quickfilter
 -----------

@@ -1,5 +1,5 @@
 .. meta::
-   :description: Configuring a PostgreSQL High Availability cluster to use with Micetro by Men&Mice
+   :description: Configuring a PostgreSQL High Availability cluster to use with Micetro
    :keywords: high availability, database, failover, PostgreSQL, Micetro
 
 .. _psql-ha:
@@ -8,9 +8,9 @@ Setting up the PostgreSQL High Availability Environment
 =======================================================
 
 .. important::
-  Configuring high availability for the database is the responsibility of your database team. The following information illustrates a possible setup using ``pg_auto_failover`` to create a high availability database cluster.
+  Configuring high availability for the database is the responsibility of your database team. The following information ourlines a possible setup using ``pg_auto_failover`` to create a high availability database cluster.
 
-  While all possible steps were taken to verify its accuracy, Men&Mice assumes no responsibility for the setup herein.
+  While every effort has been made to ensure the accuracy of this setup, BlueCat takes no responsibility for the configuration detailed here.
 
 Install pg_auto-failover
 ------------------------
@@ -30,10 +30,10 @@ Install pg_auto-failover
   "``[monitor]``", "The monitor node's machine hostname", "postgresql-node-0"
   "``[node-1]``", "The primary node's machine hostname", "postgresql-node-1"
   "``[node-2]``", "The secondary node's machine hostname", "postgresql-node-2"
-  "``[ip-address-monitor-machine]``", "The monitor node’s machine IP address", "172.17.0.2"
+  "``[ip-address-monitor-machine]``", "The monitor node's machine IP address", "172.17.0.2"
   "``[ip-address-node-1]``", "The machine's IP address of node-1", "172.17.0.3"
   "``[ip-address-node-2]``", "The machine's IP address of node-2", "172.17.0.4"
-  "``[monitor_node_password]``", "The monitor node’s password to its database. **This password cannot contain the *@* character.**", "test123"
+  "``[monitor_node_password]``", "The monitor node's password to its database. **This password cannot contain the *@* character.**", "test123"
   "``[replication-password]``", "The password used for replication between nodes", "vg8@urenHfhk"
   "``[postgres-password]``", "The password used to access the mmsuite database", "postgres"
   "``[ip-address-of-central-primary]``", "The IP address of the *primary* machine running Central", "172.17.0.5"

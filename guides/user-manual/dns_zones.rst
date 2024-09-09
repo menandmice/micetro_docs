@@ -82,8 +82,8 @@ The SOA record contains the following data fields. To edit SOA information, clic
 Managing DNS Zones
 -------------------
 
-Opening Zones
-^^^^^^^^^^^^^^
+Viewing Zone Contents
+^^^^^^^^^^^^^^^^^^^^^^
 To view the DNS resource records for a particular zone, you can double-click the zone, or select it and then click :guilabel:`Open` on the page toolbar or the row menu :guilabel:`...`. A list of the zone's resource records is displayed. For more information about DNS resource records, see :ref:`dns-records`.
 
 Creating Zones

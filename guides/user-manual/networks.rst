@@ -7,6 +7,8 @@
 Networks
 =========
 
+.. _view-networks:
+
 Viewing Networks
 ----------------
 The **Networks** tab on the **IPAM** page provides a comprehensive overview of the IP :ref:`address space <address-spaces>` accessible to you. By default, all networks are displayed, but you can use the filtering sidebar on the left to filter by **IP ranges**, **DHCP scopes**, and **containers**. The network list displays how the IP addresses are organized into named subnets and provides important details such as how much of the address space is used and backup plans for subnet failures. You can also view details for the selected network in the inspector on the right.

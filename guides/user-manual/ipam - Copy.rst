@@ -24,4 +24,5 @@ IP Address Management (IPAM) is where you manage all aspects of your network inf
   dhcp_superscopes
   devices
   webapp_import_ipam_data
+  dhcp_servers
   

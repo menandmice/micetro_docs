@@ -208,4 +208,4 @@ The Micetro Web Interface can be installed on any server on the network running 
 Virtual Appliances (Optional)
 ------------------------------
 
-The BDDS DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the appliance has been configured, you work with the DNS and DHCP servers just as you would work with the BIND and ISC DHCP servers. See :ref:`webapp-appliance-management` for more information.
+The MDDS DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the appliance has been configured, you work with the DNS and DHCP servers just as you would work with the BIND and ISC DHCP servers. See :ref:`webapp-appliance-management` for more information.

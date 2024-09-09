@@ -1,19 +1,19 @@
 .. meta::
-   :description: Permissions reference for Micetro by Men&Mice 10.1
+   :description: Permissions reference for Micetro 
    :keywords: Micetro access model
 
 .. _permissions-reference:
 
-Permissions reference
+Permissions Reference
 ---------------------
 
 .. note::
   License management has no associated permission, and can only be accessed by :ref:`administrator`.
 
-The following tables list all the permissions in Micetro, as defined in the API and the web application.
+The following tables list all the permissions in Micetro, as defined in the API and the Web Interface.
 
 .. csv-table:: Micetro
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_adminUser``", "**Administer users/groups**", "Needed to manage Roles."
@@ -27,14 +27,14 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_DHCPModule``", "**Access DHCP module**", "Needed to access DHCP functionality in the IPAM view. License for the IPAM module also unlocks the DHCP module."
     "``access_console``", "**Access to the Management Console**", ""
     "``access_commandLine``", "**Access to the CLI**", "Legacy permission, the CLI (Command Line Interface) is no longer in use."
-    "``access_web``", "**Access to the web interface**", "Needed to access the web application."
-    "``access_basicZoneView``", "**Access to basic zone view in web interface**", "Legacy permission, not available in the web application."
-    "``access_advancedZoneView``", "**Access to advanced zone view in web interface**", "Needed to access DNS functionality in the web application."
-    "``access_IPAMView``", "**Access to IPAM view in web interface**", "Needed to access IPAM functionality in the web application."
+    "``access_web``", "**Access to the web interface**", "Needed to access the Web Interface."
+    "``access_basicZoneView``", "**Access to basic zone view in web interface**", "Legacy permission, not available in the Web Interface."
+    "``access_advancedZoneView``", "**Access to advanced zone view in web interface**", "Needed to access DNS functionality in the Web Interface."
+    "``access_IPAMView``", "**Access to IPAM view in web interface**", "Needed to access IPAM functionality in the Web Interface."
     "``access_basicReporting``", "**Access to basic reporting**", "Manually run built-in reports."
-    "``access_tasksView``", "**Access to task list view in web interface**", "Legacy permission, not available in the web application."
+    "``access_tasksView``", "**Access to task list view in web interface**", "Legacy permission, not available in the Web Interface."
     "``access_viewHistory``", "**Access to view history**", ""
-    "``access_webHostEditor``", "**Access to Host editor**", "Legacy permission, not available in the web application."
+    "``access_webHostEditor``", "**Access to Host editor**", "Legacy permission, not available in the Web Interface."
     "``access_adminADSites``", "**Access to manage AD Sites and Site Links**", ""
     "``access_adminClouds``", "**Access to manage clouds**", ""
     "``access_workflowModule``", "**Access Workflow module**", ""
@@ -42,7 +42,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_importDataCustom``", "**Access to 'Import Data' web task**", ""
 
 .. csv-table:: DNS servers
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit DNS server access**", ""
@@ -57,7 +57,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_manageLocalZones``", "**Manage local zones**", ""
 
 .. csv-table:: DHCP servers
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit DHCP server access**", ""
@@ -73,7 +73,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_classData``", "**Read/write DHCP class data**", ""
 
 .. csv-table:: DNS zones
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit zone access**", ""
@@ -91,7 +91,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_editProperties``", "**Edit zone properties**", ""
 
 .. csv-table:: Ranges and DHCP scopes
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit range access**", ""
@@ -115,7 +115,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_addGroup``", "**Add a group**", "Legacy permission for DHCP groups."
 
 .. csv-table:: DHCP groups (legacy only)
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit DHCP group access**", ""
@@ -127,7 +127,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_delete``", "**Delete DHCP group**", ""
 
 .. csv-table:: Address spaces
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit address space access**", ""
@@ -136,7 +136,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
 
 
 .. csv-table:: Cloud networks
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit cloud network access**", ""
@@ -146,7 +146,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
     "``access_delete``", "**Delete cloud network**", ""
 
 .. csv-table:: Cloud services
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
 
     "``access_editAccess``", "**Edit cloud access**", ""
@@ -157,7 +157,7 @@ The following tables list all the permissions in Micetro, as defined in the API 
 
 ..
     .. csv-table:: Server groups
-    :header: "API", "Web application", "Notes"
+    :header: "API", "Web Interface", "Notes"
     :widths: 15, 25, 60
     "``access_editAccess``", "**Edit server group access**", ""
     "``access_list``", "**List (or view) server group**", ""

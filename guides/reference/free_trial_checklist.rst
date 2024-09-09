@@ -4,8 +4,8 @@
 
 .. _free_trial_checklist:
 
-Free Trial Best Checklist
---------------------------
+Free Trial Checklist
+---------------------
 Copy this or print it out to make sure you're getting the most out of your Micetro Free Trial.
 
 [ ] Enter IPAM data either via import, discovery, or through manual entry. For help see video here: https://www.youtube.com/watch?v=RVRDdaOfq5U&t=77s

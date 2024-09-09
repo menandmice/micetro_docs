@@ -65,7 +65,7 @@ Each superscope is associated with a specific DHCP server and is implemented on 
    
   * Use the quick filter search box to find and select the desired scopes.
 
-5. 5.	Review your entries in the :guilabel:`Summary`. Click :guilabel:`Add` to complete the creation of the superscope.
+5. Review your entries in the :guilabel:`Summary`. Click :guilabel:`Add` to complete the creation of the superscope.
 
 .. note::
   If a superscope is created without any scopes assigned, it will not be activated on the server until at least one scope is added. Therefore, DHCP options cannot be configured for the superscope until it contains at least one scope.
@@ -97,7 +97,7 @@ You can add existing scopes to superscopes or transfer to a different superscope
 2.	Select :guilabel:`Set superscope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 3.	Select the desired superscope.
 
-    .. image:: ../../images/superscopes-assign.png
+    .. image:: ../../images/superscopes-set.png
       :width: 70%
  
     * The list shows the superscopes that are on the same server as the scope.
@@ -111,6 +111,7 @@ Removing Scopes from Superscopes
 You can remove one or more scopes from a superscope to reorganize the scopes on the server. This action does not delete or disable the scope, and it can be added to a different superscope on the server if required.
 
 **To remove a scope from a superscope**:
+
 Do one of the following:
 
 * On the **DHCP Superscopes** tab, select the superscope containing the scope you want to remove. In the inspector panel, find the relevant scope and select :guilabel:`Remove from superscope` on the scope's action :guilabel:`...` menu.
@@ -122,7 +123,7 @@ Do one of the following:
 
 * On the **Networks** tab, locate the scope you want to remove. You can use the **Superscopes** filters in the filtering sidebar to find it. Click :guilabel:`Set superscope` on the :guilabel:`Action` or the Row :guilabel:`...` menu. Delete the scope from the **Superscope** field.
 
-  .. image:: ../../images/superscopes-assign-remove.png
+  .. image:: ../../images/superscopes-set-remove.png
      :width: 65%
       
 
