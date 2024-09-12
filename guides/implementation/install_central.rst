@@ -12,7 +12,37 @@ Micetro Central is the central authentication server. It also serves as the meta
 .. _central-non-standard-install:
 
 .. important::
-  The installer was designed to be quick and straightforward. Pay attention to the steps, if you'd like to customize your installation. (Such as installing Central to a different path.)
+  The installation process is designed to be fast and simple. If you want to customize your setup, such as changing the installation path for Central, be sure to follow the steps carefully.
+
+.. _install-central-windows:
+
+Micetro Central on Windows
+---------------------------
+
+Run the downloaded binary and follow the instructions on-screen.
+
+.. note::
+  Installing Micetro Central does not require special privileges. The service will be started automatically after installation.
+
+.. image:: ../../images/install-windows-service.png
+  :width: 60%
+  :align: center
+|
+.. note:: Running Micetro Central under a privileged user account
+  Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
+
+  When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
+
+  The service account running Central needs to be added to the DNS Admins and/or DHCP Admins group to manage data.
+
+.. important::
+  The installer creates the data directories for Micetro Central at the default location ``C:\\Program Files\\Men and Mice\\Central`` even if the installation target is on a different drive or path. See :ref:`config-files-windows`.
+
+Micetro Central configuration files on Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See :ref:`config-windows`.
+
 
 .. _install-central-linux:
 
@@ -63,32 +93,3 @@ Micetro Central configuration files on Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See :ref:`config-linux`.
-
-.. _install-central-windows:
-
-Micetro Central on Windows
----------------------------
-
-Run the downloaded binary and follow the instructions on-screen.
-
-.. note::
-  Installing Micetro Central does not require special privileges. The service will be started automatically after installation.
-
-.. image:: ../../images/install-windows-service.png
-  :width: 60%
-  :align: center
-|
-.. note:: Running Micetro Central under a privileged user account
-  Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
-
-  When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise it will not be able to utilize the ping functionality.
-
-  The service account running Central needs to be added to the DNS Admins and/or DHCP Admins group to manage data.
-
-.. important::
-  The installer creates the data directories for Micetro Central at the default location (C:\\Program Files\\Men and Mice\\Central) even if the installation target is on a different drive or path. See :ref:`config-files-windows`.
-
-Micetro Central configuration files on Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-See :ref:`config-windows`.

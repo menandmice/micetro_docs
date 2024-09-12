@@ -17,7 +17,7 @@ Supported Cloud Services
 ------------------------
 
 .. important::
-  To use cloud services, the DNS agent must be installed on the same machine as Micetro Central. For information about how to install DNS agents, see :ref:`install-dns-controllers`.
+  To use cloud services, the DNS and DHCP agents must be installed on the same machine as Micetro Central. For information about how to install DNS agents, see :ref:`install-dns-controllers`.
 
 .. csv-table::
   :header: "Cloud service", "DNS", "IPAM"
@@ -35,17 +35,17 @@ Setting Up Cloud Integrations
 
 Prerequisites
 ^^^^^^^^^^^^^^^
-For IP Address Management (IPAM), Micetro connects with the cloud service through Micetro Central, and for DNS management, the Micetro DNS agent is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
+For IP Address Management (IPAM), Micetro connects with the cloud service through Micetro Central. DNS management requires the Micetro DNS agent, and DHCP management requires the Micetro DHCP agent. Before proceeding with any actions involving Micetro and cloud services, two critical requirements must be met:
 
-1. **DNS Agent Installation and Setup**:
+1. **DNS/DHCP Agent Installation and Setup**:
 
-   * Ensure that the DNS agent is installed on the machine where Micetro Central is running.
-   * For instructions on installing DNS agents, see :ref:`install-controllers`.
+   * Ensure that the Micetro agent is installed on the machine where Micetro Central is running.
+   * For instructions on installing Micetro agents, see :ref:`install-controllers`.
 
 2. **Network Connectivity**:
 
-   * Verify that the machine running Micetro Central can establish a connection to the specific cloud instance.
-   * The connection should be established on port 443/TCP. This is a specific network port used for secure communication.
+   * Ensure that the machine hosting Micetro Central can connect to the designated cloud instance.
+   * The connection must be made through port 443/TCP, which is reserved for secure communication.
    * For detailed networking requirements, see :ref:`firewall-ports`.
 
 
@@ -54,7 +54,7 @@ If you intend to add multiple AWS cloud accounts using a single set of credentia
 Adding Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^
 
-You must have permission to administer DNS to add a new service to Micetro.
+You must have permission to administer DNS or DHCP to add a new service to Micetro.
 
 **To add a cloud service**:
 
@@ -65,7 +65,7 @@ You must have permission to administer DNS to add a new service to Micetro.
    .. image:: ../../images/add-servive-dialog.png
      :width: 50%
 
-4. The DNS service and any subnets defined will be displayed under DNS Services and IP Ranges, respectively.
+4. The service and any subnets defined will be displayed under DNS Services or DHCPS Service and IP Ranges, respectively.
 
 Akamai Fast DNS
 """"""""""""""""
@@ -78,7 +78,7 @@ Fill in the fields required to connect to Akamai Fast DNS:
 * **Obtaining Access Credentials**: For information about how to create API Access Credentials for Micetro, see `Create EdgeGrid authentication credentials <https://developer.akamai.com/introduction/Prov_Creds.html>`_.
 
 .. warning:: 
-  Akamai OPEN APIs are time sensitive! Ensure that the system your client runs on is synchronized to a Stratum 2 or better time source.
+  Akamai OPEN APIs are time sensitive! It is crucial to synchronize the system your client operates on with a Stratum 2 or higher time source.
 
 .. danger::
   If the time on the server running the DNS Remote differs significantly from Coordinated Universal Time, authentication will fail preventing access/updating of zones through Micetro.
@@ -125,10 +125,9 @@ Fill in the fields required to connect to NS1:
 
 Cisco Meraki
 """"""""""""
-A prerequisite for managing Meraki with Micetro is that the user needs to have a running instance of the Micetro DHCP Agent somewhere. 
-For more information about the DHCP Agent, see :ref:`install-dhcp-controllers`. The user that is adding Meraki must also be a DHCP administrator.
+To manage Meraki with Micetro, it is required to have an operational instance of the Micetro DHCP Agent. For additional details about the DHCP Agent, see :ref:`install-dhcp-controllers`. Moreover, the user responsible for adding Meraki should have DHCP administrator privileges.
 
-When connecting to Meraki, the user must first fill in where the DHCP agent that should be used is running. Then the user must give Micetro a display name for the Service along with the API key used to connect to Meraki. 
+When connecting to Meraki, you need to sepcify the location of the running DHCP. Next you must provide Micetro with a display name for the service and the API key to connect to Meraki. 
 
 .. image:: ../../images/add-meraki.png
    :width: 50%

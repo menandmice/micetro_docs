@@ -12,6 +12,24 @@ Configuring Logging for the Micetro Agents
 DNS Agent
 ----------
 
+Windows
+^^^^^^^
+
+1. After installing the DNS agent, *create* the logging directory (``C:\ProgramData\Men and Mice\DNS Server Controller\logs`` or specify your own).
+
+2. Edit the ``C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg`` file and add/edit the following:
+
+.. code-block::
+
+  <LogFileName value="C:\ProgramData\Men and Mice\DNS Server Controller\logs\mmDnslog.txt" />
+  <LogDestination value="3"/>
+  <LogLevel value="5" />
+
+(Amend the directory path as needed.)
+
+Restart the DNS agent.
+
+
 Linux
 ^^^^^
 
@@ -35,29 +53,29 @@ Restart the DNS agent:
 
 .. code-block:: bash
 
-  systemctl restart mmremote
-
-Windows
-^^^^^^^
-
-1. After installing the DNS agent, *create* the logging directory (``C:\ProgramData\Men and Mice\DNS Server Controller\logs`` or specify your own).
-
-2. Edit the ``C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg`` file and add/edit the following:
-
-.. code-block::
-
-  <LogFileName value="C:\ProgramData\Men and Mice\DNS Server Controller\logs\mmDnslog.txt" />
-  <LogDestination value="3"/>
-  <LogLevel value="5" />
-
-(Amend the directory path as needed.)
-
-Restart the DNS agent.
+  systemctl restart mmremoteDHCP Agent
 
 .. _dhcp-controller-loglevel:
 
 DHCP Agent
 ----------
+
+Windows
+^^^^^^^
+
+1. After installing the DHCP agent, *create* the logging directory (``C:\ProgramData\Men and Mice\DHCP Server Controller\logs`` or specify your own).
+
+2. Edit the ``C:\ProgramData\Men and Mice\DHCP Server Controller\preferences.cfg`` file and add/edit the following:
+
+.. code-block::
+
+  <LogFileName value="C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log" />
+  <LogDestination value="3"/>
+  <LogLevel value="5" />
+
+(Amend the directory path as needed.)
+
+Restart the DHCP agent.
 
 Linux
 ^^^^^
@@ -83,20 +101,3 @@ Restart the DHCP agent:
 .. code-block:: bash
 
   systemctl restart mmremote
-
-Windows
-^^^^^^^
-
-1. After installing the DHCP agent, *create* the logging directory (``C:\ProgramData\Men and Mice\DHCP Server Controller\logs`` or specify your own).
-
-2. Edit the ``C:\ProgramData\Men and Mice\DHCP Server Controller\preferences.cfg`` file and add/edit the following:
-
-.. code-block::
-
-  <LogFileName value="C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log" />
-  <LogDestination value="3"/>
-  <LogLevel value="5" />
-
-(Amend the directory path as needed.)
-
-Restart the DHCP agent.

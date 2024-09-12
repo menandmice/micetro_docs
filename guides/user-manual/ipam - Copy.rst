@@ -23,6 +23,7 @@ IP Address Management (IPAM) is where you manage all aspects of your network inf
   active_directory
   dhcp_superscopes
   devices
+  cisco_meraki
   webapp_import_ipam_data
   dhcp_servers
   
