@@ -165,11 +165,11 @@ Viewing the Report Results
 Viewing the List of Reports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To view a list of all reports that have been generated for a particular reporting definition, double click the reporting definition in the list.
+To view a list of all reports that have been generated for a particular reporting definition, double-click the reporting definition in the list.
 
 This lists all reports along with how much data is in the report (row count), and how long it took to generate the report (duration).
 
-Double clicking on a report in this list allows you to preview a report.
+Double-clicking on a report in this list allows you to preview a report.
 
 Previewing and Downloading a Report
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -465,7 +465,7 @@ Improvements
 
 * The build date of the Web Application can now be seen when hovering over the version number on the login page.
 
-* xDNS profile grid has been updated to look more like other grids in the system. xDNS Profiles can now be opened by double clicking the relevant row.
+* xDNS profile grid has been updated to look more like other grids in the system. xDNS Profiles can now be opened by double-clicking the relevant row.
 
 * ISC-built packages of BIND are now supported by the Micetro installer.
 

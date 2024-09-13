@@ -85,7 +85,7 @@ DNS/DHCP Server Software
 Other
 -----
 
-Micetro Web Application
+Micetro Web Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft IIS [4]_
@@ -109,7 +109,7 @@ Supported Cloud Services
 
 .. [6] Micetro can be installed directly from the Azure Marketplace. See :ref:`installation-azure`.
 
-Supported Browsers (Web Application)
+Supported Browsers (Web Interface)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft Edge

@@ -52,7 +52,7 @@ Table of Contents
 
      guides/user-manual/webapp_user_guide
      guides/user-manual/dns
-     guides/user-manual/ipam - Copy
+     guides/user-manual/ipam
      guides/user-manual/webapp_reporting
      guides/user-manual/webapp_workflows
      guides/user-manual/folder_management     

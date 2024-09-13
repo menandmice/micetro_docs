@@ -7,7 +7,7 @@
 Update Guide
 ============
 .. note::
-   These instructions apply to the Micetro web application. For information about update management in the M&M Management Console, see :ref:`console-updates`.
+   These instructions apply to the Micetro Web Interface. For information about update management in the M&M Management Console, see :ref:`console-updates`.
 
 **Permissions:**
 
@@ -16,9 +16,9 @@ Update Guide
 
 Micetro Version
 ---------------
-Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Micetro Central and the Micetro Server Controllers. 
+Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Micetro Central and the Micetro agents. 
 
-* Minor versions often only contain an update for a single component, such as the Micetro web application.
+* Minor versions often only contain an update for a single component, such as the Micetro Web Interface.
 
 * Major version upgrades normally contain an update for every component.
 

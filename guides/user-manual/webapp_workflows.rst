@@ -161,7 +161,7 @@ Pending requests are indicated in the top menu.
 |
 Selecting :guilabel:`Workflow` in the top menu displays the Workflow page with an overview of all requests that the user has access to view.
 
-Double clicking a pending request opens up the approval dialog box:
+Double-clicking a pending request opens up the approval dialog box:
 
 .. image:: ../../images/workflows-approve.png
   :width: 90%

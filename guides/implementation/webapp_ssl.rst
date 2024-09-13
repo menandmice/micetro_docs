@@ -1,10 +1,10 @@
 .. meta::
-   :description: Configuring SSL for the Micetro Web Application
+   :description: Configuring SSL for the Micetro Web Interface
    :keywords: Apache, Microsoft IIS, SSL, Micetro 
 
 .. _webapp-ssl:
 
-Setting Up SSL for the Web Application
+Setting Up SSL for the Web Interface
 ======================================
 
 SSL on Windows (IIS)
@@ -76,7 +76,7 @@ If there's already an *HTTP to HTTPS redirect* rule at the top of the list, no f
 SSL on Linux (Apache)
 ---------------------
 
-By default, the Web Application uses an unencrypted http connection on port 80. To use it with https on port 443, follow these steps.
+By default, the Web Interface uses an unencrypted http connection on port 80. To use it with https on port 443, follow these steps.
 
 1. Ensure that mod_ssl for Apache is installed:
 
@@ -132,4 +132,4 @@ By default, the Web Application uses an unencrypted http connection on port 80. 
   The default Apache installation may already have a ``<VirtualHost _default_:443>`` directive, which may conflict with the ``mmweb.conf`` file.
   Comment out this existing VirtualHost block to avoid errors.
 
-To verify the Web Application is accessible, navigate to ``https://web-application.domain.tld``. The Micetro Web Interface login should be displayed.
+To verify the Web Interface is accessible, navigate to ``https://web-application.domain.tld``. The Micetro Web Interface login should be displayed.

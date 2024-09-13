@@ -97,7 +97,7 @@ Creating Zones
 
    .. image:: ../../images/dns-zone-create.png
       :width: 65%
-      
+   
 3. Follow the steps of the wizard. The number of steps will vary based on the zone type and the configuration of Micetro.
 
 .. tip::
@@ -107,8 +107,15 @@ Primary Zone
 """""""""""""
 1. Use the server filter to select the DNS server where the zone should be created. If xDNS profiles have been created on the instance, the zone can be added directly to an xDNS profile in the first step of the wizard.
 
-   .. image:: ../../images/zone-flow-filter-all.png
+   .. image:: ../../images/zone-primary-windows.png
       :width: 65%
+
+   * When creating a DNS zone on a Windows Server, you'll encounter two checkboxes: 
+
+      * **AD Integrated**: Selecting this option will create an Active Directory-integrated zone, which stores the zone data in Active Directory and benefits from AD's replication and security features.
+      * **Dynamic Update**: Selecting this box enables dynamic updates, allowing DNS records to be automatically updated by authorized devices.
+
+     If neither checkbox is selected, the DNS zone will be a standard static zone.
 
 2. Optional. You can select server(s) to host an identical copy of the zone. The zone files from the primary DNS are synced to the secondary DNS through a zone transfer.
 
@@ -141,7 +148,6 @@ When creating a secondary zone, you need to specify the zone name and either the
 Stub Zone
 """""""""""
 When creating a stub zone, you must provide the zone name and one or more primary servers for the zone being copied. You can use the toggle control above the text box to turn the address resolution on and off.
-
 
 Static-stub Zone
 """"""""""""""""
@@ -237,9 +243,9 @@ Windows Zone Options
 .. image:: ../../images/zone-options-windows.png
    :width: 65%
 
-* **Dynamic zone** (primary): Specifies whether the zone accepts dynamic updates. If not selected, any changes to the DNS records within that zone will need to be made manually.
+* **Dynamic zone** (primary): Specifies whether the zone accepts dynamic updates. If selected, clients can use dynamic DNS updates to update their resource records.
 * **Allow insecure updates** (Active Directory): Enable or disable insecure updates for the zone. When enabled, any client can update DNS records without authentication, potentially introducing security risks.
-* **Update notifications** (primary, secondary, Acitvie Directory): Specifies which servers should be nortified when changes are made to the zone's DNS records.
+* **Update notifications** (primary, secondary, Active Directory): Specifies which servers should be notified when changes are made to the zone's DNS records.
 * **Zone transfers** (primary, secondary, Active Directory): Controls which servers are allowed to receive zone transfers.
 * **Forward servers** (forward): Specify the servers to which queries should be forwarded.
 * **Primary servers** (stub): Specify the primary servers for the stub zone.

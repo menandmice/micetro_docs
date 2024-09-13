@@ -564,9 +564,9 @@ To delete a lease in a DHCP scope, do the following:
 IP Address Details
 ^^^^^^^^^^^^^^^^^^
 
-The IP Address details window contains all information pertaining to an IP Address in the application, including DNS records, DHCP reservations, and custom properties. To access the *IP Address details* window from the DHCP scope dialog you need to double click on an IP Address in the DHCP scope dialog, or right-click on an IP Address and select the Open menu item.
+The IP Address details window contains all information pertaining to an IP Address in the application, including DNS records, DHCP reservations, and custom properties. To access the *IP Address details* window from the DHCP scope dialog you need to double-click on an IP Address in the DHCP scope dialog, or right-click on an IP Address and select the Open menu item.
 
-The IP Address details window is documented in :ref:`ip-address-dialog`. However, when the IP Address details window is opened from the DHCP scope dialog, information on any DHCP reservation associated with the IP Address displays as well. A reservation can be created by clicking the Create button on the DHCP Panel. You can also create and edit a reservation directly from the DHCP scope dialog by selecting the appropriate menu item when right-clicking on an IP Address. The IP Address dialog box is not available if only a DHCP license key has been entered. In this case, the reservation dialog box will be displayed when double clicking an entry in the DHCP scope.
+The IP Address details window is documented in :ref:`ip-address-dialog`. However, when the IP Address details window is opened from the DHCP scope dialog, information on any DHCP reservation associated with the IP Address displays as well. A reservation can be created by clicking the Create button on the DHCP Panel. You can also create and edit a reservation directly from the DHCP scope dialog by selecting the appropriate menu item when right-clicking on an IP Address. The IP Address dialog box is not available if only a DHCP license key has been entered. In this case, the reservation dialog box will be displayed when double-clicking an entry in the DHCP scope.
 
 Subranges of Scopes
 ^^^^^^^^^^^^^^^^^^^
