@@ -33,6 +33,7 @@ Improvements
 
 Bug Fixes
 ^^^^^^^^^
+* Added support for Bearer session token authorization in the API, and changed the REST API documentation to default to that instead of Basic Auth. Added micetro/sessions HTTP POST endpoint in REST API to create a session token for this purpose.
 * Information about file paths have been removed from error messages for security reasons
 * Multiple accessibility improvements have been done e.g. auto-closing sidebars when a certain zoom level has been reached
 * Session tokens have been removed from URL's due to security reasons
@@ -48,6 +49,11 @@ Deprecation Announcements
 * Unbound support has been deprecated. This support was added originally because Unbound was used in the Men & Mice caching appliances but those were deprecated as part of introducing MDDS support in version 11.0.0 (which does not use Unbound). Additionally, the Unbound version that was currently supported was heavily outdated and because of limited use of Unbound by customers it was decided to deprecate this support
 * Support for Kea version 2.2 as a service that Micetro can overlay is deprecated due to reaching end-of-life status and no longer being supported by ISC. See the roadmap for ISC Kea `here <https://kb.isc.org/docs/aa-00896>`_.
 * Support for Microsoft SQL Server 2014 is deprecated as this databases reached end of support on July 9, 2024. For more information on Microsoft SQL Server roadmap, see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
+
+Breaking changes
+^^^^^^^^^^^^^^^^^^^^^^^^^
+ * By default, it's no longer possible to login to other Central servers than the default Central server through the Web Interface or the API. When Web Interface and Central are on the same server, the server field is no longer shown when logging in.
+ * Default character encoding on API requests has now been changed to UTF-8 from Latin1 if no charset is defined in the `Content-Type` HTTP header 
 
 .. _11.0.3-release:
 
