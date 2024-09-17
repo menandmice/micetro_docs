@@ -27,7 +27,6 @@ Bug Fixes
 * Fixed an issue where unintended user input in the filter field caused Central to stop.
 * Resolved a problem where a field name in filters would be matched to a column even if it was only a partial match.
 * Fixed a regression that allowed users to modify the names and descriptions of built-in groups.
-* Enabled scope conversion in the eBay-specific version of the Micetro Web Interface.
 * Fixed the import of TXT records that contain semicolons.
 * The ``AddDHCPReservation`` function no longer supports referencing reservations by name for Kea.
 * Change requests can now reference reservations by address, in addition to name. For ISC reservations with multiple addresses, the system will now verify if any of the addresses match.
