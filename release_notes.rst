@@ -42,13 +42,15 @@ Bug Fixes
 Deprecation Announcements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* CentOS cannot be used to host Micetro anymore as this operating system was deprecated by Red Hat on 30 June 2024, see more information `here <https://www.redhat.com/en/topics/linux/centos-linux-eol>`_.
+* CentOS is no longer supported by Micetro as this operating system was deprecated by Red Hat on 30 June 2024, see more information `here <https://www.redhat.com/en/topics/linux/centos-linux-eol>`_.
 * RHEL 6 support has now been deprecated in Micetro because it was out of maintenance support by Red Hat on 30 November 2020 according to the `Red Hat Enterprise Linux support lifecycle page <https://access.redhat.com/support/policy/updates/errata/>`_. The same applies to RHEL 7 which was out of maintenance support on 30 June 2024.
 * Suse Enterprise Linux 11 has been deprecated in Micetro as this operating system is not supported by the vendor as of 31st of March 2019, see more information `here <https://www.suse.com/lifecycle>`_.
-* Ubuntu 16.04 was out of standard support in April 2021 so as a result then support for it has been deprecated in Micetro. Ubuntu 18.04 was also out of support in April 2023 so that support has been deprecated as well.
-* Unbound support has been deprecated. This support was added originally because Unbound was used in the Men & Mice caching appliances but those were deprecated as part of introducing MDDS support in version 11.0.0 (which does not use Unbound). Additionally, the Unbound version that was currently supported was heavily outdated and because of limited use of Unbound by customers it was decided to deprecate this support
+* Unbound support has been deprecated. This support was added originally because Unbound was used in the Men & Mice caching appliances but those were deprecated as part of introducing MDDS support in version 11.0 (which does not use Unbound) so it is not necessary to support Unbound anymore in Micetro.
 * Support for Kea version 2.2 as a service that Micetro can overlay is deprecated due to reaching end-of-life status and no longer being supported by ISC. See the roadmap for ISC Kea `here <https://kb.isc.org/docs/aa-00896>`_.
 * Support for Microsoft SQL Server 2014 is deprecated as this databases reached end of support on July 9, 2024. For more information on Microsoft SQL Server roadmap, see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
+
+.. note::
+  When a feature is deprecated that means this will be the last version where a feature is officially supported. A feature might continue to work in future versions as long as the code is present within Micetro but there are no guarantees for that as the code is not officially maintained.
 
 Breaking changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
