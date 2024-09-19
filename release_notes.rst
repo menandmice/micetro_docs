@@ -11,7 +11,7 @@ Release Notes
   Major releases are supported for 2 years.
 
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.1.0-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`
 
 .. _11.1.0-release:
 
@@ -56,6 +56,24 @@ Breaking changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
  * By default, it's no longer possible to login to other Central servers than the default Central server through the Web Interface or the API. When Web Interface and Central are on the same server, the server field is no longer shown when logging in.
  * Default character encoding on API requests has now been changed to UTF-8 from Latin1 if no charset is defined in the `Content-Type` HTTP header 
+
+.. _11.0.4-release:
+
+11.0.4
+------
+September 16, 2024
+
+Bug Fixes
+^^^^^^^^^
+* Resolved a problem that prevented users from logging into the Micetro Web Interface following an upgrade to a new license key version when the default home page was configured to the DNS or IPAM view.
+* Fixed an issue where the DNS server list (DHCP option 6 on MS DHCP) in the Micetro Web Interface was previously sorting by IP address instead of the user-defined order. The order of DNS servers in DHCP option 6 is now preserved in the Web Interface.
+* Resolved an issue where field validation failed during DHCP scope conversion:
+* Fixed an issue where unintended user input in the filter field caused Central to stop.
+* Resolved a problem where a field name in filters would be matched to a column even if it was only a partial match.
+* Fixed a regression that allowed users to modify the names and descriptions of built-in groups.
+* Fixed the import of TXT records that contain semicolons.
+* The ``AddDHCPReservation`` function no longer supports referencing reservations by name for Kea.
+* Change requests can now reference reservations by address, in addition to name. For ISC reservations with multiple addresses, the system will now verify if any of the addresses match.
 
 .. _11.0.3-release:
 
