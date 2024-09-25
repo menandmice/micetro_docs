@@ -22,18 +22,26 @@ September 30, 2024
 New Features
 ^^^^^^^^^^^^
 
-* **Cisco Meraki**: Micetro now supports managing DHCP in Cisco Meraki
-* **Microsoft Superscopes**: Micetro now enables the management of Superscopes in Microsoft servers
-* **Kea and ISC DHCP shared networks**: Micetro now supports management of shared networks in both Kea and ISC DHCP
-* **UTF-8**: Micetro now has full UTF-8 support, which means that any character can be used within the Micetro solution. For customers that are using Microsoft SQL Server and Postgres database then the collation needs to be able to store those characters, this does not apply to SQLite which does not use collations
+* **Cisco Meraki**: Micetro now supports orchestration of DHCP on Cisco Meraki devices, see more information `here <https://docs.menandmice.com/guides/user-manual/cisco_meraki.html>`_
+* **Kea shared networks**: Micetro now supports management of shared networks on ISC Kea
+* **ISC DHCP shared networks**: Shared networks on ISC DHCP can now be managed via Micetro in the Web Application
+* **Microsoft Superscopes**: Superscopes can now be managed via Micetro in the Web Application
+* **Devices and interfaces**: Rudamentary asset management is now possible in the Web Application via Devices and Interfaces
+* **Universal Character Sets**: Micetro is now fully UTF-8 capable for data entry, which means that any character can be used within the Micetro solution, where appropriate 
+.. note::
+   For deployments with a dedicated database backend, i.e. Microsoft SQL Server and PostgreSQL, the correct collation needs to be chosen to ensure correct behaviour with non-ASCII characters
 
 Improvements
 ^^^^^^^^^^^^
-* **Devices and interfaces**: Micetro can manage devices and interfaces, this feature was already present in the Windows management console but has now been added to the web UI as well
+
+* When updating Micetro a automatic backup is taken of the embedded database
+.. note::
+   For deployments with a dedicated database backend, i.e. Microsoft SQL Server or PostgreSQL, database backups must be taken manually
+* A link to the REST API documentation has been added to the welcome page of Micetro
 
 Bug Fixes
 ^^^^^^^^^
-* Added support for Bearer session token authorization in the API, and changed the REST API documentation to default to that instead of Basic Auth. Added micetro/sessions HTTP POST endpoint in REST API to create a session token for this purpose.
+* Added support for Bearer session token authorization in the API, and changed the REST API documentation to default to that instead of Basic Auth. Added micetro/sessions HTTP POST endpoint in REST API to create a session token for this purpose
 * Information about file paths have been removed from error messages for security reasons
 * Multiple accessibility improvements have been done e.g. auto-closing sidebars when a certain zoom level has been reached
 * Session tokens have been removed from URL's due to security reasons
@@ -42,15 +50,15 @@ Bug Fixes
 Deprecation Announcements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+  When a feature is deprecated that means this will be the last version where a feature is officially supported. A feature might continue to work in future versions as long as the code is present within Micetro but there are no guarantees for that as the code is not officially maintained.
+
 * CentOS is no longer supported by Micetro as this operating system was deprecated by Red Hat on 30 June 2024, see more information `here <https://www.redhat.com/en/topics/linux/centos-linux-eol>`_.
 * RHEL 6 support has now been deprecated in Micetro because it was out of maintenance support by Red Hat on 30 November 2020 according to the `Red Hat Enterprise Linux support lifecycle page <https://access.redhat.com/support/policy/updates/errata/>`_. The same applies to RHEL 7 which was out of maintenance support on 30 June 2024.
 * Suse Enterprise Linux 11 has been deprecated in Micetro as this operating system is not supported by the vendor as of 31st of March 2019, see more information `here <https://www.suse.com/lifecycle>`_.
 * Unbound support has been deprecated. This support was added originally because Unbound was used in the Men & Mice caching appliances but those were deprecated as part of introducing MDDS support in version 11.0 (which does not use Unbound) so it is not necessary to support Unbound anymore in Micetro.
 * Support for Kea version 2.2 as a service that Micetro can overlay is deprecated due to reaching end-of-life status and no longer being supported by ISC. See the roadmap for ISC Kea `here <https://kb.isc.org/docs/aa-00896>`_.
 * Support for Microsoft SQL Server 2014 is deprecated as this databases reached end of support on July 9, 2024. For more information on Microsoft SQL Server roadmap, see `here <https://learn.microsoft.com/en-us/lifecycle/products>`_.
-
-.. note::
-  When a feature is deprecated that means this will be the last version where a feature is officially supported. A feature might continue to work in future versions as long as the code is present within Micetro but there are no guarantees for that as the code is not officially maintained.
 
 Breaking changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
