@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro 11.0.x versions
+   :description: Release notes for Micetro 11.x versions
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
@@ -34,18 +34,56 @@ New Features
 Improvements
 ^^^^^^^^^^^^
 
+* A link to the REST API documentation has been added to the welcome page of Micetro
+* Accessibility in the Web UI improved for lowest screen resolution by making dialogs take the whole screen when opened
+* Action buttons names changed: Failover Management -> Manage Failover and Access -> Manage Access
+* Added checks to the API to ensure that the TXT record is valid (i.e. it doesn't contain new lines), if they are not valid then an exception is thrown
+* Added flag --skip-arrange to the installer for the agents. Since 11.0 the DNS agent for BIND does not need to arrange the configuration files. By using this flag when installing the original configuration files will not be changed
+* Added support for Bearer session token authorization in the API, and changed the REST API documentation to default to that instead of Basic Auth. Added micetro/sessions HTTP POST endpoint in REST API to create a session token for this purpose
+* created_at and modified_at columns in table mm_devices have been renamed to created and lastmodified
+* "Delete range" command is now hidden for the root ranges, as it is impossible to delete them
+* Double-clicking a DNS Service in the Web UI now takes the user to its zone. Also, double-clicking a DHCP Service now takes the user to its scopes
+* Field name in filters are now matched to columns even if it was only a partial match.
+* "Find next free address" feature now works in large subnets (including IPv6)
+* "Find random free address" now only pings the selected address
+* GetIPAMRecords2 now takes in a parameter dhcpScopeRef which will only return reservations and leases for that the specified scope
+* Hardened validation of DNS records. It is no longer possible to add records or zones with hyphens at the start or end of a label
+* Improved handling for throttling and API availability for Akamai
+* Inserting dynamic DNS zone now available in Microsoft DNS
+* It is now possible to switch between overlapping scopes in the IPAM grid view, only showing DHCP info of the specified scope.
+* Micetro log files are now also purged according to system setting
+* Micetro no longer writes header warning users not to edit config files as it can not pick up changes in those files
+* New properties first seen date and status (Online/Offline) now appear under discovery, in the left side inspector panel in IPAM grid page on Meraki scopes, when an ip address with a lease is selected.
+* Primary and secondary pools in Kea Load Balance setup is now handled correctly. Alias HA client classes HA_server1 (for primary server) and HA_server2 (for secondary server) are being created, so that any pool receiving client class HA_server1 is a primary pool and HA_server2 is a secondary pool
+* Removed the option to choose a module you don't have a license for as the landing page
+* Rest API documentation is now linked on the welcome/dashboard page in the Web UI
+* Separate ports can now be defined for ISC DHCP Failover relationships
+* The inspector in the Web UI has now been made collapsible like the sidebar
+* UI for zone options consistent across server types. Added support for more Windows zone options
 * When updating Micetro a automatic backup is taken of the embedded database
 .. note::
    For deployments with a dedicated database backend, i.e. Microsoft SQL Server or PostgreSQL, database backups must be taken manually
-* A link to the REST API documentation has been added to the welcome page of Micetro
 
 Bug Fixes
 ^^^^^^^^^
-* Added support for Bearer session token authorization in the API, and changed the REST API documentation to default to that instead of Basic Auth. Added micetro/sessions HTTP POST endpoint in REST API to create a session token for this purpose
+
+* AD synchronization recognizes external updates without requiring a restart of Central
+* DHCP scopes are now deleted when the underlying network is being deleted
+* Fixed a problem with SetZoneOptions which was not updated in memory and returned incorrect information until after next synchronization
+* Fixed issue where adding a DNS server and attempting to add a zone on the server in the same session would sometimes fail
+* Fixed issue where users would not be able to login after update of Micetro if there had been an empty xml file in the updates folder
+* Fixed regression of auto-update of server controllers that would sometimes temporarily be reported as out-of-date after being updated
+* Folders are now converted with a range when it is converted into a scope
 * Information about file paths have been removed from error messages for security reasons
+* MDDS appliances added to the non-default address space are now automatically updated
+* Micetro can now fetch more than 1000 zones from Azure
 * Multiple accessibility improvements have been done e.g. auto-closing sidebars when a certain zoom level has been reached
+* Options from Action menu in the Web UI to be are now selectable
+* Parsing of simple dnssec-policy statements in zones are now behing handled correctly
+* Port numbers for ISC DHCP Failover can now be defined for the whole range of port numbers
 * Session tokens have been removed from URL's due to security reasons
-* Updated SQLAPI++ library which is used for communication with different database types. This solves multiple issues such as those related to handle MARS on database connections in Microsoft SQL Server
+* Solved multiple issues related to handling of MARS on database connections in Microsoft SQL Server
+* Users are not prompted with an invalid session error anymore when the landing page is set to DNS
 
 Deprecation Announcements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -62,8 +100,9 @@ Deprecation Announcements
 
 Breaking changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
- * By default, it's no longer possible to login to other Central servers than the default Central server through the Web Interface or the API. When Web Interface and Central are on the same server, the server field is no longer shown when logging in.
- * Default character encoding on API requests has now been changed to UTF-8 from Latin1 if no charset is defined in the `Content-Type` HTTP header 
+
+* By default, it's no longer possible to login to other Central servers than the default Central server through the Web Interface or the API. When Web Interface and Central are on the same server, the server field is no longer shown when logging in.
+* Default character encoding on API requests has now been changed to UTF-8 from Latin1 if no charset is defined in the `Content-Type` HTTP header 
 
 .. _11.0.4-release:
 
