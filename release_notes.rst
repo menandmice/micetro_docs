@@ -47,7 +47,7 @@ Improvements
 * "Find random free address" now only pings the selected address
 * Hardened validation of DNS records. It is no longer possible to add records or zones with hyphens at the start or end of a label
 * Improved handling for throttling and API availability for Akamai
-* It is now possible to insert dynamic DNS zones on Microsoft DNS
+* It is now possible to create dynamic DNS zones on Microsoft DNS
 * Micetro log files are now also purged according to system setting
 * Micetro no longer writes header warning users not to edit config files as it can not pick up changes in those files
 * Primary and secondary pools in Kea Load Balance setup is now handled correctly. Alias HA client classes HA_server1 (for primary server) and HA_server2 (for secondary server) are being created, so that any pool receiving client class HA_server1 is a primary pool and HA_server2 is a secondary pool
@@ -57,6 +57,7 @@ Improvements
 * The inspector in the Web UI has now been made collapsible like the sidebar
 * UI for zone options consistent across server types. Added support for more Windows zone options
 * When updating Micetro a automatic backup is taken of the embedded database
+
 .. note::
    For deployments with a dedicated database backend, i.e. Microsoft SQL Server or PostgreSQL, database backups must be taken manually
 
