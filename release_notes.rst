@@ -40,23 +40,19 @@ Improvements
 * Added checks to the API to ensure that the TXT record is valid (i.e. it doesn't contain new lines), if they are not valid then an exception is thrown
 * Added flag --skip-arrange to the installer for the agents. Since 11.0 the DNS agent for BIND does not need to arrange the configuration files. By using this flag when installing the original configuration files will not be changed
 * Added support for Bearer session token authorization in the API, and changed the REST API documentation to default to that instead of Basic Auth. Added micetro/sessions HTTP POST endpoint in REST API to create a session token for this purpose
-* created_at and modified_at columns in table mm_devices have been renamed to created and lastmodified
 * "Delete range" command is now hidden for the root ranges, as it is impossible to delete them
 * Double-clicking a DNS Service in the Web UI now takes the user to its zone. Also, double-clicking a DHCP Service now takes the user to its scopes
 * Field name in filters are now matched to columns even if it was only a partial match.
 * "Find next free address" feature now works in large subnets (including IPv6)
 * "Find random free address" now only pings the selected address
-* GetIPAMRecords2 now takes in a parameter dhcpScopeRef which will only return reservations and leases for that the specified scope
 * Hardened validation of DNS records. It is no longer possible to add records or zones with hyphens at the start or end of a label
 * Improved handling for throttling and API availability for Akamai
-* Inserting dynamic DNS zone now available in Microsoft DNS
-* It is now possible to switch between overlapping scopes in the IPAM grid view, only showing DHCP info of the specified scope.
+* It is now possible to insert dynamic DNS zones on Microsoft DNS
 * Micetro log files are now also purged according to system setting
 * Micetro no longer writes header warning users not to edit config files as it can not pick up changes in those files
-* New properties first seen date and status (Online/Offline) now appear under discovery, in the left side inspector panel in IPAM grid page on Meraki scopes, when an ip address with a lease is selected.
 * Primary and secondary pools in Kea Load Balance setup is now handled correctly. Alias HA client classes HA_server1 (for primary server) and HA_server2 (for secondary server) are being created, so that any pool receiving client class HA_server1 is a primary pool and HA_server2 is a secondary pool
 * Removed the option to choose a module you don't have a license for as the landing page
-* Rest API documentation is now linked on the welcome/dashboard page in the Web UI
+* REST API documentation is now linked on the welcome/dashboard page in the Web UI
 * Separate ports can now be defined for ISC DHCP Failover relationships
 * The inspector in the Web UI has now been made collapsible like the sidebar
 * UI for zone options consistent across server types. Added support for more Windows zone options
