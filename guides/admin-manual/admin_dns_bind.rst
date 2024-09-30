@@ -24,15 +24,15 @@ You can customize your BIND server's behavior by editing various server options.
 
    **Query Options**
 
+   * **Recursive**: Determines whether the server answers recursive queries.
    * **Query restrictions**: Specifies which hosts or IP addresses are allowed to send queries to this resolver. 
    * **Recursive query restrictions**: Sets restrictions on recursive queries, specifying which IP addresses or hosts can make recursive queries to your DNS server.
    * **Query forwarding**: Configures the DNS server to forward queries to other DNS servers, allowing you to specify the IP addresses of the servers to which queries should be forwarded.
-   * **Recursive**: Determines whether the server answers recursive queries.
+  
 
    **Transfer Options**
 
    * **Transfer restrictions**: Restricts zone transfers to specific IP addresses or hosts, enhancing security by limiting access to sensitive information.
-   * **Update restrictions**: Controls updates to the DNS server, allowing you to restrict updates based on IP addresses or hosts to ensure authorized hosts make changes to your DNS records.
    * **Update notifications**: Enables or disables NOTIFY messages on zone changes, ensuring other DNS servers are promptly informed of updates to your zones.
 
 5. Click :guilabel:`Save` when you're done.

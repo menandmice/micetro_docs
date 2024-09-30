@@ -7,346 +7,154 @@
 DHCP Superscopes
 ================
 
-The shared networks feature on ISC and Kea is called Superscopes in Micetro
+**Permissions required**: 
 
-For DHCPv6,  superscopes only work for a Kea service. for DHCPv4 it's then MS, ISC and Kea.
+* To create and manage superscopes, you need administrative privileges on the DHCP service (``DHCP Administrator``). Specifically, you should have permission (access) to ``Add a scope``.
+
+.. note:: 
+    
+  * For DHCPv4, superscopes are supported by Microsoft DHCP (MS), Internet Systems Consortium DHCP (ISC), and Kea.
+  * For DHCPv6, superscopes are only supported by the Kea service.
+
+A superscope, known as a shared network for ISC and Kea, groups individual DHCP scopes to streamline network management, simplifying the handling of complex networks through logical organization.
+
+Superscopes support network segmentation, assist with migration and transition processes, provide temporary IP address assignments, and enable redundancy and load balancing across DHCP servers. The use of superscopes results in more streamlined and proficient DHCP management.
+
+Viewing Superscopes
+-------------------
+The **DHCP Superscopes** tab on the **IPAM** page provides an overview of all superscopes. It displays information about each superscope, including its associated DHCP server and the number of scopes it contains. The sidebar allows you to filter the view for **all superscopes**, **favorites**, or specific **DHCP servers**. Additionally, the quick filter search box helps you to quickly find a particular superscope.
+
+.. image:: ../../images/superscopes-view.png
+  :width: 90%
+
+* The inspector panel on the right-hand side displays the scopes assicuated with the selected superscope. To view the scopes, click :guilabel:`View` in the inspector or select :guilabel:`View scopes` on the :guilabel:`Action` or the Row :guilabel:`...` menu. This will take you to the **Networks** tab, where the quick filter search box will is automatically populated with the selected superscope.
+
+The **Networks** list includes a column that indicates whether a scope belongs to a superscope. The filtering sidebar provides an option to filter by a superscope. You can also use the quick filter search box to find a specific superscope.
+
+.. image:: ../../images/superscopes-networks-view.png
+   :width: 90%
+
+* Superscopes that include scopes existing on multiple servers (split scopes) are indicated as <multiple values> if the superscope name is not the same on both servers. Although this configuration is valid, it is recommended to use the same superscope name across servers in a split scope setup.
+
+If you have administrative privileges, you can view the defined superscopes on a DHCP server. Go to the **Admin** page and select the desired DHCP server. Then select :guilabel:`View superscopes` on the :guilabel:`Action` or the Row :guilabel:`...` menu.
+
+.. image:: ../../images/superscopes-dhcp-server.png
+   :width: 90%
 
 Creating Superscopes
 --------------------
 
-Superscopes can be created and scopes added to them as a way to group scopes together.
+To simplify scope management, you can group related scopes together in a superscope based on criteria such as geographic location, department, or subnet range. Creating a superscope allows for the assignment of IP addresses from various scopes to clients on the same network.
 
-Creating a new superscope can be done on the superscope subpage. When creating a superscope a name needs to be defined as well as choosing what server the superscope should exist on. 
+Each superscope is associated with a specific DHCP server and is implemented on a per-server basis. There can only be one unique superscope per network (IP range). 
 
+**To create a superscope**:
 
+1. On the **DHCP Superscopes** tab, click :guilabel:`Create superscope`.
 
-Selected Scope Menus
-^^^^^^^^^^^^^^^^^^^^
+2. Enter an identifying name for the superscope and select the DHCP server where it will be hosted. The name cannot be changed once the superscope has been created. Optionally, add a description. 
 
-When working with scopes, selecting one or more scopes enables a row menu (...) and relevant actions from the :guilabel:`Actions` menu on the top toolbar. The available actions change based upon the type of the DHCP server the scope is hosted on.
+3. Click :guilabel:`Next` to proceed.
 
-DHCP Scope Actions
-""""""""""""""""""
+4. Select one or more scopes from the list. If you want to add scopes later, click :guilabel:`Next` without selecting anything.
 
-* **Open network**: Opens the selected scope.
-
-* **Edit network properties**: Change the title, description, and vlan id of the selected network.
-
-* **Enable/disable scope**: If you are no longer using a particular scope, but do not want to delete it completely because you may need it in the future, you can disable the scope instead. A scope that is disabled will be ignored by the DHCP server until it is re-enabled.
-
-* **Convert to network**: Converts the DHCP scope to a network.
-
-* **Add to folder**: Adds the scope to a folder for easier access. See :ref:`object-folders`.
-
-* **Set discovery schedule**: Sets discovery schedule for the scope.
-
-* **Set subnet monitoring**: Configures subnet monitoring for the scope. 
-.. _dhcp-pools:
-* **Manage DHCP pools**: View and manage DHCP pools.
-
-  * **Add Pool** : Creates an address pool for the selected scope. Fill in the :guilabel:`From` and :guilabel:`To` fields in the dialog box, typing the range of addresses to be included in the pool. Both of these fields default to the first available address in the range. If this is a split scope (a scope that exists on more than one server) and the address pool overlaps a warning message displays.
-
-  * **Edit Address Pool**: To edit an existing pool, select it, and then select :guilabel:`Edit` on the **Row menu (...)** .
-
-  * **Delete Address Pool(s)**: To delete an existing pool, select it, and then select :guilabel:`Delete` on the **Row menu (...)**.
-
-  * **Create Exclusion**:  *MS DHCP only*. Allows you to exclude a single IP Address or an entire range of addresses from being used. You can only exclude addresses that are already part of an address pool. To create an exclusion, specify the From and To IP Addresses. All the addresses between and including the ones entered will be excluded.
-
-  * **Edit Exclusion**: *MS DHCP only.* To edit an exclusion, select it, and then select :guilabel:`Edit` on the **Row menu (...)**.
-
-  * **Delete Excluded Range(s)**: *MS DHCP only.* To delete an exclusion, select it, and then select :guilabel:`Delete` on the **Row menu (...)**.
-
-DHCP Actions for IP Addresses
-"""""""""""""""""""""""""""""
-
-To view the IP addresses a DHCP scope contains, double click the scope the grid, select :guilabel:`Open network` on the **Row menu (...)**, or the :guilabel:`Action` menu.
-
-* **Create DNS record**: Creates an A record from the selected IP address. See :ref:`webapp-create-dns-record`.
-
-* **Edit IP address properties**: Define values for any custom properties configured in the system.
-
-* **Claim/release IP address**: Claims and releases the IP address(es).
-
-* **Ping IP address**: Performs a ping on the selected IP address(es).
-
-* **Create DHCP reservation**: Reservations can be created in unassigned address space, address pools, and excluded addresses. It is possible to set options for reserved IP Addresses. To create a reservation, do the following:
-
-  * **Name**: Assign a name to identify the reserved address.
-
-    * **Description**: (Optional) User defined description.
-
-    * **Reservation method**: Hardware address or Client identifier
-
-      * **Hardware address**: Enter the MAC Address (i.e., Media Access Control Address) of the network node for which this address is being reserved.
-
-      * **Client identifier**: Use the *Ascii* and *Hex* switch on the right to change input type.
-
-    * **Reservation type**: Select whether this reservation should support DHCP, BOOTP (i.e., Bootstrap Protocol), or both (default).
-
-* **Edit DHCP reservation**: Edit an existing reservation.
-
-* **Edit reservation options**: Edit options for a reservation. Refer to :ref:`dhcp-options` for details on this dialog box.
-
-* **Delete DHCP reservation**: To delete an existing reservation, right-click on the reservation you want to remove and select :guilabel:`Delete Reservation(s)`.
-
-* **View history**: Displays the object history for the selected IP address.
-  
-  
-Viewing DHCPv6 Scopes
----------------------
-Unlike DHCPv4 scopes which display all the addresses within a scope, a DHCPv6 scope will only display addresses in use or which have been recently used. At the bottom of the view, you will see how many active IP addresses are being shown. If there is an IP address with the status of **free**, that IP address has recently been used. To see more information, select :guilabel:`View History` for that address.
-
-.. image:: ../../images/dhcpv6-scope.jpg
-  :width: 70%
-  :align: center
-|
-.. _new-dhcp-scope:
-
-New DHCP Scope
---------------
-
-.. note::
-  Creating a scope on a Kea server configured for load balancing high availability, Micetro will automatically split the scope evenly between primary and secondary servers. See :ref:`dhcp-kea-ha`.
-
-This section describes how to create and edit DHCP scopes with the new *DHCP Scope Creation Wizard*.
-
-Whenever you create a new scope, Micetro automatically checks whether the new scope conflicts with an existing scope or an IPAM range.
-
-The Wizard has additional steps, or skips over some steps, depending on the type of DHCP server the scope is being created on, and whether the :ref:`active-directory` integration has been enabled.
-
-**To create a new scope on the MS DHCP server**:
-
-1. In :menuselection:`Networks` use the :guilabel:`Create` action and select :guilabel:`DHCP scope` from the dropdown.
-
-.. image:: ../../images/create-dhcp-scope-Micetro.png
-  :width: 70%
-  :align: center
-
-2. Click :guilabel:`Next`.
-
-3. Edit the options for the DHCP scope.
-
-   * **DHCP server**: The DHCP server for the scope.
-
-   * **Enabled**: If selected, the DHCP scope will start allocating IP addresses immediately. Clear this option if you want to configure the scope further.
-
-   * **Start/end of address pool**: Adjust the first and last IP address in the pool.
-
-4. Active Directory Site selection. If you have enabled :ref:`active-directory`, the Wizard will ask you which AD site the new DHCP Scope should be associated to.
-
-  .. note::
-    Leave it empty for no AD site.
-
-5. Scope properties.
-
-6. Summary. The changes the Wizard will perform are summarized here and applied once the user clicks "Finish".
-
-7. Save comment.
-
-New DHCPv6 Scope
-----------------
-
-.. note::
-Micetro supports DHCPv6 for Microsoft and Kea DHCP
-
-1. Under :guilabel:`IPAM` click on :guilabel:`Create` and select :guilabel:`DHCP Scope`..
-
-2. Enter the network information and click :guilabel:`Next`.
-
-3. Enter the DHCP Server name and the preference, and put a check next to :guilabel:`Enabled` if you'd like to enable this scope on this server. Click :guilabel:`Next`.
-
-   .. Note::
-      The preference value is a new parameter required by Microsoft for DHCPv6 scopes. If the scope is assigned to multiple servers, the lowest preference assignment will be selected by the DHCP client
-   
-4. Enter the title as an identifier for this scope as well as the description and click :guilabel:`Next`.
-
-5. Verify the information is correct and click :guilabel:`Finish`.
-
-Manage DHCPv6 Exclusions
-------------------------
-When managing exclusions within a DHCPv6 pool it is possible to specify a percentage of a DHCPv6 scope rather than specifying a **From address** and **To address**
-
-1. Select a DHCP scope while under :guilabel:`IPAM` >> :guilabel:`DHCP scopes`.
-
-2. Click :guilabel:`Action`, and then select :guilabel:`Manage DHCP Exclusions`.
-
-3. Click :guilabel:`Add Exclusion`.
-
-4. A new pop up will appear. Choose to either create the exclusion range by :guilabel:`Manual Entry` or :guilabel:`Percentage`.
-
-5. If you choose manual entry, enter the **From address** and **To address** for the range you'd like to exclude from the DHCP scope.
-
-   If you choose percentage, drag the percentage bar to the correct percentage of addresses you'd like to exclude, and enter a **From address** only.
-
-.. image:: ../../images/add-exclusion-percentage.png
-   :width: 50%
-   :align: center
-   
-.. Note::
-   If the exclusion range doesn't have the space to accomodate the percentage of IP addresses specified, it will not allow you to add this exclusion range until you pick an appropriate **From address** or lower the percentage.
-
-6. Click :guilabel:`Add`.
-
-   **Red bar**: The exclusion range
-   
-   **Blue bar**: Address Pool of dynamic allocation addresses
-   
-   .. image:: ../../images/dhcp-exclusions.png
-      :width: 50%
-      :align: center
-
-7. Click :guilabel:`Save`
-
-
-.. _reconcile-scopes:
-
-Reconcile Scopes
-----------------
-
-.. note::
-  Applies to MS DHCP Servers only.
-
-Use this function to fix inconsistencies between information in the registry and the DHCP database.
-
-1. Go to the :guilabel:`IPAM` page.
-
-2. Select :guilabel:`DHCP Scopes`
-
-3. Select one or multiple DHCP Scopes from :guilabel:`Microsoft Servers`
-
-4. Click on the ellipsis (or meatball) menu on the scope(s).
-
-5. Click on :guilabel:`Reconcile DHCP Scopes`
-
-6. If there are inconsistencies, a list will be presented. Click :guilabel:`Fix` to fix the inconsistincies.
-
-.. image:: ../../images/reconciling-scopes.png
-  :width: 70%
-  :align: center
-
-For more information see `the Microsoft documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd145311(v=ws.10)?redirectedfrom=MSDN>`_.
-
-
-Other Functions
----------------
-
-At any time, you can modify the properties for a scope. Simply locate the item, and from the **Row menu (...)** select :guilabel:`Edit network properties`. For split scopes, the scope contents can be examined individually on each server.
-
-Deleting a Lease
-^^^^^^^^^^^^^^^^
-
-To delete a lease in a DHCP scope, do the following:
-
-1. Open the scope containing the lease you want to delete.
-
-2. Select the lease and on the **Row menu (...)**  select :guilabel:`Release DHCP lease` or use :menuselection:`Action --> Release DHCP lease`.
-
-IP Address Details
-^^^^^^^^^^^^^^^^^^
-
-The IP Address details window contains all information pertaining to an IP Address in Micetro, including DNS records, DHCP reservations, and custom properties. To access the IP address details select an IP address in the DHCP scope dialog, and all information is displayed in the Inspector, including information on any DNS and DHCP data associated with the IP address. A reservation can be created by clicking the :guilabel:`+` button in the *Related DHCP data* section of the Inspector.
-
-Renaming a Scope
-^^^^^^^^^^^^^^^^
-
-You can change the name and/or description of a scope in Micetro.
-
-1. Locate and select the DHCP Scope you want to rename.
-
-2. On the **Row menu (...)**, select :guilabel:`Edit network properties`.
-
-3. Enter the **Title**, and any other value you wish to change.
-
-4. Click :guilabel:`Save`.
-
-
-
-  
-Split Scopes in Load Balancing Mode
------------------------------------
-
-When creating scopes on Kea servers configured in load balancing mode for high availability, Micetro will split the available pool evenly between primary and secondary servers.
-
-.. image:: ../../images/kea-ha-lb-split-scopes-Micetro.png
-  :width: 50%
-  :align: center
-
-Managing Split Scopes for DHCPv6
---------------------------------
-  
-1. Select a DHCPv6 scope under :guilabel:`IPAM` >> :guilabel:`DHCP Scopes`
-  
-2. Click :guilabel:`Action`, and then :guilabel:`Manage Scope Instances`
-  
-3. In the drop-down menu select a second server to manage the DHCP scope, and then click :guilabel:`Add`. Enable the servers on which the split-scope should reside.
-  
-   .. note::
-      You can change the preference of the servers by clicking and dragging on the hamburger icon (three lines to the left of the server) to change the order of the servers. The second server will always have a preference of the **First Server Preference + 1** and each additional server will increment by 1.
-   
-4. Click :guilabel:`Save`
-  
-   .. image:: ../../images/split-scopes-instances.png
-    :width: 60%
-   
-5. On the same scope, click the :guilabel:`Action` menu and then select :guilabel:`Manage DHCP Exclusions`
-  
-6. Click :guilabel:`Add Exclusion` for the first server and select the percentage for which you'd like to exclude from the first server and click :guilabel:`Add`
-  
-7. Click :guilabel:`Add Exclusion` for the second server and select the percentage for which you'd like to exclude from the second server and click :guilabel:`Add`
-  
-   .. image:: ../../images/split-scope-exclusions.png
-    :width: 60%
-   
-8. Click :guilabel:`Save`
- 
-  
-.. _webapp-edit-dhcp:
-
-Editing DHCP Options
----------------------- 
-
-.. Note::
-   DHCPv4 and DHCPv6 scopes inherit DHCP and DDNS Options from the parent DHCP server. DHCPv4 and DHCPv6 reservation inherit DHCP and DDNS options from the DHCP scope. However, these options may be changed by editing the options for the specific scope or reservation.
-
-Viewing the configured DHCP options for a DHCP scope
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Select the DHCP scope in the networks list.
-
-2. On the :guilabel:`Action` menu, select :guilabel:`Edit scope options`. You can also select this option on the **Row menu (...)**.
-
-3. A dialog box is displayed. Note that in order to see the options that have inherited values, you need to select the :guilabel:`Show inherited options` checkbox.
-
-   .. image:: ../../images/edit-dhcp-options.png
+  .. image:: ../../images/create-superscope.png
     :width: 70%
 
-Adding a New DHCP Option
-""""""""""""""""""""""""""
+  * The list only shows scopes on the selected server that are not included in a superscope.
+   
+  * Use the quick filter search box to find and select the desired scopes.
 
-1. Start typing into the :guilabel:`Add an option` field. Either type in the name of the option or the option number.
+5. Review your entries in the :guilabel:`Summary`. Click :guilabel:`Add` to complete the creation of the superscope.
 
-2. A list of available options will be displayed as you type.
+.. note::
+  If a superscope is created without any scopes assigned, it will not be activated on the server until at least one scope is added. Therefore, DHCP options cannot be configured for the superscope until it contains at least one scope.
 
-   .. image:: ../../images/edit-scope-autocomplete.png
+Adding Scopes to a Superscope
+------------------------------
+Scopes can be added to a superscope during the creation of a new scope or by setting a superscope for an existing one. It is also possible to transfer scopes between superscopes.
+
+Adding a Scope to a Superscope During Scope Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If a superscope exists on the DHCP server, you can add the new scope to it during scope creation.
+
+1. On the **Networks** tab, click :menuselection:`Create --> DHCP Scope`. 
+2. Specify a network address, server, and address pool. For more details about creating scopes, see :ref:`ipam-create-network`. 
+3. Select the superscope to which you want to add the new scope.
+
+   .. image:: ../../images/create-dhcp-scope-superscope.png
+      :width: 75%
+
+3.	Complete filling in the details and click :guilabel:`Finish` to create the scope.
+
+Adding an Existing Scope to a Superscope
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can add existing scopes to superscopes or transfer to a different superscope on the DHCP server.
+
+**To add an existing scope to a superscope or move it to a different superscope**:
+
+1.	Go to the **Networks** tab and locate the scope(s) you want to add to the superscope.
+2.	Select :guilabel:`Set superscope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3.	Select the desired superscope.
+
+    .. image:: ../../images/superscopes-set.png
       :width: 70%
+ 
+    * The list shows the superscopes that are on the same server as the scope.
+    *	To remove a scope from a superscope, clear the :guilabel:`Superscope` field or select a different superscope if you want to transfer the scope to a another superscope.
+    * For split-scope ranges, only the superscopes available on both servers are displayed. Selecting one will place both scopes in their respective superscopes on each server.
 
-3. Select the option you want to add.
+4.	Click :guilabel:`Save` when you're done.
 
-4. The option is now shown in the list and you can add values to the option.
+Removing Scopes from Superscopes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can remove one or more scopes from a superscope to reorganize the scopes on the server. This action does not delete or disable the scope, and it can be added to a different superscope on the server if required.
 
+**To remove a scope from a superscope**:
+
+Do one of the following:
+
+* On the **DHCP Superscopes** tab, select the superscope containing the scope you want to remove. In the inspector panel, find the relevant scope and select :guilabel:`Remove from superscope` on the scope's action :guilabel:`...` menu.
+
+   .. image:: ../../images/remove-from-superscope-inspector.png
+      :width: 35%
+
+ -OR-
+
+* On the **Networks** tab, locate the scope you want to remove. You can use the **Superscopes** filters in the filtering sidebar to find it. Click :guilabel:`Set superscope` on the :guilabel:`Action` or the Row :guilabel:`...` menu. Delete the scope from the **Superscope** field.
+
+  .. image:: ../../images/superscopes-set-remove.png
+     :width: 65%
       
-Removing a DHCP Option
-^^^^^^^^^^^^^^^^^^^^^^
 
-Hovering over an option in the Edit Scope dialog box will display a trash can icon to the right of the option.
+Configuring DHCP Supersope Options
+----------------------------------
+You can configure DHCP options for superscopes on ISC and Kea DHCP servers. Scopes within a superscope inherit the superscope's options, while the superscope inherits the server's options.
 
-Clicking the trash can will remove the option.
+When a superscope is created without a scope assigned, it will not be created on the server until a scope is added. Therefore, DHCP options cannot be configured until a scope has been added first.
 
-HEX and ASCII Representation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For Kea, it is possible to remove scopes from the superscope and still add options via the API, because the superscope still exists in the Kea configuration if a scope was added to it first.
 
-Some DHCP options, such as DHCP option 43 (Vendor specific info) require the value to be in HEX format. In this case the UI offers the value to be viewed both as HEX and ASCII by selecting each option in tabs above the field, as seen in the figure below.
+For more details on how to edit scope options, see :ref:`edit-dhcp-options`.
 
-.. image:: ../../images/blackstar-edit-dhcp-ascii-hex.png
-  :width: 70%
-  :align: center
+
+Editing Superscopes
+-------------------
+Superscope descriptions serve as a helpful tool for categorizing and easily locating scopes. You can edit this description.
+
+**To edit a superscope**:
+
+1.	On the **DHCP Superscopes** tab, locate the superscope and double-click it, or select :guilabel:`Edit superscope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+2.	Make the desired changes to the description and click :guilabel:`Save`.
+
+.. note::
+  You cannot change the name of a superscope after it is created.
+
+Deleting Superscopes
+--------------------
+When a superscope is deleted from Micetro, it will be removed from the database and the server. Individual scopes within the superscope are not deleted. If a Kea superscope is defined for both DHCPv4 and DHCPv6, deleting it will remove the superscope from both protocols.
+
+**To delete a superscope**:
+
+1.	On the **Superscopes** tab, select the superscope you want to delete.
+2.	On either the :guilabel:`Action` or Row :guilabel:`...` menu, select :guilabel:`Delete superscope`. This will delete the superscope and remove all associated scopes from it.

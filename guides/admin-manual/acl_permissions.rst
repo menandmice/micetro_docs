@@ -1,5 +1,5 @@
 .. meta::
-   :description: Access control flags in Micetro by Men&Mice 10.1
+   :description: Access control flags in Micetro
    :keywords: Micetro access model
 
 .. _acl-permissions:
@@ -11,42 +11,41 @@ Permissions are **access flags**, configured on roles and pertaining to types of
 
 Permissions determine what type of objects the role has access to, and what kind of access it has to them.
 
-For a full list of available permissions see :ref:`permissions-reference`.
+For a full list of available permissions, see :ref:`permissions-reference`.
 
-Setting permissions
+Setting Permissions
 ^^^^^^^^^^^^^^^^^^^
 
 .. note::
    Permissions for :ref:`built-in-roles` cannot be modified.
 
-1. Navigate to :menuselection:`Admin --> Configuration --> Roles` in the web application.
+1. Navigate to :menuselection:`Admin --> Configuration --> Roles`.
 
-2. Select the role you want to edit, and double click it. (Or use the :guilabel:`Edit role properties` action from the top bar or ellipsis menu.)
+2. Select the role you want to edit and double-click, or select :guilabel:`Edit role properties` on the :guilabel:`Action` or Row :guilabel:`...` menu.
 
    .. note::
       Permissions can only be edited on individual roles.
 
-3. Switch to the :guilabel:`Access` tab.
+3. Select the :guilabel:`Access` tab.
 
-4. Edit the permissions as needed.
-
-5. Click :guilabel:`Save`.
+4. Edit the permissions as needed and click :guilabel:`Save` when you're done.
 
 .. note::
-  When setting access on a role, adding a permission will automatically enable all dependent permissions as well to prevent access problems.
+  * When configuring access for a role, adding a permission will also automatically enable all related dependent permissions to avoid access issues.
 
-  An information button will appear on the top right of the dialog box, providing a summary of dependent permissions enables if hovered over.
+  * An information icon appears in the upper right corner of the dialog box, and hovering over it provides a summary of the enabled dependent permissions.
 
-  Turning off the permission(s) will **not** disable the automatically enabled dependent permissions. Turning off the dependent permission(s) will still allow the role to be saved.
+  * Disabling permission(s) will **not** disable the dependent permissions that were automatically enabled. However, disabling the dependent permission(s) will not prevent the role from being saved.
 
 .. _block-permission:
 
-Block permission
-----------------
+Blocking Permissions
+--------------------
 
-When a permission is enabled, it'll set the access flag to ``allow``. When you **block** a permission on a role, it is set as ``deny`` and *prevent any other role* to overwrite that permission.
+When a permission is enabled, it sets the access flag to ``allow``. Blocking a permission on a role, sets it to ``deny``, preventing any other role from overriding that permission.
 
-*Example:* The role *Worfklow Blocked* has the "Access to Workflow module" permission blocked. The built-in role "DNS approvers" has this permission enabled. Attaching user ``janedoe`` to both roles will result in the user **not** being able to access the Workflow module. Even though the *DNS approvers* role would allow it, the permission block set in *Workflow Blocked* will prevent it to take effect.
+Example:
+   If the role "Worfklow Blocked" has the "Access to Workflow module" permission blocked, and the built-in role "DNS approvers" has this permission enabled, assigning the user ``janedoe`` to both roles will block access to the Workflow module. The permission granted by the "DNS approvers" role is overridden by the permission denied by the "Workflow Blocked" role.
 
 .. note::
-  Permissions that are not set are simply returned as "null." These empty access flags are **not** equivalent to 'deny' and **can** be overwritten by access flags configured in other roles.
+  Permissions not explicitly set are returned as ``null``. These undefined access flags are **not** the same as ``deny`` and **can** be overwridden by access flags set in other roles.

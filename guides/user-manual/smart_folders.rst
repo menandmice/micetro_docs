@@ -1,40 +1,38 @@
 .. meta::
-   :description: Smart folders in Micetro by Men&Mice
+   :description: Smart folders in Micetro
    :keywords: folder management, organization, filtering, Micetro 
 
 .. _smart-folders:
 
-Smart folders 
+Smart Folders 
 -------------
 
-Smart folders are saved filters, using the filter query syntax from :ref:`webapp-quick-filter`.
+Smart folders are saved filters, using the filter query syntax from the :ref:`webapp-quick-filter`.
 
-Smart folders can group together the following objects:
+Smart folders can group the following objects:
 
-DNS
-    Zones and records.
+* **DNS**: Zones and records.
 
-IPAM
-    Ranges, scopes, containers, and IP addresses.
+* **IPAM**: Ranges, scopes, containers, and IP addresses.
 
 .. note::
-    DNS records and IP addresses can only be filtered with a smart folder placed in the root folder.
+    DNS records and IP addresses can only be filtered by using a smart folder that is placed in the root folder.
 
-Access to smart folders
+Access to Smart Folders
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 See :ref:`folder-access`.
 
 .. _combine-smart-folder:
 
-Combining smart folders
+Combining Smart Folders
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Smart folders placed inside another smart folder will combine the filtering queries.
+Smart folders nested within another smart folder will merge their filtering queries.
 
-**Example:** user creates a smart folder called *.com TLD** with the filter query ``.com`` (either in the root folder or inside an object folder). Inside the **.com TLD** smart folder they create another smart folder called *local** with the filter query ``authority=example.local.``.
+**Example:** You create a smart folder called *.com TLD** with the filter query ``.com`` (placed either in the root folder or inside an object folder). Within the **.com TLD** smart folder, you then create another smart folder named *local** with the filter query ``authority=example.local.``.
 
-The smart folder *.com TLD* will display all zones that contain the string ``.com``, and the smart folder *local* will display all zones that contain the string ``.com`` **and** whose authority is ``example.local.``.
+The *.com TLD* smart folder will display all zones that contain the string ``.com``, while the *local* smart folder will display all zones that contain the string ``.com`` **and** have the authority ``example.local.``.
 
 .. tip::
-    Using smart folders within smart folders allows you to create powerful and complex filter combinations while preserving each filter element on its own as well.
+    Using smart folders within smart folders allows you to create complex and powerful filter combinations, while maintaining the integrity of each filter element.

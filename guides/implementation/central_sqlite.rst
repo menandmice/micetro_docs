@@ -1,5 +1,5 @@
 .. meta::
-   :description: Using SQLite as the database backend for Micetro by Men&Mice
+   :description: Using SQLite as the database backend for Micetro
    :keywords: SQLite, Micetro, database 
 
 .. _central-sqlite:
@@ -7,4 +7,4 @@
 SQLite
 ------
 
-The Men&Mice Central application is shipped with an embedded SQLite database, that will be used if no external database is configured. Customization options for SQLite are not available, Central will use the built-in configuration.
+The Micetro Central application comes with a built-in SQLite database, which is used if there is no configuration for an external database. There are no customization options for SQLite. Central will use the default configuration.

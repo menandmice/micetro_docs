@@ -22,11 +22,11 @@ The following table demonstrates the different options when adding a DHCP Server
 +----------------------------+----------------------------------------------------------------------------------------+
 | Server type                | Description                                                                            |
 +============================+========================================================================================+
-| Microsoft Agent-Free [1]   | The DHCP Server Controller has been installed on the machine running the Men&Mice      |
+| Microsoft Agent-Free [1]   | The DHCP agent has been installed on the machine running the Micetro      |
 | (Use proxy not checked)    | Central Component and that machine will be used as a proxy. Micetro is not able to     |
 |                            | track lease history data.                                                              | 
 +----------------------------+----------------------------------------------------------------------------------------+
-| Microsoft Agent-Free [1]   | The DHCP Server Controller has been installed on the machine identified in the         |
+| Microsoft Agent-Free [1]   | The DHCP agent has been installed on the machine identified in the         |
 | (Use proxy checked)        | **Use proxy server** field and that machine will be used as a proxy. Micetro is not    |
 |                            | able to track lease history data.                                                      |
 +----------------------------+----------------------------------------------------------------------------------------+
@@ -42,7 +42,7 @@ The following table demonstrates the different options when adding a DHCP Server
 +----------------------------+----------------------------------------------------------------------------------------+
 | ISC Kea [2]                | A server running ISC Kea with a DHCP agent and Control Agent installed.                |
 +----------------------------+----------------------------------------------------------------------------------------+
-| Cisco                      | The DHCP agent has been installed on the machine running the Men&Mice                  | 
+| Cisco                      | The DHCP agent has been installed on the machine running the Micetro                 | 
 | (Use proxy not checked)    | Central and that machine will be used as a proxy.                                      |
 +----------------------------+----------------------------------------------------------------------------------------+
 | Cisco                      | The DHCP agent has been installed on the machine identified in the **Use               |

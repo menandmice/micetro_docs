@@ -1,5 +1,5 @@
 .. meta::
-   :description: Defining options on Microsoft DHCP servers in Micetro by Men&Mice
+   :description: Defining options on Microsoft DHCP servers in Micetro
    :keywords: DHCP, DHCP servers, DHCP Windows
 
 .. _admin-dhcp-windows:
@@ -16,7 +16,7 @@ Defining Options on MS DHCP Servers
 
 2. Under **DHCP Services** in the filtering sidebar, select the applicable Microsoft DHCP server. 
 
-3. On the :guilabel:`Action` menu, select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Manage DHCPv6 options`. You can also select these options on the **Row menu (...)**. 
+3. Select either :guilabel:`Manage DHCPv4 options` or :guilabel:`Manage DHCPv6 options` on the :guilabel:`Action` or the Row :guilabel:`...` menu. 
 
 4. The Manage DHCP Options dialog box opens, showing all options defined on the DHCP server.
 
@@ -31,21 +31,21 @@ Defining Options on MS DHCP Servers
 
 Defining Custom DHCP Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Click the :guilabel:`Custom Options` tab.
+1. Select the :guilabel:`Custom Options` tab.
 
 2. Select the appropriate :guilabel:`Vendor class` in the drop-down list.
 
 Adding a New Custom Option
 """"""""""""""""""""""""""
-1. Select :guilabel:`Add Custom Option`.
+1. Click :guilabel:`Add Custom Option`.
 
-2. Enter the desired ID. An error will show if that ID is not available or invalid.
+2. Enter the desired ID. An error will appear if the ID is unavailable or invalid.
 
 3. Enter a name.
 
-4. Select a Type in the dropdown list. Select the :guilabel:`Array` checkbox if the option is an Array.
+4. Select a type in the drop-down list. If the option is an array, select the :guilabel:`Array` checkbox.
 
-5. Click :guilabel:`Add`, and then :guilabel:`Save`.
+5. Click :guilabel:`Add` and then :guilabel:`Save` to complete the process.
 
 .. note::
    Once an option has been defined, you can set its value on the :guilabel:`Edit Options` tab.
@@ -55,31 +55,25 @@ Removing an Existing Custom Option
 """""""""""""""""""""""""""""""""""
 1. On the :guilabel:`Custom Options` tab in the Manage DHCP Options dialog box, select the relevant custom option.
 
-2. On the **Row menu (...)**, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
+2. On the Row :guilabel:`...` menu, select :guilabel:`Remove`, and then :guilabel:`Yes` to confirm.
 
 .. _ms-dhcp-dns-options:
 
 Configuring DNS Options
 ^^^^^^^^^^^^^^^^^^^^^^^^
-* In the Manage DHCP Options dialog box, click the :guilabel:`DNS` tab.
+On the :guilabel:`DNS` tab in the **Manage DHCP Options** dialog box you can access various settings related to DNS dynamic updates. These settings determine how the DHCP server interacts with the DNS server to update DNS records dynamically.
 
-Enable DNS dynamic updates according to the settings below.
-  Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.
+* **Enable DNS dynamic updates according to the settings below**: Specifies whether the DHCP server sends DNS dynamic record updates to the DNS server. Updates are sent to DNS servers configured in TCP/IP client properties for any active network connections at the DHCP server.
 
-  Dynamically update DNS A and PTR records.
-    Specifies that the DHCP server update forward and reverse lookups are based on the type of request made by the client during the lease process.
+  * **Dynamically update DNS A and PTR records**: Specifies that the DHCP server update forward and reverse lookups are based on the type of request made by the client during the lease process.
 
-  Always dynamically update DNS A and PTR records.
-    Specifies that the DHCP server update forward and reverse DNS lookups when a client acquires a lease, regardless of the type of request used to acquire it.
+  * **Always dynamically update DNS A and PTR records**: Specifies that the DHCP server update forward and reverse DNS lookups when a client acquires a lease, regardless of the type of request used to acquire it.
 
-Discard A and PTR records when lease is deleted.
-  Specifies whether the DHCP server discards forward DNS lookups for clients when a lease expires.
+* **Discard A and PTR records when lease is deleted**: Specifies whether the DHCP server discards forward DNS lookups for clients when a lease expires.
 
-Dynamically update DNS A and PTR records for DHCP clients.
-  Specifies whether the DHCP server sends dynamic updates to the DNS server for DHCP clients that do not support performing these updates. If selected, clients running earlier versions of Windows are updated by the DHCP server for both their host (A) and pointer (PTR) resource records.
+* **Dynamically update DNS A and PTR records for DHCP clients**: Specifies whether the DHCP server sends dynamic updates to the DNS server for DHCP clients that do not support performing these updates. If selected, clients running earlier versions of Windows are updated by the DHCP server for both their host (A) and pointer (PTR) resource records.
 
-Disable dynamic updates for DNS PTR records
-  Turns off dynamic updates for PTR records.
+* **Disable dynamic updates for DNS PTR record**: Turns off dynamic updates for PTR records.
   
 Editing Server Properties
 --------------------------
@@ -87,12 +81,12 @@ You can edit the configuration of Windows servers.
 
 1. Select the relevant Windows server.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Edit configuration`. You can also select this option on the **Row menu (...)**. 
+2. On the :guilabel:`Action` or the Row :guilabel:`...` menu, select :guilabel:`Edit configuration`.
 
 3. In the **Edit Configuration** dialog box, make the desired changes, and then click :guilabel:`Save`.
 
    .. image:: ../../images/windows-dhcp-configuration.png
-    :width: 70%
+    :width: 60%
    
  * **Conflict detection attempts**: Specifies the number of conflict detection attempts you want the DHCP server to make before it leases an address to a client.
  * **Audit log file path**: Specifies the location of the DHCP server audit log files.
@@ -103,11 +97,11 @@ You can edit the configuration of Windows servers.
 Toggling DHCPv6 Management On and Off
 --------------------------------------
 .. note::
-   There is only one DHCP service on a Microsoft DHCP server. DHCPv4 and DHCPv6 are not decoupled in Microsoft as they are in Micetro. Any action performed on either DHCPv6 or DHCPv4 that requires a restart of the service will result in a restart of the single DHCP service on the Microsoft server.
+   There is only one DHCP service on a Microsoft DHCP server. Unlike Micetro, where DHCPv4 and DHCPv6 are separate, Microsoft combines them. Therefore, any action that requires either DHCPv6 or DHCPv4 to be restarted will cause the unified DHCP service on the Microsoft server to be restarted..
    
 1. On the **Admin** page, select the relevant Microsoft DHCP server.
 
-2. On the :guilabel:`Action` menu, select :guilabel:`Edit service`. You can also select this option on the **Row menu (...)**. 
+2. On the :guilabel:`Action` menu or the Row :guilabel:`...`menu, select :guilabel:`Edit service`. 
 
 3. Select :guilabel:`Manage DHCPv6 service` to enable DHCPv6 management on the server(s) you selected.
 

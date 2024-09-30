@@ -1,16 +1,16 @@
 .. meta::
-   :description: Configuring a PostgreSQL High Availability cluster to use with Micetro by Men&Mice
+   :description: Configuring a PostgreSQL High Availability cluster to use with Micetro
    :keywords: high availability, database, failover, PostgreSQL, Micetro
 
 .. _psql-ha:
 
-Setting up the PostgreSQL High Availability environment
+Setting up the PostgreSQL High Availability Environment
 =======================================================
 
 .. important::
-  Configuring high availability for the database is the responsibility of your database team. The following information illustrates a possible setup using ``pg_auto_failover`` to create a high availability database cluster.
+  Configuring high availability for the database is the responsibility of your database team. The following information ourlines a possible setup using ``pg_auto_failover`` to create a high availability database cluster.
 
-  While all possible steps were taken to verify its accuracy, Men&Mice assumes no responsibility for the setup herein.
+  While every effort has been made to ensure the accuracy of this setup, BlueCat takes no responsibility for the configuration detailed here.
 
 Install pg_auto-failover
 ------------------------
@@ -27,13 +27,13 @@ Install pg_auto-failover
   :widths: 20, 60, 20
 
   "``[port]``", "The port number that will be used for communication between database nodes", "5000"
-  "``[monitor]``", "The monitor node’s machine hostname", "postgresql-node-0"
-  "``[node-1]``", "The primary node’s machine hostname", "postgresql-node-1"
-  "``[node-2]``", "The secondary node’s machine hostname", "postgresql-node-2"
-  "``[ip-address-monitor-machine]``", "The monitor node’s machine IP address", "172.17.0.2"
-  "``[ip-address-node-1]``", "The machine’s IP address of node-1", "172.17.0.3"
-  "``[ip-address-node-2]``", "The machine’s IP address of node-2", "172.17.0.4"
-  "``[monitor_node_password]``", "The monitor node’s password to its database. **This password cannot contain the *@* character.**", "test123"
+  "``[monitor]``", "The monitor node's machine hostname", "postgresql-node-0"
+  "``[node-1]``", "The primary node's machine hostname", "postgresql-node-1"
+  "``[node-2]``", "The secondary node's machine hostname", "postgresql-node-2"
+  "``[ip-address-monitor-machine]``", "The monitor node's machine IP address", "172.17.0.2"
+  "``[ip-address-node-1]``", "The machine's IP address of node-1", "172.17.0.3"
+  "``[ip-address-node-2]``", "The machine's IP address of node-2", "172.17.0.4"
+  "``[monitor_node_password]``", "The monitor node's password to its database. **This password cannot contain the *@* character.**", "test123"
   "``[replication-password]``", "The password used for replication between nodes", "vg8@urenHfhk"
   "``[postgres-password]``", "The password used to access the mmsuite database", "postgres"
   "``[ip-address-of-central-primary]``", "The IP address of the *primary* machine running Central", "172.17.0.5"
@@ -43,7 +43,7 @@ Install pg_auto-failover
 Make sure that the hostnames are resolvable between all three machines along with the machine running Central (and the second instance if Central is running in HA mode).
 If that is not possible, using the ip-addresses instead of hostnames is allowed.
 
-Install requirements
+Install Requirements
 ^^^^^^^^^^^^^^^^^^^^
 
 Install ``sudo`` and ``which``:
@@ -184,8 +184,8 @@ Show state to verify the setup:
   [node-1]                   |   [port] |     0 |     1 |            primary |           primary
   [node-2]                   |   [port] |     0 |     1 |          secondary |         secondary
 
-Set up the mmsuite database and edit config files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setting Up the mmsuite Database and Editing Config Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Machine: node-1
 """""""""""""""
@@ -195,7 +195,7 @@ Enter the ``postgresql`` database as user *postgres*:
 .. code-block::
 
   psql -p [port]
-  > CREATE DATABASE mmsuite ENCODING = 'LATIN1' LC_CTYPE = 'POSIX' LC_COLLATE='POSIX' TEMPLATE template0;
+  > CREATE DATABASE mmsuite ENCODING = 'UTF8' LC_CTYPE = 'POSIX' LC_COLLATE='POSIX' TEMPLATE template0;
   > GRANT ALL PRIVILEGES ON DATABASE mmsuite TO postgres;
 
 Edit the ``pg_hba.conf`` to allow access to the database from the outside:

@@ -1,5 +1,5 @@
 .. meta::
-   :description: Access control for groups in Micetro by Men&Mice 10.1
+   :description: Access control for groups in Micetro 
    :keywords: Micetro access model
 
 .. _acl-groups:
@@ -16,26 +16,20 @@ Adding a New Group
 
 2. Click the :guilabel:`Add` button and select whether to add an external (authenticated and managed through an external source such as Active Directory or LDAP) or create a local group (authenticated and managed through Micetro only).
 
-For **local group** the following dialog box displays:
+   For **local group** the following dialog box displays:
 
-  Group name
-    The name for the group you are creating.
+  .. image:: ../../images/create-micetro-group.png
+     :width: 60%
 
-  Description field
-    (Optional) Some information that describes the function of this group.
+  * **Group name**: The name for the group you are creating.
 
-  AD Integrated
-    Check this box to define this group as an Active Directory Integrated group. When checked this group name will be matched against groups defined in Active Directory. For more information how on this works refer to External Authentication.
+  * **Description field**: (Optional) Some information that describes the function of this group.
 
-  Roles
-    Any roles that members of this group will automatically assume.
+  * **AD Integrated**: Check this box to define this group as an Active Directory Integrated group. When checked this group name will be matched against groups defined in Active Directory. For more information how on this works refer to External Authentication.
 
-  Users
-    Any users that you want to add to this group. (Users can be added/removed at any time.)
+  * **Roles**: Any roles that members of this group will automatically assume.
 
-.. image:: ../../images/create-micetro-group.png
-  :width: 60%
-  :align: center
+  * **Users**: Any users that you want to add to this group. (Users can be added/removed at any time.)
 
 3. When all selections/entries are made, click :guilabel:`Save`.
 

@@ -113,7 +113,7 @@ a value.
 Single Sign-On
 --------------
 
-To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro. See :ref:`external-auth`.
+To enable single sign-on in the Web Interface, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro. See :ref:`external-auth`.
 
 ..
   When using M&M Web Services as an API endpoint, refer to the Negotiate header Authorization section above.

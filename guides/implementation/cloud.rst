@@ -6,15 +6,18 @@
 
 Cloud Integration
 *****************
-Micetro provides native integration with cloud-based DNS services and can manage IP address-related data for Azure and AWS, including virtual networks and subnets that exist in cloud accounts.
+Micetro provides native integration with cloud-based DNS and DHCP services, managing IP address data for Azure and AWS, including virtual networks and subnets within cloud accounts.
 
-Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  It's worth noting that, at present, cloud DNS services only support the creation of primary zones.
+Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  
+
+.. note::
+   Currently, cloud DNS services only support the creation of primary zones.
 
 Supported Cloud Services
 ------------------------
 
 .. important::
-  To use cloud services, the DNS Server Controller must be installed on the same machine as Men&Mice Central. For information about how to install DNS controllers, see :ref:`install-dns-controllers`.
+  To use cloud services, the DNS and DHCP agents must be installed on the same machine as Micetro Central. For information about how to install DNS agents, see :ref:`install-dns-controllers`.
 
 .. csv-table::
   :header: "Cloud service", "DNS", "IPAM"
@@ -24,6 +27,7 @@ Supported Cloud Services
   "Azure", "Yes (Azure DNS)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "NS1", "Yes", "N/A"
+  "Meraki", "N/A", "Yes"
 
 
 Setting Up Cloud Integrations
@@ -31,17 +35,17 @@ Setting Up Cloud Integrations
 
 Prerequisites
 ^^^^^^^^^^^^^^^
-For IP Address Management (IPAM), Micetro connects with the cloud service through Men&Mice Central, and for DNS management, the Men&Mice DNS controller is required. Before proceeding with any actions related to Micetro and its interaction with cloud services, two essential requirements must be met:
+For IP Address Management (IPAM), Micetro connects with the cloud service through Micetro Central. DNS management requires the Micetro DNS agent, and DHCP management requires the Micetro DHCP agent. Before proceeding with any actions involving Micetro and cloud services, two critical requirements must be met:
 
-1. **DNS Controller Installation and Setup**:
+1. **DNS/DHCP Agent Installation and Setup**:
 
-   * Ensure that the DNS controller is installed on the machine where Men&Mice Central is running.
-   * For instructions on installing DNS controllers, see :ref:`install-controllers`.
+   * Ensure that the Micetro agent is installed on the machine where Micetro Central is running.
+   * For instructions on installing Micetro agents, see :ref:`install-controllers`.
 
 2. **Network Connectivity**:
 
-   * Verify that the machine running Men&Mice Central can establish a connection to the specific cloud instance.
-   * The connection should be established on port 443/TCP. This is a specific network port used for secure communication.
+   * Ensure that the machine hosting Micetro Central can connect to the designated cloud instance.
+   * The connection must be made through port 443/TCP, which is reserved for secure communication.
    * For detailed networking requirements, see :ref:`firewall-ports`.
 
 
@@ -50,7 +54,7 @@ If you intend to add multiple AWS cloud accounts using a single set of credentia
 Adding Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^
 
-You must have permission to administer DNS to add a new service to Micetro.
+You must have permission to administer DNS or DHCP to add a new service to Micetro.
 
 **To add a cloud service**:
 
@@ -61,7 +65,7 @@ You must have permission to administer DNS to add a new service to Micetro.
    .. image:: ../../images/add-servive-dialog.png
      :width: 50%
 
-4. The DNS service and any subnets defined will be displayed under DNS Services and IP Ranges, respectively.
+4. The service and any subnets defined will be displayed under DNS Services or DHCPS Service and IP Ranges, respectively.
 
 Akamai Fast DNS
 """"""""""""""""
@@ -71,10 +75,10 @@ Fill in the fields required to connect to Akamai Fast DNS:
 .. image:: ../../images/add-edge-dns.png
    :width: 50%
 
-* **Obtaining Access Credentials**: For information about how to create API Access Credentials for Micetro, see https://developer.akamai.com/introduction/Prov_Creds.html
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for Micetro, see `Create EdgeGrid authentication credentials <https://developer.akamai.com/introduction/Prov_Creds.html>`_.
 
 .. warning:: 
-  Akamai OPEN APIs are time sensitive! Ensure that the system your client runs on is synchronized to a Stratum 2 or better time source.
+  Akamai OPEN APIs are time sensitive! It is crucial to synchronize the system your client operates on with a Stratum 2 or higher time source.
 
 .. danger::
   If the time on the server running the DNS Remote differs significantly from Coordinated Universal Time, authentication will fail preventing access/updating of zones through Micetro.
@@ -99,7 +103,7 @@ Fill in the fields required to connect to AWS:
 .. image:: ../../images/add-aws.png
    :width: 50%
 
-* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see: https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see `AWS security credentials <https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html>`_. 
 
 * For information about how to add multiple AWS cloud accounts using single credentials, see: :ref:`aws-multi-account`.
 * For information about the minimum permissions required for adding AWS accounts, see :ref:`cloud-minimum-permissions`.
@@ -115,10 +119,20 @@ Fill in the fields required to connect to NS1:
 .. image:: ../../images/add-ns1.png
    :width: 50%
 
-*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see https://ns1.com/knowledgebase/creating-and-managing-api-keys.
+*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `IBM NS1 Connect <https://ns1.com/knowledgebase/creating-and-managing-api-keys>`_.
 
-.. _connect-dyn:
+.. _connect-meraki:
 
+Cisco Meraki
+""""""""""""
+To manage Meraki with Micetro, it is required to have an operational instance of the Micetro DHCP Agent. For additional details about the DHCP Agent, see :ref:`install-dhcp-controllers`. Moreover, the user responsible for adding Meraki should have DHCP administrator privileges.
+
+When connecting to Meraki, you need to sepcify the location of the running DHCP. Next you must provide Micetro with a display name for the service and the API key to connect to Meraki. 
+
+.. image:: ../../images/add-meraki.png
+   :width: 50%
+
+* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `Cisco Meraki Dashboard API <https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API>`_.
 
 Editing Cloud Services
 -----------------------
@@ -147,8 +161,9 @@ Removing Cloud Networks
 
 1. On the **IPAM** page, select the specific cloud network.
 2. On the :guilabel:`Action` menu, select :guilabel:`Delete network`.
+
 |
-**See also**:
+**Related topics**:
 
 * :ref:`aws-multi-account`
 

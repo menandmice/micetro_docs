@@ -1,60 +1,44 @@
 .. meta::
-   :description: Setting a static value for Micetro Central in the Micetro Web Interface
+   :description: Allowing Micetro Web Interface to login to other Central servers.
    :keywords: Micetro 
 
 .. _webapp-fixed-central:
 
-Configuring the Web Interface to Use a fixed Micetro Central Server
+Allowing Micetro Web Interface to Log In to Other Central Servers
 ===================================================================
 
-By default, the Micetro Web Interface allows you to select the Micetro Central server for login. If you want to set a fixed Micetro Central Server for the login dialog box, follow the steps below.
+By default, the Micetro Web Interface and API only allow connecting to a single Micetro Central server, determined during the first login to Micetro after installation.
+
+If you want to allow users to specify a custom Central server to connect to, follow the instructions below.
 
 Windows
 -------
 
-**To configure a fixed Server name for the Web Interface login**:
-
-1. Edit the ``preferences.cfg`` file for the M&M Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. If it doesn't exist, insert an XML-Tag for the default Micetro Central server name:
+1. Edit the ``preferences.cfg`` file for the M&M Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following XML tag:
 
   .. code-block::
 
-    <DefaultCentralServer value="your M&M Central DNS name or IP" />
+    <LockToDefaultServer value="0" />
 
-2. Add an XML tag to set the Web Interface to use the DefaultCentralServer as a fixed server name:
+2. Restart the M&M Web Services Windows service.
 
-  .. code-block::
-
-    <FixedCentralServer value="1" />
-
-3. Restart the M&M Web Services Windows service.
-
-4. After that, the login dialog box will display the DefaultCentralServer name as "Server", which will be greyed out and uneditable.
-
-.. tip::
-  It's a good idea to clear the browser's cached cookies and reload the Web Interface page to ensure the correct data is displayed.
+3. After that, a "Server" field will appear on the Micetro Web Interface login page, and the "serverName" field in the API Login command will be honored.
 
 Linux
 -----
 
 1. Log into the server hosting the Web Interface.
 
-2. Edit the ``preferences.cfg`` file for the M&M Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add an XML tag for the default Micetro Central server name if it's missing:
+2. Edit the ``preferences.cfg`` file for the M&M Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following XML tag:
 
   .. code-block::
 
-    <DefaultCentralServer value="your M&M Central DNS name or IP" />
+    <LockToDefaultServer value="0" />
 
-3. Add an XML tag to set the Web Interface to use the DefaultCentralServer as fixed server name:
-
-  .. code-block::
-
-    <FixedCentralServer value="1" />
-
-4. Restart the ``mmws`` service:
+3. Restart the ``mmws`` service:
 
   .. code-block:: bash
 
     systemctl restart mmws
 
-.. tip::
-  It's a good idea to clear the browser's cached cookies and reload the Web Interface page to ensure the correct data is displayed.
+4. After that, a "Server" field will appear on the Micetro Web Interface login page, and the "serverName" field in the API Login command will be honored.

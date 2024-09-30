@@ -7,7 +7,7 @@
 Update Guide
 ============
 .. note::
-   These instructions apply to the Micetro web application. For information about update management in the M&M Management Console, see :ref:`console-updates`.
+   These instructions apply to the Micetro Web Interface. For information about update management in the M&M Management Console, see :ref:`console-updates`.
 
 **Permissions:**
 
@@ -16,9 +16,9 @@ Update Guide
 
 Micetro Version
 ---------------
-Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Men&Mice Central and the Micetro Server Controllers. 
+Micetro notifies you when a new version becomes available and allows administrators to update to a new version. Versions may contain updates for any number of components, such as Micetro Central and the Micetro agents. 
 
-* Minor versions often only contain an update for a single component, such as the Micetro web application.
+* Minor versions often only contain an update for a single component, such as the Micetro Web Interface.
 
 * Major version upgrades normally contain an update for every component.
 
@@ -76,8 +76,9 @@ If you're updating Micetro from an older version, refer to the following table:
 
 .. [1] Kea DHCP servers must be updated to 1.6.0 or 1.8.0 *before* updating Micetro to 10.0 or newer. See `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
 
+
 Checking the Status of Micetro Components and Appliances
---------------------------------------------------------
+---------------------------------------------------------
 You can see the status of all components at a glance so you know everything is up and running smoothly.
 
 **To check the current status of Micetro Components and Appliances**:

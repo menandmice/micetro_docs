@@ -49,4 +49,4 @@ Available Connector Scripts
 
 * Amazon Route53: see :ref:`aws-route53`.
 
-* PowerDNS with MySQL database backend: see :ref:`powerdns`.
+* PowerDNS Authoritative DNS Server: see :ref:`powerdns`.

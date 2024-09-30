@@ -63,7 +63,7 @@ VMWare Fusion/Workstation
 
 1. First, download the OVA file (http://appliance.is/ddi.ova) or use http://download.menandmice.com/Appliance/ for a specific version
 
-2. To setup the Virtual Appliance in VMWare Fusion, either double click the OVA file, or navigate to :menuselection:`File --> Import`.
+2. To setup the Virtual Appliance in VMWare Fusion, either double-click the OVA file, or navigate to :menuselection:`File --> Import`.
 
 3. A dialog box appears that will allow you to specify the location of the OVA file. Confirm by clicking the :guilabel:`Open` button.
 

@@ -7,9 +7,11 @@
 Networks
 =========
 
+.. _view-networks:
+
 Viewing Networks
 ----------------
-The **Networks** tab on the **IPAM** page provides a comprehensive overview of the IP :ref:`address space <address-spaces>` accessible to you. By default, all networks are displayed, but you can use the filtering sidebar on the left to filter by IP ranges, DHCP scopes, and containers. The network list displays how the IP addresses are organized into named subnets and provides important details such as how much of the address space is used and backup plans for subnet failures. You can also view details for the selected network in the inspector on the right.
+The **Networks** tab on the **IPAM** page provides a comprehensive overview of the IP :ref:`address space <address-spaces>` accessible to you. By default, all networks are displayed, but you can use the filtering sidebar on the left to filter by **IP ranges**, **DHCP scopes**, and **containers**. The network list displays how the IP addresses are organized into named subnets and provides important details such as how much of the address space is used and backup plans for subnet failures. You can also view details for the selected network in the inspector on the right.
 
 .. image:: ../../images/Networks-Micetro-10.5.png
   :width: 90%
@@ -20,12 +22,17 @@ The **Networks** tab on the **IPAM** page provides a comprehensive overview of t
 
 * When a network has no subranges, its utilization is displayed in the network list.
 
+The left sidebar offers several options for filtering and organizing the networks: Menu, Folders, and DHCP services.
+
+.. image:: ../../images/networks-sidebar-options.png
+  :width: 40%
+
 To narrow down the results shown when viewing networks, use the :ref:`webapp-quick-filter`. When using the tree view with an active filter, parent networks that do not match the search criteria will appear dimmed, while the matching results are highlighted. For example, in the image below, we searched for the string ``3.1``.
 
 .. image:: ../../images/ipam-tree-filter-Micetro.png
   :width: 90%
 
-.. _ipam-range-config:
+.. _ipam-create-network:
 
 Creating Networks
 ------------------
@@ -43,11 +50,15 @@ When creating a network, Micetro automatically places it in the proper location 
 
 2. Select the type of network you want to create (network, scope, container).
 
-3. Fill in the necessary details. The **Create** wizard varies depending on the type you selected:**MORE INFO**
+3. Fill in the necessary details. The **Create** wizard varies depending on the type you selected:
 
    * For a **network**, you can reserve network and broadcast address, and lock the range if needed. You can also assign it to an AD site, see :ref:`active-directory`.
 
-   * A **DHCP scope** can be created with the network and broadcast addresses automatically configured.**ENTER MORE INFO HERE**
+   * A **DHCP scope** can be created with the network and broadcast addresses automatically configured. If the server is configured to use a failover relationship, you can add the scope to the failover. Also, if :ref:`dhcp-superscopes` have been created on the server, you can add the scope to a superscope.
+
+    .. Note::
+      
+      When creating a DHCPv6 scope for a Microsoft or a Kea DHCP server, you must specify a preference value for the DHCP scope. If the scope is assigned to multiple servers, the DHCP client will select the server with the lowest preference value.
 
    * A **container** doesn't have a network or broadcast address. Within a container, you can define address ranges and scopes, and you can set privileges that apply to the enclosed ranges and scopes through access inheritance. You cannot allocate IP addresses from a container unless you have enabled this functionality in the **IPAM** section of the :ref:`admin-system-settings`. 
     
@@ -68,7 +79,7 @@ You can edit the properties of a network.
 
 1. Select the network(s) in the list.
 
-2. Select :guilabel:`Properties` on the taskbar or :guilabel:`Edit network properties` on the row :guilabel:`...` menu. 
+2. Select :guilabel:`Properties` on the taskbar or :guilabel:`Edit network properties` on the Row :guilabel:`...` menu. 
 
 3. Make the desired changes to the network.
 
@@ -92,16 +103,14 @@ When you need to set up similar environments or scale existing configurations, y
 
 1. Select the network you wish to duplicate.
 
-2. Select :guilabel:`Duplicate` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
+2. Select :guilabel:`Duplicate` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 3. In the Duplicate Networks dialog box, enter a new network address and title for the network you are creating. 
 
 4. Click :guilabel:`Duplicate`. The new network is added to the networks list.
 
-
 Deleting Networks
 ^^^^^^^^^^^^^^^^^^
-
 When a network is deleted, its IP addresses will not be deleted. Instead, they are assigned to the parent network and will be listed when that network is opened. If the network being deleted contains subranges, those subranges will become children of the parent network of the unassigned networks.
 
 When a DHCP scope is deleted, the IP addresses within that scope will no longer be managed dynamically. 
@@ -114,13 +123,12 @@ Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations,
 
 1. Select network(s) you wish to remove.
 
-2. Select :guilabel:`Delete network` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
+2. Select :guilabel:`Delete network` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
 
 3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to cancel.
 
 Viewing IP Addresses within Networks
 -------------------------------------
-
 To view a list of IP addresses within a specific network, double-click the network. This opens a list where you can view and edit the properties of individual IP addresses. You can filter the IP address list, so it displays only the IP addressees you need. 
 
 .. image:: ../../images/view-Networks-Micetro-10.5.png
@@ -142,7 +150,7 @@ To view a list of IP addresses within a specific network, double-click the netwo
   
   * On the :guilabel:`Action` menu you can use the :guilabel:`Find next free address` option to select the next available IP address within the range. Alternatively, selecting :guilabel:`Find random free address` will randomly select an available IP address.
 
-  * **Viewing DHCPv6 scopes**: Unlike DHCPv4 scopes, which display all addresses within a scope, a DHCPv6 scope only shows addresses that are currently in use or have been recently used. At the bottom of the view, you can see the number of active IP addresses being displayed. An IP address with the status "free" indicates that it was recently used. To see more information about an address, select :guilabel:`View History` for that address.
+  * **Viewing DHCPv6 scopes**: Unlike DHCPv4 scopes, which display all addresses within a scope, a DHCPv6 scope only shows addresses that are currently in use or have been recently used. At the bottom of the view, you can see the number of active IP addresses being displayed. An IP address with the status **free** indicates that it was recently used. To see more information about an address, select :guilabel:`View History` for that address.
 
 IP Address State
 ^^^^^^^^^^^^^^^^^
@@ -166,6 +174,133 @@ The following states indicate the IP address usage:
 
    * **Pending**: This is specific to the Workflow module. It indicates that there is a pending Change Request for an A record associated with this IP address. Although the address is otherwise available, it is marked as **Pending**  to avoid it from being assigned to another user while the change request awaits approval.
 
+
+.. _split-range-wizard:
+
+Allocating Subranges
+----------------------
+
+You can create multiple subnets from an existing network that resides on subnet boundaries and currently has no subnets configured.
+
+**To allocate subranges**:
+
+1. On the **IPAM** page, select the network you want to allocate from.
+
+2. Select :guilabel:`Allocate subranges` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+
+3. Configure the new subranges. If you select fewer subnets than fit within the network, you can set the offset from where to start the allocation. Click :guilabel:`Next` when you finish configuring.
+
+   .. image:: ../../images/subranges-wizard.png
+     :width: 65%
+
+4. Define the title and custom properties for the new subranges. Click :guilabel:`Next` when you're done.
+
+5. On the summary page, verify the new subranges and click :guilabel:`Finish`.
+
+Joining Networks (Ranges)
+-------------------------
+With this feature, you can select and merge multiple networks. The :guilabel:`Join ranges` command becomes available if the selected networks can be joined.
+
+**To join networks**:
+
+1. On the **IPAM** page, select the ranges you want to join.
+
+2. Select :guilabel:`Join ranges` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
+
+   .. image:: ../../images/join-ranges.png
+      :width: 90%
+   
+3. Configure the properties for the joined range:
+
+   * **Use access from**: Select the range from which you want to inherit access permissions.
+
+   * **Use properties from**: Select the range from which you want to inherit properties.
+
+   * **Title**: Enter a title for the new range.
+
+   * **Description**: Add a description if needed.
+
+4. Click :guilabel:`Join`.
+
+
+Host Discovery
+---------------
+
+With this feature, you can monitor the presence of hosts on your network and track when they were last detected. Host discovery can be accomplished through two methods: using ping or querying routers for host information.
+
+Configuring Host Discovery Using Ping
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. On the **IPAM** page, select one or more networks.
+
+2. Select :guilabel:`Set discovery schedule` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+
+3. Select the :guilabel:`Enable` checkbox.
+
+4. Enter the :guilabel:`Frequency` and select the frequency unit on the :guilabel:`Every` dropdown list.
+
+5. Set the date and time for the :guilabel:`Next run`.  
+
+6. Click :guilabel:`Save`.
+
+Once the schedule options have been configured, two columns - **Last Seen** and **Last Known MAC Address** - are added to the IP address list. The **Last Seen** column identifies the timestamp of when a host was last detected on the network.
+
+   * **Green**: Host responded to the last PING request, displaying the date and time.
+
+   * **Orange**: Host has responded in the past but did not respond to the last PING request. The date and time of the last response is shown.
+
+   * **Red**: Host has never responded to a PING request, and the text **Never** is displayed.
+
+Disabling Host Discovery
+""""""""""""""""""""""""
+At any time if you wish to disable host discovery, do the following:
+
+1. Select the network(s) for which you want to disable discovery.
+
+2. On the Row :guilabel:`...` menu, select :guilabel:`Set discovery schedule`.
+
+3. Clear the :guilabel:`Enable` checkbox.
+
+4. Click :guilabel:`Save`.
+
+Configuring Host Discovery by Querying Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See :ref:`snmp-profiles`.
+
+Subnet Discovery
+----------------
+
+The subnet discovery feature enables Micetro to obtain information about the subnets on the network through routers using SNMP. To activate the subnet discovery feature, ensure that :guilabel:`Synchronize subnets ...` is selected in the SNMP profile. For more information about SNMP profiles, see :ref:`snmp-profiles`.
+
+
+Setting Subnet Monitoring
+-------------------------
+
+**To adjust monitoring settings for a subnet**:
+
+1. Select the subnet(s) for which you want to change the monitoring setting.
+
+2. Select :guilabel:`Set subnet monitoring` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
+
+3. Complete the required details in the Subnet Monitoring dialog box.
+
+   * **Enabled**: When selected, the subnet will be monitored.
+
+   * **Script to invoke**: Enter the path of the script to run when the number of free addresses falls below the defined threshold. For information on the script interface and formatting, see :ref:`admin-change-events`.
+
+   * **Email addresses**: Enter one or more email addresses separated by commas (for example, email@example.com,email@example.net) to receive notifications when the number of free addresses drops below the set threshold.
+
+   * **Dynamic Threshold**: Define the threshold for the number of free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
+
+   * **Static Threshold**: Enter the threshold for the number of free addresses in a subnet.
+
+   * **Only perform action once (until fixed)**: Select this option to execute the action only once when the number of free addresses falls below the threshold.
+
+   * **Perform action when fixed**: Choose this option to execute the action when the number of free addresses is no longer below the threshold.
+
+4. Click :guilabel:`OK` to confirm your settings.
+   
 .. _ip-address-dialog:
 
 Adding and Modifying Related DNS Data
@@ -199,155 +334,19 @@ Adding a DNS Record
 Editing a DNS Record
 ^^^^^^^^^^^^^^^^^^^^
 
-1. In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Edit` on the row :guilabel:`...` menu for the relevant DNS record.
+1. In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Edit` on the Row :guilabel:`...` menu for the relevant DNS record.
 
 2. Make the desired changes and click :guilabel:`Save now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
 
 Removing a DNS Record
 ^^^^^^^^^^^^^^^^^^^^^
 
-1. In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Delete` on the row :guilabel:`...` menu for the relevant DNS record.
+1. In the :guilabel:`Related DNS data` section of the inspector, select :guilabel:`Delete` on the Row :guilabel:`...` menu for the relevant DNS record.
 
 2. Select :guilabel:`Delete now` or :guilabel:`Add to request`. See :ref:`webapp-workflows` for further details.
 
 3. The host details are deleted and removed from the inspector.
 
-.. _split-range-wizard:
-
-Allocating Subranges
-----------------------
-
-You can create multiple subnets from an existing network that resides on subnet boundaries and currently has no subnets configured.
-
-**To allocate subranges**:
-
-1. On the **IPAM** page, select the network you want to allocate from.
-
-2. Select :guilabel:`Allocate subranges` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
-
-3. Configure the new subranges. If you select fewer subnets than fit within the network, you can set the offset from where to start the allocation. Click :guilabel:`Next` when you finish configuring.
-
-   .. image:: ../../images/subranges-wizard.png
-     :width: 65%
-
-4. Define the title and custom properties for the new subranges. Click :guilabel:`Next` when you're done.
-
-5. On the summary page, verify the new subranges and click :guilabel:`Finish`.
-
-Joining Networks (Ranges)
--------------------------
-With this feature, you can select and merge multiple networks. The :guilabel:`Join ranges` command becomes available if the selected networks can be joined.
-
-**To join networks**:
-
-1. On the **IPAM** page, select the ranges you want to join.
-
-2. Select :guilabel:`Join ranges` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
-
-   .. image:: ../../images/join-ranges.png
-      :width: 90%
-   
-3. Configure the properties for the joined range:
-
-   * **Use access from**: Select the range from which you want to inherit access permissions.
-
-   * **Use properties from**: Select the range from which you want to inherit properties.
-
-   * **Title**: Enter a title for the new range.
-
-   * **Description**: Add a description if needed.
-
-4. Click :guilabel:`Join`.
-
-Enabling or Disabling Scopes
------------------------------
-If a scope is no longer needed but you want to keep it for potential future use, you can disable it instead of deleting it. When a scope is disabled, it will be ignored by the DHCP server until it is re-enabled.
-
-**To enable or disable a scope**:
-
-1.	Select the scope you want to enable or disable.
-2.	Select Disable scope or Enable scope on either the Action or the row … menu.
-3.	Click Yes to confirm.
-
-
-Host Discovery
----------------
-
-With this feature, you can monitor the presence of hosts on your network and track when they were last detected. Host discovery can be accomplished through two methods: using ping or querying routers for host information.
-
-Configuring Host Discovery Using Ping
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. On the **IPAM** page, select one or more networks.
-
-2. Select :guilabel:`Set discovery schedule` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
-
-3. Select the :guilabel:`Enable` checkbox.
-
-4. Enter the :guilabel:`Frequency` and select the frequency unit on the :guilabel:`Every` dropdown list.
-
-5. Set the date and time for the :guilabel:`Next run`.  
-
-6. Click :guilabel:`Save`.
-
-Once the schedule options have been configured, two columns - **Last Seen** and **Last Known MAC Address** - are added to the IP address list. The **Last Seen** column identifies the timestamp of when a host was last detected on the network.
-
-   * **Green**: Host responded to the last PING request, displaying the date and time.
-
-   * **Orange**: Host has responded in the past but did not respond to the last PING request. The date and time of the last response is shown.
-
-   * **Red**: Host has never responded to a PING request, and the text **Never** is displayed.
-
-Disabling Host Discovery
-""""""""""""""""""""""""
-At any time if you wish to disable host discovery, do the following:
-
-1. Select the network(s) for which you want to disable discovery.
-
-2. On the row :guilabel:`...` menu, select :guilabel:`Set discovery schedule`.
-
-3. Clear the :guilabel:`Enable` checkbox.
-
-4. Click :guilabel:`Save`.
-
-Configuring Host Discovery by Querying Routers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-See :ref:`snmp-profiles`.
-
-Subnet Discovery
-----------------
-
-The subnet discovery feature enables Micetro to obtain information about the subnets on the network through routers using SNMP. To activate the subnet discovery feature, ensure that :guilabel:`Synchronize subnets ...` is selected in the SNMP profile. For more information about SNMP profiles, see :ref:`snmp-profiles`.
-
-
-Setting Subnet Monitoring
--------------------------
-
-**To adjust monitoring settings for a subnet**:
-
-1. Select the subnet(s) for which you want to change the monitoring setting.
-
-2. Select :guilabel:`Set subnet monitoring` on either the :guilabel:`Action` or the row :guilabel:`...` menu. 
-
-3. Complete the required details in the Subnet Monitoring dialog box.
-
-   * **Enabled**: When selected, the subnet will be monitored.
-
-   * **Script to invoke**: Enter the path of the script to run when the number of free addresses falls below the defined threshold. For information on the script interface and formatting, see :ref:`admin-change-events`.
-
-   * **Email addresses**: Enter one or more email addresses separated by commas (for example, email@example.com,email@example.net) to receive notifications when the number of free addresses drops below the set threshold.
-
-   * **Dynamic Threshold**: Define the threshold for the number of free addresses in a DHCP scope address pool.  NOTE:  For split scopes and scopes in a superscope (on MS DHCP servers) and address pools using the shared-network feature on ISC DHCP servers, the total number of free addresses in all of the scope instances is used when calculating the number of free addresses.
-
-   * **Static Threshold**: Enter the threshold for the number of free addresses in a subnet.
-
-   * **Only perform action once (until fixed)**: Select this option to execute the action only once when the number of free addresses falls below the threshold.
-
-   * **Perform action when fixed**: Choose this option to execute the action when the number of free addresses is no longer below the threshold.
-
-4. Click :guilabel:`OK` to confirm your settings.
-   
 Working with Address (A) Records in DNS Zone Windows
 -----------------------------------------------------
 
@@ -355,16 +354,18 @@ When the IPAM module is enabled, you may notice some differences when working wi
 
 The system administrator can control which IP addresses users are permitted to use and set a range of IP addresses they are allowed to work with. Additionally, administrators can decide whether users are allowed to use IP addresses already assigned in DNS. This means that there could be a predefined range of IP addresses that you're permitted to work with, and the system may prevent you from using IP addresses outside of this range.
 
+
+  
 |
 **Related Topics**:
 
 * :ref:`ipam`
+* :ref:`configuring-dhcp-scopes`
 * :ref:`active-directory`
 * :ref:`devices`
-* :ref:`dhcp-supersocpes`
+* :ref:`dhcp-superscopes`
 * :ref:`admin-custom-properties`
 * :ref:`admin-change-events`
 * :ref:`snmp-profiles`
 * :ref:`webapp-workflows`
 * :ref:`admin-system-settings`
-* :ref:`new-dhcp-scope`

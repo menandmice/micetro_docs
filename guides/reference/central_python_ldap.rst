@@ -1,10 +1,10 @@
 .. meta::
    :description: Using Python with Micetro on Windows Server
-   :keywords: Micetro, Men&Mice Central, server, installation, how to, Python
+   :keywords: Micetro, Micetro Central, server, installation, how to, Python
 
 .. _central-python-ldap:
 
-Installing Python for Men&Mice Central on Windows
+Installing Python for Micetro Central on Windows
 -------------------------------------------------
 
 Using LDAP (see :ref:`configure-ldap`) with :ref:`install-central` on a Windows server requires Python to be installed for all users.

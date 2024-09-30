@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Micetro - 11.0"
+project = "Micetro - 11.1"
 copyright = "2024, BlueCat"
-author = "Men&Mice"
+author = "BlueCat"
 
 
 # -- General configuration ---------------------------------------------------

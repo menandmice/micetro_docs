@@ -7,17 +7,11 @@
 Reports
 =======
 
-Introduction
-------------
-
 Micetro manages vast amounts of DNS, DHCP, and IPAM data. Building reports is easy and can be tailor-made by correlating related data in a few steps, and scheduling the results to be generated daily, weekly or on a custom schedule. There are built-in report definitions that can be used as a reference to build reports. Using custom fields in Micetro further enhances reports by correlating custom fields with the built-in ones. The system then allows you to create reporting definitions that can be run either one time only, or scheduled to run later or at regular intervals.
 
 The reports can be viewed within the Web Application, or downloaded in various formats for further analysis.
 
 When the **Reports** page is opened, you are presented with a list of report definitions. Like every other part of the Web Application, this list can be filtered and searched.
-
-Reporting Module
-----------------
 
 You can:
 
@@ -171,11 +165,11 @@ Viewing the Report Results
 Viewing the List of Reports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To view a list of all reports that have been generated for a particular reporting definition, double click the reporting definition in the list.
+To view a list of all reports that have been generated for a particular reporting definition, double-click the reporting definition in the list.
 
 This lists all reports along with how much data is in the report (row count), and how long it took to generate the report (duration).
 
-Double clicking on a report in this list allows you to preview a report.
+Double-clicking on a report in this list allows you to preview a report.
 
 Previewing and Downloading a Report
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -252,7 +246,7 @@ Settings for Schedule.
 By selecting for example '2' and 'Weeks', a new report is generated at the selected start on date/time and then at every 2 weeks afterward.
 
 .. note::
-  All dates and times are according to the time zone setting on the Men&Mice Central server.
+  All dates and times are according to the time zone setting on the Micetro Central server.
 
 Settings for Scavenging
 """""""""""""""""""""""
@@ -304,7 +298,7 @@ Both the report definition properties, the filtering criteria for the report, an
 Scavenge Reports
 ^^^^^^^^^^^^^^^^
 
-Report results take up disk space on the Men&Mice Central server. The system allows for specifying the maximum number of reports (or the maximum number of days to keep each result) for each report definition. Oldest results are deleted when the limit is reached.
+Report results take up disk space on the MicetroCentral server. The system allows for specifying the maximum number of reports (or the maximum number of days to keep each result) for each report definition. Oldest results are deleted when the limit is reached.
 
 1. Select a report definition in the list, and then click :guilabel:`Scavenge reports`.
 

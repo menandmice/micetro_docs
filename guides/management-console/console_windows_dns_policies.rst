@@ -4,8 +4,8 @@
 
 .. _windows-dns-policies:
 
-DNS policies (Windows)
-======================
+DNS policies (Windows) (Management Console, obsolete)
+======================================================
 
 .. note::
   Managing DNS policies for Microsoft DNS servers is only available in the Management Console.

@@ -322,7 +322,7 @@ Editing a DNS Host
 
 1. Select the host details you want to edit.
 
-2. Double click the host entry you want to edit. A dialog box displays.
+2. Double-click the host entry you want to edit. A dialog box displays.
 
 3. Make the desired changes and click :guilabel:`OK`. The dialog box closes and the details are updated.
 
@@ -355,7 +355,7 @@ Adding a Related Host
 Editing a Related Host
 ^^^^^^^^^^^^^^^^^^^^^^
 
-1. Double click the related host you want to edit. The Modify Host dialog box displays.
+1. Double-click the related host you want to edit. The Modify Host dialog box displays.
 
   .. note::
     It is not possible to edit all record types.

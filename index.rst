@@ -2,7 +2,7 @@
    :description: Product documentation for Micetro
    :keywords: Micetro, documentation, user guide, admin guide, installation guide
 
-Micetro 11.0
+Micetro 11.1
 #############
 
 Welcome to Micetro, a backend-agnostic DDI orchestration software for complex enterprise network environments.
@@ -52,11 +52,10 @@ Table of Contents
 
      guides/user-manual/webapp_user_guide
      guides/user-manual/dns
-     guides/user-manual/dhcp_scopes
      guides/user-manual/ipam
-     guides/user-manual/folder_management     
      guides/user-manual/webapp_reporting
      guides/user-manual/webapp_workflows
+     guides/user-manual/folder_management     
      guides/user-manual/view_change_history
      guides/user-manual/automation
      

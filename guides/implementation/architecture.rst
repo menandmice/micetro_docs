@@ -31,14 +31,14 @@ Components
 
 Micetro consists of the following components:
 
-Men&Mice Central
+Micetro Central
   The server component of Micetro, running the orchestration logic for all configured services. *Can be configured for high availability on certain platforms.*
 
 Data storage
   Accumulating and organizing data from connected services. *Can be configured for high availability on certain platforms.*
 
 Micetro Agent(s)
-  Minimal-footprint service handling communication between Men&Mice Central and the connected services. *Some services can be connected natively to Central and don't need an agent.*
+  Minimal-footprint service handling communication between Micetro Central and the connected services. *Some services can be connected natively to Central and don't need an agent.*
 
 User interface
   Users manage connected services through a browser-based user interface.
@@ -50,19 +50,19 @@ User interface
 .. note::
   All communications between the Micetro components are encrypted.
 
-Men&Mice Central
+Micetro Central
 ----------------
 
 .. note::
-  At least one copy of Men&Mice Central needs to be installed.
+  At least one copy of Micetro Central needs to be installed.
 
 .. _about-central:
 
-Men&Mice Central, through the connected database, stores all data including user-specific and centrally stored information.
+Micetro Central, through the connected database, stores all data including user-specific and centrally stored information.
 
-Men&Mice Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management module is activated, Men&Mice Central is responsible for the management and allocation of IP Addresses.
+Micetro Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management module is activated, Micetro Central is responsible for the management and allocation of IP Addresses.
 
-*Men&Mice Central listens on TCP port 1231.* See :ref:`firewall-ports` for more details.
+*Micetro Central listens on TCP port 1231.* See :ref:`firewall-ports` for more details.
 
 Use this table as a guide for allocating resources to ensure smooth operation of Micetro:
 
@@ -87,7 +87,7 @@ Use this table as a guide for allocating resources to ensure smooth operation of
 .. [1] In smaller installations, Micetro's Central component can be installed on one of the DNS or DHCP servers, as it will not require much resources. More resources are needed as the managed environment gets larger.
 
 ..
-  If the organization is using Active Directory (AD) and wishes to use AD user authentication, Men&Mice Central must be installed on a Microsoft Windows member server in the domain. All users in that domain, that forest, and trusted forests, will be able to authenticate in Micetro, given that they have been granted access in Micetro. As the other Micetro components (DNS Server Controller and DHCP Server Controller) can be installed on the DNS and DHCP servers, Micetro can manage DNS and DHCP servers that reside in forests where there is no trust between the forest where Central is installed and DNS/DHCP is installed. See :ref:`active-directory` for more information.
+  If the organization is using Active Directory (AD) and wishes to use AD user authentication, Micetro Central must be installed on a Microsoft Windows member server in the domain. All users in that domain, that forest, and trusted forests, will be able to authenticate in Micetro, given that they have been granted access in Micetro. As the other Micetro components (DNS Server Controller and DHCP Server Controller) can be installed on the DNS and DHCP servers, Micetro can manage DNS and DHCP servers that reside in forests where there is no trust between the forest where Central is installed and DNS/DHCP is installed. See :ref:`active-directory` for more information.
   .. image:: ../../images/central-arch-old.png
     :width: 80%
     :align: center
@@ -104,9 +104,9 @@ Data storage
 .. note::
   In case of conflict, the authoritative data is always the data source itself (i.e., the DNS or DHCP server).
 
-By default Men&Mice Central will use an embedded *SQLite* database.  The embedded database is suitable for small to medium environments but larger environments should instead use a more robust database backend. Currently supported database platforms are MS SQL and PostgreSQL server.
+By default, Micetro Central will use an embedded *SQLite* database.  The embedded database is suitable for small to medium environments but larger environments should instead use a more robust database backend. Currently supported database platforms are MS SQL and PostgreSQL server.
 
-Information on how to use MS SQL or PostgreSQL as the database for Men&Mice Central can be found in the :ref:`central-database` section.
+Information on how to use MS SQL or PostgreSQL as the database for Micetro Central can be found in the :ref:`central-database` section.
 
 .. note::
   Deploying Micetro through the Azure Marketplace will use Azure SQL as its database backend automatically. See :ref:`installation-azure` for details.
@@ -116,7 +116,7 @@ Information on how to use MS SQL or PostgreSQL as the database for Men&Mice Cent
 Micetro Agents
 ---------------
 
-The Micetro agents are minimal-footprint services running on the DNS/DHCP server or alongside Men&Mice Central, and facilitate the communication between the connected service and Central.
+The Micetro agents are minimal-footprint services running on the DNS/DHCP server or alongside Micetro Central, and facilitate the communication between the connected service and Central.
 
 .. _about-dns-controller:
 
@@ -129,7 +129,7 @@ The Micetro DNS agent is used to control the DNS server and must be installed on
   Micetro's DNS agent is installed on each DNS server that is to be managed.
 
 (Microsoft) AD environment
-  The DNS agent can be installed on some of the DNS servers or they can all be managed agent-free. If they are to be managed agent-free, then the DNS agent is typically installed on the machine running Men&Mice Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is selected. (See :ref:`agent-free-dns-dhcp`.)
+  The DNS agent can be installed on some of the DNS servers or they can all be managed agent-free. If they are to be managed agent-free, then the DNS agent is typically installed on the machine running Micetro Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is selected. (See :ref:`agent-free-dns-dhcp`.)
 
   The DNS agent must be running as a user that has the necessary privileges.
 
@@ -159,7 +159,7 @@ MS DHCP
 Cisco DHCP
   The DHCP agent can be installed on any machine.
 
-The DHCP agent listens for connections from Men&Mice Central on TCP port 4151.
+The DHCP agent listens for connections from Micetro Central on TCP port 4151.
 
 .. tip::
   There are a few strategies to install the Micetro DHCP agent.
@@ -189,7 +189,7 @@ User Interface
 
 .. _about-webapp:
 
-The Micetro Web Interface can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Interface talks directly to the Web Server (IIS or Apache) which redirects its request to Men&Mice Central through TCP port 1231.
+The Micetro Web Interface can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Interface talks directly to the Web Server (IIS or Apache) which redirects its request to Micetro Central through TCP port 1231.
 
 .. image:: ../../images/IPAM1.png
   :width: 80%
@@ -201,7 +201,7 @@ The Micetro Web Interface can be installed on any server on the network running 
 ..
   Middle Layer
   ------------
-  The middle layer is responsible for collecting and synchronizing data and handling requests from different Interfaces. Men&Mice Central has its own database to store all related data. (See :ref:`central-database`.)  To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate with other services to get or set information - e.g., Microsoft Active Directory to authenticate users. (See :ref:`webapp-sso`.)
+  The middle layer is responsible for collecting and synchronizing data and handling requests from different Interfaces. Micetro Central has its own database to store all related data. (See :ref:`central-database`.)  To retrieve data from the different data sources it uses various methods, as listed above.  It might also communicate with other services to get or set information - e.g., Microsoft Active Directory to authenticate users. (See :ref:`webapp-sso`.)
 
 .. _about-virtual-appliances:
 

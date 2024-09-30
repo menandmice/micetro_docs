@@ -7,6 +7,19 @@
 Micetro Components
 ===================
 
+Windows
+-------
+
+`Download <https://download.menandmice.com>`_ the following installer packages:
+
+* Micetro Central: ``Micetro_Central_x64.exe``
+* Micetro Agent: ``Micetro_Controllers_x64.exe``
+* Micetro Web Interface: ``Micetro_Web_Application_x64.exe``
+* Micetro Management Console: ``Micetro_Management_Console.exe``
+
+.. note::
+  Unless noted, all applications are run as **Administrator**.
+
 Linux
 -----
 
@@ -22,16 +35,3 @@ Linux
 
 .. note::
   Unless noted, all commands are run as *root*.
-
-Windows
--------
-
-`Download <https://download.menandmice.com>`_ the following installer packages:
-
-* Micetro Central: ``Micetro_Central_x64.exe``
-* Micetro Agent: ``Micetro_Controllers_x64.exe``
-* Micetro Web Interface: ``Micetro_Web_Application_x64.exe``
-* Micetro Management Console: ``Micetro_Management_Console.exe``
-
-.. note::
-  Unless noted, all applications are run as **Administrator**.

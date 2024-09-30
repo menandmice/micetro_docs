@@ -21,12 +21,12 @@ Below is a list of the components that are installed and a description of their 
 .. csv-table::
   :widths: 20, 80
 
-  "Men&Mice Central",	"The main Men&Mice component. It also serves as the meta-data storage engine, containing things such as zone history logs, user accounts and permissions, etc. You must have one copy on some server somewhere. It does not need to be installed on a DNS server."
-  "Men&Mice DNS Agent",	"The DNS server agent. It usually sits on each DNS server machine and manages the DNS service on your behalf. In the case of cloud DNS services providers there should be a DNS agent installed on the same machine as the central service."
-  "Men&Mice DHCP Agent", "The DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP agent, on any machine in the network) and manages the DHCP service on your behalf."
+  "Micetro Central",	"The main Micetro component. It also serves as the meta-data storage engine, containing things such as zone history logs, user accounts and permissions, etc. You must have one copy on some server somewhere. It does not need to be installed on a DNS server."
+  "Micetro DNS Agent",	"The DNS server agent. It usually sits on each DNS server machine and manages the DNS service on your behalf. In the case of cloud DNS services providers there should be a DNS agent installed on the same machine as the central service."
+  "Micetro DHCP Agent", "The DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP agent, on any machine in the network) and manages the DHCP service on your behalf."
   "Micetro Web Interface", "The Micetro Web Interface includes most day-to-day actions needed for DDI management."
-  "Men&Mice Management Console", "A thick client. You can install multiple copies, wherever it's needed. For detailed information about the Men&Mice Management Console, see the documentation for the Management Console."
-  "Azure SQL Server", "The database backend for the Men&Mice Central. Micetro will preform all the necessary setup for the database to be ready for use."
+  "Micetro Management Console", "A thick client. You can install multiple copies, wherever it's needed. For detailed information about the Micetro Management Console, see the documentation for the Management Console."
+  "Azure SQL Server", "The database backend for the Micetro Central. Micetro will preform all the necessary setup for the database to be ready for use."
 
 .. important::
   The Azure Marketplace offering comes with 60 day trial keys for all components of Micetro. If you would like to extend your trial or buy permanent license keys please contact sales@menandmice.com.

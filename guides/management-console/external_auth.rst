@@ -78,9 +78,9 @@ To enable Active Directory Single Sign-on, do the following:
 Web Interface
 ^^^^^^^^^^^^^
 
-When single sign-on is enabled, it is possible to enable sign-on in the web interface if the web application is running on a Microsoft Windows Server.
+When single sign-on is enabled, it is possible to enable sign-on in the web interface if the Web Interface is running on a Microsoft Windows Server.
 
-To enable single sign-on in the web application, make sure that Single Sign-on and Single Sign-on for web are enabled in Micetro.
+To enable single sign-on in the Web Interface, make sure that Single Sign-on and Single Sign-on for web are enabled in Micetro.
 
 ..
   .. _disable-kernel-mode-auth:
@@ -553,14 +553,3 @@ Logging for External Authentication can be enabled by putting your Central log i
 **External changes to user profiles**
 
 External changes to the user’s email, full name, and group membership are automatically replicated in Micetro on the next login.
-
-**Separate hosts for Micetro Central and Micetro Web Application**
-
-The Web Application/Web service is traditionally on the same host as the Micetro Central and by default, the tool will send queries to “localhost”.  
-
-if Micetro Central is on a different host from the Web Service then you can add the following XML-tag to the preference value to auto-populate the “Server” field at login::
-
-      <DefaultCentralServer value="IP or DNS name of the Men & Mice Central server" />
-      
-      * Windows - C:\ProgramData\Men and Mice\Central\preferences.cfg 
-      * Linux - /var/mmsuite/mmcentral/preferences.cfg

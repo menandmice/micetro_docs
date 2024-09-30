@@ -1,5 +1,5 @@
 .. meta::
-   :description: Configuring PostgreSQL as the database backend for Micetro by Men&Mice
+   :description: Configuring PostgreSQL as the database backend for Micetro
    :keywords: PostgreSQL, Micetro, database, DDI database
 
 .. _central-postgresql:
@@ -9,16 +9,16 @@ PostgreSQL
 
 .. _central-psql-unix:
 
-Men&Mice Central running on Linux
+Micetro Central Running on Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Edit the configuration file for Men&Mice Central:
+Edit the configuration file for Micetro Central:
 
 .. code-block:: bash
 
   nano /var/mmsuite/mmcentral/preferences.cfg
 
-Find (or create) and set the following values:
+Find (or add) the following entries and configure them accordingly:
 
 .. code-block::
 
@@ -27,46 +27,50 @@ Find (or create) and set the following values:
   <databaseusername value="USERNAME" />
   <databasepassword value="plaintext:PASSWORD" />
 
-Where
+Definitions:
 
-* ``HOSTNAME`` and ``DATABASE``: the server’s hostname running the PostgreSQL service, and the system user on the server
-* ``USERNAME``: the user with permissions to read and write the PostgreSQL database
-* ``PASSWORD``: the database user’s password
+* ``HOSTNAME`` and ``DATABASE``: The hostname of the server running the PostgreSQL service and the system user on the server.
+* ``USERNAME``: The user with read and write permissions for the PostgreSQL database.
+* ``PASSWORD``: The password for the database user.
 
 .. note::
-  Once Central starts and reads the configuration file, it’ll automatically change the plaintext password to hashed, to increase security.
+  After Central starts and processes the configuration file, it will automatically convert the plaintext password into a hashed format to increase security.
 
-Restart Central and verify it’s running:
+To restart Central and check its status:
 
 .. code-block:: bash
 
   systemctl restart mmcentral
   systemctl status mmcentral
 
-If the database connection fails, the service will fail to start with the appropriate error message.
+If the database connection fails, the service will not start and an error message will be displayed.
 
 .. _central-psql-windows:
 
-Men&Mice Central running on Windows
+Micetro Central Running on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The preferences.cfg file in the data directory contains (beside the fingerprint of Central, i.e. the "password" XML-tag) four additional XML tags: database, databaseserver, databaseusername and databasepassword
+The preferences.cfg file located in the data directory contains, in addition to the fingerprint of Central (the "password" XML-tag), four other XML tags: database, databaseserver, databaseusername and databasepassword.
 
-The preferences.cfg file for normal user/password authentication should look like:
+The preferences.cfg file for standard user/password authentication should look like this:
 
 .. code-block::
 
   <password value="the fingerprint hash"/>
   <database value="postgresql"/>
-  <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
+  <databaseserver value="<name or IP of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
   <databaseusername value="mmSuiteDBUser"/>
   <databasepassword value="password hash"/>
 
-An example preferences.cfg file for the Windows Authentication method should look like (databaseusername tag must be present and the value attribute must be set to empty string):
+For the Windows Authentication method, an example preferences.cfg file would look like  this (the databaseusername tag must be included and its value attribute should be an empty string):
 
 .. code-block::
 
   <password value="the fingerprint hash"/>
   <database value="postgresql"/>
-  <databaseserver value="<name or ip of the PostgreSQL server>\<name of instance, e.g. PSQLDB>@,<name of database, e.g. mmsuite"/>
+  <databaseserver value="<name or ip of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
   <databaseusername value=""/>
+
+Setting Up a PostgreSQL Database
+--------------------------------
+Micetro requires the creation of a new database on the database server with the UTF8 encoding.

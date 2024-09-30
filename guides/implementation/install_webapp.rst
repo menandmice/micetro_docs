@@ -34,7 +34,7 @@ Installing the Web Interface on Linux
       cd micetro-web-application-10.3.5.linux.x64 && ./install --web-virtual-host-domain web-application.domain.tld
 
     
-  Where ``web-application.domain.tld`` is the domain where the Web Application will be accessed.
+  Where ``web-application.domain.tld`` is the domain where the Web Interface will be accessed.
 
 2. Restart the Apache web server:
 
