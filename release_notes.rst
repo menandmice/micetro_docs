@@ -21,7 +21,7 @@ September 30, 2024
 New Features
 ^^^^^^^^^^^^
 
-* **Cisco Meraki**: Micetro now supports orchestration of DHCP on Cisco Meraki devices, see more information `here <https://docs.menandmice.com/guides/user-manual/cisco_meraki.html>`_
+* **Cisco Meraki**: Micetro now supports orchestration of DHCP on Cisco Meraki devices, see more information `here <https://docs.menandmice.com/en/latest/guides/user-manual/cisco_meraki/>`_
 * **Kea shared networks**: Micetro now supports management of shared networks on ISC Kea
 * **ISC DHCP shared networks**: Shared networks on ISC DHCP can now be managed via Micetro in the Web Application
 * **Microsoft Superscopes**: Superscopes can now be managed via Micetro in the Web Application
