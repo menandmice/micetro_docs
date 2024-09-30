@@ -21,7 +21,7 @@ September 30, 2024
 New Features
 ^^^^^^^^^^^^
 
-* **Cisco Meraki**: Micetro now supports orchestration of DHCP on Cisco Meraki devices, see more information `here <https://docs.menandmice.com/guides/user-manual/cisco_meraki.html>`_
+* **Cisco Meraki**: Micetro now supports orchestration of DHCP on Cisco Meraki devices, see more information in :ref:`cisco-meraki`
 * **Kea shared networks**: Micetro now supports management of shared networks on ISC Kea
 * **ISC DHCP shared networks**: Shared networks on ISC DHCP can now be managed via Micetro in the Web Application
 * **Microsoft Superscopes**: Superscopes can now be managed via Micetro in the Web Application
@@ -33,7 +33,6 @@ New Features
 Improvements
 ^^^^^^^^^^^^
 
-* A link to the REST API documentation has been added to the welcome page of Micetro
 * Accessibility in the Web UI improved for lowest screen resolution by making dialogs take the whole screen when opened
 * Action buttons names changed: Failover Management -> Manage Failover and Access -> Manage Access
 * Added checks to the API to ensure that the TXT record is valid (i.e. it doesn't contain new lines), if they are not valid then an exception is thrown
@@ -44,11 +43,12 @@ Improvements
 * Field name in filters are now matched to columns even if it was only a partial match.
 * "Find next free address" feature now works in large subnets (including IPv6)
 * "Find random free address" now only pings the selected address
+* Folders are now converted with a range when it is converted into a scope
 * Hardened validation of DNS records. It is no longer possible to add records or zones with hyphens at the start or end of a label
 * Improved handling for throttling and API availability for Akamai
 * It is now possible to create dynamic DNS zones on Microsoft DNS
 * Micetro log files are now also purged according to system setting
-* Micetro no longer writes header warning users not to edit config files as it can not pick up changes in those files
+* Port numbers for ISC DHCP Failover can now be defined for the whole range of port numbers
 * Primary and secondary pools in Kea Load Balance setup is now handled correctly. Alias HA client classes HA_server1 (for primary server) and HA_server2 (for secondary server) are being created, so that any pool receiving client class HA_server1 is a primary pool and HA_server2 is a secondary pool
 * Removed the option to choose a module you don't have a license for as the landing page
 * REST API documentation is now linked on the welcome/dashboard page in the Web UI
@@ -69,16 +69,14 @@ Bug Fixes
 * Fixed issue where adding a DNS server and attempting to add a zone on the server in the same session would sometimes fail
 * Fixed issue where users would not be able to login after update of Micetro if there had been an empty xml file in the updates folder
 * Fixed regression of auto-update of server controllers that would sometimes temporarily be reported as out-of-date after being updated
-* Folders are now converted with a range when it is converted into a scope
+* Handling of MARS (multiple active result sets) on Microsoft SQL Server has been improved
 * Information about file paths have been removed from error messages for security reasons
 * MDDS appliances added to the non-default address space are now automatically updated
 * Micetro can now fetch more than 1000 zones from Azure
 * Multiple accessibility improvements have been done e.g. auto-closing sidebars when a certain zoom level has been reached
 * Options from Action menu in the Web UI to be are now selectable
 * Parsing of simple dnssec-policy statements in zones are now behing handled correctly
-* Port numbers for ISC DHCP Failover can now be defined for the whole range of port numbers
 * Session tokens have been removed from URL's due to security reasons
-* Solved multiple issues related to handling of MARS on database connections in Microsoft SQL Server
 * Users are not prompted with an invalid session error anymore when the landing page is set to DNS
 
 Deprecation Announcements
