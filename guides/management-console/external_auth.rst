@@ -520,7 +520,7 @@ This will enable the SSO login on the web.
       :align: center
       
 .. Note::
-The form will not be hidden if there is no external provider configured. The login form can be found by clicking the “Log in with Micetro“ down in the left corner of the login page.
+   The form will not be hidden if there is no external provider configured. The login form can be found by clicking the “Log in with Micetro“ down in the left corner of the login page.
 
 Login and Grant User/Group Access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
