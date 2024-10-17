@@ -140,7 +140,7 @@ Windows
 12. Start Central on the secondary server:
 
   * Open the Services window by pressing **Win + R**, typing **services.msc**, and hitting Enter.
-  * Locate the Micetro Central service, right-click on it, and select **Stop** to ensure it's not running.
+  * Locate the Micetro Central service, right-click on it, and select **Start** and ensure it's running.
 
 13. Verify that you now have 2 servers: one primary, one secondary in :menuselection:`Tools --> Manage High availability`.
 
