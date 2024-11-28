@@ -20,7 +20,9 @@ November xx, 2024
 Bug Fixes
 ^^^^^^^^^
 
-* Resolved an issue where upgrading to Micetro 11.1.0 with a database configured with case-insensitive collation would result in most data in the database being stored in lowercase
+* Fixed an issue affecting customers with unsupported case insensitive database collation on MS SQL Server
+* Fixed a regression in GetNextFreeReservationAddress introduced in 11.1.0.  The API command now works as intended for MS DHCP servers
+* When setting Micetro mode on BDDS, Micetro ensures that the firewall is open on the correct network interface
 
 .. _11.1.1-release:
 11.1.1
