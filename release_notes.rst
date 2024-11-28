@@ -22,7 +22,10 @@ Bug Fixes
 
 * Fixed an issue affecting customers with unsupported case insensitive database collation on MS SQL Server
 * Fixed a regression in GetNextFreeReservationAddress introduced in 11.1.0.  The API command now works as intended for MS DHCP servers
-* When setting Micetro mode on BDDS, Micetro ensures that the firewall is open on the correct network interface
+* When setting BDDS with a dedicated management interface to Micetro mode, Micetro ensures that the firewall is open on the correct network interface
+
+.. note::
+   Micetro only supports databases with case sensitive collations, which is the default for SQLite and Postgres. Customers running MS SQL Server databases with a case insensitive collation are using an unsupported database configuration and might experience unexpected behavior in their Micetro deployment. For more information on the recommended database configuration see :ref:`central-database`
 
 .. _11.1.1-release:
 11.1.1
