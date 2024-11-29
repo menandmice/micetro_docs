@@ -35,14 +35,14 @@ October 24, 2024
 Bug Fixes
 ^^^^^^^^^
 
-* Resolved a UI glitch where the Superscopes filter icon would float on top of tasks if they were large enough to overlap the sidebar
-* Change Requests modifying reservations with a ClientIdentifier reservation method could fail when applied
-* Users with limited access could get an "You do not have access to perform that action" error at login
-* Micetro would sometimes fail syncing MX records correctly from AWS
 * Change Requests could be scheduled in the past using the Web UI
-* Improved mechanism for how DHCP reservations are modified on MS DHCP servers
+* Change Requests modifying reservations with a ClientIdentifier reservation method could fail when applied
 * Fixed an issue when connecting to SQL Server using ODBC on Linux
 * Fixed an issue where initialization of an MDDS appliance using data on the appliance itself was not working
+* Improved mechanism for how DHCP reservations are modified on MS DHCP servers
+* Micetro would sometimes fail syncing MX records correctly from AWS
+* Resolved a UI glitch where the Superscopes filter icon would float on top of tasks if they were large enough to overlap the sidebar
+* Users with limited access could get an "You do not have access to perform that action" error at login
 
 .. _11.1.0-release:
 
