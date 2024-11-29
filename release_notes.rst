@@ -25,7 +25,7 @@ Bug Fixes
 * When setting BDDS with a dedicated management interface to Micetro mode, Micetro ensures that the firewall is open on the correct network interface
 
 .. note::
-   Micetro only supports databases with case sensitive collations, which is the default for SQLite and Postgres. Customers running MS SQL Server databases with a case insensitive collation are using an unsupported database configuration and might experience unexpected behavior in their Micetro deployment. For more information on the recommended database configuration see :ref:`central-database`
+   Customers running MS SQL Server databases with a case-insensitive collation are using an unsupported database configuration and might experience unexpected behavior in their Micetro deployment. For more information on the recommended MS SQL Server database configuration see :ref:`central-mssql`
 
 .. _11.1.1-release:
 11.1.1
@@ -42,6 +42,7 @@ Bug Fixes
 * Change Requests could be scheduled in the past using the Web UI
 * Improved mechanism for how DHCP reservations are modified on MS DHCP servers
 * Fixed an issue when connecting to SQL Server using ODBC on Linux
+* Fixed an issue where initialization of an MDDS appliance using data on the appliance itself was not working
 
 .. _11.1.0-release:
 
