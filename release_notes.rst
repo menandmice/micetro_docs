@@ -15,7 +15,7 @@ Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :
 .. _11.1.2-release:
 11.1.2
 ------
-November xx, 2024
+December 3, 2024
 
 Bug Fixes
 ^^^^^^^^^
