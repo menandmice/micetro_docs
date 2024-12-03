@@ -25,7 +25,7 @@ Bug Fixes
 * When setting BDDS with a dedicated management interface to Micetro mode, Micetro ensures that the firewall is open on the correct network interface
 
 .. note::
-   Customers running MS SQL Server databases with a case-insensitive collation are using an unsupported database configuration and might experience unexpected behavior in their Micetro deployment. For more information on the recommended MS SQL Server database configuration see :ref:`central-mssql`
+   Customers running MS SQL Server databases with a case-insensitive collation are using an unsupported database configuration and might experience unexpected behavior in their Micetro deployment. For more information on the recommended MS SQL Server database configuration, see :ref:`central-mssql`
 
 .. _11.1.1-release:
 11.1.1
