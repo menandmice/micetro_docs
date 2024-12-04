@@ -21,6 +21,7 @@ Bug Fixes
 ^^^^^^^^^
 
 * Fixed an issue affecting customers with unsupported case insensitive database collation on MS SQL Server
+* Fixed an issue when adding new Authserve service to Micetro
 * Fixed a regression in GetNextFreeReservationAddress introduced in 11.1.0.  The API command now works as intended for MS DHCP servers
 * When setting BDDS with a dedicated management interface to Micetro mode, Micetro ensures that the firewall is open on the correct network interface
 
