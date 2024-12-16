@@ -161,7 +161,7 @@ Changes in named.conf
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  Upon installation the Micetro DNS agent will rearrange the named configuration data, including rewriting ``named.conf`` and reorganizing the data directory. The new configuration is functionally equivalent to the old one, except that the logging statement may be added or modified to include new channels. Before making these modifications a backup will be taken of the named configuration data.
+  Upon installation, the Micetro DNS agent will rearrange the named configuration data, including rewriting ``named.conf`` and reorganizing the data directory. The new configuration is functionally equivalent to the old one, except that the logging statement may be added or modified to include new channels. Before making these modifications, a backup will be made of the named configuration data.
   
 Common Files
 """"""""""""
