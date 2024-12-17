@@ -41,3 +41,4 @@ Micetro Reference Articles
   acl_console
   health_bar_information
   ie_eol
+  alias_dns_records
