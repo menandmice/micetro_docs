@@ -10,7 +10,50 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`
+
+.. _11.1.3-release:
+11.1.3
+------
+December 16, 2024
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed issue affecting database performance for customers with MS SQL server
+
+.. _11.1.2-release:
+11.1.2
+------
+December 4, 2024
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed an issue affecting customers with unsupported case insensitive database collation on MS SQL Server
+* Fixed an issue when adding new Authserve service to Micetro
+* Fixed a regression in GetNextFreeReservationAddress introduced in 11.1.0.  The API command now works as intended for MS DHCP servers
+* When setting BDDS with a dedicated management interface to Micetro mode, Micetro ensures that the firewall is open on the correct network interface
+
+.. note::
+   Customers running MS SQL Server databases with a case-insensitive collation are using an unsupported database configuration and might experience unexpected behavior in their Micetro deployment. For more information on the recommended MS SQL Server database configuration, see :ref:`central-mssql`
+
+.. _11.1.1-release:
+11.1.1
+------
+October 24, 2024
+
+Bug Fixes
+^^^^^^^^^
+
+* Change Requests could be scheduled in the past using the Web UI
+* Change Requests modifying reservations with a ClientIdentifier reservation method could fail when applied
+* Fixed an issue when connecting to SQL Server using ODBC on Linux
+* Fixed an issue where initialization of an MDDS appliance using data on the appliance itself was not working
+* Improved mechanism for how DHCP reservations are modified on MS DHCP servers
+* Micetro would sometimes fail syncing MX records correctly from AWS
+* Resolved a UI glitch where the Superscopes filter icon would float on top of tasks if they were large enough to overlap the sidebar
+* Users with limited access could get an "You do not have access to perform that action" error at login
 
 .. _11.1.0-release:
 
@@ -21,19 +64,18 @@ September 30, 2024
 New Features
 ^^^^^^^^^^^^
 
-* **Cisco Meraki**: Micetro now supports orchestration of DHCP on Cisco Meraki devices, see more information `here <https://docs.menandmice.com/guides/user-manual/cisco_meraki.html>`_
+* **Cisco Meraki**: Micetro now supports orchestration of DHCP on Cisco Meraki devices, see more information in :ref:`cisco-meraki`
 * **Kea shared networks**: Micetro now supports management of shared networks on ISC Kea
 * **ISC DHCP shared networks**: Shared networks on ISC DHCP can now be managed via Micetro in the Web Application
 * **Microsoft Superscopes**: Superscopes can now be managed via Micetro in the Web Application
 * **Devices and interfaces**: Rudamentary asset management is now possible in the Web Application via Devices and Interfaces
-* **Universal Character Sets**: Micetro is now fully UTF-8 capable for data entry, which means that any character can be used within the Micetro solution, where appropriate 
+* **Universal Character Sets**: Micetro is now fully UTF-8 capable for data entry, which means that any character can be used within the Micetro solution, where appropriate
 .. note::
    For deployments with a dedicated database backend, i.e. Microsoft SQL Server and PostgreSQL, the correct collation needs to be chosen to ensure correct behaviour with non-ASCII characters
 
 Improvements
 ^^^^^^^^^^^^
 
-* A link to the REST API documentation has been added to the welcome page of Micetro
 * Accessibility in the Web UI improved for lowest screen resolution by making dialogs take the whole screen when opened
 * Action buttons names changed: Failover Management -> Manage Failover and Access -> Manage Access
 * Added checks to the API to ensure that the TXT record is valid (i.e. it doesn't contain new lines), if they are not valid then an exception is thrown
@@ -44,11 +86,12 @@ Improvements
 * Field name in filters are now matched to columns even if it was only a partial match.
 * "Find next free address" feature now works in large subnets (including IPv6)
 * "Find random free address" now only pings the selected address
+* Folders are now converted with a range when it is converted into a scope
 * Hardened validation of DNS records. It is no longer possible to add records or zones with hyphens at the start or end of a label
 * Improved handling for throttling and API availability for Akamai
 * It is now possible to create dynamic DNS zones on Microsoft DNS
 * Micetro log files are now also purged according to system setting
-* Micetro no longer writes header warning users not to edit config files as it can not pick up changes in those files
+* Port numbers for ISC DHCP Failover can now be defined for the whole range of port numbers
 * Primary and secondary pools in Kea Load Balance setup is now handled correctly. Alias HA client classes HA_server1 (for primary server) and HA_server2 (for secondary server) are being created, so that any pool receiving client class HA_server1 is a primary pool and HA_server2 is a secondary pool
 * Removed the option to choose a module you don't have a license for as the landing page
 * REST API documentation is now linked on the welcome/dashboard page in the Web UI
@@ -69,16 +112,14 @@ Bug Fixes
 * Fixed issue where adding a DNS server and attempting to add a zone on the server in the same session would sometimes fail
 * Fixed issue where users would not be able to login after update of Micetro if there had been an empty xml file in the updates folder
 * Fixed regression of auto-update of server controllers that would sometimes temporarily be reported as out-of-date after being updated
-* Folders are now converted with a range when it is converted into a scope
+* Handling of MARS (multiple active result sets) on Microsoft SQL Server has been improved
 * Information about file paths have been removed from error messages for security reasons
 * MDDS appliances added to the non-default address space are now automatically updated
 * Micetro can now fetch more than 1000 zones from Azure
 * Multiple accessibility improvements have been done e.g. auto-closing sidebars when a certain zoom level has been reached
 * Options from Action menu in the Web UI to be are now selectable
 * Parsing of simple dnssec-policy statements in zones are now behing handled correctly
-* Port numbers for ISC DHCP Failover can now be defined for the whole range of port numbers
 * Session tokens have been removed from URL's due to security reasons
-* Solved multiple issues related to handling of MARS on database connections in Microsoft SQL Server
 * Users are not prompted with an invalid session error anymore when the landing page is set to DNS
 
 Deprecation Announcements
@@ -98,7 +139,7 @@ Breaking changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * By default, it's no longer possible to login to other Central servers than the default Central server through the Web Interface or the API. When Web Interface and Central are on the same server, the server field is no longer shown when logging in.
-* Default character encoding on API requests has now been changed to UTF-8 from Latin1 if no charset is defined in the `Content-Type` HTTP header 
+* Default character encoding on API requests has now been changed to UTF-8 from Latin1 if no charset is defined in the `Content-Type` HTTP header
 
 .. _11.0.4-release:
 
@@ -127,7 +168,7 @@ July 23, 2024
 Improvements
 ^^^^^^^^^^^^
 * BIND has been upgraded to v9.16.50 (along with patches from ISC) on the Micetro appliances to address the following security vulnerabilities:
-   * CVE-2024-0760: A flood of DNS messages over TCP may make the server unstable 
+   * CVE-2024-0760: A flood of DNS messages over TCP may make the server unstable
    * CVE-2024-1737: BIND’s database will be slow if a very large number of RRs exist at the same name
    * CVE-2024-1975: SIG(0) can be used to exhaust CPU resources
    * CVE-2024-4076: Assertion failure when serving both stale cache data and authoritative zone content
@@ -200,13 +241,13 @@ New Features
 Improvements
 ^^^^^^^^^^^^
 * **High Availability (HA) Support for mmWS**: Session handling has been moved from mmWS to the Central server. This allows customers to configure multiple mmWS instances for redundancy, region, or load balancing purposes.
-* **External and Multifactor Authentication**: Setting up external authentication has been streamlined with the integration of Python scripts for LDAP and external authentication directly into the installation and upgrading process. Users can now easily configure integration with Okta and Microsoft Entra ID (formerly Azure AD) by navigating to :menuselection:`Admin --> Configuration --> Authentication`. Additionally, a built-in test feature allows users to test if that configuration is correct. 
+* **External and Multifactor Authentication**: Setting up external authentication has been streamlined with the integration of Python scripts for LDAP and external authentication directly into the installation and upgrading process. Users can now easily configure integration with Okta and Microsoft Entra ID (formerly Azure AD) by navigating to :menuselection:`Admin --> Configuration --> Authentication`. Additionally, a built-in test feature allows users to test if that configuration is correct.
 * **New Remote for BIND**: Users can now manage Response Policy Zones (RPZ) and dynamic zones.
 * **Enhanced License Key Handling**: Handling of license keys has been changed to include subscription keys and allow for longer expiration times.
 
 Bug Fixes
 ^^^^^^^^^
-* Fixed an issue where existing records disappeared and reappeared again. Now all existing records are shown correctly when changing the state of DNS zone from static to dynamic. 
+* Fixed an issue where existing records disappeared and reappeared again. Now all existing records are shown correctly when changing the state of DNS zone from static to dynamic.
 * Excessive timeouts when trying to establish initial connections to agents have been significantly reduced.
 * Sensitive SNMP information is no longer logged in the object history.
 * Object history entries are now created for the NS record within DNS zones.
@@ -322,11 +363,11 @@ Bug Fixes
 
 * Fixed an issue where records in recently promoted AuthServe zones could not be edited.
 
-* Addressed an error where the importing of host records for IP addresses would fail.	
+* Addressed an error where the importing of host records for IP addresses would fail.
 
 * Resolved slowness issues when deleting a zone with a few records from AuthServe. Improved performance when deleting a zone on a Central with a PostgreSQL database.
 
-* Various bug fixes and improvements.	
+* Various bug fixes and improvements.
 
 .. _10.5.4-release:
 
@@ -362,7 +403,7 @@ Bug Fixes
 
 * Fixed a bug that resulted in an error when duplicating a range with certain custom properties.
 
-* Resolved a bug that previously hindered the creation of newly converted DHCP scopes on all relevant DHCP servers. 
+* Resolved a bug that previously hindered the creation of newly converted DHCP scopes on all relevant DHCP servers.
 
 * Addressed an issue in the Management Console where DHCP scopes on Kea could unintentionally be disabled.
 
@@ -370,7 +411,7 @@ Bug Fixes
 
 * Fixed a bug where Micetro would not function as expected when managing BIND servers with Catalog zones.
 
-* Fixed a bug that previously prevented the successful creation of a DHCP scope on all relevant DHCP servers when converting a range. 
+* Fixed a bug that previously prevented the successful creation of a DHCP scope on all relevant DHCP servers when converting a range.
 
 .. _10.5.2-release:
 
@@ -449,7 +490,7 @@ Bug Fixes
 * Fixed an issue where adding a zone to a new folder wasn't possible
 
 * An issue was fixed where connections to MSSQL databases were not cached on Central running on Linux.
- 
+
 * An issue was fixed where the Micetro Central service installer would not remove all temporary files during installation.
 
 * Various accessibility fixes have been implemented in the system settings.
@@ -496,7 +537,7 @@ New Features
    * Microsoft DHCP server-to-server failover relationships management.
 
    * Definition of custom DHCP IPv4 and IPv6 options for individual Microsoft, Kea, and ISC services.
-   
+
    * Management of DHCP server properties.
 
 * **Zone Creation Workflow**: We have introduced a new intuitive wizard for creating zones. Among other improvements, custom properties can be added to all zone types and zones can be added to folders during the creation process.
@@ -523,7 +564,7 @@ Improvements
 
   .. note::
       This feature was added in Kea 2.0. We officially support version 1.8.
-  
+
 * DHCPv6 Scopes are now displayed in the Management Console.
 
 * Type is now required when importing reservations to a Microsoft DHCP scope.
