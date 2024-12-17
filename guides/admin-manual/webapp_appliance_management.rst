@@ -190,6 +190,8 @@ The Network Settings let you set up the interfaces on the appliance. You can cre
    * **Remove a sub-interface**: Click the Row :guilabel:`...` menu for the sub-interface to delete, and then select :guilabel:`Remove`.
    * **Modify the loopback address**: On the interface's Row :guilabel:`...` menu, select :guilabel:`Edit`, and then make the desired changes.
 
+.. note::
+    To enable dedicated management interface on an MDDS appliance, follow `these instructions <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Enabling-Dedicated-Management/9.6.0?tocId=7VzLNLSMNkmvR8qSXeO24g>`_ to set the IP address in the ETH2 interface. This must be done **before** the MDDS appliance is put into Micetro-mode as described in the instructions for `Configuring DNS/DHCP Servers for Micetro <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Configuring-DNS/DHCP-Servers-for-Micetro/9.6.0>`_. This ensures that the ETH2 interface is accessible by adding the relevant firewall rules. It is not possible to edit this interface in the web application, as any changes there might block the user from managing the appliance.
 
 Configuring Static Routes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
