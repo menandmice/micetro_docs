@@ -91,7 +91,7 @@ Available Record Types
 * ALIAS (read-only)
 
 .. note::
-  **AWS and Azure ALIAS Records:** For more information about ALIAS records in Micetro, refer to :ref: `alias-dns-records`.
+  **AWS and Azure ALIAS Records:** For more information about ALIAS records in Micetro, refer to :ref:`alias-dns-records`.
 
 
 Creating New DNS Records

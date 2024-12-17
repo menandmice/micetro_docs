@@ -11,6 +11,12 @@ Micetro synchronizes ALIAS records, which can be viewed in the web application o
 
 In Micetro, ALIAS records are read-only. They have the type "ALIAS" and their underlying :ref:`DNS record type<DNS Resource Records>` is represented in the data field of the record,a long with the resource id/hostname in a human-readable and raw format, all tab-separated.
 
+.. note::
+    The full resource ID is not displayed in the **Data** column of the ALIAS record in the list of a DNS zone's resource records. Only the underlying record type and formatted resource ID are displayed.
+
+Examples of AWS and Azure ALIAS records
+---------------------------------------
+
 **Data**
 
 underlying_dns_record_type<tab>resource_id_formatted<tab>full_resource_id
