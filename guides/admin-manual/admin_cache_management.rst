@@ -16,7 +16,7 @@ From the :guilabel:`Admin` page, you can view a DNS server's cache and, if neces
 * **Service migrations** — Clearing the cache ensures that clients are directed to the correct new locations when migrating services to new servers.
 * **Configuration updates** — Clearing the cache after updating DNS server configurations or policies ensures that all queries reflect the latest settings.
 
-..note::
+.. note::
     Options to clear a server cache are available for MS and BIND DNS servers.
 
 
@@ -33,12 +33,12 @@ You can view the cache of a selected DNS server to review its entries and determ
 
 3. From the dropdown, select :guilabel:`Cache management`.
 
-4. In the modal, enter a cache entry name in the search bar and select :guilabel:`Search`.
+4. In the dialog box, enter a cache entry name in the search bar and select :guilabel:`Search`.
 
-   .. image:: ../../images/_admin-cache-management.png
+   .. image:: ../../images/admin-cache-management.png
       :width: 80%
 
-The entries in the DNS server's cache will be displayed in the modal.
+The entries in the DNS server's cache will be displayed in the dialog box.
 
 
 .. _clearing-cache
