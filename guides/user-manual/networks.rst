@@ -127,6 +127,47 @@ Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations,
 
 3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to cancel.
 
+Copying or Exporting Networks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Micetro enables you to copy and/or export data, including networks, to ...? You can select up to 500 rows to export or copy at a given time.
+
+.. note::
+  If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
+
+**To export networks**:
+
+1. Select the network(s) you want to export.
+
+2. On the Row menu (...), select :guilabel:`Export`.
+
+3. In the dialog box, the :guilabel:`File name` field will be populated with **networks**, based on your selection.
+
+.. image:: ../../images/networks-export.png
+  :width: 75%
+
+4. Select a file format from the :guilabel:`Format` dropdown. Choose from the following options:
+
+   * Comma-separated values (.csv)
+
+   * Tab-separated values (.tsv)
+
+   * Zone file format
+
+5. Click :guilabel:`Download`.
+
+The file(s) will be downloaded to your local drive.
+
+**To copy networks**:
+
+1. Select the network(s) you want to copy.
+
+2. On the Row menu (...), select :guilabel:`Copy`.
+
+The content from the row(s) you selected will be copied to your clipboard in tab-separated format.
+
+.. note::
+  This is only available in environments running on localhost or that have HTTPS setup.
+
 Viewing IP Addresses within Networks
 -------------------------------------
 To view a list of IP addresses within a specific network, double-click the network. This opens a list where you can view and edit the properties of individual IP addresses. You can filter the IP address list, so it displays only the IP addressees you need. 

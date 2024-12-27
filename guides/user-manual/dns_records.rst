@@ -204,3 +204,45 @@ If you need to revert or undo changes made to DNS records, Micetro provides a st
 4.	Select :guilabel:`Undo` option on the Row menu (…). This action will roll back the selected change, restoring the DNS record to its previous state.
 
 For more information about viewing object change history, see :ref:`view-change-history`.
+
+Copying or Exporting Records
+-------------------------------
+Micetro enables you to copy and/or export data, including DNS records and zone files, to ...? You can select up to 500 rows to export or copy at a given time.
+
+.. note::
+  If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
+
+**To export records**:
+
+1. Select the desired zone to view its records.
+
+2. Select the records you want to export.
+
+3. On the Row menu (...), select :guilabel:`Export`.
+
+4. In the dialog box, the :guilabel:`File name` field will be populated with **DNS records**, based on your selection.
+
+5. Select a file format from the :guilabel:`Format` dropdown. Choose from the following options:
+
+   * Comma-separated values (.csv)
+
+   * Tab-separated values (.tsv)
+
+   * Zone file format
+
+6. Click :guilabel:`Download`.
+
+The file(s) will be downloaded to your local drive.
+
+**To copy records**:
+
+1. Select the desired zone to view its resource records.
+
+2. Select the records you want to copy.
+
+3. On the Row menu (...), select :guilabel:`Copy`.
+
+The content from the row(s) you selected will be copied to your clipboard in tab-separated format.
+
+.. note::
+  This is only available in environments running on localhost or that have HTTPS setup.
