@@ -220,6 +220,9 @@ Micetro enables you to copy and/or export data, including DNS records and zone f
 
 3. On the Row menu (...), select :guilabel:`Export`.
 
+.. image:: ../../images/dns-export-copy.png
+     :width: 85%
+
 4. In the dialog box, the :guilabel:`File name` field will be populated with **DNS records**, based on your selection.
 
 5. Select a file format from the :guilabel:`Format` dropdown. Choose from the following options:

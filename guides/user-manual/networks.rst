@@ -140,6 +140,9 @@ Micetro enables you to copy and/or export data, including networks, to ...? You 
 
 2. On the Row menu (...), select :guilabel:`Export`.
 
+.. image:: ../../images/networks-export-copy.png
+     :width: 85%
+
 3. In the dialog box, the :guilabel:`File name` field will be populated with **networks**, based on your selection.
 
 .. image:: ../../images/networks-export.png
