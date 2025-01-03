@@ -109,10 +109,84 @@ When dealing with multiple interfaces and IP addresses, the inspector can become
 2.	Select :guilabel:`Configure interfaces` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 3.	Use the search box to filter the information by connection type, interface, IP address, or other properties.
 
-  .. image:: ../../images/devices-configure-dialog.png
+  .. image:: ../../images/devices-configure-interfaces.png
     :width: 65%
 
 4.	Select the item you want to configure. Select a configuration option on the item's row :guilabel:`...` menu.
+
+Editing IP Address Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If necessary, you can edit an the properties of a device interface's IP address.
+
+.. note::
+  Only **Custom Properties** can be edited. All other properties are read-only.
+
+**To edit IP address properties**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address you want to edit. Use the row :guilabel:`...` menu to select :guilabel:`Edit IP address`.
+
+.. image:: ../../images/devices-edit-ipaddress.png
+  :width: 70%
+
+3. Edit the IP address' **Custom Properties** as needed and click :guilabel:`Save`.
+
+Creating DNS Records for Interface IP Addresses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can create DNS records for a specific IP address on a device interface.
+
+**To create a DNS record**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address for which you want to create a DNS record.
+3. Use the row :guilabel:`...` menu to select :guilabel:`Create DNS record`.
+
+.. image:: ../../images/devices-create-dns-record-option.png
+  :width: 70%
+
+4. Enter the required information into the provided form. The hostname must be fully qualified.
+
+.. image:: ../../images/devices-create-dns-record.png
+  :width: 70%
+
+5. Select :guilabel:`Create Now` or use the dropdown to select :guilabel:`Add To Request` to add the DNS record creation to a request.???
+
+Deleting a Related DNS Record from an IP Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can delete a DNS record that has been related to an IP address for a device interface, if needed.
+
+**To delete a related DNS record**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address for which you want to delete a related DNS record.
+3. Use the row :guilabel:`...` menu to select :guilabel:`Delete related record`.
+
+.. image:: ../../images/devices-delete-related-record.png
+  :width: 70%
+
+4. In the dialog box, select either :guilabel:`Add To Request` to add the deletion to a request??? or use the dropdown to select :guilabel:`Delete Now` and delete the record immediately.
+
+.. image:: ../../images/devices-delete-dns-record-dialog.png
+
+Creating a DHCP Reservation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can create a DHCP reservation for an interface's IP address. 
+
+**To create a DHCP reservation**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address for which you want to create a DHCP reservation.
+3. Use the row :guilabel:`...` menu to select :guilabel:`Create DHCP reservation`.
+
+.. image:: ../../images/devices-create-dhcp-reservation-option.png
+  :width: 70%
+
+4. Enter the required information about the DHCP reservation in the provided form. 
+
+.. image:: ../../images/devices-create-dhcp-reservation.png
+  :width: 70%
+
+5. Select :guilabel:`Create`.
 
 Editing Device Properties
 -------------------------
