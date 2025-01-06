@@ -12,7 +12,7 @@ Service Management is the place for connecting and orchestrating DNS, DHCP, and 
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
-2. Click the :guilabel:`Service Management` tab in the upper-left corner.
+2. Click the :guilabel:`Service Management` tab in the upper left corner.
 
    .. image:: ../../images/dns-context-10.6.png      
        :width: 85%
@@ -24,13 +24,13 @@ Service Management is the place for connecting and orchestrating DNS, DHCP, and 
    * In the right pane, the properties of a selected service are shown.
 
 .. note:: 
-   The Micetro web interface does not yet provide full management of IPAM services. Therefore they are not listed here, but you can still enable IPAM services by using the :guilabel:`Add Service` function. 
+   The Micetro web application does not yet provide full management of IPAM services. Therefore, they are not listed here, but you can still enable IPAM services using the :guilabel:`Add Service` function. 
 
 User Permissions and Access Management
 ---------------------------------------
 Depending on user permissions and available license keys, DNS and DHCP services and functions can be disabled or hidden.
 
-Micetro has a granular role-based :ref:`access-control` system. For DNS and DHCP administrators, it is recommended to be members of the built-in **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
+Micetro has a granular role-based :ref:`access-control` system. It is recommended that DNS and DHCP administrators be members of the built-in **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
 
 When not using the built-in roles, users need to be members of a role with the following permissions. Note that additional permissions might be necessary for comprehensive service management. For more information on Micetro's granular role-based access controls, see :ref:`access-control`. 
 
@@ -124,9 +124,9 @@ Adding a new service is either a two or three-step process, depending on the typ
 
    * This step is not required for cloud services.
 
-   * For ISC BIND and ISC DHCP this step is not required because the agent must be installed on the service host itself.
+   * For ISC BIND and ISC DHCP, this step is not required because the agent must be installed on the service host itself.
 
-   * With the exception of the above services, the agent can be installed on the Micetro Central host, the service host, or for MS DNS/DHCP, ISC Kea, Cisco Meraki, and Cisco IOS, on a different host. If you have already added a service of this type, you can select from existing agents or create a new one. A single agent can be used to manage multiple servoce connections.
+   * With the exception of the above services, the agent can be installed on the Micetro Central host, the service host, or -- for MS DNS/DHCP, ISC Kea, Cisco Meraki, and Cisco IOS -- a different host. If you have already added a service of this type, you can select from existing agents or create a new one. A single agent can be used to manage multiple service connections.
 
    * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process. You can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
    
@@ -140,11 +140,11 @@ Adding a new service is either a two or three-step process, depending on the typ
 
     * Enter the hostname or IP address of the service/server.
 
-    * **AuthServe** uses a channel as the connection string. The channel name is mapped to a host name in a server configuration file. 'ansp' is the default channel name, which maps to localhost. To use a different host name, the format is ``"1.2.3.4#<someseceret>"``. Consult the AuthServe documentation for details.
+    * **AuthServe** uses a channel as the connection string. The channel name is mapped to a hostname in a server configuration file. 'ansp' is the default channel name, which maps to localhost. To use a different hostname, the format is ``"1.2.3.4#<someseceret>"``. Consult the AuthServe documentation for details.
 
 Editing Services
 -----------------
-Depending on the service, you can change the name and/or custom properties for the service. For example, if you need to refer to the service by another name or if you are connecting to the service by an IP Address and the IP Address has changed. 
+Depending on the service, you can change the name and/or custom properties for the service if, for example, you need to refer to the service by another name or if you are connecting to the service by an IP address and the IP address has changed. 
 
 **To edit a service**:
 
@@ -156,7 +156,7 @@ Depending on the service, you can change the name and/or custom properties for t
 
 Other Service Actions
 ----------------------
-All actions applicable to a selected server can be accessed either on the :guilabel:`Actions` menu above the list, or the Row :guilabel:`...` menu that appears on the right-hand side when you hover over a row.
+All actions applicable to a selected server can be accessed either on the :guilabel:`Actions` menu above the list or the Row :guilabel:`...` menu that appears on the right-hand side when you hover over a row.
 
 .. csv-table::
   :header: "Action", "Description"
@@ -196,12 +196,13 @@ See the following table for detailed information about these indicators:
 
 DNS Services
 ------------
-See the following topic for information about configuring the BIND DNS platform:
+Refer to the following topics for information about configuring the BIND DNS platform and managing DNS server caches:
 
 .. toctree::
   :maxdepth: 1
 
   admin_dns_bind
+  admin_cache_management
 
 DHCP Services
 --------------
