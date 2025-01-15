@@ -55,6 +55,10 @@ Failed login attempts
 
 To protect users from brute force password attacks, Micetro throttles unsuccessful login attempts. 
 
+.. note::
+  This only applies to internal Micetro users.
+
+
 New objects
 -----------
 
