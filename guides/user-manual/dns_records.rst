@@ -230,10 +230,6 @@ Micetro enables you to copy and/or export data. You can select up to 500 rows to
    * Comma-separated values (.csv)
    
    * Tab-separated values (.tsv)
-   
-   * Excel spreadsheet (.xlsx)
-
-   * Tab-separated values (.tsv)
 
    * Excel spreadsheet (.xlsx)
 
