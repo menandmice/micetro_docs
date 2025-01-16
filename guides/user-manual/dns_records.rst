@@ -228,6 +228,10 @@ Micetro enables you to copy and/or export data, including DNS records and zone f
 5. Select a file format from the :guilabel:`Format` dropdown. Choose from the following options:
 
    * Comma-separated values (.csv)
+   
+   * Tab-separated values (.tsv)
+   
+   * Excel spreadsheet (.xlsx)
 
    * Tab-separated values (.tsv)
 
