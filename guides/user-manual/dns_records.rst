@@ -207,10 +207,10 @@ For more information about viewing object change history, see :ref:`view-change-
 
 Copying or Exporting Records
 -------------------------------
-Micetro enables you to copy and/or export data, including DNS records and zone files, to ...? You can select up to 500 rows to export or copy at a given time.
+Micetro enables you to copy and/or export data. You can select up to 500 rows to export or copy at a given time. If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
 
 .. note::
-  If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
+  In Micetro, it's possible to copy and/or export all kinds of data following the same process. This includes but is not limited to services, devices, records, zones, and users.
 
 **To export records**:
 
@@ -218,7 +218,7 @@ Micetro enables you to copy and/or export data, including DNS records and zone f
 
 2. Select the records you want to export.
 
-3. On the Row menu (...), select :guilabel:`Export`.
+3. On the Row :guilabel:`...` menu, select :guilabel:`Export`.
 
 .. image:: ../../images/dns-export-copy.png
      :width: 85%
@@ -230,6 +230,8 @@ Micetro enables you to copy and/or export data, including DNS records and zone f
    * Comma-separated values (.csv)
 
    * Tab-separated values (.tsv)
+
+   * Excel spreadsheet (.xlsx)
 
    * Zone file format
 
@@ -243,9 +245,9 @@ The file(s) will be downloaded to your local drive.
 
 2. Select the records you want to copy.
 
-3. On the Row menu (...), select :guilabel:`Copy`.
+3. On the Row :guilabel:`...` menu, select :guilabel:`Copy`.
 
-The content from the row(s) you selected will be copied to your clipboard in tab-separated format.
+The content from the row(s) you selected will be copied to your clipboard in tab-separated (.tsv) format.
 
 .. note::
   This is only available in environments running on localhost or that have HTTPS setup.

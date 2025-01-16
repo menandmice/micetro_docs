@@ -129,16 +129,16 @@ Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations,
 
 Copying or Exporting Networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Micetro enables you to copy and/or export data, including networks, to ...? You can select up to 500 rows to export or copy at a given time.
+Micetro enables you to copy and/or export data, including networks. You can select up to 500 rows to export or copy at a given time.  If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
 
 .. note::
-  If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
+  In Micetro, it's possible to copy and/or export all kinds of data following the same process. This includes but is not limited to services, devices, records, zones, and users.
 
 **To export networks**:
 
 1. Select the network(s) you want to export.
 
-2. On the Row menu (...), select :guilabel:`Export`.
+2. On the Row :guilabel:`...` menu, select :guilabel:`Export`.
 
 .. image:: ../../images/networks-export-copy.png
      :width: 85%
@@ -154,7 +154,7 @@ Micetro enables you to copy and/or export data, including networks, to ...? You 
 
    * Tab-separated values (.tsv)
 
-   * Zone file format
+   * Excel spreadsheet (.xlsx)
 
 5. Click :guilabel:`Download`.
 
@@ -164,9 +164,9 @@ The file(s) will be downloaded to your local drive.
 
 1. Select the network(s) you want to copy.
 
-2. On the Row menu (...), select :guilabel:`Copy`.
+2. On the Row :guilabel:`...` menu, select :guilabel:`Copy`.
 
-The content from the row(s) you selected will be copied to your clipboard in tab-separated format.
+The content from the row(s) you selected will be copied to your clipboard in tab-separated (.tsv) format.
 
 .. note::
   This is only available in environments running on localhost or that have HTTPS setup.
