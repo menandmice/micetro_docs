@@ -32,39 +32,37 @@ Available Record Types
 
 * A / AAAA
 
-* MX
+* AFSDB
 
-* TXT
-
-* NS
-
-* SOA
-
-* SRV
-
-* HINFO
-
-* CNAME
-
-* TLSA
+* ALIAS (read-only)
 
 * CAA
 
+* CDS
+
+* CDNSKEY
+
 * CERT
 
-* WKS
+* CNAME
 
-* RP
+* CSYNC
 
-* AFSDB
+* DLV (read-only)
+
+* DNSKEY (read-only)
+
+* DS
+
+* HINFO
+
+* HTTPS
 
 * LOC
 
-* SSHFP
+* MX
 
-* SPF
-
-* DNSKEY (read-only)
+* NS
 
 * NSEC (read-only)
 
@@ -72,27 +70,30 @@ Available Record Types
 
 * NSEC3PARAM (read-only)
 
+* RP
+
 * RRSIG (read-only)
 
-* DS
+* SOA
 
-* DLV (read-only)
+* SPF
 
-* HTTPS
+* SRV
+
+* SSHFP
 
 * SVCB
 
-* CDS
+* TLSA
 
-* CDNSKEY
+* TXT
 
-* CSYNC
+* URI
 
-* ALIAS (read-only)
+* WKS
 
 .. note::
   **AWS and Azure ALIAS Records:** For more information about ALIAS records in Micetro, refer to :ref:`alias-dns-records`.
-
 
 Creating New DNS Records
 -------------------------
