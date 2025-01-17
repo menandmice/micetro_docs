@@ -43,6 +43,7 @@ You can view the history of a specific object or all objects.
 
    * If you're viewing global object history, you can narrow down results by selecting an object type.
    * Administrators can specify a username in the :guilabel:`Made by user` box to filter changes by specific users.
+   * If the :guilabel:`Name` or :guilabel:`Description` of an object includes an icon or emoji, such as the printer emoji, you can search by that icon/emoji.
 
 Undoing Changes
 ---------------
