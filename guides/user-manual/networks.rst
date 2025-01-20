@@ -152,6 +152,13 @@ To view a list of IP addresses within a specific network, double-click the netwo
 
   * **Viewing DHCPv6 scopes**: Unlike DHCPv4 scopes, which display all addresses within a scope, a DHCPv6 scope only shows addresses that are currently in use or have been recently used. At the bottom of the view, you can see the number of active IP addresses being displayed. An IP address with the status **free** indicates that it was recently used. To see more information about an address, select :guilabel:`View History` for that address.
 
+**Filtering by Dynamic or Static Allocation**:
+
+You can filter to view exclusively dynamic or static IP addresses within a DHCP scope using the :guilabel:`Allocation` section on the filtering sidebar. Applicable addresses will be displayed depending on related pools and exclusions.
+
+.. image:: ../../images/networks-filter-scopes.png
+  :width: 75%
+
 IP Address State
 ^^^^^^^^^^^^^^^^^
 The **State** column in the IP Address list displays the current state of each address, allowing you to quickly see whether an address is free, assigned, or in another state. You can use the :guilabel:`State` section in the left-hand filtering sidebar to filter the list.
