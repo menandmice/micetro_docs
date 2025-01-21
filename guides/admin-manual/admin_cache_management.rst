@@ -40,7 +40,14 @@ You can view the cache of a selected DNS server to review its entries and determ
 
 The entries in the DNS server's cache will be displayed in the dialog box.
 
+.. image:: ../../images/cache-flush-list.png
+   :width: 80%
 
+When multiple records share the same name, an ellipsis (...) is displayed. To see the other records, hover your cursor over the entry and the records will be displayed in a tooltip. You can also move the column manually to view the other records on the list.
+
+.. image:: ../../images/cache-management-column.png
+   :width: 80%
+   
 .. _clearing-cache
 
 Clearing the cache
