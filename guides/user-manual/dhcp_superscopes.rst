@@ -150,6 +150,15 @@ Superscope descriptions serve as a helpful tool for categorizing and easily loca
 .. note::
   You cannot change the name of a superscope after it is created.
 
+.. _kea-client-classes-superscopes:
+
+Assigning Client Classes to Superscopes on Kea
+----------------------------------------------
+Kea allows you to group various clients into a client class to receive shared options. For example, you might create classes for different device types, such as smartphones, printers, and servers, or for particular user groups. These classes help you apply different configuration settings, such as lease times, options, and subnet selection, based on the client's classification. Client classes can be assigned to a superscope on a connected Kea server. For more information about client classes, see :ref:`kea-client-classes`.
+
+.. note::
+  Only a DHCP administrator can assign client classes to a superscope.
+
 Deleting Superscopes
 --------------------
 When a superscope is deleted from Micetro, it will be removed from the database and the server. Individual scopes within the superscope are not deleted. If a Kea superscope is defined for both DHCPv4 and DHCPv6, deleting it will remove the superscope from both protocols.

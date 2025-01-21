@@ -213,6 +213,8 @@ You can manage Kea Client Classifications through Micetro.
       
    * If you have any client classes already defined on your server, you can find them listed on the respective service type tab (DHCPv4/DHCPv6). 
    * From here you can create, edit existing, or remove client classes. Any of these actions will add an entry to the audit trail inside of Micetro which can be viewed by selecting the history action of a client class.
+
+Client classes can also be assigned and managed on DHCP superscopes. See :ref:`kea-client-classes-superscopes`.
  
 Creating Client Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^
