@@ -55,9 +55,9 @@ Register the Application
    
    2. On the left pane, select :guilabel:`App registrations` and then click :guilabel:`New Registration` within the newly opened “blade”.
 
-   3. Enter the name and select the appropriate authentication types. For the Redirect URI, select **web** and enter https://micetro.central.fqdn/mmws/auth_cb/microsoft 
+   3. Enter the name and select the appropriate authentication types. For the Redirect URI, select **web** and enter https://micetro.central.fqdn/mmws/auth_cb/microsoft. 
 
-   4. After registering the app, locate the client ID in the essentials panel.
+   4. After registering the app, locate the client ID in the **Essentials** panel.
 
    5. Navigate to **Certificates and Secrets** to generate a new secret for the app's use. 
 
@@ -72,25 +72,26 @@ Group authorization
 Mapping groups from Microsoft Entra ID
     As Entra ID only returns group ID with the token, the script makes an extra call to Microsoft Graph API to fetch the group names. As there is a limit of about 200 group IDs that can be returned within the JSON Web Token, filtering should be used to supply only the necessary groups. 
 
-    For more information, see `Configure group claims for applications by using Microsoft Entra ID <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims>`_
+    For more information, see `Configure group claims for applications by using Microsoft Entra ID <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims>`_.
 
 Configuring Central Server
 ---------------------------
 
    1. Install Python and dependent libraries and packages on the Central server.
    
+   .. note::
       When installing Python, ensure the following:
       
-      * Python is available to "all user" (Windows).
+      * Python is available to "all users" (Windows).
       
-      * Use Python version 3.7 or newer.
+      * You are using Python version 3.8 or newer.
       
       * Python is installed in the "Default" environment.
    
-   2. **Confirm that there is a directory called "extensions"** in the Central data directory, and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created during the installation of Micetro Central.
+   2. **Confirm that there is a directory called "extensions"** in the Central data directory and that it contains a Python script named `mm_auth_cb.py` and a signature file. This Python script handles the authentication callback from the external provider. The same script serves both providers. The directory and files are created during the installation of Micetro Central.
 
-Configuring Entra ID (Azure AD) Authentication in the Micetro Web Interface
-----------------------------------------------------------------------------
+Configuring Entra ID (Azure AD) Authentication in the Micetro Web Application
+-----------------------------------------------------------------------------
 After completing the setup in Entra ID, the next step is to configure authentication in Micetro by entering the necessary information obtained during the application setup process. Once you have entered the information, save the configuration. Micetro will then test the integration with Entra ID to ensure it is working properly. 
 
 **To configure and test the authentication**:
@@ -99,18 +100,18 @@ After completing the setup in Entra ID, the next step is to configure authentica
 2.	Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
 3.	Make sure the :guilabel:`Enable external login providers` checkbox is selected.
 4.	Click :guilabel:`Configure` and select :guilabel:`Azure AD` in the dropdown list.
-5.	Fill out the configuration form with the information collected during the Entra ID setup process.
+5.	Complete the configuration form with the information collected during the Entra ID setup process.
 
     .. image:: ../../images/mfa-configure-azure.png
         :width: 60%
  
     * **Client ID**: A unique identifier for your application within Entra ID. 
     * **Client credential**: Enter the appropriate credential.
-    * **Redirect URI**: This should match the redirect UI configured in Entra ID.
-    * **Scope** (optional): Scopes define the level of access that the client application is requesting from the user during the authentication process.
+    * **Redirect URI**: Should match the redirect UI configured in Entra ID.
+    * **Scope** (optional): Defines the level of access that the client application is requesting from the user during the authentication process.
     * **Use Azure US Government endpoints** (optional): Select the Microsoft Graph endpoint you are required to use. 
 
-6.	When you're finished, click :guilabel:`Save and Test` Micetro will attempt to authenticate via the service and display a success message or a log explaining any failures encountered during the process.
+6.	When you're finished, click :guilabel:`Save and Test`. Micetro will attempt to authenticate via the service and display a success message or a log explaining any failures encountered during the process.
 7. Optional. If you want to provide only SSO/MFA login, you can disable the internal login method. This will remove the local login from the Micetro login page. However, you can still bypass this restriction at login. The internal login method can be found by clicking **Log in with Micetro** in the bottom left corner of the login page.
 
    .. image:: ../../images/sso-login-external.png  
@@ -123,7 +124,7 @@ User Authentication and Access Management
 
 Upon first login using Entra ID, a new user account is created in Micetro, categorized as “External”. Subsequent logins synchronize external changes to the user's email, full name, and group memberships by matching the external ID.
 
-It's important to note that external user accounts authenticated via Entra ID and those integrated with AD-integrated SSO are treated as distinct entities within Micetro, each with its distinct user profile.
+It's important to note that external user accounts authenticated via Entra ID and those integrated with AD-integrated SSO are treated as distinct entities within Micetro, each with a distinct user profile.
 
 By default, all external users are automatically added to the “All users (built-in)” group. If group memberships are included in the properties returned by Entra ID, Micetro will add users to groups with matching names.
 
@@ -131,7 +132,7 @@ Micetro ensures synchronization of several key properties including email, full 
 
 .. Note::
     
-   Despite the automatic addition of new External accounts during initial login, administrators must manually grant access to the DNS/DHCP/IPAM roles.   
+   Despite the automatic addition of new external accounts during initial login, administrators must manually grant access to the DNS/DHCP/IPAM roles.   
     
    Failure to grant privileges for these new external accounts will result in an error for the user.   
 
@@ -142,10 +143,10 @@ Micetro ensures synchronization of several key properties including email, full 
 
 Manual Configuration via a Config File
 --------------------------------------
-Instead of using the Micetro Web Interface (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Micetro Central's data directory. At start up the Micetro Central program will search the data directory for a file named `ext_auth_conf.json`.
+Instead of using the Micetro Web Application (see above), it is possible to configure external authentication manually by creating a JSON configuration file in Micetro Central's data directory. Upon start-up, the Micetro Central program will search the data directory for a file named `ext_auth_conf.json`.
 
 The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
-For more information on configuring external authentication manually, see the documentation for version 10.3. You can find detailed instructions in the section titled: :ref:`Multi-factor-Authentication`.
+For more information on manually configuring external authentication, see the documentation for version 10.3. You can find detailed instructions in the section titled: :ref:`Multi-factor-Authentication`.
 
 

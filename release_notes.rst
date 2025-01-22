@@ -10,7 +10,17 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`
+
+.. _11.1.3-release:
+11.1.3
+------
+December 16, 2024
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed issue affecting database performance for customers with MS SQL server
 
 .. _11.1.2-release:
 11.1.2
@@ -21,6 +31,7 @@ Bug Fixes
 ^^^^^^^^^
 
 * Fixed an issue affecting customers with unsupported case insensitive database collation on MS SQL Server
+* Fixed an issue when adding new Authserve service to Micetro
 * Fixed a regression in GetNextFreeReservationAddress introduced in 11.1.0.  The API command now works as intended for MS DHCP servers
 * When setting BDDS with a dedicated management interface to Micetro mode, Micetro ensures that the firewall is open on the correct network interface
 
