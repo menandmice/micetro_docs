@@ -117,7 +117,7 @@ Adding a new service is either a two- or three-step process, depending on the ty
   .. image:: ../../images/add-service-dialog.png
       :width: 100%
 
-3. On the :guilabel:`Properties` tab, select an agent from the dropdown menu.
+3. In the :guilabel:`Properties` step, select an agent from the dropdown menu.
 
    .. image:: ../../images/add-service-properties.png
      :width: 100%
@@ -134,7 +134,7 @@ Adding a new service is either a two- or three-step process, depending on the ty
     .. image:: ../../images/add-service-authserve-newagent.png
          :width: 100%
 
-4. Enter the necessary details for the service and click :guilabel:`Next`. The :guilabel:`Properties` tab displays a sidebar with context-sensitive help specific to the type of service you select.
+4. Enter the necessary details for the service and click :guilabel:`Next`. The :guilabel:`Properties` step displays a sidebar with context-sensitive help specific to the type of service you select.
   * **Cloud services**: Each service type has its set of credentials in addition to the optional service name. For more details on adding cloud services, see :ref:`cloud`.
 
   * **On-premises services**:
@@ -143,9 +143,9 @@ Adding a new service is either a two- or three-step process, depending on the ty
 
     * **AuthServe** uses a channel as the connection string. The channel name is mapped to a hostname in a server configuration file. 'ansp' is the default channel name, which maps to localhost. To use a different hostname, the format is ``"1.2.3.4#<someseceret>"``. Consult the AuthServe documentation for details.
 
-5. On the :guilabel:`Custom Properties` tab, you can set optional custom property values for the service, such as authority and region. Click :guilabel:`Next`.
+5. In the :guilabel:`Custom Properties` step, you can set optional custom property values for the service, such as authority and region. Click :guilabel:`Next`.
 
-6. Review the service's settings on the :guilabel:`Summary` tab. If you need to make any changes to the service, use the :guilabel:`Back` button to return to any of the previous tabs.
+6. Review the service's settings in the :guilabel:`Summary` step. If you need to make any changes to the service, use the :guilabel:`Back` button to return to any of the previous steps.
 
 7. Select :guilabel:`Add` to add the service to Micetro.
 
