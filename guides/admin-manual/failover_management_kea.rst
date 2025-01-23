@@ -199,6 +199,9 @@ If a Kea DHCP server functions as a secondary server in a failover relationship,
 
 Micetro currently supports two failover server types in a relationship: one primary and one secondary. Therefore, creating failover relationships with backup servers is not supported.
 
+.. note::
+  Failover relationships created on Kea servers do not support the use of multi-threaded (MT) communication between peers in Kea. To create failover relationships with MT enabled, you must edit the config directly.
+
 **To create a failover relationship through the API**:
 
 API supports creation using ``AddDHCPFailoverRelationship``.
