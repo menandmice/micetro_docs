@@ -36,4 +36,26 @@ A public IP address:
 
 ip-name<tab>/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/publicIPAddresses/ip-name
 
+Record types that support ALIAS records
+---------------------------------------
+Record types that support ALIAS records in AWS include the following:
 
+* A
+* AAAA
+* CAA
+* CNAME
+* MX
+* NAPTR
+* PTR
+* SPF
+* SRV
+* TXT
+
+Records types that support ALIAS records in Azure include the following:
+
+* A
+* AAAA
+* CNAME
+
+.. note::
+    No other record types are supported, even though they can be created in the Cloud platform UI (or through API).
