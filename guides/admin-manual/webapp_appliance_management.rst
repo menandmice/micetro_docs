@@ -116,6 +116,7 @@ You can configure Anycast through either of the following routing protocols: Bor
    * **ASN**: Enter a number for the Autonomous System to which the DNS server belongs.
    * **Keepalive time**: Enter the frequency, in seconds, (from 0--65535) that *keepalive* notifications are sent to the BGP peer.
    * **Hold time**: Enter the interval, in seconds, (from 0--65535) after which a *keepalive* notification has not been received and a BGP peer is declared dead.
+   * **CLI**: If you want to use vtysh command line to configure the network setup, use the dropdown to select :guilabel:`On` and enter your password.
    * **Router ID**: Enter a unique ID for the appliance, in dotted-decimal notation (A.B.C.D). The ID can be any unique value, but it is recommended to use a number that represents the appliance, such as its eth0 IP address. 
    * **Neighbors**: Add the IP addresses of the routers with which the appliance forms a neighbor relationship. These routers must be capable of using BGP and be configured to form a relationship with the appliance.
 
@@ -150,6 +151,7 @@ You can configure Anycast through either of the following routing protocols: Bor
    * **Area**: Enter the OSPF Area that the appliance will participate in, in dotted-decimal notation (A.B.C.D). Each OSPF network must contain at least a backbone area (area 0 or 0.0.0.0), but can also contain other areas through Area Border Routers (ABRs). The Area ID is only configured once for all networks, since the appliance never acts as an ABR and never uses the same Area ID on all adapters.
    * **Hello interval**: Enter the length of time, in seconds, for which the primary router contacts its peer to indicate that it's still active.
    * **Dead interval**: Enter the length of time (in seconds) for which the peer router maintains a route to the primary router in the absence of hello messages.
+   * **CLI**: If you want to use vtysh command line to configure the network setup, use the dropdown to select :guilabel:`On` and enter your password.
    * **Stub**: Check the checkbox to specify the use of an OSPF subnet.
 
 6. Select :guilabel:`Save`.
