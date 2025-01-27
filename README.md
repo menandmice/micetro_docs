@@ -41,6 +41,7 @@ When working locally, it can become cumbersome to manually rebuild the documenta
   * Checkout the Git repository at https://github.com/menandmice/micetro_docs.git in some local folder.
   * Navigate to the local folder.
   * Run `pip install sphinx-autobuild`.
+  * Run `pip install sphinx-rtd-theme`.
   * Run `sphinx-autobuild . build/html`.
 
 After this, Sphinx should be running on http://127.0.0.1:8000 and navigating to this path in a browser should open up the documentation.
