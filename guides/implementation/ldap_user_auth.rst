@@ -139,7 +139,7 @@ Example configuration for connecting to an openLDAP LDAP service:
     "method": "authenticate",
     "server": {
         "uri": "ldap://ldap.example.com:636",
-        "reader_dn": "cn=admin,dc=dev,dc=lab",
+        "reader_dn": "cn=admin, dc=corp, dc=example, dc=com",
         "reader_password": "admin_password",
         "skip_cert_verification": false,
         "disable_referrals": true,
@@ -147,10 +147,10 @@ Example configuration for connecting to an openLDAP LDAP service:
         },
 
     "user_search_config": {
-        "base_dn":  "dc=dev,dc=lab",
+        "base_dn":  "dc=corp, dc=example, dc=com",
         "search_filter": "uid={username}",
         "group_search_config": {
-          "base_dn": "ou=groups,dc=dev,dc=lab",
+          "base_dn": "ou=groups, dc=corp, dc=example, dc=com",
           "search_filter": "(&(objectClass=posixGroup)(memberUid={username}))",
           "name_attribute": "cn"
           }
@@ -159,18 +159,18 @@ Example configuration for connecting to an openLDAP LDAP service:
     }
 
 .. note::
-  In the ``name_attribute`` field, ``cn`` ("common name") refers to the user's name or group name in LDAP. In the LDAP configuration JSON file, enter ``cn`` in the ``name_attribute`` field, not the user or group name itself.
+  In the ``name_attribute`` field, ``cn`` ("common name") refers to the group name in LDAP. In the LDAP configuration JSON file, enter ``cn`` in the ``name_attribute`` field if that attribute is used for group name in LDAP, not the group name itself.
 
 
 After setting up the server, enable LDAP authentication in Micetro as described below. Once LDAP is enabled in Groups, you can create an LDAP group. The group must have the same name in both Micetro and LDAP. Enter this name in the :guilabel:`External ID` field.
 
 .. image:: ../../images/ldap-users-externalid.png
-  :width: 90%
+  :width: 85%
 
 The next time you log in with an LDAP username created in LAM --- and that user is added to the specific group in LAM --- your user will be automatically added to the **Users** list with the permissions assigned to the associated group created in Micetro.
 
 .. image:: ../../images/ldap-authtype-group.png
-  :width: 100%
+  :width: 90%
 
 .. note::
   LDAP users are only added to the LDAP group list after logging into Micetro.
