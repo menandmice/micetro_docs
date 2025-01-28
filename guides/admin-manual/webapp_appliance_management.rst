@@ -251,10 +251,10 @@ You can shut down or restart the appliances.
 
 Removing Appliances
 -------------------
-This command is only available for the Administrator role.
+When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are **not** removed or shut down.
 
-.. Warning::
-   When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are removed from Micetro as well.
+.. note::
+   This command is only available for the Administrator role.
 
 **To remove an appliance from Micetro**:
 
