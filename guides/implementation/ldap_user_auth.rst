@@ -139,7 +139,7 @@ Example configuration for connecting to an openLDAP LDAP service:
     "method": "authenticate",
     "server": {
         "uri": "ldap://ldap.example.com:636",
-        "reader_dn": "cn=ldap_users,dc=dev,dc=lab",
+        "reader_dn": "cn=admin,dc=dev,dc=lab",
         "reader_password": "admin_password",
         "skip_cert_verification": false,
         "disable_referrals": true,
@@ -159,7 +159,7 @@ Example configuration for connecting to an openLDAP LDAP service:
     }
 
 .. note::
-  ``cn`` ("common name") is the equivalent of ``userPrincipalName`` in Active Directory (AD). Therefore, when configuring with openLDAP, ``group_search_config.name_attribute`` is the user's name, whereas it calls for the group name when configuring with AD.
+  In the ``name_attribute`` field, ``cn`` ("common name") refers to the user's name or group name in LDAP. In the LDAP configuration JSON file, enter ``cn`` in the ``name_attribute`` field, not the user or group name itself.
 
 
 After setting up the server, enable LDAP authentication in Micetro as described below. Once LDAP is enabled in Groups, you can create an LDAP group. The group must have the same name in both Micetro and LDAP. Enter this name in the :guilabel:`External ID` field.
