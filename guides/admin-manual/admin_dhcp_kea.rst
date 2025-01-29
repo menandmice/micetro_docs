@@ -200,9 +200,13 @@ See :ref:`dhcp-kea-ha-external-changes`.
 
 .. _kea-client-classes:
 
-Managing Kea Client Classifications with Micetro
+Managing Kea Client Classification with Micetro
 ------------------------------------------------
-You can manage Kea Client Classifications through Micetro. 
+Client Classification is a feature specific to ISC Kea DHCP servers, which enables the classification of different types of clients to treat them in different ways.
+
+Incoming packets can be associated with a client class by selecting a vendor class option or another built-in condition, static host reservation, scope, or superscope, or by using a hook. You can use client classification to select scopes and pools, limit leases, or even rate limiting. For more information, refer to `the official Kea documentation on client classification <https://kea.readthedocs.io/en/latest/arm/classify.html>`_.
+
+**To manage Kea Client Classification through Micetro:**
 
 1. On the **Admin** page, select :guilabel:`Kea` under :guilabel:`DHCP Services` in the left sidebar.
 
@@ -211,7 +215,7 @@ You can manage Kea Client Classifications through Micetro.
    .. image:: ../../images/kea-client-classifications.png
       :width: 70%
       
-   * If you have any client classes already defined on your server, you can find them listed on the respective service type tab (DHCPv4/DHCPv6). 
+   * If you have any client classes already defined on your server, you can find them listed on the respective service type tab (DHCPv4/DHCPv6). Here, you can see whether existing client classes are built-in, global (i.e., replicated on all available Kea servers), and/or custom.
    * From here you can create, edit existing, or remove client classes. Any of these actions will add an entry to the audit trail inside of Micetro which can be viewed by selecting the history action of a client class.
 
 Client classes can also be assigned and managed on DHCP superscopes. See :ref:`kea-client-classes-superscopes`.
@@ -239,7 +243,7 @@ Creating Client Classes
 
 Assigning Client Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^
-You can limit the access to specific scopes and address pools by assigning a client class to them. Then only packets that belong to the assigned client class will have access.
+You can limit the access to specific scopes and address pools by assigning a client class to them. Then only packets that belong to the assigned client class will have access. For assigning client classes to a superscope, refer to :ref:`kea-client-classes-superscopes`.
 
 **To assign a client class to a scope:**
 
@@ -268,3 +272,218 @@ Assigning client classes to scopes/pools shows up in the history of the respecti
 .. image:: ../../images/kea-client-classifications-filter.png
    :width: 70%
 
+Managing Client Classification with API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following commands for managing client classes are available in Micetro:
+
+* AddClientClass
+* AddClientClasses
+* AssignClientClass
+* GetBuiltinClientClasses
+* GetClientClass
+* GetClientClasses
+
+**AddClientClass**
+
+The XML command ``AddClientClass`` is used to add/define a new client class on a Kea server.
+
+Example XML request to add a client class:
+
+.. code-block::
+
+   <AddClientClass>
+    <serverRef>{server reference id}</serverRef>
+	<clientClass>
+		<name>test</name>
+		<expression>exp</expression>
+		<global>0</global>
+		<nextServer>192.168.5.37</nextServer>
+		<serverHostname>server.hostname</serverHostname>
+		<bootFileName>boot-name</bootFileName>
+		<description>description</description>
+	</clientClass>
+    <serviceType>DHCPv4</serviceType>
+   </AddClientClass>
+
+Example response:
+
+.. code-block::
+
+   <clientClass>
+    <ref>{client class reference id}</ref>
+   </clientClass>
+
+**AddClientClasses**
+
+The XML command ``AddClientClasses`` is used to add/define multiple new client classes on a Kea server.
+
+Example XML request to add client classes:
+
+.. code-block::
+
+   <AddClientClasses>
+    <serverRef>{server reference id}</serverRef>
+    <clientClasses>
+    	<clientClass>
+	    	<name>test</name>
+		    <expression>exp</expression>
+    		<global>0</global>
+	    	<nextServer>192.168.5.37</nextServer>
+		    <serverHostname>server.hostname</serverHostname>
+    		<bootFileName>boot-name</bootFileName>
+	    	<description>description</description>
+    	</clientClass>
+    	<clientClass>
+	    	<name>test2</name>
+		    <expression>exp</expression>
+    		<global>0</global>
+	    	<nextServer>192.168.5.37</nextServer>
+		    <serverHostname>server.hostname</serverHostname>
+    		<bootFileName>boot-name</bootFileName>
+	    	<description>description</description>
+    	</clientClass>
+    </clientClasses>
+    <serviceType>DHCPv4</serviceType>
+   </AddClientClasses>
+
+Example response:
+
+.. code-block::
+
+   <clientClasses>
+    <clientClass>
+        <ref>{first client class reference id}</ref>
+    </clientClass>
+    <clientClass>
+        <ref>{second client class reference id}</ref>
+    </clientClass>
+   </clientClasses>
+
+**AssignClientClass**
+
+The XML command ``AssignClientClass`` assigns a client class to a valid object reference. The object can be either a pool, a scope, or a superscope.
+
+Example XML command request to assigni a client classification:
+
+.. code-block::
+
+   <AssignClientClass>
+    <ref>{reference id for a pool, scope or superscope}</ref>
+    <name>{name of a client class}</name>
+   </AssignClientClass>
+
+Example response:
+
+.. code-block::
+
+   <clientClass>
+    <ref>{reference id for the client class}</ref>
+   </clientClass>
+
+**GetBuiltinClientClasses**
+
+The XML command ``GetBuiltinClientClasses`` returns the ``builtin`` client classes. The command itself takes no arguments.
+
+Example XML request for built-in client classes:
+
+.. code-block::
+
+   <GetBuiltinClientClasses>
+   </GetBuiltinClientClasses>
+
+Example response:
+
+.. code-block::
+
+   <builtinClientClasses>
+    <builtinClientClass>
+        <value>ALL</value><type>Name</type><requiresExpression>0</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>KNOWN</value><type>Name</type><requiresExpression>0</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>UNKNOWN</value><type>Name</type><requiresExpression>0</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>BOOTP</value><type>Name</type><requiresExpression>0</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>DROP</value><type>Name</type><requiresExpression>1</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>VENDOR_CLASS_</value><type>Prefix</type><requiresExpression>1</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>HA_</value><type>Prefix</type><requiresExpression>1</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>AFTER_</value><type>Prefix</type><requiresExpression>1</requiresExpression>
+    </builtinClientClass>
+    <builtinClientClass>
+        <value>EXTERNAL_</value><type>Prefix</type><requiresExpression>1</requiresExpression>
+    </builtinClientClass>
+   </builtinClientClasses>
+
+**GetClientClasses**
+
+The XML command ``GetClientClasses`` returns a list of all client classes defined on a specific server, including both local and global client classes.
+
+Example XML request for client classes:
+
+.. code-block::
+
+   <GetClientClasses>
+    <serverRef>{ID reference of the selected server}</serverRef>
+    <serviceType>DHCPv4</serviceType>
+   </GetClientClasses>
+
+Example response:
+
+.. code-block::
+
+   <clientClasses>
+	<clientClass>
+		<name>test</name>
+		<expression>exp</expression>
+		<global>0</global>
+		<nextServer>192.168.5.37</nextServer>
+		<serverHostname>server.hostname</serverHostname>
+		<bootFileName>boot-name</bootFileName>
+		<description>description</description>
+		<ref>{client class reference ID}</ref>
+		<serverRef>{server reference ID}</serverRef>
+	</clientClass>
+   </clientClasses>
+
+
+
+**GetClientClass**
+
+The XML command ``GetClientClass`` returns the client class definition. It can either return the
+client class definition for a client class reference ID or the client classification of
+a pool, scope, or superscope.
+
+Example XML command request to get a client class:
+
+.. code-block::
+
+   <GetClientClass>
+    <ref>{reference id for a client class, pool, scope, or superscope}</ref>
+   </GetClientClass>
+
+Example response:
+
+.. code-block::
+
+   <clientClass>
+	<name>test</name>
+	<expression>exp</expression>
+	<global>0</global>
+	<nextServer>192.168.5.37</nextServer>
+	<serverHostname>server.hostname</serverHostname>
+	<bootFileName>boot-name</bootFileName>
+	<description>description</description>
+	<ref>{client class reference ID}</ref>
+	<serverRef>{server reference ID}</serverRef>
+   </clientClass>
