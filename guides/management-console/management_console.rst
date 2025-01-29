@@ -51,4 +51,3 @@ Management Console (obsolete)
    console_dhcp_isc
    console_dhcp_cisco
    admin_maintenance
-   caching_appliance
