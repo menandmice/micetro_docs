@@ -125,7 +125,6 @@ LDAP configurations are stored in a JSON config file that should be stored in th
 .. code-block:: bash
 
   sudo cp ldapconf.json /var/mmsuite/mmcentral
-  sudo sed -i "s/admin_password/$PSSWD/g" /var/mmsuite/mmcentral/ldapconf.json
   sudo chown root:root /var/mmsuite/mmcentral/ldapconf.json
   sudo chmod 440 /var/mmsuite/mmcentral/ldapconf.json
 
@@ -160,6 +159,8 @@ Example configuration for connecting to an openLDAP LDAP service:
 
 .. note::
   In the ``name_attribute`` field, ``cn`` ("common name") refers to the group name in LDAP. In the LDAP configuration JSON file, enter ``cn`` in the ``name_attribute`` field if that attribute is used for group name in LDAP, not the group name itself.
+
+  Additionally, replace the ``reader_dn`` and ``reader_password`` values with the admin credentials from LDAP.
 
 
 After setting up the server, enable LDAP authentication in Micetro as described below. Once LDAP is enabled in Groups, you can create an LDAP group. The group must have the same name in both Micetro and LDAP. Enter this name in the :guilabel:`External ID` field.
