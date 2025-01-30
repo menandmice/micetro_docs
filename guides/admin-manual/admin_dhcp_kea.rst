@@ -200,9 +200,13 @@ See :ref:`dhcp-kea-ha-external-changes`.
 
 .. _kea-client-classes:
 
-Managing Kea Client Classifications with Micetro
+Managing Kea Client Classification with Micetro
 ------------------------------------------------
-You can manage Kea Client Classifications through Micetro. 
+Client Classification is a feature specific to ISC Kea DHCP servers, which enables the classification of different types of clients to treat them in different ways.
+
+Incoming packets can be associated with a client class by selecting a vendor class option or another built-in condition, static host reservation, scope, or superscope, or by using a hook. You can use client classification to select scopes and pools, limit leases, or even rate limiting. For more information, refer to `the official Kea documentation on client classification <https://kea.readthedocs.io/en/latest/arm/classify.html>`_.
+
+**To manage Kea Client Classification through Micetro:**
 
 1. On the **Admin** page, select :guilabel:`Kea` under :guilabel:`DHCP Services` in the left sidebar.
 
@@ -211,8 +215,10 @@ You can manage Kea Client Classifications through Micetro.
    .. image:: ../../images/kea-client-classifications.png
       :width: 70%
       
-   * If you have any client classes already defined on your server, you can find them listed on the respective service type tab (DHCPv4/DHCPv6). 
+   * If you have any client classes already defined on your server, you can find them listed on the respective service type tab (DHCPv4/DHCPv6). Here, you can see whether existing client classes are built-in, global, and/or custom. See Creating Client Classes below for more information on types of client classes.
    * From here you can create, edit existing, or remove client classes. Any of these actions will add an entry to the audit trail inside of Micetro which can be viewed by selecting the history action of a client class.
+
+Client classes can also be assigned and managed on DHCP superscopes. See :ref:`kea-client-classes-superscopes`.
  
 Creating Client Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -227,7 +233,7 @@ Creating Client Classes
    
    * Optionally you can add a description. The description is not added to the Kea config, only saved in Micetro. Defining a client class as global is a Micetro-specific feature and is explained in detail below.
    
-   * Select the :guilabel:`Global` checkbox if you want to create the client clss on all active Kea servers. Any modification or removal action on that client class will be replicated on all the active Kea servers.
+   * Select the :guilabel:`Global` checkbox if you want to create the client class on all active Kea servers. Any modification or removal action on that client class will be replicated on all the active Kea servers.
 
 3. Go to the :guilabel:`Options` tab to set DHCP options on the client classes.
 
@@ -237,7 +243,7 @@ Creating Client Classes
 
 Assigning Client Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^
-You can limit the access to specific scopes and address pools by assigning a client class to them. Then only packets that belong to the assigned client class will have access.
+You can limit the access to specific scopes and address pools by assigning a client class to them. Then only packets that belong to the assigned client class will have access. For assigning client classes to a superscope, refer to :ref:`kea-client-classes-superscopes`.
 
 **To assign a client class to a scope:**
 
@@ -266,3 +272,13 @@ Assigning client classes to scopes/pools shows up in the history of the respecti
 .. image:: ../../images/kea-client-classifications-filter.png
    :width: 70%
 
+Managing Client Classification with API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following commands for managing client classes are available in Micetro:
+
+* ``AddClientClass`` --- Adds/defines a new client on a Kea server.
+* ``AddClientClasses`` --- Adds/defines multiple new clients on a Kea server.
+* ``AssignClientClass`` --- Assigns a client class to a valid object reference. The object can be either a pool, a scope, or a superscope.
+* ``GetBuiltinClientClasses`` --- Returns the ``builtin`` client classes. The command itself takes no arguments.
+* ``GetClientClass`` --- Returns the client class definition. It can either return the client class definition for a client class reference ID or the client classification of a pool, scope, or superscope.
+* ``GetClientClasses`` --- Returns a list of all client classes defined on a specific server, including both local and global client classes.
