@@ -104,36 +104,39 @@ Micetro requires an agent to handle communication with external services. The in
 
 Adding a Service
 ----------------
-You must have permission to administer DNS to add a new service to Micetro.
+To add a new service to Micetro, you must have permission to administer DNS.
 
-Adding a new service is either a two or three-step process, depending on the type of service being added.
+Adding a new service is either a two- or three-step process, depending on the type of service being added.
 
 **To add a service**:
 
 1. On the :guilabel:`Service Management` tab, click :guilabel:`Add Service`.   
 
-2. Select the platform you wish to use. The list of options is based on your license keys. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to find the specific service you need.
+2. Select the service you want to use. The list of options is based on your license keys. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to find the specific service you need. Click :guilabel:`Next`.
 
-  .. image:: ../../images/add-servive-dialog.png
-      :width: 65%
+  .. image:: ../../images/add-service-dialogbox.png
+      :width: 100%
 
-3. Select an agent: 
+3. In the :guilabel:`Properties` step, select an agent from the dropdown menu.
 
-   .. image:: ../../images/add-kea.png
-     :width: 65%
+   .. image:: ../../images/add-service-properties-tab.png
+     :width: 100%
 
+.. note::
    * This step is not required for cloud services.
 
-   * For ISC BIND and ISC DHCP, this step is not required because the agent must be installed on the service host itself.
+   * For **ISC BIND** and **ISC DHCP**, this step is not required because the agent must be installed on the service host itself.
 
-   * With the exception of the above services, the agent can be installed on the Micetro Central host, the service host, or -- for MS DNS/DHCP, ISC Kea, Cisco Meraki, and Cisco IOS -- a different host. If you have already added a service of this type, you can select from existing agents or create a new one. A single agent can be used to manage multiple service connections.
+   * With the exception of the above services, the agent can be installed on the Micetro Central host, the service host, or --- for MS DNS/DHCP, ISC Kea, Cisco Meraki, and Cisco IOS --- a different host. If you have already added a service of this type, you can select from existing agents or create a new one. A single agent can be used to manage multiple service connections.
 
-   * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process. You can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
+   * For **AuthServe**, **Cisco IOS**, **Kea**, **Meraki**, **MS DNS**, and **MS DHCP**, you can select from a list of available agents that were registered in the installation process. For **AuthServe**, you must specify the name and shared secret for the agent. For all of these services excepting AuthServer, Meraki, and Cisco, you can select the :guilabel:`Service host` to use the agent installed on the server.
+
+   * In the case of **AuthServe**, you can also register a new agent by selecting :guilabel:`New Agent` from the :guilabel:`Agent` dropdown. Enter a hostname or IP address (if the agent hostname is not resolvable), as well as the agent secret.
    
-    .. image:: ../../images/add-authserve.png
-         :width: 65%
+    .. image:: ../../images/add-service-newagent.png
+         :width: 100%
 
-4. Enter the necessary details:
+4. Enter the necessary details for the service and click :guilabel:`Next`. The :guilabel:`Properties` step displays a sidebar with context-sensitive help specific to the type of service you select.
   * **Cloud services**: Each service type has its set of credentials in addition to the optional service name. For more details on adding cloud services, see :ref:`cloud`.
 
   * **On-premises services**:
@@ -141,6 +144,12 @@ Adding a new service is either a two or three-step process, depending on the typ
     * Enter the hostname or IP address of the service/server.
 
     * **AuthServe** uses a channel as the connection string. The channel name is mapped to a hostname in a server configuration file. 'ansp' is the default channel name, which maps to localhost. To use a different hostname, the format is ``"1.2.3.4#<someseceret>"``. Consult the AuthServe documentation for details.
+
+5. In the :guilabel:`Custom Properties` step, you can set optional custom property values for the service, such as authority and region. Click :guilabel:`Next`.
+
+6. Review the service's settings in the :guilabel:`Summary` step. If you need to make any changes to the service, use the :guilabel:`Back` button to return to any of the previous steps.
+
+7. Select :guilabel:`Add` to add the service to Micetro.
 
 Editing Services
 -----------------
@@ -216,4 +225,3 @@ For detailed information about the different DHCP platforms and their configurat
   admin_dhcp_isc
   admin_dhcp_cisco
   admin_dhcp_meraki
-
