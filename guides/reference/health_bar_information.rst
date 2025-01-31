@@ -28,7 +28,7 @@ This error is shown when the Men&Mice Central cannot communicate with the specif
 Database has multiple schemas
 """""""""""""""""""""""""""""
 
-This error is displayed when it has been detected that the database has multiple schemas. This can happen if the database has been migrated and not configured properly. Contact Men&Mice Support for further assistance. (See :ref:`support`.)
+This error is displayed when it has been detected that the database has multiple schemas. This can happen if the database has been migrated and not configured properly. Contact Support for further assistance. (See :ref:`support`.)
 
 Database size exceeded the recommended value
 """"""""""""""""""""""""""""""""""""""""""""
@@ -43,7 +43,7 @@ This error is displayed when the defined failover partner server for a DHCP serv
 Error loading zone
 """"""""""""""""""
 
-This warning is shown when DNS server (e.g. BIND) is unable to load its zones. This warning is also posted if the server has not successfully finished checking all zones for errors.
+This warning is shown when DNS server (e.g., BIND) is unable to load its zones. This warning is also posted if the server has not successfully finished checking all zones for errors.
 
 Failed to do a SOA request for zone
 """""""""""""""""""""""""""""""""""
@@ -55,8 +55,6 @@ Failed to load ODBC Driver for SQL Server
 
 The preferred version of the Microsoft ODBD Driver for SQL Server failed to load. The latest version can be downloaded from `https://www.microsoft.com/en-us/download/details.aspx?id=53339 <https://www.microsoft.com/en-us/download/details.aspx?id=53339>`_.
 
-Failover partner Down
-"""""""""""""""""""""
 
 High availability failure state
 """""""""""""""""""""""""""""""
@@ -66,13 +64,8 @@ This warning is shown when the active Central server went down and a standby Cen
 License exceeded
 """"""""""""""""
 
-This warning is shown when the current license for Men&Mice component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact `sales@menandmice.com <mailto:sales@menandmice.com>`_ to resolve the matter.
+This warning is shown when the current license for a Men&Mice component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact `support@bluecatnetworks.com <mailto:support@bluecatnetworks.com>`_ to resolve the matter.
 
-Multiple PTR records in zone
-""""""""""""""""""""""""""""
-
-Orphaned PTR records in zone
-""""""""""""""""""""""""""""
 
 Outdated database server version
 """"""""""""""""""""""""""""""""
@@ -102,28 +95,26 @@ This warning is shown when one of the following situations occur:
 
 * An address pool conflict was detected.
 
-Cloud Subnet Collision
-""""""""""""""""""""""
 
 Scope reservation mismatch
 """"""""""""""""""""""""""
 
-This warning is shown when DHCP reservations do not match, that is name, MAC address and description are not identical.
+This warning is shown when DHCP reservations do not match, that is name, MAC address, and description are not identical.
 
 Slave zone not updated from master or is about to expire
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 This warning is shown when a slave zone is not receiving an update from its master. This warning could also be shown when a slave zone is not receiving update from its master and is about to expire.
 
-Superscope, subnet, static or dynamic part of scope over utilized
+Superscope, subnet, static, or dynamic part of scope over utilized
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when a specific threshold is reached, that is, not enough IP addresses is available in this range. To fix this issue remove the scope and create a larger one instead or create a super scope which will join together two or more scopes for larger one.
+This warning is shown when a specific threshold is reached, that is, not enough IP addresses is available in this range. To fix this issue, remove the scope and create a larger one instead or create a superscope which will join together two or more scopes for larger one.
 
 Unable to check whether scope contains inconsistencies
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when Men&Mice Central can’t connect to the DHCP Server Controller service to check whether scope contains inconsistencies. The reason could be if the DHCP Server Controller is offline or not turned on.
+This warning is shown when Men&Mice Central can’t connect to the DHCP Server Controller service to check whether a scope contains inconsistencies. The reason could be if the DHCP Server Controller is offline or not turned on.
 
 Unable to check whether scope is part of a failover relationship on partner server
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,17 +144,14 @@ This warning is shown when Men&Mice Central can’t connect to the DNS Server Co
 Update available
 """"""""""""""""
 
-This warning is shown when new version of Micetro is available. To get this new version go to :menuselection:`Tools --> Check for updates` in the menu bar and run the update wizard.
+This warning is shown when new version of Micetro is available. To get this new version, go to :menuselection:`Tools --> Check for updates` in the menu bar and run the update wizard.
 
 Update server unreachable
 """""""""""""""""""""""""
 
-This warning is shown when Men&Mice Central has lost its connection to Men&Mice update server. It is not mandatory to have this connection and it can be turned off. To fix this issue make sure that machine running the Men&Mice Update service and the machine running the Men&Mice Central are listening to the same TCP port. TCP port ``4603`` is reserved for the update service but it can be changed if there is another software using that TCP port. See :ref:`change-updater-port` about changing the TCP port.
+This warning is shown when Men&Mice Central has lost its connection to Men&Mice update server. It is not mandatory to have this connection and it can be turned off. To fix this issue, make sure that machine running the Men&Mice Update service and the machine running the Men&Mice Central are listening to the same TCP port. TCP port ``4603`` is reserved for the update service, but it can be changed if there is another software using that TCP port. See :ref:`change-updater-port` about changing the TCP port.
 
 Zone replication group out of sync
 """"""""""""""""""""""""""""""""""
 
 This error is shown when a member of a zone replication group is out of sync.
-
-Zone serial out of date
-"""""""""""""""""""""""
