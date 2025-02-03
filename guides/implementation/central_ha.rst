@@ -7,14 +7,14 @@
 Configure High Availability for Micetro Central
 ================================================
 
-Failover instances of Micetro Central can be configured to build a high availability cluster.
+Failover instances of Micetro Central can be configured to build a high availability cluster. For information about fine-tuning the settings for the Central High Availability cluster, see :ref:`ha-tweaks-central`.
 
 .. note::
   * To run Micetro in High Availability mode, you must be using the MSSQL or PostgreSQL database backend for Micetro. High Availability mode is not available for other database types.
   
-  * When there are no HA members defined or if Micetro Central has not been configured for HA, a message will appear, indicating further configuration is necessary. This documentation provides instructions on how to configure HA in the web Micetro Web Interface for versions 10.2 and above. If you need to use the management console (thick client), please follow the documentation for version 10.1 (https://menandmice.com/docs/10.1/guides/implementation/central_ha).
+  * All participating servers should use the same NTP server. If not, one standby server may start to take over, since the timestamp for the active server will be old, and lead the NTP server to think the active server is offline.
 
-  * For fine-tuning the settings for the Central High Availability cluster, see :ref:`ha-tweaks-central`.
+  * When there are no HA members defined or if Micetro Central has not been configured for HA, a message will appear, indicating further configuration is necessary. This documentation provides instructions on how to configure HA in the web Micetro Web Interface for versions 10.2 and above. If you need to use the management console (thick client), please follow the documentation for version 10.1 (https://menandmice.com/docs/10.1/guides/implementation/central_ha).
 
 .. _central-ha-unix:
 
