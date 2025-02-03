@@ -14,7 +14,7 @@ The user is able to click a link from the Management Console to get more details
 Component out of date
 """""""""""""""""""""
 
-This warning is shown when a Men&Mice component is out of date in the system. This can be confirmed by going to :menuselection:`Tools --> Update Status`. It will show all components that are out of date in the system. From this window, they can also be updated.
+This warning is shown when a Micetro component is out of date in the system. This can be confirmed by going to :menuselection:`Tools --> Update Status`. It will show all components that are out of date in the system. From this window, they can also be updated.
 
 Component unreachable
 """""""""""""""""""""
@@ -48,7 +48,7 @@ This warning is shown when DNS server (e.g., BIND) is unable to load its zones. 
 Failed to do a SOA request for zone
 """""""""""""""""""""""""""""""""""
 
-This error is shown when the Men&Mice DNS Server Controller is able to query the server, but SOA request for the zone failed.
+This error is shown when the Micetro DNS Server Controller is able to query the server, but SOA request for the zone failed.
 
 Failed to load ODBC Driver for SQL Server
 """""""""""""""""""""""""""""""""""""""""
@@ -133,7 +133,7 @@ This warning is shown when Micetro Central can’t connect to the DHCP Server Co
 Unable to fetch scope info from partner server
 """"""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when Men&Mice Central can’t connect to the DHCP Server Controller service to gather scope info from partner server. The reason could be if the DHCP Server Controller is offline or not turned on.
+This warning is shown when Micetro Central can’t connect to the DHCP Server Controller service to gather scope info from partner server. The reason could be if the DHCP Server Controller is offline or not turned on.
 
 Unable to get status for DNS or DHCP server
 """""""""""""""""""""""""""""""""""""""""""
