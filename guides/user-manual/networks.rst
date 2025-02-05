@@ -273,6 +273,7 @@ Subnet Discovery
 
 The subnet discovery feature enables Micetro to obtain information about the subnets on the network through routers using SNMP. To activate the subnet discovery feature, ensure that :guilabel:`Synchronize subnets ...` is selected in the SNMP profile. For more information about SNMP profiles, see :ref:`snmp-profiles`.
 
+.. _ipam-subnet-monitoring:
 
 Setting Subnet Monitoring
 -------------------------

@@ -8,7 +8,7 @@ Cloud Integration
 *****************
 Micetro provides native integration with cloud-based DNS and DHCP services, managing IP address data for Azure and AWS, including virtual networks and subnets within cloud accounts.
 
-Using a cloud DNS service in Micetro is similar to the process of working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  
+Using a cloud DNS service in Micetro is similar to working with other DNS services. The process of adding DNS zones, DNS records, or modifying them is identical to that of other DNS servers in Micetro.  
 
 .. note::
    Currently, cloud DNS services only support the creation of primary zones.
@@ -23,7 +23,7 @@ Supported Cloud Services
   :header: "Cloud service", "DNS", "IPAM"
   :widths: 10, 30, 30
 
-  "Akamai",	"Yes (Akamai Fast DNS)", "N/A"
+  "Akamai",	"Yes (Akamai Edge DNS)", "N/A"
   "Azure", "Yes (Azure DNS)", "Yes"
   "Amazon Web Services (AWS)", "Yes (Amazon Route 53)", "Yes"
   "NS1", "Yes", "N/A"
@@ -54,23 +54,24 @@ If you intend to add multiple AWS cloud accounts using a single set of credentia
 Adding Cloud Services
 ^^^^^^^^^^^^^^^^^^^^^^
 
-You must have permission to administer DNS or DHCP to add a new service to Micetro.
+.. note::
+   You must have permission to administer DNS or DHCP to add a new service to Micetro.
 
 **To add a cloud service**:
 
-1.	On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
+1.	On the **Admin** page, select the :guilabel:`Service Management` tab.
 2.	Select :guilabel:`Add Service`.
-3.	Select the cloud provider you want to use, fill in the required information, and select :guilabel:`Add`.
+3.	Select the cloud provider you want to use, enter the required information, and select :guilabel:`Add`.
 
    .. image:: ../../images/add-servive-dialog.png
      :width: 50%
 
-4. The service and any subnets defined will be displayed under DNS Services or DHCPS Service and IP Ranges, respectively.
+4. The service and any subnets defined will be displayed under DNS Services or DHCP Services and IP Ranges, respectively.
 
-Akamai Fast DNS
+Akamai Edge DNS
 """"""""""""""""
 
-Fill in the fields required to connect to Akamai Fast DNS:
+Fill out the fields required to connect to Akamai Edge DNS:
 
 .. image:: ../../images/add-edge-dns.png
    :width: 50%
@@ -81,24 +82,24 @@ Fill in the fields required to connect to Akamai Fast DNS:
   Akamai OPEN APIs are time sensitive! It is crucial to synchronize the system your client operates on with a Stratum 2 or higher time source.
 
 .. danger::
-  If the time on the server running the DNS Remote differs significantly from Coordinated Universal Time, authentication will fail preventing access/updating of zones through Micetro.
+  If the time on the server running the DNS Remote differs significantly from Coordinated Universal Time, authentication will fail, preventing access/updating of zones through Micetro.
 
 .. _connect-azure:
 
 Azure DNS
 """"""""""
-Fill in the  fields required to connect to Azure:
+Fill out the fields required to connect to Azure:
 
 .. image:: ../../images/add-azure-dns.png
    :width: 50%
 
-* For information about how to configure Azure DNS, see :ref:`configure-azure-dns`.
+For information about how to configure Azure DNS, see :ref:`configure-azure-dns`.
 
 .. _connect-aws:
 
-Amazon Web Services
-"""""""""""""""""""
-Fill in the fields required to connect to AWS:
+Amazon Web Services (AWS)
+"""""""""""""""""""""""""
+Fill out the fields required to connect to AWS:
 
 .. image:: ../../images/add-aws.png
    :width: 50%
@@ -114,34 +115,36 @@ Fill in the fields required to connect to AWS:
 NS1
 """
 
-Fill in the fields required to connect to NS1:
+Fill out the fields required to connect to NS1:
 
 .. image:: ../../images/add-ns1.png
    :width: 50%
 
-*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `IBM NS1 Connect <https://ns1.com/knowledgebase/creating-and-managing-api-keys>`_.
+*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see `IBM NS1 Connect <https://ns1.com/knowledgebase/creating-and-managing-api-keys>`_.
 
 .. _connect-meraki:
 
 Cisco Meraki
 """"""""""""
-To manage Meraki with Micetro, it is required to have an operational instance of the Micetro DHCP Agent. For additional details about the DHCP Agent, see :ref:`install-dhcp-controllers`. Moreover, the user responsible for adding Meraki should have DHCP administrator privileges.
+To manage Meraki with Micetro, an operational instance of the Micetro DHCP Agent is required. For additional details about the DHCP Agent, see :ref:`install-dhcp-controllers`. Moreover, the user responsible for adding Meraki should have DHCP administrator privileges.
 
-When connecting to Meraki, you need to sepcify the location of the running DHCP. Next you must provide Micetro with a display name for the service and the API key to connect to Meraki. 
+When connecting to Meraki, you must specify the location of the running DHCP. Next, provide Micetro with a display name for the service and the API key to connect to Meraki. 
 
 .. image:: ../../images/add-meraki.png
    :width: 50%
 
 * **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `Cisco Meraki Dashboard API <https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API>`_.
 
+Synchronization parameters, e.g., network client synchronization interval, can be configured under :ref:`Advanced System Settings <admin-advanced>`.
+
 Editing Cloud Services
 -----------------------
 
 **To edit the properties of a cloud service**:
 
-1.	In the **Service Management** area, locate the service you want to edit.
-2.	Double-click the service or select it, and then select :guilabel:`Edit service` on the :guilabel:`Action` menu.
-3.	Make the necessary changes and select :guilabel:`Confirm`.
+1.	On the **Service Management** tab, locate the service you want to edit.
+2.	Double-click the service or select it, and then select :guilabel:`Edit service properties` on the :guilabel:`Action` menu.
+3.	Make the necessary changes and select :guilabel:`Save`.
 
 Removing Cloud Services
 ------------------------
@@ -150,7 +153,7 @@ Removing Cloud Services
 
 **To remove a cloud service**:
 
-1.	In the **Service Management** area, select the service you want to remove.
+1.	On the **Service Management** tab, select the service you want to remove.
 2.	On the :guilabel:`Action` menu, select :guilabel:`Remove DNS service`.
 
 
@@ -170,4 +173,3 @@ Removing Cloud Networks
 * :ref:`cloud-minimum-permissions`
 
 * :ref:`configure-azure-dns`
-
