@@ -283,9 +283,6 @@ Versions (only shown for log file channels).
 Facility (only shown for syslog channels).
   Allows the user to specify a syslog facility to be used.
 
-.. note::
-  For remote logging on the DDI appliance, only the local7 facility is configured to be sent to the remote loghost. See Appliance Management for more information on enabling remote logging on the DDI appliance.
-
 Query Restrictions (BIND)
 """""""""""""""""""""""""
 
@@ -462,8 +459,6 @@ It is possible to clear the DNS server cache using the Management console's 'Cle
 
 * On a Windows DNS server you can only clear the entire cache
 
-* On the DNS Caching Appliance you can clear individual cache entries, an entire domain or clear the entire cache
-
 To clear the cache of a BIND DNS server, do the following:
 
 1. Select the desired server.
@@ -485,16 +480,6 @@ To clear the cache of a Windows DNS server, do the following:
 2. From the menu bar, select :menuselection:`Server --> Clear Cache`. A confirmation dialog box displays.
 
 3. Click :guilabel:`OK` to clear the cache of the server.
-
-To clear the cache of a DNS Caching Appliance, do the following:
-
-1. Select the desired server.
-
-2. From the menu bar, select :menuselection:`Server --> Clear Cache`. The *Clear Cache* dialog box displays.
-
-3. To clear the entire server cache, select :guilabel:`Clear entire cache`. Note that this is the only available option if you are clearing the cache on a Windows DNS server.
-
-4. To clear a specific name, select the :guilabel:`Name to clear` radio button and enter the name you want to clear from the cache. If you want to clear an entire domain (the name entered and all names below it), select the Recursively flush the entire domain checkbox.
 
 View Cache Entries (Management Console)
 ---------------------------------------

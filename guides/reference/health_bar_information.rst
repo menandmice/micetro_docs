@@ -66,13 +66,7 @@ This warning is shown when the active Central server went down and a standby Cen
 License exceeded
 """"""""""""""""
 
-This warning is shown when the current license for Men&Mice component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact `sales@menandmice.com <mailto:sales@menandmice.com>`_ to resolve the matter.
-
-Multiple PTR records in zone
-""""""""""""""""""""""""""""
-
-Orphaned PTR records in zone
-""""""""""""""""""""""""""""
+This warning is shown when the current license for Men&Mice component has been exceeded. Please contact `sales@menandmice.com <mailto:sales@menandmice.com>`_ to resolve the matter.
 
 Outdated database server version
 """"""""""""""""""""""""""""""""

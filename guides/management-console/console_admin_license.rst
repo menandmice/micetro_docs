@@ -8,13 +8,11 @@ License Management (Management Console, obsolete)
 
   From version 10.1, license management has been migrated to the web application: see :ref:`admin-license`.
 
-There are five different keys, one each for:
+There are four different keys, one each for:
 
 * the DNS module
 
 * the IPAM and DHCP modules
-
-* enabling management of Men&Mice Virtual Appliances
 
 * the Workflow module
 

@@ -9,9 +9,6 @@ New DNS Server (Management Console, obsolete)
 
 You must be logged in as a user with privileges to administer DNS in order to add a DNS server.
 
-.. note::
-  For information on adding a DNS server on a Men&Mice Appliance, refer to :ref:`appliance-management`.
-
 .. image:: ../../images/console-dns-add-server.png
   :width: 50%
   :align: center

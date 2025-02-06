@@ -7,7 +7,7 @@
 Update Guide (Management Console, obsolete)
 ==============================================
 
-The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&Mice Central, the Men&Mice Server Controllers and the Men&Mice Appliances with minimal downtime.
+The Update Manager notifies you when a new version of Micetro is available and simplifies the update process for Micetro. Using the Update Manager you can update Men&Mice Central and the Men&Mice Server Controllers with minimal downtime.
 
 Update paths
 ------------
@@ -57,7 +57,7 @@ To download the new version, select the version and click the :guilabel:`Downloa
 Installing an Update
 --------------------
 
-Once the update has been downloaded, you can start the actual update process. The Update Manager can update Men&Mice Central, connected Server Controllers and Men&Mice Virtual Appliances. The Men&Mice Web Application must be updated manually.
+Once the update has been downloaded, you can start the actual update process. The Update Manager can update Men&Mice Central and connected Server Controllers. The Men&Mice Web Application must be updated manually.
 
 If you want to perform the update at a later time, you can close the dialog box. To display the dialog box again, select :menuselection:`Tools --> Check for Updates`.
 
@@ -69,25 +69,6 @@ The following instructions contain information on how to update Micetro after th
 
   * If the update contains a new version of the Men&Mice Web Application, a dialog box is displayed where you can find instructions on manually updating the Men&Mice Web Application.
 
-  * If your environment contains a Men&Mice Appliance, the latest version of the Men&Mice Appliance software is uploaded to the Appliance, but isn't applied automatically.
-
-Updating an Appliance
-^^^^^^^^^^^^^^^^^^^^^
-
-As an update to the Men&Mice Appliance sometimes requires that the Appliance is restarted, the update is not applied automatically.
-
-To complete an Appliance update, you must manually initiate the update. To minimize service disruption you might want to update your Appliances in several batches.
-
-1. From the menu bar, select :menuselection:`Tools --> Update Status`. The *Update Status* dialog box displays. The dialog box shows the update status for all DNS and DHCP server controllers as well as all Men&Mice Appliances. If an update is pending for an Appliance, the status is listed as *Update pending* and a checkbox is displayed in the Update column.
-
-.. image:: ../../images/admin-update-appliance.png
-  :width: 80%
-  :align: center
-
-2. Click the checkbox to select the Appliance(s) you want to update.
-
-3. Click the :guilabel:`Update Appliances` button. This will update the selected appliance(s).
-
 Viewing Update Status
 ---------------------
 
@@ -97,7 +78,7 @@ Through the *Update Status* dialog box, you can always view the update status fo
   :width: 80%
   :align: center
 
-The dialog box shows the update status for all DNS and DHCP server controllers as well as all Men&Mice Appliances. If an update is pending for an Appliance, the status is listed as Update pending and a checkbox is displayed in the Update column.
+The dialog box shows the update status for all DNS and DHCP server controllers.
 
 Uncheck the :guilabel:`Show servers that are up-to-date` checkbox to only show servers that need to be updated.
 
