@@ -66,7 +66,7 @@ This warning is shown when the active Central server went down and a standby Cen
 License exceeded
 """"""""""""""""
 
-This warning is shown when the current license for a Men&Mice component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact `support@bluecatnetworks.com <mailto:support@bluecatnetworks.com>`_ to resolve the matter.
+This warning is shown when the current license for a component has been exceeded. For example, if the appliance license is only valid for a single appliance, and another appliance is added, then the additional appliance is not shown. Please contact `support@bluecatnetworks.com <mailto:support@bluecatnetworks.com>`_ to resolve the matter.
 
 Multiple PTR records in zone
 """"""""""""""""""""""""""""

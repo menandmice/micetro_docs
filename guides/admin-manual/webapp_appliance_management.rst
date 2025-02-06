@@ -288,8 +288,4 @@ Micetro automatically detects the new server as uninitialized. To begin using th
 
 * :ref:`webapp-server-management`
 
-* :ref:`appliance-management`
-
-* :ref:`caching-appliance`
-
 * `Setting up Micetro DNS/DHCP Servers <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Feature-support-and-limitations/9.6.0>`_
