@@ -530,7 +530,7 @@ Automatic backup can be disabled by setting the property ``BackupDNSServers`` va
 
 .. code-block::
 
-  <BackupDNSServers value="0" />
+  BackupDNSServers = false
 
 If a DNS server machine crashes and has to be replaced with another machine with the same IP Address, Micetro will detect the new server and consider it to be in an uninitialized state. To be able to work with the server the administrator needs to initialize the server. To initialize the server right-click on the server and select Initialize. This will display a dialog box where the user can choose how the server should be initialized:
 

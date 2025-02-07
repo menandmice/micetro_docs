@@ -25,7 +25,7 @@ Linux
 
   .. code-block::
 
-   <ClusterMemberName value="somename"/>
+   ClusterMemberName = somename
 
   to the end of the file. ``somename`` is the unique name that will identify the Central instance in the high availability cluster. (For example "1", “primary”, or "central1").
 
@@ -94,7 +94,7 @@ Windows
 
   .. code-block::
 
-   <ClusterMemberName value="somename"/>
+   ClusterMemberName = somename
 
   to the end of the file. ``somename`` is the unique name that will identify the Central instance in the high availability cluster. (E.g. "1", “primary”, or "central1").
 

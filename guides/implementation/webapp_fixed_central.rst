@@ -14,11 +14,11 @@ If you want to allow users to specify a custom Central server to connect to, fol
 Windows
 -------
 
-1. Edit the ``preferences.cfg`` file for the M&M Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following XML tag:
+1. Edit the ``preferences.cfg`` file for the M&M Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following line:
 
   .. code-block::
 
-    <LockToDefaultServer value="0" />
+    LockToDefaultServer = false
 
 2. Restart the M&M Web Services Windows service.
 
@@ -29,11 +29,11 @@ Linux
 
 1. Log into the server hosting the Web Interface.
 
-2. Edit the ``preferences.cfg`` file for the M&M Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following XML tag:
+2. Edit the ``preferences.cfg`` file for the M&M Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following line:
 
   .. code-block::
 
-    <LockToDefaultServer value="0" />
+    LockToDefaultServer = false
 
 3. Restart the ``mmws`` service:
 

@@ -176,7 +176,10 @@ Example:
 
 .. code-block::
 
-  <RADIUSServer value="192.168.1.3"/><RADIUSPort value="1515"/><RADIUSSharedSecret value="MyBigSecret"/><RADIUSAuthentication value="1"/>
+  RADIUSServer = 192.168.1.3
+  RADIUSPort = 1515
+  RADIUSSharedSecret = "MyBigSecret"
+  RADIUSAuthentication = true
 
 After editing the file, restart Men&Mice Central.
 
@@ -438,19 +441,12 @@ Azure:
 .. code-block::
 
          { 
-
             "microsoft": { 
-
                "tenant_id": "Company_tenant_id (must match Azure)", 
-
                "client_id": "xxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxx", 
-
                "client_credential": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
-
                "redirect_uri": "http://localhost/mmws/auth_cb/microsoft (must match what is configured in Azure)" 
-
             } 
-
          }	 
 
 
@@ -459,21 +455,13 @@ Okta:
 .. code-block::
 
          { 
-
             "okta": { 
-
                "domain": "Company_domain.okta.com", 
-
                "server_id": "xxxxxxxxxxx|'default'", (can be skipped/empty)
-
                "client_id": "xxxxxxxxxxx", 
-
                "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
-
                "redirect_uri": "http://localhost/mmws/auth_cb/okta (must match what is configured in Okta)" 
-
             } 
-
          }	 
 
 This will cache the credentials in the DB (no need to restart Central).  Once Authentication through the Service Providers is established, the json configuration file can be deleted. 

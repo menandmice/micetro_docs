@@ -14,7 +14,8 @@ To prevent this, make sure ``named-checkconf`` is executable, and edit the Contr
 
 .. code-block::
 
-  <fingerprint value="<some-hex-values>"/> <named-checkconf value="/usr/sbin/named-checkconf"/>
+  Fingerprint = "<some-hex-values>"
+  named-checkconf = "/usr/sbin/named-checkconf"
 
 Restart the DNS Server Controller process:
 

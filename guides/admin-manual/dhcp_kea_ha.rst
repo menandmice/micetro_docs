@@ -106,7 +106,7 @@ Tweaking the DHCP Server Controller
 The ``preferences.cfg`` file for the DHCP Server Controller can be used to tweak the Kea high availability setup.
 
 keaReplicateConfig
-  If this value is set to 0, Micetro will not replicate between Kea DHCP servers in a high availability setup. The default value is **1**. Example: ``<keaReplicateConfig value=”0”/>``
+  If this value is set to ``false``, Micetro will not replicate between Kea DHCP servers in a high availability setup. The default value is **true**. Example: ``KeaReplicateConfig = true``
 
 keaControlAgentHost
   Determines which host to use when connecting to a control agent. The default value is ``127.0.0.1`` if the Kea Control Agent is running on the same machine, or the IP address of the server added to Micetro.

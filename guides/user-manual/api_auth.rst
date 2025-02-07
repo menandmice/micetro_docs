@@ -90,7 +90,7 @@ For more information on Basic Authorization headers on the client side, see for 
 
 .. note::
   * Remember to configure HTTPS for the mmws site for this authentication method since the username and password can easily be extracted for anyone listening in on the communication.
-  * Micetro can be configured to disable the Basic Authorization header by inserting ``<AuthorizationMethods value="" />`` into mmws preference file.
+  * Micetro can be configured to disable the Basic Authorization header by adding the line ``AuthorizationMethods = ""`` into mmws preferences file.
 
 Negotiate Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +103,7 @@ To enable Negotiate header Authorization in the Micetro Web Interface, add the f
 
 .. code-block::
 
-  <AuthorizationMethods value="Kerberos,NTLM" />
+  AuthorizationMethods = "Kerberos,NTLM"
 
 You can change the order of the methods, for example, if NTLM is preferred over Kerberos. However, if you want to avoid using NTLM as a less secure fallback, specify only Kerberos as
 a value.

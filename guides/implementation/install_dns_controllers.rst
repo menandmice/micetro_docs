@@ -335,7 +335,7 @@ If the file does not exist, create it. The file is a text file in a simple XML-b
 
 .. code-block::
 
-  <DNSServerAddress value="192.0.2.1"/>
+  DNSServerAddress = 192.0.2.1
 
 Save the file, and then restart Micetro DNS agent using :menuselection:`Administrative Tools --> Services` in Windows. Then also restart Micetro Central, so that it can cache the zone's contents.
 
@@ -365,7 +365,7 @@ The file is a text file in a simple XML-based format. Add the following element,
 
 .. code-block:: XML
 
-  <GenericDNSScript value="python /scripts/genericDNS.py" />
+  GenericDNSScript = "python /scripts/genericDNS.py"
 
 Configure the DNS Agent to Work with Microsoft Azure DNS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

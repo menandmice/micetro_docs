@@ -21,7 +21,7 @@ You can add up to three custom links that show up on the Micetro login page.
 
    .. code-block::
 
-      <LoginFootnote value="Link Text 1[https://www.example.com/link1],Link Text 2[https://www.example.com/link2],Link Text 3[https://www.example.com/link3]" />
+      LoginFootnote = "Link Text 1[https://www.example.com/link1],Link Text 2[https://www.example.com/link2],Link Text 3[https://www.example.com/link3]"
 
 3. Restart the Micetro Web Service to pick up the changes:
 

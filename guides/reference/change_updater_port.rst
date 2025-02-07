@@ -17,7 +17,7 @@ The TCP port for the updater service can be changed. It must be changed on the `
 
 .. code-block::
 
-  <Arguments value="-p 12345" />
+  Arguments = "-p 12345"
 
 Where ``12345`` is the TCP port number the Men&Mice update service should use.
 
@@ -27,7 +27,7 @@ Where ``12345`` is the TCP port number the Men&Mice update service should use.
 
 .. code-block::
 
-  <UpdateAgentPortNumber value="12345" />
+  UpdateAgentPortNumber = 12345
 
 Where ``12345`` is the TCP port number the Men&Mice update service is using on the remote system(s).
 

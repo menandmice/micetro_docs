@@ -22,10 +22,10 @@ Find (or add) the following entries and configure them accordingly:
 
 .. code-block::
 
-  <database value="postgresql"/>
-  <databaseserver value="HOSTNAME@DATABASE"/>
-  <databaseusername value="USERNAME" />
-  <databasepassword value="plaintext:PASSWORD" />
+  DatabaseType = postgresql
+  DatabaseServer = "HOSTNAME@DATABASE"
+  DatabaseUsername = "USERNAME"
+  DatabasePassword = "plaintext:PASSWORD"
 
 Definitions:
 
@@ -56,20 +56,20 @@ The preferences.cfg file for standard user/password authentication should look l
 
 .. code-block::
 
-  <password value="the fingerprint hash"/>
-  <database value="postgresql"/>
-  <databaseserver value="<name or IP of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
-  <databaseusername value="mmSuiteDBUser"/>
-  <databasepassword value="password hash"/>
+  Password = "the fingerprint hash"
+  DatabaseType = postgresql
+  DatabaseServer = "<name or IP of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite>"
+  DatabaseUsername = mmSuiteDBUser
+  DatabasePassword = "password hash"
 
 For the Windows Authentication method, an example preferences.cfg file would look like  this (the databaseusername tag must be included and its value attribute should be an empty string):
 
 .. code-block::
 
-  <password value="the fingerprint hash"/>
-  <database value="postgresql"/>
-  <databaseserver value="<name or ip of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
-  <databaseusername value=""/>
+  Password = "the fingerprint hash"
+  DatabaseType = postgresql
+  Databaseserver = "<name or ip of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite>"
+  Databaseusername = ""
 
 Setting Up a PostgreSQL Database
 --------------------------------

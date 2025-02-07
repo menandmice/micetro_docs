@@ -42,11 +42,11 @@ Add this to the Micetro Central ``preferences.cfg`` file:
 
 .. code-block::
 
-  <Database value="postgresql"/>
-  <DatabaseServer value="postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write" />
-  <DatabaseUsername value="postgres" />
-  <DatabasePassword value="plaintext:[postgres-password]" />
-  <DatabaseConnectionPolling value="1" />
+  DatabaseType = postgresql
+  DatabaseServer = "postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write"
+  DatabaseUsername = [postgres-username]
+  DatabasePassword = "plaintext:[postgres-password]"
+  DatabaseConnectionPolling = true
 
 Machine: central-secondary
 """"""""""""""""""""""""""
@@ -62,8 +62,8 @@ Add this to the Micetro Central ``preferences.cfg`` file:
 
 .. code-block::
 
-  <Database value="postgresql"/>
-  <DatabaseServer value="postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write" />
-  <DatabaseUsername value="postgres" />
-  <DatabasePassword value="plaintext:[postgres-password]" />
-  <DatabaseConnectionPolling value="1" />
+  Database = postgresql
+  DatabaseServer = "postgres://[node-1]:[port],[node-2]:[port]/mmsuite?target_session_attrs=read-write"
+  DatabaseUsername = [postgres-username]
+  DatabasePassword value="plaintext:[postgres-password]"
+  DatabaseConnectionPolling = true

@@ -21,9 +21,9 @@ Windows
 
 .. code-block::
 
-  <LogFileName value="C:\ProgramData\Men and Mice\DNS Server Controller\logs\mmDnslog.txt" />
-  <LogDestination value="3"/>
-  <LogLevel value="5" />
+  LogFileName = "C:\ProgramData\Men and Mice\DNS Server Controller\logs\mmDnslog.txt"
+  LogDestination = 3
+  LogLevel = 5
 
 (Amend the directory path as needed.)
 
@@ -43,9 +43,9 @@ Edit the ``/var/named/mmsuite/preferences.cfg`` file and add/edit the following:
 
 .. code-block::
 
-  <LogFileName value="/var/named/mmsuite/logs/mmremote.log" />
-  <LogDestination value="3"/>
-  <LogLevel value="5" />
+  LogFileName = "/var/named/mmsuite/logs/mmremote.log"
+  LogDestination = 3
+  LogLevel = 5
 
 (Amend the directory path as needed.)
 
@@ -69,9 +69,9 @@ Windows
 
 .. code-block::
 
-  <LogFileName value="C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log" />
-  <LogDestination value="3"/>
-  <LogLevel value="5" />
+  LogFileName = "C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log"
+  LogDestination = 3
+  LogLevel = 5
 
 (Amend the directory path as needed.)
 
@@ -90,9 +90,9 @@ Edit the ``/var/mmsuite/dhcp_server_controller/preferences.cfg`` file and add/ed
 
 .. code-block::
 
-  <LogFileName value="/var/mmsuite/dhcp_server_controller/logs/mmremote.log" />
-  <LogDestination value="3"/>
-  <LogLevel value="5" />
+  LogFileName = "/var/mmsuite/dhcp_server_controller/logs/mmremote.log"
+  LogDestination = 3
+  LogLevel = 5
 
 (Amend the directory path as needed.)
 

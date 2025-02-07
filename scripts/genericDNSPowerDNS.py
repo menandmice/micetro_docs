@@ -11,7 +11,7 @@ Needs MySQLdb to connect to the PDNS database
 with the M&M support.
 
 2. Add reference to the script in preferences.cfg for DNS remote. Example:
-	<GenericDNSScript value="python /var/mmsuite/dns_server_controller/scripts/genericDNSPowerDNS.py" />
+	GenericDNSScript = "python /var/mmsuite/dns_server_controller/scripts/genericDNSPowerDNS.py"
 
 3. Start DNS remote, use MMMC to log in to central and add a generic DNS server refering to
 the DNS remote.

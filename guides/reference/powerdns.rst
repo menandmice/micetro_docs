@@ -70,7 +70,7 @@ Configuration Steps for mmremoted on Linux
 
   .. code-block:: bash
 
-    <GenericDNSScript value="/usr/bin/python3.12 /var/mmsuite/dns_server_controller/genericDNSPowerDNSP3.py" />
+    GenericDNSScript = "/usr/bin/python3.12 /var/mmsuite/dns_server_controller/genericDNSPowerDNSP3.py"
 
 5. **Create and configure environment variables**:
 

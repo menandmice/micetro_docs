@@ -51,7 +51,7 @@ If you have access to Kea Premium Hooks from ISC, you can enable support for the
 To enable these hooks, you must add a preference attribute to your DHCP agent's preference file:
 
 1. Locate the ``preferences.cfg`` file, which contains your DHCP agent's preferences.
-2. Add the following preference attribute to the file: ``<UseKeaPremiumHooks value="1" />``. 
+2. Add the following preference attribute to the file: ``UseKeaPremiumHooks = true``. 
 3. If your Kea server operates in a failover relationship, ensure to enable the hooks on both the primary and secondary servers for synchronized functionality.
 
 Remember to restart your Kea services after making changes to the configuration for them to take effect.
