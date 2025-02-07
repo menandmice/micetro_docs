@@ -7,9 +7,14 @@
 Health Bar information (Management Console)
 -------------------------------------------
 
-On this page, the errors / warnings from the :ref:`console-health-bar` in the Management Console are made available.
+On this page, the errors/warnings from the :ref:`console-health-bar` in the Management Console are made available.
 
-The user is able to click a link from the Management Console to get more details about each error / warning that is shown there.
+The user is able to click a link from the Management Console to get more details about each error/warning that is displayed.
+
+Cloud Subnet Collision
+""""""""""""""""""""""
+
+A cloud subnet conflicts with an existing subnet in Micetro and was not synced.
 
 Component out of date
 """""""""""""""""""""
@@ -45,6 +50,11 @@ Error loading zone
 
 This warning is shown when DNS server (e.g., BIND) is unable to load its zones. This warning is also posted if the server has not successfully finished checking all zones for errors.
 
+Exclusion range outside of pool
+"""""""""""""""""""""""""""""""
+
+A DHCP exclusion range extends out of the address pool. This is a misconfiguration, but has no adverse effects, since addresses outside the pool are excluded by default.
+
 Failed to do a SOA request for zone
 """""""""""""""""""""""""""""""""""
 
@@ -57,6 +67,8 @@ The preferred version of the Microsoft ODBD Driver for SQL Server failed to load
 
 Failover partner Down
 """""""""""""""""""""
+
+This warning indicates that one server in a failover pair cannot be reached. The remaining server will continue to run, but if it goes down, service will be interrupted.
 
 High availability failure state
 """""""""""""""""""""""""""""""
@@ -71,18 +83,22 @@ This warning is shown when the current license for a component has been exceeded
 Multiple PTR records in zone
 """"""""""""""""""""""""""""
 
+Multiple PTR records refer to an IP address in a reverse zone. This can happen when there are multiple A/AAAA records that refer to the same host. It is recommended to delete all such PTR records except one.
+
 Orphaned PTR records in zone
 """"""""""""""""""""""""""""
+
+There are PTR records for an IP address, but no A/AAAA records were found that resolve to the IP address. These records should be deleted.
 
 Outdated database server version
 """"""""""""""""""""""""""""""""
 
-For Micetro Suite version 8.1 and higher we recommend to use only SQL Server 2014 or higher. Support for older versions will be dropped in version 8.2 of the Micetro Suite.
+For Micetro Suite version 8.1 and higher, we recommend to use only SQL Server 2014 or higher. Support for older versions will be dropped in version 8.2 of the Micetro Suite.
 
 Scope contains inconsistencies that need reconciling
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when scope contains inconsistencies and it needs reconciling. See :ref:`console-dhcp-windows-reconcile` and `https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx <https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx>`_ about reconciling a DHCP scope.
+This warning is shown when a scope contains inconsistencies and it needs reconciling. See :ref:`console-dhcp-windows-reconcile` and `https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx <https://technet.microsoft.com/en-us/library/dd183579(v=ws.10).aspx>`_ about reconciling a DHCP scope.
 
 Scope is not part of a failover relationship on partner server
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,9 +117,6 @@ This warning is shown when one of the following situations occur:
 * An address pool conflict was detected. The address pool is not identical across the split scope.
 
 * An address pool conflict was detected.
-
-Cloud Subnet Collision
-""""""""""""""""""""""
 
 Scope reservation mismatch
 """"""""""""""""""""""""""
@@ -164,6 +177,3 @@ Zone replication group out of sync
 """"""""""""""""""""""""""""""""""
 
 This error is shown when a member of a zone replication group is out of sync.
-
-Zone serial out of date
-"""""""""""""""""""""""
