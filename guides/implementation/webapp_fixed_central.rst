@@ -7,7 +7,7 @@
 Allowing Micetro Web Interface to Log In to Other Central Servers
 ===================================================================
 
-By default, the Micetro ÙI and API only allow connecting to a single Micetro Central server, determined during the first login to Micetro after installation.
+By default, the Micetro UI and API only allow connecting to a single Micetro Central server, determined during the first login to Micetro after installation.
 
 If you want to allow users to specify a custom Central server to connect to, follow the instructions below.
 
