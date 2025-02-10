@@ -191,10 +191,10 @@ Specify various monitoring related settings.
 Subnet Monitoring
 ^^^^^^^^^^^^^^^^^
 Enable subnet monitoring
-  When enabled, the system monitors the free addresses in DHCP address pools and subnets and performs an action if the number of free addresses goes below a user-definable threshold. For further configuration, see :ref:`admin-subnet-monitoring-events`.
+  When enabled, the system monitors the IPv4 free addresses in DHCP address pools and subnets and performs an action if the number of free addresses goes below a user-definable threshold. However, IPv6 addresses are excluded from subnet monitoring. For further configuration, see :ref:`admin-subnet-monitoring-events`.
 
   .. note::
-    The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. Refer to  IP Address Management—Subnet Monitoring and Utilization History  for information on how to change monitoring settings for individual subnets.
+    The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. Refer to IP Address Management—Subnet Monitoring and Utilization History for information on how to change monitoring settings for individual subnets.
    
 When subnet monitoring is enabled, a new column, Monitoring, displays when viewing the subnet list. To quickly see all subnets that are monitored, you can use the Quick Filter and filter by this column by entering "Monitor: Yes" in the Quick Filter search field.
 
@@ -276,4 +276,3 @@ Here you can configure advanced system settings, such as specifying a SSL Certif
   
 
 .. [1] Enabling this feature can affect the performance of the system.
-
