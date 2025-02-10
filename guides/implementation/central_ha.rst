@@ -21,13 +21,13 @@ Failover instances of Micetro Central can be configured to build a high availabi
 Linux
 -----
 
-1. On the existing (or designated as *primary*) server running Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg``, adding
+1. On the existing (or designated as *primary*) server running Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg``, by adding the following to the end of the file:
 
   .. code-block::
 
    ClusterMemberName = somename
 
-  to the end of the file. ``somename`` is the unique name that will identify the Central instance in the high availability cluster. (For example "1", “primary”, or "central1").
+  ``somename`` is the unique name that will identify the Central instance in the high availability cluster. (For example "1", “primary”, or "central1").
 
 2. Restart the primary Central application:
 
@@ -90,13 +90,13 @@ Proceed to :ref:`install-controllers`.
 Windows
 -------
 
-1. In the existing (or designated as *primary*) server running Central, edit the preferences file ``preferences.cfg``, adding
+1. In the existing (or designated as *primary*) server running Central, edit the preferences file ``preferences.cfg``, by adding the following to the end of the file:
 
   .. code-block::
 
    ClusterMemberName = somename
 
-  to the end of the file. ``somename`` is the unique name that will identify the Central instance in the high availability cluster. (E.g. "1", “primary”, or "central1").
+  ``somename`` is the unique name that will identify the Central instance in the high availability cluster. (E.g. "1", “primary”, or "central1").
 
 2. Restart the primary Central application from the command line:
 
