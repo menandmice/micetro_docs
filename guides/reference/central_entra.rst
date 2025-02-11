@@ -17,18 +17,18 @@ This topic describes how to configure the Central server for multifactor authent
       
       * Python is installed in the "Default" environment.
       
-      * If Python is not available in the PATH the following line can be added to the preferences.cfg file to specify where it can be found:
+      * If Python is not available in the PATH the following line can be added to the ``preferences.cfg`` file to specify where it can be found:
       
          PythonExecutablePath = "C:\\Python\\python.exe"
 
-      * Path for preferences.cfg:
+      * Path for ``preferences.cfg``:
 
          * Windows - C:\\ProgramData\\Men and Mice\\Central\\preferences.cfg 
          
          * Linux - /var/mmsuite/mmcentral/preferences.cfg 
          
         .. Note::
-            A Central restart is required after this statement is added to the Preferences.cfg file.
+            A Central restart is required after this statement is added to the ``preferences.cfg`` file.
    
    2. **Create a new directory called "extensions"** in the Central data directory.
    
@@ -42,9 +42,9 @@ This topic describes how to configure the Central server for multifactor authent
 
          * `mm_auth_cb.signature.zip <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mm_auth_cb.signature.zip.zip>`_
          
-         For security reasons, the script is signed and will not be run if there is not a matching signature file mm_auth_cb.signature in the same folder. 
+         For security reasons, the script is signed and will not be run if there is not a matching signature file ``mm_auth_cb.signature`` in the same folder. 
          
-   4. **Manually create a JSON configuration file in the Micetro data directory**.  At start up the Micetro Central program will search the data directory for a file named “ext_auth_conf.json”.  It will read the contents of the file and store it in the database along with the timestamp. 
+   4. **Manually create a JSON configuration file in the Micetro data directory**.  At start up, Micetro Central will search the data directory for a file named ``ext_auth_conf.json``. It will read the contents of the file and store it in the database along with the timestamp. 
 
    The structure of the JSON object inside the configuration file is unique for each customer depending on the identity solution that is being configured. 
 
@@ -93,7 +93,7 @@ The contents of the configuration file `ext_auth_conf.json` are cached in the da
 
 *Clear the cached configuration*
 
-If for some reason you want to clear the cached configuration file in the database. 
+If for some reason you want to clear the cached configuration file in the database: 
 
 1. Empty the `ext_auth_conf.json` configuration file.
 
@@ -110,6 +110,6 @@ If for some reason you want to clear the cached configuration file in the databa
           :width: 60%
           :align: center
           
-It is also possible to enable it via an API call to SetSystemSettings with a system setting named enableExternalAuthentication and value of 1. 
+It is also possible to enable it via an API call to ``SetSystemSettings`` with a system setting named ``enableExternalAuthentication`` and value of 1. 
 
-This will enable the SSO login in the web application. 
+This will enable the single sign-on (SSO) login in the web application. 

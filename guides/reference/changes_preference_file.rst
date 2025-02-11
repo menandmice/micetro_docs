@@ -7,7 +7,7 @@
 Changes to preferences.cfg files in 11.2
 ---------------------------------------- 
 
-With the release of Micetro 11.2, the formatting of the ``preferences.cfg`` files, for all binaries changed from XML to INI. These binaries include Central, the DNS agent, the DHCP agent, the update agent, and web services (mmWS). You can configure individual components in Micetro by editing the preference files.
+With the release of Micetro 11.2, the formatting of the ``preferences.cfg`` files, for all binaries changed from XML to INI. These binaries include Central, the DNS Agent, the DHCP Agent, the Update Agent, and web services (mmWS). For more information about these configuration files, refer to :ref:`config-files`.
 
 .. note::
     The preference files are also referred to as the *configuration files*.
@@ -18,11 +18,11 @@ The default locations of the preference files are as follows:
   :header: "Windows", "Linux"
   :widths: 50, 50
 
-  "C:\ProgramData\Men and Mice\Central\preferences.cfg", "/var/mmsuite/mmcentral/preferences.cfg"
-  "C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg", "/var/mmsuite/dns_server_controller/preferences.cfg"
-  "C:\ProgramData\Men and Mice\DHCP Server Controller\preferences.cfg", /var/mmsuite/dhcp_server_controller/preferences.cfg"
-  "C:\ProgramData\Men and Mice\Updater\preferences.cfg", "/var/mmsuite/updater/preferences.cfg"
-  "C:\ProgramData\Men and Mice\Web Services\preferences.cfg", "/var/mmsuite/web_services/preferences.cfg"
+  "C:\\ProgramData\\Men and Mice\\Central\\preferences.cfg", "/var/mmsuite/mmcentral/preferences.cfg"
+  "C:\\ProgramData\\Men and Mice\\DNS Server Controller\\preferences.cfg", "/var/mmsuite/dns_server_controller/preferences.cfg"
+  "C:\\ProgramData\\Men and Mice\\DHCP Server Controller\\preferences.cfg", /var/mmsuite/dhcp_server_controller/preferences.cfg"
+  "C:\\ProgramData\\Men and Mice\\Updater\\preferences.cfg", "/var/mmsuite/updater/preferences.cfg"
+  "C:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg", "/var/mmsuite/web_services/preferences.cfg"
 
 File transformation
 ===================
@@ -75,8 +75,6 @@ When adding new lines to the preference file, make sure not to inadvertently pla
 .. note::
     Preference keys are still case-insensitive, i.e., ``password``, ``Password``, and ``PASSWORD`` are all the same.
 
-    If a preference key occurs two or more times in the file, only the final value is used.
-
 
 Strings
 ^^^^^^^
@@ -90,28 +88,3 @@ In the XML format, the values for Boolean preferences were either 0 or 1, e.g., 
 
 .. note::
     It is recommended to use ``true`` and ``false`` moving forward to align with the INI format, e.g., ``CrashDumpEnable = true``.
-
-
-Comments
-^^^^^^^^
-The INI format supports comments. You can use either `;` and `#` to comment on what is following in a line or a whole line, if the comment is placed at the start of the line.
-
-Example:
-
-.. code-block::
-
-    Password = dXi6n8JHFmbJOssIva3JhO316A5d68qk
-    GUID = 6ea66fa1-e507-a358-8bee-7f04eb6af614
-
-    [Database]
-    Type = mssql
-    Server = "localhost@mydatabase;Encrypt=no" ; Need to be quoted because of ';'
-    Username = test ; micetro_user 
-    Password = $3$1$II+HwZRCvHV7UvZ+ZYN6W/UXaFtR1l3QdEXwvqNmL//vERjs3FPnDQ50
-
-    #[CrashDump]
-    #Enabled = true
-    #Level = 3
- 
-.. warning::
-    Comments are **not** maintained when the binary itself updates the preferences. For example, when Central replaces a ``plaintext:mypassword`` value with a hash for the ``DatabasePassword`` preference.
