@@ -58,7 +58,7 @@ A DHCP exclusion range extends out of the address pool. This is a misconfigurati
 Failed to do a SOA request for zone
 """""""""""""""""""""""""""""""""""
 
-This error is shown when the Micetro DNS Server Controller is able to query the server, but SOA request for the zone failed.
+This error is shown when the Micetro DNS Agent is able to query the server, but SOA request for the zone failed.
 
 Failed to load ODBC Driver for SQL Server
 """""""""""""""""""""""""""""""""""""""""
@@ -136,32 +136,32 @@ This warning is shown when a specific threshold is reached, that is, not enough 
 Unable to check whether scope contains inconsistencies
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when Micetro Central can’t connect to the DHCP Server Controller service to check whether a scope contains inconsistencies. The reason could be if the DHCP Server Controller is offline or not turned on.
+This warning is shown when Micetro Central can’t connect to the DHCP Agent to check whether a scope contains inconsistencies. The reason could be if the DHCP Agent is offline or not turned on.
 
 Unable to check whether scope is part of a failover relationship on partner server
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when Micetro Central can’t connect to the DHCP Server Controller service to see if a scope is a part of a failover relationship on partner server. The reason could be if the DHCP Server Controller is offline or not turned on.
+This warning is shown when Micetro Central can’t connect to the DHCP Agent to see if a scope is a part of a failover relationship on partner server. The reason could be if the DHCP Agent is offline or not turned on.
 
 Unable to fetch scope info from partner server
 """"""""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when Micetro Central can’t connect to the DHCP Server Controller service to gather scope info from partner server. The reason could be if the DHCP Server Controller is offline or not turned on.
+This warning is shown when Micetro Central can’t connect to the DHCP Agent to gather scope info from partner server. The reason could be if the DHCP Agent is offline or not turned on.
 
 Unable to get status for DNS or DHCP server
 """""""""""""""""""""""""""""""""""""""""""
 
-This warning is shown when Micetro Central is unable to connect to the DNS or DHCP Server Controller to do a status check for the server. This occurs if the Server Controller is offline, not turned on or has been shut down (in some case not installed). To fix this issue, get the server online again and turn on the remote or (re)install.
+This warning is shown when Micetro Central is unable to connect to the DNS or DHCP Agent to do a status check for the server. This occurs if the Agent is offline, not turned on or has been shut down (in some case not installed). To fix this issue, get the server online again and turn on the remote or (re)install.
 
 Unable to get status for scope
 """"""""""""""""""""""""""""""
 
-This error is shown when Micetro Central can’t connect to the DHCP Server Controller service to get scope status from DHCP server. The reason could be if the DHCP Server Controller is offline or not turned on.
+This error is shown when Micetro Central can’t connect to the DHCP Agent to get scope status from DHCP server. The reason could be if the DHCP Agent is offline or not turned on.
 
 Unable to get status for zones
 """"""""""""""""""""""""""""""
 
-This warning is shown when Micetro Central can’t connect to the DNS Server Controller service to get status on the zones. The reason could be if the DNS Server Controller service is turned off or is offline.
+This warning is shown when Micetro Central can’t connect to the DNS Agent to get status on the zones. The reason could be if the DNS Agent is turned off or is offline.
 
 Update available
 """"""""""""""""
@@ -171,7 +171,7 @@ This warning is shown when new version of Micetro is available. To get this new 
 Update server unreachable
 """""""""""""""""""""""""
 
-This warning is shown when Micetro Central has lost its connection to the update server. It is not mandatory to have this connection and it can be turned off. To fix this issue, make sure that machine running the update service and the machine running Micetro Central are listening to the same TCP port. TCP port ``4603`` is reserved for the update service, but it can be changed if there is another software using that TCP port. See :ref:`change-updater-port` about changing the TCP port.
+This warning is shown when Micetro Central has lost its connection to the update server. It is not mandatory to have this connection and it can be turned off. To fix this issue, make sure that machine running the Update Agent and the machine running Micetro Central are listening to the same TCP port. TCP port ``4603`` is reserved for the Update Agent, but it can be changed if there is another software using that TCP port. See :ref:`change-updater-port` about changing the TCP port.
 
 Zone replication group out of sync
 """"""""""""""""""""""""""""""""""

@@ -30,17 +30,17 @@ Micetro Central runs as a service and you can start and stop Micetro Central usi
 Micetro Agents
 ^^^^^^^^^^^^^^
 
-The Micetro DNS agent runs as a service and you can start and stop the agent using the Services application. You can also control the Micetro DNS agent using these command line options:
+The Micetro DNS Agent runs as a service and you can start and stop the agent using the Services application. You can also control the Micetro DNS Agent using these command line options:
 
 .. csv-table::
   widths: 30, 70
 
-  "mmremote –i", "Installs the Micetro DNS agent as a service"
-  "mmremote –u", "Uninstalls the Micetro DNS agent"
-  "mmremote –start", "Starts the Micetro DNS agent service"
-  "mmremote –stop", "Stops the Micetro DNS agent service"
+  "mmremote –i", "Installs the Micetro DNS Agent as a service"
+  "mmremote –u", "Uninstalls the Micetro DNS Agent"
+  "mmremote –start", "Starts the Micetro DNS Agent service"
+  "mmremote –stop", "Stops the Micetro DNS Agent service"
   "mmremote –v", "Displays version information"
-  "mmremote –h", "Displays available command line options for the Micetro DNS agent"
+  "mmremote –h", "Displays available command line options for the Micetro DNS Agent"
 
 ----
 

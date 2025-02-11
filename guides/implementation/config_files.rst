@@ -28,10 +28,10 @@ Windows
   "``C:\ProgramData\Men and Mice\Central\mmsuite.db``", "Default, built-in database for Micetro."
   "``C:\ProgramData\Men and Mice\Central\backups\``", "Server configuration backups for Micetro Central."
   "``C:\ProgramData\Men and Mice\Central\logs\``", "Micetro Central logfiles. See :ref:`central-logging.`"
-  "``C:\ProgramData\Men and Mice\Central\updates\``", "Micetro Updater service install directory."
+  "``C:\ProgramData\Men and Mice\Central\updates\``", "Micetro Update Agent install directory."
   "``C:\ProgramData\Men and Mice\DHCP Server Controller\preferences.cfg``", "Mietro DHCP Agent configuration file."
   "``C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg``", "Micetro DNS Agent configuration file."
-  "Logfiles for Server Controllers", "Enabled in the agent's ``preferences.cfg`` file. See :ref:`controller-logging`."
+  "Logfiles for Agents", "Enabled in the agent's ``preferences.cfg`` file. See :ref:`controller-logging`."
 
 .. _config-linux:
 

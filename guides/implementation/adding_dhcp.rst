@@ -17,37 +17,19 @@ DHCP servers require :ref:`install-controllers` and need to be added using their
 
 The following table demonstrates the different options when adding a DHCP Server.
 
+.. csv-table::
+  :header: "Server type", "Description"
+  :widths: 20, 80
 
+  "Microsoft Agent-Free (Use proxy not checked) [1]", "The DHCP Agent has been installed on the machine running Micetro Central and that machine will be used as a proxy. Micetro is not able to rack lease history data."
+  "Microsoft Agent-Free  (Use proxy not checked) [1] ", "The DHCP Agent has been installed on the machine identified in the **Use proxy server** field and that machine will be used as a proxy. Micetro is not able to track lease history data."
+  "Microsoft with Agent Installed", "The DHCP Agent has been installed on the remote DHCP server. Micetro is able to track lease history data."
+  "ISC DHCP", "Either a Unix server running the DHCPD OR a Micetro appliance with the ``mm-dhcpd`` package installed."
+  "ISC Kea Agent (Agent-Free) [1]", "A server running ISC Kea with the :ref:`kea-control-agent` installed and accessible for the DHCP."
+  "ISC Kea [2]", "A server running ISC Kea with a DHCP Agent and Control Agent installed."
+  "Cisco (Use proxy not checked)", "The DHCP Agent has been installed on teh machine running Micetro Central and that machine will be used as a proxy."
+  "Cisco (Use proxy checked)", "The DHCP Agent has been installed on teh machine identified in the **Use proxy server** field and that machine will be used as a proxy."
 
-+----------------------------+----------------------------------------------------------------------------------------+
-| Server type                | Description                                                                            |
-+============================+========================================================================================+
-| Microsoft Agent-Free [1]   | The DHCP agent has been installed on the machine running the Micetro      |
-| (Use proxy not checked)    | Central Component and that machine will be used as a proxy. Micetro is not able to     |
-|                            | track lease history data.                                                              | 
-+----------------------------+----------------------------------------------------------------------------------------+
-| Microsoft Agent-Free [1]   | The DHCP agent has been installed on the machine identified in the         |
-| (Use proxy checked)        | **Use proxy server** field and that machine will be used as a proxy. Micetro is not    |
-|                            | able to track lease history data.                                                      |
-+----------------------------+----------------------------------------------------------------------------------------+
-| Microsoft                  | The DHCP Server Controller has been installed on the remote DHCP server.               |
-| with Agent Installed       | Micetro is able to track lease history data.                                           |
-+----------------------------+----------------------------------------------------------------------------------------+
-| ISC DHCP                   | Either a Unix server running the ISC DHCPD or a Micetro Appliance with the ``mm-dhcpd``|
-|                            | package installed                                                                      |
-+----------------------------+----------------------------------------------------------------------------------------+
-| ISC Kea                    | A server running ISC Kea with the :ref:`kea-control-agent` installed and accessible    |
-| Server Controller.         | for the DHCP.                                                                          |
-| (Agent-free) [1]           |                                                                                        |
-+----------------------------+----------------------------------------------------------------------------------------+
-| ISC Kea [2]                | A server running ISC Kea with a DHCP agent and Control Agent installed.                |
-+----------------------------+----------------------------------------------------------------------------------------+
-| Cisco                      | The DHCP agent has been installed on the machine running the Micetro                 | 
-| (Use proxy not checked)    | Central and that machine will be used as a proxy.                                      |
-+----------------------------+----------------------------------------------------------------------------------------+
-| Cisco                      | The DHCP agent has been installed on the machine identified in the **Use               |
-| (Use proxy checked)        | proxy server** field, and that machine will be used as a proxy.                        |
-+----------------------------+----------------------------------------------------------------------------------------+
 
 .. [1] See :ref:`agent-free-dns-dhcp`.
 
@@ -59,4 +41,3 @@ The following table demonstrates the different options when adding a DHCP Server
 Services are managed on the **Admin** page in the :guilabel:`Service Management` section. There you select :guilabel:`Add Service` to add a new server.
 
 For further details, see :ref:`adding-service` in the Admin Guide.
-

@@ -12,14 +12,14 @@ Agent-free Management of DNS/DHCP Servers
 Kea
 ---
 
-Kea DHCP servers can be configured agent-free, without a DHCP Server Controller running on every Kea machine. The :ref:`kea-control-agent` needs to be installed, and available for communication through its defined port (default: 8000). A single DHCP Server Controller is sufficient to communicate with and handle all Kea servers on the network.
+Kea DHCP servers can be configured agent-free, without a DHCP Agent running on every Kea machine. The :ref:`kea-control-agent` needs to be installed, and available for communication through its defined port (default: 8000). A single DHCP Agent is sufficient to communicate with and handle all Kea servers on the network.
 
 .. _ms-agent-free:
 
 Microsoft
 ---------
 
-Microsoft DNS and DHCP servers in Active Directory environments can be managed agent free, i.e. without running a Micetro server controller locally on the DNS/DHCP server.
+Microsoft DNS and DHCP servers in Active Directory environments can be managed agent free, i.e. without running a Micetro agent locally on the DNS/DHCP server.
 
 While agent free management of DHCP servers is possible with any 6.x version of Micetro, version 6.3 or newer is required for agent free management of DNS servers.
 

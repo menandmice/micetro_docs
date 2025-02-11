@@ -14,20 +14,20 @@ Failover relationships for Microsoft DHCP services involve configuring two DHCP 
 2. **Load Balancing**: Both DHCP servers actively serve IP addresses, distributing the load between them. This mode is designed to optimize resource utilization and provide fault tolerance.
 
 .. note::
-   To manage failover between two Microsoft Servers, the DHCP Server Controller must be running as a service account with enough privileges to manage the DHCP service. For more information, see :ref:`install-dhcp-controllers`.
+   To manage failover between two Microsoft Servers, the DHCP Agent must be running as a service account with enough privileges to manage the DHCP service. For more information, see :ref:`install-dhcp-controllers`.
 
 Viewing Existing Microsoft DHCP Failover Relationships
 ------------------------------------------------------
 You can view existing Microsoft DHCP failover relationships at the server level. Micetro automatically detects and syncs all existing failover relationships. 
 
-You can retrieve failover relationships through the API using GetDHCPFailoverRelationship(s). 
+You can retrieve failover relationships through the API using ``GetDHCPFailoverRelationship(s)``. 
 
 **To view failover relationships in Micetro**:
 
-1.	On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
-2.	In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Microsoft DHCP`.
-3. Select the server you want to view, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
-4. The Failover Management window will show all relationships associated with the selected server.
+1.	On the **Admin** page, select :guilabel:`Service Management` in the upper left corner.
+2.	In the leftmost sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Microsoft DHCP`.
+3. Select the server you want to view, and then select :guilabel:`Manage failover` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
+4. The **Manage failover** dialog displays all relationships associated with the selected server.
 
    .. image:: ../../images/failover-microsoft-view.png
       :width: 65%
@@ -56,11 +56,11 @@ The following parameters are used for the ``AddDHCPFailoverRelationship`` comman
 
 **To create a failover relationship in Micetro**:
 
-1. On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
+1. On the **Admin** page, select :guilabel:`Service Management` in the upper left corner.
 
-2. In the left sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Microsoft DHCP`.
+2. In the leftmost sidebar, under :guilabel:`DHCP Services`, select :guilabel:`Microsoft DHCP`.
 
-3. Select the server that you want as the primary server in the relationship, and then select :guilabel:`Failover management` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3. Select the server that you want as the primary server in the relationship, and then select :guilabel:`Manage failover` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 4. Select :guilabel:`Add Relationship` in the lower left corner, and complete the **Add Relationship** wizard:
 
@@ -87,7 +87,7 @@ The following parameters are used for the ``AddDHCPFailoverRelationship`` comman
 
 Adding Scopes to Microsoft DHCP Failover Relationships
 ------------------------------------------------------
-Failover relationships will initially appear as "Empty" and must be activated by adding a scope on the IPAM page. You can either create a new scope or select an existing one. 
+Failover relationships will initially appear as "Empty" and must be activated by adding a scope on the **IPAM** page. You can either create a new scope or select an existing one. 
 If the failover relationship was previously empty, it will be created on the Microsoft DHCP server. 
 
 **To add scopes to the relationship, do one of the following**:
@@ -143,7 +143,7 @@ You can modify ISC failover relationship options on a per-relationship basis.
 
 **To modify a failover relationship, do one of the following**:
 
-1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to modify, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
+1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to modify, and then select :guilabel:`Manage failover` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 2.	Select the relevant relationship, and then select :guilabel:`Edit` on the Row :guilabel:`...` menu.
 3.	Make the desired changes and select :guilabel:`Save`.
 
@@ -164,7 +164,7 @@ You can modify ISC failover relationship options on a per-relationship basis.
 Removing Failover Relationships 
 --------------------------------
 
-1. On the **Admin** page, select the Windows server containing the relationship you want to remove, then select :guilabel:`Failover management` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+1. On the **Admin** page, select the Windows server containing the relationship you want to remove, then select :guilabel:`Manage failover` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 
 2. Select the relevant relationship, and then select :guilabel:`Remove` on the Row :guilabel:`...` menu.
 

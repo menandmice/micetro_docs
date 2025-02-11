@@ -35,17 +35,17 @@ Setting Up Cloud Integrations
 
 Prerequisites
 ^^^^^^^^^^^^^^^
-For IP Address Management (IPAM), Micetro connects with the cloud service through Micetro Central. DNS management requires the Micetro DNS agent, and DHCP management requires the Micetro DHCP agent. Before proceeding with any actions involving Micetro and cloud services, two critical requirements must be met:
+For IP Address Management (IPAM), Micetro connects with the cloud service through Micetro Central. DNS management requires the Micetro DNS Agent, and DHCP management requires the Micetro DHCP Agent. Before proceeding with any actions involving Micetro and cloud services, two critical requirements must be met:
 
 1. **DNS/DHCP Agent Installation and Setup**:
 
-   * Ensure that the Micetro agent is installed on the machine where Micetro Central is running.
-   * For instructions on installing Micetro agents, see :ref:`install-controllers`.
+   * Ensure that the Micetro Agent is installed on the machine where Micetro Central is running.
+   * For instructions on installing Micetro Agents, see :ref:`install-controllers`.
 
 2. **Network Connectivity**:
 
    * Ensure that the machine hosting Micetro Central can connect to the designated cloud instance.
-   * The connection must be made through port 443/TCP, which is reserved for secure communication.
+   * The connection must be made through port `443/TCP`, which is reserved for secure communication.
    * For detailed networking requirements, see :ref:`firewall-ports`.
 
 
@@ -87,12 +87,12 @@ Fill in the fields required to connect to Akamai Fast DNS:
 
 Azure DNS
 """"""""""
-Fill in the  fields required to connect to Azure:
+Fill in the fields required to connect to Azure:
 
 .. image:: ../../images/add-azure-dns.png
    :width: 50%
 
-* For information about how to configure Azure DNS, see :ref:`configure-azure-dns`.
+* For information on how to configure Azure DNS, see :ref:`configure-azure-dns`.
 
 .. _connect-aws:
 
@@ -119,7 +119,7 @@ Fill in the fields required to connect to NS1:
 .. image:: ../../images/add-ns1.png
    :width: 50%
 
-*	**Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `IBM NS1 Connect <https://ns1.com/knowledgebase/creating-and-managing-api-keys>`_.
+*	**Obtaining Access Credentials**: For information on how to create API Access Credentials for use by Micetro, see `IBM NS1 Connect <https://ns1.com/knowledgebase/creating-and-managing-api-keys>`_.
 
 .. _connect-meraki:
 
@@ -132,7 +132,7 @@ When connecting to Meraki, you need to sepcify the location of the running DHCP.
 .. image:: ../../images/add-meraki.png
    :width: 50%
 
-* **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, see  `Cisco Meraki Dashboard API <https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API>`_.
+* **Obtaining Access Credentials**: For information on how to create API Access Credentials for use by Micetro, see  `Cisco Meraki Dashboard API <https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API>`_.
 
 Editing Cloud Services
 -----------------------
@@ -170,4 +170,3 @@ Removing Cloud Networks
 * :ref:`cloud-minimum-permissions`
 
 * :ref:`configure-azure-dns`
-

@@ -17,7 +17,7 @@ Prerequisites
 
 Before proceeding, ensure the following prerequisites are met:
 
-* Central and the DNS Controller must be on the same machine and capable of connecting to Azure services through the following URLs:
+* Central and the DNS Agent must be on the same machine and capable of connecting to Azure services through the following URLs:
 
   * https://management.azure.com
   * https://login.microsoftonline.com
@@ -31,7 +31,7 @@ Before proceeding, ensure the following prerequisites are met:
 
 Getting the Service Principal Details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Retrieve the necessary details for the Azure service principal, including Tenant ID, Subscription ID, Client ID (Application ID), and Client Secret (Authentication Key). Detailed instructions can be found here: https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
+Retrieve the necessary details for the Azure service principal, including Tenant ID, Subscription ID, Client ID (Application ID), and Client Secret (Authentication Key). Detailed instructions can be found here: https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal.
 
 Minimum Permissions for Micetro Integration with Azure
 ------------------------------------------------------

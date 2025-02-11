@@ -1,10 +1,10 @@
 .. meta::
-   :description: How to set up a Managed Service Account for managing Microsoft DNS and DHCP with Micetro by Men&Mice
-   :keywords: Microsoft DNS, Microsoft DHCP, Managed Service Account, Micetro 
+   :description: How to set up a Managed Service Account for managing Microsoft DNS and DHCP with Micetro
+   :keywords: Microsoft DNS, Microsoft DHCP, Managed Service Account, Micetro, Agents 
 
 .. _setup-msa:
 
-Setting up a Managed Service Account to run M&M DNS/DHCP Server Controllers
+Setting up a Managed Service Account to run Micetro DNS/DHCP Agents
 ===========================================================================
 
 Managed Service Account was introduced in Windows Server 2008 R2. Managed Service Account is managed domain account that provides the following features to simplify service administration:
@@ -13,12 +13,12 @@ Managed Service Account was introduced in Windows Server 2008 R2. Managed Servic
 
 * Simplified SPN management, including delegation of management to other administrators. Additional automatic SPN management is available at the Windows Server 2008 R2 domain functional level.
 
-Managed Service Account is good addition to Local Services to run M&M DNS/DHCP Server Controllers. When using MSA you gain managed domain account with isolated privileges to run the application.
+Managed Service Account is good addition to Local Services to run M&M DNS/DHCP Agents. When using MSA, you gain managed domain account with isolated privileges to run the application.
 
 Step-by-step guide
 ------------------
 
-1. If you are running Windows Server 2012 or newer then the first step is to run:
+1. If you are running Windows Server 2012 or newer, the first step is to run:
 
 .. code-block::
 
@@ -42,11 +42,11 @@ This is because Manage Service Account feature came with Windows Server 2008. Bu
 
 In Server Manager dashboard click on Tools and choose Active Directory Users and Computers. Click on Users, right click on the group to add the Managed Service Account to. For example DNSAdmins or DHCP Admins.
 
-5. Add the Managed Service Account to M&M DNS/DHCP Server Controllers:
+5. Add the Managed Service Account to Micetro DNS/DHCP Agents:
 
-Go to Services and locate the M&M controllers, right click on them and choose Properties. In the Properties window click on Log On tab and choose This Account. Fill in the name of the service that was made in step 2. That is DOMAIN\ServiceAccountName ending with '$' sign. Click OK and restart the M&M DNS/DHCP Server Controller.
+Go to Services and locate the Micetro Agents, right click on them and choose Properties. In the Properties window click on Log On tab and choose This Account. Fill in the name of the service that was made in step 2. That is DOMAIN\ServiceAccountName ending with '$' sign. Click OK and restart the DNS/DHCP Agent.
 
-To remove Managed Service Account from M&M DND/DHCP Server Controllers run cmd and write in the command:
+To remove Managed Service Account from Micetro DNS/DHCP Agents run cmd and write in the command:
 
 .. code-block::
 

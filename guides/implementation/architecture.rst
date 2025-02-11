@@ -87,7 +87,7 @@ Use this table as a guide for allocating resources to ensure smooth operation of
 .. [1] In smaller installations, Micetro's Central component can be installed on one of the DNS or DHCP servers, as it will not require much resources. More resources are needed as the managed environment gets larger.
 
 ..
-  If the organization is using Active Directory (AD) and wishes to use AD user authentication, Micetro Central must be installed on a Microsoft Windows member server in the domain. All users in that domain, that forest, and trusted forests, will be able to authenticate in Micetro, given that they have been granted access in Micetro. As the other Micetro components (DNS Server Controller and DHCP Server Controller) can be installed on the DNS and DHCP servers, Micetro can manage DNS and DHCP servers that reside in forests where there is no trust between the forest where Central is installed and DNS/DHCP is installed. See :ref:`active-directory` for more information.
+  If the organization is using Active Directory (AD) and wishes to use AD user authentication, Micetro Central must be installed on a Microsoft Windows member server in the domain. All users in that domain, that forest, and trusted forests, will be able to authenticate in Micetro, given that they have been granted access in Micetro. As the other Micetro components (DNS Agent and DHCP Agent) can be installed on the DNS and DHCP servers, Micetro can manage DNS and DHCP servers that reside in forests where there is no trust between the forest where Central is installed and DNS/DHCP is installed. See :ref:`active-directory` for more information.
   .. image:: ../../images/central-arch-old.png
     :width: 80%
     :align: center
@@ -116,24 +116,24 @@ Information on how to use MS SQL or PostgreSQL as the database for Micetro Centr
 Micetro Agents
 ---------------
 
-The Micetro agents are minimal-footprint services running on the DNS/DHCP server or alongside Micetro Central, and facilitate the communication between the connected service and Central.
+The Micetro Agents are minimal-footprint services running on the DNS/DHCP server or alongside Micetro Central, and facilitate the communication between the connected service and Central.
 
 .. _about-dns-controller:
 
 DNS Agents
 ^^^^^^^^^^^
 
-The Micetro DNS agent is used to control the DNS server and must be installed on each DNS server machine you want to control. The Micetro DNS agent reads and writes zone data and option files, and sends commands to the DNS server. The Micetro DNS agent listens on TCP port 1337.
+The Micetro DNS Agent is used to control the DNS server and must be installed on each DNS server machine you want to control. The Micetro DNS Agent reads and writes zone data and option files, and sends commands to the DNS server. The Micetro DNS Agent listens on TCP port 1337.
 
 (Unix) BIND DNS environment
-  Micetro's DNS agent is installed on each DNS server that is to be managed.
+  Micetro's DNS Agent is installed on each DNS server that is to be managed.
 
 (Microsoft) AD environment
-  The DNS agent can be installed on some of the DNS servers or they can all be managed agent-free. If they are to be managed agent-free, then the DNS agent is typically installed on the machine running Micetro Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is selected. (See :ref:`agent-free-dns-dhcp`.)
+  The DNS Agent can be installed on some of the DNS servers or they can all be managed agent-free. If they are to be managed agent-free, then the DNS Agent is typically installed on the machine running Micetro Central and when adding the DNS server, the option to add the server as "Microsoft Agent-Free" is selected. (See :ref:`agent-free-dns-dhcp`.)
 
-  The DNS agent must be running as a user that has the necessary privileges.
+  The DNS Agent must be running as a user that has the necessary privileges.
 
-  If the plan is to install the DNS agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (meaning that *all* zones are AD integrated), the DNS agent is typically installed on 2 DNS servers in each AD domain. Micetro will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
+  If the plan is to install the DNS Agent on some of the DNS servers in a Microsoft AD environment, and the environment is a pure AD environment (meaning that *all* zones are AD integrated), the DNS aAent is typically installed on 2 DNS servers in each AD domain. Micetro will read and write DNS updates to the first server from each AD domain, but if the first server becomes unavailable it will failover to the second server.
 
   For more information see :ref:`ad-preferred-servers`.
 
@@ -141,41 +141,41 @@ Other environments
   The Micetro agent service can also communicate with other DNS platforms, such as PowerDNS. See :ref:`generic-dns-controller` for more information.
 
 .. note::
-  The Micetro DNS agent communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
+  The Micetro DNS Agent communicates with the DNS server using RNDC (BIND) or DNSP/RPC (Windows Server 2008 and above).
 
 .. _about-dhcp-controller:
 
 DHCP Agents
 ^^^^^^^^^^^^
 
-The Micetro DHCP agent is used to control the DHCP server.
+The Micetro DHCP Agent is used to control the DHCP server.
 
 ISC DHCP
   A copy should be installed on each DHCP server machine.
 
 MS DHCP
-  A copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connected to the DHCP service over the network. For this remote DHCP management to work, the DHCP agent must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP agent can manage several different DHCP servers.
+  A copy can be installed on each DHCP server machine, or in certain circumstances it can be installed on another server and connected to the DHCP service over the network. For this remote DHCP management to work, the DHCP Agent must be installed on a Windows server and must run under an account that has privileges to manage the DHCP service over the network. Operating this way, one DHCP Agent can manage several different DHCP servers.
 
 Cisco DHCP
-  The DHCP agent can be installed on any machine.
+  The DHCP Agent can be installed on any machine.
 
-The DHCP agent listens for connections from Micetro Central on TCP port 4151.
+The DHCP Agent listens for connections from Micetro Central on TCP port `4151`.
 
 .. tip::
-  There are a few strategies to install the Micetro DHCP agent.
+  There are a few strategies to install the Micetro DHCP Agent.
 
-  * In a Unix ISC DHCP environment, the DHCP agent is installed on all DHCP servers that are to be managed.
+  * In a Unix ISC DHCP environment, the DHCP Agent is installed on all DHCP servers that are to be managed.
 
-  * In a Microsoft environment, the administrator can install the DHCP agent on one server, some of the servers, or all the servers. If all the DHCP servers are in the same security realm (maybe in different forests but with trust between them), the DHCP agent can be installed on one server, typically the server running Micetro's Central component.
+  * In a Microsoft environment, the administrator can install the DHCP Agent on one server, some of the servers, or all the servers. If all the DHCP servers are in the same security realm (maybe in different forests but with trust between them), the DHCP Agent can be installed on one server, typically the server running Micetro Central.
 
     .. note::
-      If the DHCP agent is to be used to manage DHCP on other DHCP servers, the DHCP agent must be running as a member of the AD DHCP Administrators group.
+      If the DHCP Agent is to be used to manage DHCP on other DHCP servers, the DHCP Agent must be running as a member of the AD DHCP Administrators group.
 
-  * If some of the managed DHCP servers are not in the same forest as Micetro's Central component, and there is no trust between the forests, the administrator must install at least one DHCP agent in the foreign forest. That DHCP agent can act as a proxy between Central and the DHCP servers and must be running as a member of the AD DHCP Administrators group in the foreign forest.
+  * If some of the managed DHCP servers are not in the same forest as Micetro's Central component, and there is no trust between the forests, the administrator must install at least one DHCP agent in the foreign forest. That DHCP Agent can act as a proxy between Central and the DHCP servers and must be running as a member of the AD DHCP Administrators group in the foreign forest.
 
-  * The DHCP agents can be installed on each managed DHCP server. In that scenario, the DHCP agent can be run as the Local System account, which means that no additional configuration is needed after the installation is complete.
+  * The DHCP Agents can be installed on each managed DHCP server. In that scenario, the DHCP agent can be run as the Local System account, which means that no additional configuration is needed after the installation is complete.
 
-Cisco IOS DHCP servers can be managed using Micetro. A Micetro DHCP agent has to be installed on a machine in the environment, which will then act as a proxy to manage the Cisco IOS DHCP servers and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
+Cisco IOS DHCP servers can be managed using Micetro. A Micetro DHCP Agent has to be installed on a machine in the environment, which will then act as a proxy to manage the Cisco IOS DHCP servers and will use either plain ``telnet`` or ``ssh`` to connect to the managed servers.
 
 ----
 
@@ -189,14 +189,14 @@ User Interface
 
 .. _about-webapp:
 
-The Micetro Web Interface can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Interface talks directly to the Web Server (IIS or Apache) which redirects its request to Micetro Central through TCP port 1231.
+The Micetro UI can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro UI talks directly to the Web Server (IIS or Apache) which redirects its request to Micetro Central through TCP port `1231`.
 
 .. image:: ../../images/IPAM1.png
   :width: 80%
   :align: center
 |
 .. tip::
-  It is common practice to install the Web Interface on the same server that Micetro's Central component is installed on.
+  It is common practice to install the UI on the same server that Micetro's Central component is installed on.
 
 ..
   Middle Layer

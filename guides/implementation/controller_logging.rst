@@ -27,13 +27,13 @@ Windows
 
 (Amend the directory path as needed.)
 
-Restart the DNS agent.
+3. Restart the DNS Agent.
 
 
 Linux
 ^^^^^
 
-After installing the DNS agent, *create* the logging directory (``/var/named/mmsuite/`` in CentOS or ``/var/cache/bind/mmsuite/ in Ubuntu`` or specify your own):
+After installing the DNS Agent, *create* the logging directory (``/var/named/mmsuite/`` in CentOS or ``/var/cache/bind/mmsuite/ in Ubuntu`` or specify your own):
 
 .. code-block:: bash
 
@@ -49,7 +49,7 @@ Edit the ``/var/named/mmsuite/preferences.cfg`` file and add/edit the following:
 
 (Amend the directory path as needed.)
 
-Restart the DNS agent:
+Restart the DNS Agent:
 
 .. code-block:: bash
 
@@ -63,7 +63,7 @@ DHCP Agent
 Windows
 ^^^^^^^
 
-1. After installing the DHCP agent, *create* the logging directory (``C:\ProgramData\Men and Mice\DHCP Server Controller\logs`` or specify your own).
+1. After installing the DHCP Agent, *create* the logging directory (``C:\ProgramData\Men and Mice\DHCP Server Controller\logs`` or specify your own).
 
 2. Edit the ``C:\ProgramData\Men and Mice\DHCP Server Controller\preferences.cfg`` file and add/edit the following:
 
@@ -75,18 +75,18 @@ Windows
 
 (Amend the directory path as needed.)
 
-Restart the DHCP agent.
+3. Restart the DHCP Agent.
 
 Linux
 ^^^^^
 
-After installing the DHCP agent, *create* the logging directory (``/var/mmsuite/dhcp_server_controller/logs/`` or specify your own):
+1. After installing the DHCP Agent, *create* the logging directory (``/var/mmsuite/dhcp_server_controller/logs/`` or specify your own):
 
 .. code-block:: bash
 
   mkdir /var/mmsuite/dhcp_server_controller/logs/
 
-Edit the ``/var/mmsuite/dhcp_server_controller/preferences.cfg`` file and add/edit the following:
+2. Edit the ``/var/mmsuite/dhcp_server_controller/preferences.cfg`` file and add/edit the following:
 
 .. code-block::
 
@@ -96,7 +96,7 @@ Edit the ``/var/mmsuite/dhcp_server_controller/preferences.cfg`` file and add/ed
 
 (Amend the directory path as needed.)
 
-Restart the DHCP agent:
+3. Restart the DHCP Agent:
 
 .. code-block:: bash
 
