@@ -14,13 +14,13 @@ If you want to allow users to specify a custom Central server to connect to, fol
 Windows
 -------
 
-1. Edit the ``preferences.cfg`` file for the M&M Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following line:
+1. Edit the ``preferences.cfg`` file for the Micetro Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following line:
 
   .. code-block::
 
     LockToDefaultServer = false
 
-2. Restart the M&M Web Services Windows service.
+2. Restart the Micetro Web Services Windows service.
 
 3. After that, a "Server" field will appear on the Micetro login page, and the "serverName" field in the API Login command will be honored.
 
@@ -29,7 +29,7 @@ Linux
 
 1. Log into the server hosting Micetro.
 
-2. Edit the ``preferences.cfg`` file for the M&M Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following line:
+2. Edit the ``preferences.cfg`` file for the Micetro Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following line:
 
   .. code-block::
 

@@ -35,7 +35,7 @@ Linux
 
     systemctl restart mmcentral
 
-3. Log in to the Micetro Web Interface as "administrator" and go to :menuselection:`Admin --> Configuration`.
+3. Log in to the Micetro Application as "administrator" and go to :menuselection:`Admin --> Configuration`.
 
 4. Select :guilabel:`High Availability`.
 
