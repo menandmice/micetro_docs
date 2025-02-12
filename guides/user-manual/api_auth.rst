@@ -68,8 +68,6 @@ For JSON-RPC, the login command is used to create a new session.
 The Micetro API checks the token's validity. If it is valid, the client is granted access to the requested resource.
 
 
-For more information about Bearer Authentication, see ???
-
 
 Basic Authentication
 ^^^^^^^^^^^^^^^^^^^^
@@ -86,20 +84,20 @@ For Basic Authentication, simply include a HTTP header like:
 
 where the last part is ``<user name>:<password>``, base64 encoded.
 
-For more information on Basic Authorization headers on the client side, see for example here: https://en.wikipedia.org/wiki/Basic_access_authentication
+For more information on Basic Authorization headers on the client side, see for example here: https://en.wikipedia.org/wiki/Basic_access_authentication.
 
 .. note::
   * Remember to configure HTTPS for the mmws site for this authentication method since the username and password can easily be extracted for anyone listening in on the communication.
-  * Micetro can be configured to disable the Basic Authorization header by adding the line ``AuthorizationMethods = ""`` into mmws preferences file.
+  * Micetro can be configured to disable the Basic Authorization header by adding the line ``AuthorizationMethods = ""`` into the mmws preferences file.
 
 Negotiate Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Negotiate header Authorization, based on `SPNEGO <https://en.wikipedia.org/wiki/SPNEGO>`_ (Simple and Protected GSSAPI Negotiation Mechanism) for Kerberos and NTLM HTTP Authentication, is supported if suppored by the client supports and enabled in the Micetro Web Interface.
+Negotiate header Authorization, based on `SPNEGO <https://en.wikipedia.org/wiki/SPNEGO>`_ (Simple and Protected GSSAPI Negotiation Mechanism) for Kerberos and NTLM HTTP Authentication, is supported if suppored by the client supports and enabled in the Micetro Web Application.
 
-With this method, the username and password are not included in the header; instead the API call is made within the security context of the invoking user. In essence, this serves as the single sign-on authentication method provided by the Micetro Web Interface.
+With this method, the username and password are not included in the header; instead the API call is made within the security context of the invoking user. In essence, this serves as the single sign-on authentication method provided by the Micetro Web Application.
 
-To enable Negotiate header Authorization in the Micetro Web Interface, add the following line to the ``preferences.cfg`` and restart the ``mmws`` service.
+To enable Negotiate header Authorization in Micetro, add the following line to the ``preferences.cfg`` and restart the ``mmws`` service.
 
 .. code-block::
 
@@ -113,7 +111,7 @@ a value.
 Single Sign-On
 --------------
 
-To enable single sign-on in the Web Interface, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro. See :ref:`external-auth`.
+To enable single sign-on in Micetro, make sure that Single Sign-on and Single Sign-on for web is enabled in Micetro. See :ref:`external-auth`.
 
 ..
   When using M&M Web Services as an API endpoint, refer to the Negotiate header Authorization section above.

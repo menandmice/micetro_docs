@@ -29,7 +29,7 @@ The Active Directory (AD) User Authentication mechanism allows you to have users
 Active Directory User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Even when using AD User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between AD vs. local user authentication is that when AD user authentication is used, users are authenticated using the AD User Authentication system before they can access the Management Console. When AD User Authentication is used, the user password is not stored in the Men&Mice software.
+Even when using AD User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between AD vs. local user authentication is that when AD user authentication is used, users are authenticated using the AD User Authentication system before they can access the Management Console. When AD User Authentication is used, the user password is not stored in the Micetro software.
 
 .. note::
   Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using AD user authentication, while other users log in using local user authentication.
@@ -38,7 +38,7 @@ Enabling AD User Authentication Using Active Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 AD user authentication using Active Directory is only possible when you run Micetro Central on a Windows machine. The machine running Micetro Central must be a member in an Active Directory domain or forest.
-No specific configuration is needed for Men&Mice Central for user authentication using Active Directory.
+No specific configuration is needed for Micetro Central for user authentication using Active Directory.
 
 Configuring Users for AD Authentication
 """""""""""""""""""""""""""""""""""""""
@@ -49,7 +49,7 @@ To configure a user to use AD user authentication, do the following:
 
 2. Select the applicable user from the list. If the desired user is not shown, the user must be added to the application. For more information, see :ref:`acl-users`.
 
-3. When the *Properties* dialog box displays, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Men&Mice Central is not running on a Windows machine, only the Micetro authentication method displays.)
+3. When the *Properties* dialog box displays, move to the **Authentication** field, click the drop-down list, and select the applicable authentication method. (If Micetro Central is not running on a Windows machine, only the Micetro authentication method displays.)
 
 4. Click :guilabel:`OK`.
 
@@ -75,12 +75,12 @@ To enable Active Directory Single Sign-on, do the following:
 
 4. Click :guilabel:`OK`.
 
-Web Interface
-^^^^^^^^^^^^^
+Web Application
+^^^^^^^^^^^^^^^
 
-When single sign-on is enabled, it is possible to enable sign-on in the web interface if the Web Interface is running on a Microsoft Windows Server.
+When single sign-on is enabled, it is possible to enable sign in to Micetro if the Web Application is running on a Microsoft Windows Server.
 
-To enable single sign-on in the Web Interface, make sure that Single Sign-on and Single Sign-on for web are enabled in Micetro.
+To enable single sign-on in the Web Application, make sure that Single Sign-on and Single Sign-on for web are enabled in Micetro.
 
 ..
   .. _disable-kernel-mode-auth:
@@ -97,7 +97,7 @@ Logging in to Micetro will not change when AD user authentication is used and Si
 Group Level Active Directory User Authentication
 ------------------------------------------------
 
-The Group Level Active Directory (AD) User Authentication mechanism allows you to set user access privileges by group membership in the AD. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (i.e., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
+The Group Level Active Directory (AD) User Authentication mechanism allows you to set user access privileges by group membership in the AD. In large installations, this system has obvious benefits as the users do not have to maintain their passwords in multiple locations. The password rules (e.g., password expiry, minimum password length, etc.) that have been applied within the organization automatically apply to Micetro.
 
 The login sequence is as follows for users with Group Level AD authentication:
 
@@ -132,7 +132,7 @@ Group Name
 5. Click :guilabel:`OK`.
 
 .. note::
-  Group Level Active Directory user authentication is only possible when you run Men&Mice Central on a Windows machine. The machine running Men&Mice Central must be a member of an Active Directory domain or forest.
+  Group Level Active Directory user authentication is only possible when you run Micetro Central on a Windows machine. The machine running Micetro Central must be a member of an Active Directory domain or forest.
 
 Configuring Users and Access Privileges
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,7 +146,7 @@ Micetro can authenticate using an external RADIUS server. In large installations
 RADIUS User Authentication vs. Local User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Even when using RADIUS User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between RADIUS vs. local user authentication is that when RADIUS user authentication is used, users are authenticated using the RADIUS User Authentication system before they can access the Management Console. When RADIUS User Authentication is used, the user password is not stored in the Men&Mice software.
+Even when using RADIUS User Authentication, you must create users in the Management Console and assign privileges to them using the Men&Mice access system. The only difference between RADIUS vs. local user authentication is that when RADIUS user authentication is used, users are authenticated using the RADIUS User Authentication system before they can access the Management Console. When RADIUS User Authentication is used, the user password is not stored in the Micetro software.
 
 .. note::
   Only one authentication method can be used per user, but different users can have different authentication methods. That means you can have some users log in using RADIUS user authentication, while other users log in using local user authentication.
@@ -154,7 +154,7 @@ Even when using RADIUS User Authentication, you must create users in the Managem
 Enabling RADIUS User Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To enable RADIUS authentication, you must add several properties to the Men&Mice Central configuration file preferences.cfg. This file is located in the data folder inside the Men&Mice Central data directory:
+To enable RADIUS authentication, you must add several properties to the Micetro Central configuration file preferences.cfg. This file is located in the data folder inside the Micetro Central data directory:
 
 * Windows: C:\\Program Files\\Men&Mice\\Central\\data
 
@@ -181,9 +181,9 @@ Example:
   RADIUSSharedSecret = "MyBigSecret"
   RADIUSAuthentication = true
 
-After editing the file, restart Men&Mice Central.
+After editing the file, restart Micetro Central.
 
-* Windows: use :menuselection:`Administration Tools --> Services` to restart Men&Mice Central.
+* Windows: use :menuselection:`Administration Tools --> Services` to restart Micetro Central.
 
 * Mac OS X: Execute the following shell command in a Terminal window (/Applications/Utilities/Terminal):
 
@@ -196,7 +196,7 @@ After editing the file, restart Men&Mice Central.
 Configuring Users
 ^^^^^^^^^^^^^^^^^
 
-To allow a user to log in to the Men&Mice system, the user must exist in the Men&Mice user database. If the user does not exist in the Men&Mice user database, they are not allowed to log in, even if they provide a valid username and password in the RADIUS login system.
+To allow a user to log in to Micetro, the user must exist in the Men&Mice user database. If the user does not exist in the Micetro user database, they are not allowed to log in, even if they provide a valid username and password in the RADIUS login system.
 
 To configure a user to use AD user authentication, do the following:
 
@@ -273,7 +273,7 @@ Dependency Checklist
       * requests - https://pypi.org/project/requests/ 
       
 .. Note::
-   If running Central in HA mode, it is advised to disable the service on one of the partners to ensure installation is successful on each server, and to prevent the servers from failing over during the installation.
+   If running Central in HA mode, it is advised to disable the service on one of the partners to ensure installation is successful on each server and to prevent the servers from failing over during the installation.
 
    Installation and configuration must be done on ALL Central servers in your environment. 
       
@@ -315,9 +315,9 @@ The app asks for ``User.Read`` from the user, but an administrator needs to gran
 
 The setup requires navigation to the Azure Portal, and opening AAD. 
 
-   1. On the left pane, select “App registration” and inside the newly opened “blade” (what Azure calls their subpages) click “New Registration” 
+   1. On the left pane, select “App registration” and inside the newly opened “blade” (what Azure calls their subpages) click “New Registration”. 
 
-   2. Type the name, select the proper radio button value for supported authentication types and for the Redirect URI the platform should be web and the field should      be https://micetro.central.fqdn/mmws/auth_cb/microsoft 
+   2. Type the name, select the proper radio button value for supported authentication types and for the Redirect URI the platform should be web and the field should be https://micetro.central.fqdn/mmws/auth_cb/microsoft. 
 
    3. Once the app has been registered, the client ID should be viewable in the essentials panel for the app. 
 
@@ -464,11 +464,11 @@ Okta:
             } 
          }	 
 
-This will cache the credentials in the DB (no need to restart Central).  Once Authentication through the Service Providers is established, the json configuration file can be deleted. 
+This will cache the credentials in the DB (no need to restart Central). Once Authentication through the Service Providers is established, the json configuration file can be deleted. 
 
 *About the credential caching*
 
-The contents of the configuration file ext_auth_conf.json are cached in the database, therefore the file can be deleted after external authentication is up and running.  The cached version is updated automatically based on the file timestamp.  
+The contents of the configuration file ext_auth_conf.json are cached in the database, therefore the file can be deleted after external authentication is up and running. The cached version is updated automatically based on the file timestamp.  
 
 *Clear the cached configuration*
 

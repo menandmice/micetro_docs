@@ -42,3 +42,4 @@ Micetro Reference Articles
   health_bar_information
   ie_eol
   alias_dns_records
+  changes_preference_file
