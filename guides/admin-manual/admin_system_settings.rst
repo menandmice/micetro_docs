@@ -257,7 +257,7 @@ Here you can configure advanced system settings, such as specifying a SSL Certif
   "Password for web proxy authentication", "Specifies a cleartext password for proxy sign-in."    
   "Use web proxy settings when connecting to AWS", "If selected, the configured proxy settings will be used for connections to AWS."
   "**Cisco Meraki**"
-  "Network client synchronization interval in seconds", "Specifies the amount of time, in seconds, it takes for the network to fetch all Meraki clients."
+  "Network client synchronization interval in seconds", "Specifies the amount of time, in seconds, between fetches of all Meraki clients."
   "Configuration synchronization interval in seconds", "Specifies the amount of time, in seconds, between fetches of all non-client-related information, e.g., networks, subnets, etc."
   "Throttling max wait time in seconds", "Specifies the maximum wait time, in seconds, after a ``429 Too many requests`` response. Default behavior follows the maximum value suggested in the Meraki API response."
   "API server error default wait time in seconds", "Specifies the wait time, in seconds, after receiving ``5xx`` error responses."
