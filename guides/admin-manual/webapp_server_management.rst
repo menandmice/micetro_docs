@@ -129,9 +129,9 @@ Adding a new service is either a two- or three-step process, depending on the ty
 
    * With the exception of the above services, the agent can be installed on the Micetro Central host, the service host, or --- for MS DNS/DHCP, ISC Kea, Cisco Meraki, and Cisco IOS --- a different host. If you have already added a service of this type, you can select from existing agents or create a new one. A single agent can be used to manage multiple service connections.
 
-   * For **AuthServe**, **Cisco IOS**, **Kea**, **Meraki**, **MS DNS**, and **MS DHCP**, you can select from a list of available agents that were registered in the installation process. For **AuthServe**, you must specify the name and shared secret for the agent. For all of these services excepting AuthServer, Meraki, and Cisco, you can select the :guilabel:`Service host` to use the agent installed on the server.
+      * Choose from a list of available agents registered during the installation process for **AuthServe**, **Cisco IOS**, **Kea**, **Meraki**, **MS DNS**, and **MS DHCP**. For **AuthServe**, you must specify the name and shared secret for the agent. For all of these services excepting AuthServe, Meraki, and Cisco, you can select the :guilabel:`Service host` to use the agent installed on the server.
 
-   * In the case of **AuthServe**, you can also register a new agent by selecting :guilabel:`New Agent` from the :guilabel:`Agent` dropdown. Enter a hostname or IP address (if the agent hostname is not resolvable), as well as the agent secret.
+      * Register a new agent for **AuthServe**, **Cisco IOS**, **Kea**, **MS DNS**, or **MS DHCP** by selecting :guilabel:`New Agent` from the :guilabel:`Agent` dropdown. Enter a hostname or IP address (if the agent hostname is not resolvable). For **AuthServe** specificially, you also need to enter an agent secret.
    
     .. image:: ../../images/add-service-newagent.png
          :width: 100%
