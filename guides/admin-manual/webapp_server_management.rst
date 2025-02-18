@@ -131,7 +131,7 @@ Adding a new service is either a two- or three-step process, depending on the ty
 
       * Choose from a list of available agents registered during the installation process for **AuthServe**, **Cisco IOS**, **Kea**, **Meraki**, **MS DNS**, and **MS DHCP**. For **AuthServe**, you must specify the name and shared secret for the agent. For all of these services excepting AuthServe, Meraki, and Cisco, you can select the :guilabel:`Service host` to use the agent installed on the server.
 
-      * Register a new agent for **AuthServe**, **Cisco IOS**, **Kea**, **MS DNS**, or **MS DHCP** by selecting :guilabel:`New Agent` from the :guilabel:`Agent` dropdown. Enter a hostname or IP address (if the agent hostname is not resolvable), as well as the agent secret.
+      * Register a new agent for **AuthServe**, **Cisco IOS**, **Kea**, **MS DNS**, or **MS DHCP** by selecting :guilabel:`New Agent` from the :guilabel:`Agent` dropdown. Enter a hostname or IP address (if the agent hostname is not resolvable). For **AuthServe** specificially, you also need to enter an agent secret.
    
     .. image:: ../../images/add-service-newagent.png
          :width: 100%
