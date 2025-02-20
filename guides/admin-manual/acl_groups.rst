@@ -25,7 +25,7 @@ Adding a New Group
 You can create add new groups at any time. With Micetro, you have the option to add either:
 
 * A Micetro group --- authenticated and managed through Micetro only
-* An AD group --- authenticated and managed through an external source, e.g., Active Directory
+* An external group --- authenticated and managed through an external source, e.g., Active Directory, LDAP, Okta, Entra ID, or RADIUS
 
 **To add a new Micetro group**:
 
@@ -50,18 +50,18 @@ You can create add new groups at any time. With Micetro, you have the option to 
 
 3. When all selections and entries are made, click :guilabel:`Create`.
 
-**To add a new AD group**:
+**To add a new external group**:
 
 1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the leftmost sidebar. The default groups are displayed here, as well as any other groups you have already created.
 
-2. Click the :guilabel:`Add` button and select :guilabel:`AD group`.
+2. Click the :guilabel:`Add` button and select the type of group, e.g., :guilabel:`AD group`.
 
 3. Enter the following information in the dialog box:
 
       .. image:: ../../images/create-ad-group.png
          :width: 60%
 
-  * **AD group name** --- The name for the Active Directory group you are creating.
+  * **Group name** --- The name for the group you are creating, e.g., an Active Directory group name.
 
   * **Description** --- (Optional) A description of the group's function.
 
