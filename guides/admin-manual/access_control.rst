@@ -4,29 +4,26 @@
 
 .. _access-control:
 
-Access Management
-=================
+Controlling Access
+==================
 
 .. important::
-  Micetro 10.1 (released in September 2021) brought changes to the access management in order to make it more streamlined and easier to use, while keeping the flexibility. This page describes the new access control. If you're using an older version, or would like information on the legacy access control model, see :ref:`access-control-legacy`.
+  Micetro 10.1 (released in September 2021) brought changes to the access management in order to make it more streamlined and easier to use, while keeping the flexibility. This page describes the new access control. If you're using an older version, or would like information on the legacy access control model, see :ref:`acl-console`.
 
-Overview
---------
+Access control in Micetro is **role-based**. :ref:`acl-users` and :ref:`acl-groups` do not have direct access to objects (servers, zones, scopes, IP addresses, etc.) unless they are assigned to :ref:`acl-roles`. Roles are configured with :ref:`acl-permissions`.
 
-Access control in Micetro is **role-based**.
-
-Objects (servers, zones, scopes, IP addresses, etc.) in Micetro are accessed through :ref:`acl-roles` configured with :ref:`acl-permissions`. :ref:`acl-users` and :ref:`acl-groups` do not have direct access to objects, only if they're **assigned to roles**. Administrators can control a user or group's access by assigning or removing them from roles.
+Administrators can control a user or group's access by assigning them to or removing them from roles.
 
 .. image:: ../../images/acl-overview.png
   :width: 95%
   :align: center
 
-A set of :ref:`acl-built-in-roles` are available that should cover most use cases. These are :ref:`acl-general-roles`, applied to all objects (present and future) in Micetro. :ref:`acl-specific-roles` exist for use cases where per-object permissions are required.
+A set of :ref:`built-in roles<acl-built-in-roles>` is available that should cover most use cases. These are :ref:`acl-general-roles`, which are applied to all objects (present and future) in Micetro. :ref:`acl-specific-roles` exist for use cases where per-object permissions are required.
 
-Groups, Users, and Roles
+Roles, users, and groups
 ------------------------
 
-The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-roles` is as follows:
+The following rules define the relationships between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-roles`:
 
 * Users and groups can be assigned to roles.
 
@@ -38,12 +35,30 @@ The relationship between :ref:`acl-groups`, :ref:`acl-users`, and :ref:`acl-role
 
 * Users and groups can be assigned to any number of roles.
 
+For more information about roles, users, groups, and permissions, and instructions on how to manage them, refer to the following:
+
+.. toctree::
+  :maxdepth: 1
+
+  acl_roles
+  acl_general_roles
+  acl_specific_roles
+  acl_legacy_roles
+  acl_permissions
+  acl_users
+  acl_groups
+  acl_effective_access
+
+To troubleshoot access control issues or to check the effective access of a user or group to a specific object, refer to :ref:`acl-effective-access`.
+
+Because Micetro's access controls are role-based, permissions are configured *on the role*, and propagated to any user or group attached to the role. If needed, you can grant restricted access on a per-object basis. For more information, refer to :ref:`acl-specific-roles`.
+
 .. _administrator:
 
-The ``administrator`` user
+The Administrator user
 --------------------------
 
-The built-in, local ``administrator`` user exists outside of regular access controls. All permissions are enabled for this user (even if not attached to any role) and its permissions cannot be edited or overriden (see :ref:`block-permission`) by any role.
+The built-in, local ``administrator`` user exists outside of regular access controls. All permissions are enabled for this user (even if not attached to any role) and its permissions cannot be edited or overridden (see :ref:`block-permission`) by any role.
 
 The password for the ``administrator`` user is configured during the :ref:`first-run-wizard`.
 
@@ -62,26 +77,11 @@ To protect users from brute force password attacks, Micetro throttles unsuccessf
 New objects
 -----------
 
-When a user imports or creates a new object (such as DNS zone, record, DHCP scope, IPAM range, etc.) in Micetro, the object is configured for a certain default access based on the permissions for the object type. General roles configured with permissions for the object type will have automatic access to the object.
+When a user imports or creates a new object (such as a DNS zone, record, DHCP scope, or address range) in Micetro, the object is configured for a certain default access based on the permissions for the object type. General roles configured with permissions for the object type will have automatic access to the object.
 
-
-Access Control Management
--------------------------
-
-Because Micetro's access controls are role-based, permissions are configured *on the role*, and propagated to any user or group attached to the role.
-
-To grant restricted access on a per-object basis, see :ref:`acl-specific-roles`.
-
-To check access to a specific object and troubleshoot access control issues, see :ref:`acl-effective-access`.
-
-----
+For instructions on managing object access, refer to the following:
 
 .. toctree::
   :maxdepth: 1
 
-  acl_permissions
-  acl_roles
-  acl_effective_access
-  acl_users
-  acl_groups
   acl_object_access

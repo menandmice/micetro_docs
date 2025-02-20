@@ -4,15 +4,15 @@
 
 .. _webapp-server-management:
 
-Service Management
-===================
+Managing Services
+=================
 Service Management is the place for connecting and orchestrating DNS, DHCP, and IP Address Management (IPAM) services with Micetro. Your services can be hosted on-premises, deployed on specialized appliances, or reside in the cloud. Connected services are displayed on the :guilabel:`Service Management` tab on the :guilabel:`Admin` page.
 
 **To access Service Management**:
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
-2. Click the :guilabel:`Service Management` tab in the upper-left corner.
+2. Click the :guilabel:`Service Management` tab in the upper left corner.
 
    .. image:: ../../images/dns-context-10.6.png      
        :width: 85%
@@ -30,7 +30,7 @@ User Permissions and Access Management
 ---------------------------------------
 Depending on user permissions and available license keys, DNS and DHCP services and functions can be disabled or hidden.
 
-Micetro has a granular role-based :ref:`access-control` system. For DNS and DHCP administrators, it is recommended to be members of the built-in **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
+Micetro has a granular role-based :ref:`access control<access-control>` system. For DNS and DHCP administrators, it is recommended to be members of the built-in **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
 
 When not using the built-in roles, users need to be members of a role with the following permissions. Note that additional permissions might be necessary for comprehensive service management. For more information on Micetro's granular role-based access controls, see :ref:`access-control`. 
 

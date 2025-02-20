@@ -4,7 +4,7 @@
 
 .. _address-spaces:
 
-Address Space Management
+Managing Address Spaces
 =======================
 
 Multiple Address Spaces

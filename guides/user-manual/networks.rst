@@ -222,6 +222,7 @@ With this feature, you can select and merge multiple networks. The :guilabel:`Jo
 
 4. Click :guilabel:`Join`.
 
+.. _host-discovery:
 
 Host Discovery
 ---------------
@@ -266,7 +267,7 @@ At any time if you wish to disable host discovery, do the following:
 Configuring Host Discovery by Querying Routers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See :ref:`snmp-profiles`.
+Administrators can configure host discovery by querying routers for host information by sending SNMP profiles and assigning routers to them. For instructions on how to add SNMP profiles. see :ref:`snmp-profiles`.
 
 Subnet Discovery
 ----------------

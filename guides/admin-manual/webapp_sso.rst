@@ -4,8 +4,8 @@
 
 .. _webapp-sso:
 
-Configure Single Sign-On
-========================
+Configuring Single Sign-On
+==========================
 
 The single sign-on feature in Micetro allows users to sign in to the web using their active directory credentials.
 

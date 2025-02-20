@@ -4,8 +4,9 @@
 
 .. _ha-tweaks-central:
 
-Micetro Central HA Tweaks
+Micetro Central High Availability Tweaks
 ==========================
+Micetro enables you to fine-tune the settings for your Micetro Central High Availability (HA) cluster, such as changing the default heartbeat timestamp value.
 
 Changing the default heartbeat timestamp value in Central HA
 ------------------------------------------------------------

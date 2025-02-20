@@ -7,68 +7,93 @@
 Groups
 ------
 
-Groups allow you to manage multiple individual users, based on needs for the same access across the system.
+Groups allow you to manage multiple individual users, based on needs for the same access across the system. You can add users to a group to provide those selected users access to the same objects.
+
+To view and manage existing groups, navigate to :menuselection:`Admin --> Configuration --> Access Management` and select :guilabel:`Groups`. A list of groups and related information is displayed. By selecting a group from the grid, the Inpsector populates with an overview of that group's properties, such as a description and included roles.
+
+External Groups
+^^^^^^^^^^^^^^^
+For external groups, such as those managed in Active Directory, use the :guilabel:`Add --> AD group` or :guilabel:`Add --> LDAP group`. The **group name** field must match the name in the external authentication. See :ref:`webapp-external-auth`.
+
+.. note::
+  When adding a group to Micetro, external groups do not have a dedicated :guilabel:`Users` tab.  After the external group is added to Micetro, it will not contain users. Users are only added to the external group after their first login.
+
+For more information, see :ref:`active-directory` and :ref:`webapp-external-auth`.
 
 Adding a New Group
 ^^^^^^^^^^^^^^^^^^
+You can create add new groups at any time. With Micetro, you have the option to add either:
 
-1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar. The default groups are displayed here, as well as any other groups you have already created.
+* A Micetro group --- authenticated and managed through Micetro only
+* An AD group --- authenticated and managed through an external source, e.g., Active Directory
 
-2. Click the :guilabel:`Add` button and select whether to add an external (authenticated and managed through an external source such as Active Directory or LDAP) or create a local group (authenticated and managed through Micetro only).
+**To add a new Micetro group**:
 
-   For **local group** the following dialog box displays:
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the leftmost sidebar. The default groups are displayed here, as well as any other groups you have already created.
 
-  .. image:: ../../images/create-micetro-group.png
-     :width: 60%
+2. Click the :guilabel:`Add` button and select :guilabel:`Micetro group`.
 
-  * **Group name**: The name for the group you are creating.
+3. Enter the following information in the dialog box:
 
-  * **Description field**: (Optional) Some information that describes the function of this group.
+      .. image:: ../../images/create-micetro-group.png
+         :width: 60%
 
-  * **AD Integrated**: Check this box to define this group as an Active Directory Integrated group. When checked this group name will be matched against groups defined in Active Directory. For more information how on this works refer to External Authentication.
+  * **Group name** --- The name for the group you are creating.
 
-  * **Roles**: Any roles that members of this group will automatically assume.
+  * **Description** --- (Optional) A description of the group's function.
 
-  * **Users**: Any users that you want to add to this group. (Users can be added/removed at any time.)
+  * **External ID** --- Enter an external ID string to associate with the group. When provided this group name will be matched against groups defined in the external authentication source. For more information how on this works, refer to :ref:`webapp-external-auth`.
 
-3. When all selections/entries are made, click :guilabel:`Save`.
+  * **Roles** --- Select any roles that members of this group will automatically assume.
+
+  * **Users** --- Select users that you want to add to this group. (Users can be added/removed at any time.)
+
+3. When all selections and entries are made, click :guilabel:`Create`.
+
+**To add a new AD group**:
+
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the leftmost sidebar. The default groups are displayed here, as well as any other groups you have already created.
+
+2. Click the :guilabel:`Add` button and select :guilabel:`AD group`.
+
+3. Enter the following information in the dialog box:
+
+      .. image:: ../../images/create-ad-group.png
+         :width: 60%
+
+  * **AD group name** --- The name for the Active Directory group you are creating.
+
+  * **Description** --- (Optional) A description of the group's function.
+
+  * **External ID** --- Enter an external ID string to associate with the group. When provided this group name will be matched against groups defined in the external authentication source. For more information how on this works, refer to :ref:`webapp-external-auth`.
+
+  * **Roles** --- Select any roles that members of this group will automatically assume.
+
+4. When all selections and entries are made, click :guilabel:`Add`.
 
 Editing a Group
 ^^^^^^^^^^^^^^^
+If you need to make changes to a group, you can edit the group name and/or description, and indicate whether this group is Active Directory-integrated.
 
-Through this function, you can edit the group name and/or description, and indicate whether this group is Active Directory integrated.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the leftmost sidebar.
 
-1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar.
+2. To select a single group, click on the group's name. To select multiple groups, press/hold the **Ctrl** (**Cmd** on Mac) key and then click on each group's name.
 
-2. To select a single group, click on the group's name. To select multiple groups, press/hold the Ctrl (Cmd on Mac) key and then click on each group's name.
+3. On either the :guilabel:`Action` or Row :guilabel:`...` menu, select :guilabel:`Edit group properties`.
 
-3. From the ellipsis menu, select :guilabel:`Edit group properties` or use :menuselection:`Actions --> Edit group properties`.
-
-4. Make the desired changes to the group's information. In the :guilabel:`Users` tab you can remove users from the group.
+4. Make the desired changes to the group's information. On the :guilabel:`Users` tab, you can remove users from the group.
 
 5. Click :guilabel:`Save` to save the changes.
 
-Deleting a Group
+Removing a Group
 ^^^^^^^^^^^^^^^^
+When necessary, you can remove a group from Micetro.
 
-Through this function, you delete a group.
+1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the leftmost sidebar.
 
-1. Navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Groups` in the filtering sidebar.
+2. To remove a single group, click on the group's name. To remove multiple groups, press/hold the **Ctrl** (**Cmd** on Mac) key and then click on each group's name.
 
-2. To remove a single group, click on the group's name. To remove multiple groups, press/hold the Ctrl (Cmd on Mac) key and then click on each group's name.
-
-3. From the ellipsis menu, select :guilabel:`Remove user` or use :menuselection:`Actions --> Remove user`.
+3. On either the :guilabel:`Action` or Row :guilabel:`...` menu, select, select :guilabel:`Remove group`.
 
 4. To remove the group, click the :guilabel:`Yes` button. The group is removed.
 
-External groups (Active Directory, LDAP)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For external groups, such as those managed in Active Directory, use the :guilabel:`Add --> AD Group` or :guilabel:`Add --> LDAP group`. The **group name** field must match the name in the external authentication. See :ref:`external-auth`.
-
-.. note::
-  External groups do not have a *Users* tab when adding the group to Micetro.
-
-  After the external group is added to Micetro, it will not contain users. Users are only added to the external group after their first login.
-
-For more information, see :ref:`active-directory` and :ref:`external-auth`.

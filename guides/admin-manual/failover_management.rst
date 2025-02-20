@@ -4,9 +4,11 @@
 
 .. _failover-management:
 
-Failover Management
+Managing DHCP Failover
 ====================
-Micetro can be used to manage failover configurations for ISC DHCP, Kea DHCP, and Microsoft servers. Failover is a feature that improves the reliability and availability of DHCP services by creating redundancy between two DHCP servers. This failover mechanism ensures that if one server becomes unavailable, the other can seamlessly take over the DHCP service, minimizing downtime and disruption to network operations. Servers can be configured in Hot Standby or Load Balancing modes, depending on the server type.
+Micetro can be used to manage failover configurations for :ref:`ISC DHCP <failover-management-isc>`, :ref:`Kea DHCP <failover-management-kea>`, and :ref:`Microsoft DHCP <failover-management-windows>` servers. Failover is a feature that improves the reliability and availability of DHCP services by creating redundancy between two DHCP servers. This failover mechanism ensures that if one server becomes unavailable, the other can seamlessly take over the DHCP service, minimizing downtime and disruption to network operations. 
+
+Servers can be configured in Hot Standby or Load Balancing modes, depending on the server type.
 
 .. note::
   Both servers must be in Micetro for the functionality to work.
@@ -23,7 +25,7 @@ The following permissions and roles are required for effective failover manageme
 * Permission bit: ``add a scope`` 
 * Built-in role: ``DHCP Administrators (built-in)``
 
-**To Replicate Scopes**:
+**To replicate scopes**:
 
 * Access bits - one or more of the following:
 
@@ -34,7 +36,7 @@ The following permissions and roles are required for effective failover manageme
 
 * Built-in roles: ``IPAM Administrators (built-in)`` and ``DHCP Administrators (built-in)``
 
-**To Replicate all scopes on a server or in a relationship**:
+**To replicate all scopes on a server or in a relationship**:
 
 * Access bits: ``"Administer DHCP servers"``
 * Built-in role: ``DHCP Administrators (built-in)``
