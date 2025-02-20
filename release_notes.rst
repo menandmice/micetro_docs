@@ -25,7 +25,7 @@ Bug Fixes
 * Fixed a potential thread locking in the code when removing DHCP scopes from failover relationships (`KI-26000 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OJ4j2AG>`_)
 * Meraki synchronization parameters can now be set in Micetro's Advanced System Settings, reducing the number of calls to the Meraki API (`KI-026177 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000029nB2AQ>`_)
 * Resolved an issue that made it not possible to modify an MX record using the Import feature with a Modify action. To enable this function, correctly pass the  ``"filter": "name in ()"`` with the name of the record in the parentheses to the API (`KI-025866 <https://care.bluecatnetworks.com/s/detail/a8BOI000000I34H2AS>`_)
-* The DHCP agent can now be run on Red Hat Linux to manage Meraki (`KI-025995 <https://care.bluecatnetworks.com/s/detail/a8BOI000000O6aX2AS>`_)
+* The DHCP agent can now be run on Red Hat Enterprise Linux to manage Meraki (`KI-025995 <https://care.bluecatnetworks.com/s/detail/a8BOI000000O6aX2AS>`_)
 
 .. _11.1.3-release:
 11.1.3
