@@ -13,7 +13,7 @@ Once you have configured the initial network settings for your appliance and add
 Appliances are accessed and managed in :guilabel:`Service Management` on the :guilabel:`Admin` page. 
 
 .. image:: ../../images/appliances-11.0.png
-   :width: 80%
+   :width: 90%
 
 
 Adding a New Appliance to Micetro
@@ -25,20 +25,27 @@ Adding a New Appliance to Micetro
 
    * To configure interfaces on the appliance, follow the instructions for `Setting an IPv4 address <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv4-address/9.6.0>`_ and `Setting an IPv6 address <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv6-address/9.6.0>`_.
 
-To add an appliance to Micetro, you must have the Administrator role.
+To add an appliance to Micetro, you must be assigned the Administrator role.
 
 **To add an appliance**:
 
-1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page, and select :guilabel:`Add Service`. The Add Service wizard opens.
+1. On the :guilabel:`Service Management` tab of the :guilabel:`Admin` page, select :guilabel:`Add Service`.
 
-   .. image:: ../../images/add-servive-dialog.png
-      :width: 65%
+2. In the **Add Service** wizard, select :guilabel:`Appliance`.
 
-2. Select :guilabel:`Appliance`. 
-3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
-4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
-5. Enable or disable appliance services. By default, **DNS** and **DHCP** services are activated.  If you require remote access to your appliance for specific purposes, you can enable the **SSH** (Secure Shell) client.
-6. Select :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
+   .. image:: ../../images/add-service-appliance.png
+      :width: 90%
+
+3. On the :guilabel:`Properties` tab, enter the hostname for the appliance in the :guilabel:`Appliance name` field, which will also be used for the DNS and DHCP services hosted on the appliance.
+
+   .. note::
+      If the appliance uses a separate management interface, enter a hostname that resolves to the service interface (eth0) in the :guilabel:`Appliance name` field.
+
+4. If the appliance uses a separate management interface, enter the IP address of the management interface (eth2) in the :guilabel:`Management interface address` field. If the appliance only has a single interface configured, you can leave this field empty.
+5. Enable or disable appliance services on the :guilabel:`Enabled Services` tab. By default, **DNS** and **DHCP** services are activated.  If you require remote access to your appliance for specific purposes, you can enable the **SSH** (Secure Shell) client. You can change the enabled or disabled appliance services at any time. Refer to :ref:`set-appliance-services`.
+6. Select :guilabel:`Add`.
+
+The appliance is added to the **Appliances** grid and its associated services are listed under **DNS Services** and **DHCP Services**.
 
 Editing Appliance Name
 -----------------------
@@ -65,20 +72,31 @@ Locate the specific application, and select the relevant view option on either t
 .. image:: ../../images/appliances-view-options.png
       :width: 80%
 
+.. _set-appliance-services:
+
 Setting Appliance Services
 --------------------------
 You can enable or disable various appliance services to configure your appliance. 
 
 **To enable/disable appliance services**:
 
-1. Locate the specific appliance for which you want to set services.
-2. Select :guilabel:`Set appliance services` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
-3. Enable or disable the desired services:
+1. On the :guilabel:`Service Management` tab of the **Admin** page, select :guilabel:`Appliances` on the leftmost sidebar.
 
-   * **DNS**: Enable this service to allow your appliance to participate in domain name resolution on the network.
-   * **DHCP**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
-   * **SSH (Secure Shell)**: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting.
-   * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
+   .. image:: ../../images/sidebar-appliances.png
+      :width: 25%
+
+2. Select the specific appliance for which you want to set services.
+2. On either the :guilabel:`Action` or the Row :guilabel:`...` menu, select :guilabel:`Set appliance services`.
+3. Enable or disable the desired services by checking or unchecking the checkboxes:
+
+   * **DNS service**: Enable this service to allow your appliance to participate in domain name resolution on the network.
+   * **DHCP service**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
+   * **SSH service (Secure Shell)**: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting.
+   * **Firewall service**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats.
+
+   .. warning::
+      Disabling the firewall is **NOT** recommended. Disabling the firewall temporarily should only be done in situations in which you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration fo firewall disablement and reenable it as soon as possible.
+
 4. Select :guilabel:`Save` when you are done.
 
 Configuring DNS Resolvers 
