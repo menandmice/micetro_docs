@@ -6,29 +6,26 @@
 
 Importing DNS Records
 =====================
+Micetro enables you to import DNS records so you can manage them in the Web Application. This can be useful if you need to add DNS records in bulk.
 
-DNS Records can be imported into Micetro.
+.. note::
+  You must have the necessary permissions to edit records in the zones that are used in the importation. For more information about permissions, refer to :ref:`access-control`.
 
-Prerequisites
--------------
+**To import DNS records**:
 
-You must have the necessary permissions to edit records in the zones used in the import.
+1. Use the :menuselection:`Action` menu to select :guilabel:`Import DNS records`, which allows you to import records into multiple zones simultaneously. If you only want to import records into a specific zone, double-click that zone to open it and then use the :menuselection:`Action` menu to select :guilabel:`Import DNS records`.
 
-For more information about access controls, see :ref:`access-control`.
-
-Import Task
------------
-
-The option to import DNS Records is found on the :menuselection:`Action` menu in the list of DNS zones, and allows you to import records into multiple zones simultanously.
-
-The :menuselection:`Action --> Import DNS Records` function is also available within a specific zone for importing records into that zone only.
+2. In the **Import DNS Records** dialog box, paste in text or drag and drop a a plaintext CSV file into the provided field to import or modify DNS data in bulk. 
 
 .. image:: ../../images/bulk-import-dns.png
   :width: 90%
   :align: center
-|
+
+Refer to **DNS Bulk Import Format** below for instructions on formatting the DNS data file for import.
+
 DNS Bulk Import Format
 ^^^^^^^^^^^^^^^^^^^^^^
+Include the following information formatted as described here in the DNS data file you will use to import DNS records to Micetro.
 
 .. note::
   Only plaintext CSV/TSV/TXT files are accepted for file selection. Excel spreadsheets must be converted to one of these formats before importing.
@@ -45,6 +42,7 @@ Field names in the header line are not case-sensitive. For example, "title" corr
 
 Built-in Fields
 """""""""""""""
+Built-in system fields include the following:
 
 * **action** (default: **Add**): Add, Modify, or Remove.
 
@@ -71,7 +69,7 @@ Built-in Fields
 
 * **data** (required): The record's data (IP for A/AAAA, the target A/AAAA record for CNAME, etc.).
 
-* **TTL**: The record's time-to-Live value. Defaults to seconds, but can also be hours (1H), days (2D), weeks (3W), months (4M), or years (5Y).
+* **TTL**: The record's time-to-live (TTL) value. Defaults to seconds, but can also be hours (1H), days (2D), weeks (3W), months (4M), or years (5Y).
 
 * **comment**: An optional save comment.
 
@@ -79,6 +77,7 @@ Built-in Fields
 
 Examples
 ^^^^^^^^
+Here are a few examples of how to import, modify, and delete DNS records through the bulk import function:
 
 Add Records
 """""""""""
