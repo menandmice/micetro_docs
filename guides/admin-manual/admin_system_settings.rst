@@ -273,7 +273,7 @@ Here you can configure advanced system settings, such as specifying a SSL Certif
   "Include A/AAAA records when checking for *Edit apex records* access", "Determines whether A and AAAA records are considered when verifying access to edit apex (root) records."
   "Web app landing page", "By default, the Micetro frontpage is the landing page for the system. Clicking the Micetro logo will take you to the landing page."
   "Web app server host", "Used to specify which host the web application is running on in order for auto update to work for the web application. Default is localhost (same server as Micetro Central)."
-  "Require User Administrator access to be able to list users, groups and roles", "Select to require a user to have User Administrator access in order to retrieve and see lists of and information about users, groups, and roles in Micetro."
+  "Require User Administrator access to be able to list users, groups and roles", "Select to require a user to have User Administrator access in order to retrieve information about users, groups, and roles in Micetro."
   
 
 .. [1] Enabling this feature can affect the performance of the system.
