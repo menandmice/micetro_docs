@@ -76,6 +76,10 @@ Configure authentication methods, including single sign-on, LDAP integration, an
 
 When **single sign-on** is activated, users do not have to authenticate when logging in to Micetro. For more information about Single sign-on, see :ref:`webapp-external-auth`.
 
+Local Authentication
+^^^^^^^^^^^^^^^^^^^^
+Set a minimum password length for all users in Micetro. The default length is 12 characters.
+
 External Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^
 Allow users to log in to Micetro using credentials from Okta or Azure AD. The :guilabel:`Configure` button opens a form where you can set enter the necessary information needed for Okta or Azure AD authentication. 
