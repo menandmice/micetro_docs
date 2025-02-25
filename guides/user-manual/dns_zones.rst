@@ -53,6 +53,8 @@ This table shows the zone types supported by Micetro.
   "Static-stub", "A BIND specific zone type to configure conditional forwarding, similar to Stub but is static, that is, it has a set of preconfigured NS entries."
   "Forward", "A forward zone contains a list of name server addresses, called forwarders, that can resolve queries for the zone. With forward zones queries are forced to go to the specified addresses."
  
+.. _zone-contents:
+
 Zone Contents
 ^^^^^^^^^^^^^
 
