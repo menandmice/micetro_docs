@@ -22,10 +22,10 @@ Find (or add) the following entries and configure them accordingly:
 
 .. code-block::
 
-  DatabaseType = postgresql
-  DatabaseServer = "HOSTNAME@DATABASE"
-  DatabaseUsername = "USERNAME"
-  DatabasePassword = "plaintext:PASSWORD"
+  <database value="postgresql"/>
+  <databaseserver value="HOSTNAME@DATABASE"/>
+  <databaseusername value="USERNAME" />
+  <databasepassword value="plaintext:PASSWORD" />
 
 Definitions:
 
@@ -50,26 +50,26 @@ If the database connection fails, the service will not start and an error messag
 Micetro Central Running on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The preferences.cfg file located in the data directory contains, in addition to the fingerprint of Central (the "password" preference), four other preferences: ``DatabaseType``, ``DatabaseServer``, ``DatabaseUsername`` and ``DatabasePassword``.
+The ``preferences.cfg`` file located in the data directory contains, in addition to the fingerprint of Central (the "password" preference), four other preferences: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
 
-The preferences.cfg file for standard user/password authentication should look like this:
-
-.. code-block::
-
-  Password = "the fingerprint hash"
-  DatabaseType = postgresql
-  DatabaseServer = "<name or IP of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite>"
-  DatabaseUsername = mmSuiteDBUser
-  DatabasePassword = "password hash"
-
-For the Windows Authentication method, an example preferences.cfg file would look like  this (the ``DatabaseUsername`` preference must be included and its value attribute should be an empty string):
+The ``preferences.cfg`` file for standard user/password authentication should look like this:
 
 .. code-block::
 
-  Password = "the fingerprint hash"
-  DatabaseType = postgresql
-  DatabaseServer = "<name or ip of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite>"
-  DatabaseUsername = ""
+  <password value="the fingerprint hash"/>
+  <database value="postgresql"/>
+  <databaseserver value="<name or IP of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
+  <databaseusername value="mmSuiteDBUser"/>
+  <databasepassword value="password hash"/>
+
+For the Windows Authentication method, an example ``preferences.cfg`` file would look like  this (the ``databaseusername`` preference must be included and its value attribute should be an empty string):
+
+.. code-block::
+
+  <password value="the fingerprint hash"/>
+  <database value="postgresql"/>
+  <databaseserver value="<name or ip of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
+  <databaseusername value=""/>
 
 Setting Up a PostgreSQL Database
 --------------------------------

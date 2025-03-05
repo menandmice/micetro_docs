@@ -63,7 +63,7 @@ Edit the file $NAMED/mmsuite/preferences.cfg. Add the following line:
 
 .. code-block::
 
-  ExpandControlStatements = true
+  <ExpandControlStatements value="1"/>
 
 Save the file and restart the DNS agent, using its init script (a file named *mmremoted*, such as ``/etc/init.d/mmremoted``, or ``/Library/StartupItems/mmServerController/mmServerController`` - the location is platform-specific). You can then log in with the Management Console to see the effects of this process.
 

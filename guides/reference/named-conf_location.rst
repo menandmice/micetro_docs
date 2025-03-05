@@ -15,8 +15,8 @@ To fix this, add a configuration parameter pointing to the ``named-checkconf`` t
 
 .. code-block::
 
-  Fingerprint = "<some-hex-values>"
-  named-checkconf = "/usr/sbin/named-checkconf"
+  <fingerprint value="<some-hex-values>"/>
+  <named-checkconf value="/usr/sbin/named-checkconf"/>
 
 Make sure that the ``named-checkconf`` tool is executable and reachable for the DNS Server Controller (if the DNSServer Controller is inside a CHROOT environment, the ``named-checkconf`` must also be inside that CHROOT as well as all dynamic libraries needed).
 

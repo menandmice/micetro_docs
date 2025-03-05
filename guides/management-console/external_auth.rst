@@ -176,10 +176,7 @@ Example:
 
 .. code-block::
 
-  RADIUSServer = 192.168.1.3
-  RADIUSPort = 1515
-  RADIUSSharedSecret = "MyBigSecret"
-  RADIUSAuthentication = true
+  <RADIUSServer value="192.168.1.3"/><RADIUSPort value="1515"/><RADIUSSharedSecret value="MyBigSecret"/><RADIUSAuthentication value="1"/>
 
 After editing the file, restart Micetro Central.
 
