@@ -11,19 +11,15 @@ The Micetro web application is split into five main pages:
 
 * **DNS**. On the :ref:`dns` page, you can create, delete, and edit DNS zones. You also manage DNS records within the DNS zones.
 * **IPAM**. On the :ref:`ipam` page, you have the ability to perform various actions related to network and DHCP management, such as creating a new IP address range or DHCP scope, managing IP addresses within a network or DHCP scope, and creating DHCP reserverations. You can also view related DNS data for IP addresses within a network and add DNS hosts for IP addresses.
-* **Reports**. The :ref:`webapp-reporting` page is activated with a separate license key. On this page, you can create and save new reporting definitions, as well as schedule reports to run at specific times.
+* **Reports**. On the :ref:`webapp-reporting` page, you can run and view reports on various objects. To create and save new reporting definitions, as well as schedule reports to run at specific times, you need to have the Advanced Reporting module, which is activated by a separate license key.
 * **Workflow**. The :ref:`webapp-workflows` page requires a separate license key. This page allows you to submit ‘change requests’ for creating, modifying, or deleting DNS records.
 * **Admin**. The Admin page is the workspace for system administrators to perform the various tasks involved in administrating Micetro, such as managing user access and services.
-
-.. note::
-   As of version 9.3, Micetro does not support the Internet Explorer browser.
      
-
 Working in the grid
 -------------------
-Micetro is centered around a grid, which lists objects in the system, such as DNS zones and records, IP address ranges, DHCP scopes, and IP addresses. From the grid, users can manage DNS zones and records, networks and DHCP scopes, and more, using the tools that comprise the Micetro UI.
+Micetro is centered around a data grid, which lists objects in the system, such as DNS zones and records, IP address ranges, DHCP scopes, and IP addresses. From the data grid, users can manage DNS zones and records, networks and DHCP scopes, and more, using the tools that comprise Micetro.
 
-.. image:: ../../images/web-UI-annotated.jpg
+.. image:: ../../images/webUI-annotated-new.png
    :width: 100%
 |
 
@@ -32,26 +28,26 @@ Micetro is centered around a grid, which lists objects in the system, such as DN
   :header: Item, Description
 
   "Add to favorites", "Adds the selected item to the favorites list. The corresponding Favorites filter in the sidebar shows all favorited items."
-  "Column configuration", "Specifies which columns are displayed in the grid."
+  "Column configuration", "Specifies which columns are displayed in the data grid."
   "Folder sidebar", "Filters the sidebar to show only created folders."
-  "Grid or tree toggle", "Toggles the grid between list and tree view."
-  "Inspector", "Displays various information about the item selected in the grid. Refer to :ref:`webapp-inspector`."
+  "Grid or tree toggle", "Toggles the data grid between list and tree view."
+  "Inspector", "Displays various information about the item selected in the data grid. Refer to :ref:`webapp-inspector`."
   "Quick command", "Allows you to quickly find and perform actions. Refer to :ref:`webapp-quick-command`."
-  "Quick filter", "Filters the results displayed in the list when you select an item in the sidebar. Refer to :ref:`quickfilter`."
-  "Refresh grid", "Refreshes the contents of the grid."
+  "Quick filter", "Filters the results displayed in the data grid when you select an item in the sidebar. Refer to :ref:`quickfilter`."
+  "Refresh grid", "Refreshes the contents of the data grid."
   "Services sidebar", "Filters the sidebar to show only services, e.g., DHCP services or DNS services."
-  "Sidebar", "Displays a list of possible filters to apply to the grid. Refer to :ref:`webapp-filtering` below."
+  "Sidebar", "Displays a list of possible filters to apply to the data grid. Refer to :ref:`webapp-filtering` below."
   "Task bar", "Provides the main tasks on each page, e.g., Create, Open, Action."
   
 .. _webapp-filtering:
 
 Filtering with the sidebar
 --------------------------
-The leftmost sidebar acts as a selector on each page, which helps you to quickly find the zones or networks. You can select predefined filters or selectors.
+The leftmost sidebar provides a set of predefined filters on each page, which you can use to quickly find the zones or networks.
 
 The sidebar is open by default, but you can collapse it to an icon-only mode. If a list of clickable items is needed, the sidebar automatically unfolds.
 
-Selecting an item in the sidebar applies the filter for the main work grid. You can narrow down results further using the quick filter. For more information, refer to :ref:`quickfilter`.
+Selecting an item in the sidebar applies the filter for the data grid. You can narrow down results further using the quick filter. For more information, refer to :ref:`quickfilter`.
 
 .. tip::
    When you select a filter in the sidebar and then the :guilabel:`Create` action in the task bar, the object type will be automatically selected based on the active filter.
@@ -69,13 +65,13 @@ Select the folder |folder| in the bottom left corner of the sidebar to view the 
   :width: 80%
   :align: center
 |
-To add or remove an object to a folder, select the object in the grid and then use the :guilabel:`Action` menu to select :guilabel:`Add to folder`. In the **Add to Folder** dialog box, you can add the object to a folder, move it between folders, or remove it from a folder.
+To add or remove an object to a folder, select the object in the data grid and then use the :guilabel:`Action` menu to select :guilabel:`Add to folder`. In the **Add to Folder** dialog box, you can add the object to a folder, move it between folders, or remove it from a folder.
 
 .. _quickfilter:
 
 Filtering with the quick filter
 -------------------------------
-The quick filter can be accessed on all pages that display a list of items like, for example, the DNS zone grid on the **DNS** page. The quick filter enables you to filter the results displayed after selecting an object in the sidebar. Alternatively, you can use the quick filter to specify columns and the values for which to filter each column.
+The quick filter can be accessed on all pages that display a list of items like, for example, the DNS zone data grid on the **DNS** page. The quick filter enables you to filter the results displayed after selecting an object in the sidebar. Alternatively, you can use the quick filter to specify columns and the values for which to filter each column.
 
 .. image:: ../../images/quickfilter-11.1.png
   :width: 60%
@@ -86,9 +82,9 @@ The quick filter can be accessed on all pages that display a list of items like,
   :height: 4ex
 
 .. note::
-  **Quick search**: You can toggle the quick filter to quick search by selecting the magnifying glass |quicksearch|. Quick search will highlight objects in the grid that match the search, but the grid will still display all entries.
+  **Quick search**: You can toggle the quick filter to quick search by selecting the magnifying glass |quicksearch|. Quick search will highlight objects in the data grid that match the search, but the data grid will still display all entries.
 
-The quick filter can be used as a free text search by simply entering some string into the field. The value is compared to all rows in the grid with columns containing the given string.
+The quick filter can be used as a free text search by simply entering some string into the field. The value is compared to all rows in the data grid with columns containing the given string.
 
 You can also enter the name of the column, a conditional operator, and the queried string.
 
@@ -169,7 +165,7 @@ Access quick command by selecting either the lightning icon |quickcommand| in th
 
 Viewing object details in the Inspector
 ---------------------------------------
-The Inspector, located to the right of the grid on each page, serves as an info box for the selected objects, such as DNS zones. In some cases, it's possible to edit the information in the Inspector, such as DNS zone authority, or the Start of Authority (SOA) record for each zone. For more information, refer to :ref:`zone-contents`.
+The Inspector, located to the right of the data grid on each page, serves as an info box for the selected objects, such as DNS zones. In some cases, it's possible to edit the information in the Inspector, such as DNS zone authority, or the Start of Authority (SOA) record for each zone. For more information, refer to :ref:`zone-contents`.
 
 The **Properties** section of the Inspector displays all properties for the selected object. These include all custom properties that have been defined for a specific object type.
 
