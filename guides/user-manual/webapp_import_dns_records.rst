@@ -20,7 +20,7 @@ Micetro enables you to import DNS records so you can manage them in the Web Appl
 .. image:: ../../images/bulk-import-dns.png
   :width: 90%
   :align: center
-
+|
 Refer to **DNS Bulk Import Format** below for instructions on formatting the DNS data file for import.
 
 DNS Bulk Import Format

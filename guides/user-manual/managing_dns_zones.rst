@@ -7,13 +7,13 @@ Managing DNS Zones
 In Micetro, you can manage all your DNS zones on the **DNS** page. This is the hub for everything from creating new zones to editing zone options to deleting zones.
 
 .. note::
-   This information applies to the Micetro web interface. For information about DNS zone management in the M&M Management Console, see :ref:`console-dns-zones`.
+   This information applies to the Micetro web application. For information about DNS zone management in the M&M Management Console, see :ref:`console-dns-zones`.
 
 Creating Zones
 --------------
 To create a new DNS zone:
 
-1. Click :guilabel:`Create` on the **DNS** page toolbar.
+1. Click :guilabel:`Create` on the **DNS** page task bar.
 
 2. Select the zone type. For more information about zone types, refer to :ref:`dns-zone-types`.
 
@@ -58,9 +58,9 @@ Primary zone
     .. image:: ../../images/zone-flow-custom-properties.png
       :width: 65%
 
-   Custom properties appear as individual columns on the **DNS** grid for each zone.
+   Custom properties appear as individual columns on the **DNS** data grid for each zone.
 
-4. On the **Zone Options** step, you can specify which DNS servers will be notified of changes to the zone and to which servers it is allowed to perform zone transfers. 
+4. In the **Zone Options** step, you can specify which DNS servers will be notified of changes to the zone and to which servers it is allowed to perform zone transfers. 
 
     .. image:: ../../images/zone-flow-options.png
       :width: 65%
@@ -111,7 +111,7 @@ You can migrate one or more zones from one server to another. Migrating a zone a
 
 **To migrate a zone**:
 
-1. In the **DNS** grid, select the zone you want to migrate.
+1. In the **DNS** data grid, select the zone you want to migrate.
 
 2. Using either the :guilabel:`Action` or the Row :guilabel:`...` menu, select :guilabel:`Migrate zone`.  
    
@@ -125,7 +125,7 @@ Deleting Zones
 --------------
 To delete a zone from one or more servers:
 
-1. In the **DNS** grid, select the zone(s) you want to delete.
+1. In the **DNS** data grid, select the zone(s) you want to delete.
 
 2. Using either the :guilabel:`Action` or the Row :guilabel:`...` menu, select :guilabel:`Delete zone`.    
       
@@ -154,7 +154,7 @@ When a secondary zone is promoted, the following actions are performed:
 
 **To promote a secondary zone to a primary zone**:
 
-1. In the **DNS** grid, select the secondary zone.
+1. In the **DNS** data grid, select the secondary zone.
 
 2. Using the :guilabel:`Action` or the Row :guilabel:`...` menu, select :guilabel:`Promote to primary`.  
    
@@ -173,7 +173,7 @@ DNS administrators can specify the server to use when opening an Active Director
 
 1. In the leftmost sidebar, select :guilabel:`AD Integrated`.
 
-2. In the grid, select the zone(s) for which you want to set preferred servers.
+2. In the data grid, select the zone(s) for which you want to set preferred servers.
 
 3. Using either the :guilabel:`Action` or the Row :guilabel:`...` menu, select :guilabel:`Edit preferred servers`.
    
@@ -190,7 +190,7 @@ Editing Zone Properties
 
 **To edit zone properties**:
 
-1. Select the zone you want to edit and click :guilabel:`Edit Properties` on the toolbar or the Row :guilabel:`...` menu.
+1. Select the zone you want to edit and click :guilabel:`Properties` on the task bar or the Row :guilabel:`...` menu.
 2. Make the desired changes and click :guilabel:`Save` to apply them.
 
 Editing Zone Options on Windows and BIND

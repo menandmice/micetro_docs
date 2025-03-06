@@ -55,7 +55,7 @@ This table shows the zone types supported by Micetro:
  
 Zone Contents
 ^^^^^^^^^^^^^
-For each zone in the **DNS** grid, you can view its properties, details, and resource records.
+For each zone in the **DNS** data grid, you can view its properties, details, and resource records.
 
 The Inspector on the right side of the screen provides an overview of the Start of Authority (SOA) record and properties of the selected zone. 
 
@@ -86,7 +86,7 @@ An SOA record contains the following data fields. To edit SOA information, click
 
 Resource Records
 """"""""""""""""
-To view the DNS resource records for a particular zone, double-click the zone in the **DNS** grid or select it and then click :guilabel:`Open` on the page toolbar or the Row :guilabel:`...` menu. A list of the zone's resource records is displayed. For more information about DNS resource records, refer to :ref:`dns-records`.
+To view the DNS resource records for a particular zone, double-click the zone in the **DNS** data grid or select it and then click :guilabel:`Open` on the page task bar or the Row :guilabel:`...` menu. A list of the zone's resource records is displayed. For more information about DNS resource records, refer to :ref:`dns-records`.
 
 View History
 ^^^^^^^^^^^^^

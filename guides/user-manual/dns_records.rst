@@ -12,7 +12,7 @@ Each zone in the Domain Name System (DNS) contains a set of resource records tha
   :width: 90%
   :align: center
 |
-Select a DNS record in the list to view the following details and actions for the record in the Inspector.
+Select a DNS record in the grid to view the following details and actions for the record in the Inspector.
 
 .. csv-table::
   :header: "Item", "Description"
@@ -141,7 +141,7 @@ Hover over the :guilabel:`i` icon to see more information or a list of objects:
 
   "Network", "The network containing the specified IP address"
   "Network type", "Either an IP address range or a DHCP scope"
-  "Properties", "Various properties including custom properties, if defined."
+  "Properties", "Various properties including custom properties, if defined"
   "DNS hosts", "Lists all DNS hosts that are set for the specified IP address"
   "MAC address", "The MAC address of the discovered device"
   "Last seen", "The date for which the IP address was last seen"
@@ -173,7 +173,7 @@ When necessary, Micetro enables you to edit an existing DNS record.
 
 1. Select the DNS record in the grid on the **DNS** page.
 
-2. Select either :guilabel:`Edit` on the task bar :guilabel:`Edit DNS record` in the Row :guilabel:`...` menu.
+2. Select either :guilabel:`Edit` on the task bar or use the Row :guilabel:`...` menu to select :guilabel:`Edit DNS record`.
 
 3. In the dialog box, modify the DNS record as needed.
 
@@ -186,7 +186,7 @@ Deleting a record removes both the data and the physical record from the grid.
 
 **To delete a DNS record**
 
-1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making your selections.
+1. Select the record(s) that you want to delete. To select multiple records, hold down the **Ctrl** (or **Cmd** on Mac) key while making your selections.
 
 2. Click :guilabel:`Delete` on the task bar. The record is immediately deleted from the zone.
 
@@ -199,8 +199,8 @@ If you need to undo or revert changes made to DNS records, Micetro provides a st
 
 1.	Locate the zone where the changes were made, and use the Row :guilabel:`...` menu to select :guilabel:`View history`.
 
-3.	In the **History** dialog, find the specific action you want to undo.
+3.	In the **History** dialog, select the specific action you want to undo.
 
-4.	Select :guilabel:`Undo` in the Row :guilabel:`...` menu. This action will roll back the selected change, restoring the DNS record to its previous state.
+4.	Use the Row :guilabel:`...` menu to select :guilabel:`Undo`. This action will roll back the selected change, restoring the DNS record to its previous state.
 
 For more information about viewing object change history, refer to :ref:`view-change-history`.
