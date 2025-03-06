@@ -44,14 +44,14 @@ For Micetro Central on Windows, you have two authentication methods to choose fr
    
    Ensure that Micetro Central runs under an Active Directory service account that is a member of the local administrators group.
 
-   Here's an example of how the ``preferences.cfg`` file should look like for the Windows Authentication method. Note that the ``databaseusername`` tag must be present and the value must be set to an empty string.
+   Here's an example of how the ``preferences.cfg`` file should look like for the Windows Authentication method. Note that the ``databaseusername`` tag must be present and the ``value`` attribute must be set to an empty string.
 
    .. code-block::
 
-     Password = "the fingerprint hash"
-     DatabaseType = MSSQL
-     DatabaseServer = "<name or ip of the SQL server>\<instance name, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite"
-     DatabaseUsername = ""
+     <password value="the fingerprint hash"/>
+     <database value="MSSQL"/>
+     <databaseserver value="<name or ip of the SQL server>\<instance name, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite"/>
+     <databaseusername value=""/>
 
 2. **Normal User/Password Authentication**:
 
@@ -59,11 +59,11 @@ For Micetro Central on Windows, you have two authentication methods to choose fr
 
    .. code-block::
 
-     Password = "the fingerprint hash"
-     DatabaseType = MSSQL
-     DatabaseServer = "<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro"
-     DatabaseUsername = mmSuiteDBUser
-     DatabasePassword = "plaintext:DBPASSWORD"
+     <password value="the fingerprint hash"/>
+     <database value="MSSQL"/>
+     <databaseserver value="<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro"/>
+     <databaseusername value="mmSuiteDBUser"/>
+     <databasepassword value="plaintext:DBPASSWORD"/>
 
    With this approach, you can use a dedicated SQL Server user for authentication. The ``plaintext:`` prefix in the database password input allows the password to be entered in plaintext, which Micetro Central will encrypt during the initial startup.
 
@@ -74,10 +74,10 @@ Navigate to the data directory (usually located at ``/var/mmsuite/mmcentral``) a
 
 .. code-block::
 
-  DatabaseType = MSSQL
-  DatabaseServer = "ip/dns name of SQL server><,port>\<Instance name>@<Database name>"
-  DatabaseUsername = mmSuiteDBUser
-  DatabasePassword = "plaintext:<your password here>"
+  <Database value="MSSQL" />
+  <DatabaseServer value="ip/dns name of SQL server><,port>\<Instance name>@<Database name>" />
+  <DatabaseUsername value="mmSuiteDBUser" />
+  <DatabasePassword value="plaintext:<your password here>" />
 
 
 If the ``DatabasePassword`` value is prefixed by ``plaintext:``, Micetro Central will replace it with a password hash during startup.

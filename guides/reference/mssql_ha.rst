@@ -21,4 +21,4 @@ To use Always On Availability Groups, change the DatabaseServer value in the pre
 
 .. code-block::
 
-  DatabaseServer = "virtual ip/fqdn of availability group listener><,port>\<Instance name>@<Database name>"
+  <DatabaseServer value="virtual ip/fqdn of availability group listener><,port>\<Instance name>@<Database name>" />

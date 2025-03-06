@@ -16,7 +16,7 @@ By default the Central instances update the heartbeat timestamp in the database 
 
 .. code-block::
 
-  HeartbeatInterval = 10
+  <HeartbeatInterval value=“10” />
 
 This can be tweaked between values of **5** and **15**.
 
@@ -29,6 +29,6 @@ The default maximum downtime can be overwritten in the ``/var/mmsuite/mmcentral/
 
 .. code-block::
 
-  HeartbeatMaxAllowedDowntime = 30
+  <HeartbeatMaxAllowedDowntime value=“30” />
 
 Values between **20** and **120** are allowed, setting the maximum downtime to 20-120 seconds.

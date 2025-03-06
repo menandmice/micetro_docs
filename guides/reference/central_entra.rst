@@ -15,11 +15,13 @@ This topic describes how to configure the Central server for multifactor authent
       
       * Python is available to "all user" (Windows).
       
+      * Use a Men&Mice tested version of Python (see the dependency checklist).
+      
       * Python is installed in the "Default" environment.
       
-      * If Python is not available in the PATH the following line can be added to the ``preferences.cfg`` file to specify where it can be found:
+      * Add the following XML tag to the ``preferences.cfg`` file to set the path:
       
-         PythonExecutablePath = "C:\\Python\\python.exe"
+         <PythonExecutablePath value="C:\\Python39\\python.exe" /> 
 
       * Path for ``preferences.cfg``:
 

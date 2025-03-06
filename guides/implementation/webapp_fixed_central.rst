@@ -14,11 +14,11 @@ If you want to allow users to specify a custom Central server to connect to, fol
 Windows
 -------
 
-1. Edit the ``preferences.cfg`` file for the Micetro Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following line:
+1. Edit the ``preferences.cfg`` file for the Micetro Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following XML tag:
 
   .. code-block::
 
-    LockToDefaultServer = false
+    <LockToDefaultServer value="0" />
 
 2. Restart the Micetro Web Services Windows service.
 
@@ -29,11 +29,11 @@ Linux
 
 1. Log into the server hosting Micetro.
 
-2. Edit the ``preferences.cfg`` file for the Micetro Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following line:
+2. Edit the ``preferences.cfg`` file for the Micetro Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following XML tag:
 
   .. code-block::
 
-    LockToDefaultServer = false
+    <LockToDefaultServer value="0" />
 
 3. Restart the ``mmws`` service:
 

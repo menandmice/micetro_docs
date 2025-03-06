@@ -28,7 +28,7 @@ The generic DNS agent is compatible with other native DNS servers, providing inc
 
   .. code-block::
 
-    GenericDNSScript = "python C:\scripts\genericDNS.py"
+    <GenericDNSScript value="python c:\scripts\genericDNS.py" />
 
   The `genericDNS.py <https://github.com/menandmice/micetro_docs/blob/latest/guides/implementation/genericDNS.py>`_ script implements the generic API and interfaces with the DNS server.
 

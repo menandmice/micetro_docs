@@ -107,11 +107,11 @@ Configuring the DHCP Agent
 
 The ``preferences.cfg`` file can be used to fine-tune the Kea High Availability setup within the DHCP agent.
 
-* ``KeaReplicateConfig``: If set to ``false``, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is ``true``. Example: ``KeaReplicateConfig = false``.
+* ``keaReplicateConfig``: If set to ``0``, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is ``1``. Example: ``<keaReplicateConfig value=”0”/>``.
 
-* ``KeaControlAgentHost``: Specifies the host to use when connecting to a control agent. The default value is ``127.0.0.1`` if the Kea Control Agent is running on the same machine, or it is the IP address of the server added to Micetro.
+* ``keaControlAgentHost``: Specifies the host to use when connecting to a control agent. The default value is ``127.0.0.1`` if the Kea Control Agent is running on the same machine, or it is the IP address of the server added to Micetro.
 
-* ``KeaControlAgentPort``: Defines the port to use when connecting to the Kea Control Agent. The default value is ``8000``.
+* ``keaControlAgentPort``: Defines the port to use when connecting to the Kea Control Agent. The default value is ``8000``.
 
 
 Adding a High Availability-enabled Kea DHCP Server to Micetro
