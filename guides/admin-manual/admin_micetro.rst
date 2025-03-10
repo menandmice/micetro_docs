@@ -24,4 +24,4 @@ The **First Login** wizard comprises two steps:
 .. tip::
    **Strong Passwords**: We recommend using a unique password that contains at least one uppercase letter, one lowercase letter, one number, and one special character. It is also recommended that your password be longer than 12 characters, which increases your password strength.
 
-If do not agree to the user agreement, you will be logged out of Micetro.
+If you do not agree to the user agreement, you will be logged out of Micetro.
