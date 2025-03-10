@@ -29,7 +29,7 @@ Below is a list of the components that are installed and a description of their 
   "Azure SQL Server", "The database backend for the Micetro Central. Micetro will preform all the necessary setup for the database to be ready for use."
 
 .. important::
-  The Azure Marketplace offering comes with 60 day trial keys for all components of Micetro. If you would like to extend your trial or buy permanent license keys please contact sales@menandmice.com.
+  The Azure Marketplace offering comes with 60 day trial keys for all components of Micetro. If you would like to extend your trial or buy permanent license keys please contact support@bluecatnetworks.com.
 
 Getting started
 ===============

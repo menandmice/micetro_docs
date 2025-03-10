@@ -49,6 +49,16 @@ The password for the ``administrator`` user is configured during the :ref:`first
 
 The ``administrator`` user cannot be removed from Micetro, and is always local (cannot be authenticated by SSO).
 
+
+Failed login attempts
+---------------------
+
+To protect users from brute force password attacks, Micetro throttles unsuccessful login attempts. 
+
+.. note::
+  This only applies to internal Micetro users.
+
+
 New objects
 -----------
 

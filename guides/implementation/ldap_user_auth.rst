@@ -33,8 +33,8 @@ A signature file for the python extension will also have to be installed and pla
 .. note::
   For security reasons, the Central service will not execute ``mm_ldap.py`` unless the signature ``inmm_ldap.signature`` matches the signature calculated for ``mm_ldap.py``.
 
-Configuring LDAP
-----------------
+Configuring LDAP with Active Directory
+--------------------------------------
 
 LDAP configurations are stored in a JSON config file that should be stored in the Micetro Central service root directory:
 
@@ -44,7 +44,7 @@ LDAP configurations are stored in a JSON config file that should be stored in th
   sudo chown root:root /var/mmsuite/mmcentral/ldapconf.json
   sudo chmod 440 /var/mmsuite/mmcentral/ldapconf.json
 
-The configuration file has the following schema:
+The configuration file for AD has the following schema:
 
 .. code-block::
 
@@ -118,6 +118,66 @@ Example configuration for connecting to an AD LDAP service:
         }
     }
 
+Configuring LDAP with openLDAP
+------------------------------
+LDAP configurations are stored in a JSON config file that should be stored in the Micetro Central service root directory.
+
+.. code-block:: bash
+
+  sudo cp ldapconf.json /var/mmsuite/mmcentral
+  sudo chown root:root /var/mmsuite/mmcentral/ldapconf.json
+  sudo chmod 440 /var/mmsuite/mmcentral/ldapconf.json
+
+To configure LDAP with openLDAP, install the server and use LDAP Account Manager to create users and groups, and add users to groups.
+
+Example configuration for connecting to an openLDAP LDAP service:
+
+.. code-block::
+
+  {
+    "method": "authenticate",
+    "server": {
+        "uri": "ldap://ldap.example.com:636",
+        "reader_dn": "cn=admin, dc=corp, dc=example, dc=com",
+        "reader_password": "admin_password",
+        "skip_cert_verification": false,
+        "disable_referrals": true,
+        "use_start_tls": false
+        },
+
+    "user_search_config": {
+        "base_dn":  "dc=corp, dc=example, dc=com",
+        "search_filter": "uid={username}",
+        "group_search_config": {
+          "base_dn": "ou=groups, dc=corp, dc=example, dc=com",
+          "search_filter": "(&(objectClass=posixGroup)(memberUid={username}))",
+          "name_attribute": "cn"
+          }
+        },
+     "version": [1, 0]
+    }
+
+.. note::
+  In the ``name_attribute`` field, ``cn`` ("common name") refers to the group name in LDAP. In the LDAP configuration JSON file, enter ``cn`` in the ``name_attribute`` field if that attribute is used for group name in LDAP, not the group name itself.
+
+  Additionally, replace the ``reader_dn`` and ``reader_password`` values with the admin credentials from LDAP.
+
+
+After setting up the server, enable LDAP authentication in Micetro as described below. Once LDAP is enabled in Groups, you can create an LDAP group. The group must have the same name in both Micetro and LDAP. Enter this name in the :guilabel:`External ID` field.
+
+.. image:: ../../images/ldap-users-externalid.png
+  :width: 85%
+
+The next time you log in with an LDAP username created in LAM --- and that user is added to the specific group in LAM --- your user will be automatically added to the **Users** list with the permissions assigned to the associated group created in Micetro.
+
+.. image:: ../../images/ldap-authtype-group.png
+  :width: 90%
+
+.. note::
+  LDAP users are only added to the LDAP group list after logging into Micetro.
+
+
+
 
 Enabling LDAP in Micetro
 ------------------------
@@ -127,7 +187,7 @@ After completing the setup of the server, you need to enable the LDAP authentica
 
 1. On the :guilabel:`Admin` page, select the :guilabel:`Configuration` tab.
 2. Select :guilabel:`Authentication` under :guilabel:`System Settings` in the left pane.
-3. Select the :guilabel:`Enable LDAP integration`.
+3. Select the :guilabel:`Enable LDAP integration` checkbox.
 
 Using LDAP with Central Running on Windows
 ------------------------------------------
