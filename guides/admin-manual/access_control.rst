@@ -45,7 +45,7 @@ The ``administrator`` user
 
 The built-in, local ``administrator`` user exists outside of regular access controls. All permissions are enabled for this user (even if not attached to any role) and its permissions cannot be edited or overriden (see :ref:`block-permission`) by any role.
 
-The password for the ``administrator`` user is configured during the :ref:`first-run-wizard`.
+The password for the ``administrator`` user is configured when the administrator logs in for the first time. For more information, refer to :ref:`first-login`.
 
 The ``administrator`` user cannot be removed from Micetro, and is always local (cannot be authenticated by SSO).
 
