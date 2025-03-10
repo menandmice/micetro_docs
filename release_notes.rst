@@ -10,7 +10,24 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`
+
+.. _11.1.4-release:
+11.1.4
+------
+March 10, 2025
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed an issue in which the User Agent header was not set properly for outgoing requests to the Meraki API (`KI-026180 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002A4v2AE>`_)
+* Fixed an issue preventing Azure network interfaces on virtual machines from syncing on subnets by making Azure ID comparison case-insensitive (`KI-026181 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002A6X2AU>`_)
+* Fixed a potential thread locking in the code when removing DHCP scopes from failover relationships (`KI-26000 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OJ4j2AG>`_)
+* HTTP proxy system settings, if defined, are now used in all Meraki communication
+* Meraki synchronization parameters can now be set in Micetro's Advanced System Settings, reducing the number of calls to the Meraki API (`KI-026177 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000029nB2AQ>`_)
+* Resolved an issue that made it not possible to modify an MX record using the Import feature with a Modify action. To enable this function, correctly pass the  ``"filter": "name in ()"`` with the name of the record in the parentheses to the API (`KI-025866 <https://care.bluecatnetworks.com/s/detail/a8BOI000000I34H2AS>`_)
+* The DHCP agent now searches for certificates in more locations than it previously did (`KI-025995 <https://care.bluecatnetworks.com/s/detail/a8BOI000000O6aX2AS>`_)
+* You can now configure whether Micetro checks for certificate revocation when calling external APIs, e.g., for Cisco Meraki, by setting the ``checkCertificateRevocation`` preference value to either ``true`` or ``false`` (`KI-026210 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002FkX2AU>`_)
 
 .. _11.1.3-release:
 11.1.3
