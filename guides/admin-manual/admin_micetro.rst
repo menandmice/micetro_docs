@@ -19,7 +19,7 @@ The **First Login** wizard comprises two steps:
 
 1. **First Login** --- To proceed, you must check the :guilabel:`I agree` checkbox. By checking the box, you agree to use Micetro according to the applicable BlueCat user agreement.
 
-2. **Set Password** --- You are required to change the administrator password upon first login. For more information about the administrator user, refer to :ref:`administrator`.
+2. **Set Password** --- It's highly recommended that you change the administrator password upon first login. For more information about the administrator user, refer to :ref:`administrator`.
 
 .. tip::
    **Strong Passwords**: We recommend using a unique password that contains at least one uppercase letter, one lowercase letter, one number, and one special character. It is also recommended that your password be longer than 12 characters, which increases your password strength.
