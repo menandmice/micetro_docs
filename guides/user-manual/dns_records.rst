@@ -245,8 +245,6 @@ Micetro enables you to copy and/or export data. You can select up to 500 rows to
 
    * Excel spreadsheet (.xlsx)
 
-   * Zone file format
-
 6. Click :guilabel:`Download`.
 
 The file(s) will be downloaded to your local drive.
