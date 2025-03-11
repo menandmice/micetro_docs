@@ -27,7 +27,6 @@ Bug Fixes
 * Meraki synchronization parameters can now be set in Micetro's Advanced System Settings, reducing the number of calls to the Meraki API (`KI-026177 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000029nB2AQ>`_)
 * Resolved an issue that prevented the modification of MX records when importing them to Micetro (`KI-025866 <https://care.bluecatnetworks.com/s/detail/a8BOI000000I34H2AS>`_)
 * The DHCP agent now searches for certificates in more locations than it previously did (`KI-025995 <https://care.bluecatnetworks.com/s/detail/a8BOI000000O6aX2AS>`_)
-* You can now configure whether Micetro checks for certificate revocation when calling external APIs, e.g., for Cisco Meraki, by enabling the ``checkCertificateRevocation`` preference (`KI-026210 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002FkX2AU>`_)
 
 .. _11.1.3-release:
 11.1.3
