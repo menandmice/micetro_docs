@@ -36,7 +36,6 @@ Micetro Reference Articles
   mssql_ha
   access_control_example
   send_license_info
-  appliance_guide
   acl_convert
   acl_console
   health_bar_information

@@ -1,6 +1,6 @@
 .. meta::
    :description: The command to remove a server from the Management Console in Micetro by Men&Mice
-   :keywords: Micetro. DNS management, DNS server, Men&Mice appliance, appliance management
+   :keywords: Micetro. DNS management, DNS server
 
 .. _console-delete-dns-server:
 
@@ -8,9 +8,6 @@ Remove DNS servers (Management Console, obsolete)
 ---------------------------------------------------
 
 This command is only available with the Administrator account. Use this command to remove a server from the Management Console.
-
-.. note::
-  For information on removing a DNS server on a Men&Mice Appliance, refer Appliance Management.
 
 1. In the Object browser of the Management Console, click on :guilabel:`DNS Servers`.
 

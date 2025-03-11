@@ -7,9 +7,6 @@
 Delete (Management Console, obsolete)
 ---------------------------------------
 
-.. note::
-  For information on removing a DHCP server on a Men&Mice Appliance, refer to :ref:`appliance-management`.
-
 To remove a DHCP server, do the following:
 
 1. In the *Object Section* of the Management Console, click on :guilabel:`DHCP Servers`.
