@@ -4,10 +4,10 @@
 
 .. _central-ha:
 
-Configure High Availability for Micetro Central
-================================================
+Configuring High Availability for Micetro Central
+=================================================
 
-Failover instances of Micetro Central can be configured to build a high availability (HA) cluster. For information about fine-tuning the settings for the Central High Availability cluster, see :ref:`ha-tweaks-central`.
+Failover instances of Micetro Central can be configured to build a High Availability (HA) cluster. For information about fine-tuning the settings for the Central High Availability cluster, refer to :ref:`ha-tweaks-central`.
 
 .. note::
   * To run Micetro in High Availability mode, you must be using the MSSQL or PostgreSQL database backend for Micetro. High Availability mode is not available for other database types.
@@ -18,8 +18,8 @@ Failover instances of Micetro Central can be configured to build a high availabi
 
 .. _central-ha-unix:
 
-Linux
------
+Configuring High Availability on Linux
+--------------------------------------
 
 1. On the existing (or designated as *primary*) server running Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg``, by adding the following to the file:
 
@@ -87,8 +87,8 @@ Proceed to :ref:`install-controllers`.
 
 .. _central-ha-windows:
 
-Windows
--------
+Configuring High Availability on Windows
+----------------------------------------
 
 1. In the existing (or designated as *primary*) server running Central, edit the preferences file ``preferences.cfg``, by adding the following to the file:
 
@@ -149,7 +149,7 @@ Windows
 .. note::
   Repeat these steps for each high availability failover you'd like to add. The priority for each failover member should be unique and higher than the primary.
   
-Editing HA Member Options
+Editing HA member options
 -------------------------
 
 1. Log in to the Micetro Web Application and go to :menuselection:`Admin --> Configuration`.

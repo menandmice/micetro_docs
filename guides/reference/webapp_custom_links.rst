@@ -1,15 +1,18 @@
+.. meta::
+   :description: Adding custom links to the Micetro Web Application
+   :keywords: Custom links, Web Application, Micetro 
+
 .. _webapp-custom-links:
 
-Custom Links in the Micetro Web Interface 
------------------------------------------
-
-You can add up to three custom links that show up on the Micetro login page.
+Custom Links in the Micetro Web Application 
+===========================================
+You can add up to three custom links to be displayed on the Micetro login page. For example, you might want to add a link to your internal support channel for quick access.
 
 .. image:: ../../images/login-custom-links.png 
     :width: 50%
 
 
-**To add your custom links (for example internal support channel)**:
+**To add your custom links**:
 
 1. Open the ``preferences.cfg`` file for Micetro Web Services.
 
@@ -17,7 +20,7 @@ You can add up to three custom links that show up on the Micetro login page.
 
    * Default location on Linux: ``/var/mmsuite/web_services/preferences.cfg``
 
-2. To the end of the file, add the links in the following format: 
+2. Add the links, in the following format, to the end of the file:
 
    .. code-block::
 

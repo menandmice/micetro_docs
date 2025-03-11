@@ -22,6 +22,7 @@ Additionally, we'll explore the integration of Micetro with Active Directory, al
   webapp_server_management
   failover_management
   snmp_profiles
+  xdns_profiles
   admin_event_hooks
   address_spaces
   admin_custom_properties

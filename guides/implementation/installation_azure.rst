@@ -5,18 +5,14 @@
 .. _installation-azure:
 
 Installing Micetro in Azure
-***************************
-
-Overview
-========
-
-The Micetro offering in the `Azure Marketplace <https://azuremarketplace.microsoft.com/en-en/marketplace/apps/men-and-mice.men-and-mice-suite?tab=overview>`_ provides a simple wizard for deployment of the necessary components to get started. The diagram below depicts the steps needed to perform the deployment. See :ref:`azure-marketplace-wizard` for details on each step.
+===========================
+The Micetro offering in the `Azure Marketplace <https://azuremarketplace.microsoft.com/en-en/marketplace/apps/men-and-mice.men-and-mice-suite?tab=overview>`_ provides a simple wizard for deployment of the components needed to get started. The diagram below depicts the steps needed to perform the deployment. Refer to :ref:`azure-marketplace-wizard` for details about each step in the process.
 
 .. image:: ../../images/deploy-azure-marketplace.png
   :width: 80%
   :align: center
 
-Below is a list of the components that are installed and a description of their main functions. See :ref:`architecture` for more details.
+The following list includes the components that are installed and a description of their main functions. Refer to :ref:`architecture` for more details.
 
 .. csv-table::
   :widths: 20, 80
@@ -24,37 +20,35 @@ Below is a list of the components that are installed and a description of their 
   "Micetro Central",	"The main Micetro component. It also serves as the meta-data storage engine, containing things such as zone history logs, user accounts and permissions, etc. You must have one copy on some server somewhere. It does not need to be installed on a DNS server."
   "Micetro DNS Agent",	"The DNS server agent. It usually sits on each DNS server machine and manages the DNS service on your behalf. In the case of cloud DNS services providers there should be a DNS agent installed on the same machine as the central service."
   "Micetro DHCP Agent", "The DHCP server agent. It sits on each DHCP server machine (or in case of the MS DHCP agent, on any machine in the network) and manages the DHCP service on your behalf."
-  "Micetro Web Interface", "The Micetro Web Interface includes most day-to-day actions needed for DDI management."
+  "Micetro Web Application", "The Micetro Web Application includes most day-to-day actions needed for DDI management."
   "Micetro Management Console", "A thick client. You can install multiple copies, wherever it's needed. For detailed information about the Micetro Management Console, see the documentation for the Management Console."
   "Azure SQL Server", "The database backend for the Micetro Central. Micetro will preform all the necessary setup for the database to be ready for use."
 
 .. important::
-  The Azure Marketplace offering comes with 60 day trial keys for all components of Micetro. If you would like to extend your trial or buy permanent license keys please contact sales@menandmice.com.
+  The Azure Marketplace offering comes with 60-day trial keys for all Micetro components. If you would like to extend your trial or buy permanent license keys, please contact support@bluecatnetworks.com.
 
-Getting started
-===============
-
-Finding the product in the Marketplace
+Finding Micetro in the Azure Marketplace
 --------------------------------------
+1. Open your Azure Portal and enter "Marketplace" in the search bar in at the top of the screen.
 
-Open up your Azure Portal and in the search bar in at the top of the screen enter "Marketplace".
+2. Select the **Marketplace** option, which should appear under "Services".
 
-Click the Marketplace option which should appear under services.
+  .. image:: ../../images/micetro-azure-1.png
+    :width: 70%
+    :align: center
 
-.. image:: ../../images/micetro-azure-1.png
-  :width: 80%
-  :align: center
+3. Enter the search term "Micetro" and select the offering.
 
-Enter the search term "Micetro", click on the offering and there should open a sidebar to the right with a "Create" button.
+3. In the rightmost sidebar, select :guilabel:`Create`.
 
-.. image:: ../../images/micetro-azure-2.png
-  :width: 80%
-  :align: center
+  .. image:: ../../images/micetro-azure-2.png
+    :width: 80%
+    :align: center
 
 .. _azure-marketplace-wizard:
 
-Azure Marketplace Wizard
-------------------------
+Setting up Micetro in Azure
+---------------------------
 
 After pressing the create button, you should be created by the Azure Marketplace Wizard for the Micetro offering.
 

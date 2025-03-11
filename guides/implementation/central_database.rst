@@ -4,8 +4,8 @@
 
 .. _central-database:
 
-Database Backend
-================
+Setting up the Database Backend
+===============================
 
 Micetro can be used with the following databases:
 

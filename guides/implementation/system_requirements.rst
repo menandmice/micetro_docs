@@ -4,21 +4,21 @@
 
 .. _system-requirements:
 
-System Requirements
-===================
-
+System requirements
+-------------------
 The minimum system requirements and supported platforms for Micetro are as follows:
 
 Hardware
---------
+^^^^^^^^
 
 .. note::
-  The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture-overview` for details.
+  The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture` for details.
 
-Operating Systems
------------------
 
-.. csv-table:: Operating Systems
+Operating systems
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
   :header: "Operating system", "Management Console [1]_", "Agents", "Micetro Central", "Web Application", "API [2]_", "Command Line Interface"
   :widths: 20, 20, 20, 10, 10, 10, 10
 
@@ -41,17 +41,18 @@ Operating Systems
   "Ubuntu 22.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 24.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
 
-.. [1] The management console also works on non-server Windows that have not reached their EOL.
+.. [1] The Management Console also works on non-server Windows that have not reached their EOL.
 
 .. [2] The REST and SOAP APIs are bundled into the Web Application for Windows and Linux.
 
 .. note::
    Starting from version 10.2, support for 32-bit Linux Operating Systems will be discontinued due to the lack of support from common Linux distributions.
 
-Databases
----------
 
-.. csv-table:: Databases
+Databases
+^^^^^^^^^
+
+.. csv-table::
   :header: "Database", "Supported version(s)", "Operating System of Micetro Central"
   :widths: 20, 20, 60
 
@@ -62,10 +63,10 @@ Databases
 .. [3] The SQLite database is embedded into the Micetro Central application.
 
 
-DNS/DHCP Server Software
-------------------------
+DNS/DHCP server software
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. csv-table:: DNS & DHCP Server Software
+.. csv-table::
   :header: "Server", "Version(s)"
   :widths: 40, 60
 
@@ -80,13 +81,11 @@ DNS/DHCP Server Software
   "Cisco IOS with DHCP support", "12.3 - 16.09"
 
 .. warning::
-  ISC Kea version 2.0 and older are no longer supported. See :ref:`kea-update` for more details.
+  ISC Kea version 2.0 and older are no longer supported. Refer to :ref:`kea-update` for more details.
 
-Other
------
 
-Micetro Web Interface
-^^^^^^^^^^^^^^^^^^^^^^^^
+Micetro Web Application
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * Microsoft IIS [4]_
 
@@ -96,7 +95,8 @@ Micetro Web Interface
 
 .. [5] The Apache web server is supported on all platforms except Windows.
 
-Supported Cloud Services
+
+Supported cloud services
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Azure [6]_
@@ -107,10 +107,12 @@ Supported Cloud Services
 
 * Akamai
 
-.. [6] Micetro can be installed directly from the Azure Marketplace. See :ref:`installation-azure`.
+.. [6] Micetro can be installed directly from the Azure Marketplace. Refer to :ref:`install-azure`.
 
-Supported Browsers (Web Interface)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Supported browsers
+^^^^^^^^^^^^^^^^^^
+The following browsers support the Micetro Web Application:
 
 * Microsoft Edge
 
