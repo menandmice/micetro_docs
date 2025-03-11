@@ -4,7 +4,7 @@
 
 .. _webapp-import-dns-records:
 
-Importing DNS Records
+Importing DNS records
 =====================
 Micetro enables you to import DNS records so you can manage them in the Web Application. This can be useful if you need to add DNS records in bulk.
 
@@ -23,14 +23,14 @@ Micetro enables you to import DNS records so you can manage them in the Web Appl
 |
 Refer to **DNS Bulk Import Format** below for instructions on formatting the DNS data file for import.
 
-DNS Bulk Import Format
+DNS bulk import format
 ^^^^^^^^^^^^^^^^^^^^^^
 Include the following information formatted as described here in the DNS data file you will use to import DNS records to Micetro.
 
 .. note::
   Only plaintext CSV/TSV/TXT files are accepted for file selection. Excel spreadsheets must be converted to one of these formats before importing.
 
-Header Line
+Header line
 """""""""""
 
 The first line of the data must be the header line, containing the names of the fields in the following columns. Some fields refer to built-in system fields, while others match the custom properties defined for the object type in question.
@@ -40,7 +40,7 @@ The first line of the data must be the header line, containing the names of the 
 
 Field names in the header line are not case-sensitive. For example, "title" corresponds to the custom property "Title".
 
-Built-in Fields
+Built-in fields
 """""""""""""""
 Built-in system fields include the following:
 
@@ -79,7 +79,7 @@ Examples
 ^^^^^^^^
 Here are a few examples of how to import, modify, and delete DNS records through the bulk import function:
 
-Add Records
+Add records
 """""""""""
 
 Import A record 'viola' to the zone 'illyria.coast':
@@ -110,7 +110,7 @@ Import A record 'cesario' to 'olivia.palace', when zone and authority are specif
   name,type,data,authority,zone
   cesario.olivia.palace.,A,16.0.2.2,illyria,orsino.palace
 
-Modify Records
+Modify records
 """"""""""""""
 
 Modify IP address for the A record 'viola':
@@ -134,7 +134,7 @@ Modify IP address *and* TTL for the A record 'viola':
   action,name,type,data,newdata,ttl
   modify,viola.illyria.coast.,A,16.0.2.2, 20.21.9.6, 2H
 
-Remove Records
+Remove records
 """"""""""""""
 
 Remove A record 'malvolio':

@@ -4,7 +4,7 @@
 
 .. _dns-records:
 
-DNS Resource Records
+DNS resource records
 ====================
 Each zone in the Domain Name System (DNS) contains a set of resource records that define how requests are processed or delegated within that zone. To view the resource records for a particular zone, double-click the zone or select the zone in the grid and then select :guilabel:`Open` on the task bar or :guilabel:`Open zone` on the Row :guilabel:`...` menu. Once the zone is open, you can view, edit, and manipulate the resource records as needed.
 
@@ -23,7 +23,7 @@ Select a DNS record in the grid to view the following details and actions for th
   "Related DNS Data", "Lists all DNS records that are somehow associated with the selected DNS record."
   "Related IP Addresses", "Lists the related IP addresses in the case of an A or AAAA DNS record."
 
-Available Record Types
+Available record types
 ----------------------
 
 * A / AAAA
@@ -85,7 +85,7 @@ Available Record Types
 * CSYNC
 
 
-Creating New DNS Records
+Creating new DNS records
 -------------------------
 In Micetro, you can create new DNS records for a zone.
 
@@ -117,7 +117,7 @@ In Micetro, you can create new DNS records for a zone.
     
 4. When you are finished, select :guilabel:`Create Now` to save the new record to the zone or :guilabel:`Add to Request` to add it to the request queue. For more information about the request queue, refer to :ref:`webapp-workflows`.
 
-IP Address Insights
+IP address insights
 ^^^^^^^^^^^^^^^^^^^^
 Once you have entered/selected the IP address in the :guilabel:`Address` field, the dialog box will display insights about the address and related objects. These insights provide more information about the IP address and can help you to better understand its state.
 
@@ -180,7 +180,7 @@ When necessary, Micetro enables you to edit an existing DNS record.
 4. Click :guilabel:`Save`.
 
 
-Deleting a DNS Record
+Deleting a DNS record
 ---------------------
 Deleting a record removes both the data and the physical record from the grid. 
 
@@ -191,7 +191,7 @@ Deleting a record removes both the data and the physical record from the grid.
 2. Click :guilabel:`Delete` on the task bar. The record is immediately deleted from the zone.
 
 
-Undoing Changes to a DNS Record
+Undoing changes to a DNS record
 -------------------------------
 If you need to undo or revert changes made to DNS records, Micetro provides a straightforward process through its History feature. It's essential to use this feature carefully, especially when dealing with critical DNS configurations.
 

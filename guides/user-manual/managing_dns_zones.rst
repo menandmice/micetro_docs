@@ -2,14 +2,14 @@
    :description: Instructions for managing DNS zones in Micetro
    :keywords: DNS zones, DNS servers
 
-Managing DNS Zones 
+Managing DNS zones 
 ==================
 In Micetro, you can manage all your DNS zones on the **DNS** page. This is the hub for everything from creating new zones to editing zone options to deleting zones.
 
 .. note::
    This information applies to the Micetro web application. For information about DNS zone management in the M&M Management Console, see :ref:`console-dns-zones`.
 
-Creating Zones
+Creating zones
 --------------
 To create a new DNS zone:
 
@@ -76,19 +76,19 @@ Primary zone
 
 .. _secondary-zone:
 
-Secondary Zone
+Secondary zone
 """""""""""""""
 When creating a secondary zone, you must provide the zone name and either the IP address or hostname of the primary servers that hold the zone of which you are creating a secondary copy.
 
 .. _stub-zone:
 
-Stub Zone
+Stub zone
 """""""""""
 When creating a stub zone, you must provide the zone name and one or more primary servers for the zone being copied.
 
 .. _static-stub-zone:
 
-Static-stub Zone
+Static-stub zone
 """"""""""""""""
 When creating a static-stub zone, you must provide the zone name and a target DNS server. To configure how the zone should be resolved, specify either hostnames or IP addresses in the :guilabel:`Zone Options` step.
 
@@ -100,12 +100,12 @@ Forward zones are similar to stub zones. You must provide a zone name and a list
 
 .. _options-template-zone:
 
-Options Template Zone
+Options template zone
 """""""""""""""""""""""
 .. note::
     The options template zone type is only available if an AuthServe DNS server is connected to Micetro.
 
-Migrating Zones
+Migrating zones
 ---------------
 You can migrate one or more zones from one server to another. Migrating a zone also migrates all data in that zone.
 
@@ -121,7 +121,7 @@ You can migrate one or more zones from one server to another. Migrating a zone a
 
 5. Select :guilabel:`Migrate`.
 
-Deleting Zones
+Deleting zones
 --------------
 To delete a zone from one or more servers:
 
@@ -135,7 +135,7 @@ To delete a zone from one or more servers:
 
 The selected zone(s) is removed from the selected servers.
 
-Promoting Secondary Zones
+Promoting secondary zones
 -------------------------
 In Micetro, it's possible to change a secondary zone into a primary zone. You might need to do this in an emergency situation, e.g., if the primary zone becomes unavailable for an extended period of time.
 
@@ -162,7 +162,7 @@ When a secondary zone is promoted, the following actions are performed:
 
 .. _ad-preferred-servers:
 
-Editing Preferred Servers
+Editing preferred servers
 -------------------------
 DNS administrators can specify the server to use when opening an Active Directory (AD) integrated zone, as well as the order of servers to use if the first preferred server becomes unavailable.
 
@@ -184,7 +184,7 @@ DNS administrators can specify the server to use when opening an Active Director
 .. warning::
   If you select multiple zones, they might have different settings for preferred servers. Saving the configuration will overwrite the previous settings on all selected zones.
 
-Editing Zone Properties
+Editing zone properties
 -----------------------
 :ref:`admin-custom-properties` are flexible metadata associated with zones and other object types, allowing you to include details such as contact information for zones, ranges, and records. These properties can be edited.
 
@@ -193,8 +193,8 @@ Editing Zone Properties
 1. Select the zone you want to edit and click :guilabel:`Properties` on the task bar or the Row :guilabel:`...` menu.
 2. Make the desired changes and click :guilabel:`Save` to apply them.
 
-Editing Zone Options on Windows and BIND
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Editing zone options on Windows and BIND
+----------------------------------------
 For Windows and BIND servers you can configure individual settings for a specific zone on each server.
 
 **To edit zone options for Windows and BIND zones**:

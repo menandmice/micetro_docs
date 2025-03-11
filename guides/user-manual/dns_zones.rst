@@ -4,7 +4,7 @@
 
 .. _dns-zones:
 
-DNS Zone Types
+DNS zone types
 ==============
 
 .. |controls| image:: ../../images/console-dns-zones-zone-controls-icon.png
@@ -34,7 +34,7 @@ Micetro will remember your current view selection when you navigate away from th
 
 .. _dns-zone-types:
 
-Zone Types
+Zone types
 -----------
 This table shows the zone types supported by Micetro:
 
@@ -53,7 +53,7 @@ This table shows the zone types supported by Micetro:
   "Static-stub", "A BIND specific zone type to configure conditional forwarding, similar to Stub but is static, that is, it has a set of preconfigured NS entries."
   "Forward", "A forward zone contains a list of name server addresses, called forwarders, that can resolve queries for the zone. With forward zones queries are forced to go to the specified addresses."
  
-Zone Contents
+Zone contents
 ^^^^^^^^^^^^^
 For each zone in the **DNS** data grid, you can view its properties, details, and resource records.
 
@@ -64,7 +64,7 @@ The Inspector on the right side of the screen provides an overview of the Start 
       
 Click the header of the desired section to collapse or expand the section.
 
-SOA Records
+SOA records
 """""""""""
 An SOA record contains the following data fields. To edit SOA information, click the |ico1| in the section header.
 
@@ -84,11 +84,11 @@ An SOA record contains the following data fields. To edit SOA information, click
   "Neg. caching", "This field is only available when connected to a BIND server. It specifies how long a server will cache the knowledge negative reponses. The standard setting is 86400 seconds, 24 hours."
 
 
-Resource Records
+Resource records
 """"""""""""""""
 To view the DNS resource records for a particular zone, double-click the zone in the **DNS** data grid or select it and then click :guilabel:`Open` on the page task bar or the Row :guilabel:`...` menu. A list of the zone's resource records is displayed. For more information about DNS resource records, refer to :ref:`dns-records`.
 
-View History
+View history
 ^^^^^^^^^^^^^
 Select the :guilabel:`View history` option on the :guilabel:`Action` menu to open the **History** dialog, which provides a log of all changes that have been made to the zone, including the following information:
 
