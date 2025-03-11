@@ -14,7 +14,6 @@ Micetro reference articles
     permissions
     named-conf_location
     bind_file_structure
-    changes_preference_file
     change_updater_port
     central_python_ldap
     ha_tweaks_central
