@@ -51,6 +51,9 @@ jobs:
   displayName: Publish docs
   pool: BPC-Linux-ON1
   dependsOn: BuildDocs
+  
+  variables:
+  - group: azure-secrets
 
   steps:
   - checkout: none
@@ -61,7 +64,7 @@ jobs:
       runOptions: 'inline'
       inline: |
         az acr login --name micehub
-        docker pull micehub.azurecr.io/micetro-docs:${{ parameters.branch }}
+        docker pull $(acr-docs-path):${{ parameters.branch }}
         echo ${{ parameters.branch }}
         if [ "${{ parameters.branch }}" == "latest" ]; then
           port=8080
@@ -76,7 +79,7 @@ jobs:
           # Remove the container
           docker rm micetro-docs-$port
         fi
-        docker run -d -p $port:80 --name micetro-docs-$port micehub.azurecr.io/micetro-docs:${{ parameters.branch }}
+        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):${{ parameters.branch }}
         docker ps
         if ! grep -q "location /${{ parameters.branch }}" /etc/nginx/sites-available/docs.mice.dev; then
           block="location /${{ parameters.branch }} { \n\tproxy_pass http://localhost:$(port);\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
