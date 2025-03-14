@@ -32,6 +32,7 @@ jobs:
     artifact: micetro_docs
     displayName: Publish Docs
   - script: |
+      pwd
       sed -i 's/version/${{ parameters.branch }}/g' Dockerfile
     displayName: Prepare for docker build
   - task: Docker@2
