@@ -1,0 +1,88 @@
+parameters:
+  - name: branch
+    displayName: 'Github branch to build. Default is latest. Use only the release branches names beside the latest (e.g. 11.14, 11.2, etc.).'
+    default: 'latest'
+    type: string
+
+resources:
+  repositories:
+  - repository: gitHubRepo # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: github.com_ddespic
+    name: menandmice/micetro_docs
+    ref: ${{ parameters.branch }}
+    clean: true
+
+jobs:
+- job: BuildDocs
+  displayName: Build Docs
+  pool: az-ubuntu-2404-builders 
+  
+  steps:
+  - checkout: gitHubRepo
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: 3.x
+  - script: |
+      pip install pipenv
+      pipenv install
+      pipenv run sphinx-build -M html . build/
+    displayName: Build Docs
+  - publish: build
+    artifact: micetro_docs
+    displayName: Publish Docs
+  - script: |
+      sed -i 's/version/${{ parameters.branch }}/g' Dockerfile
+    displayName: Prepare for docker build
+  - task: Docker@2
+    displayName: Login to ACR
+    inputs:
+      command: login
+      containerRegistry: micehub
+  - task: Docker@2
+    displayName: Build and Push Docker image
+    inputs:
+      command: buildAndPush
+      dockerfile: $(Build.SourcesDirectory)/Dockerfile
+      repository: micetro-docs
+      tags: ${{ parameters.branch }}
+  
+- job: PublishDocs
+  displayName: Publish docs
+  pool: BPC-Linux-ON1
+  dependsOn: BuildDocs
+
+  steps:
+  - checkout: none
+  - task: SSH@0
+    displayName: Publish docs on the web server
+    inputs:
+      sshEndpoint: 'ssh-docker-mice-dev'
+      runOptions: 'inline'
+      inline: |
+        az acr login --name micehub
+        docker pull micehub.azurecr.io/micetro-docs:${{ parameters.branch }}
+        echo ${{ parameters.branch }}
+        if [ "${{ parameters.branch }}" == "latest" ]; then
+          port=8080
+        else
+          port=$(echo ${{ parameters.branch }} | sed 's/\.//g')
+        fi
+        docker ps -f name=micetro-docs-$port
+        if [ $(docker ps -q -f name=micetro-docs-$port) ]; then
+          echo "Stopping and removing container: micetro-docs-$port"
+          # Stop the container
+          docker stop micetro-docs-$port
+          # Remove the container
+          docker rm micetro-docs-$port
+        fi
+        docker run -d -p $port:80 --name micetro-docs-$port micehub.azurecr.io/micetro-docs:${{ parameters.branch }}
+        docker ps
+        if ! grep -q "location /${{ parameters.branch }}" /etc/nginx/sites-available/docs.mice.dev; then
+          block="location /${{ parameters.branch }} { \n\tproxy_pass http://localhost:$(port);\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
+          sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev
+          systemctl restart nginx
+        fi
+
+
+  
