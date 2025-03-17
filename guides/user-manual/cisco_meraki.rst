@@ -27,7 +27,7 @@ When you have added your Meraki environment to Micetro, your networks will appea
   :width: 100%
 
 Double-click a range or scope in the **IPAM** grid to view its associated IP addresses. This opens the **IP Addresses** grid, where you can monitor the statuses of all IP addresses within the range or scope. 
-Network clients are shown as leases, indicated in the **State** column by :guilabel:`Leased`. For more information about viewing IP addresses, refer to :ref:`view-networks`.
+Network clients are shown as leases, indicated in the **State** column by :guilabel:`Leased`. When a Meraki client is synchronized in Micetro, the IP address history updates. For more information about viewing IP addresses, refer to :ref:`view-networks`.
 
 .. image:: ../../images/meraki/range-view.png
   :width: 100%
