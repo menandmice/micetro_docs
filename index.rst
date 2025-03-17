@@ -65,6 +65,7 @@ Table of Contents
     :caption: Micetro Admin Guide
     :maxdepth: 1
     
+    guides/admin-manual/admin_micetro
     guides/admin-manual/admin_license
     guides/admin-manual/access_control
     guides/admin-manual/webapp_server_management

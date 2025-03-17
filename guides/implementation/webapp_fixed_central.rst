@@ -7,29 +7,29 @@
 Allowing Micetro Web Interface to Log In to Other Central Servers
 ===================================================================
 
-By default, the Micetro Web Interface and API only allow connecting to a single Micetro Central server, determined during the first login to Micetro after installation.
+By default, the Micetro UI and API only allow connecting to a single Micetro Central server, determined during the first login to Micetro after installation.
 
 If you want to allow users to specify a custom Central server to connect to, follow the instructions below.
 
 Windows
 -------
 
-1. Edit the ``preferences.cfg`` file for the M&M Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following XML tag:
+1. Edit the ``preferences.cfg`` file for the Micetro Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following XML tag:
 
   .. code-block::
 
     <LockToDefaultServer value="0" />
 
-2. Restart the M&M Web Services Windows service.
+2. Restart the Micetro Web Services Windows service.
 
-3. After that, a "Server" field will appear on the Micetro Web Interface login page, and the "serverName" field in the API Login command will be honored.
+3. After that, a "Server" field will appear on the Micetro login page, and the "serverName" field in the API Login command will be honored.
 
 Linux
 -----
 
-1. Log into the server hosting the Web Interface.
+1. Log into the server hosting Micetro.
 
-2. Edit the ``preferences.cfg`` file for the M&M Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following XML tag:
+2. Edit the ``preferences.cfg`` file for the Micetro Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following XML tag:
 
   .. code-block::
 
@@ -41,4 +41,4 @@ Linux
 
     systemctl restart mmws
 
-4. After that, a "Server" field will appear on the Micetro Web Interface login page, and the "serverName" field in the API Login command will be honored.
+4. After that, a :guides:`Server` field will appear on the Micetro login page, and the :guilabel:`serverName` field in the API Login command will be honored.

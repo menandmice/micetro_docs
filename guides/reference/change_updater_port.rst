@@ -1,13 +1,13 @@
 .. meta::
    :description: The TCP port for the updater service can be changed. It must be changed on the mmupdate service and also on Micetro Central (mmcentral). All remote servers must listen on the same TCP port for update messages from Micetro Central.
-   :keywords: TCP Port, Men&Mice
+   :keywords: TCP Port, Micetro, Update service
 
 .. _change-updater-port:
 
 Changing the TCP Port for the Micetro Update Service
 -----------------------------------------------------
 
-The Micetro update service is listening by default on port ``4603/TCP``. Although the port ``4603/TCP`` is reserved for the Men&Mice Update service in the IANA database, there might be a different software already running on that port.
+The Micetro update service is listening by default on port ``4603/TCP``. Although the port ``4603/TCP`` is reserved for the Micetro Update service in the IANA database, there might be a different software already running on that port.
 
 The TCP port for the updater service can be changed. It must be changed on the ``mmupdate`` service and also on Micetro Central (``mmcentral``). All remote servers must listen on the same TCP port for update messages from Micetro Central. It is not possible to run the Micetro Update service on different ports for different servers.
 
@@ -29,6 +29,6 @@ Where ``12345`` is the TCP port number the Men&Mice update service should use.
 
   <UpdateAgentPortNumber value="12345" />
 
-Where ``12345`` is the TCP port number the Men&Mice update service is using on the remote system(s).
+Where ``12345`` is the TCP port number the Micetro update service is using on the remote system(s).
 
 5. Start the Micetro Central service.

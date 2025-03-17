@@ -12,7 +12,7 @@ Service Management is the place for connecting and orchestrating DNS, DHCP, and 
 
 1. Select :guilabel:`Admin` on the top navigation bar.
 
-2. Click the :guilabel:`Service Management` tab in the upper-left corner.
+2. Click the :guilabel:`Service Management` tab in the upper left corner.
 
    .. image:: ../../images/dns-context-10.6.png      
        :width: 85%
@@ -24,13 +24,13 @@ Service Management is the place for connecting and orchestrating DNS, DHCP, and 
    * In the right pane, the properties of a selected service are shown.
 
 .. note:: 
-   The Micetro web interface does not yet provide full management of IPAM services. Therefore they are not listed here, but you can still enable IPAM services by using the :guilabel:`Add Service` function. 
+   The Micetro web application does not yet provide full management of IPAM services. Therefore, they are not listed here, but you can still enable IPAM services using the :guilabel:`Add Service` function. 
 
 User Permissions and Access Management
 ---------------------------------------
 Depending on user permissions and available license keys, DNS and DHCP services and functions can be disabled or hidden.
 
-Micetro has a granular role-based :ref:`access-control` system. For DNS and DHCP administrators, it is recommended to be members of the built-in **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
+Micetro has a granular role-based :ref:`access-control` system. It is recommended that DNS and DHCP administrators be members of the built-in **DNS Administrators** and/or **IPAM Administrators** roles. To manage Appliances, it is recommended to be a member of the built-in **Administrators** role. 
 
 When not using the built-in roles, users need to be members of a role with the following permissions. Note that additional permissions might be necessary for comprehensive service management. For more information on Micetro's granular role-based access controls, see :ref:`access-control`. 
 
@@ -104,47 +104,56 @@ Micetro requires an agent to handle communication with external services. The in
 
 Adding a Service
 ----------------
-You must have permission to administer DNS to add a new service to Micetro.
+To add a new service to Micetro, you must have permission to administer DNS.
 
-Adding a new service is either a two or three-step process, depending on the type of service being added.
+Adding a new service is either a two- or three-step process, depending on the type of service being added.
 
 **To add a service**:
 
 1. On the :guilabel:`Service Management` tab, click :guilabel:`Add Service`.   
 
-2. Select the platform you wish to use. The list of options is based on your license keys. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to find the specific service you need.
+2. Select the service you want to use. The list of options is based on your license keys. You can use the **DNS**, **DHCP**, and **IPAM** filters at the top to narrow down the list. You can also use the search box to find the specific service you need. Click :guilabel:`Next`.
 
-  .. image:: ../../images/add-servive-dialog.png
-      :width: 65%
+  .. image:: ../../images/add-service-dialogbox.png
+      :width: 100%
 
-3. Select an agent: 
+3. In the :guilabel:`Properties` step, select an agent from the dropdown menu.
 
-   .. image:: ../../images/add-kea.png
-     :width: 65%
+   .. image:: ../../images/add-service-properties-tab.png
+     :width: 100%
 
+.. note::
    * This step is not required for cloud services.
 
-   * For ISC BIND and ISC DHCP this step is not required because the agent must be installed on the service host itself.
+   * For **ISC BIND** and **ISC DHCP**, this step is not required because the agent must be installed on the service host itself.
 
-   * With the exception of the above services, the agent can be installed on the Micetro Central host, the service host, or for MS DNS/DHCP, ISC Kea, Cisco Meraki, and Cisco IOS, on a different host. If you have already added a service of this type, you can select from existing agents or create a new one. A single agent can be used to manage multiple servoce connections.
+   * With the exception of the above services, the agent can be installed on the Micetro Central host, the service host, or --- for MS DNS/DHCP, ISC Kea, Cisco Meraki, and Cisco IOS --- a different host. If you have already added a service of this type, you can select from existing agents or create a new one. A single agent can be used to manage multiple service connections.
 
-   * In the case of **AuthServe**, you can select from a list of available agents that were registered in the installation process. You can also register a new agent on the :guilabel:`New Agent` tab. Enter a hostname for the agent and, optionally, the IP address. If the hostname is not resolvable, an IP address is needed here.
+      * Choose from a list of available agents registered during the installation process for **AuthServe**, **Cisco IOS**, **Kea**, **Meraki**, **MS DNS**, and **MS DHCP**. For **AuthServe**, you must specify the name and shared secret for the agent. For all of these services excepting AuthServe, Meraki, and Cisco, you can select the :guilabel:`Service host` to use the agent installed on the server.
+
+      * Register a new agent for **AuthServe**, **Cisco IOS**, **Kea**, **MS DNS**, or **MS DHCP** by selecting :guilabel:`New Agent` from the :guilabel:`Agent` dropdown. Enter a hostname or IP address (if the agent hostname is not resolvable). For **AuthServe** specificially, you also need to enter an agent secret.
    
-    .. image:: ../../images/add-authserve.png
-         :width: 65%
+    .. image:: ../../images/add-service-newagent.png
+         :width: 100%
 
-4. Enter the necessary details:
+4. Enter the necessary details for the service and click :guilabel:`Next`. The :guilabel:`Properties` step displays a sidebar with context-sensitive help specific to the type of service you select.
   * **Cloud services**: Each service type has its set of credentials in addition to the optional service name. For more details on adding cloud services, see :ref:`cloud`.
 
   * **On-premises services**:
 
     * Enter the hostname or IP address of the service/server.
 
-    * **AuthServe** uses a channel as the connection string. The channel name is mapped to a host name in a server configuration file. 'ansp' is the default channel name, which maps to localhost. To use a different host name, the format is ``"1.2.3.4#<someseceret>"``. Consult the AuthServe documentation for details.
+    * **AuthServe** uses a channel as the connection string. The channel name is mapped to a hostname in a server configuration file. 'ansp' is the default channel name, which maps to localhost. To use a different hostname, the format is ``"1.2.3.4#<someseceret>"``. Consult the AuthServe documentation for details.
+
+5. In the :guilabel:`Custom Properties` step, you can set optional custom property values for the service, such as authority and region. Click :guilabel:`Next`.
+
+6. Review the service's settings in the :guilabel:`Summary` step. If you need to make any changes to the service, use the :guilabel:`Back` button to return to any of the previous steps.
+
+7. Select :guilabel:`Add` to add the service to Micetro.
 
 Editing Services
 -----------------
-Depending on the service, you can change the name and/or custom properties for the service. For example, if you need to refer to the service by another name or if you are connecting to the service by an IP Address and the IP Address has changed. 
+Depending on the service, you can change the name and/or custom properties for the service if, for example, you need to refer to the service by another name or if you are connecting to the service by an IP address and the IP address has changed. 
 
 **To edit a service**:
 
@@ -156,7 +165,7 @@ Depending on the service, you can change the name and/or custom properties for t
 
 Other Service Actions
 ----------------------
-All actions applicable to a selected server can be accessed either on the :guilabel:`Actions` menu above the list, or the Row :guilabel:`...` menu that appears on the right-hand side when you hover over a row.
+All actions applicable to a selected server can be accessed either on the :guilabel:`Actions` menu above the list or the Row :guilabel:`...` menu that appears on the right-hand side when you hover over a row.
 
 .. csv-table::
   :header: "Action", "Description"
@@ -196,12 +205,13 @@ See the following table for detailed information about these indicators:
 
 DNS Services
 ------------
-See the following topic for information about configuring the BIND DNS platform:
+Refer to the following topics for information about configuring the BIND DNS platform and managing DNS server caches:
 
 .. toctree::
   :maxdepth: 1
 
   admin_dns_bind
+  admin_cache_management
 
 DHCP Services
 --------------
@@ -215,4 +225,3 @@ For detailed information about the different DHCP platforms and their configurat
   admin_dhcp_isc
   admin_dhcp_cisco
   admin_dhcp_meraki
-

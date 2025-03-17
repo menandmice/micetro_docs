@@ -13,7 +13,7 @@ Once you have configured the initial network settings for your appliance and add
 Appliances are accessed and managed in :guilabel:`Service Management` on the :guilabel:`Admin` page. 
 
 .. image:: ../../images/appliances-11.0.png
-   :width: 80%
+   :width: 90%
 
 
 Adding a New Appliance to Micetro
@@ -25,20 +25,27 @@ Adding a New Appliance to Micetro
 
    * To configure interfaces on the appliance, follow the instructions for `Setting an IPv4 address <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv4-address/9.6.0>`_ and `Setting an IPv6 address <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Setting-an-IPv6-address/9.6.0>`_.
 
-To add an appliance to Micetro, you must have the Administrator role.
+To add an appliance to Micetro, you must be assigned the Administrator role.
 
 **To add an appliance**:
 
-1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page, and select :guilabel:`Add Service`. The Add Service wizard opens.
+1. On the :guilabel:`Service Management` tab of the :guilabel:`Admin` page, select :guilabel:`Add Service`.
 
-   .. image:: ../../images/add-servive-dialog.png
-      :width: 65%
+2. In the **Add Service** wizard, select :guilabel:`Appliance`.
 
-2. Select :guilabel:`Appliance`. 
-3. Provide the host name for the appliance, which will also be used for the DNS and DHCP services hosted on the appliance.
-4. Optionally, enter the IP address of the appliance. The appliance name will still be used when displaying appliance information.
-5. Enable or disable appliance services. By default, **DNS** and **DHCP** services are activated.  If you require remote access to your appliance for specific purposes, you can enable the **SSH** (Secure Shell) client.
-6. Select :guilabel:`Add`. The appliance is added to the **Appliances** section, and its associated services are listed under **DNS Services** and **DHCP Services**.
+   .. image:: ../../images/add-service-appliance.png
+      :width: 90%
+
+3. On the :guilabel:`Properties` tab, enter the hostname for the appliance in the :guilabel:`Appliance name` field, which will also be used for the DNS and DHCP services hosted on the appliance.
+
+   .. note::
+      If the appliance uses a separate management interface, enter a hostname that resolves to the service interface (eth0) in the :guilabel:`Appliance name` field.
+
+4. If the appliance uses a separate management interface, enter the IP address of the management interface (eth2) in the :guilabel:`Management interface address` field. If the appliance only has a single interface configured, you can leave this field empty.
+5. Enable or disable appliance services on the :guilabel:`Enabled Services` tab. By default, **DNS** and **DHCP** services are activated.  If you require remote access to your appliance for specific purposes, you can enable the **SSH** (Secure Shell) client. You can change the enabled or disabled appliance services at any time. Refer to :ref:`set-appliance-services`.
+6. Select :guilabel:`Add`.
+
+The appliance is added to the **Appliances** grid and its associated services are listed under **DNS Services** and **DHCP Services**.
 
 Editing Appliance Name
 -----------------------
@@ -65,20 +72,31 @@ Locate the specific application, and select the relevant view option on either t
 .. image:: ../../images/appliances-view-options.png
       :width: 80%
 
+.. _set-appliance-services:
+
 Setting Appliance Services
 --------------------------
 You can enable or disable various appliance services to configure your appliance. 
 
 **To enable/disable appliance services**:
 
-1. Locate the specific appliance for which you want to set services.
-2. Select :guilabel:`Set appliance services` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
-3. Enable or disable the desired services:
+1. On the :guilabel:`Service Management` tab of the **Admin** page, select :guilabel:`Appliances` on the leftmost sidebar.
 
-   * **DNS**: Enable this service to allow your appliance to participate in domain name resolution on the network.
-   * **DHCP**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
-   * **SSH (Secure Shell)**: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting.
-   * **Firewall**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats. Disabling the firewall is NOT recommended. Disabling the firewall temporarily should only be done in situations where you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration of firewall disablement and re-enable it as soon as possible.
+   .. image:: ../../images/sidebar-appliances.png
+      :width: 25%
+
+2. Select the specific appliance for which you want to set services.
+2. On either the :guilabel:`Action` or the Row :guilabel:`...` menu, select :guilabel:`Set appliance services`.
+3. Enable or disable the desired services by checking or unchecking the checkboxes:
+
+   * **DNS service**: Enable this service to allow your appliance to participate in domain name resolution on the network.
+   * **DHCP service**: Enable this service if you want your appliance to manage dynamic IP address allocation on the network.
+   * **SSH service (Secure Shell)**: The SSH service is not enabled by default. You can enable it when secure remote access is needed, such as for troubleshooting.
+   * **Firewall service**: The firewall is a crucial security measure that protects your appliance against potential attacks. It is strongly recommended to keep the firewall enabled at all times to safeguard your server from threats.
+
+   .. warning::
+      Disabling the firewall is **NOT** recommended. Disabling the firewall temporarily should only be done in situations in which you have a deep understanding of the potential risks and have specific security measures in place to compensate for the loss of protection. Even in such cases, minimize the duration fo firewall disablement and reenable it as soon as possible.
+
 4. Select :guilabel:`Save` when you are done.
 
 Configuring DNS Resolvers 
@@ -91,6 +109,70 @@ To ensure optimal performance of your appliance, you can add the IP addresses of
 2. Select :guilabel:`Configure DNS resolvers` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 3. In the Configure DNS resolvers dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by listing their IP addresses on separate lines. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
 4. Select :guilabel:`Save` when you are done.
+
+Configuring Anycast on Appliances
+---------------------------------
+Micetro supports Anycast network configuration, which allows DNS queries to be answered by the nearest optimal server from a group of servers sharing an IP address. Anycast not only provides redundancy, but also improves the reliability of DNS services by ensuring that queries are answered by the closest available server.
+
+You can configure Anycast through either of the following routing protocols: Border Gateway Protocol (BGP) or Open Shortest Path First (OSPF).
+
+**To configure Anycast using BGP**:
+
+1. Locate the specific appliance for which you want to configure Anycast.
+2. Select :guilabel:`Configure Anycast` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3. In the :guilabel:`Configure Anycast` dialog box, select the :guilabel:`Active` checkbox to enable BGP. Unselect it to disable the BGP Anycast service.
+4. Enter the following information into the provided fields, depending on the needed configuration:
+
+   .. image:: ../../images/anycast-bgp-dialog.png
+      :width: 75%
+
+   * **Addresses**: Enter the IP addresses the appliance will advertise through the routing protocol. The appliance also automatically configures a loopback adapter with this address and provides service.
+
+   .. note::
+      The IP addresses are synced between BGP and OSPF.
+   
+   * **ASN**: Enter a number for the Autonomous System to which the DNS server belongs.
+   * **Keepalive time**: Enter the frequency, in seconds, (from 0--65535) that *keepalive* notifications are sent to the BGP peer.
+   * **Hold time**: Enter the interval, in seconds, (from 0--65535) after which a *keepalive* notification has not been received and a BGP peer is declared dead.
+   * **CLI**: If you want to use vtysh command line to configure the network setup, use the dropdown to select :guilabel:`On` and enter your password.
+   * **Router ID**: Enter a unique ID for the appliance, in dotted-decimal notation (A.B.C.D). The ID can be any unique value, but it is recommended to use a number that represents the appliance, such as its eth0 IP address. 
+   * **Neighbors**: Add the IP addresses of the routers with which the appliance forms a neighbor relationship. These routers must be capable of using BGP and be configured to form a relationship with the appliance.
+
+      1. To add a neighbor address, click the :guilabel:`Add` button and enter the required information. 
+      2. In the **Hop limit** field, enter the number of hops (1--255) permitted from the Anycast DNS server and its closest peer via IPv4.
+      3. Use the **Next-hop-self** dropdown to enable or disable the DNS server from advertising its IPv6 peering address to the BGP peer as the next hop for all IPv6 routes distributed by the DNS server. Select **Announce** to enable or **Don't announce** to disable.
+
+   * **Prefix list**: Select filtering for the input and output of the routing information, if needed.
+
+      1. **Name**: Select whether this filtering should be applied to input or output IPv4 or IPv6.
+      2. **Action**: Select whether the filter allows or denies traffic.
+      3. **Network**: Specify the network this filter should be applied to.
+
+5. Select :guilabel:`Save`.
+
+**To configure Anycast using OSPF**:
+
+1. Locate the specific appliance for which you want to configure Anycast.
+2. Select :guilabel:`Configure Anycast` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+3. In the :guilabel:`Configure Anycast` dialog box, select the :guilabel:`OSPF` tab.
+4. In the :guilabel:`Configure Anycast` dialog box, select the :guilabel:`Active` checkbox to enable OSPF. Unselect it to disable the OSPF Anycast service.
+5. Enter the following information into the provided fields, depending on the needed configuration:
+
+   .. image:: ../../images/anycast-ospf-dialog.png
+      :width: 75%
+
+   * **Addresses**: Enter the IP addresses the appliance will advertise through the routing protocol. The appliance also automatically configures a loopback adapter with this address and provides service.
+
+   .. note::
+      The IP addresses are synced between BGP and OSPF.
+
+   * **Area**: Enter the OSPF Area that the appliance will participate in, in dotted-decimal notation (A.B.C.D). Each OSPF network must contain at least a backbone area (area 0 or 0.0.0.0), but can also contain other areas through Area Border Routers (ABRs). The Area ID is only configured once for all networks, since the appliance never acts as an ABR and never uses the same Area ID on all adapters.
+   * **Hello interval**: Enter the length of time, in seconds, for which the primary router contacts its peer to indicate that it's still active.
+   * **Dead interval**: Enter the length of time (in seconds) for which the peer router maintains a route to the primary router in the absence of hello messages.
+   * **CLI**: If you want to use vtysh command line to configure the network setup, use the dropdown to select :guilabel:`On` and enter your password.
+   * **Stub**: Check the checkbox to specify the use of an OSPF subnet.
+
+6. Select :guilabel:`Save`.
 
 Configuring NTP on Appliances
 ------------------------------
@@ -190,6 +272,8 @@ The Network Settings let you set up the interfaces on the appliance. You can cre
    * **Remove a sub-interface**: Click the Row :guilabel:`...` menu for the sub-interface to delete, and then select :guilabel:`Remove`.
    * **Modify the loopback address**: On the interface's Row :guilabel:`...` menu, select :guilabel:`Edit`, and then make the desired changes.
 
+.. note::
+    To enable dedicated management interface on an MDDS appliance, follow `these instructions <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Enabling-Dedicated-Management/9.6.0?tocId=7VzLNLSMNkmvR8qSXeO24g>`_ to set the IP address in the ETH2 interface. This must be done **before** the MDDS appliance is put into Micetro-mode as described in the instructions for `Configuring DNS/DHCP Servers for Micetro <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Configuring-DNS/DHCP-Servers-for-Micetro/9.6.0>`_. This ensures that the ETH2 interface is accessible by adding the relevant firewall rules. It is not possible to edit this interface in the web application, as any changes there might block the user from managing the appliance.
 
 Configuring Static Routes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -249,10 +333,10 @@ You can shut down or restart the appliances.
 
 Removing Appliances
 -------------------
-This command is only available for the Administrator role.
+When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are **not** removed or shut down.
 
-.. Warning::
-   When you remove an appliance from Micetro, the DNS and DHCP services hosted on the appliance are removed from Micetro as well.
+.. note::
+   This command is only available for the Administrator role.
 
 **To remove an appliance from Micetro**:
 

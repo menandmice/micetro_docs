@@ -25,69 +25,75 @@ Selecting a DNS record in the list will display the following details and action
   "Actions", "Lists all available actions for the selected record."
   "Properties", "Lists the properties for the selected DNS record."
   "Related DNS Data", "Lists all related DNS records for the selected DNS record. Related DNS records all DNS records that are somehow associated with the specified record."
-  "Related IP address", "Lists the related IP address in case of an A or AAAA DNS record."
+  "Related IP address", "Lists the related IP addresses in case of an A or AAAA DNS record."
 
 Available Record Types
 ----------------------
 
 * A / AAAA
 
-* MX
-
-* TXT
-
-* NS
-
-* SOA
-
-* SRV
-
-* HINFO
-
-* CNAME
-
-* TLSA
-
-* CAA
-
-* CERT
-
-* WKS
-
-* RP
-
 * AFSDB
 
-* LOC
+* ALIAS (read-only)
 
-* SSHFP
-
-* SPF
-
-* DNSKEY (read only)
-
-* NSEC (read only)
-
-* NSEC3 (read only)
-
-* NSEC3PARAM (read only)
-
-* RRSIG (read only)
-
-* DS
-
-* DLV (read only)
-
-* HTTPS
-
-* SVCB
+* CAA
 
 * CDS
 
 * CDNSKEY
 
+* CERT
+
+* CNAME
+
 * CSYNC
 
+* DLV (read-only)
+
+* DNSKEY (read-only)
+
+* DS
+
+* HINFO
+
+* HTTPS
+
+* LOC
+
+* MX
+
+* NS
+
+* NSEC (read-only)
+
+* NSEC3 (read-only)
+
+* NSEC3PARAM (read-only)
+
+* RP
+
+* RRSIG (read-only)
+
+* SOA
+
+* SPF
+
+* SRV
+
+* SSHFP
+
+* SVCB
+
+* TLSA
+
+* TXT
+
+* URI
+
+* WKS
+
+.. note::
+  **AWS and Azure ALIAS Records:** For more information about ALIAS records in Micetro, refer to :ref:`alias-dns-records`.
 
 Creating New DNS Records
 -------------------------
@@ -97,14 +103,14 @@ Creating New DNS Records
   
 To create a new DNS record:
 
-1. Click :guilabel:`Create` in the main toolbar. The Create DNS Record dialog box opens.
+1. Click :guilabel:`Create` in the main toolbar. The **Create DNS Record** dialog box opens.
 
 2. Enter a name and select the record type. After selecting the type, the relevant fields are automatically displayed.
 
   .. warning::
     If you save a new DNS record with the wrong type, you cannot change the type later. You have to delete the record and create a new one with the correct type.
     
-3. Fill in the required information and custom fields, if there are any.
+3. Enter the required information and custom fields, if applicable.
 
    * For A records, an autocomplete behavior helps find a free IP address in a network.
 
@@ -113,31 +119,31 @@ To create a new DNS record:
        .. image:: ../../images/create-DNS-record-ip-Micetro.png
           :width: 75%
     
-  * Selecting an item from the list, will fill in the **Address** field with the next free IP address from that network, along with an indicator on the address state: ``Free``, ``Reserved``, ``Claimed`` or ``Assigned``. You'll also see insights for the selected IP address.
+  * Selecting an item from the list will fill in the **Address** field with the next free IP address from that network, along with an indicator on the address state: ``Free``, ``Reserved``, ``Claimed`` or ``Assigned``. You'll also see insights for the selected IP address.
 
       .. image:: ../../images/create-DNS-record-ipam-Micetro.png
          :width: 75%
     
-4. When you are finished, click :guilabel:`Create now` to save the new record to the zone, or :guilabel:`Add to request` to add it to the request queue. For more information about the request queue, see :ref:`webapp-workflows`.
+4. When you are finished, click :guilabel:`Create now` to save the new record to the zone or :guilabel:`Add to request` to add it to the request queue. For more information about the request queue, see :ref:`webapp-workflows`.
 
 IP Address Insights
 ^^^^^^^^^^^^^^^^^^^^
-Once you have entered/selected the IP address in the **Address** field, you can see some insights about the address and related objects. These insights give you more information about the IP address and can help you understand its state better.
+Once you have entered/selected the IP address in the **Address** field, you can see some insights about the address and related objects. These insights provide more information about the IP address and can help you to better understand its state.
 
 .. image:: ../../images/create-DNS-record-ipam-insights-Micetro.png
      :width: 75%
 |
 Hover over the :guilabel:`i` icon to see more information or a list of objects:
 
-  * *Network* will show more details on the network.
+  * *Network* shows more details on the network.
 
-  * *Properties* will show a list of all defined properties for the specified IP address.
+  * *Properties* shows a list of all defined properties for the specified IP address.
 
-  * *DNS hosts* will show a list of all defined DNS hosts for the specified IP address.
+  * *DNS hosts* shows a list of all defined DNS hosts for the specified IP address.
 
-  * *MAC address* will show a list of additional MAC information for the specified IP address.
+  * *MAC address* shows a list of additional MAC information for the specified IP address.
 
-  * *Last seen* will show a list of additional information for the specified IP address.
+  * *Last seen* shows a list of additional information for the specified IP address.
 
 .. csv-table:: IPAM Insights
   :widths: 15, 85
@@ -170,7 +176,11 @@ Throughout the system, the TTL value can either be specified in seconds or using
 Editing a DNS record
 --------------------
 
-1. Select the DNS record in the DNS record list
+You can edit an existing DNS record, if modifications are necessary.
+
+**To edit a DNS record**:
+
+1. Select the DNS record in the DNS record list.
 
 2. Either click :guilabel:`Edit` in the main task bar, or click on :guilabel:`Edit DNS record` in the row menu (...).
 
@@ -184,7 +194,9 @@ Deleting Records
 
 Deleting a record removes both the data and the physical record from the grid. 
 
-1. Select the record(s) that you want to delete. To select multiple records, hold down the Ctrl (or Cmd on Mac) key while making your selections.
+**To delete a DNS record**:
+
+1. Select the record(s) that you want to delete. To select multiple records, hold down the **Ctrl** (or **Cmd** on Mac) key while making your selections.
 
 2. Click :guilabel:`Delete` on the task bar. The record is immediately deleted from the zone.
 
@@ -201,6 +213,51 @@ If you need to revert or undo changes made to DNS records, Micetro provides a st
 
 3.	Locate the specific action you want to undo within the history.
 
-4.	Select :guilabel:`Undo` option on the Row menu (…). This action will roll back the selected change, restoring the DNS record to its previous state.
+4.	Select :guilabel:`Undo` option on the Row menu (...). This action will roll back the selected change, restoring the DNS record to its previous state.
 
 For more information about viewing object change history, see :ref:`view-change-history`.
+
+Copying or Exporting Records
+-------------------------------
+Micetro enables you to copy and/or export data. You can select up to 500 rows to export or copy at a given time. If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
+
+.. note::
+  In Micetro, it's possible to copy and/or export all kinds of data following the same process. This includes but is not limited to services, devices, records, zones, and users.
+
+**To export records**:
+
+1. Select the desired zone to view its records.
+
+2. Select the records you want to export.
+
+3. On the Row :guilabel:`...` menu, select :guilabel:`Export`.
+
+.. image:: ../../images/dns-export-copy.png
+     :width: 85%
+
+4. In the dialog box, the :guilabel:`File name` field will be populated with **DNS records**, based on your selection.
+
+5. Select a file format from the :guilabel:`Format` dropdown. Choose from the following options:
+
+   * Comma-separated values (.csv)
+
+   * Tab-separated values (.tsv)
+
+   * Excel spreadsheet (.xlsx)
+
+6. Click :guilabel:`Download`.
+
+The file(s) will be downloaded to your local drive.
+
+**To copy records**:
+
+1. Select the desired zone to view its resource records.
+
+2. Select the records you want to copy.
+
+3. On the Row :guilabel:`...` menu, select :guilabel:`Copy`.
+
+The content from the row(s) you selected will be copied to your clipboard in tab-separated (.tsv) format.
+
+.. note::
+  This is only available in environments running on localhost or that have HTTPS setup.
