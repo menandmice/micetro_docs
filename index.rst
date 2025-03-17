@@ -34,6 +34,7 @@ Table of Contents
     :maxdepth: 1
 
     release_notes
+    versions
     support
     opensource
 
