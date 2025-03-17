@@ -108,7 +108,7 @@ DHCP reservations can be created in unassigned address spaces, address pools, an
 
   * **Name**: Assign a name to identify the reserved address.
 
-  * **Reservation method**: Choose between :guilabel:`Hardware address` or :guilabl:`Client identifier`.
+  * **Reservation method**: Choose between :guilabel:`Hardware address` or :guilabel:`Client identifier`.
 
        * **Hardware address**: Enter the MAC Address (Media Access Control Address) of the network node for which this address is being reserved.
 
