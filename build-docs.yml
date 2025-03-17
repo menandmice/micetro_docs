@@ -1,17 +1,9 @@
-parameters:
-  - name: branch
-    displayName: 'Github branch to build. Default is latest. Use only the release branches names beside the latest (e.g. 11.14, 11.2, etc.).'
-    default: 'latest'
-    type: string
-
-resources:
-  repositories:
-  - repository: gitHubRepo # The name used to reference this repository in the checkout step
-    type: github
-    endpoint: github.com_ddespic
-    name: menandmice/micetro_docs
-    ref: ${{ parameters.branch }}
-    clean: true
+trigger:
+  branches:
+    include:
+      - refs/heads/latest
+      - refs/heads/11.*
+      - refs/heads/25.*
 
 jobs:
 - job: BuildDocs
@@ -19,7 +11,7 @@ jobs:
   pool: az-ubuntu-2404-builders 
   
   steps:
-  - checkout: gitHubRepo
+  - checkout: self
   - task: UsePythonVersion@0
     inputs:
       versionSpec: 3.x
@@ -33,7 +25,7 @@ jobs:
     displayName: Publish Docs
   - script: |
       ls $(Build.SourcesDirectory)
-      sed -i 's/version/${{ parameters.branch }}/g' $(Build.SourcesDirectory)/Dockerfile
+      sed -i 's/version/latest/g' $(Build.SourcesDirectory)/Dockerfile
     displayName: Prepare for docker build
   - task: Docker@2
     displayName: Login to ACR
@@ -46,7 +38,7 @@ jobs:
       command: buildAndPush
       dockerfile: $(Build.SourcesDirectory)/Dockerfile
       repository: micetro-docs
-      tags: ${{ parameters.branch }}
+      tags: latest
   
 - job: PublishDocs
   displayName: Publish docs
@@ -65,12 +57,11 @@ jobs:
       runOptions: 'inline'
       inline: |
         az acr login --name micehub
-        docker pull $(acr-docs-path):${{ parameters.branch }}
-        echo ${{ parameters.branch }}
-        if [ "${{ parameters.branch }}" == "latest" ]; then
+        docker pull $(acr-docs-path):latest
+        if [ "latest" == "latest" ]; then
           port=8080
         else
-          port=$(echo ${{ parameters.branch }} | sed 's/\.//g')
+          port=$(echo latest | sed 's/\.//g')
         fi
         docker ps -f name=micetro-docs-$port
         if [ $(docker ps -q -f name=micetro-docs-$port) ]; then
@@ -80,10 +71,10 @@ jobs:
           # Remove the container
           docker rm micetro-docs-$port
         fi
-        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):${{ parameters.branch }}
+        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):latest
         docker ps
-        if ! grep -q "location /${{ parameters.branch }}" /etc/nginx/sites-available/docs.mice.dev; then
-          block="location /${{ parameters.branch }} { \n\tproxy_pass http://localhost:$(port);\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
+        if ! grep -q "location /latest }}" /etc/nginx/sites-available/docs.mice.dev; then
+          block="location /latest { \n\tproxy_pass http://localhost:$(port);\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
           sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev
           systemctl restart nginx
         fi
