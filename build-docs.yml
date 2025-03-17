@@ -73,8 +73,9 @@ jobs:
         fi
         docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):latest
         docker ps
-        if ! grep -q "location /latest }}" /etc/nginx/sites-available/docs.mice.dev; then
-          block="location /latest { \n\tproxy_pass http://localhost:$(port);\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
+        echo $port
+        if ! grep -q "location /latest" /etc/nginx/sites-available/docs.mice.dev; then
+          block="location /latest { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
           sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev
           systemctl restart nginx
         fi
