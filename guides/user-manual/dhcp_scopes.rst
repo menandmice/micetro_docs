@@ -279,7 +279,7 @@ There are certain limitations to migrating scopes between servers of differing t
 
 * DHCP policies are MS-specific and are not migrated, i.e., by converting to client classes on Kea servers.
 * DHCP exclusions on MS DHCP servers are converted to static address spaces on the destination server by splitting up the pool in which the exclusions were. As a result, a warning will be generated in the migration.
-* Reservations inside pools on MS servers are not migrated unless the setting to "All reservations inside pools on ISC DHCP servers" is enabled.
+* Reservations inside pools on MS servers are not migrated unless the setting to **Allow reservations inside pools on ISC DHCP servers** is enabled.
 * User class options are MS-specific and are not migrated.
 * DDNS settings are MS-specific and are not migrated.
 
