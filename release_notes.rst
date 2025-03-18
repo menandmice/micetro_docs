@@ -113,6 +113,12 @@ Deprecation Announcements
 * Support for PostgreSQL 12 has been deprecated, as this database is not supported by the vendor as of November 21, 2024.
 * Support for Python 3.8 has been deprecated, as it reached its end of life on October 7, 2024.
 * Support for Suse Enterprise Linux 12 has been deprecated in Micetro as this operating system is not supported by the vendor as of October 31, 2024. More information is available `here <https://www.suse.com/lifecycle#suse-linux-enterprise-server-12>`_.
+* The following software components have been deprecated:
+
+   * mmcmd --- Instead, the ``BackupDatabase`` API has been added in version 25.1 which provides the ability to back up an SQLite database.
+   * mmedit
+   * mmlock
+
 * The Men&Mice Management Console will be deprecated in version XYZ.
 
 
