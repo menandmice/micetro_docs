@@ -10,7 +10,116 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`
+
+.. _25.1.0-release:
+25.1.0
+------
+April 14, 2025
+
+.. important::
+   Starting with version 25.1.0, Micetro version numbers will follow a calendar version methodology (Year.Release in Year.Patch). 25.1.0 indicates the first release of the year 2025 with no patches.
+
+New Features
+^^^^^^^^^^^^
+
+* **ALIAS resource records**: Micetro now supports ALIAS resource records, which are read-only. For information, refer to :ref:`alias-dns-records`
+* **AnyCast**: AnyCast network configuration is now supported through two routing protocols on MDDS. For more information, refer to :ref:`anycast-appliances`
+* **Cisco Meraki IPAM**: Micetro now supports the synchronization of non-DHCP Meraki subnets and subnets that have a DHCP relay configured, in addition to those with DHCP enabled. Refer to :ref:`cisco-meraki`
+* **Dedicated management interface for MDDS**: Micetro now allows you to enable a dedicated management interface on an MDDS appliance. Refer to :ref:`webapp-appliance-management`. When setting Micetro mode on MDDS, make sure to open the firewall on correct network interface
+* **DNS cache management**: Micetro now provides the ability to view and clear the DNS server cache in the Web Application. Refer to :ref:`admin-cache-management`
+* **Export feature**: You can now copy and export up to 500 rows from most of the datagrids in the Micetro UI. Export is available in .csv, .tsv, and .xslx formats (`KI-26187 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002CMr2AM>`_)
+* **Migrate DHCP Scopes**: The Micetro web application now enables you to migrate DHCP scopes between servers
+* **Private zones**: Micetro now provides read and write support for private zones on AWS and Azure services (`KI-25776 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EX0v2AG>`_)
+
+
+Improvements
+^^^^^^^^^^^^
+
+* Active nodes in high-availability mode now actively check whether the standby nodes have failed  and, if so, the standby nodes are set to an Offline state (`KI-025777 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EYrR2AW>`_)
+* Added ability for DHCP administrators to assign client classes to DHCP superscopes on Kea servers
+* Added ability to filter for exclusively dynamic or static IP addresses within a DHCP scope using the sidebar filter (`KI-025768 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EIoH2AW>`_)
+* Added support for Uniform Resource Identifier (URI) resource records (`KI-025623 <https://care.bluecatnetworks.com/s/detail/a8BOI0000006l972AA>`_)
+* Added a system setting that requires administrator access to be able to retrieve a list of users, groups, and/or roles (`KI-026053 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QitR2AS>`_)
+* Added a tooltip with instructions for enabling the Configure button if it's in a disabled state
+* The Token hash string for a user's username and password is now hidden from the Micetro log
+* By default, new password fields will not autofill with your Micetro password
+* Implemented separate calls to fetch DHCPv4 and DHCPv6 leases to remove the risk of error in retrieving both at the same time
+* Improved logging of object history for appliances that have been moved between address spaces
+* Improved the method by which Micetro fetches DNS server IP addresses to use in root records for primary zones and when connecting secondary zones to the DNS server
+* Improved syncing of Kea servers
+* IPv6 networks are now excluded from subnet monitoring. Micetro will only monitor IPv4 networks (`KI-025635 <https://care.bluecatnetworks.com/s/global-search/KI-025635>`_)
+* Micetro will refuse to initialize a new database if the selected encoding is case-insensitive
+* Minimum password strength constraint added as a System Setting, for which the default is 12 characters (`KI-026043 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaW52AK>`_ and `KI-025508 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX5TMAU>`_)
+* Read-only DNS records are visually indicated in the Micetro UI with a read-only icon
+* Removing an appliance from Micetro does not remove or shut down the DNS and DHCP servers hosted on that appliance
+* Significantly increased performance when sorting IP address ranges by their custom properties in large environments
+* Tasks that are unavailable when a service is detached have been disabled
+* The Add Service dialog was improved for consistency with the Micetro UI
+* The administrator user now needs to accept a legal disclaimer when logging in for the first login after installing Micetro
+* The file format for the *preferences.cfg* files has been simplified. The files will be automatically reformatted. For more information, refer to :ref:`changes-preference-file` in the documentation
+* The item selected in the filtering sidebar is now used as the default when creating zones, DHCP scopes, or DNS records
+* Users assigned the administrator role can add or remove address spaces (`KI-25782 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Eaej2AC>`_)
+* When creating a network, the folder in which the network will be created is always displayed
+* You can now add VendorClasses to Kea DHCP when defining new Custom Options in the Micetro Web Application
+* You can now import MS DHCP reservations using the data in the Description column of the Import function (`KI-025758 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Dov32AC>`_)
+
+
+Bug Fixes
+^^^^^^^^^
+
+* Added additional information when a scope name or description is updated on a MS DHCP agent
+* Adjusted error messages received when a zone name or record name is too long to be more specific
+* Corrected the spacing in AWS Route 53 in the Micetro UI, which was previously missing
+* Failover relationships created on Kea servers do not support multi-threaded (MT) communication between peers in Kea. Users must edit the config directly to create failover relationshiips with MT enabled
+* Fixed an issue during the creation of a new zone, in which a custom property with a dot in its name resulted in an error (`KI-025859 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Hx5J2AS>`_)
+* Fixed an issue during the creation of a report, in which filtering by a custom property with a space in its name resulted in a report with no data entries
+* Fixed an issue in which clearing a single node in the DNS cache cleared the whole cache
+* Fixed an issue in which a deadlock could occur when multiple threads are working on address pools
+* Fixed an issue in which the Remove from AD Site task was missing a "danger" property, so it didn't display properly as a destructive action
+* Fixed an issue preventing users from editing SNMP profiles by moving the fetch call for tasks available to each SNMP profile to prevent potential re-render loops (`KI-025983 <https://care.bluecatnetworks.com/s/detail/a8BOI000000NeKv2AK>`_)
+* Fixed an issue that caused Micetro Central to crash and added semaphores to prevent further occurrences (`KI-025997 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OAEL2A4>`_)
+* Fixed an issue that didn't remove the timestamp value from the Web Application when the "aging" parameter is removed while editing TTL for dynamic records (`KI-025957 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Mw8e2AC>`_)
+* Fixed an issue that prevented users from creating an AD forest when an AD site was selected
+* Fixed an issue that returned duplicate records when DNS cache nodes had same records cached
+* Fixed an issue that reverted changes Smart Folder filter to its original value (`KI-026044 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaXh2AK>`_)
+* Fixed an issue with fetching reservation options on ISC DHCP
+* Fixed connectivity issue with Cisco IOS servers connecting to Micetro (`KI-025719 <https://care.bluecatnetworks.com/s/detail/a8BOI000000CQRl2AO>`_)
+* Fixed a problem with the DNS cache for BIND when no cache-file was defined (`KI-026188 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002Cuj2AE>`_)
+* IP address license usage is correctly calculated for overlapping Meraki scopes, so that IP addresses across all instances are counted
+* Meraki HTTP requests can be aborted
+* Micetro can now sync a lease history from Microsoft when the hostname field contains a quotation mark (") (`KI-026093 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000001u6b2AA>`_)
+* Size of the viewname database column in mm_views has been increased to 128 characters (`KI-026094 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000001u8D2AQ>`_)
+* There is no limit to the number of services displayed on Services grid. All services are displayed
+* TSIG logic that was previously used during zone transfer has been removed and a message is considered the last message only if the last read record is an SOA record with a serial number equal to that of the first read SOA record (`KI-025874 <https://care.bluecatnetworks.com/s/detail/a8BOI000000IJVd2AO>`_)
+* Updated the error message received when a user attempts to add an AWS service that has the same credentials as an existing service for clarity
+* When a DNS server is detached and reattached, make sure it is synced
+
+
+Deprecation Announcements
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
+  When a feature is deprecated that means this will be the last version where a feature is officially supported. A feature might continue to work in future versions as long as the code is present within Micetro but there are no guarantees for that as the code is not officially maintained.
+
+* Following version 11.1, new database setups should use the UTF-8 encoding. Older setups using SQL Server or PostgreSQL with Latin1 encoding will continue to work, but users can only enter values with Latin1 characters. Setups using the embedded data storage (SQLite) can use all characters.
+* Support for Debian 6 and 7 has been deprecated, as these operating systems are not supported by the vendor. Micetro supports Debian 8 as the minimum version.
+* Support for the following drivers is deprecated for SQL Server on Windows:
+
+   * Native Client 10 OLE ``(sqlncli10.dll)``
+   * Native Client ``(sqlncli.dll)``
+   * ODBC SQL Server Driver ``(sqlsrv32.dll)`` bundled with Windows
+
+  An error is logged upon startup if no other driver is found. We recommend that all users with SQL Server on Windows and Linux use the Microsoft OBDC driver, either version 18 or 17. This is required when using UTF-8 encoded collations. Otherwise, Micetro will connect to a database using older drivers, which could result in issues such as degraded performance.
+* Support for PostgreSQL 12 has been deprecated, as this database is not supported by the vendor as of November 21, 2024.
+* Support for Python 3.8 has been deprecated, as it reached its end of life on October 7, 2024.
+* Support for Suse Enterprise Linux 12 has been deprecated in Micetro as this operating system is not supported by the vendor as of October 31, 2024. More information is available `here <https://www.suse.com/lifecycle#suse-linux-enterprise-server-12>`_.
+* The Men&Mice Management Console will be deprecated in version XYZ.
+
+
+Breaking Changes
+^^^^^^^^^^^^^^^^
+
+* Changes between versions 2.4 and 2.6 of Kea may cause failover to stop working
 
 .. _11.1.4-release:
 11.1.4
