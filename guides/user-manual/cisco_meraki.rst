@@ -27,28 +27,23 @@ When you have added your Meraki environment to Micetro, your networks will appea
   :width: 100%
 
 Double-click a range or scope in the **IPAM** grid to view its associated IP addresses. This opens the **IP Addresses** grid, where you can monitor the statuses of all IP addresses within the range or scope. 
-Network clients are shown as leases, indicated in the **State** column by :guilabel:`Leased`. When a Meraki client is synchronized in Micetro, the IP address history updates. For more information about viewing IP addresses, refer to :ref:`view-networks`.
+When a Meraki client is synchronized in Micetro, the IP address history updates. For more information about viewing IP addresses, refer to :ref:`view-networks`.
 
 .. image:: ../../images/meraki/range-view.png
-  :width: 100%
-
-You can use the :guilabel:`Cloud Networks` filter in the leftmost sidebar to filter the data grid by cloud networks only.
-
-.. image:: ../../images/cloud-networks-filter.png
   :width: 100%
 
 .. _synchronize-meraki:
 
 Viewing Synchronized Meraki Clients
 -----------------------------------
-It's possible to synchronize Meraki subnets and their clients regardless of whether the subnets have DHCP enabled or disabled, or have configured a DHCP relay to another server. A subnet is associated with a :guilabel:`Range`. For Meraki subnets, the **Authority** column of the **IPAM** data grid is populated with the Meraki cloud network the subnet belongs to.
+It's possible to synchronize Meraki subnets and their clients regardless of whether the subnets have DHCP enabled or disabled, or have configured a DHCP relay to another server. A subnet is associated with a :guilabel:`Range`. For Meraki subnets, the **Authority** column of the **IPAM** data grid is populated with the Meraki network to which the subnet belongs.
 
 Multiple subnets can be associated with the same range, in which case the **Authority** column is populated with **Overlap**. Depending on how many ranges the subnet is associated with, the **Authority** column also displays the names or the number of associated ranges.
 
 .. image:: ../../images/meraki-ipam-overlap.png
   :width: 90%
 
-Clients on DHCP networks may have a :guilabel:`Leased` or :guilabel:`Reserved` **State**, dependng on whether the client has been temporarily or permanently assigned.
+Clients on DHCP networks may have a :guilabel:`Leased` or :guilabel:`Reserved` **State**, depending on whether the client has been temporarily or permanently assigned.
 
 Clients on non-DHCP networks have an :guilabel:`Assigned` **State** and their **Discovery Type** is API, which can be viewed in the Inspector.
 
@@ -59,9 +54,9 @@ For more information about how Meraki data is displayed in Micetro, refer to :re
 
 Managing VLANs and LANs
 -----------------------
-VLANs and single LANs are displayed as :guilabel:`Scope` instances on the **IPAM** page. The tabs at the bottom of the leftmost sidebar allow you to filter the grid by DHCP service. Each Meraki network with DHCP enabled is displayed as a DHCP service, so you can use this filter to limit the view to the VLANs/single LANs of a specific network.
+In Micetro, Meraki networks are cloud networks. You can use the :guilabel:`Cloud Networks` filter in the left sidebar to filter the data grid by an individual cloud network and view the VLANs/single LANs of that specific network.
 
-.. image:: ../../images/ipam-services-filter.png
+.. image:: ../../images/cloud-networks-filter.png
   :width: 100%
 
 Overlapping LANs 
