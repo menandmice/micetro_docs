@@ -21,7 +21,7 @@ An ``admin`` user can configure synchronization parameters for your Meraki integ
 
 Viewing Your Meraki Infrastructure
 ----------------------------------
-When you have added your Meraki environment to Micetro, your networks will appear on the **IPAM** page. Micetro retrieves DHCP data from all networks that have an MX appliance. 
+When you have added your Meraki environment to Micetro, your networks will appear on the **IPAM** page. Micetro retrieves subnets from all networks that have an MX appliance. 
 
 .. image:: ../../images/ipam-grid-25.1.png
   :width: 100%
