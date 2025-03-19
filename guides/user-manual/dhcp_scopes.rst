@@ -10,7 +10,7 @@ DHCP Scopes
 This section shows you how to perform specific actions in Micetro associated with maintaining your DHCP scopes, such as creating and modifying reservations, setting scope options, and working with split scopes.
 
 .. note::
-  For informatin about how to create scopes, see :ref:`networks`.
+  For information about how to create scopes, refer to :ref:`networks`.
 
 Managing DHCP Pools
 --------------------
@@ -266,33 +266,45 @@ If a scope is no longer needed but you want to keep it for potential future use,
 
 Migrating Scopes
 ----------------
-In the case that you need to decommission a server or there has been an outage, you can migrate a DHCP scope to a new server to keep your network operational.
+Micetro allows you to migrate DHCP scopes to servers in different locations. This may be needed to keep your network operational in the case that you are decommissioning a server or there has been an outage.
 
 .. note::
-  To migrate DHCP scopes, you must be a DHCP administrator with full read access to the source server(s) and scope(s), including reading options. You must also have permissions to create scopes on the destination server.
+  To migrate DHCP scopes, you must have full read access to the source server(s) and scope(s), including reading options. You must also have permissions to create scopes on the destination server.
 
-Micetro not only allows you to migrate scopes between servers of the same type, but also between different server types, i.e., from a Microsoft DHCP server to an ISC server. Additionally, it's possible to migrate scopes from servers that are dead or unreachable. Refer to :ref:`migrate-unreachable-limitations` below.
+Micetro not only allows you to migrate scopes between servers of the same type, but also between different server types. There are some limitations to the different server types you can migrate to and from, and what can be migrated along with a scope between different server types. Refer to :ref:`migrate-server-types` below.
 
-Limitations to Migrating Between Server Types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Additionally, it's possible to migrate scopes from servers that are dead or unreachable, but with some limitations. Refer to :ref:`migrate-unreachable` below.
+
+.. _migrate-server-types:
+
+Migrating Between Server Types
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can migrate scopes to and from the following server types:
+
+* From MS DHCP to either ISC/MDDS or Kea
+* From Cisco IOS to ISC/MDDS, Kea, or MS
+
 There are certain limitations to migrating scopes between servers of differing types:
 
-* DHCP policies are MS-specific and are not migrated, i.e., by converting to client classes on Kea servers.
+* DHCP policies are MS-specific and are not migrated.
 * DHCP exclusions on MS DHCP servers are converted to static address spaces on the destination server by splitting up the pool in which the exclusions were. As a result, a warning will be generated in the migration.
 * Reservations inside pools on MS servers are not migrated unless the setting to **Allow reservations inside pools on ISC DHCP servers** is enabled.
 * User class options are MS-specific and are not migrated.
 * DDNS settings are MS-specific and are not migrated.
-* When migrating scopes from an MS server to an ISC or Kea server, the MS DHCP option 51 (scope lease time) becomes the scope settings ``default-lease-time`` and ``max-lease-time``. 
+* When migrating scopes from an MS server to an ISC/MDDS or Kea server, the MS DHCP option 51 (scope lease time) becomes the following scope configurations:
 
-.. _migrate-unreachable-limitations:
+  * ``default-lease-time`` and ``max-lease-time`` on ISC/MDDS.
+  * ``valid-lifetime`` and ``max-lifetime`` on Kea. 
 
-Limitations to Migrating From Unreachable Servers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _migrate-unreachable:
+
+Migrating From Unreachable Servers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 There are certain limitations to migrating scopes from dead or unreachable servers:
 
 * If the server is a MS DHCP server and a backup exists (the **Perform backup of MS and ISC DHCP servers** system setting is enabled), DHCP options are migrated from the backup for both scope and reservations.
 * DHCP policies and their options are not migrated.
-* Scope settings on ISC and Kea servers are not migrated.
+* Scope configurations on ISC and Kea servers are not migrated.
 * Leases are migrated, if requested, as long as Micetro has not been restarted since it last synchronized successfully with the server.
 * The source scope is always left unchanged, since it isn't possible to remove or disable a scope on a dead server.
 
@@ -313,7 +325,7 @@ Migrating a DHCP Scope
     .. image:: ../../images/migrate-dhcp-scope.png
       :width: 80%
 
-  * **Source server**: Use the dropdown to select the server from which you want to migrate the scope.
+  * **Source server**: Use the dropdown to select the server from which you want to migrate the scope. If you select multiple scopes, the dropdown populates only with the servers on which all the selected scopes exist.
   * **Destination server**: Use the dropdown to select the server to which you want to migrate the scope.
   * **Destination failover relationship**: Use the dropdown to select a failover relationship for the destination server.
   * **Migrate leases**: Check this box if you also want to migrate the leases within the scope.
@@ -334,7 +346,7 @@ Migrating a DHCP Scope
 
 5. If there are no errors or warnings---or you want to proceed despite a warning---select :guilabel:`Migrate`.
 
-A progress bar is displayed in the dialog box, which shows you how much is left to migrate. When the progress bar reaches 100%, a ta-dah! sound indicates that the migration is complete.
+A progress bar is displayed in the dialog box, which shows you how much is left to migrate and indicates when the migration is complete.
 
 Results of Migrating Scopes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
