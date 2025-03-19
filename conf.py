@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Micetro - 11.2"
+project = "Micetro - 25.1"
 copyright = "2025, BlueCat"
 author = "BlueCat"
 
