@@ -282,6 +282,7 @@ There are certain limitations to migrating scopes between servers of differing t
 * Reservations inside pools on MS servers are not migrated unless the setting to **Allow reservations inside pools on ISC DHCP servers** is enabled.
 * User class options are MS-specific and are not migrated.
 * DDNS settings are MS-specific and are not migrated.
+* When migrating scopes from an MS server to an ISC or Kea server, the MS DHCP option 51 (scope lease time) becomes the scope settings ``default-lease-time`` and ``max-lease-time``. 
 
 .. _migrate-unreachable-limitations:
 
