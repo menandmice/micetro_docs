@@ -41,23 +41,22 @@ Improvements
 * Added ability to filter for exclusively dynamic or static IP addresses within a DHCP scope using the sidebar filter (`KI-025768 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EIoH2AW>`_)
 * Added a new synchronization mechanism for Kea DHCP servers to improve syncing performance
 * Added support for Uniform Resource Identifier (URI) resource records on BIND (`KI-025623 <https://care.bluecatnetworks.com/s/detail/a8BOI0000006l972AA>`_)
-* Added a system setting that requires administrator access to be able to retrieve a list of users, groups, and/or roles (`KI-026053 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QitR2AS>`_)
+* Added a system setting that requires user administrator access to be able to retrieve a list of users, groups, and/or roles. Defaults to ``true`` on new installations, but ``false`` for existing users (`KI-026053 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QitR2AS>`_)
 * Added a tooltip with instructions for enabling the Configure button if it's in a disabled state
 * By default, new password fields will not autofill with your Micetro password
 * Implemented separate calls to fetch DHCPv4 and DHCPv6 leases to remove the risk of error in retrieving both at the same time
-* Implemented support for the "next-server" field in the DHCP server configuration (`KI-025843 <https://care.bluecatnetworks.com/s/detail/a8BOI000000GKu12AG>`_)
 * Improved logging of object history for appliances that have been moved between address spaces
 * Improved the method by which Micetro fetches DNS server IP addresses to use in root records for primary zones and when connecting secondary zones to the DNS server
 * Improved PXE support for Kea servers and added DHCP configuration options, like client classes, to those that can be edited in the Micetro Web Application (`KI-025642 <https://care.bluecatnetworks.com/s/detail/a8BOI0000007idp2AA>`_)
 * Increased the limit of subranges you can allocate from a range at a given time to 512 (`KI-025504 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX59MAE>`_)
 * Micetro will refuse to initialize a new database if the selected encoding is case-insensitive
+* Micetro uses a parser to handle BIND configuration as of version 11.0. More information is available in the :ref:`bind-file-structure` reference article (`KI-026056 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Qlhd2AC>`_)
 * Minimum password strength constraint added as a System Setting, for which the default is 12 characters (`KI-026043 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaW52AK>`_ and `KI-025508 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX5TMAU>`_)
 * Read-only DNS records are visually indicated in the Micetro UI with a read-only icon
 * Significantly increased performance when sorting IP address ranges by their custom properties in large environments
 * The Add Service dialog was improved for consistency with the Micetro UI
-* The administrator user now needs to accept a legal disclaimer when logging in for the first login after installing Micetro
 * The item selected in the left sidebar is now used as the default when creating zones, DHCP scopes, or DNS records
-* Users assigned the administrator role can add or remove address spaces (`KI-25782 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Eaej2AC>`_)
+* Users assigned the administrator role can add or remove address spaces (`KI-025782 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Eaej2AC>`_)
 * When creating a network, the folder in which the network will be created is always displayed
 * You can now add VendorClasses to Kea DHCP when defining new Custom Options in the Micetro Web Application
 * You can now edit subnet ranges in the Micetro Web Application (`KI-025520 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX6RMAU>`_)
@@ -70,7 +69,7 @@ Bug Fixes
 * Added additional information when a scope name or description is updated on a MS DHCP agent (**KI**)
 * Failover relationships created on Kea servers do not support multi-threaded (MT) communication between peers in Kea. Users must edit the config directly to create failover relationships with MT enabled
 * Fixed an issue affecting database performance for customers with MS SQL server
-* Fixed an issue in which a user wiTH only the built-in administrator role could not see the System Settings when only one of the core license keys (DNS or IPAM) was present (`KI-026062 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Qxyv2AC>`_)
+* Fixed an issue in which a user with only the built-in administrator role could not see the System Settings when only one of the core license keys (DNS or IPAM) was present (`KI-026062 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Qxyv2AC>`_)
 * Fixed an issue during the creation of a new zone, in which a custom property with a dot in its name resulted in an error (`KI-025859 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Hx5J2AS>`_)
 * Fixed an issue during the creation of a secondary zone on a BIND server in the Web Application that prevented creation of the zone file (`KI-026175 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000029SD2AY>`_)
 * Fixed an issue during the creation of a report, in which filtering by a custom property with a space in its name resulted in a report with no data entries
@@ -145,7 +144,7 @@ Bug Fixes
 
 * Fixed an issue in which the User Agent header was not set properly for outgoing requests to the Meraki API (`KI-026180 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002A4v2AE>`_)
 * Fixed an issue preventing Azure network interfaces on virtual machines from syncing on subnets by making Azure ID comparison case-insensitive (`KI-026181 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002A6X2AU>`_)
-* Fixed a potential thread locking in the code when removing DHCP scopes from failover relationships (`KI-26000 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OJ4j2AG>`_)
+* Fixed a potential thread locking in the code when removing DHCP scopes from failover relationships (`KI-026000 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OJ4j2AG>`_)
 * HTTP proxy system settings, if defined, are now used in all Meraki communication
 * Meraki synchronization parameters can now be set in Micetro's Advanced System Settings, reducing the number of calls to the Meraki API (`KI-026177 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000029nB2AQ>`_)
 * Resolved an issue that prevented the modification of MX records when importing them to Micetro (`KI-025866 <https://care.bluecatnetworks.com/s/detail/a8BOI000000I34H2AS>`_)
