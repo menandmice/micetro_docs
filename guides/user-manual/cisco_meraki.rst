@@ -36,9 +36,9 @@ When a Meraki client is synchronized in Micetro, the IP address history updates.
 
 Viewing Synchronized Meraki Clients
 -----------------------------------
-It's possible to synchronize Meraki subnets and their clients regardless of whether the subnets have DHCP enabled or disabled, or have configured a DHCP relay to another server. A subnet is associated with a :guilabel:`Range`. For Meraki subnets, the **Authority** column of the **IPAM** data grid is populated with the Meraki network to which the subnet belongs.
+It's possible to synchronize Meraki subnets and their clients regardless of whether the subnets have DHCP enabled or disabled, or have configured a DHCP relay to another server. A subnet is associated with a :guilabel:`Range`.
 
-Multiple subnets can be associated with the same range, in which case the **Authority** column is populated with **Overlap**. Depending on how many ranges the subnet is associated with, the **Authority** column also displays the names or the number of associated ranges.
+For Meraki subnets, the **Authority** column of the **IPAM** data grid is populated with the Meraki network to which the subnet belongs. Multiple subnets can be associated with the same range, in which case the **Authority** column is populated with **Overlap**. Depending on how many ranges the subnet is associated with, the **Authority** column also displays the names or the number of associated ranges.
 
 .. image:: ../../images/meraki-ipam-overlap.png
   :width: 90%
