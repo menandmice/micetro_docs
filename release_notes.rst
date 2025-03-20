@@ -54,7 +54,6 @@ Improvements
 * Minimum password strength constraint added as a System Setting, for which the default is 12 characters (`KI-026043 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaW52AK>`_ and `KI-025508 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX5TMAU>`_)
 * Read-only DNS records are visually indicated in the Micetro UI with a read-only icon
 * Significantly increased performance when sorting IP address ranges by their custom properties in large environments
-* Tasks that are unavailable when a service is detached have been disabled
 * The Add Service dialog was improved for consistency with the Micetro UI
 * The administrator user now needs to accept a legal disclaimer when logging in for the first login after installing Micetro
 * The item selected in the left sidebar is now used as the default when creating zones, DHCP scopes, or DNS records
@@ -68,22 +67,18 @@ Bug Fixes
 ^^^^^^^^^
 
 * Active nodes in High-Availability mode now actively check whether the standby nodes have failed  and, if so, the standby nodes are set to an Offline state (`KI-025777 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EYrR2AW>`_)
-* Added additional information when a scope name or description is updated on a MS DHCP agent
-* Added a more descriptive message for when Akamai Edge throws an "Invalid Timestamp" error when adding related records
-* Adjusted error messages received when a zone name or record name is too long to be more specific
-* Corrected the spacing in AWS Route 53 in the Micetro UI, which was previously missing
+* Added additional information when a scope name or description is updated on a MS DHCP agent (**KI**)
 * Failover relationships created on Kea servers do not support multi-threaded (MT) communication between peers in Kea. Users must edit the config directly to create failover relationships with MT enabled
+* Fixed an issue affecting database performance for customers with MS SQL server
 * Fixed an issue in which a user wiTH only the built-in administrator role could not see the System Settings when only one of the core license keys (DNS or IPAM) was present (`KI-026062 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Qxyv2AC>`_)
 * Fixed an issue during the creation of a new zone, in which a custom property with a dot in its name resulted in an error (`KI-025859 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Hx5J2AS>`_)
-* Fixed an issue during the creation of a secondary zone on a BIND server in the Web Application that prevented creation of the zone file (`KI-026175 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000029SD2AY>`)
+* Fixed an issue during the creation of a secondary zone on a BIND server in the Web Application that prevented creation of the zone file (`KI-026175 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000029SD2AY>`_)
 * Fixed an issue during the creation of a report, in which filtering by a custom property with a space in its name resulted in a report with no data entries
-* Fixed an issue in which clearing a single node in the DNS cache cleared the whole cache
-* Fixed an issue in which a deadlock could occur when multiple threads are working on address pools
 * Fixed an issue in which the Remove from AD Site task was missing a "danger" property, so it didn't display properly as a destructive action
 * Fixed an issue preventing users from editing SNMP profiles by moving the fetch call for tasks available to each SNMP profile to prevent potential re-render loops (`KI-025983 <https://care.bluecatnetworks.com/s/detail/a8BOI000000NeKv2AK>`_)
 * Fixed an issue that caused Micetro Central to potentially crash when working witih IP addresses (`KI-025997 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OAEL2A4>`_)
 * Fixed an issue that didn't remove the timestamp value from the Web Application when the "aging" parameter is removed while editing TTL for dynamic records (`KI-025957 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Mw8e2AC>`_)
-* Fixed an issue that prevented users from creating an AD forest when an AD site was selected
+* Fixed an issue that prevented users from creating a DHCP superscope without adding a DHCP scope (**KI**)
 * Fixed an issue that returned duplicate records when DNS cache nodes had same records cached
 * Fixed an issue that returned IP addresses that had already been assigned when using the ``NextFreeAddress`` API call (`KI-026010 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OgkT2AS>`_)
 * Fixed an issue that reverted changes Smart Folder filter to its original value (`KI-026044 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaXh2AK>`_)
@@ -92,14 +87,12 @@ Bug Fixes
 * Fixed a problem with the DNS cache for BIND when no cache-file was defined (`KI-026188 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002Cuj2AE>`_)
 * IP address license usage is correctly calculated for overlapping Meraki scopes, so that IP addresses across all instances are counted
 * IPv6 networks are now excluded from subnet monitoring. Micetro will only monitor IPv4 networks (`KI-025635 <https://care.bluecatnetworks.com/s/global-search/KI-025635>`_)
-* Meraki HTTP requests can be aborted
 * Micetro can now sync a lease history from Microsoft when the hostname field contains a quotation mark (") (`KI-026093 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000001u6b2AA>`_)
 * Removing an appliance from Micetro does not remove or shut down the DNS and DHCP servers hosted on that appliance
 * Size of the viewname database column in mm_views has been increased to 128 characters (`KI-026094 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000001u8D2AQ>`_)
-* The Token hash string for a user's username and password is now hidden from the Micetro log
+* The Token hash string for a user's username and password is now hidden from the Micetro log (**KI**)
 * There is no limit to the number of services displayed on Services grid. All services are displayed
 * TSIG logic that was previously used during zone transfer has been removed and a message is considered the last message only if the last read record is an SOA record with a serial number equal to that of the first read SOA record (`KI-025874 <https://care.bluecatnetworks.com/s/detail/a8BOI000000IJVd2AO>`_)
-* Updated the error message received when a user attempts to add an AWS service that has the same credentials as an existing service for clarity
 * When a DNS server is detached and reattached, make sure it is synced
 * You can now import MS DHCP reservations using the data in the Description column of the Import function (`KI-025758 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Dov32AC>`_)
 
