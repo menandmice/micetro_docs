@@ -29,7 +29,7 @@ Operating systems
   "**Linux**",,,,,,
   "Redhat Enterprise Linux 8", "N", "Y", "Y", "Y", "N/A", "Y"
   "Redhat Enterprise Linux 9", "N", "Y", "Y", "Y", "N/A", "Y"
-  "Suse Enterprise Linux 15", "N", "Y", "Y", "Y", "N/A", "Y"
+  "Suse Enterprise Linux 12/15", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 16.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 18.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
   "Ubuntu 20.04 LTS", "N", "Y", "Y", "Y", "N/A", "Y"
@@ -50,7 +50,7 @@ Databases
   :header: "Database", "Supported version(s)", "Operating system of Micetro Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 13-16, "Windows, Linux"
+  "PostgreSQL", 12-16, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
   "Microsoft SQL Server", "2016, 2019, 2022", "Windows"
 
