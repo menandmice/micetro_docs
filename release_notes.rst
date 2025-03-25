@@ -132,7 +132,7 @@ Deprecation Announcements
 Breaking Changes
 ^^^^^^^^^^^^^^^^
 
-* Changes between versions 2.4 and 2.6 of Kea may cause failover to stop working
+* **Failover relationships on Kea created through the Micetro Web Application now explicitly disable multi-threaded communication between the peers.** With Kea v2.6, the default value for ``enable-multi-threading`` in High Availability configurations has been changed to ``true``. This is a potentially breaking change that could affect existing failover relationships in which both the DHCPv4 and DHCPv6 services are enabled and configured to use the same port number. With multi-threading enabled, the services will both try to bind the same port. The latter service will fail and, therefore, not be started. This will not occur if ``enable-multi-threading`` is explicitly set to ``false``. If multi-threaded communication between the peers is required, manually configure the Kea Control Agent, the DHCPv4 service, and the DHCPv6 service to use different port numbers, e.g., ``8000``, ``8001``, and ``8002``, respectively.
 
 .. _11.1.4-release:
 11.1.4
