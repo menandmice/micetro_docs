@@ -24,7 +24,7 @@ jobs:
     artifact: micetro_docs
     displayName: Publish Docs
   - script: |
-      echo $(Build.SourceBranch)
+      echo $(Build.SourceBranchName)
       sed -i 's/version/$(Build.SourceBranch)/g' $(Build.SourcesDirectory)/Dockerfile
     displayName: Prepare for docker build
   - task: Docker@2
@@ -61,7 +61,7 @@ jobs:
         if [ "$(Build.SourceBranch)" == "latest" ]; then
           port=8080
         else
-          port=$(echo $(Build.SourceBranch) | sed 's/\.//g')
+          port=$(echo $(Build.SourceBranchName) | sed 's/\.//g')
         fi
         docker ps -f name=micetro-docs-$port
         if [ $(docker ps -q -f name=micetro-docs-$port) ]; then
