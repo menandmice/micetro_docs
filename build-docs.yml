@@ -9,7 +9,8 @@ jobs:
 - job: BuildDocs
   displayName: Build Docs
   pool: az-ubuntu-2404-builders 
-  
+  variables:
+  - group: azure-secrets
   steps:
   - checkout: self
   - task: UsePythonVersion@0
