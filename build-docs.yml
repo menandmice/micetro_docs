@@ -24,14 +24,14 @@ jobs:
     artifact: micetro_docs
     displayName: Publish Docs
   - script: |
-      ls $(Build.SourcesDirectory)
+      echo $(Build.SourceBranch)
       sed -i 's/version/$(Build.SourceBranch)/g' $(Build.SourcesDirectory)/Dockerfile
     displayName: Prepare for docker build
   - task: Docker@2
     displayName: Login to ACR
     inputs:
       command: login
-      containerRegistry: $(acr-registry)
+      containerRegistry: micehub
   - task: Docker@2
     displayName: Build and Push Docker image
     inputs:
@@ -56,7 +56,7 @@ jobs:
       sshEndpoint: 'ssh-docker-mice-dev'
       runOptions: 'inline'
       inline: |
-        az acr login --name $(acr-registry)
+        az acr login --name micehub
         docker pull $(acr-docs-path):$(Build.SourceBranch)
         if [ "$(Build.SourceBranch)" == "latest" ]; then
           port=8080
