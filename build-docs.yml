@@ -71,11 +71,11 @@ jobs:
           # Remove the container
           docker rm micetro-docs-$port
         fi
-        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):$(Build.SourceBranch)
+        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):$(Build.SourceBranchName)
         docker ps
         echo $port
-        if ! grep -q "location /$(Build.SourceBranch)" /etc/nginx/sites-available/docs.mice.dev; then
-          block="location /$(Build.SourceBranch) { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
+        if ! grep -q "location /$(Build.SourceBranchName)" /etc/nginx/sites-available/docs.mice.dev; then
+          block="location /$(Build.SourceBranchName) { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
           sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev
           systemctl restart nginx
         fi
