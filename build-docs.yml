@@ -26,7 +26,7 @@ jobs:
     displayName: Publish Docs
   - script: |
       ls $(Build.SourcesDirectory)
-      sed -i 's/version/$(Build.SourceBranch)/g' $(Build.SourcesDirectory)/Dockerfile
+      sed -i 's/version/$(Build.SourceBranchName)/g' $(Build.SourcesDirectory)/Dockerfile
     displayName: Prepare for docker build
   - task: Docker@2
     displayName: Login to ACR
@@ -39,7 +39,7 @@ jobs:
       command: buildAndPush
       dockerfile: $(Build.SourcesDirectory)/Dockerfile
       repository: micetro-docs
-      tags: $(Build.SourceBranch)
+      tags: $(Build.SourceBranchName)
   
 - job: PublishDocs
   displayName: Publish docs
@@ -58,11 +58,11 @@ jobs:
       runOptions: 'inline'
       inline: |
         az acr login --name micehub
-        docker pull $(acr-docs-path):$(Build.SourceBranch)
-        if [ "$(Build.SourceBranch)" == "latest" ]; then
+        docker pull $(acr-docs-path):$(Build.SourceBranchName)
+        if [ "$(Build.SourceBranchName)" == "latest" ]; then
           port=8080
         else
-          port=$(echo $(Build.SourceBranch) | sed 's/\.//g')
+          port=$(echo $(Build.SourceBranchName) | sed 's/\.//g')
         fi
         docker ps -f name=micetro-docs-$port
         if [ $(docker ps -q -f name=micetro-docs-$port) ]; then
@@ -72,11 +72,11 @@ jobs:
           # Remove the container
           docker rm micetro-docs-$port
         fi
-        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):$(Build.SourceBranch)
+        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):$(Build.SourceBranchName)
         docker ps
         echo $port
-        if ! grep -q "location /$(Build.SourceBranch)" /etc/nginx/sites-available/docs.mice.dev; then
-          block="location /$(Build.SourceBranch) { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
+        if ! grep -q "location /$(Build.SourceBranchName)" /etc/nginx/sites-available/docs.mice.dev; then
+          block="location /$(Build.SourceBranchName) { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
           sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev
           systemctl restart nginx
         fi
