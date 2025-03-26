@@ -32,7 +32,7 @@ jobs:
     displayName: Login to ACR
     inputs:
       command: login
-      containerRegistry: $acr-registry
+      containerRegistry: micehub
   - task: Docker@2
     displayName: Build and Push Docker image
     inputs:
@@ -57,7 +57,7 @@ jobs:
       sshEndpoint: 'ssh-docker-mice-dev'
       runOptions: 'inline'
       inline: |
-        az acr login --name $(acr-registry)
+        az acr login --name micehub
         docker pull $(acr-docs-path):$(Build.SourceBranchName)
         if [ "$(Build.SourceBranchName)" == "latest" ]; then
           port=8080
