@@ -1,0 +1,84 @@
+trigger:
+  branches:
+    include:
+      - refs/heads/latest
+      - refs/heads/11.[0-9]*
+      - refs/heads/25.[0-9]*
+
+jobs:
+- job: BuildDocs
+  displayName: Build Docs
+  pool: az-ubuntu-2404-builders 
+  
+  steps:
+  - checkout: self
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: 3.x
+  - script: |
+      pip install pipenv
+      pipenv install
+      pipenv run sphinx-build -M html . build/
+    displayName: Build Docs
+  - publish: build
+    artifact: micetro_docs
+    displayName: Publish Docs
+  - script: |
+      echo $(Build.SourceBranchName)
+      sed -i 's/version/$(Build.SourceBranchName)/g' $(Build.SourcesDirectory)/Dockerfile
+    displayName: Prepare for docker build
+  - task: Docker@2
+    displayName: Login to ACR
+    inputs:
+      command: login
+      containerRegistry: micehub
+  - task: Docker@2
+    displayName: Build and Push Docker image
+    inputs:
+      command: buildAndPush
+      dockerfile: $(Build.SourcesDirectory)/Dockerfile
+      repository: micetro-docs
+      tags: $(Build.SourceBranchName)
+  
+- job: PublishDocs
+  displayName: Publish docs
+  pool: BPC-Linux-ON1
+  dependsOn: BuildDocs
+  
+  variables:
+  - group: azure-secrets
+
+  steps:
+  - checkout: none
+  - task: SSH@0
+    displayName: Publish docs on the web server
+    inputs:
+      sshEndpoint: 'ssh-docker-mice-dev'
+      runOptions: 'inline'
+      inline: |
+        az acr login --name micehub
+        docker pull $(acr-docs-path):$(Build.SourceBranchName)
+        if [ "$(Build.SourceBranchName)" == "latest" ]; then
+          port=8080
+        else
+          port=$(echo $(Build.SourceBranchName) | sed 's/\.//g')
+        fi
+        docker ps -f name=micetro-docs-$port
+        if [ $(docker ps -q -f name=micetro-docs-$port) ]; then
+          echo "Stopping and removing container: micetro-docs-$port"
+          # Stop the container
+          docker stop micetro-docs-$port
+          # Remove the container
+          docker rm micetro-docs-$port
+        fi
+        docker run -d -p $port:80 --name micetro-docs-$port $(acr-docs-path):$(Build.SourceBranchName)
+        docker ps
+        echo $port
+        if ! grep -q "location /$(Build.SourceBranchName)" /etc/nginx/sites-available/docs.mice.dev; then
+          block="   location /$(Build.SourceBranchName) { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host \$host;\n\tproxy_set_header X-Real-IP \$remote_addr;\n\tproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto \$scheme;\n    }"
+          echo "$(azdevops-pass)" | sudo -S sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev 2>/dev/null
+          echo "$(azdevops-pass)" | sudo -S systemctl restart nginx 2>/dev/null
+        fi
+
+
+  
