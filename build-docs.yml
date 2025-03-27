@@ -2,15 +2,14 @@ trigger:
   branches:
     include:
       - refs/heads/latest
-      - refs/heads/11.*
-      - refs/heads/25.*
+      - refs/heads/11.[0-9]*
+      - refs/heads/25.[0-9]*
 
 jobs:
 - job: BuildDocs
   displayName: Build Docs
   pool: az-ubuntu-2404-builders 
-  variables:
-  - group: azure-secrets
+  
   steps:
   - checkout: self
   - task: UsePythonVersion@0
@@ -25,7 +24,7 @@ jobs:
     artifact: micetro_docs
     displayName: Publish Docs
   - script: |
-      ls $(Build.SourcesDirectory)
+      echo $(Build.SourceBranchName)
       sed -i 's/version/$(Build.SourceBranchName)/g' $(Build.SourcesDirectory)/Dockerfile
     displayName: Prepare for docker build
   - task: Docker@2
@@ -76,9 +75,9 @@ jobs:
         docker ps
         echo $port
         if ! grep -q "location /$(Build.SourceBranchName)" /etc/nginx/sites-available/docs.mice.dev; then
-          block="location /$(Build.SourceBranchName) { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host $host;\n\tproxy_set_header X-Real-IP $remote_addr;\n\tproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto $scheme;\n}"
-          sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev
-          systemctl restart nginx
+          block="   location /$(Build.SourceBranchName) { \n\tproxy_pass http://localhost:$port;\n\tproxy_set_header Host \$host;\n\tproxy_set_header X-Real-IP \$remote_addr;\n\tproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;\n\tproxy_set_header X-Forwarded-Proto \$scheme;\n    }"
+          echo "$(azdevops-pass)" | sudo -S sed -i "/location \/latest/i \\ $block" /etc/nginx/sites-available/docs.mice.dev 2>/dev/null
+          echo "$(azdevops-pass)" | sudo -S systemctl restart nginx 2>/dev/null
         fi
 
 
