@@ -379,11 +379,11 @@ If any of the following issues arise during migration and were not caught during
 * Options or scope properties could not be set.
 * Address pools or exclusions could not be added.
 * Reservations could not be added.
+* Leases could not be created.
 * Client classifications or policies could not be configured.
 * Failover could not be configured.
 
 If any of the following occur, the migration will not be rolled back:
 
-* Leases are not successfully created.
 * The source scope was not successfully disabled or removed.
 * The scope could not be enabled on the destination server.
