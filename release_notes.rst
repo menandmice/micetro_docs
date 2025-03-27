@@ -24,11 +24,11 @@ New Features
 ^^^^^^^^^^^^
 
 * **ALIAS resource records**: Micetro now supports ALIAS resource records, which are read-only. For information, refer to :ref:`alias-dns-records`
-* **AnyCast**: AnyCast network configuration is now supported through two routing protocols on MDDS. For more information, refer to :ref:`anycast-appliances`
+* **Anycast**: Anycast network configuration is now supported through two routing protocols on MDDS. For more information, refer to :ref:`anycast-appliances`
 * **Cisco Meraki IPAM**: Micetro now supports the synchronization of non-DHCP Meraki subnets and subnets that have a DHCP relay configured, in addition to those with DHCP enabled. Refer to :ref:`cisco-meraki`
 * **Dedicated management interface for MDDS**: Micetro now allows you to enable a dedicated management interface on an MDDS appliance. Refer to :ref:`webapp-appliance-management`. When setting Micetro mode on MDDS, make sure to open the firewall on correct network interface
 * **DNS cache management**: Micetro now provides the ability to view and clear the DNS server cache in the Web Application. Refer to :ref:`admin-cache-management`
-* **Export feature**: You can now copy and export up to 500 rows from most of the datagrids in the Micetro UI. Export is available in .csv, .tsv, and .xslx formats (`KI-26187 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002CMr2AM>`_)
+* **Export feature**: You can now copy and export up to 500 rows from most of the data grids in the Micetro UI. Export is available in .csv, .tsv, and .xslx formats (`KI-26187 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002CMr2AM>`_)
 * **Migrate DHCP Scopes**: The Micetro web application now enables you to migrate DHCP scopes between servers. For more information, refer to :ref:`migrate-scopes`
 * **Private zones**: Micetro now provides read and write support for private zones on AWS and Azure services (`KI-25776 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EX0v2AG>`_)
 
@@ -75,7 +75,7 @@ Bug Fixes
 * Fixed an issue during the creation of a report, in which filtering by a custom property with a space in its name resulted in a report with no data entries
 * Fixed an issue in which the Remove from AD Site task was missing a "danger" property, so it didn't display properly as a destructive action
 * Fixed an issue preventing users from editing SNMP profiles by moving the fetch call for tasks available to each SNMP profile to prevent potential re-render loops (`KI-025983 <https://care.bluecatnetworks.com/s/detail/a8BOI000000NeKv2AK>`_)
-* Fixed an issue that caused Micetro Central to potentially crash when working witih IP addresses (`KI-025997 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OAEL2A4>`_)
+* Fixed an issue that caused Micetro Central to potentially crash when working with IP addresses (`KI-025997 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OAEL2A4>`_)
 * Fixed an issue that didn't remove the timestamp value from the Web Application when the "aging" parameter is removed while editing TTL for dynamic records (`KI-025957 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Mw8e2AC>`_)
 * Fixed an issue that prevented users from creating a DHCP superscope without adding a DHCP scope (**KI**)
 * Fixed an issue that returned duplicate records when DNS cache nodes had same records cached
