@@ -4,40 +4,75 @@
 
 .. _reference:
 
-Micetro Reference Articles
+Micetro reference articles
 ##########################
 
 .. toctree::
-  :maxdepth: 1
+   :caption: Free trial references
+   :maxdepth: 1
 
-  permissions
-  cloud_minimum_permissions
-  free_trial_best_practices
-  free_trial_checklist
-  ip_count
-  aws_multi_account
-  aws_route53
-  meraki_mapping
-  configure_azure_dns
-  dynamic_zones
-  powerdns
-  external_scripts
-  named-conf_location
-  named-checkconf_timeout
-  change_updater_port
-  setup_msa
-  bind_file_structure
-  disable_auto_zone-transfer
-  dns_controller_include
-  dns_controller_generate
-  central_python_ldap
-  snmp_oid
-  psql_ha
-  mssql_ha
-  access_control_example
-  send_license_info
-  acl_convert
-  acl_console
-  health_bar_information
-  ie_eol
-  alias_dns_records
+   free_trial_best_practices
+   free_trial_checklist
+
+
+.. toctree::
+   :caption: Setup, configuration, and customization
+   :maxdepth: 1
+
+   permissions
+   named-conf_location
+   bind_file_structure
+   change_updater_port
+   central_python_ldap
+   ha_tweaks_central
+   psql_ha
+   mssql_ha
+   webapp_custom_links
+   install_azure
+
+.. toctree::
+   :caption: Cloud configuration
+   :maxdepth: 1
+ 
+   cloud_minimum_permissions
+   aws_multi_account
+   configure_azure_dns
+
+.. toctree::
+   :caption: DNS
+   :maxdepth: 1
+ 
+   dynamic_zones
+   powerdns
+   dns_controller_include
+   dns_controller_generate
+   alias_dns_records
+ 
+ 
+.. toctree::
+   :caption: IPAM
+   :maxdepth: 1
+ 
+   ip_count
+   meraki_mapping
+   snmp_oid
+
+.. toctree::
+   :caption: Administration
+   :maxdepth: 1
+ 
+   access_control_example
+   send_license_info
+
+ 
+.. toctree::
+   :caption: Management Console
+   :maxdepth: 1
+ 
+   acl_console
+   acl_convert
+   health_bar_information
+   named-checkconf_timeout
+   setup_msa
+   disable_auto_zone-transfer
+   ie_eol

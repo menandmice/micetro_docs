@@ -42,9 +42,9 @@ Table of Contents
      :maxdepth: 1
 
      guides/implementation/implementation
+     guides/implementation/install_windows
+     guides/implementation/install_linux
      guides/implementation/configuration
-     guides/implementation/advanced_config
-     guides/implementation/updates
 
 .. toctree::
      :caption: Micetro User Guide
@@ -70,6 +70,7 @@ Table of Contents
     guides/admin-manual/webapp_server_management
     guides/admin-manual/failover_management
     guides/admin-manual/snmp_profiles
+    guides/implementation/xdns_redundancy
     guides/admin-manual/admin_event_hooks
     guides/admin-manual/address_spaces
     guides/admin-manual/admin_custom_properties

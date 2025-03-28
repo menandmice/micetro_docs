@@ -12,6 +12,3 @@ Advanced configuration
 
   console_advanced_settings
   central_ha
-  ha_tweaks_central
-  xdns_redundancy
-  webapp_custom_links
