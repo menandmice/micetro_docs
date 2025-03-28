@@ -48,6 +48,7 @@ To maximize the capabilities of Cloud network management in Micetro, it is highl
 * route53:DeleteHostedZone
 * route53:ListResourceRecordSets
 * route53:ChangeResourceRecordSets
+* route53:AssociateVPCWithHostedZone
 
 Cloud Network Management Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,5 +79,3 @@ In an AWS multi-account setup, additional permissions are necessary. For more in
 * In the accounts where roles are assumed from the Micetro user, roles must already be configured, with the account containing the Micetro user designated as a trusted entity.
 
 * Furthermore, the roles assumed in these accounts should be assigned the DNS and/or cloud network permissions outlined in the required/recommended permission list above.
-
-

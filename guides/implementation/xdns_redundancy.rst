@@ -30,7 +30,7 @@ Creating/Modifying xDNS Profiles
 ---------------------------------
 To create or edit an xDNS profile, you must have administrative access within Micetro to the DNS Services you want to include. 
 
-* To **create** a new profile, click :guilabel:`Create Profile` in the lower-rigt corner of the xDNS Profiles list.
+* To **create** a new profile, click :guilabel:`Create Profile` in the lower-right corner of the xDNS Profiles list.
 * To **edit** a profile, select the relevant profile, and then select :guilabel:`Edit profile` on the row :guilabel:`...` menu. You can also double-click the profile.
 
 Each profile has the following properties: 
@@ -80,7 +80,7 @@ xDNS profiles initially do not include any zones.
 **To add zones to xDNS profiles**:
 
 1. Go to the **DNS** page.
-2. In the filtering sidebar, select :guilabel:`Primary Zones`, if not already selected. xDNS only supports primary zones. 
+2. In the filtering sidebar, select either :guilabel:`Primary zones` or :guilabel:`Private zones`, if not already selected. xDNS only supports primary and private zones. 
 3. On the :guilabel:`Actions` menu, select :guilabel:`Add to xDNS profile`. You can also select this option on the row :guilabel:`...` menu.
 
    .. image:: ../../images/add-to-xdns-profile.png
@@ -120,4 +120,3 @@ xDNS zones and the API
 ----------------------
 
 xDNS zones are represented as single instances in the API, with the Authority value denoting the profile they belong to. Individual zone instances remain accessible, for example by calling GetDNSZones and filtering for each DNS service via the dnsServerRef parameter. 
-
