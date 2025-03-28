@@ -10,13 +10,13 @@ DNS Resource Records
 Overview
 --------
 
-Each zone in the Domain Name System (DNS) contains a set of resource records that define how requests are processed or delegated within that zone. To view the resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the toolbar at the top or on the row menu (**...**). Once you have opened the zone, you can view, edit, and manipulate the resource records.
+Each zone in the Domain Name System (DNS) contains a set of resource records that define how requests are processed or delegated within that zone. To view the resource records for a particular zone, you can double-click the zone, or select the zone and then click :guilabel:`Open` on the task bar at the top or on the Row :guilabel:`...` menu. Once you have opened the zone, you can view, edit, and manipulate the resource records.
 
 .. image:: ../../images/DNS-records-Micetro-10.5.png
   :width: 90%
   :align: center
 |
-Selecting a DNS record in the list will display the following details and actions for the record in the :guilabel:`Inspector` pane on the right.
+Selecting a DNS record in the list will display the following details and actions for the record in the Inspector on the right.
 
 .. csv-table::
   :header: "Item", "Description"
@@ -125,6 +125,8 @@ To create a new DNS record:
          :width: 75%
     
 4. When you are finished, click :guilabel:`Create now` to save the new record to the zone or :guilabel:`Add to request` to add it to the request queue. For more information about the request queue, see :ref:`webapp-workflows`.
+
+It's also possible to create DNS records through the Micetro API.
 
 IP Address Insights
 ^^^^^^^^^^^^^^^^^^^^

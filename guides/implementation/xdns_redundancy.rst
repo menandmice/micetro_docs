@@ -17,6 +17,13 @@ xDNS profiles
 ^^^^^^^^^^^^^
 xDNS Profiles group together two or more DNS services that share the authority of a list of zones. Any changes made to these zones, within or outside Micetro, are automatically synchronized across all DNS services within the profile. In case of conflicts, Micetro has a built-in conflict resolution strategy to handle them.
 
+Creating/Modifying xDNS Profiles 
+---------------------------------
+To create or edit an xDNS profile, you must have administrative access within Micetro to the DNS Services you want to include. 
+
+* To **create** a new profile, click :guilabel:`Create Profile` in the lower-right corner of the **xDNS Profiles** grid.
+* To **edit** a profile, select the relevant profile, and then select :guilabel:`Edit profile` on the Row :guilabel:`...` menu. You can also double-click the profile.
+
 Each profile has the following properties: 
 
 * **Name**: A unique identifier for the profile. 
