@@ -8,8 +8,7 @@ trigger:
 jobs:
 - job: BuildDocs
   displayName: Build Docs
-  pool:
-    vmImage: 'ubuntu-latest' 
+  pool: Linux 
   
   steps:
   - checkout: self
