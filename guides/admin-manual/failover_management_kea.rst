@@ -169,8 +169,6 @@ Viewing Kea DHCP Failover Relationships
 ---------------------------------------
 You can view existing Kea DHCP failover relationships at the server level. Micetro automatically detects and syncs all existing failover relationships. 
 
-You can retrieve failover relationships through the API using the ``GetDHCPFailoverRelationship``.
-
 **To view failover relationships in Micetro**:
 
 1.	On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
@@ -198,18 +196,6 @@ Each Kea DHCP server supports the creation of one Kea DHCPv4 and one Kea DHCPv6 
 If a Kea DHCP server functions as a secondary server in a failover relationship, creating additional relationships with it as a primary server is not possible.
 
 Micetro currently supports two failover server types in a relationship: one primary and one secondary. Therefore, creating failover relationships with backup servers is not supported.
-
-**To create a failover relationship through the API**:
-
-API supports creation using ``AddDHCPFailoverRelationship``.
-
-The following parameters are used for the ``AddDHCPFailoverRelationship`` command:
-
-* **Name**: The name of the DHCP failover relationship to be created.
-* **PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
-* **SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
-* **FailoverMode**: The DHCP failover mode to use.
-* **ServiceType**: DHCPv4 or DHCPv6, defaults to DHCPv4.
 
 **To create a failover relationship in Micetro**:
 
@@ -250,7 +236,3 @@ Removing Failover Relationships
 1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to modify, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 2.	Select the relevant relationship, and then select :guilabel:`Remove` on the Row :guilabel:`...` menu.
 3.	Decide whether to delete or disable the secondary scopes.
-
-   -OR-
-
-   * The API offers ``RemoveDHCPFailoverRelationships``. Just specify a reference to the Kea DHCP service, the name of the failover relationship, and the proper deconfigure action.
