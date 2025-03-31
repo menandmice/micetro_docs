@@ -65,11 +65,11 @@ DNS/DHCP server software
   :widths: 40, 60
 
   "**DNS**"
-  "Microsoft DNS", "2016, 2019, 2022"
+  "Microsoft DNS", "2016, 2019, 2022, 2025"
   "ISC BIND", "9.18--9.20"
   "PowerDNS Authoritative Server", "3.4--4.9"
   "**DHCP**"
-  "Microsoft DHCP", "2016, 2019, 2022"
+  "Microsoft DHCP", "2016, 2019, 2022, 2025"
   "ISC DHCP", "4.4.1--4.4.3"
   "ISC Kea", "2.4, 2.6"
   "Cisco IOS with DHCP support", "12.3 - 16.09"
