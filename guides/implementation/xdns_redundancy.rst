@@ -78,13 +78,9 @@ xDNS profiles do not include any zones initially. To add a DNS zone to an xDNS p
 
 **To add zones to xDNS profiles**:
 
-1. On the **DNS** page, select :guilabel:`Primary Zones` in the left sidebar, if not already selected.
-
-  .. note::
-    xDNS only supports primary zones.
-
-2. Select the zone(s) you want to add to an xDNS profile.
-3. Use the :guilabel:`Action` menu or Row :guilabel:`...` menu to select :guilabel:`Add to xDNS profile`.
+1. Go to the **DNS** page.
+2. In the left sidebar, select either :guilabel:`Primary zones` or :guilabel:`Private zones`, if not already selected. xDNS only supports primary and private zones. 
+3. On the :guilabel:`Actions` menu, select :guilabel:`Add to xDNS profile`. You can also select this option on the row :guilabel:`...` menu.
 
    .. image:: ../../images/add-to-xdns-profile.png
      :width: 60%

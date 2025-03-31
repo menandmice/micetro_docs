@@ -50,6 +50,8 @@ Available Record Types
 
 * DLV (read-only)
 
+* DNAME
+
 * DNSKEY (read-only)
 
 * DS
@@ -62,6 +64,8 @@ Available Record Types
 
 * MX
 
+* NAPTR
+
 * NS
 
 * NSEC (read-only)
@@ -69,6 +73,8 @@ Available Record Types
 * NSEC3 (read-only)
 
 * NSEC3PARAM (read-only)
+
+* PTR
 
 * RP
 
