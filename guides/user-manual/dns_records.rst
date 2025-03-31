@@ -32,61 +32,65 @@ Available Record Types
 
 * A / AAAA
 
-* MX
-
-* TXT
-
-* NS
-
-* SOA
-
-* SRV
-
-* HINFO
-
-* CNAME
-
-* TLSA
-
-* CAA
-
-* CERT
-
-* WKS
-
-* RP
-
 * AFSDB
 
-* LOC
-
-* SSHFP
-
-* SPF
-
-* DNSKEY (read only)
-
-* NSEC (read only)
-
-* NSEC3 (read only)
-
-* NSEC3PARAM (read only)
-
-* RRSIG (read only)
-
-* DS
-
-* DLV (read only)
-
-* HTTPS
-
-* SVCB
+* CAA
 
 * CDS
 
 * CDNSKEY
 
+* CERT
+
+* CNAME
+
 * CSYNC
+
+* DLV (read-only)
+
+* DNAME
+
+* DNSKEY (read-only)
+
+* DS
+
+* HINFO
+
+* HTTPS
+
+* LOC
+
+* NAPTR
+
+* NS
+
+* NSEC (read-only)
+
+* NSEC3 (read-only)
+
+* NSEC3PARAM (read-only)
+
+* PTR
+
+* RP
+
+* RRSIG (read-only)
+
+* SOA
+
+* SPF
+
+* SRV
+
+* SSHFP
+
+* SVCB
+
+* TLSA
+
+* TXT
+
+* WKS
 
 
 Creating New DNS Records
