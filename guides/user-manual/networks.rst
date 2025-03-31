@@ -127,6 +127,50 @@ Associated DHCP objects such as Leases, Address Pools, Exclusions, Reservations,
 
 3. You are prompted to confirm your decision to delete the(se) network(s). Click :guilabel:`Yes` to delete the range, or :guilabel:`No` to cancel.
 
+Copying or Exporting Networks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Micetro enables you to copy and/or export data, including networks. You can select up to 500 rows to export or copy at a given time.  If you want to export or copy more than 500 rows, refer to :ref:`webapp-reporting`.
+
+.. note::
+  In Micetro, it's possible to copy and/or export all kinds of data following the same process. This includes but is not limited to services, devices, records, zones, and users.
+
+**To export networks**:
+
+1. Select the network(s) you want to export.
+
+2. On the Row :guilabel:`...` menu, select :guilabel:`Export`.
+
+.. image:: ../../images/networks-export-copy.png
+     :width: 85%
+
+3. In the dialog box, the :guilabel:`File name` field will be populated with **networks**, based on your selection.
+
+.. image:: ../../images/networks-export.png
+  :width: 75%
+
+4. Select a file format from the :guilabel:`Format` dropdown. Choose from the following options:
+
+   * Comma-separated values (.csv)
+
+   * Tab-separated values (.tsv)
+   
+   * Excel spreadsheet (.xlsx)
+
+5. Click :guilabel:`Download`.
+
+The file(s) will be downloaded to your local drive.
+
+**To copy networks**:
+
+1. Select the network(s) you want to copy.
+
+2. On the Row :guilabel:`...` menu, select :guilabel:`Copy`.
+
+The content from the row(s) you selected will be copied to your clipboard in tab-separated (.tsv) format.
+
+.. note::
+  This is only available in environments running on localhost or that have HTTPS setup.
+
 Viewing IP Addresses within Networks
 -------------------------------------
 To view a list of IP addresses within a specific network, double-click the network. This opens a list where you can view and edit the properties of individual IP addresses. You can filter the IP address list, so it displays only the IP addressees you need. 
@@ -151,6 +195,13 @@ To view a list of IP addresses within a specific network, double-click the netwo
   * On the :guilabel:`Action` menu you can use the :guilabel:`Find next free address` option to select the next available IP address within the range. Alternatively, selecting :guilabel:`Find random free address` will randomly select an available IP address.
 
   * **Viewing DHCPv6 scopes**: Unlike DHCPv4 scopes, which display all addresses within a scope, a DHCPv6 scope only shows addresses that are currently in use or have been recently used. At the bottom of the view, you can see the number of active IP addresses being displayed. An IP address with the status **free** indicates that it was recently used. To see more information about an address, select :guilabel:`View History` for that address.
+
+**Filtering by Dynamic or Static Allocation**:
+
+You can filter to view exclusively dynamic or static IP addresses within a DHCP scope using the :guilabel:`Allocation` section on the filtering sidebar. Applicable addresses will be displayed depending on related pools and exclusions.
+
+.. image:: ../../images/networks-filter-scopes.png
+  :width: 75%
 
 IP Address State
 ^^^^^^^^^^^^^^^^^

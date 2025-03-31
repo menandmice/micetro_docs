@@ -4,13 +4,13 @@
 
 .. _configuring-dhcp-scopes:
 
-Configuring DHCP Scopes
-=======================
+DHCP Scopes
+============
 
 This section shows you how to perform specific actions in Micetro associated with maintaining your DHCP scopes, such as creating and modifying reservations, setting scope options, and working with split scopes.
 
 .. note::
-  For informatin about how to create scopes, see :ref:`networks`.
+  For information about how to create scopes, refer to :ref:`networks`.
 
 Managing DHCP Pools
 --------------------
@@ -108,7 +108,7 @@ DHCP reservations can be created in unassigned address spaces, address pools, an
 
   * **Name**: Assign a name to identify the reserved address.
 
-  * **Reservation method**: Choose between :guilabel:`Hardware address` or :guilabl:`Client identifier`.
+  * **Reservation method**: Choose between :guilabel:`Hardware address` or :guilabel:`Client identifier`.
 
        * **Hardware address**: Enter the MAC Address (Media Access Control Address) of the network node for which this address is being reserved.
 
@@ -263,3 +263,127 @@ If a scope is no longer needed but you want to keep it for potential future use,
 1.	Select the scope you want to enable or disable.
 2.	Select :guilabel:`Disable scope` or :guilabel:`Enable scope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 3.	Click :guilabel:`Yes` to confirm.
+
+Migrating Scopes
+----------------
+Micetro allows you to migrate DHCP scopes to servers in different locations. This may be needed to keep your network operational in the case that you are decommissioning a server or there has been an outage.
+
+.. note::
+  To migrate DHCP scopes, you must have full read access to the source server(s) and scope(s), including reading options. You must also have permissions to create scopes on the destination server.
+
+Micetro not only allows you to migrate scopes between servers of the same type, but also between different server types. There are some limitations to the different server types you can migrate to and from, and what can be migrated along with a scope between different server types. Refer to :ref:`migrate-server-types` below.
+
+Additionally, it's possible to migrate scopes from servers that are dead or unreachable, but with some limitations. Refer to :ref:`migrate-unreachable` below.
+
+.. _migrate-server-types:
+
+Migrating Between Server Types
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can migrate scopes to and from the following server types:
+
+* From MS DHCP to either ISC/MDDS or Kea
+* From Cisco IOS to ISC/MDDS, Kea, or MS
+
+There are certain limitations to migrating scopes between servers of differing types:
+
+* DHCP policies are MS-specific and are not migrated.
+* DHCP exclusions on MS DHCP servers are converted to static address spaces on the destination server by splitting up the pool in which the exclusions were. As a result, a warning will be generated in the migration.
+* Reservations inside pools on MS servers are not migrated unless the setting to **Allow reservations inside pools on ISC DHCP servers** is enabled.
+* User class options are MS-specific and are not migrated.
+* DDNS settings are MS-specific and are not migrated.
+* When migrating scopes from an MS server to an ISC/MDDS or Kea server, the MS DHCP option 51 (scope lease time) becomes the following scope configurations:
+
+  * ``default-lease-time`` and ``max-lease-time`` on ISC/MDDS.
+  * ``valid-lifetime`` and ``max-lifetime`` on Kea. 
+
+.. _migrate-unreachable:
+
+Migrating From Unreachable Servers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+There are certain limitations to migrating scopes from dead or unreachable servers:
+
+* If the server is a MS DHCP server and a backup exists (the **Perform backup of MS and ISC DHCP servers** system setting is enabled), DHCP options are migrated from the backup for both scope and reservations.
+* DHCP policies and their options are not migrated.
+* Scope configurations on ISC and Kea servers are not migrated.
+* Leases are migrated, if requested, as long as Micetro has not been restarted since it last synchronized successfully with the server.
+* The source scope is always left unchanged, since it isn't possible to remove or disable a scope on a dead server.
+
+Migrating a DHCP Scope
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+  We recommend that you configure both definitions and server-level option values on the destination server to be the same as those on the source server **before** migrating a scope.
+
+  If any options configured on the scope(s) are not defined on the destination server, you will receive a warning that these options will not be migrated. You will also receive a warning if the options defined on the source and destination servers differ such that the migrated scope has different effective options (due to the inheritance of option values).  
+
+1. On the **IPAM** data grid, select the scope you want to migrate.
+
+2. Use the :guilabel:`Action` or Row :guilabel:`...` menu to select :guilabel:`Migrate DHCP scope`.
+
+3. In the **Migrate** dialog box, configure the scope migration:
+
+    .. image:: ../../images/migrate-dhcp-scope.png
+      :width: 80%
+
+  * **Source server**: Use the dropdown to select the server from which you want to migrate the scope. If you select multiple scopes, the dropdown populates only with the servers on which all the selected scopes exist.
+  * **Destination server**: Use the dropdown to select the server to which you want to migrate the scope.
+  * **Destination failover relationship**: Use the dropdown to select a failover relationship for the destination server.
+  * **Migrate leases**: Check this box if you also want to migrate the leases within the scope.
+  * **Enable scope on destination server**: Check the box if you want to enable the scope on the destination server immediately.
+  * **After migration, source scope is**: Select whether the source scope will be **Unchanged**, **Disabled**, or **Deleted** after the scope has been migrated.
+
+    .. note::
+      To delete the source scope after migration, you must have permissions to delete ranges.
+
+      To disable the source scope after migration, you must have the "Access to enable/disable scopes" permission on the underlying range.
+
+4. Select :guilabel:`Verify`.
+
+   A pre-flight for the migration is then run, which returns a list of any problems, e.g., errors or warnings. If the pre-flight returns any errors, the migration cannot proceed. Warnings are returned for non-critical issues, which typically inform you that something cannot be migrated.
+
+  .. image:: ../../images/scope-migration-error.png
+    :width: 100%
+
+5. If there are no errors or warnings---or you want to proceed despite a warning---select :guilabel:`Migrate`.
+
+A progress bar is displayed in the dialog box, which shows you how much is left to migrate and indicates when the migration is complete.
+
+Results of Migrating Scopes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following options defined on the source server may have these results during a scope migration:
+
+**Reservations**:
+
+* Reservations in DHCP groups on ISC DHCP servers will be migrated to a group with a matching name or, if no matching group exists, it will not be migrated to a group. In the latter case, you will receive a warning upon verifying the migration.
+* Reservations with multiple addresses that span different subnets on ISC DHCP will not be migrated.
+
+**Superscopes**:
+
+* If the scope to be migrated is part of a superscope, it will be migrated to a superscope with a matching name on the destination server. If no matching superscope is found, you will receive a warning upon verifying the migration and the scope will not be added to a superscope on the destination server.
+
+**Client classifications**:
+
+* Client class associations on a Kea server will be migrated to another Kea server as long as the matching client class (matched by name, expression, and BOOTP options) is found on the destination server. If no matching client class if found, you will receive a warning informing you that the client class association will not be migrated.
+
+**Failover relationships**:
+
+* It's possible to select a new failover relationship for a migrated scope. Once you've selected the new failover relationship, or the source scope is already in a failover relationship, you must **delete** the source scope. Otherwise, you will receive an error and cannot proceed with the migration.
+
+  .. important::
+    The scope being migrated cannot already exist on the primary or secondary server in the failover relationship. If it does, and only one server in the failover relationship should change, you should use Micetro's failover management features to deconfigure the old relationship and add the scope to a new failover relationship. For more information about managing failover, refer to :ref:`failover-management`.
+
+Scope Migration Rollback
+^^^^^^^^^^^^^^^^^^^^^^^^
+If any of the following issues arise during migration and were not caught during the pre-flight, the migration will be rolled back:
+
+* Options or scope properties could not be set.
+* Address pools or exclusions could not be added.
+* Reservations could not be added.
+* Leases could not be created.
+* Client classifications or policies could not be configured.
+* Failover could not be configured.
+
+If any of the following occur, the migration will not be rolled back:
+
+* The source scope was not successfully disabled or removed.
+* The scope could not be enabled on the destination server.

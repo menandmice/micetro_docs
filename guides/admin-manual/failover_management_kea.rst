@@ -107,7 +107,7 @@ Configuring the DHCP Agent
 
 The ``preferences.cfg`` file can be used to fine-tune the Kea High Availability setup within the DHCP agent.
 
-* ``keaReplicateConfig``: If set to 0, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is **1**. Example: ``<keaReplicateConfig value=”0”/>``
+* ``keaReplicateConfig``: If set to ``0``, Micetro will not replicate between Kea DHCP servers in a High Availability setup. The default value is ``1``. Example: ``<keaReplicateConfig value=”0”/>``.
 
 * ``keaControlAgentHost``: Specifies the host to use when connecting to a control agent. The default value is ``127.0.0.1`` if the Kea Control Agent is running on the same machine, or it is the IP address of the server added to Micetro.
 
@@ -196,6 +196,9 @@ Each Kea DHCP server supports the creation of one Kea DHCPv4 and one Kea DHCPv6 
 If a Kea DHCP server functions as a secondary server in a failover relationship, creating additional relationships with it as a primary server is not possible.
 
 Micetro currently supports two failover server types in a relationship: one primary and one secondary. Therefore, creating failover relationships with backup servers is not supported.
+
+.. note::
+  Failover relationships created on Kea servers do not support the use of multi-threaded (MT) communication between peers in Kea. To create failover relationships with MT enabled, you must edit the config directly.
 
 **To create a failover relationship in Micetro**:
 

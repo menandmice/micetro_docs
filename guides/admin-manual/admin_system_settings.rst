@@ -74,7 +74,11 @@ Authentication
 --------------
 Configure authentication methods, including single sign-on, LDAP integration, and external login providers. 
 
-When **single sign-on** is activated, users do not need to authenticate when logging in to Micetro. For more information about single sign-on, see :ref:`webapp-external-auth`.
+When **single sign-on** is activated, users do not have to authenticate when logging in to Micetro. For more information about Single sign-on, see :ref:`webapp-external-auth`.
+
+Local Authentication
+^^^^^^^^^^^^^^^^^^^^
+Set a minimum password length for all users in Micetro. The default length is 12 characters.
 
 External Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -194,7 +198,7 @@ Specify various monitoring-related settings, including the following:
 Subnet Monitoring
 ^^^^^^^^^^^^^^^^^
 Enable subnet monitoring
-  When enabled, the system monitors the free addresses in DHCP address pools and subnets and performs an action if the number of free addresses drops below a user-definable threshold. For further configuration, see :ref:`admin-subnet-monitoring-events`.
+  When enabled, the system monitors the IPv4 free addresses in DHCP address pools and subnets and performs an action if the number of free addresses goes below a user-definable threshold. However, IPv6 addresses are excluded from subnet monitoring. For further configuration, see :ref:`admin-subnet-monitoring-events`.
 
   .. note::
     The global subnet monitoring setting can be overridden for individual subnets by changing the setting explicitly for the subnet. Refer to :ref:`ipam-subnet-monitoring` for information on how to change monitoring settings for individual subnets.
@@ -279,9 +283,10 @@ Here you can configure advanced system settings, such as specifying a SSL Certif
   "Timeout in seconds for named-checkconf", "Specifies the timeout value, in seconds, for named-checkonf files."
   "Synchronize DNSSEC signed zones immediately after editing", "Determines whether DNSSEC signed zones should be synchronized immediately after they are changed. If selected, the zones are synchronized immediately. [1]_"
   "Use case sensitive comparison when updating custom properties from scripts", "Specifies whether to take case sensitivity into account when comparing custom properties from scripts."
-  "Include A/AAAA records when checking for *Edit apex records access*", "Determines whether A and AAAA records are considered when verifying access to edit apex (root) records."
-  "Web app landing page", "By default, the Micetro homepage is the landing page for the system. You can change the landing page, if desired, to either the DNS or IPAM page. Clicking the Micetro logo will take you to the landing page."
+  "Include A/AAAA records when checking for *Edit apex records* access", "Determines whether A and AAAA records are considered when verifying access to edit apex (root) records."
+  "Web app landing page", "By default, the Micetro frontpage is the landing page for the system. Clicking the Micetro logo will take you to the landing page."
   "Web app server host", "Used to specify which host the web application is running on in order for auto update to work for the web application. Default is localhost (same server as Micetro Central)."
+  "Require User Administrator access to be able to list users, groups and roles", "Select to require a user to have User Administrator access in order to retrieve information about users, groups, and roles in Micetro."
   
 
 .. [1] Enabling this feature can affect the performance of the system.

@@ -51,6 +51,21 @@ To locate devices quickly, use the Quick Filter search box at the top of the Dev
 
 Creating a list of favorite devices allows for fast access to the devices you use most frequently. Use the star icon next to the search box to add a selected device to favorites and access your favorites in the left-hand filtering sidebar.
 
+Locating Devices from a Linked IP Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To quickly locate and view a device from an IP address:
+
+1. On the **Networks** tab, select the IP address.
+2. Use the row :guilabel:`...` menu to select :guilabel:`Reveal device`.
+
+.. image:: ../../images/devices-reveal-device.png
+  :width: 70%
+
+The system takes you to the **Devices** tab where the IP address' linked device is highlighted.
+
+.. note::
+  If an IP address is not linked to a device, the :guilabel:`Reveal device` option is not displayed. You can link a device by selecting :guilabel:`Link device` or see Linking IP Addresses to Devices below for further instructions.
+
 Viewing IP Address Details
 ---------------------------
 The inspector on the right-hand side of the device list provides detailed information about the IP addresses linked to the selected device. 
@@ -62,8 +77,15 @@ If an interface has multiple IP addresses associated with it, the address list w
 Locating IP Addresses
 ^^^^^^^^^^^^^^^^^^^^^
 To quickly locate and view a specific IP address within the IPAM view:
-1.	Select the address.
-2.	On the row :guilabel:`...` menu, select :guilabel:`Reveal`. The system takes you to the IPAM view where the selected IP address will be highlighted.
+
+1. On the **Devices** tab, double-click the device OR select :guilabel:`Configure interfaces` on the row :guilabel:`...` menu.
+2. In the dialog box, select the linked IP address you want to view.
+3. On the row :guilabel:`...` menu, select :guilabel:`Reveal IP address`.
+
+.. image:: ../../images/devices-reveal-ipaddress.png
+  :width: 70%
+
+The system takes you to the **Networks** tab where the selected IP address will be highlighted.
 
 Linking IP Addresses to Devices
 -------------------------------
@@ -101,7 +123,7 @@ You can also clear an address, which will remove the association and delete all 
 
 Configuring Device Interfaces
 -----------------------------
-When dealing with multiple interfaces and IP addresses, the inspector can become crowded, making it difficult to locate the specific item you want to view or modify. To streamline this process, you use the Configure interfaces dialog box that allows for easier searching and configuration. In this dialog box, you can add new interfaces, link and unlink IP addresses, edit device properties, and delete interfaces.
+When dealing with multiple interfaces and IP addresses, the inspector can become crowded, making it difficult to locate the specific item you want to view or modify. To streamline this process, use the **Configure interfaces** dialog box, which allows for easier searching and configuration. In this dialog box, you can add new interfaces, link and unlink IP addresses, edit device properties, and delete interfaces.
 
 **To configure a device interface**:
 
@@ -109,10 +131,85 @@ When dealing with multiple interfaces and IP addresses, the inspector can become
 2.	Select :guilabel:`Configure interfaces` on either the :guilabel:`Action` or the row :guilabel:`...` menu.
 3.	Use the search box to filter the information by connection type, interface, IP address, or other properties.
 
-  .. image:: ../../images/devices-configure-dialog.png
+  .. image:: ../../images/devices-configure-interfaces.png
     :width: 65%
 
 4.	Select the item you want to configure. Select a configuration option on the item's row :guilabel:`...` menu.
+
+Editing IP Address Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If necessary, you can edit the properties of a device interface's linked IP address.
+
+.. note::
+  Only **Custom Properties** can be edited. All other properties are read-only.
+
+**To edit IP address properties**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address you want to edit. Use the row :guilabel:`...` menu to select :guilabel:`Edit IP address`.
+
+.. image:: ../../images/devices-edit-ipaddress.png
+  :width: 70%
+
+3. Edit the IP address' **Custom Properties** as needed and click :guilabel:`Save`.
+
+Creating DNS Records for Interface IP Addresses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can create DNS records for a specific IP address on a device interface.
+
+**To create a DNS record**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address for which you want to create a DNS record.
+3. Use the row :guilabel:`...` menu to select :guilabel:`Create DNS record`.
+
+.. image:: ../../images/devices-create-dns-record-option.png
+  :width: 70%
+
+4. Enter the required information into the provided form. The hostname must be fully qualified.
+
+.. image:: ../../images/devices-create-dns-record.png
+  :width: 70%
+
+5. Select :guilabel:`Create Now` or use the dropdown to select :guilabel:`Add To Request` to add the DNS record creation to a request.
+
+Deleting a Related DNS Record from an IP Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can delete a DNS record that has been related to an IP address for a device interface, if needed.
+
+**To delete a related DNS record**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address for which you want to delete a related DNS record.
+3. Use the row :guilabel:`...` menu to select :guilabel:`Delete related record`.
+
+.. image:: ../../images/devices-delete-related-record.png
+  :width: 70%
+
+4. In the dialog box, select either :guilabel:`Add To Request` to add the deletion to a request or use the dropdown to select :guilabel:`Delete Now` and delete the record immediately.
+
+.. image:: ../../images/devices-delete-dns-record-dialog.png
+  :width: 70%
+
+Creating a DHCP Reservation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can create a DHCP reservation for an interface's IP address. 
+
+**To create a DHCP reservation**:
+
+1. On the :guilabel:`Devices` screen, select the row :guilabel:`...` menu for the device and click :guilabel:`Configure interfaces`.
+2. In the dialog box, select the linked IP address for which you want to create a DHCP reservation.
+3. Use the row :guilabel:`...` menu to select :guilabel:`Create DHCP reservation`.
+
+.. image:: ../../images/devices-create-dhcp-reservation-option.png
+  :width: 70%
+
+4. Enter the required information about the DHCP reservation in the provided form. 
+
+.. image:: ../../images/devices-create-dhcp-reservation.png
+  :width: 70%
+
+5. Select :guilabel:`Create`.
 
 Editing Device Properties
 -------------------------

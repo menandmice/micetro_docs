@@ -17,6 +17,9 @@ Enabling Subnet Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Subnet monitoring is enabled in the :ref:`admin-system-settings`. Click the **Settings** button in the upper-right corner to go to the System Settings where you can enable subnet monitoring in the system and configure email notifications.
 
+.. note::
+  Micetro will only monitor IPv4 addresses, but not IPv6, when you enable subnet monitoring.
+
 When enabled, the system monitors the free addresses in DHCP address pools and subnets and acts if the number of free addresses goes below a user-definable threshold.
 
 When subnet monitoring is enabled, a new column, **Monitoring**, is added when viewing the subnet list. To filter the view by this column and quickly see all subnets that are monitored, you can enter "Monitor: Yes" in the Quick Filter search box.

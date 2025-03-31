@@ -50,9 +50,9 @@ If the database connection fails, the service will not start and an error messag
 Micetro Central Running on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The preferences.cfg file located in the data directory contains, in addition to the fingerprint of Central (the "password" XML-tag), four other XML tags: database, databaseserver, databaseusername and databasepassword.
+The ``preferences.cfg`` file located in the data directory contains, in addition to the fingerprint of Central (the "password" preference), four other preferences: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
 
-The preferences.cfg file for standard user/password authentication should look like this:
+The ``preferences.cfg`` file for standard user/password authentication should look like this:
 
 .. code-block::
 
@@ -62,7 +62,7 @@ The preferences.cfg file for standard user/password authentication should look l
   <databaseusername value="mmSuiteDBUser"/>
   <databasepassword value="password hash"/>
 
-For the Windows Authentication method, an example preferences.cfg file would look like  this (the databaseusername tag must be included and its value attribute should be an empty string):
+For the Windows Authentication method, an example ``preferences.cfg`` file would look like  this (the ``databaseusername`` preference must be included and its value attribute should be an empty string):
 
 .. code-block::
 
@@ -73,4 +73,4 @@ For the Windows Authentication method, an example preferences.cfg file would loo
 
 Setting Up a PostgreSQL Database
 --------------------------------
-Micetro requires the creation of a new database on the database server with the UTF8 encoding.
+Micetro requires the creation of a new database on the database server with the UTF-8 encoding.
