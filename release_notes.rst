@@ -101,7 +101,7 @@ Deprecation Announcements
 .. note::
   When a feature is deprecated that means this will be the last version where a feature is officially supported. A feature might continue to work in future versions as long as the code is present within Micetro but there are no guarantees for that as the code is not officially maintained.
 
-* The Men&Mice Management Console has been deprecated in version 25.1.0. This is the final version in which the Management Console is guaranteed to function with Micetro. This version will be supported for two years and, during this time, we will integrate the final features into the current version of Micetro. New features will not be integrated into older versions of Micetro that support the Management Console. If you have any questions about features from the Management Console that are critical to your operation which you don't currently see replicated in Micetro, please contact BlueCat Support at support@bluecatnetworks.com.
+* The Men&Mice Management Console has been deprecated in version 25.1.0. This is the final version in which the Management Console is guaranteed to function with Micetro. This version will be supported for two years and, during this time, we will integrate the final features in upcoming releases. If you have any questions about features from the Management Console that are critical to your operation which you don't currently see replicated in the Micetro Web Application, please contact BlueCat Support at support@bluecatnetworks.com.
 ----
 
 * The following software components have been deprecated:
