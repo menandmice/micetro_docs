@@ -20,8 +20,6 @@ Viewing Existing Microsoft DHCP Failover Relationships
 ------------------------------------------------------
 You can view existing Microsoft DHCP failover relationships at the server level. Micetro automatically detects and syncs all existing failover relationships. 
 
-You can retrieve failover relationships through the API using GetDHCPFailoverRelationship(s). 
-
 **To view failover relationships in Micetro**:
 
 1.	On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
@@ -38,21 +36,6 @@ Creating Failover Relationships for Microsoft DHCP
 Micetro manages failover relationships at both the scope and server levels. Scopes group IP addresses logically and help to manage failover efficiently. DHCP configurations can be customized per scope to suit the specific requirements of different network segments.
 
 When creating failover relationships for Microsoft DHCP servers, scopes are not added to the relationship at the time of creation. Instead, the scopes are added later by using the :guilabel:`Add scope to failover` action.
-
-**To create a failover relationship through the API**
-
-API supports creation using ``AddDHCPFailoverRelationship``.
-
-The following parameters are used for the ``AddDHCPFailoverRelationship`` command:
-
-* **Name**: The name of the DHCP failover relationship to be created.
-* **PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
-* **SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
-* **FailoverMode**: The DHCP failover mode to use.
-* **Mclt**: Specify the number of seconds for which either server can renew a lease without contacting the other.
-* **SafePeriod**: Safe period time in seconds, that the DHCPv4 server will wait before transitioning the server from the COMMUNICATION-INT state to PARTNER-DOWN.
-* **Percentage**: Indicates the percentage of the DHCPv4 client load that will be shared between the primary and secondary servers in the failover relationship.
-* **SharedSecret**: The shared secret key associated with this failover relationship.
 
 **To create a failover relationship in Micetro**:
 
@@ -104,10 +87,6 @@ If the failover relationship was previously empty, it will be created on the Mic
    .. image:: ../../images/failover-create-scope.png
       :width: 80%
 
--OR-
-
-* API offers ``AdsdDHCPScopesFromDHCPFailoverRelationship`` which adds scopes to failover relationships. Specify a reference to the DHCP Scope and the failover relationship name.
-
 If the failover relationship was empty before the scope was added to it, the status will change from “Empty” to “Normal”.
 
 .. image:: ../../images/failover-state-microsoft.png
@@ -133,10 +112,6 @@ Microsoft DHCP scopes participating in failover relationships are grouped and la
    .. image:: ../../images/failover-microsoft-remove-scope-instance.png
       :width: 805%
 
--OR-
-
-* The API offers ``RemoveDHCPScopesFromDHCPFailoverRelationship`` which removes scopes to failover relationships. Specify a reference to the DHCP Scope, the failover relationship name, and the proper deconfigure action.
-
 Modifying Failover Relationships
 --------------------------------
 You can modify ISC failover relationship options on a per-relationship basis. 
@@ -146,19 +121,6 @@ You can modify ISC failover relationship options on a per-relationship basis.
 1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to modify, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 2.	Select the relevant relationship, and then select :guilabel:`Edit` on the Row :guilabel:`...` menu.
 3.	Make the desired changes and select :guilabel:`Save`.
-
--OR-
-
-* The API offers ``ModifyDHCPFailoverRelationship``. The following parameters are used for the ``ModifyDHCPFailoverRelationship`` command:
-
-   * **Name**: The name of the DHCP failover relationship to be created.
-   * **PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
-   * **SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
-   * **FailoverMode**: The DHCP failover mode to use.
-   * **Mclt**: Specify the number of seconds for which either server can renew a lease without contacting the other.
-   * **SafePeriod**: Safe period time in seconds, that the DHCPv4 server will wait before transitioning the server from the COMMUNICATION-INT state to PARTNER-DOWN.
-   * **Percentage**: Indicates the percentage of the DHCPv4 client load that will be shared between the primary and secondary servers in the failover relationship.
-   * **SharedSecret**: The shared secret key associated with this failover relationship.
 
 
 Removing Failover Relationships 
