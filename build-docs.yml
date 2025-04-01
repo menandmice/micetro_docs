@@ -2,8 +2,8 @@ trigger:
   branches:
     include:
       - refs/heads/latest
-      - refs/heads/11.[0-9]*
-      - refs/heads/25.[0-9]*
+      - refs/heads/11.*
+      - refs/heads/25.*
 
 jobs:
 - job: BuildDocs
