@@ -24,7 +24,7 @@ This documentation is divided into four parts:
 .. tip::
   Use the search function to quickly locate the information required.
 
-The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
+The documentation is open-source, under a modified MIT license, and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
 
 Table of Contents
 -----------------
