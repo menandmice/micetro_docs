@@ -6,26 +6,35 @@
 
 Script Name Validation Policy
 =============================
+Script name fields are used when adding or editing events and configuring default subnet monitoring. You can view script names under :guilabel:`Event Hooks` on the :guilabel:`Configuration` tab of the **Admin** page.
 
-Changes in Script Name Field Validation (version 10.5.5)
-----------------------------------------------------------
+The script name field is also located in the :guilabel:`Schedule` dialog for report definitions on the **Reports** page.
 
-In version 10.5.5, significant changes have been made to the validation of script name fields for schedules scripts, change event scripts, subnet monitoring scripts, and report results scripts. 
+Since version 10.5.5, significant changes have been made to the validation of script name fields for scheduled scripts, change event scripts, subnet monitoring scripts, and report results scripts. 
 
-**Where to Access the Script Name Fields**:
+Storing scripts
+---------------
+Scripts are stored in the ``scripts`` folder, which is located in Micetro Central's data folder. Any existing scripts need to be moved to this folder and all new scripts should be placed in it.
 
-Script name fields are used when adding or editing events and setting default subnet monitoring on the :guilabel:`Event Hooks` page (:menuselection:`Admin --> Configuration --> Event Hooks`).  Additionally, the script name field is located in the :guilabel:`Schedule` dialog box for report definitions on the :guilabel:`Reports` page.
+After moving existing scripts, make sure that you update the field values referring to them accordingly.
 
-**Key Points to Note**:
+**Restrictions**:
 
-* **Scripts Folder**: The changes introduce a new concept of a **scripts folder**. This folder, named ``scripts``, is located in Central's data folder. Existing scripts need to be moved to this folder, and all new scripts should be placed here as well. After moving existing scripts, ensure that field values referring to them are updated accordingly.
+Scripts cannot be have paths outside of the ``scripts`` folder or any of its sub-folders. Validation checks ensure that the script file exists on the server. 
 
-* **Restrictions**: The new policy does not allow scripts with paths outside of the scripts folder (or its sub-folders). Validation checks ensure that the script file exists on the server. Additionally, specifying an interpreter as part of the script name value is no longer allowed. For Windows, the interpreter is determined by the script file’s extension, while for Linux, shebang should indicate the interpreter. Parameters cannot be specified as part of the script name value; however, wrapper scripts that call other scripts with specific parameters can be used instead.
+You cannot specify an interpreter as part of the script name value. On Windows, the interpreter is determined by the script file's extension. On Linux, a ``shebang`` indicates the interpreter.
 
-* **Compatibility**: Existing values for script name fields will continue to function, and saving without changing the value will not result in validation failure. The new validation policy is enforced only when attempting to change the value via the WebUI or through the API.
+Naming scripts
+--------------
+When adding a script name to a scheduled event, change event, subnet monitoring event, or a report result, select the script name from the dropdown. The dropdown displays all scripts located in the ``scripts`` folder.
 
-* **Display of Non-Compliant Values**: For dialog boxes containing script name fields with values that don't meet the new requirements, the current value is displayed in a read-only field. 
+You can also mark the checkbox to indicate the user of ScriptRunner authentication parameters when invoking the script.
 
-**New Script Name Field**:
+If a script name doesn't meet the requirements, the current value is displayed in dialogs as a read-only field.
 
-The updated script name field includes a dropdown menu listing scripts located in the scripts folder, along with a checkbox to indicate the use of ScriptRunner authentication parameters when invoking the script.
+.. note::
+   Existing values for script names from versions before 10.5.5 will continue to function. Saving without changing the value will not result in a validation failure. The updated validation policy is only enforced when you attempt to change the value in the Web Application or through the API.
+
+**Restrictions**:
+
+Parameters cannot be specified as part of the script name value; however, wrapper scripts that call other scripts with specific parameters can be used instead.
