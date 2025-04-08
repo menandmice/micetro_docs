@@ -29,4 +29,4 @@ Accessing documentation for your version
 ----------------------------------------
 If you're using a version of Micetro that is not the most recent, you can access the version-specific documentation---including an installation guide, user guide, admin guide, and reference articles---by selecting your version from the dropdown in the upper left corner of the screen.
 
-Because major versions are supported for two years, the documentation for major versions are also maintained for two years.
+Because major versions are supported for two years, the documentation for major versions is also maintained for two years.
