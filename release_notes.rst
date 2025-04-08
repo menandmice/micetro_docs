@@ -18,7 +18,7 @@ Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :
 April 14, 2025
 
 .. important::
-   Starting with version 25.1.0, Micetro version numbers will follow a calendar version methodology (Year.Release.Patch). 25.1.0 indicates the first release of the year 2025 with no patches. For more information, refer to :ref:`versions`.
+   Starting with version 25.1.0, Micetro version numbers will follow a calendar version methodology (<Year>.<Major release>.<Minor/Patch release>). 25.1.0 indicates the first release of the year 2025 with no patches. For more information, refer to :ref:`versions`.
 
 New Features
 ^^^^^^^^^^^^
@@ -28,9 +28,9 @@ New Features
 * **Cisco Meraki IPAM**: Micetro now supports the synchronization of non-DHCP Meraki subnets and subnets that have a DHCP relay configured, in addition to those with DHCP enabled. Refer to :ref:`cisco-meraki`
 * **Dedicated management interface for MDDS**: Micetro now allows you to enable a dedicated management interface on an MDDS appliance. Refer to :ref:`webapp-appliance-management`. When setting Micetro mode on MDDS, make sure to open the firewall on correct network interface (`KI-026258 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002P7B2AU>`_)
 * **DNS cache management**: Micetro now provides the ability to view and clear the DNS server cache in the Web Application. Refer to :ref:`admin-cache-management`
-* **Export feature**: You can now copy and export up to 500 rows from most of the data grids in the Micetro UI. Export is available in .csv, .tsv, and .xslx formats (`KI-026187 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002CMr2AM>`_ and `KI-025581 <https://care.bluecatnetworks.com/s/detail/a8BOI0000005JTV2A2>`_)
-* **Migrate DHCP Scopes**: The Micetro web application now enables you to migrate DHCP scopes between servers. For more information, refer to :ref:`migrate-scopes`
-* **Private zones**: Micetro now provides read and write support for private zones on AWS and Azure services (`KI-025776 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EX0v2AG>`_)
+* **Export feature**: You can now copy and export up to 500 rows from most of the data grids in the Web Application. Export is available in .csv, .tsv, and .xslx formats (`KI-026187 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002CMr2AM>`_ and `KI-025581 <https://care.bluecatnetworks.com/s/detail/a8BOI0000005JTV2A2>`_)
+* **Migrate DHCP Scopes**: The Web Application now enables you to migrate DHCP scopes between servers. For more information, refer to :ref:`migrate-scopes`
+* **Private zones**: Micetro now provides read and write support for private zones on AWS and Azure services. For more information, refer to :ref:`dns-zone-types` (`KI-025776 <https://care.bluecatnetworks.com/s/detail/a8BOI000000EX0v2AG>`_)
 
 
 Improvements
@@ -47,19 +47,19 @@ Improvements
 * Implemented separate calls to fetch DHCPv4 and DHCPv6 leases to remove the risk of error in retrieving both at the same time
 * Improved logging of object history for appliances that have been moved between address spaces
 * Improved the method by which Micetro fetches DNS server IP addresses to use in root records for primary zones and when connecting secondary zones to the DNS server
-* Improved PXE support for Kea servers and added DHCP configuration options, like client classes, to those that can be edited in the Micetro Web Application (`KI-025642 <https://care.bluecatnetworks.com/s/detail/a8BOI0000007idp2AA>`_)
+* Improved PXE support for Kea servers and added DHCP configuration options, like client classes, to those that can be edited in the Web Application (`KI-025642 <https://care.bluecatnetworks.com/s/detail/a8BOI0000007idp2AA>`_)
 * Increased the limit of subranges you can allocate from a range at a given time to 512 (`KI-025504 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX59MAE>`_)
 * Micetro will refuse to initialize a new database if the selected encoding is case-insensitive
 * Micetro uses a parser to handle BIND configuration as of version 11.0. More information is available in the :ref:`bind-file-structure` reference article (`KI-026056 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Qlhd2AC>`_)
-* Minimum password strength constraint added as a System Setting, for which the default is 12 characters (`KI-026043 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaW52AK>`_ and `KI-025508 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX5TMAU>`_)
+* Minimum password strength constraint added as a system setting, for which the default is 12 characters (`KI-026043 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaW52AK>`_ and `KI-025508 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX5TMAU>`_)
 * Read-only DNS records are visually indicated in the Micetro UI with a read-only icon
 * Significantly increased performance when sorting IP address ranges by their custom properties in large environments
-* The Add Service dialog was improved for consistency in the Micetro Web Application
+* The Add Service dialog was improved for consistency in the Web Application
 * The item selected in the left sidebar is now used as the default when creating zones, DHCP scopes, or DNS records
 * Users assigned the administrator role can add or remove address spaces (`KI-025782 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Eaej2AC>`_)
 * When creating a network, the folder in which the network will be created is always displayed
-* You can now add VendorClasses to Kea DHCP when defining new Custom Options in the Micetro Web Application
-* You can now edit subnet ranges in the Micetro Web Application (`KI-025520 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX6RMAU>`_)
+* You can now add VendorClasses to Kea DHCP when defining new Custom Options in the Web Application
+* You can now edit subnet ranges in the Web Application (`KI-025520 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX6RMAU>`_)
 
 
 Bug Fixes
