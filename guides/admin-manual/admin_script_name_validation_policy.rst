@@ -6,11 +6,9 @@
 
 Script Name Validation Policy
 =============================
-Script name fields are used when adding or editing events and configuring default subnet monitoring. You can view script names under :guilabel:`Event Hooks` on the :guilabel:`Configuration` tab of the **Admin** page.
+Script name fields are in scheduled event scripts, change event scripts, subnet monitoring event scripts, and report results scripts. They are used when adding or editing events, configuring default subnet monitoring, and scheduling reports.
 
-The script name field is also located in the :guilabel:`Schedule` dialog for report definitions on the **Reports** page.
-
-Since version 10.5.5, significant changes have been made to the validation of script name fields for scheduled scripts, change event scripts, subnet monitoring scripts, and report results scripts. 
+You can view script names under :guilabel:`Event Hooks` on the :guilabel:`Configuration` tab of the **Admin** page. For reports, the script name is added in the :guilabel:`Schedule` dialog for report definitions on the **Reports** page.
 
 Storing scripts
 ---------------
@@ -20,7 +18,7 @@ After moving existing scripts, make sure that you update the field values referr
 
 **Restrictions**:
 
-Scripts cannot be have paths outside of the ``scripts`` folder or any of its sub-folders. Validation checks ensure that the script file exists on the server. 
+Scripts cannot have paths outside of the ``scripts`` folder or any of its sub-folders. Validation checks ensure that the script file exists on the server. 
 
 You cannot specify an interpreter as part of the script name value. On Windows, the interpreter is determined by the script file's extension. On Linux, a ``shebang`` indicates the interpreter.
 
