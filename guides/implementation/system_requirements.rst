@@ -50,7 +50,7 @@ Databases
   :header: "Database", "Supported version(s)", "Operating System of Micetro Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 12-16, "Windows, Linux"
+  "PostgreSQL", 12-17, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
   "Microsoft SQL Server", "2016, 2019, 2022", "Windows"
 
