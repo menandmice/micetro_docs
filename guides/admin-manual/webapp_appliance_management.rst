@@ -110,6 +110,8 @@ To ensure optimal performance of your appliance, you can add the IP addresses of
 3. In the Configure DNS resolvers dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by listing their IP addresses on separate lines. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
 4. Select :guilabel:`Save` when you are done.
 
+.. _anycast-appliances:
+
 Configuring Anycast on Appliances
 ---------------------------------
 Micetro supports Anycast network configuration, which allows DNS queries to be answered by the nearest optimal server from a group of servers sharing an IP address. Anycast not only provides redundancy, but also improves the reliability of DNS services by ensuring that queries are answered by the closest available server.
