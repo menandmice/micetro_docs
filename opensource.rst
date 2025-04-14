@@ -6,6 +6,7 @@
 
 Open-Source Licenses
 ====================
+The following table provides our license information for several open-source software programs.
 
 .. csv-table::
   :header: "Name", "License"

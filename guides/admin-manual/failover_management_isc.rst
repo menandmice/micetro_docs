@@ -12,8 +12,6 @@ Viewing Existing ISC DHCP Failover Relationships
 ------------------------------------------------
 You can view existing ISC DHCP failover relationships at the server level. Micetro automatically detects and syncs all existing failover relationships.
 
-You can retrieve failover relationships through the API using ``GetDHCPFailoverRelationship(s)``. 
-
 **To view failover relationships in Micetro**:
 
 1.	On the **Admin** page, select :guilabel:`Service Management` in the upper-left corner.
@@ -39,22 +37,6 @@ While ISC DHCP servers handle operations at the DHCP pool level, Micetro manages
 
 .. note::
    When the first scope is added to the failover relationship, the failover peer statement is created on the server. All address pools within the scope will be updated to refer to this failover peer.
-
-**To create a failover relationship through the API**:
-
-API supports creation using ``AddDHCPFailoverRelationship``.
-
-The following parameters are used for the ``AddDHCPFailoverRelationship`` command:
-
-* **Name**: The name of the DHCP failover relationship to be created.
-* **PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
-* **SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
-* **Percentage**: Indicates the percentage of the DHCPv4 client load that will be shared between the primary and secondary servers in the failover relationship.
-* **Mclt**: Specify the number of seconds for which a lease can be renewed by either server without contacting the other.
-* **Port**: Specify the port number on which the server should listen for connections from its failover peer.
-* **LoadBalanceMaxSeconds**: Specify the cutoff in seconds after which load balancing is disabled. According to ISC documentation, a value of 3 or 5 is recommended.  
-* **MaxResponseDelay**: Specify the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
-* **MaxUnackedUpdates**: Specify the number of messages the server can send before receiving an acknowledgment from its failover peer. According to ISC documentation, 10 seems to be a good value.
 
 **To create a failover relationship in Micetro**:
 
@@ -108,10 +90,6 @@ Once you have added a scope, the failover peer statement will automatically be a
    .. image:: ../../images/failover-create-scope.png
       :width: 80%
 
--OR-
-
-* API offers ``AdsdDHCPScopesFromDHCPFailoverRelationship`` which adds scopes to failover relationships. Specify a reference to the DHCP Scope and the failover relationship name.
-
 .. note::
    At least one pool must exist in the scope before adding it to the failover relationship.
 
@@ -143,9 +121,6 @@ ISC DHCP scopes participating in failover relationships are grouped and labeled 
    .. image:: ../../images/failover-isc-remove-scope-instance.png
       :width: 80%
 
--OR-
-
-* The API offers ``RemoveDHCPScopesFromDHCPFailoverRelationship`` which removes scopes to failover relationships. Just specify a reference to the DHCP Scope, the failover relationship name, and the proper deconfigure action.
 
 Modifying Failover Relationships
 --------------------------------
@@ -157,19 +132,6 @@ You can modify ISC failover relationship options on a per-relationship basis.
 2.	Select the relevant relationship, and then select :guilabel:`Edit` on the Row :guilabel:`...` menu.
 3.	Make the desired changes and select :guilabel:`Save`.
 
--OR-
-
-* The API offers ``ModifyDHCPFailoverRelationship``. The following parameters are used for the ``ModifyDHCPFailoverRelationship`` command:
-
-   *	**Name**: The name of the DHCP failover relationship to be created.
-   *	**PrimaryServer**: The name of the primary DHCP server as it appears in Micetro.
-   *	**SecondaryServer**: The name of the secondary DHCP server as it appears in Micetro.
-   *	**Mclt**: Specify the number of seconds for which a lease can be renewed by either server without contacting the other.
-   *	**Port**: Specify the port number on which the server should listen for connections from its failover peer.
-   *	**LoadBalanceMaxSeconds**: Specify the cutoff in seconds after which load balancing is disabled. According to ISC documentation, a value of 3 or 5 is recommended.  
-   *	**MaxResponseDelay**: Specify the number of seconds that may pass without the server receiving a message from its failover peer before it assumes that the connection has failed.
-   *	**MaxUnackedUpdates**: Specify the number of messages the server can send before receiving an acknowledgment from its failover peer. According to ISC documentation, 10 seems to be a good value.
-
 Removing Failover Relationships
 --------------------------------
 
@@ -178,10 +140,6 @@ Removing Failover Relationships
 1.	Go to the :guilabel:`Service Management` tab on the **Admin** page, select the server containing the relationship you want to remove, and then select :guilabel:`Failover management` either on the :guilabel:`Action` or the Row :guilabel:`...` menu.
 2.	Select the relevant relationship, and then select :guilabel:`Remove`  on the Row :guilabel:`...` menu. 
 3.	Decide whether to delete or disable the secondary scopes. 
-
--OR-
-
-* The API offers ``RemoveDHCPFailoverRelationships``. Specify a reference to the ISC DHCP service, the name of the failover relationship, and the proper deconfigure action.
 
 Address Pool Failover Display
 ------------------------------

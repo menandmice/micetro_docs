@@ -7,12 +7,12 @@
 AWS and Azure ALIAS records in Micetro
 ======================================
 
-Micetro synchronizes ALIAS records, which can be viewed in the web application or through API.
+Micetro synchronizes ALIAS records, which can be viewed in the Web Application or through API.
 
-In Micetro, ALIAS records are read-only. They have the type "ALIAS" and their underlying :ref:`DNS record type<DNS Resource Records>` is represented in the data field of the record, a long with the resource id/hostname in a human-readable and raw format, all tab-separated.
+In Micetro, ALIAS records are read-only. They have the type "ALIAS" and their underlying :ref:`DNS record type<DNS Resource Records>` is represented in the data field of the record, along with the resource id/hostname in a human-readable and raw format, all tab-separated.
 
 .. note::
-    The full resource ID is not displayed in the **Data** column of the ALIAS record in the list of a DNS zone's resource records. Only the underlying record type and formatted resource ID are displayed.
+    In the data grid, the full resource ID is not displayed in the **Data** column of the ALIAS record's entry in the list of a DNS zone's resource records. Only the underlying record type and formatted resource ID are displayed.
 
 Examples of AWS and Azure ALIAS records
 ---------------------------------------
@@ -22,7 +22,7 @@ Examples of AWS and Azure ALIAS records
 underlying_dns_record_type<tab>resource_id_formatted<tab>full_resource_id
 
 .. note::
-    Resources in Azure are identified by slash-separated string. Resources in AWS are identified by their DNS hostname.
+    Resources in Azure are identified by a slash-separated string. Resources in AWS are identified by their DNS hostname.
 
 **ALIAS record AWS data example**
 
@@ -58,4 +58,4 @@ Records types that support ALIAS records in Azure include the following:
 * CNAME
 
 .. note::
-    No other record types are supported, even though they can be created in the Cloud platform UI (or through API).
+    No other record types are supported, even though they can be created in the cloud platform UI (or through API).

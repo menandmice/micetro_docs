@@ -29,7 +29,7 @@ To add an appliance to Micetro, you must be assigned the Administrator role.
 
 **To add an appliance**:
 
-1. On the :guilabel:`Service Management` tab of the :guilabel:`Admin` page, select :guilabel:`Add Service`.
+1. On the :guilabel:`Service Management` tab of the **Admin** page, select :guilabel:`Add Service`.
 
 2. In the **Add Service** wizard, select :guilabel:`Appliance`.
 
@@ -53,8 +53,8 @@ You can change the name or IP address used to connect to your appliance. This is
 
 **To change the appliance name**:
 
-1. Go to the :guilabel:`Service Management` tab on the :guilabel:`Admin` page. 
-2. In the filtering sidebar, select :guilabel:`Appliances`, then select the specific appliance you wish to edit.
+1. Go to the :guilabel:`Service Management` tab on the **Admin** page. 
+2. In the left sidebar, select :guilabel:`Appliances`, then select the specific appliance you wish to edit.
 3. Select :guilabel:`Edit appliance` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 4. Modify the appliance's name, and/or IP address (optional).
 
@@ -80,7 +80,7 @@ You can enable or disable various appliance services to configure your appliance
 
 **To enable/disable appliance services**:
 
-1. On the :guilabel:`Service Management` tab of the **Admin** page, select :guilabel:`Appliances` on the leftmost sidebar.
+1. On the :guilabel:`Service Management` tab of the **Admin** page, select :guilabel:`Appliances` on the left sidebar.
 
    .. image:: ../../images/sidebar-appliances.png
       :width: 25%
@@ -109,6 +109,8 @@ To ensure optimal performance of your appliance, you can add the IP addresses of
 2. Select :guilabel:`Configure DNS resolvers` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 3. In the Configure DNS resolvers dialog box, enter the IP addresses of the DNS resolver servers you want to set. It's important to ensure the accuracy of the IP addresses, as incorrect entries can lead to DNS resolution issues. You can set multiple DNS resolvers by listing their IP addresses on separate lines. This redundancy ensures uninterrupted DNS resolution even if one resolver becomes unavailable.
 4. Select :guilabel:`Save` when you are done.
+
+.. _anycast-appliances:
 
 Configuring Anycast on Appliances
 ---------------------------------
@@ -273,7 +275,7 @@ The Network Settings let you set up the interfaces on the appliance. You can cre
    * **Modify the loopback address**: On the interface's Row :guilabel:`...` menu, select :guilabel:`Edit`, and then make the desired changes.
 
 .. note::
-    To enable dedicated management interface on an MDDS appliance, follow `these instructions <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Enabling-Dedicated-Management/9.6.0?tocId=7VzLNLSMNkmvR8qSXeO24g>`_ to set the IP address in the ETH2 interface. This must be done **before** the MDDS appliance is put into Micetro-mode as described in the instructions for `Configuring DNS/DHCP Servers for Micetro <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Configuring-DNS/DHCP-Servers-for-Micetro/9.6.0>`_. This ensures that the ETH2 interface is accessible by adding the relevant firewall rules. It is not possible to edit this interface in the web application, as any changes there might block the user from managing the appliance.
+    To enable a dedicated management interface on an MDDS appliance, follow `these instructions <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Enabling-Dedicated-Management/9.6.0?tocId=7VzLNLSMNkmvR8qSXeO24g>`_ to set the IP address in the eth2 interface. This must be done **before** the MDDS appliance is put into Micetro-mode as described in the instructions for `Configuring DNS/DHCP Servers for Micetro <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Configuring-DNS/DHCP-Servers-for-Micetro/9.6.0>`_. This ensures that the eth2 interface is accessible by adding the relevant firewall rules. It is not possible to edit this interface in the web application, as any changes there might block the user from managing the appliance.
 
 Configuring Static Routes
 ^^^^^^^^^^^^^^^^^^^^^^^^^

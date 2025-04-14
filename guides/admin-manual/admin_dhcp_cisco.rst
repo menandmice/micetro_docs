@@ -14,6 +14,6 @@ You can edit the configuration of Cisco servers.
 
 1. On the **Admin** page, select the relevant Cisco server.
 
-2. Select :guilabel:`Edit configuration` on either the :guilabel:`Action` or the :guilabel:`Row` menu. 
+2. Select :guilabel:`Edit configuration` on either the :guilabel:`Action` or the Row :guilabel:`...` menu. 
 
-3. In the **Edit Configuration** dialog box, make the desired changes, and then click :guilabel:`Save`.
+3. In the **Edit Configuration** dialog, make the desired changes, and then select :guilabel:`Save`.

@@ -15,6 +15,7 @@ Hardware
 .. note::
   The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture` for details.
 
+
 Operating systems
 -----------------
 
@@ -50,7 +51,7 @@ Databases
   :header: "Database", "Supported version(s)", "Operating system of Micetro Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 12-16, "Windows, Linux"
+  "PostgreSQL", 12--17, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
   "Microsoft SQL Server", "2016, 2019, 2022", "Windows"
 
@@ -72,7 +73,7 @@ DNS/DHCP server software
   "Microsoft DHCP", "2016, 2019, 2022, 2025"
   "ISC DHCP", "4.4.1--4.4.3"
   "ISC Kea", "2.4, 2.6"
-  "Cisco IOS with DHCP support", "12.3 - 16.09"
+  "Cisco IOS with DHCP support", "12.3--16.09"
 
 
 Micetro Web Application
@@ -85,6 +86,7 @@ Micetro Web Application
 .. [4] When using IIS 7 the IIS 6 Management Compatibility and ISAPI Extensions role services are required.
 
 .. [5] The Apache web server is supported on all platforms except Windows.
+
 
 Supported cloud services
 ------------------------
@@ -100,6 +102,7 @@ Supported cloud services
 * Meraki
 
 .. [6] Micetro can be installed directly from the Azure Marketplace. Refer to :ref:`installation-azure`.
+
 
 Supported browsers (Web Application)
 ------------------------------------

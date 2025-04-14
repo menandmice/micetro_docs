@@ -264,6 +264,8 @@ If a scope is no longer needed but you want to keep it for potential future use,
 2.	Select :guilabel:`Disable scope` or :guilabel:`Enable scope` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
 3.	Click :guilabel:`Yes` to confirm.
 
+.. _migrate-scopes:
+
 Migrating Scopes
 ----------------
 Micetro allows you to migrate DHCP scopes to servers in different locations. This may be needed to keep your network operational in the case that you are decommissioning a server or there has been an outage.
@@ -287,7 +289,7 @@ You can migrate scopes to and from the following server types:
 There are certain limitations to migrating scopes between servers of differing types:
 
 * DHCP policies are MS-specific and are not migrated.
-* DHCP exclusions on MS DHCP servers are converted to static address spaces on the destination server by splitting up the pool in which the exclusions were. As a result, a warning will be generated in the migration.
+* DHCP exclusions on MS DHCP servers are converted to static address spaces on ISC DHCP or Kea destination servers by splitting up the pool in which the exclusions were. As a result, a warning will be generated in the migration.
 * Reservations inside pools on MS servers are not migrated unless the setting to **Allow reservations inside pools on ISC DHCP servers** is enabled.
 * User class options are MS-specific and are not migrated.
 * DDNS settings are MS-specific and are not migrated.
