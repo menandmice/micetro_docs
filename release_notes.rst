@@ -18,7 +18,7 @@ Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :
 April 14, 2025
 
 .. important::
-   Starting with version 25.1.0, Micetro version numbers will follow a calendar version methodology (<Year>.<Major release>.<Minor/Patch release>). 25.1.0 indicates the first release of the year 2025 with no patches. For more information, refer to :ref:`versions`.
+   Starting with version 25.1.0, Micetro version numbers will follow a calendar version methodology (<Year>.<Major release>.<Minor/Patch release>). 25.1.0 indicates the first release of the year 2025 with no patches. For more information, refer to :ref:`version-numbers`.
 
 New Features
 ^^^^^^^^^^^^
