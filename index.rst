@@ -2,7 +2,7 @@
    :description: Product documentation for Micetro
    :keywords: Micetro, documentation, user guide, admin guide, installation guide
 
-Micetro 11.1
+Micetro 25.1
 #############
 
 Welcome to Micetro, a backend-agnostic DDI orchestration software for complex enterprise network environments.
@@ -24,7 +24,7 @@ This documentation is divided into four parts:
 .. tip::
   Use the search function to quickly locate the information required.
 
-The documentation is open-source, under a modified MIT license (see :ref:`docs-license`), and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_.
+The documentation is open-source, under a modified MIT license, and you're welcome to file issues and improvements `on GitHub <https://github.com/menandmice/micetro_docs>`_. For more information about licensing and user agreements, refer to `BlueCat Legal Documents <https://bluecatnetworks.com/legal-documents/>`_.
 
 Table of Contents
 -----------------
@@ -34,6 +34,7 @@ Table of Contents
     :maxdepth: 1
 
     release_notes
+    versions
     support
     opensource
 
@@ -64,6 +65,7 @@ Table of Contents
     :caption: Micetro Admin Guide
     :maxdepth: 1
     
+    guides/admin-manual/admin_micetro
     guides/admin-manual/admin_license
     guides/admin-manual/access_control
     guides/admin-manual/webapp_server_management

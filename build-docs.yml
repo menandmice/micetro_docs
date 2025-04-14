@@ -8,7 +8,7 @@ trigger:
 jobs:
 - job: BuildDocs
   displayName: Build Docs
-  pool: az-ubuntu-2404-builders 
+  pool: Linux 
   
   steps:
   - checkout: self
