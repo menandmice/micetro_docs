@@ -2,7 +2,7 @@
    :description: An explanation of Micetro's versioning methodology
    :keywords: Micetro, version numbers, calendar-based
 
-.. _versions:
+.. _version-numbers:
 
 Versions
 ========
