@@ -50,7 +50,6 @@ Improvements
 * Improved PXE support for Kea servers and added DHCP configuration options, like client classes, to those that can be edited in the Web Application (`KI-025642 <https://care.bluecatnetworks.com/s/detail/a8BOI0000007idp2AA>`_)
 * Increased the limit of subranges you can allocate from a range at a given time to 512 (`KI-025504 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX59MAE>`_)
 * Micetro will refuse to initialize a new database if the selected encoding is case-insensitive
-* Micetro uses a parser to handle BIND configuration as of version 11.0. More information is available in the :ref:`bind-file-structure` reference article (`KI-026056 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Qlhd2AC>`_)
 * Minimum password strength constraint added as a system setting, for which the default is 12 characters (`KI-026043 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaW52AK>`_ and `KI-025508 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX5TMAU>`_)
 * Read-only DNS records are visually indicated in the Micetro UI with a read-only icon
 * Significantly increased performance when sorting IP address ranges by their custom properties in large environments
