@@ -1,5 +1,5 @@
 .. meta::
-   :description: Release notes for Micetro 11.x versions
+   :description: Release notes for Micetro
    :keywords: Micetro, release notes, releases, update notes
 
 .. _release-notes:
