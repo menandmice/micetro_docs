@@ -58,7 +58,6 @@ Improvements
 * Users assigned the administrator role can add or remove address spaces (`KI-025782 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Eaej2AC>`_)
 * When creating a network, the folder in which the network will be created is always displayed
 * You can now add VendorClasses to Kea DHCP when defining new Custom Options in the Web Application
-* You can now edit subnet ranges in the Web Application (`KI-025520 <https://care.bluecatnetworks.com/s/detail/a8BDo000000kX6RMAU>`_)
 
 
 Bug Fixes
@@ -77,7 +76,6 @@ Bug Fixes
 * Fixed an issue that caused Micetro Central to potentially crash when working with IP addresses (`KI-025997 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OAEL2A4>`_)
 * Fixed an issue that didn't remove the timestamp value from the Web Application when the "aging" parameter is removed while editing TTL for dynamic records (`KI-025957 <https://care.bluecatnetworks.com/s/detail/a8BOI000000Mw8e2AC>`_)
 * Fixed an issue that returned duplicate records when DNS cache nodes had same records cached
-* Fixed an issue that returned IP addresses that had already been assigned when using the ``NextFreeAddress`` API call (`KI-026010 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OgkT2AS>`_)
 * Fixed an issue that reverted changes Smart Folder filter to its original value (`KI-026044 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QaXh2AK>`_)
 * Fixed an issue with fetching reservation options on ISC DHCP
 * Fixed connectivity issue with Cisco IOS servers connecting to Micetro (`KI-025719 <https://care.bluecatnetworks.com/s/detail/a8BOI000000CQRl2AO>`_)
