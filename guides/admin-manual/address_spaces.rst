@@ -63,6 +63,8 @@ Go to :menuselection:`Admin --> Configuration --> Address Spaces`.
 
   The *<default>* address space is the only address space that shows AD sites if *AD Site and Subnet* integration is enabled.
 
+.. _moving-objects-address-spaces:
+
 Moving Objects to a Different Address Space
 -------------------------------------------
 You can move DNS servers, DHCP servers, and IP Address ranges between address spaces. When an object is moved between address spaces, all properties for the object are retained, including its access settings and change history. You must have the relevant administrator privileges to move objects to a different address space.
