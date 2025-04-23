@@ -6,21 +6,20 @@
 
 Editing BIND DNS Server Options
 ================================
-
-You can customize your BIND server's behavior by editing various server options.
+Customize your BIND DNS server's behavior by editing various server options.
 
 **To edit BIND server options**:
 
-1. Locate the BIND server that you want to configure on the :guilabel:`Service Management` tab of the :guilabel:`Admin` page.
+1. Locate the BIND server that you want to configure on the :guilabel:`Service Management` tab of the **Admin** page.
 
-2. Select :guilabel:`Edit server options` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+2. Use either the :guilabel:`Action` or the Row :guilabel:`...` menu to select :guilabel:`Edit server options`.
 
-3. Select the specific option you wish to modify from the dropdown list.
+3. In the dropdown, select the specific option you want to modify.
 
-   .. image:: ../../images/bind-edit-options.png
+    .. image:: ../../images/bind-edit-options.png
       :width: 80%
 
-4. In the configuration interface that appears, adjust the settings according to your requirements. To add another entry, click :guilabel:`Add`.
+4. In the dialog, adjust the settings according to your requirements. To add another entry, select :guilabel:`Add`.
 
    **Query Options**
 
@@ -35,38 +34,36 @@ You can customize your BIND server's behavior by editing various server options.
    * **Transfer restrictions**: Restricts zone transfers to specific IP addresses or hosts, enhancing security by limiting access to sensitive information.
    * **Update notifications**: Enables or disables NOTIFY messages on zone changes, ensuring other DNS servers are promptly informed of updates to your zones.
 
-5. Click :guilabel:`Save` when you're done.
+5. Prioritize address match list entries by dragging and dropping them into the preferred sequence.
 
-Rearranging the Order of Entries
----------------------------------
-You can prioritize address match list entries by dragging and dropping them into your preferred sequence.
-
-.. image:: ../../images/bind-prioritize-entries.png
+    .. image:: ../../images/bind-serveroptions-prioritize.png
       :width: 80%
 
-Raw Configuration
-------------------
-DNS Administrators can access and modify raw configuration files directly, granting them control over server and zone options not available through the GUI.
+6. Select :guilabel:`Save`.
 
-This option is intended for experienced users who have a good understanding of DNS configurations.
+Modifying BIND Servers' Raw Configuration
+-----------------------------------------
+DNS administrators can access and directly modify raw configuration files, granting them control over server and zone options not available through the Web Application.
+
+This option is intended for experienced users who have a deep understanding of DNS configurations.
 
 **To edit BIND configuration files**:
 
-1. Locate the BIND server that you want to configure.
+1. Locate the BIND server that you want to configure in the :guilabel:`Service Management` data grid.
 
-2. Select :guilabel:`Edit server options` on either the :guilabel:`Action` or the Row :guilabel:`...` menu.
+2. Use either the :guilabel:`Action` or the Row :guilabel:`...` menu to select :guilabel:`Edit server options`.
 
-3. Go to the :guilabel:`Raw Configuration` tab. If the tab is not available, it indicates that changes have been made on the :guilabel:`Options` tab. Close the dialog box and reopen it to discard any unsaved modifications.
+3. In the dialog, select the :guilabel:`Raw Configuration` tab. If the tab is not available, it indicates that changes have been made on the :guilabel:`Options` tab. Close the dialog and reopen it to discard any unsaved modifications.
 
-   .. image:: ../../images/bind-raw-config-11.png
+   .. image:: ../../images/bind-serveroptions-rawconfig.png
       :width: 80%
 
-   * The various configuration files associated with the BIND server are available on the :guilabel:`File` dropdown list. From this list, select the specific configuration file that you want to modify. Configuration files may represent different aspects of the BIND server.
+   * The various configuration files associated with the BIND server, and which may represent its different aspects, are available in the :guilabel:`File` dropdown. Select the specific configuration file you want to modify.
 
-   * If you're looking to make changes to specific settings within the selected configuration file, you can use the search box. Enter keywords or terms related to the settings you wish to modify.
+   * If you want to make changes to specific settings within the selected configuration file, use the search box to enter keywords or terms related to the settings you want to modify.
 
-4. Make your edits and click :guilabel:`Save` when you're done.
+4. Make your edits and then select :guilabel:`Save`.
 
 Removing DNS Options
 --------------------
-To remove an option, go to the :guilabel:`Options` tab, and click the trash can icon next to the option you wish to remove.
+To remove an option, select the :guilabel:`Options` tab in the **Edit Server Options** dialog. On the tab, select the trash can icon next to the option you want to remove.
