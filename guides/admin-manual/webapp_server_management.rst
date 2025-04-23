@@ -12,7 +12,7 @@ To access Service Management, select the :guilabel:`Service Management` tab on t
 
 .. image:: ../../images/dns-context-10.6.png      
   :width: 100%
-  
+
 In the left sidebar, you can filter the list by type of service or provider. The Inspector on the right side of the page displays the properties of a selected service.
 
 .. note:: 
