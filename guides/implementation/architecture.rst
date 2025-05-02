@@ -181,22 +181,24 @@ Cisco IOS DHCP servers can be managed using Micetro. A Micetro DHCP agent has to
 
 .. _about-ui:
 
-User Interface
---------------
+Web Application
+---------------
 
 .. note::
   Of the different user interfaces, multiple copies may be installed, and multiple instances can be logged in at once to manage the environments.
 
 .. _about-webapp:
 
-The Micetro Web Interface can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Interface talks directly to the Web Server (IIS or Apache) which redirects its request to Micetro Central through TCP port 1231.
+The Micetro Web Application can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Web Application talks directly to the Web Server (IIS or Apache) which redirects its request to Micetro Central through TCP port ``1231``.
+
+The Web Application supports a minimum browser viewport area of 1366x768 pixels when using a maximum (100%) zoom setting. Lower resolutions are not supported.
 
 .. image:: ../../images/IPAM1.png
   :width: 80%
   :align: center
 |
 .. tip::
-  It is common practice to install the Web Interface on the same server that Micetro's Central component is installed on.
+  It is common practice to install the Web Application on the same server as Micetro Central.
 
 ..
   Middle Layer
