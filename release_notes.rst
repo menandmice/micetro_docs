@@ -10,7 +10,22 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`, :ref:`25.1.1-release`
+
+.. _25.1.1-release:
+25.1.1
+------
+May xx, 2025
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed issue in which large error messages extended outside the error dialog
+* Fixed an issue in which event hooks only returned changed property data for a range instead of all custom properties (`KI-026310 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002YIX2A2>`_)
+* Fixed an issue that prevented users from adding private zones to xDNS profiles
+* Fixed an issue that prevented users from deleting DNS records from dynamic zones on BIND and MDDS (`KI-026300 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002WVF2A2>`_)
+* Network Associations are now updated and displayed in the Inspector as soon as zone options update. Quick command can now locate private zones and records within private zones
+
 
 .. _25.1.0-release:
 25.1.0
