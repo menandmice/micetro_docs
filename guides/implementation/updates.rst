@@ -35,6 +35,7 @@ If you're updating Micetro from an older version, refer to the following table:
   :widths: 30, 30, 40
   :header: "Origin version", "Target version", "Update to"
 
+  "11.x", "25.x", "25.x [1]_"
   "10.x", "11.x", "11.x [1]_"
   "9.x", "10.x", "10.x [1]_"
   "8.x", "10.x", "10.x [1]_"

@@ -27,6 +27,7 @@ Operating systems
   "Windows Server 2016", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2019", "Y", "Y", "Y", "Y", "N/A", "Y"
   "Windows Server 2022", "Y", "Y", "Y", "Y", "N/A", "Y"
+  "Windows Server 2025", "Y", "Y", "Y", "Y", "N/A", "Y"
   "**Linux**",,,,,,
   "Redhat Enterprise Linux 8", "N", "Y", "Y", "Y", "N/A", "Y"
   "Redhat Enterprise Linux 9", "N", "Y", "Y", "Y", "N/A", "Y"

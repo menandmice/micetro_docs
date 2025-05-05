@@ -56,15 +56,11 @@ Micetro supports the following DNS and DHCP platforms:
 
   * BIND
 
-  * DynDNS (cloud), (Note DynDNS is EOL May 31st 2023)
-
   * Edge DNS (cloud)
 
   * Microsoft DNS
 
   * NS1 (cloud)
-
-  * Unbound (deprecated, new services cannot be added)
 
   * Micetro DDS Appliance
 

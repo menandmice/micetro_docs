@@ -169,7 +169,9 @@ Web Application
 
 .. _about-webapp:
 
-The Micetro Web Application can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Micetro Web Application talks directly to the Web Server (IIS or Apache), which redirects its request to Micetro Central through TCP port ``1231``.
+The Micetro Web Application can be installed on any server on the network running Microsoft Internet Information Services (IIS) or Apache. The Web Application talks directly to the Web Server (IIS or Apache) which redirects its request to Micetro Central through TCP port ``1231``.
+
+The Web Application supports a minimum browser viewport area of 1366x768 pixels when using a maximum (100%) zoom setting. Lower resolutions are not supported.
 
 .. image:: ../../images/IPAM1.png
   :width: 80%
@@ -177,6 +179,7 @@ The Micetro Web Application can be installed on any server on the network runnin
 |
 .. tip::
   It's common practice to install the Web Application on the same server as Micetro Central.
+
 
 ..
   Middle Layer
