@@ -6,20 +6,20 @@
 .. _radius-user-auth:
 
 
-RADIUS User Authentication
+RADIUS user authentication
 ==========================
 Micetro can authenticate using an external RADIUS server. This is especially useful in large installations, as it eliminates the need for users to maintain their passwords in multiple locations. Any password rules, such as password expiry and minimum password length, that have been applied within the organization automatically apply to Micetro.
 
-RADIUS User Authentication vs. Local User Authentication
+RADIUS user authentication vs. local user authentication
 --------------------------------------------------------
-Even with RADIUS user authentication enabled, users must still be created and assigned privileges within Micetro. The only difference between RADIUS and local user authentication is in the authentication process: when RADIUS user authentication is enabled, users are authenticated via the RADIUS user authentication system before accessing Micetro.
+Even with RADIUS user authentication enabled, you still need to create users and assign them privileges within Micetro. The only difference between RADIUS and local user authentication is in the authentication process: when RADIUS user authentication is enabled, users are authenticated via the RADIUS user authentication system before accessing Micetro.
 
 With RADIUS user authentication, user passwords are not stored within Micetro.
 
 .. note::
   Only one authentication method can be assigned per user, but different users can use different authentication methods. This allows some users to log in using RADIUS user authentication while others utilize local user authentication.
 
-Enabling RADIUS User Authentication
+Enabling RADIUS user authentication
 -----------------------------------
 To enable RADIUS authentication, you need to configure specific properties in the Micetro Central configuration file ``preferences.cfg``. Locate this file in the data folder in the Micetro Central data directory:
 
@@ -52,7 +52,7 @@ After editing the file, restart Micetro Central.
 
 * Linux: Restart the ``mmcentrald`` daemon process, e.g., as root user ``systemctl restart mmcentral``.
 
-Configuring Users for RADIUS Authentication
+Configuring users for RADIUS authentication
 -------------------------------------------
 To enable user login in Micetro, users must exist in the Micetro user database. Without existing records in this database, users cannot log in, even with valid credentials in the RADIUS login system.
 

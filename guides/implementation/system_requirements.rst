@@ -4,7 +4,7 @@
 
 .. _system-requirements:
 
-System Requirements
+System requirements
 ===================
 
 The minimum system requirements and supported platforms for Micetro are as follows:
@@ -13,9 +13,10 @@ Hardware
 --------
 
 .. note::
-  The hardware requirements for the Micetro components depend on the size of the environment and usage. Refer to :ref:`architecture-overview` for details.
+  The hardware requirements for the Micetro components are dependent on the size of the environment and usage. Refer to :ref:`architecture` for details.
 
-Operating Systems
+
+Operating systems
 -----------------
 
 .. csv-table::
@@ -48,17 +49,17 @@ Databases
 ---------
 
 .. csv-table::
-  :header: "Database", "Supported version(s)", "Operating System of Micetro Central"
+  :header: "Database", "Supported version(s)", "Operating system of Micetro Central"
   :widths: 20, 20, 60
 
-  "PostgreSQL", 12-17, "Windows, Linux"
+  "PostgreSQL", 12--17, "Windows, Linux"
   "SQLite", "N/A [3]_", "Windows, Linux"
   "Microsoft SQL Server", "2016, 2019, 2022", "Windows"
 
 .. [3] The SQLite database is embedded into the Micetro Central application.
 
 
-DNS/DHCP Server Software
+DNS/DHCP server software
 ------------------------
 
 .. csv-table::
@@ -73,7 +74,7 @@ DNS/DHCP Server Software
   "Microsoft DHCP", "2016, 2019, 2022, 2025"
   "ISC DHCP", "4.4.1--4.4.3"
   "ISC Kea", "2.4, 2.6"
-  "Cisco IOS with DHCP support", "12.3 - 16.09"
+  "Cisco IOS with DHCP support", "12.3--16.09"
 
 
 Micetro Web Application
@@ -87,7 +88,8 @@ Micetro Web Application
 
 .. [5] The Apache web server is supported on all platforms except Windows.
 
-Supported Cloud Services
+
+Supported cloud services
 ------------------------
 
 * Azure [6]_
@@ -102,7 +104,8 @@ Supported Cloud Services
 
 .. [6] Micetro can be installed directly from the Azure Marketplace. Refer to :ref:`installation-azure`.
 
-Supported Browsers (Web Application)
+
+Supported browsers (Web Application)
 ------------------------------------
 
 * Microsoft Edge
