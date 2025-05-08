@@ -9,7 +9,7 @@ jobs:
 - job: BuildDocs
   displayName: Build Docs
   pool:
-    vmImage: ubuntu-latest 
+    vmImage: Ubuntu-22.04 
   
   steps:
   - checkout: self
