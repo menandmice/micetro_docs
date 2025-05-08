@@ -10,7 +10,20 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`, :ref:`25.1.1-release`
+
+.. _25.1.1-release:
+25.1.1
+------
+May 8, 2025
+
+Bug Fixes
+^^^^^^^^^
+
+* Fixed an issue in which Azure DNS services would not sync after upgrading to Micetro Central version 25.1.0 (`KI-026295 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002VhF2AU>`_)
+* Fixed an issue in which mmWS terminated when handling a malformed HTTP request with chunked transfer encoding (`KI-026290 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002VCb2AM>`_)
+* Fixed an issue in which event hooks only returned changed property data for a range instead of all custom properties (`KI-026310 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002YIX2A2>`_)
+* Fixed an issue that prevented users from deleting DNS records from dynamic zones on BIND and MDDS (`KI-026300 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002WVF2A2>`_)
 
 .. _25.1.0-release:
 25.1.0
