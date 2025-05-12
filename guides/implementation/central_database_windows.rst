@@ -103,7 +103,7 @@ If there are any database connection issues, the service will fail to start. Che
  
 PostgreSQL
 ----------
-For Micetro Central running on Windows, the ``preferences.cfg`` file located in the data directory contains, in addition to the fingerprint of Central (the "password" preference), four other preferences: ``DatabaseType``, ``DatabaseServer``, ``DatabaseUsername`` and ``DatabasePassword``.
+For Micetro Central running on Windows, the ``preferences.cfg`` file located in the data directory contains, in addition to the fingerprint of Central (the ``password`` preference), four other preferences: ``DatabaseType``, ``DatabaseServer``, ``DatabaseUsername`` and ``DatabasePassword``.
  
  The ``preferences.cfg`` file for standard user/password authentication should look like this:
  

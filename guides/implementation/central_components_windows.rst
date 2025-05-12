@@ -43,9 +43,9 @@ For information about preferences/configuration files, refer to :ref:`config-fil
 
 Running Micetro Central under a privileged user account
 -------------------------------------------------------
-Running Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
+Running Micetro Central as a specific service account affects a few functions when it talks to the Active Directory, such as Integrated Security communications with an SQL server database, communications with AD Sites and Services, authentication of AD users, and ability to ping.
 
-When creating a service account for Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise, it will not be able to utilize the ping functionality.
+When creating a service account for Micetro Central, make sure the user is in the local "administrators" group on the Central machine. Otherwise, it will not be able to utilize the ping functionality.
 
 To be able to manage data, the service account running Micetro Central needs to be added to the DNS Admins and/or DHCP Admins group.
 
@@ -66,7 +66,7 @@ For IP Address Management (IPAM), Micetro connects with cloud services through M
 
    * Make sure the machine hosting Micetro Central can connect to the designated cloud instance.
    * The connection must be made through port ``443/TCP``, which is reserved for secure communication.
-   * For detailed networking requirements, refer to :ref:`networking-requirements`.
+   * For detailed networking requirements, refer to :ref:`networking_requirements`.
 
 If you intend to add multiple AWS cloud accounts using a single set of credentials, refer to :ref:`aws-multi-account`.
 

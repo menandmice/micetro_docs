@@ -7,7 +7,7 @@
 
 Integrating with Okta
 =====================
-Integrating Micetro with Okta can simplify the authentication process by providing multi-Factor authentication (MFA) and single sign-on (SSO) functionalities. After configuration, Micetro's login page includes a button that, when clicked, directs users to Okta's authentication URL, where they can complete the authentication process using their Okta credentials and gain access to Micetro without needing to repeatedly enter their login credentials. 
+Integrating Micetro with Okta can simplify the authentication process by providing multi-factor authentication (MFA) and single sign-on (SSO) functionalities. After configuration, Micetro's login page includes a button that, when clicked, directs users to Okta's authentication URL, where they can complete the authentication process using their Okta credentials and gain access to Micetro without needing to repeatedly enter their login credentials. 
 
 Dependency checklist
 ---------------------

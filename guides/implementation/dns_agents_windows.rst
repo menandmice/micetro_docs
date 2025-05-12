@@ -47,7 +47,7 @@ If Micetro Central is installed on a Windows host, you can install Micetro DNS A
     
 Installing agents
 -----------------
-* To install agents automatically (recommended when you have a single service like BIND or Unbound):
+* To install agents automatically (recommended when you have a single service like BIND):
  
   .. code-block:: bash
         
@@ -99,7 +99,7 @@ Add the following element, replacing the dummy address here with the server's co
     
     DNSServerAddress = 192.0.2.1
  
-Save the file, and then restart the Micetro DNS Agent using :menuselection:`Administrative Tools --> Services` in Windows. Then, restart Micetro Central so that it can cache the zone's contents.
+Save the file, and then restart the Micetro DNS Agent using :menuselection:`Administrative Tools --> Services` on Windows. Then, restart Micetro Central so that it can cache the zone's contents.
  
 .. note::
     For Active Directory (AD)-integrated zones, other domain controllers running Microsoft DNS do not need to get zone transfers. This is because the zone data is replicated through LDAP, rather than through zone transfers. Thus, for an AD-integrated zone, the zone transfer restriction list might only need the server's own address.
@@ -110,16 +110,16 @@ Normally, the Micetro DNS Agent is installed on only *one* host in an Active Dir
  
 To configure Micetro DNS Agent to access DNS servers on remote computers:
  
-1. Start the Windows 'Services' program and open the **Properties** dialog box for the Micetro DNS Agent.
+1. Start the Windows **Services** program and open the **Properties** dialog for the Micetro DNS Agent.
 2. Select the :guilabel:`Log On` tab. The :guilabel:`Local System account` radio button is most likely selected.
 3. Select the :guilabel:`This account` radio button and enter the name and password of a Windows user who is a member of the Administrators group.
-4. Close the dialog box and restart the Micetro DNS Agent service.
+4. Close the dialog and restart the Micetro DNS Agent service.
  
 If Micetro DNS Agent is run as a local system service (the default), it will only be able to manage the MS DNS service on the same host.
  
 Enabling the generic DNS Agent functionality
 ------------------------------------------
-If the Agent should be configured to run a connector script so it can interface with DNS servers other than the natively supported Windows DNS/Unix BIND DNS, you must configure the script interpreter and the connector script in the agents ``preferences.cfg`` file.
+If the Agent should be configured to run a connector script so it can interface with DNS servers other than the natively supported Windows DNS/Unix BIND DNS, you must configure the script interpreter and the connector script in the agent's ``preferences.cfg`` file.
  
 The file is a text file in a simple XML-based format. Add the following element, replacing the dummy script interpreter and script:
  

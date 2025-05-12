@@ -56,7 +56,7 @@ Through the connected database, Micetro Central stores all data, including user-
 
 Micetro Central handles user authentication and contains information about access privileges for the user. If the Micetro IP Address Management (IPAM) page is activated, Micetro Central is responsible for the management and allocation of IP addresses.
 
-Micetro Central listens on TCP port ``1231``. Fore more information, refer to :ref:`firewall-ports`.
+Micetro Central listens on TCP port ``1231``. For more information, refer to :ref:`networking_requirements`.
 
 Use this table as a guide for allocating resources to ensure smooth operation of Micetro:
 
@@ -77,7 +77,7 @@ Use this table as a guide for allocating resources to ensure smooth operation of
     :width: 80%
     :align: center
 
-Additional instances of Micetro Central can also be installed as a "cold standby". With Micetro's embedded SQLite data storage, the database is periodically copied from the active Central server to the cold standby and, if the active server becomes unavailable, the Central service on the cold standby can be activated. If Central is configured with a different database backend, the database needs its own high availability setup for redundancy.
+Additional instances of Micetro Central can also be installed as a "cold standby". With Micetro's embedded SQLite data storage, the database is periodically copied from the active Central server to the cold standby and, if the active server becomes unavailable, the Central service on the cold standby can be activated. If Micetro Central is configured with a different database backend, the database needs its own High Availability setup for redundancy.
 
 Refer to :ref:`central-ha` for information about running multiple Micetro Central instances for High Availability.
 
@@ -191,4 +191,4 @@ The Web Application supports a minimum browser viewport area of 1366x768 pixels 
 Virtual Appliances (Optional)
 ------------------------------
 
-The MDDS DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the appliance has been configured, you work with the DNS and DHCP servers just as you would work with the BIND and ISC DHCP servers. Fore more information, refer to :ref:`webapp-appliance-management`.
+The MDDS DNS/DHCP Appliance can be used as both a DNS and a DHCP server. Once the appliance has been configured, you work with the DNS and DHCP servers just as you would work with the BIND and ISC DHCP servers. For more information, refer to :ref:`webapp-appliance-management`.

@@ -116,7 +116,7 @@ During the installation process, the installer will prompt you with questions re
     * Are you running named in a chroot() environment?
     * What is the chroot() directory?
     * Where is the BIND configuration file?
-    * Would you like the DNS agent to run ``name-checkconf`` to verify changes when editing advanced server and zone options?
+    * Would you like the DNS agent to run ``named-checkconf`` to verify changes when editing advanced server and zone options?
     * Where is ``named-checkconf`` located?
     * The installer needs to rearrange the files in ``<directory>`` and restart the name server. A backup will be created. Is this OK?
     * Enter the user and group names under which you want to run the Micetro DNS agent. This must be the user which is running named.
@@ -162,7 +162,7 @@ The file layout differs slightly between instances with and without BIND views, 
  
     "Micetro DNS Agent daemon", "mmremoted, usually in /usr/sbin or /usr/local/sbin"
     "Micetro external static zone handling utilities", "mmedit and mmlock, usually in /usr/bin or /usr/local/bin"
-    "Data directory for Micetro DNS agent", "Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Agent was installed"
+    "Data directory for Micetro DNS Agent", "Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Agent was installed"
     "Backup of original data directory", "Same as above, with '.bak' appended to the path"
     "New starting configuration file", "Usually either /etc/named.conf or /etc/namedb/named.conf; possibly located within a chroot jail"
     "Backup of original starting configuration file", "Same as above, with '.bak' appended to the path"
