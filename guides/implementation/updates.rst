@@ -94,7 +94,7 @@ Troubleshooting
 If there's an error with a component, or it's offline, it will be highlighted in the :guilabel:`Status` column of the **Current Status** grid. Hover your cursor over the **Offline** or **Error** status for more details to help you troubleshoot.
 
 Updating Appliances
---------------------
+-------------------
 If any appliances have pending updates, they are displayed on the :guilabel:`Appliance updates` grid, along with their details and statuses.
 
 There are three types of updates:
@@ -105,7 +105,7 @@ There are three types of updates:
 
 Appliance Update Status
 ^^^^^^^^^^^^^^^^^^^^^^^
-The update process involves downloading and deploying updates reflected in the :guilabel:`Status` column of the **Apliance updates** grid. There are five different statuses:
+The update process involves downloading and deploying updates reflected in the :guilabel:`Status` column of the **Appliance updates** grid. There are five different statuses:
 
 * **Available**: Updates are ready for application but have not been downloaded yet.
 * **Deployed**: Updates have been applied and fully deployed. 
@@ -115,6 +115,13 @@ The update process involves downloading and deploying updates reflected in the :
 
 .. note::
    It's recommended to update individual appliances one at a time to avoid simultaneous downtime for all appliances.
+
+How to Update Appliances
+^^^^^^^^^^^^^^^^^^^^^^^^
+To update an appliance in Micetro, you can either download and apply the update directly through the Web Application or manually.
+
+.. note::
+   It's recommended to download and update your MDDS appliances through the Web Application.
 
 **To update an appliance**:
 
@@ -127,3 +134,21 @@ The update process involves downloading and deploying updates reflected in the :
       :width: 50%
 
 4. Once the download is complete, the update **Status** becomes :guilabel:`Pending`. Initiate the update process by selecting :guilabel:`Deploy` on the Row :guilabel:`...` menu.
+
+**To update an appliance manually**:
+
+1. Download the update file (.tgz) from the update server at https://update.menandmice.com/appliance/updates/.
+2. Unzip the file and extract its contents, which include the manifest file, into a folder in one of the following locations:
+
+   * **Windows**: ``C:\ProgramData\Men and Mice\Central\update\appliance``
+   * **Linux**: ``/var/mmsuite/mmcentral/update/appliance``
+
+   .. note::
+      We recommend naming the folder based on the update version, e.g., ``C:\ProgramData\Men and Mice\Central\update\appliance\9.6.1`` or ``/var/mmsuite/mmcentral/update/appliance/9.6.1``.
+
+3. Upload the update package to the Central server.
+4. In the Web Application, navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Appliance updates` in the left sidebar.
+5. Select the update in the grid and use the Row :guilabel:`...` menu to select :guilabel:`Deploy`.
+
+   .. note::
+      The update you downloaded should be listed in the data grid and available for deployment as long as there is an MDDS appliance with a version to which the update applies.
