@@ -61,7 +61,7 @@ For Micetro Central on Windows, you can choose from two authentication methods:
     
    Ensure that Micetro Central runs under an Active Directory service account that is a member of the local administrators group.
  
-   Here's an example of how the ``preferences.cfg`` file should look for the Windows Authentication method. Note that the ``databaseusername`` tag must be present and the value must be set to an empty string.
+   Here's an example of how the database section of the ``preferences.cfg`` file should look for the Windows Authentication method. Note that the ``databaseusername`` tag must be present and the value must be set to an empty string.
  
    .. code-block::
             
@@ -71,7 +71,7 @@ For Micetro Central on Windows, you can choose from two authentication methods:
  
 2. **Normal User/Password Authentication**:
  
-   For this method, configure the ``preferences.cfg`` file as follows:
+   For this method, configure the database section of the ``preferences.cfg`` file as follows:
  
    .. code-block::
     
@@ -103,7 +103,7 @@ PostgreSQL
 ----------
 For Micetro Central running on Windows, the ``preferences.cfg`` file located in the data directory contains, in addition to the fingerprint of Central (the ``password`` preference), four other preferences: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
  
-The ``preferences.cfg`` file for standard user/password authentication should look like this:
+The database connection section in the ``preferences.cfg`` file for standard user/password authentication should look like this:
  
 .. code-block::
     
@@ -112,7 +112,7 @@ The ``preferences.cfg`` file for standard user/password authentication should lo
     <databaseusername value="mmSuiteDBUser"/>
     <databasepassword value="password hash"/>
  
-For the Windows Authentication method, an example ``preferences.cfg`` file would look like this:
+For the Windows Authentication method, an example database section of the ``preferences.cfg`` file would look like this:
  
 .. code-block::
     
