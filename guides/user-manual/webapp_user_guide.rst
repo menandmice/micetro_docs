@@ -33,16 +33,27 @@ From the data grid, you can manage DNS zones and records, networks and DHCP scop
   "Add to favorites", "Adds the selected item to the favorites list. The corresponding Favorites filter in the sidebar shows all favorited items."
   "Column configuration", "Specifies which columns are displayed in the data grid."
   "Folder sidebar", "Filters the sidebar to show only created folders."
-  "Grid or tree toggle", "Toggles the data grid between list and tree view."
+  "Flat or tree toggle", "Toggles the data grid between list and tree view."
   "Inspector", "Displays various information about the item selected in the data grid. Refer to :ref:`webapp-inspector`."
   "Quick command", "Allows you to quickly find and perform actions. Refer to :ref:`webapp-quick-command`."
   "Quick filter", "Filters the results displayed in the data grid when you select an item in the sidebar. Refer to :ref:`quickfilter`."
-  "Refresh grid", "Refreshes the contents of the data grid."
+  "Refresh data grid", "Refreshes the contents of the data grid."
   "Services sidebar", "Filters the sidebar to show only services, e.g., DHCP services or DNS services."
-  "Sidebar", "Displays a list of possible filters to apply to the data grid. Refer to :ref:`webapp-filtering` below."
+  "Sidebar", "Displays a list of possible filters to apply to the data grid. Refer to :ref:`webapp-filtering`."
   "Task bar", "Provides the main tasks on each page, e.g., Create, Open, Action."
 
-  
+
+.. _webapp-inspector:
+
+Viewing object details in the Inspector
+---------------------------------------
+The Inspector, located to the right of the data grid on each page, serves as an info box for the selected objects, such as DNS zones. In some cases, it's possible to edit the information in the Inspector, such as DNS zone authority or the Start of Authority (SOA) record for each zone. For more information, refer to :ref:`zone-contents`.
+
+The **Properties** section of the Inspector displays all properties for the selected object. These include all custom properties that have been defined for a specific object type.
+
+.. note::
+  For IP addresses, the Inspector also displays the vendor for the specific MAC address, when available.
+
 .. _webapp-filtering:
 
 Filtering with the sidebar
@@ -70,7 +81,7 @@ Select the folder |folder| in the bottom left corner of the sidebar to view the 
   :align: center
 |
 
-To add or remove an object to a folder, select the object in the data grid and then use the :guilabel:`Action` menu to select :guilabel:`Add to folder`. In the **Add to Folder** dialog box, you can add the object to a folder, move it between folders, or remove it from a folder.
+To add or remove an object to a folder, select the object in the data grid and then use the :guilabel:`Action` menu to select :guilabel:`Add to folder`. In the **Add to Folder** dialog, you can add the object to a folder, move it between folders, or remove it from a folder.
 
 .. _quickfilter:
 
@@ -94,7 +105,7 @@ You can also enter the name of the column, a conditional operator, and the queri
 
 .. code-block::
 
-  type=slave
+  type=secondary
   name=^example
   name=$arpa.
 
@@ -132,7 +143,7 @@ Searching with the quick command
 --------------------------------
 The quick command speeds up common operations in Micetro and helps you find and perform actions on specific objects in the system.
 
-Access quick command by selecting either the lightning icon |quickcommand| in the upper right corner of the screen or by using the keyboard shortcut **Ctrl** + **Space**.
+Access quick command by selecting either the lightning icon |quickcommand| in the top right corner of the screen or by using the keyboard shortcut **Ctrl** + **Space**.
 
 .. |quickcommand| image:: ../../images/quick-command.png
   :height: 3ex
@@ -166,24 +177,13 @@ Access quick command by selecting either the lightning icon |quickcommand| in th
      :width: 70%
 
 
-.. _webapp-inspector:
-
-Viewing object details in the Inspector
----------------------------------------
-The Inspector, located to the right of the data grid on each page, serves as an info box for the selected objects, such as DNS zones. In some cases, it's possible to edit the information in the Inspector, such as DNS zone authority or the Start of Authority (SOA) record for each zone. For more information, refer to :ref:`zone-contents`.
-
-The **Properties** section of the Inspector displays all properties for the selected object. These include all custom properties that have been defined for a specific object type.
-
-.. note::
-  For IP addresses, the Inspector also displays the vendor for the specific MAC address, when available.
-
 .. _webapp-help:
 
 Getting help or support
 -----------------------
 Information about how to get help and/or access the documentation is available in the right sidebar on Micetro's front page.
 
-You can also access the help sidebar from anywhere in Micetro by clicking the |help| icon in the top menu.
+You can also access the help sidebar from anywhere in Micetro by clicking the |help| icon on the navigation menu.
 
 .. |help| image:: ../../images/help-icon.png
   :height: 4ex
