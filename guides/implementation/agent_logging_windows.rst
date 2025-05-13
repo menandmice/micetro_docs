@@ -15,10 +15,10 @@ DNS Agent
 2. Edit the ``C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg`` file and add/edit the following:
 
    .. code-block::
-    
-    LogFileName = "C:\ProgramData\Men and Mice\DNS Server Controller\logs\mmDnslog.txt"
-    LogDestination = 3
-    LogLevel = 5
+      
+      <LogFileName value="C:\ProgramData\Men and Mice\DNS Server Controller\logs\mmDnslog.txt" />
+      <LogDestination value="3"/>
+      <LogLevel value="5" />
 
    (Amend the directory path as needed.)
 
@@ -31,10 +31,10 @@ DHCP Agent
 2. Edit the ``C:\ProgramData\Men and Mice\DHCP Server Controller\preferences.cfg`` file and add/edit the following:
 
    .. code-block::
-    
-    LogFileName = "C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log"
-    LogDestination = 3
-    LogLevel = 5
+      
+      <LogFileName value="C:\ProgramData\Men and Mice\DHCP Server Controller\mmremote.log" />
+      <LogDestination value="3"/>
+      <LogLevel value="5" />
   
    (Amend the directory path as needed.)
 

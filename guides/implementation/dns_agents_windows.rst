@@ -97,7 +97,7 @@ Add the following element, replacing the dummy address here with the server's co
  
 .. code-block::
     
-    DNSServerAddress = 192.0.2.1
+    <DNSServerAddress value="192.0.2.1"/>
  
 Save the file, and then restart the Micetro DNS Agent using :menuselection:`Administrative Tools --> Services` on Windows. Then, restart Micetro Central so that it can cache the zone's contents.
  
@@ -125,7 +125,7 @@ The file is a text file in a simple XML-based format. Add the following element,
  
 .. code-block:: XML
     
-    GenericDNSScript = "python /scripts/genericDNS.py"
+    <GenericDNSScript value="python /scripts/genericDNS.py" />
  
 For information about ``preferences.cfg`` files, refer to :ref:`config-files-windows`.
  

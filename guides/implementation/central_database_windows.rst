@@ -7,7 +7,7 @@
 Setting up the database backend on Windows
 ==========================================
  
-Micetro can be used with the following databases:
+Micetro can be used with the following databases on Windows:
  
 * :ref:`SQLite<central-sqlite-windows>`
 * :ref:`Microsoft SQL Server<central-mssql-windows>`
@@ -34,7 +34,7 @@ Microsoft SQL Server
 .. important::
     It is recommended to keep the network latency between the SQL Server and Micetro Central **below 5 milliseconds**. Latency above this level can lead to performance issues.
  
-    Micetro does not automatically perform index maintentance or database backups. It is recommended to have a database administrator set up a scheduled task to maintain indexes and regularly back up the database and transaction logs, (when using the Full recovery model).
+    Micetro does not automatically perform index maintenance or database backups. It is recommended to have a database administrator set up a scheduled task to maintain indexes and regularly back up the database and transaction logs (when using the Full recovery model).
  
 Micetro requires the creation of a new database on your server with a case-sensitive and accent-sensitive collation. For SQL Server 2019 or later, it is recommended to use a UTF-8 collation, such as ``Latin1_General_100_CS_AS_KS_WS_SC_UTF8``. For earlier SQL Server versions or Micetro versions 11.0 and below, the recommended collation is ``SQL_Latin1_General_CP1_CS_AS``. We recommend using the `Microsoft ODBC driver <https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server>`_ --- either version 17 or 18 --- for SQL Server. This is required when using UTF-8 encoded collations. Otherwise, Micetro will connect to a database using older drivers, which could result in issues such as degraded performance.
 
@@ -65,10 +65,9 @@ For Micetro Central on Windows, you can choose from two authentication methods:
  
    .. code-block::
             
-    Password = "the fingerprint hash"
-    DatabaseType = MSSQL
-    DatabaseServer = "<name or ip of the SQL server>\<instance name, e.g., SQLEXPRESS>@<name of database, e.g., mmsuite>"
-    DatabaseUsername = ""
+    <database value="MSSQL"/>
+    <databaseserver value="<name or ip of the SQL server>\<instance name, e.g., SQLEXPRESS>@<name of database, e.g., micetro/>
+    <databaseusername value=""/>
  
 2. **Normal User/Password Authentication**:
  
@@ -76,11 +75,10 @@ For Micetro Central on Windows, you can choose from two authentication methods:
  
    .. code-block::
     
-    Password = "the fingerprint hash"
-    DatabaseType = MSSQL
-    DatabaseServer = "<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro>"
-    DatabaseUsername = mmSuiteDBUser
-    DatabasePassword = "plaintext:DBPASSWORD"
+    <database value="MSSQL"/>
+    <databaseserver value="<name or IP of the SQL server>\<instance name, e.g., SQLEXPRESS>@<database name, e.g., micetro"/>
+    <databaseusername value="mmSuiteDBUser"/>
+    <databasepassword value="plaintext:DBPASSWORD"/>
  
    With this approach, you can use a dedicated SQL Server user for authentication. The ``plaintext:`` prefix in the database password input allows the password to be entered in plaintext, which Micetro Central will encrypt during the initial startup.
  
@@ -97,35 +95,33 @@ Verify the service is running smoothly:
     systemctl restart mmcentral
     systemctl status mmcentral
  
-If there are any database connection issues, the service will fail to start. Check the Micetro Central startup log for errors. The log is located in the Micetro Central data directory at either ``/var/mmsuite/mmcentral/logs`` or ``C:\ProgramData\Men and Mice\Central\logs``.
+If there are any database connection issues, the service will fail to start. Check the Micetro Central startup log for errors. The log is located in the Micetro Central data directory at ``C:\ProgramData\Men and Mice\Central\logs``.
  
 .. _central-postgresql-windows:
  
 PostgreSQL
 ----------
-For Micetro Central running on Windows, the ``preferences.cfg`` file located in the data directory contains, in addition to the fingerprint of Central (the ``password`` preference), four other preferences: ``DatabaseType``, ``DatabaseServer``, ``DatabaseUsername`` and ``DatabasePassword``.
+For Micetro Central running on Windows, the ``preferences.cfg`` file located in the data directory contains, in addition to the fingerprint of Central (the ``password`` preference), four other preferences: ``database``, ``databaseserver``, ``databaseusername`` and ``databasepassword``.
  
- The ``preferences.cfg`` file for standard user/password authentication should look like this:
+The ``preferences.cfg`` file for standard user/password authentication should look like this:
  
 .. code-block::
     
-    Password = "the fingerprint hash"
-    DatabaseType = postgresql
-    DatabaseServer = "<name or IP of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite>"
-    DatabaseUsername = mmSuiteDBUser
-    DatabasePassword = "password hash"
+    <database value="postgresql"/>
+    <databaseserver value="<name or IP of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
+    <databaseusername value="mmSuiteDBUser"/>
+    <databasepassword value="password hash"/>
  
 For the Windows Authentication method, an example ``preferences.cfg`` file would look like this:
  
 .. code-block::
     
-    Password = "the fingerprint hash"
-    DatabaseType = postgresql
-    DatabaseServer = "<name or ip of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite>"
-    DatabaseUsername = ""
+    <database value="postgresql"/>
+    <databaseserver value="<name or ip of the PostgreSQL server>\<instance name, for example, PSQLDB>@<database name, for example, mmsuite"/>
+    <databaseusername value=""/>
  
 .. note::
-    The ``DatabaseUsername`` preference must be included and its value attribute should be an empty string.
+    The ``databaseusername`` preference must be included and its value attribute should be an empty string.
  
 Setting Up a PostgreSQL database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

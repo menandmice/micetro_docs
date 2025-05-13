@@ -17,7 +17,6 @@ The following pages provide instructions on how to install Micetro on Linux, inc
     dhcp_agents_linux
     agent_free_dns-dhcp
     central_database_linux
-    migrate-sqlite-sql-server
     install_webapp_linux
  
 For instructions on configuring Micetro, such as setting up cloud integrations, refer to :ref:`configuration`.

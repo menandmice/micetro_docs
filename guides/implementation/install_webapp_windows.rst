@@ -92,7 +92,7 @@ To allow users to specify a custom Central server to connect to:
  
    .. code-block::
         
-    LockToDefaultServer = false
+    <LockToDefaultServer value="0" />
  
 2. Restart the Micetro Web Services Windows service.
  
