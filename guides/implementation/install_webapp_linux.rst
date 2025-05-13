@@ -98,7 +98,7 @@ To verify the Web Application is accessible, navigate to ``https://web-applicati
  
 Enabling content compression for Apache
 ---------------------------------------
-To speed up response time for large operations, add the following line to `mmws.conf:
+To speed up response time for large operations, add the following line to ``mmws.conf``:
  
 .. code-block::
  
@@ -118,7 +118,7 @@ To allow users to specify a custom Central server to connect to:
  
    .. code-block::
  
-    LockToDefaultServer = false
+    <LockToDefaultServer value="0" />
  
 3. Restart the ``mmws`` service:
  

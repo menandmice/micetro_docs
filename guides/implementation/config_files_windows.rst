@@ -48,4 +48,4 @@ The following table outlines the paths of configuration and log files on Windows
    "``C:\ProgramData\Men and Mice\DNS Server Controller\preferences.cfg``", "Micetro DNS Agent configuration file."
    "``C:\ProgramData\Men and Mice\Web Services\preferences.cfg``", "Mietro Web Services configuration file."
    "``C:\ProgramData\Men and Mice\Updater\preferences.cfg``", "Micetro Update Agent configuration file."
-   "Logfiles for Agents", "Enabled in the agent's ``preferences.cfg`` file. Refer to :ref:`controller-logging`."
+   "Logfiles for Agents", "Enabled in the agent's ``preferences.cfg`` file. Refer to :ref:`agent-logging-windows`."
