@@ -4,28 +4,26 @@
 
 .. _adding-dns:
 
-Adding DNS Service
-==================
+Adding a DNS service
+====================
 
 After installation, Micetro contains no data about DNS servers. These need to be added.
 
-DNS servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
+DNS servers require :ref:`install-controllers` and need to be added using their fully qualified names, such as ``dns1.europe.ad.mmdemo.local``.
 
 .. note::
-  Servers in Microsoft Active Directory environments can be added without installing an agent. See :ref:`agent-free-dns-dhcp`.
+  Servers in Microsoft Active Directory environments can be added without installing an agent. Refer to :ref:`agent-free-dns-dhcp`.
 
-Services are managed on the **Admin** page in the :guilabel:`Service Management` section. There you select :guilabel:`Add Service` to add a new server.
+Services are managed on the :guilabel:`Service Management` tab of the **Admin** page. To add a new service, select :guilabel:`Add Service` on the task bar.
 
-For further details, see :ref:`adding-service` in the Admin Guide.
+For more information and instructions, refer to :ref:`adding-service` in the :ref:`Admin Guide<admin-overview>`.
 
-DNS Servers in Active Directory Integrated Zones
+DNS servers in Active Directory-integrated zones
 ------------------------------------------------
+The DNS Agent uses two different methods to retrieve information from Microsoft AD integrated zones. 
 
-The DNS agent will use two different methods to retrieve information from Microsoft AD integrated zones.  First it will do a zone transfer (both full and incremental) to get the latest records for the zone and then it will use Microsoft APIs to get detailed information for individual records.  Due to this it is important that the DNS agent is allowed to do a zone transfer from the local server.
+1. First, it performs a zone transfer (both full and incremental) to get the latest records for the zone.
 
-.. image:: ../../images/add-dns-arch-old.png
-  :width: 55%
-  :align: center
+2. Then, it uses Microsoft APIs to get detailed information for individual records.
 
-The DNS agent on the DNS server must be able to transfer AD integrated zones from the local DNS server.
-
+As a result, it's important that the DNS Agent is allowed to perform a zone transfer from the local server. The DNS Agent on the DNS server must be able to transfer AD-integrated zones from the local DNS server.

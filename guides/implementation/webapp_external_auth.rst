@@ -4,7 +4,7 @@
    
 .. _webapp-external-auth:
 
-External Authentication
+External authentication
 =======================
 
 Micetro offers a variety of user authentication options to enhance security and streamline access.
