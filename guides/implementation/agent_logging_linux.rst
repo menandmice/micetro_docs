@@ -19,10 +19,10 @@ DNS Agent
 2. Edit the ``/var/named/mmsuite/preferences.cfg`` file and add/edit the following:
 
    .. code-block::
-    
-    LogFileName = "/var/named/mmsuite/logs/mmremote.log"
-    LogDestination = 3
-    LogLevel = 5
+      
+      <LogFileName value="/var/named/mmsuite/logs/mmremote.log" />
+      <LogDestination value="3"/>
+      <LogLevel value="5" />
 
    (Amend the directory path as needed.)
 
@@ -43,10 +43,10 @@ DHCP Agent
 2. Edit the ``/var/mmsuite/dhcp_server_controller/preferences.cfg`` file and add/edit the following:
 
    .. code-block::
-
-    LogFileName = "/var/mmsuite/dhcp_server_controller/logs/mmremote.log"
-    LogDestination = 3
-    LogLevel = 5
+      
+      <LogFileName value="/var/mmsuite/dhcp_server_controller/logs/mmremote.log" />
+      <LogDestination value="3"/>
+      <LogLevel value="5" />
 
    (Amend the directory path as needed.)
 

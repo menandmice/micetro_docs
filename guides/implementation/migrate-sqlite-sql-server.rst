@@ -14,7 +14,7 @@ Before you can migrate the Micetro database to a Microsoft SQL (MS SQL) Server, 
 
 #. Connect Micetro Central to the MS SQL Server. This will create the new Micetro database.
 
-#. Follow the instructions for `setting up Microsoft SQL Server as a database server for the Micetro <https://docs.menandmice.com/en/latest/guides/implementation/central_mssql/#microsoft-sql-server>`_.
+#. Follow the instructions for :ref:`setting up Microsoft SQL Server as a database server for Micetro <central-mssql-windows>`.
 
 The following instructions assume you have created the Micetro database in MS SQL, as well as a ``preferences.cfg`` file with information about connecting to the MS SQL Server. When Micetro Central connects to the MS SQL server for the first time, it will create the necessary tables.
 
