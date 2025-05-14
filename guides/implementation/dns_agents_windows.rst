@@ -75,6 +75,13 @@ If you experience issues with the new installer, the previous Perl-based install
     ./deprecated_installer
  
 The installer will ask a series of questions. Be prepared to answer them, as described, for each component.
+
+For instructions on installing the Generic DNS agent, refer to:
+
+.. toctree::
+    :maxdepth: 1
+ 
+    generic_dns_controller
  
 Active Directory-integrated zones and dynamic zones
 ---------------------------------------------------

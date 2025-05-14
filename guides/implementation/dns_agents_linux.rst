@@ -107,12 +107,13 @@ Installing the agents
     cd mmsuite-controllers-10.1.linux.x64 && ./install
 
 
-For instructions on installing the AuthServe Agent, refer to:
+For instructions on installing other agents, refer to:
 
 .. toctree::
     :maxdepth: 1
  
     authserve_agent
+    generic_dns_controller
 
 .. _installer-questions:
  
