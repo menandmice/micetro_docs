@@ -16,7 +16,7 @@ Micetro can be used with the following databases on Windows:
 .. note::
     * High Availability for the database is only available for MS SQL and PostgreSQL.
  
-    * Deploying Micetro using the Azure Marketplace configures the environment automatically for Azure SQL. Refer to :ref:`installation-azure` for details.
+    * Deploying Micetro using the Azure Marketplace configures the environment automatically for Azure SQL. Refer to :ref:`install-azure` for details.
  
 .. _central-sqlite-windows:
 
@@ -53,7 +53,7 @@ Configuring connection parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
 .. note::
-    To improve your compatibility with Microsoft SQL Server, you need to `install ODBC driver on the Central server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
+    To improve your compatibility with Microsoft SQL Server, you need to `install the ODBC driver on the Central server <https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15>`_.
  
 For Micetro Central on Windows, you can choose from two authentication methods:
  

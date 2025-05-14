@@ -7,7 +7,7 @@
 Adding a DHCP service
 =====================
 
-DHCP servers require :ref:`install-controllers` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
+DHCP servers require :ref:`micetro-agents` and need to be added using their fully qualified names (such as ``dns1.europe.ad.mmdemo.local``).
 
 Servers in Microsoft Active Directory environments can be added without installing an agent. Refer to :ref:`agent-free-dns-dhcp`.
 

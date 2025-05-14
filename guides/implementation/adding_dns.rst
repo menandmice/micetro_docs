@@ -9,7 +9,7 @@ Adding a DNS service
 
 After installation, Micetro contains no data about DNS servers. These need to be added.
 
-DNS servers require :ref:`install-controllers` and need to be added using their fully qualified names, such as ``dns1.europe.ad.mmdemo.local``.
+DNS servers require :ref:`micetro-agents` and need to be added using their fully qualified names, such as ``dns1.europe.ad.mmdemo.local``.
 
 .. note::
   Servers in Microsoft Active Directory environments can be added without installing an agent. Refer to :ref:`agent-free-dns-dhcp`.

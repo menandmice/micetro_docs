@@ -1,15 +1,12 @@
 .. meta::
     :description: Installing the Micetro DNS Agent for Micetro on Windows
-    :keywords: DNS, DNS Agent, Micetro, BIND, Unbound, AuthServe, Windows
+    :keywords: DNS, DNS Agent, Micetro, BIND, Windows
  
 .. _dns-agent-windows:
  
 Installing Micetro DNS Agents on Windows
 ========================================
-Micetro comes with two types of DNS agents: 
- 
-    * the Micetro DNS Agent
-    * the Micetro :ref:`AuthServe Agent<authserve>` 
+Micetro comes with the Micetro DNS Agent.
  
 By default, the Micetro agent installer attempts to automatically detect the installed DNS service, e.g., BIND, and install the appropriate agent. In the case that automatic detection fails, the installer provides hints and additional information.
  
@@ -132,8 +129,3 @@ For information about ``preferences.cfg`` files, refer to :ref:`config-files-win
 Configuring the DNS Agent for Microsoft Azure DNS
 -------------------------------------------------
 You can configure the DNS Agent to work with Microsoft Azure DNS. For information on configuring Microsoft Azure DNS, refer to :ref:`configure-azure-dns`.
- 
-.. toctree::
-    :maxdepth: 1
- 
-    authserve_agent

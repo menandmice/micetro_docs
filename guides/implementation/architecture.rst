@@ -89,14 +89,16 @@ Data storage
 .. note::
   In case of conflict, the authoritative data is always the data source itself (e.g., the DNS or DHCP server).
 
-By default, Micetro Central uses an embedded :ref:`central-sqlite` database. The embedded database is suitable for small to medium environments but larger environments should use a more robust database backend. Currently supported database platforms are MS SQL and PostgreSQL server.
+By default, Micetro Central uses an embedded SQLite database. The embedded database is suitable for small to medium environments but larger environments should use a more robust database backend. Currently supported database platforms are MS SQL and PostgreSQL server.
 
-Information on how to use MS SQL or PostgreSQL as the database for Micetro Central can be found in the :ref:`central-database` section.
+Information on how to use MS SQL or PostgreSQL as the database for Micetro Central can be found in either :ref:`central-database-windows` or :ref:`central-database-linux`.
 
 .. note::
-  Deploying Micetro through the Azure Marketplace will use Azure SQL as its database backend automatically. Refer to :ref:`installation-azure` for details.
+  Deploying Micetro through the Azure Marketplace will use Azure SQL as its database backend automatically. Refer to :ref:`install-azure` for details.
 
 ----
+
+.. _micetro-agents:
 
 Micetro Agents
 ^^^^^^^^^^^^^^

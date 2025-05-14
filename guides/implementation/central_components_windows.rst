@@ -51,8 +51,8 @@ To be able to manage data, the service account running Micetro Central needs to 
 
 .. _cloud-prereqs-windows:
 
-Setting up cloud services
--------------------------
+Setting up cloud services on Windows
+------------------------------------
 For IP Address Management (IPAM), Micetro connects with cloud services through Micetro Central. DNS management requires the Micetro DNS Agent and DHCP management requires the Micetro DHCP Agent. Before proceeding with any actions involving Micetro and cloud services, two critical prerequisites must be met:
  
 1. **DNS/DHCP Agent Installation and Setup**:

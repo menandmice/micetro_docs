@@ -14,7 +14,7 @@ Micetro can be used with the following databases on Linux:
 .. note::
     * High Availability for the database is only available for PostgreSQL.
 
-    * Deploying Micetro using the Azure Marketplace configures the environment automatically for Azure SQL. Refer to :ref:`installation-azure` for details.
+    * Deploying Micetro using the Azure Marketplace configures the environment automatically for Azure SQL. Refer to :ref:`install-azure` for details.
 
 .. _central-sqlite-linux:
 
