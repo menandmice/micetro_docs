@@ -50,7 +50,7 @@ Two specific tools have been developed to streamline interactions with the JSON-
 
 * **Python Module**: This lightweight module simplifies session handling and data conversion from dictionaries to JSON requests. You can access the Python module `here <https://download.menandmice.com/misc/mmJSONClient-1.0.0.tar.gz/>`_.
 
-* **PowerShell Script**: This script is designed to create a robust API client for the JSON-RPC API, providing an efficient and flexible way to interact with the service. You can access the PowerShell script `here <https://download.menandmice.com/misc/mmWSClient.ps1/>`_.
+* **PowerShell Script**: This script is designed to create a robust API client for the JSON-RPC API, providing an efficient and flexible way to interact with the service. You can access the PowerShell script `here <https://github.com/menandmice/micetro_docs/blob/latest/scripts/mmWSClient.ps1>`_.
 
 
 Connecting and Interactive API Clients
