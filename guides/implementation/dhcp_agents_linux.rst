@@ -40,7 +40,7 @@ Multiple agents can be specified. If, for example, you have both ISC Kea and ISC
     ./install --kea-dhcp-controller --isc-dhcp-controller
  
 .. note::
-    If you have only a single service like BIND or Unbound installed, we recommend running the installer without parameters. Then, it then uses the ``--auto`` parameter and figures out the service automatically.
+    If you have only a single service like BIND installed, we recommend running the installer without parameters. Then, it then uses the ``--auto`` parameter and figures out the service automatically.
  
 Quiet/unattended installation is possible with the ``--quiet`` parameter (no output at all):
  

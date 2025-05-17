@@ -82,8 +82,8 @@ To remove Micetro Central:
 
 .. _cloud-prereqs-linux:
 
-Setting up cloud services
--------------------------
+Setting up cloud services on Linux
+----------------------------------
 For IP Address Management (IPAM), Micetro connects with cloud services through Micetro Central. DNS management requires the Micetro DNS Agent and DHCP management requires the Micetro DHCP Agent. Before proceeding with any actions involving Micetro and cloud services, two critical prerequisites must be met:
 
 1. **DNS/DHCP Agent Installation and Setup**:
@@ -97,7 +97,7 @@ For IP Address Management (IPAM), Micetro connects with cloud services through M
 
    * Make sure the machine hosting Micetro Central can connect to the designated cloud instance.
    * The connection must be made through port ``443/TCP``, which is reserved for secure communication.
-   * For detailed networking requirements, refer to :ref:`networking-requirements`.
+   * For detailed networking requirements, refer to :ref:`networking_requirements`.
 
 If you intend to add multiple AWS cloud accounts using a single set of credentials, refer to :ref:`aws-multi-account`.
 

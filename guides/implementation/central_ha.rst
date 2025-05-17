@@ -21,13 +21,13 @@ When there are no HA members defined or if Micetro Central has not been configur
 Configuring High Availability on Windows
 ----------------------------------------
 
-1. In the existing (or designated as *primary*) server running Micetro Central, edit the preferences file ``preferences.cfg``, by adding the following to the file:
+1. In the existing (or designated as *primary*) server running Micetro Central, edit the preferences file ``preferences.cfg`` by adding the following to the file:
 
   .. code-block::
 
    <ClusterMemberName value="somename"/>
 
-  ``somename`` is the unique name that will identify the Micetro Central instance in the High Availability cluster. (e.g., "1", “primary”, or "central1").
+  ``somename`` is the unique name that will identify the Micetro Central instance in the High Availability cluster. (For example, "1", “primary”, or "central1".)
 
 2. Restart the primary Central application from the command line:
 
@@ -87,13 +87,13 @@ Configuring High Availability on Windows
 Configuring High Availability on Linux
 --------------------------------------
 
-1. On the existing (or designated as *primary*) server running Micetro Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg``, by adding the following to the file:
+1. On the existing (or designated as *primary*) server running Micetro Central, edit the preferences file in ``/var/mmsuite/mmcentral/preferences.cfg`` by adding the following to the file:
 
   .. code-block::
 
     <ClusterMemberName value="somename"/>
 
-  ``somename`` is the unique name that will identify the Micetro Central instance in the High Availability cluster. (For example "1", “primary”, or "central1").
+  ``somename`` is the unique name that will identify the Micetro Central instance in the High Availability cluster. (For example "1", “primary”, or "central1".)
 
 2. Restart the primary Micetro Central application:
 
@@ -147,7 +147,7 @@ Configuring High Availability on Linux
 .. note::
   Repeat these steps for each High Availability failover you'd like to add. The priority for each failover member should be unique and higher than the primary.
 
-Proceed to :ref:`install-controllers`.
+Proceed to :ref:`dns-agent-linux`.
 
   
 Editing HA member options
@@ -165,4 +165,4 @@ Editing HA member options
    
   * **Remove member**: Remove the server member from the HA cluster.
 
-Proceed to :ref:`install-controllers`.
+Proceed to :ref:`dns-agent-windows` or :ref:`dns-agent-linux`.
