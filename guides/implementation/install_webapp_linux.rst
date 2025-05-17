@@ -47,8 +47,8 @@ By default, the Web Application uses an unencrypted HTTP connection on port ``80
  
 2. If you have existing SSL key files: 
 
-    * place the .key file in /etc/pki/tls/private/
-    * and the .crt and .csr files in /etc/pki/tls/certs/.
+    * place the .key file in ``/etc/pki/tls/private/``
+    * and the .crt and .csr files in ``/etc/pki/tls/certs/``.
  
 3. If you need new SSL keys, generate a keypair:
  

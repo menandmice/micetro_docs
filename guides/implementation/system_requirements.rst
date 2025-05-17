@@ -88,6 +88,16 @@ Micetro Web Application
 
 .. [5] The Apache web server is supported on all platforms except Windows.
 
+The Web Application supports the following browsers:
+
+* Microsoft Edge
+
+* Google Chrome
+
+* Mozilla Firefox
+
+* Apple Safari
+
 
 Supported cloud services
 ------------------------
@@ -103,15 +113,3 @@ Supported cloud services
 * Meraki
 
 .. [6] Micetro can be installed directly from the Azure Marketplace. Refer to :ref:`installation-azure`.
-
-
-Supported browsers (Web Application)
-------------------------------------
-
-* Microsoft Edge
-
-* Google Chrome
-
-* Mozilla Firefox
-
-* Apple Safari

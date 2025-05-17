@@ -1,6 +1,6 @@
 .. meta::
     :description: Installing the Micetro DNS Agent for Micetro on Linux
-    :keywords: DNS, DNS Agent, Micetro, BIND, Unbound, AuthServe, Linux
+    :keywords: DNS, DNS Agent, Micetro, BIND, AuthServe, Linux
  
 .. _dns-agent-linux:
  
@@ -13,7 +13,7 @@ Micetro comes with two types of DNS agents:
     * the Micetro :ref:`AuthServe Agent<authserve>` 
  
 By default, the installer attempts to automatically detect the installed DNS service (such as BIND) and install the appropriate agent. In cases where automatic detection fails, the installer provides hints and additional information.
- 
+
 .. note::
     If you're running BIND DNS, ensure that the DNS agents run as the same user as BIND (by default, ``named``.)
  
@@ -59,7 +59,7 @@ Before installing the Micetro DNS Agent on a Linux system, make sure you have th
  
 Running the installer
 ---------------------
-* To install agents automatically (recommended when you have a single service like BIND or Unbound):
+* To install agents automatically (recommended when you have a single service like BIND):
  
   .. code-block:: bash
         
@@ -105,7 +105,16 @@ Installing the agents
    .. code-block:: bash
  
     cd mmsuite-controllers-10.1.linux.x64 && ./install
+
+
+For instructions on installing other agents, refer to:
+
+.. toctree::
+    :maxdepth: 1
  
+    authserve_agent
+    generic_dns_controller
+
 .. _installer-questions:
  
 Installer questions
@@ -116,7 +125,7 @@ During the installation process, the installer will prompt you with questions re
     * Are you running named in a chroot() environment?
     * What is the chroot() directory?
     * Where is the BIND configuration file?
-    * Would you like the DNS agent to run ``name-checkconf`` to verify changes when editing advanced server and zone options?
+    * Would you like the DNS agent to run ``named-checkconf`` to verify changes when editing advanced server and zone options?
     * Where is ``named-checkconf`` located?
     * The installer needs to rearrange the files in ``<directory>`` and restart the name server. A backup will be created. Is this OK?
     * Enter the user and group names under which you want to run the Micetro DNS agent. This must be the user which is running named.
@@ -162,7 +171,7 @@ The file layout differs slightly between instances with and without BIND views, 
  
     "Micetro DNS Agent daemon", "mmremoted, usually in /usr/sbin or /usr/local/sbin"
     "Micetro external static zone handling utilities", "mmedit and mmlock, usually in /usr/bin or /usr/local/bin"
-    "Data directory for Micetro DNS agent", "Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Agent was installed"
+    "Data directory for Micetro DNS Agent", "Usually /var/named, /etc/namedb, /var/lib/named, or something within a chroot jail; the same location as before the DNS Agent was installed"
     "Backup of original data directory", "Same as above, with '.bak' appended to the path"
     "New starting configuration file", "Usually either /etc/named.conf or /etc/namedb/named.conf; possibly located within a chroot jail"
     "Backup of original starting configuration file", "Same as above, with '.bak' appended to the path"
@@ -239,9 +248,9 @@ Once the service is stopped, you can proceed to remove the DNS Agent files:
  
 3. Revert to your original configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you wish to revert to your original DNS configuration and data, follow these additional steps:
+If you want to revert to your original DNS configuration and data, follow these additional steps:
  
-1. Stop the BIND or named service, which might have been managed by the DNS agent, using its respective init script. For example:
+1. Stop the BIND or ``named`` service, which might have been managed by the DNS agent, using its respective init script. For example:
  
    .. code-block:: bash
         
@@ -253,7 +262,7 @@ If you wish to revert to your original DNS configuration and data, follow these 
         
     sudo systemctl stop named
  
-2. With the BIND or named service stopped, you can proceed to restore your original DNS configuration and data:
+2. With the BIND or ``named`` service stopped, you can proceed to restore your original DNS configuration and data:
  
     * Delete the initial configuration file (``named.conf``) created by the DNS Agent. 
  
@@ -311,11 +320,3 @@ Verify the agent application is running:
 .. code-block:: bash
     
     systemctl status mmremote
-
-|
-**Related topics**:
-
-.. toctree::
-    :maxdepth: 1
- 
-    authserve_agent

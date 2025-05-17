@@ -14,7 +14,7 @@ Micetro can be used with the following databases on Linux:
 .. note::
     * High Availability for the database is only available for PostgreSQL.
 
-    * Deploying Micetro using the Azure Marketplace configures the environment automatically for Azure SQL. Refer to :ref:`installation-azure` for details.
+    * Deploying Micetro using the Azure Marketplace configures the environment automatically for Azure SQL. Refer to :ref:`install-azure` for details.
 
 .. _central-sqlite-linux:
 
@@ -58,7 +58,7 @@ To restart Micetro Central and check its status:
     systemctl restart mmcentral
     systemctl status mmcentral
  
-If the database connection fails, the service will not start and an error message is displayed.
+If there are any database connection issues, the service will fail to start. Check the Micetro Central startup log for errors. The log is located in the Micetro Central data directory at ``/var/mmsuite/mmcentral/logs``.
  
 Setting Up a PostgreSQL database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

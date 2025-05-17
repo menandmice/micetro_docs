@@ -11,4 +11,4 @@ Once DHCP services have been added to Micetro, all the scopes from the DHCP serv
 .. image:: ../../images/ipam-scopes.png
    :width: 90%
 
-Additionally, if you have a spreadsheet or a database with other IP address range (subnet) allocations and details on individual devices (IP addresses), you can manually enter this data or import it to Micetro in bulk through the Web Application. For more information about importing IPAM data to Micetro, refer to :ref:`webapp-import-ipam-data`
+Additionally, if you have a spreadsheet or a database with other IP address range (subnet) allocations and details on individual devices (IP addresses), you can manually enter this data or import it to Micetro in bulk through the Web Application. For more information about importing IPAM data to Micetro, refer to :ref:`webapp-import-ipam-data`.
