@@ -118,10 +118,7 @@ The update process involves downloading and deploying updates reflected in the :
 
 How to Update Appliances
 ^^^^^^^^^^^^^^^^^^^^^^^^
-To update an appliance in Micetro, you can either download and apply the update directly through the Web Application or manually.
-
-.. note::
-   It's recommended to download and update your MDDS appliances through the Web Application.
+To update an appliance in Micetro, you can either download and apply the update directly through the Web Application or download the update package manually and then apply it through the Web Application. It's also possible to update MDDS manually by following the `instructions in the BlueCat Address Manager Administration Guide <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Upgrading-DNS/DHCP-Server-software/25.1.0>`_.
 
 **To update an appliance**:
 
@@ -135,10 +132,11 @@ To update an appliance in Micetro, you can either download and apply the update 
 
 4. Once the download is complete, the update **Status** becomes :guilabel:`Pending`. Initiate the update process by selecting :guilabel:`Deploy` on the Row :guilabel:`...` menu.
 
-**To update an appliance manually**:
+**To manually prepare an appliance update**:
 
-1. Download the update file (.tgz) from the update server at https://update.menandmice.com/appliance/updates/.
-2. Unzip the file and extract its contents, which include the manifest file, into a folder in one of the following locations:
+1. Navigate to the `appliance update index <https://update.menandmice.com/appliance/index.json>`_ and grab the ``filename`` for the update, e.g., "filename": "bdds-9.6.1.zip".
+2. Download the update file (.zip) with that ``filename`` from the `update server <https://update.menandmice.com/appliance/updates/>`_ and upload it to the Central server.
+3. Unzip the file and extract its contents, which include the manifest file, into a folder in one of the following locations:
 
    * **Windows**: ``C:\ProgramData\Men and Mice\Central\update\appliance``
    * **Linux**: ``/var/mmsuite/mmcentral/update/appliance``
@@ -146,7 +144,6 @@ To update an appliance in Micetro, you can either download and apply the update 
    .. note::
       We recommend naming the folder based on the update version, e.g., ``C:\ProgramData\Men and Mice\Central\update\appliance\9.6.1`` or ``/var/mmsuite/mmcentral/update/appliance/9.6.1``.
 
-3. Upload the update package to the Central server.
 4. In the Web Application, navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Appliance updates` in the left sidebar.
 5. Select the update in the grid and use the Row :guilabel:`...` menu to select :guilabel:`Deploy`.
 

@@ -79,7 +79,7 @@ Table of Contents
     guides/admin-manual/admin_object_history
     guides/admin-manual/webapp_sso
     guides/admin-manual/webapp_appliance_management
-    guides/implementation/updates
+    guides/admin-manual/updates
 
 .. toctree::
     :caption: Reference
