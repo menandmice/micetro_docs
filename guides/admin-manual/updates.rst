@@ -29,20 +29,23 @@ Micetro notifies you when a new version becomes available and allows administrat
  
 Update Paths
 ------------
-If you're updating Micetro from an older version, refer to the following table:
+A direct update path is supported for all Micetro versions from 7.x and greater. If you are on a version below 7.x, please update first to version 9.3 before updating to the target version, e.g., 25.1.x.
 
-.. csv-table::
-  :widths: 30, 30, 40
-  :header: "Origin version", "Target version", "Update to"
+Important Notes for Updating
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  "11.x", "25.x", "25.x [1]_"
-  "10.x", "11.x", "11.x [1]_"
-  "9.x", "10.x", "10.x [1]_"
-  "8.x", "10.x", "10.x [1]_"
-  "7.x", "10.x", "10.x [1]_"
-  "6.x", "10.x", "9.3"
+* **If you have a Kea DHCP server on a version below 1.6.0**, it must be updated to 1.6.0 or 1.8.0 before you can update to Micetro version 10.0.0 or greater. For more information, refer to the `Kea update notice <https://docs.menandmice.com/en/10.0/release_notes/10.0.0/#release>`_.
 
-.. [1] Before updating to Micetro 10.0 or newer, Kea DHCP servers must be updated to 1.6.0 or 1.8.0. Refer to `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
+* **If you're running Micetro Central on Windows on a version between 7.x and 10.x** and want to update directly to 25.1.x, follow these instructions:
+
+     1. Run the installer executable manually to upgrade Micetro Central to version 25.1.x.
+     2. Download only the Micetro Central installer file from the `Micetro downloads server <https://download.menandmice.com/Windows/>`_ and run the installer with "Run as Administrator" on the machine running Micetro Central.
+     3. Update Micetro Central in the High Availability setup, if applicable.
+     4. Shut down the Micetro Central service on each secondary server.
+     5. Update the primary server manually using an installer, which can be downloaded from the `downloads server <https://download.menandmice.com/>`_.
+     6. Manually update each secondary server using an installer. 
+
+   When the update is successfully completed, the service will be started again. Both servers should be updated and returned to High Availability mode.
 
 Updating Micetro
 ----------------
@@ -51,7 +54,7 @@ Before updating Micetro, we strongly recommend first reading the :ref:`release-n
 Checking for Available Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Select :guilabel:`Admin` on the top navigation ^menu.
+1. Select :guilabel:`Admin` on the top navigation menu.
 
 2. Select the :guilabel:`Configuration` tab.
 
