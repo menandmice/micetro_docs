@@ -29,20 +29,23 @@ Micetro notifies you when a new version becomes available and allows administrat
  
 Update Paths
 ------------
-If you're updating Micetro from an older version, refer to the following table:
+A direct update path is supported for all Micetro versions from 7.x and greater. If you are on a version below 7.x, please update first to version 9.3 before updating to the target version, e.g., 25.1.x.
 
-.. csv-table::
-  :widths: 30, 30, 40
-  :header: "Origin version", "Target version", "Update to"
+Important Notes for Updating
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  "11.x", "25.x", "25.x [1]_"
-  "10.x", "11.x", "11.x [1]_"
-  "9.x", "10.x", "10.x [1]_"
-  "8.x", "10.x", "10.x [1]_"
-  "7.x", "10.x", "10.x [1]_"
-  "6.x", "10.x", "9.3"
+* **If you have a Kea DHCP server on a version below 1.6.0**, it must be updated to 1.6.0 or 1.8.0 before you can update to Micetro version 10.0.0 or greater. For more information, refer to the `Kea update notice <https://docs.menandmice.com/en/10.0/release_notes/10.0.0/#release>`_.
 
-.. [1] Before updating to Micetro 10.0 or newer, Kea DHCP servers must be updated to 1.6.0 or 1.8.0. Refer to `Kea update notice <https://menandmice.com/docs/10.0/release_notes/10.0.0#release>`_.
+* **If you're running Micetro Central on Windows on a version between 7.x and 10.x** and want to update directly to 25.1.x, follow these instructions:
+
+     1. Run the installer executable manually to upgrade Micetro Central to version 25.1.x.
+     2. Download only the Micetro Central installer file from the `Micetro downloads server <https://download.menandmice.com/Windows/>`_ and run the installer with "Run as Administrator" on the machine running Micetro Central.
+     3. Update Micetro Central in the High Availability setup, if applicable.
+     4. Shut down the Micetro Central service on each secondary server.
+     5. Update the primary server manually using an installer, which can be downloaded from the `downloads server <https://download.menandmice.com/>`_.
+     6. Manually update each secondary server using an installer. 
+
+   When the update is successfully completed, the service will be started again. Both servers should be updated and returned to High Availability mode.
 
 Updating Micetro
 ----------------
@@ -51,7 +54,7 @@ Before updating Micetro, we strongly recommend first reading the :ref:`release-n
 Checking for Available Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Select :guilabel:`Admin` on the top navigation ^menu.
+1. Select :guilabel:`Admin` on the top navigation menu.
 
 2. Select the :guilabel:`Configuration` tab.
 
@@ -94,7 +97,7 @@ Troubleshooting
 If there's an error with a component, or it's offline, it will be highlighted in the :guilabel:`Status` column of the **Current Status** grid. Hover your cursor over the **Offline** or **Error** status for more details to help you troubleshoot.
 
 Updating Appliances
---------------------
+-------------------
 If any appliances have pending updates, they are displayed on the :guilabel:`Appliance updates` grid, along with their details and statuses.
 
 There are three types of updates:
@@ -105,7 +108,7 @@ There are three types of updates:
 
 Appliance Update Status
 ^^^^^^^^^^^^^^^^^^^^^^^
-The update process involves downloading and deploying updates reflected in the :guilabel:`Status` column of the **Apliance updates** grid. There are five different statuses:
+The update process involves downloading and deploying updates reflected in the :guilabel:`Status` column of the **Appliance updates** grid. There are five different statuses:
 
 * **Available**: Updates are ready for application but have not been downloaded yet.
 * **Deployed**: Updates have been applied and fully deployed. 
@@ -115,6 +118,10 @@ The update process involves downloading and deploying updates reflected in the :
 
 .. note::
    It's recommended to update individual appliances one at a time to avoid simultaneous downtime for all appliances.
+
+How to Update Appliances
+^^^^^^^^^^^^^^^^^^^^^^^^
+To update an appliance in Micetro, you can either download and apply the update directly through the Web Application or download the update package manually and then apply it through the Web Application. It's also possible to update MDDS manually by following the `instructions in the BlueCat Address Manager Administration Guide <https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/Upgrading-DNS/DHCP-Server-software/25.1.0>`_.
 
 **To update an appliance**:
 
@@ -127,3 +134,21 @@ The update process involves downloading and deploying updates reflected in the :
       :width: 50%
 
 4. Once the download is complete, the update **Status** becomes :guilabel:`Pending`. Initiate the update process by selecting :guilabel:`Deploy` on the Row :guilabel:`...` menu.
+
+**To manually prepare an appliance update**:
+
+1. Navigate to the `appliance update index <https://update.menandmice.com/appliance/index.json>`_ and grab the ``filename`` for the update, e.g., "filename": "bdds-9.6.1.zip".
+2. Download the update file (.zip) with that ``filename`` from the `update server <https://update.menandmice.com/appliance/updates/>`_ and upload it to the Central server.
+3. Unzip the file and extract its contents, which include the manifest file, into a folder in one of the following locations:
+
+   * **Windows**: ``C:\ProgramData\Men and Mice\Central\update\appliance``
+   * **Linux**: ``/var/mmsuite/mmcentral/update/appliance``
+
+   .. note::
+      We recommend naming the folder based on the update version, e.g., ``C:\ProgramData\Men and Mice\Central\update\appliance\9.6.1`` or ``/var/mmsuite/mmcentral/update/appliance/9.6.1``.
+
+4. In the Web Application, navigate to :menuselection:`Admin --> Configuration` and select :guilabel:`Appliance updates` in the left sidebar.
+5. Select the update in the grid and use the Row :guilabel:`...` menu to select :guilabel:`Deploy`.
+
+   .. note::
+      The update you downloaded should be listed in the data grid and available for deployment as long as there is an MDDS appliance with a version to which the update applies.
