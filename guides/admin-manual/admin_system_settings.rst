@@ -97,7 +97,7 @@ The Logging settings allow you to specify when log messages should be deleted an
 
 Micetro Log
 ^^^^^^^^^^^^
-Logging level for Micetro Central (1-6)
+Logging level for Micetro Central (0-7)
    Determines the level of detail to log when logging the output of Micetro Central to a file.
 
 Log file for Micetro Central
