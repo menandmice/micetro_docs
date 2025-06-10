@@ -48,122 +48,140 @@ Script Interfaces
 
 When Micetro Central runs an external script associated with a change event, it sends an XML structure as an argument to the script being called. The XML structure contains information about all custom properties that are defined for the object type. The XML structure also contains the login name of the user that triggered the script.
 
-The XML structures differ a little depending on the type of script (property change, zone contents change, scope monitoring).
+The XML structures differ a little depending on the type of script (property change, zone contents change, DNS record change, scope monitoring).
 
 .. note::
-   The API knows change events as External Scripts which is why the element name is externalScriptParameters.
+   The API knows change events as External Scripts which is why the element name is ``externalScriptParameters``.
 
-Property Change Script Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The XML schema for a property change script is as follows:
+Standard Script Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^
+The XML schema for all objects is as follows:
 
 .. code-block:: XML
 
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="externalScriptParameters">
-  <xs:complexType>
-  <xs:sequence>
-  <xs:element ref="customFields" minOccurs="1" maxOccurs="1" />
-  </xs:sequence>
-  <xs:attribute name="userName" type="xs:string" />
-  </xs:complexType>
-  </xs:element>
-  <xs:element name="customFields">
-  <xs:complexType>
-  <xs:sequence>
-  <xs:element ref="customField" minOccurs="1" maxOccurs="unbounded" />
-  </xs:sequence>
-  </xs:complexType>
-  </xs:element>
-  <xs:element name="customField">
-  <xs:complexType>
-  <xs:sequence>
-  </xs:sequence>
-  <xs:attribute name="customFieldID" type="xs:string" />
-  <xs:attribute name="customFieldName" type="xs:string" />
-  <xs:attribute name="objectID" type="xs:string" />
-  <xs:attribute name="objectType" type="xs:string" />
-  <xs:attribute name="value" type="xs:string" />
-  </xs:complexType>
-  </xs:element>
+  <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="externalScriptParameters" type="externalScriptParametersType"/>
+    <xs:complexType name="objectType">
+      <xs:sequence>
+        <xs:element type="xs:string" name="id"/>
+        <xs:element type="xs:string" name="type"/>
+        <xs:element type="xs:string" name="name" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="addressSpace" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="server" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="view" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="zone" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="fqName" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="zoneType" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="dynamic" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="adIntegrated" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="customFieldType">
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="customFieldID"/>
+          <xs:attribute type="xs:string" name="customFieldName"/>
+          <xs:attribute type="xs:string" name="objectID"/>
+          <xs:attribute type="xs:string" name="objectType"/>
+          <xs:attribute type="xs:string" name="value"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="customFieldsType">
+      <xs:sequence>
+        <xs:element type="customFieldType" name="customField"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="propertyType">
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="propertyName"/>
+          <xs:attribute type="xs:string" name="objectID"/>
+          <xs:attribute type="xs:string" name="objectType"/>
+          <xs:attribute type="xs:string" name="value"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="propertiesType">
+      <xs:sequence>
+        <xs:element type="propertyType" name="property" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="externalScriptParametersType">
+      <xs:sequence>
+        <xs:element type="objectType" name="object"/>
+        <xs:element type="customFieldsType" name="customFields" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="propertiesType" name="properties" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="userName"/>
+    </xs:complexType>
   </xs:schema>
 
-An example XML structure with three custom properties named Location, Country and Region might look as follows:
+Change Request Script Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The XML schema for a change request (external script) is as follows:
 
-.. code-block:: XML
+.. note::
+  This script applies to most objects, excluding DNS records. For an example XML schema for changes to DNS records, refer to :ref:`dns-record-xml-schema` below.
 
-  <?xml version="1.0"?>
-  <externalScriptParameters username="administrator">
-  <customFields>
-  <customField customFieldID="24" customFieldName="Location"
-  objectID="27" objectType="4" value="location1"></customField>
-  <customField customFieldID="25" customFieldName="Country"
-  objectID="27" objectType="4" value=""></customField>
-  <customField customFieldID="26" customFieldName="Region"
-  objectID="27" objectType="4" value=""></customField>
-  </customFields>
-  </externalScriptParameters>
+.. code-block::
 
-Upon completion, the script must create a new XML structure and return it to Micetro Central. The schema for the XML structure that is returned is as follows:
-
-.. code-block:: XML
-
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd"
-  elementFormDefault="qualified" xmlns="http://tempuri.org/
-  XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="result">
-  <xs:complexType>
-  <xs:choice minOccurs="1" maxOccurs="2">
-  <xs:element ref="customFields" />
-  <xs:element ref="error" />
-  </xs:choice>
-  <xs:attribute name="success" type="xs:string" />
-  </xs:complexType>
-  </xs:element>
-  <xs:element name="customFields">
-  <xs:complexType>
-  <xs:sequence>
-  <xs:element ref="customField" minOccurs="0" maxOccurs="unbounded"/>
-  </xs:sequence>
-  </xs:complexType>
-  </xs:element>
-  <xs:element name="customField">
-  <xs:complexType>
-  <xs:sequence>
-  </xs:sequence>
-  <xs:attribute name="customFieldID" type="xs:string" />
-  <xs:attribute name="customFieldName" type="xs:string" />
-  <xs:attribute name="objectID" type="xs:string" />
-  <xs:attribute name="objectType" type="xs:string" />
-  <xs:attribute name="value" type="xs:string" />
-  </xs:complexType>
-  </xs:element>
-  <xs:element name="error">
-  <xs:complexType>
-  <xs:sequence>
-  </xs:sequence>
-  <xs:attribute name="code" type="xs:string" />
-  <xs:attribute name="message" type="xs:string" />
-  </xs:complexType>
-  </xs:element>
+  <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="externalScriptParameters" type="externalScriptParametersType"/>
+    <xs:complexType name="objectType">
+      <xs:sequence>
+        <xs:element type="xs:string" name="id"/>
+        <xs:element type="xs:string" name="type"/>
+        <xs:element type="xs:string" name="name" />
+        <xs:element type="xs:string" name="addressSpace" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="server" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="view" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="fqName" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="zoneType" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="dynamic" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="adIntegrated" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="customFieldType">
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="customFieldID"/>
+          <xs:attribute type="xs:string" name="customFieldName"/>
+          <xs:attribute type="xs:string" name="objectID"/>
+          <xs:attribute type="xs:string" name="objectType"/>
+          <xs:attribute type="xs:string" name="value"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="customFieldsType">
+      <xs:sequence>
+        <xs:element type="customFieldType" name="customField"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="propertyType">
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="propertyName"/>
+          <xs:attribute type="xs:string" name="objectID"/>
+          <xs:attribute type="xs:string" name="objectType"/>
+          <xs:attribute type="xs:string" name="value"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="propertiesType">
+      <xs:sequence>
+        <xs:element type="propertyType" name="property" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="externalScriptParametersType">
+      <xs:sequence>
+        <xs:element type="objectType" name="object"/>
+        <xs:element type="customFieldsType" name="customFields"/>
+        <xs:element type="propertiesType" name="properties" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="userName"/>
+    </xs:complexType>
   </xs:schema>
-
-An example XML structure with three custom properties named Location, Country, and region might look as follows:
-
-.. code-block:: XML
-
-  <?xml version="1.0"?>
-  <result success="1">
-  <customFields>
-  <customField customFieldID="24" customFieldName="loc" objectID="27" objectType="4" value="location1"></customField>
-  <customField customFieldID="25" customFieldName="Country" objectID="27" objectType="4" value="USA"></customField>
-  <customField customFieldID="26" customFieldName="Region" objectID="27" objectType="4" value="Texas"></customField>
-  </customFields>
-  </result>
 
 Micetro Central uses the information in the XML structure to update other custom properties or to display an error message if the success attribute on the result element is set to 0. The following XML example shows how an error message can be returned by the change event script.
 
@@ -177,33 +195,28 @@ The XML structure is not required to return information about all custom propert
 
 Zone Content Change Script Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The XML schema for a zone content change script is as follows:
+The XML schema for a DNS zone content change script is as follows:
 
 .. code-block:: XML
-
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="externalScriptParameters">
-  <xs:complexType>
-  <xs:sequence>
-  <xs:element ref="object" minOccurs="1" maxOccurs="1" />
-  </xs:sequence>
-  <xs:attribute name="userName" type="xs:string" />
-  </xs:complexType>
-  </xs:element>
-  <xs:element name="object">
-  <xs:complexType>
-  <xs:sequence>
-  <xs:element name="id" type="xs:integer" minOccurs="1" maxOccurs="1" />
-  <xs:element name="type" type="xs:integer" minOccurs="1" maxOccurs="1" />
-  <xs:element name="server" type="xs:string" minOccurs="1" maxOccurs="1" />
-  <xs:element name="view" type="xs:string" minOccurs="1" maxOccurs="1" />
-  <xs:element name="zone" type="xs:string" minOccurs="1" maxOccurs="1" />
-  <xs:element name="fqName" type="xs:string" minOccurs="1" maxOccurs="1" />
-  </xs:sequence>
-  </xs:complexType>
-  </xs:element>
+  
+  <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="externalScriptParameters" type="externalScriptParametersType"/>
+    <xs:complexType name="objectType">
+      <xs:sequence>
+        <xs:element type="xs:string" name="id"/>
+        <xs:element type="xs:string" name="type"/>
+        <xs:element type="xs:string" name="server"/>
+        <xs:element type="xs:string" name="view"/>
+        <xs:element type="xs:string" name="zone"/>
+        <xs:element type="xs:string" name="fqName"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="externalScriptParametersType">
+      <xs:sequence>
+        <xs:element type="objectType" name="object"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="userName"/>
+    </xs:complexType>
   </xs:schema>
 
 An example XML structure for a zone change script might look as follows for a zone that exists in a view:
@@ -212,14 +225,14 @@ An example XML structure for a zone change script might look as follows for a zo
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <externalScriptParameters userName="administrator">
-  <object>
-  <id>2534</id>
-  <type>13</type>
-  <server>bind1.corp.net.</server>
-  <view>internal</view>
-  <zone>zone.com.</zone>
-  <fqName>bind1.corp.net.:internal:zone.com.</fqName>
-  </object>
+    <object>
+      <id>2534</id>
+      <type>13</type>
+      <server>bind1.corp.net.</server>
+      <view>internal</view>
+      <zone>zone.com.</zone>
+      <fqName>bind1.corp.net.:internal:zone.com.</fqName>
+    </object>
   </externalScriptParameters>
 
 An example XML structure for a zone change script might look as follows for a zone that is not in a view:
@@ -228,14 +241,86 @@ An example XML structure for a zone change script might look as follows for a zo
 
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <externalScriptParameters userName="administrator">
-  <object>
-  <id>2635</id>
-  <type>13</type>
-  <server>dns1.corp.net.</server>
-  <view />
-  <zone>my.zone.com.</zone>
-  <fqName>dns1.corp.net.::my.zone.com.</fqName>
-  </object>
+    <object>
+      <id>2635</id>
+      <type>13</type>
+      <server>dns1.corp.net.</server>
+      <view />
+      <zone>my.zone.com.</zone>
+      <fqName>dns1.corp.net.::my.zone.com.</fqName>
+    </object>
   </externalScriptParameters>
 
 A zone content change script does not have any return value.
+
+.. _dns-record-xml-schema:
+
+DNS Record Content Change Script Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following XML structure is used for changes to DNS records:
+
+.. code-block:: XML
+
+  <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="externalScriptParameters" type="externalScriptParametersType"/>
+    <xs:complexType name="objectType">
+      <xs:sequence>
+        <xs:element type="xs:string" name="id"/>
+        <xs:element type="xs:string" name="type"/>
+        <xs:element type="xs:string" name="server"/>
+        <xs:element type="xs:string" name="view"/>
+        <xs:element type="xs:string" name="zone"/>
+        <xs:element type="xs:string" name="fqName"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="externalScriptParametersType">
+      <xs:sequence>
+        <xs:element type="objectType" name="object"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="userName"/>
+    </xs:complexType>
+  </xs:schema>
+
+An example XML structure for a DNS record change script might look as follows:
+
+.. code-block:: XML
+
+  <?xml version="1.0" encoding="ISO-8859-1" ?>
+  <externalScriptParameters userName="administrator">
+    <object>
+        <id>1</id>
+        <type>13</type>
+        <server>dns1.corp.net.</server>
+        <view />
+        <zone>armann.test.</zone>
+        <fqName>dns1.corp.net.::my.zone.com.</fqName>
+    </object>
+  </externalScriptParameters>
+
+Workflow Change Script Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following XML structure is used for changes to a workflow:
+
+.. code-block:: XML
+
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <externalScriptParameters userName="administrator">
+    <object>
+        <id>14</id>
+        <type>13</type>
+        <name>gaman7</name>
+        <addressSpace>1</addressSpace>
+        <server>bind1.corp.net.</server>
+        <view></view>
+        <fqName>bind1.corp.net.:internal:zone.com.</fqName>
+        <zoneType>master</zoneType>
+        <dynamic>0</dynamic>
+        <adIntegrated>0</adIntegrated>
+    </object>
+    <customFields>
+        <customField customFieldID="5" customFieldName="myCustomRecordProp" objectID="14" objectType="13" value="test"></customField>
+    </customFields>
+    <properties>
+        <property propertyName="someName" objectID="2580" objectType="10" value="someValue"></property>
+    </properties>
+  </externalScriptParameters>
