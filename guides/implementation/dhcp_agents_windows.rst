@@ -27,7 +27,6 @@ To retrieve the list of available agents/parameters, run the installer script wi
     --quiet:  Suppress output during install.
     --auto:  Automatically determine what controllers to install. Default if no other option is given.
     --bind-dns-controller:  Install a DNS server controller for BIND.
-    --unbound-dns-controller:  Install a DNS server controller for Unbound.
     --generic-dns-controller:  Install a Generic DNS server controller.
     --isc-dhcp-controller:  Install a DHCP server controller for ISC dhcpd.
     --kea-dhcp-controller:  Install a DHCP server controller for Kea dhcp4.
