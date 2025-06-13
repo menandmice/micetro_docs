@@ -273,6 +273,7 @@ With this feature, you can select and merge multiple networks. The :guilabel:`Jo
 
 4. Click :guilabel:`Join`.
 
+.. _host-discovery-networks:
 
 Host Discovery
 ---------------
