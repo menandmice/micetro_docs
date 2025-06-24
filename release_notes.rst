@@ -20,14 +20,14 @@ June 26, 2025
 Bug Fixes
 ^^^^^^^^^
 
-* Breaking changes announced in the Kea 2.6.3 release in which sockets must be created in ``[kea-install-dir]/var/run/kea`` instead of ``/tmp``. For more information, refer to the `Kea 2.6.3 release notes <https://downloads.isc.org/isc/kea/2.6.3/Kea-2.6.3-ReleaseNotes.txt>`_
 * Fixed an issue in which calling ``NextFreeAddress`` returned an IP address that had already been assigned (`KI-026010 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OgkT2AS>`_)
 * Fixed an issue that caused custom property values for device interfaces to not be displayed in the Web Application (`KI-026397 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002rcv2AA>`_)
 * Fixed an issue that caused range external scripts to time out if certain operations were performed against the API, e.g., ``GetRanges`` (`KI-026372 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002mdF2AQ>`_)
 * Fixed an issue that initiated an automatic database backup whenever Micetro Central was restarted (`KI-026303 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002XO52AM>`_)
-* Fixed an issue that prevented users from connecting to Cisco DHCP servers after updating to Micetro 25.1.1 (`KI-026338 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002eB32AI>`_)
-* Fixed the writing of XML sent to event hook scripts (`KI-026392 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002qlh2AA>`_)
-* Fixed the WSDL in the ``mm`` namespace (`KI-026380 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002oGr2AI>`_)
+* Fixed an issue that prevented users from connecting to Cisco IOS DHCP servers by increasing the number of security algorithms that can be used to connect (`KI-026338 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002eB32AI>`_)
+* Fixed the writing of XML sent to event hook scripts so special characters, e.g., &, are correctly escaped (`KI-026392 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002qlh2AA>`_)
+* Fixed the WSDL in the ``mm`` namespace so customers can properly create typed clients on top of the WSDL (`KI-026380 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002oGr2AI>`_)
+* Kea 2.6.3 introduced breaking changes in which sockets must be created in ``[kea-install-dir]/var/run/kea`` instead of ``/tmp``. This is now handled properly within Micetro. Any customer looking to manage Kea 2.6.3 should update to this version (or greater) of Micetro. For more information, refer to the `Kea 2.6.3 release notes <https://downloads.isc.org/isc/kea/2.6.3/Kea-2.6.3-ReleaseNotes.txt>`_
 * Resolved an issue in which Meraki data stopped syncing when the client did not have access. Now Meraki services can be configured in Micetro to ignore specified Meraki networks or organizations (`KI-026398 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002reX2AQ>`_)
 
 .. _25.1.1-release:
