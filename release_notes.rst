@@ -23,7 +23,7 @@ Bug Fixes
 * Breaking changes announced in the Kea 2.6.3 release in which sockets must be created in ``[kea-install-dir]/var/run/kea`` instead of ``/tmp``. For more information, refer to the `Kea 2.6.3 release notes <https://downloads.isc.org/isc/kea/2.6.3/Kea-2.6.3-ReleaseNotes.txt>`_
 * Corrected in-app links to the REST API documentation
 * Fixed an issue in which calling ``NextFreeAddress`` returned an IP address that had already been assigned (`KI-026010 <https://care.bluecatnetworks.com/s/detail/a8BOI000000OgkT2AS>`_)
-* Fixed an issue that caused custom property values for device interfaces were not displayed in the Web Application
+* Fixed an issue that caused custom property values for device interfaces to not be displayed in the Web Application
 * Fixed an issue that caused range external scripts to time out if certain operations were performed against the API, e.g., ``GetRanges`` (`KI-026372 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002mdF2AQ>`_)
 * Fixed an issue that initiated an automatic database backup whenever Micetro Central was restarted (`KI-026303 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002XO52AM>`_)
 * Fixed an issue that prevented users from connecting to Cisco DHCP servers after updating to Micetro 25.1.1 (`KI-026338 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002eB32AI>`_)
