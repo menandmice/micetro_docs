@@ -106,7 +106,7 @@ To speed up response time for large operations, add the following line to ``mmws
  
 .. _webapp-fixed-central-linux:
  
-Allowing the Micetro Web Application to log into other Central servers
+Allowing the Web Application to log into other Micetro Central servers
 ----------------------------------------------------------------------
 By default, the Micetro UI and API only allow connecting to a single Micetro Central server, determined during the first login to Micetro after installation.
  
@@ -114,8 +114,17 @@ To allow users to specify a custom Central server to connect to:
  
 1. Log into the server hosting Micetro.
  
-2. Edit the ``preferences.cfg`` file for the Micetro Web Services (``/var/mmsuite/web_services/preferences.cfg``). Add the following line:
- 
+2. Edit the ``preferences.cfg`` file for the Micetro Web Services located at ``/var/mmsuite/web_services/preferences.cfg``) by adding the following line:
+
+   .. code-block::
+    
+    <DefaultCentralServer value="your Micetro Central DNS name or IP" />
+
+   .. note::
+    If ``DefaultCentralServer`` is not specified, the web service will use the first-specified Micetro Central server, typically ``localhost``.
+
+3. Add the following XML-tag to lock the web service to use the default Micetro Central server:
+
    .. code-block::
  
     <LockToDefaultServer value="0" />
@@ -126,7 +135,7 @@ To allow users to specify a custom Central server to connect to:
  
     systemctl restart mmws
  
-A :guilabel:`Server` field will appear on the Micetro login page and the :guilabel:`serverName` field in the API Login command will be honored.
+A :guilabel:`Server` field will appear on the Micetro login page and the ``serverName`` field in the API Login command will be honored.
  
 .. _webserver-proxy-timeout-linux:
  

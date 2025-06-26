@@ -82,21 +82,30 @@ If there's already an **HTTP to HTTPS redirect** rule at the top of the list, no
  
 .. _webapp-fixed-central-windows:
  
-Allowing the Micetro Web Application to log into other Central servers
+Allowing the Web Application to log into other Micetro Central servers
 ----------------------------------------------------------------------
 By default, the Micetro UI and API only allow connecting to a single Micetro Central server, determined during the first login to Micetro after installation.
  
-To allow users to specify a custom Central server to connect to:
+To allow users to specify a custom Micetro Central server to connect to:
  
-1. Edit the ``preferences.cfg`` file for the Micetro Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg``. Add the following line:
+1. Edit the ``preferences.cfg`` file for the Micetro Web Services located at ``c:\\ProgramData\\Men and Mice\\Web Services\\preferences.cfg`` by adding the following line to define the default Micetro Central server name:
  
    .. code-block::
-        
+    
+    <DefaultCentralServer value="your Micetro Central DNS name or IP" />
+    
+   .. note::
+    If ``DefaultCentralServer`` is not specified, the web service will use the first-specified Micetro Central server, typically ``localhost``.
+
+2. Add the following XML-tag to lock the web service to use the default Micetro Central server:
+
+   .. code-block::
+    
     <LockToDefaultServer value="0" />
  
 2. Restart the Micetro Web Services Windows service.
  
-A "Server" field will appear on the Micetro login page and the "serverName" field in the API Login command will be honored.
+A :guilabel:`Server` field will appear on the Micetro login page and the ``serverName`` field in the API Login command will be honored.
  
 .. _webserver-proxy-timeout-windows:
  
