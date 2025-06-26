@@ -92,13 +92,13 @@ Refer to the tabs below for details on each specific cloud provider.
 
       To manage Meraki with Micetro, you must have an operational instance of the Micetro DHCP Agent. For additional details about the DHCP Agent, refer to :ref:`dhcp_agents_windows` or :ref:`dhcp_agents_linux`.
 
-      Moreover, the user responsible for adding Meraki should have DHCP administrator privileges.
+      When connecting to Meraki, specify the location of the running DHCP Agent. You must also provide Micetro with a display name for the service and the API key to connect to Meraki.
 
-      When connecting to Meraki, specify the location of the running DHCP. You must also provide Micetro with a display name for the service and the API key to connect to Meraki. 
+      Additionally, in the **Ignore list** field, enter the Meraki Organization or Network IDs that Micetro should exclude from synchronization. List one ID per line.
 
-         .. image:: ../../images/add-meraki.png
-            :width: 70%
-      
+         .. image:: ../../images/add-service-meraki.png
+            :width: 100%
+        
       **Obtaining Access Credentials**: For information about how to create API Access Credentials for use by Micetro, refer to  `Cisco Meraki Dashboard API <https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API>`_.
 
       Synchronization parameters, e.g., network client synchronization interval, can be configured under :ref:`Advanced System Settings <admin-advanced>`.
