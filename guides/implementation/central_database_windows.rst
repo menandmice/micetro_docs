@@ -39,7 +39,7 @@ Microsoft SQL Server
 Micetro requires the creation of a new database on your server with a case-sensitive and accent-sensitive collation. For SQL Server 2019 or later, it is recommended to use a UTF-8 collation, such as ``Latin1_General_100_CS_AS_KS_WS_SC_UTF8``. For earlier SQL Server versions or Micetro versions 11.0 and below, the recommended collation is ``SQL_Latin1_General_CP1_CS_AS``.
 
 .. note::
-    We recommend using the `Microsoft ODBC driver <https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server>`_ **version 17 or 18** for SQL Server. This is required when using UTF-8 encoded collations. Otherwise, Micetro will connect to a database using older drivers, which could result in issues such as degraded performance.
+    Multiple ODBC drivers were deprecated as part of the :ref:`Micetro 25.1.0 release<25.1.0-release>`. We recommend using the `Microsoft ODBC driver <https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server>`_ **version 17 or 18** for SQL Server. This is required when using UTF-8 encoded collations. Otherwise, Micetro will connect to a database using older drivers, which could result in undefined behavior or errors, e.g., "invalid precision value".
 
 The `CreateDatabase.sql <https://github.com/menandmice/micetro_docs/blob/latest/scripts/CreateDatabase.sql>`_ script can be used to create a blank database for Micetro with the recommended configurations. The script also creates a user account called ``micetroDBUser``, but you must change the password before running the script. 
  
