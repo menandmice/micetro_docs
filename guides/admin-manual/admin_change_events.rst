@@ -149,29 +149,7 @@ The following example shows the XML structure for a change request script:
 
 Zone Content Change Script Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The XML schema for a DNS zone or DNS record content change script is as follows:
-
-.. code-block:: XML
-  
-  <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="externalScriptParameters" type="externalScriptParametersType"/>
-    <xs:complexType name="objectType">
-      <xs:sequence>
-        <xs:element type="xs:string" name="id"/>
-        <xs:element type="xs:string" name="type"/>
-        <xs:element type="xs:string" name="server"/>
-        <xs:element type="xs:string" name="view"/>
-        <xs:element type="xs:string" name="zone"/>
-        <xs:element type="xs:string" name="fqName"/>
-      </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="externalScriptParametersType">
-      <xs:sequence>
-        <xs:element type="objectType" name="object"/>
-      </xs:sequence>
-      <xs:attribute type="xs:string" name="userName"/>
-    </xs:complexType>
-  </xs:schema>
+The XML structure for a DNS zone change script differs depending on whether the zone is or is not in a view.
 
 **Zone that exists in a view**: The following example shows the XML structure for a zone change script for a zone that exists in a view:
 
