@@ -117,14 +117,6 @@ The XML schema for all objects is as follows:
     </xs:complexType>
   </xs:schema>
 
-Micetro Central uses the information in the XML structure to either update other custom properties or display an error message if the success attribute on the result element is set to ``0``. The following XML example shows how an error message can be returned by the change event script:
-
-.. code-block:: XML
-
-  <?xml version="1.0"?><result success="0"><error code="1"message="The error message."></error></result>
-
-The XML structure is not required to return information about all custom properties, only fields that the script has changed. Unknown property fields are ignored by Micetro Central.
-
 Change Request Script Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following example shows the XML structure for a change request script:
@@ -230,3 +222,13 @@ The following XML structure is used for changes to a workflow:
         <property propertyName="someName" objectID="2580" objectType="10" value="someValue"></property>
     </properties>
   </externalScriptParameters>
+
+Data Returned by Change Event Scripts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Micetro Central uses the information in the XML structure to either update other custom properties or display an error message if the success attribute on the result element is set to ``0``. The following XML example shows how an error message can be returned by the change event script:
+
+.. code-block:: XML
+
+  <?xml version="1.0"?><result success="0"><error code="1"message="The error message."></error></result>
+
+The XML structure is not required to return information about all custom properties, only fields that the script has changed. Unknown property fields are ignored by Micetro Central.
