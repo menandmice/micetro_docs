@@ -47,6 +47,8 @@ Important Notes for Updating
 
    When the update is successfully completed, the service will be started again. Both servers should be updated and returned to High Availability mode.
 
+.. _update-micetro:
+
 Updating Micetro
 ----------------
 Before updating Micetro, we strongly recommend first reading the :ref:`release-notes`. 

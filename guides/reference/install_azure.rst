@@ -37,7 +37,9 @@ Finding Micetro in the Azure Marketplace
         :width: 70%
         :align: center
  
-3. Enter the search term "Micetro" and select the offering.
+3. Enter the search term "Micetro" and select the offering, which is latest major version of Micetro, e.g., 25.1.0.
+
+   For more information on Micetro versions, refer to :ref:`version-numbers`.
  
 4. In the rightmost sidebar, select :guilabel:`Create`.
  
@@ -169,3 +171,9 @@ After deployment
 The deployment may take up to 15--20 minutes, depending on the traffic of the Azure region to which you are deploying.
  
 It may be helpful to reference the :ref:`architecture` during the deployment.
+
+Update to the latest minor/patch version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When using Azure Marketplace, you receive the latest major version of Micetro, e.g., 25.1.0. If subsequent minor/patch versions have been released, e.g., 25.1.1, you need to update your Micetro version through the Web Application. Minor/patch versions are not available in Azure Marketplace.
+
+For instructions on updating Micetro through the Web Application, refer to :ref:`update-micetro`.
