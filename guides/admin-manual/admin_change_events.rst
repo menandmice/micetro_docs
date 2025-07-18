@@ -175,7 +175,6 @@ The XML structure for a DNS zone change script differs depending on whether the 
     </object>
   </externalScriptParameters>
 
-A zone content change script does not have any return value.
 
 .. _dns-record-xml-schema:
 
