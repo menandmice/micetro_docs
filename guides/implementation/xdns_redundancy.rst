@@ -11,6 +11,10 @@ xDNS (Cross-Domain Name System) redundancy helps ensure the availability and rel
 
 * **Creating Redundancy Groups**: With xDNS profiles, you can create groups that consist of multiple DNS servers and services. These groups are designed to manage the authority of a specific list of DNS zones.
 * **Identical Zone Content**: Once you've set up an xDNS redundancy group, the system assists you in generating identical copies of the DNS zone content across multiple primary zones. This replication ensures that all zones within the group are the same in every aspect.
+
+  .. note::
+    The SOA record is not replicated during this process. Additionally, Micetro does not update the SOA serial number (which may have different values in the synchronized zones), because some supported DNS services, like Azure DNS or Route 53, do not allow you to change it.
+
 * **Flexibility**: You can add or remove zones from the xDNS profile as your needs evolve.
 
 xDNS profiles 
