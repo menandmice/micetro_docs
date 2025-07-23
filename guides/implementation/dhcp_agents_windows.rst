@@ -37,13 +37,19 @@ You can also run the installer executable as **Windows Administrator** in silent
 
   .. code-block::
     
-    ``Micetro_Controllers_x64_<version>.exe /s /v"/qn /L*V C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,Update"``
+    Micetro_Controllers_x64_<version>.exe /s /v"/qn /L*V C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,Update"
     
 * To install only the DNS and Update Agents:
 
   .. code-block::
     
-    ``Micetro_Controllers_x64_<version>.exe /s /v"/qn /L*V C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DNS,Update"``
+    Micetro_Controllers_x64_<version>.exe /s /v"/qn /L*V C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DNS,Update"
+
+**Example**: The following example is a full installation for Micetro version 25.1.2:
+
+.. code-block::
+        
+    Micetro_Controllers_x64_<25.1.2>.exe /s /v"/qn /L*V C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,DNS,Update"
 
 All agents are installed as a **Windows Service** and all services run by default under the **Local System** account. For information about how to change the account that runs the service, refer to :ref:`windows-dhcp-privileged`.
 
