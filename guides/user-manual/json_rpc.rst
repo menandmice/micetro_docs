@@ -68,7 +68,7 @@ To use ``mmJSONClient`` in an interactive Python session:
 
       $ python
       >>> import mmJSONClient
-      >>> client = mmJSONClient.JSONClient()
+      >>> client = mmJSONClient.MmJSONClient()
 
 3. Authenticate and open a session with the desired Micetro Central instance using the ``Login`` command, which requires at least three arguments:
 
@@ -76,7 +76,7 @@ To use ``mmJSONClient`` in an interactive Python session:
    * ``username``: Username for authentication.
    * ``password``: Password for authentication.
 
-These arguments are optional, as the API assumes the Micetro Central instance is located on the same machine as the Web Services by default. The API also supports other authentication mechanisms like Bearer Authentication, Windows NTLM, and Kerberos.
+The API assumes the Micetro Central instance is located on the same machine as the Web Services by default, if that is not the case the `proxy` argument can be used. The API also supports other authentication mechanisms like Bearer Authentication, Windows NTLM, and Kerberos.
 
 .. code-block::
 
