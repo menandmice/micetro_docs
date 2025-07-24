@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
     Creates a scripting client to the Micetro API interface.
-    Version: 11.1
-    Updated: 06/14/2024
-    Copyright (c) 2024 BlueCat Networks
+    Version: 25.1
+    Updated: 07/24/2025
+    Copyright (c) 2025 BlueCat Networks
 
 .DESCRIPTION
     Instantiates a Micetro JSON-RPC Client, and makes all API Methods available
@@ -322,7 +322,11 @@ function publishMMMethods ($theClient, $wsdlURL, $version){
 
 
     function getParamTypePrefix ($paramType) {
-
+        # Workaround because of the "any" type (in ProviderProperties) which is
+        # a non-standard type and causes a failure when generating the client
+	if($paramType.Name -eq "XmlElement") {
+            return "[String]"
+        }
         $pName = $paramType.Name.replace('&','')
 
         if ($pName.StartsWith('Nullable')){
