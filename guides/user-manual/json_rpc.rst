@@ -19,8 +19,8 @@ Using the JSON-RPC API offers several advantages over the SOAP API, which it mir
 
 Below is the format for JSON-RPC requests and responses:
 
-* Both requests and responses start with the ``jsonrpc property``, which should always have the value ``"2.0"``.
-* Requests have two additional properties, **method** which specifies the exact name of the operation to be invoked and * **params** which contains all the parameters needed to complete the operation.
+* Both requests and responses start with the ``jsonrpc`` property, which should always have the value ``"2.0"``.
+* Requests have two additional properties: ``method``, which specifies the exact name of the operation to be invoked, and ``params``, which contains all the parameters needed to complete the operation.
 
 Example Request:
 
@@ -68,7 +68,7 @@ To use ``mmJSONClient`` in an interactive Python session:
 
       $ python
       >>> import mmJSONClient
-      >>> client = mmJSONClient.JSONClient()
+      >>> client = mmJSONClient.MmJSONClient()
 
 3. Authenticate and open a session with the desired Micetro Central instance using the ``Login`` command, which requires at least three arguments:
 
@@ -76,7 +76,7 @@ To use ``mmJSONClient`` in an interactive Python session:
    * ``username``: Username for authentication.
    * ``password``: Password for authentication.
 
-These arguments are optional, as the API assumes the Micetro Central instance is located on the same machine as the Web Services by default. The API also supports other authentication mechanisms like Bearer Authentication, Windows NTLM, and Kerberos.
+The API assumes the Micetro Central instance is located on the same machine as the Web Services by default. If that is not the case, the ``proxy`` argument can be used. The API also supports other authentication mechanisms like Bearer Authentication, Windows NTLM, and Kerberos.
 
 .. code-block::
 
