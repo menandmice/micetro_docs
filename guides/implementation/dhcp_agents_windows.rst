@@ -32,6 +32,21 @@ You can also run the installer executable as **Windows Administrator** in silent
   .. code-block::
     
     Micetro_Controllers_x64_<version>.exe /s /v"/qn /L*V C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,DNS,Update"
+
+* A full installation, including the DNS Agent, DHCP Agent, and Update Agent, with ``runas.exe`` administrator in a Windows command:
+
+  .. note::
+    The ``c:\temp`` directory for the ``controllerInstall.log`` file must be created before executing the installation.
+
+  .. code-block::
+
+    runas.exe /user:administrator "Micetro_Controllers_x64_25.1.2.exe /s /v"/qn /LV C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,DNS,Update""
+
+  Enter the password for administrator:
+
+  .. code-block::
+    
+    Attempting to start Micetro_Controllers_x64_25.1.2.exe /s /v"/qn /LV C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,DNS,Update" as user "WIN-32QTB227IR8\administrator" ...
     
 * To install only the DHCP and the Update Agents:
 
