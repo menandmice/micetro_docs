@@ -77,7 +77,7 @@ For an agent-free installation, in which an Agent is used as proxy to communicat
 
 The DNS Agent service (service name: ``Men and Mice DNS Server Controller``) runs under an Active Directory (AD) service account that is member of the ``DNSAdmins`` group in AD and is also local administrator on the machine running the agent.
 
-With the Micetro DHCP Agent (service name: ``Men and Mice DHCP Server Controller``), the serivce account typically runs under an AD service account that is member of the AD group ``DHCP Administrators``. If the DHCP server role runs on a dedicated Windows domaim member server (not on a Domain Controller), membership to the local ``DHCP Administrators`` group for the DHCP servers is required.
+With the Micetro DHCP Agent (service name: ``Men and Mice DHCP Server Controller``), the serivce account typically runs under an AD service account that is member of the AD group ``DHCP Administrators``. If the DHCP server role runs on a dedicated Windows domain member server (not on a Domain Controller), membership to the local ``DHCP Administrators`` group for the DHCP servers is required.
 
 The Update Agent can also run on the Local System. Typically, no changes are needed for this agent type. 
 
