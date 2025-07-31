@@ -40,7 +40,7 @@ You can also run the installer executable as **Windows Administrator** in silent
 
   .. code-block::
 
-    runas.exe /user:administrator "Micetro_Controllers_x64_25.1.2.exe /s /v"/qn /LV C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,DNS,Update""
+    runas.exe /user:administrator "Micetro_Controllers_x64_11.0.4.exe /s /v\"/qn /L*V C:\temp\controllerInstall.log REBOOT=ReallySuppress ADDLOCAL=DHCP,DNS,Update\""
 
   Enter the password for administrator:
 
