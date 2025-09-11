@@ -16,7 +16,10 @@ To install the Micetro Web Application, double-click on the Microsoft installer 
  
 Setting up SSL for the Web Application
 --------------------------------------
-If you want to set up a secure sockets layer (SSL) for the Web Application, follow these instructions. 
+To set up a secure sockets layer (SSL) for the Web Application, follow these instructions.
+
+.. note::
+    Make sure that certificates include a Subject Alternative Name (SAN) so that web browsers mark the site as secure.
  
 Configuring SSL certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
