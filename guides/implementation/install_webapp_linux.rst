@@ -36,6 +36,9 @@ To install the Micetro Web Application on Linux:
  
 Setting up SSL for the Web Application (Apache)
 -----------------------------------------------
+.. note::
+    Make sure that certificates include a Subject Alternative Name (SAN) so that web browsers mark the site as secure.
+    
 By default, the Web Application uses an unencrypted HTTP connection on port ``80``. To use it with HTTPS on port ``443``, follow these steps:
  
 1. Make sure that mod_ssl for Apache is installed:
