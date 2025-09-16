@@ -23,7 +23,7 @@ You can either select an existing user or create a new one. This can be done thr
 
    * If creating a new user, ensure you allow programmatic access to generate an access key ID and secret access key pair for adding the account to Micetro. 
    * Attach the *IAMReadOnlyAccess* policy to the user.
-   * If you want to manage Route53 and VPCs on this account, also attach the *AmazonRoute53FullAccess* and *AmazonEC2FullAccess* policies.
+   * If you want to manage Route53 and VPCs on this account, also attach the access policies needed to manage Amazon Route 53 and EC2. For more information about permissions, refer to :ref:`cloud-minimum-permissions`.
 
 4. Create a group. This can be done through the AWS Management Console or by using the AWS CLI command ``[iam|create-group]``.
 
@@ -69,12 +69,13 @@ II.  Creating and Configuring Roles for Each Account
 
    * Attach the necessary policies for Micetro by searching for them by name and selecting them.
 
-      * *AmazonRoute53FullAccess* to manage hosted DNS zones.
+      * Route 53 permissions to manage hosted DNS zones.
 
-      * *AmazonEC2FullAccess* to manage Cloud Networks and ranges.
+      * EC2 permissions to manage Cloud Networks and ranges.
 
-      * *IAMReadOnlyAccess* so that Micetro can access the account alias. This does not need to be attached if you do not want AWS account aliases to be displayed in Micetro.
-
+      * IAM permissions so that Micetro can access the account alias. This does not need to be attached if you do not want AWS account aliases to be displayed in Micetro.
+     For more information about permissions, refer to :ref:`cloud-minimum-permissions`.
+     
    * Select :guilabel:`Next: Tags`. 
 
    This can also be done using the AWS CLI command ``[iam|attach-role-policy]``
