@@ -69,11 +69,11 @@ II.  Creating and Configuring Roles for Each Account
 
    * Attach the necessary policies for Micetro by searching for them by name and selecting them.
 
-      * Route 53 permissions to manage hosted DNS zones.
+      * **Route 53 permissions** to manage hosted DNS zones.
 
-      * EC2 permissions to manage Cloud Networks and ranges.
+      * **EC2 permissions** to manage cloud networks and ranges.
 
-      * IAM permissions so that Micetro can access the account alias. This does not need to be attached if you do not want AWS account aliases to be displayed in Micetro.
+      * **IAM permissions** so that Micetro can access the account alias. This does not need to be attached if you do not want AWS account aliases to be displayed in Micetro.
      For more information about permissions, refer to :ref:`cloud-minimum-permissions`.
      
    * Select :guilabel:`Next: Tags`. 
