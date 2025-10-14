@@ -19,7 +19,7 @@ You can adjust the heartbeat timestamp to any value between **5** and **15**.
 
 When a Central instance stops writing the heartbeat timestamp to the database, the ``HeartbeatMaxAllowedDowntime`` value is used to determine if a failover is done to the next valid Central in the list—valid meaning that, in this case, the next Central instance is an HA cluster member and is writing its heartbeat timestamp to the database.
 
-The default maximum downtime is set for 30 seconds. When the current time [UTC – heartbeat timestamp UTC]  >  [HeartbeatMaxAllowedDowntime], an automatic failover is initiated. You can overwrite the default maximum downtown in the ``/var/mmsuite/mmcentral/preferences.cfg`` for each Central instance by changing the following value:
+The default maximum downtime is set for 30 seconds. When the current time [UTC – heartbeat timestamp UTC]  >  [HeartbeatMaxAllowedDowntime], an automatic failover is initiated. You can overwrite the default maximum downtime in the ``/var/mmsuite/mmcentral/preferences.cfg`` for each Central instance by changing the following value:
 
 .. code-block::
 
