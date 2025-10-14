@@ -135,7 +135,7 @@ For example, to add a DNS record to a zone, you can use the following URL:
 
 .. code-block::
 
-   POST http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/test.menandmice.com./dnsRecords?dnsRecord={“name”:”name”, “type”: “A”, “data”: “1.2.3.4”}
+   POST http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/test.menandmice.com./dnsRecords?dnsRecord={"name":"name", "type": "A", "data": "1.2.3.4"}
 
 To modify the newly created DNS record, you can use the following URL:
 
@@ -153,4 +153,4 @@ To delete the DNS record, you can use the following URL:
    For more complex objects, it's recommended to provide the data in the body of the HTTP request rather than in the URL.
    
 .. tip::
-   The API definition can be downloaded from the Web Services and then imported into a 3rd party API development tool such as Postman. To retrieve the API definition in JSON form, navigate to the url ``http(s)://micetro.yourdomain.tld/mmws/api/swagger.json``.
+   The API definition can be downloaded from the Web Services and then imported into a 3rd party API development tool such as Postman. To retrieve the API definition in JSON form, navigate to the URL ``http(s)://micetro.yourdomain.tld/mmws/api/swagger.json``.
