@@ -10,7 +10,23 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`, :ref:`25.1.1-release`, :ref:`25.1.2-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`, :ref:`25.1.1-release`, :ref:`25.1.2-release`, :ref:`25.1.3-release`
+
+.. _25.1.3-release:
+25.1.3
+------
+November 27, 2025
+
+Bug Fixes
+^^^^^^^^^
+
+* Changed the default behavior of scripts for DNS record changes so that they only run when changes are made through Micetro and not as the result of external changes. If users want to change this function so the scripts run upon external changes, they can set the ``RunExternalScriptsOnDNSZoneSync`` preference value to ``true`` (`KI-026054 <https://care.bluecatnetworks.com/s/detail/a8BOI000000QjXl2AK>`_)
+* Custom properties for IP addresses, DNS records, and change requests are now reloaded when manual failover is performed to a server that was previously active in a High Availability setup (`KI-026576 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000003QE52AM>`_)
+* Fixed a bug that did not execute a configured DNS service change when adding an AuthServe DNS service to Micetro (`KI-026108 <https://care.bluecatnetworks.com/s/detail/a8BPJ000000202L2AQ>`_)
+* Fixed an issue in which the statuses of MDDS appliances did not update correctly (`KI-026405 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002uED2AY>`_), which fixes a similar issue with DHCP agents (`KI-026437 <https://care.bluecatnetworks.com/s/detail/a8BPJ00000030Q52AI>`_)
+* Fixed an issue that prevented users from adding Cisco IOS devices to Micetro by enabling all HMAC algorithms supported by libssh (`KI-026619 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000003b1R2AQ>`_)
+* Fixed an issue that prevented users from changing a DNS record in Azure DNS (`KI-026607 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000003YLJ2A2>`_)
+* Fixed the message provided in the Linux installer when updating the mm-authserve-agent so it now displays the correct path (`KI-026301 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000002WYT2A2>`_)
 
 .. _25.1.2-release:
 25.1.2
