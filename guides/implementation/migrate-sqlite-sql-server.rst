@@ -25,7 +25,7 @@ Before migrating
 
 2. If the SQL Server is not running on the Micetro Central server, download and install the `SQL Server OBDC Driver <https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16>`_ from Microsoft.
 
-3. Download and extract the `ConvertDatabase2.10.zip <https://download.menandmice.com/misc/ConvertDatabase2.10.zip>`_ file and copy the extracted files to the "Migrate" directory. The "Migrate" directory should contain the following:
+3. Download and extract the `ConvertDatabase2.10.zip <https://download.menandmice.com/misc/db/ConvertDatabase2.10.zip>`_ file and copy the extracted files to the "Migrate" directory. The "Migrate" directory should contain the following:
 
   * A PowerShell script used to migrate the database from SQLite3 to MS SQL
   * Two SQLite3 DLLs (redistributed from `system.data.sqlite.org <http://system.data.sqlite.org/>`_) under the folders x32 and x64
