@@ -10,11 +10,11 @@ With the Micetro REST API administrators and software developers can create cust
 
 Installation
 ^^^^^^^^^^^^
-To use the REST API, you must install the Men&Mice Web Services and make sure you have the correct access permission. For more information about installing the application, see :ref:`install-webapp`.
+To use the REST API, you must install Micetro Web Services and make sure you have the correct access permission. For more information about installing the application, refer to either :ref:`install-webapp-windows` or :ref:`install-webapp-linux`.
 
-All APIs are bundled together in the installation of the Web Services. Once the Men&Mice Web Services is installed, you can access the API documentation via:
+All APIs are bundled together in the installation of the Web Services. Once Micetro Web Services is installed, you can access the API documentation via:
 
-``http(s)://<micetro.yourdomain.tld>/mmws/api/doc``
+``http(s)://<micetro.yourdomain.tld>/mmws/api/doc/v2/``
 
 .. tip::
    The online REST API documentation can also be viewed on `api.menandmice.com <http://api.menandmice.com/>`_.
@@ -34,7 +34,7 @@ An example of a resource would be a DNS zone, defined in our REST API as ``dnsZo
 
 .. code-block::
 
-   GET http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones
+   GET http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsZones
 
 A successful response looks like this:
 
@@ -77,11 +77,11 @@ Building on top of our previous example, let's retrieve a specific zone using it
 
 .. code-block::
 
-   GET http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/dnsZones/1
+   GET http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsZones/dnsZones/1
    
 .. tip::
 
-   Unique identifiers can also be substituted for names as long as they are unique in the system. If a unique name is used instead of an identifier, Micetro will look up the identifier for the user. ``GET http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/test.menandmice.com``.
+   Unique identifiers can also be substituted for names as long as they are unique in the system. If a unique name is used instead of an identifier, Micetro will look up the identifier for the user. ``GET http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsZones/test.menandmice.com``.
 
 Arguments
 ^^^^^^^^^^
@@ -111,19 +111,19 @@ To get all zones with a name starting with ``test.menandmice``.
 
 .. code-block::
 
-   GET http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones?filter=name=^test.menandmice
+   GET http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsZones?filter=name=^test.menandmice
 
 To get all zones sorted alphabetically by name:
 
 .. code-block::
 
-   GET http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones?sortBy=name&sortOrder=descending
+   GET http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsZones?sortBy=name&sortOrder=descending
 
 To get the first 50 zones in the system in reverse order:
 
 .. code-block::
 
-   GET http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones?sortBy=name&sortOrder=descending&limit=50
+   GET http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsZones?sortBy=name&sortOrder=descending&limit=50
 
 For a more detailed explanation of filtering and sorting in the Micetro REST API, see our `REST API whitepaper <https://www.menandmice.com/resources/whitepapers/rest-api>`_.
 
@@ -135,19 +135,19 @@ For example, to add a DNS record to a zone, you can use the following URL:
 
 .. code-block::
 
-   POST http(s)://<micetro.yourdomain.tld>/mmws/api/dnsZones/test.menandmice.com./dnsRecords?dnsRecord={“name”:”name”, “type”: “A”, “data”: “1.2.3.4”}
+   POST http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsZones/test.menandmice.com./dnsRecords?dnsRecord={"name":"name", "type": "A", "data": "1.2.3.4"}
 
 To modify the newly created DNS record, you can use the following URL:
 
 .. code-block::
 
-   PUT http(s)://<micetro.yourdomain.tld>/mmws/api/dnsRecords/name.test.menandmice.com./?properties={"data":"2.3.4.5"}
+   PUT http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsRecords/name.test.menandmice.com./?properties={"data":"2.3.4.5"}
 
 To delete the DNS record, you can use the following URL:
 
 .. code-block::
 
-   DELETE http(s)://<micetro.yourdomain.tld>/mmws/api/dnsRecords/name.test.menandmice.com.
+   DELETE http(s)://<micetro.yourdomain.tld>/mmws/api/v2/dnsRecords/name.test.menandmice.com.
 
 .. note::
    For more complex objects, it's recommended to provide the data in the body of the HTTP request rather than in the URL.
