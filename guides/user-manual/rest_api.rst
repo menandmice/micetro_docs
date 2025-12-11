@@ -14,7 +14,7 @@ To use the REST API, you must install Micetro Web Services and make sure you hav
 
 All APIs are bundled together in the installation of the Web Services. Once Micetro Web Services is installed, you can access the API documentation via:
 
-``http(s)://<micetro.yourdomain.tld>/mmws/api/doc/v2/``
+``http(s)://<micetro.yourdomain.tld>/mmws/api/doc``
 
 .. tip::
    The online REST API documentation can also be viewed on `api.menandmice.com <http://api.menandmice.com/>`_.
