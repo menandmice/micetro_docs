@@ -10,7 +10,19 @@ Release Notes
 .. note::
   Major releases are supported for 2 years.
 
-Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`, :ref:`25.1.1-release`, :ref:`25.1.2-release`, :ref:`25.1.3-release`
+Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :ref:`10.5.3-release`, :ref:`10.5.4-release`, :ref:`10.5.5-release`, :ref:`10.5.6-release`, :ref:`10.5.7-release`, :ref:`10.5.8-release`, :ref:`11.0.0-release`, :ref:`11.0.1-release`, :ref:`11.0.2-release`, :ref:`11.0.3-release`, :ref:`11.0.4-release`, :ref:`11.1.0-release`, :ref:`11.1.1-release`, :ref:`11.1.2-release`, :ref:`11.1.3-release`, :ref:`11.1.4-release`, :ref:`25.1.0-release`, :ref:`25.1.1-release`, :ref:`25.1.2-release`, :ref:`25.1.3-release`, :ref:`25.1.4-release`
+
+.. _25.1.4-release:
+25.1.4
+------
+September X, 2026
+
+Bug Fixes
+^^^^^^^^^
+
+* Appliances are now displayed correctly in the data grid (`KI-027122 <https://care.bluecatnetworks.com/s/detail/a8BRn0000009IybMAE>`_)
+* Fixed an issue in which DHCP scopes are displayed in Micetro as IP address ranges after being migrated between High Availability clusters (`KI-027395 <https://care.bluecatnetworks.com/s/detail/a8BRn000000BaHtMAK>`_)
+* Fixed an issue in which DNS zones could not be created in new zones on BIND DNS servers whose directory statements ended with a trailing slash, such as ``directory "/var/named/"`` (`KI <>`_)
 
 .. _25.1.3-release:
 25.1.3
