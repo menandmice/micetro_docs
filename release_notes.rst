@@ -22,7 +22,7 @@ Bug Fixes
 
 * Appliances are now displayed correctly in the data grid (`KI-027122 <https://care.bluecatnetworks.com/s/detail/a8BRn0000009IybMAE>`_)
 * Fixed an issue in which DHCP scopes are displayed in Micetro as IP address ranges after being migrated between High Availability clusters (`KI-027395 <https://care.bluecatnetworks.com/s/detail/a8BRn000000BaHtMAK>`_)
-* Fixed an issue in which DNS zones could not be created in new zones on BIND DNS servers whose directory statements ended with a trailing slash, such as ``directory "/var/named/"`` (`KI <>`_)
+* Fixed an issue in which DNS zones could not be created in new zones on BIND DNS servers whose directory statements ended with a trailing slash, such as ``directory "/var/named/"`` (`KI-027529 <https://care.bluecatnetworks.com/s/detail/a8BRn000000CrmvMAC>`_)
 * The ``HeartbeatMaxAllowedDowntime`` preference value can now be set up to one hour (3600 seconds) to allow more control over failover behavior of Micetro Central (`KI-026861 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000008TRR2A2>`_)
 
 .. _25.1.3-release:
