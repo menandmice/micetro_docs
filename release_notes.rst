@@ -15,7 +15,7 @@ Jump to: :ref:`10.5.0-release`, :ref:`10.5.1-release`,  :ref:`10.5.2-release`, :
 .. _25.1.4-release:
 25.1.4
 ------
-September X, 2026
+September 23, 2026
 
 Bug Fixes
 ^^^^^^^^^
@@ -23,6 +23,7 @@ Bug Fixes
 * Appliances are now displayed correctly in the data grid after upgrading from legacy Micetro versions with outdated ``mm_appliances`` schema constraints (`KI-027122 <https://care.bluecatnetworks.com/s/detail/a8BRn0000009IybMAE>`_)
 * Fixed an issue in which DNS records could not be created in new zones on BIND DNS servers whose directory statements ended with a trailing slash, such as ``directory "/var/named/"`` (`KI-027529 <https://care.bluecatnetworks.com/s/detail/a8BRn000000CrmvMAC>`_)
 * Fixed an issue in which migrated DHCP scopes are displayed in Micetro as IP address ranges (`KI-027395 <https://care.bluecatnetworks.com/s/detail/a8BRn000000BaHtMAK>`_)
+* Fixed an issue in which adding scopes outside of Micetro removed custom properties for existing matching ranges in Micetro
 * The ``HeartbeatMaxAllowedDowntime`` preference value can now be set up to one hour (3600 seconds) to allow more control over failover behavior of Micetro Central (`KI-026861 <https://care.bluecatnetworks.com/s/detail/a8BPJ0000008TRR2A2>`_)
 
 .. _25.1.3-release:
