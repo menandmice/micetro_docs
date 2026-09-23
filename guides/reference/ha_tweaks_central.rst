@@ -25,4 +25,4 @@ The default maximum downtime is set for 30 seconds. When the current time [UTC â
 
   <HeartbeatMaxAllowedDowntime value="30" />
 
-You can set the default maximum value to any values between **20** and **120** seconds.
+You can set the default maximum value to any values between **20** and **3600** seconds.
